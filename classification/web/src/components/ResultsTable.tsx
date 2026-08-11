@@ -1,5 +1,6 @@
 import type { Question } from '../types'
-import { pluralize, shortId } from '../lib/questions'
+import { shortId } from '../lib/questions'
+import { useI18n } from '../i18n'
 import { MathText } from './MathText'
 
 interface ResultsTableProps {
@@ -17,12 +18,13 @@ export function ResultsTable({
   onSelect,
   onReset,
 }: ResultsTableProps) {
+  const { count, t } = useI18n()
   return (
     <main id="results" tabIndex={-1} className="results-panel flex min-h-0 min-w-0 flex-1 flex-col bg-canvas">
       <div className="hidden min-h-10.5 items-center border-b border-line px-3 max-[960px]:flex">
         <div className="flex items-baseline gap-2">
-          <strong>{pluralize(questions.length, 'блок', 'блока', 'блоков')}</strong>
-          <span className="text-xs text-muted">{pluralize(marks, 'балл', 'балла', 'баллов')}</span>
+          <strong>{count('blocks', questions.length)}</strong>
+          <span className="text-xs text-muted">{count('marks', marks)}</span>
         </div>
       </div>
 
@@ -31,10 +33,10 @@ export function ResultsTable({
           <thead className="sticky top-0 z-10 bg-canvas">
             <tr>
               <Header className="results-col-id">ID</Header>
-              <Header>Задание</Header>
-              <Header className="results-col-topic">Тема</Header>
-              <Header className="results-col-method">Метод</Header>
-              <Header className="results-col-marks text-right">Баллы</Header>
+              <Header>{t('results.task')}</Header>
+              <Header className="results-col-topic">{t('results.topic')}</Header>
+              <Header className="results-col-method">{t('results.method')}</Header>
+              <Header className="results-col-marks text-right">{t('results.marks')}</Header>
             </tr>
           </thead>
           <tbody>
@@ -61,7 +63,7 @@ export function ResultsTable({
                   <td className="results-task h-12 overflow-hidden border-b border-line px-2.5 py-1.5 leading-[1.35]">
                     <MathText>{question.task_summary}</MathText>
                     <small className="mt-0.5 block text-muted max-[680px]:hidden">
-                      {question.session} · {question.review_status === 'ai_draft' ? 'AI draft' : 'проверено'} · Q{question.question}{question.part === '-' ? '' : `(${question.part})`} · pp. {question.source_pages}
+                      {question.session} · {question.review_status === 'ai_draft' ? t('filters.aiDraft') : t('results.verified')} · Q{question.question}{question.part === '-' ? '' : `(${question.part})`} · {t('results.pages')} {question.source_pages}
                     </small>
                   </td>
                   <td className="results-col-topic h-12 overflow-hidden border-b border-line px-2.5 py-1.5">
@@ -79,10 +81,10 @@ export function ResultsTable({
 
         {questions.length === 0 && (
           <div className="grid min-h-65 place-content-center justify-items-center gap-2 text-muted">
-            <strong className="text-[15px] text-ink">Ничего не найдено</strong>
-            <span>Измените запрос или сбросьте фильтры.</span>
+            <strong className="text-[15px] text-ink">{t('results.emptyTitle')}</strong>
+            <span>{t('results.emptyBody')}</span>
             <button className="min-h-7.5 cursor-pointer border border-line-strong bg-canvas px-2.5 hover:bg-surface" type="button" onClick={onReset}>
-              Сбросить
+              {t('results.reset')}
             </button>
           </div>
         )}

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import type { CSSProperties, KeyboardEvent, PointerEvent as ReactPointerEvent } from 'react'
 import type { Filters, FilterSetKey } from '../types'
 import { formatKey } from '../lib/questions'
+import { useI18n } from '../i18n'
 import { CheckIcon, CloseIcon, ResetIcon } from './Icons'
 
 interface FilterPanelProps {
@@ -36,19 +37,20 @@ export function FilterPanel({
   onReset,
   onClose,
 }: FilterPanelProps) {
+  const { t } = useI18n()
   return (
     <aside
       id="filters"
-      aria-label="Фильтры"
+      aria-label={t('filters.label')}
       style={{ '--filter-panel-width': `${width}px` } as CSSProperties}
       className={`filter-panel z-10 flex min-h-0 min-w-0 shrink-0 flex-col gap-4.5 overflow-y-auto border-r border-line bg-canvas px-3.5 py-3.5 ${compact ? 'fixed top-13 bottom-8 left-0 z-30 shadow-overlay motion-safe:animate-[filter-panel-in_180ms_var(--ease-out-quart)]' : 'relative'}`}
     >
       <div className="flex items-center justify-between">
-        <h2 className="m-0 text-sm font-semibold">Фильтры</h2>
+        <h2 className="m-0 text-sm font-semibold">{t('filters.label')}</h2>
         <button
           className={`size-8 cursor-pointer place-items-center border-0 bg-transparent ${compact ? 'grid' : 'hidden'}`}
           type="button"
-          aria-label="Закрыть фильтры"
+          aria-label={t('filters.close')}
           onClick={onClose}
         >
           <CloseIcon />
@@ -56,49 +58,49 @@ export function FilterPanel({
       </div>
 
       <SegmentField
-        legend="Бумага"
+        legend={t('filters.paper')}
         value={filters.paper}
-        options={[['all', 'Все'], ['1', 'P1'], ['2', 'P2'], ['3', 'P3']]}
+        options={[['all', t('filters.all')], ['1', 'P1'], ['2', 'P2'], ['3', 'P3']]}
         onChange={(value) => onSetSegment('paper', value)}
       />
 
       <SelectField
-        legend="Сессия"
+        legend={t('filters.session')}
         value={filters.session}
         options={sessionCounts}
         onChange={(value) => onSetSegment('session', value)}
       />
 
       <SelectField
-        legend="Зона"
+        legend={t('filters.zone')}
         value={filters.zone}
         options={zoneCounts}
         onChange={(value) => onSetSegment('zone', value)}
       />
 
       <SegmentField
-        legend="Статус"
+        legend={t('filters.status')}
         value={filters.status}
-        options={[["all", "Все"], ["manual_verified", "Ручной"], ["ai_draft", "AI draft"]]}
+        options={[["all", t('filters.all')], ["manual_verified", t('filters.manual')], ["ai_draft", t('filters.aiDraft')]]}
         onChange={(value) => onSetSegment('status', value)}
       />
 
       <SegmentField
-        legend="Калькулятор"
+        legend={t('filters.calculator')}
         value={filters.calculator}
-        options={[['all', 'Любой'], ['no', 'No'], ['yes', 'Yes']]}
+        options={[['all', t('filters.any')], ['no', t('filters.no')], ['yes', t('filters.yes')]]}
         onChange={(value) => onSetSegment('calculator', value)}
       />
 
       <CheckboxFilter
-        label="Тема"
+        label={t('filters.topic')}
         counts={topicCounts}
         selected={filters.topics}
         onToggle={(value) => onToggleSet('topics', value)}
       />
 
       <CheckboxFilter
-        label="Семейство метода"
+        label={t('filters.methodFamily')}
         counts={methodCounts}
         selected={filters.methods}
         onToggle={(value) => onToggleSet('methods', value)}
@@ -110,7 +112,7 @@ export function FilterPanel({
         onClick={onReset}
       >
         <ResetIcon className="size-4" />
-        Сбросить фильтры
+        {t('filters.reset')}
       </button>
 
       {!compact && <SidebarResizeHandle width={width} onResize={onResize} />}
@@ -129,6 +131,7 @@ function SelectField({
   options: Array<[string, number]>
   onChange: (value: string) => void
 }) {
+  const { t } = useI18n()
   return (
     <label className="grid gap-1.5 text-xs font-semibold">
       {legend}
@@ -137,7 +140,7 @@ function SelectField({
         value={value}
         onChange={(event) => onChange(event.target.value)}
       >
-        <option value="all">Все</option>
+        <option value="all">{t('filters.all')}</option>
         {options.map(([option, count]) => <option key={option} value={option}>{option} · {count}</option>)}
       </select>
     </label>
@@ -148,6 +151,7 @@ const MIN_WIDTH = 208
 const MAX_WIDTH = 384
 
 function SidebarResizeHandle({ width, onResize }: { width: number; onResize: (width: number) => void }) {
+  const { t } = useI18n()
   const drag = useRef<{ x: number; width: number } | null>(null)
   const clamp = (value: number) => Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, value))
 
@@ -193,13 +197,13 @@ function SidebarResizeHandle({ width, onResize }: { width: number; onResize: (wi
     <div
       className="group absolute inset-y-0 -right-1.5 z-20 w-3 cursor-col-resize touch-none outline-none"
       role="separator"
-      aria-label="Изменить ширину боковой панели"
+      aria-label={t('filters.resize')}
       aria-orientation="vertical"
       aria-valuemin={MIN_WIDTH}
       aria-valuemax={MAX_WIDTH}
       aria-valuenow={Math.round(width)}
       tabIndex={0}
-      title="Перетащите, чтобы изменить ширину"
+      title={t('filters.resizeHint')}
       onDoubleClick={() => onResize(248)}
       onKeyDown={handleKeyDown}
       onPointerDown={handlePointerDown}

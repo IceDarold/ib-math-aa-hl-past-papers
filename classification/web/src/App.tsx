@@ -5,6 +5,7 @@ import { ResultsTable } from './components/ResultsTable'
 import { StatusBar } from './components/StatusBar'
 import { TopBar } from './components/TopBar'
 import { countBy, filterQuestions, questions } from './lib/questions'
+import { useI18n } from './i18n'
 import type { Filters, FilterSetKey } from './types'
 
 const DEFAULT_SIDEBAR_WIDTH = 248
@@ -28,6 +29,7 @@ const initialFilters: Filters = {
 }
 
 export default function App() {
+  const { t } = useI18n()
   const [filters, setFilters] = useState<Filters>(initialFilters)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [sidebarVisible, setSidebarVisible] = useState(() => localStorage.getItem('question-atlas:sidebar-visible') !== 'false')
@@ -161,7 +163,7 @@ export default function App() {
   return (
     <div className="flex h-full flex-col bg-canvas text-ink">
       <a className="fixed top-1.5 left-2 z-50 -translate-y-[150%] bg-ink px-3 py-2 text-canvas focus:translate-y-0" href="#results">
-        К результатам
+        {t('app.skipResults')}
       </a>
 
       <TopBar
@@ -180,7 +182,7 @@ export default function App() {
 
       <div className="relative flex min-h-0 flex-1 overflow-hidden">
         {compactLayout && (filtersOpen || inspectorOpen) && (
-          <button className="fixed inset-x-0 top-13 bottom-8 z-20 cursor-default border-0 bg-ink/25" type="button" aria-label="Закрыть панель" onClick={closeOverlays} />
+          <button className="fixed inset-x-0 top-13 bottom-8 z-20 cursor-default border-0 bg-ink/25" type="button" aria-label={t('app.closePanel')} onClick={closeOverlays} />
         )}
 
         {(compactLayout ? filtersOpen : sidebarVisible) && (

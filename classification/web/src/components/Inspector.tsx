@@ -1,5 +1,6 @@
 import type { Question } from '../types'
 import { pdfUrl } from '../lib/questions'
+import { useI18n } from '../i18n'
 import { CheckIcon, CloseIcon, FileIcon } from './Icons'
 import { MathText } from './MathText'
 import { Taxon } from './ResultsTable'
@@ -11,9 +12,10 @@ interface InspectorProps {
 }
 
 export function Inspector({ question, compact, onClose }: InspectorProps) {
+  const { t } = useI18n()
   return (
     <aside
-      aria-label="Детали задания"
+      aria-label={t('inspector.label')}
       aria-live="polite"
       className={`inspector-panel min-h-0 min-w-0 shrink-0 overflow-y-auto border-l border-line bg-canvas motion-safe:animate-[panel-in_180ms_var(--ease-out-quart)] ${compact ? 'fixed top-13 right-0 bottom-8 z-30 shadow-overlay' : 'relative'}`}
     >
@@ -23,6 +25,7 @@ export function Inspector({ question, compact, onClose }: InspectorProps) {
 }
 
 function InspectorContent({ question, onClose }: { question: Question; onClose: () => void }) {
+  const { count, t } = useI18n()
   const questionLabel = `Q${question.question}${question.part === '-' ? '' : `(${question.part})`}`
   return (
     <>
@@ -31,34 +34,34 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
           <span className="min-w-0 flex-1 font-mono text-[11px] text-muted [overflow-wrap:anywhere]">{question.id}</span>
           <span className={`flex shrink-0 items-center gap-1 border px-1.5 py-0.5 text-[10px] ${question.review_status === 'manual_verified' ? 'border-verified/40 bg-verified-soft text-verified' : 'border-info/40 bg-info/10 text-info'}`}>
             {question.review_status === 'manual_verified' && <CheckIcon className="size-3" />}
-            {question.review_status === 'manual_verified' ? 'Проверено вручную' : 'AI draft'}
+            {question.review_status === 'manual_verified' ? t('inspector.manualVerified') : t('inspector.aiDraft')}
           </span>
-          <button className="grid size-8 shrink-0 cursor-pointer place-items-center border border-transparent bg-transparent hover:border-line hover:bg-surface" type="button" aria-label="Закрыть детали" onClick={onClose}>
+          <button className="grid size-8 shrink-0 cursor-pointer place-items-center border border-transparent bg-transparent hover:border-line hover:bg-surface" type="button" aria-label={t('inspector.close')} onClick={onClose}>
             <CloseIcon />
           </button>
         </div>
         <h2 className="my-3 mb-1.5 text-lg leading-tight font-semibold tracking-[-0.01em] text-pretty"><MathText>{question.task_summary}</MathText></h2>
         <div className="flex flex-wrap gap-1.5 text-[11px] text-muted">
-          <span>Paper {question.paper}</span><span>·</span><span>{questionLabel}</span><span>·</span>
-          <span>{question.marks} {question.marks === 1 ? 'mark' : 'marks'}</span><span>·</span>
-          <span className={question.calculator === 'yes' ? 'text-info' : ''}>{question.calculator === 'yes' ? 'calculator' : 'non-calculator'}</span>
+          <span>{t('inspector.paper')} {question.paper}</span><span>·</span><span>{questionLabel}</span><span>·</span>
+          <span>{count('marks', question.marks)}</span><span>·</span>
+          <span className={question.calculator === 'yes' ? 'text-info' : ''}>{question.calculator === 'yes' ? t('inspector.calculator') : t('inspector.nonCalculator')}</span>
           <span>·</span><span>{question.session} · {question.zone}</span>
         </div>
       </header>
 
-      <Section title="Классификация">
+      <Section title={t('inspector.classification')}>
         <dl className="grid grid-cols-[105px_minmax(0,1fr)] items-start gap-x-2 gap-y-2">
-          <dt className="text-[11px] text-muted">Primary topic</dt><dd className="m-0 min-w-0"><Taxon>{question.primary_topic}</Taxon></dd>
-          <dt className="text-[11px] text-muted">Secondary</dt><dd className="m-0 min-w-0"><Tags values={question.secondaryTopics} /></dd>
-          <dt className="text-[11px] text-muted">Method family</dt><dd className="m-0 min-w-0"><Taxon>{question.methodFamily}</Taxon></dd>
-          <dt className="text-[11px] text-muted">Method tags</dt><dd className="m-0 min-w-0"><Tags values={question.tags} /></dd>
-          <dt className="text-[11px] text-muted">Source pages</dt><dd className="m-0">{question.source_pages}</dd>
-          <dt className="text-[11px] text-muted">Markscheme</dt><dd className="m-0">{question.markscheme_pages}</dd>
-          <dt className="text-[11px] text-muted">Review flags</dt><dd className="m-0 min-w-0"><Tags values={question.reviewFlags} /></dd>
+          <dt className="text-[11px] text-muted">{t('inspector.primaryTopic')}</dt><dd className="m-0 min-w-0"><Taxon>{question.primary_topic}</Taxon></dd>
+          <dt className="text-[11px] text-muted">{t('inspector.secondary')}</dt><dd className="m-0 min-w-0"><Tags values={question.secondaryTopics} /></dd>
+          <dt className="text-[11px] text-muted">{t('inspector.methodFamily')}</dt><dd className="m-0 min-w-0"><Taxon>{question.methodFamily}</Taxon></dd>
+          <dt className="text-[11px] text-muted">{t('inspector.methodTags')}</dt><dd className="m-0 min-w-0"><Tags values={question.tags} /></dd>
+          <dt className="text-[11px] text-muted">{t('inspector.sourcePages')}</dt><dd className="m-0">{question.source_pages}</dd>
+          <dt className="text-[11px] text-muted">{t('inspector.markschemePages')}</dt><dd className="m-0">{question.markscheme_pages}</dd>
+          <dt className="text-[11px] text-muted">{t('inspector.reviewFlags')}</dt><dd className="m-0 min-w-0"><Tags values={question.reviewFlags} /></dd>
         </dl>
       </Section>
 
-      <Section title="Путь решения">
+      <Section title={t('inspector.solutionPath')}>
         {question.pathSteps.length > 0 ? (
           <ol className="m-0 list-none p-0">
             {question.pathSteps.map((step, index) => (
@@ -72,34 +75,34 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
         ) : <p className="m-0">—</p>}
       </Section>
 
-      <Section title="Допустимые альтернативы">
+      <Section title={t('inspector.alternatives')}>
         {question.alternatives.length > 0
           ? <AlternativeList values={question.alternatives} />
-          : <p className="m-0 leading-relaxed text-muted">В markscheme отдельный альтернативный маршрут не указан.</p>}
+          : <p className="m-0 leading-relaxed text-muted">{t('inspector.noAlternative')}</p>}
       </Section>
 
       {question.review_status === 'ai_draft' && (
-        <Section title="Основание классификации">
+        <Section title={t('inspector.evidence')}>
           <div className="mb-2 text-[11px] text-muted">
-            Confidence: segmentation {question.confidenceLevels.segmentation} · topic {question.confidenceLevels.topic} · method {question.confidenceLevels.method}
+            {t('inspector.confidence')}: {t('inspector.segmentation')} {question.confidenceLevels.segmentation} · {t('inspector.topic')} {question.confidenceLevels.topic} · {t('inspector.method')} {question.confidenceLevels.method}
           </div>
           {question.evidenceItems.length > 0 ? (
             <div className="grid gap-1.5">
               {question.evidenceItems.map((item, index) => (
                 <div key={`${item.markscheme_pages}-${index}`} className="border border-line bg-surface px-2 py-1.5 leading-relaxed">
-                  <span className="mr-1 font-mono text-[10px] text-muted">MS p. {item.markscheme_pages}</span>
+                  <span className="mr-1 font-mono text-[10px] text-muted">{t('inspector.msPage')} {item.markscheme_pages}</span>
                   <MathText>{item.basis}</MathText>
                 </div>
               ))}
             </div>
-          ) : <p className="m-0 text-muted">Evidence не указано.</p>}
+          ) : <p className="m-0 text-muted">{t('inspector.noEvidence')}</p>}
         </Section>
       )}
 
-      <Section title="Источник">
+      <Section title={t('inspector.source')}>
         <div className="grid grid-cols-2 gap-2">
-          <SourceLink href={pdfUrl(question, 'question-paper.pdf')} label="Question paper" />
-          <SourceLink href={pdfUrl(question, 'markscheme.pdf')} label="Markscheme" />
+          <SourceLink href={pdfUrl(question, 'question-paper.pdf')} label={t('inspector.questionPaper')} />
+          <SourceLink href={pdfUrl(question, 'markscheme.pdf')} label={t('inspector.markscheme')} />
         </div>
       </Section>
     </>

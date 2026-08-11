@@ -1,4 +1,5 @@
 import type { RefObject } from 'react'
+import { useI18n } from '../i18n'
 import { MenuIcon, PanelLeftIcon, SearchIcon } from './Icons'
 
 interface TopBarProps {
@@ -28,12 +29,13 @@ export function TopBar({
   onOpenFilters,
   onToggleSidebar,
 }: TopBarProps) {
+  const { count, locale, setLocale, t } = useI18n()
   return (
-    <header className="grid h-13 shrink-0 grid-cols-[auto_auto_auto_minmax(260px,1fr)_auto] items-center gap-4 border-b border-line bg-canvas px-3 max-[1220px]:gap-3 max-[960px]:grid-cols-[auto_auto_1fr] max-[960px]:gap-2.5 max-[960px]:pl-2">
+    <header className="grid h-13 shrink-0 grid-cols-[auto_auto_auto_minmax(260px,1fr)_auto_auto] items-center gap-4 border-b border-line bg-canvas px-3 max-[1220px]:gap-3 max-[960px]:grid-cols-[auto_auto_minmax(0,1fr)_auto] max-[960px]:gap-2.5 max-[960px]:pl-2">
       <button
         className="grid size-8 cursor-pointer place-items-center border border-transparent bg-transparent hover:border-line hover:bg-surface max-[960px]:hidden"
         type="button"
-        aria-label={sidebarVisible ? 'Скрыть боковую панель' : 'Показать боковую панель'}
+        aria-label={sidebarVisible ? t('top.hideSidebar') : t('top.showSidebar')}
         aria-controls="filters"
         aria-expanded={sidebarVisible}
         onClick={onToggleSidebar}
@@ -44,7 +46,7 @@ export function TopBar({
       <button
         className="hidden size-8 cursor-pointer place-items-center border-0 bg-transparent max-[960px]:grid"
         type="button"
-        aria-label="Открыть фильтры"
+        aria-label={t('top.openFilters')}
         aria-controls="filters"
         aria-expanded={filtersOpen}
         onClick={onOpenFilters}
@@ -52,25 +54,25 @@ export function TopBar({
         <MenuIcon />
       </button>
 
-      <div className="flex items-baseline gap-2 whitespace-nowrap text-[15px] max-[680px]:text-sm" aria-label="IB Math AA HL Question Atlas">
+      <div className="flex items-baseline gap-2 whitespace-nowrap text-[15px] max-[680px]:text-sm" aria-label={`IB Math AA HL · ${t('brand.atlas')}`}>
         <strong className="text-base max-[680px]:text-sm">IB Math AA HL</strong>
         <span className="text-faint max-[960px]:hidden">/</span>
-        <span className="max-[960px]:hidden">Question Atlas</span>
+        <span className="max-[960px]:hidden">{t('brand.atlas')}</span>
       </div>
 
       <div className="whitespace-nowrap max-[960px]:hidden">
-        {yearRange} <span className="text-faint">· {sessionCount} сессий</span>
+        {yearRange} <span className="text-faint">· {count('sessions', sessionCount)}</span>
       </div>
 
-      <label className="group/search mx-auto grid h-8.5 w-full max-w-155 grid-cols-[24px_1fr_auto] items-center gap-1.5 border border-line-strong bg-canvas px-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary max-[960px]:justify-self-stretch max-[680px]:grid-cols-[20px_1fr]">
+      <label className="group/search mx-auto grid h-8.5 w-full min-w-0 max-w-155 grid-cols-[24px_1fr_auto] items-center gap-1.5 border border-line-strong bg-canvas px-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary max-[960px]:justify-self-stretch max-[680px]:grid-cols-[20px_1fr]">
         <SearchIcon className="text-muted" />
-        <span className="sr-only">Поиск</span>
+        <span className="sr-only">{t('top.search')}</span>
         <input
           ref={searchRef}
           className="h-full min-w-0 border-0 bg-transparent text-ink outline-0 placeholder:text-muted"
           type="search"
           autoComplete="off"
-          placeholder="ID, topic, method…"
+          placeholder={t('top.searchPlaceholder')}
           value={query}
           onChange={(event) => onQueryChange(event.target.value)}
         />
@@ -78,8 +80,23 @@ export function TopBar({
       </label>
 
       <div className="whitespace-nowrap text-xs text-muted max-[1220px]:hidden">
-        <strong className="font-semibold text-ink">{resultCount}</strong> blocks <span className="text-faint">·</span>{' '}
-        <strong className="font-semibold text-ink">{resultMarks}</strong> marks
+        <strong className="font-semibold text-ink">{count('blocks', resultCount)}</strong> <span className="text-faint">·</span>{' '}
+        <strong className="font-semibold text-ink">{count('marks', resultMarks)}</strong>
+      </div>
+
+      <div className="grid grid-cols-2 border border-line-strong" role="group" aria-label={t('language.label')}>
+        {(['ru', 'en'] as const).map((option) => (
+          <button
+            key={option}
+            className={`h-7 min-w-7 cursor-pointer border-0 px-1.5 font-mono text-[10px] transition-colors duration-150 ${locale === option ? 'bg-ink text-canvas' : 'bg-canvas text-muted hover:bg-surface hover:text-ink'}`}
+            type="button"
+            aria-label={option === 'ru' ? t('language.russian') : t('language.english')}
+            aria-pressed={locale === option}
+            onClick={() => setLocale(option)}
+          >
+            {option.toUpperCase()}
+          </button>
+        ))}
       </div>
     </header>
   )
