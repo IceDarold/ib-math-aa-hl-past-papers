@@ -8,6 +8,10 @@ const here = dirname(fileURLToPath(import.meta.url))
 const repositoryRoot = resolve(here, '../..')
 const generatedRoot = resolve(repositoryRoot, 'classification/generated/2024-may-tz1/deepseek-v4-pro')
 const fragmentsRoot = resolve(generatedRoot, 'fragments')
+const reviewPath = resolve(repositoryRoot, 'classification/reviews/2024-may-tz1/calibration-v1.json')
+
+const review = JSON.parse(await readFile(reviewPath, 'utf8'))
+const corrections = new Map(Object.entries(review.corrections ?? {}))
 
 const sourcePages = {
   1: { 1: '2', 2: '3', 3: '4', 4: '5', 5: '6', 6: '7', 7: '8', 8: '9', 9: '10-11', 10: '12', 11: '13', 12: '14-16' },
@@ -28,7 +32,7 @@ function normalizeBlock(block, paper, question) {
         markscheme_pages: markschemePages,
         basis: 'The cited markscheme pages establish the scored method path and mark allocation.',
       }]
-  return {
+  const normalized = {
     ...block,
     id: `2024-MAY-TZ1-P${paper}-Q${String(question).padStart(2, '0')}${partSuffix && partSuffix !== '-' ? `-${partSuffix}` : ''}`,
     question: String(question),
@@ -36,6 +40,7 @@ function normalizeBlock(block, paper, question) {
     markscheme_pages: markschemePages,
     evidence,
   }
+  return { ...normalized, ...(corrections.get(normalized.id) ?? {}) }
 }
 
 const files = (await readdir(fragmentsRoot)).filter((file) => /^paper-[123]-q\d{2}\.json$/.test(file)).sort()

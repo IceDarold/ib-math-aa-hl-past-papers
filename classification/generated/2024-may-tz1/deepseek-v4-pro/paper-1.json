@@ -637,7 +637,7 @@
       "marks": 2,
       "task_summary": "Sketch y = |f(|x|)|",
       "primary_topic": "functions.graphing",
-      "method_family": "geometric_reasoning",
+      "method_family": "function_analysis",
       "method_tags": [
         "absolute_value",
         "reflection_in_x_axis",
@@ -673,7 +673,7 @@
       "marks": 2,
       "task_summary": "Sketch y = f(x) given f is odd and y = f(|x|)",
       "primary_topic": "functions.graphing",
-      "method_family": "geometric_reasoning",
+      "method_family": "function_analysis",
       "method_tags": [
         "odd_function",
         "rotation_about_origin",

@@ -54,6 +54,7 @@ topics:
   calculus:
     label: Calculus
     subtopics:
+      - differential_equations
       - differentiation
       - inequalities
       - integration_applications
@@ -62,4 +63,3 @@ topics:
       - rates_of_change
       - series
       - stationary_points
-

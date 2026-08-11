@@ -4,6 +4,11 @@ export interface TextSegment {
 }
 
 const expressions: ReadonlyArray<readonly [string, string]> = [
+  ['dy/dx - y = x', String.raw`\frac{dy}{dx}-y=x`],
+  ['y(0)=2', String.raw`y(0)=2`],
+  ['y=f(x)', String.raw`y=f(x)`],
+  ['sqrt(6)', String.raw`\sqrt{6}`],
+  ['u dot v = 3', String.raw`\mathbf u\cdot\mathbf v=3`],
   ['P(A union B) = P(A) + P(B) - P(A intersection B)', String.raw`\Pr(A\cup B)=\Pr(A)+\Pr(B)-\Pr(A\cap B)`],
   ["P(A' intersection B')", String.raw`\Pr(A'\cap B')`],
   ["P(B')", String.raw`\Pr(B')`],

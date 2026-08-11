@@ -586,8 +586,8 @@
       "marks": 7,
       "source_pages": "9",
       "markscheme_pages": "15",
-      "task_summary": "Solve the differential equation dy/dx + y = x, given y(0)=2, giving answer as y=f(x).",
-      "primary_topic": "calculus.integration_applications",
+      "task_summary": "Solve the differential equation dy/dx - y = x, given y(0)=2, giving the answer as y=f(x).",
+      "primary_topic": "calculus.differential_equations",
       "secondary_topics": [],
       "method_family": "integration",
       "method_tags": [
@@ -614,12 +614,10 @@
       ],
       "confidence": {
         "segmentation": "high",
-        "topic": "medium",
+        "topic": "high",
         "method": "high"
       },
-      "review_flags": [
-        "topic_uncertain"
-      ]
+      "review_flags": []
     },
     {
       "id": "2024-MAY-TZ1-P2-Q08-A",
@@ -1138,7 +1136,7 @@
       "marks": 2,
       "task_summary": "Show (u·v)² + |u×v|² = |u|²|v|² using definitions of dot and cross products.",
       "primary_topic": "geometry.vectors",
-      "method_family": "algebraic_transformation",
+      "method_family": "vector_reasoning",
       "method_tags": [
         "dot_product_definition",
         "cross_product_magnitude_definition",
@@ -1172,7 +1170,7 @@
       "id": "2024-MAY-TZ1-P2-Q12-B-I-III",
       "part": "(b)(i-iii)",
       "marks": 13,
-      "task_summary": "Given u = AB, v = AC, area of triangle ABC = 6, u·v = 3. (i) Find |u×v|. (ii) Find |u|. (iii) Find possible p and corresponding q.",
+      "task_summary": "Given u = AB, v = AC, area of triangle ABC = sqrt(6), and u dot v = 3: find the cross-product magnitude, then |u|, then the possible p values and corresponding q values.",
       "primary_topic": "geometry.vectors_3d",
       "method_family": "vector_reasoning",
       "method_tags": [
@@ -1218,7 +1216,7 @@
       "part": "c",
       "marks": 5,
       "task_summary": "Find possible vectors w given p=1, u·w=v·w=0, area of triangle ACD=5",
-      "primary_topic": "geometry.vectors",
+      "primary_topic": "geometry.vectors_3d",
       "method_family": "vector_reasoning",
       "method_tags": [
         "orthogonality_conditions",

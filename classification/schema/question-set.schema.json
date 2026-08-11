@@ -93,6 +93,7 @@
             "statistics.expected_value",
             "statistics.probability",
             "statistics.regression",
+            "calculus.differential_equations",
             "calculus.differentiation",
             "calculus.inequalities",
             "calculus.integration_applications",

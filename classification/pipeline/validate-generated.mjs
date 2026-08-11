@@ -8,11 +8,13 @@ const here = dirname(fileURLToPath(import.meta.url))
 const repositoryRoot = resolve(here, '../..')
 const generatedRoot = resolve(repositoryRoot, 'classification/generated/2024-may-tz1/deepseek-v4-pro')
 const schema = JSON.parse(await readFile(resolve(repositoryRoot, 'classification/schema/question-set.schema.json'), 'utf8'))
+const review = JSON.parse(await readFile(resolve(repositoryRoot, 'classification/reviews/2024-may-tz1/calibration-v1.json'), 'utf8'))
 const allowedTopics = new Set(schema.$defs.block.properties.primary_topic.enum)
 const allowedMethods = new Set(schema.$defs.block.properties.method_family.enum)
 const allowedConfidence = new Set(schema.$defs.confidence.enum)
 const allowedFlags = new Set(schema.$defs.block.properties.review_flags.items.enum)
 let failed = false
+const generatedIds = new Set()
 
 function assert(condition, message, errors) {
   if (!condition) errors.push(message)
@@ -37,6 +39,7 @@ for (const paper of [1, 2, 3]) {
     assert(typeof block.id === 'string' && /^2024-MAY-TZ1-P[123]-Q\d{2}(?:-[A-Z0-9-]+)?$/.test(block.id), `${prefix}: invalid id`, errors)
     assert(!seen.has(block.id), `${prefix}: duplicate id`, errors)
     seen.add(block.id)
+    generatedIds.add(block.id)
     assert(Number.isInteger(block.marks) && block.marks > 0, `${prefix}: marks must be a positive integer`, errors)
     assert(allowedTopics.has(block.primary_topic), `${prefix}: unknown primary_topic ${block.primary_topic}`, errors)
     assert(allowedMethods.has(block.method_family), `${prefix}: unknown method_family ${block.method_family}`, errors)
@@ -59,6 +62,29 @@ for (const paper of [1, 2, 3]) {
     const lowConfidence = document.blocks.filter((block) => Object.values(block.confidence).includes('low')).length
     console.log(`${basename(path)}: ${document.blocks.length} blocks, ${marks} marks, ${flagged} flagged, ${lowConfidence} low-confidence`)
   }
+}
+
+const reviewErrors = []
+const reviewedIds = review.reviews.map((item) => item.id)
+const uniqueReviewedIds = new Set(reviewedIds)
+assert(uniqueReviewedIds.size === reviewedIds.length, 'review ledger contains duplicate ids', reviewErrors)
+assert(reviewedIds.length === review.sample.flagged_count + review.sample.unflagged_count, 'review count does not match sample metadata', reviewErrors)
+for (const item of review.reviews) {
+  assert(generatedIds.has(item.id), `reviewed block does not exist: ${item.id}`, reviewErrors)
+  assert(['accepted', 'corrected'].includes(item.verdict), `invalid review verdict for ${item.id}`, reviewErrors)
+  assert(item.verdict === 'corrected' || !review.corrections[item.id], `accepted block has a correction: ${item.id}`, reviewErrors)
+  assert(item.verdict !== 'corrected' || Boolean(review.corrections[item.id]), `corrected block has no correction: ${item.id}`, reviewErrors)
+}
+for (const id of Object.keys(review.corrections)) {
+  assert(uniqueReviewedIds.has(id), `correction has no review entry: ${id}`, reviewErrors)
+}
+if (reviewErrors.length > 0) {
+  failed = true
+  console.error('calibration-v1.json: FAILED')
+  for (const error of reviewErrors) console.error(`  - ${error}`)
+} else {
+  const corrected = review.reviews.filter((item) => item.verdict === 'corrected').length
+  console.log(`calibration-v1.json: ${reviewedIds.length} reviewed, ${corrected} corrected`)
 }
 
 if (failed) process.exitCode = 1

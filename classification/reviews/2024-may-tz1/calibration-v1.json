@@ -1,0 +1,197 @@
+{
+  "session": "May 2024",
+  "zone": "TZ1",
+  "reviewed_at": "2026-08-11",
+  "reviewer": "Codex",
+  "review_method": "Visual comparison of each sampled question-paper block against the corresponding markscheme pages",
+  "sample": {
+    "strategy": "All flagged blocks plus a deterministic cross-paper sample of unflagged blocks",
+    "seed": "calibration-v1",
+    "flagged_count": 15,
+    "unflagged_count": 10,
+    "paper_quotas": {
+      "1": 4,
+      "2": 4,
+      "3": 2
+    }
+  },
+  "reviews": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q08-A-I",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "The Maclaurin substitution and 2-mark boundary match the question paper and markscheme."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q08-A-II",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "The squared-series route and trigonometric-identity alternative both match the markscheme."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q08-B",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "The differentiation route and both accepted alternatives are supported by the markscheme."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-A",
+      "cohort": "flagged",
+      "verdict": "corrected",
+      "notes": "This is a function graph transformation, not general geometric reasoning."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-B",
+      "cohort": "flagged",
+      "verdict": "corrected",
+      "notes": "Odd-function graph reconstruction belongs to function analysis."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-C-I-II",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "The combined block is justified because the two printed answers share the 2-mark allocation."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-F-I-II",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "The markscheme gives one shared method mark across the two limits, so the combined block is appropriate."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q05-C",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "The explanation and x-on-y regression calculation share the printed 4-mark allocation."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q07",
+      "cohort": "flagged",
+      "verdict": "corrected",
+      "notes": "The task summary had the wrong sign. A dedicated differential-equations topic was also added."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q09-A",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "The block method, row-boundary handling, and alternative line method match the markscheme."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q09-B",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "The two case-based counting routes and final total match the markscheme."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-A",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "Both direct extrema timing and half-period methods are valid and correctly summarized."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-B-I-II",
+      "cohort": "flagged",
+      "verdict": "accepted",
+      "notes": "The show-that and numerical-coordinate parts correctly form one 9-mark shared block."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-B-I-III",
+      "cohort": "flagged",
+      "verdict": "corrected",
+      "notes": "The task summary omitted the square root in the given area: it is sqrt(6), not 6."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-C",
+      "cohort": "flagged",
+      "verdict": "corrected",
+      "notes": "The task explicitly uses coordinates and perpendicular vectors in three dimensions."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-G",
+      "cohort": "unflagged_sample",
+      "verdict": "accepted",
+      "notes": "The common argument gap and De Moivre alternative both give n=24 as in the markscheme."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q01-A",
+      "cohort": "unflagged_sample",
+      "verdict": "accepted",
+      "notes": "The frequency and mean equations, elimination, and 5-mark boundary are correct."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-D",
+      "cohort": "unflagged_sample",
+      "verdict": "accepted",
+      "notes": "The root-factor route and the listed alternatives correctly determine b and c."
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q03-A",
+      "cohort": "unflagged_sample",
+      "verdict": "accepted",
+      "notes": "The sector perimeter/area equations and elimination reproduce the required quadratic."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-D",
+      "cohort": "unflagged_sample",
+      "verdict": "accepted",
+      "notes": "Setting the gradient to -1, obtaining y=x, and solving numerically match the markscheme."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q06-A",
+      "cohort": "unflagged_sample",
+      "verdict": "accepted",
+      "notes": "The binomial model X~B(31,0.2) and exact-event calculation are correct."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-A",
+      "cohort": "unflagged_sample",
+      "verdict": "corrected",
+      "notes": "The algebra is correct, but the defining method is vector reasoning."
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-D",
+      "cohort": "unflagged_sample",
+      "verdict": "accepted",
+      "notes": "Amplitude, vertical shift, period/frequency, and phase routes match both markscheme methods."
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-F",
+      "cohort": "unflagged_sample",
+      "verdict": "accepted",
+      "notes": "The certainty after four previous non-boosted actions is stated with the condition required by the markscheme."
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-F-I",
+      "cohort": "unflagged_sample",
+      "verdict": "accepted",
+      "notes": "B=(0,0) follows directly from the previously derived inflection x-coordinate and the curve equation."
+    }
+  ],
+  "corrections": {
+    "2024-MAY-TZ1-P1-Q09-A": {
+      "method_family": "function_analysis"
+    },
+    "2024-MAY-TZ1-P1-Q09-B": {
+      "method_family": "function_analysis"
+    },
+    "2024-MAY-TZ1-P2-Q07": {
+      "task_summary": "Solve the differential equation dy/dx - y = x, given y(0)=2, giving the answer as y=f(x).",
+      "primary_topic": "calculus.differential_equations",
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    "2024-MAY-TZ1-P2-Q12-A": {
+      "method_family": "vector_reasoning"
+    },
+    "2024-MAY-TZ1-P2-Q12-B-I-III": {
+      "task_summary": "Given u = AB, v = AC, area of triangle ABC = sqrt(6), and u dot v = 3: find the cross-product magnitude, then |u|, then the possible p values and corresponding q values."
+    },
+    "2024-MAY-TZ1-P2-Q12-C": {
+      "primary_topic": "geometry.vectors_3d"
+    }
+  }
+}

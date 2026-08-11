@@ -1,6 +1,6 @@
 # May 2024 TZ1 classification report
 
-Status: **AI draft**, not manually verified.
+Status: **partially reviewed** — 25 of 95 blocks have been manually compared with the question papers and markschemes.
 
 ## Result
 
@@ -11,19 +11,21 @@ Status: **AI draft**, not manually verified.
 | Paper 3 | 2 | 25 | 55 |
 | **Total** | **26** | **95** | **275** |
 
-All three final JSON documents pass `classification/pipeline/validate-generated.mjs`: IDs are unique, mark totals match the papers, and every primary topic, method family, confidence value, and review flag belongs to the controlled taxonomy.
+All three final JSON documents pass `classification/pipeline/validate-generated.mjs`: IDs are unique, mark totals match the papers, and every primary topic, method family, confidence value, and review flag belongs to the controlled taxonomy. The validator also checks that the calibration ledger has unique, existing block IDs and a correction for every `corrected` verdict.
 
-## Review queue
+## Calibration review
 
-15 blocks carry review flags:
+The complete flagged set (15 blocks) and a deterministic cross-paper sample of 10 unflagged blocks were visually reviewed against both source PDFs. The sample seed is `calibration-v1`; its IDs and decisions are recorded in `classification/reviews/2024-may-tz1/calibration-v1.json`.
 
-- 5 `shared_marks` blocks;
-- 4 `diagram_dependent` blocks;
-- 3 blocks involving uncertain formula extraction;
-- 4 blocks with an explicit alternative route (two overlap formula-extraction flags);
-- 1 `topic_uncertain` block.
+| Cohort | Reviewed | Accepted | Corrected |
+| --- | ---: | ---: | ---: |
+| Flagged | 15 | 10 | 5 |
+| Unflagged sample | 10 | 9 | 1 |
+| **Total** | **25** | **19** | **6** |
 
-The remaining 80 blocks have no explicit review flag, but still retain `ai_draft` status until a human accepts them.
+The corrections cover two function-analysis method labels, one differential-equation sign and topic, two 3D-vector topic/method labels, and one lost square root in a task summary. The raw DeepSeek fragments remain unchanged; the deterministic merger applies the audited correction layer to the final papers.
+
+The reviewed 25 blocks now have `manual_verified` status in the web interface. The remaining 70 blocks retain `ai_draft` status.
 
 ## Extraction and generation
 
@@ -36,10 +38,14 @@ Five formula- or diagram-heavy locations used visual, manually verified transcri
 
 59 blocks use generic page-level evidence created by the deterministic merger; 36 retain more specific evidence generated from the markscheme. Generic evidence is sufficient for provenance, but those blocks are good candidates for the second-pass evidence audit.
 
-## Recommended calibration before the bulk run
+## Bulk-run decision
 
-1. Manually review all 15 flagged blocks.
-2. Randomly sample 10 unflagged blocks across the three papers.
-3. Confirm whether combined shared-mark blocks should remain combined or be split when individual A/M marks are explicit in the markscheme.
-4. Tune confidence: DeepSeek marked segmentation high for all 95 blocks, which is too optimistic for an unattended production run.
-5. After calibration, run the remaining paired papers with the same question/group pipeline and send only flagged or sampled items to human review.
+The structure is good enough for a bulk run, but not for unattended publication. The flagged set had a 5/15 correction rate, and the unflagged control sample still found 1/10 needing correction. DeepSeek also assigned high segmentation confidence to every block, so model confidence cannot be used as the only review gate.
+
+For the remaining sessions, keep the same question/group pipeline and require:
+
+1. deterministic mark-total and schema validation for every paper;
+2. manual review of every flagged block;
+3. a seeded 10% sample of unflagged blocks, with a minimum of two per paper;
+4. expansion to full-paper review whenever the sample contains a factual transcription error;
+5. publication as AI draft until that session's review gate passes.
