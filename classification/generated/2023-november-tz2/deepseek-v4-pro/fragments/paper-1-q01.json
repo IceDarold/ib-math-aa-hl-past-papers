@@ -1,0 +1,77 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Write down an expression for (g ∘ f)(x) where f(x) = x − 3 and g(x) = x² + k².",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "composite_function",
+        "substitution",
+        "expansion"
+      ],
+      "method_path": [
+        "Form composite function g(f(x)) by substituting f(x) into g",
+        "Simplify to (x − 3)² + k² or expand to x² − 6x + 9 + k²"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1: attempt to form (g ∘ f)(x); A1: (g ∘ f)(x) = (x − 3)² + k² = x² − 6x + 9 + k²"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Given (g ∘ f)(2) = 10, find the possible values of k.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solve_quadratic",
+        "square_root"
+      ],
+      "method_path": [
+        "Substitute x = 2 into (g ∘ f)(x) and set equal to 10",
+        "Solve (2 − 3)² + k² = 10 to obtain k² = 9",
+        "Take square root to get k = ±3"
+      ],
+      "accepted_alternatives": [
+        "Using expanded form: substitute x = 2 into x² − 6x + 9 + k² = 10 to obtain 4 − 12 + 9 + k² = 10, giving k² = 9, k = ±3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1: substituting x = 2 into their (g ∘ f)(x) and setting their expression = 10; (A1): k² = 9; A1: k = ±3"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

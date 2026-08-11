@@ -1,0 +1,86 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "8",
+      "task_summary": "Find p and q given S_n = p n^2 − q n, S_4 = 40, S_5 = 65.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "simultaneous_equations",
+        "linear_system",
+        "arithmetic_sequence_sum"
+      ],
+      "method_path": [
+        "Substitute S_4 = 40 to obtain 16p − 4q = 40 (or 4p − q = 10)",
+        "Substitute S_5 = 65 to obtain 25p − 5q = 65 (or 5p − q = 13)",
+        "Solve the simultaneous linear equations to obtain p = 3, q = 2"
+      ],
+      "accepted_alternatives": [
+        "Solve via arithmetic sequence parameters: form S_4 and S_5 equations in u_1 and d to obtain u_1 = 1, d = 6, then deduce p = 3, q = 2 from S_n = (n/2)[2u_1 + (n−1)d] = 3n^2 − 2n."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: attempt to form at least one equation, using either S_4 or S_5 (M1); 65 = 25p − 5q (13 = 5p − q) and 40 = 16p − 4q (10 = 4p − q) (A1); valid attempt to solve simultaneous linear equations (M1); p = 3, q = 2 (A1A1)."
+        },
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 2 alternative: form equations in u_1 and d, solve to u_1 = 1, d = 6, then S_n = n/2[2(1)+(n−1)6] = 3n^2 − 2n ⇒ p = 3 and q = 2 (A1A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "8",
+      "task_summary": "Find u_5 using the values of p, q or S_4, S_5.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "term_from_sum",
+        "arithmetic_sequence"
+      ],
+      "method_path": [
+        "Compute u_5 = S_5 − S_4 = 65 − 40",
+        "Evaluate: u_5 = 25"
+      ],
+      "accepted_alternatives": [
+        "Substitute u_1 = 1, d = 6 into u_5 = u_1 + 4d = 1 + 24 = 25.",
+        "Use S_5 = (5/2)(u_1 + u_5) = 65 with u_1 = 1 to solve for u_5 = 25."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "u_5 = S_5 − S_4 (M1); u_5 = 65 − 40 OR u_5 = 1 + 4×6 OR (5/2)(1+u_5)=65 (M1); = 25 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

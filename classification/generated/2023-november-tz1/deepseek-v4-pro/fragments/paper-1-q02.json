@@ -1,0 +1,78 @@
+{
+  "question": "2",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "7",
+      "task_summary": "Find P(A ∪ B) given P(A) = 0.65, P(B) = 0.75, and P(A ∩ B) = 0.6.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "addition_rule",
+        "union_probability"
+      ],
+      "method_path": [
+        "Apply addition rule: P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+        "Substitute values: 0.65 + 0.75 − 0.6",
+        "Compute: 0.8"
+      ],
+      "accepted_alternatives": [
+        "Venn diagram decomposition: P(A ∪ B) = P(A \\ B) + P(A ∩ B) + P(B \\ A) = 0.05 + 0.6 + 0.15 = 0.8"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "P(A ∪ B) = 0.65 + 0.75 − 0.6 OR 0.05 + 0.6 + 0.15 (A1), = 0.8 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "7",
+      "task_summary": "Hence, or otherwise, find P(A′ ∩ B′).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "complement_rule",
+        "de_morgans_law"
+      ],
+      "method_path": [
+        "Recognise P(A′ ∩ B′) = P((A ∪ B)′) = 1 − P(A ∪ B)",
+        "Substitute: 1 − 0.8",
+        "Compute: 0.2"
+      ],
+      "accepted_alternatives": [
+        "Venn diagram: identify and label the region outside both A and B as 0.2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "recognition that P(A′ ∩ B′) = P((A ∪ B)′) OR = 1 − P(A ∪ B) (region/value may be seen in a correctly shaded/labeled Venn diagram) (M1), = 1 − 0.8 = 0.2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

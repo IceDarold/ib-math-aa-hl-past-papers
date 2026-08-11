@@ -1,0 +1,99 @@
+{
+  "question": "9",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Show that f(x) = sin^2(kx)/x^2 is an even function.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "evaluate_f_neg_x",
+        "apply_sine_odd_property",
+        "simplify_squared",
+        "conclude_even"
+      ],
+      "method_path": [
+        "Evaluate f(-x) = sin^2(k(-x))/(-x)^2",
+        "Simplify denominator: (-x)^2 = x^2",
+        "Use sin(-kx) = -sin(kx) so sin^2(-kx) = sin^2(kx)",
+        "Conclude f(-x) = sin^2(kx)/x^2 = f(x), hence f is even"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1: f(-x) = sin^2(k(-x))/(-x)^2; A1: = sin^2(-kx)/x^2 = sin^2(kx)/x^2 = f(x), hence f(x) is even AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "17-18",
+      "task_summary": "Given lim_{x to 0} f(x) = 16, find k by evaluating the limit of sin^2(kx)/x^2 as x approaches 0.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "calculus.differentiation"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "indeterminate_form",
+        "lhopital_rule",
+        "trigonometric_differentiation",
+        "evaluate_limit",
+        "solve_for_k"
+      ],
+      "method_path": [
+        "Recognise limit is indeterminate 0/0",
+        "Apply L'Hopital: differentiate numerator sin^2(kx) to k sin(2kx), denominator x^2 to 2x",
+        "Simplify to lim k sin(2kx)/(2x), still 0/0",
+        "Apply L'Hopital again: numerator to 2k^2 cos(2kx), denominator to 2",
+        "Evaluate limit as x to 0: 2k^2/2 = k^2",
+        "Set k^2 = 16, solve k = 4 (k > 0)"
+      ],
+      "accepted_alternatives": [
+        "Maclaurin series: sin(kx) = kx + ..., so sin^2(kx)/x^2 = k^2 + terms in x, limit = k^2 = 16, k = 4",
+        "Product of limits: write as (sin(kx)/x)*(sin(kx)/x), each limit = k via L'Hopital or Maclaurin, product = k^2 = 16, k = 4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 1: (M1) noting limit is 0/0; M1 attempt differentiate numerator and denominator; A1 lim k sin(2kx)/(2x); M1 attempt differentiate second time; A1 lim 2k^2 cos(2kx)/2 = k^2; A1 k^2=16 so k=4"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 2: M1 attempt Maclaurin series for sin(kx); A1 sin^2(kx) = k^2 x^2 + ...; M1 substitute and take limit; R1 limit = k^2 + terms in x; A1 k^2; A1 k=4"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 3: (M1) split as (sin(kx)/x)*(sin(kx)/x); A1 product of limits; (M1) L'Hopital or Maclaurin for each factor; (A1) each limit = k; A1 product = k^2; A1 k^2=16 so k=4"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

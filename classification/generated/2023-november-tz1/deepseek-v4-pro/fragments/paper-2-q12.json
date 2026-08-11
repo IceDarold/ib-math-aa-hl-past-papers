@@ -1,0 +1,229 @@
+{
+  "question": "12",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "28",
+      "task_summary": "Show lines L and M intersect and find intersection point A by equating parametric components, solving for s and t, verifying consistency, and computing the position vector.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_components_equal",
+        "solve_simultaneous_equations",
+        "find_parameters",
+        "verify_consistency",
+        "compute_position_vector"
+      ],
+      "method_path": [
+        "Set at least two components of r1 and r2 equal",
+        "Solve two equations simultaneously to obtain s = 2 and t = −1",
+        "Verify the third equation is satisfied by substituting s = 2 and t = −1",
+        "Substitute s = 2 into r1 to obtain position vector of A = (5, 8, 9)"
+      ],
+      "accepted_alternatives": [
+        "Recognition that the 2nd and 3rd component equations are equivalent instead of substituting into the remaining component (R1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "M1: attempt to set at least two components of L and M equal"
+        },
+        {
+          "markscheme_pages": "28",
+          "basis": "(M1): attempt to solve two of their equations simultaneously"
+        },
+        {
+          "markscheme_pages": "28",
+          "basis": "A1: s = 2 OR t = −1"
+        },
+        {
+          "markscheme_pages": "28",
+          "basis": "R1: substitute s = 2 and t = −1 into remaining component, or recognition that 2nd and 3rd equations are equivalent"
+        },
+        {
+          "markscheme_pages": "28",
+          "basis": "A1: position vector of A is (5, 8, 9)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "28-29",
+      "task_summary": "Verify both lines L and M lie in plane P by substituting their parametric equations into r·(0,2,−1)=7 and confirming the identity holds for all s and t.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "substitute_parametric_form",
+        "verify_plane_equation",
+        "dot_product"
+      ],
+      "method_path": [
+        "Substitute the parametric form of line L into r·(0,2,−1) = 7, showing that (1+2s, 2+3s, −3+6s)·(0,2,−1) = 7 for all s",
+        "Substitute the parametric form of line M into r·(0,2,−1) = 7, showing that (9+4t, 9+t, 11+2t)·(0,2,−1) = 7 for all t"
+      ],
+      "accepted_alternatives": [
+        "Show each line's direction vector is perpendicular to the plane normal (direction·(0,2,−1) = 0) AND a point on each line satisfies the plane equation (Method 2)",
+        "Show both direction vectors are perpendicular to the normal via cross product or dot product, THEN verify one point on each line satisfies the plane equation (Method 3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "(M1): attempt to substitute at least one line into the equation of the plane"
+        },
+        {
+          "markscheme_pages": "28",
+          "basis": "A1: line L substitution shown: (1+2s, 2+3s, −3+6s)·(0,2,−1) = 7"
+        },
+        {
+          "markscheme_pages": "28-29",
+          "basis": "A1: line M substitution shown: (9+4t, 9+t, 11+2t)·(0,2,−1) = 7, or equivalent Method 2 or Method 3 verification"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "30-31",
+      "task_summary": "Find foot C of perpendicular from B(3,12,2) to plane P by forming the line r = (3,12,2) + λ(0,2,−1), solving for λ via the plane equation, then compute |BC→| = distance from B to C.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "form_parametric_line",
+        "substitute_into_plane",
+        "solve_for_parameter",
+        "find_intersection_point",
+        "vector_subtraction",
+        "distance_formula"
+      ],
+      "method_path": [
+        "Form line through B perpendicular to P: r = (3,12,2) + λ(0,2,−1)",
+        "Substitute into plane equation r·(0,2,−1) = 7 to obtain 2(12+2λ) − (2−λ) = 7",
+        "Solve 22 + 5λ = 7 to get λ = −3",
+        "Compute position vector of C: (−3, 6, 5)",
+        "Find BC→ = OC − OB = (−6, −6, 3)",
+        "Compute |BC→| = √((−6)² + (−6)² + 3²) = √45 = 3√5"
+      ],
+      "accepted_alternatives": [
+        "Recognise BC→ = 3 × (0,2,−1) and compute |BC→| = 3√(0² + 2² + (−1)²) = 3√5 (Method 2 for part (ii))"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "(A1): position vector of point on the line is r = (3,12,2) + λ(0,2,−1)"
+        },
+        {
+          "markscheme_pages": "30",
+          "basis": "(M1): attempt to substitute position vector into equation of plane P"
+        },
+        {
+          "markscheme_pages": "30",
+          "basis": "(A1): λ = −3"
+        },
+        {
+          "markscheme_pages": "30",
+          "basis": "A1: position vector of C = (−3, 6, 5)"
+        },
+        {
+          "markscheme_pages": "30",
+          "basis": "(M1): attempt to find BC using OC − OB"
+        },
+        {
+          "markscheme_pages": "30",
+          "basis": "(M1): attempt to use distance formula to find BC"
+        },
+        {
+          "markscheme_pages": "30",
+          "basis": "A1: BC = √45 = 3√5 ≈ 6.71"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "32",
+      "task_summary": "Find the reflection B′ of point B(3,12,2) in plane P by extending the perpendicular line through C by the same distance, obtaining B′ = (−3, 0, 8).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "parametric_form",
+        "reflect_point",
+        "vector_addition"
+      ],
+      "method_path": [
+        "Express OB′ = (3,12,2) + μ(0,2,−1) with μ = 2λ = −6",
+        "Alternatively use OB′ = OC + CB′ where CB′ = BC→",
+        "Compute OB′ = (−3, 0, 8), so B′ = (−3, 0, 8)"
+      ],
+      "accepted_alternatives": [
+        "Use OB′ = OB + 2BC→ or OB′ = 2OC − OB with BC→ = (0,−6,3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "32",
+          "basis": "(A1): OB′ = (3,12,2) + μ(0,2,−1) for Method 1, or BC = CB′ = (0,−6,3) for Method 2"
+        },
+        {
+          "markscheme_pages": "32",
+          "basis": "(M1): recognition that μ = 2λ = −6 OR BC = CB′"
+        },
+        {
+          "markscheme_pages": "32",
+          "basis": "A1: OB′ = (−3, 0, 8), coordinates are (−3, 0, 8)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

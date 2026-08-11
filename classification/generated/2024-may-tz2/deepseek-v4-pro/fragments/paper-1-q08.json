@@ -1,0 +1,51 @@
+{
+  "question": "8",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Evaluate the limit of (sec^4 x - cos^2 x)/(x^4 - x^2) as x->0 by applying l'Hopital's rule twice, yielding -3.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "limit_notation",
+        "indeterminate_form",
+        "differentiation",
+        "trigonometric_differentiation",
+        "polynomial_differentiation",
+        "limit_evaluation"
+      ],
+      "method_path": [
+        "Apply l'Hopital's rule: differentiate numerator sec^4 x - cos^2 x -> 4 sec^4 x tan x + 2 sin x cos x and denominator x^4 - x^2 -> 4x^3 - 2x",
+        "Recognise the expression remains in 0/0 indeterminate form as x->0",
+        "Apply l'Hopital's rule a second time: differentiate to obtain (16 sec^4 x tan^2 x + 4 sec^6 x + 2 sin^2 x - 2 cos^2 x)/(12x^2 - 2)",
+        "Evaluate the limit as x->0 to obtain -3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "First application: A1 for numerator 4 sec^4 x tan x + 2 sin x cos x, A1 for denominator 4x^3 - 2x. Second application: M1 for second use of l'Hopital's rule provided expression is in indeterminate 0/0 form and no third attempt at using the rule. A1A1 for the second derivative. Final A1 for answer -3. Note: limit notation lim_{x->0} must be seen at least once for full marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

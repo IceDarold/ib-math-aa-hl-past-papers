@@ -1,0 +1,122 @@
+{
+  "question": "3",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "State the intensity of sound S2, given that S1 has intensity 10⁻⁶ units and S2 has twice that intensity.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "multiply",
+        "double_value"
+      ],
+      "method_path": [
+        "Multiply 10⁻⁶ by 2 to obtain 2 × 10⁻⁶ units."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "I = 2 × 10⁻⁶ = 1/500000 (units) A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Determine the loudness of S2 by substituting its intensity into L = 10 log₁₀(I × 10¹²).",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute",
+        "evaluate_logarithm",
+        "compute_decibels"
+      ],
+      "method_path": [
+        "Substitute I = 2 × 10⁻⁶ into L = 10 log₁₀(I × 10¹²).",
+        "Simplify to 10 log₁₀(2 × 10⁶).",
+        "Evaluate to obtain L ≈ 63.0 decibels."
+      ],
+      "accepted_alternatives": [
+        "60 + 10 log₁₀ 2 (decibels) as a final answer."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "substitutes their doubled I value from part (a) into L (M1) … L = 10 log₁₀(2×10⁻⁶ × 10¹²) = 63.0102… = 63.0 (decibels) A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "Note: Accept 60 + 10 log₁₀ 2 (decibels) as a final answer. Do not award the final A1 for L = 0 (from I = 10⁻¹²)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the intensity I of thunder given its loudness L = 115 decibels using L = 10 log₁₀(I × 10¹²).",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute",
+        "solve_logarithmic_equation",
+        "isolate_variable",
+        "exponentiate"
+      ],
+      "method_path": [
+        "Set 115 = 10 log₁₀(I × 10¹²).",
+        "Divide both sides by 10: 11.5 = log₁₀(I × 10¹²).",
+        "Convert to exponential form: 10¹¹·⁵ = I × 10¹².",
+        "Solve for I: I = 10⁻⁰·⁵ ≈ 0.316 units."
+      ],
+      "accepted_alternatives": [
+        "Exact final answers such as 10⁻⁰·⁵ and 1/√10."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "115 = 10 log₁₀(I × 10¹²) (A1) … attempts to solve for I (M1) … I = 10¹¹·⁵ / 10¹² … 0.316 I = (units) A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "Note: Accept exact final answers such as 10⁻⁰·⁵ and 1/√10."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

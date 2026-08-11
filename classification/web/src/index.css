@@ -109,15 +109,20 @@
   }
 
   .math-inline {
-    display: inline-block;
-    margin-inline: 0.08em;
+    display: inline;
+    margin-inline: 0.04em;
     color: var(--color-ink);
-    vertical-align: -0.08em;
+    white-space: nowrap;
   }
 
   .math-inline .katex {
-    font-size: 1.04em;
-    line-height: 1;
+    font-size: 1em;
+    line-height: inherit;
+  }
+
+  .math-inline[data-math-error='true'] {
+    font-family: var(--font-mono);
+    font-size: 0.96em;
   }
 }
 

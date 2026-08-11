@@ -1,0 +1,1087 @@
+{
+  "session": "November 2023",
+  "zone": "TZ2",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Write down an expression for (g ∘ f)(x) where f(x) = x − 3 and g(x) = x² + k².",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "composite_function",
+        "substitution",
+        "expansion"
+      ],
+      "method_path": [
+        "Form composite function g(f(x)) by substituting f(x) into g",
+        "Simplify to (x − 3)² + k² or expand to x² − 6x + 9 + k²"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1: attempt to form (g ∘ f)(x); A1: (g ∘ f)(x) = (x − 3)² + k² = x² − 6x + 9 + k²"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Given (g ∘ f)(2) = 10, find the possible values of k.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solve_quadratic",
+        "square_root"
+      ],
+      "method_path": [
+        "Substitute x = 2 into (g ∘ f)(x) and set equal to 10",
+        "Solve (2 − 3)² + k² = 10 to obtain k² = 9",
+        "Take square root to get k = ±3"
+      ],
+      "accepted_alternatives": [
+        "Using expanded form: substitute x = 2 into x² − 6x + 9 + k² = 10 to obtain 4 − 12 + 9 + k² = 10, giving k² = 9, k = ±3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1: substituting x = 2 into their (g ∘ f)(x) and setting their expression = 10; (A1): k² = 9; A1: k = ±3"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "7",
+      "task_summary": "Find P(A ∪ B) using the probability addition rule P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "probability_addition_rule",
+        "substitution",
+        "evaluate_arithmetic"
+      ],
+      "method_path": [
+        "apply P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+        "substitute 0.65 + 0.75 − 0.6",
+        "compute 0.8"
+      ],
+      "accepted_alternatives": [
+        "Use Venn diagram: 0.05 + 0.6 + 0.15 = 0.8"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "P(A ∪ B) = 0.65 + 0.75 − 0.6 OR 0.05 + 0.6 + 0.15 (A1); 0.8 = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "7",
+      "task_summary": "Find P(A′ ∩ B′) using De Morgan's law A′ ∩ B′ = (A ∪ B)′ and the complement rule.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "de_morgans_law",
+        "complement_rule",
+        "substitution",
+        "evaluate_arithmetic"
+      ],
+      "method_path": [
+        "recognize A′ ∩ B′ = (A ∪ B)′ or A′ ∩ B′ = 1 − P(A ∪ B)",
+        "substitute P(A ∪ B) = 0.8",
+        "compute 1 − 0.8 = 0.2"
+      ],
+      "accepted_alternatives": [
+        "Use a correctly shaded/labeled Venn diagram showing 0.2 in the region for A′ ∩ B′, explicitly labeled as P(A′ ∩ B′)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "recognition that A′ ∩ B′ = (A ∪ B)′ OR A′ ∩ B′ = 1 − (A ∪ B) (region/value may be seen in a correctly shaded/labeled Venn diagram) (M1); 1 − 0.8 = ; 0.2 = A1; Note: For the final mark, 0.2 must be stated as the candidate's answer, or labeled as P(A′ ∩ B′) in their Venn diagram. Just seeing an unlabeled 0.2 in the correct region of their diagram earns M1A0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "8",
+      "task_summary": "Find p and q given S_n = p n^2 − q n, S_4 = 40, S_5 = 65.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "simultaneous_equations",
+        "linear_system",
+        "arithmetic_sequence_sum"
+      ],
+      "method_path": [
+        "Substitute S_4 = 40 to obtain 16p − 4q = 40 (or 4p − q = 10)",
+        "Substitute S_5 = 65 to obtain 25p − 5q = 65 (or 5p − q = 13)",
+        "Solve the simultaneous linear equations to obtain p = 3, q = 2"
+      ],
+      "accepted_alternatives": [
+        "Solve via arithmetic sequence parameters: form S_4 and S_5 equations in u_1 and d to obtain u_1 = 1, d = 6, then deduce p = 3, q = 2 from S_n = (n/2)[2u_1 + (n−1)d] = 3n^2 − 2n."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: attempt to form at least one equation, using either S_4 or S_5 (M1); 65 = 25p − 5q (13 = 5p − q) and 40 = 16p − 4q (10 = 4p − q) (A1); valid attempt to solve simultaneous linear equations (M1); p = 3, q = 2 (A1A1)."
+        },
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 2 alternative: form equations in u_1 and d, solve to u_1 = 1, d = 6, then S_n = n/2[2(1)+(n−1)6] = 3n^2 − 2n ⇒ p = 3 and q = 2 (A1A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "8",
+      "task_summary": "Find u_5 using the values of p, q or S_4, S_5.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "term_from_sum",
+        "arithmetic_sequence"
+      ],
+      "method_path": [
+        "Compute u_5 = S_5 − S_4 = 65 − 40",
+        "Evaluate: u_5 = 25"
+      ],
+      "accepted_alternatives": [
+        "Substitute u_1 = 1, d = 6 into u_5 = u_1 + 4d = 1 + 24 = 25.",
+        "Use S_5 = (5/2)(u_1 + u_5) = 65 with u_1 = 1 to solve for u_5 = 25."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "u_5 = S_5 − S_4 (M1); u_5 = 65 − 40 OR u_5 = 1 + 4×6 OR (5/2)(1+u_5)=65 (M1); = 25 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "9-10",
+      "task_summary": "Find the area of triangle ABC given AB = 6 cm, AC = 10 cm, and cos BÂC = 1/5.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "pythagorean_identity",
+        "sine_from_cosine",
+        "triangle_area_sine_formula",
+        "substitution_and_evaluation",
+        "right_triangle_trigonometry"
+      ],
+      "method_path": [
+        "Find sin BÂC from cos BÂC = 1/5 using sin²α + cos²α = 1 or Pythagoras' theorem",
+        "Obtain sin BÂC = √24/5",
+        "Apply area formula Area = ½ab sin C with a = 10, b = 6, C = BÂC",
+        "Compute Area = ½ × 10 × 6 × √24/5 = 12 cm²"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Use Pythagoras' theorem in a right-angled triangle with hypotenuse 5 and adjacent 1 to find opposite = √24, giving sin BÂC = √24/5, then Area = ½ab sin C = ½ × 10 × 6 × √24/5 = 12",
+        "METHOD 2: Find perpendicular height h = 6 × sin BÂC = 6 × √24/5 = 12/5 via Pythagorean identity, then Area = ½ × base × height = ½ × 10 × 12/5 = 12",
+        "METHOD 2 variant: Find adjacent = 6 × (1/5) = 6/5, use Pythagoras to get height = √(6² − (6/5)²) = 12/5, then Area = ½ × 10 × 12/5 = 12"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: M1 for attempt to use Pythagoras' theorem or Pythagorean identity; A1 for √(5² − 1²)/5 = √24/5; A1 for sin BÂC = √24/5; M1 for attempt to use Area = ½ab sin C; A1 for ½ × 10 × 6 × √24/5; A1 for 12 cm²."
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 2: M1 for attempt to find perpendicular height; EITHER branch M1 for Pythagorean identity, A1 for height = 6 × √(1 − (1/5)²), A1 for height = 12/5; OR branch A1 for adjacent = 6/5, M1 for Pythagoras, A1 for height = √(6² − (6/5)²) = 12/5; THEN M1 for Area = ½ × base × height; A1 for 12 cm²."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Find n and k in the binomial expansion (1+kx)^n given the first three terms 1+12x+28k²x², where n∈ℤ⁺ and k∈ℝ.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "equating_coefficients",
+        "quadratic_solving",
+        "substitution"
+      ],
+      "method_path": [
+        "apply binomial theorem to expand (1+kx)^n as 1 + nC1·kx + nC2·k²x² + …",
+        "equate coefficient of x: nC1·k = 12 → nk = 12",
+        "equate coefficient of x²: nC2·k² = 28k² → nC2 = 28",
+        "write nC2 = n(n−1)/2 = 28 → n²−n−56 = 0",
+        "solve quadratic → n = 8 (reject n = −7)",
+        "substitute n = 8 into nk = 12 → k = 3/2"
+      ],
+      "accepted_alternatives": [
+        "identify n = 8 from the row of Pascal's triangle where the third entry is 28, then determine k = 3/2 from nk = 12"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: attempt to apply binomial expansion; A1: nk = 12; A1: n(n−1)/2 = 28 or n!/(2!(n−2)!) = 28; M1: valid attempt to solve n²−n−56 = 0 or n(n−1)=56; A1: n = 8; A1: k = 3/2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Prove by mathematical induction that 5^(2n) - 2^(3n) is divisible by 17 for all n in Z+.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "inductive_hypothesis",
+        "inductive_step",
+        "algebraic_manipulation",
+        "divisibility",
+        "induction_conclusion"
+      ],
+      "method_path": [
+        "Verify base case n=1: 5^2 - 2^3 = 25 - 8 = 17, divisible by 17",
+        "Assume true for n=k: 5^(2k) - 2^(3k) = 17s for some integer s",
+        "Consider n=k+1: 5^(2(k+1)) - 2^(3(k+1))",
+        "Algebraically rewrite 5^(2(k+1)) - 2^(3(k+1)) as 17 times an integer using the inductive hypothesis",
+        "Conclude by induction: true for n=1 and n=k implies n=k+1, therefore true for all n in Z+"
+      ],
+      "accepted_alternatives": [
+        "Route 1: 5^(2(k+1)) - 2^(3(k+1)) = 25*5^(2k) - 8*2^(3k) = 17*5^(2k) + 8(5^(2k) - 2^(3k)) = 17*5^(2k) + 8*17s = 17(5^(2k) + 8s)",
+        "Route 2: Using 5^(2k) = 17s + 2^(3k), then 25(17s + 2^(3k)) - 8*2^(3k) = 17*25s + 17*2^(3k) = 17(25s + 2^(3k))",
+        "5^(2k) and 2^(3k) may be replaced by 25^k and 8^k throughout"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "Base case n=1: 5^2-2^3=25-8=17 so true for n=1 [A1]. Assume true for n=k: 5^(2k)-2^(3k)=17s [M1]. Consider n=k+1 [M1]. Algebraic manipulation via EITHER/OR routes [A1,A1,A1]. Conclusion R1 with note: only award R1 if 4 of the previous 6 marks have been awarded."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "13",
+      "task_summary": "Substitute z = 5 + qi into z² + iz = -p + 25i, expand, equate real and imaginary parts, and solve the resulting linear system to find q = 2 and p = -19.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.equations",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "substitution",
+        "expand_complex_square",
+        "equate_real_imaginary_parts",
+        "solve_linear_equation",
+        "back_substitution"
+      ],
+      "method_path": [
+        "Substitute z = 5 + qi into z² + iz = -p + 25i",
+        "Expand (5 + qi)² + i(5 + qi) to obtain (25 - q² - q) + (10q + 5)i = -p + 25i",
+        "Equate imaginary parts: 10q + 5 = 25",
+        "Solve for q = 2",
+        "Equate real parts: 25 - q² - q = -p, substitute q = 2 to obtain p = -19"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Rewrite as z² + iz + p - 25i = 0. By Vieta, sum of roots = -i, product = p - 25i. Given one root 5 + qi, the other root is (-i) - (5 + qi) = -5 - i - qi. Compute product (5 + qi)(-5 - i - qi), equate real and imaginary parts to p - 25i, and solve to obtain q = 2, p = -19."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: 'attempt to substitute solution into given equation (M1)' followed by expansion A1, then 'attempt to equate real or imaginary parts: (M1) 10q - 20 = 0 OR 25 - q² - q = -p', and 'q = 2, p = -19 A1A1'."
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 2: 'sum of roots = -i, product of roots = -p + 25i M1', 'other root is (-5 - i - qi) A1', 'equating real and imaginary parts for product of roots (M1)', 'q = 2, p = -19 A1A1'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "14-15",
+      "task_summary": "Find the indefinite integral of x (ln x)^2 dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "double_integration_by_parts",
+        "antiderivative",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Integrate by parts with u = (ln x)^2, dv/dx = x",
+        "Obtain (x^2/2)(ln x)^2 minus integral of x ln x dx",
+        "Integrate by parts again with u = ln x, dv/dx = x",
+        "Obtain (x^2/2)(ln x)^2 minus (x^2/2)ln x plus x^2/4 plus c"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use known integral of ln x dx = x ln x minus x; integrate by parts with u = x ln x, dv/dx = ln x.",
+        "METHOD 3: Use known integral of x ln x dx = (x^2/2)ln x minus x^2/4; integrate by parts with u = ln x, dv/dx = x ln x."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: attempt to integrate by parts (M1); u = (ln x)^2, dv/dx = x (M1); correct expression A1; attempt to integrate integral of x ln x dx by parts, with u = ln x (M1); correct intermediate A1; final answer (x^2/2)(ln x)^2 minus (x^2/2)ln x plus x^2/4 plus c (A1)."
+        },
+        {
+          "markscheme_pages": "14-15",
+          "basis": "METHOD 2 and METHOD 3 shown as accepted complete alternative integration-by-parts routes, each earning the full 6 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Hence show that the definite integral from 1 to 4 of x (ln x)^2 dx equals 32(ln 2)^2 minus 16 ln 2 plus 15/4.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral_FTC",
+        "substitution_of_limits",
+        "logarithmic_simplification",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Substitute limits x = 4 and x = 1 into the antiderivative from part (a)",
+        "Replace any ln 4 term with 2 ln 2",
+        "Simplify to obtain 32(ln 2)^2 minus 16 ln 2 plus 15/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to substitute limits into their integrated expression (M1); attempt to replace any ln 4 term with 2 ln 2 (M1); correct simplification to 32(ln 2)^2 minus 16 ln 2 plus 15/4 (A1) AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q09-A",
+      "question": "9",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Prove f is even by showing f(-x) = f(x) using sin(-θ) = -sin(θ).",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "evaluate_f_of_negative_x",
+        "simplify_using_sin_oddness",
+        "compare_to_f_of_x",
+        "conclude_even"
+      ],
+      "method_path": [
+        "Evaluate f(-x) = sin²(-kx)/(-x)²",
+        "Use sin(-θ) = -sin(θ) to get sin²(-kx) = (-sin(kx))² = sin²(kx)",
+        "Simplify (-x)² = x², so f(-x) = sin²(kx)/x² = f(x)",
+        "Conclude f is an even function (AG)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1 for evaluating f(-x) = sin²(-kx)/(-x)²; A1 for showing this equals sin²(kx)/x² = f(x) hence f is even AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q09-B",
+      "question": "9",
+      "part": "b",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "17-18",
+      "task_summary": "Evaluate lim_{x→0} sin²(kx)/x² = 16 using L'Hôpital's rule (or Maclaurin series, or product-of-limits) and solve for k ∈ ℝ⁺.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "calculus.series"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "identify_indeterminate_form",
+        "apply_lhopitals_rule",
+        "differentiate_numerator_denominator",
+        "apply_lhopitals_rule_twice",
+        "evaluate_limit",
+        "equate_to_given_value",
+        "solve_for_constant"
+      ],
+      "method_path": [
+        "Note lim_{x→0} sin²(kx)/x² = 0/0 indeterminate form",
+        "Apply L'Hôpital: differentiate numerator and denominator → (2k sin(kx) cos(kx))/(2x) = k sin(2kx)/(2x)",
+        "Still 0/0; apply L'Hôpital a second time → (2k² cos(2kx))/2 = k² cos(2kx)",
+        "As x→0, cos(2kx)→1, so limit = k²",
+        "Set k² = 16",
+        "Solve for k = 4 (since k ∈ ℝ⁺)"
+      ],
+      "accepted_alternatives": [
+        "Method 2 (Maclaurin series): Expand sin(kx) = kx + ... ⇒ sin²(kx) = k²x² + ... ⇒ limit = k², then k = 4.",
+        "Method 3 (splitting): Write as (sin(kx)/x)(sin(kx)/x), use limit of product = product of limits, evaluate sin(kx)/x → k (via L'Hôpital or Maclaurin) ⇒ k·k = k², then k = 4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "(M1) noting limit = 0/0; M1 attempt to differentiate numerator and denominator; A1 for k sin(2kx)/(2x); M1 attempts second differentiation; A1 for k²; A1 for k²=16 ⇒ k=4. Method 2: M1 Maclaurin series; A1 sin²(kx)=k²x²+…; M1 limit setup; R1 limit = k²+terms in x; A1 k²; A1 k=4. Method 3: (M1) splitting; A1 limit of product; (M1) L'Hôpital or Maclaurin for sin(kx)/x; (A1) limit = k; A1 k²; A1 k=4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "State the equation of the vertical asymptote to the graph of y = g(x) = 2ln x − ln d.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "identify_vertical_asymptote",
+        "domain_analysis"
+      ],
+      "method_path": [
+        "Recognise ln x has vertical asymptote at x = 0",
+        "State asymptote as x = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "Markscheme entry: '0 = x A1' awarding 1 mark for the asymptote x = 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 9,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Given f(x)=ln(2x−9) and g(x)=2ln x−ln d intersect at two distinct points: (i) show x²−2dx+9d=0, (ii) hence show d²−9d>0, (iii) find the range of possible values of d.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "number_algebra.inequalities",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equate_functions",
+        "log_power_rule",
+        "log_quotient_rule",
+        "equate_arguments",
+        "rearrange_quadratic",
+        "discriminant",
+        "discriminant_positive",
+        "simplify_inequality",
+        "factor_quadratic_inequality",
+        "sign_analysis"
+      ],
+      "method_path": [
+        "Set f(x)=g(x): ln(2x−9)=2ln x−ln d",
+        "Apply power rule: 2ln x=ln(x²)",
+        "Apply quotient rule to obtain ln(2x−9)=ln(x²/d) or equivalent",
+        "Equate arguments: 2x−9=x²/d",
+        "Rearrange to x²−2dx+9d=0",
+        "Form discriminant Δ=(2d)²−4(1)(9d)",
+        "Require Δ>0 for two distinct real roots",
+        "Simplify to d²−9d>0",
+        "Factor to d(d−9)>0",
+        "Solve with constraint d∈ℝ⁺ to obtain d>9"
+      ],
+      "accepted_alternatives": [
+        "Log form ln(x²/(2x−9))=ln d leading to x²/(2x−9)=d",
+        "Log form ln(2x−9)=ln(x²/d) leading to (2x−9)d=x²",
+        "Discriminant inequality written as (2d)²−4×9d>0 or 4d²−36d>0",
+        "Inequality solved by d(d−9)=0, sketch graph, sign test, or d²>9d"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "Part (b)(i): M1 for setting ln(2x−9)=2ln x−ln d; (M1) for power rule; (M1) for product/quotient rule; A1 for correct logarithmic equation leading to AG x²−2dx+9d=0. Part (b)(ii): (A1) for discriminant expression; (M1) for recognising discriminant>0; A1 for correct inequality leading to AG d²−9d>0. Part (b)(iii): (M1) for solving d(d−9)>0 by factorisation, sketch, sign test or equivalent; A1 for d>9."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "When d=10, find q−p where the graphs intersect at x=p and x=q (p<q), expressing the answer in the form a√b with a,b∈ℤ⁺.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_value",
+        "solve_quadratic",
+        "quadratic_formula",
+        "subtract_roots",
+        "simplify_radical"
+      ],
+      "method_path": [
+        "Substitute d=10 into x²−2dx+9d=0 to get x²−20x+90=0",
+        "Solve quadratic: x=10±√10",
+        "Identify p=10−√10, q=10+√10",
+        "Compute q−p=2√10",
+        "State a=2, b=10"
+      ],
+      "accepted_alternatives": [
+        "Answer expressed as √40 or 1√40"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "A1 for x²−20x+90=0; (M1) for attempting to solve the quadratic; (A1) for x=10−√10=p and x=10+√10=q; (M1) for subtracting their values of x; A1 for distance=2√10. Note accepts 1√40 or √40."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "(a)",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "21",
+      "task_summary": "Find the coordinates of the points on y = f(x) = e^(cos2x) where the gradient is zero, using differentiation and solving a trigonometric equation.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "geometry.trigonometric_equations",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "derivative",
+        "set_derivative_to_zero",
+        "solve_trigonometric_equation",
+        "find_coordinates"
+      ],
+      "method_path": [
+        "Apply chain rule: f'(x) = e^(cos2x) * (-2sin2x)",
+        "Set f'(x) = 0",
+        "Solve sin2x = 0 giving 2x = 0, pi, 2pi, ...",
+        "Obtain x = 0, pi/2, pi",
+        "Substitute into f(x) for coordinates: (0, e), (pi/2, 1/e), (pi, e)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to use chain rule to find f'(x) (M1); f'(x) = -2 sin2x e^(cos2x) = 0 (A1); sin2x = 0 (M1); 2x = 0, pi, 2pi, ... so x = 0, pi/2, pi, ... (A1); Coordinates are (0,e), (pi/2, 1/e), (pi,e) (A1). Special case note for two correct coordinate pairs."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-B",
+      "question": "11",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "21",
+      "task_summary": "Using the second derivative at each stationary point, show that the curve has two local maxima and one local minimum.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "second_derivative",
+        "evaluate_derivative",
+        "classify_stationary_points"
+      ],
+      "method_path": [
+        "Apply product rule to f'(x) to find f''(x) = e^(cos2x)[(2sin2x)^2 - 4cos2x]",
+        "Evaluate f''(0) = -4e < 0 so maximum",
+        "Evaluate f''(pi) = -4e < 0 so maximum",
+        "Evaluate f''(pi/2) = 4/e > 0 so minimum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to differentiate f'(x) using product rule (M1); f''(x) = (-2sin2x)(-2sin2x)e^(cos2x) - 4cos2x e^(cos2x) (A1); at x=0, f''(x) = -4e < 0 so maximum AND at x=pi, f''(x) = -4e < 0 so maximum (R1); at x=pi/2, f''(x) = 4/e > 0 so minimum (R1). Note: values must be correct for R marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "(c)",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Sketch the curve y = f(x) = e^(cos2x) for 0 <= x <= pi, taking into consideration the relative values of the second derivative from part (b).",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_curve",
+        "plot_maxima",
+        "plot_minimum",
+        "show_curvature"
+      ],
+      "method_path": [
+        "Draw general shape of e^(cos2x) over [0, pi]",
+        "Mark local maxima at (0, e) and (pi, e)",
+        "Mark local minimum at (pi/2, 1/e)",
+        "Show higher rate of change of gradient at maxima and lower rate at the minimum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Award A1 for general shape, A1 for correct maxima (0,e), (pi,e) and minimum point (pi/2, 1/e) and A1 for showing a higher rate of change of gradient at maxima and a lower rate of change of gradient at the minimum point."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-D-I-II-III",
+      "question": "11",
+      "part": "(d)(i)(ii)(iii)",
+      "marks": 6,
+      "source_pages": "15-16",
+      "markscheme_pages": "23-24",
+      "task_summary": "Find the Maclaurin series for cos2x up to x^4 (i), hence for e^(cos2x-1) up to x^4 (ii), and hence for f(x) = e^(cos2x) up to x^4 (iii).",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "functions.exponential_models"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "series_substitution",
+        "series_multiplication",
+        "trigonometric_series",
+        "exponential_series"
+      ],
+      "method_path": [
+        "(i) Expand cos2x using standard series: 1 - (2x)^2/2! + (2x)^4/4! - ... = 1 - 2x^2 + (2/3)x^4",
+        "(ii) Substitute cos2x - 1 = -2x^2 + (2/3)x^4 into e^u = 1 + u + u^2/2 + ...",
+        "(ii) Keep terms up to x^4: 1 + (-2x^2 + 2x^4/3) + (4x^4)/2 = 1 - 2x^2 + (8/3)x^4",
+        "(iii) Multiply series by e: f(x) = e - 2ex^2 + (8e/3)x^4"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Write e^(cos2x-1) = e^(-2x^2) * e^((2/3)x^4), find Maclaurin series for each factor separately, then multiply the series and keep terms up to x^4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(i) cos2x = 1 - (2x)^2/2! + (2x)^4/4! + ... = 1 - 2x^2 + (2/3)x^4 (M1)(A1)."
+        },
+        {
+          "markscheme_pages": "23-24",
+          "basis": "(ii) Method 1: substitute series for cos2x-1 into e^x = 1 + x + x^2/2 + x^3/6 + x^4/24 (M1); e^(cos2x-1) = 1 + (-2x^2 + 2x^4/3) + (4x^4)/2 + ... = 1 - 2x^2 + (8/3)x^4 (A1)(A1). Method 2: e^(cos2x-1) = e^(-2x^2) * e^((2/3)x^4), find series for e^(-2x^2) = 1 - 2x^2 + 2x^4 and e^((2/3)x^4) = 1 + (2/3)x^4, multiply to get 1 - 2x^2 + (8/3)x^4 (M1)(A1)(A1)."
+        },
+        {
+          "markscheme_pages": "24",
+          "basis": "(iii) f(x) = e * [1 - 2x^2 + (8/3)x^4] = e - 2ex^2 + (8e/3)x^4 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-E",
+      "question": "11",
+      "part": "(e)",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Use the first two non-zero terms in the Maclaurin series for f(x) to show that the definite integral from 0 to 1/10 of e^(cos2x) dx approximately equals 149e/1500.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.series"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "approximate_integrand",
+        "integrate_polynomial",
+        "evaluate_definite_integral",
+        "simplify_algebraic_expression"
+      ],
+      "method_path": [
+        "Approximate integrand: e^(cos2x) = e - 2ex^2 (first two non-zero terms)",
+        "Integrate: integral of (e - 2ex^2) dx = e[x - (2/3)x^3]",
+        "Evaluate from 0 to 1/10: e[(1/10) - (2/3)(1/1000)] = e(1/10 - 2/3000)",
+        "Simplify: e(300/3000 - 2/3000) = 298e/3000 = 149e/1500 (AG)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "Use f(x) = e(1 - 2x^2) (M1); integral = e[x - (2/3)x^3] from 0 to 1/10 (A1); = e(1/10 - 2/3000) (A1); = 298e/3000 = 149e/1500 AG. Note: if candidate follows through an incorrect expansion from part (d), award maximum M1A1FTA0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Find the binomial expansion of (cos θ + i sin θ)^5 in the form a + bi, where a and b are expressed in terms of sin θ and cos θ.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "complex_separation",
+        "evaluate_powers_of_i",
+        "collect_real_imaginary_parts"
+      ],
+      "method_path": [
+        "Apply binomial theorem to expand (cos θ + i sin θ)^5 using C(5,0) to C(5,5)",
+        "Simplify powers of i: i^2 = -1, i^3 = -i, i^4 = 1, i^5 = i",
+        "Collect real part: a = cos^5 θ - 10 cos^3 θ sin^2 θ + 5 cos θ sin^4 θ",
+        "Collect imaginary part: b = 5 cos^4 θ sin θ - 10 cos^2 θ sin^3 θ + sin^5 θ",
+        "Present as a + bi"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "M1 for attempt to expand using binomial theorem; expansion shown with binomial coefficients; A1A1 awarded for correct real part and correct imaginary part."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Using De Moivre's theorem and the expansion from part (a), show that sin 5θ ≡ 16 sin^5 θ - 20 sin^3 θ + 5 sin θ.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivre_theorem",
+        "equate_imaginary_parts",
+        "pythagorean_identity_substitution",
+        "algebraic_expansion",
+        "trigonometric_simplification"
+      ],
+      "method_path": [
+        "Apply De Moivre's theorem: (cos θ + i sin θ)^5 = cos 5θ + i sin 5θ",
+        "Equate imaginary parts: sin 5θ = 5 cos^4 θ sin θ - 10 cos^2 θ sin^3 θ + sin^5 θ",
+        "Substitute cos^2 θ = 1 - sin^2 θ",
+        "Expand (1 - sin^2 θ)^2 and simplify algebraically",
+        "Obtain sin 5θ = 16 sin^5 θ - 20 sin^3 θ + 5 sin θ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1 for De Moivre; M1 for equating imaginary parts; A1 for sin 5θ expression; M1 for substituting cos^2 θ = 1 - sin^2 θ; A1, A1 for correct expansion and simplification to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "26-28",
+      "task_summary": "(i) Show that π/5 and 3π/5 are solutions of 16 sin^4 θ - 20 sin^2 θ + 5 = 0. (ii) Hence show that sin(π/5) sin(3π/5) = sqrt(5)/4.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.equations",
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "factorisation",
+        "trigonometric_equation",
+        "quadratic_formula",
+        "product_of_roots",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Factor sin 5θ = sin θ (16 sin^4 θ - 20 sin^2 θ + 5)",
+        "Set sin 5θ = 0, giving 5θ = kπ so θ = kπ/5 for integer k",
+        "Observe that sin(π/5) ≠ 0 and sin(3π/5) ≠ 0",
+        "Deduce that π/5 and 3π/5 satisfy 16 sin^4 θ - 20 sin^2 θ + 5 = 0",
+        "Treat equation as quadratic in sin^2 θ: 16(sin^2 θ)^2 - 20 sin^2 θ + 5 = 0",
+        "Solve using quadratic formula: sin^2 θ = (20 ± sqrt(80))/32 = (5 ± sqrt(5))/8",
+        "Compute sin(π/5) sin(3π/5) = sqrt[((5+sqrt(5))/8) * ((5-sqrt(5))/8)] = sqrt(20/64) = sqrt(5)/4"
+      ],
+      "accepted_alternatives": [
+        "Method 2 for (c)(ii): Use product of roots of quartic 16x^4 - 20x^2 + 5 = 0 with symmetry sin(π/5)=sin(4π/5), sin(2π/5)=sin(3π/5) to obtain sin^2(π/5)*sin^2(3π/5)=5/16.",
+        "Method 3 for (c)(ii): Treat as quadratic in sin^2 θ; product of roots sin^2(π/5) and sin^2(3π/5) is 5/16; take square root."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(c)(i): M1 for factorising 16 sin^5 θ - 20 sin^3 θ + 5 sin θ into sin θ(16 sin^4 θ - 20 sin^2 θ + 5); R1 for sin 5(π/5)=0 and sin 5(3π/5)=0 (or solving sin 5θ=0 giving 5θ=kπ); R1 for concluding sin(π/5)≠0 and sin(3π/5)≠0, therefore π/5, 3π/5 are solutions."
+        },
+        {
+          "markscheme_pages": "27-28",
+          "basis": "(c)(ii) Method 1: M1 for quadratic formula; A1 for sin^2 θ = (20 ± sqrt(80))/32 = (5 ± sqrt(5))/8; M1 for multiplying; A1 for sqrt(5)/4 (AG). Method 2: A1 for roots; M1 for product = 5/16; A1, A1. Method 3: M1, A1, M1, A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

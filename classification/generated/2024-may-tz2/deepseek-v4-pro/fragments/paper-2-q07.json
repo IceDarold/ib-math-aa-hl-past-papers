@@ -1,0 +1,49 @@
+{
+  "question": "7",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find the volume of the solid formed when the curve y = 4 ln(x - 2) for 0 ≤ y ≤ 4 is rotated 360° about the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "inverse_ln_function",
+        "algebraic_expansion",
+        "volume_of_revolution",
+        "definite_integral",
+        "integration_by_antiderivative",
+        "numerical_evaluation"
+      ],
+      "method_path": [
+        "Express x in terms of y: x = 2 + e^(y/4)",
+        "Square to obtain x² = (2 + e^(y/4))² = 4 + 4e^(y/4) + e^(y/2)",
+        "Set up volume integral V = π ∫₀⁴ x² dy",
+        "Integrate: ∫ (e^(y/2) + 4e^(y/4) + 4) dy = 2e^(y/2) + 16e^(y/4) + 4y",
+        "Evaluate from y = 0 to y = 4",
+        "Obtain V = 2π(e² + 8e − 1) ≈ 177 cubic units"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempts to express x (or x²) in terms of y (M1); x² = (2 + e^(y/4))² = 4 + 4e^(y/4) + e^(y/2) (A1); forms a definite integral of the form π∫x² dy (M1); V = π∫₀⁴ (e^(y/2) + 4e^(y/4) + 4) dy (A1); 176.779... = 177 = 2π(e² + 8e − 1) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Form the composite (g∘f)(x) = (ax+b)² + (ax+b) + 3, expand, equate coefficients with 4x²−14x+15 to obtain a²=4 and 2ab+a=−14, solve for a=±2 then find corresponding b=−4 and b=3, giving f(x)=2x−4 and f(x)=−2x+3.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "function_composition",
+        "polynomial_expansion",
+        "equate_coefficients",
+        "solve_quadratic",
+        "solve_linear"
+      ],
+      "method_path": [
+        "Form composite: (g∘f)(x) = (ax+b)² + (ax+b) + 3",
+        "Expand to a²x² + 2abx + b² + ax + b + 3 and equate to 4x² − 14x + 15",
+        "Equate x² coefficients: a² = 4 → a = ±2",
+        "Equate x coefficients: 2ab + a = −14",
+        "For a = 2, solve 4b + 2 = −14 → b = −4, giving f(x) = 2x − 4",
+        "For a = −2, solve −4b − 2 = −14 → b = 3, giving f(x) = −2x + 3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "M1 for attempts to form (g∘f)(x); A1 for expanded form a²x²+2abx+b²+ax+b+3=4x²−14x+15; M1 for equating corresponding terms; A1 for a=±2; M1 for using 2ab+a=−14 to pair values; A1A1 for f(x)=2x−4 and f(x)=−2x+3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

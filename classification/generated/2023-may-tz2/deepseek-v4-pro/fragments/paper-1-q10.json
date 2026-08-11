@@ -1,0 +1,165 @@
+{
+  "question": "10",
+  "expected_question_marks": 14,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Show that for point Q on the circle x^2 + y^2 = 9 in the first quadrant, y = sqrt(9 - x^2).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.circular_measure"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "rearranging_equation",
+        "square_root",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "Rearrange x^2 + y^2 = 9 to y^2 = 9 - x^2",
+        "Since Q is in first quadrant, y > 0 implies y = sqrt(9 - x^2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "y = sqrt(9 - x^2) OR y = +/- sqrt(9 - x^2) A1, then since y > 0 yields y = sqrt(9 - x^2) AG. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find an expression for A, the area of triangle PQR, in terms of x.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.circular_measure",
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "area_of_triangle",
+        "substitution",
+        "geometric_interpretation"
+      ],
+      "method_path": [
+        "Identify base QR = 2y = 2 sqrt(9 - x^2)",
+        "Identify height = x - (-3) = x + 3",
+        "Substitute into A = (1/2) * base * height",
+        "Simplify to A = sqrt(9 - x^2) * (x + 3)"
+      ],
+      "accepted_alternatives": [
+        "Equivalent forms such as (x + 3) sqrt(9 - x^2)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "b = 2y = 2 sqrt(9 - x^2) or h = x + 3 (A1). Attempts to substitute into A = (1/2)bh (M1). A = sqrt(9 - x^2)(x + 3) A1. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "20-21",
+      "task_summary": "Show that dA/dx = (9 - 3x - 2x^2) / sqrt(9 - x^2).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "chain_rule",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply product rule to A = sqrt(9 - x^2) * (x + 3)",
+        "Apply chain rule: d/dx[sqrt(9 - x^2)] = -x / sqrt(9 - x^2)",
+        "Combine terms and simplify to obtain (9 - 3x - 2x^2) / sqrt(9 - x^2)"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use dA/dx = (dA/dy)*(dy/dx) with A = y(x+3) and dy/dx = -x/y, substitute and simplify."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20-21",
+          "basis": "METHOD 1: attempts product rule (M1), attempts chain rule (M1), two A1 for derivative simplification. METHOD 2: dA/dx = dA/dy * dy/dx with A = y(x+3) and dy/dx = -x/y. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find the y-coordinate of R such that area A is a maximum.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.circular_measure",
+        "functions.equations"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "setting_derivative_to_zero",
+        "solving_quadratic",
+        "coordinate_substitution",
+        "domain_validation"
+      ],
+      "method_path": [
+        "Set dA/dx = 0 giving 9 - 3x - 2x^2 = 0",
+        "Solve quadratic: (2x - 3)(x + 3) = 0, giving x = 3/2 or x = -3",
+        "Reject x = -3 (Q in first quadrant)",
+        "Substitute x = 3/2 into y_R = -sqrt(9 - x^2)",
+        "Simplify: y_R = -sqrt(27/4) = -(3 sqrt(3))/2"
+      ],
+      "accepted_alternatives": [
+        "Solve quadratic via formula: x = (3 +/- sqrt(9 - 4(-2)(9))) / (2(-2)) giving x = 3/2 or x = -3."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Set dA/dx = 0 (M1). Attempts to solve 9 - 3x - 2x^2 = 0 (M1). (2x - 3)(x + 3) = 0 OR quadratic formula (A1). x = 3/2 A1. Substitute into y = -sqrt(9 - x^2) (M1). y = -sqrt(27/4) = -3 sqrt(3)/2 A1. [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

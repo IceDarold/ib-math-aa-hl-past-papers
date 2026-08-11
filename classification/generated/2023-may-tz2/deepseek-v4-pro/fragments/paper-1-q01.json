@@ -1,0 +1,113 @@
+{
+  "question": "1",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the perimeter of the shaded sector given radius 4 cm and arc length 10 cm.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "perimeter_of_sector",
+        "arc_length",
+        "addition"
+      ],
+      "method_path": [
+        "perimeter = arc + 2r",
+        "= 10 + 4 + 4",
+        "= 18 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempts to find perimeter (M1); arc + 2 radius OR 10 + 4 + 4; = 18 (cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the angle theta in radians using the arc length formula s = r theta.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "arc_length_formula",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "arc = r theta",
+        "10 = 4 theta",
+        "theta = 10/4",
+        "theta = 5/2 = 2.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "10 = 4 theta (A1); theta = 10/4 = 5/2, 2.5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the area of the shaded sector using A = half r squared theta.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sector_area",
+        "substitution"
+      ],
+      "method_path": [
+        "area = (1/2) r^2 theta",
+        "= (1/2) x 4^2 x (10/4)",
+        "= 1.25 x 16",
+        "= 20 cm^2"
+      ],
+      "accepted_alternatives": [
+        "area = (1/2) r^2 theta with theta = 2.5, giving (1/2) x 16 x 2.5 = 20 cm^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "area = (1/2)(4^2)(10/4) = (1.25)(16) = 20 (cm^2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

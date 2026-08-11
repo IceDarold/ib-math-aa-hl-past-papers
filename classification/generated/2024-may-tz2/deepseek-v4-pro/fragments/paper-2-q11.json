@@ -1,0 +1,264 @@
+{
+  "question": "11",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Show that AB = 28.57 m, correct to four significant figures, using the geometry of a circle with radius 20 m and centre S, 14 m from a path.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "pythagorean_theorem",
+        "circle_geometry",
+        "midpoint",
+        "significant_figures"
+      ],
+      "method_path": [
+        "let M be the midpoint of AB, so AB = 2AM",
+        "AM² + 14² = 20² → AM = √(20² − 14²) = √204",
+        "AB = 2√204 ≈ 28.5657… → 28.57 (4 s.f.)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Let θ = AŜM, find θ = arccos(14/20), then AM = 14 tan θ = 20 sin θ ≈ 14.2828…, AB = 2AM ≈ 28.57"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "METHOD 1: attempts to use Pythagoras' theorem to find AM (M1); recognizes that AB = 2AM (A1); AB = 2√204 = 28.5657… → AB = 28.57 (A1). METHOD 2: θ = arccos(14/20) (A1); attempts valid trigonometric ratio (M1); AM = 14 tan θ or 20 sin θ (A1); AB = 28.5657… → 28.57 (AG)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Show that the sprinkler rotates through an angle of π/8 radians in one second.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "angular_velocity",
+        "proportional_reasoning"
+      ],
+      "method_path": [
+        "one revolution = 2π rad in 16 s",
+        "angular speed = 2π/16 = π/8 rad/s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "the sprinkler rotates through 2π radians every 16 seconds and hence rotates through 2π/16 radians in 1 second (A1); 2π/16 = π/8 (AG)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find the time T seconds that segment AB is watered in each revolution.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "inverse_trigonometric_function",
+        "angular_velocity",
+        "proportional_reasoning",
+        "equation_solving"
+      ],
+      "method_path": [
+        "find central half-angle θ = arccos(14/20)",
+        "central angle AŜB = 2θ",
+        "angular speed = 2π/16 rad/s",
+        "T = 2θ ÷ (2π/16) = 16θ/π ≈ 4.05 s"
+      ],
+      "accepted_alternatives": [
+        "Follow-through from Method 2 in part (a) using the candidate's own value of θ"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "attempts to find 2θ where θ = AŜM (M1); uses t/θ (rad/s) or similar to form an equation involving T (M1); T = 4.05093… (A1); T = 4.05 s (A1). Note: full FT from Method 2 in (a)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Write down an expression for α (angle AŜD) in terms of t.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "angular_velocity",
+        "linear_expression"
+      ],
+      "method_path": [
+        "α = (π/8)t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "α = π/8 t (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Using the sine rule in ΔASD, show that d = 20 sin(πt/8) / sin(2.37 − πt/8).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.circular_measure"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "sine_rule",
+        "triangle_angle_sum",
+        "substitution",
+        "trigonometric_manipulation"
+      ],
+      "method_path": [
+        "apply sine rule: d / sin α = 20 / sin(AĎS)",
+        "AĎS = π − β − α = π − 0.7754 − α ≈ 2.37 − α",
+        "d = 20 sin α / sin(π − β − α)",
+        "substitute α = πt/8 to obtain d = 20 sin(πt/8) / sin(2.37 − πt/8)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "applies sine rule in ΔASD (A1); attempts to find AĎS in terms of α: AĎS = π − β − α = π − 0.7754… − α = 2.366… − α (M1); d = 20 sin α / sin(2.366… − α) (A1); substitute α = πt/8 to obtain the given expression (AG)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 1,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "At t = 0, state how far south the turtle is from A.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "function_evaluation"
+      ],
+      "method_path": [
+        "g(0) = 0.05(0)² + 1.1(0) + 18 = 18 m"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "18 (m) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-G",
+      "question": "11",
+      "part": "G",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "25",
+      "task_summary": "(i) Write an expression for w = g(t) − d(t). (ii) Solve w = 0 to find when (t ≈ 3.35 s) and where (≈ 22.2 m south of A) the water first reaches the turtle.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "function_combination",
+        "equation_solving",
+        "numerical_solution",
+        "function_evaluation",
+        "gdc_solver"
+      ],
+      "method_path": [
+        "w = g(t) − d(t) = 0.05t² + 1.1t + 18 − [20 sin(πt/8) / sin(2.37 − πt/8)]",
+        "solve w = 0 for t using GDC",
+        "t ≈ 3.35 s (first solution)",
+        "substitute into g(t): g(3.35) ≈ 22.2 m south of A"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(i) w = 0.05t² + 1.1t + 18 − [20 sin(πt/8) / sin(2.37 − πt/8)] (A1). (ii) attempts to solve w = 0 for t (M1); t = 3.35 s (A1); 22.2 (m) south of A (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

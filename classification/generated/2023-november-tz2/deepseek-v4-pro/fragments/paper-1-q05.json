@@ -1,0 +1,47 @@
+{
+  "question": "5",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Find n and k in the binomial expansion (1+kx)^n given the first three terms 1+12x+28k²x², where n∈ℤ⁺ and k∈ℝ.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "equating_coefficients",
+        "quadratic_solving",
+        "substitution"
+      ],
+      "method_path": [
+        "apply binomial theorem to expand (1+kx)^n as 1 + nC1·kx + nC2·k²x² + …",
+        "equate coefficient of x: nC1·k = 12 → nk = 12",
+        "equate coefficient of x²: nC2·k² = 28k² → nC2 = 28",
+        "write nC2 = n(n−1)/2 = 28 → n²−n−56 = 0",
+        "solve quadratic → n = 8 (reject n = −7)",
+        "substitute n = 8 into nk = 12 → k = 3/2"
+      ],
+      "accepted_alternatives": [
+        "identify n = 8 from the row of Pascal's triangle where the third entry is 28, then determine k = 3/2 from nk = 12"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: attempt to apply binomial expansion; A1: nk = 12; A1: n(n−1)/2 = 28 or n!/(2!(n−2)!) = 28; M1: valid attempt to solve n²−n−56 = 0 or n(n−1)=56; A1: n = 8; A1: k = 3/2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

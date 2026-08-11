@@ -1,0 +1,381 @@
+{
+  "question": "2",
+  "expected_question_marks": 31,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P3-Q02-A-I",
+      "question": "2",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "Write down an expression for the gradient of the line y = mx in terms of x and y.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "gradient_from_linear_equation",
+        "rearrange_for_parameter"
+      ],
+      "method_path": [
+        "identify_gradient_of_L_as_m",
+        "express_m_in_terms_of_x_and_y_as_y_over_x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "y/x A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P3-Q02-A-II",
+      "question": "2",
+      "part": "A-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "Show that the gradient of C is dy/dx = −x/y using the condition that L and C intersect at right angles.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "perpendicular_gradients_product_negative_one",
+        "negative_reciprocal"
+      ],
+      "method_path": [
+        "state_condition_for_perpendicular_lines_product_of_gradients_is_negative_one",
+        "substitute_gradient_of_L_as_y_over_x",
+        "solve_for_dy_over_dx_equals_negative_x_over_y"
+      ],
+      "accepted_alternatives": [
+        "gradient is the negative (opposite) reciprocal of y/x",
+        "m × (gradient of C) = −1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "dy/dx = −1/(y/x) = −x/y A1. Note: Award A1 for responses such as 'the gradient is the negative (opposite) reciprocal of y/x' or m × dy/dx = −1 (or equivalent). Do not award FT from part (a)(i). AG [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P3-Q02-A-III",
+      "question": "2",
+      "part": "A-III",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "16",
+      "task_summary": "Solve the differential equation dy/dx = −x/y to show that the family of curves C has equation x² + y² = k.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "indefinite_integration",
+        "constant_of_integration"
+      ],
+      "method_path": [
+        "separate_variables_y_dy_equals_negative_x_dx",
+        "integrate_both_sides",
+        "obtain_y_squared_over_2_equals_negative_x_squared_over_2_plus_c",
+        "multiply_by_2_and_rearrange_to_x_squared_plus_y_squared_equals_k"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempts to separate variables x and y (M1); ∫y dy = ∫−x dx; y²/2 = −x²/2 + c A1; x² + y² = k (where k = 2c) AG [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P3-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "17",
+      "task_summary": "Sketch y² = 16 − 8x and y² = 4 + 4x on the same axes, label each curve and any x-intercepts.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_x_intercepts",
+        "determine_parabola_orientation",
+        "sketch_quadratic_relation"
+      ],
+      "method_path": [
+        "find_x_intercept_of_first_curve_by_setting_y_equal_0_to_get_x_equals_2",
+        "find_x_intercept_of_second_curve_by_setting_y_equal_0_to_get_x_equals_negative_1",
+        "sketch_two_parabolic_curves_with_correct_shape_intersecting_in_first_and_fourth_quadrants",
+        "label_curves_and_x_intercepts"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "two parabolic shaped curves with approximately correct shape/position (e.g. two intersection points, in first and fourth quadrant) A1A1; x-intercepts −1 and 2 A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P3-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 6,
+      "source_pages": "4",
+      "markscheme_pages": "18",
+      "task_summary": "Solve y² = 4a² − 4ax and y² = 4b² + 4bx simultaneously to show intersection points are M(a−b, 2√(ab)) and N(a−b, −2√(ab)).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equate_expressions",
+        "rearrange_terms",
+        "factorise_difference_of_squares",
+        "divide_by_common_factor",
+        "substitution",
+        "simplify_surd"
+      ],
+      "method_path": [
+        "equate_4a_squared_minus_4ax_equal_to_4b_squared_plus_4bx",
+        "rearrange_to_4a_squared_minus_4b_squared_equals_4ax_plus_4bx",
+        "factorise_LHS_as_4_times_a_minus_b_times_a_plus_b_and_RHS_as_4x_times_a_plus_b",
+        "divide_by_4_times_a_plus_b_noting_a_plus_b_positive",
+        "solve_x_equals_a_minus_b",
+        "substitute_x_into_either_equation",
+        "simplify_to_y_equals_plus_minus_2_sqrt_ab",
+        "state_coordinates_M_and_N"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "at intersection, 4a² − 4ax = 4b² + 4bx A1; attempts to factorize either LHS or RHS (M1); (a+b)(a−b) = (a+b)x; recognition that a+b > 0 R1; x = a−b A1 (only if (a+b)(a−b) used); substitutes x = a−b into either equation and attempts to simplify (M1); y² = 4a² − 4a(a−b) ⇒ y = ±2√(ab) A1; so M(a−b, 2√(ab)) and N(a−b, −2√(ab)) AG [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P3-Q02-D",
+      "question": "2",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "19-20",
+      "task_summary": "Show that at point M the curves y² = 4a² − 4ax and y² = 4b² + 4bx intersect at right angles.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "evaluate_derivative_at_point",
+        "verify_orthogonal_gradients"
+      ],
+      "method_path": [
+        "implicitly_differentiate_first_curve_to_get_dy_dx_equals_negative_4a_over_2y",
+        "implicitly_differentiate_second_curve_to_get_dy_dx_equals_4b_over_2y",
+        "substitute_y_equals_2_sqrt_ab_into_both_derivatives",
+        "obtain_gradient1_equals_negative_a_over_sqrt_ab_and_gradient2_equals_b_over_sqrt_ab",
+        "verify_product_of_gradients_equals_negative_one"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: use chain rule differentiation, dy/dx = −2a/√(4a²−4ax) and dy/dx = 2b/√(4b²+4bx), substitute x = a−b, obtain same gradients, verify product is −1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: attempts implicit differentiation on either curve (M1); dy/dx = −4a/(2y) and dy/dx = 4b/(2y) A1; substitutes y = 2√(ab) (M1); dy/dx = −a/√(ab) and dy/dx = b/√(ab) A1; product −a/√(ab) × b/√(ab) = −1 A1; so at point M curves intersect at right angles AG [5 marks]"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 2: attempts chain rule differentiation on either curve (M1); dy/dx = −2a/√(4a²−4ax) and dy/dx = 2b/√(4b²+4bx) A1; substitutes x = a−b (M1); dy/dx = −a/√(ab) and dy/dx = b/√(ab) A1; product = −1 A1 [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P3-Q02-E-I",
+      "question": "2",
+      "part": "E-I",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "21",
+      "task_summary": "Show that g(x,y) = (y−x)/(y+x) given f(x,y) = −x/y and α = π/4 using the formula relating intersecting curve gradients.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_into_formula",
+        "evaluate_trigonometric_value",
+        "simplify_complex_fraction"
+      ],
+      "method_path": [
+        "substitute_f_equals_negative_x_over_y_and_alpha_equals_pi_over_4_into_g_formula",
+        "evaluate_tan_of_pi_over_4_equals_1",
+        "simplify_the_compound_fraction_numerator_and_denominator",
+        "obtain_g_equals_y_minus_x_over_y_plus_x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "g(x,y) = (−x/y + tan(π/4))/(1 − (−x/y)tan(π/4)) (A1); = ((−x+y)/y)/((y+x)/y) = (y−x)/(y+x) A1; AG [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P3-Q02-E-II",
+      "question": "2",
+      "part": "E-II",
+      "marks": 9,
+      "source_pages": "5",
+      "markscheme_pages": "22",
+      "task_summary": "Solve the homogeneous differential equation dy/dx = (y−x)/(y+x) to find a general equation for family G in the form h(x,y) = d.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "homogeneous_substitution_y_equals_vx",
+        "product_rule_differentiation",
+        "separation_of_variables",
+        "arctan_integration",
+        "logarithmic_integration",
+        "back_substitution"
+      ],
+      "method_path": [
+        "let_y_equals_vx_and_differentiate_to_get_dy_dx_equals_v_plus_x_dv_dx",
+        "substitute_to_get_v_plus_x_dv_dx_equals_v_minus_1_over_v_plus_1",
+        "rearrange_to_x_dv_dx_equals_negative_1_plus_v_squared_over_1_plus_v",
+        "separate_variables_as_1_plus_v_over_1_plus_v_squared_dv_equals_negative_1_over_x_dx",
+        "integrate_both_sides",
+        "obtain_half_ln_1_plus_v_squared_plus_arctan_v_equals_negative_ln_absolute_x_plus_d",
+        "back_substitute_v_equals_y_over_x",
+        "write_in_form_h_of_x_y_equals_d"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "let y = vx (M1); dy/dx = v + x dv/dx (A1); v + x dv/dx = (vx−x)/(vx+x) = (v−1)/(v+1) (A1); attempts to express x dv/dx as a single fraction in v (M1); x dv/dx = −(1+v²)/(1+v) (A1); attempts to separate variables x and v (M1); ∫(1+v)/(1+v²) dv = −∫(1/x) dx; (1/2)ln(1+v²) + arctan(v) = −ln|x| + d A1A1; (1/2)ln(1+(y/x)²) + arctan(y/x) + ln|x| = d A1 [9 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P3-Q02-F",
+      "question": "2",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "23",
+      "task_summary": "Show that lim_{α→π/2} g(x,y) = −1/f(x,y) for all finite f(x,y) by considering the limit of tan α.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "rearrange_formula",
+        "evaluate_limit",
+        "asymptotic_analysis"
+      ],
+      "method_path": [
+        "rearrange_given_formula_to_isolate_g_in_terms_of_f_and_tan_alpha",
+        "take_limit_as_alpha_approaches_pi_over_2",
+        "note_that_tan_alpha_approaches_infinity_so_1_over_tan_alpha_approaches_0",
+        "conclude_g_approaches_negative_1_over_f"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: express using sin and cos, as α→π/2, cos α→0 and sin α→1, so g → (f·0+1)/(0−f·1) = −1/f"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: g = (1 + f/tan α)/(1/tan α − f) M1; as α→π/2, 1/tan α→0, hence g→−1/f R1 (dependent on M1); AG [2 marks]"
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 2: uses sin/cos to form g = (f cos α + sin α)/(cos α − f sin α) M1; as α→π/2, cos α→0 and sin α→1 so g→−1/f R1 (dependent on M1); AG [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

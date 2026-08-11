@@ -1,0 +1,1222 @@
+{
+  "session": "May 2023",
+  "zone": "TZ2",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the perimeter of the shaded sector given radius 4 cm and arc length 10 cm.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "perimeter_of_sector",
+        "arc_length",
+        "addition"
+      ],
+      "method_path": [
+        "perimeter = arc + 2r",
+        "= 10 + 4 + 4",
+        "= 18 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempts to find perimeter (M1); arc + 2 radius OR 10 + 4 + 4; = 18 (cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the angle theta in radians using the arc length formula s = r theta.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "arc_length_formula",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "arc = r theta",
+        "10 = 4 theta",
+        "theta = 10/4",
+        "theta = 5/2 = 2.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "10 = 4 theta (A1); theta = 10/4 = 5/2, 2.5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the area of the shaded sector using A = half r squared theta.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sector_area",
+        "substitution"
+      ],
+      "method_path": [
+        "area = (1/2) r^2 theta",
+        "= (1/2) x 4^2 x (10/4)",
+        "= 1.25 x 16",
+        "= 20 cm^2"
+      ],
+      "accepted_alternatives": [
+        "area = (1/2) r^2 theta with theta = 2.5, giving (1/2) x 16 x 2.5 = 20 cm^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "area = (1/2)(4^2)(10/4) = (1.25)(16) = 20 (cm^2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Write down the equations of the vertical and horizontal asymptotes of f(x) = 1 - 1/(x - 2).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_asymptote",
+        "horizontal_asymptote",
+        "limit_behavior"
+      ],
+      "method_path": [
+        "Vertical asymptote: denominator x - 2 = 0 gives x = 2",
+        "Horizontal asymptote: as x tends to plus/minus infinity, 1/(x - 2) tends to 0 so y = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(a)(i) x = 2 A1; (a)(ii) y = 1 A1; [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the coordinates where the graph of f(x) = 1 - 1/(x - 2) intersects the y-axis and the x-axis.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "y_intercept",
+        "x_intercept",
+        "solve_equation"
+      ],
+      "method_path": [
+        "y-intercept: set x = 0, f(0) = 1 - 1/(0 - 2) = 1 + 1/2 = 3/2 gives (0, 3/2)",
+        "x-intercept: set f(x) = 0, 1 - 1/(x - 2) = 0 gives 1/(x - 2) = 1 gives x - 2 = 1 gives x = 3 gives (3, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(b)(i) (0, 3/2) A1; (b)(ii) (3, 0) A1; [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Sketch the graph of y = f(x) showing all asymptotes and intercepts found in parts (a) and (b).",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "asymptotic_behavior",
+        "intercepts"
+      ],
+      "method_path": [
+        "Sketch two branches of hyperbola with vertical asymptote x = 2, horizontal asymptote y = 1, y-intercept (0, 3/2), and x-intercept (3, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(c) two correct branches with correct asymptotic behaviour and intercepts clearly shown A1; [1 mark] Total [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find P(B) given P(A)=0.4, P(A|B)=0.25, and P(A∪B)=0.55 by combining the addition rule and conditional probability formula.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "addition_rule",
+        "conditional_probability",
+        "substitution",
+        "solving_linear_equation"
+      ],
+      "method_path": [
+        "Apply P(A∪B)=P(A)+P(B)−P(A∩B) to form 0.55=0.4+P(B)−P(A∩B)",
+        "Apply P(A|B)=P(A∩B)/P(B) to form 0.25=P(A∩B)/P(B)",
+        "Express P(A∩B)=0.25P(B) and substitute into the first equation",
+        "Solve 0.55=0.4+P(B)−0.25P(B) for P(B)",
+        "State P(B)=0.2 (=1/5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "substitutes into P(A∪B)=P(A)+P(B)−P(A∩B) to form 0.55=0.4+P(B)−P(A∩B) (or equivalent) (A1)"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "substitutes into P(A|B)=P(A∩B)/P(B) to form 0.25=P(A∩B)/P(B) (or equivalent) (A1)"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "attempts to combine their two probability equations to form an equation in P(B) (M1)"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "correct equation in P(B): 0.55=0.4+P(B)−0.25P(B) OR P(B)−0.15=0.25P(B) OR (P(B)−0.15)/0.25=P(B) (or equivalent) A1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "P(B)=0.2=1/5=15/75 A1; Total [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 6,
+      "source_pages": "8",
+      "markscheme_pages": "11-12",
+      "task_summary": "Set up definite integral for area under y=x/(x^2+2) from 0 to c, integrate by substitution or inspection to obtain (1/2)ln(x^2+2), substitute limits, equate to ln 3, apply log laws, then solve c^2=16 to give c=4.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "u_substitution",
+        "logarithmic_integration",
+        "log_laws",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Set up A = integral from 0 to c of x/(x^2+2) dx",
+        "Integrate by substitution u=x^2+2 to get (1/2)ln|u| or by inspection to get (1/2)ln(x^2+2)",
+        "Substitute limits: (1/2)[ln(c^2+2) - ln 2]",
+        "Equate to ln 3: (1/2)[ln(c^2+2) - ln 2] = ln 3",
+        "Apply log law: ln((c^2+2)/2) = ln 9",
+        "Solve: (c^2+2)/2 = 9, c^2 = 16, c = 4"
+      ],
+      "accepted_alternatives": [
+        "Integrate by substitution using u=x^2 (rather than u=x^2+2)",
+        "Apply log law to obtain ln((c^2+2)/2) = ln 3 with (c^2+2)/2 = 3 as intermediate step before reaching (c^2+2)/2 = 9"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Definite integral setup A = integral_0^c x/(x^2+2) dx; EITHER substitution u=x^2+2 or u=x^2 (M1); integrated form (1/2)[ln|u+2|] or (1/2)ln(x^2+2) (A1); OR integration by inspection (M1) yielding (1/2)ln(x^2+2) (A1)"
+        },
+        {
+          "markscheme_pages": "11-12",
+          "basis": "THEN correctly substitutes limits (M1); correctly applies at least one log law (M1); obtains (c^2+2)/2 = 9 or (c^2+2)/2 = 3 (A1); then c^2=16, c=4 (A1). Total [6 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Form the composite (g∘f)(x) = (ax+b)² + (ax+b) + 3, expand, equate coefficients with 4x²−14x+15 to obtain a²=4 and 2ab+a=−14, solve for a=±2 then find corresponding b=−4 and b=3, giving f(x)=2x−4 and f(x)=−2x+3.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "function_composition",
+        "polynomial_expansion",
+        "equate_coefficients",
+        "solve_quadratic",
+        "solve_linear"
+      ],
+      "method_path": [
+        "Form composite: (g∘f)(x) = (ax+b)² + (ax+b) + 3",
+        "Expand to a²x² + 2abx + b² + ax + b + 3 and equate to 4x² − 14x + 15",
+        "Equate x² coefficients: a² = 4 → a = ±2",
+        "Equate x coefficients: 2ab + a = −14",
+        "For a = 2, solve 4b + 2 = −14 → b = −4, giving f(x) = 2x − 4",
+        "For a = −2, solve −4b − 2 = −14 → b = 3, giving f(x) = −2x + 3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "M1 for attempts to form (g∘f)(x); A1 for expanded form a²x²+2abx+b²+ax+b+3=4x²−14x+15; M1 for equating corresponding terms; A1 for a=±2; M1 for using 2ab+a=−14 to pair values; A1A1 for f(x)=2x−4 and f(x)=−2x+3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "State E(X) for a continuous uniform distribution on [a, 3a].",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "uniform_distribution",
+        "expected_value",
+        "symmetry"
+      ],
+      "method_path": [
+        "Recognize X ~ U(a, 3a)",
+        "State E(X) = (a + 3a)/2 = 2a by symmetry"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "E(X) = 2a (by symmetry) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "14–15",
+      "task_summary": "Use integration to find Var(X) for a continuous uniform distribution on [a, 3a].",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "statistics.expected_value"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "variance_formula",
+        "definite_integral",
+        "power_rule",
+        "evaluation"
+      ],
+      "method_path": [
+        "Apply Var(X) = E(X²) − [E(X)]²",
+        "Compute E(X²) = ∫_a^{3a} x²/(2a) dx",
+        "Integrate: [x³/(6a)]_a^{3a}",
+        "Evaluate to (13/3)a²",
+        "Subtract (2a)² = 4a²",
+        "Obtain Var(X) = a²/3"
+      ],
+      "accepted_alternatives": [
+        "Apply Var(X) = E[(X − E(X))²]: compute ∫_a^{3a} (x−2a)²/(2a) dx = [(x−2a)³/(6a)]_a^{3a} = a²/3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: uses Var(X) = E(X²) − [E(X)]² (M1); integration expression A1; intermediate value (A1); final A1 for a²/3"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 2: uses Var(X) = E[(X − E(X))²] (M1); integration A1; intermediate (A1); final A1 for a²/3"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 7,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Prove by mathematical induction that ∑_{r=1}^{n} r/((r+1)!) = 1 − 1/((n+1)!) for all integers n ≥ 1.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "inductive_hypothesis",
+        "inductive_step",
+        "summation_decomposition",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Verify base case n=1: LHS = 1/2, RHS = 1/2, so P(1) true",
+        "Assume P(k) true: ∑_{r=1}^{k} r/((r+1)!) = 1 − 1/((k+1)!)",
+        "Consider P(k+1): ∑_{r=1}^{k+1} r/((r+1)!) = ∑_{r=1}^{k} r/((r+1)!) + (k+1)/((k+2)!)",
+        "Substitute inductive hypothesis: = 1 − 1/((k+1)!) + (k+1)/((k+2)!)",
+        "Simplify using common denominator (k+2)!: = 1 − ((k+2)−(k+1))/((k+2)!) = 1 − 1/((k+2)!)",
+        "Conclude P(k+1) true, hence by induction P(n) true for all n ≥ 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "R1 for verifying base case P(1) with LHS=1/2, RHS=1/2. M1 for assuming P(k) true. (M1) for writing P(k+1) sum as P(k) sum plus (k+1)/((k+2)!). A1 for substituting hypothesis to get 1−1/((k+1)!)+(k+1)/((k+2)!). A1 for intermediate simplification step. A1 for final form 1−1/((k+2)!). R1 for concluding P(k+1) true and hence P(n) true for all n≥1 (requires any four prior marks). Total 7 marks. Note: M1 not awarded for mere 'let n=k'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q08-A",
+      "question": "8",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "12",
+      "markscheme_pages": "17",
+      "task_summary": "Show that cos^2 k = sin k, where k is the x-coordinate of the intersection point P of f(x) = cos x and g(x) = tan x.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "function_equality",
+        "trigonometric_substitution",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "Equate f(k) = g(k): cos k = tan k",
+        "Substitute tan k = sin k / cos k",
+        "Multiply both sides by cos k: cos^2 k = sin k"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "sin k / cos k = cos k then cos^2 k = sin k AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q08-B",
+      "question": "8",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "17-18",
+      "task_summary": "Show that the tangent to y = f(x) at P and the tangent to y = g(x) at P intersect at right angles, using cos^2 k = sin k from part (a).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation",
+        "trigonometric_derivatives",
+        "gradient_product",
+        "perpendicular_condition"
+      ],
+      "method_path": [
+        "Differentiate f to obtain f'(k) = -sin k",
+        "Differentiate g to obtain g'(k) = sec^2 k",
+        "Compute product f'(k) g'(k) = -sin k sec^2 k = -sin k / cos^2 k",
+        "Substitute cos^2 k = sin k from part (a)",
+        "Conclude f'(k) g'(k) = -1, so tangents are perpendicular"
+      ],
+      "accepted_alternatives": [
+        "Show g'(k) = 1/cos^2 k = 1/sin k, then g'(k) = -1/f'(k), hence tangents are perpendicular."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "f'(k) = -sin k and g'(k) = sec^2 k A1"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "EITHER f'(k)g'(k) = -sin k/cos^2 k = -1 OR g'(k) = 1/cos^2 k = 1/sin k = -1/f'(k); R1 for conclusion that tangents intersect at right angles"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q08-C",
+      "question": "8",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Find the value of sin k in the form (a + sqrt(b))/c, where a, c in Z and b in Z+.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "pythagorean_identity",
+        "quadratic_equation",
+        "quadratic_formula",
+        "root_selection"
+      ],
+      "method_path": [
+        "Apply cos^2 k = 1 - sin^2 k with cos^2 k = sin k",
+        "Rearrange: 1 - sin^2 k = sin k to sin^2 k + sin k - 1 = 0",
+        "Apply quadratic formula: sin k = (-1 +/- sqrt(1+4))/2",
+        "Select positive root: sin k = (-1 + sqrt(5))/2",
+        "Identify a = -1, b = 5, c = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "1 - sin^2 k = sin k (from part a) A1; attempts to solve for sin k (M1); sin k = (-1+sqrt(5))/2 A1; a=-1, b=5, c=2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Express OM and MC in terms of a and c.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_addition",
+        "scalar_multiplication",
+        "vector_subtraction"
+      ],
+      "method_path": [
+        "OM = OA + AM = a + kc",
+        "MC = OC − OM = c − (a + kc) = (1−k)c − a"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "OM = a + kc (A1); MC = (1−k)c − a (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Use a vector method to show that |a|²(1−2k)(2cosθ−(1−2k))=0.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product",
+        "algebraic_expansion",
+        "substitution",
+        "factorisation"
+      ],
+      "method_path": [
+        "Set OM·MC = 0",
+        "Expand (a+kc)·((1−k)c−a) to −|a|²+(1−2k)(a·c)+k(1−k)|c|²",
+        "Substitute |c|²=4|a|² and a·c=2|a|²cosθ",
+        "Simplify and factor to |a|²(1−2k)(2cosθ−(1−2k))=0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: attempts to expand their dot product (a+kc)·((1−k)c−a); M1: uses |c|²=4|a|² and a·c=2|a|²cosθ; A1: correct result leading to AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Find the range of values for θ such that there are two possible positions for M.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equation_solving",
+        "inequality_solving",
+        "trigonometric_inequality",
+        "constraint_application",
+        "case_analysis"
+      ],
+      "method_path": [
+        "Set each factor to zero from |a|²(1−2k)(2cosθ−(1−2k))=0 with |a|≠0",
+        "Solve: k=1/2 or k=(1−2cosθ)/2",
+        "Apply 0≤k≤1 to the second solution: 0≤(1−2cosθ)/2≤1",
+        "Solve inequality to obtain −1/2≤cosθ≤1/2",
+        "Convert to θ: π/3≤θ≤2π/3",
+        "Exclude θ=π/2 (gives k=1/2, a unique M)"
+      ],
+      "accepted_alternatives": [
+        "Solve for cosθ instead of k: cosθ=(1−2k)/2, then apply 0≤k≤1 to obtain the same bounds on cosθ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: attempts to solve (1−2k)(2cosθ−(1−2k))=0 for k (or for cosθ); k=1/2 or k=(1−2cosθ)/2; A1: 0≤(1−2cosθ)/2≤1 → −1/2≤cosθ≤1/2; A1A1: π/3≤θ≤2π/3, θ≠π/2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Show that for point Q on the circle x^2 + y^2 = 9 in the first quadrant, y = sqrt(9 - x^2).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.circular_measure"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "rearranging_equation",
+        "square_root",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "Rearrange x^2 + y^2 = 9 to y^2 = 9 - x^2",
+        "Since Q is in first quadrant, y > 0 implies y = sqrt(9 - x^2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "y = sqrt(9 - x^2) OR y = +/- sqrt(9 - x^2) A1, then since y > 0 yields y = sqrt(9 - x^2) AG. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find an expression for A, the area of triangle PQR, in terms of x.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.circular_measure",
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "area_of_triangle",
+        "substitution",
+        "geometric_interpretation"
+      ],
+      "method_path": [
+        "Identify base QR = 2y = 2 sqrt(9 - x^2)",
+        "Identify height = x - (-3) = x + 3",
+        "Substitute into A = (1/2) * base * height",
+        "Simplify to A = sqrt(9 - x^2) * (x + 3)"
+      ],
+      "accepted_alternatives": [
+        "Equivalent forms such as (x + 3) sqrt(9 - x^2)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "b = 2y = 2 sqrt(9 - x^2) or h = x + 3 (A1). Attempts to substitute into A = (1/2)bh (M1). A = sqrt(9 - x^2)(x + 3) A1. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "20-21",
+      "task_summary": "Show that dA/dx = (9 - 3x - 2x^2) / sqrt(9 - x^2).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "chain_rule",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply product rule to A = sqrt(9 - x^2) * (x + 3)",
+        "Apply chain rule: d/dx[sqrt(9 - x^2)] = -x / sqrt(9 - x^2)",
+        "Combine terms and simplify to obtain (9 - 3x - 2x^2) / sqrt(9 - x^2)"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use dA/dx = (dA/dy)*(dy/dx) with A = y(x+3) and dy/dx = -x/y, substitute and simplify."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20-21",
+          "basis": "METHOD 1: attempts product rule (M1), attempts chain rule (M1), two A1 for derivative simplification. METHOD 2: dA/dx = dA/dy * dy/dx with A = y(x+3) and dy/dx = -x/y. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find the y-coordinate of R such that area A is a maximum.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.circular_measure",
+        "functions.equations"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "setting_derivative_to_zero",
+        "solving_quadratic",
+        "coordinate_substitution",
+        "domain_validation"
+      ],
+      "method_path": [
+        "Set dA/dx = 0 giving 9 - 3x - 2x^2 = 0",
+        "Solve quadratic: (2x - 3)(x + 3) = 0, giving x = 3/2 or x = -3",
+        "Reject x = -3 (Q in first quadrant)",
+        "Substitute x = 3/2 into y_R = -sqrt(9 - x^2)",
+        "Simplify: y_R = -sqrt(27/4) = -(3 sqrt(3))/2"
+      ],
+      "accepted_alternatives": [
+        "Solve quadratic via formula: x = (3 +/- sqrt(9 - 4(-2)(9))) / (2(-2)) giving x = 3/2 or x = -3."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Set dA/dx = 0 (M1). Attempts to solve 9 - 3x - 2x^2 = 0 (M1). (2x - 3)(x + 3) = 0 OR quadratic formula (A1). x = 3/2 A1. Substitute into y = -sqrt(9 - x^2) (M1). y = -sqrt(27/4) = -3 sqrt(3)/2 A1. [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Find modulus and argument of u = -1 + √3 i, hence show u = 2e^(2πi/3).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus",
+        "argument",
+        "polar_form",
+        "reference_angle",
+        "quadrant_determination"
+      ],
+      "method_path": [
+        "Compute |u| = √((-1)² + (√3)²) = 2",
+        "Find reference angle arctan(√3/1) = π/3",
+        "Determine arg(u) = π − π/3 = 2π/3 (quadrant II)",
+        "Express u = 2(cos(2π/3) + i sin(2π/3)) = 2e^(2πi/3)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: use polar form equations r cos(2π/3) = −1 and r sin(2π/3) = √3 to find r = 2, then combine with argument from diagram/tan to give 2e^(2πi/3)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "A1 for |u| = √((−1)²+(√3)²) = 2 (AG); M1 for reference angle π/3 or tan⁻¹(√3/1); A1 for arg = π − π/3 = 2π/3, giving 2e^(2πi/3) (AG). METHOD 2: M1 for reference angle; A1 for argument; A1 for r = 2 via cos(2π/3) or sin(2π/3)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "(i) Find smallest positive integer n such that u^n is real. (ii) Evaluate u^n for that n.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivre_theorem",
+        "real_condition",
+        "trigonometric_form",
+        "integer_solution",
+        "evaluation"
+      ],
+      "method_path": [
+        "(i) Write u^n = 2^n e^(2nπi/3); for u^n ∈ ℝ require sin(2nπ/3) = 0",
+        "Set 2nπ/3 = kπ, k ∈ ℤ → n = 3k/2; smallest positive integer n = 3",
+        "(ii) Compute u³ = 2³ e^(2πi) = 8·(cos 2π + i sin 2π) = 8"
+      ],
+      "accepted_alternatives": [
+        "Any correct reasoning that n must be a multiple of 3 to make the argument an integer multiple of π, with n = 3 being the smallest positive such integer."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "(i) (M1) for noting u^n ∈ ℝ ⇒ 2nπ/3 = kπ; (A1) for a multiple of 3 considered; A1 for n = 3. (ii) M1 for substituting their n into u^n; A1 for u³ = 8."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 9,
+      "source_pages": "14",
+      "markscheme_pages": "25-26",
+      "task_summary": "(i) Given u = −1+√3i is a root of z³+5z²+10z+12=0, find the other roots. (ii) Using a transformation or otherwise, find the roots of 1+5w+10w²+12w³=0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "conjugate_root_theorem",
+        "sum_of_roots",
+        "product_of_roots",
+        "coefficient_comparison",
+        "reciprocal_transformation",
+        "factorization"
+      ],
+      "method_path": [
+        "(i) By conjugate root theorem, −1−√3i is a root",
+        "Use sum of roots: (−1+√3i)+(−1−√3i)+c = −5 → c = −3, or product: (−1+√3i)(−1−√3i)·c = −12 → 4c = −12 → c = −3",
+        "Roots are z = −1±√3i, z = −3",
+        "(ii) Compare 1+5w+10w²+12w³=0 with z³+5z²+10z+12=0: substitute w = 1/z",
+        "Roots w = 1/(−1±√3i) = (−1∓√3i)/4 and w = −1/3"
+      ],
+      "accepted_alternatives": [
+        "(i) OR: form quadratic factor (z−(−1+√3i))(z−(−1−√3i)) = z²+2z+4, compare coefficients in (z−c)(z²+2z+4)=z³+5z²+10z+12 to get c=−3. (ii) OR: factor 1+5w+10w²+12w³ = (3w+1)(4w²+2w+1)=0 and solve."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25-26",
+          "basis": "(i) A1 for conjugate −1−√3i as root. EITHER: M1 sum of roots → (A1) (−1+√3i)+(−1−√3i)+c = −5 → (A1) c = −3. OR: M1 product of roots → (A1) 4c = −12 → (A1) c = −3. OR: (A1) quadratic factor z²+2z+4 → M1 coefficient comparison → (A1) −4c = −12. THEN A1: c = −3. (ii) METHOD 1: A2 for z = 1/w; A1, A1 for w = −1/3, (−1∓√3i)/4. METHOD 2: M1 factorisation; A1 for (3w+1)(4w²+2w+1)=0; A1, A1 for roots."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Solve z² = 2z* (z ≠ 0) by expressing z = a+bi, find all roots.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "cartesian_expansion",
+        "real_imaginary_equating",
+        "simultaneous_equations",
+        "case_analysis"
+      ],
+      "method_path": [
+        "Substitute z = a+bi into z² = 2z*: (a+bi)² = 2(a−bi)",
+        "Expand: a²−b²+2abi = 2a−2bi",
+        "Equate real and imaginary parts: a²−b² = 2a, 2ab = −2b",
+        "From 2ab = −2b: factor 2b(a+1)=0 → b=0 or a=−1",
+        "Case b=0: a²=2a → a=0 (reject, z≠0) or a=2 → z=2",
+        "Case a=−1: 1−b²=−2 → b²=3 → b=±√3 → z=−1±√3i"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "A1 for (a+bi)² = 2(a−bi); M1 expand and equate real/imaginary parts: a²−b²=2a, 2ab=−2b; M1 solve for a or b; A1 for b=0 → a=2 (real root z=2); A1 for a=−1 → b=±√3 (complex roots z=−1±√3i)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Use substitution t = √x and integration by parts to show that ∫cos(√x)dx = 2√x sin(√x) + 2cos(√x) + C",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "integration_by_parts",
+        "trigonometric_integration",
+        "back_substitution"
+      ],
+      "method_path": [
+        "Substitute t = √x, so dx = 2t dt",
+        "Rewrite integral as ∫2t cos t dt",
+        "Integrate by parts: let u = 2t, dv = cos t dt, so du = 2dt, v = sin t",
+        "Obtain ∫2t cos t dt = 2t sin t − ∫2 sin t dt = 2t sin t + 2cos t + C",
+        "Back-substitute t = √x to obtain 2√x sin(√x) + 2cos(√x) + C"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "Substitution t=√x (M1); dt/dx=1/(2√x) ⇒ dx=2t dt (A1); ∫cos(√x)dx=∫2t cos t dt (A1); attempts integration by parts (M1); u=2t, dv=cos t dt, du=2dt, v=sin t (A1); 2t sin t+2cos t+C (A1); substitution back yields result (AG)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Write down expression for x_{n+1} given x_n = ((2n−1)²π²)/4",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "index_shift",
+        "pattern_recognition"
+      ],
+      "method_path": [
+        "Replace n by n+1 in x_n = ((2n−1)²π²)/4",
+        "Obtain x_{n+1} = ((2(n+1)−1)²π²)/4 = ((2n+1)²π²)/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "x_{n+1}=((2(n+1)−1)²π²)/4=((2n+1)²π²)/4 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "28",
+      "task_summary": "Calculate area of region R_n = |∫_{x_n}^{x_{n+1}} cos(√x) dx|, giving answer as 4πn",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "absolute_value",
+        "trigonometric_evaluation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Set up definite integral ∫_{x_n}^{x_{n+1}} cos(√x) dx with modulus for area",
+        "Apply antiderivative 2√x sin(√x)+2cos(√x) from part (a)",
+        "Substitute limits: upper √x_{n+1}=(2n+1)π/2, lower √x_n=(2n−1)π/2",
+        "Evaluate sin and cos at odd multiples of π/2: cos terms vanish, sin terms give (−1)^n and (−1)^{n−1}",
+        "Simplify to (−1)^n[(2n+1)π+(2n−1)π] = 4πn·(−1)^n",
+        "Take absolute value to obtain 4πn"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "area of R_n is |∫_{x_n}^{x_{n+1}} cos(√x)dx| (M1); antiderivative [2√x sin(√x)+2cos(√x)] (A1); substitute limits (M1); simplify using sin/cos at multiples of π/2 (A1,A1,A1); final result 4πn (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "Show that the areas R_n = 4πn form an arithmetic sequence",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "common_difference",
+        "arithmetic_sequence_verification",
+        "algebraic_transformation"
+      ],
+      "method_path": [
+        "Find common difference d = R_{n+1} − R_n = 4π(n+1) − 4πn",
+        "Simplify to d = 4π, a constant",
+        "Conclude that constant common difference implies arithmetic sequence"
+      ],
+      "accepted_alternatives": [
+        "Compare R_n = 4πn to general arithmetic form u_n = dn + c, identify d = 4π and c = 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "EITHER: d=R_{n+1}−R_n=4π(n+1)−4πn=4π constant (M1)(A1), so arithmetic (R1); OR: compare R_n=4πn to u_n=dn+c, d=4π, c=0 (M1)(M1)(A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

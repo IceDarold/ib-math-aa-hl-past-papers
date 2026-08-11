@@ -1,0 +1,56 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "9-10",
+      "task_summary": "Find the area of triangle ABC given AB = 6 cm, AC = 10 cm, and cos BÂC = 1/5.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "pythagorean_identity",
+        "sine_from_cosine",
+        "triangle_area_sine_formula",
+        "substitution_and_evaluation",
+        "right_triangle_trigonometry"
+      ],
+      "method_path": [
+        "Find sin BÂC from cos BÂC = 1/5 using sin²α + cos²α = 1 or Pythagoras' theorem",
+        "Obtain sin BÂC = √24/5",
+        "Apply area formula Area = ½ab sin C with a = 10, b = 6, C = BÂC",
+        "Compute Area = ½ × 10 × 6 × √24/5 = 12 cm²"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Use Pythagoras' theorem in a right-angled triangle with hypotenuse 5 and adjacent 1 to find opposite = √24, giving sin BÂC = √24/5, then Area = ½ab sin C = ½ × 10 × 6 × √24/5 = 12",
+        "METHOD 2: Find perpendicular height h = 6 × sin BÂC = 6 × √24/5 = 12/5 via Pythagorean identity, then Area = ½ × base × height = ½ × 10 × 12/5 = 12",
+        "METHOD 2 variant: Find adjacent = 6 × (1/5) = 6/5, use Pythagoras to get height = √(6² − (6/5)²) = 12/5, then Area = ½ × 10 × 12/5 = 12"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: M1 for attempt to use Pythagoras' theorem or Pythagorean identity; A1 for √(5² − 1²)/5 = √24/5; A1 for sin BÂC = √24/5; M1 for attempt to use Area = ½ab sin C; A1 for ½ × 10 × 6 × √24/5; A1 for 12 cm²."
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 2: M1 for attempt to find perpendicular height; EITHER branch M1 for Pythagorean identity, A1 for height = 6 × √(1 − (1/5)²), A1 for height = 12/5; OR branch A1 for adjacent = 6/5, M1 for Pythagoras, A1 for height = √(6² − (6/5)²) = 12/5; THEN M1 for Area = ½ × base × height; A1 for 12 cm²."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

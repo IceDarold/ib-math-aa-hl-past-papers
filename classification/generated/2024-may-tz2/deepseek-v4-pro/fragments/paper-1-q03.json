@@ -1,0 +1,122 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q03-A-I",
+      "question": "3",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the coordinates of the midpoint of [AC] given A(6, 0) and C(3, 3√3).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "midpoint_formula"
+      ],
+      "method_path": [
+        "Midpoint = ((x1+x2)/2, (y1+y2)/2)",
+        "= ((6+3)/2, (0+3√3)/2) = (9/2, 3√3/2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1 awarded for (9/2, 3√3/2) or x = 9/2 and y = 3√3/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q03-A-II",
+      "question": "3",
+      "part": "A-II",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Hence or otherwise, find the equation of the line passing through O and B, using symmetry of OABC about [OB] and the midpoint of [AC].",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "gradient",
+        "line_equation",
+        "symmetry",
+        "coordinate_geometry"
+      ],
+      "method_path": [
+        "Gradient of OB using midpoint M(9/2, 3√3/2): m = (3√3/2)/(9/2) = √3/3",
+        "Line through origin: y = (√3/3)x"
+      ],
+      "accepted_alternatives": [
+        "Vector equation: r = λ⟨9/2, 3√3/2⟩ or parametric x=(9/2)t, y=(3√3/2)t",
+        "Using tan30° for gradient",
+        "Gradient perpendicular to AC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1 for Δy/Δx with midpoint OR gradient perpendicular to AC OR tan30°. A1 for m = √3/3. A1 for equation y = (√3/3)x or point-slope form (must be an equation)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Given [OA] is perpendicular to [AB], find the area of quadrilateral OABC.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "substitution",
+        "perpendicular_lines",
+        "area_of_triangle",
+        "symmetry"
+      ],
+      "method_path": [
+        "Substitute x = 6 into y = (√3/3)x to find B → B(6, 2√3)",
+        "Area of △OAB = (1/2)(6)(2√3) = 6√3",
+        "Area of quadrilateral OABC = 2 × 6√3 = 12√3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "M1 for substituting x = 6 into their equation. A1 for y = 2√3 at B. A1 for area = 12√3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

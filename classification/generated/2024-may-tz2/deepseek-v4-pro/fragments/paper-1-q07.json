@@ -1,0 +1,119 @@
+{
+  "question": "7",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Write down the sum of roots alpha+beta+gamma for the cubic g(x)=2x^3-7x^2+dx-e.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "sum_of_roots",
+        "vieta_formula"
+      ],
+      "method_path": [
+        "alpha+beta+gamma = -(-7)/2",
+        "alpha+beta+gamma = 7/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "alpha+beta+gamma = 7/2 A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Show that p=1 given that alpha,beta,gamma are also roots of quintic h(z)=2z^5-11z^4+rz^3+sz^2+tz-20 and z=p+3i is a root.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "conjugate_root_theorem",
+        "sum_of_roots",
+        "vieta_formula",
+        "linear_equation_solving"
+      ],
+      "method_path": [
+        "p-3i is also a root by conjugate root theorem",
+        "sum of all 5 roots = -(-11)/2 = 11/2",
+        "alpha+beta+gamma + (p+3i) + (p-3i) = 11/2",
+        "7/2 + 2p = 11/2",
+        "p = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "p-3i is also a root (seen anywhere) A1; recognition of 5 roots and attempt to sum these roots (M1); 7/2 + p+3i + p-3i = 11/2 A1; p = 1 AG [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q07-C",
+      "question": "7",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Given h(1/2)=0, alpha,beta in R+, alpha<beta, gamma in Q: (i) find product alpha*beta via product of roots; (ii) state alpha=1, beta=2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "product_of_roots",
+        "vieta_formula",
+        "factor_recognition",
+        "quadratic_solving"
+      ],
+      "method_path": [
+        "product of 5 roots = -(-20)/2 = 10",
+        "(1+3i)(1-3i) * alpha*beta * (1/2) = 10",
+        "10 * alpha*beta * 1/2 = 10",
+        "alpha*beta = 2",
+        "alpha = 1, beta = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to find product of 5 roots and equate to +/-10 (M1); (1+3i)(1-3i)*alpha*beta*(1/2) = 10; alpha*beta = 2 A1; alpha = 1 and beta = 2 A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "question": "1",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "2023-NOV-TZ1-P2, page 4 of 17",
+      "markscheme_pages": "2023-NOV-TZ1-P2 markscheme, page 8 of 32",
+      "task_summary": "Find the distance BV between points B(6,8,0) and V(3,4,9).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "distance_formula_3d",
+        "square_root_simplification",
+        "rounding"
+      ],
+      "method_path": [
+        "BV = sqrt((6-3)^2 + (8-4)^2 + (0-9)^2)",
+        "BV = sqrt(9+16+81) = sqrt(106)",
+        "BV approx 10.3 (= sqrt 106)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "BV = sqrt((6-3)^2+(8-4)^2+(0-9)^2) (A1); = sqrt(106) approx 10.3 A1. SC(A0)A1 for vector (3,4,-9) when notation misinterpreted."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "2023-NOV-TZ1-P2, page 4 of 17",
+      "markscheme_pages": "2023-NOV-TZ1-P2 markscheme, pages 8-9 of 32",
+      "task_summary": "Find the size of angle BVC in the pyramid with vertex V(3,4,9) and base points B(6,8,0), C(6,0,0).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "cosine_rule",
+        "distance_formula_3d",
+        "inverse_cosine",
+        "rounding"
+      ],
+      "method_path": [
+        "BV = VC = sqrt(106), BC = 8",
+        "cos(BVC) = (BV^2 + VC^2 - BC^2) / (2 * BV * VC)",
+        "cos(BVC) = (106+106-64) / (2*106) = 148/212",
+        "BVC = arccos(148/212) approx 0.798 (or 45.7 deg)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Let M be midpoint of BC, BM = 4. Use right triangle BMV: sin(BVM) = 4/sqrt(106), BVC = 2 arcsin(4/sqrt(106)) approx 0.798.",
+        "METHOD 3: Dot product with VB=(3,4,-9) and VC=(3,-4,-9). cos(BVC) = (9-16+81)/(sqrt(106)*sqrt(106)) = 74/106.",
+        "METHOD 4: Cross product. sin(BVC) = |VB x VC|/(|VB||VC|) = sqrt(5760)/106."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8-9",
+          "basis": "METHOD 1: BV=VC=sqrt(106), BC=8 (A1); attempt cosine rule (M1); correct substitution (A1); BVC = 0.798 (A1). METHODS 2-4 equally accepted with analogous marking."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

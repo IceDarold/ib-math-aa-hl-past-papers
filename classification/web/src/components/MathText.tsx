@@ -12,25 +12,31 @@ export function MathText({ children, className }: MathTextProps) {
   return (
     <span className={className}>
       {segments.map((segment, index) => segment.type === 'math'
-        ? <InlineMath key={`${index}-${segment.value}`} tex={segment.value} />
+        ? <InlineMath key={`${index}-${segment.value}`} tex={segment.value} fallback={segment.source ?? segment.value} />
         : <span key={`${index}-${segment.value}`}>{segment.value}</span>)}
     </span>
   )
 }
 
-function InlineMath({ tex }: { tex: string }) {
+function InlineMath({ tex, fallback }: { tex: string; fallback: string }) {
   const elementRef = useRef<HTMLSpanElement>(null)
 
   useLayoutEffect(() => {
     if (!elementRef.current) return
-    katex.render(tex, elementRef.current, {
-      displayMode: false,
-      output: 'htmlAndMathml',
-      throwOnError: false,
-      strict: 'warn',
-      trust: false,
-    })
-  }, [tex])
+    try {
+      katex.render(tex, elementRef.current, {
+        displayMode: false,
+        output: 'htmlAndMathml',
+        throwOnError: true,
+        strict: 'ignore',
+        trust: false,
+      })
+      delete elementRef.current.dataset.mathError
+    } catch {
+      elementRef.current.textContent = fallback
+      elementRef.current.dataset.mathError = 'true'
+    }
+  }, [fallback, tex])
 
   return <span ref={elementRef} className="math-inline" data-tex={tex} />
 }

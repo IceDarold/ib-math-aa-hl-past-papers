@@ -1,0 +1,50 @@
+{
+  "question": "5",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "13",
+      "task_summary": "Given a discrete probability distribution for X with P(X=1)=k, P(X=2)=k^2, P(X=3)=a, P(X=4)=k^3 and E(X)=2.3, find the value of a.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value",
+        "statistics.probability"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "expected_value_equation",
+        "probability_sum_to_one",
+        "system_of_equations",
+        "solving_cubic",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Write equation for E(X): k + 2k^2 + 3a + 4k^3 = 2.3",
+        "Write equation for sum of probabilities: a + k + k^2 + k^3 = 1",
+        "Solve the system for a by making a the subject in both equations and finding intersection (graphical/numerical GDC) or by eliminating a to obtain cubic k^3 - k^2 - 2k + 0.7 = 0 and solving it",
+        "Evaluate a ≈ 0.553"
+      ],
+      "accepted_alternatives": [
+        "Graphical/numerical GDC route: make a the subject in both equations, then use graph or table to find their intersection.",
+        "Algebraic route: eliminate a to form cubic k^3 - k^2 - 2k + 0.7 = 0, then solve the cubic."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "E(X) equation: E(X)=k+2k^2+3a+4k^3=2.3 (A1). Sum of probabilities: a+k+k^2+k^3=1 (A1). Note: first two A marks are independent. EITHER make a subject in both, use graph/table for intersection (M1)(M1). OR solve algebraically to find cubic in k (M1), solve cubic (M1). THEN a=0.552839... so a=0.553 (A1). Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

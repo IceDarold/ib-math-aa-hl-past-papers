@@ -1,0 +1,161 @@
+{
+  "question": "12",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Use substitution t = √x and integration by parts to show that ∫cos(√x)dx = 2√x sin(√x) + 2cos(√x) + C",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "integration_by_parts",
+        "trigonometric_integration",
+        "back_substitution"
+      ],
+      "method_path": [
+        "Substitute t = √x, so dx = 2t dt",
+        "Rewrite integral as ∫2t cos t dt",
+        "Integrate by parts: let u = 2t, dv = cos t dt, so du = 2dt, v = sin t",
+        "Obtain ∫2t cos t dt = 2t sin t − ∫2 sin t dt = 2t sin t + 2cos t + C",
+        "Back-substitute t = √x to obtain 2√x sin(√x) + 2cos(√x) + C"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "Substitution t=√x (M1); dt/dx=1/(2√x) ⇒ dx=2t dt (A1); ∫cos(√x)dx=∫2t cos t dt (A1); attempts integration by parts (M1); u=2t, dv=cos t dt, du=2dt, v=sin t (A1); 2t sin t+2cos t+C (A1); substitution back yields result (AG)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Write down expression for x_{n+1} given x_n = ((2n−1)²π²)/4",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "index_shift",
+        "pattern_recognition"
+      ],
+      "method_path": [
+        "Replace n by n+1 in x_n = ((2n−1)²π²)/4",
+        "Obtain x_{n+1} = ((2(n+1)−1)²π²)/4 = ((2n+1)²π²)/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "x_{n+1}=((2(n+1)−1)²π²)/4=((2n+1)²π²)/4 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "28",
+      "task_summary": "Calculate area of region R_n = |∫_{x_n}^{x_{n+1}} cos(√x) dx|, giving answer as 4πn",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "absolute_value",
+        "trigonometric_evaluation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Set up definite integral ∫_{x_n}^{x_{n+1}} cos(√x) dx with modulus for area",
+        "Apply antiderivative 2√x sin(√x)+2cos(√x) from part (a)",
+        "Substitute limits: upper √x_{n+1}=(2n+1)π/2, lower √x_n=(2n−1)π/2",
+        "Evaluate sin and cos at odd multiples of π/2: cos terms vanish, sin terms give (−1)^n and (−1)^{n−1}",
+        "Simplify to (−1)^n[(2n+1)π+(2n−1)π] = 4πn·(−1)^n",
+        "Take absolute value to obtain 4πn"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "area of R_n is |∫_{x_n}^{x_{n+1}} cos(√x)dx| (M1); antiderivative [2√x sin(√x)+2cos(√x)] (A1); substitute limits (M1); simplify using sin/cos at multiples of π/2 (A1,A1,A1); final result 4πn (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "Show that the areas R_n = 4πn form an arithmetic sequence",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "common_difference",
+        "arithmetic_sequence_verification",
+        "algebraic_transformation"
+      ],
+      "method_path": [
+        "Find common difference d = R_{n+1} − R_n = 4π(n+1) − 4πn",
+        "Simplify to d = 4π, a constant",
+        "Conclude that constant common difference implies arithmetic sequence"
+      ],
+      "accepted_alternatives": [
+        "Compare R_n = 4πn to general arithmetic form u_n = dn + c, identify d = 4π and c = 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "EITHER: d=R_{n+1}−R_n=4π(n+1)−4πn=4π constant (M1)(A1), so arithmetic (R1); OR: compare R_n=4πn to u_n=dn+c, d=4π, c=0 (M1)(M1)(A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

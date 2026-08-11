@@ -1,0 +1,1398 @@
+{
+  "session": "November 2023",
+  "zone": "TZ2",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the distance BV between points B(6,8,0) and V(3,4,9) in the 3D pyramid.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "distance_formula_3d",
+        "vector_magnitude",
+        "simplify_surd"
+      ],
+      "method_path": [
+        "Apply 3D distance formula: √((6−3)² + (8−4)² + (0−9)²)",
+        "Compute to obtain BV = √106 ≈ 10.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(6−3)² + (8−4)² + (0−9)² (A1); 10.3 (= √106) A1. Note: SC(A0)A1 for vector misinterpretation."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "8-9",
+      "task_summary": "Find the size of angle BVC at vertex V in the pyramid using vector dot product or cosine rule.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_from_coordinates",
+        "dot_product",
+        "angle_between_vectors",
+        "inverse_cosine"
+      ],
+      "method_path": [
+        "Form vectors VB = ⟨3, 4, −9⟩ and VC = ⟨3, −4, −9⟩ from coordinates",
+        "Apply dot product formula: cos(BVC) = (VB·VC) / (|VB||VC|)",
+        "Substitute: cos(BVC) = (9 − 16 + 81) / 106 = 74/106",
+        "Compute BVC = arccos(74/106) ≈ 0.798 rad (45.7°)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1 (cosine rule): Note BV = VC = √106 and BC = 8, then apply cosine rule cos(BVC) = (BV² + VC² − BC²) / (2·BV·VC) = (106 + 106 − 64) / (2·106) = 148/212 = 74/106 → BVC ≈ 0.798",
+        "METHOD 2 (midpoint): Let M be midpoint of BC, BM = 4, then BVC = 2·arcsin(4/√106) ≈ 2·0.399018 ≈ 0.798",
+        "METHOD 4 (cross product): sin(BVC) = |VB × VC| / (|VB||VC|) = √5760 / 106 → BVC ≈ 0.798"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8-9",
+          "basis": "METHOD 1: (A1) BV = VC AND BC = 8, (M1) attempt cosine rule, (A1) correct substitution, A1 for BVC = 0.798 (45.7°)."
+        },
+        {
+          "markscheme_pages": "8-9",
+          "basis": "METHOD 3: (A1) vectors VC = ⟨3,−4,−9⟩ and VB = ⟨3,4,−9⟩, (M1) attempt cosine formula, (A1) cos(BVC) = 74/106, A1 for BVC = 0.798 (45.7°)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5-6",
+      "markscheme_pages": "10",
+      "task_summary": "Sketch the graph of f(x) = e^x − 3x − 4 for −4 ≤ x ≤ 3, showing approximate roots, y-intercept, local minimum and endpoints.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "curve_sketching",
+        "root_approximation",
+        "intercept_identification",
+        "turning_point_identification",
+        "endpoint_evaluation"
+      ],
+      "method_path": [
+        "Identify approximate roots in intervals (−2, −1) and (2, 3)",
+        "Identify y-intercept ≈ −3 and local minimum near (1, −4.5)",
+        "Evaluate left endpoint near (−4, 8) and right endpoint near (3, 7)",
+        "Sketch smooth curve through all identified features"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for approximately correct roots, in the intervals −2 < x < −1 and 2 < x < 3. A1 for y-intercept AND local minimum in approximately correct positions. Allow for y-intercept −3.5 < y < −2.5, and for local minimum 0.5 < x < 1.5, −5 < y < −4. A1 for approximately correct endpoints, with the left end in the intervals −4.5 < x < −3.5, 7.5 < y < 8.5 and the right end in the intervals 2.5 < x < 3.5, 6.5 < y < 7.5."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find the horizontal stretch factor k and vertical translation c such that g(x) = e^(2x) − 6x − 7 is obtained from f by a horizontal stretch followed by a vertical translation.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "function_transformation",
+        "horizontal_stretch",
+        "vertical_translation",
+        "function_composition"
+      ],
+      "method_path": [
+        "Express g(x) = e^(2x) − 6x − 7 in terms of f(x) = e^x − 3x − 4",
+        "Recognise g(x) = f(2x) − 3",
+        "Identify horizontal stretch factor k = 1/2",
+        "Identify vertical translation c = −3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "k = 1/2 A1; c = −3 (accept translate/shift 3 (units) down) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7-8",
+      "markscheme_pages": "11",
+      "task_summary": "Show that the area of the 'C' shaped region between two concentric sectors with reflex angle 5.2 rad, outer radius 10 cm, and inner radius r cm is 260 − 2.6r².",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sector_area_formula",
+        "subtraction",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply sector area formula ½R²θ to outer circle: ½ × 10² × 5.2 = 260",
+        "Apply sector area formula ½r²θ to inner circle: ½ × r² × 5.2 = 2.6r²",
+        "Subtract inner from outer: 260 − 2.6r²"
+      ],
+      "accepted_alternatives": [
+        "Use full circle area minus non-reflex sector: ½×10²×π − ½×10²×(2π−5.2) − [½×r²×π − ½×r²×(2π−5.2)], simplifying to 260 − 2.6r²"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: use of sector area formula to find area of at least one sector. A1: working leading directly to AG. Expression shown: ½×5.2×100 − ½×5.2×r²."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Given the area is 64 cm², find r and then compute the perimeter of the 'C'.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "equation_solving",
+        "arc_length_formula",
+        "perimeter_sum",
+        "gdc_numerical_solve"
+      ],
+      "method_path": [
+        "Set 260 − 2.6r² = 64",
+        "Solve for r: r = √(196/2.6) ≈ 8.68 cm",
+        "Compute outer arc length: 10 × 5.2",
+        "Compute inner arc length: r × 5.2",
+        "Add two radial end segments: 2(10 − r)",
+        "Sum for perimeter: 5.2×10 + 5.2×r + 2(10−r) ≈ 99.8 cm"
+      ],
+      "accepted_alternatives": [
+        "Equivalent perimeter expressions such as 5.2(10+r) + 2(10−r)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "(i) (A1) for 260−2.6r²=64, A1 for r=8.68... (cm). (ii) (A1) for 10×5.2 OR 8.68...×5.2, (M1) for substituting r into 5.2×r + 5.2×10 + 2(10−r), A1 for perimeter=99.8 (cm)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the time q when the particle first comes to rest by differentiating the displacement function and setting velocity to zero.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation",
+        "trigonometric_equation",
+        "equation_solving",
+        "gdc_solving"
+      ],
+      "method_path": [
+        "differentiate s(t) to obtain v(t)",
+        "set v(t) = 0",
+        "solve for smallest positive t in [0, 10] using GDC",
+        "record q ≈ 5.74"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognizing at rest when ds/dt = 0 OR s is a minimum (M1); q = 5.73553... = 5.74 A1; Note: If no working shown, award (M1)A0 for 5.7 (2sf)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the total distance travelled in the first q seconds by integrating the absolute value of velocity or using the difference between initial and minimum displacement.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "absolute_value",
+        "displacement",
+        "gdc_integration",
+        "kinematics"
+      ],
+      "method_path": [
+        "recognize total distance = ∫₀ᵠ|v(t)|dt",
+        "set up definite integral of |v(t)| from 0 to q",
+        "evaluate integral using GDC",
+        "obtain distance ≈ 7.68 m"
+      ],
+      "accepted_alternatives": [
+        "Use displacement difference: compute s(0) and s(q) where s(q) is minimum, then total distance = s(0) − s(q)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 1: recognizing that integral of v(t) is required (M1); integral setup (A1); 7.68302... = 7.68 (m) A1."
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: recognition that total distance travelled is the difference between the initial displacement and the displacement at minimum (M1); initial displacement is 3.38302... AND at minimum is −4.3 (A1); 7.68302... = 7.68 (m) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Find a given E(X)=2.3 for a discrete random variable with probabilities k, k², a, k³ at x=1,2,3,4.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "expected_value_equation",
+        "probability_sum_to_one",
+        "simultaneous_equations",
+        "cubic_equation",
+        "gdc_solve"
+      ],
+      "method_path": [
+        "Form E(X) = Σ x·P(X=x): 2.3 = 1·k + 2·k² + 3·a + 4·k³",
+        "Form Σ P(X=x) = 1: 1 = a + k + k² + k³",
+        "Solve the two simultaneous equations for a and k (graphically or algebraically via cubic)",
+        "Report a ≈ 0.553"
+      ],
+      "accepted_alternatives": [
+        "Graphical/numerical route: make a the subject in both equations, use graph or table on GDC to find intersection",
+        "Algebraic route: eliminate a to obtain cubic 2.3k³ − 2k² − k + 0.7 = 0 (or equivalent), solve for k, then find a"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for E(X) equation k+2k²+3a+4k³=2.3; A1 for a+k+k²+k³=1; M1 for making a subject / eliminating a; M1 for solving (graph/table or cubic); A1 for a=0.553"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Given X ~ B(25, p) and Var(X) = 5.75, find the possible values of p by setting up the binomial variance equation 25p(1-p) = 5.75 and solving the quadratic.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "binomial_variance",
+        "quadratic_equation",
+        "substitution",
+        "gdc_solve"
+      ],
+      "method_path": [
+        "Recall binomial variance formula Var(X) = np(1-p)",
+        "Substitute n = 25, Var(X) = 5.75 to give 25p(1-p) = 5.75",
+        "Solve the quadratic p(1-p) = 0.23 for p",
+        "Obtain p ≈ 0.641 or p ≈ 0.359 (exact: p = (5 ± √2)/10)"
+      ],
+      "accepted_alternatives": [
+        "Exact form p = (5 ± √2)/10 accepted in place of decimal approximations."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "5.75 = 25p(1-p) (A1); p = 0.641421..., 0.358578... → p = 0.641, 0.359 (A1)(A1); also p = (5 ± √2)/10"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Given Y = 1 - 2X, find Var(Y) using the linear transformation property Var(aX + b) = a²Var(X).",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "variance_linear_transformation",
+        "substitution",
+        "arithmetic"
+      ],
+      "method_path": [
+        "Apply Var(a + bX) = b²Var(X) with b = -2",
+        "Compute Var(Y) = (-2)² × Var(X) = 4 × 5.75",
+        "Obtain Var(Y) = 23"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Var(Y) = (-2)² Var(X) = 4 Var(X) (A1); = 23 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q07-A",
+      "question": "7",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find the number of ways to arrange 9 team members (6 boys, 3 girls) in a line when (i) there are no restrictions, and (ii) the three girls must be placed next to each other.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "factorial",
+        "permutations",
+        "block_method"
+      ],
+      "method_path": [
+        "9! = 362880",
+        "Treat 3 girls as a single block: 7! arrangements of 7 objects",
+        "Multiply by 3! for internal arrangements of the girls",
+        "7! times 3! = 30240"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(a)(i): A1 for 9! = 362880. Note: Accept 9! or 363000. (a)(ii): (M1) attempt to consider girls as a single object, A1 for 7! x 3! = 30240. Note: Accept 30200."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q07-B",
+      "question": "7",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find the number of possible selections of 5 members that contain at least two girls.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combinations",
+        "cases",
+        "complement_rule"
+      ],
+      "method_path": [
+        "Recognise two cases: exactly 2 girls or exactly 3 girls",
+        "C(6,3) x C(3,2) = 60",
+        "C(6,2) x C(3,3) = 15",
+        "60 + 15 = 75"
+      ],
+      "accepted_alternatives": [
+        "Total minus 0 or 1 girl: C(9,5)=126, C(3,1)xC(6,4)=45, C(6,5)=6, 126-45-6=75"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: (M1) recognition of two cases; (A1) 2 girls C(6,3)xC(3,2)=60, 3 girls C(6,2)xC(3,3)=15; A1 total 75. METHOD 2: (M1) recognition of total minus 0 or 1 girl; (A1) total C(9,5)=126, one girl C(3,1)xC(6,4)=45, no girls C(6,5)=6; A1 126-45-6=75."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Show that the cross product AB × AC equals (p−2, 3p−p²−2, 2p²−2) for points A(0,p,2), B(1,1,1), C(p,0,4).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_subtraction",
+        "cross_product",
+        "determinant"
+      ],
+      "method_path": [
+        "Find AB = B − A = (1, 1−p, −1)",
+        "Find AC = C − A = (p, −p, 2)",
+        "Compute AB × AC using determinant or cross-product formula",
+        "Simplify to (p−2, 3p−p²−2, 2p²−2)"
+      ],
+      "accepted_alternatives": [
+        "Use i, j, k component form instead of column vector notation for the cross product"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "AB = (1, 1−p, −1) awarded A1; AC = (p, −p, 2) awarded A1"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to evaluate their AB×AC by use of formula or determinant awarded M1"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "cross product result (p−2, −(p²−3p+2), 2p²−2) shown, marked AG, awarded A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Find the smallest possible value of |AB × AC|² using the cross product from part (a).",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.vectors_3d"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "magnitude_squared",
+        "polynomial_expansion",
+        "derivative",
+        "minimization"
+      ],
+      "method_path": [
+        "Compute |AB × AC|² = (p−2)² + (3p−p²−2)² + (2p²−2)²",
+        "Expand to 4p⁴ − 14p³ + 8p² + 8p + 8",
+        "Find minimum by differentiating or using GDC",
+        "Obtain minimum value ≈ 6.75"
+      ],
+      "accepted_alternatives": [
+        "Use GDC to find the minimum directly from the unsimplified |AB × AC|² expression"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "expansion (p−2)² + (−(p²−3p+2))² + (2p²−2)² = 4p⁴−14p³+8p²+8p+8 awarded (A1)"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to find minimum of their |AB×AC|² awarded (M1)"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "min value is 6.75 awarded A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "17",
+      "task_summary": "Find the smallest possible area of triangle ABC using the result from part (b).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "triangle_area",
+        "half_magnitude_cross_product"
+      ],
+      "method_path": [
+        "Apply area = ½|AB × AC| = ½√(|AB × AC|²)",
+        "Substitute minimum |AB × AC|² ≈ 6.75257… from part (b)",
+        "Compute area ≈ 1.30 units²"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "valid attempt to find area = ½|AB×AC| using their answer to part b) awarded (M1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "area = 1.30 (units²) awarded A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Use Euler's method with step size 0.1 to approximate y when x=0.5 for dy/dx=(4-y)/10, y(0)=2, giving the answer correct to four significant figures.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "iterative_approximation",
+        "separable_differential_equation"
+      ],
+      "method_path": [
+        "Apply Euler recursive formula: y_n = y_{n-1} + 0.1 × (4 - y_{n-1}) / 10",
+        "Iterate from (0, 2) to (0.5, y_5) through successive steps at x = 0.1, 0.2, 0.3, 0.4, 0.5",
+        "Round the final approximation to four significant figures: 2.098"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for attempt to use recursive formula y_n = y_{n-1} + 0.1 × (4-y_{n-1})/10; A1 for y_1 = 2.02; A1 for y_5 = 2.098. Note: Accept any answer which rounds to the correct 4sf value."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "13-14",
+      "markscheme_pages": "18-20",
+      "task_summary": "Solve the differential equation dy/dx=(4-y)/10 with initial condition y(0)=2 to show that y=4-2e^(-x/10).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "integration",
+        "natural_logarithm",
+        "initial_conditions",
+        "exponential_form"
+      ],
+      "method_path": [
+        "Separate variables: ∫ dy/(4-y) = ∫ dx/10",
+        "Integrate both sides: -ln|4-y| = x/10 + c",
+        "Apply initial condition (0,2) to find c = -ln 2",
+        "Rearrange: ln|4-y| = -x/10 + ln 2 → ln|(4-y)/2| = -x/10",
+        "Obtain explicit form: y = 4 - 2e^(-x/10)"
+      ],
+      "accepted_alternatives": [
+        "Use integrating factor: rewrite as dy/dx + (1/10)y = 4/10 with IF = e^(x/10), giving e^(x/10)y = 4e^(x/10) + c, apply initial condition to get c = -2, then y = 4 - 2e^(-x/10)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: M1 for separating variables and integrating; A1 for -ln|4-y| = x/10 + c; M1 for substituting initial conditions; A1 for c = -ln 2; A1 for y = 4 - 2e^(-x/10) AG."
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 2: M1 for rearranging and finding integrating factor IF = e^(x/10); A1A1 for e^(x/10)y = 4e^(x/10) + c; M1 for substituting initial conditions; A1 for c = -2; AG for final result."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Find the absolute value of the error in the Euler approximation from part (a) compared to the exact solution at x=0.5.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "absolute_error",
+        "function_evaluation"
+      ],
+      "method_path": [
+        "Evaluate exact solution at x=0.5: y = 4 - 2e^(-0.05)",
+        "Compute absolute error: |approximation - exact| = |2.09801… - (4 - 2e^(-0.05))|",
+        "Give result: 0.000479 (or 0.000459 if using 4sf rounded value)"
+      ],
+      "accepted_alternatives": [
+        "Accept 0.000459 (4.59×10⁻⁴) from use of the 4sf rounded value 2.098."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "A1 for absolute error = 0.000479 (4.79×10⁻⁴). Note: Accept 0.000459 (4.59×10⁻⁴) from use of 4sf value."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Find P(94.6 < H < 98.1) given P(H < 94.6) = 0.288 and P(H > 98.1) = 0.434.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "complement_rule",
+        "probability_sum"
+      ],
+      "method_path": [
+        "Recognize that total probability sums to 1",
+        "P(94.6 < H < 98.1) = 1 - P(H < 94.6) - P(H > 98.1)",
+        "= 1 - 0.288 - 0.434",
+        "= 0.278"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognizing probabilities sum to 1 (M1) ... P(94.6 < X < 98.1) = 0.278 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Find the mean m and standard deviation s of the normal distribution given P(H < 94.6) = 0.288 and P(H > 98.1) = 0.434.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "inverse_normal",
+        "z_score",
+        "system_of_equations",
+        "gdc_solve"
+      ],
+      "method_path": [
+        "invNorm(0.288) = -0.559236...",
+        "invNorm(1 - 0.434) = invNorm(0.566) = 0.166199...",
+        "Set up equations: mu + (-0.559236...)sigma = 94.6, mu + 0.166199...sigma = 98.1",
+        "Solve system with GDC",
+        "mu = 97.3, sigma = 4.82"
+      ],
+      "accepted_alternatives": [
+        "Method 2: compute z-scores z1 = invNorm(0.288) = -0.559236..., z2 = invNorm(0.566) = 0.166199..., then solve (94.6 - mu)/sigma = z1 and (98.1 - mu)/sigma = z2 with GDC, giving mu = 97.3, sigma = 4.82."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "METHOD 1: recognizing the need to use inverse normal (M1); invNorm(0.288) ... (A1)(A1); attempt to solve equations using GDC (M1); mu = 97.3, sigma = 4.82 A1. METHOD 2 also accepted."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-C-I",
+      "question": "10",
+      "part": "C-I",
+      "marks": 2,
+      "source_pages": "14-15",
+      "markscheme_pages": "22",
+      "task_summary": "Find P(exactly 34 out of 100 randomly selected plants ready to harvest) where p = P(H > 98.1) = 0.434.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_model",
+        "binomial_pdf"
+      ],
+      "method_path": [
+        "Recognise X ~ B(100, 0.434)",
+        "P(X = 34) = binompdf(100, 0.434, 34)",
+        "= 0.0133"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "recognition of Binomial distribution (M1); X ~ B(100,0.434); P(X = 34) = 0.0133 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-C-II",
+      "question": "10",
+      "part": "C-II",
+      "marks": 4,
+      "source_pages": "14-15",
+      "markscheme_pages": "22",
+      "task_summary": "Given fewer than 49 plants are ready to harvest, find P(exactly 34 plants ready to harvest).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "binomial_cdf",
+        "binomial_pdf"
+      ],
+      "method_path": [
+        "P(X < 49) = binomcdf(100, 0.434, 48) = 0.848218...",
+        "Recognise conditional probability: P(X = 34 | X < 49)",
+        "= P(X = 34) / P(X < 49)",
+        "= 0.0133198... / 0.848218...",
+        "= 0.0157"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "P(X < 49) = 0.848218... (A1); recognition of conditional probability (M1); P(X = 34 | X < 49) = P(X = 34) / P(X < 49) (A1); = 0.0157 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Find the standard deviation d given F ~ N(98.6, d^2) and interquartile range = 4.82 cm.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "interquartile_range",
+        "quartile",
+        "inverse_normal",
+        "z_score"
+      ],
+      "method_path": [
+        "IQR = 4.82 so Q1 = 98.6 - 2.41 = 96.19, Q3 = 98.6 + 2.41 = 101.01",
+        "P(F < 96.19) = 0.25",
+        "invNorm(0.25) = -0.674489...",
+        "(96.19 - 98.6)/d = -0.674489...",
+        "-2.41/d = -0.674489...",
+        "d = 3.57"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "Q1 = 96.19 OR Q3 = 101.01 (A1); attempt to find d (M1); -2.41/d = -0.674489... OR 2.41/d = 0.674489...; d = 3.57 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "State the equation of the vertical asymptote of f(x) = (x² − 14x + 24)/(2x + 6).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_asymptote",
+        "solve_linear"
+      ],
+      "method_path": [
+        "Set denominator to zero: 2x + 6 = 0",
+        "Solve: x = −3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "x = −3 A1. Note: Accept 2x + 6 = 0 or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Find the coordinates of the points where the graph of f crosses the x-axis.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "x_intercept",
+        "factor_quadratic",
+        "solve_quadratic"
+      ],
+      "method_path": [
+        "Set f(x) = 0 ⇒ x² − 14x + 24 = 0",
+        "Factor: (x − 2)(x − 12) = 0",
+        "Solve: x = 2, x = 12",
+        "Write as coordinates: (2, 0) and (12, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "(2,0) and (12,0) A1A1. Note: Award A1 for (2,0) and A1 for (12,0). Award A1A0 if only x values are given."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "24–25",
+      "task_summary": "Find the values a and b for the oblique asymptote y = ax + b of f.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "oblique_asymptote",
+        "polynomial_long_division",
+        "limit_at_infinity",
+        "equate_coefficients"
+      ],
+      "method_path": [
+        "Determine a = lim_{x→∞} f(x)/x = 1/2",
+        "Perform long division: (x² − 14x + 24) ÷ (2x + 6)",
+        "Obtain quotient (1/2)x − 17/2 with remainder",
+        "Identify b = −17/2 from the limit of f(x) − (1/2)x as x → ∞"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Write f(x) ≡ (1/2)x + b + c/(2x+6), clear denominator, equate coefficients of x to obtain −14 = 3 + 2b ⇒ b = −17/2.",
+        "METHOD 3: Write f(x) − (1/2)x ≡ (−17x + 24)/(2x + 6) and find b = lim_{x→∞} [f(x) − (1/2)x] = −17/2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 1: a = 1/2 A1, attempt at 'long division' (M1), f(x) = (1/2)x − 17/2 + ... (A1), b = −17/2 A1."
+        },
+        {
+          "markscheme_pages": "25",
+          "basis": "METHOD 2: a = 1/2 A1, f(x) ≡ (1/2)x + b + c/(2x+6) (A1), attempt to equate coefficients (M1), b = −17/2 A1. METHOD 3: a = 1/2 A1, f(x) − (1/2)x ≡ (−17x+24)/(2x+6) (A1), attempt to find limit (M1), b = −17/2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "26",
+      "task_summary": "Sketch the graph of f for −50 ≤ x ≤ 50, showing asymptotes and axes intersections.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "asymptotic_behavior",
+        "plot_intercepts",
+        "curve_branching"
+      ],
+      "method_path": [
+        "Draw vertical asymptote x = −3",
+        "Draw oblique asymptote y = (1/2)x − 17/2",
+        "Plot x-intercepts (2, 0) and (12, 0)",
+        "Plot y-intercept (0, 4)",
+        "Sketch two branches with correct asymptotic behaviour approaching both asymptotes"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "two branches with approximately correct shape A1. their vertical and oblique asymptotes in approximately correct positions with both branches showing correct asymptotic behaviour A1A1. their axes intercepts in approximately the correct positions A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Find the range of f.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "range_rational_function",
+        "quadratic_discriminant",
+        "solve_quadratic_inequality"
+      ],
+      "method_path": [
+        "Set y = (x² − 14x + 24)/(2x + 6) and rearrange to quadratic in x: x² − (14 + 2y)x + (24 − 6y) = 0",
+        "Require discriminant Δ ≥ 0 for real x: (14 + 2y)² − 4(24 − 6y) ≥ 0",
+        "Simplify: 4y² + 80y + 100 ≥ 0 ⇒ y² + 20y + 25 ≥ 0",
+        "Solve: (y + 10)² ≥ 75 ⇒ |y + 10| ≥ 5√3",
+        "Obtain critical values y = −10 ± 5√3",
+        "Write range: y ≤ −10 − 5√3 or y ≥ −10 + 5√3 (approx. y ≤ −18.7 or y ≥ −1.34)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "(−10 − 5√3 = −18.6602...) OR (−10 + 5√3 = −1.33974...) seen anywhere (A1). attempt to write the range using at least one value in an interval or inequality in y or f(x) (M1). y ≤ −18.7, y ≥ −1.34 A1A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Solve the inequality f(x) > x.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "rational_inequality",
+        "common_denominator",
+        "sign_analysis",
+        "quadratic_formula"
+      ],
+      "method_path": [
+        "Set (x² − 14x + 24)/(2x + 6) > x",
+        "Rearrange to common denominator: (x² − 14x + 24 − x(2x + 6))/(2x + 6) > 0",
+        "Simplify numerator: (−x² − 20x + 24)/(2(x + 3)) > 0",
+        "Multiply by −1 and reverse inequality: (x² + 20x − 24)/(x + 3) < 0",
+        "Find zeros of numerator: x = −10 ± 2√31 (≈ −21.14, 1.14)",
+        "Find zero of denominator: x = −3",
+        "Sign analysis on intervals (−∞, −21.1), (−21.1, −3), (−3, 1.14), (1.14, ∞)",
+        "Solution: x < −21.1 or −3 < x < 1.14"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "(−10 − 2√31 = −21.1355...) OR (−10 + 2√31 = 1.13552...) seen anywhere (A1). x < −21.1, −3 < x < 1.14 A1A1A1. Award A1 for x < −21.1, A1 for correct endpoints −3 and 1.14, A1 for −3 < x < 1.14."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "28",
+      "task_summary": "Show that lines L and M intersect at a point A and find the position vector of A.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "equate_vector_components",
+        "solve_linear_system",
+        "verify_intersection",
+        "compute_position_vector"
+      ],
+      "method_path": [
+        "Set at least two corresponding components of L and M equal to form equations in s and t",
+        "Solve two of the equations simultaneously to obtain s=2 (or t=-1)",
+        "Verify the solution satisfies the remaining component equation",
+        "Substitute s=2 into L or t=-1 into M to obtain position vector A=(5,8,9)"
+      ],
+      "accepted_alternatives": [
+        "Use t=-1 and verify in remaining component instead of s=2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "M1: attempt to set at least two components of L and M equal; (M1): attempt to solve two equations simultaneously; A1: s=2 OR t=-1; R1: substitute s=2 and t=-1 into remaining component OR recognition that 2nd and 3rd equations are equivalent; A1: position vector of A is (5,8,9)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "28-29",
+      "task_summary": "Verify that lines L and M both lie in the plane P given by r dot (0,2,-1)=7.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product",
+        "verify_plane_condition",
+        "substitute_parametric_line"
+      ],
+      "method_path": [
+        "Substitute the parametric equation of L into r dot (0,2,-1)=7 and verify the identity holds for all s",
+        "Substitute the parametric equation of M into r dot (0,2,-1)=7 and verify the identity holds for all t"
+      ],
+      "accepted_alternatives": [
+        "Show direction of each line is perpendicular to the normal (0,2,-1) AND a point on each line satisfies the plane equation",
+        "Show both direction vectors are perpendicular to the normal AND a point on either line satisfies the plane equation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28-29",
+          "basis": "METHOD 1: (M1) attempt to substitute at least one line into the plane equation; A1: L substitution yields 7; A1: M substitution yields 7. METHOD 2: (M1) consideration of direction of one line and a point; A1: direction dot normal = 0 and point on line satisfies plane for L; A1: same for M. METHOD 3: (M1) consideration of direction of both lines; A1: both directions dot normal = 0 or cross product yields scalar multiple of normal; A1: a point satisfies plane equation."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "30-31",
+      "task_summary": "(i) Find the position vector of C where the line through B=(-3,12,2) perpendicular to plane P meets P. (ii) Hence find the magnitude of BC.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "parametric_line_equation",
+        "substitute_plane_equation",
+        "solve_for_parameter",
+        "compute_position_vector",
+        "vector_subtraction",
+        "distance_formula"
+      ],
+      "method_path": [
+        "Write parametric equation of line through B with direction (0,2,-1): r=(-3,12,2)+lambda(0,2,-1)",
+        "Substitute into plane equation r dot (0,2,-1)=7 to obtain 22+5lambda=7",
+        "Solve for lambda=-3",
+        "Compute C=(-3,12,2)+(-3)(0,2,-1)=(-3,6,5)",
+        "Compute BC=OC-OB=(0,-6,3)",
+        "Compute |BC|=sqrt(0^2+(-6)^2+3^2)=sqrt(45)=3sqrt(5)"
+      ],
+      "accepted_alternatives": [
+        "For (ii): recognise BC is parallel to normal vector, BC=lambda * magnitude_of_normal, so |BC|=|lambda|*|(0,2,-1)|=3*sqrt(5)=sqrt(45)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30-31",
+          "basis": "(c)(i): (A1) position vector of point on line r=(-3,12,2)+lambda(0,2,-1); (M1) substitute into plane equation; (A1) lambda=-3; A1: C=(-3,6,5). (c)(ii): (M1) BC=OC-OB; (M1) distance formula; A1: BC=sqrt(45)=3sqrt(5). METHOD 2 for (ii): (M1) recognition that BC is parallel to normal; (M1) distance formula on normal vector; A1: BC=3*sqrt(5)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "32",
+      "task_summary": "Find the reflection of point B=(-3,12,2) in the plane P.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_reflection",
+        "compute_position_vector",
+        "scalar_multiplication"
+      ],
+      "method_path": [
+        "Recognise that the reflected point B-prime lies on the same perpendicular line with parameter mu=2*lambda=-6",
+        "Compute OB-prime=(-3,12,2)+(-6)(0,2,-1)=(-3,0,8)"
+      ],
+      "accepted_alternatives": [
+        "Use CB-prime=BC=(0,-6,3), so OB-prime=OC+CB-prime=(-3,6,5)+(0,-6,3)=(-3,0,8)",
+        "Use OB-prime=OB+2*BC or OB-prime=2*OC-OB to obtain (-3,0,8)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "32",
+          "basis": "METHOD 1: (A1) OB-prime=(-3,12,2)+mu(0,2,-1); (M1) recognition that mu=2*lambda=-6 OR BC=CB-prime; A1: OB-prime=(-3,0,8) so coordinates are (-3,0,8). METHOD 2: (A1) BC=CB-prime=(0,-6,3); (M1) OB-prime=OC+CB-prime OR OB-prime=OB+2*BC OR OB-prime=2*OC-OB; A1: OB-prime=(-3,0,8)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

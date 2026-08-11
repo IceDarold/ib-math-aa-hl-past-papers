@@ -1,0 +1,89 @@
+{
+  "question": "1",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the distance BV between points B(6,8,0) and V(3,4,9) in the 3D pyramid.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "distance_formula_3d",
+        "vector_magnitude",
+        "simplify_surd"
+      ],
+      "method_path": [
+        "Apply 3D distance formula: √((6−3)² + (8−4)² + (0−9)²)",
+        "Compute to obtain BV = √106 ≈ 10.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(6−3)² + (8−4)² + (0−9)² (A1); 10.3 (= √106) A1. Note: SC(A0)A1 for vector misinterpretation."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "8-9",
+      "task_summary": "Find the size of angle BVC at vertex V in the pyramid using vector dot product or cosine rule.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_from_coordinates",
+        "dot_product",
+        "angle_between_vectors",
+        "inverse_cosine"
+      ],
+      "method_path": [
+        "Form vectors VB = ⟨3, 4, −9⟩ and VC = ⟨3, −4, −9⟩ from coordinates",
+        "Apply dot product formula: cos(BVC) = (VB·VC) / (|VB||VC|)",
+        "Substitute: cos(BVC) = (9 − 16 + 81) / 106 = 74/106",
+        "Compute BVC = arccos(74/106) ≈ 0.798 rad (45.7°)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1 (cosine rule): Note BV = VC = √106 and BC = 8, then apply cosine rule cos(BVC) = (BV² + VC² − BC²) / (2·BV·VC) = (106 + 106 − 64) / (2·106) = 148/212 = 74/106 → BVC ≈ 0.798",
+        "METHOD 2 (midpoint): Let M be midpoint of BC, BM = 4, then BVC = 2·arcsin(4/√106) ≈ 2·0.399018 ≈ 0.798",
+        "METHOD 4 (cross product): sin(BVC) = |VB × VC| / (|VB||VC|) = √5760 / 106 → BVC ≈ 0.798"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8-9",
+          "basis": "METHOD 1: (A1) BV = VC AND BC = 8, (M1) attempt cosine rule, (A1) correct substitution, A1 for BVC = 0.798 (45.7°)."
+        },
+        {
+          "markscheme_pages": "8-9",
+          "basis": "METHOD 3: (A1) vectors VC = ⟨3,−4,−9⟩ and VB = ⟨3,4,−9⟩, (M1) attempt cosine formula, (A1) cos(BVC) = 74/106, A1 for BVC = 0.798 (45.7°)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

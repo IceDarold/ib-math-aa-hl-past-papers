@@ -1,0 +1,113 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Write down the equations of the vertical and horizontal asymptotes of f(x) = 1 - 1/(x - 2).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_asymptote",
+        "horizontal_asymptote",
+        "limit_behavior"
+      ],
+      "method_path": [
+        "Vertical asymptote: denominator x - 2 = 0 gives x = 2",
+        "Horizontal asymptote: as x tends to plus/minus infinity, 1/(x - 2) tends to 0 so y = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(a)(i) x = 2 A1; (a)(ii) y = 1 A1; [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the coordinates where the graph of f(x) = 1 - 1/(x - 2) intersects the y-axis and the x-axis.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "y_intercept",
+        "x_intercept",
+        "solve_equation"
+      ],
+      "method_path": [
+        "y-intercept: set x = 0, f(0) = 1 - 1/(0 - 2) = 1 + 1/2 = 3/2 gives (0, 3/2)",
+        "x-intercept: set f(x) = 0, 1 - 1/(x - 2) = 0 gives 1/(x - 2) = 1 gives x - 2 = 1 gives x = 3 gives (3, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(b)(i) (0, 3/2) A1; (b)(ii) (3, 0) A1; [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Sketch the graph of y = f(x) showing all asymptotes and intercepts found in parts (a) and (b).",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "asymptotic_behavior",
+        "intercepts"
+      ],
+      "method_path": [
+        "Sketch two branches of hyperbola with vertical asymptote x = 2, horizontal asymptote y = 1, y-intercept (0, 3/2), and x-intercept (3, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(c) two correct branches with correct asymptotic behaviour and intercepts clearly shown A1; [1 mark] Total [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

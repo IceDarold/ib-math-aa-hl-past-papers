@@ -1,0 +1,221 @@
+{
+  "question": "11",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "(a)",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "21",
+      "task_summary": "Find the coordinates of the points on y = f(x) = e^(cos2x) where the gradient is zero, using differentiation and solving a trigonometric equation.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "geometry.trigonometric_equations",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "derivative",
+        "set_derivative_to_zero",
+        "solve_trigonometric_equation",
+        "find_coordinates"
+      ],
+      "method_path": [
+        "Apply chain rule: f'(x) = e^(cos2x) * (-2sin2x)",
+        "Set f'(x) = 0",
+        "Solve sin2x = 0 giving 2x = 0, pi, 2pi, ...",
+        "Obtain x = 0, pi/2, pi",
+        "Substitute into f(x) for coordinates: (0, e), (pi/2, 1/e), (pi, e)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to use chain rule to find f'(x) (M1); f'(x) = -2 sin2x e^(cos2x) = 0 (A1); sin2x = 0 (M1); 2x = 0, pi, 2pi, ... so x = 0, pi/2, pi, ... (A1); Coordinates are (0,e), (pi/2, 1/e), (pi,e) (A1). Special case note for two correct coordinate pairs."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-B",
+      "question": "11",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "21",
+      "task_summary": "Using the second derivative at each stationary point, show that the curve has two local maxima and one local minimum.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "second_derivative",
+        "evaluate_derivative",
+        "classify_stationary_points"
+      ],
+      "method_path": [
+        "Apply product rule to f'(x) to find f''(x) = e^(cos2x)[(2sin2x)^2 - 4cos2x]",
+        "Evaluate f''(0) = -4e < 0 so maximum",
+        "Evaluate f''(pi) = -4e < 0 so maximum",
+        "Evaluate f''(pi/2) = 4/e > 0 so minimum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to differentiate f'(x) using product rule (M1); f''(x) = (-2sin2x)(-2sin2x)e^(cos2x) - 4cos2x e^(cos2x) (A1); at x=0, f''(x) = -4e < 0 so maximum AND at x=pi, f''(x) = -4e < 0 so maximum (R1); at x=pi/2, f''(x) = 4/e > 0 so minimum (R1). Note: values must be correct for R marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "(c)",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Sketch the curve y = f(x) = e^(cos2x) for 0 <= x <= pi, taking into consideration the relative values of the second derivative from part (b).",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_curve",
+        "plot_maxima",
+        "plot_minimum",
+        "show_curvature"
+      ],
+      "method_path": [
+        "Draw general shape of e^(cos2x) over [0, pi]",
+        "Mark local maxima at (0, e) and (pi, e)",
+        "Mark local minimum at (pi/2, 1/e)",
+        "Show higher rate of change of gradient at maxima and lower rate at the minimum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Award A1 for general shape, A1 for correct maxima (0,e), (pi,e) and minimum point (pi/2, 1/e) and A1 for showing a higher rate of change of gradient at maxima and a lower rate of change of gradient at the minimum point."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-D-I-II-III",
+      "question": "11",
+      "part": "(d)(i)(ii)(iii)",
+      "marks": 6,
+      "source_pages": "15-16",
+      "markscheme_pages": "23-24",
+      "task_summary": "Find the Maclaurin series for cos2x up to x^4 (i), hence for e^(cos2x-1) up to x^4 (ii), and hence for f(x) = e^(cos2x) up to x^4 (iii).",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "functions.exponential_models"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "series_substitution",
+        "series_multiplication",
+        "trigonometric_series",
+        "exponential_series"
+      ],
+      "method_path": [
+        "(i) Expand cos2x using standard series: 1 - (2x)^2/2! + (2x)^4/4! - ... = 1 - 2x^2 + (2/3)x^4",
+        "(ii) Substitute cos2x - 1 = -2x^2 + (2/3)x^4 into e^u = 1 + u + u^2/2 + ...",
+        "(ii) Keep terms up to x^4: 1 + (-2x^2 + 2x^4/3) + (4x^4)/2 = 1 - 2x^2 + (8/3)x^4",
+        "(iii) Multiply series by e: f(x) = e - 2ex^2 + (8e/3)x^4"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Write e^(cos2x-1) = e^(-2x^2) * e^((2/3)x^4), find Maclaurin series for each factor separately, then multiply the series and keep terms up to x^4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(i) cos2x = 1 - (2x)^2/2! + (2x)^4/4! + ... = 1 - 2x^2 + (2/3)x^4 (M1)(A1)."
+        },
+        {
+          "markscheme_pages": "23-24",
+          "basis": "(ii) Method 1: substitute series for cos2x-1 into e^x = 1 + x + x^2/2 + x^3/6 + x^4/24 (M1); e^(cos2x-1) = 1 + (-2x^2 + 2x^4/3) + (4x^4)/2 + ... = 1 - 2x^2 + (8/3)x^4 (A1)(A1). Method 2: e^(cos2x-1) = e^(-2x^2) * e^((2/3)x^4), find series for e^(-2x^2) = 1 - 2x^2 + 2x^4 and e^((2/3)x^4) = 1 + (2/3)x^4, multiply to get 1 - 2x^2 + (8/3)x^4 (M1)(A1)(A1)."
+        },
+        {
+          "markscheme_pages": "24",
+          "basis": "(iii) f(x) = e * [1 - 2x^2 + (8/3)x^4] = e - 2ex^2 + (8e/3)x^4 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q11-E",
+      "question": "11",
+      "part": "(e)",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Use the first two non-zero terms in the Maclaurin series for f(x) to show that the definite integral from 0 to 1/10 of e^(cos2x) dx approximately equals 149e/1500.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.series"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "approximate_integrand",
+        "integrate_polynomial",
+        "evaluate_definite_integral",
+        "simplify_algebraic_expression"
+      ],
+      "method_path": [
+        "Approximate integrand: e^(cos2x) = e - 2ex^2 (first two non-zero terms)",
+        "Integrate: integral of (e - 2ex^2) dx = e[x - (2/3)x^3]",
+        "Evaluate from 0 to 1/10: e[(1/10) - (2/3)(1/1000)] = e(1/10 - 2/3000)",
+        "Simplify: e(300/3000 - 2/3000) = 298e/3000 = 149e/1500 (AG)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "Use f(x) = e(1 - 2x^2) (M1); integral = e[x - (2/3)x^3] from 0 to 1/10 (A1); = e(1/10 - 2/3000) (A1); = 298e/3000 = 149e/1500 AG. Note: if candidate follows through an incorrect expansion from part (d), award maximum M1A1FTA0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

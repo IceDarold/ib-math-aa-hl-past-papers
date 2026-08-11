@@ -1,0 +1,202 @@
+{
+  "question": "10",
+  "expected_question_marks": 13,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Find the period of H(t) = a cos(7.8t) + b.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "period_of_cosine",
+        "formula_substitution",
+        "gdc_evaluation"
+      ],
+      "method_path": [
+        "period = 2π / |7.8|",
+        "period = 2π/7.8 ≈ 0.806 s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "period = 2π/7.8 (M1); 0.805536... = 20π/78, period ≈ 0.806 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Find a and b given minimum height 1 m and maximum height 1.8 m.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "amplitude_from_extrema",
+        "vertical_shift",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "amplitude = (H_max − H_min)/2 = (1.8 − 1)/2 = 0.4",
+        "a = −amplitude = −0.4 (negative because weight released at minimum)",
+        "b = (H_max + H_min)/2 = (1.8 + 1)/2 = 1.4"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: solve simultaneous equations a + b = 1 and −a + b = 1.8 to obtain a = −0.4, b = 1.4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: amplitude = (max−min)/2 (M1); a = −0.4 (A1); b = 1.4 (A1). METHOD 2: attempt two simultaneous equations (M1); a = −0.4, b = 1.4 (A1A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Find the number of times the weight reaches its maximum height in the first 5 seconds.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "counting_maxima",
+        "period_division",
+        "graphical_interpretation"
+      ],
+      "method_path": [
+        "period ≈ 0.806 s",
+        "5 / period ≈ 6.21",
+        "integer count = 6 times"
+      ],
+      "accepted_alternatives": [
+        "consideration of number of maxima on graph in first 5 seconds",
+        "listing times of maxima: t ≈ 0.403, 1.21, 2.01, 2.82, 3.62, 4.43"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "5 / (1/2 period) < 6.207... < 6 (A1); OR consideration of maxima on graph (A1); OR maxima at t = 0.403, 1.21, 2.01, 2.82, 3.62, 4.43 (A1); THEN 6 times (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Find the first time the base of the weight reaches a height of 1.5 metres.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_trigonometric_equation",
+        "inverse_cosine",
+        "gdc_solver"
+      ],
+      "method_path": [
+        "set H(t) = 1.5",
+        "−0.4 cos(7.8t) + 1.4 = 1.5",
+        "cos(7.8t) = −0.25",
+        "t = arccos(−0.25) / 7.8 ≈ 0.234 s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "recognizing that H(t) = 1.5 (M1); −0.4 cos(7.8t) + 1.4 = 1.5 → t = 0.233779... ≈ 0.234 seconds (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Find the probability that the height is greater than 1.5 metres at a random time in the first 5 seconds.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "time_above_threshold",
+        "geometric_probability",
+        "ratio_of_durations",
+        "periodic_analysis"
+      ],
+      "method_path": [
+        "find second time when H = 1.5: t₂ ≈ 0.572 s",
+        "time above 1.5 m per period = t₂ − t₁ ≈ 0.338 s",
+        "total time above 1.5 m in 5 s = 6 × 0.338 ≈ 2.028 s",
+        "probability = total time / 5 = 2.028/5 ≈ 0.406"
+      ],
+      "accepted_alternatives": [
+        "compute total time above 1.5 m directly as 2.02787... s, then divide by 5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "finding second time height is 1.5 m (M1); in each period height > 1.5 m for 0.337978... s (A1); multiplying by 6 and dividing by 5 (M1); P ≈ 0.406 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

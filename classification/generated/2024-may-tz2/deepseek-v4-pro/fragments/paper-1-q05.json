@@ -1,0 +1,166 @@
+{
+  "question": "5",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Write down the equation of the horizontal asymptote of f(x)=(2x+6)/(3x+6).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "horizontal_asymptote",
+        "rational_function",
+        "leading_coefficient_ratio"
+      ],
+      "method_path": [
+        "identify_leading_coefficients_numerator_2_denominator_3",
+        "compute_ratio_2_over_3",
+        "write_equation_y_equals_2_over_3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "y = 2/3 (must be written as equation with y =) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q05-B-I",
+      "question": "5",
+      "part": "B-I",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "State the number of solutions to f(x)=g(x) when m>0, using the graph of y=f(x) and the line g(x)=mx+1 through (0,1).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "graphical_interpretation",
+        "intersection_count",
+        "positive_slope",
+        "rational_function"
+      ],
+      "method_path": [
+        "observe_graph_of_f",
+        "consider_line_through_(0,1)_with_positive_slope",
+        "count_intersection_points",
+        "state_two_solutions"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "(i) 2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q05-B-II",
+      "question": "5",
+      "part": "B-II",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "13-14",
+      "task_summary": "Determine m such that f(x)=g(x) has exactly one solution for x.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "rational_equation",
+        "cross_multiplication",
+        "quadratic_formation",
+        "discriminant_zero",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "set_f(x)_equal_to_mx+1",
+        "multiply_both_sides_by_denominator_3x+6",
+        "expand_to_quadratic_3mx^2+(6m+1)x=0",
+        "set_discriminant_zero_for_unique_solution",
+        "solve_(6m+1)^2=0",
+        "obtain_m=-1/6"
+      ],
+      "accepted_alternatives": [
+        "Derivative method: find f'(x) using quotient rule, evaluate at x=0 to get f'(0)=-1/6, and recognise that m equals the derivative at the repeated root x=0."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13-14",
+          "basis": "EITHER: set (2x+6)/(3x+6)=mx+1, expand to 3mx^2+(6m+1)x=0, discriminant=0 gives (6m+1)^2=0 so m=-1/6 (M1A1M1A1). OR: quotient rule gives f'(x)=-2/(3(x+2)^2), evaluate at x=0, recognise m=f'(0)=-1/6 (M1A1M1A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q05-B-III",
+      "question": "5",
+      "part": "B-III",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Determine the range of m for which f(x)=g(x) has two solutions with x greater than or equal to 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quadratic_factoring",
+        "root_classification",
+        "inequality_solving",
+        "parameter_range"
+      ],
+      "method_path": [
+        "factor_quadratic_x(3mx+6m+1)=0",
+        "identify_roots_x=0_and_x=-(6m+1)/(3m)",
+        "require_second_root_positive_and_distinct_from_zero",
+        "solve_inequality_-(6m+1)/(3m)_greater_than_0",
+        "obtain_range_-1/6_less_than_m_less_than_0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "-1/6 < m < 0 A2. Note: Award A1 for only m > -1/6. Award A1 for only m < 0. FT may be awarded only for values of m between -1 and 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 6,
+      "source_pages": "6",
+      "markscheme_pages": "9–10",
+      "task_summary": "Given triangle ABC with AB = 6 cm, AC = 10 cm and cos BÂC = 1/5, find the area of triangle ABC.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "pythagorean_identity",
+        "sin_from_cos",
+        "area_of_triangle_sine_formula",
+        "substitution",
+        "arithmetic_simplification"
+      ],
+      "method_path": [
+        "Use sin^2 BÂC = 1 − cos^2 BÂC to express sin BÂC",
+        "Compute sin BÂC = sqrt(1 − (1/5)^2) = sqrt(24)/5",
+        "Apply area formula A = 1/2 × AB × AC × sin BÂC",
+        "Substitute values: A = 1/2 × 10 × 6 × sqrt(24)/5",
+        "Simplify to A = 12 cm^2"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Find perpendicular height of triangle via height = 6 × sin BÂC (using Pythagorean identity) or via Pythagoras' theorem on right triangle with hypotenuse 6 and adjacent 6/5, giving height = 12/5; then Area = 1/2 × base × height = 1/2 × 10 × 12/5 = 12 cm^2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: M1 for attempt to use Pythagoras' theorem or Pythagorean identity sin^2α + cos^2α = 1; A1 for sqrt(5^2 − 1^2) = sqrt(24) or sin^2BÂC = 1 − (1/5)^2; A1 for sinBÂC = sqrt(24)/5; M1 for attempt to use Area = 1/2 ab sinC; A1 for 1/2 × 10 × 6 × sqrt(24)/5; A1 for 12 cm^2. [6 marks]"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 2: M1 for attempt to find perpendicular height; M1 for Pythagorean identity or Pythagoras' theorem; A1 for intermediate work; A1 for height = 12/5; M1 for Area = 1/2 × base × height; A1 for 12 cm^2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

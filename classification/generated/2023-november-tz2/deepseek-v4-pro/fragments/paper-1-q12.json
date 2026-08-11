@@ -1,0 +1,140 @@
+{
+  "question": "12",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Find the binomial expansion of (cos θ + i sin θ)^5 in the form a + bi, where a and b are expressed in terms of sin θ and cos θ.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "complex_separation",
+        "evaluate_powers_of_i",
+        "collect_real_imaginary_parts"
+      ],
+      "method_path": [
+        "Apply binomial theorem to expand (cos θ + i sin θ)^5 using C(5,0) to C(5,5)",
+        "Simplify powers of i: i^2 = -1, i^3 = -i, i^4 = 1, i^5 = i",
+        "Collect real part: a = cos^5 θ - 10 cos^3 θ sin^2 θ + 5 cos θ sin^4 θ",
+        "Collect imaginary part: b = 5 cos^4 θ sin θ - 10 cos^2 θ sin^3 θ + sin^5 θ",
+        "Present as a + bi"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "M1 for attempt to expand using binomial theorem; expansion shown with binomial coefficients; A1A1 awarded for correct real part and correct imaginary part."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Using De Moivre's theorem and the expansion from part (a), show that sin 5θ ≡ 16 sin^5 θ - 20 sin^3 θ + 5 sin θ.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivre_theorem",
+        "equate_imaginary_parts",
+        "pythagorean_identity_substitution",
+        "algebraic_expansion",
+        "trigonometric_simplification"
+      ],
+      "method_path": [
+        "Apply De Moivre's theorem: (cos θ + i sin θ)^5 = cos 5θ + i sin 5θ",
+        "Equate imaginary parts: sin 5θ = 5 cos^4 θ sin θ - 10 cos^2 θ sin^3 θ + sin^5 θ",
+        "Substitute cos^2 θ = 1 - sin^2 θ",
+        "Expand (1 - sin^2 θ)^2 and simplify algebraically",
+        "Obtain sin 5θ = 16 sin^5 θ - 20 sin^3 θ + 5 sin θ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1 for De Moivre; M1 for equating imaginary parts; A1 for sin 5θ expression; M1 for substituting cos^2 θ = 1 - sin^2 θ; A1, A1 for correct expansion and simplification to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "26-28",
+      "task_summary": "(i) Show that π/5 and 3π/5 are solutions of 16 sin^4 θ - 20 sin^2 θ + 5 = 0. (ii) Hence show that sin(π/5) sin(3π/5) = sqrt(5)/4.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.equations",
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "factorisation",
+        "trigonometric_equation",
+        "quadratic_formula",
+        "product_of_roots",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Factor sin 5θ = sin θ (16 sin^4 θ - 20 sin^2 θ + 5)",
+        "Set sin 5θ = 0, giving 5θ = kπ so θ = kπ/5 for integer k",
+        "Observe that sin(π/5) ≠ 0 and sin(3π/5) ≠ 0",
+        "Deduce that π/5 and 3π/5 satisfy 16 sin^4 θ - 20 sin^2 θ + 5 = 0",
+        "Treat equation as quadratic in sin^2 θ: 16(sin^2 θ)^2 - 20 sin^2 θ + 5 = 0",
+        "Solve using quadratic formula: sin^2 θ = (20 ± sqrt(80))/32 = (5 ± sqrt(5))/8",
+        "Compute sin(π/5) sin(3π/5) = sqrt[((5+sqrt(5))/8) * ((5-sqrt(5))/8)] = sqrt(20/64) = sqrt(5)/4"
+      ],
+      "accepted_alternatives": [
+        "Method 2 for (c)(ii): Use product of roots of quartic 16x^4 - 20x^2 + 5 = 0 with symmetry sin(π/5)=sin(4π/5), sin(2π/5)=sin(3π/5) to obtain sin^2(π/5)*sin^2(3π/5)=5/16.",
+        "Method 3 for (c)(ii): Treat as quadratic in sin^2 θ; product of roots sin^2(π/5) and sin^2(3π/5) is 5/16; take square root."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(c)(i): M1 for factorising 16 sin^5 θ - 20 sin^3 θ + 5 sin θ into sin θ(16 sin^4 θ - 20 sin^2 θ + 5); R1 for sin 5(π/5)=0 and sin 5(3π/5)=0 (or solving sin 5θ=0 giving 5θ=kπ); R1 for concluding sin(π/5)≠0 and sin(3π/5)≠0, therefore π/5, 3π/5 are solutions."
+        },
+        {
+          "markscheme_pages": "27-28",
+          "basis": "(c)(ii) Method 1: M1 for quadratic formula; A1 for sin^2 θ = (20 ± sqrt(80))/32 = (5 ± sqrt(5))/8; M1 for multiplying; A1 for sqrt(5)/4 (AG). Method 2: A1 for roots; M1 for product = 5/16; A1, A1. Method 3: M1, A1, M1, A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

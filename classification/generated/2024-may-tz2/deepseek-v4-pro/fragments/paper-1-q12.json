@@ -1,0 +1,203 @@
+{
+  "question": "12",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 8,
+      "source_pages": "16",
+      "markscheme_pages": "28",
+      "task_summary": "Prove by induction that f^(n)(x) = ((2n-1)! a^n)/(2^(n-1)(n-1)!) (1-ax)^(-(2n-1)/2) for n in Z+, where f(x)=(1-ax)^(-1/2).",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "induction_hypothesis",
+        "differentiate_nth_derivative",
+        "algebraic_simplification",
+        "induction_conclusion"
+      ],
+      "method_path": [
+        "Verify base case n=1: compute f'(x)=a/2(1-ax)^(-3/2) from definition, confirm matches RHS formula",
+        "Assume formula true for n=k",
+        "Differentiate f^(k)(x) with chain rule to express f^(k+1)(x)",
+        "Multiply numerator and denominator by 2k",
+        "Simplify factorial and exponent to give formula for n=k+1",
+        "Conclude by induction: true for n=1 and n=k implies n=k+1, therefore true for all n in Z+"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A1 LHS/RHS at n=1; R1 therefore true for n=1; M1 assume true for n=k; M1 attempt differentiate RHS; A1 correct derivative; M1 multiply top and bottom by 2k; A1 simplified expression; R1 induction conclusion requires at least five prior marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "Using part (a) or otherwise, show the Maclaurin series for f(x)=(1-ax)^(-1/2) up to x^2 term is 1 + (a/2)x + (3a^2/8)x^2.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "evaluate_function_at_zero",
+        "evaluate_derivatives_at_zero",
+        "maclaurin_series_formula"
+      ],
+      "method_path": [
+        "Evaluate f(0)=1, f'(0)=a/2, f''(0)=3a^2/4",
+        "Substitute into Maclaurin formula f(0)+f'(0)x+f''(0)x^2/2! and simplify to 1+(a/2)x+(3a^2/8)x^2"
+      ],
+      "accepted_alternatives": [
+        "Use general term from part (a) with n=0,1,2 directly",
+        "Use repeated differentiation from first principles"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "A1 for f''(x) or f''(0)=3a^2/4; A1 for f(0)=1, f'(0)=a/2, f''(0)=6a^2/8 leading to series 1+(a/2)x+(3a^2/8)x^2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "30",
+      "task_summary": "Hence show that (1-2x)^(-1/2)(1-4x)^(-1/2) is approximately 1 + 3x + (19/2)x^2.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_parameter",
+        "binomial_series_expansion",
+        "series_multiplication",
+        "collect_like_terms"
+      ],
+      "method_path": [
+        "Substitute a=2 in Maclaurin series to expand (1-2x)^(-1/2) = 1 + x + (3/2)x^2 + ...",
+        "Substitute a=4 to expand (1-4x)^(-1/2) = 1 + 2x + 6x^2 + ...",
+        "Multiply the two series expansions",
+        "Collect terms up to x^2 to obtain 1 + 3x + (19/2)x^2"
+      ],
+      "accepted_alternatives": [
+        "Use binomial theorem directly on product (1-6x+8x^2)^(-1/2)",
+        "Multiply in reverse order"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "M1 attempt to use a=2 or a=4 in expansion; A1 for at least one correct expansion; M1 attempt to multiply their two expansions; A1 for result 1+3x+(19/2)x^2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "30",
+      "task_summary": "Given the series expansion for (1-ax)^(-1/2) converges for |ax|<1, state the restriction on x for the approximation in part (c) to be valid.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "convergence_condition",
+        "inequality_from_domain"
+      ],
+      "method_path": [
+        "State |x| less than 1/4 from requiring |2x| less than 1 and |4x| less than 1"
+      ],
+      "accepted_alternatives": [
+        "-1/4 less than x less than 1/4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "A1 for |x| less than 1/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "31",
+      "task_summary": "Use x=1/10 to determine an approximate value for sqrt(3). Give answer as c/d with c,d in Z+.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "substitute_value",
+        "evaluate_series_approximation",
+        "evaluate_exact_expression",
+        "equate_and_solve",
+        "rational_simplification"
+      ],
+      "method_path": [
+        "Substitute x=1/10 into series 1+3x+(19/2)x^2 to get 279/200",
+        "Substitute x=1/10 into exact product (1-2x)^(-1/2)(1-4x)^(-1/2) to get sqrt(10/48)",
+        "Equate approximation to exact: 279/200 approx 1/(4 sqrt(3))",
+        "Solve for sqrt(3) to obtain 500/279"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "A1 for 279/200 from series; M1 attempt to substitute x=1/10 into exact expression; A1 for sqrt(10/48) or equivalent; A1 for 279/200 approx 1/(4 sqrt(3)); A1 for sqrt(3) approx 500/279."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

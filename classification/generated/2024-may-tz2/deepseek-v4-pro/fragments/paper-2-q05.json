@@ -1,0 +1,55 @@
+{
+  "question": "5",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "11-12",
+      "task_summary": "Find the least integer n for X ~ B(n, 0.25) such that P(X ≥ 1) > 0.99, using complement rule P(X ≥ 1) = 1 − (0.75)^n and solving the exponential inequality.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_probability",
+        "complement_rule",
+        "exponential_inequality",
+        "logarithmic_solving",
+        "integer_bound"
+      ],
+      "method_path": [
+        "Express P(X ≥ 1) = 1 − P(X = 0)",
+        "Compute P(X = 0) = (0.75)^n",
+        "Form inequality 1 − (0.75)^n > 0.99",
+        "Rearrange to (0.75)^n < 0.01",
+        "Apply logarithms: n ln(0.75) < ln(0.01)",
+        "Solve n > ln(0.01)/ln(0.75) ≈ 16.0078",
+        "Conclude least integer n = 17"
+      ],
+      "accepted_alternatives": [
+        "GDC binomial CDF table: compute P(X ≥ 1) for n = 16 (≈0.98998 < 0.99) and n = 17 (≈0.99248 > 0.99), conclude n = 17"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: correct inequality or equation involving P(X = 0) (A1); attempts to solve inequality involving 0.75^n for n (M1); 1 − 0.75^n > 0.99 OR 0.75^n < 0.01; n > 16.0078... (A2); least value n = 17 A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: attempts binomial cdf for one value of n (M1); correct P(X ≥ 1) values (A1); P(X ≥ 1) = 0.989977... < 0.99 for n = 16 (A1); P(X ≥ 1) = 0.992483... > 0.99 for n = 17 (A1); least value n = 17 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

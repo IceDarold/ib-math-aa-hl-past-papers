@@ -1,0 +1,88 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q08-A",
+      "question": "8",
+      "part": "a",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "17",
+      "task_summary": "Determine the range of the rational function g(x) = (2 - 5x^2)/(3 - x^2), x in R, x not equal to plus/minus sqrt(3).",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes",
+        "calculus.differentiation"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_critical_points",
+        "evaluate_extrema",
+        "asymptotic_analysis",
+        "state_range"
+      ],
+      "method_path": [
+        "Find y-coordinate of local minimum and local maximum points (or set up discriminant equation from y = g(x))",
+        "Obtain critical y-values: local min approx 1.43, local max approx 0.232",
+        "State range: g(x) <= 0.232 or g(x) >= 1.43 (exact forms involve surds)"
+      ],
+      "accepted_alternatives": [
+        "Discriminant approach: rearrange y = (2-5x^2)/(3-x^2) to a quadratic form, set discriminant Delta >= 0, solve for y"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(M1) attempts to find y-coordinate of local min or max; OR attempts discriminant; (A1)(A1) local min y approx 1.434, local max y approx 0.232; A1 range g(x) <= 0.232 or g(x) >= 1.43"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q08-B",
+      "question": "8",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "17",
+      "task_summary": "Find the set of values of x such that h(x) = g(|x|) cos t <= 0, where pi/2 < t <= pi.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "sign_analysis",
+        "rational_inequality",
+        "solve_inequality",
+        "trigonometric_sign"
+      ],
+      "method_path": [
+        "Note cos t < 0 for pi/2 < t <= pi, so h(x) <= 0 implies g(|x|) >= 0",
+        "Set up rational inequality (2-5x^2)/(3-x^2) >= 0",
+        "Solve graphically or algebraically using sign analysis",
+        "State solution: x <= -sqrt(5/2) or -sqrt(3) < x < sqrt(3) or x >= sqrt(5/2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(R1) (2-5x^2)/(3-x^2) >= 0 since cos t < 0 for pi/2 < t <= pi; (M1) attempts to solve graphically or algebraically; A1 x <= -sqrt(5/2) OR -sqrt(3) < x < sqrt(3) OR x >= sqrt(5/2)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

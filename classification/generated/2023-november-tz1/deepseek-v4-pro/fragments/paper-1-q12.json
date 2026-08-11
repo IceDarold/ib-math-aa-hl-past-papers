@@ -1,0 +1,150 @@
+{
+  "question": "12",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Expand (cosθ + i sinθ)^5 using the binomial theorem and express the result in the form a + bi where a and b are in terms of sinθ and cosθ.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "binomial_expansion",
+        "powers_of_i",
+        "collect_real_imaginary_parts"
+      ],
+      "method_path": [
+        "Apply binomial theorem: (cosθ + i sinθ)^5 = Σ_{r=0}^{5} C(5,r) cos^{5-r}θ (i sinθ)^r",
+        "Compute binomial coefficients: 1, 5, 10, 10, 5, 1",
+        "Simplify powers of i: i^2 = -1, i^3 = -i, i^4 = 1, i^5 = i",
+        "Collect real part a = cos^5θ - 10cos^3θ sin^2θ + 5cosθ sin^4θ",
+        "Collect imaginary part b = 5cos^4θ sinθ - 10cos^2θ sin^3θ + sin^5θ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to expand using binomial theorem: (M1). Award (M1) for seeing at least one term with a product of a binomial coefficient, power of i sinθ and a power of cosθ. Expansion written with all six terms. A1A1: Award A1 for correct real part and A1 for correct imaginary part. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "16",
+      "markscheme_pages": "25–26",
+      "task_summary": "Using De Moivre's theorem and the result from part (a), show that sin 5θ ≡ 16 sin^5 θ - 20 sin^3 θ + 5 sin θ.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "de_moivres_theorem",
+        "equate_imaginary_parts",
+        "pythagorean_substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply De Moivre's theorem: (cosθ + i sinθ)^5 = cos5θ + i sin5θ",
+        "Equate imaginary parts with the imaginary part from part (a)",
+        "Obtain sin5θ = 5cos^4θ sinθ - 10cos^2θ sin^3θ + sin^5θ",
+        "Substitute cos^2θ = 1 - sin^2θ throughout",
+        "Expand (1 - sin^2θ)^2 = 1 - 2sin^2θ + sin^4θ",
+        "Simplify to sin5θ = 16sin^5θ - 20sin^3θ + 5sinθ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(cosθ + i sinθ)^5 = cos5θ + i sin5θ (A1). equate imaginary parts: (M1). sin5θ = 5cos^4θ sinθ - 10cos^2θ sin^3θ + sin^5θ A1. substitute cos^2θ = 1 - sin^2θ (M1). [6 marks]"
+        },
+        {
+          "markscheme_pages": "26",
+          "basis": "Note: Some of this working may be seen in part (a). Allow for awarding marks in part (b)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "26–28",
+      "task_summary": "(i) Show that π/5 and 3π/5 are solutions of 16 sin^4 θ - 20 sin^2 θ + 5 = 0. (ii) Hence show that sin(π/5) sin(3π/5) = √5/4.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "factorisation",
+        "solve_trigonometric_equation",
+        "quadratic_in_sine_squared",
+        "quadratic_formula",
+        "product_of_roots",
+        "simplify_radical"
+      ],
+      "method_path": [
+        "(i) Factor sin5θ = sinθ(16sin^4θ - 20sin^2θ + 5) from part (b)",
+        "(i) Solve sin5θ = 0 ⇒ 5θ = kπ ⇒ θ = kπ/5, k ∈ Z",
+        "(i) Substitute θ = π/5, 3π/5: sin(5·π/5) = sinπ = 0, sin(5·3π/5) = sin3π = 0",
+        "(i) Note sin(π/5) ≠ 0, sin(3π/5) ≠ 0, so the quartic factor 16sin^4θ - 20sin^2θ + 5 = 0",
+        "(i) Conclude π/5 and 3π/5 are solutions of 16sin^4θ - 20sin^2θ + 5 = 0",
+        "(ii) Treat 16sin^4θ - 20sin^2θ + 5 = 0 as quadratic in u = sin^2θ: 16u^2 - 20u + 5 = 0",
+        "(ii) Solve via quadratic formula: u = (20 ± √(400 - 320))/32 = (20 ± √80)/32 = (5 ± √5)/8",
+        "(ii) Assign sin^2(π/5) = (5+√5)/8, sin^2(3π/5) = (5-√5)/8",
+        "(ii) Compute product: sin(π/5)sin(3π/5) = √((5+√5)/8 · (5-√5)/8) = √(20/64) = √(5/16) = √5/4"
+      ],
+      "accepted_alternatives": [
+        "(c)(ii) Method 2: Use product of four roots of the quartic equation. π/5, 2π/5, 3π/5, 4π/5 are roots; product = 5/16. Recognise sin(π/5)=sin(4π/5) and sin(2π/5)=sin(3π/5), giving sin^2(π/5)sin^2(3π/5)=5/16, so sin(π/5)sin(3π/5)=√5/4.",
+        "(c)(ii) Method 3: Treat the quartic as quadratic in sin^2θ with roots sin^2(π/5) and sin^2(3π/5). Product of roots = 5/16, so sin(π/5)sin(3π/5)=√(5/16)=√5/4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(c)(i) factorising 16sin^5θ - 20sin^3θ + 5sinθ (M1). sin5θ = sinθ(16sin^4θ - 20sin^2θ + 5). EITHER sin(5·π/5)=0 and sin(5·3π/5)=0 (R1) OR solving sin5θ = 0, 5θ = kπ where k ∈ Z (R1). therefore either sinθ = 0 OR 16sin^4θ - 20sin^2θ + 5 = 0. sin(π/5) ≠ 0 and sin(3π/5) ≠ 0 (R1). therefore π/5, 3π/5 are solutions of 16sin^4θ - 20sin^2θ + 5 = 0 AG. Final R1 dependent on both previous marks."
+        },
+        {
+          "markscheme_pages": "27",
+          "basis": "(c)(ii) METHOD 1: attempt to use quadratic formula (M1). sin^2θ = (20 ± √80)/32 = (5 ± √5)/8 (A1). sinθ = √((5±√5)/8). Compute sin(π/5)sin(3π/5) = √((5+√5)/8 · (5-√5)/8) = √(20/64) = √5/4 (M1)(A1)."
+        },
+        {
+          "markscheme_pages": "27–28",
+          "basis": "METHOD 2: Roots of quartic are sin(π/5), sin(2π/5), sin(3π/5), sin(4π/5) (A1). Product of roots = 5/16 (M1)(A1). sin(π/5)=sin(4π/5), sin(2π/5)=sin(3π/5) ⇒ sin^2(π/5)sin^2(3π/5)=5/16 (A1). METHOD 3: Treat as quadratic in sin^2θ (M1). Product of roots sin^2(π/5)·sin^2(3π/5) = 5/16 (M1)(A1)(A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

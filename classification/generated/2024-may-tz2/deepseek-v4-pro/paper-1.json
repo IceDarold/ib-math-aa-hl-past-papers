@@ -1,0 +1,1403 @@
+{
+  "session": "May 2024",
+  "zone": "TZ2",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 4,
+      "source_pages": "4-5",
+      "markscheme_pages": "7",
+      "task_summary": "Solve tan(2x − 5°) = 1 for x in [0°, 180°], giving both solutions.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "inverse_tangent",
+        "reference_angle",
+        "angle_range_restriction",
+        "linear_equation"
+      ],
+      "method_path": [
+        "tan⁻¹(1) = 45°",
+        "set 2x − 5° = 45°, 225°",
+        "solve for x → x = 25°, 115°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "tan⁻¹(1) = 45° or equivalent (A1); attempt to equate 2x − 5° to their reference angle (M1); Note: Do not accept 2x − 5° = 1; (2x − 5°) = 45°, 225°; x = 25°, 115° A1A1; Note: Do not award the final A1 if any additional solutions are seen. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Solve the exponential equation 3 × 9^x + 5 × 3^x − 2 = 0 by recognising it as a quadratic in 3^x, solving the quadratic, and then solving for x.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "quadratic_recognition",
+        "solving_quadratic",
+        "factorising",
+        "quadratic_formula",
+        "logarithmic_solving"
+      ],
+      "method_path": [
+        "Recognise the equation as a quadratic in 3^x: 3(3^x)² + 5(3^x) − 2 = 0",
+        "Solve the quadratic by factorising to (3·3^x − 1)(3^x + 2) = 0 or via quadratic formula",
+        "Obtain 3^x = 1/3 (reject 3^x = −2)",
+        "Solve 3^x = 1/3 → x = −1"
+      ],
+      "accepted_alternatives": [
+        "Use of quadratic formula instead of factorising: 3^x = (−5 ± √(25+24))/6",
+        "Including x = log₃(−2) alongside x = −1 in the final answer is acceptable"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "recognising a quadratic in 3^x (M1); valid attempt to solve a quadratic equation (M1); (3·3^x − 1)(3^x + 2) = 0 OR 3^x = (−5±√(25+24))/6 (A1); 3^x = 1/3 (or 3^x = −2) (A1); x = −1 (A1). Note: Award final A1 if answer includes x = −1 and x = log₃(−2). Award A0 if other incorrect answers given."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q03-A-I",
+      "question": "3",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the coordinates of the midpoint of [AC] given A(6, 0) and C(3, 3√3).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "midpoint_formula"
+      ],
+      "method_path": [
+        "Midpoint = ((x1+x2)/2, (y1+y2)/2)",
+        "= ((6+3)/2, (0+3√3)/2) = (9/2, 3√3/2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1 awarded for (9/2, 3√3/2) or x = 9/2 and y = 3√3/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q03-A-II",
+      "question": "3",
+      "part": "A-II",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Hence or otherwise, find the equation of the line passing through O and B, using symmetry of OABC about [OB] and the midpoint of [AC].",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "gradient",
+        "line_equation",
+        "symmetry",
+        "coordinate_geometry"
+      ],
+      "method_path": [
+        "Gradient of OB using midpoint M(9/2, 3√3/2): m = (3√3/2)/(9/2) = √3/3",
+        "Line through origin: y = (√3/3)x"
+      ],
+      "accepted_alternatives": [
+        "Vector equation: r = λ⟨9/2, 3√3/2⟩ or parametric x=(9/2)t, y=(3√3/2)t",
+        "Using tan30° for gradient",
+        "Gradient perpendicular to AC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1 for Δy/Δx with midpoint OR gradient perpendicular to AC OR tan30°. A1 for m = √3/3. A1 for equation y = (√3/3)x or point-slope form (must be an equation)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Given [OA] is perpendicular to [AB], find the area of quadrilateral OABC.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "substitution",
+        "perpendicular_lines",
+        "area_of_triangle",
+        "symmetry"
+      ],
+      "method_path": [
+        "Substitute x = 6 into y = (√3/3)x to find B → B(6, 2√3)",
+        "Area of △OAB = (1/2)(6)(2√3) = 6√3",
+        "Area of quadrilateral OABC = 2 × 6√3 = 12√3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "M1 for substituting x = 6 into their equation. A1 for y = 2√3 at B. A1 for area = 12√3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Complete the tree diagram by writing the probabilities of not nesting in each season in terms of k: 1 − k for Spring, 1 − k/2 for Summer.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_complement",
+        "tree_diagram"
+      ],
+      "method_path": [
+        "P(not nest | Spring) = 1 − k",
+        "P(not nest | Summer) = 1 − k/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "1 − k for Spring A1; 1 − k/2 for both Summers A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "12",
+      "task_summary": "(i) Show that 9k² − 27k + 8 = 0 by multiplying the not-nesting branch probabilities (1−k)(1−k/2), equating to 5/9, expanding and rearranging. (ii) State that k = 1/3 is the only valid solution because k = 8/3 exceeds 1, which is impossible for a probability.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.polynomials",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "multiply_probabilities",
+        "expand_brackets",
+        "equate_to_fraction",
+        "rearrange_to_quadratic",
+        "solve_quadratic",
+        "validate_probability_domain"
+      ],
+      "method_path": [
+        "(1 − k)(1 − k/2) = 5/9",
+        "1 − 3k/2 + k²/2 = 5/9",
+        "18 − 27k + 9k² = 10",
+        "9k² − 27k + 8 = 0",
+        "k = 1/3 or k = 8/3",
+        "Reject k = 8/3 since a probability cannot exceed 1"
+      ],
+      "accepted_alternatives": [
+        "Any valid reasoning that a probability cannot be greater than 1 or less than 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "multiplying the two correct branches (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to expand and equate to 5/9 (M1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "9k² − 27k + 8 = 0 AG (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "k = 1/3 is the only valid solution as 8/3 > 1 (R1). Accept any valid reasoning indicating that any probability cannot be greater than 1 and/or probability cannot be less than 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Write down the equation of the horizontal asymptote of f(x)=(2x+6)/(3x+6).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "horizontal_asymptote",
+        "rational_function",
+        "leading_coefficient_ratio"
+      ],
+      "method_path": [
+        "identify_leading_coefficients_numerator_2_denominator_3",
+        "compute_ratio_2_over_3",
+        "write_equation_y_equals_2_over_3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "y = 2/3 (must be written as equation with y =) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q05-B-I",
+      "question": "5",
+      "part": "B-I",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "State the number of solutions to f(x)=g(x) when m>0, using the graph of y=f(x) and the line g(x)=mx+1 through (0,1).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "graphical_interpretation",
+        "intersection_count",
+        "positive_slope",
+        "rational_function"
+      ],
+      "method_path": [
+        "observe_graph_of_f",
+        "consider_line_through_(0,1)_with_positive_slope",
+        "count_intersection_points",
+        "state_two_solutions"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "(i) 2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q05-B-II",
+      "question": "5",
+      "part": "B-II",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "13-14",
+      "task_summary": "Determine m such that f(x)=g(x) has exactly one solution for x.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "rational_equation",
+        "cross_multiplication",
+        "quadratic_formation",
+        "discriminant_zero",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "set_f(x)_equal_to_mx+1",
+        "multiply_both_sides_by_denominator_3x+6",
+        "expand_to_quadratic_3mx^2+(6m+1)x=0",
+        "set_discriminant_zero_for_unique_solution",
+        "solve_(6m+1)^2=0",
+        "obtain_m=-1/6"
+      ],
+      "accepted_alternatives": [
+        "Derivative method: find f'(x) using quotient rule, evaluate at x=0 to get f'(0)=-1/6, and recognise that m equals the derivative at the repeated root x=0."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13-14",
+          "basis": "EITHER: set (2x+6)/(3x+6)=mx+1, expand to 3mx^2+(6m+1)x=0, discriminant=0 gives (6m+1)^2=0 so m=-1/6 (M1A1M1A1). OR: quotient rule gives f'(x)=-2/(3(x+2)^2), evaluate at x=0, recognise m=f'(0)=-1/6 (M1A1M1A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q05-B-III",
+      "question": "5",
+      "part": "B-III",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Determine the range of m for which f(x)=g(x) has two solutions with x greater than or equal to 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quadratic_factoring",
+        "root_classification",
+        "inequality_solving",
+        "parameter_range"
+      ],
+      "method_path": [
+        "factor_quadratic_x(3mx+6m+1)=0",
+        "identify_roots_x=0_and_x=-(6m+1)/(3m)",
+        "require_second_root_positive_and_distinct_from_zero",
+        "solve_inequality_-(6m+1)/(3m)_greater_than_0",
+        "obtain_range_-1/6_less_than_m_less_than_0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "-1/6 < m < 0 A2. Note: Award A1 for only m > -1/6. Award A1 for only m < 0. FT may be awarded only for values of m between -1 and 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q06-A",
+      "question": "6",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find the percentage of eating apples (mean 100 g, σ = 20 g) with weight greater than 140 g, given 95% of weights lie within two standard deviations of the mean.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "empirical_rule",
+        "tail_probability"
+      ],
+      "method_path": [
+        "z = (140 − 100) / 20 = 2 standard deviations above the mean",
+        "upper tail area = (1 − 0.95) / 2 = 0.025 = 2.5%"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "2.5(%) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q06-B",
+      "question": "6",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Given 80% of apples are eating apples, both types are mixed and those weighing >140 g are separated. Find the probability a randomly selected apple from the >140 g container is an eating apple. Answer as c/d with c, d ∈ ℤ⁺.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "normal_distribution",
+        "law_of_total_probability",
+        "bayes_theorem"
+      ],
+      "method_path": [
+        "P(cooking > 140) = 0.5 (symmetric about mean 140)",
+        "P(eating > 140) = 0.025 (from part a)",
+        "apply conditional probability: P(eating | >140) = P(eating ∩ >140) / P(>140)",
+        "P(eating ∩ >140) = 0.8 × 0.025 = 0.02",
+        "P(>140) = 0.8 × 0.025 + 0.2 × 0.5 = 0.12",
+        "result = 0.02 / 0.12 = 1/6"
+      ],
+      "accepted_alternatives": [
+        "Any equivalent exact fraction (e.g. 200/1200 simplified)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "P(weight of cooking apples > 140) = 0.5 (50%) (seen anywhere) (A1); recognition of conditional probability in context (M1); expression 0.8×0.025/(0.8×0.025+0.2×0.5) (A1); 1/6 A1; Note: Accept any equivalent exact answer written as a fraction."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Write down the sum of roots alpha+beta+gamma for the cubic g(x)=2x^3-7x^2+dx-e.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "sum_of_roots",
+        "vieta_formula"
+      ],
+      "method_path": [
+        "alpha+beta+gamma = -(-7)/2",
+        "alpha+beta+gamma = 7/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "alpha+beta+gamma = 7/2 A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Show that p=1 given that alpha,beta,gamma are also roots of quintic h(z)=2z^5-11z^4+rz^3+sz^2+tz-20 and z=p+3i is a root.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "conjugate_root_theorem",
+        "sum_of_roots",
+        "vieta_formula",
+        "linear_equation_solving"
+      ],
+      "method_path": [
+        "p-3i is also a root by conjugate root theorem",
+        "sum of all 5 roots = -(-11)/2 = 11/2",
+        "alpha+beta+gamma + (p+3i) + (p-3i) = 11/2",
+        "7/2 + 2p = 11/2",
+        "p = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "p-3i is also a root (seen anywhere) A1; recognition of 5 roots and attempt to sum these roots (M1); 7/2 + p+3i + p-3i = 11/2 A1; p = 1 AG [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q07-C",
+      "question": "7",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Given h(1/2)=0, alpha,beta in R+, alpha<beta, gamma in Q: (i) find product alpha*beta via product of roots; (ii) state alpha=1, beta=2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "product_of_roots",
+        "vieta_formula",
+        "factor_recognition",
+        "quadratic_solving"
+      ],
+      "method_path": [
+        "product of 5 roots = -(-20)/2 = 10",
+        "(1+3i)(1-3i) * alpha*beta * (1/2) = 10",
+        "10 * alpha*beta * 1/2 = 10",
+        "alpha*beta = 2",
+        "alpha = 1, beta = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to find product of 5 roots and equate to +/-10 (M1); (1+3i)(1-3i)*alpha*beta*(1/2) = 10; alpha*beta = 2 A1; alpha = 1 and beta = 2 A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Evaluate the limit of (sec^4 x - cos^2 x)/(x^4 - x^2) as x->0 by applying l'Hopital's rule twice, yielding -3.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "limit_notation",
+        "indeterminate_form",
+        "differentiation",
+        "trigonometric_differentiation",
+        "polynomial_differentiation",
+        "limit_evaluation"
+      ],
+      "method_path": [
+        "Apply l'Hopital's rule: differentiate numerator sec^4 x - cos^2 x -> 4 sec^4 x tan x + 2 sin x cos x and denominator x^4 - x^2 -> 4x^3 - 2x",
+        "Recognise the expression remains in 0/0 indeterminate form as x->0",
+        "Apply l'Hopital's rule a second time: differentiate to obtain (16 sec^4 x tan^2 x + 4 sec^6 x + 2 sin^2 x - 2 cos^2 x)/(12x^2 - 2)",
+        "Evaluate the limit as x->0 to obtain -3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "First application: A1 for numerator 4 sec^4 x tan x + 2 sin x cos x, A1 for denominator 4x^3 - 2x. Second application: M1 for second use of l'Hopital's rule provided expression is in indeterminate 0/0 form and no third attempt at using the rule. A1A1 for the second derivative. Final A1 for answer -3. Note: limit notation lim_{x->0} must be seen at least once for full marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q09-A",
+      "question": "9",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Write down an expression for the number of ways to assign n students into a group of 3 and a group of n-3.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combination"
+      ],
+      "method_path": [
+        "nCr(n,3) or C(n,3) or binom(n,3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "Mark scheme states: ^nC_3 A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q09-B",
+      "question": "9",
+      "part": "b",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "19-20",
+      "task_summary": "Determine n given that when two particular students must be in different groups, the number of possible assignments is halved.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "combination",
+        "constrained_counting",
+        "equation_setup",
+        "factorial_elimination",
+        "quadratic_solving",
+        "solution_validation"
+      ],
+      "method_path": [
+        "Count assignments with two students separated: ^2C_1 to choose which special student enters the first group",
+        "Choose remaining 2 of the first group from the other n-2 students: ^{n-2}C_2",
+        "Set equation: (1/2)*binom(n,3) = ^2C_1 * ^{n-2}C_2",
+        "Eliminate factorials to obtain quadratic n^2 - 13n + 36 = 0",
+        "Factor: (n-9)(n-4) = 0",
+        "Reject n=4 (second group would have only 1 student, violating 'at least three'), conclude n=9"
+      ],
+      "accepted_alternatives": [
+        "Count assignments with two students together: ^{n-2}C_1 + ^{n-2}C_3, then equate half of binom(n,3) to this sum and solve, obtaining same quadratic and n=9"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "EITHER approach: ^2C_1 (A1), ^{n-2}C_2 (A1), equation setup M1, factorial elimination (M1)"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "A1 for n^2 - 13n + 36 = 0; A1 for n = 9; Note: Do not award the final A1 if additional values of n are given"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "OR approach (two students together): ^{n-2}C_1 (A1), ^{n-2}C_3 (A1), then same equation and solving steps"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "15/17",
+      "markscheme_pages": "21/31",
+      "task_summary": "Show that 2p − q = a for the arithmetic sequence a, p, q, …",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_sequence",
+        "common_difference",
+        "equating_differences",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "Express common difference d = p − a and d = q − p",
+        "Equate: p − a = q − p",
+        "Rearrange to 2p − q = a"
+      ],
+      "accepted_alternatives": [
+        "Use a + q = 2p or equivalent rearrangements"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21/31",
+          "basis": "M1 awarded for attempt to find a difference; A1 for correct equation leading to 2p − q = a AG. Accepts p − a = q − p, 2(q − a) = p − a, or 2p = a + q."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "15/17",
+      "markscheme_pages": "21/31",
+      "task_summary": "Show that s² = at for the geometric sequence a, s, t, …",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_sequence",
+        "common_ratio",
+        "equating_ratios",
+        "cross_multiplication"
+      ],
+      "method_path": [
+        "Express common ratio r = s/a and r = t/s",
+        "Equate: s/a = t/s",
+        "Cross-multiply to s² = at"
+      ],
+      "accepted_alternatives": [
+        "Use s = ar and t = ar² leading to t = sr, then substitute r = s/a to obtain s² = at"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21/31",
+          "basis": "M1 for attempt to find a ratio; A1 for correct equation. Accepts s/a = t/s, t = a(s/a)², or s/a = t/s."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "15/17",
+      "markscheme_pages": "22/31",
+      "task_summary": "Given q = t = 1, show that p > 1/2.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "substitution",
+        "inequality_reasoning",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Substitute q = 1 into 2p − q = a to obtain 2p − 1 = a",
+        "Substitute t = 1 into s² = at to obtain s² = a",
+        "Combine to get 2p − 1 = s²",
+        "Since s² > 0, 2p − 1 > 0, therefore p > 1/2"
+      ],
+      "accepted_alternatives": [
+        "Use a = 2p − 1 and a = s²; since a > 0 (as s² > 0), 2p − 1 > 0 ⇒ p > 1/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22/31",
+          "basis": "EITHER route: A1 for 2p − 1 = s²; R1 for s² > 0 ⇒ 2p − 1 > 0 ⇒ p > 1/2. OR route: A1 for 2p − 1 = a and s² = a; R1 for a > 0 ⇒ 2p − 1 > 0 ⇒ p > 1/2. Note: Do not award A0R1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "15/17",
+      "markscheme_pages": "23/31",
+      "task_summary": "Given a = 9, s > 0, q = t = 1, write the first four terms of (i) the arithmetic sequence and (ii) the geometric sequence.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_sequence",
+        "geometric_sequence",
+        "common_difference",
+        "common_ratio",
+        "term_generation"
+      ],
+      "method_path": [
+        "(i) Solve 2p − 1 = 9 ⇒ p = 5, find d = p − a = −4",
+        "Arithmetic terms: 9, 5, 1, −3",
+        "(ii) Solve s² = 9·1 ⇒ s = 3 (since s > 0), find r = s/a = 1/3",
+        "Geometric terms: 9, 3, 1, 1/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23/31",
+          "basis": "(i) 9, 5, 1, −3 with A1 awarded for each of the 2nd term (5) and 4th term (−3). (ii) 9, 3, 1, 1/3 with A1 awarded for each of the 2nd term (3) and 4th term (1/3)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 6,
+      "source_pages": "15/17",
+      "markscheme_pages": "23–24/31",
+      "task_summary": "(i) Find the common difference of uₙ in terms of ln 3; (ii) Show that Σ_{i=1}^{10} uᵢ = −90 − 25 ln 3, where u₁ = 9 + ln 9, u₂ = 5 + ln 3, u₃ = 1 + ln 1.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_sequence",
+        "common_difference",
+        "arithmetic_series_sum",
+        "logarithm_properties",
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "(i) Compute d = u₂ − u₁ = (5 + ln 3) − (9 + ln 9)",
+        "Simplify ln 9 = 2 ln 3, ln 1 = 0",
+        "Obtain d = −4 − ln 3",
+        "(ii) Apply S₁₀ = (10/2)[2u₁ + 9d]",
+        "Substitute u₁ = 9 + 2 ln 3, d = −4 − ln 3",
+        "Simplify: S₁₀ = 5[18 + 4 ln 3 − 36 − 9 ln 3] = 5[−18 − 5 ln 3] = −90 − 25 ln 3"
+      ],
+      "accepted_alternatives": [
+        "Compute u₁₀ = u₁ + 9d = 9 + 2 ln 3 + 9(−4 − ln 3) = −27 − 7 ln 3, then S₁₀ = 10(u₁ + u₁₀)/2 = 5(9 + 2 ln 3 − 27 − 7 ln 3) = −90 − 25 ln 3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23/31",
+          "basis": "(i) M1 for attempt to find difference between two consecutive terms; A1 for ln 9 = 2 ln 3 or ln 1 = 0 or ln(1/3) = −ln 3; A1 for d = −4 − ln 3."
+        },
+        {
+          "markscheme_pages": "24/31",
+          "basis": "(ii) METHOD 1: M1 for attempt to substitute into S₁₀; A1 for correct substitution; A1 for simplified result −90 − 25 ln 3 AG. METHOD 2: find u₁₀ first then apply S₁₀ = 10(u₁ + u₁₀)/2, same mark distribution."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "(a)",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Verify that A(2, 1/2, 1) lies on plane P₁: 2x+6y−2z=5 by substituting coordinates.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_coordinates",
+        "evaluate_plane_equation",
+        "verify_equality"
+      ],
+      "method_path": [
+        "Substitute x=2, y=1/2, z=1 into 2x+6y−2z",
+        "Compute 2·2+6·(1/2)−2·1=4+3−2=5",
+        "Confirm LHS equals RHS=5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1 for 2×2+6×1/2−2×1=5. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-B",
+      "question": "11",
+      "part": "(b)",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Given p=−6, P₂ perpendicular to P₁, and A on P₂, find k and q. Use dot product of normals = 0, then substitute A into P₂.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product_normals",
+        "equate_to_zero",
+        "solve_quadratic",
+        "substitute_point_into_plane",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Write normals n₁=(2,6,−2), n₂=(k²−6, 2k+3, −6)",
+        "Set n₁·n₂=0: 2(k²−6)+6(2k+3)+(−2)(−6)=0",
+        "Simplify to 2k²+12k+18=0 → (k+3)²=0",
+        "Solve k=−3",
+        "Substitute k=−3, p=−6, A(2,1/2,1) into (k²−6)x+(2k+3)y+pz=q",
+        "Solve q=3·2−3·(1/2)−6·1=−3/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(A1) for dot product equation; (M1) for equating scalar product of normals to zero; A1 for k=−3; (M1) for substituting k, p, A into Π₂; A1 for q=−3/2. [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "(c)",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "26",
+      "task_summary": "Given P₂ parallel to P₁ and k=3, determine p by equating normal vector ratios.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "parallel_plane_condition",
+        "equate_normal_ratios",
+        "solve_proportion"
+      ],
+      "method_path": [
+        "Write n₁=(2,6,−2), n₂=(3,9,p)",
+        "Set normals proportional: (2,6,−2)=μ(3,9,p)",
+        "Equate ratios: 2/3=6/9=−2/p",
+        "Solve 2/3=−2/p → p=−3"
+      ],
+      "accepted_alternatives": [
+        "Solve 6/9=−2/p → p=−3",
+        "Solve 6p+18=0 → p=−3",
+        "Solve −6−2p=0 → p=−3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(M1) for attempt to equate a pair of ratios or equate vector product to zero; A1 for p=−3. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-D-I-II",
+      "question": "11",
+      "part": "(d)(i)(ii)",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "26–27",
+      "task_summary": "Find coordinates of B where the line through A perpendicular to P₁ meets P₂, then show the perpendicular distance between the planes is √11.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "parametric_line_equation",
+        "substitute_into_plane",
+        "solve_for_parameter",
+        "compute_point_coordinates",
+        "vector_difference",
+        "magnitude_formula",
+        "simplify_radical"
+      ],
+      "method_path": [
+        "Write line through A with direction n₁: r=(2,1/2,1)+λ(2,6,−2)",
+        "Substitute into P₂: 3(2+2λ)+9(1/2+6λ)−3(1−2λ)=−51/2",
+        "Simplify to 15/2+66λ=−51/2",
+        "Solve λ=−1/2",
+        "Compute B=(2−1, 1/2−3, 1+1)=(1,−5/2,2)",
+        "Compute AB=B−A=(−1,−3,1)",
+        "Find |AB|=√((−1)²+(−3)²+1²)=√(1+9+1)=√11"
+      ],
+      "accepted_alternatives": [
+        "Use distance formula |λ|·|n₁| with λ=−1/2: |−1/2|·√44=√11"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(M1) for vector equation of line through A perpendicular to Π₁; (M1) for substituting into Π₂; (A1) for correct substitution; A1 for λ=−1/2; A1 for B=(1,−5/2,2)."
+        },
+        {
+          "markscheme_pages": "27",
+          "basis": "(M1) for distance AB or ||λ(2,6,−2)||; A1 for √((1−2)²+(−5/2−1/2)²+(2−1)²) or √(1+9+1); AG for =√11. [7 marks total]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-E",
+      "question": "11",
+      "part": "(e)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Find the equation of a third parallel plane P₃ also at perpendicular distance √11 from P₁.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_equality",
+        "compute_opposite_point",
+        "substitute_point_into_plane_form",
+        "write_plane_equation"
+      ],
+      "method_path": [
+        "Find point C on P₃ using AC=BA (or equivalent): C=A−(B−A)=A+(1,−3,−1)=(3,7/2,0)",
+        "Substitute C into plane form x+3y−z=d: 3+3·(7/2)−0=27/2",
+        "Write P₃: x+3y−z=27/2 or 2x+6y−2z=27"
+      ],
+      "accepted_alternatives": [
+        "Use BC=2BA to find C, then substitute into plane form",
+        "Use A as midpoint of BC to find C, then substitute into plane form"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "(M1) for valid method to find point C (AC=BA, BC=2BA, or A as midpoint of BC); A1 for point (3,7/2,0); (M1) for substituting into Π₃: x+3y−z=d; A1 for Π₃: x+3y−z=27/2 or 2x+6y−2z=27. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 8,
+      "source_pages": "16",
+      "markscheme_pages": "28",
+      "task_summary": "Prove by induction that f^(n)(x) = ((2n-1)! a^n)/(2^(n-1)(n-1)!) (1-ax)^(-(2n-1)/2) for n in Z+, where f(x)=(1-ax)^(-1/2).",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "induction_hypothesis",
+        "differentiate_nth_derivative",
+        "algebraic_simplification",
+        "induction_conclusion"
+      ],
+      "method_path": [
+        "Verify base case n=1: compute f'(x)=a/2(1-ax)^(-3/2) from definition, confirm matches RHS formula",
+        "Assume formula true for n=k",
+        "Differentiate f^(k)(x) with chain rule to express f^(k+1)(x)",
+        "Multiply numerator and denominator by 2k",
+        "Simplify factorial and exponent to give formula for n=k+1",
+        "Conclude by induction: true for n=1 and n=k implies n=k+1, therefore true for all n in Z+"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A1 LHS/RHS at n=1; R1 therefore true for n=1; M1 assume true for n=k; M1 attempt differentiate RHS; A1 correct derivative; M1 multiply top and bottom by 2k; A1 simplified expression; R1 induction conclusion requires at least five prior marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "Using part (a) or otherwise, show the Maclaurin series for f(x)=(1-ax)^(-1/2) up to x^2 term is 1 + (a/2)x + (3a^2/8)x^2.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "evaluate_function_at_zero",
+        "evaluate_derivatives_at_zero",
+        "maclaurin_series_formula"
+      ],
+      "method_path": [
+        "Evaluate f(0)=1, f'(0)=a/2, f''(0)=3a^2/4",
+        "Substitute into Maclaurin formula f(0)+f'(0)x+f''(0)x^2/2! and simplify to 1+(a/2)x+(3a^2/8)x^2"
+      ],
+      "accepted_alternatives": [
+        "Use general term from part (a) with n=0,1,2 directly",
+        "Use repeated differentiation from first principles"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "A1 for f''(x) or f''(0)=3a^2/4; A1 for f(0)=1, f'(0)=a/2, f''(0)=6a^2/8 leading to series 1+(a/2)x+(3a^2/8)x^2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "30",
+      "task_summary": "Hence show that (1-2x)^(-1/2)(1-4x)^(-1/2) is approximately 1 + 3x + (19/2)x^2.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_parameter",
+        "binomial_series_expansion",
+        "series_multiplication",
+        "collect_like_terms"
+      ],
+      "method_path": [
+        "Substitute a=2 in Maclaurin series to expand (1-2x)^(-1/2) = 1 + x + (3/2)x^2 + ...",
+        "Substitute a=4 to expand (1-4x)^(-1/2) = 1 + 2x + 6x^2 + ...",
+        "Multiply the two series expansions",
+        "Collect terms up to x^2 to obtain 1 + 3x + (19/2)x^2"
+      ],
+      "accepted_alternatives": [
+        "Use binomial theorem directly on product (1-6x+8x^2)^(-1/2)",
+        "Multiply in reverse order"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "M1 attempt to use a=2 or a=4 in expansion; A1 for at least one correct expansion; M1 attempt to multiply their two expansions; A1 for result 1+3x+(19/2)x^2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "30",
+      "task_summary": "Given the series expansion for (1-ax)^(-1/2) converges for |ax|<1, state the restriction on x for the approximation in part (c) to be valid.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "convergence_condition",
+        "inequality_from_domain"
+      ],
+      "method_path": [
+        "State |x| less than 1/4 from requiring |2x| less than 1 and |4x| less than 1"
+      ],
+      "accepted_alternatives": [
+        "-1/4 less than x less than 1/4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "A1 for |x| less than 1/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "31",
+      "task_summary": "Use x=1/10 to determine an approximate value for sqrt(3). Give answer as c/d with c,d in Z+.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "substitute_value",
+        "evaluate_series_approximation",
+        "evaluate_exact_expression",
+        "equate_and_solve",
+        "rational_simplification"
+      ],
+      "method_path": [
+        "Substitute x=1/10 into series 1+3x+(19/2)x^2 to get 279/200",
+        "Substitute x=1/10 into exact product (1-2x)^(-1/2)(1-4x)^(-1/2) to get sqrt(10/48)",
+        "Equate approximation to exact: 279/200 approx 1/(4 sqrt(3))",
+        "Solve for sqrt(3) to obtain 500/279"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "A1 for 279/200 from series; M1 attempt to substitute x=1/10 into exact expression; A1 for sqrt(10/48) or equivalent; A1 for 279/200 approx 1/(4 sqrt(3)); A1 for sqrt(3) approx 500/279."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

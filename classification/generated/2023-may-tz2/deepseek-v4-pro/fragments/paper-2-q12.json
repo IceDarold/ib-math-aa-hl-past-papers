@@ -1,0 +1,256 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Use Euler's method with step length 0.1 to approximate y(1.1) given dy/dx = (x²+3y²)/(xy) with y(1)=2.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "numerical_approximation",
+        "first_order_de"
+      ],
+      "method_path": [
+        "compute f(x₀,y₀) at (1,2)",
+        "apply y₁ = y₀ + h·f(x₀,y₀) with h=0.1",
+        "obtain y(1.1) ≈ 2.65"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "(M1) for attempt to use y₁ = y₀ + h × f(x₀,y₀); A1 for 2.65. Note: Award (M1)A0 for 2.35."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 8,
+      "source_pages": "16",
+      "markscheme_pages": "24-25",
+      "task_summary": "Solve the differential equation analytically to show that y = x√((9x⁴−1)/2).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution_y_equals_vx",
+        "separation_of_variables",
+        "integration",
+        "initial_condition",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "substitute y = vx, dy/dx = v + x dv/dx",
+        "substitute into DE and simplify to separable form",
+        "separate variables: ∫ 2v/(1+2v²) dv = ∫ 1/x dx",
+        "integrate to (1/4)ln(1+2v²) = ln x + C",
+        "substitute back v = y/x",
+        "use initial condition (1,2) to find C = 9",
+        "rearrange to y = x√((9x⁴−1)/2)"
+      ],
+      "accepted_alternatives": [
+        "Alternative integration path using ln(y²/x²+2) = ln(Cx⁴) to obtain same constant C=9"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for y=vx; (A1) for dy/dx = v+x dv/dx; (M1) for substitution into DE; A1 for simplified form; M1 for attempt to separate variables; A1 for (1/4)ln(2v²+1)=ln x + C"
+        },
+        {
+          "markscheme_pages": "25",
+          "basis": "M1 for finding C using x=1,y=2; A1 for rearranged equation; AG for final answer"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "26",
+      "task_summary": "Find the exact value of y when x = 1.1 using the solution from part (b).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "evaluate_expression",
+        "substitution"
+      ],
+      "method_path": [
+        "substitute x = 1.1 into y = x√((9x⁴−1)/2)",
+        "compute y ≈ 2.71422… ≈ 2.71"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "y = 2.71422…; A1 for y = 2.71"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "26",
+      "task_summary": "Explain, using concavity, why the exact y(1.1) from part (c) is greater than the Euler approximation from part (a).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "concavity",
+        "euler_method_error",
+        "tangent_underestimate"
+      ],
+      "method_path": [
+        "state graph is concave up / d²y/dx² > 0 on [1,1.1]",
+        "reason that Euler tangent line lies below curve, giving underestimate"
+      ],
+      "accepted_alternatives": [
+        "reference to positive curvature, opening upwards, or increasing first derivative with tangent-line reasoning"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "A1 for graph concave up or d²y/dx²>0 for 1≤x≤1.1; R1 for tangent drawn using Euler's method gives underestimate, so exact value is greater (must reference tangent)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Sketch the graph of an appropriate derivative of y to determine the x-coordinate of the inflection point P.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "calculus.differential_equations",
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "inflection_point",
+        "derivative_graph",
+        "gdc_sketch",
+        "root_finding"
+      ],
+      "method_path": [
+        "sketch correct graph of dy/dx or d²y/dx²",
+        "identify x-coordinate where derivative has extremum or d²y/dx²=0",
+        "obtain x ≈ 0.656"
+      ],
+      "accepted_alternatives": [
+        "sketch of dy/dx and find its minimum; sketch of d²y/dx² and find its root"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "A1 for correct graph of dy/dx or d²y/dx²; A1 for x = 0.655996… ≈ 0.656"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q12-F",
+      "question": "12",
+      "part": "F",
+      "marks": 6,
+      "source_pages": "16",
+      "markscheme_pages": "28-29",
+      "task_summary": "Use the given expression for d²y/dx² to show that point P lies on the line y = mx and determine the exact value of m.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "second_derivative_zero",
+        "polynomial_division",
+        "substitution",
+        "factorisation",
+        "quadratic_in_m_squared"
+      ],
+      "method_path": [
+        "set d²y/dx² = 0",
+        "multiply through by denominator to obtain polynomial x⁴ − 2x²y² + 6y⁴ = 0",
+        "divide through by y⁴ and substitute m = y/x",
+        "obtain 6m⁴ + m² − 1 = 0",
+        "factor as (3m²−1)(2m²+1)=0",
+        "solve to get m = 1/3 (reject negative and complex roots using x>0, y>0)"
+      ],
+      "accepted_alternatives": [
+        "Divide through by x²y² instead of y⁴",
+        "Factor x⁴−2x²y²+6y⁴ directly as (x²−3y²)(x²+2y²)=0 then solve for y/x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "(A1) for d²y/dx²=0; M1 for dividing through by y⁴ (or x²y²); M1 for substituting m=y/x; A1 for (3m²−1)(2m²+1)=0"
+        },
+        {
+          "markscheme_pages": "29",
+          "basis": "A1 for m=1/3; R1 for rejecting other roots using x>0,y>0"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

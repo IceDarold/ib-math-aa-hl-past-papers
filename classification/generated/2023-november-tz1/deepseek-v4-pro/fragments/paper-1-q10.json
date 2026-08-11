@@ -1,0 +1,204 @@
+{
+  "question": "10",
+  "expected_question_marks": 15,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P1-Q10-A",
+      "question": "10",
+      "part": "(a)",
+      "marks": 1,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "State the equation of the vertical asymptote to the graph of y = g(x) where g(x) = 2 ln x - ln d, x > 0.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "identify_vertical_asymptote",
+        "logarithmic_asymptote"
+      ],
+      "method_path": [
+        "Identify that ln x has a vertical asymptote at x = 0",
+        "State x = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "x = 0  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q10-B-I",
+      "question": "10",
+      "part": "(b)(i)",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Show that at the points of intersection of f(x)=ln(2x-9) and g(x)=2ln x-ln d, the x-coordinates satisfy x^2 - 2dx + 9d = 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equate_functions",
+        "apply_log_power_rule",
+        "apply_log_quotient_rule",
+        "eliminate_logarithms",
+        "rearrange_to_quadratic"
+      ],
+      "method_path": [
+        "Set ln(2x-9) = 2 ln x - ln d",
+        "Apply power rule: 2 ln x = ln(x^2)",
+        "Apply quotient rule: ln(x^2) - ln d = ln(x^2/d)",
+        "Equate arguments: 2x - 9 = x^2/d",
+        "Multiply by d and rearrange to x^2 - 2dx + 9d = 0"
+      ],
+      "accepted_alternatives": [
+        "Route via ln d = ln(x^2/(2x-9)) giving d = x^2/(2x-9)",
+        "Route via ln(2x-9) = ln(x^2) - ln d giving (2x-9)d = x^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "setting ln(2x-9)=2ln x-ln d M1; attempt to use power rule (M1); 2ln x=ln x^2 (seen anywhere); attempt to use product/quotient rule for logs (M1); ln(2x-9)=ln(x^2/d) OR ln d=ln(x^2/(2x-9)) OR ln(2x-9)=ln x^2-ln d A1; leads to x^2=(2x-9)d OR d=x^2/(2x-9) OR (2x-9)d=x^2; x^2-2dx+9d=0 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q10-B-II",
+      "question": "10",
+      "part": "(b)(ii)",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Hence show that d^2 - 9d > 0 using the discriminant of the quadratic from (b)(i).",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "compute_discriminant",
+        "apply_discriminant_condition",
+        "simplify_inequality"
+      ],
+      "method_path": [
+        "Write discriminant Delta = (-2d)^2 - 4(1)(9d)",
+        "Recognize two distinct intersection points imply Delta > 0",
+        "Simplify 4d^2 - 36d > 0 to d^2 - 9d > 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "discriminant = (-2d)^2 - 4x1x9d (A1); recognizing discriminant > 0 (M1); (-2d)^2 - 4x1x9d > 0 OR (2d)^2 - 4x9d > 0 OR 4d^2 - 36d > 0 A1; d^2 - 9d > 0 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q10-B-III",
+      "question": "10",
+      "part": "(b)(iii)",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Find the range of possible values of d given d is a positive real number and d^2 - 9d > 0.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "factor_inequality",
+        "solve_quadratic_inequality",
+        "apply_domain_restriction"
+      ],
+      "method_path": [
+        "Factor: d(d - 9) > 0",
+        "Solve: d < 0 or d > 9",
+        "Apply d in R+: d > 9"
+      ],
+      "accepted_alternatives": [
+        "Solve by sketching graph of d(d-9)",
+        "Solve by sign test",
+        "Solve d^2 > 9d giving d > 9 for d > 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "setting d(d-9)>0 OR d(d-9)=0 OR sketch graph OR sign test OR d^2>9d (M1); d<0 or d>9, but d in R+ so d>9 (or [9,infinity)) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q10-C",
+      "question": "10",
+      "part": "(c)",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "For d = 10, find q - p where p and q are the x-coordinates of intersection, expressing the answer in the form a sqrt(b) with a, b positive integers.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_parameter",
+        "solve_quadratic_equation",
+        "identify_roots",
+        "compute_difference",
+        "simplify_radical"
+      ],
+      "method_path": [
+        "Substitute d = 10 into x^2 - 2dx + 9d = 0 to get x^2 - 20x + 90 = 0",
+        "Solve: x = 10 +/- sqrt(10)",
+        "Identify p = 10 - sqrt(10), q = 10 + sqrt(10)",
+        "Compute q - p = 2 sqrt(10)",
+        "State a = 2, b = 10"
+      ],
+      "accepted_alternatives": [
+        "sqrt(40) equivalent to 2 sqrt(10) with a = 1, b = 40"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "x^2 - 20x + 90 = 0 A1; attempting to solve their 3 term quadratic equation (M1); (x=10-sqrt(10))=p or (x=10+sqrt(10))=q (A1); subtracting their values of x (M1); distance = 2 sqrt(10) A1; (a=2, b=10). Note: Accept 1 sqrt(40) OR sqrt(40)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

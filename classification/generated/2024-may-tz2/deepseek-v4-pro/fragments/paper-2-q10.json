@@ -1,0 +1,198 @@
+{
+  "question": "10",
+  "expected_question_marks": 15,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Find the mode of the continuous random variable X with the given probability density function f.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "mode_of_pdf",
+        "function_maximum",
+        "derivative_or_symmetry"
+      ],
+      "method_path": [
+        "Recognize mode is the value of x at which f(x) attains its maximum",
+        "Find maximum via f'(x)=0, axis of symmetry, or graph of f",
+        "Mode = 1.5 kg"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "recognizes that the mode is a value of x at which f has a maximum value (M1); a clearly labelled graph of f OR states f'(x)=0 OR considers the axis of symmetry; mode is 1.5 (kg) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Find P(1 ≤ X ≤ 2) by integrating the probability density function f over [1, 2].",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "probability_from_pdf"
+      ],
+      "method_path": [
+        "Set up the definite integral of f(x) from 1 to 2",
+        "Evaluate the integral (analytically or via GDC)",
+        "P(1 ≤ X ≤ 2) = 37/85 ≈ 0.435"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "attempts to find integral from 1 to 2 of f(x) dx (M1); 0.435294... = 37/85 = 0.435 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find the median m of X by solving the equation P(X ≤ m) = 0.5, i.e. integral from 0.5 to m of f(x) dx = 0.5.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "median_of_continuous_distribution",
+        "definite_integral",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Recognize median m satisfies integral from 0.5 to m of f(x) dx = 0.5",
+        "Integrate f(x) from 0.5 to m",
+        "Solve the resulting equation for m",
+        "m = 1.69 kg"
+      ],
+      "accepted_alternatives": [
+        "Method 2: explicit antiderivative with algebraic simplification leading to the same equation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: recognizes that integral from 0.5 to m of f(x) dx = 0.5 (M1); m = 1.68701..., m = 1.69 (kg) A2. METHOD 2: same recognition (M1); explicit integration with algebraic work (A1); m = 1.69 (kg) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find the probability that a randomly selected customer spends at most $48, given $25/kg normally and $24/kg discounted rate for weight at least 0.75 kg.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "piecewise_cost_function",
+        "inequality_to_bound",
+        "definite_integral"
+      ],
+      "method_path": [
+        "Translate spend ≤ $48: for weight < 0.75 kg (rate $25/kg) always satisfied; for weight ≥ 0.75 kg (rate $24/kg) need weight ≤ 2 kg",
+        "Conclude spending ≤ $48 ⇔ weight ≤ 2 kg",
+        "Set up and evaluate integral of f(x) from 0.5 to 2",
+        "Probability = 0.635"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "0.5 ≤ x ≤ 2 (can be seen in a definite integral) (A1); attempts to evaluate their definite integral (M1); integral from 0.5 to 2 of f(x) dx = 0.635294... = 0.635 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Find the expected amount spent per customer to the nearest cent, using piecewise rates $25/kg for weight < 0.75 kg and $24/kg for weight ≥ 0.75 kg.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "statistics.continuous_random_variables",
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "expected_value",
+        "piecewise_integration",
+        "definite_integral",
+        "weighted_sum"
+      ],
+      "method_path": [
+        "Form expected value as sum of piecewise integrals: 25 times integral of x f(x) from 0.5 to 0.75 plus 24 times integral of x f(x) from 0.75 to 3",
+        "Compute integral of x f(x) from 0.5 to 0.75",
+        "Compute integral of x f(x) from 0.75 to 3",
+        "Multiply by respective rates and sum",
+        "Expected amount = $40.96"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "an attempt at forming an expected value integral (M1); integral from 0.5 to 0.75 of x f(x) dx = 0.060592... OR 25 times that = 1.51482... (A1); integral from 0.75 to 3 of x f(x) dx = 1.64345... OR 24 times that = 39.4428... (A1); sums their two definite integrals (M1); expected amount = $40.96 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

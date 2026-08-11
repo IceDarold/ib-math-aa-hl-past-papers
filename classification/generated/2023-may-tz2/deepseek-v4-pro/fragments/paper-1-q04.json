@@ -1,0 +1,57 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 6,
+      "source_pages": "8",
+      "markscheme_pages": "11-12",
+      "task_summary": "Set up definite integral for area under y=x/(x^2+2) from 0 to c, integrate by substitution or inspection to obtain (1/2)ln(x^2+2), substitute limits, equate to ln 3, apply log laws, then solve c^2=16 to give c=4.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "u_substitution",
+        "logarithmic_integration",
+        "log_laws",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Set up A = integral from 0 to c of x/(x^2+2) dx",
+        "Integrate by substitution u=x^2+2 to get (1/2)ln|u| or by inspection to get (1/2)ln(x^2+2)",
+        "Substitute limits: (1/2)[ln(c^2+2) - ln 2]",
+        "Equate to ln 3: (1/2)[ln(c^2+2) - ln 2] = ln 3",
+        "Apply log law: ln((c^2+2)/2) = ln 9",
+        "Solve: (c^2+2)/2 = 9, c^2 = 16, c = 4"
+      ],
+      "accepted_alternatives": [
+        "Integrate by substitution using u=x^2 (rather than u=x^2+2)",
+        "Apply log law to obtain ln((c^2+2)/2) = ln 3 with (c^2+2)/2 = 3 as intermediate step before reaching (c^2+2)/2 = 9"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Definite integral setup A = integral_0^c x/(x^2+2) dx; EITHER substitution u=x^2+2 or u=x^2 (M1); integrated form (1/2)[ln|u+2|] or (1/2)ln(x^2+2) (A1); OR integration by inspection (M1) yielding (1/2)ln(x^2+2) (A1)"
+        },
+        {
+          "markscheme_pages": "11-12",
+          "basis": "THEN correctly substitutes limits (M1); correctly applies at least one log law (M1); obtains (c^2+2)/2 = 9 or (c^2+2)/2 = 3 (A1); then c^2=16, c=4 (A1). Total [6 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

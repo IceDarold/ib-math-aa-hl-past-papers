@@ -1,0 +1,92 @@
+{
+  "question": "8",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "14-15",
+      "task_summary": "Find the indefinite integral of x (ln x)^2 dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "double_integration_by_parts",
+        "antiderivative",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Integrate by parts with u = (ln x)^2, dv/dx = x",
+        "Obtain (x^2/2)(ln x)^2 minus integral of x ln x dx",
+        "Integrate by parts again with u = ln x, dv/dx = x",
+        "Obtain (x^2/2)(ln x)^2 minus (x^2/2)ln x plus x^2/4 plus c"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use known integral of ln x dx = x ln x minus x; integrate by parts with u = x ln x, dv/dx = ln x.",
+        "METHOD 3: Use known integral of x ln x dx = (x^2/2)ln x minus x^2/4; integrate by parts with u = ln x, dv/dx = x ln x."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: attempt to integrate by parts (M1); u = (ln x)^2, dv/dx = x (M1); correct expression A1; attempt to integrate integral of x ln x dx by parts, with u = ln x (M1); correct intermediate A1; final answer (x^2/2)(ln x)^2 minus (x^2/2)ln x plus x^2/4 plus c (A1)."
+        },
+        {
+          "markscheme_pages": "14-15",
+          "basis": "METHOD 2 and METHOD 3 shown as accepted complete alternative integration-by-parts routes, each earning the full 6 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Hence show that the definite integral from 1 to 4 of x (ln x)^2 dx equals 32(ln 2)^2 minus 16 ln 2 plus 15/4.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral_FTC",
+        "substitution_of_limits",
+        "logarithmic_simplification",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Substitute limits x = 4 and x = 1 into the antiderivative from part (a)",
+        "Replace any ln 4 term with 2 ln 2",
+        "Simplify to obtain 32(ln 2)^2 minus 16 ln 2 plus 15/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to substitute limits into their integrated expression (M1); attempt to replace any ln 4 term with 2 ln 2 (M1); correct simplification to 32(ln 2)^2 minus 16 ln 2 plus 15/4 (A1) AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

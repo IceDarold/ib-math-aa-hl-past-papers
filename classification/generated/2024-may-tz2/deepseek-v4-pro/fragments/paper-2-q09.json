@@ -1,0 +1,62 @@
+{
+  "question": "9",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 8,
+      "source_pages": "10",
+      "markscheme_pages": "17",
+      "task_summary": "Find constants a, b, c in the rational function using three conditions: vertical asymptote x=1 gives a+b+c=0; point (2,1) gives 4a+2b+c=-2; local minimum at x=2 gives dy/dx=0 yielding 12a+4b+c=0. Solve the linear system to obtain a=3, b=-11, c=8.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "vertical_asymptote_condition",
+        "point_substitution",
+        "quotient_rule",
+        "stationary_point_condition",
+        "solve_linear_system"
+      ],
+      "method_path": [
+        "Set denominator to zero at vertical asymptote x=1 to obtain a+b+c=0",
+        "Substitute point (2,1) into curve equation to obtain 4a+2b+c=-2",
+        "Differentiate using quotient rule to find dy/dx",
+        "Set numerator of derivative to zero at x=2 to obtain 12a+4b+c=0",
+        "Solve the system of three linear equations to find a=3, b=-11, c=8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "recognizes that x=1 implies ax^2+bx+c=0 (M1); a+b+c=0 (seen anywhere) A1"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "passes through (2,1) so: (4-2)/(4a+2b+c)=1 implies 2=4a+2b+c (seen anywhere) A1"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "attempts to find dy/dx using quotient or product rule M1; substitutes x=2 into numerator of dy/dx=0 (M1); (12a+4b+c)=0 A1"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "attempts to solve their 3 linear equations (M1); a=3, b=-11 and c=8 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

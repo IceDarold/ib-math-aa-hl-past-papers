@@ -1,0 +1,56 @@
+{
+  "question": "7",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "13",
+      "task_summary": "Substitute z = 5 + qi into z² + iz = -p + 25i, expand, equate real and imaginary parts, and solve the resulting linear system to find q = 2 and p = -19.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.equations",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "substitution",
+        "expand_complex_square",
+        "equate_real_imaginary_parts",
+        "solve_linear_equation",
+        "back_substitution"
+      ],
+      "method_path": [
+        "Substitute z = 5 + qi into z² + iz = -p + 25i",
+        "Expand (5 + qi)² + i(5 + qi) to obtain (25 - q² - q) + (10q + 5)i = -p + 25i",
+        "Equate imaginary parts: 10q + 5 = 25",
+        "Solve for q = 2",
+        "Equate real parts: 25 - q² - q = -p, substitute q = 2 to obtain p = -19"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Rewrite as z² + iz + p - 25i = 0. By Vieta, sum of roots = -i, product = p - 25i. Given one root 5 + qi, the other root is (-i) - (5 + qi) = -5 - i - qi. Compute product (5 + qi)(-5 - i - qi), equate real and imaginary parts to p - 25i, and solve to obtain q = 2, p = -19."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: 'attempt to substitute solution into given equation (M1)' followed by expansion A1, then 'attempt to equate real or imaginary parts: (M1) 10q - 20 = 0 OR 25 - q² - q = -p', and 'q = 2, p = -19 A1A1'."
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 2: 'sum of roots = -i, product of roots = -p + 25i M1', 'other root is (-5 - i - qi) A1', 'equating real and imaginary parts for product of roots (M1)', 'q = 2, p = -19 A1A1'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

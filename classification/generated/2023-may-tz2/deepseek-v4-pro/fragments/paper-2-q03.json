@@ -1,0 +1,144 @@
+{
+  "question": "3",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find P(W > 210) for W ~ N(204, 5²).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "upper_tail_probability",
+        "gdc"
+      ],
+      "method_path": [
+        "compute_upper_tail_area_W_greater_210_using_normal_cdf_or_standardization",
+        "obtain_0.115"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "evidence of attempting to find correct area under normal curve (M1); P(W > 210) = 0.115 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Given P(w < W < 210) = 0.8, find P(W < w).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "complement_rule",
+        "total_probability"
+      ],
+      "method_path": [
+        "recognize_P_W_less_w_equals_1_minus_P_w_less_W_less_210_minus_P_W_greater_210",
+        "substitute_1_minus_0.8_minus_0.115069",
+        "obtain_0.0849"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognizing P(W < w) = 1 − P(w < W < 210) − P(W > 210) (M1); P(W < w) = 0.0849 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find w such that P(W < w) = 0.0849 for W ~ N(204, 5²).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "inverse_normal_distribution",
+        "gdc"
+      ],
+      "method_path": [
+        "apply_inverse_normal_with_left_tail_probability_0.08493_given_mean_204_sd_5",
+        "obtain_w_equals_197"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "evidence of attempting to use inverse normal function (M1); w = 197 (grams) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q03-D",
+      "question": "3",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Ten bags are selected at random. Find the probability that exactly one weighs less than w grams.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "binomial_probability"
+      ],
+      "method_path": [
+        "recognize_X_follows_B_10_0.08493",
+        "compute_P_X_equals_1",
+        "obtain_0.382"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognition of binomial distribution (M1); P(X = 1) = 0.382 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

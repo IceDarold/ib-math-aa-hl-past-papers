@@ -1,0 +1,83 @@
+{
+  "question": "1",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "2",
+      "markscheme_pages": "7",
+      "task_summary": "Find the x-coordinates a and b (a < b) of the intersection points of f(x) = 1 − x² and g(x) = e^(2x) on the domain −1 ≤ x ≤ 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "solve_equation",
+        "gdc_intersection",
+        "find_intersection_points"
+      ],
+      "method_path": [
+        "Set f(x) = g(x) → 1 − x² = e^(2x)",
+        "Use GDC to solve for x on [−1, 0]",
+        "Obtain a ≈ −0.917 (or −0.916562…), b = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempts to find an intersection point (M1); a = −0.916562... or −0.917, b = 0 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "2",
+      "markscheme_pages": "7",
+      "task_summary": "Find the area of the region enclosed by the graphs of f(x) = 1 − x² and g(x) = e^(2x) between x = a and x = b.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "area_between_curves",
+        "definite_integral",
+        "gdc_integration",
+        "evaluate_integral"
+      ],
+      "method_path": [
+        "Set up definite integral ∫[a, b] (f(x) − g(x)) dx = ∫[a, 0] (1 − x² − e^(2x)) dx",
+        "Evaluate integral using GDC or analytic methods",
+        "Obtain area ≈ 0.240 (or 0.239855…)"
+      ],
+      "accepted_alternatives": [
+        "For M1: show a graph with the required area shaded instead of attempting the integral"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "EITHER attempts to form the required integral involving subtraction (M1) OR shows a graph with the required area shaded (M1); THEN ∫ from a to b (f(x)−g(x))dx = ∫ from −0.916562... to 0 (1−x²−e^(2x))dx (A1); A = 0.239855... ≈ 0.240 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q08-A",
+      "question": "8",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "12",
+      "markscheme_pages": "17",
+      "task_summary": "Show that cos^2 k = sin k, where k is the x-coordinate of the intersection point P of f(x) = cos x and g(x) = tan x.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "function_equality",
+        "trigonometric_substitution",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "Equate f(k) = g(k): cos k = tan k",
+        "Substitute tan k = sin k / cos k",
+        "Multiply both sides by cos k: cos^2 k = sin k"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "sin k / cos k = cos k then cos^2 k = sin k AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q08-B",
+      "question": "8",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "17-18",
+      "task_summary": "Show that the tangent to y = f(x) at P and the tangent to y = g(x) at P intersect at right angles, using cos^2 k = sin k from part (a).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation",
+        "trigonometric_derivatives",
+        "gradient_product",
+        "perpendicular_condition"
+      ],
+      "method_path": [
+        "Differentiate f to obtain f'(k) = -sin k",
+        "Differentiate g to obtain g'(k) = sec^2 k",
+        "Compute product f'(k) g'(k) = -sin k sec^2 k = -sin k / cos^2 k",
+        "Substitute cos^2 k = sin k from part (a)",
+        "Conclude f'(k) g'(k) = -1, so tangents are perpendicular"
+      ],
+      "accepted_alternatives": [
+        "Show g'(k) = 1/cos^2 k = 1/sin k, then g'(k) = -1/f'(k), hence tangents are perpendicular."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "f'(k) = -sin k and g'(k) = sec^2 k A1"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "EITHER f'(k)g'(k) = -sin k/cos^2 k = -1 OR g'(k) = 1/cos^2 k = 1/sin k = -1/f'(k); R1 for conclusion that tangents intersect at right angles"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q08-C",
+      "question": "8",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Find the value of sin k in the form (a + sqrt(b))/c, where a, c in Z and b in Z+.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "pythagorean_identity",
+        "quadratic_equation",
+        "quadratic_formula",
+        "root_selection"
+      ],
+      "method_path": [
+        "Apply cos^2 k = 1 - sin^2 k with cos^2 k = sin k",
+        "Rearrange: 1 - sin^2 k = sin k to sin^2 k + sin k - 1 = 0",
+        "Apply quadratic formula: sin k = (-1 +/- sqrt(1+4))/2",
+        "Select positive root: sin k = (-1 + sqrt(5))/2",
+        "Identify a = -1, b = 5, c = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "1 - sin^2 k = sin k (from part a) A1; attempts to solve for sin k (M1); sin k = (-1+sqrt(5))/2 A1; a=-1, b=5, c=2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "question": "11",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "State the vertical asymptote of f(x)=(x^2-14x+24)/(2x+6).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "vertical_asymptote",
+        "denominator_zero"
+      ],
+      "method_path": [
+        "Set denominator 2x+6=0",
+        "Solve x=-3"
+      ],
+      "accepted_alternatives": [
+        "Accept 2x+6=0 or equivalent"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "x=-3 A1. Note: Accept 2x+6=0 or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "Find x-axis intercepts of f.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "x_intercept",
+        "numerator_zero",
+        "quadratic_factorisation"
+      ],
+      "method_path": [
+        "Set f(x)=0 giving x^2-14x+24=0",
+        "Factorise (x-2)(x-12)=0",
+        "State (2,0) and (12,0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "(2,0) and (12,0) A1A1. A1A0 if only x values given."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "24-25",
+      "task_summary": "Find a and b for oblique asymptote y=ax+b.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "oblique_asymptote",
+        "polynomial_division",
+        "equating_coefficients",
+        "limit_at_infinity"
+      ],
+      "method_path": [
+        "State a=1/2 from leading coefficients",
+        "Long division or equate coefficients or limit f(x)-ax as x to infinity",
+        "Obtain b=-17/2"
+      ],
+      "accepted_alternatives": [
+        "Method 1: long division yields (1/2)x-17/2+remainder",
+        "Method 2: equate coefficients with (1/2)x+b+c/(2x+6)",
+        "Method 3: limit of f(x)-(1/2)x as x to infinity = -17/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24-25",
+          "basis": "a=1/2 A1. Three methods for b=-17/2 A1. Accept y=(1/2)x-17/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "26",
+      "task_summary": "Sketch f for -50 to 50, showing asymptotes and axis intersections.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch",
+        "asymptotic_behaviour",
+        "intercepts",
+        "branches"
+      ],
+      "method_path": [
+        "Draw two branches with correct shape",
+        "Plot vertical asymptote x=-3 and oblique asymptote y=(1/2)x-17/2",
+        "Mark intercepts (2,0), (12,0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "A1 two branches correct shape. A1A1 asymptotes with correct behaviour. A1 axes intercepts correct."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "27",
+      "task_summary": "Find the range of f.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "range",
+        "discriminant",
+        "quadratic_inequality"
+      ],
+      "method_path": [
+        "Set y=f(x), rearrange to quadratic in x: x^2-(14+2y)x+(24-6y)=0",
+        "Require discriminant non-negative",
+        "Solve 4y^2+80y+100 >= 0 giving y^2+20y+25 >= 0",
+        "Obtain critical values y=-10 +/- 5 sqrt(3)",
+        "Range: y <= -10-5 sqrt(3) or y >= -10+5 sqrt(3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "-10-5 sqrt(3) ~ -18.66 OR -10+5 sqrt(3) ~ -1.34 seen (A1). attempt range (M1). y <= -18.7, y >= -1.34 A1A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "27",
+      "task_summary": "Solve inequality f(x) > x.",
+      "primary_topic": "functions.inequalities",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "rational_inequality",
+        "case_analysis",
+        "quadratic_inequality"
+      ],
+      "method_path": [
+        "Rewrite (x^2-14x+24)/(2x+6) > x",
+        "Case x > -3: gives x^2+20x-24 < 0, so -10-2 sqrt(31) < x < -10+2 sqrt(31), intersect -> -3 < x < -10+2 sqrt(31)",
+        "Case x < -3: inequality reverses, x^2+20x-24 > 0, so x < -10-2 sqrt(31) or x > -10+2 sqrt(31), intersect -> x < -10-2 sqrt(31)",
+        "Combine: x < -10-2 sqrt(31) (~ -21.1) or -3 < x < -10+2 sqrt(31) (~ 1.14)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "-10-2 sqrt(31) ~ -21.14 OR -10+2 sqrt(31) ~ 1.14 seen (A1). x < -21.1, -3 < x < 1.14 A1A1A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Sketch the graph of f(x) = e^x - 3x - 4 on the domain -4 <= x <= 3, showing roots, y-intercept, local minimum, and endpoints with approximate accuracy.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "function_sketching",
+        "root_finding",
+        "intercept_finding",
+        "turning_point_finding",
+        "domain_endpoints"
+      ],
+      "method_path": [
+        "Locate roots approximately: one root in (-2, -1) and one in (2, 3)",
+        "Find y-intercept f(0) = -3",
+        "Find local minimum near x in (0.5, 1.5) with y in (-5, -4)",
+        "Evaluate endpoints at x = -4 and x = 3",
+        "Sketch smooth curve through all key features"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1A1A1: A1 for approximately correct roots in -2<x<-1 and 2<x<3; A1 for y-intercept in -3.5<y<-2.5 and local minimum in 0.5<x<1.5, -5<y<-4; A1 for approximately correct endpoints."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find horizontal stretch factor k and vertical translation c that transform f(x)=e^x-3x-4 into g(x)=e^{2x}-6x-7.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "function_transformation",
+        "horizontal_stretch",
+        "vertical_translation",
+        "coefficient_matching"
+      ],
+      "method_path": [
+        "Apply horizontal stretch x->x/k to f: f(x/k)=e^{x/k}-3(x/k)-4",
+        "Add vertical translation c: f(x/k)+c",
+        "Match exponent: x/k=2x gives k=1/2",
+        "Match linear and constant: -3x/(1/2)-4+c=-6x-7 gives c=-3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for k=1/2; A1 for c=-3 (accept translate/shift 3 units down)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "question": "6",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Given X ~ B(25, p) and Var(X) = 5.75, find the possible values of p by setting up the binomial variance equation 25p(1-p) = 5.75 and solving the quadratic.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "binomial_variance",
+        "quadratic_equation",
+        "substitution",
+        "gdc_solve"
+      ],
+      "method_path": [
+        "Recall binomial variance formula Var(X) = np(1-p)",
+        "Substitute n = 25, Var(X) = 5.75 to give 25p(1-p) = 5.75",
+        "Solve the quadratic p(1-p) = 0.23 for p",
+        "Obtain p ≈ 0.641 or p ≈ 0.359 (exact: p = (5 ± √2)/10)"
+      ],
+      "accepted_alternatives": [
+        "Exact form p = (5 ± √2)/10 accepted in place of decimal approximations."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "5.75 = 25p(1-p) (A1); p = 0.641421..., 0.358578... → p = 0.641, 0.359 (A1)(A1); also p = (5 ± √2)/10"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Given Y = 1 - 2X, find Var(Y) using the linear transformation property Var(aX + b) = a²Var(X).",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "variance_linear_transformation",
+        "substitution",
+        "arithmetic"
+      ],
+      "method_path": [
+        "Apply Var(a + bX) = b²Var(X) with b = -2",
+        "Compute Var(Y) = (-2)² × Var(X) = 4 × 5.75",
+        "Obtain Var(Y) = 23"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Var(Y) = (-2)² Var(X) = 4 Var(X) (A1); = 23 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

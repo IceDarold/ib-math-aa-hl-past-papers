@@ -1,0 +1,174 @@
+{
+  "question": "11",
+  "expected_question_marks": 22,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Find modulus and argument of u = -1 + √3 i, hence show u = 2e^(2πi/3).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus",
+        "argument",
+        "polar_form",
+        "reference_angle",
+        "quadrant_determination"
+      ],
+      "method_path": [
+        "Compute |u| = √((-1)² + (√3)²) = 2",
+        "Find reference angle arctan(√3/1) = π/3",
+        "Determine arg(u) = π − π/3 = 2π/3 (quadrant II)",
+        "Express u = 2(cos(2π/3) + i sin(2π/3)) = 2e^(2πi/3)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: use polar form equations r cos(2π/3) = −1 and r sin(2π/3) = √3 to find r = 2, then combine with argument from diagram/tan to give 2e^(2πi/3)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "A1 for |u| = √((−1)²+(√3)²) = 2 (AG); M1 for reference angle π/3 or tan⁻¹(√3/1); A1 for arg = π − π/3 = 2π/3, giving 2e^(2πi/3) (AG). METHOD 2: M1 for reference angle; A1 for argument; A1 for r = 2 via cos(2π/3) or sin(2π/3)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "(i) Find smallest positive integer n such that u^n is real. (ii) Evaluate u^n for that n.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivre_theorem",
+        "real_condition",
+        "trigonometric_form",
+        "integer_solution",
+        "evaluation"
+      ],
+      "method_path": [
+        "(i) Write u^n = 2^n e^(2nπi/3); for u^n ∈ ℝ require sin(2nπ/3) = 0",
+        "Set 2nπ/3 = kπ, k ∈ ℤ → n = 3k/2; smallest positive integer n = 3",
+        "(ii) Compute u³ = 2³ e^(2πi) = 8·(cos 2π + i sin 2π) = 8"
+      ],
+      "accepted_alternatives": [
+        "Any correct reasoning that n must be a multiple of 3 to make the argument an integer multiple of π, with n = 3 being the smallest positive such integer."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "(i) (M1) for noting u^n ∈ ℝ ⇒ 2nπ/3 = kπ; (A1) for a multiple of 3 considered; A1 for n = 3. (ii) M1 for substituting their n into u^n; A1 for u³ = 8."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 9,
+      "source_pages": "14",
+      "markscheme_pages": "25-26",
+      "task_summary": "(i) Given u = −1+√3i is a root of z³+5z²+10z+12=0, find the other roots. (ii) Using a transformation or otherwise, find the roots of 1+5w+10w²+12w³=0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "conjugate_root_theorem",
+        "sum_of_roots",
+        "product_of_roots",
+        "coefficient_comparison",
+        "reciprocal_transformation",
+        "factorization"
+      ],
+      "method_path": [
+        "(i) By conjugate root theorem, −1−√3i is a root",
+        "Use sum of roots: (−1+√3i)+(−1−√3i)+c = −5 → c = −3, or product: (−1+√3i)(−1−√3i)·c = −12 → 4c = −12 → c = −3",
+        "Roots are z = −1±√3i, z = −3",
+        "(ii) Compare 1+5w+10w²+12w³=0 with z³+5z²+10z+12=0: substitute w = 1/z",
+        "Roots w = 1/(−1±√3i) = (−1∓√3i)/4 and w = −1/3"
+      ],
+      "accepted_alternatives": [
+        "(i) OR: form quadratic factor (z−(−1+√3i))(z−(−1−√3i)) = z²+2z+4, compare coefficients in (z−c)(z²+2z+4)=z³+5z²+10z+12 to get c=−3. (ii) OR: factor 1+5w+10w²+12w³ = (3w+1)(4w²+2w+1)=0 and solve."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25-26",
+          "basis": "(i) A1 for conjugate −1−√3i as root. EITHER: M1 sum of roots → (A1) (−1+√3i)+(−1−√3i)+c = −5 → (A1) c = −3. OR: M1 product of roots → (A1) 4c = −12 → (A1) c = −3. OR: (A1) quadratic factor z²+2z+4 → M1 coefficient comparison → (A1) −4c = −12. THEN A1: c = −3. (ii) METHOD 1: A2 for z = 1/w; A1, A1 for w = −1/3, (−1∓√3i)/4. METHOD 2: M1 factorisation; A1 for (3w+1)(4w²+2w+1)=0; A1, A1 for roots."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Solve z² = 2z* (z ≠ 0) by expressing z = a+bi, find all roots.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "cartesian_expansion",
+        "real_imaginary_equating",
+        "simultaneous_equations",
+        "case_analysis"
+      ],
+      "method_path": [
+        "Substitute z = a+bi into z² = 2z*: (a+bi)² = 2(a−bi)",
+        "Expand: a²−b²+2abi = 2a−2bi",
+        "Equate real and imaginary parts: a²−b² = 2a, 2ab = −2b",
+        "From 2ab = −2b: factor 2b(a+1)=0 → b=0 or a=−1",
+        "Case b=0: a²=2a → a=0 (reject, z≠0) or a=2 → z=2",
+        "Case a=−1: 1−b²=−2 → b²=3 → b=±√3 → z=−1±√3i"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "A1 for (a+bi)² = 2(a−bi); M1 expand and equate real/imaginary parts: a²−b²=2a, 2ab=−2b; M1 solve for a or b; A1 for b=0 → a=2 (real root z=2); A1 for a=−1 → b=±√3 (complex roots z=−1±√3i)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

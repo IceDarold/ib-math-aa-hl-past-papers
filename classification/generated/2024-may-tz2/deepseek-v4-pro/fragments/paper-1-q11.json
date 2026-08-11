@@ -1,0 +1,224 @@
+{
+  "question": "11",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "(a)",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Verify that A(2, 1/2, 1) lies on plane P₁: 2x+6y−2z=5 by substituting coordinates.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_coordinates",
+        "evaluate_plane_equation",
+        "verify_equality"
+      ],
+      "method_path": [
+        "Substitute x=2, y=1/2, z=1 into 2x+6y−2z",
+        "Compute 2·2+6·(1/2)−2·1=4+3−2=5",
+        "Confirm LHS equals RHS=5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1 for 2×2+6×1/2−2×1=5. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-B",
+      "question": "11",
+      "part": "(b)",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Given p=−6, P₂ perpendicular to P₁, and A on P₂, find k and q. Use dot product of normals = 0, then substitute A into P₂.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product_normals",
+        "equate_to_zero",
+        "solve_quadratic",
+        "substitute_point_into_plane",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Write normals n₁=(2,6,−2), n₂=(k²−6, 2k+3, −6)",
+        "Set n₁·n₂=0: 2(k²−6)+6(2k+3)+(−2)(−6)=0",
+        "Simplify to 2k²+12k+18=0 → (k+3)²=0",
+        "Solve k=−3",
+        "Substitute k=−3, p=−6, A(2,1/2,1) into (k²−6)x+(2k+3)y+pz=q",
+        "Solve q=3·2−3·(1/2)−6·1=−3/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(A1) for dot product equation; (M1) for equating scalar product of normals to zero; A1 for k=−3; (M1) for substituting k, p, A into Π₂; A1 for q=−3/2. [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "(c)",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "26",
+      "task_summary": "Given P₂ parallel to P₁ and k=3, determine p by equating normal vector ratios.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "parallel_plane_condition",
+        "equate_normal_ratios",
+        "solve_proportion"
+      ],
+      "method_path": [
+        "Write n₁=(2,6,−2), n₂=(3,9,p)",
+        "Set normals proportional: (2,6,−2)=μ(3,9,p)",
+        "Equate ratios: 2/3=6/9=−2/p",
+        "Solve 2/3=−2/p → p=−3"
+      ],
+      "accepted_alternatives": [
+        "Solve 6/9=−2/p → p=−3",
+        "Solve 6p+18=0 → p=−3",
+        "Solve −6−2p=0 → p=−3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(M1) for attempt to equate a pair of ratios or equate vector product to zero; A1 for p=−3. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-D-I-II",
+      "question": "11",
+      "part": "(d)(i)(ii)",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "26–27",
+      "task_summary": "Find coordinates of B where the line through A perpendicular to P₁ meets P₂, then show the perpendicular distance between the planes is √11.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "parametric_line_equation",
+        "substitute_into_plane",
+        "solve_for_parameter",
+        "compute_point_coordinates",
+        "vector_difference",
+        "magnitude_formula",
+        "simplify_radical"
+      ],
+      "method_path": [
+        "Write line through A with direction n₁: r=(2,1/2,1)+λ(2,6,−2)",
+        "Substitute into P₂: 3(2+2λ)+9(1/2+6λ)−3(1−2λ)=−51/2",
+        "Simplify to 15/2+66λ=−51/2",
+        "Solve λ=−1/2",
+        "Compute B=(2−1, 1/2−3, 1+1)=(1,−5/2,2)",
+        "Compute AB=B−A=(−1,−3,1)",
+        "Find |AB|=√((−1)²+(−3)²+1²)=√(1+9+1)=√11"
+      ],
+      "accepted_alternatives": [
+        "Use distance formula |λ|·|n₁| with λ=−1/2: |−1/2|·√44=√11"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(M1) for vector equation of line through A perpendicular to Π₁; (M1) for substituting into Π₂; (A1) for correct substitution; A1 for λ=−1/2; A1 for B=(1,−5/2,2)."
+        },
+        {
+          "markscheme_pages": "27",
+          "basis": "(M1) for distance AB or ||λ(2,6,−2)||; A1 for √((1−2)²+(−5/2−1/2)²+(2−1)²) or √(1+9+1); AG for =√11. [7 marks total]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q11-E",
+      "question": "11",
+      "part": "(e)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Find the equation of a third parallel plane P₃ also at perpendicular distance √11 from P₁.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_equality",
+        "compute_opposite_point",
+        "substitute_point_into_plane_form",
+        "write_plane_equation"
+      ],
+      "method_path": [
+        "Find point C on P₃ using AC=BA (or equivalent): C=A−(B−A)=A+(1,−3,−1)=(3,7/2,0)",
+        "Substitute C into plane form x+3y−z=d: 3+3·(7/2)−0=27/2",
+        "Write P₃: x+3y−z=27/2 or 2x+6y−2z=27"
+      ],
+      "accepted_alternatives": [
+        "Use BC=2BA to find C, then substitute into plane form",
+        "Use A as midpoint of BC to find C, then substitute into plane form"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "(M1) for valid method to find point C (AC=BA, BC=2BA, or A as midpoint of BC); A1 for point (3,7/2,0); (M1) for substituting into Π₃: x+3y−z=d; A1 for Π₃: x+3y−z=27/2 or 2x+6y−2z=27. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "(a)",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "26",
+      "task_summary": "Use Euler's method with step π/12 to approximate y at x=5π/12 for dy/dx=y/tan x+cosec 2x, given y(π/4)=π/4, to 3 s.f.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "step_iteration",
+        "numerical_approximation",
+        "significant_figures"
+      ],
+      "method_path": [
+        "apply Euler's method, h=π/12",
+        "x1=π/3, y1=y0+h*(y0/tan x0+cosec 2x0)=1.25281...",
+        "x2=5π/12, y2=y1+h*(y1/tan x1+cosec 2x1)=1.97608...",
+        "round to 3 s.f.: 1.98"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "M1 attempt Euler; (A1) y1=1.25281...; A1 y=1.98"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "26",
+      "task_summary": "Show d/dx(1/2 ln(cot x)) = -cosec 2x via chain rule.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "logarithmic_differentiation",
+        "trigonometric_derivatives",
+        "double_angle_identity"
+      ],
+      "method_path": [
+        "apply chain rule to 1/2 ln(cot x)",
+        "=1/2*1/cot x*(-cosec^2 x)",
+        "=-cosec^2 x/(2 cot x)",
+        "=-1/(2 sin x cos x)",
+        "=-1/sin 2x = -cosec 2x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "M1 chain rule with multiplication of two derivatives; A1 -cosec^2 x/(2cot x); A1 -1/(2 sin x cos x); A1 -cosec 2x AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "(c)",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "27",
+      "task_summary": "Show cot x is an integrating factor for the DE.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrating_factor",
+        "exponential_form",
+        "trigonometric_integration",
+        "logarithmic_simplification"
+      ],
+      "method_path": [
+        "METHOD 1: I(x)=e^{∫P(x)dx}",
+        "=e^{∫-cosec 2x dx}",
+        "=e^{(1/2)ln(cot x)}",
+        "=e^{ln(cot x)}=cot x"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: apply product rule to d/dx(y cot x), expand using DE, simplify to show d/dx(y cot x)=cot x * cosec 2x - y cosec 2x, confirming cot x is integrating factor"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "METHOD 1: M1 I(x)=e^{∫P(x)dx}; A1 e^{∫-cosec 2x dx}; (A1) e^{(1/2)ln(cot x)}; A1 cot x AG. METHOD 2: M1 product rule on d/dx(y cot x); A1,A1,A1 expansions; A1 cot x is integrating factor AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "(d)",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Solve the DE using the integrating factor cot x and show y = x tan x.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrating_factor_method",
+        "indefinite_integration",
+        "initial_condition",
+        "particular_solution"
+      ],
+      "method_path": [
+        "multiply DE by integrating factor cot x",
+        "recognize LHS as d/dx(y cot x)",
+        "simplify RHS: d/dx(y cot x)=1",
+        "integrate: y cot x=x+C",
+        "substitute y(π/4)=π/4 to find C=0",
+        "solve: y=x tan x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "M1 d/dx(y cot x)=...; A1 d/dx(y cot x)=1; A1 y cot x=∫1 dx; A1 y cot x=x+C; M1 substitute π/4,π/4 => C=0; y=x tan x AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-E-I-II-III",
+      "question": "12",
+      "part": "(e)(i)(ii)(iii)",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "(i) Find exact y at x=5π/12 to 3 s.f.; (ii) suggest why Euler gives poor approximation; (iii) state why approximation is less than exact.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "calculus.stationary_points"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "exact_solution_evaluation",
+        "gradient_analysis",
+        "concavity_analysis",
+        "error_analysis",
+        "numerical_vs_exact"
+      ],
+      "method_path": [
+        "(i) substitute x=5π/12 into y=x tan x, evaluate to 2.53 (3 s.f.)",
+        "(ii) gradient changes substantially in neighbourhood of x=5π/12",
+        "(iii) curve is concave up OR d^2y/dx^2 > 0 over the interval"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "(i) y=2.52878... -> 2.53 A1; (ii) the gradient changes substantially R1; (iii) the curve is concave up OR d^2y/dx^2 > 0 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-F",
+      "question": "12",
+      "part": "(f)",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "29",
+      "task_summary": "Deduce the curve y=x tan x has a positive gradient for 0<x<π/2 by considering dy/dx.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "sign_analysis",
+        "trigonometric_positivity",
+        "gradient_deduction"
+      ],
+      "method_path": [
+        "substitute y=x tan x into dy/dx=y/tan x+cosec 2x",
+        "simplify to expression involving only positive terms",
+        "note cosec 2x>0 and tan x>0 for 0<x<π/2",
+        "conclude dy/dx>0, hence positive gradient"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "dy/dx=y/tan x+cosec 2x=...; R1 cosec 2x, tan x>0 (for 0<x<π/2); A1 dy/dx>0; positive gradient AG. Note: Do not award R0A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "question": "7",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Count the number of ways to arrange 6 boys and 3 girls in a line: (i) with no restrictions; (ii) with the three girls placed next to each other.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "factorial",
+        "permutations_with_restrictions",
+        "grouping"
+      ],
+      "method_path": [
+        "9! = 362880",
+        "treat 3 girls as a single object giving 7! arrangements",
+        "multiply by 3! for internal ordering of girls -> 3! x 7! = 30240"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(i) 9! = 362880 A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "(ii) attempt to consider girls as a single object (M1); 3! x 7! = 30240 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find the number of possible selections of 5 members from 6 boys and 3 girls that contain at least two girls.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combinations",
+        "case_analysis",
+        "complementary_counting"
+      ],
+      "method_path": [
+        "identify cases: exactly 2 girls or exactly 3 girls",
+        "6C3 x 3C2 = 60 (2 girls)",
+        "6C2 x 3C3 = 15 (3 girls)",
+        "total = 60 + 15 = 75"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 (complementary counting): total selections 9C5 = 126, subtract 1-girl case 3C1 x 6C4 = 45 and 0-girl case 6C5 = 6, giving 126 - 45 - 6 = 75"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: recognition of the two different cases for 2 girls and 3 girls (M1); exactly 2 girls is 6C3 x 3C2 = 60 and exactly 3 girls 3C3 x 6C2 = 15 (A1); total 60 + 15 = 75 A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 2: recognition of the three different cases: total choices, 1 girl and no girls (M1); total choices 9C5 = 126, one girl case 3C1 x 6C4 = 45, no girl case 6C5 = 6 (A1); total 126 - 45 - 6 = 75 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

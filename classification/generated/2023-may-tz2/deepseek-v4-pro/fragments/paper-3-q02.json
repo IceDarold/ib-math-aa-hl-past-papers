@@ -1,0 +1,498 @@
+{
+  "question": "2",
+  "expected_question_marks": 31,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "16",
+      "task_summary": "Show that L(x) = 2x − 1 is an AS-linear function by finding its root r = 1/2 and verifying that m = 2, r = 1/2, c = −1 form an arithmetic sequence with common difference −3/2.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "solve_linear_equation",
+        "compute_common_difference",
+        "verify_arithmetic_sequence"
+      ],
+      "method_path": [
+        "find root r from L(r)=0: 2r−1=0 → r=1/2",
+        "identify m=2, r=1/2, c=−1",
+        "compute common difference d = r−m = 1/2−2 = −3/2",
+        "verify c−r = −1−1/2 = −3/2 = d",
+        "conclude arithmetic sequence holds, hence AS-linear"
+      ],
+      "accepted_alternatives": [
+        "Verify via arithmetic mean: (m+c)/2 = (2+(−1))/2 = 1/2 = r, so m, r, c are arithmetic."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "m=2, c=−1, r=1/2 (A1). EITHER d = 1/2−2 = −3/2 = −1−1/2 A1 OR this sequence has a common difference of −3/2 A1 OR the (arithmetic) mean of 2 and −1 is 1/2 A1. THEN hence L(x)=2x−1 is an AS-linear function AG. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-B-I",
+      "question": "2",
+      "part": "b(i)",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "16",
+      "task_summary": "Show that r = −c/m by setting L(r) = 0 and solving mr + c = 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "set L(r)=0 → mr + c = 0",
+        "solve for r: r = −c/m"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "L(r)=0 ⇒ mr+c=0 A1. r=−c/m AG. Note: Award A0 for numerical verification from L(x)=2x−1 in part (a). [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-B-II",
+      "question": "2",
+      "part": "b(ii)",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "17-18",
+      "task_summary": "Given L(x) is AS-linear, use the arithmetic sequence condition on m, r, c to derive c = −m²/(m+2) and hence show L(x) = mx − m²/(m+2).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_mean",
+        "substitute",
+        "eliminate_denominator",
+        "solve_for_c",
+        "form_linear_function"
+      ],
+      "method_path": [
+        "apply arithmetic sequence condition: r = (m+c)/2 or d = r−m = c−r",
+        "substitute r = −c/m from (b)(i)",
+        "clear denominator to obtain m² + 2cm + c = 0",
+        "solve for c: c = −m²/(m+2)",
+        "substitute c into L(x) = mx + c to obtain L(x) = mx − m²/(m+2)"
+      ],
+      "accepted_alternatives": [
+        "Use d = r−m = c−r with r=−c/m and clear denominators.",
+        "Use m = 2c + d with substitution and clear denominators.",
+        "Use r = m+d and c = m+2d, substitute d = −c/m − m, and clear denominators.",
+        "METHOD 2: consider L(x)=mx−mr, use d=r−m=−mr−r, express r in terms of m as r = m/(m+2)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "METHOD 1: attempts to use d=r−m=c−r (M1). (c−(−c/m)) = (−c/m−m) A1. removes denominator m (M1). m²+2cm+c=0 (or equivalent). c = −m²/(m+2) A1. so L(x)=mx−m²/(m+2) AG. Do not accept working backwards. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-B-III",
+      "question": "2",
+      "part": "b(iii)",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "19",
+      "task_summary": "State the further restriction m ≠ −2 (in addition to the given m, c ≠ 0).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "domain_restriction"
+      ],
+      "method_path": [
+        "identify that denominator m+2 requires m ≠ −2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "m ≠ −2 (m ≠ 0) A1. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "19",
+      "task_summary": "Find the two remaining AS-linear functions with integer m, r, c: L(x) = −4x + 8 and L(x) = −3x + 9.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "integer_solutions",
+        "divisibility",
+        "compute_coefficients"
+      ],
+      "method_path": [
+        "use c = −m²/(m+2) and impose that m+2 divides m² for integer m, r, c",
+        "find integer solutions: m = −4 and m = −3",
+        "compute corresponding c = 8, 9 and r = 2, 3",
+        "state L(x) = −4x + 8 and L(x) = −3x + 9"
+      ],
+      "accepted_alternatives": [
+        "Systematic trial and error.",
+        "Use a graph and slider.",
+        "Solve m² = k(m+2) for integer m.",
+        "Solve m²/(m+2) = integer for m."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempts to find integer value of m (M1). m=−4 OR m=−3 (A1). −4,2,8 OR −3,3,9. L(x)=−4x+8, L(x)=−3x+9 A1. Note: Award (M1)(A1)A0 for −4x+8 and −3x+9 without L(x)=. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-D-I",
+      "question": "2",
+      "part": "d(i)",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "19",
+      "task_summary": "Write down the sum of roots r₁ + r₂ = −b/a.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "vieta_sum"
+      ],
+      "method_path": [
+        "recall Vieta's formula: r₁ + r₂ = −b/a"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "−b/a A1. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-D-II",
+      "question": "2",
+      "part": "d(ii)",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "19",
+      "task_summary": "Write down the product of roots r₁r₂ = c/a.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "vieta_product"
+      ],
+      "method_path": [
+        "recall Vieta's formula: r₁r₂ = c/a"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "c/a A1. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-E-I",
+      "question": "2",
+      "part": "e(i)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "20",
+      "task_summary": "Using the arithmetic sequence a, r₁, b, r₂, c, write r₂ − r₁ = b − a.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "common_difference_from_arithmetic_sequence"
+      ],
+      "method_path": [
+        "identify common difference d from positions: b = a + 2d → d = (b−a)/2",
+        "compute r₂ − r₁ = (a+3d) − (a+d) = 2d = b − a"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "Answer b−a A1 confirmed by markscheme note: 'Award marks as appropriate in parts (e)(ii) and (iii) for use of r₂ − r₁ = b − a.' Subsequent working in (e)(ii) uses 2r₁ = −b/a − (b−a). [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-E-II",
+      "question": "2",
+      "part": "e(ii)",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "20",
+      "task_summary": "Eliminate r₂ using r₁ + r₂ = −b/a and r₂ − r₁ = b − a to show r₁ = (a² − ab − b)/(2a).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "eliminate_variable",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "write 2r₁ = (r₁ + r₂) − (r₂ − r₁)",
+        "substitute r₁ + r₂ = −b/a and r₂ − r₁ = b − a",
+        "simplify to 2r₁ = −b/a − b + a",
+        "combine terms to r₁ = (a² − ab − b)/(2a)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempts to eliminate r₂ M1. (r₁+r₂)−(r₂−r₁)=2r₁ = −b/a − (b−a) ⇒ r₁ = (a²−ab−b)/(2a) (or equivalent) A1. Do not accept working backwards from the AG. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-E-III",
+      "question": "2",
+      "part": "e(iii)",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "21-22",
+      "task_summary": "Show that b = 0 or a = −1/2 by combining the arithmetic mean property b = (r₁+r₂)/2 with Vieta r₁+r₂ = −b/a.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "arithmetic_mean",
+        "substitute",
+        "factor",
+        "zero_product_property"
+      ],
+      "method_path": [
+        "note from arithmetic sequence that b = (r₁ + r₂)/2",
+        "substitute r₁ + r₂ = −b/a from (d)(i)",
+        "obtain 2b = −b/a",
+        "rearrange to b(2a + 1)/a = 0",
+        "conclude b = 0 or a = −1/2"
+      ],
+      "accepted_alternatives": [
+        "Equate two expressions for r₁: (a+b)/2 = (a²−ab−b)/(2a) → 4ab+2b=0 → b(2a+1)=0.",
+        "Use r₁ = a+d with d = (b−a)/2 and r₁ from (e)(ii) → (2a+1)(a+2d)=0."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21-22",
+          "basis": "METHOD 1: (a+b)/2 = r₁ (A1). attempts to equate two expressions for r₁ M1. leads to 2ab+b=0 or 4ab+2b=0 A1. so b=0 or a=−1/2 AG. METHOD 2: b=a+2d (A1). equates expressions M1. (2a+1)(a+2d)=0 A1. so b=0 or a=−1/2 AG. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-F",
+      "question": "2",
+      "part": "f",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "23-25",
+      "task_summary": "For b = 0, determine the two AS-quadratic functions: Q(x) = 2x² − 2 and Q(x) = −2x² + 2.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute",
+        "express_in_single_variable",
+        "solve_for_parameter",
+        "determine_quadratic"
+      ],
+      "method_path": [
+        "set b = 0",
+        "from arithmetic sequence a, r₁, 0, r₂, c deduce: r₁ = a/2, r₂ = −a/2, c = −a",
+        "substitute into Q(x) = ax² − a = 0 to find a",
+        "solve a(a²/4 − 1) = 0 or equivalent → a = ±2",
+        "state Q(x) = 2x² − 2 and Q(x) = −2x² + 2"
+      ],
+      "accepted_alternatives": [
+        "Express in terms of d: a=−2d, r₁=−d, b=0, r₂=d, c=2d → find d=±1.",
+        "Express in terms of r₁: a=2r₁, r₁, b=0, r₂=−r₁, c=−2r₁ → find r₁=±1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23-25",
+          "basis": "METHOD 1: r₁ = a/2 OR r₂ = −a/2 OR d = −a/2 (A1). c = −a (A1). attempts to find values of a (M1). a = ±2 (A1). Q(x)=2x²−2, Q(x)=−2x²+2 A1. [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-G-I",
+      "question": "2",
+      "part": "g(i)",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "26",
+      "task_summary": "With a = −1/2, express r₁ in terms of b: r₁ = (2b − 1)/4.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute",
+        "simplify"
+      ],
+      "method_path": [
+        "substitute a = −1/2 into r₁ = (a + b)/2 or r₁ = (a² − ab − b)/(2a)",
+        "simplify to r₁ = (2b − 1)/4"
+      ],
+      "accepted_alternatives": [
+        "Use r₁ − a = b − r₁ → 2r₁ = a + b → r₁ = (−1/2 + b)/2 = (2b−1)/4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "attempts to express r₁ in terms of b with a=−1/2 (M1). EITHER uses r₁=(a+b)/2 OR uses r₁=(a²−ab−b)/(2a) OR uses r₁−a=b−r₁. r₁ = (2b−1)/4 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P3-Q02-G-II",
+      "question": "2",
+      "part": "g(ii)",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "27-32",
+      "task_summary": "Determine exact b and c for AS-quadratic functions with a = −1/2: b = (−5 ± 2√5)/2, c = (−9 ± 4√5)/2.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute",
+        "form_quadratic_equation",
+        "solve_quadratic",
+        "compute_coefficient"
+      ],
+      "method_path": [
+        "substitute r₁ = (2b−1)/4 into Q(r₁) = 0 with a = −1/2",
+        "obtain equation relating b and c; use arithmetic to express c = (b+4)/2",
+        "form quadratic 4b² + 20b + 5 = 0",
+        "solve for b = (−5 ± 2√5)/2",
+        "substitute to get c = (−9 ± 4√5)/2"
+      ],
+      "accepted_alternatives": [
+        "Use factorized form Q(x)=−½(x−r₁)(x−r₂) and expand, compare coefficients.",
+        "Use product of roots r₁r₂ = c/a with r₁, r₂ expressed in b.",
+        "Equate two expressions for r₁ with a=−1/2.",
+        "Use d-substitution: express r₁, r₂ in terms of d, substitute into Q(x)=0."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27-32",
+          "basis": "METHOD 1: substitutes r₁ into Q(r₁)=0 (M1). c = (b+4)/2 seen anywhere A1. 4b²+20b+5=0. attempts to solve quadratic (M1). b = (−5±2√5)/2 A1. c = (−9±4√5)/2 A1. [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

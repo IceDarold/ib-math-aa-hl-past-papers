@@ -1,0 +1,80 @@
+{
+  "question": "6",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "Solve Var(X)=np(1-p) for p given X~B(25,p) and Var(X)=5.75, obtaining the two possible values of p.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "binomial_variance_formula",
+        "quadratic_equation",
+        "solve_for_variable"
+      ],
+      "method_path": [
+        "Write binomial variance formula Var(X)=np(1-p)",
+        "Substitute n=25 and Var(X)=5.75 to obtain 25p(1-p)=5.75",
+        "Rearrange to quadratic p²−p+0.23=0",
+        "Solve to obtain p≈0.641 and p≈0.359"
+      ],
+      "accepted_alternatives": [
+        "Exact surd form p=(5±√2)/10"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "5.75=25p(1−p) (A1); p=0.641421…, 0.358578… → p=0.641, 0.359 (or p=(5±√2)/10) A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "Use Var(aX+b)=a²Var(X) to find Var(Y) where Y=1−2X.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "variance_linear_transformation",
+        "substitute_value"
+      ],
+      "method_path": [
+        "Apply Var(aX+b)=a²Var(X) with a=−2",
+        "Compute Var(Y)=(−2)²Var(X)=4Var(X)",
+        "Substitute Var(X)=5.75 to obtain Var(Y)=23"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Var(Y)=(−2)²Var(X)=4Var(X) (A1); =23 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

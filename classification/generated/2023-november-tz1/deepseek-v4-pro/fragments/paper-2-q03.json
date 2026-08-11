@@ -1,0 +1,85 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7-8",
+      "markscheme_pages": "11",
+      "task_summary": "Show that the area of the C-shaped logo between two concentric circles with reflex angle 5.2 rad is 260 − 2.6r².",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sector_area",
+        "subtraction",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "apply sector area formula ½r²θ to outer sector with r=10 and θ=5.2",
+        "apply sector area formula ½r²θ to inner sector with r=r and θ=5.2",
+        "subtract inner area from outer area to obtain 260 − 2.6r²"
+      ],
+      "accepted_alternatives": [
+        "Use full-circle minus small-angle sector: (½×10²×2π − ½×10²×(2π−5.2)) − (½×r²×2π − ½×r²×(2π−5.2))"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "use of sector area formula to find area of at least one sector (M1); ½×5.2×100 − ½×5.2×r² OR alternative expression (A1); (area) = 260 − 2.6r² AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Given the area of the C is 64 cm², find r and then find the perimeter of the C.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "equation_setup",
+        "solve_quadratic",
+        "arc_length",
+        "perimeter_calculation",
+        "substitution"
+      ],
+      "method_path": [
+        "set 260 − 2.6r² = 64",
+        "solve for r = √((260−64)/2.6) ≈ 8.68 cm",
+        "compute outer arc length 10 × 5.2",
+        "compute inner arc length r × 5.2",
+        "compute straight edges 2(10 − r)",
+        "sum to obtain perimeter ≈ 99.8 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "(i) 260 − 2.6r² = 64 (A1); r = 8.68… (A1) (ii) 10 × 5.2 OR 8.68… × 5.2 (A1); substituting their r into 5.2×10 + 5.2×r + 2(10−r) (M1); Perimeter = 99.8 cm (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

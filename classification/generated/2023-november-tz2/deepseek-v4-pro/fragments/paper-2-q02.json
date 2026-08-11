@@ -1,0 +1,85 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5-6",
+      "markscheme_pages": "10",
+      "task_summary": "Sketch the graph of f(x) = e^x − 3x − 4 for −4 ≤ x ≤ 3, showing approximate roots, y-intercept, local minimum and endpoints.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "curve_sketching",
+        "root_approximation",
+        "intercept_identification",
+        "turning_point_identification",
+        "endpoint_evaluation"
+      ],
+      "method_path": [
+        "Identify approximate roots in intervals (−2, −1) and (2, 3)",
+        "Identify y-intercept ≈ −3 and local minimum near (1, −4.5)",
+        "Evaluate left endpoint near (−4, 8) and right endpoint near (3, 7)",
+        "Sketch smooth curve through all identified features"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for approximately correct roots, in the intervals −2 < x < −1 and 2 < x < 3. A1 for y-intercept AND local minimum in approximately correct positions. Allow for y-intercept −3.5 < y < −2.5, and for local minimum 0.5 < x < 1.5, −5 < y < −4. A1 for approximately correct endpoints, with the left end in the intervals −4.5 < x < −3.5, 7.5 < y < 8.5 and the right end in the intervals 2.5 < x < 3.5, 6.5 < y < 7.5."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find the horizontal stretch factor k and vertical translation c such that g(x) = e^(2x) − 6x − 7 is obtained from f by a horizontal stretch followed by a vertical translation.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "function_transformation",
+        "horizontal_stretch",
+        "vertical_translation",
+        "function_composition"
+      ],
+      "method_path": [
+        "Express g(x) = e^(2x) − 6x − 7 in terms of f(x) = e^x − 3x − 4",
+        "Recognise g(x) = f(2x) − 3",
+        "Identify horizontal stretch factor k = 1/2",
+        "Identify vertical translation c = −3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "k = 1/2 A1; c = −3 (accept translate/shift 3 (units) down) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

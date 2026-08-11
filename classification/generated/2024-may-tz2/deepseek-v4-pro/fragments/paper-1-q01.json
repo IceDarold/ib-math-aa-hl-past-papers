@@ -1,0 +1,42 @@
+{
+  "question": "1",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 4,
+      "source_pages": "4-5",
+      "markscheme_pages": "7",
+      "task_summary": "Solve tan(2x − 5°) = 1 for x in [0°, 180°], giving both solutions.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "inverse_tangent",
+        "reference_angle",
+        "angle_range_restriction",
+        "linear_equation"
+      ],
+      "method_path": [
+        "tan⁻¹(1) = 45°",
+        "set 2x − 5° = 45°, 225°",
+        "solve for x → x = 25°, 115°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "tan⁻¹(1) = 45° or equivalent (A1); attempt to equate 2x − 5° to their reference angle (M1); Note: Do not accept 2x − 5° = 1; (2x − 5°) = 45°, 225°; x = 25°, 115° A1A1; Note: Do not award the final A1 if any additional solutions are seen. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

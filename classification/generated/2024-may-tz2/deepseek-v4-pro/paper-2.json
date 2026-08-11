@@ -1,0 +1,1411 @@
+{
+  "session": "May 2024",
+  "zone": "TZ2",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "2",
+      "markscheme_pages": "7",
+      "task_summary": "Find the x-coordinates a and b (a < b) of the intersection points of f(x) = 1 − x² and g(x) = e^(2x) on the domain −1 ≤ x ≤ 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "solve_equation",
+        "gdc_intersection",
+        "find_intersection_points"
+      ],
+      "method_path": [
+        "Set f(x) = g(x) → 1 − x² = e^(2x)",
+        "Use GDC to solve for x on [−1, 0]",
+        "Obtain a ≈ −0.917 (or −0.916562…), b = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempts to find an intersection point (M1); a = −0.916562... or −0.917, b = 0 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "2",
+      "markscheme_pages": "7",
+      "task_summary": "Find the area of the region enclosed by the graphs of f(x) = 1 − x² and g(x) = e^(2x) between x = a and x = b.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "area_between_curves",
+        "definite_integral",
+        "gdc_integration",
+        "evaluate_integral"
+      ],
+      "method_path": [
+        "Set up definite integral ∫[a, b] (f(x) − g(x)) dx = ∫[a, 0] (1 − x² − e^(2x)) dx",
+        "Evaluate integral using GDC or analytic methods",
+        "Obtain area ≈ 0.240 (or 0.239855…)"
+      ],
+      "accepted_alternatives": [
+        "For M1: show a graph with the required area shaded instead of attempting the integral"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "EITHER attempts to form the required integral involving subtraction (M1) OR shows a graph with the required area shaded (M1); THEN ∫ from a to b (f(x)−g(x))dx = ∫ from −0.916562... to 0 (1−x²−e^(2x))dx (A1); A = 0.239855... ≈ 0.240 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Given x̄ = 7 and the regression line y = 2.1875x + 0.6875, verify that ȳ = 16 using the property that the regression line passes through (x̄, ȳ).",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "linear_regression",
+        "arithmetic_evaluation",
+        "mean_point_property"
+      ],
+      "method_path": [
+        "Substitute x̄ = 7 into y = 2.1875x + 0.6875",
+        "Compute 2.1875 × 7 + 0.6875 = 15.3125 + 0.6875 = 16",
+        "Conclude ȳ = 16 as required"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER y = 2.1875 × 7 + 0.6875 A1 OR y = 15.3125 + 0.6875 A1 THEN y = 16 AG [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Given q − p = 3 and the bivariate data set with ȳ = 16 from part (a), find the values of p and q.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "mean_calculation",
+        "linear_equations",
+        "simultaneous_equations",
+        "substitution_method"
+      ],
+      "method_path": [
+        "Write mean equation: (9 + 13 + p + q + 21) / 5 = 16",
+        "Simplify to p + q = 37",
+        "Form system: p + q = 37 and q − p = 3",
+        "Solve to obtain p = 17, q = 20"
+      ],
+      "accepted_alternatives": [
+        "Substitute q = p + 3 directly into the mean equation: (9 + 13 + p + (p + 3) + 21) / 5 = 16, then solve 80 = 2p + 46 to get p = 17, q = 20"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempts to use ȳ = Σy/n to form a linear equation in p and q (M1) ... (9+13+p+q+21)/5 = 16 ⇒ p+q = 37 (A1) ... attempts to solve two linear equations simultaneously (one of which is q = p + 3) (M1) ... p = 17 and q = 20 A1 [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "State the intensity of sound S2, given that S1 has intensity 10⁻⁶ units and S2 has twice that intensity.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "multiply",
+        "double_value"
+      ],
+      "method_path": [
+        "Multiply 10⁻⁶ by 2 to obtain 2 × 10⁻⁶ units."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "I = 2 × 10⁻⁶ = 1/500000 (units) A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Determine the loudness of S2 by substituting its intensity into L = 10 log₁₀(I × 10¹²).",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute",
+        "evaluate_logarithm",
+        "compute_decibels"
+      ],
+      "method_path": [
+        "Substitute I = 2 × 10⁻⁶ into L = 10 log₁₀(I × 10¹²).",
+        "Simplify to 10 log₁₀(2 × 10⁶).",
+        "Evaluate to obtain L ≈ 63.0 decibels."
+      ],
+      "accepted_alternatives": [
+        "60 + 10 log₁₀ 2 (decibels) as a final answer."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "substitutes their doubled I value from part (a) into L (M1) … L = 10 log₁₀(2×10⁻⁶ × 10¹²) = 63.0102… = 63.0 (decibels) A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "Note: Accept 60 + 10 log₁₀ 2 (decibels) as a final answer. Do not award the final A1 for L = 0 (from I = 10⁻¹²)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the intensity I of thunder given its loudness L = 115 decibels using L = 10 log₁₀(I × 10¹²).",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute",
+        "solve_logarithmic_equation",
+        "isolate_variable",
+        "exponentiate"
+      ],
+      "method_path": [
+        "Set 115 = 10 log₁₀(I × 10¹²).",
+        "Divide both sides by 10: 11.5 = log₁₀(I × 10¹²).",
+        "Convert to exponential form: 10¹¹·⁵ = I × 10¹².",
+        "Solve for I: I = 10⁻⁰·⁵ ≈ 0.316 units."
+      ],
+      "accepted_alternatives": [
+        "Exact final answers such as 10⁻⁰·⁵ and 1/√10."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "115 = 10 log₁₀(I × 10¹²) (A1) … attempts to solve for I (M1) … I = 10¹¹·⁵ / 10¹² … 0.316 I = (units) A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "Note: Accept exact final answers such as 10⁻⁰·⁵ and 1/√10."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find the velocity of the particle at t=2 by evaluating v(t)=1+e^{-t}-e^{-sin(2t)}.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "substitution",
+        "gdc_numerical",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Substitute t=2 into v(t)=1+e^{-t}-e^{-sin(2t)}",
+        "Evaluate numerically using GDC",
+        "Give answer to 3 significant figures: v=-0.996 ms^{-1}"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "0.996114... v=-, 0.996 v=- (ms-1), A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find the maximum velocity by setting v'(t)=0, solving for t, and substituting back into v(t).",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "calculus.stationary_points"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "solve_equation",
+        "find_critical_point",
+        "gdc_numerical",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Differentiate v(t) to obtain v'(t)",
+        "Set v'(t)=0 and solve for t using GDC, obtaining t≈0.406",
+        "Substitute t into v(t) and evaluate",
+        "Give maximum velocity v_max≈1.18 ms^{-1}"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "considers v'(t)=0 (M1), t=0.405833..., v_max=1.18230..., v_max=1.18 (ms-1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q04-C",
+      "question": "4",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find the acceleration when the particle changes direction by solving v(t)=0 for t, then evaluating a(t)=v'(t) at that t.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "solve_equation",
+        "differentiate",
+        "gdc_numerical",
+        "interpret_kinematics",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Recognize direction change occurs when v(t)=0",
+        "Solve v(t)=0 for t using GDC, obtaining t≈1.66",
+        "Obtain acceleration a(t)=v'(t)",
+        "Substitute t into a(t) and evaluate",
+        "Give acceleration a≈-2.53 ms^{-2}"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognizes that the particle changes direction when v=0 (M1), Note: Award (M1) for t=1.65840... seen, finds acceleration for their value of t for which v(t)=0 (M1), v'(1.65840...), a=-2.53487..., a=-2.53 (ms-2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "11-12",
+      "task_summary": "Find the least integer n for X ~ B(n, 0.25) such that P(X ≥ 1) > 0.99, using complement rule P(X ≥ 1) = 1 − (0.75)^n and solving the exponential inequality.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_probability",
+        "complement_rule",
+        "exponential_inequality",
+        "logarithmic_solving",
+        "integer_bound"
+      ],
+      "method_path": [
+        "Express P(X ≥ 1) = 1 − P(X = 0)",
+        "Compute P(X = 0) = (0.75)^n",
+        "Form inequality 1 − (0.75)^n > 0.99",
+        "Rearrange to (0.75)^n < 0.01",
+        "Apply logarithms: n ln(0.75) < ln(0.01)",
+        "Solve n > ln(0.01)/ln(0.75) ≈ 16.0078",
+        "Conclude least integer n = 17"
+      ],
+      "accepted_alternatives": [
+        "GDC binomial CDF table: compute P(X ≥ 1) for n = 16 (≈0.98998 < 0.99) and n = 17 (≈0.99248 > 0.99), conclude n = 17"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: correct inequality or equation involving P(X = 0) (A1); attempts to solve inequality involving 0.75^n for n (M1); 1 − 0.75^n > 0.99 OR 0.75^n < 0.01; n > 16.0078... (A2); least value n = 17 A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: attempts binomial cdf for one value of n (M1); correct P(X ≥ 1) values (A1); P(X ≥ 1) = 0.989977... < 0.99 for n = 16 (A1); P(X ≥ 1) = 0.992483... > 0.99 for n = 17 (A1); least value n = 17 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 6,
+      "source_pages": "8",
+      "markscheme_pages": "13",
+      "task_summary": "Given a spherical bubble with volume increasing at a constant rate of 5 cm³ s⁻¹ and initial volume zero, find the rate at which the radius increases when the volume is 20 cm³.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "geometry.solid_geometry",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "solve_for_radius",
+        "volume_of_sphere",
+        "differentiate_implicitly",
+        "chain_rule",
+        "substitute_values"
+      ],
+      "method_path": [
+        "Solve V = (4/3)πr³ for r when V = 20 to obtain r = (15/π)^(1/3)",
+        "Differentiate V with respect to r: dV/dr = 4πr²",
+        "Apply the chain rule: dV/dt = dV/dr × dr/dt (or equivalently dr/dt = dr/dV × dV/dt)",
+        "Rearrange to isolate dr/dt",
+        "Substitute dV/dt = 5 and the computed r value to find dr/dt = 5/(4π(15/π)^(2/3)) ≈ 0.140 cm s⁻¹"
+      ],
+      "accepted_alternatives": [
+        "dr/dt = dr/dV × dV/dt where dr/dV = 1/(4πr²)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempts to solve (4/3)πr³ = 20 for r (M1); r = (15/π)^(1/3) ≈ 1.68389... A1; attempts to use the chain rule dV/dt = dV/dr × dr/dt OR dr/dt = dr/dV × dV/dt (M1); A1 for correct derivative expression; attempts to find dr/dt when dV/dt = 5 (M1); dr/dt = (5/(4π))(π/15)^(2/3) ≈ 0.140 cm s⁻¹ A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find the volume of the solid formed when the curve y = 4 ln(x - 2) for 0 ≤ y ≤ 4 is rotated 360° about the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "inverse_ln_function",
+        "algebraic_expansion",
+        "volume_of_revolution",
+        "definite_integral",
+        "integration_by_antiderivative",
+        "numerical_evaluation"
+      ],
+      "method_path": [
+        "Express x in terms of y: x = 2 + e^(y/4)",
+        "Square to obtain x² = (2 + e^(y/4))² = 4 + 4e^(y/4) + e^(y/2)",
+        "Set up volume integral V = π ∫₀⁴ x² dy",
+        "Integrate: ∫ (e^(y/2) + 4e^(y/4) + 4) dy = 2e^(y/2) + 16e^(y/4) + 4y",
+        "Evaluate from y = 0 to y = 4",
+        "Obtain V = 2π(e² + 8e − 1) ≈ 177 cubic units"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempts to express x (or x²) in terms of y (M1); x² = (2 + e^(y/4))² = 4 + 4e^(y/4) + e^(y/2) (A1); forms a definite integral of the form π∫x² dy (M1); V = π∫₀⁴ (e^(y/2) + 4e^(y/4) + 4) dy (A1); 176.779... = 177 = 2π(e² + 8e − 1) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q08-A-I",
+      "question": "8",
+      "part": "A-I",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Show that arg z = θ for z = 1 + cos 2θ + i sin 2θ, given −π/2 < θ < π/2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "arg",
+        "arctan",
+        "double_angle_identities",
+        "simplification"
+      ],
+      "method_path": [
+        "Write arg z = arctan(sin 2θ / (1 + cos 2θ))",
+        "Apply double-angle identities: sin 2θ = 2 sin θ cos θ, 1 + cos 2θ = 2 cos²θ",
+        "Simplify to arctan(tan θ)",
+        "Conclude arg z = θ for −π/2 < θ < π/2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Rewrite z = 1 + (2cos²θ − 1) + i(2 sin θ cos θ) = 2 cos θ (cos θ + i sin θ) = 2 cos θ cis θ, hence arg z = θ and |z| = 2 cos θ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "A1 for arctan(sin2θ/(1+cos2θ)); M1 for uses 2sinθcosθ in numerator and any double angle identity for cos2θ in denominator; A1 for arg z = arctan(tan θ) → arg z = θ."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q08-A-II",
+      "question": "8",
+      "part": "A-II",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Show that |z| = 2 cos θ for z = 1 + cos 2θ + i sin 2θ, given −π/2 < θ < π/2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus",
+        "pythagorean_identity",
+        "double_angle_identities",
+        "simplification"
+      ],
+      "method_path": [
+        "Write |z| = √((1 + cos 2θ)² + sin² 2θ)",
+        "Expand (1 + cos 2θ)² and apply cos² 2θ + sin² 2θ = 1",
+        "Obtain |z| = √(2 + 2 cos 2θ)",
+        "Use cos 2θ = 2 cos²θ − 1 to get |z| = √(4 cos²θ) = 2 cos θ"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: z = 2 cos²θ + i(2 sin θ cos θ) = 2 cos θ (cos θ + i sin θ), so |z| = 2 cos θ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "M1 for attempt to express |z| = √(Re² + Im²); M1 for expanding (1+cos2θ)² then using cos²2θ+sin²2θ=1; A1 for √(2+2cos2θ); A1 for 2cosθ."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find θ such that arg(z²) = |z³|, using z = 1 + cos 2θ + i sin 2θ.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "arg_properties",
+        "modulus_properties",
+        "equation_solving",
+        "gdc"
+      ],
+      "method_path": [
+        "Apply arg(z²) = 2 arg(z) = 2θ",
+        "Apply |z³| = |z|³ = (2 cos θ)³ = 8 cos³ θ",
+        "Set 2θ = 8 cos³ θ and solve using GDC",
+        "Obtain θ ≈ 0.913"
+      ],
+      "accepted_alternatives": [
+        "Award all marks for θ ≈ 0.913 found directly without using part (a)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "(A1) for 2θ = (2cosθ)³; (M1) for attempts to solve for θ; A1 for θ = 0.913. Note: Award all marks for θ = 0.913 found directly without using part (a). Note: Award (A1)(M1)A0 for θ = 3.97."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 8,
+      "source_pages": "10",
+      "markscheme_pages": "17",
+      "task_summary": "Find constants a, b, c in the rational function using three conditions: vertical asymptote x=1 gives a+b+c=0; point (2,1) gives 4a+2b+c=-2; local minimum at x=2 gives dy/dx=0 yielding 12a+4b+c=0. Solve the linear system to obtain a=3, b=-11, c=8.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "vertical_asymptote_condition",
+        "point_substitution",
+        "quotient_rule",
+        "stationary_point_condition",
+        "solve_linear_system"
+      ],
+      "method_path": [
+        "Set denominator to zero at vertical asymptote x=1 to obtain a+b+c=0",
+        "Substitute point (2,1) into curve equation to obtain 4a+2b+c=-2",
+        "Differentiate using quotient rule to find dy/dx",
+        "Set numerator of derivative to zero at x=2 to obtain 12a+4b+c=0",
+        "Solve the system of three linear equations to find a=3, b=-11, c=8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "recognizes that x=1 implies ax^2+bx+c=0 (M1); a+b+c=0 (seen anywhere) A1"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "passes through (2,1) so: (4-2)/(4a+2b+c)=1 implies 2=4a+2b+c (seen anywhere) A1"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "attempts to find dy/dx using quotient or product rule M1; substitutes x=2 into numerator of dy/dx=0 (M1); (12a+4b+c)=0 A1"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "attempts to solve their 3 linear equations (M1); a=3, b=-11 and c=8 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Find the mode of the continuous random variable X with the given probability density function f.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "mode_of_pdf",
+        "function_maximum",
+        "derivative_or_symmetry"
+      ],
+      "method_path": [
+        "Recognize mode is the value of x at which f(x) attains its maximum",
+        "Find maximum via f'(x)=0, axis of symmetry, or graph of f",
+        "Mode = 1.5 kg"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "recognizes that the mode is a value of x at which f has a maximum value (M1); a clearly labelled graph of f OR states f'(x)=0 OR considers the axis of symmetry; mode is 1.5 (kg) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Find P(1 ≤ X ≤ 2) by integrating the probability density function f over [1, 2].",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "probability_from_pdf"
+      ],
+      "method_path": [
+        "Set up the definite integral of f(x) from 1 to 2",
+        "Evaluate the integral (analytically or via GDC)",
+        "P(1 ≤ X ≤ 2) = 37/85 ≈ 0.435"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "attempts to find integral from 1 to 2 of f(x) dx (M1); 0.435294... = 37/85 = 0.435 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find the median m of X by solving the equation P(X ≤ m) = 0.5, i.e. integral from 0.5 to m of f(x) dx = 0.5.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "median_of_continuous_distribution",
+        "definite_integral",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Recognize median m satisfies integral from 0.5 to m of f(x) dx = 0.5",
+        "Integrate f(x) from 0.5 to m",
+        "Solve the resulting equation for m",
+        "m = 1.69 kg"
+      ],
+      "accepted_alternatives": [
+        "Method 2: explicit antiderivative with algebraic simplification leading to the same equation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: recognizes that integral from 0.5 to m of f(x) dx = 0.5 (M1); m = 1.68701..., m = 1.69 (kg) A2. METHOD 2: same recognition (M1); explicit integration with algebraic work (A1); m = 1.69 (kg) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find the probability that a randomly selected customer spends at most $48, given $25/kg normally and $24/kg discounted rate for weight at least 0.75 kg.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "piecewise_cost_function",
+        "inequality_to_bound",
+        "definite_integral"
+      ],
+      "method_path": [
+        "Translate spend ≤ $48: for weight < 0.75 kg (rate $25/kg) always satisfied; for weight ≥ 0.75 kg (rate $24/kg) need weight ≤ 2 kg",
+        "Conclude spending ≤ $48 ⇔ weight ≤ 2 kg",
+        "Set up and evaluate integral of f(x) from 0.5 to 2",
+        "Probability = 0.635"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "0.5 ≤ x ≤ 2 (can be seen in a definite integral) (A1); attempts to evaluate their definite integral (M1); integral from 0.5 to 2 of f(x) dx = 0.635294... = 0.635 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Find the expected amount spent per customer to the nearest cent, using piecewise rates $25/kg for weight < 0.75 kg and $24/kg for weight ≥ 0.75 kg.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "statistics.continuous_random_variables",
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "expected_value",
+        "piecewise_integration",
+        "definite_integral",
+        "weighted_sum"
+      ],
+      "method_path": [
+        "Form expected value as sum of piecewise integrals: 25 times integral of x f(x) from 0.5 to 0.75 plus 24 times integral of x f(x) from 0.75 to 3",
+        "Compute integral of x f(x) from 0.5 to 0.75",
+        "Compute integral of x f(x) from 0.75 to 3",
+        "Multiply by respective rates and sum",
+        "Expected amount = $40.96"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "an attempt at forming an expected value integral (M1); integral from 0.5 to 0.75 of x f(x) dx = 0.060592... OR 25 times that = 1.51482... (A1); integral from 0.75 to 3 of x f(x) dx = 1.64345... OR 24 times that = 39.4428... (A1); sums their two definite integrals (M1); expected amount = $40.96 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Show that AB = 28.57 m, correct to four significant figures, using the geometry of a circle with radius 20 m and centre S, 14 m from a path.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "pythagorean_theorem",
+        "circle_geometry",
+        "midpoint",
+        "significant_figures"
+      ],
+      "method_path": [
+        "let M be the midpoint of AB, so AB = 2AM",
+        "AM² + 14² = 20² → AM = √(20² − 14²) = √204",
+        "AB = 2√204 ≈ 28.5657… → 28.57 (4 s.f.)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Let θ = AŜM, find θ = arccos(14/20), then AM = 14 tan θ = 20 sin θ ≈ 14.2828…, AB = 2AM ≈ 28.57"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "METHOD 1: attempts to use Pythagoras' theorem to find AM (M1); recognizes that AB = 2AM (A1); AB = 2√204 = 28.5657… → AB = 28.57 (A1). METHOD 2: θ = arccos(14/20) (A1); attempts valid trigonometric ratio (M1); AM = 14 tan θ or 20 sin θ (A1); AB = 28.5657… → 28.57 (AG)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Show that the sprinkler rotates through an angle of π/8 radians in one second.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "angular_velocity",
+        "proportional_reasoning"
+      ],
+      "method_path": [
+        "one revolution = 2π rad in 16 s",
+        "angular speed = 2π/16 = π/8 rad/s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "the sprinkler rotates through 2π radians every 16 seconds and hence rotates through 2π/16 radians in 1 second (A1); 2π/16 = π/8 (AG)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find the time T seconds that segment AB is watered in each revolution.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "inverse_trigonometric_function",
+        "angular_velocity",
+        "proportional_reasoning",
+        "equation_solving"
+      ],
+      "method_path": [
+        "find central half-angle θ = arccos(14/20)",
+        "central angle AŜB = 2θ",
+        "angular speed = 2π/16 rad/s",
+        "T = 2θ ÷ (2π/16) = 16θ/π ≈ 4.05 s"
+      ],
+      "accepted_alternatives": [
+        "Follow-through from Method 2 in part (a) using the candidate's own value of θ"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "attempts to find 2θ where θ = AŜM (M1); uses t/θ (rad/s) or similar to form an equation involving T (M1); T = 4.05093… (A1); T = 4.05 s (A1). Note: full FT from Method 2 in (a)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Write down an expression for α (angle AŜD) in terms of t.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "angular_velocity",
+        "linear_expression"
+      ],
+      "method_path": [
+        "α = (π/8)t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "α = π/8 t (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Using the sine rule in ΔASD, show that d = 20 sin(πt/8) / sin(2.37 − πt/8).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.circular_measure"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "sine_rule",
+        "triangle_angle_sum",
+        "substitution",
+        "trigonometric_manipulation"
+      ],
+      "method_path": [
+        "apply sine rule: d / sin α = 20 / sin(AĎS)",
+        "AĎS = π − β − α = π − 0.7754 − α ≈ 2.37 − α",
+        "d = 20 sin α / sin(π − β − α)",
+        "substitute α = πt/8 to obtain d = 20 sin(πt/8) / sin(2.37 − πt/8)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "applies sine rule in ΔASD (A1); attempts to find AĎS in terms of α: AĎS = π − β − α = π − 0.7754… − α = 2.366… − α (M1); d = 20 sin α / sin(2.366… − α) (A1); substitute α = πt/8 to obtain the given expression (AG)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 1,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "At t = 0, state how far south the turtle is from A.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "function_evaluation"
+      ],
+      "method_path": [
+        "g(0) = 0.05(0)² + 1.1(0) + 18 = 18 m"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "18 (m) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q11-G",
+      "question": "11",
+      "part": "G",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "25",
+      "task_summary": "(i) Write an expression for w = g(t) − d(t). (ii) Solve w = 0 to find when (t ≈ 3.35 s) and where (≈ 22.2 m south of A) the water first reaches the turtle.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "function_combination",
+        "equation_solving",
+        "numerical_solution",
+        "function_evaluation",
+        "gdc_solver"
+      ],
+      "method_path": [
+        "w = g(t) − d(t) = 0.05t² + 1.1t + 18 − [20 sin(πt/8) / sin(2.37 − πt/8)]",
+        "solve w = 0 for t using GDC",
+        "t ≈ 3.35 s (first solution)",
+        "substitute into g(t): g(3.35) ≈ 22.2 m south of A"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(i) w = 0.05t² + 1.1t + 18 − [20 sin(πt/8) / sin(2.37 − πt/8)] (A1). (ii) attempts to solve w = 0 for t (M1); t = 3.35 s (A1); 22.2 (m) south of A (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "(a)",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "26",
+      "task_summary": "Use Euler's method with step π/12 to approximate y at x=5π/12 for dy/dx=y/tan x+cosec 2x, given y(π/4)=π/4, to 3 s.f.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "step_iteration",
+        "numerical_approximation",
+        "significant_figures"
+      ],
+      "method_path": [
+        "apply Euler's method, h=π/12",
+        "x1=π/3, y1=y0+h*(y0/tan x0+cosec 2x0)=1.25281...",
+        "x2=5π/12, y2=y1+h*(y1/tan x1+cosec 2x1)=1.97608...",
+        "round to 3 s.f.: 1.98"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "M1 attempt Euler; (A1) y1=1.25281...; A1 y=1.98"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "26",
+      "task_summary": "Show d/dx(1/2 ln(cot x)) = -cosec 2x via chain rule.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "logarithmic_differentiation",
+        "trigonometric_derivatives",
+        "double_angle_identity"
+      ],
+      "method_path": [
+        "apply chain rule to 1/2 ln(cot x)",
+        "=1/2*1/cot x*(-cosec^2 x)",
+        "=-cosec^2 x/(2 cot x)",
+        "=-1/(2 sin x cos x)",
+        "=-1/sin 2x = -cosec 2x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "M1 chain rule with multiplication of two derivatives; A1 -cosec^2 x/(2cot x); A1 -1/(2 sin x cos x); A1 -cosec 2x AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "(c)",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "27",
+      "task_summary": "Show cot x is an integrating factor for the DE.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrating_factor",
+        "exponential_form",
+        "trigonometric_integration",
+        "logarithmic_simplification"
+      ],
+      "method_path": [
+        "METHOD 1: I(x)=e^{∫P(x)dx}",
+        "=e^{∫-cosec 2x dx}",
+        "=e^{(1/2)ln(cot x)}",
+        "=e^{ln(cot x)}=cot x"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: apply product rule to d/dx(y cot x), expand using DE, simplify to show d/dx(y cot x)=cot x * cosec 2x - y cosec 2x, confirming cot x is integrating factor"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "METHOD 1: M1 I(x)=e^{∫P(x)dx}; A1 e^{∫-cosec 2x dx}; (A1) e^{(1/2)ln(cot x)}; A1 cot x AG. METHOD 2: M1 product rule on d/dx(y cot x); A1,A1,A1 expansions; A1 cot x is integrating factor AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "(d)",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Solve the DE using the integrating factor cot x and show y = x tan x.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrating_factor_method",
+        "indefinite_integration",
+        "initial_condition",
+        "particular_solution"
+      ],
+      "method_path": [
+        "multiply DE by integrating factor cot x",
+        "recognize LHS as d/dx(y cot x)",
+        "simplify RHS: d/dx(y cot x)=1",
+        "integrate: y cot x=x+C",
+        "substitute y(π/4)=π/4 to find C=0",
+        "solve: y=x tan x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "M1 d/dx(y cot x)=...; A1 d/dx(y cot x)=1; A1 y cot x=∫1 dx; A1 y cot x=x+C; M1 substitute π/4,π/4 => C=0; y=x tan x AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-E-I-II-III",
+      "question": "12",
+      "part": "(e)(i)(ii)(iii)",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "(i) Find exact y at x=5π/12 to 3 s.f.; (ii) suggest why Euler gives poor approximation; (iii) state why approximation is less than exact.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "calculus.stationary_points"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "exact_solution_evaluation",
+        "gradient_analysis",
+        "concavity_analysis",
+        "error_analysis",
+        "numerical_vs_exact"
+      ],
+      "method_path": [
+        "(i) substitute x=5π/12 into y=x tan x, evaluate to 2.53 (3 s.f.)",
+        "(ii) gradient changes substantially in neighbourhood of x=5π/12",
+        "(iii) curve is concave up OR d^2y/dx^2 > 0 over the interval"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "(i) y=2.52878... -> 2.53 A1; (ii) the gradient changes substantially R1; (iii) the curve is concave up OR d^2y/dx^2 > 0 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q12-F",
+      "question": "12",
+      "part": "(f)",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "29",
+      "task_summary": "Deduce the curve y=x tan x has a positive gradient for 0<x<π/2 by considering dy/dx.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "sign_analysis",
+        "trigonometric_positivity",
+        "gradient_deduction"
+      ],
+      "method_path": [
+        "substitute y=x tan x into dy/dx=y/tan x+cosec 2x",
+        "simplify to expression involving only positive terms",
+        "note cosec 2x>0 and tan x>0 for 0<x<π/2",
+        "conclude dy/dx>0, hence positive gradient"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "dy/dx=y/tan x+cosec 2x=...; R1 cosec 2x, tan x>0 (for 0<x<π/2); A1 dy/dx>0; positive gradient AG. Note: Do not award R0A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

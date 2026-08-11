@@ -1,0 +1,125 @@
+{
+  "question": "8",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "16",
+      "task_summary": "Given A(0,p,2), B(1,1,1), C(p,0,4) with p>0, find vectors AB and AC, compute AB×AC via determinant, and simplify to the column vector (2−3p, −2−p, p²−2p).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_subtraction",
+        "cross_product",
+        "determinant_expansion",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Compute AB = B − A = (1, 1−p, −1)",
+        "Compute AC = C − A = (p, −p, 2)",
+        "Evaluate AB×AC via 3×3 determinant",
+        "Simplify to (2−3p, −(2+p), p²−2p)"
+      ],
+      "accepted_alternatives": [
+        "Cross product may be expressed using i, j, k unit vectors instead of determinant notation."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "A1 for AB; A1 for AC; M1 for attempt to evaluate cross product by formula or determinant; A1 for correct simplified cross product marked AG. OR notation for i,j,k expansion also shown."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "16",
+      "task_summary": "Expand |AB×AC|² to the quartic p⁴−4p³+14p²−8p+8, then find its minimum value 6.75.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "calculus.optimization",
+        "calculus.differentiation"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "magnitude_squared",
+        "polynomial_expansion",
+        "differentiation",
+        "critical_point_analysis",
+        "function_minimization"
+      ],
+      "method_path": [
+        "Compute |AB×AC|² as sum of squares of the three components",
+        "Expand to p⁴−4p³+14p²−8p+8",
+        "Differentiate or use GDC to find critical point p≈0.3264",
+        "Evaluate minimum value ≈6.75"
+      ],
+      "accepted_alternatives": [
+        "Minimum may be found by GDC instead of calculus differentiation."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "(A1) for correct expansion of |AB×AC|²; (M1) for attempt to find minimum; A1 for min value 6.75. Markscheme gives p≈0.3264... or 6.75257... as intermediate values."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Use area = ½|AB×AC| with the minimum magnitude from part (b) to find the smallest possible area of triangle ABC, giving 1.30 units².",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "triangle_area_from_cross_product",
+        "square_root",
+        "numerical_evaluation"
+      ],
+      "method_path": [
+        "Apply area = ½|AB×AC|",
+        "Substitute minimum |AB×AC| = √6.75257...",
+        "Compute ½√6.75257... ≈ 1.30"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(M1) for valid attempt to find area = ½|AB×AC| using answer from part (b); A1 for 1.30 units²."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

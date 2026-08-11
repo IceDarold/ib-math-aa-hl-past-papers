@@ -1,0 +1,124 @@
+{
+  "question": "9",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Use Euler's method with step size 0.1 to approximate y when x=0.5 for dy/dx=(4-y)/10, y(0)=2, giving the answer correct to four significant figures.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "iterative_approximation",
+        "separable_differential_equation"
+      ],
+      "method_path": [
+        "Apply Euler recursive formula: y_n = y_{n-1} + 0.1 × (4 - y_{n-1}) / 10",
+        "Iterate from (0, 2) to (0.5, y_5) through successive steps at x = 0.1, 0.2, 0.3, 0.4, 0.5",
+        "Round the final approximation to four significant figures: 2.098"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for attempt to use recursive formula y_n = y_{n-1} + 0.1 × (4-y_{n-1})/10; A1 for y_1 = 2.02; A1 for y_5 = 2.098. Note: Accept any answer which rounds to the correct 4sf value."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "13-14",
+      "markscheme_pages": "18-20",
+      "task_summary": "Solve the differential equation dy/dx=(4-y)/10 with initial condition y(0)=2 to show that y=4-2e^(-x/10).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "integration",
+        "natural_logarithm",
+        "initial_conditions",
+        "exponential_form"
+      ],
+      "method_path": [
+        "Separate variables: ∫ dy/(4-y) = ∫ dx/10",
+        "Integrate both sides: -ln|4-y| = x/10 + c",
+        "Apply initial condition (0,2) to find c = -ln 2",
+        "Rearrange: ln|4-y| = -x/10 + ln 2 → ln|(4-y)/2| = -x/10",
+        "Obtain explicit form: y = 4 - 2e^(-x/10)"
+      ],
+      "accepted_alternatives": [
+        "Use integrating factor: rewrite as dy/dx + (1/10)y = 4/10 with IF = e^(x/10), giving e^(x/10)y = 4e^(x/10) + c, apply initial condition to get c = -2, then y = 4 - 2e^(-x/10)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: M1 for separating variables and integrating; A1 for -ln|4-y| = x/10 + c; M1 for substituting initial conditions; A1 for c = -ln 2; A1 for y = 4 - 2e^(-x/10) AG."
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 2: M1 for rearranging and finding integrating factor IF = e^(x/10); A1A1 for e^(x/10)y = 4e^(x/10) + c; M1 for substituting initial conditions; A1 for c = -2; AG for final result."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Find the absolute value of the error in the Euler approximation from part (a) compared to the exact solution at x=0.5.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "absolute_error",
+        "function_evaluation"
+      ],
+      "method_path": [
+        "Evaluate exact solution at x=0.5: y = 4 - 2e^(-0.05)",
+        "Compute absolute error: |approximation - exact| = |2.09801… - (4 - 2e^(-0.05))|",
+        "Give result: 0.000479 (or 0.000459 if using 4sf rounded value)"
+      ],
+      "accepted_alternatives": [
+        "Accept 0.000459 (4.59×10⁻⁴) from use of the 4sf rounded value 2.098."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "A1 for absolute error = 0.000479 (4.79×10⁻⁴). Note: Accept 0.000459 (4.59×10⁻⁴) from use of 4sf value."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

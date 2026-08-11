@@ -1,0 +1,83 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Given x̄ = 7 and the regression line y = 2.1875x + 0.6875, verify that ȳ = 16 using the property that the regression line passes through (x̄, ȳ).",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "linear_regression",
+        "arithmetic_evaluation",
+        "mean_point_property"
+      ],
+      "method_path": [
+        "Substitute x̄ = 7 into y = 2.1875x + 0.6875",
+        "Compute 2.1875 × 7 + 0.6875 = 15.3125 + 0.6875 = 16",
+        "Conclude ȳ = 16 as required"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER y = 2.1875 × 7 + 0.6875 A1 OR y = 15.3125 + 0.6875 A1 THEN y = 16 AG [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Given q − p = 3 and the bivariate data set with ȳ = 16 from part (a), find the values of p and q.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "mean_calculation",
+        "linear_equations",
+        "simultaneous_equations",
+        "substitution_method"
+      ],
+      "method_path": [
+        "Write mean equation: (9 + 13 + p + q + 21) / 5 = 16",
+        "Simplify to p + q = 37",
+        "Form system: p + q = 37 and q − p = 3",
+        "Solve to obtain p = 17, q = 20"
+      ],
+      "accepted_alternatives": [
+        "Substitute q = p + 3 directly into the mean equation: (9 + 13 + p + (p + 3) + 21) / 5 = 16, then solve 80 = 2p + 46 to get p = 17, q = 20"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempts to use ȳ = Σy/n to form a linear equation in p and q (M1) ... (9+13+p+q+21)/5 = 16 ⇒ p+q = 37 (A1) ... attempts to solve two linear equations simultaneously (one of which is q = p + 3) (M1) ... p = 17 and q = 20 A1 [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

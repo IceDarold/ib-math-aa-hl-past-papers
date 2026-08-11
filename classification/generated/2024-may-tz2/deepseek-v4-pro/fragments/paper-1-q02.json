@@ -1,0 +1,51 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Solve the exponential equation 3 × 9^x + 5 × 3^x − 2 = 0 by recognising it as a quadratic in 3^x, solving the quadratic, and then solving for x.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "quadratic_recognition",
+        "solving_quadratic",
+        "factorising",
+        "quadratic_formula",
+        "logarithmic_solving"
+      ],
+      "method_path": [
+        "Recognise the equation as a quadratic in 3^x: 3(3^x)² + 5(3^x) − 2 = 0",
+        "Solve the quadratic by factorising to (3·3^x − 1)(3^x + 2) = 0 or via quadratic formula",
+        "Obtain 3^x = 1/3 (reject 3^x = −2)",
+        "Solve 3^x = 1/3 → x = −1"
+      ],
+      "accepted_alternatives": [
+        "Use of quadratic formula instead of factorising: 3^x = (−5 ± √(25+24))/6",
+        "Including x = log₃(−2) alongside x = −1 in the final answer is acceptable"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "recognising a quadratic in 3^x (M1); valid attempt to solve a quadratic equation (M1); (3·3^x − 1)(3^x + 2) = 0 OR 3^x = (−5±√(25+24))/6 (A1); 3^x = 1/3 (or 3^x = −2) (A1); x = −1 (A1). Note: Award final A1 if answer includes x = −1 and x = log₃(−2). Award A0 if other incorrect answers given."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

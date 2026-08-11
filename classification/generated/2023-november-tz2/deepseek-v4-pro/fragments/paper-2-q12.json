@@ -1,0 +1,177 @@
+{
+  "question": "12",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "28",
+      "task_summary": "Show that lines L and M intersect at a point A and find the position vector of A.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "equate_vector_components",
+        "solve_linear_system",
+        "verify_intersection",
+        "compute_position_vector"
+      ],
+      "method_path": [
+        "Set at least two corresponding components of L and M equal to form equations in s and t",
+        "Solve two of the equations simultaneously to obtain s=2 (or t=-1)",
+        "Verify the solution satisfies the remaining component equation",
+        "Substitute s=2 into L or t=-1 into M to obtain position vector A=(5,8,9)"
+      ],
+      "accepted_alternatives": [
+        "Use t=-1 and verify in remaining component instead of s=2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "M1: attempt to set at least two components of L and M equal; (M1): attempt to solve two equations simultaneously; A1: s=2 OR t=-1; R1: substitute s=2 and t=-1 into remaining component OR recognition that 2nd and 3rd equations are equivalent; A1: position vector of A is (5,8,9)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "28-29",
+      "task_summary": "Verify that lines L and M both lie in the plane P given by r dot (0,2,-1)=7.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product",
+        "verify_plane_condition",
+        "substitute_parametric_line"
+      ],
+      "method_path": [
+        "Substitute the parametric equation of L into r dot (0,2,-1)=7 and verify the identity holds for all s",
+        "Substitute the parametric equation of M into r dot (0,2,-1)=7 and verify the identity holds for all t"
+      ],
+      "accepted_alternatives": [
+        "Show direction of each line is perpendicular to the normal (0,2,-1) AND a point on each line satisfies the plane equation",
+        "Show both direction vectors are perpendicular to the normal AND a point on either line satisfies the plane equation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28-29",
+          "basis": "METHOD 1: (M1) attempt to substitute at least one line into the plane equation; A1: L substitution yields 7; A1: M substitution yields 7. METHOD 2: (M1) consideration of direction of one line and a point; A1: direction dot normal = 0 and point on line satisfies plane for L; A1: same for M. METHOD 3: (M1) consideration of direction of both lines; A1: both directions dot normal = 0 or cross product yields scalar multiple of normal; A1: a point satisfies plane equation."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "30-31",
+      "task_summary": "(i) Find the position vector of C where the line through B=(-3,12,2) perpendicular to plane P meets P. (ii) Hence find the magnitude of BC.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "parametric_line_equation",
+        "substitute_plane_equation",
+        "solve_for_parameter",
+        "compute_position_vector",
+        "vector_subtraction",
+        "distance_formula"
+      ],
+      "method_path": [
+        "Write parametric equation of line through B with direction (0,2,-1): r=(-3,12,2)+lambda(0,2,-1)",
+        "Substitute into plane equation r dot (0,2,-1)=7 to obtain 22+5lambda=7",
+        "Solve for lambda=-3",
+        "Compute C=(-3,12,2)+(-3)(0,2,-1)=(-3,6,5)",
+        "Compute BC=OC-OB=(0,-6,3)",
+        "Compute |BC|=sqrt(0^2+(-6)^2+3^2)=sqrt(45)=3sqrt(5)"
+      ],
+      "accepted_alternatives": [
+        "For (ii): recognise BC is parallel to normal vector, BC=lambda * magnitude_of_normal, so |BC|=|lambda|*|(0,2,-1)|=3*sqrt(5)=sqrt(45)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30-31",
+          "basis": "(c)(i): (A1) position vector of point on line r=(-3,12,2)+lambda(0,2,-1); (M1) substitute into plane equation; (A1) lambda=-3; A1: C=(-3,6,5). (c)(ii): (M1) BC=OC-OB; (M1) distance formula; A1: BC=sqrt(45)=3sqrt(5). METHOD 2 for (ii): (M1) recognition that BC is parallel to normal; (M1) distance formula on normal vector; A1: BC=3*sqrt(5)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "32",
+      "task_summary": "Find the reflection of point B=(-3,12,2) in the plane P.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_reflection",
+        "compute_position_vector",
+        "scalar_multiplication"
+      ],
+      "method_path": [
+        "Recognise that the reflected point B-prime lies on the same perpendicular line with parameter mu=2*lambda=-6",
+        "Compute OB-prime=(-3,12,2)+(-6)(0,2,-1)=(-3,0,8)"
+      ],
+      "accepted_alternatives": [
+        "Use CB-prime=BC=(0,-6,3), so OB-prime=OC+CB-prime=(-3,6,5)+(0,-6,3)=(-3,0,8)",
+        "Use OB-prime=OB+2*BC or OB-prime=2*OC-OB to obtain (-3,0,8)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "32",
+          "basis": "METHOD 1: (A1) OB-prime=(-3,12,2)+mu(0,2,-1); (M1) recognition that mu=2*lambda=-6 OR BC=CB-prime; A1: OB-prime=(-3,0,8) so coordinates are (-3,0,8). METHOD 2: (A1) BC=CB-prime=(0,-6,3); (M1) OB-prime=OC+CB-prime OR OB-prime=OB+2*BC OR OB-prime=2*OC-OB; A1: OB-prime=(-3,0,8)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "question": "7",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "13",
+      "task_summary": "Given z = 5 + qi satisfies z² + iz = -p + 25i with p, q ∈ ℝ, find the values of p and q.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "substitution",
+        "expansion",
+        "equate_real_imaginary_parts",
+        "solving_simultaneous_equations"
+      ],
+      "method_path": [
+        "Substitute z = 5 + qi into z² + iz = -p + 25i",
+        "Expand and collect real and imaginary parts",
+        "Equate real parts and imaginary parts to obtain two equations",
+        "Solve 10q - 20 = 0 for q",
+        "Substitute q = 2 into -q² - p + 25 = 0 to obtain p = -19"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use sum and product of roots. Rearrange to z² + iz + p - 25i = 0. Sum of roots = -i, one root is 5 + qi so the other is -5 - qi - i. Equate product (5 + qi)(-5 - qi - i) = -p + 25i and solve real and imaginary parts to get q = 2, p = -19."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "Markscheme shows METHOD 1 with M1 for substituting z, A1 for correct expansion, M1 for equating real/imaginary parts, and A1A1 for q = 2, p = -19. METHOD 2 using sum and product of roots is also accepted with equivalent mark allocation. Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

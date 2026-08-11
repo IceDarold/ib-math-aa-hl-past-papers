@@ -1,0 +1,55 @@
+{
+  "question": "2",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 6,
+      "source_pages": "3",
+      "markscheme_pages": "8–9",
+      "task_summary": "Given two buildings on level ground, point P between them with equal angles of elevation θ to both tops, distances PA = 150 m, PB = 90 m, and AB = 154 m, find the height h of the taller building.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "cosine_rule",
+        "angle_calculation",
+        "isosceles_triangle",
+        "sine",
+        "solve_for_side"
+      ],
+      "method_path": [
+        "Apply cosine rule: 154² = 150² + 90² − 2(150)(90)cos(AP̂B)",
+        "Solve for AP̂B ≈ 75.2° (or 1.31 rad)",
+        "Use geometry of isosceles triangles: θ = (180° − AP̂B)/2 ≈ 52.4°",
+        "Express h via right-triangle trigonometry: h = 150 sin θ",
+        "Compute h ≈ 119 m"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Express distance between buildings as (150+90)cosθ and height difference as (150−90)sinθ, apply Pythagoras: (60 sinθ)² + (240 cosθ)² = 154², solve for θ ≈ 0.914 rad (52.4°), then h = 150 sinθ ≈ 119 m."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: (M1) attempt to substitute into cosine rule; (A1) 154² = 150² + 90² − 2(150)(90)cos(AP̂B) or cos(AP̂B) = (150²+90²−154²)/(2·150·90); (A1) AP̂B = 75.2286…° or 1.31298… rad (accept 75.2° or 1.31 rad); (M1) valid approach to find θ: θ = (180°−AP̂B)/2 = 52.3856…° or θ = (π−1.31298…)/2 = 0.914302…; (M1) valid approach to express h in terms of θ: sinθ = h/150; A1 h = 119 (m)."
+        },
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 2: (M1) attempts distance between buildings or height difference in terms of θ; (A1) distance = (150+90)cosθ, height difference = (150−90)sinθ; (M1) uses Pythagoras and attempts to solve: (60 sinθ)² + (240 cosθ)² = 154²; (A1) θ = 0.914302… (52.3856…°); (M1) sinθ = h/150; A1 h = 119 (m)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

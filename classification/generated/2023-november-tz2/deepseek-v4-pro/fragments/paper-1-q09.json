@@ -1,0 +1,95 @@
+{
+  "question": "9",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q09-A",
+      "question": "9",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Prove f is even by showing f(-x) = f(x) using sin(-θ) = -sin(θ).",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "evaluate_f_of_negative_x",
+        "simplify_using_sin_oddness",
+        "compare_to_f_of_x",
+        "conclude_even"
+      ],
+      "method_path": [
+        "Evaluate f(-x) = sin²(-kx)/(-x)²",
+        "Use sin(-θ) = -sin(θ) to get sin²(-kx) = (-sin(kx))² = sin²(kx)",
+        "Simplify (-x)² = x², so f(-x) = sin²(kx)/x² = f(x)",
+        "Conclude f is an even function (AG)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1 for evaluating f(-x) = sin²(-kx)/(-x)²; A1 for showing this equals sin²(kx)/x² = f(x) hence f is even AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q09-B",
+      "question": "9",
+      "part": "b",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "17-18",
+      "task_summary": "Evaluate lim_{x→0} sin²(kx)/x² = 16 using L'Hôpital's rule (or Maclaurin series, or product-of-limits) and solve for k ∈ ℝ⁺.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "calculus.series"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "identify_indeterminate_form",
+        "apply_lhopitals_rule",
+        "differentiate_numerator_denominator",
+        "apply_lhopitals_rule_twice",
+        "evaluate_limit",
+        "equate_to_given_value",
+        "solve_for_constant"
+      ],
+      "method_path": [
+        "Note lim_{x→0} sin²(kx)/x² = 0/0 indeterminate form",
+        "Apply L'Hôpital: differentiate numerator and denominator → (2k sin(kx) cos(kx))/(2x) = k sin(2kx)/(2x)",
+        "Still 0/0; apply L'Hôpital a second time → (2k² cos(2kx))/2 = k² cos(2kx)",
+        "As x→0, cos(2kx)→1, so limit = k²",
+        "Set k² = 16",
+        "Solve for k = 4 (since k ∈ ℝ⁺)"
+      ],
+      "accepted_alternatives": [
+        "Method 2 (Maclaurin series): Expand sin(kx) = kx + ... ⇒ sin²(kx) = k²x² + ... ⇒ limit = k², then k = 4.",
+        "Method 3 (splitting): Write as (sin(kx)/x)(sin(kx)/x), use limit of product = product of limits, evaluate sin(kx)/x → k (via L'Hôpital or Maclaurin) ⇒ k·k = k², then k = 4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "(M1) noting limit = 0/0; M1 attempt to differentiate numerator and denominator; A1 for k sin(2kx)/(2x); M1 attempts second differentiation; A1 for k²; A1 for k²=16 ⇒ k=4. Method 2: M1 Maclaurin series; A1 sin²(kx)=k²x²+…; M1 limit setup; R1 limit = k²+terms in x; A1 k²; A1 k=4. Method 3: (M1) splitting; A1 limit of product; (M1) L'Hôpital or Maclaurin for sin(kx)/x; (A1) limit = k; A1 k²; A1 k=4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

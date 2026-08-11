@@ -1,0 +1,83 @@
+{
+  "question": "6",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q06-A",
+      "question": "6",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find the percentage of eating apples (mean 100 g, σ = 20 g) with weight greater than 140 g, given 95% of weights lie within two standard deviations of the mean.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "empirical_rule",
+        "tail_probability"
+      ],
+      "method_path": [
+        "z = (140 − 100) / 20 = 2 standard deviations above the mean",
+        "upper tail area = (1 − 0.95) / 2 = 0.025 = 2.5%"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "2.5(%) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q06-B",
+      "question": "6",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Given 80% of apples are eating apples, both types are mixed and those weighing >140 g are separated. Find the probability a randomly selected apple from the >140 g container is an eating apple. Answer as c/d with c, d ∈ ℤ⁺.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "normal_distribution",
+        "law_of_total_probability",
+        "bayes_theorem"
+      ],
+      "method_path": [
+        "P(cooking > 140) = 0.5 (symmetric about mean 140)",
+        "P(eating > 140) = 0.025 (from part a)",
+        "apply conditional probability: P(eating | >140) = P(eating ∩ >140) / P(>140)",
+        "P(eating ∩ >140) = 0.8 × 0.025 = 0.02",
+        "P(>140) = 0.8 × 0.025 + 0.2 × 0.5 = 0.12",
+        "result = 0.02 / 0.12 = 1/6"
+      ],
+      "accepted_alternatives": [
+        "Any equivalent exact fraction (e.g. 200/1200 simplified)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "P(weight of cooking apples > 140) = 0.5 (50%) (seen anywhere) (A1); recognition of conditional probability in context (M1); expression 0.8×0.025/(0.8×0.025+0.2×0.5) (A1); 1/6 A1; Note: Accept any equivalent exact answer written as a fraction."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

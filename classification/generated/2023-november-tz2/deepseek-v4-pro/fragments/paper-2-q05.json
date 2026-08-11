@@ -1,0 +1,50 @@
+{
+  "question": "5",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Find a given E(X)=2.3 for a discrete random variable with probabilities k, k², a, k³ at x=1,2,3,4.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "expected_value_equation",
+        "probability_sum_to_one",
+        "simultaneous_equations",
+        "cubic_equation",
+        "gdc_solve"
+      ],
+      "method_path": [
+        "Form E(X) = Σ x·P(X=x): 2.3 = 1·k + 2·k² + 3·a + 4·k³",
+        "Form Σ P(X=x) = 1: 1 = a + k + k² + k³",
+        "Solve the two simultaneous equations for a and k (graphically or algebraically via cubic)",
+        "Report a ≈ 0.553"
+      ],
+      "accepted_alternatives": [
+        "Graphical/numerical route: make a the subject in both equations, use graph or table on GDC to find intersection",
+        "Algebraic route: eliminate a to obtain cubic 2.3k³ − 2k² − k + 0.7 = 0 (or equivalent), solve for k, then find a"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for E(X) equation k+2k²+3a+4k³=2.3; A1 for a+k+k²+k³=1; M1 for making a subject / eliminating a; M1 for solving (graph/table or cubic); A1 for a=0.553"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "question": "10",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "15/17",
+      "markscheme_pages": "21/31",
+      "task_summary": "Show that 2p − q = a for the arithmetic sequence a, p, q, …",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_sequence",
+        "common_difference",
+        "equating_differences",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "Express common difference d = p − a and d = q − p",
+        "Equate: p − a = q − p",
+        "Rearrange to 2p − q = a"
+      ],
+      "accepted_alternatives": [
+        "Use a + q = 2p or equivalent rearrangements"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21/31",
+          "basis": "M1 awarded for attempt to find a difference; A1 for correct equation leading to 2p − q = a AG. Accepts p − a = q − p, 2(q − a) = p − a, or 2p = a + q."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "15/17",
+      "markscheme_pages": "21/31",
+      "task_summary": "Show that s² = at for the geometric sequence a, s, t, …",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_sequence",
+        "common_ratio",
+        "equating_ratios",
+        "cross_multiplication"
+      ],
+      "method_path": [
+        "Express common ratio r = s/a and r = t/s",
+        "Equate: s/a = t/s",
+        "Cross-multiply to s² = at"
+      ],
+      "accepted_alternatives": [
+        "Use s = ar and t = ar² leading to t = sr, then substitute r = s/a to obtain s² = at"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21/31",
+          "basis": "M1 for attempt to find a ratio; A1 for correct equation. Accepts s/a = t/s, t = a(s/a)², or s/a = t/s."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "15/17",
+      "markscheme_pages": "22/31",
+      "task_summary": "Given q = t = 1, show that p > 1/2.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "substitution",
+        "inequality_reasoning",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Substitute q = 1 into 2p − q = a to obtain 2p − 1 = a",
+        "Substitute t = 1 into s² = at to obtain s² = a",
+        "Combine to get 2p − 1 = s²",
+        "Since s² > 0, 2p − 1 > 0, therefore p > 1/2"
+      ],
+      "accepted_alternatives": [
+        "Use a = 2p − 1 and a = s²; since a > 0 (as s² > 0), 2p − 1 > 0 ⇒ p > 1/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22/31",
+          "basis": "EITHER route: A1 for 2p − 1 = s²; R1 for s² > 0 ⇒ 2p − 1 > 0 ⇒ p > 1/2. OR route: A1 for 2p − 1 = a and s² = a; R1 for a > 0 ⇒ 2p − 1 > 0 ⇒ p > 1/2. Note: Do not award A0R1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "15/17",
+      "markscheme_pages": "23/31",
+      "task_summary": "Given a = 9, s > 0, q = t = 1, write the first four terms of (i) the arithmetic sequence and (ii) the geometric sequence.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_sequence",
+        "geometric_sequence",
+        "common_difference",
+        "common_ratio",
+        "term_generation"
+      ],
+      "method_path": [
+        "(i) Solve 2p − 1 = 9 ⇒ p = 5, find d = p − a = −4",
+        "Arithmetic terms: 9, 5, 1, −3",
+        "(ii) Solve s² = 9·1 ⇒ s = 3 (since s > 0), find r = s/a = 1/3",
+        "Geometric terms: 9, 3, 1, 1/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23/31",
+          "basis": "(i) 9, 5, 1, −3 with A1 awarded for each of the 2nd term (5) and 4th term (−3). (ii) 9, 3, 1, 1/3 with A1 awarded for each of the 2nd term (3) and 4th term (1/3)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 6,
+      "source_pages": "15/17",
+      "markscheme_pages": "23–24/31",
+      "task_summary": "(i) Find the common difference of uₙ in terms of ln 3; (ii) Show that Σ_{i=1}^{10} uᵢ = −90 − 25 ln 3, where u₁ = 9 + ln 9, u₂ = 5 + ln 3, u₃ = 1 + ln 1.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_sequence",
+        "common_difference",
+        "arithmetic_series_sum",
+        "logarithm_properties",
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "(i) Compute d = u₂ − u₁ = (5 + ln 3) − (9 + ln 9)",
+        "Simplify ln 9 = 2 ln 3, ln 1 = 0",
+        "Obtain d = −4 − ln 3",
+        "(ii) Apply S₁₀ = (10/2)[2u₁ + 9d]",
+        "Substitute u₁ = 9 + 2 ln 3, d = −4 − ln 3",
+        "Simplify: S₁₀ = 5[18 + 4 ln 3 − 36 − 9 ln 3] = 5[−18 − 5 ln 3] = −90 − 25 ln 3"
+      ],
+      "accepted_alternatives": [
+        "Compute u₁₀ = u₁ + 9d = 9 + 2 ln 3 + 9(−4 − ln 3) = −27 − 7 ln 3, then S₁₀ = 10(u₁ + u₁₀)/2 = 5(9 + 2 ln 3 − 27 − 7 ln 3) = −90 − 25 ln 3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23/31",
+          "basis": "(i) M1 for attempt to find difference between two consecutive terms; A1 for ln 9 = 2 ln 3 or ln 1 = 0 or ln(1/3) = −ln 3; A1 for d = −4 − ln 3."
+        },
+        {
+          "markscheme_pages": "24/31",
+          "basis": "(ii) METHOD 1: M1 for attempt to substitute into S₁₀; A1 for correct substitution; A1 for simplified result −90 − 25 ln 3 AG. METHOD 2: find u₁₀ first then apply S₁₀ = 10(u₁ + u₁₀)/2, same mark distribution."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    }
+  ]
+}

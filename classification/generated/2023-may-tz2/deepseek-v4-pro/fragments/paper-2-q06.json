@@ -1,0 +1,96 @@
+{
+  "question": "6",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q06-A",
+      "question": "6",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "12-14",
+      "task_summary": "Verify the given vector equation of the line of intersection of two planes by substituting the parametric general point into both plane equations.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "parametric_substitution",
+        "plane_equation_verification",
+        "line_of_intersection"
+      ],
+      "method_path": [
+        "express general point on L as (λ, 2−2λ, 4−2λ)",
+        "substitute into Π₁: 2(λ) − (2−2λ) + 2(4−2λ) = 6",
+        "simplify to 6 = 6 to verify Π₁ holds",
+        "substitute into Π₂: 4(λ) + 3(2−2λ) − (4−2λ) = 2",
+        "simplify to 2 = 2 to verify Π₂ holds"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Verify point (0,2,4) lies on both planes, then compute cross product of normals ⟨2,−1,2⟩×⟨4,3,−1⟩ = ⟨−5,10,10⟩ proportional to ⟨1,−2,−2⟩",
+        "METHOD 3: Row reduction to obtain parametric equations x=λ, y=2−2λ, z=4−2λ",
+        "METHOD 4: Solve the two-plane system directly for x=λ, y=2−2λ, z=4−2λ"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 1: (M1) substitutes general point (λ, 2−2λ, 4−2λ) into both Π₁ and Π₂; (A1) verifies Π₁ reduces to 6=6; (A1) verifies Π₂ reduces to 2=2"
+        },
+        {
+          "markscheme_pages": "13-14",
+          "basis": "METHOD 2: (A1) verifies (0,2,4) satisfies both planes; (M1) cross product of normals or dot product with normals; (A1) direction verified. METHOD 3: (M1) row reduction; (A1,A1) parametric equations. METHOD 4: (M1) solve system; (A2) parametric solution."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q06-B",
+      "question": "6",
+      "part": "b",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "15",
+      "task_summary": "Find the point on the line nearest to the origin by setting the dot product of the position vector and direction vector to zero (perpendicular condition) and solving for λ.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product",
+        "perpendicular_condition",
+        "nearest_point_on_line",
+        "solve_linear_equation",
+        "parametric_evaluation"
+      ],
+      "method_path": [
+        "set dot product of position vector (λ, 2−2λ, 4−2λ) and direction (1,−2,−2) to zero",
+        "expand: 1·λ + (−2)(2−2λ) + (−2)(4−2λ) = 0",
+        "simplify to 9λ − 12 = 0",
+        "solve λ = 4/3",
+        "substitute λ into parametric form to obtain P(4/3, −2/3, 4/3)"
+      ],
+      "accepted_alternatives": [
+        "Minimize squared distance s² = λ² + (2−2λ)² + (4−2λ)² by setting d(s²)/dλ = 18λ − 24 = 0, giving λ = 4/3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "EITHER: (M1) position vector dot direction = 0; (A1) λ + (−2)(2−2λ) + (−2)(4−2λ) = 0; (A1) 9λ − 12 = 0; (A1) λ = 4/3; (A1) P(4/3, −2/3, 4/3). OR: (A1) s² expression; (M1) differentiate; (A1) d(s²)/dλ = 18λ − 24 = 0; then same (A1)(A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

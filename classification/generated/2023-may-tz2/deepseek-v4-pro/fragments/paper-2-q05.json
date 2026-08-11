@@ -1,0 +1,136 @@
+{
+  "question": "5",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Find t₁, the first time when acceleration is zero, by recognising that a=v'(t)=0 (or locating the local maximum on the graph of v) and solving using GDC or analytically.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "functions.graphing"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "recognise_acceleration_as_derivative",
+        "set_derivative_to_zero",
+        "solve_with_gdc",
+        "identify_first_root"
+      ],
+      "method_path": [
+        "Recognise that acceleration a(t)=v'(t)",
+        "Set v'(t)=0 or identify local maximum on velocity graph",
+        "Solve numerically using GDC",
+        "Identify the first positive root as t₁≈0.395 (arctan(5/12))"
+      ],
+      "accepted_alternatives": [
+        "Locate the first local maximum on the supplied graph of v(t) using GDC trace/analyse functions instead of differentiating analytically."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme states: 'recognize that acceleration is zero when v'(t)=0 OR at a local maximum on the graph of v (M1); t₁=0.394791... = arctan(5/12) (seconds) (A1)'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Find t₂, the second time when the particle is instantaneously at rest, by solving v(t)=0 and identifying the second positive root as t₂=7π/2≈11.0.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_velocity_to_zero",
+        "solve_trigonometric_factor",
+        "solve_linear_factor",
+        "order_roots",
+        "identify_second_root"
+      ],
+      "method_path": [
+        "Set v(t)=0",
+        "Solve the trigonometric factor cos(…)=0 and the linear factor (4−t/2)=0 for t in [0,4π]",
+        "Order all roots",
+        "Identify the second root as t₂=7π/2≈11.0"
+      ],
+      "accepted_alternatives": [
+        "Use GDC to sketch v(t) and find zeros directly, then select the second positive zero."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme states: 'recognition that v=0 (M1); sketch OR t=4.71238... OR t=10.9955...; t₂=10.9955...=7π/2=11.0 (A1)'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q05-C",
+      "question": "5",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Find the distance travelled between t₁ and t₂ by evaluating ∫|v(t)|dt, splitting the integral at the intermediate zero t=3π/2 where velocity changes sign.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "set_up_definite_integral_of_absolute_velocity",
+        "split_at_sign_change",
+        "evaluate_integrals_with_gdc",
+        "sum_for_total_distance"
+      ],
+      "method_path": [
+        "Express distance as ∫|v(t)|dt from t₁ to t₂",
+        "Identify sign-change point at t=3π/2 (where v=0 between t₁ and t₂)",
+        "Split integral: ∫_{t₁}^{3π/2} v dt + ∫_{3π/2}^{t₂} (−v) dt",
+        "Evaluate numerically using GDC: 6.538… + 1.293…",
+        "Sum to obtain distance ≈ 7.83 m"
+      ],
+      "accepted_alternatives": [
+        "Evaluate ∫_{t₁}^{t₂} |v(t)| dt directly on GDC without manually splitting the integral."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme gives the integral setup '∫_{t₁}^{t₂} |v| dt' or the split form with limits 0.394791…→4.71238… and 4.71238…→10.9955…, yielding 6.53806…+1.29313…, and states 'distance = 7.83118… = 7.83 (m) (A1)'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

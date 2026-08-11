@@ -1,0 +1,203 @@
+{
+  "question": "11",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Show that given P(YY)=1/3, the equation 2y²−2(r+1)y+r−r²=0 holds.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "probability_expression",
+        "cross_multiplication",
+        "algebraic_expansion",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "P(YY)=y(y−1)/((r+y)(r+y−1))=1/3",
+        "Cross-multiply: 3y(y−1)=(r+y)(r+y−1)",
+        "Expand: 3y²−3y=r²+2ry+y²−r−y",
+        "Rearrange to 2y²−2(r+1)y+r−r²=0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "(M1) attempts to form a numerator involving a product of two terms involving y and a denominator involving a product of two terms involving r+y; (A1) y(y−1)/((r+y)(r+y−1))=1/3; (M1) attempts to remove the fractions and expand the brackets; (A1) 2y²−2(r+1)y+r−r²=0 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Solve the quadratic from part (a) to show that y=((r+1)+√(3r²+1))/2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quadratic_formula",
+        "discriminant_simplification",
+        "positive_root_selection",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply quadratic formula: y=[2(r+1)±√(4(r+1)²−8(r−r²))]/4",
+        "Simplify discriminant: √(12r²+4)=2√(3r²+1)",
+        "y=((r+1)±√(3r²+1))/2",
+        "Reject negative root since y>0 (number of balls cannot be negative)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "(M1) attempts to solve for y; (A1) y=(2(r+1)±√(4(r+1)²−8(r−r²)))/4; (A1) y=(2(r+1)±√(12r²+4))/4; (R1) stating that number of balls cannot be negative, or similar. Note: Accept y>0; so y=((r+1)+√(3r²+1))/2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Find two pairs of positive integer values for r and y that satisfy P(YY)=1/3.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "integer_search",
+        "gdc_table",
+        "solution_verification"
+      ],
+      "method_path": [
+        "Substitute positive integer r into y=((r+1)+√(3r²+1))/2",
+        "r=1 yields y=2",
+        "r=4 yields y=6"
+      ],
+      "accepted_alternatives": [
+        "(r=15, y=21) also accepted as the next solution"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(M1) attempts to find a pair of positive integer values eg by using a table. Note: Award M0 if numbers are not positive integers. 1 red ball and 2 yellow balls (r=1 and y=2) A1. 4 red balls and 6 yellow balls (r=4 and y=6) A2. Note: Award A1 for one solution and A2 for another. 15 red balls and 21 yellow balls (r=15 and y=21) is the next solution."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Find an expression for P(YYY) in terms of y when the box contains 10 red balls and y yellow balls.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_expression",
+        "combinatorial_product",
+        "without_replacement"
+      ],
+      "method_path": [
+        "P(YYY)=y(y−1)(y−2)/((y+10)(y+9)(y+8))"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(M1) attempts to form a numerator involving a product of three terms involving y and a denominator involving a product of three terms that includes a (y+10) term; (A1) for a correct numerator; (A1) for a correct denominator. P(YYY)=y(y−1)(y−2)/((y+10)(y+9)(y+8))"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Find the initial number of yellow balls given that adding one yellow ball doubles P(YYY) from part (d).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "probability_expression",
+        "equation_setup",
+        "algebraic_cancellation",
+        "quadratic_solving",
+        "integer_solution"
+      ],
+      "method_path": [
+        "P_new=(y+1)y(y−1)/((y+11)(y+10)(y+9))",
+        "Set P_new=2×P(YYY) from part (d)",
+        "Cancel common factors to obtain (y+1)/(y+11)=2(y−2)/(y+8)",
+        "Cross-multiply and expand: y²+9y+8=2y²+18y−44",
+        "Rearrange: y²+9y−52=0",
+        "Factorise: (y+13)(y−4)=0",
+        "Select positive solution: y=4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(A1) P(new)=(y+1)y(y−1)/((y+11)(y+10)(y+9)); (M1) equates their answer for P(new) to 2× their answer for part (d); (M1) attempts to solve for y. Note: Award (M1) for attempting to write the expression as 2(y−2)/(y+8)=(y+1)/(y+11). y=4 A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

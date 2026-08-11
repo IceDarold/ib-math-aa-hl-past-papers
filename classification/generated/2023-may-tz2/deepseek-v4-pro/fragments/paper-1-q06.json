@@ -1,0 +1,90 @@
+{
+  "question": "6",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "State E(X) for a continuous uniform distribution on [a, 3a].",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "uniform_distribution",
+        "expected_value",
+        "symmetry"
+      ],
+      "method_path": [
+        "Recognize X ~ U(a, 3a)",
+        "State E(X) = (a + 3a)/2 = 2a by symmetry"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "E(X) = 2a (by symmetry) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "14–15",
+      "task_summary": "Use integration to find Var(X) for a continuous uniform distribution on [a, 3a].",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "statistics.expected_value"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "variance_formula",
+        "definite_integral",
+        "power_rule",
+        "evaluation"
+      ],
+      "method_path": [
+        "Apply Var(X) = E(X²) − [E(X)]²",
+        "Compute E(X²) = ∫_a^{3a} x²/(2a) dx",
+        "Integrate: [x³/(6a)]_a^{3a}",
+        "Evaluate to (13/3)a²",
+        "Subtract (2a)² = 4a²",
+        "Obtain Var(X) = a²/3"
+      ],
+      "accepted_alternatives": [
+        "Apply Var(X) = E[(X − E(X))²]: compute ∫_a^{3a} (x−2a)²/(2a) dx = [(x−2a)³/(6a)]_a^{3a} = a²/3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: uses Var(X) = E(X²) − [E(X)]² (M1); integration expression A1; intermediate value (A1); final A1 for a²/3"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 2: uses Var(X) = E[(X − E(X))²] (M1); integration A1; intermediate (A1); final A1 for a²/3"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

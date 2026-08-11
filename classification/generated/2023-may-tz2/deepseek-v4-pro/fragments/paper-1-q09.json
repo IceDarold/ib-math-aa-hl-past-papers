@@ -1,0 +1,123 @@
+{
+  "question": "9",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Express OM and MC in terms of a and c.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_addition",
+        "scalar_multiplication",
+        "vector_subtraction"
+      ],
+      "method_path": [
+        "OM = OA + AM = a + kc",
+        "MC = OC − OM = c − (a + kc) = (1−k)c − a"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "OM = a + kc (A1); MC = (1−k)c − a (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Use a vector method to show that |a|²(1−2k)(2cosθ−(1−2k))=0.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product",
+        "algebraic_expansion",
+        "substitution",
+        "factorisation"
+      ],
+      "method_path": [
+        "Set OM·MC = 0",
+        "Expand (a+kc)·((1−k)c−a) to −|a|²+(1−2k)(a·c)+k(1−k)|c|²",
+        "Substitute |c|²=4|a|² and a·c=2|a|²cosθ",
+        "Simplify and factor to |a|²(1−2k)(2cosθ−(1−2k))=0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: attempts to expand their dot product (a+kc)·((1−k)c−a); M1: uses |c|²=4|a|² and a·c=2|a|²cosθ; A1: correct result leading to AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P1-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Find the range of values for θ such that there are two possible positions for M.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equation_solving",
+        "inequality_solving",
+        "trigonometric_inequality",
+        "constraint_application",
+        "case_analysis"
+      ],
+      "method_path": [
+        "Set each factor to zero from |a|²(1−2k)(2cosθ−(1−2k))=0 with |a|≠0",
+        "Solve: k=1/2 or k=(1−2cosθ)/2",
+        "Apply 0≤k≤1 to the second solution: 0≤(1−2cosθ)/2≤1",
+        "Solve inequality to obtain −1/2≤cosθ≤1/2",
+        "Convert to θ: π/3≤θ≤2π/3",
+        "Exclude θ=π/2 (gives k=1/2, a unique M)"
+      ],
+      "accepted_alternatives": [
+        "Solve for cosθ instead of k: cosθ=(1−2k)/2, then apply 0≤k≤1 to obtain the same bounds on cosθ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: attempts to solve (1−2k)(2cosθ−(1−2k))=0 for k (or for cosθ); k=1/2 or k=(1−2cosθ)/2; A1: 0≤(1−2cosθ)/2≤1 → −1/2≤cosθ≤1/2; A1A1: π/3≤θ≤2π/3, θ≠π/2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

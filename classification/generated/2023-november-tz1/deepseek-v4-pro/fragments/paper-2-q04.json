@@ -1,0 +1,96 @@
+{
+  "question": "4",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the time q when the particle first comes to rest by setting the velocity (ds/dt) equal to zero and solving for the smallest positive t.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "geometry.trigonometric_equations",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "set_derivative_zero",
+        "solve_trigonometric_equation"
+      ],
+      "method_path": [
+        "Differentiate s(t) to obtain v(t) = ds/dt",
+        "Set v(t) = 0",
+        "Solve for the smallest positive t, giving q ≈ 5.74"
+      ],
+      "accepted_alternatives": [
+        "Recognize that at rest the displacement s is at a minimum and find the t-value of that stationary point."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognizing at rest when ds/dt = 0 OR s is a minimum (M1); 5.73553... q = 5.74 = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the total distance travelled in the first q seconds by either integrating the absolute velocity over [0, q] or by computing the displacement difference between the initial position and the minimum.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "calculus.differentiation"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate_absolute_velocity",
+        "definite_integral",
+        "displacement_difference",
+        "evaluate_numerically"
+      ],
+      "method_path": [
+        "Recognize distance = integral of |v(t)| from 0 to q",
+        "Integrate |v(t)| over [0, q]",
+        "Evaluate to obtain approximately 7.68 m"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Recognize the particle does not change direction before q, so distance = s(0) − s(q). Compute s(0) ≈ 3.383 and s(q) = −4.3 (the minimum), then distance = 3.383 − (−4.3) = 7.68 m."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 1: recognizing that integral of v(t) is required (M1); ∫₀^(5.73...) v(t) dt OR ∫₀^(5.73...) |v(t)| dt (A1); = 7.68302... = 7.68 (m) A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: recognition that total distance travelled is the difference between the initial displacement and the displacement at minimum (M1); initial displacement is 3.38302... AND at minimum is −4.3 (A1); total distance travelled = 3.38302... − (−4.3) = 7.68302... = 7.68 (m) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain",
+        "alternative_route"
+      ]
+    }
+  ]
+}

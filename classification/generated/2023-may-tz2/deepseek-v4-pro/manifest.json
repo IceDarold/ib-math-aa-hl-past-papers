@@ -1,0 +1,31 @@
+{
+  "session": "May 2023",
+  "zone": "TZ2",
+  "subject": "IB Mathematics: Analysis and Approaches HL",
+  "provider": "deepseek",
+  "model": "deepseek-v4-pro[1m]",
+  "review_status": "ai_draft",
+  "papers": [
+    {
+      "paper": 1,
+      "blocks": 30,
+      "marks": 110,
+      "flagged": 8
+    },
+    {
+      "paper": 2,
+      "blocks": 33,
+      "marks": 110,
+      "flagged": 14
+    },
+    {
+      "paper": 3,
+      "blocks": 20,
+      "marks": 55,
+      "flagged": 4
+    }
+  ],
+  "total_blocks": 83,
+  "total_marks": 275,
+  "flagged_blocks": 26
+}

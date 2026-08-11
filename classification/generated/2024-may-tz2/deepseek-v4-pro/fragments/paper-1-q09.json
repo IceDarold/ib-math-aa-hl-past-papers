@@ -1,0 +1,88 @@
+{
+  "question": "9",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q09-A",
+      "question": "9",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Write down an expression for the number of ways to assign n students into a group of 3 and a group of n-3.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combination"
+      ],
+      "method_path": [
+        "nCr(n,3) or C(n,3) or binom(n,3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "Mark scheme states: ^nC_3 A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q09-B",
+      "question": "9",
+      "part": "b",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "19-20",
+      "task_summary": "Determine n given that when two particular students must be in different groups, the number of possible assignments is halved.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "combination",
+        "constrained_counting",
+        "equation_setup",
+        "factorial_elimination",
+        "quadratic_solving",
+        "solution_validation"
+      ],
+      "method_path": [
+        "Count assignments with two students separated: ^2C_1 to choose which special student enters the first group",
+        "Choose remaining 2 of the first group from the other n-2 students: ^{n-2}C_2",
+        "Set equation: (1/2)*binom(n,3) = ^2C_1 * ^{n-2}C_2",
+        "Eliminate factorials to obtain quadratic n^2 - 13n + 36 = 0",
+        "Factor: (n-9)(n-4) = 0",
+        "Reject n=4 (second group would have only 1 student, violating 'at least three'), conclude n=9"
+      ],
+      "accepted_alternatives": [
+        "Count assignments with two students together: ^{n-2}C_1 + ^{n-2}C_3, then equate half of binom(n,3) to this sum and solve, obtaining same quadratic and n=9"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "EITHER approach: ^2C_1 (A1), ^{n-2}C_2 (A1), equation setup M1, factorial elimination (M1)"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "A1 for n^2 - 13n + 36 = 0; A1 for n = 9; Note: Do not award the final A1 if additional values of n are given"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "OR approach (two students together): ^{n-2}C_1 (A1), ^{n-2}C_3 (A1), then same equation and solving steps"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

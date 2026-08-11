@@ -1,0 +1,60 @@
+{
+  "question": "3",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find P(B) given P(A)=0.4, P(A|B)=0.25, and P(A∪B)=0.55 by combining the addition rule and conditional probability formula.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "addition_rule",
+        "conditional_probability",
+        "substitution",
+        "solving_linear_equation"
+      ],
+      "method_path": [
+        "Apply P(A∪B)=P(A)+P(B)−P(A∩B) to form 0.55=0.4+P(B)−P(A∩B)",
+        "Apply P(A|B)=P(A∩B)/P(B) to form 0.25=P(A∩B)/P(B)",
+        "Express P(A∩B)=0.25P(B) and substitute into the first equation",
+        "Solve 0.55=0.4+P(B)−0.25P(B) for P(B)",
+        "State P(B)=0.2 (=1/5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "substitutes into P(A∪B)=P(A)+P(B)−P(A∩B) to form 0.55=0.4+P(B)−P(A∩B) (or equivalent) (A1)"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "substitutes into P(A|B)=P(A∩B)/P(B) to form 0.25=P(A∩B)/P(B) (or equivalent) (A1)"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "attempts to combine their two probability equations to form an equation in P(B) (M1)"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "correct equation in P(B): 0.55=0.4+P(B)−0.25P(B) OR P(B)−0.15=0.25P(B) OR (P(B)−0.15)/0.25=P(B) (or equivalent) A1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "P(B)=0.2=1/5=15/75 A1; Total [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "question": "2",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P1-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "7",
+      "task_summary": "Find P(A ∪ B) using the probability addition rule P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "probability_addition_rule",
+        "substitution",
+        "evaluate_arithmetic"
+      ],
+      "method_path": [
+        "apply P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+        "substitute 0.65 + 0.75 − 0.6",
+        "compute 0.8"
+      ],
+      "accepted_alternatives": [
+        "Use Venn diagram: 0.05 + 0.6 + 0.15 = 0.8"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "P(A ∪ B) = 0.65 + 0.75 − 0.6 OR 0.05 + 0.6 + 0.15 (A1); 0.8 = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P1-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "7",
+      "task_summary": "Find P(A′ ∩ B′) using De Morgan's law A′ ∩ B′ = (A ∪ B)′ and the complement rule.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "de_morgans_law",
+        "complement_rule",
+        "substitution",
+        "evaluate_arithmetic"
+      ],
+      "method_path": [
+        "recognize A′ ∩ B′ = (A ∪ B)′ or A′ ∩ B′ = 1 − P(A ∪ B)",
+        "substitute P(A ∪ B) = 0.8",
+        "compute 1 − 0.8 = 0.2"
+      ],
+      "accepted_alternatives": [
+        "Use a correctly shaded/labeled Venn diagram showing 0.2 in the region for A′ ∩ B′, explicitly labeled as P(A′ ∩ B′)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "recognition that A′ ∩ B′ = (A ∪ B)′ OR A′ ∩ B′ = 1 − (A ∪ B) (region/value may be seen in a correctly shaded/labeled Venn diagram) (M1); 1 − 0.8 = ; 0.2 = A1; Note: For the final mark, 0.2 must be stated as the candidate's answer, or labeled as P(A′ ∩ B′) in their Venn diagram. Just seeing an unlabeled 0.2 in the correct region of their diagram earns M1A0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

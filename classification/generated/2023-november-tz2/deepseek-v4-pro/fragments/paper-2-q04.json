@@ -1,0 +1,95 @@
+{
+  "question": "4",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the time q when the particle first comes to rest by differentiating the displacement function and setting velocity to zero.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation",
+        "trigonometric_equation",
+        "equation_solving",
+        "gdc_solving"
+      ],
+      "method_path": [
+        "differentiate s(t) to obtain v(t)",
+        "set v(t) = 0",
+        "solve for smallest positive t in [0, 10] using GDC",
+        "record q ≈ 5.74"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognizing at rest when ds/dt = 0 OR s is a minimum (M1); q = 5.73553... = 5.74 A1; Note: If no working shown, award (M1)A0 for 5.7 (2sf)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the total distance travelled in the first q seconds by integrating the absolute value of velocity or using the difference between initial and minimum displacement.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "absolute_value",
+        "displacement",
+        "gdc_integration",
+        "kinematics"
+      ],
+      "method_path": [
+        "recognize total distance = ∫₀ᵠ|v(t)|dt",
+        "set up definite integral of |v(t)| from 0 to q",
+        "evaluate integral using GDC",
+        "obtain distance ≈ 7.68 m"
+      ],
+      "accepted_alternatives": [
+        "Use displacement difference: compute s(0) and s(q) where s(q) is minimum, then total distance = s(0) − s(q)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 1: recognizing that integral of v(t) is required (M1); integral setup (A1); 7.68302... = 7.68 (m) A1."
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: recognition that total distance travelled is the difference between the initial displacement and the displacement at minimum (M1); initial displacement is 3.38302... AND at minimum is −4.3 (A1); 7.68302... = 7.68 (m) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

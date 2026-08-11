@@ -1,0 +1,49 @@
+{
+  "question": "4",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 7,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Use the binomial theorem to expand (x+h)^8, extract coefficients a=8h, b=28h^2, d=70h^4, then apply the geometric-sequence common-ratio condition to form an equation and solve for h.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "binomial_coefficient",
+        "geometric_sequence",
+        "common_ratio",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Apply binomial theorem to expand (x+h)^8",
+        "Identify a = C(8,1)h = 8h",
+        "Identify b = C(8,2)h^2 = 28h^2",
+        "Identify d = C(8,4)h^4 = 70h^4",
+        "Recognise that a, b, d form a geometric sequence, so b/a = d/b",
+        "Form the equation 28h^2/(8h) = 70h^4/(28h^2)",
+        "Solve to obtain h = 1.4 (h positive)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to use the binomial expansion of (x+h)^8 (M1); a = 8h (accept 8C1 h) A1; b = 28h^2 (accept 8C2 h^2) A1; d = 70h^4 (accept 8C4 h^4) A1; recognition that there is a common ratio between their terms (M1); correct equation in terms of h (A1): 28h^2/(8h) = 70h^4/(28h^2) (or equivalent); h = 1.4 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

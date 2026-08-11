@@ -1,0 +1,75 @@
+{
+  "question": "1",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "2",
+      "markscheme_pages": "7",
+      "task_summary": "Find the values of a and b in the regression line h = ad + b for the given plant-height data.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "linear_regression",
+        "gdc_calculation",
+        "coefficient_determination"
+      ],
+      "method_path": [
+        "Input (d, h) paired data into GDC",
+        "Compute linear regression of h on d",
+        "Obtain a approx 1.93, b approx 7.22"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "a = 1.93258..., b = 7.21662... ; a = 1.93, b = 7.22  A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ2-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "2",
+      "markscheme_pages": "7",
+      "task_summary": "Use the regression line to estimate average plant height when d = 20 days.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluation",
+        "linear_regression"
+      ],
+      "method_path": [
+        "Substitute d = 20 into h = ad + b",
+        "Compute h approx 45.9 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempt to substitute d = 20 into their equation (M1); height = 45.8683... = 45.9 (cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

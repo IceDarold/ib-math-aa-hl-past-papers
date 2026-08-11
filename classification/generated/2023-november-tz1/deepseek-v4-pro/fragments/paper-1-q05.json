@@ -1,0 +1,55 @@
+{
+  "question": "5",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P1-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "The binomial expansion of (1+kx)^n is given as 1+12x+28k^2 x^2+...+k^n x^n with n in positive integers and k real. Find n and k by equating binomial coefficients to the given terms.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "binomial_expansion",
+        "equate_coefficients",
+        "binomial_coefficient_formula",
+        "quadratic_equation",
+        "solve_quadratic",
+        "substitution"
+      ],
+      "method_path": [
+        "Expand (1+kx)^n via binomial theorem: 1 + nC1 kx + nC2 k^2 x^2 + ...",
+        "Equate coefficient of x: nC1 k = 12 gives n k = 12",
+        "Equate coefficient of x^2: nC2 = 28 gives n(n-1)/2 = 28",
+        "Form quadratic equation: n^2 - n - 56 = 0",
+        "Solve: (n-8)(n+7) = 0 gives n = 8",
+        "Substitute into n k = 12: k = 12/8 = 3/2"
+      ],
+      "accepted_alternatives": [
+        "Find n = 8 by identifying the appropriate row in Pascal's triangle rather than solving the quadratic algebraically."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to apply binomial expansion (M1); n k = 12 (A1); n(n-1)/2 = 28 OR n!/(2!(n-2)!) = 28 (A1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "n^2 - n - 56 = 0 OR n(n-1) = 56; valid attempt to solve (M1); n = 8 A1; k = 3/2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

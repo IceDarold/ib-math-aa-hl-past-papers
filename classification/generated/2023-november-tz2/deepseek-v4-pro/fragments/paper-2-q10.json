@@ -1,0 +1,199 @@
+{
+  "question": "10",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Find P(94.6 < H < 98.1) given P(H < 94.6) = 0.288 and P(H > 98.1) = 0.434.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "complement_rule",
+        "probability_sum"
+      ],
+      "method_path": [
+        "Recognize that total probability sums to 1",
+        "P(94.6 < H < 98.1) = 1 - P(H < 94.6) - P(H > 98.1)",
+        "= 1 - 0.288 - 0.434",
+        "= 0.278"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognizing probabilities sum to 1 (M1) ... P(94.6 < X < 98.1) = 0.278 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Find the mean m and standard deviation s of the normal distribution given P(H < 94.6) = 0.288 and P(H > 98.1) = 0.434.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "inverse_normal",
+        "z_score",
+        "system_of_equations",
+        "gdc_solve"
+      ],
+      "method_path": [
+        "invNorm(0.288) = -0.559236...",
+        "invNorm(1 - 0.434) = invNorm(0.566) = 0.166199...",
+        "Set up equations: mu + (-0.559236...)sigma = 94.6, mu + 0.166199...sigma = 98.1",
+        "Solve system with GDC",
+        "mu = 97.3, sigma = 4.82"
+      ],
+      "accepted_alternatives": [
+        "Method 2: compute z-scores z1 = invNorm(0.288) = -0.559236..., z2 = invNorm(0.566) = 0.166199..., then solve (94.6 - mu)/sigma = z1 and (98.1 - mu)/sigma = z2 with GDC, giving mu = 97.3, sigma = 4.82."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "METHOD 1: recognizing the need to use inverse normal (M1); invNorm(0.288) ... (A1)(A1); attempt to solve equations using GDC (M1); mu = 97.3, sigma = 4.82 A1. METHOD 2 also accepted."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-C-I",
+      "question": "10",
+      "part": "C-I",
+      "marks": 2,
+      "source_pages": "14-15",
+      "markscheme_pages": "22",
+      "task_summary": "Find P(exactly 34 out of 100 randomly selected plants ready to harvest) where p = P(H > 98.1) = 0.434.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_model",
+        "binomial_pdf"
+      ],
+      "method_path": [
+        "Recognise X ~ B(100, 0.434)",
+        "P(X = 34) = binompdf(100, 0.434, 34)",
+        "= 0.0133"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "recognition of Binomial distribution (M1); X ~ B(100,0.434); P(X = 34) = 0.0133 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-C-II",
+      "question": "10",
+      "part": "C-II",
+      "marks": 4,
+      "source_pages": "14-15",
+      "markscheme_pages": "22",
+      "task_summary": "Given fewer than 49 plants are ready to harvest, find P(exactly 34 plants ready to harvest).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "binomial_cdf",
+        "binomial_pdf"
+      ],
+      "method_path": [
+        "P(X < 49) = binomcdf(100, 0.434, 48) = 0.848218...",
+        "Recognise conditional probability: P(X = 34 | X < 49)",
+        "= P(X = 34) / P(X < 49)",
+        "= 0.0133198... / 0.848218...",
+        "= 0.0157"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "P(X < 49) = 0.848218... (A1); recognition of conditional probability (M1); P(X = 34 | X < 49) = P(X = 34) / P(X < 49) (A1); = 0.0157 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Find the standard deviation d given F ~ N(98.6, d^2) and interquartile range = 4.82 cm.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "interquartile_range",
+        "quartile",
+        "inverse_normal",
+        "z_score"
+      ],
+      "method_path": [
+        "IQR = 4.82 so Q1 = 98.6 - 2.41 = 96.19, Q3 = 98.6 + 2.41 = 101.01",
+        "P(F < 96.19) = 0.25",
+        "invNorm(0.25) = -0.674489...",
+        "(96.19 - 98.6)/d = -0.674489...",
+        "-2.41/d = -0.674489...",
+        "d = 3.57"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "Q1 = 96.19 OR Q3 = 101.01 (A1); attempt to find d (M1); -2.41/d = -0.674489... OR 2.41/d = 0.674489...; d = 3.57 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

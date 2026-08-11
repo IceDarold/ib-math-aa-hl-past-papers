@@ -1,0 +1,219 @@
+{
+  "question": "11",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Find the coordinates of points on y = e^(cos 2x), −π/4 ≤ x ≤ π, where the gradient is zero.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "derivative_of_exponential",
+        "solve_trigonometric_equation",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "apply chain rule to differentiate f(x) = e^(cos 2x)",
+        "set f'(x) = −2 sin 2x e^(cos 2x) = 0",
+        "solve sin 2x = 0 for x in [−π/4, π]",
+        "find corresponding y-coordinates",
+        "state three coordinate pairs: (0, e), (π/2, 1/e), (π, e)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(M1) attempt to use chain rule to find f′(x); f′(x) = −2 sin 2x e^(cos2x) A1; (M1) sin 2x = 0; 2x = 0, π, 2π, … ; x = 0, π/2, π, … A1; Coordinates are (0,e), (π/2, 1/e), (π,e) A1. Special case note: for two correct coordinate pairs award (M1)A1(M1)A0A1; for extra coordinate pairs award (M1)A1(M1)A1A0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Using the second derivative at each stationary point, show that the curve has two local maximum points and one local minimum point.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "second_derivative_test",
+        "classify_critical_points"
+      ],
+      "method_path": [
+        "differentiate f'(x) using product rule to obtain f''(x)",
+        "evaluate f''(x) at x = 0, π/2, π",
+        "classify: f''(0) = −4e < 0 → local maximum",
+        "classify: f''(π) = −4e < 0 → local maximum",
+        "classify: f''(π/2) = 4/e > 0 → local minimum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(M1) attempt to differentiate f′(x) using product rule; f′′(x) = (−2 sin 2x)(−2 sin 2x)e^(cos2x) − 4 cos 2x e^(cos2x) A1; at x = 0, f′′(x) = −4e < 0 so maximum AND at x = π, f′′(x) = −4e < 0 so maximum R1; at x = π/2, f′′(x) = 4/e > 0 so minimum R1. Note: values for second derivative must be correct to award R marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Sketch the curve y = f(x) for 0 ≤ x ≤ π, taking into consideration the relative values of the second derivative found in part (b).",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_curve",
+        "plot_critical_points",
+        "curvature_analysis"
+      ],
+      "method_path": [
+        "plot maxima at (0, e) and (π, e)",
+        "plot minimum at (π/2, 1/e)",
+        "draw smooth curve with correct general shape",
+        "show higher rate of change of gradient (sharper curvature) at maxima",
+        "show lower rate of change of gradient (gentler curvature) at minimum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "A1A1A1. Award A1 for general shape, A1 for correct maxima (0,e), (π,e) and minimum point (π/2, 1/e) and A1 for showing a higher rate of change of gradient at maxima and a lower rate of change of gradient at the minimum point."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "23-24",
+      "task_summary": "Find the Maclaurin series for cos 2x, then for e^(cos 2x − 1), then for f(x) = e^(cos 2x), each up to and including the term in x⁴.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "functions.exponential_models"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "series_substitution",
+        "series_composition",
+        "trigonometric_series"
+      ],
+      "method_path": [
+        "(i) write standard Maclaurin series for cos θ, substitute θ = 2x: cos 2x = 1 − 2x² + (2/3)x⁴ + …",
+        "(ii) substitute series for cos 2x − 1 into series for e^θ and expand: e^(cos2x−1) = 1 − 2x² + (8/3)x⁴ + …",
+        "(iii) multiply by e: f(x) = e − 2ex² + (8e/3)x⁴ + …"
+      ],
+      "accepted_alternatives": [
+        "Method 2 (markscheme page 23): express e^(cos2x−1) = e^(−2x²) · e^(2x⁴/3), find series for each factor separately, then multiply to obtain the same result."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(i) (M1) cos 2x = 1 − (2x)²/2! + (2x)⁴/4! + … ; cos 2x = 1 − 2x² + (2/3)x⁴ + … A1"
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "(ii) METHOD 1: (M1) attempt to substitute series for cos2x−1 into series for e^x; A1 for correct substitution; e^(cos2x−1) = 1 + (−2x² + (2/3)x⁴) + (1/2)(−2x² + …)² + … = 1 − 2x² + (8/3)x⁴ + … A1"
+        },
+        {
+          "markscheme_pages": "23-24",
+          "basis": "METHOD 2: (M1) attempt to find Maclaurin series for e^(−2x²) OR e^(2x⁴/3); A1 for correct substitution and product; A1 for final series 1 − 2x² + (8/3)x⁴ + …"
+        },
+        {
+          "markscheme_pages": "24",
+          "basis": "(iii) f(x) ≈ e[1 − 2x² + (8/3)x⁴ + …] = e − 2ex² + (8e/3)x⁴ + … A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Use the first two non-zero terms in the Maclaurin series for f(x) to show that ∫₀^(1/10) e^(cos 2x) dx ≈ 149e/1500.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.series"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "series_integration",
+        "termwise_integration",
+        "definite_integral",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "substitute f(x) ≈ e(1 − 2x²) into the definite integral",
+        "integrate term by term: ∫ e(1 − 2x²) dx = e[x − 2x³/3]",
+        "evaluate from 0 to 1/10: e[(1/10) − 2/(3000)]",
+        "simplify to 298e/3000 = 149e/1500"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "(M1) ∫₀^(1/10) e^(cos2x) dx ≈ ∫₀^(1/10) e(1 − 2x²) dx; A1 for [e(x − 2x³/3)]₀^(1/10); A1 e(1/10 − 2/3000) = 298e/3000 = 149e/1500 AG. Note: if candidate follows through an incorrect expansion from part (d), award a maximum of M1A1FTA0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

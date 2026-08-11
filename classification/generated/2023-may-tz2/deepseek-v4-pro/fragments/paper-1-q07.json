@@ -1,0 +1,50 @@
+{
+  "question": "7",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ2-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 7,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Prove by mathematical induction that ∑_{r=1}^{n} r/((r+1)!) = 1 − 1/((n+1)!) for all integers n ≥ 1.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "inductive_hypothesis",
+        "inductive_step",
+        "summation_decomposition",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Verify base case n=1: LHS = 1/2, RHS = 1/2, so P(1) true",
+        "Assume P(k) true: ∑_{r=1}^{k} r/((r+1)!) = 1 − 1/((k+1)!)",
+        "Consider P(k+1): ∑_{r=1}^{k+1} r/((r+1)!) = ∑_{r=1}^{k} r/((r+1)!) + (k+1)/((k+2)!)",
+        "Substitute inductive hypothesis: = 1 − 1/((k+1)!) + (k+1)/((k+2)!)",
+        "Simplify using common denominator (k+2)!: = 1 − ((k+2)−(k+1))/((k+2)!) = 1 − 1/((k+2)!)",
+        "Conclude P(k+1) true, hence by induction P(n) true for all n ≥ 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "R1 for verifying base case P(1) with LHS=1/2, RHS=1/2. M1 for assuming P(k) true. (M1) for writing P(k+1) sum as P(k) sum plus (k+1)/((k+2)!). A1 for substituting hypothesis to get 1−1/((k+1)!)+(k+1)/((k+2)!). A1 for intermediate simplification step. A1 for final form 1−1/((k+2)!). R1 for concluding P(k+1) true and hence P(n) true for all n≥1 (requires any four prior marks). Total 7 marks. Note: M1 not awarded for mere 'let n=k'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

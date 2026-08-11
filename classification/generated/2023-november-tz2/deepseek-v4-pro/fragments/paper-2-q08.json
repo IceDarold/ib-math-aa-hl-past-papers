@@ -1,0 +1,141 @@
+{
+  "question": "8",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Show that the cross product AB × AC equals (p−2, 3p−p²−2, 2p²−2) for points A(0,p,2), B(1,1,1), C(p,0,4).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_subtraction",
+        "cross_product",
+        "determinant"
+      ],
+      "method_path": [
+        "Find AB = B − A = (1, 1−p, −1)",
+        "Find AC = C − A = (p, −p, 2)",
+        "Compute AB × AC using determinant or cross-product formula",
+        "Simplify to (p−2, 3p−p²−2, 2p²−2)"
+      ],
+      "accepted_alternatives": [
+        "Use i, j, k component form instead of column vector notation for the cross product"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "AB = (1, 1−p, −1) awarded A1; AC = (p, −p, 2) awarded A1"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to evaluate their AB×AC by use of formula or determinant awarded M1"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "cross product result (p−2, −(p²−3p+2), 2p²−2) shown, marked AG, awarded A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Find the smallest possible value of |AB × AC|² using the cross product from part (a).",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.vectors_3d"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "magnitude_squared",
+        "polynomial_expansion",
+        "derivative",
+        "minimization"
+      ],
+      "method_path": [
+        "Compute |AB × AC|² = (p−2)² + (3p−p²−2)² + (2p²−2)²",
+        "Expand to 4p⁴ − 14p³ + 8p² + 8p + 8",
+        "Find minimum by differentiating or using GDC",
+        "Obtain minimum value ≈ 6.75"
+      ],
+      "accepted_alternatives": [
+        "Use GDC to find the minimum directly from the unsimplified |AB × AC|² expression"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "expansion (p−2)² + (−(p²−3p+2))² + (2p²−2)² = 4p⁴−14p³+8p²+8p+8 awarded (A1)"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to find minimum of their |AB×AC|² awarded (M1)"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "min value is 6.75 awarded A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "17",
+      "task_summary": "Find the smallest possible area of triangle ABC using the result from part (b).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "triangle_area",
+        "half_magnitude_cross_product"
+      ],
+      "method_path": [
+        "Apply area = ½|AB × AC| = ½√(|AB × AC|²)",
+        "Substitute minimum |AB × AC|² ≈ 6.75257… from part (b)",
+        "Compute area ≈ 1.30 units²"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "valid attempt to find area = ½|AB×AC| using their answer to part b) awarded (M1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "area = 1.30 (units²) awarded A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

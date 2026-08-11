@@ -1,0 +1,129 @@
+{
+  "question": "8",
+  "expected_question_marks": 10,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P2-Q08-A-I",
+      "question": "8",
+      "part": "A-I",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Show that arg z = θ for z = 1 + cos 2θ + i sin 2θ, given −π/2 < θ < π/2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "arg",
+        "arctan",
+        "double_angle_identities",
+        "simplification"
+      ],
+      "method_path": [
+        "Write arg z = arctan(sin 2θ / (1 + cos 2θ))",
+        "Apply double-angle identities: sin 2θ = 2 sin θ cos θ, 1 + cos 2θ = 2 cos²θ",
+        "Simplify to arctan(tan θ)",
+        "Conclude arg z = θ for −π/2 < θ < π/2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Rewrite z = 1 + (2cos²θ − 1) + i(2 sin θ cos θ) = 2 cos θ (cos θ + i sin θ) = 2 cos θ cis θ, hence arg z = θ and |z| = 2 cos θ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "A1 for arctan(sin2θ/(1+cos2θ)); M1 for uses 2sinθcosθ in numerator and any double angle identity for cos2θ in denominator; A1 for arg z = arctan(tan θ) → arg z = θ."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q08-A-II",
+      "question": "8",
+      "part": "A-II",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Show that |z| = 2 cos θ for z = 1 + cos 2θ + i sin 2θ, given −π/2 < θ < π/2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus",
+        "pythagorean_identity",
+        "double_angle_identities",
+        "simplification"
+      ],
+      "method_path": [
+        "Write |z| = √((1 + cos 2θ)² + sin² 2θ)",
+        "Expand (1 + cos 2θ)² and apply cos² 2θ + sin² 2θ = 1",
+        "Obtain |z| = √(2 + 2 cos 2θ)",
+        "Use cos 2θ = 2 cos²θ − 1 to get |z| = √(4 cos²θ) = 2 cos θ"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: z = 2 cos²θ + i(2 sin θ cos θ) = 2 cos θ (cos θ + i sin θ), so |z| = 2 cos θ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "M1 for attempt to express |z| = √(Re² + Im²); M1 for expanding (1+cos2θ)² then using cos²2θ+sin²2θ=1; A1 for √(2+2cos2θ); A1 for 2cosθ."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find θ such that arg(z²) = |z³|, using z = 1 + cos 2θ + i sin 2θ.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "arg_properties",
+        "modulus_properties",
+        "equation_solving",
+        "gdc"
+      ],
+      "method_path": [
+        "Apply arg(z²) = 2 arg(z) = 2θ",
+        "Apply |z³| = |z|³ = (2 cos θ)³ = 8 cos³ θ",
+        "Set 2θ = 8 cos³ θ and solve using GDC",
+        "Obtain θ ≈ 0.913"
+      ],
+      "accepted_alternatives": [
+        "Award all marks for θ ≈ 0.913 found directly without using part (a)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "(A1) for 2θ = (2cosθ)³; (M1) for attempts to solve for θ; A1 for θ = 0.913. Note: Award all marks for θ = 0.913 found directly without using part (a). Note: Award (A1)(M1)A0 for θ = 3.97."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ1-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Use S₄ = 40 and S₅ = 65 to find p and q where Sₙ = pn² − qn, by forming two equations from the given sum formula and solving the simultaneous linear system for p and q.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "simultaneous_equations",
+        "arithmetic_sequence_sum",
+        "linear_system"
+      ],
+      "method_path": [
+        "Substitute n=4, S₄=40 into Sₙ=pn²−qn to obtain 16p−4q=40 → 4p−q=10",
+        "Substitute n=5, S₅=65 into Sₙ=pn²−qn to obtain 25p−5q=65 → 5p−q=13",
+        "Solve the simultaneous linear equations, e.g., subtract to get p=3, then back-substitute to get q=2"
+      ],
+      "accepted_alternatives": [
+        "Use arithmetic sequence sum formula Sₙ = n/2(2u₁+(n−1)d) to form equations in u₁ and d, solve to get u₁=1 and d=6, then equate coefficients in Sₙ = 3n²−2n to obtain p=3, q=2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: attempt to form at least one equation using S₄ or S₅ (M1); 25p−5q=65 → 5p−q=13 and 40=16p−4q → 10=4p−q (A1); valid attempt to solve simultaneous linear equations in p and q (M1); p=3, q=2 (A1A1). METHOD 2: attempt to form equation using S₄ or S₅ (M1); gives equations in u₁ and d (A1); solve to get u₁=1, d=6 (A1); equate to Sₙ = 3n²−2n giving p=3, q=2 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ1-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Find the fifth term u₅ of the arithmetic sequence using u₅ = S₅ − S₄ = 65 − 40 = 25.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "term_from_sums",
+        "arithmetic_sequence_term"
+      ],
+      "method_path": [
+        "Compute u₅ = S₅ − S₄",
+        "u₅ = 65 − 40 = 25"
+      ],
+      "accepted_alternatives": [
+        "Use u₅ = u₁ + 4d with u₁=1, d=6 giving u₅ = 1 + 4×6 = 25.",
+        "Use S₅ = 5(u₁ + u₅)/2 = 65 with u₁=1 to solve for u₅ = 25."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "u₅ = S₅ − S₄ OR substituting u₁ and d into u₅ = u₁ + 4d OR substituting u₁ into S₅ = 5(u₁+u₅)/2 = 65 (M1); u₅ = 65 − 40 = 25 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

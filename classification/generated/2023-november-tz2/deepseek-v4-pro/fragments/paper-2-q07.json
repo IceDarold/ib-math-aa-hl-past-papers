@@ -1,0 +1,82 @@
+{
+  "question": "7",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q07-A",
+      "question": "7",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find the number of ways to arrange 9 team members (6 boys, 3 girls) in a line when (i) there are no restrictions, and (ii) the three girls must be placed next to each other.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "factorial",
+        "permutations",
+        "block_method"
+      ],
+      "method_path": [
+        "9! = 362880",
+        "Treat 3 girls as a single block: 7! arrangements of 7 objects",
+        "Multiply by 3! for internal arrangements of the girls",
+        "7! times 3! = 30240"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(a)(i): A1 for 9! = 362880. Note: Accept 9! or 363000. (a)(ii): (M1) attempt to consider girls as a single object, A1 for 7! x 3! = 30240. Note: Accept 30200."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q07-B",
+      "question": "7",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find the number of possible selections of 5 members that contain at least two girls.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combinations",
+        "cases",
+        "complement_rule"
+      ],
+      "method_path": [
+        "Recognise two cases: exactly 2 girls or exactly 3 girls",
+        "C(6,3) x C(3,2) = 60",
+        "C(6,2) x C(3,3) = 15",
+        "60 + 15 = 75"
+      ],
+      "accepted_alternatives": [
+        "Total minus 0 or 1 girl: C(9,5)=126, C(3,1)xC(6,4)=45, C(6,5)=6, 126-45-6=75"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: (M1) recognition of two cases; (A1) 2 girls C(6,3)xC(3,2)=60, 3 girls C(6,2)xC(3,3)=15; A1 total 75. METHOD 2: (M1) recognition of total minus 0 or 1 girl; (A1) total C(9,5)=126, one girl C(3,1)xC(6,4)=45, no girls C(6,5)=6; A1 126-45-6=75."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

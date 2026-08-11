@@ -1,0 +1,89 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7-8",
+      "markscheme_pages": "11",
+      "task_summary": "Show that the area of the 'C' shaped region between two concentric sectors with reflex angle 5.2 rad, outer radius 10 cm, and inner radius r cm is 260 − 2.6r².",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sector_area_formula",
+        "subtraction",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply sector area formula ½R²θ to outer circle: ½ × 10² × 5.2 = 260",
+        "Apply sector area formula ½r²θ to inner circle: ½ × r² × 5.2 = 2.6r²",
+        "Subtract inner from outer: 260 − 2.6r²"
+      ],
+      "accepted_alternatives": [
+        "Use full circle area minus non-reflex sector: ½×10²×π − ½×10²×(2π−5.2) − [½×r²×π − ½×r²×(2π−5.2)], simplifying to 260 − 2.6r²"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: use of sector area formula to find area of at least one sector. A1: working leading directly to AG. Expression shown: ½×5.2×100 − ½×5.2×r²."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Given the area is 64 cm², find r and then compute the perimeter of the 'C'.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "equation_solving",
+        "arc_length_formula",
+        "perimeter_sum",
+        "gdc_numerical_solve"
+      ],
+      "method_path": [
+        "Set 260 − 2.6r² = 64",
+        "Solve for r: r = √(196/2.6) ≈ 8.68 cm",
+        "Compute outer arc length: 10 × 5.2",
+        "Compute inner arc length: r × 5.2",
+        "Add two radial end segments: 2(10 − r)",
+        "Sum for perimeter: 5.2×10 + 5.2×r + 2(10−r) ≈ 99.8 cm"
+      ],
+      "accepted_alternatives": [
+        "Equivalent perimeter expressions such as 5.2(10+r) + 2(10−r)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "(i) (A1) for 260−2.6r²=64, A1 for r=8.68... (cm). (ii) (A1) for 10×5.2 OR 8.68...×5.2, (M1) for substituting r into 5.2×r + 5.2×10 + 2(10−r), A1 for perimeter=99.8 (cm)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

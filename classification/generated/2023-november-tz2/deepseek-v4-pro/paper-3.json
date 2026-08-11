@@ -1,0 +1,801 @@
+{
+  "session": "November 2023",
+  "zone": "TZ2",
+  "paper": 3,
+  "calculator": "yes",
+  "expected_total_marks": 55,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the two values of b such that y = x^3 + 3x^2 + b has exactly two x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vary_parameter",
+        "identify_critical_values",
+        "stationary_point_on_axis"
+      ],
+      "method_path": [
+        "vary b and observe when a stationary point of the cubic lies on the x-axis",
+        "determine b = 0 (when P(0, b) touches x-axis) and b = −4 (when local minimum at x = −2 touches x-axis)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1 for varying b with a = 3 or evidence that b = 0 case is considered; A1 for b = −4, 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-B-I",
+      "question": "1",
+      "part": "B-I",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write the set of b values for which y = x^3 + 3x^2 + b has exactly one x-axis intercept.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_inequality_set"
+      ],
+      "method_path": [
+        "deduce from part (a) that b < −4 or b > 0 gives exactly one x-intercept"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for b < −4 or b > 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-B-II",
+      "question": "1",
+      "part": "B-II",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write the set of b values for which y = x^3 + 3x^2 + b has exactly three x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_inequality_set"
+      ],
+      "method_path": [
+        "deduce from part (a) that −4 < b < 0 gives exactly three x-intercepts"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for −4 < b < 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-C-I",
+      "question": "1",
+      "part": "C-I",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Write the set of b values for which y = x^3 − 3x^2 + b has exactly two x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_set_of_values"
+      ],
+      "method_path": [
+        "determine that when a = −3, stationary points at x = 0 (y = b) and x = 2 (y = b − 4) give exactly two intercepts for b = 0, 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for b = 0, 4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-C-II",
+      "question": "1",
+      "part": "C-II",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Write the set of b values for which y = x^3 − 3x^2 + b has exactly one x-axis intercept.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_inequality_set"
+      ],
+      "method_path": [
+        "deduce that b < 0 or b > 4 gives exactly one x-intercept"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for b < 0 or b > 4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-C-III",
+      "question": "1",
+      "part": "C-III",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Write the set of b values for which y = x^3 − 3x^2 + b has exactly three x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_inequality_set"
+      ],
+      "method_path": [
+        "deduce that 0 < b < 4 gives exactly three x-intercepts"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for 0 < b < 4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-D",
+      "question": "1",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "For exactly three x-axis intercepts, state whether each point of zero gradient is above or below the x-axis.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_relative_position"
+      ],
+      "method_path": [
+        "state that the two stationary points lie on opposite sides of the x-axis"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1 for 'one point of zero gradient is located on either side (of the x-axis)' or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-E",
+      "question": "1",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "9-10",
+      "task_summary": "Show that the curve has stationary points at P(0, b) and Q(−2a/3, 4a³/27 + b).",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "solve_derivative_zero",
+        "factor_expression",
+        "substitute",
+        "simplify_algebraic_expression"
+      ],
+      "method_path": [
+        "differentiate to obtain dy/dx = 3x² + 2ax",
+        "set dy/dx = 0 and factor to x(3x + 2a) = 0",
+        "solve to obtain x = 0 and x = −2a/3",
+        "verify P(0, b) is a stationary point and substitute x = −2a/3 into y = x³ + ax² + b",
+        "simplify to y = 4a³/27 + b to confirm Q(−2a/3, 4a³/27 + b)"
+      ],
+      "accepted_alternatives": [
+        "Substitute x = 0 and x = −2a/3 directly into dy/dx = 3x² + 2ax to verify each yields zero, then substitute x = −2a/3 into y = x³ + ax² + b and simplify to 4a³/27 + b (Method 2)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9-10",
+          "basis": "Method 1: (A1) dy/dx = 3x² + 2ax; (M1) solve dy/dx = 0; (A1) x = 0, −2a/3; AG for P; (M1) substitute x into y; (A1) simplify to 4a³/27 + b. Method 2: (A1) dy/dx; (M1) substitute x=0 or x=−2a/3; AG for P; (A1) verify dy/dx=0 at both; (M1) substitute into y; (A1) simplify to y-coordinate."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-F-I",
+      "question": "1",
+      "part": "F-I",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Find d²y/dx² and classify P and Q as local maximum or minimum when a > 0 and b > 0.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative",
+        "evaluate_at_point",
+        "classify_stationary_point"
+      ],
+      "method_path": [
+        "find d²y/dx² = 6x + 2a",
+        "evaluate at x = 0: d²y/dx² = 2a > 0 → P is a local minimum",
+        "evaluate at x = −2a/3: d²y/dx² = −2a < 0 → Q is a local maximum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "A1 for d²y/dx² = 6x + 2a; R1 for P is local minimum (2a > 0 when a > 0); R1 for Q is local maximum (−2a < 0 when a > 0)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-F-II",
+      "question": "1",
+      "part": "F-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Determine whether P and Q are above or below the x-axis when a > 0 and b > 0.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "determine_sign",
+        "state_position"
+      ],
+      "method_path": [
+        "note b > 0 and 4a³/27 + b > 0 when a > 0, b > 0, hence both P and Q lie above the x-axis"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "A1 for both above the x-axis; accept a labelled sketch clearly showing this."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-G-I",
+      "question": "1",
+      "part": "G-I",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "For a < 0 and b > 0, state whether P is a local max or min and whether it is above or below the x-axis.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "classify_stationary_point",
+        "determine_position"
+      ],
+      "method_path": [
+        "classify P as a local maximum (since a < 0 gives d²y/dx² = 2a < 0 at x = 0) and state it is above the x-axis (b > 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "A1 for P is a local maximum and is above the x-axis."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-G-II",
+      "question": "1",
+      "part": "G-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "State the conditions on a and b for Q to be below the x-axis.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "state_inequality_condition"
+      ],
+      "method_path": [
+        "state 4a³/27 + b < 0 or equivalently b < −4a³/27"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "A1 for 4a³/27 + b < 0 or equivalent inequality, e.g. b < −4a³/27."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-H",
+      "question": "1",
+      "part": "H",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "13-14",
+      "task_summary": "Prove that if 4a³b + 27b² < 0 then y = x³ + ax² + b has exactly three x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.proof",
+        "number_algebra.inequalities",
+        "calculus.stationary_points"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "factor_inequality",
+        "sign_analysis",
+        "relate_stationary_points_to_intercepts",
+        "deduce_intercept_count"
+      ],
+      "method_path": [
+        "factor 4a³b + 27b² < 0 as b(4a³ + 27b) < 0 or (b/27)(4a³ + 27b) < 0",
+        "deduce that b and (4a³/27 + b) have opposite signs",
+        "observe that b = y-coordinate of P and 4a³/27 + b = y-coordinate of Q",
+        "conclude P and Q lie on opposite sides of the x-axis",
+        "deduce that with stationary points on opposite sides the cubic must cross the x-axis exactly three times"
+      ],
+      "accepted_alternatives": [
+        "Split into two explicit cases: (1) b > 0 and 4a³/27 + b < 0 ⇒ a < 0 hence three intercepts; (2) b < 0 and 4a³/27 + b > 0 ⇒ a > 0 hence three intercepts (Method 2). The converse proof is also accepted for a maximum of 3 marks."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13-14",
+          "basis": "Method 1: (M1) factor; (A1) b(4a³/27 + b) < 0 or (b)(4a³ + 27b) < 0; (A1) two sign cases; (R1) opposite signs ⇒ P and Q on opposite sides of x-axis; (R1) opposite sides ⇒ exactly three intercepts. Method 2: additional R1 for each subcase linking to sign of a."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q02-A-I",
+      "question": "2",
+      "part": "(a)(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "Write down an expression for the gradient of L in terms of x and y.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "gradient_of_line",
+        "rearrange_linear_equation"
+      ],
+      "method_path": [
+        "Express gradient m from y = mx as m = y/x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "y/x A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q02-A-II",
+      "question": "2",
+      "part": "(a)(ii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "Hence show that the gradient of C is given by dy/dx = -x/y.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "perpendicular_gradients",
+        "negative_reciprocal"
+      ],
+      "method_path": [
+        "Use perpendicular condition: gradient of C = -1/(gradient of L)",
+        "Substitute gradient of L = y/x to obtain dy/dx = -x/y"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "dy/dx = -1/(y/x) = -x/y A1. Note: Award A1 for 'the gradient is the negative reciprocal of y/x' or m_C times y/x = -1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q02-A-III",
+      "question": "2",
+      "part": "(a)(iii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "16",
+      "task_summary": "By solving the differential equation dy/dx = -x/y, show that the family of curves C has equation x^2 + y^2 = k where k is a parameter.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "indefinite_integration",
+        "differential_equation"
+      ],
+      "method_path": [
+        "Separate variables: y dy = -x dx",
+        "Integrate both sides: y^2/2 = -x^2/2 + c",
+        "Rearrange to x^2 + y^2 = k where k = 2c"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempts to separate variables x and y (M1). integral y dy = integral -x dx. y^2/2 = -x^2/2 + c A1. x^2 + y^2 = k AG [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q02-B",
+      "question": "2",
+      "part": "(b)",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "17",
+      "task_summary": "On the same set of axes, sketch the curves y^2 = 16 - 8x and y^2 = 4 + 4x. Clearly label each curve and any x-intercepts. (Not required to find intersection points.)",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "curve_sketching",
+        "find_intercepts",
+        "parabola"
+      ],
+      "method_path": [
+        "Identify curves as sideways parabolas",
+        "Find x-intercept of y^2 = 16 - 8x: set y = 0 gives x = 2",
+        "Find x-intercept of y^2 = 4 + 4x: set y = 0 gives x = -1",
+        "Sketch two parabolic curves with correct shape, position, and two intersection points in QI and QIV"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "two parabolic shaped curves with approximately correct shape/position (e.g. two intersection points, in first and fourth quadrant) A1A1. x-intercepts -1 and 2 A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q02-C",
+      "question": "2",
+      "part": "(c)",
+      "marks": 6,
+      "source_pages": "4",
+      "markscheme_pages": "18",
+      "task_summary": "By solving y^2 = 4a^2 - 4ax and y^2 = 4b^2 + 4bx simultaneously, show that these curves intersect at the points M(a-b, 2sqrt(ab)) and N(a-b, -2sqrt(ab)).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "simultaneous_equations",
+        "factorisation",
+        "substitution"
+      ],
+      "method_path": [
+        "Equate expressions: 4a^2 - 4ax = 4b^2 + 4bx",
+        "Simplify to a^2 - b^2 = x(a + b)",
+        "Factor LHS: (a - b)(a + b) = x(a + b)",
+        "Divide by (a + b) since a, b > 0 implies a + b > 0, giving x = a - b",
+        "Substitute x = a - b into either equation",
+        "Simplify to y^2 = 4ab, so y = +/- 2sqrt(ab)"
+      ],
+      "accepted_alternatives": [
+        "Alternative forms such as 4(a+b)(a-b) = 4(a+b)x or (a+b)(a-b) - x(a+b) = 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "at intersection, 4a^2 - 4ax = 4b^2 + 4bx A1. attempts to factorize either LHS or RHS (M1). recognition that a + b > 0 R1. x = a - b A1. substitutes x = a - b into either equation and attempts to simplify (M1). y^2 = 4ab => y = +/- 2sqrt(ab) A1. AG [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q02-D",
+      "question": "2",
+      "part": "(d)",
+      "marks": 5,
+      "source_pages": "4-5",
+      "markscheme_pages": "19-20",
+      "task_summary": "At point M, show that the curves y^2 = 4a^2 - 4ax and y^2 = 4b^2 + 4bx intersect at right-angles.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "orthogonality_check",
+        "perpendicular_gradients"
+      ],
+      "method_path": [
+        "Implicitly differentiate both curves: 2y(dy/dx) = -4a gives dy/dx = -2a/y, and 2y(dy/dx) = 4b gives dy/dx = 2b/y",
+        "Substitute y = 2sqrt(ab) at M",
+        "Obtain gradients: m_1 = -a/sqrt(ab) and m_2 = b/sqrt(ab)",
+        "Multiply gradients: m_1 times m_2 = -ab/(ab) = -1, confirming right-angle intersection"
+      ],
+      "accepted_alternatives": [
+        "Chain rule differentiation: dy/dx = -2a/sqrt(4a^2-4ax) and dy/dx = 2b/sqrt(4b^2+4bx), then substitute x = a - b"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19-20",
+          "basis": "METHOD 1: attempts implicit differentiation on either curve (M1). dy/dx = -4a/(2y) and dy/dx = 4b/(2y) A1. substitutes y = 2sqrt(ab) (M1). dy/dx = -a/sqrt(ab) and b/sqrt(ab) A1. product = -1 A1. METHOD 2: chain rule (M1), correct derivatives A1, substitute x = a-b (M1), gradients A1, product = -1 A1. [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q02-E-I",
+      "question": "2",
+      "part": "(e)(i)",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "21",
+      "task_summary": "Show that g(x,y) = (y - x)/(y + x).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification",
+        "trigonometric_evaluation"
+      ],
+      "method_path": [
+        "Substitute f(x,y) = -x/y and tan(pi/4) = 1 into formula",
+        "Simplify: g = (-x/y + 1)/(1 - (-x/y)(1)) = ((-x+y)/y)/((y+x)/y) = (y-x)/(y+x)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "g(x,y) = (-x/y + tan(pi/4))/(1 - (-x/y)tan(pi/4)) (A1). = ((-x+y)/y)/((y+x)/y) = (y-x)/(y+x) A1. AG [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q02-E-II",
+      "question": "2",
+      "part": "(e)(ii)",
+      "marks": 9,
+      "source_pages": "5",
+      "markscheme_pages": "22",
+      "task_summary": "Hence, by solving the homogeneous differential equation dy/dx = (y - x)/(y + x), find a general equation that represents this family of curves, G. Give your answer in the form h(x, y) = d where d is a parameter.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "homogeneous_differential_equation",
+        "substitution_y_equals_vx",
+        "separation_of_variables",
+        "integration",
+        "inverse_trigonometric_integration"
+      ],
+      "method_path": [
+        "Substitute y = vx, giving dy/dx = v + x dv/dx",
+        "Form DE: v + x dv/dx = (vx - x)/(vx + x) = (v - 1)/(v + 1)",
+        "Rearrange to x dv/dx = (v-1)/(v+1) - v = -(1+v^2)/(1+v)",
+        "Separate variables: (1+v)/(1+v^2) dv = -dx/x",
+        "Integrate: (1/2)ln(1+v^2) + arctan(v) = -ln|x| + d",
+        "Substitute back v = y/x",
+        "Obtain (1/2)ln(1+(y/x)^2) + arctan(y/x) + ln|x| = d"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "let y = vx (M1). dy/dx = v + x dv/dx (A1). v + x dv/dx = (v-1)/(v+1) (A1). attempts to express x dv/dx as single fraction in v (M1). x dv/dx = -(1+v^2)/(1+v) (A1). attempts to separate variables (M1). integral (1+v)/(1+v^2) dv = -integral 1/x dx. (1/2)ln(1+v^2) + arctan(v) = -ln x + d A1A1. (1/2)ln(1+(y/x)^2) + arctan(y/x) + ln x = d A1. [9 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q02-F",
+      "question": "2",
+      "part": "(f)",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "23",
+      "task_summary": "By considering lim as alpha -> pi/2 of tan(alpha), show that, for all finite f(x,y), lim as alpha -> pi/2 of g(x,y) = -1/f(x,y).",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "trigonometric_limit",
+        "rearrange_formula"
+      ],
+      "method_path": [
+        "Rearrange formula to g = (1/tan(alpha) + f)/(1/tan(alpha) - f) or use sin/cos",
+        "As alpha -> pi/2, tan(alpha) -> infinity so 1/tan(alpha) -> 0",
+        "Conclude g -> -1/f"
+      ],
+      "accepted_alternatives": [
+        "Using sin(alpha)/cos(alpha) substitution: g = (f cos(alpha) + sin(alpha))/(cos(alpha) - f sin(alpha)), then as alpha -> pi/2, cos(alpha) -> 0, sin(alpha) -> 1, so g -> 1/(-f) = -1/f"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: g = (1/tan(alpha) + f)/(1/tan(alpha) - f) M1. As alpha -> pi/2, 1/tan(alpha) -> 0, hence g -> -1/f R1 (dependent on M1). METHOD 2: uses sin/cos to form g = (f cos(alpha) + sin(alpha))/(cos(alpha) - f sin(alpha)) M1. As alpha -> pi/2, cos(alpha) -> 0, sin(alpha) -> 1, so g -> -1/f R1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

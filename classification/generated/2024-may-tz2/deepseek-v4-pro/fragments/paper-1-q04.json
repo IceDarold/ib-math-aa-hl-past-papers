@@ -1,0 +1,99 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ2-P1-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Complete the tree diagram by writing the probabilities of not nesting in each season in terms of k: 1 − k for Spring, 1 − k/2 for Summer.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_complement",
+        "tree_diagram"
+      ],
+      "method_path": [
+        "P(not nest | Spring) = 1 − k",
+        "P(not nest | Summer) = 1 − k/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "1 − k for Spring A1; 1 − k/2 for both Summers A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ2-P1-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "12",
+      "task_summary": "(i) Show that 9k² − 27k + 8 = 0 by multiplying the not-nesting branch probabilities (1−k)(1−k/2), equating to 5/9, expanding and rearranging. (ii) State that k = 1/3 is the only valid solution because k = 8/3 exceeds 1, which is impossible for a probability.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.polynomials",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "multiply_probabilities",
+        "expand_brackets",
+        "equate_to_fraction",
+        "rearrange_to_quadratic",
+        "solve_quadratic",
+        "validate_probability_domain"
+      ],
+      "method_path": [
+        "(1 − k)(1 − k/2) = 5/9",
+        "1 − 3k/2 + k²/2 = 5/9",
+        "18 − 27k + 9k² = 10",
+        "9k² − 27k + 8 = 0",
+        "k = 1/3 or k = 8/3",
+        "Reject k = 8/3 since a probability cannot exceed 1"
+      ],
+      "accepted_alternatives": [
+        "Any valid reasoning that a probability cannot be greater than 1 or less than 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "multiplying the two correct branches (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to expand and equate to 5/9 (M1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "9k² − 27k + 8 = 0 AG (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "k = 1/3 is the only valid solution as 8/3 > 1 (R1). Accept any valid reasoning indicating that any probability cannot be greater than 1 and/or probability cannot be less than 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

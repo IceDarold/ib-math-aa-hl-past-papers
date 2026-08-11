@@ -1,0 +1,451 @@
+{
+  "question": "1",
+  "expected_question_marks": 24,
+  "blocks": [
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the two values of b such that y = x^3 + 3x^2 + b has exactly two x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vary_parameter",
+        "identify_critical_values",
+        "stationary_point_on_axis"
+      ],
+      "method_path": [
+        "vary b and observe when a stationary point of the cubic lies on the x-axis",
+        "determine b = 0 (when P(0, b) touches x-axis) and b = −4 (when local minimum at x = −2 touches x-axis)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1 for varying b with a = 3 or evidence that b = 0 case is considered; A1 for b = −4, 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-B-I",
+      "question": "1",
+      "part": "B-I",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write the set of b values for which y = x^3 + 3x^2 + b has exactly one x-axis intercept.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_inequality_set"
+      ],
+      "method_path": [
+        "deduce from part (a) that b < −4 or b > 0 gives exactly one x-intercept"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for b < −4 or b > 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-B-II",
+      "question": "1",
+      "part": "B-II",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write the set of b values for which y = x^3 + 3x^2 + b has exactly three x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_inequality_set"
+      ],
+      "method_path": [
+        "deduce from part (a) that −4 < b < 0 gives exactly three x-intercepts"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for −4 < b < 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-C-I",
+      "question": "1",
+      "part": "C-I",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Write the set of b values for which y = x^3 − 3x^2 + b has exactly two x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_set_of_values"
+      ],
+      "method_path": [
+        "determine that when a = −3, stationary points at x = 0 (y = b) and x = 2 (y = b − 4) give exactly two intercepts for b = 0, 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for b = 0, 4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-C-II",
+      "question": "1",
+      "part": "C-II",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Write the set of b values for which y = x^3 − 3x^2 + b has exactly one x-axis intercept.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_inequality_set"
+      ],
+      "method_path": [
+        "deduce that b < 0 or b > 4 gives exactly one x-intercept"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for b < 0 or b > 4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-C-III",
+      "question": "1",
+      "part": "C-III",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Write the set of b values for which y = x^3 − 3x^2 + b has exactly three x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_inequality_set"
+      ],
+      "method_path": [
+        "deduce that 0 < b < 4 gives exactly three x-intercepts"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for 0 < b < 4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-D",
+      "question": "1",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "For exactly three x-axis intercepts, state whether each point of zero gradient is above or below the x-axis.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "state_relative_position"
+      ],
+      "method_path": [
+        "state that the two stationary points lie on opposite sides of the x-axis"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1 for 'one point of zero gradient is located on either side (of the x-axis)' or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-E",
+      "question": "1",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "9-10",
+      "task_summary": "Show that the curve has stationary points at P(0, b) and Q(−2a/3, 4a³/27 + b).",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "solve_derivative_zero",
+        "factor_expression",
+        "substitute",
+        "simplify_algebraic_expression"
+      ],
+      "method_path": [
+        "differentiate to obtain dy/dx = 3x² + 2ax",
+        "set dy/dx = 0 and factor to x(3x + 2a) = 0",
+        "solve to obtain x = 0 and x = −2a/3",
+        "verify P(0, b) is a stationary point and substitute x = −2a/3 into y = x³ + ax² + b",
+        "simplify to y = 4a³/27 + b to confirm Q(−2a/3, 4a³/27 + b)"
+      ],
+      "accepted_alternatives": [
+        "Substitute x = 0 and x = −2a/3 directly into dy/dx = 3x² + 2ax to verify each yields zero, then substitute x = −2a/3 into y = x³ + ax² + b and simplify to 4a³/27 + b (Method 2)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9-10",
+          "basis": "Method 1: (A1) dy/dx = 3x² + 2ax; (M1) solve dy/dx = 0; (A1) x = 0, −2a/3; AG for P; (M1) substitute x into y; (A1) simplify to 4a³/27 + b. Method 2: (A1) dy/dx; (M1) substitute x=0 or x=−2a/3; AG for P; (A1) verify dy/dx=0 at both; (M1) substitute into y; (A1) simplify to y-coordinate."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-F-I",
+      "question": "1",
+      "part": "F-I",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Find d²y/dx² and classify P and Q as local maximum or minimum when a > 0 and b > 0.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative",
+        "evaluate_at_point",
+        "classify_stationary_point"
+      ],
+      "method_path": [
+        "find d²y/dx² = 6x + 2a",
+        "evaluate at x = 0: d²y/dx² = 2a > 0 → P is a local minimum",
+        "evaluate at x = −2a/3: d²y/dx² = −2a < 0 → Q is a local maximum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "A1 for d²y/dx² = 6x + 2a; R1 for P is local minimum (2a > 0 when a > 0); R1 for Q is local maximum (−2a < 0 when a > 0)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-F-II",
+      "question": "1",
+      "part": "F-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Determine whether P and Q are above or below the x-axis when a > 0 and b > 0.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "determine_sign",
+        "state_position"
+      ],
+      "method_path": [
+        "note b > 0 and 4a³/27 + b > 0 when a > 0, b > 0, hence both P and Q lie above the x-axis"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "A1 for both above the x-axis; accept a labelled sketch clearly showing this."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-G-I",
+      "question": "1",
+      "part": "G-I",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "For a < 0 and b > 0, state whether P is a local max or min and whether it is above or below the x-axis.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "classify_stationary_point",
+        "determine_position"
+      ],
+      "method_path": [
+        "classify P as a local maximum (since a < 0 gives d²y/dx² = 2a < 0 at x = 0) and state it is above the x-axis (b > 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "A1 for P is a local maximum and is above the x-axis."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-G-II",
+      "question": "1",
+      "part": "G-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "State the conditions on a and b for Q to be below the x-axis.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "state_inequality_condition"
+      ],
+      "method_path": [
+        "state 4a³/27 + b < 0 or equivalently b < −4a³/27"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "A1 for 4a³/27 + b < 0 or equivalent inequality, e.g. b < −4a³/27."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-NOV-TZ2-P3-Q01-H",
+      "question": "1",
+      "part": "H",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "13-14",
+      "task_summary": "Prove that if 4a³b + 27b² < 0 then y = x³ + ax² + b has exactly three x-axis intercepts.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.proof",
+        "number_algebra.inequalities",
+        "calculus.stationary_points"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "factor_inequality",
+        "sign_analysis",
+        "relate_stationary_points_to_intercepts",
+        "deduce_intercept_count"
+      ],
+      "method_path": [
+        "factor 4a³b + 27b² < 0 as b(4a³ + 27b) < 0 or (b/27)(4a³ + 27b) < 0",
+        "deduce that b and (4a³/27 + b) have opposite signs",
+        "observe that b = y-coordinate of P and 4a³/27 + b = y-coordinate of Q",
+        "conclude P and Q lie on opposite sides of the x-axis",
+        "deduce that with stationary points on opposite sides the cubic must cross the x-axis exactly three times"
+      ],
+      "accepted_alternatives": [
+        "Split into two explicit cases: (1) b > 0 and 4a³/27 + b < 0 ⇒ a < 0 hence three intercepts; (2) b < 0 and 4a³/27 + b > 0 ⇒ a > 0 hence three intercepts (Method 2). The converse proof is also accepted for a maximum of 3 marks."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13-14",
+          "basis": "Method 1: (M1) factor; (A1) b(4a³/27 + b) < 0 or (b)(4a³ + 27b) < 0; (A1) two sign cases; (R1) opposite signs ⇒ P and Q on opposite sides of x-axis; (R1) opposite sides ⇒ exactly three intercepts. Method 2: additional R1 for each subcase linking to sign of a."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
