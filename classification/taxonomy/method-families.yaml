@@ -1,0 +1,88 @@
+version: 0.1-pilot
+principle: Method families describe reusable solution strategies. Fine-grained operations and their order remain in method_tags and method_path.
+
+method_families:
+  formula_application:
+    description: Select a standard formula, substitute known values, and evaluate or rearrange.
+    examples: [sector area, arithmetic-series formula, expected-value formula]
+
+  algebraic_transformation:
+    description: Expand, factor, rationalize, compare coefficients, eliminate a variable, or rewrite an expression into a useful form.
+    examples: [difference of squares, polynomial division, exact radical simplification]
+
+  equation_and_inequality_solving:
+    description: Solve exact, parameterized, simultaneous, exponential, logarithmic, trigonometric, or numerical equations and inequalities.
+    examples: [discriminant condition, sign analysis, integer threshold]
+
+  direct_proof:
+    description: Establish a claim through identities, factorization, cancellation, reciprocal relations, or a nonzero-factor argument.
+    examples: [divisibility proof, trigonometric identity, palindromic-polynomial proof]
+
+  mathematical_induction:
+    description: Verify a base case, state an induction hypothesis, prove the next case, and conclude for all positive integers.
+    examples: [closed form of a first-order recurrence]
+
+  function_analysis:
+    description: Determine range, inverse restrictions, roots, turning points, asymptotes, monotonicity, or a qualitative graph.
+    examples: [horizontal-line test, asymptotic curve sketch]
+
+  numerical_gdc:
+    description: Use a graphing calculator for evaluation, roots, regression, optimization, numerical derivatives, or graph features.
+    examples: [numerical maximum, linear regression]
+
+  geometric_reasoning:
+    description: Decompose a geometric object, use symmetry, or apply length, area, volume, midpoint, or coordinate relationships.
+    examples: [hollow-cylinder model, midpoint geometry]
+
+  trigonometric_reasoning:
+    description: Apply triangle trigonometry, identities, transformations, or exact-angle reasoning.
+    examples: [cosine rule plus double-angle identity, tangent difference identity]
+
+  vector_reasoning:
+    description: Use vector parametrization, section formulae, dot or cross products, perpendicularity, or line-plane relations.
+    examples: [point-to-line distance, line parallel to a plane]
+
+  probability_and_distributions:
+    description: Use probability laws, normalize a distribution, calculate expectation, or solve a CDF or quantile equation.
+    examples: [conditional probability, median of a continuous distribution]
+
+  combinatorial_counting:
+    description: Count arrangements using permutations, combinations, blocks, complements, and the product rule.
+    examples: [consecutive seating restrictions]
+
+  sequences_and_recurrences:
+    description: Use term and sum formulae, iterate or solve recurrences, analyze first differences, convergence, or equilibrium.
+    examples: [geometric tail bound, constant recurrence]
+
+  mathematical_modelling:
+    description: Translate a context into constraints and functions, compare models, or interpret parameters and rates.
+    examples: [population models, constrained cylinder volume]
+
+  differentiation:
+    description: Differentiate explicitly or implicitly and reuse derivative relations.
+    examples: [quotient rule, recursive higher derivatives]
+
+  integration:
+    description: Build and evaluate a definite integral for accumulation, expectation, area, or volume.
+    examples: [volume of revolution, continuous expectation]
+
+  limits_and_series:
+    description: Evaluate limits and construct power-series approximations from derivatives or known expansions.
+    examples: [l'Hopital's rule, Maclaurin series]
+
+  optimization:
+    description: Construct an objective, eliminate constraints, find a stationary or numerical optimum, and interpret it in context.
+    examples: [maximum volume, maximum difference between models]
+
+  complex_number_reasoning:
+    description: Work with Cartesian, polar, conjugate, modulus-argument, De Moivre, root, or Argand representations.
+    examples: [fourth roots, conjugate-root equation]
+
+  polynomial_structure:
+    description: Exploit factorization, coefficient symmetry, root relations, reciprocal identities, or degree properties.
+    examples: [palindromic polynomials, factor comparison]
+
+  interpretation_and_validation:
+    description: Explain a parameter or derivative in context, assess extrapolation, or justify a modelling conclusion.
+    examples: [growth-factor interpretation, regression reliability]
+

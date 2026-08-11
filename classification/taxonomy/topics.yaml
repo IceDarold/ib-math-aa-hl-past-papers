@@ -1,0 +1,65 @@
+version: 0.1-pilot
+subject: IB Mathematics Analysis and Approaches HL
+principle: Every classified block has exactly one primary topic and zero or more secondary topics.
+
+topics:
+  number_algebra:
+    label: Number and algebra
+    subtopics:
+      - binomial_theorem
+      - complex_numbers
+      - exponential_models
+      - geometric_sequences
+      - inequalities
+      - mathematical_induction
+      - polynomials
+      - proof
+      - recurrence_relations
+      - sequences
+
+  functions:
+    label: Functions
+    subtopics:
+      - asymptotes
+      - curve_sketching
+      - equations
+      - exponential_models
+      - graphing
+      - inverse_functions
+      - logarithmic_functions
+      - mathematical_models
+      - trigonometric_functions
+
+  geometry:
+    label: Geometry and trigonometry
+    subtopics:
+      - circular_measure
+      - solid_geometry
+      - trigonometric_equations
+      - trigonometric_identities
+      - trigonometry
+      - vectors
+      - vectors_3d
+
+  statistics:
+    label: Statistics and probability
+    subtopics:
+      - combinatorics
+      - continuous_random_variables
+      - discrete_random_variables
+      - expected_value
+      - probability
+      - regression
+
+  calculus:
+    label: Calculus
+    subtopics:
+      - differentiation
+      - inequalities
+      - integration_applications
+      - limits
+      - optimization
+      - rates_of_change
+      - series
+      - stationary_points
+
