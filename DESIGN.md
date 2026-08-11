@@ -27,6 +27,9 @@ The UI uses the operating system sans-serif stack for compact, familiar controls
 - 4px and 8px spacing rhythm
 - 1px dividers; shadows only on narrow-screen overlays
 - Sticky top bar, column headers, and inspector title
+- The filter sidebar can be hidden and resized from 208–384px; its width and visibility persist locally
+- The inspector is progressive disclosure: it is absent until a result is activated and always has an explicit close action
+- Result columns respond to the table container rather than the viewport, preserving a fixed, horizontal-scroll-free reading surface
 - Up/down selects results; `/` focuses search; Escape closes overlays
 - At narrow widths filters become a drawer and the inspector becomes an overlay
 - Motion is short and functional, and removed under `prefers-reduced-motion`

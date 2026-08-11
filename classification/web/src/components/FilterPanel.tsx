@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+import type { CSSProperties, KeyboardEvent, PointerEvent as ReactPointerEvent } from 'react'
 import type { Filters, FilterSetKey } from '../types'
 import { formatKey } from '../lib/questions'
 import { CheckIcon, CloseIcon, ResetIcon } from './Icons'
@@ -6,7 +8,9 @@ interface FilterPanelProps {
   filters: Filters
   topicCounts: Array<[string, number]>
   methodCounts: Array<[string, number]>
-  open: boolean
+  compact: boolean
+  width: number
+  onResize: (width: number) => void
   onSetSegment: (key: 'paper' | 'calculator', value: string) => void
   onToggleSet: (key: FilterSetKey, value: string) => void
   onReset: () => void
@@ -20,7 +24,9 @@ export function FilterPanel({
   filters,
   topicCounts,
   methodCounts,
-  open,
+  compact,
+  width,
+  onResize,
   onSetSegment,
   onToggleSet,
   onReset,
@@ -30,12 +36,13 @@ export function FilterPanel({
     <aside
       id="filters"
       aria-label="Фильтры"
-      className={`relative flex min-h-0 min-w-0 flex-col gap-4.5 overflow-y-auto border-r border-line bg-canvas px-3.5 py-3.5 max-[960px]:fixed max-[960px]:inset-y-13 max-[960px]:bottom-8 max-[960px]:z-30 max-[960px]:w-[min(310px,88vw)] max-[960px]:shadow-overlay max-[960px]:transition-transform max-[960px]:duration-200 max-[960px]:ease-out-quart ${open ? 'max-[960px]:translate-x-0' : 'max-[960px]:-translate-x-full'}`}
+      style={{ '--filter-panel-width': `${width}px` } as CSSProperties}
+      className={`filter-panel z-10 flex min-h-0 min-w-0 shrink-0 flex-col gap-4.5 overflow-y-auto border-r border-line bg-canvas px-3.5 py-3.5 ${compact ? 'fixed top-13 bottom-8 left-0 z-30 shadow-overlay motion-safe:animate-[filter-panel-in_180ms_var(--ease-out-quart)]' : 'relative'}`}
     >
       <div className="flex items-center justify-between">
         <h2 className="m-0 text-sm font-semibold">Фильтры</h2>
         <button
-          className="hidden size-8 cursor-pointer place-items-center border-0 bg-transparent max-[960px]:grid"
+          className={`size-8 cursor-pointer place-items-center border-0 bg-transparent ${compact ? 'grid' : 'hidden'}`}
           type="button"
           aria-label="Закрыть фильтры"
           onClick={onClose}
@@ -80,7 +87,74 @@ export function FilterPanel({
         <ResetIcon className="size-4" />
         Сбросить фильтры
       </button>
+
+      {!compact && <SidebarResizeHandle width={width} onResize={onResize} />}
     </aside>
+  )
+}
+
+const MIN_WIDTH = 208
+const MAX_WIDTH = 384
+
+function SidebarResizeHandle({ width, onResize }: { width: number; onResize: (width: number) => void }) {
+  const drag = useRef<{ x: number; width: number } | null>(null)
+  const clamp = (value: number) => Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, value))
+
+  useEffect(() => {
+    const handlePointerMove = (event: globalThis.PointerEvent) => {
+      if (!drag.current) return
+      onResize(clamp(drag.current.width + event.clientX - drag.current.x))
+    }
+
+    const stopDragging = () => {
+      drag.current = null
+    }
+
+    window.addEventListener('pointermove', handlePointerMove)
+    window.addEventListener('pointerup', stopDragging)
+    window.addEventListener('pointercancel', stopDragging)
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove)
+      window.removeEventListener('pointerup', stopDragging)
+      window.removeEventListener('pointercancel', stopDragging)
+    }
+  }, [onResize])
+
+  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    drag.current = { x: event.clientX, width }
+  }
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault()
+      onResize(clamp(width + (event.key === 'ArrowRight' ? 16 : -16)))
+    } else if (event.key === 'Home') {
+      event.preventDefault()
+      onResize(MIN_WIDTH)
+    } else if (event.key === 'End') {
+      event.preventDefault()
+      onResize(MAX_WIDTH)
+    }
+  }
+
+  return (
+    <div
+      className="group absolute inset-y-0 -right-1.5 z-20 w-3 cursor-col-resize touch-none outline-none"
+      role="separator"
+      aria-label="Изменить ширину боковой панели"
+      aria-orientation="vertical"
+      aria-valuemin={MIN_WIDTH}
+      aria-valuemax={MAX_WIDTH}
+      aria-valuenow={Math.round(width)}
+      tabIndex={0}
+      title="Перетащите, чтобы изменить ширину"
+      onDoubleClick={() => onResize(248)}
+      onKeyDown={handleKeyDown}
+      onPointerDown={handlePointerDown}
+    >
+      <span className="mx-auto block h-full w-px bg-transparent transition-colors duration-150 group-hover:bg-primary group-focus-visible:bg-primary" />
+    </div>
   )
 }
 

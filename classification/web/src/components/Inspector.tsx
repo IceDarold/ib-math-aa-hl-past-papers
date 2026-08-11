@@ -5,30 +5,20 @@ import { MathText } from './MathText'
 import { Taxon } from './ResultsTable'
 
 interface InspectorProps {
-  question: Question | null
-  open: boolean
+  question: Question
+  compact: boolean
   onClose: () => void
 }
 
-export function Inspector({ question, open, onClose }: InspectorProps) {
+export function Inspector({ question, compact, onClose }: InspectorProps) {
   return (
     <aside
       aria-label="Детали задания"
       aria-live="polite"
-      className={`min-h-0 min-w-0 overflow-y-auto border-l border-line bg-canvas max-[960px]:fixed max-[960px]:inset-y-13 max-[960px]:right-0 max-[960px]:bottom-8 max-[960px]:z-30 max-[960px]:w-[min(430px,94vw)] max-[960px]:shadow-overlay max-[960px]:transition-transform max-[960px]:duration-200 max-[960px]:ease-out-quart ${open ? 'max-[960px]:translate-x-0' : 'max-[960px]:translate-x-full'}`}
+      className={`inspector-panel min-h-0 min-w-0 shrink-0 overflow-y-auto border-l border-line bg-canvas motion-safe:animate-[panel-in_180ms_var(--ease-out-quart)] ${compact ? 'fixed top-13 right-0 bottom-8 z-30 shadow-overlay' : 'relative'}`}
     >
-      {!question ? <InspectorEmpty /> : <InspectorContent question={question} onClose={onClose} />}
+      <InspectorContent question={question} onClose={onClose} />
     </aside>
-  )
-}
-
-function InspectorEmpty() {
-  return (
-    <div className="grid h-full place-content-center justify-items-center gap-2 px-6 text-center text-muted">
-      <span className="text-2xl text-primary" aria-hidden="true">↖</span>
-      <strong className="text-ink">Выберите блок</strong>
-      <span>Кликните по строке или используйте клавиши ↑↓.</span>
-    </div>
   )
 }
 
@@ -38,11 +28,11 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
     <>
       <header className="sticky top-0 z-10 border-b border-line bg-canvas/96 px-4.5 pt-3.5 pb-3 backdrop-blur-[2px]">
         <div className="flex items-center justify-between gap-2">
-          <span className="font-mono text-[11px] text-muted [overflow-wrap:anywhere]">{question.id}</span>
+          <span className="min-w-0 flex-1 font-mono text-[11px] text-muted [overflow-wrap:anywhere]">{question.id}</span>
           <span className="flex shrink-0 items-center gap-1 border border-verified/40 bg-verified-soft px-1.5 py-0.5 text-[10px] text-verified">
             <CheckIcon className="size-3" /> Проверено вручную
           </span>
-          <button className="hidden size-8 cursor-pointer place-items-center border-0 bg-transparent max-[960px]:grid" type="button" aria-label="Закрыть детали" onClick={onClose}>
+          <button className="grid size-8 shrink-0 cursor-pointer place-items-center border border-transparent bg-transparent hover:border-line hover:bg-surface" type="button" aria-label="Закрыть детали" onClick={onClose}>
             <CloseIcon />
           </button>
         </div>

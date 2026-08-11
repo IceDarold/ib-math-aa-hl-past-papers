@@ -68,6 +68,45 @@
 }
 
 @layer components {
+  .filter-panel {
+    width: var(--filter-panel-width);
+  }
+
+  .inspector-panel {
+    width: 390px;
+  }
+
+  .results-panel {
+    container-name: results;
+    container-type: inline-size;
+  }
+
+  .results-table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .results-col-id {
+    width: 142px;
+  }
+
+  .results-col-topic {
+    width: 154px;
+  }
+
+  .results-col-method {
+    width: 172px;
+  }
+
+  .results-col-marks {
+    width: 54px;
+  }
+
+  .results-task {
+    overflow-wrap: anywhere;
+  }
+
   .math-inline {
     display: inline-block;
     margin-inline: 0.08em;
@@ -78,5 +117,68 @@
   .math-inline .katex {
     font-size: 1.04em;
     line-height: 1;
+  }
+}
+
+@container results (max-width: 720px) {
+  .results-col-method {
+    display: none;
+  }
+}
+
+@container results (max-width: 540px) {
+  .results-col-topic {
+    display: none;
+  }
+
+  .results-col-id {
+    width: 118px;
+  }
+}
+
+@container results (max-width: 380px) {
+  .results-col-id {
+    width: 104px;
+  }
+}
+
+@media (max-width: 960px) {
+  .filter-panel {
+    width: min(310px, 88vw);
+  }
+
+  .inspector-panel {
+    width: min(430px, 94vw);
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1220px) {
+  .inspector-panel {
+    width: 340px;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+}
+
+@keyframes filter-panel-in {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

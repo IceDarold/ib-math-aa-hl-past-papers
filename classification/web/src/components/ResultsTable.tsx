@@ -6,9 +6,8 @@ interface ResultsTableProps {
   questions: Question[]
   selectedId: string | null
   marks: number
-  onSelect: (id: string, revealInspector: boolean) => void
+  onSelect: (id: string) => void
   onReset: () => void
-  onOpenInspector: () => void
 }
 
 export function ResultsTable({
@@ -17,34 +16,25 @@ export function ResultsTable({
   marks,
   onSelect,
   onReset,
-  onOpenInspector,
 }: ResultsTableProps) {
   return (
-    <main id="results" tabIndex={-1} className="flex min-h-0 min-w-0 flex-col bg-canvas">
-      <div className="hidden min-h-10.5 items-center justify-between border-b border-line px-3 max-[960px]:flex">
+    <main id="results" tabIndex={-1} className="results-panel flex min-h-0 min-w-0 flex-1 flex-col bg-canvas">
+      <div className="hidden min-h-10.5 items-center border-b border-line px-3 max-[960px]:flex">
         <div className="flex items-baseline gap-2">
           <strong>{pluralize(questions.length, 'блок', 'блока', 'блоков')}</strong>
           <span className="text-xs text-muted">{pluralize(marks, 'балл', 'балла', 'баллов')}</span>
         </div>
-        <button
-          className="min-h-7.5 cursor-pointer border border-line-strong bg-canvas px-2.5 disabled:cursor-default disabled:opacity-45"
-          type="button"
-          disabled={!selectedId}
-          onClick={onOpenInspector}
-        >
-          Детали
-        </button>
       </div>
 
-      <div className="min-h-0 overflow-auto">
-        <table className="w-full table-fixed border-collapse">
+      <div className="min-h-0 overflow-x-hidden overflow-y-auto">
+        <table className="results-table border-collapse">
           <thead className="sticky top-0 z-10 bg-canvas">
             <tr>
-              <Header className="w-44 max-[1220px]:w-36.5 max-[960px]:w-42 max-[680px]:w-32">ID</Header>
+              <Header className="results-col-id">ID</Header>
               <Header>Задание</Header>
-              <Header className="w-38.5 max-[1220px]:w-34 max-[680px]:w-32.5 max-[480px]:hidden">Тема</Header>
-              <Header className="w-43 max-[1220px]:w-37 max-[680px]:hidden">Метод</Header>
-              <Header className="w-13.5 text-right">Баллы</Header>
+              <Header className="results-col-topic">Тема</Header>
+              <Header className="results-col-method">Метод</Header>
+              <Header className="results-col-marks text-right">Баллы</Header>
             </tr>
           </thead>
           <tbody>
@@ -57,30 +47,30 @@ export function ResultsTable({
                   tabIndex={0}
                   aria-selected={selected}
                   className={`relative cursor-pointer transition-colors duration-150 ease-out-quart hover:bg-surface focus-visible:relative focus-visible:z-1 ${selected ? 'bg-primary-soft shadow-[inset_0_0_0_1px_oklch(0.82_0.08_18)]' : ''}`}
-                  onClick={() => onSelect(question.id, true)}
+                  onClick={() => onSelect(question.id)}
                   onKeyDown={(event) => {
                     if (event.key === 'Enter' || event.key === ' ') {
                       event.preventDefault()
-                      onSelect(question.id, true)
+                      onSelect(question.id)
                     }
                   }}
                 >
-                  <td className="h-12 overflow-hidden border-b border-line px-2.5 py-1.5 font-mono text-[11px] text-ellipsis whitespace-nowrap" title={question.id}>
+                  <td className="results-col-id h-12 overflow-hidden border-b border-line px-2.5 py-1.5 font-mono text-[11px] text-ellipsis whitespace-nowrap" title={question.id}>
                     {shortId(question)}
                   </td>
-                  <td className="h-12 border-b border-line px-2.5 py-1.5 leading-[1.35]">
+                  <td className="results-task h-12 overflow-hidden border-b border-line px-2.5 py-1.5 leading-[1.35]">
                     <MathText>{question.task_summary}</MathText>
                     <small className="mt-0.5 block text-muted max-[680px]:hidden">
                       Q{question.question}{question.part === '-' ? '' : `(${question.part})`} · pp. {question.source_pages}
                     </small>
                   </td>
-                  <td className="h-12 border-b border-line px-2.5 py-1.5 max-[480px]:hidden">
+                  <td className="results-col-topic h-12 overflow-hidden border-b border-line px-2.5 py-1.5">
                     <Taxon title={question.primary_topic}>{question.primary_topic}</Taxon>
                   </td>
-                  <td className="h-12 border-b border-line px-2.5 py-1.5 max-[680px]:hidden">
+                  <td className="results-col-method h-12 overflow-hidden border-b border-line px-2.5 py-1.5">
                     <Taxon title={question.methodFamily}>{question.methodFamily}</Taxon>
                   </td>
-                  <td className="h-12 border-b border-line px-2.5 py-1.5 text-right tabular-nums">{question.marks}</td>
+                  <td className="results-col-marks h-12 border-b border-line px-2.5 py-1.5 text-right tabular-nums">{question.marks}</td>
                 </tr>
               )
             })}

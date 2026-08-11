@@ -7,6 +7,10 @@ import { TopBar } from './components/TopBar'
 import { countBy, filterQuestions, questions } from './lib/questions'
 import type { Filters, FilterSetKey } from './types'
 
+const DEFAULT_SIDEBAR_WIDTH = 248
+const MIN_SIDEBAR_WIDTH = 208
+const MAX_SIDEBAR_WIDTH = 384
+
 const initialFilters: Filters = {
   query: '',
   paper: 'all',
@@ -17,7 +21,17 @@ const initialFilters: Filters = {
 
 export default function App() {
   const [filters, setFilters] = useState<Filters>(initialFilters)
-  const [selectedId, setSelectedId] = useState<string | null>(questions[0]?.id ?? null)
+  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [sidebarVisible, setSidebarVisible] = useState(() => localStorage.getItem('question-atlas:sidebar-visible') !== 'false')
+  const [sidebarWidth, setSidebarWidth] = useState(() => {
+    const storedValue = localStorage.getItem('question-atlas:sidebar-width')
+    if (storedValue === null) return DEFAULT_SIDEBAR_WIDTH
+    const stored = Number(storedValue)
+    return Number.isFinite(stored)
+      ? Math.min(MAX_SIDEBAR_WIDTH, Math.max(MIN_SIDEBAR_WIDTH, stored))
+      : DEFAULT_SIDEBAR_WIDTH
+  })
+  const [compactLayout, setCompactLayout] = useState(() => window.matchMedia('(max-width: 960px)').matches)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [inspectorOpen, setInspectorOpen] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
@@ -35,20 +49,38 @@ export default function App() {
   const methodCounts = useMemo(() => countBy(questions, (question) => question.methodFamily), [])
 
   useEffect(() => {
-    if (!filteredQuestions.some((question) => question.id === selectedId)) {
-      setSelectedId(filteredQuestions[0]?.id ?? null)
+    if (selectedId && !filteredQuestions.some((question) => question.id === selectedId)) {
+      setSelectedId(null)
+      setInspectorOpen(false)
     }
   }, [filteredQuestions, selectedId])
 
-  const selectQuestion = useCallback((id: string, revealInspector: boolean) => {
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 960px)')
+    const updateLayout = () => setCompactLayout(media.matches)
+    media.addEventListener('change', updateLayout)
+    return () => media.removeEventListener('change', updateLayout)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('question-atlas:sidebar-visible', String(sidebarVisible))
+  }, [sidebarVisible])
+
+  useEffect(() => {
+    localStorage.setItem('question-atlas:sidebar-width', String(sidebarWidth))
+  }, [sidebarWidth])
+
+  const selectQuestion = useCallback((id: string) => {
     setSelectedId(id)
-    if (revealInspector) setInspectorOpen(true)
+    setInspectorOpen(true)
   }, [])
 
   const moveSelection = useCallback((delta: number) => {
     if (filteredQuestions.length === 0) return
-    const currentIndex = Math.max(0, filteredQuestions.findIndex((question) => question.id === selectedId))
-    const nextIndex = (currentIndex + delta + filteredQuestions.length) % filteredQuestions.length
+    const currentIndex = filteredQuestions.findIndex((question) => question.id === selectedId)
+    const nextIndex = currentIndex === -1
+      ? (delta > 0 ? 0 : filteredQuestions.length - 1)
+      : (currentIndex + delta + filteredQuestions.length) % filteredQuestions.length
     const next = filteredQuestions[nextIndex]
     if (!next) return
     setSelectedId(next.id)
@@ -109,25 +141,32 @@ export default function App() {
         resultCount={filteredQuestions.length}
         resultMarks={resultMarks}
         searchRef={searchRef}
+        sidebarVisible={sidebarVisible}
+        filtersOpen={filtersOpen}
         onQueryChange={(query) => setFilters((current) => ({ ...current, query }))}
         onOpenFilters={() => setFiltersOpen(true)}
+        onToggleSidebar={() => setSidebarVisible((visible) => !visible)}
       />
 
-      <div className="grid min-h-0 flex-1 grid-cols-[248px_minmax(480px,1fr)_390px] max-[1220px]:grid-cols-[224px_minmax(440px,1fr)_340px] max-[960px]:grid-cols-1">
-        {(filtersOpen || inspectorOpen) && (
-          <button className="fixed inset-x-0 top-13 bottom-8 z-20 hidden cursor-default border-0 bg-ink/25 max-[960px]:block" type="button" aria-label="Закрыть панель" onClick={closeOverlays} />
+      <div className="relative flex min-h-0 flex-1 overflow-hidden">
+        {compactLayout && (filtersOpen || inspectorOpen) && (
+          <button className="fixed inset-x-0 top-13 bottom-8 z-20 cursor-default border-0 bg-ink/25" type="button" aria-label="Закрыть панель" onClick={closeOverlays} />
         )}
 
-        <FilterPanel
-          filters={filters}
-          topicCounts={topicCounts}
-          methodCounts={methodCounts}
-          open={filtersOpen}
-          onSetSegment={setSegment}
-          onToggleSet={toggleSet}
-          onReset={resetFilters}
-          onClose={() => setFiltersOpen(false)}
-        />
+        {(compactLayout ? filtersOpen : sidebarVisible) && (
+          <FilterPanel
+            filters={filters}
+            topicCounts={topicCounts}
+            methodCounts={methodCounts}
+            compact={compactLayout}
+            width={sidebarWidth}
+            onResize={setSidebarWidth}
+            onSetSegment={setSegment}
+            onToggleSet={toggleSet}
+            onReset={resetFilters}
+            onClose={() => setFiltersOpen(false)}
+          />
+        )}
 
         <ResultsTable
           questions={filteredQuestions}
@@ -135,14 +174,15 @@ export default function App() {
           marks={resultMarks}
           onSelect={selectQuestion}
           onReset={resetFilters}
-          onOpenInspector={() => setInspectorOpen(true)}
         />
 
-        <Inspector
-          question={selectedQuestion}
-          open={inspectorOpen}
-          onClose={() => setInspectorOpen(false)}
-        />
+        {inspectorOpen && selectedQuestion && (
+          <Inspector
+            question={selectedQuestion}
+            compact={compactLayout}
+            onClose={() => setInspectorOpen(false)}
+          />
+        )}
       </div>
 
       <StatusBar />

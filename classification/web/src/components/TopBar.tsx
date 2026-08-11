@@ -1,13 +1,16 @@
 import type { RefObject } from 'react'
-import { MenuIcon, SearchIcon } from './Icons'
+import { MenuIcon, PanelLeftIcon, SearchIcon } from './Icons'
 
 interface TopBarProps {
   query: string
   resultCount: number
   resultMarks: number
   searchRef: RefObject<HTMLInputElement | null>
+  sidebarVisible: boolean
+  filtersOpen: boolean
   onQueryChange: (query: string) => void
   onOpenFilters: () => void
+  onToggleSidebar: () => void
 }
 
 export function TopBar({
@@ -15,16 +18,31 @@ export function TopBar({
   resultCount,
   resultMarks,
   searchRef,
+  sidebarVisible,
+  filtersOpen,
   onQueryChange,
   onOpenFilters,
+  onToggleSidebar,
 }: TopBarProps) {
   return (
-    <header className="grid h-13 shrink-0 grid-cols-[auto_auto_minmax(260px,1fr)_auto] items-center gap-6 border-b border-line bg-canvas px-4 max-[1220px]:gap-3.5 max-[960px]:grid-cols-[auto_auto_1fr] max-[960px]:gap-2.5 max-[960px]:pl-2">
+    <header className="grid h-13 shrink-0 grid-cols-[auto_auto_auto_minmax(260px,1fr)_auto] items-center gap-4 border-b border-line bg-canvas px-3 max-[1220px]:gap-3 max-[960px]:grid-cols-[auto_auto_1fr] max-[960px]:gap-2.5 max-[960px]:pl-2">
+      <button
+        className="grid size-8 cursor-pointer place-items-center border border-transparent bg-transparent hover:border-line hover:bg-surface max-[960px]:hidden"
+        type="button"
+        aria-label={sidebarVisible ? 'Скрыть боковую панель' : 'Показать боковую панель'}
+        aria-controls="filters"
+        aria-expanded={sidebarVisible}
+        onClick={onToggleSidebar}
+      >
+        <PanelLeftIcon />
+      </button>
+
       <button
         className="hidden size-8 cursor-pointer place-items-center border-0 bg-transparent max-[960px]:grid"
         type="button"
         aria-label="Открыть фильтры"
         aria-controls="filters"
+        aria-expanded={filtersOpen}
         onClick={onOpenFilters}
       >
         <MenuIcon />
