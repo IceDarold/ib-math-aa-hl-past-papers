@@ -28,7 +28,7 @@ export function ResultsTable({
         </div>
       </div>
 
-      <div className="min-h-0 overflow-x-hidden overflow-y-auto">
+      <div className="results-viewport min-h-0 overflow-x-hidden overflow-y-auto">
         <table className="results-table border-collapse">
           <thead className="sticky top-0 z-10 bg-canvas">
             <tr>

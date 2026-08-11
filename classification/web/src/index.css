@@ -82,6 +82,10 @@
     container-type: inline-size;
   }
 
+  .results-viewport {
+    padding-inline: 16px;
+  }
+
   .results-table {
     width: 100%;
     min-width: 0;
@@ -133,6 +137,10 @@
 }
 
 @container results (max-width: 540px) {
+  .results-viewport {
+    padding-inline: 12px;
+  }
+
   .results-col-topic {
     display: none;
   }
@@ -143,6 +151,10 @@
 }
 
 @container results (max-width: 380px) {
+  .results-viewport {
+    padding-inline: 8px;
+  }
+
   .results-col-id {
     width: 104px;
   }
