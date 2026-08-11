@@ -1,0 +1,34 @@
+{
+  "question": "2024-MAY-TZ1-P1-Q09",
+  "expected_question_marks": 2,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-c-i-ii",
+      "part": "c-i-ii",
+      "marks": 2,
+      "task_summary": "Evaluate two definite integrals using properties of odd functions and given integral from 0 to 4.",
+      "primary_topic": "calculus.integration_applications",
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "odd_function_properties",
+        "linearity_of_integration"
+      ],
+      "method_path": [
+        "Given integral of f(|x|) from 0 to 4 is 1.6.",
+        "Since f is odd, f(-x) = -f(x), and integral_-4^0 f(x) dx = -integral_0^4 f(x) dx.",
+        "From graph, integral_0^4 f(x) dx = integral_0^4 f(|x|) dx = 1.6.",
+        "Thus (c)(i) = -1.6.",
+        "For (c)(ii), split integral: f(|x|) is even, so integral_-4^4 f(|x|) dx = 2 * 1.6 = 3.2.",
+        "Integral_-4^4 f(x) dx = 0 because f is odd and interval symmetric.",
+        "Total = 3.2 + 0 = 3.2."
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}
+

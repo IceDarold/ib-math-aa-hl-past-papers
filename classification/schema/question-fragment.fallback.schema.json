@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "required": ["question", "expected_question_marks", "blocks"],
+  "properties": {
+    "question": { "type": "string" },
+    "expected_question_marks": { "type": "integer" },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "part", "marks", "task_summary", "primary_topic", "method_family", "method_tags", "method_path", "accepted_alternatives", "confidence", "review_flags"],
+        "properties": {
+          "id": { "type": "string" },
+          "part": { "type": "string" },
+          "marks": { "type": "integer" },
+          "task_summary": { "type": "string" },
+          "primary_topic": { "type": "string" },
+          "method_family": { "type": "string" },
+          "method_tags": { "type": "array", "items": { "type": "string" } },
+          "method_path": { "type": "array", "items": { "type": "string" } },
+          "accepted_alternatives": { "type": "array", "items": { "type": "string" } },
+          "confidence": { "type": "string" },
+          "review_flags": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

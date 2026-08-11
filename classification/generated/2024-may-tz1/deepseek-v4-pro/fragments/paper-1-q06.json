@@ -1,0 +1,62 @@
+{
+  "question": "paper-1-q06",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q06",
+      "question": "paper-1-q06",
+      "part": "",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "15-16",
+      "task_summary": "Show that the volume of revolution of region R about the x-axis is pi(2 - sqrt(2))/4.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "disk_method",
+        "substitution_u_equals_x_squared",
+        "definite_integral",
+        "trigonometric_integration"
+      ],
+      "method_path": [
+        "set_up_volume_integral_using_disk_method",
+        "square_the_function_to_get_integrand_x_sin_x_squared",
+        "perform_u_substitution_with_u_equals_x_squared",
+        "integrate_sin_u",
+        "evaluate_definite_integral_and_simplify_to_target_expression"
+      ],
+      "accepted_alternatives": [
+        "substitution_u_equals_cos_x_squared",
+        "integration_by_inspection"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "M1 for setting up volume integral as pi * integral of f(x)^2 from 0 to sqrt(pi)/2"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "A1 for integrand x sin(x^2)"
+        },
+        {
+          "markscheme_pages": "15-16",
+          "basis": "Method 1: substitute u = x^2, giving (pi/2) ∫ sin u du from 0 to pi/4; integrate and evaluate"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "Method 2: substitute u = cos(x^2), with du/dx = -2x sin(x^2); transform limits and evaluate"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

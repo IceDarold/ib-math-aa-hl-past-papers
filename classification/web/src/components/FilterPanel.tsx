@@ -11,7 +11,7 @@ interface FilterPanelProps {
   compact: boolean
   width: number
   onResize: (width: number) => void
-  onSetSegment: (key: 'paper' | 'calculator', value: string) => void
+  onSetSegment: (key: 'paper' | 'calculator' | 'session' | 'status', value: string) => void
   onToggleSet: (key: FilterSetKey, value: string) => void
   onReset: () => void
   onClose: () => void
@@ -56,6 +56,20 @@ export function FilterPanel({
         value={filters.paper}
         options={[['all', 'Все'], ['1', 'P1'], ['2', 'P2'], ['3', 'P3']]}
         onChange={(value) => onSetSegment('paper', value)}
+      />
+
+      <SegmentField
+        legend="Сессия"
+        value={filters.session}
+        options={[["all", "Все"], ["May 2024", "May 24"], ["November 2024", "Nov 24"]]}
+        onChange={(value) => onSetSegment('session', value)}
+      />
+
+      <SegmentField
+        legend="Статус"
+        value={filters.status}
+        options={[["all", "Все"], ["manual_verified", "Ручной"], ["ai_draft", "AI draft"]]}
+        onChange={(value) => onSetSegment('status', value)}
       />
 
       <SegmentField

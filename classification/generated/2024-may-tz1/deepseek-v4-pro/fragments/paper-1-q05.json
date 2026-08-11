@@ -1,0 +1,89 @@
+{
+  "question": "May 2024 TZ1 Paper 1, Question 5",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q05-A",
+      "question": "May 2024 TZ1 Paper 1, Question 5",
+      "part": "(a)",
+      "marks": 1,
+      "source_pages": "7",
+      "markscheme_pages": "12",
+      "task_summary": "Find an expression for Sn in the form a(b^n - 1).",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "geometric_series_sum_formula"
+      ],
+      "method_path": [
+        "Apply geometric series sum formula: Sn = a(r^n - 1)/(r - 1)",
+        "Substitute a=1, r=10",
+        "Simplify to (10^n - 1)/9, so a=1/9, b=10"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "A1 for expression (10^n - 1)/9, with a=1/9, b=10"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q05-B",
+      "question": "May 2024 TZ1 Paper 1, Question 5",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "12-14",
+      "task_summary": "Show that S1 + S2 + ... + Sn = (10(10^n - 1) - 9n)/81.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "sum_of_series",
+        "geometric_series_sum",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Write each Sk = (10^k - 1)/9",
+        "Sum from k=1 to n: ∑ (10^k - 1)/9",
+        "Separate into (1/9)∑10^k - (1/9)∑1",
+        "Apply geometric series sum: ∑10^k = 10(10^n - 1)/(10 - 1) = (10^{n+1} - 10)/9",
+        "Compute ∑1 = n",
+        "Combine and simplify to get (10(10^n - 1) - 9n)/81"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use sigma notation and separate sums, obtaining same steps",
+        "Method 3: Mathematical induction assuming the result for n and proving for n+1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12-13",
+          "basis": "Method 1: shows expansion of each Sn as (10^k-1)/9, then summing, applying geometric series to powers of 10, simplifying to given expression."
+        },
+        {
+          "markscheme_pages": "13-14",
+          "basis": "Method 2: uses sigma notation, sums geometric and constant terms separately."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "Method 3: induction proof with base case n=1 and induction step."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

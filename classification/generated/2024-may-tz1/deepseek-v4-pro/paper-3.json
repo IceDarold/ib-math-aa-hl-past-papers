@@ -1,0 +1,886 @@
+{
+  "session": "May 2024",
+  "zone": "TZ1",
+  "paper": 3,
+  "calculator": "yes",
+  "expected_total_marks": 55,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-A-I",
+      "part": "a-i",
+      "marks": 2,
+      "task_summary": "Find probability first boost occurs on third action with p=0.1.",
+      "primary_topic": "statistics.probability",
+      "method_family": "formula_application",
+      "method_tags": [
+        "geometric_probability",
+        "multiplication",
+        "first_success"
+      ],
+      "method_path": [
+        "multiply probabilities: 0.9 * 0.9 * 0.1"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-A-II",
+      "part": "a-ii",
+      "marks": 3,
+      "task_summary": "Find probability at least one boost in first six actions with p=0.1.",
+      "primary_topic": "statistics.probability",
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_distribution",
+        "complement_rule",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "identify binomial distribution B(6,0.1)",
+        "apply complement rule: 1 - P(X=0)",
+        "compute 1 - 0.9^6 or use binomial formula"
+      ],
+      "accepted_alternatives": [
+        "binomial_distribution",
+        "complement_0.9_6",
+        "sum_of_terms"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-B-I",
+      "part": "b-i",
+      "marks": 1,
+      "task_summary": "Explain probability first boost on xth action is p(1-p)^(x-1).",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "geometric_distribution",
+        "reasoning",
+        "probability_explanation"
+      ],
+      "method_path": [
+        "explain x-1 failures followed by success"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-B-II",
+      "part": "b-ii",
+      "marks": 1,
+      "task_summary": "Write sigma notation for E(X) in terms of x and p.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "formula_application",
+      "method_tags": [
+        "expected_value",
+        "sigma_notation",
+        "geometric_distribution"
+      ],
+      "method_path": [
+        "write sum from x=1 to infinity of x * p * (1-p)^(x-1)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-C-I",
+      "part": "c-i",
+      "marks": 4,
+      "task_summary": "Differentiate both sides of the infinite geometric sum to find sum of n a r^{n-1}.",
+      "primary_topic": "calculus.series",
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_geometric_series",
+        "equate_derivatives",
+        "simplify_series"
+      ],
+      "method_path": [
+        "Differentiate LHS: 2a + 3ar + ...",
+        "Differentiate RHS: a/(1-r) to a/(1-r)^2",
+        "Equate to obtain sum_{n=1}^∞ n a r^{n-1} = a/(1-r)^2"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-C-II",
+      "part": "c-ii",
+      "marks": 2,
+      "task_summary": "Use derived sum with a=p, r=1-p to show E(X)=1/p.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_parameters",
+        "substitute_into_series_formula",
+        "simplify_to_expected_value"
+      ],
+      "method_path": [
+        "Recognize a=p, r=1-p, x=n",
+        "Substitute into sum_{n=1}^∞ n a r^{n-1}",
+        "Simplify E(X)=p/(1-(1-p))^2 = 1/p"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-D",
+      "part": "d",
+      "marks": 2,
+      "task_summary": "Compute E(X) and Var(X) for p=0.1 using E(X)=1/p and Var(X)=(1-p)/p^2.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_p",
+        "compute_expected_value",
+        "compute_variance"
+      ],
+      "method_path": [
+        "E(X) = 1/0.1 = 10",
+        "Var(X) = (0.9)/(0.01) = 90"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-E",
+      "part": "E",
+      "marks": 2,
+      "task_summary": "Show that the probability that the first boost occurs on the third action is 0.288.",
+      "primary_topic": "statistics.probability",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_multiplication",
+        "dependent_events"
+      ],
+      "method_path": [
+        "multiply probabilities of first two non-boosts and third boost",
+        "compute 0.8 × 0.6 × 0.6",
+        "obtain 0.288"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-F",
+      "part": "F",
+      "marks": 1,
+      "task_summary": "Explain why Y ≤ 5.",
+      "primary_topic": "statistics.probability",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "probability_model",
+        "reasoning"
+      ],
+      "method_path": [
+        "note probability increases by 0.2 per non-boost",
+        "after four non-boosts probability becomes 1",
+        "thus boost is certain by the 5th action"
+      ],
+      "accepted_alternatives": [
+        "when Y=5, probability of boost is 1 with reference to prior non-boosts"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-G-I",
+      "part": "(g)(i)",
+      "marks": 2,
+      "task_summary": "Find m and n from the probability distribution of Y using the given model.",
+      "primary_topic": "statistics.probability",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_model",
+        "conditional_probability",
+        "multiplication"
+      ],
+      "method_path": [
+        "Calculate P(Y=2) as (1-0.2)*0.4 = 0.32",
+        "Calculate P(Y=4) as 0.8*0.6*0.4*0.8 = 0.1536"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-G-II",
+      "part": "(g)(ii)",
+      "marks": 2,
+      "task_summary": "Show that the expected value E(Y) is 2.5104 using the probability distribution.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_value_calculation",
+        "summation"
+      ],
+      "method_path": [
+        "Multiply each y by its probability P(Y=y)",
+        "Sum the products to obtain 2.5104"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-G-III",
+      "part": "(g)(iii)",
+      "marks": 2,
+      "task_summary": "Find the variance Var(Y) using E(Y^2) - [E(Y)]^2 or GDC.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "variance_calculation",
+        "sum_of_squares",
+        "gdc_usage"
+      ],
+      "method_path": [
+        "Calculate E(Y^2) as sum of y^2 * P(Y=y)",
+        "Subtract [E(Y)]^2 to obtain variance ≈ 1.19"
+      ],
+      "accepted_alternatives": [
+        "Use GDC to compute variance directly"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-H-I",
+      "part": "(h)(i)",
+      "marks": 1,
+      "task_summary": "Find p for E(X)=E(Y) using 1/p = 2.5104.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "formula_application",
+      "method_tags": [
+        "use_of_expected_value",
+        "algebraic_solution"
+      ],
+      "method_path": [
+        "Equate E(X) = E(Y) using 1/p",
+        "Solve for p"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-H-II",
+      "part": "(h)(ii)",
+      "marks": 1,
+      "task_summary": "Find Var(X) for this p using (1-p)/p^2.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "formula_application",
+      "method_tags": [
+        "variance_formula"
+      ],
+      "method_path": [
+        "Substitute p into Var(X) = (1-p)/p^2",
+        "Calculate"
+      ],
+      "accepted_alternatives": [
+        "Using p=0.398 gives 3.80"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-H-III",
+      "part": "(h)(iii)",
+      "marks": 1,
+      "task_summary": "Compare Var(X) and Var(Y); lower variance more consistent.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "variance_comparison",
+        "interpretation"
+      ],
+      "method_path": [
+        "Compare Var(X) and Var(Y)",
+        "Conclude lower variance more consistent"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-A",
+      "part": "a",
+      "marks": 3,
+      "task_summary": "Find the second derivative d^2y/dx^2 of y=x^4-3x^3+3x.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative",
+        "polynomial_differentiation"
+      ],
+      "method_path": [
+        "Differentiate y to obtain dy/dx.",
+        "Differentiate dy/dx to obtain d^2y/dx^2."
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "2",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-B",
+      "part": "b",
+      "marks": 4,
+      "task_summary": "Find the coordinates of the points of inflexion B and C.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "inflection_points",
+        "solve_second_derivative_zero",
+        "substitute"
+      ],
+      "method_path": [
+        "Set d^2y/dx^2 = 0.",
+        "Solve for x.",
+        "Substitute x into y to find y-coordinates.",
+        "Identify points B and C."
+      ],
+      "accepted_alternatives": [
+        "Use GDC to graph dy/dx and identify inflection points."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "2",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-C",
+      "part": "c",
+      "marks": 2,
+      "task_summary": "Show line through B(0,0) and C(1.5,-0.5625) is y = -0.375x.",
+      "primary_topic": "functions.graphing",
+      "method_family": "formula_application",
+      "method_tags": [
+        "slope",
+        "line_equation",
+        "substitution"
+      ],
+      "method_path": [
+        "note y-intercept is 0 from point B",
+        "calculate slope = (y_C - y_B)/(x_C - x_B) = -0.5625/1.5 = -0.375",
+        "write line equation y = -0.375x"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-D",
+      "part": "d",
+      "marks": 2,
+      "task_summary": "Find x-coordinate of D correct to 3 d.p. by solving x^4 - 3x^3 + 3x = -0.375x.",
+      "primary_topic": "functions.equations",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "gdc_solve",
+        "polynomial_equation",
+        "root_finding"
+      ],
+      "method_path": [
+        "set x^4 - 3x^3 + 3x = -0.375x",
+        "use GDC to solve for x",
+        "choose root greater than 1.5",
+        "round to 2.427 (3 d.p.)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-E",
+      "part": "e",
+      "marks": 3,
+      "task_summary": "Find x-coordinates of points of inflexion in terms of m.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "second_derivative",
+        "solve_quadratic",
+        "point_of_inflexion"
+      ],
+      "method_path": [
+        "find first derivative dy/dx = 4x^3 - 3mx^2 + n",
+        "find second derivative d^2y/dx^2 = 12x^2 - 6mx",
+        "set second derivative to zero: 6x(2x - m) = 0",
+        "solve for x to obtain x = 0 and x = m/2"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-F-I",
+      "part": "f-i",
+      "marks": 1,
+      "task_summary": "Write down the coordinates of point B.",
+      "primary_topic": "functions.graphing",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "function_evaluation",
+        "coordinate_identification"
+      ],
+      "method_path": [
+        "substitute x = 0 into y = x^4 - mx^3 + nx to get y = 0",
+        "state coordinates (0, 0)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-F-II",
+      "part": "f-ii",
+      "marks": 2,
+      "task_summary": "Find coordinates of point C in terms of m and n.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "simplification",
+        "coordinate_determination"
+      ],
+      "method_path": [
+        "substitute x = m/2 into y = x^4 - mx^3 + nx",
+        "simplify to obtain y = -m^4/16 + mn/2",
+        "state coordinates (m/2, -m^4/16 + mn/2)"
+      ],
+      "accepted_alternatives": [
+        "equivalent simplifications such as (2mn - m^4/8) or m(2n - m^3/8)"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-G",
+      "part": "g",
+      "marks": 2,
+      "task_summary": "Show that the line through B and C is y = (-m^3/8 + n)x",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "find_slope",
+        "substitute_coordinates",
+        "simplify_expression",
+        "given_answer_check"
+      ],
+      "method_path": [
+        "Find slope from B(0,0) and C(m/2, -m^4/16 + nm/2)",
+        "Calculate (y_C - 0)/(x_C - 0) = (-m^4/16 + nm/2) / (m/2)",
+        "Simplify to -m^3/8 + n",
+        "Write line equation y = (-m^3/8 + n)x"
+      ],
+      "accepted_alternatives": [
+        "Alternative: substitute into (y2-y1)/(x2-x1) formula",
+        "Working backwards to verify points lie on line (awarded at most M1A0)"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-H",
+      "part": "h",
+      "marks": 7,
+      "task_summary": "Show that the other intersection point A has x-coordinate m/4 - (m/4)√5.",
+      "primary_topic": "functions.equations",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "polynomial_equation",
+        "factoring",
+        "quadratic_formula",
+        "root_selection"
+      ],
+      "method_path": [
+        "Equate quartic and line to form polynomial equation.",
+        "Factor out x and (x - m/2) from the quartic.",
+        "Obtain quadratic x^2 - (m/2)x - m^2/4 = 0.",
+        "Apply quadratic formula to get x = m/4 ± (m/4)√5.",
+        "Select the smaller root x_A = m/4 - (m/4)√5."
+      ],
+      "accepted_alternatives": [
+        "Method 2: Form cubic factor, use sum and product of roots with known root x_C = m/2 to derive quadratic, then solve."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-I",
+      "part": "I",
+      "marks": 2,
+      "task_summary": "Compute exact ratio (xB - xA)/(xC - xB) using previous x-coordinates.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "substitute xA, xB, xC expressions",
+        "simplify ratio to exact value"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

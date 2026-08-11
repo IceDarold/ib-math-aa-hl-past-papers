@@ -1,0 +1,51 @@
+{
+  "question": "12",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-A",
+      "part": "a",
+      "marks": 3,
+      "task_summary": "Find real and imaginary parts of (a+bi)^3 in terms of a and b.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "binomial_expansion",
+        "real_imaginary_separation",
+        "polar_form_alternative"
+      ],
+      "method_path": [
+        "Expand (a+bi)^3 using binomial theorem",
+        "Separate real and imaginary parts"
+      ],
+      "accepted_alternatives": [
+        "Use polar form and extract real and imaginary parts as r^3 cos(3θ) and r^3 sin(3θ)"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-B",
+      "part": "b",
+      "marks": 2,
+      "task_summary": "Show that (1+√3 i)^3 = -8 using part (a) or otherwise.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "substitution",
+        "evaluation",
+        "polar_form_alternative"
+      ],
+      "method_path": [
+        "Substitute a=1, b=√3 into expression from (a) and simplify to -8"
+      ],
+      "accepted_alternatives": [
+        "Direct expansion (1+√3 i)^3",
+        "Polar form: 2^3 e^{iπ} = -8"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

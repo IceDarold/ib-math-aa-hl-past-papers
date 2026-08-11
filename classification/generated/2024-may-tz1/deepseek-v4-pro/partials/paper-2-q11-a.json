@@ -1,0 +1,29 @@
+{
+  "question": "2024-MAY-TZ1-P2-Q11",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-A",
+      "part": "a",
+      "marks": 5,
+      "task_summary": "Show that dy/dx = (2x - e^(x+y))/(e^(x+y) - 2y) using implicit differentiation.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "algebraic_manipulation",
+        "derivative"
+      ],
+      "method_path": [
+        "apply implicit differentiation to both sides",
+        "correctly differentiate LHS and RHS",
+        "collect dy/dx terms",
+        "simplify to target expression"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

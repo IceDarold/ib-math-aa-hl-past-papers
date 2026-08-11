@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://math.archik.tech/schema/question-set.schema.json",
+  "title": "IB Math AA HL classified paper",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "session",
+    "zone",
+    "paper",
+    "calculator",
+    "expected_total_marks",
+    "blocks"
+  ],
+  "properties": {
+    "session": { "type": "string" },
+    "zone": { "type": "string" },
+    "paper": { "type": "integer", "enum": [1, 2, 3] },
+    "calculator": { "type": "string", "enum": ["yes", "no"] },
+    "expected_total_marks": { "type": "integer", "enum": [55, 110] },
+    "blocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/block" }
+    }
+  },
+  "$defs": {
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "question",
+        "part",
+        "marks",
+        "source_pages",
+        "markscheme_pages",
+        "task_summary",
+        "primary_topic",
+        "secondary_topics",
+        "method_family",
+        "method_tags",
+        "method_path",
+        "accepted_alternatives",
+        "evidence",
+        "confidence",
+        "review_flags"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^2024-MAY-TZ1-P[123]-Q[0-9]{2}(?:-[A-Z0-9-]+)?$" },
+        "question": { "type": "string", "pattern": "^[0-9]+$" },
+        "part": { "type": "string" },
+        "marks": { "type": "integer", "minimum": 1 },
+        "source_pages": { "type": "string" },
+        "markscheme_pages": { "type": "string" },
+        "task_summary": { "type": "string" },
+        "primary_topic": {
+          "type": "string",
+          "enum": [
+            "number_algebra.binomial_theorem",
+            "number_algebra.complex_numbers",
+            "number_algebra.exponential_models",
+            "number_algebra.geometric_sequences",
+            "number_algebra.inequalities",
+            "number_algebra.mathematical_induction",
+            "number_algebra.polynomials",
+            "number_algebra.proof",
+            "number_algebra.recurrence_relations",
+            "number_algebra.sequences",
+            "functions.asymptotes",
+            "functions.curve_sketching",
+            "functions.equations",
+            "functions.exponential_models",
+            "functions.graphing",
+            "functions.inverse_functions",
+            "functions.logarithmic_functions",
+            "functions.mathematical_models",
+            "functions.trigonometric_functions",
+            "geometry.circular_measure",
+            "geometry.solid_geometry",
+            "geometry.trigonometric_equations",
+            "geometry.trigonometric_identities",
+            "geometry.trigonometry",
+            "geometry.vectors",
+            "geometry.vectors_3d",
+            "statistics.combinatorics",
+            "statistics.continuous_random_variables",
+            "statistics.discrete_random_variables",
+            "statistics.expected_value",
+            "statistics.probability",
+            "statistics.regression",
+            "calculus.differentiation",
+            "calculus.inequalities",
+            "calculus.integration_applications",
+            "calculus.limits",
+            "calculus.optimization",
+            "calculus.rates_of_change",
+            "calculus.series",
+            "calculus.stationary_points"
+          ]
+        },
+        "secondary_topics": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z0-9_]+\\.[a-z0-9_]+$" }
+        },
+        "method_family": {
+          "type": "string",
+          "enum": [
+            "formula_application",
+            "algebraic_transformation",
+            "equation_and_inequality_solving",
+            "direct_proof",
+            "mathematical_induction",
+            "function_analysis",
+            "numerical_gdc",
+            "geometric_reasoning",
+            "trigonometric_reasoning",
+            "vector_reasoning",
+            "probability_and_distributions",
+            "combinatorial_counting",
+            "sequences_and_recurrences",
+            "mathematical_modelling",
+            "differentiation",
+            "integration",
+            "limits_and_series",
+            "optimization",
+            "complex_number_reasoning",
+            "polynomial_structure",
+            "interpretation_and_validation"
+          ]
+        },
+        "method_tags": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" }
+        },
+        "method_path": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "accepted_alternatives": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["markscheme_pages", "basis"],
+            "properties": {
+              "markscheme_pages": { "type": "string" },
+              "basis": { "type": "string" }
+            }
+          }
+        },
+        "confidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["segmentation", "topic", "method"],
+          "properties": {
+            "segmentation": { "$ref": "#/$defs/confidence" },
+            "topic": { "$ref": "#/$defs/confidence" },
+            "method": { "$ref": "#/$defs/confidence" }
+          }
+        },
+        "review_flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "shared_marks",
+              "alternative_route",
+              "diagram_dependent",
+              "formula_extraction_uncertain",
+              "part_boundary_uncertain",
+              "topic_uncertain",
+              "method_uncertain",
+              "markscheme_ambiguity"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

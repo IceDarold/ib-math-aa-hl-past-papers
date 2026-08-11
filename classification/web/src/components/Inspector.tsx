@@ -29,8 +29,9 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
       <header className="sticky top-0 z-10 border-b border-line bg-canvas/96 px-4.5 pt-3.5 pb-3 backdrop-blur-[2px]">
         <div className="flex items-center justify-between gap-2">
           <span className="min-w-0 flex-1 font-mono text-[11px] text-muted [overflow-wrap:anywhere]">{question.id}</span>
-          <span className="flex shrink-0 items-center gap-1 border border-verified/40 bg-verified-soft px-1.5 py-0.5 text-[10px] text-verified">
-            <CheckIcon className="size-3" /> Проверено вручную
+          <span className={`flex shrink-0 items-center gap-1 border px-1.5 py-0.5 text-[10px] ${question.review_status === 'manual_verified' ? 'border-verified/40 bg-verified-soft text-verified' : 'border-info/40 bg-info/10 text-info'}`}>
+            {question.review_status === 'manual_verified' && <CheckIcon className="size-3" />}
+            {question.review_status === 'manual_verified' ? 'Проверено вручную' : 'AI draft'}
           </span>
           <button className="grid size-8 shrink-0 cursor-pointer place-items-center border border-transparent bg-transparent hover:border-line hover:bg-surface" type="button" aria-label="Закрыть детали" onClick={onClose}>
             <CloseIcon />
@@ -41,6 +42,7 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
           <span>Paper {question.paper}</span><span>·</span><span>{questionLabel}</span><span>·</span>
           <span>{question.marks} {question.marks === 1 ? 'mark' : 'marks'}</span><span>·</span>
           <span className={question.calculator === 'yes' ? 'text-info' : ''}>{question.calculator === 'yes' ? 'calculator' : 'non-calculator'}</span>
+          <span>·</span><span>{question.session} · {question.zone}</span>
         </div>
       </header>
 
@@ -51,6 +53,8 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
           <dt className="text-[11px] text-muted">Method family</dt><dd className="m-0 min-w-0"><Taxon>{question.methodFamily}</Taxon></dd>
           <dt className="text-[11px] text-muted">Method tags</dt><dd className="m-0 min-w-0"><Tags values={question.tags} /></dd>
           <dt className="text-[11px] text-muted">Source pages</dt><dd className="m-0">{question.source_pages}</dd>
+          <dt className="text-[11px] text-muted">Markscheme</dt><dd className="m-0">{question.markscheme_pages}</dd>
+          <dt className="text-[11px] text-muted">Review flags</dt><dd className="m-0 min-w-0"><Tags values={question.reviewFlags} /></dd>
         </dl>
       </Section>
 
@@ -73,6 +77,24 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
           ? <AlternativeList values={question.alternatives} />
           : <p className="m-0 leading-relaxed text-muted">В markscheme отдельный альтернативный маршрут не указан.</p>}
       </Section>
+
+      {question.review_status === 'ai_draft' && (
+        <Section title="Основание классификации">
+          <div className="mb-2 text-[11px] text-muted">
+            Confidence: segmentation {question.confidenceLevels.segmentation} · topic {question.confidenceLevels.topic} · method {question.confidenceLevels.method}
+          </div>
+          {question.evidenceItems.length > 0 ? (
+            <div className="grid gap-1.5">
+              {question.evidenceItems.map((item, index) => (
+                <div key={`${item.markscheme_pages}-${index}`} className="border border-line bg-surface px-2 py-1.5 leading-relaxed">
+                  <span className="mr-1 font-mono text-[10px] text-muted">MS p. {item.markscheme_pages}</span>
+                  <MathText>{item.basis}</MathText>
+                </div>
+              ))}
+            </div>
+          ) : <p className="m-0 text-muted">Evidence не указано.</p>}
+        </Section>
+      )}
 
       <Section title="Источник">
         <div className="grid grid-cols-2 gap-2">

@@ -1,0 +1,36 @@
+{
+  "question": "12",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-c",
+      "part": "c",
+      "marks": 5,
+      "task_summary": "Find possible vectors w given p=1, u·w=v·w=0, area of triangle ACD=5",
+      "primary_topic": "geometry.vectors",
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "orthogonality_conditions",
+        "triangle_area",
+        "system_of_equations",
+        "magnitude"
+      ],
+      "method_path": [
+        "Express w components via dot product equations",
+        "Solve for two components in terms of one",
+        "Use area = 0.5 |v||w| to set up magnitude equation",
+        "Substitute and solve for variable",
+        "State both possible w vectors"
+      ],
+      "accepted_alternatives": [
+        "Method 2: use u×v as direction of w, solve scalar",
+        "Method 3: use u×w magnitude condition and perpendicularity"
+      ],
+      "confidence": "high",
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}
+

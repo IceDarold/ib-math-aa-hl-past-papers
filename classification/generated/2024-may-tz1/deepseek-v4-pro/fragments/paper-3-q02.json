@@ -1,0 +1,368 @@
+{
+  "question": "2",
+  "expected_question_marks": 28,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-A",
+      "part": "a",
+      "marks": 3,
+      "task_summary": "Find the second derivative d^2y/dx^2 of y=x^4-3x^3+3x.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative",
+        "polynomial_differentiation"
+      ],
+      "method_path": [
+        "Differentiate y to obtain dy/dx.",
+        "Differentiate dy/dx to obtain d^2y/dx^2."
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "2",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-B",
+      "part": "b",
+      "marks": 4,
+      "task_summary": "Find the coordinates of the points of inflexion B and C.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "inflection_points",
+        "solve_second_derivative_zero",
+        "substitute"
+      ],
+      "method_path": [
+        "Set d^2y/dx^2 = 0.",
+        "Solve for x.",
+        "Substitute x into y to find y-coordinates.",
+        "Identify points B and C."
+      ],
+      "accepted_alternatives": [
+        "Use GDC to graph dy/dx and identify inflection points."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "2",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-C",
+      "part": "c",
+      "marks": 2,
+      "task_summary": "Show line through B(0,0) and C(1.5,-0.5625) is y = -0.375x.",
+      "primary_topic": "functions.graphing",
+      "method_family": "formula_application",
+      "method_tags": [
+        "slope",
+        "line_equation",
+        "substitution"
+      ],
+      "method_path": [
+        "note y-intercept is 0 from point B",
+        "calculate slope = (y_C - y_B)/(x_C - x_B) = -0.5625/1.5 = -0.375",
+        "write line equation y = -0.375x"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-D",
+      "part": "d",
+      "marks": 2,
+      "task_summary": "Find x-coordinate of D correct to 3 d.p. by solving x^4 - 3x^3 + 3x = -0.375x.",
+      "primary_topic": "functions.equations",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "gdc_solve",
+        "polynomial_equation",
+        "root_finding"
+      ],
+      "method_path": [
+        "set x^4 - 3x^3 + 3x = -0.375x",
+        "use GDC to solve for x",
+        "choose root greater than 1.5",
+        "round to 2.427 (3 d.p.)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-E",
+      "part": "e",
+      "marks": 3,
+      "task_summary": "Find x-coordinates of points of inflexion in terms of m.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "second_derivative",
+        "solve_quadratic",
+        "point_of_inflexion"
+      ],
+      "method_path": [
+        "find first derivative dy/dx = 4x^3 - 3mx^2 + n",
+        "find second derivative d^2y/dx^2 = 12x^2 - 6mx",
+        "set second derivative to zero: 6x(2x - m) = 0",
+        "solve for x to obtain x = 0 and x = m/2"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-F-I",
+      "part": "f-i",
+      "marks": 1,
+      "task_summary": "Write down the coordinates of point B.",
+      "primary_topic": "functions.graphing",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "function_evaluation",
+        "coordinate_identification"
+      ],
+      "method_path": [
+        "substitute x = 0 into y = x^4 - mx^3 + nx to get y = 0",
+        "state coordinates (0, 0)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-F-II",
+      "part": "f-ii",
+      "marks": 2,
+      "task_summary": "Find coordinates of point C in terms of m and n.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "simplification",
+        "coordinate_determination"
+      ],
+      "method_path": [
+        "substitute x = m/2 into y = x^4 - mx^3 + nx",
+        "simplify to obtain y = -m^4/16 + mn/2",
+        "state coordinates (m/2, -m^4/16 + mn/2)"
+      ],
+      "accepted_alternatives": [
+        "equivalent simplifications such as (2mn - m^4/8) or m(2n - m^3/8)"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-G",
+      "part": "g",
+      "marks": 2,
+      "task_summary": "Show that the line through B and C is y = (-m^3/8 + n)x",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "find_slope",
+        "substitute_coordinates",
+        "simplify_expression",
+        "given_answer_check"
+      ],
+      "method_path": [
+        "Find slope from B(0,0) and C(m/2, -m^4/16 + nm/2)",
+        "Calculate (y_C - 0)/(x_C - 0) = (-m^4/16 + nm/2) / (m/2)",
+        "Simplify to -m^3/8 + n",
+        "Write line equation y = (-m^3/8 + n)x"
+      ],
+      "accepted_alternatives": [
+        "Alternative: substitute into (y2-y1)/(x2-x1) formula",
+        "Working backwards to verify points lie on line (awarded at most M1A0)"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-H",
+      "part": "h",
+      "marks": 7,
+      "task_summary": "Show that the other intersection point A has x-coordinate m/4 - (m/4)√5.",
+      "primary_topic": "functions.equations",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "polynomial_equation",
+        "factoring",
+        "quadratic_formula",
+        "root_selection"
+      ],
+      "method_path": [
+        "Equate quartic and line to form polynomial equation.",
+        "Factor out x and (x - m/2) from the quartic.",
+        "Obtain quadratic x^2 - (m/2)x - m^2/4 = 0.",
+        "Apply quadratic formula to get x = m/4 ± (m/4)√5.",
+        "Select the smaller root x_A = m/4 - (m/4)√5."
+      ],
+      "accepted_alternatives": [
+        "Method 2: Form cubic factor, use sum and product of roots with known root x_C = m/2 to derive quadratic, then solve."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-I",
+      "part": "I",
+      "marks": 2,
+      "task_summary": "Compute exact ratio (xB - xA)/(xC - xB) using previous x-coordinates.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "substitute xA, xB, xC expressions",
+        "simplify ratio to exact value"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "2",
+      "source_pages": "4-5",
+      "markscheme_pages": "12-16",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12-16",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

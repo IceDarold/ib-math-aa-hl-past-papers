@@ -1,0 +1,54 @@
+{
+  "question": "12",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-E",
+      "part": "E",
+      "marks": 4,
+      "task_summary": "Find u′, v′, w′ in the form re^{iθ} (−π < θ ≤ π) after rotating U, V, W by π/4 about 0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "polar_form",
+        "rotation",
+        "euler_identity",
+        "argument_simplification"
+      ],
+      "method_path": [
+        "Express u, v, w in polar form re^{iθ}",
+        "Multiply each by e^{iπ/4} to rotate",
+        "Simplify arguments to principal range",
+        "Give u′ = 2e^{i7π/12}, v′ = 2e^{-i3π/4}, w′ = 2e^{-iπ/12}"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-f",
+      "part": "f",
+      "marks": 3,
+      "task_summary": "Find c and d such that u', v', w' solve z^3 = c+di.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "cubing_roots",
+        "polar_form",
+        "cartesian_conversion"
+      ],
+      "method_path": [
+        "Cube one rotated root to get 8e^{-iπ/4} (M1 A1).",
+        "Convert to Cartesian form: 4√2 - 4√2i (A1).",
+        "Extract c=4√2, d=-4√2."
+      ],
+      "accepted_alternatives": [
+        "Find product u'v'w' = 8e^{-iπ/4}.",
+        "Rotate -8 by 3π/4 to obtain 8e^{-iπ/4}."
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

@@ -1,0 +1,49 @@
+{
+  "question": "paper-3-q01",
+  "expected_question_marks": 3,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-E",
+      "part": "E",
+      "marks": 2,
+      "task_summary": "Show that the probability that the first boost occurs on the third action is 0.288.",
+      "primary_topic": "statistics.probability",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_multiplication",
+        "dependent_events"
+      ],
+      "method_path": [
+        "multiply probabilities of first two non-boosts and third boost",
+        "compute 0.8 × 0.6 × 0.6",
+        "obtain 0.288"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-F",
+      "part": "F",
+      "marks": 1,
+      "task_summary": "Explain why Y ≤ 5.",
+      "primary_topic": "statistics.probability",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "probability_model",
+        "reasoning"
+      ],
+      "method_path": [
+        "note probability increases by 0.2 per non-boost",
+        "after four non-boosts probability becomes 1",
+        "thus boost is certain by the 5th action"
+      ],
+      "accepted_alternatives": [
+        "when Y=5, probability of boost is 1 with reference to prior non-boosts"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

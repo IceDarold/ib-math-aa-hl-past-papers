@@ -1,0 +1,78 @@
+{
+  "question": "2024-MAY-TZ1-P01-Q01",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P01-Q01-A",
+      "question": "2024-MAY-TZ1-P01-Q01",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find p and q given sum of frequencies 16 and mean 3 from frequency table.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_up_linear_equation",
+        "solve_linear_system",
+        "elimination"
+      ],
+      "method_path": [
+        "Form equation from total frequencies: p+q+4+2+0+3=16",
+        "Simplify to p+q=7",
+        "Form equation from mean: (1p+2q+3×4+4×2+5×0+6×3)/16=3",
+        "Simplify to p+2q=10",
+        "Solve simultaneously to get p=4, q=3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1 for attempt to form equation for sum or mean; A1 for p+q=7; A1 for correct mean equation; M1 for attempt to eliminate; A1 for p=4, q=3"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P01-Q01-B",
+      "question": "2024-MAY-TZ1-P01-Q01",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write mean final score when each score multiplied by 10.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "linear_transformation_of_mean"
+      ],
+      "method_path": [
+        "Recognise that multiplying all scores by 10 scales the mean by 10",
+        "Compute 10 × 3 = 30"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for mean final score = 30"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

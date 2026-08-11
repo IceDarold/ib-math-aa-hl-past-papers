@@ -1,0 +1,27 @@
+{
+  "question": "paper-2-q10",
+  "expected_question_marks": 2,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-E",
+      "part": "e",
+      "marks": 2,
+      "task_summary": "Find first time T when heights at Sule Skerry and Rockall are equal.",
+      "primary_topic": "functions.equations",
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "find_intersection",
+        "numerical_solve",
+        "trigonometric_equation"
+      ],
+      "method_path": [
+        "Find intersection of H(t) and h(t) on GDC",
+        "Round T to 3 s.f."
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

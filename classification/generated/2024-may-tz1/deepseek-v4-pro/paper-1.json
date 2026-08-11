@@ -1,0 +1,1446 @@
+{
+  "session": "May 2024",
+  "zone": "TZ1",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "2",
+      "markscheme_pages": "7",
+      "task_summary": "Find p and q given sum of frequencies 16 and mean 3 from frequency table.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_up_linear_equation",
+        "solve_linear_system",
+        "elimination"
+      ],
+      "method_path": [
+        "Form equation from total frequencies: p+q+4+2+0+3=16",
+        "Simplify to p+q=7",
+        "Form equation from mean: (1p+2q+3×4+4×2+5×0+6×3)/16=3",
+        "Simplify to p+2q=10",
+        "Solve simultaneously to get p=4, q=3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1 for attempt to form equation for sum or mean; A1 for p+q=7; A1 for correct mean equation; M1 for attempt to eliminate; A1 for p=4, q=3"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "2",
+      "markscheme_pages": "7",
+      "task_summary": "Write mean final score when each score multiplied by 10.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "linear_transformation_of_mean"
+      ],
+      "method_path": [
+        "Recognise that multiplying all scores by 10 scales the mean by 10",
+        "Compute 10 × 3 = 30"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for mean final score = 30"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Evaluate log10(1/a) given log10 a = 1/3.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "logarithm_property",
+        "substitution"
+      ],
+      "method_path": [
+        "Use log(1/a) = -log a",
+        "Substitute log10 a = 1/3",
+        "Write answer -1/3"
+      ],
+      "accepted_alternatives": [
+        "Use log(1/a) = log1 - log a = -log a",
+        "Rewrite as 10^(log(1/a)) = 1/a and solve for log(1/a)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Award (A1) for log10 1 - log10 a or equivalent expression using logarithm property, (A1) for final answer -1/3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Evaluate log_1000 a given log10 a = 1/3.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "change_of_base",
+        "division"
+      ],
+      "method_path": [
+        "Use change-of-base: log_1000 a = log a / log 1000",
+        "Compute log10 1000 = 3",
+        "Divide 1/3 by 3",
+        "Simplify to 1/9"
+      ],
+      "accepted_alternatives": [
+        "Set up equation 1000^x = a, take log10 both sides, solve for x.",
+        "Rewrite 1000 as 10^3, equate exponents: a = 10^(1/3) = (10^3)^x = 10^(3x) ⇒ 3x = 1/3, x = 1/9."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Award (A1) for log_1000 a = log a / log 1000 or equivalent correct first step, (A1) for intermediate simplification e.g., (1/3)/3, (A1) for final answer 1/9."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q03-A",
+      "question": "3",
+      "part": "a",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Show that 4r^2 - 20r + 25 = 0 given perimeter 10 cm and area 6.25 cm^2 of a sector.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "sector_perimeter",
+        "sector_area",
+        "substitution",
+        "algebraic_manipulation",
+        "derive_quadratic"
+      ],
+      "method_path": [
+        "Write perimeter equation 2r + rθ = 10",
+        "Write area equation (1/2)r^2θ = 6.25",
+        "Eliminate θ to obtain an equation in r",
+        "Derive 4r^2 - 20r + 25 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1 for perimeter equation 2r + rθ = 10; A1 for area equation (1/2)r^2θ = 6.25; M1 for attempt to eliminate θ to obtain an equation in r; A1 for correct intermediate equation, leading to AG 4r^2 - 20r + 25 = 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q03-B",
+      "question": "3",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Hence, or otherwise, find the value of r and the value of θ.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_quadratic",
+        "substitute_back",
+        "compute_theta"
+      ],
+      "method_path": [
+        "Solve quadratic 4r^2 - 20r + 25 = 0 to get r = 5/2",
+        "Substitute r into perimeter or area equation",
+        "Solve for θ to get θ = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(M1) attempt to solve quadratic by factorizing or formula or completing the square; A1 r = 5/2; (M1) attempt to substitute their value of r into perimeter or area equation; A1 θ = 2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find x-coordinates of intersection points A and C of f(x)=cos x and g(x)=sin 2x on [0,π].",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_equality",
+        "trigonometric_identity",
+        "solve_trig_equation"
+      ],
+      "method_path": [
+        "Set cos x = sin 2x",
+        "Use identity sin 2x = 2 sin x cos x",
+        "Cancel cos x (cos x ≠ 0) to get sin x = 1/2",
+        "Solve for x in [0,π] to obtain x = π/6 and 5π/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognising cos x = 2 sin x cos x (M1); (cos x ≠ 0) so sin x = 1/2 OR one correct value (A1); x-coordinates π/6 and 5π/6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "10-11",
+      "task_summary": "Find area of shaded region R between f(x)=cos x and g(x)=sin 2x from B(π/2,0) to C.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate_difference",
+        "antiderivative_trig",
+        "evaluate_definite_integral",
+        "area_between_curves"
+      ],
+      "method_path": [
+        "Set up integral ∫_{π/2}^{5π/6} (cos x - sin 2x) dx",
+        "Integrate: antiderivative sin x + (1/2) cos 2x (or equivalent)",
+        "Substitute limits: F(5π/6) - F(π/2)",
+        "Simplify to obtain area = 1/4"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Integrate cos x and sin 2x separately over the interval, then subtract the areas."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to integrate (cos x ± sin 2x) (M1); ∫ ... = ... A1 (award A1 for ±correct integration); attempt to substitute limits M1; area = 1/4 A1"
+        },
+        {
+          "markscheme_pages": "10-11",
+          "basis": "METHOD 2: integrate cos x and sin 2x separately, A1 for correct integration; attempt to substitute limits M1; attempt to subtract integrals (M1); area = 1/4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "(a)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Find an expression for Sn in the form a(b^n - 1).",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "geometric_series_sum_formula"
+      ],
+      "method_path": [
+        "Apply geometric series sum formula: Sn = a(r^n - 1)/(r - 1)",
+        "Substitute a=1, r=10",
+        "Simplify to (10^n - 1)/9, so a=1/9, b=10"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "A1 for expression (10^n - 1)/9, with a=1/9, b=10"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "12-14",
+      "task_summary": "Show that S1 + S2 + ... + Sn = (10(10^n - 1) - 9n)/81.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "sum_of_series",
+        "geometric_series_sum",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Write each Sk = (10^k - 1)/9",
+        "Sum from k=1 to n: ∑ (10^k - 1)/9",
+        "Separate into (1/9)∑10^k - (1/9)∑1",
+        "Apply geometric series sum: ∑10^k = 10(10^n - 1)/(10 - 1) = (10^{n+1} - 10)/9",
+        "Compute ∑1 = n",
+        "Combine and simplify to get (10(10^n - 1) - 9n)/81"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use sigma notation and separate sums, obtaining same steps",
+        "Method 3: Mathematical induction assuming the result for n and proving for n+1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12-13",
+          "basis": "Method 1: shows expansion of each Sn as (10^k-1)/9, then summing, applying geometric series to powers of 10, simplifying to given expression."
+        },
+        {
+          "markscheme_pages": "13-14",
+          "basis": "Method 2: uses sigma notation, sums geometric and constant terms separately."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "Method 3: induction proof with base case n=1 and induction step."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "15-16",
+      "task_summary": "Show that the volume of revolution of region R about the x-axis is pi(2 - sqrt(2))/4.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "disk_method",
+        "substitution_u_equals_x_squared",
+        "definite_integral",
+        "trigonometric_integration"
+      ],
+      "method_path": [
+        "set_up_volume_integral_using_disk_method",
+        "square_the_function_to_get_integrand_x_sin_x_squared",
+        "perform_u_substitution_with_u_equals_x_squared",
+        "integrate_sin_u",
+        "evaluate_definite_integral_and_simplify_to_target_expression"
+      ],
+      "accepted_alternatives": [
+        "substitution_u_equals_cos_x_squared",
+        "integration_by_inspection"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "M1 for setting up volume integral as pi * integral of f(x)^2 from 0 to sqrt(pi)/2"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "A1 for integrand x sin(x^2)"
+        },
+        {
+          "markscheme_pages": "15-16",
+          "basis": "Method 1: substitute u = x^2, giving (pi/2) ∫ sin u du from 0 to pi/4; integrate and evaluate"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "Method 2: substitute u = cos(x^2), with du/dx = -2x sin(x^2); transform limits and evaluate"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 7,
+      "source_pages": "8",
+      "markscheme_pages": "17",
+      "task_summary": "Prove the identity sum_{r=1}^n C(r,1) = C(n+1,2) for all positive integers n using mathematical induction and the definition of combination.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "inductive_hypothesis",
+        "induction_step",
+        "sum_splitting",
+        "hypothesis_substitution",
+        "factorial_manipulation",
+        "common_denominator",
+        "combinatorial_identity"
+      ],
+      "method_path": [
+        "State base case n=1: LHS = C(1,1)=1, RHS = C(2,2)=1, so true.",
+        "Assume true for n=k: sum_{r=1}^k C(r,1) = C(k+1,2).",
+        "Consider n=k+1: split sum, substitute hypothesis to get C(k+1,2) + C(k+1,1).",
+        "Simplify expression using either factorial cancellation or common denominator to obtain (k+2)!/(2!k!) = C(k+2,2).",
+        "Conclude by induction that the statement holds for all positive integers n."
+      ],
+      "accepted_alternatives": [
+        "Simplify C(k+1,2) + C(k+1,1) by writing in factorial form, cancelling, and using common denominator to get C(k+2,2).",
+        "Simplify by directly combining the factorial expressions with a common denominator to reach C(k+2,2)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "Base case n=1: LHS = C(1,1)=1 and RHS = C(2,2)=1, so true for n=1 (R1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "Assume true for n=k: sum_{r=1}^k C(r,1) = C(k+1,2) for some k in Z+ (M1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "Consider n=k+1: LHS = sum_{r=1}^{k+1} C(r,1) = sum_{r=1}^k C(r,1) + C(k+1,1) (M1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "= C(k+1,2) + C(k+1,1) (A1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "EITHER attempt to cancel factorials and use a common denominator M1, leading to ( (k+1)(k+2)/2 ) = ... OR attempt to use a common denominator M1, leading to ( (k+1)!/(2!(k-1)!) + (k+1)!/k! ) = ... THEN = (k+2)!/(2!k!) = C(k+2,2) (A1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "Since true for n=1, and true for n=k implies true for n=k+1, therefore true for all n in Z+ (R1). Note: Only award R1 if 4 of previous 6 marks awarded."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q08-A-I",
+      "part": "(a)(i)",
+      "marks": 2,
+      "task_summary": "Find the first two non-zero Maclaurin terms of sin(x^2).",
+      "primary_topic": "calculus.series",
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "substitution",
+        "maclaurin_series_sine",
+        "simplify"
+      ],
+      "method_path": [
+        "Substitute x^2 into sin x Maclaurin series",
+        "Obtain x^2 - x^6/6"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ],
+      "question": "8",
+      "source_pages": "9",
+      "markscheme_pages": "18-19",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "The verified markscheme transcription establishes the method and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q08-A-II",
+      "part": "(a)(ii)",
+      "marks": 3,
+      "task_summary": "Find the first two non-zero Maclaurin terms of sin^2(x^2).",
+      "primary_topic": "calculus.series",
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "series_squaring",
+        "algebraic_manipulation",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Square the series from (i) and keep cross term",
+        "Obtain x^4 - x^8/3"
+      ],
+      "accepted_alternatives": [
+        "Use sin^2 A = (1 - cos 2A)/2, expand cos(2x^2) series"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "formula_extraction_uncertain"
+      ],
+      "question": "8",
+      "source_pages": "9",
+      "markscheme_pages": "18-19",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "The verified markscheme transcription establishes the method and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q08-B",
+      "part": "(b)",
+      "marks": 2,
+      "task_summary": "Find the first two non-zero Maclaurin terms of 4x sin(x^2) cos(x^2).",
+      "primary_topic": "calculus.series",
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "differentiation_of_series",
+        "trigonometric_identity",
+        "series_multiplication"
+      ],
+      "method_path": [
+        "Differentiate sin^2(x^2) series term by term",
+        "Simplify to 4x^3 - 8x^7/3"
+      ],
+      "accepted_alternatives": [
+        "Use identity: 4x sin(x^2)cos(x^2) = 2x sin(2x^2), expand sin(2x^2)",
+        "Multiply series for 4x, sin(x^2), cos(x^2)"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "formula_extraction_uncertain"
+      ],
+      "question": "8",
+      "source_pages": "9",
+      "markscheme_pages": "18-19",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "The verified markscheme transcription establishes the method and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-A",
+      "part": "a",
+      "marks": 2,
+      "task_summary": "Sketch y = |f(|x|)|",
+      "primary_topic": "functions.graphing",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "absolute_value",
+        "reflection_in_x_axis",
+        "graph_sketching"
+      ],
+      "method_path": [
+        "reflect all negative sections of y=f(|x|) across the x-axis",
+        "sketch resulting graph with cusps at x-intercepts and correct relative peak heights"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ],
+      "question": "9",
+      "source_pages": "10-11",
+      "markscheme_pages": "20-21",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-21",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-B",
+      "part": "b",
+      "marks": 2,
+      "task_summary": "Sketch y = f(x) given f is odd and y = f(|x|)",
+      "primary_topic": "functions.graphing",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "odd_function",
+        "rotation_about_origin",
+        "graph_sketching"
+      ],
+      "method_path": [
+        "retain the right-hand side of y=f(|x|) unchanged",
+        "rotate that portion 180° about the origin to obtain the left side"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ],
+      "question": "9",
+      "source_pages": "10-11",
+      "markscheme_pages": "20-21",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-21",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-C-I-II",
+      "part": "c-i-ii",
+      "marks": 2,
+      "task_summary": "Evaluate two definite integrals using properties of odd functions and given integral from 0 to 4.",
+      "primary_topic": "calculus.integration_applications",
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "odd_function_properties",
+        "linearity_of_integration"
+      ],
+      "method_path": [
+        "Given integral of f(|x|) from 0 to 4 is 1.6.",
+        "Since f is odd, f(-x) = -f(x), and integral_-4^0 f(x) dx = -integral_0^4 f(x) dx.",
+        "From graph, integral_0^4 f(x) dx = integral_0^4 f(|x|) dx = 1.6.",
+        "Thus (c)(i) = -1.6.",
+        "For (c)(ii), split integral: f(|x|) is even, so integral_-4^4 f(|x|) dx = 2 * 1.6 = 3.2.",
+        "Integral_-4^4 f(x) dx = 0 because f is odd and interval symmetric.",
+        "Total = 3.2 + 0 = 3.2."
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ],
+      "question": "9",
+      "source_pages": "10-11",
+      "markscheme_pages": "20-21",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-21",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-A",
+      "part": "a",
+      "marks": 5,
+      "task_summary": "Sketch y=f(x) with intercepts and asymptotes labelled",
+      "primary_topic": "functions.graphing",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "identify_asymptotes",
+        "identify_intercepts"
+      ],
+      "method_path": [
+        "Identify vertical asymptote x=2",
+        "Identify horizontal asymptote y=4",
+        "Find x-intercept at x=-1/2",
+        "Find y-intercept at y=-1",
+        "Draw two branches in correct quadrants with correct asymptotic behaviour"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-B",
+      "part": "b",
+      "marks": 1,
+      "task_summary": "Write down the range of f",
+      "primary_topic": "functions.graphing",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "determine_range",
+        "rational_function"
+      ],
+      "method_path": [
+        "Observe horizontal asymptote y=4 is not attained",
+        "State range as all real numbers except 4 (y≠4)"
+      ],
+      "accepted_alternatives": [
+        "y∈R, y≠4"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-C",
+      "part": "c",
+      "marks": 1,
+      "task_summary": "Show that p = 9/2 using axis of symmetry x=2.",
+      "primary_topic": "functions.equations",
+      "method_family": "formula_application",
+      "method_tags": [
+        "axis_of_symmetry",
+        "average_of_roots"
+      ],
+      "method_path": [
+        "Set average of roots = axis of symmetry: (p + (-1/2))/2 = 2",
+        "Solve for p"
+      ],
+      "accepted_alternatives": [
+        "Use sum of roots to find p",
+        "Use distance from axis: p = 2 + (2 - (-1/2))"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-D",
+      "part": "d",
+      "marks": 3,
+      "task_summary": "Find b and c for g(x)=x^2+bx+c.",
+      "primary_topic": "functions.equations",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "form_quadratic_from_roots",
+        "expand",
+        "compare_coefficients"
+      ],
+      "method_path": [
+        "Form quadratic from roots: (x+1/2)(x-9/2)",
+        "Expand to x^2 - 4x - 9/4",
+        "Identify b = -4, c = -9/4"
+      ],
+      "accepted_alternatives": [
+        "Use axis of symmetry: b = -4, then substitute root to find c",
+        "Solve system of equations from substituting both roots",
+        "Complete vertex form (x-2)^2+k with a root to find constant"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-E",
+      "part": "e",
+      "marks": 2,
+      "task_summary": "Find the y-coordinate of the vertex of g(x)",
+      "primary_topic": "functions.graphing",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "completing_the_square"
+      ],
+      "method_path": [
+        "Substitute x=2 into g(x)",
+        "Simplify g(2) to -25/4"
+      ],
+      "accepted_alternatives": [
+        "Complete the square and read the vertex ordinate"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-F",
+      "part": "f",
+      "marks": 4,
+      "task_summary": "Find the product of the solutions to f(x)=g(x).",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "equation_setup",
+        "algebraic_manipulation",
+        "polynomial_coefficients",
+        "vieta_product"
+      ],
+      "method_path": [
+        "equate expressions",
+        "clear denominator to get cubic equation",
+        "identify leading and constant coefficients",
+        "apply product of roots relation"
+      ],
+      "accepted_alternatives": [
+        "identify x=-1/2 as a root, reduce to quadratic, compute product of its roots, multiply by -1/2"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-A",
+      "part": "a",
+      "marks": 2,
+      "task_summary": "Show that (x+1) is a factor of P(x).",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "factor_verification",
+        "substitution",
+        "remainder_check"
+      ],
+      "method_path": [
+        "Substitute x = -1 into P(x)",
+        "Evaluate to obtain zero, confirming (x+1) is a factor"
+      ],
+      "accepted_alternatives": [
+        "Synthetic division showing zero remainder",
+        "Long division showing zero remainder"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-B",
+      "part": "b",
+      "marks": 3,
+      "task_summary": "Express P(x) as a product of three linear factors.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "polynomial_division",
+        "quadratic_factorization"
+      ],
+      "method_path": [
+        "Divide P(x) by (x+1) to obtain quadratic 3x^2+2x-1",
+        "Factor quadratic into (3x-1)(x+1)",
+        "Write final product as (x+1)^2(3x-1)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-C",
+      "part": "c",
+      "marks": 3,
+      "task_summary": "Express 1/Q(x) in partial fractions A/(x+1) + B/(2x+1) where A, B ∈ ℝ.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "partial_fractions",
+        "equate_coefficients",
+        "substitute_values",
+        "solve_linear_system"
+      ],
+      "method_path": [
+        "Set up identity: 1/((x+1)(2x+1)) = A/(x+1) + B/(2x+1)",
+        "Multiply through by (x+1)(2x+1) to get 1 = A(2x+1) + B(x+1)",
+        "Either equate coefficients to form system 2A+B=0, A+B=1, or substitute suitable x-values (e.g., x=-1, x=-1/2)",
+        "Solve to find A = -1, B = 2"
+      ],
+      "accepted_alternatives": [
+        "Equate coefficients: 2A+B=0, A+B=1",
+        "Substitute x=-1 gives 1=-A, so A=-1; substitute x=-1/2 gives 1=B/2, so B=2"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-D",
+      "part": "d",
+      "marks": 2,
+      "task_summary": "Show that (1 - x/Q(x)) / ((1+x)(2x+1)) equals 1 - 4/(2x+1) - 2/(x+1) + 2/(2x+1)^2.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "partial_fractions",
+        "algebraic_simplification",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute the partial fraction decomposition of 1/Q(x) from part (c)",
+        "Form expression (1 - x*(-1/(x+1)+2/(2x+1)))/((1+x)(2x+1))",
+        "Simplify numerator and denominator algebraically",
+        "Obtain the target expression 1 - 4/(2x+1) - 2/(x+1) + 2/(2x+1)^2"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-E",
+      "part": "e",
+      "marks": 4,
+      "task_summary": "Integrate the rational function using the partial fraction form",
+      "primary_topic": "calculus.integration_applications",
+      "method_family": "integration",
+      "method_tags": [
+        "partial_fractions",
+        "termwise_integration",
+        "logarithmic_antiderivative"
+      ],
+      "method_path": [
+        "Use 4/(2x+1)-2/(x+1)-1/(x+1)^2",
+        "Integrate each term",
+        "Obtain 2ln|2x+1|-2ln|x+1|+1/(x+1)+C"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-F-I-II",
+      "part": "f-i-ii",
+      "marks": 3,
+      "task_summary": "Find lim_{x→-1} f(x) and lim_{x→∞} f(x) for the given function.",
+      "primary_topic": "calculus.limits",
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "factor_cancellation",
+        "substitution",
+        "leading_coefficient",
+        "lhopital"
+      ],
+      "method_path": [
+        "cancel (x+1) factor and substitute x=-1 for (i)",
+        "compare leading coefficients or apply L'Hôpital for (ii)"
+      ],
+      "accepted_alternatives": [
+        "Use L'Hôpital's rule for both limits"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-A",
+      "part": "a",
+      "marks": 3,
+      "task_summary": "Find real and imaginary parts of (a+bi)^3 in terms of a and b.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "binomial_expansion",
+        "real_imaginary_separation",
+        "polar_form_alternative"
+      ],
+      "method_path": [
+        "Expand (a+bi)^3 using binomial theorem",
+        "Separate real and imaginary parts"
+      ],
+      "accepted_alternatives": [
+        "Use polar form and extract real and imaginary parts as r^3 cos(3θ) and r^3 sin(3θ)"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-B",
+      "part": "b",
+      "marks": 2,
+      "task_summary": "Show that (1+√3 i)^3 = -8 using part (a) or otherwise.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "substitution",
+        "evaluation",
+        "polar_form_alternative"
+      ],
+      "method_path": [
+        "Substitute a=1, b=√3 into expression from (a) and simplify to -8"
+      ],
+      "accepted_alternatives": [
+        "Direct expansion (1+√3 i)^3",
+        "Polar form: 2^3 e^{iπ} = -8"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-C",
+      "part": "c",
+      "marks": 2,
+      "task_summary": "Write down the other two roots v (real) and w of z³ = -8 in Cartesian form, given u = 1+√3i and v real.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "roots_of_unity",
+        "cartesian_form"
+      ],
+      "method_path": [
+        "identify_real_root_v_as_negative_two",
+        "identify_conjugate_root_w_as_one_minus_sqrt_three_i"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-D",
+      "part": "d",
+      "marks": 3,
+      "task_summary": "Find the area of triangle UVW on the Argand diagram with vertices u=1+√3i, v=-2, w=1-√3i.",
+      "primary_topic": "geometry.trigonometry",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "area_of_triangle",
+        "argand_diagram",
+        "base_height"
+      ],
+      "method_path": [
+        "determine_base_and_height_from_coordinates",
+        "apply_area_formula_half_base_times_height"
+      ],
+      "accepted_alternatives": [
+        "Use base=2√3 and height=√3",
+        "Use equilateral triangle side length √12 and area formula",
+        "Sum areas of three isosceles triangles with sides 2 and angle 2π/3"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-E",
+      "part": "E",
+      "marks": 4,
+      "task_summary": "Find u′, v′, w′ in the form re^{iθ} (−π < θ ≤ π) after rotating U, V, W by π/4 about 0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "polar_form",
+        "rotation",
+        "euler_identity",
+        "argument_simplification"
+      ],
+      "method_path": [
+        "Express u, v, w in polar form re^{iθ}",
+        "Multiply each by e^{iπ/4} to rotate",
+        "Simplify arguments to principal range",
+        "Give u′ = 2e^{i7π/12}, v′ = 2e^{-i3π/4}, w′ = 2e^{-iπ/12}"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-F",
+      "part": "f",
+      "marks": 3,
+      "task_summary": "Find c and d such that u', v', w' solve z^3 = c+di.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "cubing_roots",
+        "polar_form",
+        "cartesian_conversion"
+      ],
+      "method_path": [
+        "Cube one rotated root to get 8e^{-iπ/4} (M1 A1).",
+        "Convert to Cartesian form: 4√2 - 4√2i (A1).",
+        "Extract c=4√2, d=-4√2."
+      ],
+      "accepted_alternatives": [
+        "Find product u'v'w' = 8e^{-iπ/4}.",
+        "Rotate -8 by 3π/4 to obtain 8e^{-iπ/4}."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-G",
+      "part": "g",
+      "marks": 3,
+      "task_summary": "Find smallest positive integer n such that u, v, w, u', v', w' are all solutions of z^n = a.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "argument",
+        "common_denominator",
+        "argument_difference",
+        "lcm"
+      ],
+      "method_path": [
+        "Write arguments of all six complex numbers over a common denominator (in radians or degrees).",
+        "Identify the smallest common difference between arguments (π/12 or 15°).",
+        "Compute n = 2π / (π/12) = 24 (or 360° / 15° = 24)."
+      ],
+      "accepted_alternatives": [
+        "Use polar form z = r cis θ, find n such that nθ is a multiple of 2π for all six arguments; test n = 6, 12, ... until all are multiples of 2π, giving n = 24."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

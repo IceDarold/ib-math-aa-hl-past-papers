@@ -15,6 +15,8 @@ const initialFilters: Filters = {
   query: '',
   paper: 'all',
   calculator: 'all',
+  session: 'all',
+  status: 'all',
   topics: new Set(),
   methods: new Set(),
 }
@@ -109,7 +111,7 @@ export default function App() {
     return () => document.removeEventListener('keydown', handleKeyboard)
   }, [moveSelection])
 
-  const setSegment = (key: 'paper' | 'calculator', value: string) => {
+  const setSegment = (key: 'paper' | 'calculator' | 'session' | 'status', value: string) => {
     setFilters((current) => ({ ...current, [key]: value }))
   }
 

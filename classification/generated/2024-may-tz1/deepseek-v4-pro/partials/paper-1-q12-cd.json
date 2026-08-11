@@ -1,0 +1,50 @@
+{
+  "question": "2024-MAY-TZ1-P1-Q12",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-C",
+      "part": "c",
+      "marks": 2,
+      "task_summary": "Write down the other two roots v (real) and w of z³ = -8 in Cartesian form, given u = 1+√3i and v real.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "roots_of_unity",
+        "cartesian_form"
+      ],
+      "method_path": [
+        "identify_real_root_v_as_negative_two",
+        "identify_conjugate_root_w_as_one_minus_sqrt_three_i"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-D",
+      "part": "d",
+      "marks": 3,
+      "task_summary": "Find the area of triangle UVW on the Argand diagram with vertices u=1+√3i, v=-2, w=1-√3i.",
+      "primary_topic": "geometry.trigonometry",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "area_of_triangle",
+        "argand_diagram",
+        "base_height"
+      ],
+      "method_path": [
+        "determine_base_and_height_from_coordinates",
+        "apply_area_formula_half_base_times_height"
+      ],
+      "accepted_alternatives": [
+        "Use base=2√3 and height=√3",
+        "Use equilateral triangle side length √12 and area formula",
+        "Sum areas of three isosceles triangles with sides 2 and angle 2π/3"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

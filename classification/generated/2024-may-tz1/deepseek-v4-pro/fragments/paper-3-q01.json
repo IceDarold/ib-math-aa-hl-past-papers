@@ -1,0 +1,521 @@
+{
+  "question": "1",
+  "expected_question_marks": 27,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-A-I",
+      "part": "a-i",
+      "marks": 2,
+      "task_summary": "Find probability first boost occurs on third action with p=0.1.",
+      "primary_topic": "statistics.probability",
+      "method_family": "formula_application",
+      "method_tags": [
+        "geometric_probability",
+        "multiplication",
+        "first_success"
+      ],
+      "method_path": [
+        "multiply probabilities: 0.9 * 0.9 * 0.1"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-A-II",
+      "part": "a-ii",
+      "marks": 3,
+      "task_summary": "Find probability at least one boost in first six actions with p=0.1.",
+      "primary_topic": "statistics.probability",
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_distribution",
+        "complement_rule",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "identify binomial distribution B(6,0.1)",
+        "apply complement rule: 1 - P(X=0)",
+        "compute 1 - 0.9^6 or use binomial formula"
+      ],
+      "accepted_alternatives": [
+        "binomial_distribution",
+        "complement_0.9_6",
+        "sum_of_terms"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-B-I",
+      "part": "b-i",
+      "marks": 1,
+      "task_summary": "Explain probability first boost on xth action is p(1-p)^(x-1).",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "geometric_distribution",
+        "reasoning",
+        "probability_explanation"
+      ],
+      "method_path": [
+        "explain x-1 failures followed by success"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-B-II",
+      "part": "b-ii",
+      "marks": 1,
+      "task_summary": "Write sigma notation for E(X) in terms of x and p.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "formula_application",
+      "method_tags": [
+        "expected_value",
+        "sigma_notation",
+        "geometric_distribution"
+      ],
+      "method_path": [
+        "write sum from x=1 to infinity of x * p * (1-p)^(x-1)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-C-I",
+      "part": "c-i",
+      "marks": 4,
+      "task_summary": "Differentiate both sides of the infinite geometric sum to find sum of n a r^{n-1}.",
+      "primary_topic": "calculus.series",
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_geometric_series",
+        "equate_derivatives",
+        "simplify_series"
+      ],
+      "method_path": [
+        "Differentiate LHS: 2a + 3ar + ...",
+        "Differentiate RHS: a/(1-r) to a/(1-r)^2",
+        "Equate to obtain sum_{n=1}^∞ n a r^{n-1} = a/(1-r)^2"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-C-II",
+      "part": "c-ii",
+      "marks": 2,
+      "task_summary": "Use derived sum with a=p, r=1-p to show E(X)=1/p.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_parameters",
+        "substitute_into_series_formula",
+        "simplify_to_expected_value"
+      ],
+      "method_path": [
+        "Recognize a=p, r=1-p, x=n",
+        "Substitute into sum_{n=1}^∞ n a r^{n-1}",
+        "Simplify E(X)=p/(1-(1-p))^2 = 1/p"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-D",
+      "part": "d",
+      "marks": 2,
+      "task_summary": "Compute E(X) and Var(X) for p=0.1 using E(X)=1/p and Var(X)=(1-p)/p^2.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_p",
+        "compute_expected_value",
+        "compute_variance"
+      ],
+      "method_path": [
+        "E(X) = 1/0.1 = 10",
+        "Var(X) = (0.9)/(0.01) = 90"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-E",
+      "part": "E",
+      "marks": 2,
+      "task_summary": "Show that the probability that the first boost occurs on the third action is 0.288.",
+      "primary_topic": "statistics.probability",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_multiplication",
+        "dependent_events"
+      ],
+      "method_path": [
+        "multiply probabilities of first two non-boosts and third boost",
+        "compute 0.8 × 0.6 × 0.6",
+        "obtain 0.288"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-F",
+      "part": "F",
+      "marks": 1,
+      "task_summary": "Explain why Y ≤ 5.",
+      "primary_topic": "statistics.probability",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "probability_model",
+        "reasoning"
+      ],
+      "method_path": [
+        "note probability increases by 0.2 per non-boost",
+        "after four non-boosts probability becomes 1",
+        "thus boost is certain by the 5th action"
+      ],
+      "accepted_alternatives": [
+        "when Y=5, probability of boost is 1 with reference to prior non-boosts"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-G-I",
+      "part": "(g)(i)",
+      "marks": 2,
+      "task_summary": "Find m and n from the probability distribution of Y using the given model.",
+      "primary_topic": "statistics.probability",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_model",
+        "conditional_probability",
+        "multiplication"
+      ],
+      "method_path": [
+        "Calculate P(Y=2) as (1-0.2)*0.4 = 0.32",
+        "Calculate P(Y=4) as 0.8*0.6*0.4*0.8 = 0.1536"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-G-II",
+      "part": "(g)(ii)",
+      "marks": 2,
+      "task_summary": "Show that the expected value E(Y) is 2.5104 using the probability distribution.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_value_calculation",
+        "summation"
+      ],
+      "method_path": [
+        "Multiply each y by its probability P(Y=y)",
+        "Sum the products to obtain 2.5104"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-G-III",
+      "part": "(g)(iii)",
+      "marks": 2,
+      "task_summary": "Find the variance Var(Y) using E(Y^2) - [E(Y)]^2 or GDC.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "variance_calculation",
+        "sum_of_squares",
+        "gdc_usage"
+      ],
+      "method_path": [
+        "Calculate E(Y^2) as sum of y^2 * P(Y=y)",
+        "Subtract [E(Y)]^2 to obtain variance ≈ 1.19"
+      ],
+      "accepted_alternatives": [
+        "Use GDC to compute variance directly"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-H-I",
+      "part": "(h)(i)",
+      "marks": 1,
+      "task_summary": "Find p for E(X)=E(Y) using 1/p = 2.5104.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "formula_application",
+      "method_tags": [
+        "use_of_expected_value",
+        "algebraic_solution"
+      ],
+      "method_path": [
+        "Equate E(X) = E(Y) using 1/p",
+        "Solve for p"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-H-II",
+      "part": "(h)(ii)",
+      "marks": 1,
+      "task_summary": "Find Var(X) for this p using (1-p)/p^2.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "formula_application",
+      "method_tags": [
+        "variance_formula"
+      ],
+      "method_path": [
+        "Substitute p into Var(X) = (1-p)/p^2",
+        "Calculate"
+      ],
+      "accepted_alternatives": [
+        "Using p=0.398 gives 3.80"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-H-III",
+      "part": "(h)(iii)",
+      "marks": 1,
+      "task_summary": "Compare Var(X) and Var(Y); lower variance more consistent.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "variance_comparison",
+        "interpretation"
+      ],
+      "method_path": [
+        "Compare Var(X) and Var(Y)",
+        "Conclude lower variance more consistent"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "1",
+      "source_pages": "2-3",
+      "markscheme_pages": "7-11",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7-11",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

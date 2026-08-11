@@ -1,0 +1,196 @@
+{
+  "question": "10",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-A",
+      "part": "A",
+      "marks": 3,
+      "task_summary": "Find m such that time between first low tide and first high tide is 6 hours m minutes, to nearest integer.",
+      "primary_topic": "functions.trigonometric_functions",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_zeros_of_trig",
+        "compute_half_period",
+        "time_conversion",
+        "rounding"
+      ],
+      "method_path": [
+        "EITHER find t for first low and high tides from equation and subtract; OR compute half period from b coefficient.",
+        "Obtain time difference ≈6.12396 hours.",
+        "Subtract 6 hours, multiply by 60 to get minutes ≈7.44.",
+        "Round to nearest integer m = 7."
+      ],
+      "accepted_alternatives": [
+        "Directly solving H(t)=0.50 and H(t)=3.76 for t within first cycle.",
+        "Using period T=2π/0.513, half period = T/2."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-B",
+      "part": "B",
+      "marks": 2,
+      "task_summary": "Between two consecutive high tides, determine the length of time (hours) for which water height is less than 1 metre.",
+      "primary_topic": "functions.trigonometric_functions",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_trig_equation",
+        "subtraction",
+        "rounding"
+      ],
+      "method_path": [
+        "Solve H(t) = 1 for t between the two high tides.",
+        "Obtain two solutions ≈3.56919 and ≈6.70684.",
+        "Subtract to get interval length ≈3.13764 hours.",
+        "Round to 3.14 hours."
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-C",
+      "part": "C",
+      "marks": 2,
+      "task_summary": "Find rate of change of water height when t=13.",
+      "primary_topic": "calculus.rates_of_change",
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative",
+        "evaluate_derivative",
+        "substitute_value"
+      ],
+      "method_path": [
+        "Recognize need for derivative H'(t)",
+        "Compute derivative",
+        "Substitute t=13",
+        "Obtain numerical rate"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-D",
+      "part": "D",
+      "marks": 7,
+      "task_summary": "Determine parameters a, b, c, d of sine model for tide height at Rockall.",
+      "primary_topic": "functions.trigonometric_functions",
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "determine_amplitude",
+        "determine_vertical_shift",
+        "find_period",
+        "calculate_frequency",
+        "find_phase_shift",
+        "use_tidal_data"
+      ],
+      "method_path": [
+        "Compute amplitude a from tide heights",
+        "Compute vertical shift d from mean tide height",
+        "Determine period from time between low and high tide",
+        "Calculate frequency b = 2π/period",
+        "Find phase shift c using mean time or by substituting a known point"
+      ],
+      "accepted_alternatives": [
+        "Method 1: using period and mean time; Method 2: substituting points and solving simultaneously"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-E",
+      "part": "e",
+      "marks": 2,
+      "task_summary": "Find first time T when heights at Sule Skerry and Rockall are equal.",
+      "primary_topic": "functions.equations",
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "find_intersection",
+        "numerical_solve",
+        "trigonometric_equation"
+      ],
+      "method_path": [
+        "Find intersection of H(t) and h(t) on GDC",
+        "Round T to 3 s.f."
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "question": "1",
+  "expected_question_marks": 3,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-H-I",
+      "part": "(h)(i)",
+      "marks": 1,
+      "task_summary": "Find p for E(X)=E(Y) using 1/p = 2.5104.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "formula_application",
+      "method_tags": [
+        "use_of_expected_value",
+        "algebraic_solution"
+      ],
+      "method_path": [
+        "Equate E(X) = E(Y) using 1/p",
+        "Solve for p"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-H-II",
+      "part": "(h)(ii)",
+      "marks": 1,
+      "task_summary": "Find Var(X) for this p using (1-p)/p^2.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "formula_application",
+      "method_tags": [
+        "variance_formula"
+      ],
+      "method_path": [
+        "Substitute p into Var(X) = (1-p)/p^2",
+        "Calculate"
+      ],
+      "accepted_alternatives": [
+        "Using p=0.398 gives 3.80"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-H-III",
+      "part": "(h)(iii)",
+      "marks": 1,
+      "task_summary": "Compare Var(X) and Var(Y); lower variance more consistent.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "variance_comparison",
+        "interpretation"
+      ],
+      "method_path": [
+        "Compare Var(X) and Var(Y)",
+        "Conclude lower variance more consistent"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

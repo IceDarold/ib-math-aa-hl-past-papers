@@ -1,0 +1,122 @@
+{
+  "question": "2024-MAY-TZ1-P1-Q08",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q08-AI",
+      "part": "(a)(i)",
+      "marks": 2,
+      "task_summary": "Find the first two non-zero Maclaurin terms of sin(x^2).",
+      "primary_topic": "calculus.series",
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "substitution",
+        "maclaurin_series_sine",
+        "simplify"
+      ],
+      "method_path": [
+        "Substitute x^2 into sin x Maclaurin series",
+        "Obtain x^2 - x^6/6"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ],
+      "question": "8",
+      "source_pages": "9",
+      "markscheme_pages": "18-19",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "The verified markscheme transcription establishes the method and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q08-AII",
+      "part": "(a)(ii)",
+      "marks": 3,
+      "task_summary": "Find the first two non-zero Maclaurin terms of sin^2(x^2).",
+      "primary_topic": "calculus.series",
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "series_squaring",
+        "algebraic_manipulation",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Square the series from (i) and keep cross term",
+        "Obtain x^4 - x^8/3"
+      ],
+      "accepted_alternatives": [
+        "Use sin^2 A = (1 - cos 2A)/2, expand cos(2x^2) series"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "formula_extraction_uncertain"
+      ],
+      "question": "8",
+      "source_pages": "9",
+      "markscheme_pages": "18-19",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "The verified markscheme transcription establishes the method and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q08-B",
+      "part": "(b)",
+      "marks": 2,
+      "task_summary": "Find the first two non-zero Maclaurin terms of 4x sin(x^2) cos(x^2).",
+      "primary_topic": "calculus.series",
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "differentiation_of_series",
+        "trigonometric_identity",
+        "series_multiplication"
+      ],
+      "method_path": [
+        "Differentiate sin^2(x^2) series term by term",
+        "Simplify to 4x^3 - 8x^7/3"
+      ],
+      "accepted_alternatives": [
+        "Use identity: 4x sin(x^2)cos(x^2) = 2x sin(2x^2), expand sin(2x^2)",
+        "Multiply series for 4x, sin(x^2), cos(x^2)"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "formula_extraction_uncertain"
+      ],
+      "question": "8",
+      "source_pages": "9",
+      "markscheme_pages": "18-19",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "The verified markscheme transcription establishes the method and mark allocation."
+        }
+      ]
+    }
+  ]
+}
+

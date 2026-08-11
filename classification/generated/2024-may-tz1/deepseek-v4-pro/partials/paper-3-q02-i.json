@@ -1,0 +1,26 @@
+{
+  "question": "paper-3-q02",
+  "expected_question_marks": 2,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-I",
+      "part": "I",
+      "marks": 2,
+      "task_summary": "Compute exact ratio (xB - xA)/(xC - xB) using previous x-coordinates.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "substitute xA, xB, xC expressions",
+        "simplify ratio to exact value"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

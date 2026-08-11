@@ -1,0 +1,262 @@
+{
+  "question": "12",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-A",
+      "part": "a",
+      "marks": 3,
+      "task_summary": "Find real and imaginary parts of (a+bi)^3 in terms of a and b.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "binomial_expansion",
+        "real_imaginary_separation",
+        "polar_form_alternative"
+      ],
+      "method_path": [
+        "Expand (a+bi)^3 using binomial theorem",
+        "Separate real and imaginary parts"
+      ],
+      "accepted_alternatives": [
+        "Use polar form and extract real and imaginary parts as r^3 cos(3θ) and r^3 sin(3θ)"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-B",
+      "part": "b",
+      "marks": 2,
+      "task_summary": "Show that (1+√3 i)^3 = -8 using part (a) or otherwise.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "substitution",
+        "evaluation",
+        "polar_form_alternative"
+      ],
+      "method_path": [
+        "Substitute a=1, b=√3 into expression from (a) and simplify to -8"
+      ],
+      "accepted_alternatives": [
+        "Direct expansion (1+√3 i)^3",
+        "Polar form: 2^3 e^{iπ} = -8"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-C",
+      "part": "c",
+      "marks": 2,
+      "task_summary": "Write down the other two roots v (real) and w of z³ = -8 in Cartesian form, given u = 1+√3i and v real.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "roots_of_unity",
+        "cartesian_form"
+      ],
+      "method_path": [
+        "identify_real_root_v_as_negative_two",
+        "identify_conjugate_root_w_as_one_minus_sqrt_three_i"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-D",
+      "part": "d",
+      "marks": 3,
+      "task_summary": "Find the area of triangle UVW on the Argand diagram with vertices u=1+√3i, v=-2, w=1-√3i.",
+      "primary_topic": "geometry.trigonometry",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "area_of_triangle",
+        "argand_diagram",
+        "base_height"
+      ],
+      "method_path": [
+        "determine_base_and_height_from_coordinates",
+        "apply_area_formula_half_base_times_height"
+      ],
+      "accepted_alternatives": [
+        "Use base=2√3 and height=√3",
+        "Use equilateral triangle side length √12 and area formula",
+        "Sum areas of three isosceles triangles with sides 2 and angle 2π/3"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-E",
+      "part": "E",
+      "marks": 4,
+      "task_summary": "Find u′, v′, w′ in the form re^{iθ} (−π < θ ≤ π) after rotating U, V, W by π/4 about 0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "polar_form",
+        "rotation",
+        "euler_identity",
+        "argument_simplification"
+      ],
+      "method_path": [
+        "Express u, v, w in polar form re^{iθ}",
+        "Multiply each by e^{iπ/4} to rotate",
+        "Simplify arguments to principal range",
+        "Give u′ = 2e^{i7π/12}, v′ = 2e^{-i3π/4}, w′ = 2e^{-iπ/12}"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-F",
+      "part": "f",
+      "marks": 3,
+      "task_summary": "Find c and d such that u', v', w' solve z^3 = c+di.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "cubing_roots",
+        "polar_form",
+        "cartesian_conversion"
+      ],
+      "method_path": [
+        "Cube one rotated root to get 8e^{-iπ/4} (M1 A1).",
+        "Convert to Cartesian form: 4√2 - 4√2i (A1).",
+        "Extract c=4√2, d=-4√2."
+      ],
+      "accepted_alternatives": [
+        "Find product u'v'w' = 8e^{-iπ/4}.",
+        "Rotate -8 by 3π/4 to obtain 8e^{-iπ/4}."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-G",
+      "part": "g",
+      "marks": 3,
+      "task_summary": "Find smallest positive integer n such that u, v, w, u', v', w' are all solutions of z^n = a.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "argument",
+        "common_denominator",
+        "argument_difference",
+        "lcm"
+      ],
+      "method_path": [
+        "Write arguments of all six complex numbers over a common denominator (in radians or degrees).",
+        "Identify the smallest common difference between arguments (π/12 or 15°).",
+        "Compute n = 2π / (π/12) = 24 (or 360° / 15° = 24)."
+      ],
+      "accepted_alternatives": [
+        "Use polar form z = r cis θ, find n such that nθ is a multiple of 2π for all six arguments; test n = 6, 12, ... until all are multiples of 2π, giving n = 24."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "12",
+      "source_pages": "14-16",
+      "markscheme_pages": "30-33",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30-33",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

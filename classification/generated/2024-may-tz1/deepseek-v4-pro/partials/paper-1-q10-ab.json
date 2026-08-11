@@ -1,0 +1,53 @@
+{
+  "question": "May 2024 TZ1 Paper 1, Question 10 (parts a, b)",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-a",
+      "part": "a",
+      "marks": 5,
+      "task_summary": "Sketch y=f(x) with intercepts and asymptotes labelled",
+      "primary_topic": "functions.graphing",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "identify_asymptotes",
+        "identify_intercepts"
+      ],
+      "method_path": [
+        "Identify vertical asymptote x=2",
+        "Identify horizontal asymptote y=4",
+        "Find x-intercept at x=-1/2",
+        "Find y-intercept at y=-1",
+        "Draw two branches in correct quadrants with correct asymptotic behaviour"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": [],
+      "evidence": "Markscheme pages 22-23"
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-b",
+      "part": "b",
+      "marks": 1,
+      "task_summary": "Write down the range of f",
+      "primary_topic": "functions.graphing",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "determine_range",
+        "rational_function"
+      ],
+      "method_path": [
+        "Observe horizontal asymptote y=4 is not attained",
+        "State range as all real numbers except 4 (y≠4)"
+      ],
+      "accepted_alternatives": [
+        "y∈R, y≠4"
+      ],
+      "confidence": "high",
+      "review_flags": [],
+      "evidence": "Markscheme page 23"
+    }
+  ]
+}
+

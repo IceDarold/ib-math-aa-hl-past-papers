@@ -1,0 +1,109 @@
+{
+  "question": "2024-MAY-TZ1-P2-Q06",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q06-A",
+      "question": "2024-MAY-TZ1-P2-Q06",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find the probability that it rains on exactly 10 days in May, given daily independent rain probability 0.2 and 31 days.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "probability_calculation",
+        "recognize_distribution"
+      ],
+      "method_path": [
+        "Recognize X ~ B(31, 0.2)",
+        "Calculate P(X = 10) using binomial formula or GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognition of binomial distribution (M1) ... 0.0419 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q06-B",
+      "question": "2024-MAY-TZ1-P2-Q06",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find the probability that it rains on at least 10 days in May.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "cumulative_probability",
+        "complement_rule"
+      ],
+      "method_path": [
+        "Recognize P(X >= 10) = 1 - P(X <= 9)",
+        "Calculate using binomial cumulative distribution (GDC or tables)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognition of need to find P(X >= 10) = 1 - P(X <= 9) (M1) ... 0.0746 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q06-C",
+      "question": "2024-MAY-TZ1-P2-Q06",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find the probability that the first day it rains in May is on the 10th day.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "geometric_probability",
+        "independent_events",
+        "multiplication_rule"
+      ],
+      "method_path": [
+        "Recognize sequence: 9 days no rain then rain on 10th",
+        "Calculate (0.8)^9 × 0.2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognition of 9 days with no rain followed by a day of rain (M1) ... 0.0268 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

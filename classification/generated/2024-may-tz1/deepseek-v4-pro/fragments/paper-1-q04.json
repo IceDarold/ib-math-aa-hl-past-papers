@@ -1,0 +1,91 @@
+{
+  "question": "4",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find x-coordinates of intersection points A and C of f(x)=cos x and g(x)=sin 2x on [0,π].",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_equality",
+        "trigonometric_identity",
+        "solve_trig_equation"
+      ],
+      "method_path": [
+        "Set cos x = sin 2x",
+        "Use identity sin 2x = 2 sin x cos x",
+        "Cancel cos x (cos x ≠ 0) to get sin x = 1/2",
+        "Solve for x in [0,π] to obtain x = π/6 and 5π/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognising cos x = 2 sin x cos x (M1); (cos x ≠ 0) so sin x = 1/2 OR one correct value (A1); x-coordinates π/6 and 5π/6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "10-11",
+      "task_summary": "Find area of shaded region R between f(x)=cos x and g(x)=sin 2x from B(π/2,0) to C.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate_difference",
+        "antiderivative_trig",
+        "evaluate_definite_integral",
+        "area_between_curves"
+      ],
+      "method_path": [
+        "Set up integral ∫_{π/2}^{5π/6} (cos x - sin 2x) dx",
+        "Integrate: antiderivative sin x + (1/2) cos 2x (or equivalent)",
+        "Substitute limits: F(5π/6) - F(π/2)",
+        "Simplify to obtain area = 1/4"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Integrate cos x and sin 2x separately over the interval, then subtract the areas."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to integrate (cos x ± sin 2x) (M1); ∫ ... = ... A1 (award A1 for ±correct integration); attempt to substitute limits M1; area = 1/4 A1"
+        },
+        {
+          "markscheme_pages": "10-11",
+          "basis": "METHOD 2: integrate cos x and sin 2x separately, A1 for correct integration; attempt to substitute limits M1; attempt to subtract integrals (M1); area = 1/4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

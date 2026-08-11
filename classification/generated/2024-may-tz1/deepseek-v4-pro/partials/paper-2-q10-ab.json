@@ -1,0 +1,57 @@
+{
+  "question": "2024-MAY-TZ1-P2-Q10",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-A",
+      "part": "A",
+      "marks": 3,
+      "task_summary": "Find m such that time between first low tide and first high tide is 6 hours m minutes, to nearest integer.",
+      "primary_topic": "functions.trigonometric_functions",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_zeros_of_trig",
+        "compute_half_period",
+        "time_conversion",
+        "rounding"
+      ],
+      "method_path": [
+        "EITHER find t for first low and high tides from equation and subtract; OR compute half period from b coefficient.",
+        "Obtain time difference ≈6.12396 hours.",
+        "Subtract 6 hours, multiply by 60 to get minutes ≈7.44.",
+        "Round to nearest integer m = 7."
+      ],
+      "accepted_alternatives": [
+        "Directly solving H(t)=0.50 and H(t)=3.76 for t within first cycle.",
+        "Using period T=2π/0.513, half period = T/2."
+      ],
+      "confidence": "high",
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-B",
+      "part": "B",
+      "marks": 2,
+      "task_summary": "Between two consecutive high tides, determine the length of time (hours) for which water height is less than 1 metre.",
+      "primary_topic": "functions.trigonometric_functions",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_trig_equation",
+        "subtraction",
+        "rounding"
+      ],
+      "method_path": [
+        "Solve H(t) = 1 for t between the two high tides.",
+        "Obtain two solutions ≈3.56919 and ≈6.70684.",
+        "Subtract to get interval length ≈3.13764 hours.",
+        "Round to 3.14 hours."
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

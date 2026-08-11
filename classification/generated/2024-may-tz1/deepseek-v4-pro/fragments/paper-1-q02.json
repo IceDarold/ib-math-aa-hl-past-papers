@@ -1,0 +1,82 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Evaluate log10(1/a) given log10 a = 1/3.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "logarithm_property",
+        "substitution"
+      ],
+      "method_path": [
+        "Use log(1/a) = -log a",
+        "Substitute log10 a = 1/3",
+        "Write answer -1/3"
+      ],
+      "accepted_alternatives": [
+        "Use log(1/a) = log1 - log a = -log a",
+        "Rewrite as 10^(log(1/a)) = 1/a and solve for log(1/a)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Award (A1) for log10 1 - log10 a or equivalent expression using logarithm property, (A1) for final answer -1/3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Evaluate log_1000 a given log10 a = 1/3.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "change_of_base",
+        "division"
+      ],
+      "method_path": [
+        "Use change-of-base: log_1000 a = log a / log 1000",
+        "Compute log10 1000 = 3",
+        "Divide 1/3 by 3",
+        "Simplify to 1/9"
+      ],
+      "accepted_alternatives": [
+        "Set up equation 1000^x = a, take log10 both sides, solve for x.",
+        "Rewrite 1000 as 10^3, equate exponents: a = 10^(1/3) = (10^3)^x = 10^(3x) ⇒ 3x = 1/3, x = 1/9."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Award (A1) for log_1000 a = log a / log 1000 or equivalent correct first step, (A1) for intermediate simplification e.g., (1/3)/3, (A1) for final answer 1/9."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

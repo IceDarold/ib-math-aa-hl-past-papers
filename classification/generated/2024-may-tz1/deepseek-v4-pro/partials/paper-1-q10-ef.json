@@ -1,0 +1,54 @@
+{
+  "question": "10",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-E",
+      "part": "e",
+      "marks": 2,
+      "task_summary": "Find the y-coordinate of the vertex of g(x)",
+      "primary_topic": "functions.graphing",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "completing_the_square"
+      ],
+      "method_path": [
+        "Substitute x=2 into g(x)",
+        "Simplify g(2) to -25/4"
+      ],
+      "accepted_alternatives": [
+        "Complete the square and read the vertex ordinate"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-f",
+      "part": "f",
+      "marks": 4,
+      "task_summary": "Find the product of the solutions to f(x)=g(x).",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "equation_setup",
+        "algebraic_manipulation",
+        "polynomial_coefficients",
+        "vieta_product"
+      ],
+      "method_path": [
+        "equate expressions",
+        "clear denominator to get cubic equation",
+        "identify leading and constant coefficients",
+        "apply product of roots relation"
+      ],
+      "accepted_alternatives": [
+        "identify x=-1/2 as a root, reduce to quadratic, compute product of its roots, multiply by -1/2"
+      ],
+      "confidence": "high",
+      "review_flags": [],
+      "evidence": "Markscheme pages 25-26"
+    }
+  ]
+}
+

@@ -1,0 +1,161 @@
+{
+  "question": "11",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-A",
+      "part": "a",
+      "marks": 5,
+      "task_summary": "Show that dy/dx = (2x - e^(x+y))/(e^(x+y) - 2y) using implicit differentiation.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "algebraic_manipulation",
+        "derivative"
+      ],
+      "method_path": [
+        "apply implicit differentiation to both sides",
+        "correctly differentiate LHS and RHS",
+        "collect dy/dx terms",
+        "simplify to target expression"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "14",
+      "markscheme_pages": "23-24",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-B-I-II",
+      "part": "b(i)-(ii)",
+      "marks": 9,
+      "task_summary": "Show x-coordinates of P and Q satisfy given equation; hence find coordinates of P and Q.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_zero",
+        "logarithmic_transform",
+        "substitution",
+        "algebraic_simplification",
+        "numerical_solve_gdc",
+        "coordinate_evaluation"
+      ],
+      "method_path": [
+        "Set numerator of dy/dx to zero: 2x - e^{x+y} = 0",
+        "Express y in terms of x: y = ln(2x) - x",
+        "Substitute into curve equation x^2 + y^2 = e^{x+y} to get equation in x",
+        "Simplify to show 2x^2 + (ln(2x))^2 - 2x ln(2x) - 2x = 0",
+        "Solve equation numerically for x, obtaining 0.331 and 1.84",
+        "Find corresponding y using y = ln(2x) - x, giving (0.331, -0.743) and (1.84, -0.538)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ],
+      "question": "11",
+      "source_pages": "14",
+      "markscheme_pages": "23-24",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-C",
+      "part": "(c)",
+      "marks": 1,
+      "task_summary": "Using line of symmetry y=x, write down coordinates of vertical tangent points.",
+      "primary_topic": "functions.graphing",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "symmetry",
+        "coordinate_reflection"
+      ],
+      "method_path": [
+        "Use line of symmetry y=x",
+        "Reflect points P and Q by swapping coordinates",
+        "Write coordinates of reflected points"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "14",
+      "markscheme_pages": "23-24",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-D",
+      "part": "(d)",
+      "marks": 4,
+      "task_summary": "Find coordinates of point where tangent gradient is -1.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "implicit_differentiation",
+        "gradient_condition",
+        "algebraic_simplification",
+        "substitution",
+        "numerical_solving"
+      ],
+      "method_path": [
+        "Set dy/dx = -1 using expression from (a)",
+        "Simplify to y = x",
+        "Substitute y = x into e^(x+y) = x^2 + y^2",
+        "Obtain e^(2x) = 2x^2",
+        "Solve numerically to get x ≈ -0.451",
+        "State coordinates (-0.451, -0.451)"
+      ],
+      "accepted_alternatives": [
+        "Recognize point lies on line of symmetry y=x (since gradient -1 is perpendicular), then substitute y=x into curve equation."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "14",
+      "markscheme_pages": "23-24",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

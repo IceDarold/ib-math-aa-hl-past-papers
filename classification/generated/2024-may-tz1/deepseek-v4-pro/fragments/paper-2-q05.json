@@ -1,0 +1,111 @@
+{
+  "question": "2024-MAY-TZ1-P2-Q05",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q05-A",
+      "question": "2024-MAY-TZ1-P2-Q05",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Find Pearson's product-moment correlation coefficient r for the given data.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "correlation_coefficient",
+        "gdc"
+      ],
+      "method_path": [
+        "enter_data_into_GDC",
+        "calculate_r"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "0.901017... r = 0.901 A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q05-B",
+      "question": "2024-MAY-TZ1-P2-Q05",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Give a reason why using the regression line to estimate Paulo's score is not appropriate.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "extrapolation",
+        "model_limitations"
+      ],
+      "method_path": [
+        "identify_extrapolation"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "Student 11 Test B: should not extrapolate R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q05-C",
+      "question": "2024-MAY-TZ1-P2-Q05",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "(i) Explain why using the y-on-x line to predict x is inappropriate. (ii) Use the appropriate regression line to estimate Giovanni's Test A score, showing it rounds to 86.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "regression_line_x_on_y",
+        "substitution",
+        "rounding",
+        "interpretation"
+      ],
+      "method_path": [
+        "compute_regression_line_x_on_y",
+        "substitute_y=90",
+        "solve_for_x",
+        "round_to_nearest_integer"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "(i) Student 12 Test A: should not use line of y on x to predict x from y R1. (ii) attempt to find the equation of the regression line of x on y (M1) ... x = 0.987... y - 3.219... A1 ... x = 85.6214... A1 ... = 86 to nearest integer AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}
+

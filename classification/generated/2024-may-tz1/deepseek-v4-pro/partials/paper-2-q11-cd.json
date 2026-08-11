@@ -1,0 +1,55 @@
+{
+  "question": "2024-MAY-TZ1-P2-Q11",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "Q11-C",
+      "part": "(c)",
+      "marks": 1,
+      "task_summary": "Using line of symmetry y=x, write down coordinates of vertical tangent points.",
+      "primary_topic": "functions.graphing",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "symmetry",
+        "coordinate_reflection"
+      ],
+      "method_path": [
+        "Use line of symmetry y=x",
+        "Reflect points P and Q by swapping coordinates",
+        "Write coordinates of reflected points"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "Q11-D",
+      "part": "(d)",
+      "marks": 4,
+      "task_summary": "Find coordinates of point where tangent gradient is -1.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "implicit_differentiation",
+        "gradient_condition",
+        "algebraic_simplification",
+        "substitution",
+        "numerical_solving"
+      ],
+      "method_path": [
+        "Set dy/dx = -1 using expression from (a)",
+        "Simplify to y = x",
+        "Substitute y = x into e^(x+y) = x^2 + y^2",
+        "Obtain e^(2x) = 2x^2",
+        "Solve numerically to get x ≈ -0.451",
+        "State coordinates (-0.451, -0.451)"
+      ],
+      "accepted_alternatives": [
+        "Recognize point lies on line of symmetry y=x (since gradient -1 is perpendicular), then substitute y=x into curve equation."
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

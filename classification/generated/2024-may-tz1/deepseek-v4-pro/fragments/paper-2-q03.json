@@ -1,0 +1,78 @@
+{
+  "question": "2024-MAY-TZ1-P2-Q03",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q03-A",
+      "question": "2024-MAY-TZ1-P2-Q03",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "11",
+      "task_summary": "Find the probability that X is more than 1.5 standard deviations above the mean.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "probability_calculation",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize that X > mean + 1.5*SD corresponds to X > 13 (or Z > 1.5)",
+        "Calculate P(X > 13) or P(Z > 1.5) using GDC normal CDF"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "recognition of 13 X > OR 1.5 Z > (could be seen in a diagram) (M1) then P(13) 0.0668072... X > = 0.0668 = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q03-B",
+      "question": "2024-MAY-TZ1-P2-Q03",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "11",
+      "task_summary": "Find the number of standard deviations k such that the probability that X is more than k standard deviations above the mean is 0.1.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "inverse_normal",
+        "gdc",
+        "standard_normal"
+      ],
+      "method_path": [
+        "Set up normal CDF equation (e.g., P(X > 10 + 2k) = 0.1 or P(Z > k) = 0.1) or recognize need for inverse normal",
+        "Use inverse normal with left-tail area 0.9 or right-tail 0.1 to obtain k ≈ 1.28"
+      ],
+      "accepted_alternatives": [
+        "Equation approach: equate appropriate normal CDF to 0.1 or 0.9 and solve",
+        "Direct inverse normal: use GDC invNorm with area 0.9 or 0.1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "EITHER equating an appropriate correct normal CDF function to 0.1 or 0.9 (M1) OR recognising need to use inverse normal with 0.1 or 0.9 (M1) THEN k = 1.28155... = 1.28 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

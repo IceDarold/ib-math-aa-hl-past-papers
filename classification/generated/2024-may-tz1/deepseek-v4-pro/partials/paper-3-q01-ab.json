@@ -1,0 +1,89 @@
+{
+  "question": "2024-MAY-TZ1-P3-Q01",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-A-I",
+      "part": "a-i",
+      "marks": 2,
+      "task_summary": "Find probability first boost occurs on third action with p=0.1.",
+      "primary_topic": "statistics.probability",
+      "method_family": "formula_application",
+      "method_tags": [
+        "geometric_probability",
+        "multiplication",
+        "first_success"
+      ],
+      "method_path": [
+        "multiply probabilities: 0.9 * 0.9 * 0.1"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-A-II",
+      "part": "a-ii",
+      "marks": 3,
+      "task_summary": "Find probability at least one boost in first six actions with p=0.1.",
+      "primary_topic": "statistics.probability",
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_distribution",
+        "complement_rule",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "identify binomial distribution B(6,0.1)",
+        "apply complement rule: 1 - P(X=0)",
+        "compute 1 - 0.9^6 or use binomial formula"
+      ],
+      "accepted_alternatives": [
+        "binomial_distribution",
+        "complement_0.9_6",
+        "sum_of_terms"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-B-I",
+      "part": "b-i",
+      "marks": 1,
+      "task_summary": "Explain probability first boost on xth action is p(1-p)^(x-1).",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "geometric_distribution",
+        "reasoning",
+        "probability_explanation"
+      ],
+      "method_path": [
+        "explain x-1 failures followed by success"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-B-II",
+      "part": "b-ii",
+      "marks": 1,
+      "task_summary": "Write sigma notation for E(X) in terms of x and p.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "method_family": "formula_application",
+      "method_tags": [
+        "expected_value",
+        "sigma_notation",
+        "geometric_distribution"
+      ],
+      "method_path": [
+        "write sum from x=1 to infinity of x * p * (1-p)^(x-1)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

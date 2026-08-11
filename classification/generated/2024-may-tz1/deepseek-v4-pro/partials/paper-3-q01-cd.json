@@ -1,0 +1,69 @@
+{
+  "question": "2024-MAY-TZ1-P3-Q01",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-c-i",
+      "part": "c-i",
+      "marks": 4,
+      "task_summary": "Differentiate both sides of the infinite geometric sum to find sum of n a r^{n-1}.",
+      "primary_topic": "calculus.series",
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_geometric_series",
+        "equate_derivatives",
+        "simplify_series"
+      ],
+      "method_path": [
+        "Differentiate LHS: 2a + 3ar + ...",
+        "Differentiate RHS: a/(1-r) to a/(1-r)^2",
+        "Equate to obtain sum_{n=1}^∞ n a r^{n-1} = a/(1-r)^2"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-c-ii",
+      "part": "c-ii",
+      "marks": 2,
+      "task_summary": "Use derived sum with a=p, r=1-p to show E(X)=1/p.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_parameters",
+        "substitute_into_series_formula",
+        "simplify_to_expected_value"
+      ],
+      "method_path": [
+        "Recognize a=p, r=1-p, x=n",
+        "Substitute into sum_{n=1}^∞ n a r^{n-1}",
+        "Simplify E(X)=p/(1-(1-p))^2 = 1/p"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-d",
+      "part": "d",
+      "marks": 2,
+      "task_summary": "Compute E(X) and Var(X) for p=0.1 using E(X)=1/p and Var(X)=(1-p)/p^2.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_p",
+        "compute_expected_value",
+        "compute_variance"
+      ],
+      "method_path": [
+        "E(X) = 1/0.1 = 10",
+        "Var(X) = (0.9)/(0.01) = 90"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "required": ["question", "expected_question_marks", "blocks"],
+  "properties": {
+    "question": { "type": "string" },
+    "expected_question_marks": { "type": "integer" },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "question", "part", "marks", "source_pages", "markscheme_pages",
+          "task_summary", "primary_topic", "secondary_topics", "method_family",
+          "method_tags", "method_path", "accepted_alternatives", "evidence",
+          "confidence", "review_flags"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "question": { "type": "string" },
+          "part": { "type": "string" },
+          "marks": { "type": "integer" },
+          "source_pages": { "type": "string" },
+          "markscheme_pages": { "type": "string" },
+          "task_summary": { "type": "string" },
+          "primary_topic": { "type": "string" },
+          "secondary_topics": { "type": "array", "items": { "type": "string" } },
+          "method_family": { "type": "string" },
+          "method_tags": { "type": "array", "items": { "type": "string" } },
+          "method_path": { "type": "array", "items": { "type": "string" } },
+          "accepted_alternatives": { "type": "array", "items": { "type": "string" } },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["markscheme_pages", "basis"],
+              "properties": {
+                "markscheme_pages": { "type": "string" },
+                "basis": { "type": "string" }
+              }
+            }
+          },
+          "confidence": {
+            "type": "object",
+            "required": ["segmentation", "topic", "method"],
+            "properties": {
+              "segmentation": { "type": "string" },
+              "topic": { "type": "string" },
+              "method": { "type": "string" }
+            }
+          },
+          "review_flags": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

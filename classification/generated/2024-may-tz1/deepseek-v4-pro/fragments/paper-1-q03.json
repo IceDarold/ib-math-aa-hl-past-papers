@@ -1,0 +1,84 @@
+{
+  "question": "3",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q03-A",
+      "question": "3",
+      "part": "a",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Show that 4r^2 - 20r + 25 = 0 given perimeter 10 cm and area 6.25 cm^2 of a sector.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "sector_perimeter",
+        "sector_area",
+        "substitution",
+        "algebraic_manipulation",
+        "derive_quadratic"
+      ],
+      "method_path": [
+        "Write perimeter equation 2r + rθ = 10",
+        "Write area equation (1/2)r^2θ = 6.25",
+        "Eliminate θ to obtain an equation in r",
+        "Derive 4r^2 - 20r + 25 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1 for perimeter equation 2r + rθ = 10; A1 for area equation (1/2)r^2θ = 6.25; M1 for attempt to eliminate θ to obtain an equation in r; A1 for correct intermediate equation, leading to AG 4r^2 - 20r + 25 = 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q03-B",
+      "question": "3",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Hence, or otherwise, find the value of r and the value of θ.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_quadratic",
+        "substitute_back",
+        "compute_theta"
+      ],
+      "method_path": [
+        "Solve quadratic 4r^2 - 20r + 25 = 0 to get r = 5/2",
+        "Substitute r into perimeter or area equation",
+        "Solve for θ to get θ = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(M1) attempt to solve quadratic by factorizing or formula or completing the square; A1 r = 5/2; (M1) attempt to substitute their value of r into perimeter or area equation; A1 θ = 2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

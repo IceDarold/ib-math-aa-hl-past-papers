@@ -1,0 +1,38 @@
+{
+  "question": "12",
+  "expected_question_marks": 2,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-A",
+      "part": "A",
+      "marks": 2,
+      "task_summary": "Show (u·v)² + |u×v|² = |u|²|v|² using definitions of dot and cross products.",
+      "primary_topic": "geometry.vectors",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "dot_product_definition",
+        "cross_product_magnitude_definition",
+        "trigonometric_identity",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Substitute u·v = |u||v|cosθ and |u×v| = |u||v|sinθ",
+        "Square both terms to get |u|²|v|²cos²θ + |u|²|v|²sin²θ",
+        "Factor |u|²|v|² and use cos²θ+sin²θ=1 to simplify to |u|²|v|²"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": [],
+      "evidence": {
+        "source_pages": [
+          16
+        ],
+        "markscheme_pages": [
+          25
+        ],
+        "quote": "(A1) for (|u||v|cosθ)²+(|u||v|sinθ)² or |u|²|v|² cos²θ+|u|²|v|² sin²θ; A1 for =|u|²|v|²(cos²θ+sin²θ) = |u|²|v|² AG"
+      }
+    }
+  ]
+}
+

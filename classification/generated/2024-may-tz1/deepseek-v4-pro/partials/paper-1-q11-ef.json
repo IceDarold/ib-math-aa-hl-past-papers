@@ -1,0 +1,53 @@
+{
+  "question": "11",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-E",
+      "part": "e",
+      "marks": 4,
+      "task_summary": "Integrate the rational function using the partial fraction form",
+      "primary_topic": "calculus.integration_applications",
+      "method_family": "integration",
+      "method_tags": [
+        "partial_fractions",
+        "termwise_integration",
+        "logarithmic_antiderivative"
+      ],
+      "method_path": [
+        "Use 4/(2x+1)-2/(x+1)-1/(x+1)^2",
+        "Integrate each term",
+        "Obtain 2ln|2x+1|-2ln|x+1|+1/(x+1)+C"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-f",
+      "part": "f-i-ii",
+      "marks": 3,
+      "task_summary": "Find lim_{x→-1} f(x) and lim_{x→∞} f(x) for the given function.",
+      "primary_topic": "calculus.limits",
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "factor_cancellation",
+        "substitution",
+        "leading_coefficient",
+        "lhopital"
+      ],
+      "method_path": [
+        "cancel (x+1) factor and substitute x=-1 for (i)",
+        "compare leading coefficients or apply L'Hôpital for (ii)"
+      ],
+      "accepted_alternatives": [
+        "Use L'Hôpital's rule for both limits"
+      ],
+      "confidence": "high",
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}
+

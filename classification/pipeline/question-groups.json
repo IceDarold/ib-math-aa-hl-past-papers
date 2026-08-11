@@ -1,0 +1,78 @@
+{
+  "paper-1-q09": {
+    "question": "9", "marks": 6, "source_pages": "10-11", "markscheme_pages": "20-21",
+    "groups": [
+      { "id": "ab", "scope": "parts (a) and (b)", "marks": 4 },
+      { "id": "c", "scope": "one combined block for parts (c)(i-ii), using part c-i-ii and shared_marks", "marks": 2 }
+    ]
+  },
+  "paper-1-q10": {
+    "question": "10", "marks": 16, "source_pages": "12", "markscheme_pages": "22-26",
+    "groups": [
+      { "id": "ab", "scope": "parts (a) and (b)", "marks": 6 },
+      { "id": "cd", "scope": "parts (c) and (d)", "marks": 4 },
+      { "id": "ef", "scope": "parts (e) and (f)", "marks": 6 }
+    ]
+  },
+  "paper-1-q11": {
+    "question": "11", "marks": 17, "source_pages": "13", "markscheme_pages": "27-29",
+    "groups": [
+      { "id": "ab", "scope": "parts (a) and (b)", "marks": 5 },
+      { "id": "cd", "scope": "parts (c) and (d)", "marks": 5 },
+      { "id": "ef", "scope": "parts (e) and (f), preserving any shared subpart marks", "marks": 7 }
+    ]
+  },
+  "paper-1-q12": {
+    "question": "12", "marks": 20, "source_pages": "14-16", "markscheme_pages": "30-33",
+    "groups": [
+      { "id": "ab", "scope": "parts (a) and (b), preserving any shared subpart marks", "marks": 5 },
+      { "id": "cd", "scope": "parts (c) and (d)", "marks": 5 },
+      { "id": "ef", "scope": "parts (e) and (f)", "marks": 7 },
+      { "id": "g", "scope": "part (g) only", "marks": 3 }
+    ]
+  },
+  "paper-2-q10": {
+    "question": "10", "marks": 16, "source_pages": "12-13", "markscheme_pages": "20-22",
+    "groups": [
+      { "id": "ab", "scope": "parts (a) and (b)", "marks": 5 },
+      { "id": "cd", "scope": "parts (c) and (d)", "marks": 9 },
+      { "id": "e", "scope": "part (e) only", "marks": 2 }
+    ]
+  },
+  "paper-2-q11": {
+    "question": "11", "marks": 19, "source_pages": "14", "markscheme_pages": "23-24",
+    "groups": [
+      { "id": "a", "scope": "part (a) only", "marks": 5 },
+      { "id": "b", "scope": "one combined block for parts (b)(i-ii), preserving the shared 9 marks", "marks": 9 },
+      { "id": "cd", "scope": "parts (c) and (d)", "marks": 5 }
+    ]
+  },
+  "paper-2-q12": {
+    "question": "12", "marks": 20, "source_pages": "15-16", "markscheme_pages": "25-29",
+    "groups": [
+      { "id": "a", "scope": "part (a) only", "marks": 2 },
+      { "id": "b", "scope": "one combined block for parts (b)(i-iii), preserving the shared 13 marks", "marks": 13 },
+      { "id": "c", "scope": "part (c) only", "marks": 5 }
+    ]
+  },
+  "paper-3-q01": {
+    "question": "1", "marks": 27, "source_pages": "2-3", "markscheme_pages": "7-11",
+    "groups": [
+      { "id": "ab", "scope": "parts (a) and (b), preserving shared subpart marks where printed", "marks": 7 },
+      { "id": "cd", "scope": "parts (c) and (d)", "marks": 8 },
+      { "id": "ef", "scope": "parts (e) and (f)", "marks": 3 },
+      { "id": "g", "scope": "parts (g)(i-iii)", "marks": 6 },
+      { "id": "h", "scope": "parts (h)(i-iii)", "marks": 3 }
+    ]
+  },
+  "paper-3-q02": {
+    "question": "2", "marks": 28, "source_pages": "4-5", "markscheme_pages": "12-16",
+    "groups": [
+      { "id": "ab", "scope": "parts (a) and (b)", "marks": 7 },
+      { "id": "cd", "scope": "parts (c) and (d)", "marks": 4 },
+      { "id": "ef", "scope": "parts (e) and (f), preserving shared subpart marks where printed", "marks": 6 },
+      { "id": "gh", "scope": "parts (g) and (h)", "marks": 9 },
+      { "id": "i", "scope": "part (i) only", "marks": 2 }
+    ]
+  }
+}

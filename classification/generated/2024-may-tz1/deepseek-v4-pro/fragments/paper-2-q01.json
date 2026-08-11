@@ -1,0 +1,123 @@
+{
+  "question": "1",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the value of the car after 15% depreciation in the first year.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "percentage_decrease",
+        "multiplication"
+      ],
+      "method_path": [
+        "recognize 85% remaining or compute 15% then subtract",
+        "calculate 0.85*35000 or 35000 - 0.15*35000",
+        "state value 29750"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "M1: recognition that a 15% loss leaves 85% OR finding 15% and subtracting from original. A1: ($) 29750 =."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the value after 10 years, with 11% yearly depreciation after first year, rounded to nearest dollar.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_sequence_term",
+        "compounding",
+        "gdc_finance"
+      ],
+      "method_path": [
+        "set up geometric term: 29750 * 0.89^9 or equivalent finance app parameters",
+        "compute value",
+        "round to nearest dollar giving 10423"
+      ],
+      "accepted_alternatives": [
+        "finance app: N=9, I%=11, PV=-29750, solve FV"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER 29750 × 0.89^9 (A1) OR N=9 I%=11 PV=29750 ... THEN (A1) value (FV) = $10423. A1: answer must be rounded to the nearest dollar."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q01-C",
+      "question": "1",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Find least n such that car value is less than 10% of original after n complete years.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "functions.exponential_models",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "geometric_inequality",
+        "logarithm_solving",
+        "gdc_solving",
+        "round_up"
+      ],
+      "method_path": [
+        "set up inequality 29750 * 0.89^(n-1) < 3500 or equivalent",
+        "solve by logs, trial and error, table, or finance app",
+        "obtain n > 19.36... (or N > 18.36... if solving directly for years after first)",
+        "round up to n=20"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: solve inequality 29750 * 0.89^(n-1) < 3500 by trial, table, logs",
+        "METHOD 2: use finance app with I%=11, PV=-29750, FV=3500, solve N then n=N+1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: attempt to solve the inequality (or equation) ... M1; 19.3643... OR ... (A1); n = 20 A1. METHOD 2: use of the finance app ... M1; (N =) 18.3643... A1; n = 20 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

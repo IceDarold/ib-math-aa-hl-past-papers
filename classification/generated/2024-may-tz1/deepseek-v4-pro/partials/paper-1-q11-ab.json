@@ -1,0 +1,50 @@
+{
+  "question": "paper-1-q11",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-A",
+      "part": "a",
+      "marks": 2,
+      "task_summary": "Show that (x+1) is a factor of P(x).",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "factor_verification",
+        "substitution",
+        "remainder_check"
+      ],
+      "method_path": [
+        "Substitute x = -1 into P(x)",
+        "Evaluate to obtain zero, confirming (x+1) is a factor"
+      ],
+      "accepted_alternatives": [
+        "Synthetic division showing zero remainder",
+        "Long division showing zero remainder"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-B",
+      "part": "b",
+      "marks": 3,
+      "task_summary": "Express P(x) as a product of three linear factors.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "polynomial_division",
+        "quadratic_factorization"
+      ],
+      "method_path": [
+        "Divide P(x) by (x+1) to obtain quadratic 3x^2+2x-1",
+        "Factor quadratic into (3x-1)(x+1)",
+        "Write final product as (x+1)^2(3x-1)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

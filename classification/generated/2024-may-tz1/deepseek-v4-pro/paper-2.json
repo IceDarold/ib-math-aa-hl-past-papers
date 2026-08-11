@@ -1,0 +1,1260 @@
+{
+  "session": "May 2024",
+  "zone": "TZ1",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "2",
+      "markscheme_pages": "8",
+      "task_summary": "Find the value of the car after 15% depreciation in the first year.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "percentage_decrease",
+        "multiplication"
+      ],
+      "method_path": [
+        "recognize 85% remaining or compute 15% then subtract",
+        "calculate 0.85*35000 or 35000 - 0.15*35000",
+        "state value 29750"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "M1: recognition that a 15% loss leaves 85% OR finding 15% and subtracting from original. A1: ($) 29750 =."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "2",
+      "markscheme_pages": "8",
+      "task_summary": "Find the value after 10 years, with 11% yearly depreciation after first year, rounded to nearest dollar.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_sequence_term",
+        "compounding",
+        "gdc_finance"
+      ],
+      "method_path": [
+        "set up geometric term: 29750 * 0.89^9 or equivalent finance app parameters",
+        "compute value",
+        "round to nearest dollar giving 10423"
+      ],
+      "accepted_alternatives": [
+        "finance app: N=9, I%=11, PV=-29750, solve FV"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER 29750 × 0.89^9 (A1) OR N=9 I%=11 PV=29750 ... THEN (A1) value (FV) = $10423. A1: answer must be rounded to the nearest dollar."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q01-C",
+      "question": "1",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "2",
+      "markscheme_pages": "9",
+      "task_summary": "Find least n such that car value is less than 10% of original after n complete years.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "functions.exponential_models",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "geometric_inequality",
+        "logarithm_solving",
+        "gdc_solving",
+        "round_up"
+      ],
+      "method_path": [
+        "set up inequality 29750 * 0.89^(n-1) < 3500 or equivalent",
+        "solve by logs, trial and error, table, or finance app",
+        "obtain n > 19.36... (or N > 18.36... if solving directly for years after first)",
+        "round up to n=20"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: solve inequality 29750 * 0.89^(n-1) < 3500 by trial, table, logs",
+        "METHOD 2: use finance app with I%=11, PV=-29750, FV=3500, solve N then n=N+1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: attempt to solve the inequality (or equation) ... M1; 19.3643... OR ... (A1); n = 20 A1. METHOD 2: use of the finance app ... M1; (N =) 18.3643... A1; n = 20 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Find the radius of the base of the cone using trigonometry given vertical height 20 m, distance 5 m, eye level 1.8 m, and angle of elevation 58°.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "right_triangle_trigonometry",
+        "tangent_ratio",
+        "algebraic_equation_solving"
+      ],
+      "method_path": [
+        "Set up equation using tan 58° = (20 - 1.8) / (5 + r)",
+        "Solve for r to get r = 18.2 / tan 58° - 5 ≈ 6.37 m"
+      ],
+      "accepted_alternatives": [
+        "Using sine rule: (5 + r) / sin 32° = 18.2 / sin 58°"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to use trigonometry to find the radius (M1); 18.2 / tan58 = 5 + r OR (5 + r) / sin32 = 18.2 / sin58 (A1); r = 6.37 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Find the volume of the monument (right cone) using the radius from part (a) and height 20 m.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "cone_volume_formula",
+        "substitution",
+        "rounding"
+      ],
+      "method_path": [
+        "Substitute r from part (a) and h = 20 into V = (1/3)π r^2 h",
+        "Compute and round to 3 significant figures (or as appropriate) to get 851 m³"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to substitute h=20 and their radius into correct volume of cone formula (M1); V = π (6.37...)^2 * 20 / 3 = 850.54... → 851 m³ (A1); Note: Accept 849.84... (850) from r=6.37"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q03-A",
+      "question": "3",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Find the probability that X is more than 1.5 standard deviations above the mean.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "probability_calculation",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize that X > mean + 1.5*SD corresponds to X > 13 (or Z > 1.5)",
+        "Calculate P(X > 13) or P(Z > 1.5) using GDC normal CDF"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "recognition of 13 X > OR 1.5 Z > (could be seen in a diagram) (M1) then P(13) 0.0668072... X > = 0.0668 = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q03-B",
+      "question": "3",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Find the number of standard deviations k such that the probability that X is more than k standard deviations above the mean is 0.1.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "inverse_normal",
+        "gdc",
+        "standard_normal"
+      ],
+      "method_path": [
+        "Set up normal CDF equation (e.g., P(X > 10 + 2k) = 0.1 or P(Z > k) = 0.1) or recognize need for inverse normal",
+        "Use inverse normal with left-tail area 0.9 or right-tail 0.1 to obtain k ≈ 1.28"
+      ],
+      "accepted_alternatives": [
+        "Equation approach: equate appropriate normal CDF to 0.1 or 0.9 and solve",
+        "Direct inverse normal: use GDC invNorm with area 0.9 or 0.1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "EITHER equating an appropriate correct normal CDF function to 0.1 or 0.9 (M1) OR recognising need to use inverse normal with 0.1 or 0.9 (M1) THEN k = 1.28155... = 1.28 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Find the smallest value of t when the particle changes direction.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_velocity_zero",
+        "solve_equation_gdc",
+        "smallest_positive_t"
+      ],
+      "method_path": [
+        "Set v = 0",
+        "Solve 2sin(0.5t) + 0.3t - 2 = 0 using GDC",
+        "Identify smallest positive solution t ≈ 1.69"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for recognition that velocity is zero; A1 for t = 1.69"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Find the range of t for which displacement is increasing.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "identify_positive_velocity_interval",
+        "between_zeros",
+        "state_interval"
+      ],
+      "method_path": [
+        "Recognize displacement increases when v > 0",
+        "Identify t-interval between zeros of v",
+        "State 1.69 < t < 6.12"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for recognition that v > 0; A1 for 1.69 < t < 6.12"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Find the displacement relative to O when t = 10.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.rates_of_change"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "displacement_as_integral",
+        "evaluate_definite_integral_gdc",
+        "negative_displacement"
+      ],
+      "method_path": [
+        "Set up displacement as integral of v from 0 to 10",
+        "Evaluate ∫ (2sin(0.5t) + 0.3t - 2) dt from 0 to 10 using GDC",
+        "Obtain value ≈ -2.13 m"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for attempt to substitute into total displacement formula; A1 for -2.13 (m)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "6-7",
+      "markscheme_pages": "13",
+      "task_summary": "Find Pearson's product-moment correlation coefficient r for the given data.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "correlation_coefficient",
+        "gdc"
+      ],
+      "method_path": [
+        "enter_data_into_GDC",
+        "calculate_r"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "0.901017... r = 0.901 A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "6-7",
+      "markscheme_pages": "13",
+      "task_summary": "Give a reason why using the regression line to estimate Paulo's score is not appropriate.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "extrapolation",
+        "model_limitations"
+      ],
+      "method_path": [
+        "identify_extrapolation"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "Student 11 Test B: should not extrapolate R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q05-C",
+      "question": "5",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "6-7",
+      "markscheme_pages": "13",
+      "task_summary": "(i) Explain why using the y-on-x line to predict x is inappropriate. (ii) Use the appropriate regression line to estimate Giovanni's Test A score, showing it rounds to 86.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "regression_line_x_on_y",
+        "substitution",
+        "rounding",
+        "interpretation"
+      ],
+      "method_path": [
+        "compute_regression_line_x_on_y",
+        "substitute_y=90",
+        "solve_for_x",
+        "round_to_nearest_integer"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "(i) Student 12 Test A: should not use line of y on x to predict x from y R1. (ii) attempt to find the equation of the regression line of x on y (M1) ... x = 0.987... y - 3.219... A1 ... x = 85.6214... A1 ... = 86 to nearest integer AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q06-A",
+      "question": "6",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Find the probability that it rains on exactly 10 days in May, given daily independent rain probability 0.2 and 31 days.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "probability_calculation",
+        "recognize_distribution"
+      ],
+      "method_path": [
+        "Recognize X ~ B(31, 0.2)",
+        "Calculate P(X = 10) using binomial formula or GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognition of binomial distribution (M1) ... 0.0419 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Find the probability that it rains on at least 10 days in May.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "cumulative_probability",
+        "complement_rule"
+      ],
+      "method_path": [
+        "Recognize P(X >= 10) = 1 - P(X <= 9)",
+        "Calculate using binomial cumulative distribution (GDC or tables)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognition of need to find P(X >= 10) = 1 - P(X <= 9) (M1) ... 0.0746 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q06-C",
+      "question": "6",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Find the probability that the first day it rains in May is on the 10th day.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "geometric_probability",
+        "independent_events",
+        "multiplication_rule"
+      ],
+      "method_path": [
+        "Recognize sequence: 9 days no rain then rain on 10th",
+        "Calculate (0.8)^9 × 0.2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognition of 9 days with no rain followed by a day of rain (M1) ... 0.0268 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Solve the differential equation dy/dx + y = x, given y(0)=2, giving answer as y=f(x).",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integrating_factor",
+        "integration_by_parts",
+        "initial_condition",
+        "first_order_linear_ode"
+      ],
+      "method_path": [
+        "Recognize first-order linear ODE requiring integrating factor",
+        "Compute integrating factor e^{∫ -1 dx} = e^{-x}",
+        "Multiply ODE by integrating factor and rewrite as d/dx(y e^{-x}) = x e^{-x}",
+        "Set up integral: y e^{-x} = ∫ x e^{-x} dx",
+        "Attempt integration by parts on ∫ x e^{-x} dx",
+        "Obtain correct integration: -x e^{-x} - e^{-x} + c",
+        "Solve for y, substitute initial condition y(0)=2 to find c=3, and write y = 3e^{x} - x - 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "Markscheme shows: recognition of integrating factor (M1), integrating factor e^{-x} (A1), multiplication and derivative form (A1), integration by parts attempt (M1), correct integration (A1), substitution of initial values (M1), final answer y=3e^x - x - 1 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Show that k satisfies the equation 7k^3 = 6 given a piecewise probability density function f(x).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "set_up_integral",
+        "integrate_piecewise",
+        "evaluate_definite_integral",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Set the integral of f(x) over all x equal to 1.",
+        "Integrate from 0 to k: ∫0k k x dx",
+        "Integrate from k to 2k: ∫k2k (2k - x)/(k) dx",
+        "Evaluate the integrals and simplify to obtain 7k^3/6 = 1, hence 7k^3 = 6."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "The markscheme shows the integral set-up, evaluation, and final result with A1 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "16-17",
+      "task_summary": "Find the median of X.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "numerical_gdc"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "define_median",
+        "numerical_gdc",
+        "integrate_piecewise",
+        "solve_equation",
+        "rounding"
+      ],
+      "method_path": [
+        "Recognize median m satisfies ∫0m f(x) dx = 0.5.",
+        "Compute k = (6/7)^(1/3) ≈ 0.949914.",
+        "Compute ∫0k f(x) dx = 3/7 ≈ 0.428571, so m > k.",
+        "Set up equation ∫0k f(x) dx + ∫km (2k - x)/k dx = 0.5, or equivalently ∫m2k f(x) dx = 0.5.",
+        "Evaluate integral to obtain an equation in m, solve numerically for m, yielding m ≈ 1.03."
+      ],
+      "accepted_alternatives": [
+        "Use the upper tail integral: ∫_m^{2k} (2k - x)/(k) dx = 0.5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16-17",
+          "basis": "Markscheme shows recognition M1, k value and lower integral A1, then either integral setup A1, and final answer A1; also alternative upper tail method."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q09-A",
+      "question": "9",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Find the total number of seating arrangements with Alvin and Bobby sitting next to each other in the same row.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "block_treatment",
+        "multiplication_principle",
+        "row_consideration"
+      ],
+      "method_path": [
+        "Determine number of ways to seat Alvin and Bobby as a block, considering row adjacency",
+        "compute 16 possibilities",
+        "Arrange the other 8 children in 8! ways",
+        "Multiply to get 16 × 8! = 645120"
+      ],
+      "accepted_alternatives": [
+        "Alternative method: 2 × 9! − 2 × 8! (treat as a line of 10, subtract cases where block straddles rows 5 and 6)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1: number of ways Alvin and Bobby can be seated is 2×8=16; number of ways other children 8!; total 16×8! = 645120"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q09-B",
+      "question": "9",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "18-19",
+      "task_summary": "Find the total number of seating arrangements with Alvin and Bobby adjacent, and Catalina and Daniela not adjacent.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "case_analysis",
+        "inclusion_exclusion",
+        "subtraction",
+        "multiplication_principle",
+        "block_restriction"
+      ],
+      "method_path": [
+        "Take total arrangements from part (a)",
+        "Find arrangements where A,B adjacent AND C,D adjacent via casework (end vs non-end)",
+        "Case 1: A,B at end (8 ways), C,D together 12 ways, others 6! → 8640",
+        "Case 2: A,B not at end (8 ways), C,D together 10 ways, others 6! → 7200",
+        "Subtract sum from total: 645120 − (69120+57600) = 518400"
+      ],
+      "accepted_alternatives": [
+        "Alternative method: Direct casework based on A,B position (end/non-end) and counting C,D non-adjacent placements, adding possibilities (Case 1: 8×31680, Case 2: 8×33120, total 518400)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "METHOD 1: attempt to find number A,B adjacent AND C,D adjacent and subtract from part (a); Case 1: A,B end (8 ways), C,D together 12 ways, arrangements 12×6!=8640; Case 2: A,B not end (8 ways), C,D together 10 ways, 10×6!=7200; total = 645120 – (69120+57600) = 518400"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-A",
+      "part": "A",
+      "marks": 3,
+      "task_summary": "Find m such that time between first low tide and first high tide is 6 hours m minutes, to nearest integer.",
+      "primary_topic": "functions.trigonometric_functions",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_zeros_of_trig",
+        "compute_half_period",
+        "time_conversion",
+        "rounding"
+      ],
+      "method_path": [
+        "EITHER find t for first low and high tides from equation and subtract; OR compute half period from b coefficient.",
+        "Obtain time difference ≈6.12396 hours.",
+        "Subtract 6 hours, multiply by 60 to get minutes ≈7.44.",
+        "Round to nearest integer m = 7."
+      ],
+      "accepted_alternatives": [
+        "Directly solving H(t)=0.50 and H(t)=3.76 for t within first cycle.",
+        "Using period T=2π/0.513, half period = T/2."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-B",
+      "part": "B",
+      "marks": 2,
+      "task_summary": "Between two consecutive high tides, determine the length of time (hours) for which water height is less than 1 metre.",
+      "primary_topic": "functions.trigonometric_functions",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_trig_equation",
+        "subtraction",
+        "rounding"
+      ],
+      "method_path": [
+        "Solve H(t) = 1 for t between the two high tides.",
+        "Obtain two solutions ≈3.56919 and ≈6.70684.",
+        "Subtract to get interval length ≈3.13764 hours.",
+        "Round to 3.14 hours."
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-C",
+      "part": "C",
+      "marks": 2,
+      "task_summary": "Find rate of change of water height when t=13.",
+      "primary_topic": "calculus.rates_of_change",
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative",
+        "evaluate_derivative",
+        "substitute_value"
+      ],
+      "method_path": [
+        "Recognize need for derivative H'(t)",
+        "Compute derivative",
+        "Substitute t=13",
+        "Obtain numerical rate"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-D",
+      "part": "D",
+      "marks": 7,
+      "task_summary": "Determine parameters a, b, c, d of sine model for tide height at Rockall.",
+      "primary_topic": "functions.trigonometric_functions",
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "determine_amplitude",
+        "determine_vertical_shift",
+        "find_period",
+        "calculate_frequency",
+        "find_phase_shift",
+        "use_tidal_data"
+      ],
+      "method_path": [
+        "Compute amplitude a from tide heights",
+        "Compute vertical shift d from mean tide height",
+        "Determine period from time between low and high tide",
+        "Calculate frequency b = 2π/period",
+        "Find phase shift c using mean time or by substituting a known point"
+      ],
+      "accepted_alternatives": [
+        "Method 1: using period and mean time; Method 2: substituting points and solving simultaneously"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q10-E",
+      "part": "e",
+      "marks": 2,
+      "task_summary": "Find first time T when heights at Sule Skerry and Rockall are equal.",
+      "primary_topic": "functions.equations",
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "find_intersection",
+        "numerical_solve",
+        "trigonometric_equation"
+      ],
+      "method_path": [
+        "Find intersection of H(t) and h(t) on GDC",
+        "Round T to 3 s.f."
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12-13",
+      "markscheme_pages": "20-22",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-A",
+      "part": "a",
+      "marks": 5,
+      "task_summary": "Show that dy/dx = (2x - e^(x+y))/(e^(x+y) - 2y) using implicit differentiation.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "algebraic_manipulation",
+        "derivative"
+      ],
+      "method_path": [
+        "apply implicit differentiation to both sides",
+        "correctly differentiate LHS and RHS",
+        "collect dy/dx terms",
+        "simplify to target expression"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "14",
+      "markscheme_pages": "23-24",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-B-I-II",
+      "part": "b(i)-(ii)",
+      "marks": 9,
+      "task_summary": "Show x-coordinates of P and Q satisfy given equation; hence find coordinates of P and Q.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_zero",
+        "logarithmic_transform",
+        "substitution",
+        "algebraic_simplification",
+        "numerical_solve_gdc",
+        "coordinate_evaluation"
+      ],
+      "method_path": [
+        "Set numerator of dy/dx to zero: 2x - e^{x+y} = 0",
+        "Express y in terms of x: y = ln(2x) - x",
+        "Substitute into curve equation x^2 + y^2 = e^{x+y} to get equation in x",
+        "Simplify to show 2x^2 + (ln(2x))^2 - 2x ln(2x) - 2x = 0",
+        "Solve equation numerically for x, obtaining 0.331 and 1.84",
+        "Find corresponding y using y = ln(2x) - x, giving (0.331, -0.743) and (1.84, -0.538)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ],
+      "question": "11",
+      "source_pages": "14",
+      "markscheme_pages": "23-24",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-C",
+      "part": "(c)",
+      "marks": 1,
+      "task_summary": "Using line of symmetry y=x, write down coordinates of vertical tangent points.",
+      "primary_topic": "functions.graphing",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "symmetry",
+        "coordinate_reflection"
+      ],
+      "method_path": [
+        "Use line of symmetry y=x",
+        "Reflect points P and Q by swapping coordinates",
+        "Write coordinates of reflected points"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "14",
+      "markscheme_pages": "23-24",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-D",
+      "part": "(d)",
+      "marks": 4,
+      "task_summary": "Find coordinates of point where tangent gradient is -1.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "implicit_differentiation",
+        "gradient_condition",
+        "algebraic_simplification",
+        "substitution",
+        "numerical_solving"
+      ],
+      "method_path": [
+        "Set dy/dx = -1 using expression from (a)",
+        "Simplify to y = x",
+        "Substitute y = x into e^(x+y) = x^2 + y^2",
+        "Obtain e^(2x) = 2x^2",
+        "Solve numerically to get x ≈ -0.451",
+        "State coordinates (-0.451, -0.451)"
+      ],
+      "accepted_alternatives": [
+        "Recognize point lies on line of symmetry y=x (since gradient -1 is perpendicular), then substitute y=x into curve equation."
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "14",
+      "markscheme_pages": "23-24",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-A",
+      "part": "A",
+      "marks": 2,
+      "task_summary": "Show (u·v)² + |u×v|² = |u|²|v|² using definitions of dot and cross products.",
+      "primary_topic": "geometry.vectors",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "dot_product_definition",
+        "cross_product_magnitude_definition",
+        "trigonometric_identity",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Substitute u·v = |u||v|cosθ and |u×v| = |u||v|sinθ",
+        "Square both terms to get |u|²|v|²cos²θ + |u|²|v|²sin²θ",
+        "Factor |u|²|v|² and use cos²θ+sin²θ=1 to simplify to |u|²|v|²"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "12",
+      "source_pages": "15-16",
+      "markscheme_pages": "25-29",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-B-I-III",
+      "part": "(b)(i-iii)",
+      "marks": 13,
+      "task_summary": "Given u = AB, v = AC, area of triangle ABC = 6, u·v = 3. (i) Find |u×v|. (ii) Find |u|. (iii) Find possible p and corresponding q.",
+      "primary_topic": "geometry.vectors_3d",
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "area_of_triangle",
+        "cross_product_magnitude",
+        "vector_magnitude_identity",
+        "dot_product",
+        "system_of_equations",
+        "quadratic_solving"
+      ],
+      "method_path": [
+        "Use area=0.5|u×v| to find |u×v|",
+        "Compute |v| from points C and A",
+        "Apply identity (u·v)^2+|u×v|^2=|u|^2|v|^2 to find |u|",
+        "Express u as AB = (p, q-1, 1)",
+        "Form dot product equation u·v = 3",
+        "Form magnitude equation |u| = sqrt(3)",
+        "Solve system to get quadratic in p or q",
+        "Find p values and corresponding q"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ],
+      "question": "12",
+      "source_pages": "15-16",
+      "markscheme_pages": "25-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-C",
+      "part": "c",
+      "marks": 5,
+      "task_summary": "Find possible vectors w given p=1, u·w=v·w=0, area of triangle ACD=5",
+      "primary_topic": "geometry.vectors",
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "orthogonality_conditions",
+        "triangle_area",
+        "system_of_equations",
+        "magnitude"
+      ],
+      "method_path": [
+        "Express w components via dot product equations",
+        "Solve for two components in terms of one",
+        "Use area = 0.5 |v||w| to set up magnitude equation",
+        "Substitute and solve for variable",
+        "State both possible w vectors"
+      ],
+      "accepted_alternatives": [
+        "Method 2: use u×v as direction of w, solve scalar",
+        "Method 3: use u×w magnitude condition and perpendicularity"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ],
+      "question": "12",
+      "source_pages": "15-16",
+      "markscheme_pages": "25-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

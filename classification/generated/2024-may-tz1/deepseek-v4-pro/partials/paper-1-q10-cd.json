@@ -1,0 +1,54 @@
+{
+  "question": "2024-MAY-TZ1-P1-Q10",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-C",
+      "part": "c",
+      "marks": 1,
+      "task_summary": "Show that p = 9/2 using axis of symmetry x=2.",
+      "primary_topic": "functions.equations",
+      "method_family": "formula_application",
+      "method_tags": [
+        "axis_of_symmetry",
+        "average_of_roots"
+      ],
+      "method_path": [
+        "Set average of roots = axis of symmetry: (p + (-1/2))/2 = 2",
+        "Solve for p"
+      ],
+      "accepted_alternatives": [
+        "Use sum of roots to find p",
+        "Use distance from axis: p = 2 + (2 - (-1/2))"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-D",
+      "part": "d",
+      "marks": 3,
+      "task_summary": "Find b and c for g(x)=x^2+bx+c.",
+      "primary_topic": "functions.equations",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "form_quadratic_from_roots",
+        "expand",
+        "compare_coefficients"
+      ],
+      "method_path": [
+        "Form quadratic from roots: (x+1/2)(x-9/2)",
+        "Expand to x^2 - 4x - 9/4",
+        "Identify b = -4, c = -9/4"
+      ],
+      "accepted_alternatives": [
+        "Use axis of symmetry: b = -4, then substitute root to find c",
+        "Solve system of equations from substituting both roots",
+        "Complete vertex form (x-2)^2+k with a root to find constant"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

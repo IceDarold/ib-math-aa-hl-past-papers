@@ -40,6 +40,8 @@ function inferMethodFamily(tags: string[], path: string): string {
 
 function normalizeQuestion(row: RawQuestion): Question {
   const tags = splitPipe(row.method_tags)
+  const evidenceItems = JSON.parse(row.evidence || '[]') as Question['evidenceItems']
+  const confidenceLevels = JSON.parse(row.confidence || '{}') as Question['confidenceLevels']
   return {
     ...row,
     paper: Number(row.paper),
@@ -49,7 +51,10 @@ function normalizeQuestion(row: RawQuestion): Question {
     alternatives: splitPipe(row.accepted_alternatives),
     pathSteps: splitPath(row.method_path),
     topicFamily: row.primary_topic.split('.')[0] ?? row.primary_topic,
-    methodFamily: inferMethodFamily(tags, row.method_path),
+    methodFamily: row.method_family || inferMethodFamily(tags, row.method_path),
+    evidenceItems,
+    confidenceLevels,
+    reviewFlags: splitPipe(row.review_flags),
   }
 }
 
@@ -72,6 +77,8 @@ export function filterQuestions(items: Question[], filters: import('../types').F
   return items.filter((row) => {
     if (filters.paper !== 'all' && row.paper !== Number(filters.paper)) return false
     if (filters.calculator !== 'all' && row.calculator !== filters.calculator) return false
+    if (filters.session !== 'all' && row.session !== filters.session) return false
+    if (filters.status !== 'all' && row.review_status !== filters.status) return false
     if (filters.topics.size && !filters.topics.has(row.topicFamily)) return false
     if (filters.methods.size && !filters.methods.has(row.methodFamily)) return false
     if (!query) return true
@@ -85,6 +92,10 @@ export function filterQuestions(items: Question[], filters: import('../types').F
       row.method_path,
       row.accepted_alternatives,
       row.methodFamily,
+      row.session,
+      row.zone,
+      row.review_status,
+      row.review_flags,
       `paper ${row.paper}`,
       `p${row.paper}`,
     ].join(' ').toLowerCase().includes(query)
@@ -93,12 +104,16 @@ export function filterQuestions(items: Question[], filters: import('../types').F
 
 export function shortId(row: Question): string {
   const part = row.part === '-' ? '' : `-${row.part.toUpperCase()}`
-  return `24N-C-P${row.paper}-Q${row.question.padStart(2, '0')}${part}`
+  const session = row.session === 'May 2024' ? '24M' : '24N'
+  const zone = row.zone === 'Common' ? 'C' : row.zone
+  return `${session}-${zone}-P${row.paper}-Q${row.question.padStart(2, '0')}${part}`
 }
 
 export function pdfUrl(row: Question, filename: 'question-paper.pdf' | 'markscheme.pdf'): string {
-  const page = row.source_pages.split('-')[0] ?? row.source_pages
-  return `/AA_HL/2024/November/Common/Paper%20${row.paper}/${filename}#page=${encodeURIComponent(page)}`
+  const pageSource = filename === 'markscheme.pdf' ? row.markscheme_pages : row.source_pages
+  const page = pageSource.split('-')[0] ?? pageSource
+  const session = row.session === 'May 2024' ? 'May/TZ1' : 'November/Common'
+  return `/AA_HL/2024/${session}/Paper%20${row.paper}/${filename}#page=${encodeURIComponent(page)}`
 }
 
 export function formatKey(key: string): string {

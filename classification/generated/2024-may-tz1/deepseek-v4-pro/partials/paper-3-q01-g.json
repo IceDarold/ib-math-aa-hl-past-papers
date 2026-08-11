@@ -1,0 +1,68 @@
+{
+  "question": "2024-MAY-TZ1-P3-Q01",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-g-i",
+      "part": "(g)(i)",
+      "marks": 2,
+      "task_summary": "Find m and n from the probability distribution of Y using the given model.",
+      "primary_topic": "statistics.probability",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_model",
+        "conditional_probability",
+        "multiplication"
+      ],
+      "method_path": [
+        "Calculate P(Y=2) as (1-0.2)*0.4 = 0.32",
+        "Calculate P(Y=4) as 0.8*0.6*0.4*0.8 = 0.1536"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-g-ii",
+      "part": "(g)(ii)",
+      "marks": 2,
+      "task_summary": "Show that the expected value E(Y) is 2.5104 using the probability distribution.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_value_calculation",
+        "summation"
+      ],
+      "method_path": [
+        "Multiply each y by its probability P(Y=y)",
+        "Sum the products to obtain 2.5104"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q01-g-iii",
+      "part": "(g)(iii)",
+      "marks": 2,
+      "task_summary": "Find the variance Var(Y) using E(Y^2) - [E(Y)]^2 or GDC.",
+      "primary_topic": "statistics.expected_value",
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "variance_calculation",
+        "sum_of_squares",
+        "gdc_usage"
+      ],
+      "method_path": [
+        "Calculate E(Y^2) as sum of y^2 * P(Y=y)",
+        "Subtract [E(Y)]^2 to obtain variance ≈ 1.19"
+      ],
+      "accepted_alternatives": [
+        "Use GDC to compute variance directly"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

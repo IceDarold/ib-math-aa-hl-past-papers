@@ -1,0 +1,59 @@
+{
+  "question": "2",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q02-G",
+      "part": "g",
+      "marks": 2,
+      "task_summary": "Show that the line through B and C is y = (-m^3/8 + n)x",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "find_slope",
+        "substitute_coordinates",
+        "simplify_expression",
+        "given_answer_check"
+      ],
+      "method_path": [
+        "Find slope from B(0,0) and C(m/2, -m^4/16 + nm/2)",
+        "Calculate (y_C - 0)/(x_C - 0) = (-m^4/16 + nm/2) / (m/2)",
+        "Simplify to -m^3/8 + n",
+        "Write line equation y = (-m^3/8 + n)x"
+      ],
+      "accepted_alternatives": [
+        "Alternative: substitute into (y2-y1)/(x2-x1) formula",
+        "Working backwards to verify points lie on line (awarded at most M1A0)"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-h",
+      "part": "h",
+      "marks": 7,
+      "task_summary": "Show that the other intersection point A has x-coordinate m/4 - (m/4)√5.",
+      "primary_topic": "functions.equations",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "polynomial_equation",
+        "factoring",
+        "quadratic_formula",
+        "root_selection"
+      ],
+      "method_path": [
+        "Equate quartic and line to form polynomial equation.",
+        "Factor out x and (x - m/2) from the quartic.",
+        "Obtain quadratic x^2 - (m/2)x - m^2/4 = 0.",
+        "Apply quadratic formula to get x = m/4 ± (m/4)√5.",
+        "Select the smaller root x_A = m/4 - (m/4)√5."
+      ],
+      "accepted_alternatives": [
+        "Method 2: Form cubic factor, use sum and product of roots with known root x_C = m/2 to derive quadratic, then solve."
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

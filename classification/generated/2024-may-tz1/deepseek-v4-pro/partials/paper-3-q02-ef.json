@@ -1,0 +1,72 @@
+{
+  "question": "2024-MAY-TZ1-P3-Q02",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-e",
+      "part": "e",
+      "marks": 3,
+      "task_summary": "Find x-coordinates of points of inflexion in terms of m.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "second_derivative",
+        "solve_quadratic",
+        "point_of_inflexion"
+      ],
+      "method_path": [
+        "find first derivative dy/dx = 4x^3 - 3mx^2 + n",
+        "find second derivative d^2y/dx^2 = 12x^2 - 6mx",
+        "set second derivative to zero: 6x(2x - m) = 0",
+        "solve for x to obtain x = 0 and x = m/2"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-f-i",
+      "part": "f-i",
+      "marks": 1,
+      "task_summary": "Write down the coordinates of point B.",
+      "primary_topic": "functions.graphing",
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "function_evaluation",
+        "coordinate_identification"
+      ],
+      "method_path": [
+        "substitute x = 0 into y = x^4 - mx^3 + nx to get y = 0",
+        "state coordinates (0, 0)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-f-ii",
+      "part": "f-ii",
+      "marks": 2,
+      "task_summary": "Find coordinates of point C in terms of m and n.",
+      "primary_topic": "algebra.algebraic_transformation",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "simplification",
+        "coordinate_determination"
+      ],
+      "method_path": [
+        "substitute x = m/2 into y = x^4 - mx^3 + nx",
+        "simplify to obtain y = -m^4/16 + mn/2",
+        "state coordinates (m/2, -m^4/16 + mn/2)"
+      ],
+      "accepted_alternatives": [
+        "equivalent simplifications such as (2mn - m^4/8) or m(2n - m^3/8)"
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

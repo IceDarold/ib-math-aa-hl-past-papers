@@ -1,0 +1,118 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Find the smallest value of t when the particle changes direction.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_velocity_zero",
+        "solve_equation_gdc",
+        "smallest_positive_t"
+      ],
+      "method_path": [
+        "Set v = 0",
+        "Solve 2sin(0.5t) + 0.3t - 2 = 0 using GDC",
+        "Identify smallest positive solution t ≈ 1.69"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for recognition that velocity is zero; A1 for t = 1.69"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Find the range of t for which displacement is increasing.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "identify_positive_velocity_interval",
+        "between_zeros",
+        "state_interval"
+      ],
+      "method_path": [
+        "Recognize displacement increases when v > 0",
+        "Identify t-interval between zeros of v",
+        "State 1.69 < t < 6.12"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for recognition that v > 0; A1 for 1.69 < t < 6.12"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Find the displacement relative to O when t = 10.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.rates_of_change"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "displacement_as_integral",
+        "evaluate_definite_integral_gdc",
+        "negative_displacement"
+      ],
+      "method_path": [
+        "Set up displacement as integral of v from 0 to 10",
+        "Evaluate ∫ (2sin(0.5t) + 0.3t - 2) dt from 0 to 10 using GDC",
+        "Obtain value ≈ -2.13 m"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for attempt to substitute into total displacement formula; A1 for -2.13 (m)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

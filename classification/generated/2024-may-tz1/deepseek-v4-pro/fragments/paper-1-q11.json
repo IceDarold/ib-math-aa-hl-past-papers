@@ -1,0 +1,227 @@
+{
+  "question": "11",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-A",
+      "part": "a",
+      "marks": 2,
+      "task_summary": "Show that (x+1) is a factor of P(x).",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "factor_verification",
+        "substitution",
+        "remainder_check"
+      ],
+      "method_path": [
+        "Substitute x = -1 into P(x)",
+        "Evaluate to obtain zero, confirming (x+1) is a factor"
+      ],
+      "accepted_alternatives": [
+        "Synthetic division showing zero remainder",
+        "Long division showing zero remainder"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-B",
+      "part": "b",
+      "marks": 3,
+      "task_summary": "Express P(x) as a product of three linear factors.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "polynomial_division",
+        "quadratic_factorization"
+      ],
+      "method_path": [
+        "Divide P(x) by (x+1) to obtain quadratic 3x^2+2x-1",
+        "Factor quadratic into (3x-1)(x+1)",
+        "Write final product as (x+1)^2(3x-1)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-C",
+      "part": "c",
+      "marks": 3,
+      "task_summary": "Express 1/Q(x) in partial fractions A/(x+1) + B/(2x+1) where A, B ∈ ℝ.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "partial_fractions",
+        "equate_coefficients",
+        "substitute_values",
+        "solve_linear_system"
+      ],
+      "method_path": [
+        "Set up identity: 1/((x+1)(2x+1)) = A/(x+1) + B/(2x+1)",
+        "Multiply through by (x+1)(2x+1) to get 1 = A(2x+1) + B(x+1)",
+        "Either equate coefficients to form system 2A+B=0, A+B=1, or substitute suitable x-values (e.g., x=-1, x=-1/2)",
+        "Solve to find A = -1, B = 2"
+      ],
+      "accepted_alternatives": [
+        "Equate coefficients: 2A+B=0, A+B=1",
+        "Substitute x=-1 gives 1=-A, so A=-1; substitute x=-1/2 gives 1=B/2, so B=2"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-D",
+      "part": "d",
+      "marks": 2,
+      "task_summary": "Show that (1 - x/Q(x)) / ((1+x)(2x+1)) equals 1 - 4/(2x+1) - 2/(x+1) + 2/(2x+1)^2.",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "partial_fractions",
+        "algebraic_simplification",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute the partial fraction decomposition of 1/Q(x) from part (c)",
+        "Form expression (1 - x*(-1/(x+1)+2/(2x+1)))/((1+x)(2x+1))",
+        "Simplify numerator and denominator algebraically",
+        "Obtain the target expression 1 - 4/(2x+1) - 2/(x+1) + 2/(2x+1)^2"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-E",
+      "part": "e",
+      "marks": 4,
+      "task_summary": "Integrate the rational function using the partial fraction form",
+      "primary_topic": "calculus.integration_applications",
+      "method_family": "integration",
+      "method_tags": [
+        "partial_fractions",
+        "termwise_integration",
+        "logarithmic_antiderivative"
+      ],
+      "method_path": [
+        "Use 4/(2x+1)-2/(x+1)-1/(x+1)^2",
+        "Integrate each term",
+        "Obtain 2ln|2x+1|-2ln|x+1|+1/(x+1)+C"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q11-F-I-II",
+      "part": "f-i-ii",
+      "marks": 3,
+      "task_summary": "Find lim_{x→-1} f(x) and lim_{x→∞} f(x) for the given function.",
+      "primary_topic": "calculus.limits",
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "factor_cancellation",
+        "substitution",
+        "leading_coefficient",
+        "lhopital"
+      ],
+      "method_path": [
+        "cancel (x+1) factor and substitute x=-1 for (i)",
+        "compare leading coefficients or apply L'Hôpital for (ii)"
+      ],
+      "accepted_alternatives": [
+        "Use L'Hôpital's rule for both limits"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ],
+      "question": "11",
+      "source_pages": "13",
+      "markscheme_pages": "27-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

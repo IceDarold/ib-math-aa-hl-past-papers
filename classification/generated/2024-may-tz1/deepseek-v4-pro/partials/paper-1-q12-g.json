@@ -1,0 +1,31 @@
+{
+  "question": "paper-1-q12",
+  "expected_question_marks": 3,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q12-g",
+      "part": "g",
+      "marks": 3,
+      "task_summary": "Find smallest positive integer n such that u, v, w, u', v', w' are all solutions of z^n = a.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "argument",
+        "common_denominator",
+        "argument_difference",
+        "lcm"
+      ],
+      "method_path": [
+        "Write arguments of all six complex numbers over a common denominator (in radians or degrees).",
+        "Identify the smallest common difference between arguments (π/12 or 15°).",
+        "Compute n = 2π / (π/12) = 24 (or 360° / 15° = 24)."
+      ],
+      "accepted_alternatives": [
+        "Use polar form z = r cis θ, find n such that nθ is a multiple of 2π for all six arguments; test n = 6, 12, ... until all are multiples of 2π, giving n = 24."
+      ],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

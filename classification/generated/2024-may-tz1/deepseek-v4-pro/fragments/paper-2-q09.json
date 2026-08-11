@@ -1,0 +1,90 @@
+{
+  "question": "May 2024 TZ1 Paper 2, Question 9",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q09-A",
+      "question": "May 2024 TZ1 Paper 2, Question 9",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Find the total number of seating arrangements with Alvin and Bobby sitting next to each other in the same row.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "block_treatment",
+        "multiplication_principle",
+        "row_consideration"
+      ],
+      "method_path": [
+        "Determine number of ways to seat Alvin and Bobby as a block, considering row adjacency",
+        "compute 16 possibilities",
+        "Arrange the other 8 children in 8! ways",
+        "Multiply to get 16 × 8! = 645120"
+      ],
+      "accepted_alternatives": [
+        "Alternative method: 2 × 9! − 2 × 8! (treat as a line of 10, subtract cases where block straddles rows 5 and 6)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1: number of ways Alvin and Bobby can be seated is 2×8=16; number of ways other children 8!; total 16×8! = 645120"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q09-B",
+      "question": "May 2024 TZ1 Paper 2, Question 9",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "18-19",
+      "task_summary": "Find the total number of seating arrangements with Alvin and Bobby adjacent, and Catalina and Daniela not adjacent.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "case_analysis",
+        "inclusion_exclusion",
+        "subtraction",
+        "multiplication_principle",
+        "block_restriction"
+      ],
+      "method_path": [
+        "Take total arrangements from part (a)",
+        "Find arrangements where A,B adjacent AND C,D adjacent via casework (end vs non-end)",
+        "Case 1: A,B at end (8 ways), C,D together 12 ways, others 6! → 8640",
+        "Case 2: A,B not at end (8 ways), C,D together 10 ways, others 6! → 7200",
+        "Subtract sum from total: 645120 − (69120+57600) = 518400"
+      ],
+      "accepted_alternatives": [
+        "Alternative method: Direct casework based on A,B position (end/non-end) and counting C,D non-adjacent placements, adding possibilities (Case 1: 8×31680, Case 2: 8×33120, total 518400)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "METHOD 1: attempt to find number A,B adjacent AND C,D adjacent and subtract from part (a); Case 1: A,B end (8 ways), C,D together 12 ways, arrangements 12×6!=8640; Case 2: A,B not end (8 ways), C,D together 10 ways, 10×6!=7200; total = 645120 – (69120+57600) = 518400"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}
+

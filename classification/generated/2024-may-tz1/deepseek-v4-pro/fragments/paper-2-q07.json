@@ -1,0 +1,49 @@
+{
+  "question": "May 2024 TZ1 Paper 2, Question 7",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q07",
+      "question": "May 2024 TZ1 Paper 2, Question 7",
+      "part": "",
+      "marks": 7,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Solve the differential equation dy/dx + y = x, given y(0)=2, giving answer as y=f(x).",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integrating_factor",
+        "integration_by_parts",
+        "initial_condition",
+        "first_order_linear_ode"
+      ],
+      "method_path": [
+        "Recognize first-order linear ODE requiring integrating factor",
+        "Compute integrating factor e^{∫ -1 dx} = e^{-x}",
+        "Multiply ODE by integrating factor and rewrite as d/dx(y e^{-x}) = x e^{-x}",
+        "Set up integral: y e^{-x} = ∫ x e^{-x} dx",
+        "Attempt integration by parts on ∫ x e^{-x} dx",
+        "Obtain correct integration: -x e^{-x} - e^{-x} + c",
+        "Solve for y, substitute initial condition y(0)=2 to find c=3, and write y = 3e^{x} - x - 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "Markscheme shows: recognition of integrating factor (M1), integrating factor e^{-x} (A1), multiplication and derivative form (A1), integration by parts attempt (M1), correct integration (A1), substitution of initial values (M1), final answer y=3e^x - x - 1 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "topic_uncertain"
+      ]
+    }
+  ]
+}
+

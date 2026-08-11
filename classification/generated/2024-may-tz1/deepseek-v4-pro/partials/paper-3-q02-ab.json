@@ -1,0 +1,64 @@
+{
+  "question": "2024-MAY-TZ1-P3-Q02",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-A",
+      "part": "a",
+      "marks": 3,
+      "task_summary": "Find the second derivative d^2y/dx^2 of y=x^4-3x^3+3x.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative",
+        "polynomial_differentiation"
+      ],
+      "method_path": [
+        "Differentiate y to obtain dy/dx.",
+        "Differentiate dy/dx to obtain d^2y/dx^2."
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": [],
+      "source_pages": [
+        5
+      ],
+      "markscheme_pages": [
+        12
+      ],
+      "evidence": "Markscheme p.12: d^2y/dx^2 = 12x^2 - 18x A1."
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-B",
+      "part": "b",
+      "marks": 4,
+      "task_summary": "Find the coordinates of the points of inflexion B and C.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "inflection_points",
+        "solve_second_derivative_zero",
+        "substitute"
+      ],
+      "method_path": [
+        "Set d^2y/dx^2 = 0.",
+        "Solve for x.",
+        "Substitute x into y to find y-coordinates.",
+        "Identify points B and C."
+      ],
+      "accepted_alternatives": [
+        "Use GDC to graph dy/dx and identify inflection points."
+      ],
+      "confidence": "high",
+      "review_flags": [],
+      "source_pages": [
+        5
+      ],
+      "markscheme_pages": [
+        12
+      ],
+      "evidence": "Markscheme p.12: solving 12x^2-18x=0 gives x=0,1.5; point B=(0,0), point C=(1.5,-0.5625)."
+    }
+  ]
+}
+

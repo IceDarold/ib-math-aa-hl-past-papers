@@ -1,0 +1,36 @@
+{
+  "question": "2024-MAY-TZ1-P2-Q11",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q11-B",
+      "part": "b(i)-(ii)",
+      "marks": 9,
+      "task_summary": "Show x-coordinates of P and Q satisfy given equation; hence find coordinates of P and Q.",
+      "primary_topic": "calculus.differentiation",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_zero",
+        "logarithmic_transform",
+        "substitution",
+        "algebraic_simplification",
+        "numerical_solve_gdc",
+        "coordinate_evaluation"
+      ],
+      "method_path": [
+        "Set numerator of dy/dx to zero: 2x - e^{x+y} = 0",
+        "Express y in terms of x: y = ln(2x) - x",
+        "Substitute into curve equation x^2 + y^2 = e^{x+y} to get equation in x",
+        "Simplify to show 2x^2 + (ln(2x))^2 - 2x ln(2x) - 2x = 0",
+        "Solve equation numerically for x, obtaining 0.331 and 1.84",
+        "Find corresponding y using y = ln(2x) - x, giving (0.331, -0.743) and (1.84, -0.538)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}
+

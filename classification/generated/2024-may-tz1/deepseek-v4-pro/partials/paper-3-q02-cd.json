@@ -1,0 +1,50 @@
+{
+  "question": "2024-MAY-TZ1-P3-Q02",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-C",
+      "part": "c",
+      "marks": 2,
+      "task_summary": "Show line through B(0,0) and C(1.5,-0.5625) is y = -0.375x.",
+      "primary_topic": "functions.graphing",
+      "method_family": "formula_application",
+      "method_tags": [
+        "slope",
+        "line_equation",
+        "substitution"
+      ],
+      "method_path": [
+        "note y-intercept is 0 from point B",
+        "calculate slope = (y_C - y_B)/(x_C - x_B) = -0.5625/1.5 = -0.375",
+        "write line equation y = -0.375x"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P3-Q02-D",
+      "part": "d",
+      "marks": 2,
+      "task_summary": "Find x-coordinate of D correct to 3 d.p. by solving x^4 - 3x^3 + 3x = -0.375x.",
+      "primary_topic": "functions.equations",
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "gdc_solve",
+        "polynomial_equation",
+        "root_finding"
+      ],
+      "method_path": [
+        "set x^4 - 3x^3 + 3x = -0.375x",
+        "use GDC to solve for x",
+        "choose root greater than 1.5",
+        "round to 2.427 (3 d.p.)"
+      ],
+      "accepted_alternatives": [],
+      "confidence": "high",
+      "review_flags": []
+    }
+  ]
+}
+

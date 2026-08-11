@@ -1,0 +1,227 @@
+{
+  "question": "10",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-A",
+      "part": "a",
+      "marks": 5,
+      "task_summary": "Sketch y=f(x) with intercepts and asymptotes labelled",
+      "primary_topic": "functions.graphing",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "identify_asymptotes",
+        "identify_intercepts"
+      ],
+      "method_path": [
+        "Identify vertical asymptote x=2",
+        "Identify horizontal asymptote y=4",
+        "Find x-intercept at x=-1/2",
+        "Find y-intercept at y=-1",
+        "Draw two branches in correct quadrants with correct asymptotic behaviour"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-B",
+      "part": "b",
+      "marks": 1,
+      "task_summary": "Write down the range of f",
+      "primary_topic": "functions.graphing",
+      "method_family": "function_analysis",
+      "method_tags": [
+        "determine_range",
+        "rational_function"
+      ],
+      "method_path": [
+        "Observe horizontal asymptote y=4 is not attained",
+        "State range as all real numbers except 4 (y≠4)"
+      ],
+      "accepted_alternatives": [
+        "y∈R, y≠4"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-C",
+      "part": "c",
+      "marks": 1,
+      "task_summary": "Show that p = 9/2 using axis of symmetry x=2.",
+      "primary_topic": "functions.equations",
+      "method_family": "formula_application",
+      "method_tags": [
+        "axis_of_symmetry",
+        "average_of_roots"
+      ],
+      "method_path": [
+        "Set average of roots = axis of symmetry: (p + (-1/2))/2 = 2",
+        "Solve for p"
+      ],
+      "accepted_alternatives": [
+        "Use sum of roots to find p",
+        "Use distance from axis: p = 2 + (2 - (-1/2))"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-D",
+      "part": "d",
+      "marks": 3,
+      "task_summary": "Find b and c for g(x)=x^2+bx+c.",
+      "primary_topic": "functions.equations",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "form_quadratic_from_roots",
+        "expand",
+        "compare_coefficients"
+      ],
+      "method_path": [
+        "Form quadratic from roots: (x+1/2)(x-9/2)",
+        "Expand to x^2 - 4x - 9/4",
+        "Identify b = -4, c = -9/4"
+      ],
+      "accepted_alternatives": [
+        "Use axis of symmetry: b = -4, then substitute root to find c",
+        "Solve system of equations from substituting both roots",
+        "Complete vertex form (x-2)^2+k with a root to find constant"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-E",
+      "part": "e",
+      "marks": 2,
+      "task_summary": "Find the y-coordinate of the vertex of g(x)",
+      "primary_topic": "functions.graphing",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "completing_the_square"
+      ],
+      "method_path": [
+        "Substitute x=2 into g(x)",
+        "Simplify g(2) to -25/4"
+      ],
+      "accepted_alternatives": [
+        "Complete the square and read the vertex ordinate"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q10-F",
+      "part": "f",
+      "marks": 4,
+      "task_summary": "Find the product of the solutions to f(x)=g(x).",
+      "primary_topic": "number_algebra.polynomials",
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "equation_setup",
+        "algebraic_manipulation",
+        "polynomial_coefficients",
+        "vieta_product"
+      ],
+      "method_path": [
+        "equate expressions",
+        "clear denominator to get cubic equation",
+        "identify leading and constant coefficients",
+        "apply product of roots relation"
+      ],
+      "accepted_alternatives": [
+        "identify x=-1/2 as a root, reduce to quadratic, compute product of its roots, multiply by -1/2"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22-26",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "10",
+      "source_pages": "12",
+      "markscheme_pages": "22-26",
+      "secondary_topics": []
+    }
+  ]
+}

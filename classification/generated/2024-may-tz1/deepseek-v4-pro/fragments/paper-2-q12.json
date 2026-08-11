@@ -1,0 +1,130 @@
+{
+  "question": "12",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-A",
+      "part": "A",
+      "marks": 2,
+      "task_summary": "Show (u·v)² + |u×v|² = |u|²|v|² using definitions of dot and cross products.",
+      "primary_topic": "geometry.vectors",
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "dot_product_definition",
+        "cross_product_magnitude_definition",
+        "trigonometric_identity",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Substitute u·v = |u||v|cosθ and |u×v| = |u||v|sinθ",
+        "Square both terms to get |u|²|v|²cos²θ + |u|²|v|²sin²θ",
+        "Factor |u|²|v|² and use cos²θ+sin²θ=1 to simplify to |u|²|v|²"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ],
+      "question": "12",
+      "source_pages": "15-16",
+      "markscheme_pages": "25-29",
+      "secondary_topics": []
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-B-I-III",
+      "part": "(b)(i-iii)",
+      "marks": 13,
+      "task_summary": "Given u = AB, v = AC, area of triangle ABC = 6, u·v = 3. (i) Find |u×v|. (ii) Find |u|. (iii) Find possible p and corresponding q.",
+      "primary_topic": "geometry.vectors_3d",
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "area_of_triangle",
+        "cross_product_magnitude",
+        "vector_magnitude_identity",
+        "dot_product",
+        "system_of_equations",
+        "quadratic_solving"
+      ],
+      "method_path": [
+        "Use area=0.5|u×v| to find |u×v|",
+        "Compute |v| from points C and A",
+        "Apply identity (u·v)^2+|u×v|^2=|u|^2|v|^2 to find |u|",
+        "Express u as AB = (p, q-1, 1)",
+        "Form dot product equation u·v = 3",
+        "Form magnitude equation |u| = sqrt(3)",
+        "Solve system to get quadratic in p or q",
+        "Find p values and corresponding q"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ],
+      "question": "12",
+      "source_pages": "15-16",
+      "markscheme_pages": "25-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P2-Q12-C",
+      "part": "c",
+      "marks": 5,
+      "task_summary": "Find possible vectors w given p=1, u·w=v·w=0, area of triangle ACD=5",
+      "primary_topic": "geometry.vectors",
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "orthogonality_conditions",
+        "triangle_area",
+        "system_of_equations",
+        "magnitude"
+      ],
+      "method_path": [
+        "Express w components via dot product equations",
+        "Solve for two components in terms of one",
+        "Use area = 0.5 |v||w| to set up magnitude equation",
+        "Substitute and solve for variable",
+        "State both possible w vectors"
+      ],
+      "accepted_alternatives": [
+        "Method 2: use u×v as direction of w, solve scalar",
+        "Method 3: use u×w magnitude condition and perpendicularity"
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ],
+      "question": "12",
+      "source_pages": "15-16",
+      "markscheme_pages": "25-29",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-29",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}

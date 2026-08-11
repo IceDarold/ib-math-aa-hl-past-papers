@@ -1,0 +1,74 @@
+{
+  "question": "2024-MAY-TZ1-P1-Q07",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "17",
+      "task_summary": "Prove the identity sum_{r=1}^n C(r,1) = C(n+1,2) for all positive integers n using mathematical induction and the definition of combination.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "inductive_hypothesis",
+        "induction_step",
+        "sum_splitting",
+        "hypothesis_substitution",
+        "factorial_manipulation",
+        "common_denominator",
+        "combinatorial_identity"
+      ],
+      "method_path": [
+        "State base case n=1: LHS = C(1,1)=1, RHS = C(2,2)=1, so true.",
+        "Assume true for n=k: sum_{r=1}^k C(r,1) = C(k+1,2).",
+        "Consider n=k+1: split sum, substitute hypothesis to get C(k+1,2) + C(k+1,1).",
+        "Simplify expression using either factorial cancellation or common denominator to obtain (k+2)!/(2!k!) = C(k+2,2).",
+        "Conclude by induction that the statement holds for all positive integers n."
+      ],
+      "accepted_alternatives": [
+        "Simplify C(k+1,2) + C(k+1,1) by writing in factorial form, cancelling, and using common denominator to get C(k+2,2).",
+        "Simplify by directly combining the factorial expressions with a common denominator to reach C(k+2,2)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "Base case n=1: LHS = C(1,1)=1 and RHS = C(2,2)=1, so true for n=1 (R1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "Assume true for n=k: sum_{r=1}^k C(r,1) = C(k+1,2) for some k in Z+ (M1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "Consider n=k+1: LHS = sum_{r=1}^{k+1} C(r,1) = sum_{r=1}^k C(r,1) + C(k+1,1) (M1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "= C(k+1,2) + C(k+1,1) (A1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "EITHER attempt to cancel factorials and use a common denominator M1, leading to ( (k+1)(k+2)/2 ) = ... OR attempt to use a common denominator M1, leading to ( (k+1)!/(2!(k-1)!) + (k+1)!/k! ) = ... THEN = (k+2)!/(2!k!) = C(k+2,2) (A1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "Since true for n=1, and true for n=k implies true for n=k+1, therefore true for all n in Z+ (R1). Note: Only award R1 if 4 of previous 6 marks awarded."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
+

@@ -1,0 +1,119 @@
+{
+  "question": "9",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-A",
+      "part": "a",
+      "marks": 2,
+      "task_summary": "Sketch y = |f(|x|)|",
+      "primary_topic": "functions.graphing",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "absolute_value",
+        "reflection_in_x_axis",
+        "graph_sketching"
+      ],
+      "method_path": [
+        "reflect all negative sections of y=f(|x|) across the x-axis",
+        "sketch resulting graph with cusps at x-intercepts and correct relative peak heights"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ],
+      "question": "9",
+      "source_pages": "10-11",
+      "markscheme_pages": "20-21",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-21",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-B",
+      "part": "b",
+      "marks": 2,
+      "task_summary": "Sketch y = f(x) given f is odd and y = f(|x|)",
+      "primary_topic": "functions.graphing",
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "odd_function",
+        "rotation_about_origin",
+        "graph_sketching"
+      ],
+      "method_path": [
+        "retain the right-hand side of y=f(|x|) unchanged",
+        "rotate that portion 180° about the origin to obtain the left side"
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ],
+      "question": "9",
+      "source_pages": "10-11",
+      "markscheme_pages": "20-21",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-21",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    },
+    {
+      "id": "2024-MAY-TZ1-P1-Q09-C-I-II",
+      "part": "c-i-ii",
+      "marks": 2,
+      "task_summary": "Evaluate two definite integrals using properties of odd functions and given integral from 0 to 4.",
+      "primary_topic": "calculus.integration_applications",
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "odd_function_properties",
+        "linearity_of_integration"
+      ],
+      "method_path": [
+        "Given integral of f(|x|) from 0 to 4 is 1.6.",
+        "Since f is odd, f(-x) = -f(x), and integral_-4^0 f(x) dx = -integral_0^4 f(x) dx.",
+        "From graph, integral_0^4 f(x) dx = integral_0^4 f(|x|) dx = 1.6.",
+        "Thus (c)(i) = -1.6.",
+        "For (c)(ii), split integral: f(|x|) is even, so integral_-4^4 f(|x|) dx = 2 * 1.6 = 3.2.",
+        "Integral_-4^4 f(x) dx = 0 because f is odd and interval symmetric.",
+        "Total = 3.2 + 0 = 3.2."
+      ],
+      "accepted_alternatives": [],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ],
+      "question": "9",
+      "source_pages": "10-11",
+      "markscheme_pages": "20-21",
+      "secondary_topics": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20-21",
+          "basis": "The cited markscheme pages establish the scored method path and mark allocation."
+        }
+      ]
+    }
+  ]
+}
