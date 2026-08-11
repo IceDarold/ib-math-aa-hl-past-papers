@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import type { CSSProperties, KeyboardEvent, PointerEvent as ReactPointerEvent } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 import type { Filters, FilterSetKey } from '../types'
 import { formatKey } from '../lib/questions'
 import { useI18n } from '../i18n'
@@ -21,7 +22,7 @@ interface FilterPanelProps {
 }
 
 const baseSegmentClass = 'h-8 cursor-pointer border border-r-0 border-line bg-canvas px-2 text-xs transition-colors duration-150 ease-out-quart last:border-r hover:bg-surface'
-const activeSegmentClass = 'relative z-1 border-primary! bg-primary-soft text-primary-dark'
+const activeSegmentClass = 'relative z-1 text-primary-dark'
 
 export function FilterPanel({
   filters,
@@ -39,22 +40,32 @@ export function FilterPanel({
 }: FilterPanelProps) {
   const { t } = useI18n()
   return (
-    <aside
+    <motion.aside
       id="filters"
       aria-label={t('filters.label')}
       style={{ '--filter-panel-width': `${width}px` } as CSSProperties}
-      className={`filter-panel z-10 flex min-h-0 min-w-0 shrink-0 flex-col gap-4.5 overflow-y-auto border-r border-line bg-canvas px-3.5 py-3.5 ${compact ? 'fixed top-13 bottom-8 left-0 z-30 shadow-overlay motion-safe:animate-[filter-panel-in_180ms_var(--ease-out-quart)]' : 'relative'}`}
+      className={`filter-panel z-10 flex min-h-0 min-w-0 shrink-0 flex-col gap-4.5 overflow-y-auto border-r border-line bg-canvas px-3.5 py-3.5 ${compact ? 'fixed top-13 bottom-8 left-0 z-30 shadow-overlay' : 'relative'}`}
+      initial={{ opacity: 0, x: compact ? -32 : -16, filter: 'blur(5px)' }}
+      animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+      exit={{ opacity: 0, x: compact ? -28 : -12, filter: 'blur(4px)' }}
+      transition={{
+        x: { type: 'spring', stiffness: 480, damping: 38, mass: 0.75 },
+        opacity: { duration: 0.18 },
+        filter: { duration: 0.2 },
+      }}
     >
       <div className="flex items-center justify-between">
         <h2 className="m-0 text-sm font-semibold">{t('filters.label')}</h2>
-        <button
+        <motion.button
           className={`size-8 cursor-pointer place-items-center border-0 bg-transparent ${compact ? 'grid' : 'hidden'}`}
           type="button"
           aria-label={t('filters.close')}
+          whileHover={{ rotate: 5, scale: 1.08 }}
+          whileTap={{ rotate: -5, scale: 0.86 }}
           onClick={onClose}
         >
           <CloseIcon />
-        </button>
+        </motion.button>
       </div>
 
       <SegmentField
@@ -106,17 +117,19 @@ export function FilterPanel({
         onToggle={(value) => onToggleSet('methods', value)}
       />
 
-      <button
+      <motion.button
         className="mt-auto flex cursor-pointer items-center gap-1.5 border-0 bg-transparent py-2 text-left text-primary hover:text-primary-dark"
         type="button"
+        whileHover={{ x: 4 }}
+        whileTap={{ scale: 0.96 }}
         onClick={onReset}
       >
         <ResetIcon className="size-4" />
         {t('filters.reset')}
-      </button>
+      </motion.button>
 
       {!compact && <SidebarResizeHandle width={width} onResize={onResize} />}
-    </aside>
+    </motion.aside>
   )
 }
 
@@ -135,14 +148,15 @@ function SelectField({
   return (
     <label className="grid gap-1.5 text-xs font-semibold">
       {legend}
-      <select
+      <motion.select
         className="h-8 w-full cursor-pointer border border-line-strong bg-canvas px-2 text-xs font-normal text-ink outline-none hover:bg-surface focus:border-primary focus:ring-1 focus:ring-primary"
         value={value}
+        whileFocus={{ scale: 1.012 }}
         onChange={(event) => onChange(event.target.value)}
       >
         <option value="all">{t('filters.all')}</option>
         {options.map(([option, count]) => <option key={option} value={option}>{option} · {count}</option>)}
-      </select>
+      </motion.select>
     </label>
   )
 }
@@ -221,6 +235,7 @@ interface SegmentFieldProps {
 }
 
 function SegmentField({ legend, value, options, onChange }: SegmentFieldProps) {
+  const segmentId = useId()
   return (
     <fieldset className="m-0 border-0 p-0">
       <legend className="mb-1.5 p-0 text-xs font-semibold">{legend}</legend>
@@ -228,15 +243,25 @@ function SegmentField({ legend, value, options, onChange }: SegmentFieldProps) {
         {options.map(([optionValue, label]) => {
           const active = optionValue === value
           return (
-            <button
+            <motion.button
               key={optionValue}
-              className={`${baseSegmentClass} ${active ? activeSegmentClass : ''}`}
+              className={`${baseSegmentClass} isolate ${active ? activeSegmentClass : ''}`}
               type="button"
               aria-pressed={active}
+              whileHover={{ y: -1 }}
+              whileTap={{ scale: 0.94, y: 0 }}
               onClick={() => onChange(optionValue)}
             >
-              {label}
-            </button>
+              {active && (
+                <motion.span
+                  layoutId={`segment-${segmentId}`}
+                  className="absolute inset-[-1px] z-0 border border-primary bg-primary-soft"
+                  transition={{ type: 'spring', stiffness: 520, damping: 38, mass: 0.65 }}
+                  aria-hidden="true"
+                />
+              )}
+              <span className="relative z-1">{label}</span>
+            </motion.button>
           )
         })}
       </div>
@@ -252,33 +277,81 @@ interface CheckboxFilterProps {
 }
 
 function CheckboxFilter({ label, counts, selected, onToggle }: CheckboxFilterProps) {
+  const [open, setOpen] = useState(true)
   return (
-    <details className="border-t border-line pt-2.5" open>
-      <summary className="flex cursor-pointer list-none items-center text-xs font-semibold marker:hidden">
+    <section className="border-t border-line pt-2.5">
+      <motion.button
+        className="flex w-full cursor-pointer items-center border-0 bg-transparent p-0 text-left text-xs font-semibold"
+        type="button"
+        aria-expanded={open}
+        whileTap={{ scale: 0.98 }}
+        onClick={() => setOpen((current) => !current)}
+      >
         {label}
-        {selected.size > 0 && <span className="ml-1.5 font-medium text-primary">· {selected.size}</span>}
-        <span className="ml-auto text-muted group-open:rotate-180" aria-hidden="true">⌄</span>
-      </summary>
-      <div className="mt-2.5 grid gap-1.5">
-        {counts.map(([key, count]) => {
-          const checked = selected.has(key)
-          return (
-            <label key={key} className="grid cursor-pointer grid-cols-[16px_minmax(0,1fr)_auto] items-start gap-1.5 text-xs text-muted hover:text-ink">
-              <input
-                className="peer sr-only"
-                type="checkbox"
-                checked={checked}
-                onChange={() => onToggle(key)}
-              />
-              <span className="grid size-3.5 place-items-center border border-line-strong bg-canvas peer-checked:border-primary peer-checked:bg-primary peer-focus-visible:ring-2 peer-focus-visible:ring-primary peer-focus-visible:ring-offset-1">
-                {checked && <CheckIcon className="size-3 text-white" />}
-              </span>
-              <span>{formatKey(key)}</span>
-              <span className="tabular-nums text-faint">{count}</span>
-            </label>
-          )
-        })}
-      </div>
-    </details>
+        <AnimatePresence initial={false} mode="popLayout">
+          {selected.size > 0 && (
+            <motion.span
+              key={selected.size}
+              className="ml-1.5 font-medium text-primary"
+              initial={{ opacity: 0, scale: 0.7, y: 3 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.7, y: -3 }}
+            >
+              · {selected.size}
+            </motion.span>
+          )}
+        </AnimatePresence>
+        <motion.span className="ml-auto text-muted" animate={{ rotate: open ? 180 : 0 }} aria-hidden="true">⌄</motion.span>
+      </motion.button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            className="overflow-hidden"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ height: { duration: 0.24 }, opacity: { duration: 0.15 } }}
+          >
+            <div className="grid gap-1.5 pt-2.5">
+              {counts.map(([key, count]) => {
+                const checked = selected.has(key)
+                return (
+                  <motion.label
+                    key={key}
+                    className="grid cursor-pointer grid-cols-[16px_minmax(0,1fr)_auto] items-start gap-1.5 text-xs text-muted hover:text-ink"
+                    whileHover={{ x: 2 }}
+                    whileTap={{ scale: 0.985 }}
+                  >
+                    <input
+                      className="peer sr-only"
+                      type="checkbox"
+                      checked={checked}
+                      onChange={() => onToggle(key)}
+                    />
+                    <motion.span
+                      className="grid size-3.5 place-items-center border border-line-strong bg-canvas peer-focus-visible:ring-2 peer-focus-visible:ring-primary peer-focus-visible:ring-offset-1"
+                      animate={checked
+                        ? { scale: [1, 1.16, 1], borderColor: 'var(--color-primary)', backgroundColor: 'var(--color-primary)' }
+                        : { scale: 1, borderColor: 'var(--color-line-strong)', backgroundColor: 'var(--color-canvas)' }}
+                      transition={{ duration: 0.18 }}
+                    >
+                      <AnimatePresence initial={false}>
+                        {checked && (
+                          <motion.span initial={{ scale: 0.2, rotate: -25 }} animate={{ scale: 1, rotate: 0 }} exit={{ scale: 0.2, rotate: 20 }}>
+                            <CheckIcon className="size-3 text-white" />
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </motion.span>
+                    <span>{formatKey(key)}</span>
+                    <span className="tabular-nums text-faint">{count}</span>
+                  </motion.label>
+                )
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
   )
 }

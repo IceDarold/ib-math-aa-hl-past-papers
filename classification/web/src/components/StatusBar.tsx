@@ -1,5 +1,6 @@
 import { ArrowUpDownIcon } from './Icons'
 import { useI18n } from '../i18n'
+import { motion, useReducedMotion } from 'motion/react'
 
 interface StatusBarProps {
   sessionCount: number
@@ -9,10 +10,15 @@ interface StatusBarProps {
 
 export function StatusBar({ sessionCount, verifiedCount, draftCount }: StatusBarProps) {
   const { count, t } = useI18n()
+  const reduceMotion = useReducedMotion()
   return (
     <footer className="flex h-8 shrink-0 items-center justify-between border-t border-line bg-canvas px-3.5 text-[11px] text-muted max-[680px]:justify-center">
       <span className="flex items-center gap-1.5">
-        <span className="size-2 rounded-full bg-info" />
+        <motion.span
+          className="size-2 rounded-full bg-info"
+          animate={reduceMotion ? undefined : { scale: [1, 1.35, 1], opacity: [0.75, 1, 0.75] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+        />
         {count('sessions', sessionCount)} · {count('drafts', draftCount)} · {count('verifiedBlocks', verifiedCount)}
       </span>
       <span className="flex items-center gap-1.5 max-[680px]:hidden">

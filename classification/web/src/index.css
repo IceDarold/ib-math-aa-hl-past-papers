@@ -176,20 +176,6 @@
   }
 }
 
-@keyframes panel-in {
-  from {
-    opacity: 0;
-    transform: translateX(12px);
-  }
-}
-
-@keyframes filter-panel-in {
-  from {
-    opacity: 0;
-    transform: translateX(-12px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

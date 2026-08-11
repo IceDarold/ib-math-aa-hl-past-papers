@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 import { FilterPanel } from './components/FilterPanel'
 import { Inspector } from './components/Inspector'
 import { ResultsTable } from './components/ResultsTable'
@@ -181,26 +182,39 @@ export default function App() {
       />
 
       <div className="relative flex min-h-0 flex-1 overflow-hidden">
-        {compactLayout && (filtersOpen || inspectorOpen) && (
-          <button className="fixed inset-x-0 top-13 bottom-8 z-20 cursor-default border-0 bg-ink/25" type="button" aria-label={t('app.closePanel')} onClick={closeOverlays} />
-        )}
+        <AnimatePresence initial={false}>
+          {compactLayout && (filtersOpen || inspectorOpen) && (
+            <motion.button
+              className="fixed inset-x-0 top-13 bottom-8 z-20 cursor-default border-0 bg-ink/25 backdrop-blur-[1px]"
+              type="button"
+              aria-label={t('app.closePanel')}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18 }}
+              onClick={closeOverlays}
+            />
+          )}
+        </AnimatePresence>
 
-        {(compactLayout ? filtersOpen : sidebarVisible) && (
-          <FilterPanel
-            filters={filters}
-            topicCounts={topicCounts}
-            methodCounts={methodCounts}
-            sessionCounts={sessionCounts}
-            zoneCounts={zoneCounts}
-            compact={compactLayout}
-            width={sidebarWidth}
-            onResize={setSidebarWidth}
-            onSetSegment={setSegment}
-            onToggleSet={toggleSet}
-            onReset={resetFilters}
-            onClose={() => setFiltersOpen(false)}
-          />
-        )}
+        <AnimatePresence initial={false}>
+          {(compactLayout ? filtersOpen : sidebarVisible) && (
+            <FilterPanel
+              filters={filters}
+              topicCounts={topicCounts}
+              methodCounts={methodCounts}
+              sessionCounts={sessionCounts}
+              zoneCounts={zoneCounts}
+              compact={compactLayout}
+              width={sidebarWidth}
+              onResize={setSidebarWidth}
+              onSetSegment={setSegment}
+              onToggleSet={toggleSet}
+              onReset={resetFilters}
+              onClose={() => setFiltersOpen(false)}
+            />
+          )}
+        </AnimatePresence>
 
         <ResultsTable
           questions={filteredQuestions}
@@ -210,13 +224,15 @@ export default function App() {
           onReset={resetFilters}
         />
 
-        {inspectorOpen && selectedQuestion && (
-          <Inspector
-            question={selectedQuestion}
-            compact={compactLayout}
-            onClose={() => setInspectorOpen(false)}
-          />
-        )}
+        <AnimatePresence initial={false}>
+          {inspectorOpen && selectedQuestion && (
+            <Inspector
+              question={selectedQuestion}
+              compact={compactLayout}
+              onClose={() => setInspectorOpen(false)}
+            />
+          )}
+        </AnimatePresence>
       </div>
 
       <StatusBar sessionCount={archiveSessionCount} verifiedCount={verifiedCount} draftCount={draftCount} />
