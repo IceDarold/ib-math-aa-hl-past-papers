@@ -1,0 +1,462 @@
+{
+  "question": "1",
+  "expected_question_marks": 27,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-A-I",
+      "question": "1",
+      "part": "a(i)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Sketch y=f(x)=x³−3cx+2 for c=1, showing y-intercept and points with zero gradient.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_cubic",
+        "label_y_intercept",
+        "label_local_maximum",
+        "label_local_minimum"
+      ],
+      "method_path": [
+        "Sketch positive cubic curve through (0,2)",
+        "Label y-intercept (0,2)",
+        "Label local maximum at (−1,4)",
+        "Label local minimum at (1,0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "positive cubic with correct y-intercept labelled (A1); local maximum point correctly labelled (A1); local minimum point correctly labelled (A1) [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-A-II",
+      "question": "1",
+      "part": "a(ii)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Sketch y=f(x)=x³−3cx+2 for c=2, showing y-intercept and points with zero gradient.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_cubic",
+        "label_y_intercept",
+        "label_local_maximum",
+        "label_local_minimum"
+      ],
+      "method_path": [
+        "Sketch positive cubic curve through (0,2)",
+        "Label y-intercept (0,2)",
+        "Label local maximum at (−√2, 2+4√2)",
+        "Label local minimum at (√2, 2−4√2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "positive cubic with correct y-intercept labelled (A1); local maximum point correctly labelled (A1); local minimum point correctly labelled (A1). Note: Accept exact answers: Local maximum (−√2, 2+4√2), Local minimum (√2, 2−4√2). [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-B",
+      "question": "1",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Write down an expression for f′(x).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_polynomial"
+      ],
+      "method_path": [
+        "Differentiate f(x)=x³−3cx+2 to obtain f′(x)=3x²−3c"
+      ],
+      "accepted_alternatives": [
+        "Accept 3x²−3c in any equivalent form"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "f′(x)=3x²−3c (A1). Note: Accept (an expression). [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-C-I",
+      "question": "1",
+      "part": "c(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find the set of values of c such that the graph has a point of inflexion with zero gradient.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "find_inflection_condition",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Use f′(x)=3x²−3c and f″(x)=6x",
+        "For inflexion with zero gradient, f″(x)=0 ⇒ x=0 and f′(0)=0 ⇒ −3c=0",
+        "Obtain c=0"
+      ],
+      "accepted_alternatives": [
+        "Condition that f′(x)=0 has a double root, discriminant = 0 ⇒ c=0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "c=0 (A1) [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-C-II",
+      "question": "1",
+      "part": "c(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find the set of values of c such that the graph has one local maximum and one local minimum point.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_derivative_zero",
+        "apply_discriminant_condition"
+      ],
+      "method_path": [
+        "Set f′(x)=3x²−3c=0 ⇒ x²=c",
+        "For two distinct real stationary points, require c > 0"
+      ],
+      "accepted_alternatives": [
+        "Considers the number of solutions to f′(x)=0; the M1 can be awarded for work shown in either (ii) or (iii)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "considers the number of solutions to their f′(x)=0 (M1); c>0 (A1) [2 marks]. Note: The (M1) in part (c)(ii) can be awarded for work shown in either (ii) or (iii)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-C-III",
+      "question": "1",
+      "part": "c(iii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find the set of values of c such that the graph has no points where the gradient is zero.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_derivative_zero",
+        "apply_discriminant_condition"
+      ],
+      "method_path": [
+        "Set f′(x)=3x²−3c=0 ⇒ x²=c",
+        "For no real solutions, require c < 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "c<0 (A1) [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-D-I",
+      "question": "1",
+      "part": "d(i)",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Show that the y-coordinate of the local maximum point is 2c^(3/2)+2.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "solve_f_prime_zero",
+        "identify_local_maximum",
+        "evaluate_at_critical_point",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Solve f′(x)=0 ⇒ x=±√c",
+        "Identify local maximum at x=−√c",
+        "Evaluate f(−√c)=(−√c)³−3c(−√c)+2=−c^(3/2)+3c^(3/2)+2",
+        "Simplify to 2c^(3/2)+2"
+      ],
+      "accepted_alternatives": [
+        "Award credit if work seen in part (c); accept if either x=−√c or x=√c is subsequently considered"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempts to solve their f′(x)=0 for x (M1); x=±√c (A1) — Note: Award (A1) if either x=−√c or x=√c is subsequently considered; correctly evaluates f(−√c) (A1); the y-coordinate of the local maximum point is 2c^(3/2)+2 AG. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-D-II",
+      "question": "1",
+      "part": "d(ii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Show that the y-coordinate of the local minimum point is −2c^(3/2)+2.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "evaluate_at_critical_point",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Evaluate f(√c)=(√c)³−3c(√c)+2=c^(3/2)−3c^(3/2)+2=−2c^(3/2)+2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "correctly evaluates f(√c) (A1); the y-coordinate of the local minimum point is −2c^(3/2)+2 AG. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-E-I",
+      "question": "1",
+      "part": "e(i)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "For c>0, find the set of values of c such that the graph has exactly one x-axis intercept.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_intercept_condition",
+        "solve_inequality"
+      ],
+      "method_path": [
+        "Local minimum y-coordinate must be above x-axis",
+        "Solve −2c^(3/2)+2 > 0 ⇒ c^(3/2) < 1",
+        "Obtain 0 < c < 1"
+      ],
+      "accepted_alternatives": [
+        "Rigorous reasoning that the minimum point is above the x-axis; accept c<1 (condoned) as c>0 is given"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "the graph of y=f(x) will have one x-axis intercept if 2−2c^(3/2)>0 (or equivalent reasoning) (R1); 0<c<1 (A1). Note: Condone c<1. The A1 is independent of the R1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-E-II",
+      "question": "1",
+      "part": "e(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "For c>0, find the set of values of c such that the graph has exactly two x-axis intercepts.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_intercept_condition",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Local minimum y-coordinate must equal zero (touches x-axis)",
+        "Solve −2c^(3/2)+2 = 0 ⇒ c^(3/2) = 1",
+        "Obtain c = 1"
+      ],
+      "accepted_alternatives": [
+        "Evidence from the graph in part (a)(i) where c=1 gives exactly two intercepts"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "the graph will have two x-axis intercepts if 2−2c^(3/2)=0 (or equivalent reasoning, or evidence from graph in part (a)(i)) (M1); c=1 (A1). [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-E-III",
+      "question": "1",
+      "part": "e(iii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "For c>0, find the set of values of c such that the graph has exactly three x-axis intercepts.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_intercept_condition",
+        "solve_inequality"
+      ],
+      "method_path": [
+        "Local minimum y-coordinate must be below x-axis",
+        "Solve −2c^(3/2)+2 < 0 ⇒ c^(3/2) > 1",
+        "Obtain c > 1"
+      ],
+      "accepted_alternatives": [
+        "Reasoning from the results in both parts (e)(i) and (e)(ii)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "the graph will have three x-axis intercepts if 2−2c^(3/2)<0 (or equivalent reasoning, or reasoning from results in both (e)(i) and (e)(ii)) (M1); c>1 (A1). [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-F",
+      "question": "1",
+      "part": "f",
+      "marks": 6,
+      "source_pages": "4",
+      "markscheme_pages": "14,15",
+      "task_summary": "Find all conditions on c and d such that g(x)=x³−3cx+d has exactly one x-axis intercept, explaining reasoning.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "case_analysis",
+        "analyze_stationary_points",
+        "apply_intercept_condition",
+        "solve_inequality",
+        "state_conditions"
+      ],
+      "method_path": [
+        "Case 1: c ≤ 0 → g′(x)=3x²−3c has at most one real root, no two distinct stationary points, so exactly one x-intercept for any d∈ℝ",
+        "Case 2: c > 0 → stationary points at x=±√c with y-values: local max at (−√c, 2c^(3/2)+d), local min at (√c, −2c^(3/2)+d)",
+        "For exactly one intercept, both stationary points must lie on the same side of the x-axis",
+        "Require −2c^(3/2)+d > 0 ⇒ d > 2c^(3/2) OR 2c^(3/2)+d < 0 ⇒ d < −2c^(3/2)"
+      ],
+      "accepted_alternatives": [
+        "Case 1 reasoning alternatives: g′(x)=0 does not have two solutions; OR g′(x) ≥ 0 for all x∈ℝ; OR graph of y=f(x) has no local max/min, hence any vertical translation also has none. Case 2 alternative: consider only local minimum above x-axis OR only local maximum below x-axis instead of both conditions."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Case 1: c ≤ 0 (independent of d) (A1). EITHER g′(x)=0 does not have two solutions R1; OR g′(x) ≥ 0 for x∈ℝ R1; OR graph has no local max/min, any vertical translation also has none R1. Therefore only one x-axis intercept AG. Note: Award at most A0R1 if only c<0 is considered."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "Case 2: c>0. (−√c, 2c^(3/2)+d) local max and (√c, −2c^(3/2)+d) local min (A1). Considers positions of local max and/or local min (M1). d > 2c^(3/2) (both above x-axis) A1; d < −2c^(3/2) (both below x-axis) A1. Note: Award at most (A1)(M1)A0A0 if c>0 not clearly stated. [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

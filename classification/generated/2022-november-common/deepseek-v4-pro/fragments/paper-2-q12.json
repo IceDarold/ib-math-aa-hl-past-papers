@@ -1,0 +1,175 @@
+{
+  "question": "12",
+  "expected_question_marks": 22,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q12-A",
+      "question": "12",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "24",
+      "task_summary": "Write down AB→ = (k−1, −4, −2) and AC→ = (4, −2, −1) from A(1,2,3), B(k,−2,1), C(5,0,2).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_subtraction"
+      ],
+      "method_path": [
+        "AB→ = B − A = (k−1, −4, −2)",
+        "AC→ = C − A = (4, −2, −1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "A1A1 for both AB→ and AC→ correct; vectors shown with components (k−1, −4, −2) and (4, −2, −1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q12-B",
+      "question": "12",
+      "part": "(b)",
+      "marks": 1,
+      "source_pages": "12",
+      "markscheme_pages": "24",
+      "task_summary": "Given collinear A, B, C, use AB→ parallel to AC→ to show k = 9.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "collinearity_condition",
+        "scalar_multiple"
+      ],
+      "method_path": [
+        "Set AB→ = t × AC→ for collinearity",
+        "From y: −4 = −2t ⇒ t = 2",
+        "From x: k−1 = 2×4 = 8 ⇒ k = 9"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: order points by y or z coordinate as (k,−2,1), (5,0,2), (1,2,3); set (k−5)/(5−1) equal to the ratio of successive coordinate differences to obtain k = 9."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 1: 'k−1 = 2×4 M1, k=9 AG'. METHOD 2: 'order by y or z-ordinate … k=9 AG'. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q12-C",
+      "question": "12",
+      "part": "(c)",
+      "marks": 10,
+      "source_pages": "12",
+      "markscheme_pages": "25-28",
+      "task_summary": "For k=9: (i) find vector equation of L1 through A, B, C; (ii) show L1 and L2 are skew by proving they do not intersect and are not parallel.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_equation_of_line",
+        "parametric_form",
+        "simultaneous_equations",
+        "contradiction_check",
+        "parallelism_check",
+        "skew_lines"
+      ],
+      "method_path": [
+        "(i) Write r = (1,2,3) + λ(4,−2,−1) using point A and direction AC→",
+        "(ii) Express L2 parametrically: (x,y,z) = (1+2μ, 3μ, 1−μ) with μ ≠ λ",
+        "Equate coordinates: 1+4λ = 1+2μ, 2−2λ = 3μ, 3−λ = 1−μ",
+        "Solve two equations to obtain λ = 0.25, μ = 0.5",
+        "Substitute into third equation: 3−0.25 ≠ 1−0.5 (contradiction)",
+        "Verify direction vectors (4,−2,−1) and (2,3,−1) are not parallel",
+        "Conclude L1 and L2 are skew"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 for (ii): use L2 equation to generate equations in single parameter λ from L1 coordinates; solve and obtain contradiction.",
+        "METHOD 3 for (ii): find Cartesian equations for both lines, solve for intersection, obtain contradiction."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(c)(i): '(M1) attempt to set up a vector equation … A1 … Note: r = or equivalent must be seen for A1.'"
+        },
+        {
+          "markscheme_pages": "26-28",
+          "basis": "(c)(ii) METHOD 1: M1 different parameter, (A1) point on L2, A1 any two equations, (M1) solve simultaneous, A1 values, M1 substitute into third, R1 contradiction, R1 not parallel, AG. Three full methods awarded."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q12-D",
+      "question": "12",
+      "part": "(d)",
+      "marks": 9,
+      "source_pages": "12",
+      "markscheme_pages": "29-32",
+      "task_summary": "For k ≠ 9: (i) find Cartesian equation of plane Π through A, B, C; (ii) find the point on Π closest to the origin.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "normal_vector",
+        "plane_equation_cartesian",
+        "perpendicular_line",
+        "line_plane_intersection"
+      ],
+      "method_path": [
+        "(i) Compute AB→ × AC→ = (0, 9−k, 2k−18)",
+        "Form plane: (9−k)(y−2) + (2k−18)(z−3) = 0",
+        "Simplify using k ≠ 9 to obtain y − 2z = −4",
+        "(ii) Line through origin perpendicular to plane: r = t(0, 1, −2)",
+        "Intersect with plane: t − 2(−2t) = −4 ⇒ t = −4/5",
+        "Closest point: (0, −0.8, 1.6)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 for (i): use parametric equations and eliminate parameters to obtain y − 2z = −4.",
+        "METHOD 2 for (ii): minimise squared distance d² = p² + (2r−4)² + r² with p=0, giving r=1.6, then (0, −0.8, 1.6).",
+        "METHOD 3 for (ii): use r = t(0,1,−2), compute |r| = √5|t|, check sign with plane to get t=−4/5."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "(d)(i): M1 cross product, A1 (0, 9−k, 2k−18), (M1) substitute into plane equation, A1 final equation y − 2z = −4 for k ≠ 9."
+        },
+        {
+          "markscheme_pages": "30-32",
+          "basis": "(d)(ii): M1 line through origin perpendicular to plane, (A1) r = t(0,1,−2) or r = t(k−9)(0,1,−2), (M1) intersect, (A1) t = −4/5, A1 point (0, −0.8, 1.6). Three methods shown."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

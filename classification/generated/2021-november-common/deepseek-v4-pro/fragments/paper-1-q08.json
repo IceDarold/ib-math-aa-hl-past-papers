@@ -1,0 +1,82 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 7,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Solve the first-order linear differential equation dy/dx = ln(2x)/x^2 - 2y/x, x > 0, with initial condition y(1/2) = 4, giving the answer as y = f(x).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "rearrange_linear_de",
+        "find_integrating_factor",
+        "multiply_by_integrating_factor",
+        "recognize_derivative",
+        "integrate_both_sides",
+        "integration_by_parts",
+        "solve_for_dependent_variable",
+        "substitute_initial_condition",
+        "solve_for_constant"
+      ],
+      "method_path": [
+        "Rearrange DE to standard linear form dy/dx + (2/x)y = ln(2x)/x^2",
+        "Find integrating factor mu(x) = e^(integral (2/x) dx) = x^2",
+        "Multiply DE by mu(x) to obtain x^2 dy/dx + 2xy = ln(2x)",
+        "Recognize left side as derivative d/dx(x^2 y) = ln(2x)",
+        "Integrate both sides: x^2 y = integral ln(2x) dx",
+        "Integration by parts: integral ln(2x) dx = x ln(2x) - x + c",
+        "Obtain general solution y = ln(2x)/x - 1/x + c/x^2",
+        "Substitute x = 1/2, y = 4 to get 4 = 0 - 2 + 4c and solve c = 3/2",
+        "Write particular solution y = ln(2x)/x - 1/x + 3/(2x^2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "Rearranged to standard linear form: awarding (M1). Markscheme line: dy/dx + 2y/x = ln(2x)/x^2."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Integrating factor: attempt to find integrating factor (M1) then e^(integral 2/x dx) = e^(2 ln x) = x^2 (A1)."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Multiplication and product-rule recognition: multiply by IF, recognise d/dx(x^2 y) = ln(2x)."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Integration by parts: attempt to use integration by parts (M1) leading to x^2 y = x ln(2x) - x + c (A1)."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Solve for y: y = ln(2x)/x - 1/x + c/x^2."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Substitution and constant: substituting x = 1/2, y = 4 into an integrated equation involving c (M1), giving 4 = 0 - 2 + 4c so c = 3/2."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Final answer: y = ln(2x)/x - 1/x + 3/(2x^2) (A1). Total 7 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

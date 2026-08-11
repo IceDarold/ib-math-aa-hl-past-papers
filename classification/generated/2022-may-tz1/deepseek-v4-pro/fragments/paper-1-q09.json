@@ -1,0 +1,83 @@
+{
+  "question": "9",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q09-A",
+      "question": "9",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "18",
+      "task_summary": "Find an expression for the product z1z2 in terms of b, where z1 = 1+bi and z2 = (1-b²)-2bi, b∈ℝ, b≠0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "complex_multiplication",
+        "algebraic_expansion",
+        "collect_real_imaginary_parts"
+      ],
+      "method_path": [
+        "Multiply (1+bi)((1-b²)-2bi)",
+        "Expand: 1-b²-2bi+bi-b³i+2b²",
+        "Collect real parts: 1+b²",
+        "Collect imaginary parts: (-b-b³)i",
+        "State product: (1+b²)+(-b-b³)i"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for multiplication/expansion step; A1 for real part 1+b²; A1 for imaginary part -b-b³i. Note explicitly awards A1 for 1+b² and A1 for -b-b³i."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q09-B",
+      "question": "9",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "18",
+      "task_summary": "Given that arg(z1z2)=π/4, use the expression from part (a) to find the value of b.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "argument_of_complex_number",
+        "arctan_equation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Set arctan((-b-b³)/(1+b²)) = π/4",
+        "Simplify (-b-b³)/(1+b²) = -b(1+b²)/(1+b²) = -b",
+        "Obtain arctan(-b) = π/4 or equivalently -b = 1",
+        "Solve to get b = -1"
+      ],
+      "accepted_alternatives": [
+        "Set (-b-b³)/(1+b²) = tan(π/4) = 1, factor numerator as -b(1+b²), cancel to give -b=1, hence b=-1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for setting up arctan((-b-b³)/(1+b²))=π/4. EITHER branch: A1 for arctan(-b)=π/4 (since 1+b²≠0 for b∈ℝ). OR branch: A1 for equating fraction to 1. THEN A1 for b=-1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

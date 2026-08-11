@@ -5,6 +5,8 @@ interface TopBarProps {
   query: string
   resultCount: number
   resultMarks: number
+  sessionCount: number
+  yearRange: string
   searchRef: RefObject<HTMLInputElement | null>
   sidebarVisible: boolean
   filtersOpen: boolean
@@ -17,6 +19,8 @@ export function TopBar({
   query,
   resultCount,
   resultMarks,
+  sessionCount,
+  yearRange,
   searchRef,
   sidebarVisible,
   filtersOpen,
@@ -55,7 +59,7 @@ export function TopBar({
       </div>
 
       <div className="whitespace-nowrap max-[960px]:hidden">
-        November 2024 <span className="text-faint">· Common</span>
+        {yearRange} <span className="text-faint">· {sessionCount} сессий</span>
       </div>
 
       <label className="group/search mx-auto grid h-8.5 w-full max-w-155 grid-cols-[24px_1fr_auto] items-center gap-1.5 border border-line-strong bg-canvas px-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary max-[960px]:justify-self-stretch max-[680px]:grid-cols-[20px_1fr]">

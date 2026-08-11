@@ -1,0 +1,1243 @@
+{
+  "session": "November 2021",
+  "zone": "Common",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Integrate dy/dx = cos(x - pi/4) to obtain y = sin(x - pi/4) + c, then substitute the initial condition (x = 3pi/4, y = 2) to find c = 1, giving y = sin(x - pi/4) + 1.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "geometry.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate_trigonometric",
+        "apply_initial_condition",
+        "simplify_constant"
+      ],
+      "method_path": [
+        "Integrate cos(x - pi/4) to obtain sin(x - pi/4) + c",
+        "Substitute x = 3pi/4, y = 2 into y = sin(x - pi/4) + c",
+        "Solve for c: 2 = sin(pi/2) + c gives c = 1",
+        "Write final answer y = sin(x - pi/4) + 1"
+      ],
+      "accepted_alternatives": [
+        "Use definite integration from the given point: integrate from x = 3pi/4 to x and from y = 2 to y, yielding y - 2 = sin(x - pi/4) - sin(pi/2), so y = sin(x - pi/4) + 1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: recognition that integration needed (M1), y = sin(x - pi/4) + c (A1), substitute both x and y values into their integrated expression including c (M1), y = sin(x - pi/4) + 1 A1. METHOD 2: definite integration setup (M1)(A1), y - 2 = sin(x - pi/4) - sin(pi/2) A1, y = sin(x - pi/4) + 1 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q02-A-I-II",
+      "question": "2",
+      "part": "(a)(i)(ii)",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the equations of the vertical and horizontal asymptotes of f(x) = (2x+4)/(3−x).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_asymptote",
+        "horizontal_asymptote",
+        "rational_function"
+      ],
+      "method_path": [
+        "Set denominator to zero: 3−x=0 → vertical asymptote x=3",
+        "Take limit as x→∞: ratio of leading coefficients 2/(−1)=−2 → horizontal asymptote y=−2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(a)(i) x=3 A1; (ii) y=−2 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q02-B-I-II",
+      "question": "2",
+      "part": "(b)(i)(ii)",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the coordinates where the graph of f crosses the x-axis and the y-axis.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "x_intercept",
+        "y_intercept",
+        "rational_function"
+      ],
+      "method_path": [
+        "Set numerator to zero: 2x+4=0 → x=−2, giving point (−2,0)",
+        "Evaluate f(0): f(0)=4/3, giving point (0,4/3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(b)(i) (−2,0) (accept x=−2) A1; (ii) (0,4/3) (accept y=4/3 and f(0)=4/3) A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q02-C",
+      "question": "2",
+      "part": "(c)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Sketch the graph of f on the given axes, showing asymptotic behaviour with two branches in the correct quadrants.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "asymptotic_behaviour",
+        "branches",
+        "intercepts"
+      ],
+      "method_path": [
+        "Draw asymptotes x=3 and y=−2 as dashed lines",
+        "Plot intercepts (−2,0) and (0,4/3)",
+        "Sketch two hyperbolic branches approaching asymptotes in correct quadrants"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for completely correct shape: two branches in correct quadrants with asymptotic behaviour. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q02-D",
+      "question": "2",
+      "part": "(d)",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "11-12",
+      "task_summary": "Given g(x) = (ax+4)/(x−3) and g(x) = g⁻¹(x), determine the value of a.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "inverse_function",
+        "rational_function",
+        "equate_function_and_inverse",
+        "compare_coefficients",
+        "solve_parameter"
+      ],
+      "method_path": [
+        "Write y = (ax+4)/(x−3)",
+        "Swap x and y: x = (ay+4)/(y−3), then solve for y to obtain g⁻¹(x)",
+        "Equate g(x) = g⁻¹(x)",
+        "Cross-multiply and compare coefficients to obtain a = −3"
+      ],
+      "accepted_alternatives": [
+        "Use g(g(x)) = x: substitute g(x) into itself, simplify the compound rational expression, cross-multiply, and compare coefficients of x² to obtain a = −3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: attempt to find x in terms of y (M1) … g⁻¹(x) expression (A1) … equating g(x) and g⁻¹(x) ⇒ a = −3 (A1)."
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: attempt to find g(g(x)) and equate to x (M1) … simplification steps (A1) … equating coefficients of x² ⇒ a = −3 (A1). [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Solve a logarithmic equation for x>0, applying change‑of‑base, power rule and product/quotient rule for logs to obtain an algebraic equation and then the solution x=1/2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "change_of_base",
+        "power_rule_of_logs",
+        "product_rule_of_logs",
+        "equate_log_arguments",
+        "solve_power_equation"
+      ],
+      "method_path": [
+        "Apply change‑of‑base to rewrite any log term with a non‑3 base in base 3",
+        "Apply the power rule of logarithms to move coefficients inside the log argument",
+        "Apply the product or quotient rule to combine log terms on one side",
+        "Equate the arguments of the equal base‑3 logs to obtain a polynomial equation in x",
+        "Solve the resulting equation x^5 = 1/32 to obtain x = 1/2"
+      ],
+      "accepted_alternatives": [
+        "Log rules may be applied in any order; all three M1 marks are awarded for attempting the relevant rule at any point in the solution."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to use change the base (M1) … attempt to use the power rule (M1) … attempt to use product or quotient rule for logs (M1) … leading to x^5 = 1/32 (A1) and x = 1/2 (A1). Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q04-A",
+      "question": "4",
+      "part": "(a)",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Find P(red) using law of total probability: P(R) = P(R|B1)P(B1) + P(R|B2)P(B2) = (5/7)(1/2) + (4/7)(1/2) = 9/14.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "law_of_total_probability",
+        "conditional_probability",
+        "tree_diagram",
+        "fraction_arithmetic"
+      ],
+      "method_path": [
+        "P(R) = P(R|B1)P(B1) + P(R|B2)P(B2)",
+        "(5/7)(1/2) + (4/7)(1/2)",
+        "9/14"
+      ],
+      "accepted_alternatives": [
+        "Tree diagram with box probabilities 1/2 and branch probabilities 5/7 and 4/7, summing relevant terminal probabilities.",
+        "P(B1 ∩ R) + P(B2 ∩ R) = (1/2)(5/7) + (1/2)(4/7)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "M1: valid approach to find P(R); tree diagram OR P(R∩B1)+P(R∩B2) OR P(R|B1)P(B1)+P(R|B2)P(B2). A1: 5/7·1/2 + 4/7·1/2. A1: P(R) = 9/14."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q04-B",
+      "question": "4",
+      "part": "(b)",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Test independence of A and R by comparing P(A)·P(R) = (1/2)(9/14) = 9/28 with P(A ∩ R) = 5/14, or comparing P(R|A) = 5/7 with P(R) = 9/14, concluding not independent.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "independence_test",
+        "joint_probability",
+        "conditional_probability",
+        "comparison_of_probabilities"
+      ],
+      "method_path": [
+        "P(A)·P(R) = (1/2)(9/14) = 9/28",
+        "P(A ∩ R) = (5/7)(1/2) = 5/14",
+        "5/14 ≠ 9/28 → not independent"
+      ],
+      "accepted_alternatives": [
+        "P(R|A) = 5/7 ≠ P(R) = 9/14 → not independent.",
+        "P(A|R) = (5/14)/(9/14) = 5/9 ≠ P(A) = 1/2 → not independent.",
+        "Explanation: different number of red balls in each box, so box choice affects red probability."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "A2: events A and R are not independent, since (9/14)(1/2) ≠ 5/14 OR 5/7 ≠ 9/14 OR 5/14 ≠ 1/2 OR an explanation e.g. different number of red balls in each box. Note: Both conclusion and reasoning are required. Do not split the A2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q05-A",
+      "question": "5",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given the tangent line y = 6x − 1 to the graph of f at x = 4, write down f′(4).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative_from_tangent_slope"
+      ],
+      "method_path": [
+        "Identify the slope of the tangent line as f′(4)",
+        "f′(4) = 6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "f′(4) = 6  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q05-B",
+      "question": "5",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given the same tangent line, find f(4).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "function_value_from_tangent"
+      ],
+      "method_path": [
+        "Substitute x = 4 into y = 6x − 1 because the point of tangency lies on both curves",
+        "f(4) = 6 × 4 − 1 = 23"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "f(4) = 6 × 4 − 1 = 23  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q05-C",
+      "question": "5",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given g(x) = x² − 3x and h(x) = f(g(x)), find h(4).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "function_composition",
+        "function_evaluation"
+      ],
+      "method_path": [
+        "Evaluate g(4) = 4² − 3 × 4 = 4",
+        "Evaluate h(4) = f(g(4)) = f(4)",
+        "h(4) = 23"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "h(4) = f(g(4)) (M1); g(4) = 4² − 3 × 4 = 4; h(4) = f(4); h(4) = 23  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q05-D",
+      "question": "5",
+      "part": "d",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Hence find the equation of the tangent to the graph of h at x = 4.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "tangent_line_equation"
+      ],
+      "method_path": [
+        "Apply chain rule: h′(x) = f′(g(x)) × g′(x)",
+        "Evaluate g′(x) = 2x − 3, so g′(4) = 5",
+        "Compute h′(4) = f′(4) × 5 = 6 × 5 = 30",
+        "Write tangent equation: y − 23 = 30(x − 4) or y = 30x − 97"
+      ],
+      "accepted_alternatives": [
+        "Tangent equation written as y = 30x − 97"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to use chain rule to find h′ (M1); h′(4) = f′(4) × (2 × 4 − 3) = 30  A1; y − 23 = 30(x − 4) OR y = 30x − 97  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q06-A",
+      "question": "6",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Show that (2x² − 5x − 3)/(x − 1) = 2x − 3 − 6/(x − 1), x ∈ ℝ, x ≠ 1.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "common_denominator",
+        "algebraic_simplification",
+        "polynomial_division"
+      ],
+      "method_path": [
+        "Write all LHS terms over common denominator (x − 1)",
+        "Combine numerators: 2x² − 2x − 3x + 3 − 6",
+        "Simplify to (2x² − 5x − 3)/(x − 1)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use algebraic division on RHS to obtain quotient 2x − 3 and remainder −6, giving 2x − 3 − 6/(x − 1)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: attempt to write all LHS terms over a common denominator of x − 1 (M1). Correct simplification to (2x² − 5x − 3)/(x − 1) (A1). METHOD 2: attempt to use algebraic division on RHS (M1); correctly obtains quotient of 2x − 3 and remainder −6 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q06-B",
+      "question": "6",
+      "part": "(b)",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "16–17",
+      "task_summary": "Solve (2sin²2θ − 5sin2θ − 3)/(sin2θ − 1) = 0 for 0 ≤ θ ≤ π, θ ≠ π/4.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "substitution",
+        "rational_to_polynomial",
+        "quadratic_factoring",
+        "solve_trigonometric_equation",
+        "unit_circle_values"
+      ],
+      "method_path": [
+        "Set numerator to zero: 2sin²2θ − 5sin2θ − 3 = 0",
+        "Factorise: (2sin2θ + 1)(sin2θ − 3) = 0",
+        "Solve: sin2θ = −1/2, reject sin2θ = 3",
+        "Find 2θ: 7π/6 or 11π/6",
+        "Solve for θ: θ = 7π/12, 11π/12"
+      ],
+      "accepted_alternatives": [
+        "Use quadratic formula sin2θ = (5 ± √49)/4 instead of factorisation to obtain sin2θ = −1/2 (reject sin2θ = 3)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16–17",
+          "basis": "M1: consider the equation (2sin²2θ − 5sin2θ − 3)/(sin2θ − 1) = 0 ⇒ 2sin²2θ − 5sin2θ − 3 = 0. M1: attempt to factorise or substitute into quadratic formula. A1: sin2θ = −1/2 only. A1: one of 7π/6 or 11π/6. A1: θ = 7π/12, 11π/12 (must be in radians)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q07-A",
+      "question": "7",
+      "part": "a",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "18",
+      "task_summary": "Rearrange to 3px^2+2px+(1-p)=0, apply discriminant b^2-4ac>0 with a=3p, b=2p, c=1-p to obtain 16p^2-12p>0, factor to 4p(4p-3)>0, find critical values p=0 and p=3/4, solve the quadratic inequality to get p<0 or p>3/4.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.polynomials",
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "rearrange_equation",
+        "discriminant",
+        "quadratic_inequality",
+        "factoring",
+        "critical_values",
+        "interval_testing"
+      ],
+      "method_path": [
+        "Rearrange to 3px^2 + 2px + (1-p) = 0",
+        "Set discriminant condition: b^2 - 4ac > 0 for distinct real roots",
+        "Substitute a=3p, b=2p, c=1-p: (2p)^2 - 4(3p)(1-p) > 0",
+        "Expand and simplify: 16p^2 - 12p > 0",
+        "Factor: 4p(4p-3) > 0",
+        "Find critical values: p=0, p=3/4",
+        "Solve inequality: p < 0 or p > 3/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1: attempt to use discriminant (b^2-4ac > 0). (2p)^2-4(3p)(1-p) > 0 leads to 16p^2-12p > 0 (A1). M1: attempt to find critical values p=0, p=3/4. M1: recognition that discriminant > 0. A1: p < 0 or p > 3/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q07-B",
+      "question": "7",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "18",
+      "task_summary": "Substitute p=4 to get 12x^2+8x-3=0, solve via quadratic formula to obtain x=(-2+/-sqrt(13))/6, and match to the form x=(a+/-sqrt(13))/6 to find a=-2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "quadratic_formula",
+        "simplify_surd"
+      ],
+      "method_path": [
+        "Substitute p=4: 12x^2 + 8x - 3 = 0",
+        "Apply quadratic formula: x = (-8 +/- sqrt(64+144)) / 24",
+        "Simplify: x = (-8 +/- sqrt(208)) / 24 = (-8 +/- 4sqrt(13)) / 24 = (-2 +/- sqrt(13)) / 6",
+        "Match to form x = (a +/- sqrt(13))/6: a = -2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "p=4 implies 12x^2+8x-3=0. M1: valid attempt to use quadratic formula (-b +/- sqrt(b^2-4ac))/(2a) or equivalent. x = (-8 +/- sqrt(208))/24 = (-2 +/- sqrt(13))/6. A1: a = -2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 7,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Solve the first-order linear differential equation dy/dx = ln(2x)/x^2 - 2y/x, x > 0, with initial condition y(1/2) = 4, giving the answer as y = f(x).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "rearrange_linear_de",
+        "find_integrating_factor",
+        "multiply_by_integrating_factor",
+        "recognize_derivative",
+        "integrate_both_sides",
+        "integration_by_parts",
+        "solve_for_dependent_variable",
+        "substitute_initial_condition",
+        "solve_for_constant"
+      ],
+      "method_path": [
+        "Rearrange DE to standard linear form dy/dx + (2/x)y = ln(2x)/x^2",
+        "Find integrating factor mu(x) = e^(integral (2/x) dx) = x^2",
+        "Multiply DE by mu(x) to obtain x^2 dy/dx + 2xy = ln(2x)",
+        "Recognize left side as derivative d/dx(x^2 y) = ln(2x)",
+        "Integrate both sides: x^2 y = integral ln(2x) dx",
+        "Integration by parts: integral ln(2x) dx = x ln(2x) - x + c",
+        "Obtain general solution y = ln(2x)/x - 1/x + c/x^2",
+        "Substitute x = 1/2, y = 4 to get 4 = 0 - 2 + 4c and solve c = 3/2",
+        "Write particular solution y = ln(2x)/x - 1/x + 3/(2x^2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "Rearranged to standard linear form: awarding (M1). Markscheme line: dy/dx + 2y/x = ln(2x)/x^2."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Integrating factor: attempt to find integrating factor (M1) then e^(integral 2/x dx) = e^(2 ln x) = x^2 (A1)."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Multiplication and product-rule recognition: multiply by IF, recognise d/dx(x^2 y) = ln(2x)."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Integration by parts: attempt to use integration by parts (M1) leading to x^2 y = x ln(2x) - x + c (A1)."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Solve for y: y = ln(2x)/x - 1/x + c/x^2."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Substitution and constant: substituting x = 1/2, y = 4 into an integrated equation involving c (M1), giving 4 = 0 - 2 + 4c so c = 3/2."
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Final answer: y = ln(2x)/x - 1/x + 3/(2x^2) (A1). Total 7 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "Expand (1+ax)^(-1/2) and (1-x)^(1/2) via binomial theorem up to x², equate coefficients to the given form 4bx + bx², and solve for a and b.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion_fractional",
+        "coefficient_equating",
+        "simultaneous_equations",
+        "algebraic_solving"
+      ],
+      "method_path": [
+        "Expand (1+ax)^(-1/2) using binomial theorem: 1 − (1/2)ax + (3/8)a²x² + …",
+        "Expand (1−x)^(1/2) using binomial theorem: 1 − (1/2)x − (1/8)x² + …",
+        "Form the difference and collect terms: ½(1−a)x + ⅛(3a²+1)x² + …",
+        "Equate coefficients: ½(1−a) = 4b and ⅛(3a²+1) = b",
+        "Solve simultaneously to obtain a = −1/3, b = 1/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "M1 for attempt to expand binomial with negative fractional power; A1 for (1+ax)^(-1/2) = 1 − ½ax + ⅜a²x² + …; A1 for (1−x)^(1/2) = 1 − ½x − ⅛x² + …; M1 for attempt to equate coefficients; M1 for attempt to solve simultaneously; A1 for a = −1/3, b = 1/6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "State the restriction |x| < 1 for the binomial expansion to be valid.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "convergence_condition",
+        "absolute_value_inequality"
+      ],
+      "method_path": [
+        "State |x| < 1 as the condition for validity of the binomial expansions"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "A1 for |x| < 1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q10-A-I-AND-A-II",
+      "question": "10",
+      "part": "(a)(i) and (a)(ii)",
+      "marks": 7,
+      "source_pages": "13",
+      "markscheme_pages": "21–22",
+      "task_summary": "Find t for maximum velocity by differentiating v(t)=4+4t−3t², setting v'(t)=0 and solving for t=2/3. Then integrate v(t) to obtain displacement, apply initial condition s(0)=0, and substitute t=2/3 to show distance is 88/27 m.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "differentiate",
+        "set_derivative_to_zero",
+        "solve_linear_equation",
+        "integrate_polynomial",
+        "apply_initial_condition",
+        "substitute_value",
+        "evaluate_rational_expression"
+      ],
+      "method_path": [
+        "Differentiate v(t)=4+4t−3t² to obtain v'(t)=4−6t",
+        "Set v'(t)=0 and solve to get t=2/3",
+        "Integrate v(t) to obtain displacement s(t)=4t+2t²−t³+c",
+        "Apply initial condition s(0)=0 to find c=0",
+        "Substitute t=2/3 into s(t) and simplify to 88/27"
+      ],
+      "accepted_alternatives": [
+        "Use vertex formula t=−b/(2a) to find t=2/3",
+        "Use average of roots to find t=2/3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(i) M1 for valid approach to find turning point (v'=0, −b/(2a), average of roots); A1 for t=2/3. (ii) M1 for attempt to integrate v; A1A1 for ∫v dt = 4t+2t²−t³+c; M1 for substituting their t into integrated expression; A1 for distance = 88/27 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q10-B",
+      "question": "10",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Sketch graph of v against t for 0≤t≤3, showing intercepts with axes, vertex near t=2/3, and correct concave-down parabolic shape.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "solve_quadratic_equation",
+        "find_x_intercept",
+        "identify_vertex",
+        "identify_domain_endpoints",
+        "sketch_parabola"
+      ],
+      "method_path": [
+        "Solve v(t)=0 to find t-intercept at t=2 (reject t=−2/3 outside domain)",
+        "Plot domain endpoints (0,4) and (3,−5) with t=3 clearly indicated",
+        "Plot vertex at approximately t=2/3, v>4",
+        "Sketch concave-down parabola through these points"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "M1 for valid approach to solve 4+4t−3t²=0; A1 for correct x-intercept at t=2. A1 for correct domain from 0 to 3 starting at (0,4) with 3 clearly indicated. A1 for vertex in approximately correct place for t=2/3 and v>4. Shape must be concave-down parabola."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q10-C",
+      "question": "10",
+      "part": "(c)",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find total distance travelled by integrating |v(t)| from t=0 to t=3, splitting at t=2 where velocity changes sign, and summing the absolute areas: 8+5=13 m.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "split_integral_at_sign_change",
+        "integrate_polynomial",
+        "evaluate_definite_integral",
+        "sum_absolute_areas"
+      ],
+      "method_path": [
+        "Recognise total distance = ∫₀³|v(t)|dt, split at t=2 where v(t)=0",
+        "Evaluate ∫₀²(4+4t−3t²)dt = 8",
+        "Evaluate ∫₂³(4+4t−3t²)dt = −5",
+        "Sum absolute areas: 8 + |−5| = 13 m"
+      ],
+      "accepted_alternatives": [
+        "Directly evaluate ∫₀³|4+4t−3t²|dt"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1 for recognising to integrate between 0 and 2, or 2 and 3 OR ∫|v|dt. A1 for ∫₀² = 8. A1 for ∫₂³ = −5. M1 for valid approach to sum the two areas. A1 for total distance 13 m."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 7,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Prove by mathematical induction that d^n/dx^n (x^2 e^x) = (x^2 + 2nx + n(n-1))e^x for n in positive integers.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "mathematical_induction",
+        "base_case_verification",
+        "inductive_hypothesis",
+        "product_rule",
+        "differentiation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Verify base case n=1: LHS = d/dx(x^2 e^x) = (x^2+2x)e^x, RHS = (x^2+2(1)x+1(0))e^x = (x^2+2x)e^x",
+        "Assume true for n=k: d^k/dx^k (x^2 e^x) = (x^2+2kx+k(k-1))e^x",
+        "Differentiate RHS using product rule: (2x+2k)e^x + (x^2+2kx+k(k-1))e^x",
+        "Simplify to (x^2+2(k+1)x+(k+1)k)e^x, matching formula for n=k+1",
+        "Conclude by induction for all n in positive integers"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "Base case: LHS d/dx(x^2 e^x)=(x^2+2x)e^x (A1), RHS (x^2+2(1)x+1(0))e^x (A1). Assume n=k (M1). Differentiate RHS (M1). Obtain (x^2+2(k+1)x+(k+1)k)e^x (A1, A1). Conclude R1 if three of previous four awarded."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Determine the Maclaurin series of f(x)=x^2 e^x up to and including the term in x^4.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "derivative_evaluation",
+        "series_expansion",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Use formula from part (a): f^(n)(0)=n(n-1), giving f(0)=0, f'(0)=0, f''(0)=2, f'''(0)=6, f^(4)(0)=12",
+        "Apply Maclaurin series: f(x)=f(0)+f'(0)x+f''(0)x^2/2!+f'''(0)x^3/3!+f^(4)(0)x^4/4!",
+        "Obtain f(x)=x^2+x^3+x^4/2"
+      ],
+      "accepted_alternatives": [
+        "Multiply x^2 by Maclaurin series of e^x: x^2(1+x+x^2/2!+x^3/3!+...)=x^2+x^3+x^4/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "METHOD 1: use formula from (a) for f^(n)(0)=n(n-1) (M1); f(0)=0, f'(0)=0, f''(0)=2, f'''(0)=6, f^(4)(0)=12; Maclaurin formula (M1) gives x^2+x^3+x^4/2 (A1). METHOD 2: x^2 times Maclaurin series of e^x (M1, A1, A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26-27",
+      "task_summary": "Determine lim_{x->0} (x^2 e^x - x^2) / x^3.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.series",
+        "calculus.differentiation"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "series_substitution",
+        "algebraic_simplification",
+        "lhopital_rule"
+      ],
+      "method_path": [
+        "Substitute Maclaurin series: x^2 e^x - x^2 = (x^2+x^3+x^4/2+...) - x^2 = x^3+x^4/2+...",
+        "Divide by x^3: (x^3+x^4/2+...)/x^3 = 1+x/2+...",
+        "Take limit as x->0: limit = 1"
+      ],
+      "accepted_alternatives": [
+        "Factor and use L'Hopital: lim (x^2(e^x-1))/x^3 = lim (e^x-1)/x = lim e^x/1 = 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26-27",
+          "basis": "METHOD 1: substitute series (M1), simplify to (x^3+x^4/2+...)/x^3 (A1), obtain 1+higher terms (A1), limit=1 (A1). METHOD 2: factor to (e^x-1)/x (M1, A1), apply L'Hopital (M1), limit=1 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "28",
+      "task_summary": "Verify w₁ = 1 + e^(iπ/6) is a root by substitution and de Moivre, then find w₂ and w₃ by taking complex cube roots of i and expressing in the form a + e^(iθ).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivre_theorem",
+        "complex_root_extraction",
+        "cube_root_of_unity",
+        "polar_form",
+        "trigonometric_form_conversion"
+      ],
+      "method_path": [
+        "Substitute ω₁ into LHS: (1 + e^(iπ/6) − 1)³ = (e^(iπ/6))³",
+        "Apply de Moivre: (e^(iπ/6))³ = e^(iπ/2)",
+        "Convert to Cartesian: e^(iπ/2) = cos(π/2) + i sin(π/2) = i, verifying the root",
+        "Take cube roots of i: z − 1 = e^(i(π/2 + 2πk)/3) for k = 0, 1, 2",
+        "Simplify exponent: z − 1 = e^(iπ/6 + i4πk/6)",
+        "For k = 1: w₂ = 1 + e^(i5π/6); for k = 2: w₃ = 1 + e^(i9π/6)"
+      ],
+      "accepted_alternatives": [
+        "Solve the cubic equation directly; verification marks may be awarded from part (ii) working"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "(a)(i): (1 + e^(iπ/6) − 1)³ = (e^(iπ/6))³ A1; = e^(iπ/2) A1; = i AG. Note: 'Candidates who solve the equation correctly can be awarded the above two marks.' (a)(ii): (z − 1)³ = i → z − 1 = e^(i(π/2 + 2πk)/3) M1; z − 1 = e^(iπ/6 + i4πk/6) M1; k = 1 → w₂ = 1 + e^(i5π/6) A1; k = 2 → w₃ = 1 + e^(i9π/6) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "29",
+      "task_summary": "Plot points A, B and C on an Argand diagram by expressing the complex numbers in Cartesian form and translating 1 unit on the real axis.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "polar_to_cartesian_conversion",
+        "argand_diagram_plotting",
+        "complex_translation"
+      ],
+      "method_path": [
+        "Express e^(iπ/6), e^(i5π/6), e^(i9π/6) in Cartesian form",
+        "Translate each point +1 in the real direction to obtain A, B, C",
+        "Plot the three points on the Argand diagram"
+      ],
+      "accepted_alternatives": [
+        "Express w₁, w₂, w₃ directly in Cartesian form without separate translation step"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "EITHER 'attempt to express e^(iπ/6), e^(i5π/6), e^(i9π/6) in Cartesian form and translate 1 unit in the positive direction of the real axis' (M1) OR 'attempt to express w₁, w₂ and w₃ in Cartesian form' (M1). THEN A1A1A1 for the three points. Note: 'To award A marks, it is not necessary to see A, B or C, the w, or the solid lines.'"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "30",
+      "task_summary": "Compute the modulus of the difference w₁ − w₃ to find the distance AC = √3.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "complex_modulus",
+        "complex_subtraction",
+        "distance_formula"
+      ],
+      "method_path": [
+        "Compute w₁ − w₃ in Cartesian form: (1 + √3/2 + i/2) − (1 − √3/2 + i/2) = √3 + i·0 ... or equivalent using polar subtraction",
+        "Find the modulus: |w₁ − w₃| = √((3/2)² + (√3/2)²) = √(9/4 + 3/4) = √3"
+      ],
+      "accepted_alternatives": [
+        "Use polar form directly: |e^(iπ/6) − e^(i9π/6)| with geometric reasoning"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "'valid attempt to find |w₁ − w₃| (or |w₃ − w₁|)' M1; expression in Cartesian or polar form M1; 'AC = √3' A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "31–34",
+      "task_summary": "Show α is a root by rearranging, applying de Moivre's theorem to extract a cube root, and algebraically isolating α.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivre_theorem",
+        "algebraic_rearrangement",
+        "complex_division",
+        "root_verification"
+      ],
+      "method_path": [
+        "Rearrange: (z − 1)³/z³ = i → ((z − 1)/z)³ = i",
+        "Express i as e^(iπ/2) and take cube root: (z − 1)/z = e^(iπ/6)",
+        "Set z = α and rearrange: α − 1 = α e^(iπ/6) → α(1 − e^(iπ/6)) = 1 → α = 1/(1 − e^(iπ/6))"
+      ],
+      "accepted_alternatives": [
+        "Alternate taking cube root as (z−1)/z = e^(i(π/2+2πk)/3) and selecting appropriate branch; directly substitute α into LHS and RHS and apply de Moivre to verify equality; expand (α−1)³ and iα³ and simplify using de Moivre to show the polynomial equals zero"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "31–34",
+          "basis": "METHOD 1: ((z−1)/z)³ = i M1; = e^(iπ/2) A1; (α−1)/α = e^(iπ/6) A1; algebra leads to α = 1/(1−e^(iπ/6)) AG. METHODS 2–4 also accepted with equivalent M1, A1, A1 allocations."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "35–38",
+      "task_summary": "Find Re(α) = 1/2 by expressing the denominator in Cartesian form, rationalising using the complex conjugate, and simplifying.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "polar_to_cartesian_conversion",
+        "rationalising_denominator",
+        "complex_conjugate",
+        "real_part_extraction"
+      ],
+      "method_path": [
+        "Write e^(iπ/6) = cos(π/6) + i sin(π/6) = √3/2 + i/2",
+        "Form denominator: 1 − (√3/2 + i/2) = (2−√3)/2 − i/2",
+        "Rationalise: multiply numerator and denominator by complex conjugate (2−√3)/2 + i/2",
+        "Simplify denominator using difference of squares: ((2−√3)/2)² + (1/2)²",
+        "Extract real part: Re(α) = 1/2"
+      ],
+      "accepted_alternatives": [
+        "Rationalise using trigonometric conjugate: multiply numerator and denominator by (1 − cos(π/6) + i sin(π/6)); multiply through by e^(−iπ/12)/e^(−iπ/12) and rewrite in r-cis form; multiply by (1 − e^(−iπ/6))/(1 − e^(−iπ/6)) and simplify in Cartesian form"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "35–38",
+          "basis": "METHOD 1: substitute Cartesian form M1; obtain form A1; 'attempt to use conjugate to rationalise' M1; correct numerator A1; correct denominator simplification A1; 'Re(α) = 1/2' A1. METHODS 2–4 also described with equivalent 6-mark allocations. Note: 'Their final imaginary part does not have to be correct in order for the final three A marks to be awarded.'"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

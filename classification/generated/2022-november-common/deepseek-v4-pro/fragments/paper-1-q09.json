@@ -1,0 +1,98 @@
+{
+  "question": "9",
+  "expected_question_marks": 10,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 8,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Solve the homogeneous DE via substitution y = vx, separation of variables, integration, and initial condition y(1)=2 to obtain y^2 = 4x^2(1 - ln x).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "implicit_differentiation",
+        "algebraic_simplification",
+        "separation_of_variables",
+        "logarithmic_integration",
+        "initial_condition_substitution",
+        "back_substitution"
+      ],
+      "method_path": [
+        "Substitute y = vx, giving dy/dx = v + x dv/dx",
+        "Substitute into DE: (v^2 x^2 - 2x^2)/(v x^2) = v + x dv/dx simplifies to x dv/dx = -2/v",
+        "Separate variables: v dv = -(2/x) dx",
+        "Integrate both sides: v^2/2 = -2 ln|x| + c",
+        "Back-substitute v = y/x: y^2/(2x^2) = -2 ln|x| + c",
+        "Apply initial condition y(1)=2: 2 = 0 + c so c = 2",
+        "Simplify: y^2 = 4x^2(1 - ln x)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "let y = vx implies dy/dx = v + x dv/dx (A1); substitution into DE (M1); simplification to x dv/dx = -2/v (A1); separation integral v dv = -2 integral dx/x (M1); integration v^2/2 = -2 ln x + c (A1); back-substitution y^2/(2x^2) = -2 ln x + c (A1); attempt to substitute x=1, y=2 to find c gives c=2 (M1); final answer y^2 = 4x^2(1 - ln x) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "17",
+      "task_summary": "Set dy/dx = 0 in the DE giving y^2 = 2x^2, hence y = +/- sqrt(2) x and m = +/- sqrt(2).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "zero_gradient_condition",
+        "algebraic_simplification",
+        "ratio_extraction"
+      ],
+      "method_path": [
+        "Set dy/dx = 0 in the differential equation: (y^2 - 2x^2)/(xy) = 0",
+        "Solve: y^2 = 2x^2",
+        "Take square roots: y = +/- sqrt(2) x",
+        "Read off slopes: m = +/- sqrt(2)"
+      ],
+      "accepted_alternatives": [
+        "y = sqrt(2) x and y = -sqrt(2) x",
+        "m = sqrt(2), m = -sqrt(2)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to set dy/dx = 0 in the differential equation (M1); y = sqrt(2) x and y = -sqrt(2) x or m = +/- sqrt(2) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain",
+        "markscheme_ambiguity"
+      ]
+    }
+  ]
+}

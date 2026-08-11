@@ -1,0 +1,144 @@
+{
+  "question": "12",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q12-A-I-AND-A-II",
+      "question": "12",
+      "part": "(a)(i) and (a)(ii)",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "26",
+      "task_summary": "Find arg(z0) where z0 = 1 + i, and write an expression for arg(zn) in terms of n for zn = (n^2+n+1)+i, n in N.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "evaluate_complex_number",
+        "compute_argument",
+        "arctan"
+      ],
+      "method_path": [
+        "z0 = (0^2+0+1) + i = 1 + i",
+        "arg(z0) = arctan(1/1) = arctan(1) = pi/4 (or 45 deg)",
+        "arg(zn) = arctan(1/(n^2+n+1))"
+      ],
+      "accepted_alternatives": [
+        "For (a)(i): accept arctan(1), pi/4, 45 degrees, or answer marked on an Argand diagram."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "z0 = 1 + i (A1); arg(z0) = arctan(1) = pi/4 = 45 deg (A1); arg(zn) = arctan(1/(n^2+n+1)) (A1); total [3 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q12-B-I-AND-B-II",
+      "question": "12",
+      "part": "(b)(i) and (b)(ii)",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "26-27",
+      "task_summary": "Show arctan(a)+arctan(b)=arctan((a+b)/(1-ab)) for a,b in R+, ab<1; then show arg(w1)=arctan(2) where w1=z0*z1.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "compound_angle_formula",
+        "tan_addition",
+        "arctan_addition_identity",
+        "argument_of_product",
+        "sum_of_arguments"
+      ],
+      "method_path": [
+        "tan(arctan(a)+arctan(b)) = (a+b)/(1-ab) via compound angle formula",
+        "Hence arctan(a)+arctan(b) = arctan((a+b)/(1-ab)) when ab<1",
+        "arg(w1) = arg(z0*z1) = arg(z0) + arg(z1)",
+        "= arctan(1) + arctan(1/3)",
+        "= arctan((1+1/3)/(1-1*1/3)) = arctan(2)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 for (b)(ii): w1 = (1+i)(3+i) = 2+4i, then arg(w1) = arctan(4/2) = arctan(2), or labelled Argand diagram."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(b)(i): M1 for compound angle formula for tan; A1 for tan derivation yielding (a+b)/(1-ab); AG."
+        },
+        {
+          "markscheme_pages": "26-27",
+          "basis": "(b)(ii) METHOD 1: M1 for arg(w1)=arg(z0)+arg(z1); (A1) for arctan(1)+arctan(1/3); A1 for arctan(2). METHOD 2: (M1) for w1=(1+i)(3+i); A1 for 2+4i; A1 for arg(w1)=arctan(2). [5 marks total for (b)]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q12-C",
+      "question": "12",
+      "part": "(c)",
+      "marks": 10,
+      "source_pages": "12",
+      "markscheme_pages": "28-29",
+      "task_summary": "Prove by mathematical induction that arg(wn) = arctan(n+1) for n in N, where wn = z0*z1*...*zn.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.complex_numbers",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_n0",
+        "inductive_hypothesis",
+        "argument_of_product",
+        "arctan_addition",
+        "algebraic_simplification",
+        "inductive_conclusion"
+      ],
+      "method_path": [
+        "Base case n=0: arg(w0)=arg(z0)=arctan(1); RHS=arctan(0+1)=arctan(1); LHS=RHS",
+        "Inductive hypothesis: assume arg(wk)=arctan(k+1)",
+        "arg(w_{k+1})=arg(wk*z_{k+1})=arg(wk)+arg(z_{k+1})",
+        "= arctan(k+1) + arctan(1/((k+1)^2+(k+1)+1))",
+        "Apply arctan addition formula with a=k+1, b=1/((k+1)^2+(k+1)+1)",
+        "Simplify the rational expression to arctan(k+2)",
+        "Conclusion: true for all n in N by mathematical induction"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "R1 for base case n=0; M1 for inductive hypothesis; (M1) for arg(w_{k+1})=arg(wk)+arg(z_{k+1}); A1 for substitution of expressions."
+        },
+        {
+          "markscheme_pages": "28-29",
+          "basis": "M1 for applying arctan addition formula; (A1), A1, A1 for algebraic simplification steps; A1 for arctan(k+2); R1 for induction conclusion. Note: final R1 requires four prior marks awarded. [10 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

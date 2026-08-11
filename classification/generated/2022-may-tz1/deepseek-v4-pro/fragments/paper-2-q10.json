@@ -1,0 +1,202 @@
+{
+  "question": "10",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Sketch the curve y=f(x) on [1,2], clearly indicating the coordinates of the endpoints.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "curve_sketching",
+        "identify_endpoints"
+      ],
+      "method_path": [
+        "Sketch concave down curve on the given domain [1,2]",
+        "Label endpoints (1,0) and (2,√3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "correct shape (concave down) within the given domain 1≤x≤2 A1; (1,0) and (2,√3)≈(2,1.73) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Show that f⁻¹(x)=2/x²+1; state the domain and range of f⁻¹.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "interchange_variables",
+        "algebraic_manipulation",
+        "inverse_function",
+        "domain_range"
+      ],
+      "method_path": [
+        "Interchange x and y to obtain x=√(2/(y-1))",
+        "Square both sides: x²=2/(y-1)",
+        "Rearrange and solve for y: y=2/x²+1",
+        "Conclude f⁻¹(x)=2/x²+1",
+        "State domain of f⁻¹ as [0,√3]",
+        "State range of f⁻¹ as [1,2]"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "interchanging x and y (seen anywhere) M1; x²=2/(y-1) A1; y=2/x²+1 A1; f⁻¹(x)=2/x²+1 AG; 0≤x≤√3 OR domain [0,√3] A1; 1≤y≤2 OR range [1,2] A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Show that V=π(h+h³/3); hence determine the maximum volume of the container.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry",
+        "functions.inverse_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "volume_of_revolution",
+        "integration",
+        "substitution",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Substitute x=f⁻¹(y) into V=π∫₀ʰx²dy",
+        "Integrate to obtain V=π[y+y³/3]₀ʰ",
+        "Simplify to V=π(h+h³/3)",
+        "Substitute h=√3 into V",
+        "Compute V_max=2π√3≈10.9 m³"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to substitute … into the correct volume formula (M1); V=∫₀ʰπ(…)²dy A1; =π[y+y³/3]₀ʰ A1; =π(h+h³/3) AG; attempt to substitute h=√3 into V (M1); V=10.9 (m³) (=2√3π) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Find the time to fill the container to its maximum volume at a constant rate of 0.4 m³/s.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_application",
+        "division"
+      ],
+      "method_path": [
+        "Divide maximum volume by the constant flow rate: t=V_max/0.4",
+        "Compute t=2π√3/0.4=5π√3≈27.2 s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "time = 10.8828…/0.4 (= 2√3π/0.4) (M1); =27.2 (s) (=5√3π) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Find the rate of change of the height of the water when the container is filled to half its maximum volume.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "calculus.integration_applications"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "related_rates",
+        "chain_rule",
+        "implicit_differentiation",
+        "solve_equation",
+        "substitution"
+      ],
+      "method_path": [
+        "Set V=V_max/2=π√3 and solve π(h+h³/3)=π√3 for h≈1.18",
+        "Differentiate V=π(h+h³/3) w.r.t. h: dV/dh=π(1+h²)",
+        "Apply chain rule: dh/dt=(dV/dt)/(dV/dh)",
+        "Substitute dV/dt=0.4 and h≈1.18",
+        "Compute dh/dt≈0.0531 m/s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "attempt to find height when V=5.4414…=√3π (M1); h=1.1818… (A1); attempt to use chain rule or differentiate V w.r.t. t (M1); dh/dt = dV/dt ÷ dV/dh = dV/dt × 1/(π(1+h²)) (A1); attempt to substitute h and dV/dt=0.4 (M1); dh/dt=0.0531 (m/s) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

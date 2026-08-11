@@ -1,0 +1,706 @@
+{
+  "session": "November 2021",
+  "zone": "Common",
+  "paper": 3,
+  "calculator": "yes",
+  "expected_total_marks": 55,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-A",
+      "question": "1",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Verify that u = f(t) satisfies d^2 u/dt^2 = u by differentiating f(t) twice.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_exponential",
+        "second_derivative",
+        "verify_differential_equation"
+      ],
+      "method_path": [
+        "Compute f'(t) = (e^t - e^(-t))/2",
+        "Compute f''(t) = (e^t + e^(-t))/2",
+        "Observe f''(t) = f(t), confirming d^2 u/dt^2 = u"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "f'(t) = (e^t - e^(-t))/2 A1; f''(t) = (e^t + e^(-t))/2 A1; = f(t) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-B",
+      "question": "1",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Show that (f(t))^2 + (g(t))^2 = f(2t) by substituting exponential definitions and simplifying.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.proof",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_definition",
+        "expand_binomial",
+        "collect_terms",
+        "recognize_hyperbolic_form"
+      ],
+      "method_path": [
+        "Substitute f(t) = (e^t + e^(-t))/2, g(t) = (e^t - e^(-t))/2 into LHS",
+        "Expand ((e^t+e^(-t))^2 + (e^t-e^(-t))^2)/4",
+        "Simplify to (e^(2t) + e^(-2t))/2",
+        "Recognize as f(2t)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: start from f(2t) = (e^(2t)+e^(-2t))/2 and expand backwards to (f(t))^2+(g(t))^2. Markscheme accepts combinations of METHODS 1 and 2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: substituting f and g M1; =((e^t+e^(-t))^2+(e^t-e^(-t))^2)/4 (M1); =(e^(2t)+e^(-2t))/2 = f(2t) A1. METHOD 2: f(2t)=(e^(2t)+e^(-2t))/2 =((e^t)^2+(e^(-t))^2)/2 M1; =((e^t+e^(-t))^2+(e^t-e^(-t))^2)/4 M1A1; =(f(t))^2+(g(t))^2 AG. Accept combinations of METHODS 1 and 2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-C-I",
+      "question": "1",
+      "part": "c(i)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Using e^(iu) = cos u + i sin u, find f(iu) in terms of sin u and cos u.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "apply_euler_formula",
+        "substitute_complex",
+        "simplify_to_real"
+      ],
+      "method_path": [
+        "Write f(iu) = (e^(iu) + e^(-iu))/2",
+        "Substitute e^(iu) = cos u + i sin u and e^(-iu) = cos u - i sin u",
+        "Simplify to cos u"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "substituting e^(iu)=cos u + i sin u into expression for f (M1); obtaining e^(-iu)=cos u - i sin u (A1); f(iu)=(cos u + i sin u + cos u - i sin u)/2 = cos u A1. M1 can be awarded for use of sine and cosine being odd and even respectively."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-C-II",
+      "question": "1",
+      "part": "c(ii)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Using e^(iu) = cos u + i sin u, find g(iu) in terms of sin u and cos u.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "apply_euler_formula",
+        "substitute_complex",
+        "simplify_to_imaginary"
+      ],
+      "method_path": [
+        "Write g(iu) = (e^(iu) - e^(-iu))/2",
+        "Substitute e^(iu) = cos u + i sin u and e^(-iu) = cos u - i sin u",
+        "Simplify to i sin u"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "g(iu)=(cos u + i sin u - cos u + i sin u)/2; substituting and attempt to simplify (M1); = 2i sin u / 2 = i sin u A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-D",
+      "question": "1",
+      "part": "d",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Find and simplify (f(iu))^2 + (g(iu))^2 using results from part (c).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_expressions",
+        "compute_squares",
+        "apply_double_angle"
+      ],
+      "method_path": [
+        "Substitute f(iu) = cos u and g(iu) = i sin u",
+        "Compute cos^2 u + (i sin u)^2 = cos^2 u - sin^2 u",
+        "Apply double-angle identity to get cos 2u"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: use f(2iu) = (e^(2iu)+e^(-2iu))/2 = (cos 2u + i sin 2u + cos 2u - i sin 2u)/2 = cos 2u. Equivalent forms such as 2 cos^2 u - 1 accepted."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: substituting expressions from (c) (M1); cos^2 u - sin^2 u (= cos 2u) A1. METHOD 2: f(2iu)=(e^(2iu)+e^(-2iu))/2 = cos 2u M1; cos 2u A1. Accept equivalent final answers simplified removing all imaginary parts eg 2 cos^2 u - 1 etc."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-E",
+      "question": "1",
+      "part": "e",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Show that (f(t))^2 - (g(t))^2 = (f(iu))^2 - (g(iu))^2 by evaluating both sides to 1.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_squares",
+        "simplify_to_constant",
+        "apply_pythagorean_identity",
+        "conclude_equality"
+      ],
+      "method_path": [
+        "Compute LHS: ((e^t+e^(-t))^2 - (e^t-e^(-t))^2)/4 = 1",
+        "Compute RHS: cos^2 u + sin^2 u = 1",
+        "Conclude equality since both sides equal 1"
+      ],
+      "accepted_alternatives": [
+        "Show (f(z))^2 - (g(z))^2 = 1 for all z in C, directly implying equality for both real t and imaginary iu arguments."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "LHS: ((e^t+e^(-t))^2-(e^t-e^(-t))^2)/4 M1; =(e^(2t)+e^(-2t)+2-e^(2t)-e^(-2t)+2)/4 A1; =4/4=1 A1. Award A1 for value 1 from either side. RHS: cos^2 u + sin^2 u M1; =1. Award full marks for showing (f(z))^2-(g(z))^2=1 for all z."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-F",
+      "question": "1",
+      "part": "f",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Sketch the graph of x^2 - y^2 = 1, stating axis intercepts and asymptote equations.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_intercepts",
+        "find_asymptotes",
+        "sketch_hyperbola"
+      ],
+      "method_path": [
+        "Identify x-intercepts at (1, 0) and (-1, 0)",
+        "Identify asymptotes y = x and y = -x",
+        "Sketch upper and lower branches of rectangular hyperbola"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for correct curves in upper quadrants, A1 for correct curves in lower quadrants, A1 for correct x-intercepts of (-1,0) and (1,0) (condone x=-1 and 1), A1 for y=x and y=-x."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-G",
+      "question": "1",
+      "part": "g",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "11",
+      "task_summary": "Find possible values of k such that rotating x^2 - y^2 = 1 yields xy = k.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "rotation_transformation",
+        "coordinate_transform",
+        "evaluate_constant"
+      ],
+      "method_path": [
+        "Recognize rotation by 45 degrees (pi/4) in either direction",
+        "Transform point (1, 0) under 45-degree rotation to (1/sqrt(2), +/-1/sqrt(2))",
+        "Compute k = xy = (1/sqrt(2))*(+/-1/sqrt(2)) = +/-1/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to rotate by 45 degrees in either direction (M1); attempting to rotate a particular point, eg (1,0) (M1); (1,0) rotates to (1/sqrt(2), +/-1/sqrt(2)) (or similar) (A1); hence k = +/-1/2 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-A-I",
+      "question": "2",
+      "part": "A-I",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Solve dy/dt = y by separation of variables to show y = Ae^t.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "indefinite_integration",
+        "exponentiation"
+      ],
+      "method_path": [
+        "separate_variables_dy_over_y_equals_dt",
+        "integrate_both_sides_to_ln_y_equals_t_plus_c",
+        "exponentiate_to_y_equals_Ae_to_t"
+      ],
+      "accepted_alternatives": [
+        "Rearrange to dy/dt - y = 0, multiply by integrating factor e^(-t), recognise d/dt(ye^(-t)) = 0, integrate to ye^(-t) = A, multiply by e^t."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 1: M1 for separating variables and integrating; A1 for ln y; A1 for t and c; then AG. METHOD 2: M1 for rearranging to dy/dt - y = 0 and multiplying by e^(-t); A1A1; then AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-A-II",
+      "question": "2",
+      "part": "A-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Substitute y = Ae^t into dx/dt = x - y to show dx/dt - x = -Ae^t.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "substitute_y_equals_Ae_to_t_into_dx_dt_equals_x_minus_y",
+        "rearrange_to_dx_dt_minus_x_equals_minus_Ae_to_t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for substituting y = Ae^t into the differential equation in x; then AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-A-III",
+      "question": "2",
+      "part": "A-III",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Solve the linear first-order ODE dx/dt - x = -Ae^t for x as a function of t.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrating_factor",
+        "product_rule_recognition",
+        "indefinite_integration",
+        "solving_first_order_linear_ode"
+      ],
+      "method_path": [
+        "find_integrating_factor_e_to_minus_t",
+        "multiply_ode_by_integrating_factor",
+        "recognise_derivative_of_e_to_minus_t_x",
+        "integrate_both_sides_to_e_to_minus_t_x_equals_minus_At_plus_D",
+        "solve_for_x_getting_minus_At_plus_D_times_e_to_t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for identifying integrating factor e^(∫-1dt); A1 for e^(-t); A1 for e^(-t)x = -At + D; A1 for x = (-At + D)e^t. Note: first constant must be A; second can be any constant for final A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-B-I",
+      "question": "2",
+      "part": "B-I",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Differentiate dy/dt = -x + y with respect to t and show that d²y/dt² = 2 dy/dt.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "differentiate_dy_dt_equals_minus_x_plus_y_wrt_t",
+        "substitute_dx_dt_equals_x_minus_y",
+        "simplify_to_d2y_dt2_equals_2_dy_dt"
+      ],
+      "accepted_alternatives": [
+        "EITHER substitute dy/dt = -x + y for d²y/dt² then simplify; OR substitute x = -y + dy/dt and derive directly."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for differentiating to d²y/dt² = -dx/dt + dy/dt; M1 for substituting dx/dt = x - y (EITHER route) or using x = -y + dy/dt (OR route); A1 for simplification to d²y/dt² = 2 dy/dt; then AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-B-II",
+      "question": "2",
+      "part": "B-II",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Let Y = dy/dt and show that Y = Be^(2t) by solving dY/dt = 2Y.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "variable_substitution",
+        "separation_of_variables",
+        "indefinite_integration",
+        "exponentiation"
+      ],
+      "method_path": [
+        "substitute_Y_for_dy_dt_to_get_dY_dt_equals_2Y",
+        "separate_variables_dY_over_Y_equals_2dt",
+        "integrate_both_sides_to_ln_Y_equals_2t_plus_c",
+        "exponentiate_to_Y_equals_Be_to_2t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for dY/dt = 2Y; M1 for separating and integrating ∫dY/Y = ∫2dt; A1 for ln Y = 2t + c; then AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-B-III",
+      "question": "2",
+      "part": "B-III",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Find y as a function of t by integrating dy/dt = Be^(2t).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "indefinite_integration",
+        "constant_of_integration"
+      ],
+      "method_path": [
+        "integrate_dy_dt_equals_Be_to_2t_with_respect_to_t",
+        "obtain_y_equals_B_over_2_e_to_2t_plus_C"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "M1 for integrating y = ∫Be^(2t)dt; A1 for y = (B/2)e^(2t) + C. Note: first constant must be B; second can be any constant for final A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-B-IV",
+      "question": "2",
+      "part": "B-IV",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Show that x = -(Be^(2t))/2 + C by substituting into dy/dt = -x + y.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "solving_for_variable"
+      ],
+      "method_path": [
+        "substitute_y_and_dy_dt_into_dy_dt_equals_minus_x_plus_y",
+        "solve_for_x_to_get_minus_Be_to_2t_over_2_plus_C"
+      ],
+      "accepted_alternatives": [
+        "Solve dx/dt = x - (Be^(2t))/2 - C using integrating factor e^(-t), integrate to e^(-t)x = -(B/2)e^t + Ce^(-t) + D, multiply by e^t, use dy/dt = -x + y to show D = 0."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: M1 for substituting dy/dt = Be^(2t) and y; M1 for solving; A1 for x = -(B/2)e^(2t) + C; AG. METHOD 2: M1 for rearranging to dx/dt - x = -(B/2)e^(2t) - C; M1 for integrating with IF; A1 for x = -(B/2)e^(2t) + C; AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-C-I",
+      "question": "2",
+      "part": "C-I",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "Show that the system with a = -4 yields d²y/dt² - 2 dy/dt - 3y = 0.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation",
+        "elimination_of_variable",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "differentiate_dy_dt_equals_minus_4x_plus_y_to_get_d2y_dt2_equals_minus_4_dx_dt_plus_dy_dt",
+        "eliminate_x_using_dx_dt_equals_x_minus_4y_and_x_equals_y_minus_dy_dt_over_4",
+        "simplify_to_d2y_dt2_minus_2_dy_dt_minus_3y_equals_0"
+      ],
+      "accepted_alternatives": [
+        "Rewrite LHS d²y/dt² - 2 dy/dt - 3y in terms of x and y, substitute, and simplify to show it equals zero."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "M1 for d²y/dt² = -4 dx/dt + dy/dt seen; METHOD 1: M1 for attempt to eliminate x; A1 for d²y/dt² = 2 dy/dt + 3y leading to AG. METHOD 2: M1 for rewriting LHS in terms of x and y; A1 for -(8x+5y) - 2(-4x+y) - 3y = 0; AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-C-II",
+      "question": "2",
+      "part": "C-II",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "Assume y = Fe^(λt) and find the two values of λ satisfying the second-order ODE.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "exponential_ansatz",
+        "derivative_of_exponential",
+        "characteristic_equation",
+        "quadratic_solving"
+      ],
+      "method_path": [
+        "assume_y_equals_Fe_to_lambda_t",
+        "compute_dy_dt_equals_lambda_Fe_to_lambda_t_and_d2y_dt2_equals_lambda_squared_Fe_to_lambda_t",
+        "substitute_into_ODE",
+        "divide_by_Fe_to_lambda_t",
+        "solve_characteristic_equation_lambda_squared_minus_2_lambda_minus_3_equals_0",
+        "obtain_lambda_equals_3_and_lambda_equals_minus_1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "A1 for dy/dt = λFe^(λt) and d²y/dt² = λ²Fe^(λt); M1 for substituting into ODE; A1 for λ² - 2λ - 3 = 0; A1 for λ = 3 and λ = -1 (either order)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q02-C-III",
+      "question": "2",
+      "part": "C-III",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "16",
+      "task_summary": "Verify that y = Fe^(3t) + Ge^(-t) satisfies the ODE d²y/dt² - 2 dy/dt - 3y = 0.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation_of_exponential",
+        "substitution_into_ode",
+        "algebraic_verification"
+      ],
+      "method_path": [
+        "compute_dy_dt_equals_3Fe_to_3t_minus_Ge_to_minus_t",
+        "compute_d2y_dt2_equals_9Fe_to_3t_plus_Ge_to_minus_t",
+        "substitute_into_d2y_dt2_minus_2_dy_dt_minus_3y",
+        "factor_and_simplify_to_show_result_equals_zero"
+      ],
+      "accepted_alternatives": [
+        "Use general λ₁, λ₂ in y = Fe^(λ₁t) + Ge^(λ₂t), substitute into ODE, factor out F and G, use λ² - 2λ - 3 = 0 to show each coefficient vanishes."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: A1 for dy/dt = 3Fe^(3t) - Ge^(-t); A1 for d²y/dt² = 9Fe^(3t) + Ge^(-t); M1 for substituting into ODE; A1 for simplification to 0; AG. METHOD 2: A1A1 for derivatives with λ₁, λ₂; M1 for substitution; A1 for factoring and using characteristic equation; AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

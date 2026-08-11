@@ -1,0 +1,46 @@
+{
+  "question": "3",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "In the expansion of (x + k)^7, the coefficient of x^5 is 63. Find the possible values of k.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "binomial_coefficient",
+        "equating_coefficients",
+        "solving_quadratic"
+      ],
+      "method_path": [
+        "Identify the term in x^5 from (x + k)^7 as 7C2 x^5 k^2",
+        "Compute 7C2 = 21",
+        "Set 21k^2 = 63",
+        "Solve k^2 = 3",
+        "State k = ±√3"
+      ],
+      "accepted_alternatives": [
+        "Use general term 7Cr x^{7-r} k^r with r=2 (or r=5) to identify the x^5 term, then proceed identically."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "Markscheme shows M1 for attempt to use binomial expansion or general term, A1 for identifying correct term 7C2 x^5 k^2 (or r=2/r=5), A1 for 7C2 = 21, A1 for 21k^2 = 63 leading to k^2 = 3, A1 for k = ±√3. Note: M1A1A1A1A0 for k=3 only."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

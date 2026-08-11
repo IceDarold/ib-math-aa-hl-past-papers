@@ -1,0 +1,73 @@
+{
+  "question": "9",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q09-9",
+      "question": "9",
+      "part": "9",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "18–20",
+      "task_summary": "Prove by contradiction that 2x³ + 6x + 1 = 0 has no integer roots.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "proof_by_contradiction",
+        "assumption",
+        "algebraic_manipulation",
+        "parity_argument",
+        "contradiction"
+      ],
+      "method_path": [
+        "assume_exists_integer_root",
+        "rearrange_equation",
+        "apply_parity_reasoning",
+        "reach_contradiction",
+        "conclude_no_integer_roots"
+      ],
+      "accepted_alternatives": [
+        "Rearrange to 2α³ + 6α = −1 and argue parity (even LHS ≠ odd RHS)",
+        "Rearrange to α³ = 1/2 − 3α and argue RHS not integer for integer α",
+        "Rearrange to α = −1/(2(α² + 3)) and argue RHS not integer for integer α",
+        "Rearrange to 2α = −1/(α² + 3) and argue RHS not integer for integer α",
+        "Method 2 (calculus): Show f′(x) > 0 for all x, f(0) = 1, f(−1) = −7, so only real root lies in (−1, 0), contradicting integer root assumption"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for assuming there exists some α ∈ Z such that 2α³ + 6α + 1 = 0"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for attempts to rearrange their equation into a suitable form"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "A1 for correct rearrangement e.g. 2α³ + 6α = −1"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "R1 for reasoning that 2α³ + 6α is even (α ∈ Z ⇒ 2α³ + 6α is even)"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "R1 for contradiction: 2α³ + 6α = −1 which is not even, so α cannot be an integer"
+        },
+        {
+          "markscheme_pages": "19–20",
+          "basis": "Method 2 accepted: M1 assumption, M1A1 for f′(x) = 6x² + 6 > 0 (strictly increasing), R1 for f(0) = 1 and f(−1) = −7, R1 for only real root between −1 and 0, contradiction"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

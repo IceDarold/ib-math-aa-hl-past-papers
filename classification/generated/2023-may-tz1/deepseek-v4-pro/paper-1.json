@@ -1,0 +1,1245 @@
+{
+  "session": "May 2023",
+  "zone": "TZ1",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q01-A",
+      "question": "1",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the zero of f(x) = (7x+7)/(2x-4).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_numerator_to_zero",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Set f(x)=0",
+        "Solve 7x+7=0",
+        "Obtain x=-1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "recognizing f(x)=0 (M1); x=-1 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q01-B",
+      "question": "1",
+      "part": "(b)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write down the equations of the vertical and horizontal asymptotes of y = f(x).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_asymptote",
+        "horizontal_asymptote",
+        "rational_function_asymptotes"
+      ],
+      "method_path": [
+        "Identify vertical asymptote x=2 from denominator 2x-4=0",
+        "Identify horizontal asymptote y=7/2 from ratio of leading coefficients"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "(b)(i) x=2 (must be an equation with x) A1; (b)(ii) y=7/2 (must be an equation with y) A1; [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q01-C",
+      "question": "1",
+      "part": "(c)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the inverse function f⁻¹(x) of f(x) = (7x+7)/(2x-4).",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "interchange_variables",
+        "cross_multiply",
+        "collect_like_terms",
+        "factor",
+        "solve_for_inverse",
+        "state_domain_restriction"
+      ],
+      "method_path": [
+        "Interchange x and y: x = (7y+7)/(2y-4)",
+        "Cross-multiply: x(2y-4) = 7y+7",
+        "Expand: 2xy-4x = 7y+7",
+        "Collect y terms: 2xy-7y = 4x+7",
+        "Factor y: y(2x-7) = 4x+7",
+        "Solve: y = (4x+7)/(2x-7)",
+        "State domain restriction x≠7/2"
+      ],
+      "accepted_alternatives": [
+        "Make x the subject of y = (7x+7)/(2x-4) first: 2yx-4y = 7x+7 → 2yx-7x = 4y+7 → x(2y-7) = 4y+7 → x = (4y+7)/(2y-7), then interchange x and y to obtain f⁻¹(x) = (4x+7)/(2x-7)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "EITHER interchanging x and y (M1); correct working with y terms on the same side: 2xy-4x = 7y+7 (A1); OR 2yx-4y = 7x+7 (A1); interchanging x and y OR making x the subject (M1); THEN f⁻¹(x) = (4x+7)/(2x-7), x≠7/2 (A1) [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "(i) Estimate the probability that a randomly selected visitor will ride The Dragon, using the frequency table of 40 visitors. (ii) Estimate the expected number of times a visitor will ride The Dragon, using the same frequency table.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.probability",
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "sum_frequencies",
+        "relative_frequency",
+        "expected_value_formula",
+        "weighted_sum"
+      ],
+      "method_path": [
+        "Sum non-zero frequencies or use complement to find number of riders: 1+16+13+2+3 = 34",
+        "Divide by total frequency to estimate P(rider) = 34/40",
+        "Set up expected value formula E(X) = sum of x*f_x/n using the frequency table",
+        "Compute weighted sum: (0*6 + 1*16 + 2*13 + 3*2 + 4*3)/40 = 60/40 = 1.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "summing frequencies of riders or finding complement (M1); probability = 34/40 (A1); attempt to find expected value (M1); (0*6 + 1*16 + 2*13 + 3*2 + 4*3)/40 = 60/40 = 1.5 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Given 1000 visitors and The Dragon carries a maximum of 10 people per run, estimate the minimum number of times The Dragon must run to satisfy demand, using the expected rides per visitor from part (a).",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "multiplication",
+        "division",
+        "expected_total_demand"
+      ],
+      "method_path": [
+        "Multiply expected rides per visitor by number of visitors: 1.5 * 1000 = 1500 total expected rides",
+        "Divide total expected rides by ride capacity: 1500 / 10 = 150 runs"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "evidence of their rides/visitor * 1000 or division by 10 (M1); 150 times (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 6,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Solve cos 2x = sin x for x ∈ [−π, π].",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "trigonometric_identity",
+        "quadratic_equation",
+        "factoring",
+        "arcsin",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "Apply double angle identity cos 2x = 1 − 2sin²x",
+        "Form quadratic 2sin²x + sin x − 1 = 0",
+        "Factorise (2sin x − 1)(sin x + 1) = 0 or use quadratic formula",
+        "Obtain sin x = 1/2 or sin x = −1",
+        "Find x = π/6, 5π/6 from sin x = 1/2",
+        "Find x = −π/2 from sin x = −1",
+        "Verify all solutions lie in [−π, π]"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "cos 2x = 1 − 2sin²x → 2sin²x + sin x − 1 = 0 (A1). Valid attempt to solve quadratic (M1). (2sin x − 1)(sin x + 1) OR quadratic formula (M1). sin x = −1, sin x = 1/2 (A1, A1). Final answer x = −π/2, π/6, 5π/6 (A1). Total [6 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the range of k for which the equation e^(2x) + ln k = 3e^x has at least one real solution, by substituting A = e^x to form a quadratic, applying the discriminant condition, and solving the resulting inequality with domain restriction.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.inequalities",
+        "functions.exponential_models",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "quadratic_recognition",
+        "discriminant_condition",
+        "inequality_solving",
+        "exponentiation",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "Recognize quadratic in e^x: (e^x)^2 - 3e^x + ln k = 0",
+        "Apply discriminant condition: (-3)^2 - 4(1)(ln k) >= 0",
+        "Simplify to 9 - 4 ln k >= 0 implies ln k <= 9/4",
+        "Exponentiate: k <= e^(9/4)",
+        "Apply domain restriction from ln k: k > 0",
+        "Combine: 0 < k <= e^(9/4)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognition of quadratic in e^x (M1); (e^x)^2 - 3e^x + ln k = 0 OR A^2 - 3A + ln k = 0"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "recognizing discriminant >= 0 (seen anywhere) (M1); (-3)^2 - 4(1)(ln k) OR 9 - 4 ln k (A1)"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "ln k <= 9/4 (A1); e^(9/4) (seen anywhere) A1; 0 < k <= e^(9/4) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Find m in terms of q, given f(x) = sin(qx) with x-intercepts at x = 0, 2m, 4m.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "recognize_period",
+        "relate_period_to_coefficient",
+        "equate_expressions",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Recognize period of sin(qx) is 2π/q",
+        "Identify period = 4m from given x-intercepts",
+        "Set 2π/q = 4m",
+        "Solve to obtain m = π/(2q)"
+      ],
+      "accepted_alternatives": [
+        "Substitute x = m where sin(qm) = 1 (maximum), giving qm = π/2 and m = π/(2q)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "recognition that period is 4m OR substitution of a point on f (except the origin) (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "2π/q = 4m OR sin qm = 1 ... m = π/(2q) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Sketch the graph of g(x) = 3 sin(2qx/3) for 0 <= x <= 6m on the given axes.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "identify_transformation",
+        "calculate_period",
+        "identify_amplitude",
+        "identify_domain",
+        "locate_intercepts",
+        "locate_extrema",
+        "sketch_curve"
+      ],
+      "method_path": [
+        "Identify horizontal stretch factor = 3/2 from g(x) = 3 sin(2qx/3)",
+        "Determine period = 6m (or half-period = 3m)",
+        "Identify amplitude = 3",
+        "Identify domain [0, 6m]",
+        "Locate x-intercepts at x = 0, 3m, 6m",
+        "Locate maximum at (3m/2, 3) and minimum at (9m/2, -3)",
+        "Sketch sinusoidal curve through these points on the provided axes"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "horizontal scale factor is 3/2 (seen anywhere) (A1). Note: This (A1) may be earned by seeing a period of 6m, half period of 3m or the correct x-coordinate of the maximum/minimum point."
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "Curve must be an approximate sinusoidal shape (sine or cosine). Only in this case, award the following: A1 for correct amplitude. A1 for correct domain. A1 for correct max and min points and correct x-intercepts."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the rate at which the area of an equilateral triangle is increasing, given that side lengths x cm increase at 4 cm s⁻¹ when x = 5√3 cm.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "area_of_equilateral_triangle",
+        "differentiation",
+        "chain_rule",
+        "substitution",
+        "related_rates"
+      ],
+      "method_path": [
+        "Express area A in terms of side length x: A = (1/2)x² sin(π/3) = (√3/4)x²",
+        "Differentiate to obtain dA/dx = (√3/2)x",
+        "Apply chain rule: dA/dt = (dA/dx)(dx/dt)",
+        "Substitute x = 5√3 and dx/dt = 4",
+        "Compute dA/dt = 30 cm² s⁻¹"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "A = (1/2)x² sin(π/3) OR A = (1/2)x² sin 60° OR triangle height derivation → (A1); A = (√3/4)x² → A1; attempt to use chain rule or implicit differentiation → (M1); dA/dt = dA/dx × dx/dt, dA/dt = (√3/2)x × 4 → (A1); substitution yields 30 cm² s⁻¹ → A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "Note: Award a maximum of (A1)A1(M1)(A0)A1 for a correct answer with incorrect derivative notation seen throughout."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "13-15",
+      "task_summary": "Given cubic P(z) with real positive parameter m, use the factor z-3i and the conjugate root theorem to identify roots 3i and -3i, then apply Vieta formulas (sum=36/m, product=4m) to find m=9 and the real root 4, yielding roots 3i, -3i, 4.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "conjugate_root_theorem",
+        "vietas_formulas",
+        "sum_of_roots",
+        "product_of_roots",
+        "equate_and_solve",
+        "factor_theorem"
+      ],
+      "method_path": [
+        "Identify 3i as a root from the given factor z-3i",
+        "Apply conjugate root theorem: -3i is also a root",
+        "Let third root be r; apply Vieta sum of roots: r + 3i + (-3i) = 36/m, so r = 36/m",
+        "Apply Vieta product of roots: (3i)(-3i)r = 4m, so 9r = 4m",
+        "Equate expressions for r: 36/m = 4m/9",
+        "Solve: m^2 = 81, m = 9 (since m > 0)",
+        "Compute third root: r = 36/9 = 4",
+        "State all roots: 3i, -3i, 4"
+      ],
+      "accepted_alternatives": [
+        "Method 2 (factorisation): Write P(z) = (z-3i)(z+3i)(z-r) = (z^2+9)(z-r), expand to z^3 - r z^2 + 9z - 9r, compare coefficients with z^3 - (36/m)z^2 + mz - 4m to obtain m = 9 and r = 4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for 3i is a root; A1 for -3i is the other complex root; M1 for attempt to equate sum of three roots to 36/m or product to 4m."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "(A1) for m = 9; A1 for third root is 4. Total [6 marks]. Method 2 confirmation: recognition of (z+3i) factor, comparison of coefficients."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "Method 2 final answer identical: m = 9, third root is 4. Note: max A0A0(M1)(M1)(A1)A1 if no evidence of roots throughout working."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "11-12",
+      "markscheme_pages": "16",
+      "task_summary": "Sketch the graph of g(x)=|f(|x|)| given the graph of f with y-intercept (0,3), x-intercept (a,0), and horizontal asymptote y=−2. Label axis intercepts and give the equation of the asymptote.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "absolute_value",
+        "reflection",
+        "symmetry",
+        "asymptote_identification",
+        "graph_sketching"
+      ],
+      "method_path": [
+        "Reflect f in the x-axis by taking absolute value: |f(x)|",
+        "Reflect in the y-axis by replacing x with |x|: g(x)=|f(|x|)|",
+        "Identify horizontal asymptote: y=2 (from |−2|)",
+        "Identify x-intercepts at (−a,0) and (a,0) with sharp points (cusps)",
+        "Identify y-intercept at (0,3) as a smooth maximum",
+        "Sketch symmetric graph with correct asymptotic behaviour at y=2 on both sides"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1: attempt to reflect f in the x OR y axis. A1: correct asymptotic behaviour at y=2 (either side). A1: correctly reflected RHS of the graph in the y-axis with smooth maximum at (0,3). A1: labelled x-intercept at (−a,0) and labelled asymptote at y=2 with sharp points (cusps) at the x-intercepts. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Find the possible values of k such that (g(x))² = k has exactly two solutions.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "squared_equation",
+        "range_analysis",
+        "graphical_solution_counting",
+        "critical_value_identification"
+      ],
+      "method_path": [
+        "Set (g(x))² = k so that g(x) = √k (since g(x) ≥ 0)",
+        "Determine the range of g from the sketch: [0, 3], so k ∈ [0, 9]",
+        "Identify k = 0: g(x)=0 at x = ±a → exactly 2 solutions",
+        "Identify 4 < k ≤ 9: horizontal line y = √k intersects the graph exactly twice (once on each side of the y-axis)",
+        "Note critical values k = 4 (square of asymptote y=2) and k = 9 (square of maximum y=3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "k=0 A1. 4 < k ≤ 9 A2. Note: If final answer incorrect, award A1 for critical values 4 and 9 seen anywhere. Exception to FT: Award a maximum of A0A2FT if their graph from (a) is not symmetric about the y-axis. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "markscheme_ambiguity"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 7,
+      "source_pages": "12",
+      "markscheme_pages": "17-19",
+      "task_summary": "The function x = f(y) = √(r² − y²) for −r ≤ y ≤ r is rotated 360° about the y-axis to form a sphere. A cylindrical hole is drilled along the y-axis, creating a spherical ring of height h and volume π. Find h.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "cylinder_radius_expression",
+        "integration_limits",
+        "definite_integration",
+        "limits_substitution",
+        "volume_relationship",
+        "equation_formation",
+        "algebraic_simplification",
+        "cube_root"
+      ],
+      "method_path": [
+        "Express cylinder radius: R = √(r² − h²/4) or R² = r² − h²/4",
+        "Identify integration limits: 0 to h/2 (or −h/2 to h/2)",
+        "Integrate ∫π(r² − y²)dy to π(r²y − y³/3)",
+        "Substitute limits into the integrated expression",
+        "Recognise volume relationship: V_ring = ∫π(r² − y²)dy − πR²h (or equivalent formulation)",
+        "Form and simplify equation to h³ = 6 (r cancels)",
+        "Solve: h = ∛6"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1 (subtracting volumes): integrate part-sphere and subtract cylinder volume πR²h",
+        "METHOD 2 (volume of cylindrical hole): integrate part-sphere from h/2 to r, add cylinder volume, equate to sphere volume minus ring volume",
+        "METHOD 3 (shells): use cylindrical shells 2π∫x√(r² − x²)dx with limits from R = √(r² − h²/4) to r"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-19",
+          "basis": "Page 17: METHOD 1 with radius (A1), limits (A1), integration (A1), substitution attempt (M1), volume recognition (M1), correct equation (A1). Page 18: continuation with METHOD 2 and final A1 for h = ∛6. Page 19: METHOD 3 (shells) with all corresponding marks, ending with h = ∛6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find S5 and u6 for arithmetic sequence with Sn = n^2 + 4n.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "substitute_n",
+        "evaluate_Sn",
+        "relate_term_to_sum",
+        "find_term"
+      ],
+      "method_path": [
+        "(i) Substitute n=5 into Sn=n^2+4n",
+        "(i) Compute S5=25+20=45",
+        "(ii) Use S5+u6=S6 with S6=60",
+        "(ii) Compute u6=60-45=15"
+      ],
+      "accepted_alternatives": [
+        "(ii) METHOD 2: S6=(6/2)(u1+u6)=60, solve u6=15",
+        "(ii) METHOD 3: find u1 and d, then u6=u1+5d=15"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(a)(i) n=5 (M1), S5=45 (A1). (a)(ii) S5+u6=S6 (M1), u6=15 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find u1, the first term of the arithmetic sequence.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "recognize_u1_equals_S1",
+        "evaluate_Sn"
+      ],
+      "method_path": [
+        "Recognize u1 = S1",
+        "Evaluate S1 = 1^2 + 4(1) = 5"
+      ],
+      "accepted_alternatives": [
+        "Substitute u6=15 into S6=(6/2)(u1+15)=60, solve u1=5",
+        "Set up equations for S5 and S6 in terms of u1 and d, solve u1=5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(b) recognition that u1=S1 (M1), u1=5 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Write an expression for un in terms of n.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "find_common_difference",
+        "apply_arithmetic_term_formula",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Find d, e.g. d=S2-S1-u1=2",
+        "Apply un = u1 + (n-1)d",
+        "Simplify to un = 5 + 2(n-1) = 2n + 3"
+      ],
+      "accepted_alternatives": [
+        "un = Sn - S(n-1) = n^2+4n - [(n-1)^2+4(n-1)] = 2n+3",
+        "Equate (n/2)(5+un) = n^2+4n, giving 2n+8=5+un, so un=2n+3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(c) EITHER find d (M1), d=2 (A1); OR Sn-S(n-1) (M1), expression (A1); OR equating (n/2)(5+un)=n^2+4n (M1), 2n+8=5+un (A1); THEN un=5+2(n-1) OR un=2n+3 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Find possible values of common ratio r for geometric sequence vn where v2=u1 and v4=u6.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "relate_geometric_terms",
+        "solve_for_ratio"
+      ],
+      "method_path": [
+        "Use v4 = v2 * r^2",
+        "Substitute v2=u1=5 and v4=u6=15",
+        "Solve r^2 = 15/5 = 3",
+        "Write r = +/- sqrt(3)"
+      ],
+      "accepted_alternatives": [
+        "Use (v3)^2 = v2 * v4, obtain v3 = +/- sqrt(15), then r = v3/v2 = +/- sqrt(3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(d) recognition that v4=v2*r^2 OR (v3)^2=v2*v4 (M1), r^2=3 OR v3=+/-sqrt(5*3) (A1), r=+/-sqrt(3) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Given v99 < 0, find v5.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "determine_sign_of_ratio",
+        "compute_geometric_term"
+      ],
+      "method_path": [
+        "Since v2=5>0 and v99<0, r must be negative",
+        "Select r = -sqrt(3)",
+        "Compute v5 = v4 * r = 15 * (-sqrt(3)) = -15*sqrt(3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(e) recognition that r is negative (M1), v5 = -15*sqrt(3) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Show that L = (3/4)sec(alpha) + 6cosec(alpha) by expressing AC and CB using right-triangle trigonometry on the diagram.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "trigonometric_ratio_application",
+        "secant_definition",
+        "cosecant_definition",
+        "algebraic_sum"
+      ],
+      "method_path": [
+        "Express AC via cos(alpha) = (3/4)/AC giving AC = (3/4)sec(alpha)",
+        "Express CB via sin(alpha) = 6/CB giving CB = 6cosec(alpha)",
+        "Sum AC + CB to obtain L = (3/4)sec(alpha) + 6cosec(alpha)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "A1 for AC = (3/4)sec(alpha); A1 for CB = 6cosec(alpha); concluding L = (3/4)sec(alpha) + 6cosec(alpha) AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "(i) Find dL/d(alpha). (ii) When dL/d(alpha) = 0, show that alpha = arctan 2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometric_equations",
+        "calculus.stationary_points"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation_trigonometric",
+        "algebraic_manipulation",
+        "equation_solving",
+        "inverse_trigonometric_function"
+      ],
+      "method_path": [
+        "Differentiate L: dL/d(alpha) = (3/4)sec(alpha)tan(alpha) - 6cosec(alpha)cot(alpha)",
+        "Rewrite derivative in terms of sin(alpha), cos(alpha) or tan(alpha)",
+        "Set dL/d(alpha) = 0 and simplify",
+        "Obtain tan^3(alpha) = 8",
+        "Take cube root: tan(alpha) = 2",
+        "Conclude alpha = arctan 2"
+      ],
+      "accepted_alternatives": [
+        "Derivative equivalently expressed as (3sin(alpha))/(4cos^2(alpha)) - (6cos(alpha))/sin^2(alpha) or via tan(alpha) factors."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "(b)(i) A1 for dL/d(alpha) = (3/4)sec(alpha)tan(alpha) - 6cosec(alpha)cot(alpha). (b)(ii) (M1) for writing derivative in terms of sin,cos or tan; (A1) for setting to zero and manipulating; A1 for tan^3(alpha)=8; A1 for tan(alpha)=2; A1 for alpha=arctan2 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "(i) Find d^2L/d(alpha)^2. (ii) When alpha = arctan 2, show that d^2L/d(alpha)^2 = (45*sqrt(5))/4.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "calculus.stationary_points"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "second_derivative",
+        "trigonometric_identity_application",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply product rule to dL/d(alpha) to find d^2L/d(alpha)^2",
+        "Obtain terms: (3/4)sec(alpha)tan^2(alpha)+(3/4)sec^3(alpha)+6cosec(alpha)cot^2(alpha)+6cosec^3(alpha)",
+        "Use right triangle for tan(alpha)=2 to find sec(alpha)=sqrt(5), cosec(alpha)=sqrt(5)/2, cot(alpha)=1/2",
+        "Substitute ratios into d^2L/d(alpha)^2",
+        "Simplify to (45*sqrt(5))/4"
+      ],
+      "accepted_alternatives": [
+        "Equivalent simplifications using trigonometric identities; ratios may be found via identities rather than right triangle."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(c)(i) (M1) for product rule attempt; A1 for sec terms; A1 for cosec terms. (c)(ii) (M1) for finding trig ratios from tan(alpha)=2; (A1) for one correct ratio; A2 for correct substitution and simplification to (45*sqrt(5))/4 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "(i) Justify that L is a minimum when alpha = arctan 2. (ii) Determine the minimum value of L.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "geometry.trigonometry"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "second_derivative_test",
+        "minimum_verification",
+        "trigonometric_evaluation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Note d^2L/d(alpha)^2 > 0 at alpha = arctan 2, confirming concave up",
+        "Conclude L is a minimum since dL/d(alpha)=0 and d^2L/d(alpha)^2 > 0",
+        "Substitute sec(alpha)=sqrt(5), cosec(alpha)=sqrt(5)/2 into L",
+        "Simplify: L_min = (3/4)sqrt(5) + 6(sqrt(5)/2) = (15*sqrt(5))/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "(d)(i) R1 for d^2L/d(alpha)^2 > 0 or concave up, when dL/d(alpha)=0 hence minimum. (d)(ii) (A1) for L_min = (3/4)sqrt(5) + 6(sqrt(5)/2); A1 for (15*sqrt(5))/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Determine whether a pole of length 11.25 m can be carried horizontally from the passageway into the room, giving a reason.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "numerical_comparison",
+        "contextual_interpretation"
+      ],
+      "method_path": [
+        "Recognise L_min = (15*sqrt(5))/4 is the shortest AB touching corner C",
+        "Evaluate L_min approx 8.39 m",
+        "Compare pole length 11.25 m with L_min",
+        "Conclude pole cannot be carried since 11.25 > L_min"
+      ],
+      "accepted_alternatives": [
+        "Equivalent comparative reasoning e.g. (15*sqrt(5))/4 < 45/4 = 11.25."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "R1 for comparative reasoning showing L_min < 11.25 (or equivalent); A1 for concluding the pole cannot be carried horizontally. Note: markscheme states Do not award R0A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "markscheme_ambiguity"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-A",
+      "question": "12",
+      "part": "(a)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Use the dot product and the acute angle π/3 between L₁ and L₂ to show that 4t = √(10t²+12t+18).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "scalar_product",
+        "vector_magnitude",
+        "cosine_formula",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "compute scalar product d₁·PA→ = (2t)(1)+(0)(1)+(3+t)(0) = 2t",
+        "compute magnitudes |d₁| = √(1²+1²+0²) = √2 and |PA→| = √((2t)²+0²+(3+t)²)",
+        "substitute into cos(π/3) = |d₁·PA→|/(|d₁||PA→|)",
+        "use cos(π/3)=1/2 and simplify to 4t = √(10t²+12t+18)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1 for scalar product 2t seen anywhere; A1 for one correct magnitude; M1 for correct substitution of magnitudes and scalar product into cosine formula; A1 for correct expression leading to AG statement."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-B",
+      "question": "12",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Solve the equation from part (a) to find t > 0.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "squaring",
+        "quadratic_rearrangement",
+        "factorization",
+        "root_selection"
+      ],
+      "method_path": [
+        "square both sides: 16t² = 10t²+12t+18",
+        "rearrange to 6t²−12t−18=0 and simplify to t²−2t−3=0",
+        "factor (t+1)(t−3)=0",
+        "select t=3 since t>0"
+      ],
+      "accepted_alternatives": [
+        "Quadratic formula: t = (12±√(144+432))/12 or t = (2±√(4+12))/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1 for correct quadratic equation; (M1) for valid attempt to solve quadratic set to 0; (A1) for correct factorisation or quadratic formula setup; A1 for t=3. Note: award A0 if additional answers given."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-C",
+      "question": "12",
+      "part": "(c)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "26,27,28,29",
+      "task_summary": "Find the shortest distance from point A to line L₁, using t=3.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "perpendicular_distance",
+        "trigonometric_ratio",
+        "vector_magnitude",
+        "substitution"
+      ],
+      "method_path": [
+        "compute |PA→| = √(6²+0²+6²) = √72 = 6√2 with t=3",
+        "apply sin(π/3) = x/|PA→| where x is the shortest distance",
+        "compute x = 6√2 × √3/2 = 3√6 = √54"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: shortest distance = |PA→ × v|/|v| using cross product",
+        "METHOD 3: shortest distance = √(|PA→|² − (|PA→·v|/|v|)²) using Pythagorean theorem",
+        "METHOD 4: parametrize B(λ,8+λ,3) on L₁, set AB·v=0 to find λ=3, then compute |AB|"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "METHOD 1: (M1) for recognising shortest distance is perpendicular; (A1) for |PA→|=√72=6√2; (A1) for sin(π/3)=x/√72; A1 for √54=3√6."
+        },
+        {
+          "markscheme_pages": "27",
+          "basis": "METHOD 2: (M1) for recognising distance = |PA→×v|/|v|; (A1) for cross product (6,−6,−6); (A1) for magnitude √108/√2; A1 for √54=3√6."
+        },
+        {
+          "markscheme_pages": "28",
+          "basis": "METHOD 3: (M1) for recognising base = |PA→·v|/|v|; (A1) for base = 3√2; (A1) for |PA→|=6√2; A1 for √54=3√6."
+        },
+        {
+          "markscheme_pages": "29",
+          "basis": "METHOD 4: (M1) attempt to find AB with AB⟂L₁; A1 for AB expression; A1 for λ=3 via derivative or dot product; A1 for shortest distance √54=3√6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-D",
+      "question": "12",
+      "part": "(d)",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "30",
+      "task_summary": "Find a normal vector to plane Π containing L₁ and L₂.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "normal_vector"
+      ],
+      "method_path": [
+        "compute cross product of direction vectors (1,1,0) × (6,0,6)",
+        "obtain normal vector (1,−1,−1) or any scalar multiple"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "(M1) for attempt to find vector product of two direction vectors; A1 for n = (1,−1,−1) or scalar multiple. Award A0 for final answer in coordinate form."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-E",
+      "question": "12",
+      "part": "(e)",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "31",
+      "task_summary": "Find the two possible vertex positions of a right cone with base in Π centred at A, L₁ tangent to its base, and volume 90√3π.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cone_volume_formula",
+        "substitution",
+        "unit_vector",
+        "vector_position"
+      ],
+      "method_path": [
+        "substitute r = 3√6 into V = (1/3)πr²h = 90√3π to find h = 5√3",
+        "compute unit normal n̂ = (1,−1,−1)/√3",
+        "compute vertex positions OA ± h·n̂ = (6,8,3) ± (5,−5,−5)",
+        "obtain vertices (11,3,−2) and (1,13,8)"
+      ],
+      "accepted_alternatives": [
+        "Use parameter µ with recognition h = µ|n| ⇒ µ = ±5, then OA ± 5(1,−1,−1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "(M1) for substituting x into volume formula; A1 for h=5√3; (M1) for recognition that position vector is OA+µn or OA+h×n̂; EITHER (M1) recognition h=µ|n|, (A1) µ=±5; OR (M1) attempt height vector h×n̂, (A1) correct; THEN A1A1 for vertices (11,3,−2) and (1,13,8)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

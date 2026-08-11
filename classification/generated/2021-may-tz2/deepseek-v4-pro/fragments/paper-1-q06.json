@@ -1,0 +1,53 @@
+{
+  "question": "6",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "13-14",
+      "task_summary": "Given triangle ABC with AB=10, BC=x, AC=2x, and cos C=3/4, find the area in the form (p sqrt q)/2.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "cosine_rule",
+        "pythagorean_identity",
+        "area_formula_sine",
+        "equation_solving",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply cosine rule: 10^2 = (2x)^2 + x^2 - 2(2x)(x)(3/4)",
+        "Simplify to 100 = 2x^2, giving x^2 = 50, x = 5 sqrt 2",
+        "Find sin C = sqrt(1 - cos^2 C) = sqrt 7 / 4",
+        "Substitute into area = (1/2)(AC)(BC) sin C = (1/2)(2x)(x)(sqrt 7 / 4)",
+        "Simplify to 25 sqrt 7 / 2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 (height approach): Express height h = x sin C = (sqrt 7 / 4)x. Use Pythagoras to equate h^2 expressions from two right triangles: h^2 + (3x/4)^2 = x^2 and h^2 + (5x/4)^2 = 10^2. Solve for x^2 = 50. Then area = (1/2)(2x)(h) = (1/2)(2x)(sqrt 7 / 4)x = 25 sqrt 7 / 2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: attempt to use the cosine rule to find the value of x (M1); 100 = (2x)^2 + x^2 - 2(2x)(x)(3/4) A1; x^2 = 50 OR x = sqrt 50 = 5 sqrt 2 A1; attempt to find sin C (seen anywhere) (M1); sin C = sqrt 7 / 4 (A1); correct substitution into the area formula using their value of x (or x^2) and their value of sin C (M1); A = 25 sqrt 7 / 2 A1. Total [7 marks]."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 2: attempt to find the height h of the triangle in terms of x (M1); h = (sqrt 7 / 4)x A1; equating their expressions for either h^2 or h (M1); correct equation A1; x^2 = 50 OR x = sqrt 50 = 5 sqrt 2 A1; correct substitution into the area formula using their value of x (or x^2) (M1); A = 25 sqrt 7 / 2 A1. Total [7 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

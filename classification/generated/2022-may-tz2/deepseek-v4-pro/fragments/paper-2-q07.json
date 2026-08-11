@@ -1,0 +1,96 @@
+{
+  "question": "7",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Show that a finite limit exists only for k = π/4 by requiring the indeterminate form 0/0.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "indeterminate_form",
+        "limit_condition",
+        "arctan_evaluation",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Recognise finite limit with denominator approaching 0 requires numerator also approaching 0 (0/0 form)",
+        "Set lim_{x to 0} (arctan(cos x) - k) = 0",
+        "Evaluate arctan(cos 0) = arctan(1) = pi/4",
+        "Solve k = pi/4"
+      ],
+      "accepted_alternatives": [
+        "Verification approach: start with k = pi/4 and confirm 0/0 form (awarded M1A0 as it does not prove uniqueness)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1 for implying lim_{x to 0} (arctan(cos x) - k) = 0; A1 for arctan(1) - k = 0; so k = pi/4 AG. Note: Award M1A0 for using k = pi/4 to show the limit is 0/0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "16-17",
+      "task_summary": "Use l'Hopital's rule twice to evaluate the limit algebraically and show its value is -1/4.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "differentiation",
+        "chain_rule",
+        "trigonometric_derivative",
+        "indeterminate_form",
+        "evaluate_limit",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute k = pi/4 to obtain 0/0 form",
+        "First l'Hopital: differentiate numerator to -sin x/(1+cos^2 x) and denominator to 2x",
+        "Obtain lim_{x to 0} [-sin x] / [2x(1+cos^2 x)]",
+        "Recognise result is still 0/0",
+        "Second l'Hopital: differentiate numerator and denominator again",
+        "Substitute x = 0 to obtain -1/4"
+      ],
+      "accepted_alternatives": [
+        "Two alternative differentiation routes for the second l'Hopital step: EITHER differentiate the combined fraction using quotient/product rules, OR differentiate numerator and denominator separately then simplify"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "First application: A1 for correct numerator -sin x/(1+cos^2 x), A1 for correct denominator 2x. M1 for recognising to apply l'Hopital again (must be 0/0). Second application: EITHER A1A1 for two correct numerator terms, OR A1A1 for correct numerator and denominator. Final A1 (dependent on all previous marks) for substituting x = 0 to get -1/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

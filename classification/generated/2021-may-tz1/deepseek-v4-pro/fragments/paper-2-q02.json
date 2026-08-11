@@ -1,0 +1,134 @@
+{
+  "question": "2",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find the probability a randomly selected bag is rejected, i.e. P(X < 995) where X ~ N(1000, 3.5²).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "gdc_normal_cdf",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Identify required probability as P(X < 995) for X ~ N(1000, 3.5²)",
+        "Use GDC normal CDF with lower bound −∞, upper bound 995, μ=1000, σ=3.5",
+        "Obtain P(X < 995) = 0.0766 (accept 0.07656…)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "evidence of identifying the correct area (M1)"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "P(X < 995) = 0.0765637… = 0.0766 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Estimate the number of rejected bags from a random sample of 100.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_frequency",
+        "multiplication"
+      ],
+      "method_path": [
+        "Multiply probability of rejection by sample size: 0.0766 × 100",
+        "Obtain ≈ 8 (accept 7.66)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "0.0766 × 100 ≈ 8 A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "Note: Accept 7.66"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Given a bag is not rejected, find the probability its mass exceeds 1005 g, i.e. P(X > 1005 | X ≥ 995).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "normal_distribution",
+        "symmetry",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(X > 1005 | X ≥ 995) is required",
+        "Express as P(X > 1005) / P(X ≥ 995)",
+        "Use symmetry: P(X > 1005) = P(X < 995) = 0.07656…",
+        "Compute 0.07656… / (1 − 0.07656…) = 0.07656… / 0.9234…",
+        "Obtain 0.0829"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognition that P(X > 1005 | X ≥ 995) is required (M1)"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "P(X > 1005) / P(X ≥ 995) = 0.07656…/(1−0.07656…) = 0.07656…/0.9234… (A1)"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "= 0.0829 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

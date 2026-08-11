@@ -1,0 +1,212 @@
+{
+  "question": "10",
+  "expected_question_marks": 15,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find the x-coordinate of point P where f(x) = 90e^(-0.5x) intersects the line y = x.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_exponential_equation",
+        "gdc_numerical_solve",
+        "intersection_point"
+      ],
+      "method_path": [
+        "Set 90e^(-0.5x) = x",
+        "Solve numerically using GDC",
+        "x ≈ 5.57"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to find the point of intersection of the graph of f and the line y=x (M1); x=5.56619...=5.57 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find the exact coordinates of point Q where the line L with gradient -1 is tangent to the graph of f.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.exponential_models",
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative_exponential",
+        "set_derivative_equal_to_value",
+        "solve_exponential_equation",
+        "evaluate_function",
+        "exact_coordinates"
+      ],
+      "method_path": [
+        "f'(x) = -45e^(-0.5x)",
+        "Set -45e^(-0.5x) = -1",
+        "e^(-0.5x) = 1/45",
+        "x = 2ln45",
+        "y = f(2ln45) = 90e^(-ln45) = 2",
+        "Q = (2ln45, 2)"
+      ],
+      "accepted_alternatives": [
+        "x-coordinate also accepted as (ln(1/45))/(-0.5)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "f'(x)=-45e^(-0.5x) A1; attempt to set the gradient of f equal to -1 (M1); Q has coordinates (2ln45,2) A1A1 (accept (ln(1/45)/-0.5, 2))"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Show that the equation of tangent L is y = -x + 2ln45 + 2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "point_slope_form",
+        "linear_equation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Substitute Q(2ln45, 2) and m = -1 into y - y₁ = m(x - x₁)",
+        "y - 2 = -(x - 2ln45)",
+        "Simplify to y = -x + 2ln45 + 2"
+      ],
+      "accepted_alternatives": [
+        "Use y = mx + c form: 2 = -2ln45 + c, giving c = 2ln45 + 2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to substitute coordinates of Q into an appropriate equation (M1); y-2=-(x-2ln45) OR 2=-2ln45+c A1; equation of L is y=-x+2ln45+2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Find the x-coordinate where L intersects y = x, then find the area of shaded region A enclosed by f, y = x, and L.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.exponential_models",
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "intersection_of_lines",
+        "area_between_curves",
+        "definite_integral",
+        "gdc_numerical_integration"
+      ],
+      "method_path": [
+        "(i) Set -x + 2ln45 + 2 = x → x = ln45 + 1 ≈ 4.81",
+        "(ii) Area = ∫_{5.566...}^{4.806...} (90e^(-0.5x) - x) dx + ∫_{4.806...}^{2ln45} (90e^(-0.5x) - (-x + 2ln45 + 2)) dx",
+        "Evaluate integrals using GDC",
+        "Area ≈ 1.52"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "(i) x=ln45+1≈4.81 A1; (ii) appropriate method to find the sum of two areas using integrals of the difference of two functions (M1); two correct integral expressions including correct limits and integrand (A1)(A1); =1.51965...=1.52 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-E",
+      "question": "10",
+      "part": "e",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "16",
+      "task_summary": "Find the shaded area enclosed by f, f^(-1), and the line L.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.inverse_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "symmetry_argument",
+        "inverse_function_reflection",
+        "area_by_doubling"
+      ],
+      "method_path": [
+        "Recognise region is symmetric about y = x (f and f^(-1) are reflections)",
+        "Area = 2 × 1.52 ≈ 3.04"
+      ],
+      "accepted_alternatives": [
+        "Accept any answer that rounds to 3.0 (but not exactly 3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "by symmetry (M1); 2×1.52=3.03930...=3.04 A1; Note: Accept any answer that rounds to 3.0 (but do not accept 3)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

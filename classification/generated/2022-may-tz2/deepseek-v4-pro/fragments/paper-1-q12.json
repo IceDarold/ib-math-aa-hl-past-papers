@@ -1,0 +1,209 @@
+{
+  "question": "12",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "29",
+      "task_summary": "Show that z1*z2* = r1*r2*e^(i(alpha-theta)) where z2* is the complex conjugate of z2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "complex_conjugate",
+        "modulus_argument_form",
+        "product_of_complex_numbers"
+      ],
+      "method_path": [
+        "Write conjugate in modulus-argument form: z2* = r2*e^(-i*theta)",
+        "Multiply: z1*z2* = r1*e^(i*alpha) * r2*e^(-i*theta) = r1*r2*e^(i*(alpha-theta))"
+      ],
+      "accepted_alternatives": [
+        "Working in modulus-argument form throughout"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "z2* = r2 e^(-i theta) (A1); z1 z2* = r1 e^(i alpha) r2 e^(-i theta) = r1 r2 e^(i(alpha-theta)) (A1); [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "29",
+      "task_summary": "Given Re(z1 z2*) = 0, show that triangle Z1OZ2 is right-angled.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "real_part",
+        "cosine",
+        "right_angle",
+        "argument_difference"
+      ],
+      "method_path": [
+        "Write Re(z1 z2*) = r1 r2 cos(alpha-theta) = 0",
+        "Since r1, r2 > 0, deduce cos(alpha-theta) = 0",
+        "With 0 < alpha-theta < pi, conclude alpha-theta = pi/2",
+        "Hence angle Z1OZ2 = pi/2 and triangle Z1OZ2 is right-angled at O"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "Re(z1 z2*) = r1 r2 cos(alpha-theta) = 0 (A1); alpha-theta = pi/2 (as 0 < alpha-theta < pi) (A1); so Z1OZ2 is a right-angled triangle AG; [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "29-30",
+      "task_summary": "For equilateral triangle Z1OZ2: (i) Express z1 in terms of z2. (ii) Hence show that z1^2 + z2^2 = z1 z2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "equilateral_triangle",
+        "rotation",
+        "complex_exponential",
+        "algebraic_manipulation",
+        "polar_form"
+      ],
+      "method_path": [
+        "For equilateral triangle: r1 = r2 and alpha-theta = pi/3",
+        "Express z1/z2 = e^(i*pi/3) so z1 = z2*e^(i*pi/3)",
+        "Substitute into z1^2 + z2^2: obtain z2^2*e^(2i*pi/3) + z2^2 = z2^2*(e^(2i*pi/3) + 1)",
+        "Show e^(2i*pi/3) + 1 = e^(i*pi/3)",
+        "Conclude z1^2 + z2^2 = z2^2*e^(i*pi/3) = z1*z2"
+      ],
+      "accepted_alternatives": [
+        "Working in Cartesian form: z1/z2 = 1/2 + i*sqrt(3)/2",
+        "Working on LHS and RHS separately to show equality"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29-30",
+          "basis": "(c)(i): z1/z2 = e^(i pi/3) (M1)(A1); (c)(ii): substitution M1, expression A1, e^(2i pi/3)+1 = e^(i pi/3) A1, conclusion A1; combined [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "31",
+      "task_summary": "Use the result from (c)(ii) to show that a^2 - 3b = 0, where z1, z2 are distinct roots of z^2 + az + b = 0.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "sum_of_roots",
+        "product_of_roots",
+        "algebraic_expansion",
+        "substitution"
+      ],
+      "method_path": [
+        "State z1 + z2 = -a and z1*z2 = b from Vieta",
+        "Expand (z1 + z2)^2 = z1^2 + z2^2 + 2*z1*z2",
+        "Substitute z1^2 + z2^2 = z1*z2 from (c)(ii)",
+        "Obtain (-a)^2 = z1*z2 + 2*z1*z2 = 3*z1*z2",
+        "Replace z1*z2 with b: a^2 = 3b, hence a^2 - 3b = 0"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Expand z1^2 + z2^2 + 2z1z2, substitute z1^2+z2^2 = z1z2 and then substitute sum and product of roots"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "z1+z2 = -a and z1z2 = b (A1); a^2 = z1^2 + z2^2 + 2z1z2 (A1); a^2 = z1z2 + 2z1z2 = 3z1z2 (A1); substitutes b = z1z2 (M1); a^2 = 3b so a^2 - 3b = 0 (A1); [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "31",
+      "task_summary": "Given z^2 + az + 12 = 0 and 0 < alpha-theta < pi, deduce that only one equilateral triangle Z1OZ2 can be formed from O and the roots.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials",
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quadratic_equation",
+        "root_finding",
+        "argument_condition",
+        "case_analysis"
+      ],
+      "method_path": [
+        "Apply a^2 - 3(12) = 0 to get a = +/-6",
+        "For a = -6: roots are 3+/-3i, giving alpha-theta = -5pi/3 which violates 0 < alpha-theta < pi",
+        "For a = 6: roots are -3+/-3i, giving alpha-theta = pi/3 which satisfies the condition",
+        "Conclude only one equilateral triangle can be formed"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "a^2 - 3*12 = 0 gives a = +/-6 (A1); for a = -6: alpha-theta = -5pi/3 does not satisfy 0 < alpha-theta < pi (R1); for a = 6: alpha-theta = pi/3 (A1); so only one equilateral triangle AG; [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

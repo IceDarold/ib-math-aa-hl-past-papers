@@ -1,0 +1,85 @@
+{
+  "question": "4",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q04-A",
+      "question": "4",
+      "part": "(a)",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Find P(red) using law of total probability: P(R) = P(R|B1)P(B1) + P(R|B2)P(B2) = (5/7)(1/2) + (4/7)(1/2) = 9/14.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "law_of_total_probability",
+        "conditional_probability",
+        "tree_diagram",
+        "fraction_arithmetic"
+      ],
+      "method_path": [
+        "P(R) = P(R|B1)P(B1) + P(R|B2)P(B2)",
+        "(5/7)(1/2) + (4/7)(1/2)",
+        "9/14"
+      ],
+      "accepted_alternatives": [
+        "Tree diagram with box probabilities 1/2 and branch probabilities 5/7 and 4/7, summing relevant terminal probabilities.",
+        "P(B1 ∩ R) + P(B2 ∩ R) = (1/2)(5/7) + (1/2)(4/7)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "M1: valid approach to find P(R); tree diagram OR P(R∩B1)+P(R∩B2) OR P(R|B1)P(B1)+P(R|B2)P(B2). A1: 5/7·1/2 + 4/7·1/2. A1: P(R) = 9/14."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q04-B",
+      "question": "4",
+      "part": "(b)",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Test independence of A and R by comparing P(A)·P(R) = (1/2)(9/14) = 9/28 with P(A ∩ R) = 5/14, or comparing P(R|A) = 5/7 with P(R) = 9/14, concluding not independent.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "independence_test",
+        "joint_probability",
+        "conditional_probability",
+        "comparison_of_probabilities"
+      ],
+      "method_path": [
+        "P(A)·P(R) = (1/2)(9/14) = 9/28",
+        "P(A ∩ R) = (5/7)(1/2) = 5/14",
+        "5/14 ≠ 9/28 → not independent"
+      ],
+      "accepted_alternatives": [
+        "P(R|A) = 5/7 ≠ P(R) = 9/14 → not independent.",
+        "P(A|R) = (5/14)/(9/14) = 5/9 ≠ P(A) = 1/2 → not independent.",
+        "Explanation: different number of red balls in each box, so box choice affects red probability."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "A2: events A and R are not independent, since (9/14)(1/2) ≠ 5/14 OR 5/7 ≠ 9/14 OR 5/14 ≠ 1/2 OR an explanation e.g. different number of red balls in each box. Note: Both conclusion and reasoning are required. Do not split the A2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

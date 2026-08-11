@@ -1,0 +1,131 @@
+{
+  "question": "11",
+  "expected_question_marks": 14,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 7,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Prove by mathematical induction that d^n/dx^n (x^2 e^x) = (x^2 + 2nx + n(n-1))e^x for n in positive integers.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "mathematical_induction",
+        "base_case_verification",
+        "inductive_hypothesis",
+        "product_rule",
+        "differentiation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Verify base case n=1: LHS = d/dx(x^2 e^x) = (x^2+2x)e^x, RHS = (x^2+2(1)x+1(0))e^x = (x^2+2x)e^x",
+        "Assume true for n=k: d^k/dx^k (x^2 e^x) = (x^2+2kx+k(k-1))e^x",
+        "Differentiate RHS using product rule: (2x+2k)e^x + (x^2+2kx+k(k-1))e^x",
+        "Simplify to (x^2+2(k+1)x+(k+1)k)e^x, matching formula for n=k+1",
+        "Conclude by induction for all n in positive integers"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "Base case: LHS d/dx(x^2 e^x)=(x^2+2x)e^x (A1), RHS (x^2+2(1)x+1(0))e^x (A1). Assume n=k (M1). Differentiate RHS (M1). Obtain (x^2+2(k+1)x+(k+1)k)e^x (A1, A1). Conclude R1 if three of previous four awarded."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Determine the Maclaurin series of f(x)=x^2 e^x up to and including the term in x^4.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "derivative_evaluation",
+        "series_expansion",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Use formula from part (a): f^(n)(0)=n(n-1), giving f(0)=0, f'(0)=0, f''(0)=2, f'''(0)=6, f^(4)(0)=12",
+        "Apply Maclaurin series: f(x)=f(0)+f'(0)x+f''(0)x^2/2!+f'''(0)x^3/3!+f^(4)(0)x^4/4!",
+        "Obtain f(x)=x^2+x^3+x^4/2"
+      ],
+      "accepted_alternatives": [
+        "Multiply x^2 by Maclaurin series of e^x: x^2(1+x+x^2/2!+x^3/3!+...)=x^2+x^3+x^4/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "METHOD 1: use formula from (a) for f^(n)(0)=n(n-1) (M1); f(0)=0, f'(0)=0, f''(0)=2, f'''(0)=6, f^(4)(0)=12; Maclaurin formula (M1) gives x^2+x^3+x^4/2 (A1). METHOD 2: x^2 times Maclaurin series of e^x (M1, A1, A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26-27",
+      "task_summary": "Determine lim_{x->0} (x^2 e^x - x^2) / x^3.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.series",
+        "calculus.differentiation"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "series_substitution",
+        "algebraic_simplification",
+        "lhopital_rule"
+      ],
+      "method_path": [
+        "Substitute Maclaurin series: x^2 e^x - x^2 = (x^2+x^3+x^4/2+...) - x^2 = x^3+x^4/2+...",
+        "Divide by x^3: (x^3+x^4/2+...)/x^3 = 1+x/2+...",
+        "Take limit as x->0: limit = 1"
+      ],
+      "accepted_alternatives": [
+        "Factor and use L'Hopital: lim (x^2(e^x-1))/x^3 = lim (e^x-1)/x = lim e^x/1 = 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26-27",
+          "basis": "METHOD 1: substitute series (M1), simplify to (x^3+x^4/2+...)/x^3 (A1), obtain 1+higher terms (A1), limit=1 (A1). METHOD 2: factor to (e^x-1)/x (M1, A1), apply L'Hopital (M1), limit=1 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

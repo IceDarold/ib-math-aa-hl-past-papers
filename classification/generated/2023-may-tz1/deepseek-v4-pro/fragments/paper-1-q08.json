@@ -1,0 +1,89 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "11-12",
+      "markscheme_pages": "16",
+      "task_summary": "Sketch the graph of g(x)=|f(|x|)| given the graph of f with y-intercept (0,3), x-intercept (a,0), and horizontal asymptote y=−2. Label axis intercepts and give the equation of the asymptote.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "absolute_value",
+        "reflection",
+        "symmetry",
+        "asymptote_identification",
+        "graph_sketching"
+      ],
+      "method_path": [
+        "Reflect f in the x-axis by taking absolute value: |f(x)|",
+        "Reflect in the y-axis by replacing x with |x|: g(x)=|f(|x|)|",
+        "Identify horizontal asymptote: y=2 (from |−2|)",
+        "Identify x-intercepts at (−a,0) and (a,0) with sharp points (cusps)",
+        "Identify y-intercept at (0,3) as a smooth maximum",
+        "Sketch symmetric graph with correct asymptotic behaviour at y=2 on both sides"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1: attempt to reflect f in the x OR y axis. A1: correct asymptotic behaviour at y=2 (either side). A1: correctly reflected RHS of the graph in the y-axis with smooth maximum at (0,3). A1: labelled x-intercept at (−a,0) and labelled asymptote at y=2 with sharp points (cusps) at the x-intercepts. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Find the possible values of k such that (g(x))² = k has exactly two solutions.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "squared_equation",
+        "range_analysis",
+        "graphical_solution_counting",
+        "critical_value_identification"
+      ],
+      "method_path": [
+        "Set (g(x))² = k so that g(x) = √k (since g(x) ≥ 0)",
+        "Determine the range of g from the sketch: [0, 3], so k ∈ [0, 9]",
+        "Identify k = 0: g(x)=0 at x = ±a → exactly 2 solutions",
+        "Identify 4 < k ≤ 9: horizontal line y = √k intersects the graph exactly twice (once on each side of the y-axis)",
+        "Note critical values k = 4 (square of asymptote y=2) and k = 9 (square of maximum y=3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "k=0 A1. 4 < k ≤ 9 A2. Note: If final answer incorrect, award A1 for critical values 4 and 9 seen anywhere. Exception to FT: Award a maximum of A0A2FT if their graph from (a) is not symmetric about the y-axis. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "markscheme_ambiguity"
+      ]
+    }
+  ]
+}

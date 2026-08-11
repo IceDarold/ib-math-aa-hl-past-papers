@@ -1,0 +1,88 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Show that coefficient b = 21 in the binomial expansion of (x + 1)^7.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_coefficient",
+        "factorial_calculation",
+        "pascal_triangle"
+      ],
+      "method_path": [
+        "Identify the x^5 term requires coefficient C(7,2) or C(7,5)",
+        "Compute C(7,2) = 7!/(2!5!) = (7×6)/2! = 21",
+        "Conclude b = 21"
+      ],
+      "accepted_alternatives": [
+        "Use Pascal's triangle row 7 (1, 7, 21, 35, 35, 21, 7, 1) to read the x^5 coefficient directly as 21."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "EITHER recognises the required term (or coefficient) in the expansion (M1); bx^5 = C(7,2) x^5 OR b = C(7,2) OR C(7,5); correct working A1 … OR lists terms from row 7 of Pascal's triangle (M1); 1,7,21,... A1; THEN b = 21 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Given the third term is the arithmetic mean of the second and fourth terms in the expansion of (x + 1)^7, find the possible values of x (x ≠ 0).",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "binomial_coefficient",
+        "arithmetic_mean",
+        "algebraic_simplification",
+        "quadratic_equation",
+        "solving_quadratic",
+        "factoring"
+      ],
+      "method_path": [
+        "Find a = C(7,1) = 7",
+        "Set up mean condition: (ax^6 + 35x^4)/2 = bx^5",
+        "Substitute a = 7, b = 21: (7x^6 + 35x^4)/2 = 21x^5",
+        "Multiply by 2 and divide by x^4 (x ≠ 0): 7x^2 + 35 = 42x",
+        "Rearrange to quadratic: 7x^2 − 42x + 35 = 0",
+        "Reduce: x^2 − 6x + 5 = 0",
+        "Factor: (x − 1)(x − 5) = 0",
+        "Solutions: x = 1, x = 5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "a = 7 (A1); correct equation (A1): (ax^6 + 35x^4)/2 = 21x^5 OR (7x^6 + 35x^4)/2 = 21x^5; correct quadratic equation (A1): 7x^2 − 42x + 35 = 0 OR x^2 − 6x + 5 = 0; valid attempt to solve their quadratic (M1); x = 1, x = 5 (A1); Note: Award final A0 for obtaining x = 0, x = 1, x = 5."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

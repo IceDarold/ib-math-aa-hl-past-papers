@@ -1,0 +1,116 @@
+{
+  "question": "5",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q05-A",
+      "question": "5",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the first term u_1 by evaluating S_1 = (2/3)(7/8)^1 = 7/12.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "evaluate_term",
+        "simplify_fraction"
+      ],
+      "method_path": [
+        "Evaluate u_1 = S_1 = (2/3)(7/8)^1",
+        "Simplify to 14/24 = 7/12"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "u_1 = S_1 = (2/3)(7/8) = 14/24 = 7/12 = 0.583333 (M1)(A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q05-B",
+      "question": "5",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the sum to infinity S_∞ using r = 7/8 and S_∞ = u_1/(1−r) = 14/3.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "identify_common_ratio",
+        "sum_to_infinity_formula",
+        "evaluate_expression"
+      ],
+      "method_path": [
+        "Identify common ratio r = 7/8",
+        "Apply S_∞ = u_1/(1−r)",
+        "Compute S_∞ = (7/12)/(1−7/8) = 14/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "r = 7/8 = 0.875 (A1); substituting their values for u_1 and r into S_∞ = u_1/(1−r) (M1); = 14/3 = 4.66666 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q05-C",
+      "question": "5",
+      "part": "c",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the least integer n such that S_∞ − S_n < 0.001 by solving the exponential inequality.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "set_up_inequality",
+        "solve_exponential_inequality",
+        "find_least_integer"
+      ],
+      "method_path": [
+        "Set up inequality (14/3)(7/8)^n < 0.001 or equivalent using S_n formula",
+        "Solve for n using logarithms, table, or graph",
+        "Obtain critical value n ≈ 63.27",
+        "Conclude least integer n = 64"
+      ],
+      "accepted_alternatives": [
+        "Set up inequality via tail sum: Σ_{r=n+1}^{∞} (2/3)(7/8)^r < 0.001",
+        "Set up inequality via explicit S_n: (14/3) − (7/12)(1−(7/8)^n)/(1−7/8) < 0.001",
+        "Solve using logarithms, table of values, or graphical method"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to substitute their values into the inequality or formula for S_n (M1); attempt to solve using table, graph or logarithms (M1); correct critical value 63.2675 or crossover values S_∞−S_63 = 0.001036…, S_∞−S_64 = 0.000906… (A1); least value is n = 64 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

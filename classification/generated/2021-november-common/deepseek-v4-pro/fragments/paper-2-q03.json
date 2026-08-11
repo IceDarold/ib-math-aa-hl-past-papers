@@ -1,0 +1,90 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find the probability that there is at least one defective lamp in a random sample of 30, given the probability a lamp is defective is 0.05.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "complement_rule",
+        "evaluate_binomial_probability",
+        "round_answer"
+      ],
+      "method_path": [
+        "Recognise X ~ B(30, 0.05)",
+        "P(X ≥ 1) = 1 − P(X = 0)",
+        "= 1 − 0.95^30",
+        "≈ 0.785"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognize that the variable has a Binomial distribution (M1); attempt to find P(X ≥ 1) (M1); 1 − P(X = 0) OR 1 − 0.95^30 OR 1 − 0.214638... OR 0.785361... ; P(X ≥ 1) = 0.785 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Given that there is at least one defective lamp, find the probability that there are at most two defective lamps.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "binomial_distribution",
+        "compute_binomial_probabilities",
+        "substitute_values",
+        "evaluate_result",
+        "round_answer"
+      ],
+      "method_path": [
+        "Recognise conditional probability: P(X ≤ 2 | X ≥ 1)",
+        "Apply P(X ≤ 2 | X ≥ 1) = P(1 ≤ X ≤ 2) / P(X ≥ 1)",
+        "Compute numerator as P(X ≤ 2) − P(X = 0) or P(X = 1) + P(X = 2)",
+        "Substitute P(X ≥ 1) ≈ 0.78536 from part (a)",
+        "Evaluate ≈ 0.761"
+      ],
+      "accepted_alternatives": [
+        "Compute numerator as P(X ≤ 2) − P(X = 0) ≈ 0.81218 − 0.21464 = 0.59754",
+        "Compute numerator as P(X = 1) + P(X = 2) ≈ 0.33890 + 0.25864 = 0.59754"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognition of conditional probability (M1); P(X ≤ 2 | X ≥ 1) OR P(at most 2 defective | at least 1 defective); P(1 ≤ X ≤ 2) / P(X ≥ 1) OR [P(X = 1) + P(X = 2)] / P(X ≥ 1) (A1); 0.597540... / 0.785361... OR 0.812178... − 0.214638... / 0.785361... OR 0.338903... + 0.258636... / 0.785361... (A1); P(X ≤ 2 | X ≥ 1) = 0.761 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

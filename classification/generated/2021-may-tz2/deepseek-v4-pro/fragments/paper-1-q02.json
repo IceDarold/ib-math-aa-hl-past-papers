@@ -1,0 +1,50 @@
+{
+  "question": "2",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 7,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Solve 2 cos² x + 5 sin x = 4 for 0 ≤ x ≤ 2π by substituting cos² x = 1 − sin² x, forming and solving a quadratic in sin x, rejecting the impossible root, and finding all solutions in the interval.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "trigonometric_identity_substitution",
+        "quadratic_in_sine",
+        "factorisation",
+        "quadratic_formula",
+        "inverse_trigonometric_function"
+      ],
+      "method_path": [
+        "Use cos² x = 1 − sin² x to rewrite the equation entirely in terms of sin x",
+        "Rearrange to form the quadratic 2 sin² x − 5 sin x + 2 = 0",
+        "Factorise as (2 sin x − 1)(sin x − 2) = 0 or apply the quadratic formula sin x = (5 ± √(25−16))/4",
+        "Obtain sin x = 1/2, reject sin x = 2 as impossible",
+        "Solve sin x = 1/2 for x ∈ [0, 2π] to obtain x = π/6 and x = 5π/6"
+      ],
+      "accepted_alternatives": [
+        "Factorisation route: factorise 2 sin² x − 5 sin x + 2 = 0 as (2 sin x − 1)(sin x − 2) = 0, then sin x = 1/2",
+        "Quadratic formula route: sin x = (5 ± √(25−16))/4 = (5 ± 3)/4, giving sin x = 2 (reject) or sin x = 1/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1 for attempt to use cos² x = 1 − sin² x. A1 for 2 sin² x − 5 sin x + 2 = 0. EITHER M1 for attempting to factorise with A1 for (2 sin x − 1)(sin x − 2). OR M1 for attempting quadratic formula with A1 for sin x = (5 ± 3)/4. THEN (A1) for sin x = 1/2. A1A1 for x = π/6, 5π/6. Total [7 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

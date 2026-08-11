@@ -1,0 +1,139 @@
+{
+  "question": "12",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "Apply Euler's method with step h=0.1 to approximate y(1.5) given dy/dx=(y²-2x²)/x² and initial condition y(1)=3.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "iterative_approximation",
+        "step_length",
+        "first_order_de"
+      ],
+      "method_path": [
+        "Apply Euler formula y_{n+1} = y_n + 0.1 × (y_n² - 2x_n²)/x_n²",
+        "Iterate from (x₀,y₀)=(1,3): (1.1,3.7), (1.2,4.6314...), (1.3,5.9210...), (1.4,7.7954...), (1.5,10.6958...)",
+        "Round final value to 10.7"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "attempt to use Euler's method (M1); correct intermediate y-values (A1)(A1): 3.7, 4.63140..., 5.92098..., 7.79542...; final y = 10.6958... → 10.7 (A1). Note: final A1 requires 10.7 as last value or standalone answer."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "Use the substitution y=vx to transform dy/dx=(y²-2x²)/x² into the separable DE x dv/dx = v²-v-2.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "product_rule",
+        "algebraic_simplification",
+        "first_order_de"
+      ],
+      "method_path": [
+        "Set y = vx and differentiate: dy/dx = v + x dv/dx",
+        "Substitute y=vx and dy/dx=v+x dv/dx into dy/dx = (y²-2x²)/x²",
+        "Simplify: v + x dv/dx = v² - 2 → x dv/dx = v² - v - 2 (AG)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "y = vx ⇒ dy/dx = v + x dv/dx (A1); replacing y with vx and dy/dx with v + x dv/dx (M1); v + x dv/dx = v² - 2 (A1) leading to x dv/dx = v² - v - 2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q12-C-I-II-III",
+      "question": "12",
+      "part": "C (i)(ii)(iii)",
+      "marks": 12,
+      "source_pages": "16",
+      "markscheme_pages": "30–32",
+      "task_summary": "Solve the separable DE via partial fractions to obtain the exact solution, evaluate at x=1.5, and interpret the poor Euler approximation using gradient behaviour or the vertical asymptote.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.asymptotes"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "partial_fractions",
+        "logarithmic_integration",
+        "initial_condition",
+        "substitution_back",
+        "algebraic_rearrangement",
+        "evaluation_at_point",
+        "graphical_interpretation"
+      ],
+      "method_path": [
+        "Separate variables: dv/(v²-v-2) = dx/x",
+        "Factor denominator: dv/((v-2)(v+1)) = dx/x",
+        "Partial fractions: 1/((v-2)(v+1)) = (1/3)(1/(v-2) - 1/(v+1))",
+        "Integrate both sides: (1/3)(ln|v-2| - ln|v+1|) = ln|x| + c",
+        "Use initial condition v=3 at x=1 to find c = (1/3)ln(1/4) or A = 1/4",
+        "Combine logarithms to ln|(v-2)/(v+1)| = ln|(1/4)x³| or equivalent",
+        "Substitute v=y/x and solve for y to obtain y = (4x³+8x)/(4-x³)",
+        "Evaluate at x=1.5: y = 27.3",
+        "Explain poor Euler estimate: gradient changes rapidly on [1, 1.5] / vertical asymptote at x = ∛4 ≈ 1.5874"
+      ],
+      "accepted_alternatives": [
+        "Constant of integration found via c = (1/3)ln(1/4) and single-logarithm combination, or via combined-logarithm constant A = 1/4 (both accepted in markscheme)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "(c)(i) attempt to separate variables (M1); dv/(v²-v-2) = dx/x (A1); attempt partial fractions (M1); 1/((v-2)(v+1)) = (1/3)(1/(v-2)-1/(v+1)) (A1); (1/3)(ln|v-2|-ln|v+1|)=ln x + c (A1); attempt to find c (M1); single logarithm (M1)"
+        },
+        {
+          "markscheme_pages": "31",
+          "basis": "EITHER/OR routes for constant; substitute v=y/x (M1); attempt to make y the subject (M1); y=(4x³+8x)/(4-x³) (A1)"
+        },
+        {
+          "markscheme_pages": "32",
+          "basis": "(c)(ii) actual y at x=1.5 is 27.3 (A1); (c)(iii) gradient changes rapidly / vertical asymptote at x=∛4≈1.5874... (R1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

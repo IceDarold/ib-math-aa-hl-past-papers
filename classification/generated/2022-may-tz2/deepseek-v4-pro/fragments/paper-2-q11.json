@@ -1,0 +1,215 @@
+{
+  "question": "11",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Find the three-figure bearing on which airplane B is travelling from its direction vector.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "extract_vector_components",
+        "bearing_angle",
+        "arctan",
+        "horizontal_plane"
+      ],
+      "method_path": [
+        "Extract horizontal components of B's direction vector: 4 km/min east, 2 km/min north",
+        "Compute bearing angle from north: arctan(4/2) = arctan(2) ≈ 63.4°",
+        "Express as three-figure bearing: 063°"
+      ],
+      "accepted_alternatives": [
+        "Use dot product with east unit vector: cos φ = (4,2)·(1,0)/(√20 × 1) = 4/√20, then φ = arccos(4/√20) = 063°"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "EITHER φ = 90° − arctan(1/2) = arctan(2) (M1). OR cos φ = (vector dot product with (1,0,0)) / (√20 × 1) (M1). THEN 063° (A1). Note: Do not accept 063.4° or 63.4° or 1.10ᶜ. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "22-23",
+      "task_summary": "Show that airplane A travels at a greater speed than airplane B by comparing magnitudes of their direction vectors.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "vector_magnitude",
+        "speed_calculation",
+        "comparison"
+      ],
+      "method_path": [
+        "Compute speed of A as magnitude: |vA| = √((−6)²+2²+4²) = √56 ≈ 7.48 km/min",
+        "Compute speed of B as magnitude: |vB| = √(4²+2²+(−2)²) = √24 ≈ 4.89 km/min",
+        "Compare: √56 > √24, so A travels at greater speed (AG)"
+      ],
+      "accepted_alternatives": [
+        "Use distance/time ratio, e.g. speed = |r(1)−r(0)|/1 for each airplane, yielding √56 and √24 respectively"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22-23",
+          "basis": "Method 1: speed of A = √(6²+2²+4²) = √56 ≈ 7.48 km min⁻¹, speed of B = √(4²+2²+2²) = √24 ≈ 4.89 km min⁻¹ (M1)(A1). Method 2: speed using distance/time (M1)(A1). √56 > √24 so A travels at greater speed (AG). [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "Find the acute angle between the two airplanes' lines of flight using the dot product of their direction vectors.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product",
+        "angle_between_vectors",
+        "arccos",
+        "acute_angle",
+        "supplementary_angle"
+      ],
+      "method_path": [
+        "Compute dot product: vA·vB = (−6)(4) + (2)(2) + (4)(−2) = −28",
+        "Compute magnitudes: |vA| = √56, |vB| = √24",
+        "Compute cos θ = −28/(√56 × √24) = −7/√84 ≈ −0.7637",
+        "Find obtuse angle: θ = arccos(−7/√84) ≈ 139.8°",
+        "Acute angle = 180° − θ = 40.2°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "cos θ = ((−6)(4)+(2)(2)+(4)(−2)) / (√((−6)²+2²+4²) × √(4²+2²+(−2)²)) (M1)(A1). cos θ = −7/√84 ≈ −0.7637. Acute angle = 180° − arccos(−0.7637...) = 40.2° (M1)(A1). [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "d",
+      "marks": 7,
+      "source_pages": "15",
+      "markscheme_pages": "25-26",
+      "task_summary": "Find the coordinates of intersection point P of the two flight lines by equating position vectors, and determine the time difference between the two airplanes arriving at P.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_equation",
+        "system_of_linear_equations",
+        "parametric_equations",
+        "substitution",
+        "time_difference",
+        "absolute_value"
+      ],
+      "method_path": [
+        "Set rA(t₁) = rB(t₂) to form three component equations",
+        "Solve system: 19−6t₁=1+4t₂, −1+2t₁=2t₂, 1+4t₁=12−2t₂ → t₁=2, t₂=3/2",
+        "Substitute t₁=2 into rA to get P(7,3,9)",
+        "Compute time difference: |t₁−t₂| = |2−1.5| = 0.5 minutes (30 seconds)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(i) Set rA(t₁)=rB(t₂), form equations: 19−6t₁=1+4t₂, −1+2t₁=2t₂, 1+4t₁=12−2t₂ (M1). Solve for t₁=2 and t₂=3/2 (M1)(A1). Substitute into rA to get P(7,3,9) (M1)(A1)."
+        },
+        {
+          "markscheme_pages": "26",
+          "basis": "(ii) |t₁−t₂| = |2−3/2| = 0.5 minutes (30 seconds) (M1)(A1). [7 marks total]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-E",
+      "question": "11",
+      "part": "e",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "27",
+      "task_summary": "Find the minimum distance D(t) between the two airplanes for 0 ≤ t ≤ 2.5 by forming the distance function and using calculus to minimize it.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.vectors",
+        "calculus.differentiation"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "vector_difference",
+        "distance_formula",
+        "expand_quadratic",
+        "differentiate",
+        "critical_point",
+        "minimize_distance"
+      ],
+      "method_path": [
+        "Form vector difference using common t: rB−rA = (−18,1,11) + t(10,0,−6)",
+        "Form distance squared: D(t)² = (−18+10t)² + 1² + (11−6t)² = 136t²−492t+446",
+        "Differentiate D² and set to zero: 272t−492=0 → t = 123/68 ≈ 1.8088",
+        "Compute minimum distance: D(123/68) = √1190/34 ≈ 1.01 km"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "Form rB−rA = (−18,1,11) + t(10,0,−6) (M1). D(t) = √((−18+10t)² + 1 + (11−6t)²) (M1)(A1). Set D'(t)=0 or find local minimum → t = 123/68 (M1). Minimum D = √1190/34 ≈ 1.01 km (A1). Award M0 for attempts at shortest distance between two lines. [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "question": "4",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Find the least positive value of x for which cos(x/2 + pi/3) = 1/sqrt(2).",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "reference_angle",
+        "solving_trigonometric_equation",
+        "general_solution",
+        "domain_restriction",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Determine the first-quadrant reference angle: pi/4 since cos(pi/4) = 1/sqrt(2)",
+        "Set up equation x/2 + pi/3 = pi/4 and observe that this gives x < 0",
+        "Reject the pi/4 solution because the least positive x is required",
+        "Use the next solution in the fourth quadrant: x/2 + pi/3 = 7pi/4 (= 2pi - pi/4)",
+        "Solve: x = 2(7pi/4 - pi/3) = 17pi/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "determines pi/4 (or 45 deg) as the first quadrant (reference) angle (A1); attempts to solve x/2 + pi/3 = pi/4 (M1); Note: Award M1 for attempting to solve x/2 + pi/3 = pi/4, 7pi/4,...; x/2 + pi/3 = pi/4 implies x < 0 and so pi/4 is rejected (R1); x/2 + pi/3 = 7pi/4 = 2pi - pi/4 (A1); x = 17pi/6 (must be in radians) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

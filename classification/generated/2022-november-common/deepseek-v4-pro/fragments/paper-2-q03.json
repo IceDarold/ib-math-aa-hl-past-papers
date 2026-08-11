@@ -1,0 +1,49 @@
+{
+  "question": "3",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Given u1 = 50 and u4 = 86.4 of a geometric sequence, find the common ratio r, set up the sum inequality Sn > 33 500, and solve for the smallest integer n.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_sequence_term",
+        "solve_for_common_ratio",
+        "geometric_series_sum",
+        "solve_exponential_inequality",
+        "round_up"
+      ],
+      "method_path": [
+        "Use u4 = ar^3: 50r^3 = 86.4",
+        "Solve for r: r = (86.4/50)^(1/3) = 1.2",
+        "Write geometric sum inequality: 50(1.2^n - 1)/(1.2 - 1) > 33 500",
+        "Solve for n by GDC sketch, logarithmic manipulation, or trial of S26 and S27",
+        "Select smallest integer: n = 27"
+      ],
+      "accepted_alternatives": [
+        "Solve the inequality by GDC sketch or by computing S26 = 28 368.8 and S27 = 34 092.6 directly, rather than algebraic manipulation with logarithms."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "86.4 = 50r^3 (A1); r = (86.4/50)^(1/3) = 1.2 seen anywhere (A1); 50(1.2^n - 1)/0.2 > 33500 OR 250(1.2^n - 1) > 33500 (A1); attempt to solve their geometric Sn inequality or equation (M1); sketch OR n > 26.9045, n = 26.9 OR S26 = 28368.8 OR S27 = 34092.6 OR algebraic manipulation involving logarithms; n = 27 (accept n >= 27) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Given a semicircle with centre O, radius r, points P, Q, R on the circumference with PQ = 2r and ∠ROQ = θ, and the two shaded regions having equal area, show that θ = 2 sin θ.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "area_of_segment",
+        "area_of_triangle",
+        "equate_areas",
+        "simplify_equation",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Express area of segment bounded by chord RQ and arc RQ as ½r²θ − ½r² sin θ",
+        "Express area of triangle POR as ½r² sin(π − θ)",
+        "Set areas equal: ½r²θ − ½r² sin θ = ½r² sin(π − θ)",
+        "Cancel ½r² and apply sin(π − θ) = sin θ",
+        "Obtain θ − sin θ = sin θ → θ = 2 sin θ"
+      ],
+      "accepted_alternatives": [
+        "Directly state area of triangle POR as ½r² sin θ (simplifying sin(π − θ) immediately), award maximum M1A1A0A1A1 per markscheme"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to find the area of either shaded region in terms of r and θ (M1); Area of segment = ½r²θ − ½r² sin θ A1; Area of triangle = ½r² sin(π − θ) A1; correct equation in terms of θ only (A1); θ − sin θ = sin θ → θ = 2 sin θ A1 [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Hence determine the value of θ by solving θ = 2 sin θ using GDC.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_trigonometric_equation",
+        "gdc_numerical_solve"
+      ],
+      "method_path": [
+        "Solve θ = 2 sin θ using GDC numerical solver",
+        "Obtain θ = 1.89549… → θ = 1.90"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "1.89549… → θ = 1.90 A1; Note: Award A0 if there is more than one solution. Award A0 for an answer in degrees. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

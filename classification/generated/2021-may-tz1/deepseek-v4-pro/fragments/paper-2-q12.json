@@ -1,0 +1,211 @@
+{
+  "question": "12",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Decompose f'(x) = 1/(x(k-x)) into partial fractions a/x + b/(k-x) and find a, b in terms of k.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "partial_fraction_decomposition",
+        "compare_coefficients",
+        "solve_linear_system"
+      ],
+      "method_path": [
+        "Write 1/(x(k-x)) = a/x + b/(k-x)",
+        "Multiply through by x(k-x) to obtain 1 = a(k-x) + bx",
+        "Compare coefficients or substitute x=0, x=k to solve for a=1/k, b=1/k"
+      ],
+      "accepted_alternatives": [
+        "compare coefficients (a+b=0, ak=1)",
+        "substitute x=k and x=0 to obtain equations and solve"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "Markscheme shows (A1) for partial fraction setup, (M1) for attempt to compare coefficients OR substitute x=k and x=0 and solve, A1 for a=1/k and b=1/k."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Integrate f'(x) = 1/(kx) + 1/(k(k-x)) to find f(x) = (1/k)ln|x/(k-x)| + c.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate",
+        "logarithmic_integration",
+        "simplify_logarithm"
+      ],
+      "method_path": [
+        "Integrate f'(x) = 1/(kx) + 1/(k(k-x))",
+        "Obtain (1/k)ln|x| - (1/k)ln|k-x| + c",
+        "Simplify to (1/k)ln|x/(k-x)| + c"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "Markscheme: (M1) attempt to integrate their f', A1A1 for f(x) = (1/k)(ln x - ln(k-x)) + c = (1/k)ln(x/(k-x)) + c. Note: Award A1 for each correct term. Condone absence of +c."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 8,
+      "source_pages": "15",
+      "markscheme_pages": "21, 22",
+      "task_summary": "Solve the logistic differential equation dP/dt = P(k-P)/(5k) with P(0)=1200, showing P = 1200k/(1200+(k-1200)e^(-t/5)).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separate_variables",
+        "partial_fractions",
+        "integrate",
+        "substitute_initial_condition",
+        "rearrange"
+      ],
+      "method_path": [
+        "Separate variables: k/(P(k-P)) dP = dt",
+        "Use partial fractions: (1/P + 1/(k-P)) dP = (1/5)dt",
+        "Integrate: 5(ln P - ln(k-P)) = t + c",
+        "Substitute t=0, P=1200 to find c = 5ln(1200/(k-1200))",
+        "Rearrange to isolate P and obtain P = 1200k/(1200+(k-1200)e^(-t/5))"
+      ],
+      "accepted_alternatives": [
+        "Alternative route: ln(P/(k-P)) = t/5 + c, then P/(k-P) = Ae^(t/5), substitute t=0, P=1200 to find A=1200/(k-1200), then rearrange to final form."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21, 22",
+          "basis": "Markscheme: M1 separate variables and integrate. A1 for 5(ln P - ln(k-P)) = t + c. EITHER branch: M1 substitute t=0, P=1200, A1 c = 5ln(1200/(k-1200)), further A1, A1. OR branch: ln(P/(k-P)) = t/5 + c, A1 P/(k-P) = Ae^(t/5), M1 substitute initial conditions, A1, A1. THEN M1 rearrange to isolate P, A1 final answer (AG)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Given population doubles by t=10 (P=2400), find k correct to four significant figures.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute",
+        "solve_equation",
+        "numerical_solution"
+      ],
+      "method_path": [
+        "Substitute t=10, P=2400: 2400 = 1200k/(1200+(k-1200)e^(-2))",
+        "Solve for k numerically",
+        "k ≈ 2845 (4 s.f.)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Markscheme: (M1) attempt to substitute t=10, P=2400. (A1) for correct equation. A1 for k=2845 (4 s.f.). Note: Award (M1)(A1)A0 for any other value of k which rounds to 2850."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Find t when the rate of change of the population dP/dt is at its maximum.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.differential_equations",
+        "functions.equations"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "maximize_rate",
+        "find_vertex",
+        "substitute",
+        "solve"
+      ],
+      "method_path": [
+        "Recognise dP/dt = P(k-P)/(5k) is maximised when P(k-P) is minimised, at P = k/2",
+        "Substitute P = k/2 into P = 1200k/(1200+(k-1200)e^(-t/5))",
+        "Solve for t ≈ 1.58 days"
+      ],
+      "accepted_alternatives": [
+        "Find maximum of the graph of dP/dt",
+        "Find zero of the second derivative graph of P"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Markscheme: (M1) attempt to find maximum of first derivative graph OR zero of second derivative graph OR that P = k/2. A2 for t = 1.58 days (accept any value rounding to 1.6)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

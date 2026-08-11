@@ -1,0 +1,91 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Evaluate the composite function: substitute g(x)=2x into f(x) to obtain f(2x)=3 sin 2x / cos 2x.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "composite_function",
+        "function_evaluation",
+        "trig_substitution"
+      ],
+      "method_path": [
+        "(f ∘ g)(x) = f(g(x)) = f(2x)",
+        "f(2x) = (3 sin 2x) / (cos 2x)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "(f ∘ g)(x) = f(2x) (A1); f(2x) = 3 sin 2x / cos 2x (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Solve the trigonometric equation (3 sin 2x)/(cos 2x) = 2 cos 2x, reducing to tan 2x = 1/√3 and obtaining x = π/12, 7π/12 within the given domain.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "trig_equation",
+        "algebraic_simplification",
+        "tan_identity",
+        "inverse_trig_function",
+        "general_solution",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "set (3 sin 2x)/(cos 2x) = 2 cos 2x",
+        "simplify algebraically to tan 2x = 1/√3",
+        "arctan(1/√3) = π/6",
+        "general solution for 2x: 2x = π/6, 7π/6",
+        "x = π/12, 7π/12"
+      ],
+      "accepted_alternatives": [
+        "cot 2x = √3 instead of tan 2x = 1/√3",
+        "use of right-triangle values for tan or cot"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognizing to use tan or cot (M1); tan 2x = 1/√3 OR cot 2x = √3 (A1); arctan(1/√3) = π/6 (A1); 2x = π/6, 7π/6; x = π/12, 7π/12 (A1A1). Do not award final A1 if additional solutions seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

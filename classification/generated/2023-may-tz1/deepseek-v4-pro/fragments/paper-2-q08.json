@@ -1,0 +1,76 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 7,
+      "source_pages": "10",
+      "markscheme_pages": "17-18",
+      "task_summary": "Find the angle α (0<α<π/2) between a line and a plane, given the line in symmetric form (x−1)/3=(y+2)/2=(z−5)/(−1) and the plane 4x+(cosα)y+(sinα)z=1.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "extract_direction_vector",
+        "extract_normal_vector",
+        "compute_dot_product",
+        "compute_magnitudes",
+        "angle_between_line_and_plane",
+        "solve_trigonometric_equation"
+      ],
+      "method_path": [
+        "Extract direction vector d=⟨3,2,−1⟩ from symmetric line equation",
+        "Extract normal vector n=⟨4,cosα,sinα⟩ from plane equation",
+        "Compute scalar product d·n=12+2cosα−sinα",
+        "Compute magnitudes |d|=√14 and |n|=√17",
+        "Recognise angle between d and n is π/2−α",
+        "Substitute into cos(π/2−α)=d·n/(|d||n|) to obtain 12+2cosα−sinα=√17√14 sinα",
+        "Solve trigonometric equation for α≈0.932"
+      ],
+      "accepted_alternatives": [
+        "Cross-product route: compute |d×n|²=(2sinα+cosα)²+(−4−3sinα)²+(3cosα−8)², substitute into sin(π/2−α)=|d×n|/(|d||n|) to obtain √((2sinα+cosα)²+(4+3sinα)²+(3cosα−8)²)=√17√14 cosα, solve for α≈0.932"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "direction vector of the line is (3,2,−1) (seen anywhere) (A1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "normal vector of the plane is (4,cosα,sinα) (seen anywhere) (A1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "correct scalar product 12+2cosα−sinα (seen anywhere) (A1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "one correct magnitude (seen anywhere) (A1); √(16+cos²α+sin²α)=√17, √(9+4+1)=√14"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "recognizing angle between normal and direction vector is π/2−α (seen anywhere) (M1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to substitute into the formula for the angle between two vectors to form an equation in α (M1); 12+2cosα−sinα=√17√14 sinα"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "α=0.932389… → α=0.932 A1; Note: maximum (A1)(A1)(A1)(A1)(M1)(M1)A0 for correct answer in degrees (54.4219…°)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

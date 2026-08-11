@@ -1,0 +1,69 @@
+{
+  "question": "5",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 6,
+      "source_pages": "6",
+      "markscheme_pages": "11–12",
+      "task_summary": "Use the binomial theorem to expand (ax + 1/x^2)^9, identify the term in x^4 (or x^6), extract its coefficient, equate to (8/7)a^5 (or a derived expression for x^6), and solve for a.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "general_term",
+        "coefficient_extraction",
+        "equation_solving",
+        "power_matching"
+      ],
+      "method_path": [
+        "Write the general term: C(9,r)(ax)^(9-r)(1/x^2)^r = C(9,r)a^(9-r)x^(9−3r)",
+        "Determine r for the x^6 term (r=1) giving coefficient 9a^8, OR recognise r=3 gives the x^6 term in the alternative route",
+        "Extract the relevant coefficient (e.g. 84a^6 for the x^6 term in the alternative route)",
+        "Equate the extracted coefficient to the given or derived expression: 84a^6 = 24a^5 or equivalent",
+        "Solve for a: a = 24/84 = 2/7"
+      ],
+      "accepted_alternatives": [
+        "Use term in x^4 directly: C(9,6)a^6x^4 with coefficient set equal to (8/7)a^5, giving a = 2/7."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "valid approach for expansion (must be the product of a binomial coefficient with n=9 and a power of ax) (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "recognizing that the term in x^6 is needed (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "correct term or coefficient in binomial expansion (seen anywhere) (A1): C(9,6)(ax)^3(1)^6 OR 84a^6x^6 OR 84a^6"
+        },
+        {
+          "markscheme_pages": "11–12",
+          "basis": "EITHER correct term in x^4 or coefficient (A1) … OR correct term in x^6 or coefficient (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "Set their term in x^6 or coefficient of x^6 equal to 24a^5x^6 or 24a^5 (M1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "a = 2/7 (≈0.286, 0.285714…) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

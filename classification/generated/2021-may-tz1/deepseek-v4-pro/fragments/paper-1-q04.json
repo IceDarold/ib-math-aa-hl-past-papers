@@ -1,0 +1,120 @@
+{
+  "question": "4",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Differentiate f(x)=-(x-h)^2+2k to find f'(x).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_quadratic",
+        "chain_rule"
+      ],
+      "method_path": [
+        "f'(x) = -2(x-h)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "f'(x) = -2(x-h)  A1  [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Use f'(3)=g'(3) to show h=(6+e)/2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_exponential",
+        "equate_derivatives",
+        "solve_linear"
+      ],
+      "method_path": [
+        "g'(x)=e^(x-2) or g'(3)=e",
+        "Set f'(3)=g'(3): -2(3-h)=e",
+        "Solve: h=(6+e)/2"
+      ],
+      "accepted_alternatives": [
+        "g'(x) as e^(x-2) or g'(3) as e",
+        "Intermediate: 3-h=-e/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "g'(x)=e^(x-2) OR g'(3)=e^(3-2) A1; recognizing f'(3)=g'(3) (M1); h=(6+e)/2 A1 AG; final A1 dependent on one previous mark"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q04-C",
+      "question": "4",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "10-11",
+      "task_summary": "Use f(3)=g(3) and h from (b) to show k=(2e+e^2)/4.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "equate_functions",
+        "substitute_parameter",
+        "simplify_algebraic"
+      ],
+      "method_path": [
+        "Set f(3)=g(3): -(3-h)^2+2k=e+k",
+        "Substitute h=(6+e)/2",
+        "Simplify to k=(2e+e^2)/4"
+      ],
+      "accepted_alternatives": [
+        "EITHER: substitute h then solve -(3-h)^2+2k=e+k for k",
+        "OR: rearrange to k=((6+e)/2-3)^2+e then simplify"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "f(3)=g(3) (M1); correct equation in k A1; simplification to k=(2e+e^2)/4 A1 AG; EITHER/OR branches shown"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

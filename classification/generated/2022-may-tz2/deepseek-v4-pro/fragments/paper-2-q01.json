@@ -1,0 +1,91 @@
+{
+  "question": "1",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the length of chord AB in a circle of radius 5 m, given central angle AOB = 1.9 radians.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "cosine_rule",
+        "chord_length",
+        "substitution",
+        "radian_measure",
+        "sine_rule",
+        "right_angled_trigonometry"
+      ],
+      "method_path": [
+        "apply cosine rule: AB² = 5² + 5² − 2×5×5×cos(1.9)",
+        "compute AB = √(50 − 50 cos 1.9)",
+        "round to AB = 8.13 m"
+      ],
+      "accepted_alternatives": [
+        "Use right-angled trigonometry: AB/2 = 5 sin 0.95, giving AB = 10 sin 0.95 = 8.13 m",
+        "Use sine rule: α = (π − 1.9)/2 = 0.6207…, AB/sin 1.9 = 5/sin 0.6207…, giving AB = 8.13 m"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER uses the cosine rule (M1); AB² = 5² + 5² − 2×5×5×cos 1.9 (A1); OR uses right-angled trigonometry (M1); AB/2 = 5 sin 0.95 (A1); OR uses the sine rule (M1); THEN AB = 8.1341…, AB = 8.13 m (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Find the area of the shaded (larger) sector of a circle with radius 5 m and central angle 1.9 radians.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "reflex_angle",
+        "sector_area",
+        "substitution",
+        "radian_measure"
+      ],
+      "method_path": [
+        "find reflex angle: 2π − 1.9 = 4.3831…",
+        "apply sector area formula: A = ½ × 5² × (2π − 1.9)",
+        "compute A = 54.8 m²"
+      ],
+      "accepted_alternatives": [
+        "Find area of full circle π × 5², subtract unshaded sector ½ × 5² × 1.9: A = π × 25 − ½ × 25 × 1.9 = 78.5398… − 23.75 = 54.8 m²"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: Attempt at finding reflex angle (M1); AÔB = 2π − 1.9 = 4.3831…; substitution into area formula (A1); A = ½ × 5² × 4.3831… = 54.7898… = 54.8 m² (A1). METHOD 2: A = AC − AU = π×5² − ½×5²×1.9 = 78.5398… − 23.75 = 54.7898… = 54.8 m² (M1)(A1)(A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

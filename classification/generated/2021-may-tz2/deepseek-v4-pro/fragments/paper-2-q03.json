@@ -1,0 +1,148 @@
+{
+  "question": "3",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find P(S ∩ T), the probability that a randomly selected student plays a sport and is involved in theatre.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_addition_rule",
+        "complement_rule",
+        "probability_intersection"
+      ],
+      "method_path": [
+        "Use complement: P(S ∪ T) = 1 − P(neither) = 1 − 0.18 = 0.82",
+        "Apply addition rule: P(S ∪ T) = P(S) + P(T) − P(S ∩ T)",
+        "Solve: P(S ∩ T) = 0.70 + 0.20 − 0.82 = 0.08"
+      ],
+      "accepted_alternatives": [
+        "Use a clearly labelled Venn diagram with all values correctly placed"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "EITHER P(S)+P(T)+P(S′∩T′)−P(S∩T)=1 OR P(S∪T)=1−0.18. THEN P(S∩T)=0.08 (accept 8%)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find P(T ∩ S′), the probability that a student is involved in theatre but does not play a sport.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_difference",
+        "set_difference"
+      ],
+      "method_path": [
+        "Compute P(T ∩ S′) = P(T) − P(S ∩ T)",
+        "Substitute: 0.20 − 0.08 = 0.12"
+      ],
+      "accepted_alternatives": [
+        "P(T ∩ S′) = P(T ∪ S) − P(S) = 0.82 − 0.70 = 0.12",
+        "Use a clearly labelled Venn diagram"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "EITHER P(T∩S′)=P(T)−P(T∩S)=0.2−0.08 OR P(T∩S′)=P(T∪S)−P(S)=0.82−0.7. THEN =0.12 (accept 12%)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find P(G ∩ T) given that 48% of students are girls and 25% of girls are involved in theatre.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "multiplication_rule"
+      ],
+      "method_path": [
+        "Apply P(G ∩ T) = P(T | G) × P(G)",
+        "Substitute: 0.25 × 0.48 = 0.12"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "P(G∩T)=P(T|G)P(G)=(0.25×0.48). =0.12."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q03-D",
+      "question": "3",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Determine if events G (girl) and T (theatre) are independent, justifying the answer.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "independence_test",
+        "probability_multiplication"
+      ],
+      "method_path": [
+        "Compute P(G) × P(T) = 0.48 × 0.20 = 0.096",
+        "Compare with P(G ∩ T) = 0.12 from part (c)",
+        "Conclude not independent because P(G) × P(T) ≠ P(G ∩ T)"
+      ],
+      "accepted_alternatives": [
+        "Compare P(T | G) = 0.25 with P(T) = 0.20; since P(T | G) ≠ P(T), G and T are not independent"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: P(G)×P(T)=0.48×0.2=0.096. P(G)×P(T)≠P(G∩T)⇒G and T are not independent. METHOD 2: P(T|G)=0.25. P(T|G)≠P(T)⇒G and T are not independent. Note: Do not award A0R1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

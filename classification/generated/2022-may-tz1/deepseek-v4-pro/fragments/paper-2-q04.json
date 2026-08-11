@@ -1,0 +1,122 @@
+{
+  "question": "4",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the time t when the particle is at rest by solving v(t) = e^(sin t) + 4 sin t = 0 for t in [0, 6].",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_expression_to_zero",
+        "solve_using_gdc",
+        "select_domain_solution"
+      ],
+      "method_path": [
+        "Set v(t) = 0 (particle at rest)",
+        "Solve e^(sin t) + 4 sin t = 0 using GDC",
+        "Select t = 3.35 in domain [0, 6]"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognizing at rest v=0 (M1); t = 3.34692... t = 3.35 (seconds) A1; Note: Award (M1)A0 for any other solution to v=0 eg t=-0.205 or t=6.08."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the acceleration when the particle changes direction by differentiating v(t) and evaluating a(t) at the t from part (a).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "identify_direction_change_condition",
+        "differentiate_composite_function",
+        "evaluate_at_point"
+      ],
+      "method_path": [
+        "Recognize direction change occurs when v = 0 at t = 3.34692...",
+        "Differentiate v(t): a(t) = e^(sin t) cos t + 4 cos t",
+        "Evaluate a(3.34692...) using GDC",
+        "State a = -4.71 m s^-2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognizing particle changes direction when v=0 OR when t=3.34692... (M1); a = -4.71439... a = -4.71 (ms^-2) A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the total distance travelled by integrating the absolute value of v(t) from t = 0 to 6.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "set_up_definite_integral",
+        "absolute_value_integral",
+        "split_integral_at_sign_change",
+        "evaluate_integral_gdc"
+      ],
+      "method_path": [
+        "Set total distance = integral of |v(t)| from 0 to 6",
+        "Split at t = 3.34692... where v changes sign",
+        "Evaluate integral of v(t) from 0 to 3.34692... plus integral of -v(t) from 3.34692... to 6 using GDC",
+        "State distance = 20.8 m"
+      ],
+      "accepted_alternatives": [
+        "Direct evaluation of integral of |v(t)| from 0 to 6 using GDC without explicit splitting"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "distance travelled = integral_0^6 |v| dt OR split integrals (A1); = 20.7534... = 20.8 (metres) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

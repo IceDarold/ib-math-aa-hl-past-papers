@@ -1,0 +1,1284 @@
+{
+  "session": "May 2022",
+  "zone": "TZ2",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "2",
+      "markscheme_pages": "8",
+      "task_summary": "State the first term u1 of the arithmetic sequence un = 15 - 3n.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "evaluate_term",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute n = 1 into un = 15 - 3n",
+        "u1 = 12"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "u1 = 12, A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "2",
+      "markscheme_pages": "8",
+      "task_summary": "Find n given that the nth term un = -33 for un = 15 - 3n.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_linear_equation",
+        "substitute_value",
+        "rearrange_terms"
+      ],
+      "method_path": [
+        "Set 15 - 3n = -33",
+        "Solve: 3n = 48",
+        "n = 16"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "15 - 3n = -33 (A1), n = 16 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "2",
+      "markscheme_pages": "8",
+      "task_summary": "Find the common difference d of the arithmetic sequence un = 15 - 3n.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "find_common_difference",
+        "compute_consecutive_terms",
+        "recognise_linear_coefficient"
+      ],
+      "method_path": [
+        "Compute u2 = 15 - 3(2) = 9",
+        "d = u2 - u1 = 9 - 12 = -3"
+      ],
+      "accepted_alternatives": [
+        "Recognise that the coefficient of n is -3, so d = -3",
+        "Attempt to solve 33 = 12 + 15d for d"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "valid approach to find d (M1); u2 - u1 = 9 - 12 OR recognise gradient is -3 OR attempts to solve 33 = 12 + 15d; d = -3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Prove that the sum of three consecutive integers n-1, n, n+1 is always divisible by 3.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "algebraic_simplification",
+        "divisibility_proof"
+      ],
+      "method_path": [
+        "Write sum (n-1) + n + (n+1)",
+        "Simplify to 3n",
+        "Conclude 3n is always divisible by 3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(n-1) + n + (n+1) (A1); 3n (A1); which is always divisible by 3 AG [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Prove that the sum of the squares of three consecutive integers n-1, n, n+1 is never divisible by 3.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "algebraic_expansion",
+        "sum_of_squares",
+        "divisibility_proof",
+        "modular_reasoning"
+      ],
+      "method_path": [
+        "Write sum of squares (n-1)² + n² + (n+1)²",
+        "Expand (n-1)² and/or (n+1)²",
+        "Simplify to 3n² + 2",
+        "Argue 3n² is divisible by 3 but 2 is not, so sum is never divisible by 3"
+      ],
+      "accepted_alternatives": [
+        "Observe 3n² is divisible by 3 and 2 is not, therefore 3n² + 2 is never divisible by 3",
+        "Write as 3(n² + 2/3) showing non-integer quotient",
+        "Divide by 3 to obtain n² + 2/3, not an integer"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(n-1)² + n² + (n+1)² = ... (A1); attempts to expand either (n-1)² or (n+1)² (M1); 3n² + 2 (A1); demonstrating recognition that 2 is not divisible by 3 … hence the sum of the squares is never divisible by 3 AG (R1) [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q03-A-I-A-II",
+      "question": "3",
+      "part": "(a)(i), (a)(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Write equations of the vertical and horizontal asymptotes of f(x)=(2x-1)/(x+1).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_vertical_asymptote",
+        "identify_horizontal_asymptote"
+      ],
+      "method_path": [
+        "set denominator x+1=0 to obtain vertical asymptote x=-1",
+        "identify horizontal asymptote y=2 from ratio of leading coefficients"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "(i) x=-1 A1; (ii) y=2 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q03-B",
+      "question": "3",
+      "part": "(b)",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "10-11",
+      "task_summary": "Sketch rational function with asymptotes x=-1, y=2 and intercepts at x=1/2, y=-1.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "show_asymptotes",
+        "find_intercepts",
+        "asymptotic_behaviour"
+      ],
+      "method_path": [
+        "sketch rational function with two branches in opposite quadrants",
+        "draw asymptotes x=-1 and y=2 with correct asymptotic approach",
+        "mark x-intercept at x=1/2",
+        "mark y-intercept at y=-1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10-11",
+          "basis": "rational function shape with two branches in opposite quadrants, with two correctly positioned asymptotes and asymptotic behaviour shown A1; axes intercepts clearly shown at x=1/2 and y=-1 A1A1. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q03-C",
+      "question": "3",
+      "part": "(c)",
+      "marks": 1,
+      "source_pages": "4-5",
+      "markscheme_pages": "12",
+      "task_summary": "Use the graph from (b) to solve the compound inequality 0 < f(x) < 2.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "read_inequality_from_graph"
+      ],
+      "method_path": [
+        "read from graph: 0 < f(x) < 2 when x > 1/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "x > 1/2 A1. Accept alternative notation. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q03-D",
+      "question": "3",
+      "part": "(d)",
+      "marks": 2,
+      "source_pages": "4-5",
+      "markscheme_pages": "12",
+      "task_summary": "Solve the absolute-value inequality by sketching |f(x)| or finding critical points.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_absolute_inequality",
+        "sketch_absolute_function",
+        "find_critical_points"
+      ],
+      "method_path": [
+        "sketch |(2x-1)/(x+1)| or solve 2x-1=0 to identify critical points x=1/2 and x=-1/2",
+        "determine solution x < -1/2 or x > 1/2"
+      ],
+      "accepted_alternatives": [
+        "EITHER sketch |(2x-1)/(x+1)| and read solution; OR solve 2x-1=0 algebraically to find critical points and test intervals"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "EITHER attempts to sketch |(2x-1)/(x+1)| (M1) OR attempts to solve 2x-1=0 (M1). Note: Award M1 if x=1/2 and x=-1/2 are identified. THEN x < -1/2 or x > 1/2 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Find the least positive value of x for which cos(x/2 + pi/3) = 1/sqrt(2).",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "reference_angle",
+        "solving_trigonometric_equation",
+        "general_solution",
+        "domain_restriction",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Determine the first-quadrant reference angle: pi/4 since cos(pi/4) = 1/sqrt(2)",
+        "Set up equation x/2 + pi/3 = pi/4 and observe that this gives x < 0",
+        "Reject the pi/4 solution because the least positive x is required",
+        "Use the next solution in the fourth quadrant: x/2 + pi/3 = 7pi/4 (= 2pi - pi/4)",
+        "Solve: x = 2(7pi/4 - pi/3) = 17pi/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "determines pi/4 (or 45 deg) as the first quadrant (reference) angle (A1); attempts to solve x/2 + pi/3 = pi/4 (M1); Note: Award M1 for attempting to solve x/2 + pi/3 = pi/4, 7pi/4,...; x/2 + pi/3 = pi/4 implies x < 0 and so pi/4 is rejected (R1); x/2 + pi/3 = 7pi/4 = 2pi - pi/4 (A1); x = 17pi/6 (must be in radians) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Show that coefficient b = 21 in the binomial expansion of (x + 1)^7.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_coefficient",
+        "factorial_calculation",
+        "pascal_triangle"
+      ],
+      "method_path": [
+        "Identify the x^5 term requires coefficient C(7,2) or C(7,5)",
+        "Compute C(7,2) = 7!/(2!5!) = (7×6)/2! = 21",
+        "Conclude b = 21"
+      ],
+      "accepted_alternatives": [
+        "Use Pascal's triangle row 7 (1, 7, 21, 35, 35, 21, 7, 1) to read the x^5 coefficient directly as 21."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "EITHER recognises the required term (or coefficient) in the expansion (M1); bx^5 = C(7,2) x^5 OR b = C(7,2) OR C(7,5); correct working A1 … OR lists terms from row 7 of Pascal's triangle (M1); 1,7,21,... A1; THEN b = 21 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Given the third term is the arithmetic mean of the second and fourth terms in the expansion of (x + 1)^7, find the possible values of x (x ≠ 0).",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "binomial_coefficient",
+        "arithmetic_mean",
+        "algebraic_simplification",
+        "quadratic_equation",
+        "solving_quadratic",
+        "factoring"
+      ],
+      "method_path": [
+        "Find a = C(7,1) = 7",
+        "Set up mean condition: (ax^6 + 35x^4)/2 = bx^5",
+        "Substitute a = 7, b = 21: (7x^6 + 35x^4)/2 = 21x^5",
+        "Multiply by 2 and divide by x^4 (x ≠ 0): 7x^2 + 35 = 42x",
+        "Rearrange to quadratic: 7x^2 − 42x + 35 = 0",
+        "Reduce: x^2 − 6x + 5 = 0",
+        "Factor: (x − 1)(x − 5) = 0",
+        "Solutions: x = 1, x = 5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "a = 7 (A1); correct equation (A1): (ax^6 + 35x^4)/2 = 21x^5 OR (7x^6 + 35x^4)/2 = 21x^5; correct quadratic equation (A1): 7x^2 − 42x + 35 = 0 OR x^2 − 6x + 5 = 0; valid attempt to solve their quadratic (M1); x = 1, x = 5 (A1); Note: Award final A0 for obtaining x = 0, x = 1, x = 5."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Show that f(x) = x√(1−x²) is an odd function on [−1, 1].",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_variable",
+        "simplify_expression",
+        "identify_odd_function",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Compute f(−x) by substituting −x for x in f(x)=x√(1−x²)",
+        "Simplify f(−x)=−x√(1−(−x)²)=−x√(1−x²)=−f(x)",
+        "Conclude f is an odd function since f(−x)=−f(x)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempts to replace x with −x M1; f(−x) = −x/√(1−(−x)²) = −(x/√(1−x²)) = −f(x) A1; so f is an odd function AG"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "Note: Award M1A0 for a graphical approach including evidence that the graph is invariant after rotation by 180° about the origin or after a reflection in the y-axis then x-axis"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Find the range a ≤ y ≤ b of f(x)=x√(1−x²) on [−1,1] by locating stationary points.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "chain_rule",
+        "differentiate",
+        "set_derivative_zero",
+        "solve_equation",
+        "evaluate_function",
+        "determine_range"
+      ],
+      "method_path": [
+        "Differentiate f(x)=x(1−x²)^(1/2) using product rule and chain rule",
+        "Obtain f′(x)=(1−2x²)/√(1−x²)",
+        "Set f′(x)=0 and solve",
+        "Obtain critical points x=±1/√2",
+        "Evaluate f(±1/√2)=±1/2",
+        "Conclude range a=−1/2, b=1/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempts both product rule and chain rule differentiation to find f′(x) M1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "f′(x) = (1−2x²)/√(1−x²) A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "sets their f′(x)=0 M1; x=±1/√2 A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "attempts to find at least one of f(±1/√2) (M1); a=−1/2 and b=1/2 A1; Note: Award A1 for −1/2≤y≤1/2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Evaluate the definite integral ∫₀^(π/3) sec^n x tan x dx via substitution u = sec x (or integration by inspection), obtaining the antiderivative (1/n) sec^n x and evaluating limits to yield (2^n − 1)/n.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "u_substitution",
+        "trigonometric_integration",
+        "power_rule",
+        "definite_integral",
+        "limit_evaluation"
+      ],
+      "method_path": [
+        "Substitute u = sec x, du = sec x tan x dx",
+        "Express integral as ∫ u^(n−1) du",
+        "Integrate: u^n / n",
+        "Substitute back to (1/n) sec^n x",
+        "Evaluate at upper limit x = π/3: sec(π/3) = 2 → 2^n / n",
+        "Evaluate at lower limit x = 0: sec(0) = 1 → 1 / n",
+        "Subtract limits: (2^n − 1) / n"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Rewrite integrand as sec^(n−1) x · sec x tan x; recognise that the derivative of sec^n x is n sec^(n−1) x · sec x tan x; integrate by inspection to (1/n) sec^n x; evaluate limits to give (2^n − 1)/n."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: (A1) u = sec x ⇒ du = sec x tan x dx; M1 attempts to express integral in terms of u; A1 ∫ u^(n−1) du; A1 antiderivative [u^n / n]; M1 correct substitution of limits; A1 (2^n − 1)/n. METHOD 2: (A1) ∫ sec^(n−1) x sec x tan x dx; (M1) applies integration by inspection; A2 (1/n) sec^n x; M1 correct substitution; A1 (2^n − 1)/n."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "17",
+      "task_summary": "Find the median of a continuous random variable X with triangular PDF f(x) = 2(x-a)/((b-a)(c-a)) on [a,c] and f(x) = 2(b-x)/((b-a)(b-c)) on (c,b], given c ≥ (a+b)/2, in terms of a, b, c.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "set_up_median_condition",
+        "integrate_pdf",
+        "compute_triangle_area",
+        "set_equal_to_one_half",
+        "solve_quadratic_equation",
+        "reject_extraneous_root"
+      ],
+      "method_path": [
+        "Recognise median m < c since c ≥ (a+b)/2, so m lies in [a, c]",
+        "Set up ∫_a^m f(x) dx = 1/2 or use triangle area ½ × base × height",
+        "Compute area/integral: (m−a)² / ((b−a)(c−a))",
+        "Set equal to 1/2 and solve: (m−a)² = (b−a)(c−a)/2",
+        "Obtain m − a = ±√((b−a)(c−a)/2)",
+        "Reject negative root since m > a, giving m = a + √((b−a)(c−a)/2)"
+      ],
+      "accepted_alternatives": [
+        "Geometric method: triangle area = ½ × (m−a) × [2(m−a)/((b−a)(c−a))] = (m−a)²/((b−a)(c−a)), set = 1/2",
+        "Integration method: ∫_a^m 2(x−a)/((b−a)(c−a)) dx = [(x−a)²/((b−a)(c−a))]_a^m = (m−a)²/((b−a)(c−a)), set = 1/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1 for attempting area of triangle or integration. A1 for base = (m−a) (geometric) OR A1A1 for correct integration and limits. A1 for area expression (m−a)²/((b−a)(c−a)). M1 for setting area/integral = 1/2. A1 for (m−a)² = (b−a)(c−a)/2 leading to ±√ form. A1 for rejecting negative root and final answer m = a + √((b−a)(c−a)/2)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q09-9",
+      "question": "9",
+      "part": "9",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "18–20",
+      "task_summary": "Prove by contradiction that 2x³ + 6x + 1 = 0 has no integer roots.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "proof_by_contradiction",
+        "assumption",
+        "algebraic_manipulation",
+        "parity_argument",
+        "contradiction"
+      ],
+      "method_path": [
+        "assume_exists_integer_root",
+        "rearrange_equation",
+        "apply_parity_reasoning",
+        "reach_contradiction",
+        "conclude_no_integer_roots"
+      ],
+      "accepted_alternatives": [
+        "Rearrange to 2α³ + 6α = −1 and argue parity (even LHS ≠ odd RHS)",
+        "Rearrange to α³ = 1/2 − 3α and argue RHS not integer for integer α",
+        "Rearrange to α = −1/(2(α² + 3)) and argue RHS not integer for integer α",
+        "Rearrange to 2α = −1/(α² + 3) and argue RHS not integer for integer α",
+        "Method 2 (calculus): Show f′(x) > 0 for all x, f(0) = 1, f(−1) = −7, so only real root lies in (−1, 0), contradicting integer root assumption"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for assuming there exists some α ∈ Z such that 2α³ + 6α + 1 = 0"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for attempts to rearrange their equation into a suitable form"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "A1 for correct rearrangement e.g. 2α³ + 6α = −1"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "R1 for reasoning that 2α³ + 6α is even (α ∈ Z ⇒ 2α³ + 6α is even)"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "R1 for contradiction: 2α³ + 6α = −1 which is not even, so α cannot be an integer"
+        },
+        {
+          "markscheme_pages": "19–20",
+          "basis": "Method 2 accepted: M1 assumption, M1A1 for f′(x) = 6x² + 6 > 0 (strictly increasing), R1 for f(0) = 1 and f(−1) = −7, R1 for only real root between −1 and 0, contradiction"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Show that p=0.4 and q=0.2 using ΣP(X=x)=1 and E(X)=2.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "sum_of_probabilities",
+        "expected_value_formula",
+        "linear_equation",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Form equation from ΣP(X=x)=1: p+q+0.3+0.1=1 → p+q=0.6",
+        "Form equation from E(X)=2: 1·p+2·0.3+3·q+4·0.1=2 → p+3q=1",
+        "Solve simultaneously to obtain p=0.4 and q=0.2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "uses ΣP(X=x)=1 to form a linear equation in p and q (M1); correct equation in terms of p and q from summing to 1 A1; 0.3+0.1+p+q=1 OR p+q=0.6 (or equivalent)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "uses E(X)=2 to form a linear equation in p and q (M1); correct equation in terms of p and q from E(X)=2 A1; p+0.6+3q+0.4=2 OR p+3q=1 (or equivalent)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "evidence of correctly solving these equations simultaneously A1; for example, 2q=0.4⇒q=0.2 or p+3(0.6−p)=1⇒p=0.4; so p=0.4 and q=0.2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Find P(X>2) using the probability distribution.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_from_distribution",
+        "complementary_event"
+      ],
+      "method_path": [
+        "P(X>2)=P(X=3)+P(X=4)=q+0.1=0.2+0.1=0.3"
+      ],
+      "accepted_alternatives": [
+        "P(X>2)=1−P(X=1)−P(X=2)=1−0.4−0.3=0.3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "valid approach (M1); P(X>2)=P(X=3)+P(X=4) OR P(X>2)=1−P(X=1)−P(X=2); 0.3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find the probability that Nicky wins the game given she has score 4 after three rolls and needs at least 10 from at most five rolls.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "identify_target_scores",
+        "enumerate_outcomes",
+        "independent_events",
+        "compound_probability"
+      ],
+      "method_path": [
+        "Identify required score from last two rolls: 6, 7, or 8",
+        "Compute P(T=6)=2(0.3)(0.1)+0.2²=0.1",
+        "Compute P(T=7)=2(0.2)(0.1)=0.04",
+        "Compute P(T=8)=0.1²=0.01",
+        "Sum: P(win)=0.1+0.04+0.01=0.15"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "recognises at least one of the valid scores (6, 7, or 8) required to win the game (M1); Note: Award M0 if candidate also considers scores other than 6, 7, or 8 (such as 5)."
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "a score of 6 is obtained by rolling (2,4), (4,2) or (3,3); P(T=6)=2(0.3)(0.1)+(0.2)²=0.1 A1"
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "a score of 7 is obtained by rolling (3,4) or (4,3); P(T=7)=2(0.2)(0.1)=0.04 A1"
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "a score of 8 is obtained by rolling (4,4); P(T=8)=(0.1)²=0.01 A1; Note: The above 3 A1 marks are independent of each other."
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "P(Nicky wins)=0.1+0.04+0.01=0.15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Determine the value of b given the red dice pair sum distribution matches the yellow pair sum distribution.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "maximum_sum",
+        "linear_equation"
+      ],
+      "method_path": [
+        "Equate maximum possible sums: 3+b=8 → b=5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "3+b=8 (M1); b=5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "23-24",
+      "task_summary": "Find the value of a given the red dice pair sum distribution matches the yellow pair distribution.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "distribution_matching",
+        "counting_outcomes",
+        "sample_space"
+      ],
+      "method_path": [
+        "Match probability for a specific sum to form an equation, e.g. P(S=5)=4/16 for both distributions",
+        "Count outcomes for red dice to equate: 2+a=5 → a=3"
+      ],
+      "accepted_alternatives": [
+        "Use P(S=6)=3/16 matching: a+3=6 → a=3",
+        "Use P(S=4)=3/16 matching: a+1=4 → a=3",
+        "List sample space and eliminate possibilities for a<5, showing a≠2,4, concluding a=3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1 EITHER: P(S=5)=4/16; P(S=2+a)=4/16⇒2+a=5 A1; OR: P(S=6)=3/16; P(S=a+3)=3/16⇒a+3=6; OR: P(S=4)=3/16; P(S=a+1)=3/16⇒a+1=4; THEN a=3 A1"
+        },
+        {
+          "markscheme_pages": "23-24",
+          "basis": "METHOD 2: correctly lists a relevant part of the sample space A1; eliminates possibilities for a<5, convincingly shows that a≠2,4; THEN a=3 A1; Note: Award A0A0 for a=3 obtained without working/reasoning/justification."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "25-26",
+      "task_summary": "Sketch y=1/(x^2-2x-3), giving asymptote equations, local extremum coordinates, and axis intercepts.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes",
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_intercepts",
+        "find_asymptotes",
+        "find_critical_points",
+        "sketch_rational_function"
+      ],
+      "method_path": [
+        "Evaluate f(0) for y-intercept (0,-1/3)",
+        "Factor denominator to get vertical asymptotes x=-1, x=3",
+        "Determine horizontal asymptote y=0 from degree comparison",
+        "Find local max x-coordinate via axis of symmetry x=1 or f'(x)=0",
+        "Evaluate f(1)=-1/4 for local maximum (1,-1/4)",
+        "Sketch three branches with correct asymptotics and key features"
+      ],
+      "accepted_alternatives": [
+        "Use derivative f'(x)=0 instead of axis of symmetry for local max"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "y-intercept (0,-1/3) A1; vertical asymptotes x=-1 and x=3 A1; horizontal asymptote y=0 A1; valid method for x-coordinate of local max (M1); local max (1,-1/4) A1; three correct branches A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 7,
+      "source_pages": "14",
+      "markscheme_pages": "26-27",
+      "task_summary": "For g(x)=1/(x^2-2x-3), x>3, show g^{-1}(x)=(1+sqrt(x^2+4x))/x and state domain of g^{-1}.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.equations",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "interchange_variables",
+        "complete_square",
+        "solve_for_inverse",
+        "select_branch_by_domain",
+        "determine_domain_from_range"
+      ],
+      "method_path": [
+        "Interchange x and y in g: 1/(y^2-2y-3)=x",
+        "Rewrite as y^2-2y-3=1/x",
+        "Complete square: (y-1)^2=1/x+4",
+        "Take sqrt: y-1=+/-sqrt((1+4x)/x)",
+        "Reject negative branch since original domain x>3 requires y>3",
+        "Obtain g^{-1}(x)=1+sqrt((1+4x)/x)=(1+sqrt(x^2+4x))/x",
+        "State domain of g^{-1} as x>0 from range of g"
+      ],
+      "accepted_alternatives": [
+        "Solve xy^2-2xy-(3x+1)=0 by quadratic formula and simplify to same result"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "M1 for interchanging x and y; M1 for completing the square/using quadratic formula; A1 for (y^2-2y-3)=(y-1)^2-4; A1 for (y-1)^2=1/x+4; A1 for y-1=+/-sqrt((1+4x)/x); R1 for rejecting negative sign using x>3"
+        },
+        {
+          "markscheme_pages": "27",
+          "basis": "domain of g^{-1} is x>0 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "14",
+      "markscheme_pages": "28",
+      "task_summary": "Given (h o g)(a)=pi/4 with h(x)=arctan(x/2), find a in the form p+q*sqrt(r).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "evaluate_composite_function",
+        "solve_trigonometric_equation",
+        "set_up_rational_equation",
+        "solve_quadratic",
+        "express_in_surd_form"
+      ],
+      "method_path": [
+        "Form composite: (h o g)(a)=arctan(g(a)/2)=arctan(1/(2(a^2-2a-3)))",
+        "Set arctan(g(a)/2)=pi/4",
+        "Solve: g(a)/2=tan(pi/4)=1 so g(a)=2",
+        "Set up 1/(a^2-2a-3)=2",
+        "Rearrange to 2a^2-4a-7=0",
+        "Solve quadratic: a=(4+sqrt(72))/4=1+3sqrt(2)/2",
+        "Reject smaller root as a>3 from domain of g"
+      ],
+      "accepted_alternatives": [
+        "Find a=g^{-1}(2) using inverse from part (b) instead of solving quadratic directly",
+        "Express final answer as 1+sqrt(18)/2 giving p=1,q=1,r=18"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "attempts to find (h o g)(a) (M1); (h o g)(a)=arctan(g(a)/2) (A1); attempts to solve for g(a) M1; g(a)=2 A1; EITHER a=g^{-1}(2) A1 find g^{-1}(2) M1 a=1+sqrt(4+4*2)/2 A1; OR 2a^2-4a-7=0 A1 solve quadratic M1 a=(4+/-sqrt(72))/4 A1; THEN a=1+3sqrt(2)/2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "29",
+      "task_summary": "Show that z1*z2* = r1*r2*e^(i(alpha-theta)) where z2* is the complex conjugate of z2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "complex_conjugate",
+        "modulus_argument_form",
+        "product_of_complex_numbers"
+      ],
+      "method_path": [
+        "Write conjugate in modulus-argument form: z2* = r2*e^(-i*theta)",
+        "Multiply: z1*z2* = r1*e^(i*alpha) * r2*e^(-i*theta) = r1*r2*e^(i*(alpha-theta))"
+      ],
+      "accepted_alternatives": [
+        "Working in modulus-argument form throughout"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "z2* = r2 e^(-i theta) (A1); z1 z2* = r1 e^(i alpha) r2 e^(-i theta) = r1 r2 e^(i(alpha-theta)) (A1); [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "29",
+      "task_summary": "Given Re(z1 z2*) = 0, show that triangle Z1OZ2 is right-angled.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "real_part",
+        "cosine",
+        "right_angle",
+        "argument_difference"
+      ],
+      "method_path": [
+        "Write Re(z1 z2*) = r1 r2 cos(alpha-theta) = 0",
+        "Since r1, r2 > 0, deduce cos(alpha-theta) = 0",
+        "With 0 < alpha-theta < pi, conclude alpha-theta = pi/2",
+        "Hence angle Z1OZ2 = pi/2 and triangle Z1OZ2 is right-angled at O"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "Re(z1 z2*) = r1 r2 cos(alpha-theta) = 0 (A1); alpha-theta = pi/2 (as 0 < alpha-theta < pi) (A1); so Z1OZ2 is a right-angled triangle AG; [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "29-30",
+      "task_summary": "For equilateral triangle Z1OZ2: (i) Express z1 in terms of z2. (ii) Hence show that z1^2 + z2^2 = z1 z2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "equilateral_triangle",
+        "rotation",
+        "complex_exponential",
+        "algebraic_manipulation",
+        "polar_form"
+      ],
+      "method_path": [
+        "For equilateral triangle: r1 = r2 and alpha-theta = pi/3",
+        "Express z1/z2 = e^(i*pi/3) so z1 = z2*e^(i*pi/3)",
+        "Substitute into z1^2 + z2^2: obtain z2^2*e^(2i*pi/3) + z2^2 = z2^2*(e^(2i*pi/3) + 1)",
+        "Show e^(2i*pi/3) + 1 = e^(i*pi/3)",
+        "Conclude z1^2 + z2^2 = z2^2*e^(i*pi/3) = z1*z2"
+      ],
+      "accepted_alternatives": [
+        "Working in Cartesian form: z1/z2 = 1/2 + i*sqrt(3)/2",
+        "Working on LHS and RHS separately to show equality"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29-30",
+          "basis": "(c)(i): z1/z2 = e^(i pi/3) (M1)(A1); (c)(ii): substitution M1, expression A1, e^(2i pi/3)+1 = e^(i pi/3) A1, conclusion A1; combined [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "31",
+      "task_summary": "Use the result from (c)(ii) to show that a^2 - 3b = 0, where z1, z2 are distinct roots of z^2 + az + b = 0.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "sum_of_roots",
+        "product_of_roots",
+        "algebraic_expansion",
+        "substitution"
+      ],
+      "method_path": [
+        "State z1 + z2 = -a and z1*z2 = b from Vieta",
+        "Expand (z1 + z2)^2 = z1^2 + z2^2 + 2*z1*z2",
+        "Substitute z1^2 + z2^2 = z1*z2 from (c)(ii)",
+        "Obtain (-a)^2 = z1*z2 + 2*z1*z2 = 3*z1*z2",
+        "Replace z1*z2 with b: a^2 = 3b, hence a^2 - 3b = 0"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Expand z1^2 + z2^2 + 2z1z2, substitute z1^2+z2^2 = z1z2 and then substitute sum and product of roots"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "z1+z2 = -a and z1z2 = b (A1); a^2 = z1^2 + z2^2 + 2z1z2 (A1); a^2 = z1z2 + 2z1z2 = 3z1z2 (A1); substitutes b = z1z2 (M1); a^2 = 3b so a^2 - 3b = 0 (A1); [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "31",
+      "task_summary": "Given z^2 + az + 12 = 0 and 0 < alpha-theta < pi, deduce that only one equilateral triangle Z1OZ2 can be formed from O and the roots.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials",
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quadratic_equation",
+        "root_finding",
+        "argument_condition",
+        "case_analysis"
+      ],
+      "method_path": [
+        "Apply a^2 - 3(12) = 0 to get a = +/-6",
+        "For a = -6: roots are 3+/-3i, giving alpha-theta = -5pi/3 which violates 0 < alpha-theta < pi",
+        "For a = 6: roots are -3+/-3i, giving alpha-theta = pi/3 which satisfies the condition",
+        "Conclude only one equilateral triangle can be formed"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "a^2 - 3*12 = 0 gives a = +/-6 (A1); for a = -6: alpha-theta = -5pi/3 does not satisfy 0 < alpha-theta < pi (R1); for a = 6: alpha-theta = pi/3 (A1); so only one equilateral triangle AG; [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

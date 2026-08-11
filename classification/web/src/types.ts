@@ -20,6 +20,7 @@ export interface RawQuestion {
   evidence: string
   confidence: string
   review_flags: string
+  source_root: string
 }
 
 export interface Question extends Omit<RawQuestion, 'paper' | 'marks'> {
@@ -40,7 +41,8 @@ export interface Filters {
   query: string
   paper: 'all' | '1' | '2' | '3'
   calculator: 'all' | 'yes' | 'no'
-  session: 'all' | 'May 2024' | 'November 2024'
+  session: string
+  zone: string
   status: 'all' | 'manual_verified' | 'ai_draft'
   topics: Set<string>
   methods: Set<string>

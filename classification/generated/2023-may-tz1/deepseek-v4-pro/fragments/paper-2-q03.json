@@ -1,0 +1,112 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Use the quadratic model y = -0.6T^2 + 23T + 110 to estimate the number of children y when the highest temperature T = 25 deg C.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_quadratic"
+      ],
+      "method_path": [
+        "substitute T=25 into y=-0.6T^2+23T+110",
+        "evaluate to obtain y=310"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognising to find y(25) (M1); y(25) = -0.6 x 25^2 + 23 x 25 + 110 = 310 (children) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find a regression equation to predict ice creams sold x from the total number of children y, using the given five-pair data set.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "regression_x_on_y",
+        "gdc_linear_regression",
+        "rounding_coefficients"
+      ],
+      "method_path": [
+        "recognise that x-on-y regression is required to predict x from y",
+        "use GDC to compute linear regression of x on y, obtaining a=0.0935114, b=7.43053",
+        "write regression equation as x=0.0935y+7.43"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognizing x on y is required (M1); 0.0935114 and 7.43053 (A1); x = 0.0935y + 7.43 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Use the regression equation from part (b) with y=310 from part (a) to predict the number of ice creams sold x when T=25 deg C.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "prediction_from_regression",
+        "follow_through"
+      ],
+      "method_path": [
+        "substitute y=310 into regression equation x=0.0935y+7.43",
+        "compute x=36.419, round to 36 (accept 37 or 36.4)"
+      ],
+      "accepted_alternatives": [
+        "Use y-on-x regression y=9.39x-41.5 from part (b), substitute y=310, solve to get x=37"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to substitute their answer to part (a) into their regression equation (M1); x = 0.0935114 x 310 + 7.43053 = 36.4190 = 36 (accept 37 or 36.4) A1; Note: Award (M1)A1FT for x=37 found from using y=9.39x-41.5; Award (M1)A0FT for a correct FT answer that lies outside [15,46]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "question": "8",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "17",
+      "task_summary": "Find the median of a continuous random variable X with triangular PDF f(x) = 2(x-a)/((b-a)(c-a)) on [a,c] and f(x) = 2(b-x)/((b-a)(b-c)) on (c,b], given c ≥ (a+b)/2, in terms of a, b, c.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "set_up_median_condition",
+        "integrate_pdf",
+        "compute_triangle_area",
+        "set_equal_to_one_half",
+        "solve_quadratic_equation",
+        "reject_extraneous_root"
+      ],
+      "method_path": [
+        "Recognise median m < c since c ≥ (a+b)/2, so m lies in [a, c]",
+        "Set up ∫_a^m f(x) dx = 1/2 or use triangle area ½ × base × height",
+        "Compute area/integral: (m−a)² / ((b−a)(c−a))",
+        "Set equal to 1/2 and solve: (m−a)² = (b−a)(c−a)/2",
+        "Obtain m − a = ±√((b−a)(c−a)/2)",
+        "Reject negative root since m > a, giving m = a + √((b−a)(c−a)/2)"
+      ],
+      "accepted_alternatives": [
+        "Geometric method: triangle area = ½ × (m−a) × [2(m−a)/((b−a)(c−a))] = (m−a)²/((b−a)(c−a)), set = 1/2",
+        "Integration method: ∫_a^m 2(x−a)/((b−a)(c−a)) dx = [(x−a)²/((b−a)(c−a))]_a^m = (m−a)²/((b−a)(c−a)), set = 1/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1 for attempting area of triangle or integration. A1 for base = (m−a) (geometric) OR A1A1 for correct integration and limits. A1 for area expression (m−a)²/((b−a)(c−a)). M1 for setting area/integral = 1/2. A1 for (m−a)² = (b−a)(c−a)/2 leading to ±√ form. A1 for rejecting negative root and final answer m = a + √((b−a)(c−a)/2)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

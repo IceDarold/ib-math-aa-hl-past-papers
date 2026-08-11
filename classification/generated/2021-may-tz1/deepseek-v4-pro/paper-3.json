@@ -1,0 +1,828 @@
+{
+  "session": "May 2021",
+  "zone": "TZ1",
+  "paper": 3,
+  "calculator": "yes",
+  "expected_total_marks": 55,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-A-I",
+      "question": "1",
+      "part": "a(i)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Sketch y=f(x)=x³−3cx+2 for c=1, showing y-intercept and points with zero gradient.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_cubic",
+        "label_y_intercept",
+        "label_local_maximum",
+        "label_local_minimum"
+      ],
+      "method_path": [
+        "Sketch positive cubic curve through (0,2)",
+        "Label y-intercept (0,2)",
+        "Label local maximum at (−1,4)",
+        "Label local minimum at (1,0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "positive cubic with correct y-intercept labelled (A1); local maximum point correctly labelled (A1); local minimum point correctly labelled (A1) [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-A-II",
+      "question": "1",
+      "part": "a(ii)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Sketch y=f(x)=x³−3cx+2 for c=2, showing y-intercept and points with zero gradient.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_cubic",
+        "label_y_intercept",
+        "label_local_maximum",
+        "label_local_minimum"
+      ],
+      "method_path": [
+        "Sketch positive cubic curve through (0,2)",
+        "Label y-intercept (0,2)",
+        "Label local maximum at (−√2, 2+4√2)",
+        "Label local minimum at (√2, 2−4√2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "positive cubic with correct y-intercept labelled (A1); local maximum point correctly labelled (A1); local minimum point correctly labelled (A1). Note: Accept exact answers: Local maximum (−√2, 2+4√2), Local minimum (√2, 2−4√2). [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-B",
+      "question": "1",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Write down an expression for f′(x).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_polynomial"
+      ],
+      "method_path": [
+        "Differentiate f(x)=x³−3cx+2 to obtain f′(x)=3x²−3c"
+      ],
+      "accepted_alternatives": [
+        "Accept 3x²−3c in any equivalent form"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "f′(x)=3x²−3c (A1). Note: Accept (an expression). [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-C-I",
+      "question": "1",
+      "part": "c(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find the set of values of c such that the graph has a point of inflexion with zero gradient.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "find_inflection_condition",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Use f′(x)=3x²−3c and f″(x)=6x",
+        "For inflexion with zero gradient, f″(x)=0 ⇒ x=0 and f′(0)=0 ⇒ −3c=0",
+        "Obtain c=0"
+      ],
+      "accepted_alternatives": [
+        "Condition that f′(x)=0 has a double root, discriminant = 0 ⇒ c=0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "c=0 (A1) [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-C-II",
+      "question": "1",
+      "part": "c(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find the set of values of c such that the graph has one local maximum and one local minimum point.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_derivative_zero",
+        "apply_discriminant_condition"
+      ],
+      "method_path": [
+        "Set f′(x)=3x²−3c=0 ⇒ x²=c",
+        "For two distinct real stationary points, require c > 0"
+      ],
+      "accepted_alternatives": [
+        "Considers the number of solutions to f′(x)=0; the M1 can be awarded for work shown in either (ii) or (iii)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "considers the number of solutions to their f′(x)=0 (M1); c>0 (A1) [2 marks]. Note: The (M1) in part (c)(ii) can be awarded for work shown in either (ii) or (iii)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-C-III",
+      "question": "1",
+      "part": "c(iii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find the set of values of c such that the graph has no points where the gradient is zero.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_derivative_zero",
+        "apply_discriminant_condition"
+      ],
+      "method_path": [
+        "Set f′(x)=3x²−3c=0 ⇒ x²=c",
+        "For no real solutions, require c < 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "c<0 (A1) [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-D-I",
+      "question": "1",
+      "part": "d(i)",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Show that the y-coordinate of the local maximum point is 2c^(3/2)+2.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "solve_f_prime_zero",
+        "identify_local_maximum",
+        "evaluate_at_critical_point",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Solve f′(x)=0 ⇒ x=±√c",
+        "Identify local maximum at x=−√c",
+        "Evaluate f(−√c)=(−√c)³−3c(−√c)+2=−c^(3/2)+3c^(3/2)+2",
+        "Simplify to 2c^(3/2)+2"
+      ],
+      "accepted_alternatives": [
+        "Award credit if work seen in part (c); accept if either x=−√c or x=√c is subsequently considered"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempts to solve their f′(x)=0 for x (M1); x=±√c (A1) — Note: Award (A1) if either x=−√c or x=√c is subsequently considered; correctly evaluates f(−√c) (A1); the y-coordinate of the local maximum point is 2c^(3/2)+2 AG. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-D-II",
+      "question": "1",
+      "part": "d(ii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Show that the y-coordinate of the local minimum point is −2c^(3/2)+2.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "evaluate_at_critical_point",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Evaluate f(√c)=(√c)³−3c(√c)+2=c^(3/2)−3c^(3/2)+2=−2c^(3/2)+2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "correctly evaluates f(√c) (A1); the y-coordinate of the local minimum point is −2c^(3/2)+2 AG. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-E-I",
+      "question": "1",
+      "part": "e(i)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "For c>0, find the set of values of c such that the graph has exactly one x-axis intercept.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_intercept_condition",
+        "solve_inequality"
+      ],
+      "method_path": [
+        "Local minimum y-coordinate must be above x-axis",
+        "Solve −2c^(3/2)+2 > 0 ⇒ c^(3/2) < 1",
+        "Obtain 0 < c < 1"
+      ],
+      "accepted_alternatives": [
+        "Rigorous reasoning that the minimum point is above the x-axis; accept c<1 (condoned) as c>0 is given"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "the graph of y=f(x) will have one x-axis intercept if 2−2c^(3/2)>0 (or equivalent reasoning) (R1); 0<c<1 (A1). Note: Condone c<1. The A1 is independent of the R1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-E-II",
+      "question": "1",
+      "part": "e(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "For c>0, find the set of values of c such that the graph has exactly two x-axis intercepts.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_intercept_condition",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Local minimum y-coordinate must equal zero (touches x-axis)",
+        "Solve −2c^(3/2)+2 = 0 ⇒ c^(3/2) = 1",
+        "Obtain c = 1"
+      ],
+      "accepted_alternatives": [
+        "Evidence from the graph in part (a)(i) where c=1 gives exactly two intercepts"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "the graph will have two x-axis intercepts if 2−2c^(3/2)=0 (or equivalent reasoning, or evidence from graph in part (a)(i)) (M1); c=1 (A1). [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-E-III",
+      "question": "1",
+      "part": "e(iii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "For c>0, find the set of values of c such that the graph has exactly three x-axis intercepts.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_intercept_condition",
+        "solve_inequality"
+      ],
+      "method_path": [
+        "Local minimum y-coordinate must be below x-axis",
+        "Solve −2c^(3/2)+2 < 0 ⇒ c^(3/2) > 1",
+        "Obtain c > 1"
+      ],
+      "accepted_alternatives": [
+        "Reasoning from the results in both parts (e)(i) and (e)(ii)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "the graph will have three x-axis intercepts if 2−2c^(3/2)<0 (or equivalent reasoning, or reasoning from results in both (e)(i) and (e)(ii)) (M1); c>1 (A1). [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q01-F",
+      "question": "1",
+      "part": "f",
+      "marks": 6,
+      "source_pages": "4",
+      "markscheme_pages": "14,15",
+      "task_summary": "Find all conditions on c and d such that g(x)=x³−3cx+d has exactly one x-axis intercept, explaining reasoning.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "case_analysis",
+        "analyze_stationary_points",
+        "apply_intercept_condition",
+        "solve_inequality",
+        "state_conditions"
+      ],
+      "method_path": [
+        "Case 1: c ≤ 0 → g′(x)=3x²−3c has at most one real root, no two distinct stationary points, so exactly one x-intercept for any d∈ℝ",
+        "Case 2: c > 0 → stationary points at x=±√c with y-values: local max at (−√c, 2c^(3/2)+d), local min at (√c, −2c^(3/2)+d)",
+        "For exactly one intercept, both stationary points must lie on the same side of the x-axis",
+        "Require −2c^(3/2)+d > 0 ⇒ d > 2c^(3/2) OR 2c^(3/2)+d < 0 ⇒ d < −2c^(3/2)"
+      ],
+      "accepted_alternatives": [
+        "Case 1 reasoning alternatives: g′(x)=0 does not have two solutions; OR g′(x) ≥ 0 for all x∈ℝ; OR graph of y=f(x) has no local max/min, hence any vertical translation also has none. Case 2 alternative: consider only local minimum above x-axis OR only local maximum below x-axis instead of both conditions."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Case 1: c ≤ 0 (independent of d) (A1). EITHER g′(x)=0 does not have two solutions R1; OR g′(x) ≥ 0 for x∈ℝ R1; OR graph has no local max/min, any vertical translation also has none R1. Therefore only one x-axis intercept AG. Note: Award at most A0R1 if only c<0 is considered."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "Case 2: c>0. (−√c, 2c^(3/2)+d) local max and (√c, −2c^(3/2)+d) local min (A1). Considers positions of local max and/or local min (M1). d > 2c^(3/2) (both above x-axis) A1; d < −2c^(3/2) (both below x-axis) A1. Note: Award at most (A1)(M1)A0A0 if c>0 not clearly stated. [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "16",
+      "task_summary": "Find the side length s > 0 of a square such that numerical area equals numerical perimeter.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "area_square",
+        "perimeter_square",
+        "equate_expressions",
+        "factorise",
+        "positive_root"
+      ],
+      "method_path": [
+        "state A = s^2 and P = 4s",
+        "equate A = P to get s^2 = 4s",
+        "factorise s(s - 4) = 0, discard s = 0, obtain s = 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "A = s^2 and P = 4s (A1); A = P implies s^2 = 4s (M1); s = 4 (A1). Note: Award A1M1A0 if both s = 4 and s = 0 are stated as final answers."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "16",
+      "task_summary": "Write down an expression for the area A_T of one isosceles triangle in terms of x and n.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "area_triangle_sine_formula"
+      ],
+      "method_path": [
+        "A_T = (1/2) x^2 sin(2pi/n)"
+      ],
+      "accepted_alternatives": [
+        "A_T = x^2 sin(pi/n) cos(pi/n)",
+        "A_T = (1/2) x^2 * 2 sin(pi/n) cos(pi/n)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "A_T = (1/2) x^2 sin(2pi/n) (A1). Note: Award A1 for a correct alternative form expressed in terms of x and n only, e.g. A_T = x^2 sin(pi/n) cos(pi/n)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "17-18",
+      "task_summary": "Show that y = 2x sin(pi/n).",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "sine_ratio",
+        "solve_for_side",
+        "right_triangle_trigonometry"
+      ],
+      "method_path": [
+        "use sin(pi/n) = (y/2)/x",
+        "rearrange to y = 2x sin(pi/n)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: use Pythagoras and cos(pi/n) to derive y = 2x sin(pi/n)",
+        "METHOD 3: use cosine rule y^2 = 2x^2(1 - cos(2pi/n)) then simplify",
+        "METHOD 4: use sine rule y/sin(2pi/n) = x/sin(pi/2 - pi/n) then simplify"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "METHOD 1: uses sin(theta) = opp/hyp, sin(pi/n) = (y/2)/x (M1); y = 2x sin(pi/n) (A1) AG. METHODS 2-4 shown with equivalent marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q02-D",
+      "question": "2",
+      "part": "d",
+      "marks": 7,
+      "source_pages": "5",
+      "markscheme_pages": "19-20",
+      "task_summary": "Show that A = P = 4n tan(pi/n) for an n-sided regular polygon using results from (b) and (c).",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "functions.equations",
+        "geometry.trigonometry"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "equate_area_perimeter",
+        "substitute_expression",
+        "double_angle_formula",
+        "factorise",
+        "simplify_trigonometric",
+        "tan_identity"
+      ],
+      "method_path": [
+        "equate A = P to get n*A_T = n*y",
+        "substitute A_T = (1/2)x^2 sin(2pi/n) and y = 2x sin(pi/n)",
+        "use sin(2pi/n) = 2 sin(pi/n) cos(pi/n)",
+        "simplify to x sin(pi/n) cos(pi/n) = 2 sin(pi/n)",
+        "cancel sin(pi/n) to get x = 2/cos(pi/n)",
+        "substitute x into P = n*y to obtain P = 4n tan(pi/n)",
+        "conclude A = P = 4n tan(pi/n)"
+      ],
+      "accepted_alternatives": [
+        "substitute x = 2/cos(pi/n) into A = n*A_T instead of P = n*y to obtain the same result"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19-20",
+          "basis": "M1 for equating correct expressions for A and P; A1 for simplifying; M1 for using sin(2pi/n) = 2 sin(pi/n) cos(pi/n); M1 for factorising or dividing; A1 for x sin(pi/n) cos(pi/n) = 2 sin(pi/n); M1 for substituting x into P or A; A1 for A = P = 4n tan(pi/n) AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q02-E-I",
+      "question": "2",
+      "part": "e(i)",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "21",
+      "task_summary": "Use the Maclaurin series for tan x to find lim_{n to infinity} 4n tan(pi/n).",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.limits"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "substitute_variable",
+        "series_expansion",
+        "evaluate_limit"
+      ],
+      "method_path": [
+        "substitute x = pi/n into tan x = x + x^3/3 + 2x^5/15 + ...",
+        "multiply by 4n to get 4pi + 4pi^3/(3n^2) + ...",
+        "take limit as n to infinity to obtain 4pi"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "M1 for attempting to use Maclaurin series for tan x with x = pi/n; A1 for 4n tan(pi/n) = 4pi + 4pi^3/(3n^2) + ... or equivalent; A1 for lim = 4pi. Note: Award maximum M1A1A0 if lim is not stated."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q02-E-II",
+      "question": "2",
+      "part": "e(ii)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "21",
+      "task_summary": "Interpret the limit 4pi geometrically.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "calculus.limits"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "geometric_interpretation",
+        "polygon_limit_to_circle"
+      ],
+      "method_path": [
+        "as n to infinity the regular polygon becomes a circle of radius 2, with area = perimeter = 4pi"
+      ],
+      "accepted_alternatives": [
+        "polygon becomes a circle of area 4pi",
+        "polygon becomes a circle of perimeter 4pi",
+        "polygon becomes a circle with A = P = 4pi"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "R1: the polygon becomes a circle of radius 2. Note: Award R1 for alternative responses such as: the polygon becomes a circle of area 4pi OR the polygon becomes a circle of perimeter 4pi OR the polygon becomes a circle with A = P = 4pi. Award R0 for 'polygon becomes a circle'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q02-F",
+      "question": "2",
+      "part": "f",
+      "marks": 7,
+      "source_pages": "6",
+      "markscheme_pages": "22-23",
+      "task_summary": "Show that a = 8/(b-4) + 4 for a right-angled triangle with side lengths a, b, sqrt(a^2+b^2) and A = P.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "area_right_triangle",
+        "perimeter_right_triangle",
+        "equate_expressions",
+        "isolate_radical",
+        "square_both_sides",
+        "expand_binomial",
+        "simplify_rational"
+      ],
+      "method_path": [
+        "state A = (1/2)ab and P = a + b + sqrt(a^2 + b^2)",
+        "equate A = P",
+        "isolate sqrt(a^2 + b^2) = (1/2)ab - a - b",
+        "square both sides and expand",
+        "simplify to obtain a(b-4) = 4b - 8",
+        "rearrange to a = 8/(b-4) + 4"
+      ],
+      "accepted_alternatives": [
+        "derive via eliminating a^2+b^2 differently, e.g. obtaining a = (4b-8)/(b-4)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22-23",
+          "basis": "A1A1 for A = (1/2)ab and P = a+b+sqrt(a^2+b^2); M1 for equating A and P; M1 for isolating sqrt(a^2+b^2); M1 for attempting to expand; A1 for intermediate simplification; A1 for a = 8/(b-4)+4 AG. Note: Maximum A1A1M1M1M0A0A0 for verifying."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q02-G-I",
+      "question": "2",
+      "part": "g(i)",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "24",
+      "task_summary": "Determine the three side lengths of the only two right-angled triangles for which a, b, A, P are all integers.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "number_algebra.sequences"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "integer_solutions",
+        "substitute_values",
+        "divisibility_check"
+      ],
+      "method_path": [
+        "use a = 8/(b-4) + 4 with integer a, b",
+        "test integer b > 4 such that 8/(b-4) is integer",
+        "obtain b = 5 gives a = 12, sides 5, 12, 13",
+        "obtain b = 6 gives a = 8, sides 6, 8, 10"
+      ],
+      "accepted_alternatives": [
+        "using divisibility properties of b-4 dividing 8"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for using an appropriate method e.g. substituting values for b or using divisibility properties; A1 for (5,12,13); A1 for (6,8,10). Note: Award A1A0 for either one set of three correct side lengths or two sets of two correct side lengths."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P3-Q02-G-II",
+      "question": "2",
+      "part": "g(ii)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "24",
+      "task_summary": "Determine the area and perimeter of the two right-angled triangles from (g)(i).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "area_right_triangle",
+        "perimeter_right_triangle"
+      ],
+      "method_path": [
+        "for (5,12,13): A = P = 30",
+        "for (6,8,10): A = P = 24"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "A = P = 30 and A = P = 24 (A1). Note: Do not award A1FT."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

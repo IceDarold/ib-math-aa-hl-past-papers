@@ -1,0 +1,159 @@
+{
+  "question": "10",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find P(T > 40) for T ~ N(42, 10.7²).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "gdc_calculation"
+      ],
+      "method_path": [
+        "Recognise need to find P(T > 40) using normal distribution with μ = 42, σ = 10.7",
+        "Compute P(T > 40) ≈ 0.574 using GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "recognising to find P(T > 40) (M1); P(T > 40) = 0.574 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find probability that the fourth of four employees is the only one working >40 hours per week.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "independent_events",
+        "binomial_or_geometric"
+      ],
+      "method_path": [
+        "Recognise independent trials with p = P(T > 40) from (a)",
+        "Multiply (1 − p)³ × p for exactly the fourth being the first success",
+        "Compute ≈ 0.0443"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to multiply four independent probabilities using their P(T > 40) and P(T < 40) (M1); (1−p)³·p (A1); 0.0443 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 7,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "(i) Find P(T < 55 | T > 40) using conditional probability. (ii) Find P(exactly 5 of 10 from the >40h group work <55h) using binomial distribution.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables",
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "normal_distribution",
+        "binomial_distribution"
+      ],
+      "method_path": [
+        "(i) Recognise conditional probability P(T < 55 | T > 40)",
+        "Compute P(40 < T < 55) / P(T > 40) using normal distribution",
+        "Obtain ≈ 0.805",
+        "(ii) Recognise binomial model X ~ B(10, p) with p from (i)",
+        "Compute P(X = 5) ≈ 0.0242"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(i) recognizing conditional probability (M1); P(40 < T < 55)/P(T > 40) (A1); 0.461944…/0.574136… (A1); = 0.805 (A1). (ii) recognizing binomial probability (M1); n = 10 and p = 0.804… (A1); P(X = 5) = 0.0242 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "21",
+      "task_summary": "Given P(a ≤ T ≤ b) = 0.904 and P(T > b) = 2P(T < a), find a (maximum part-time hours) using probability-sum-to-one and inverse normal.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "probability_sum_to_one",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Let P(T < a) = x, then P(T > b) = 2x",
+        "Use total probability: x + 0.904 + 2x = 1",
+        "Solve x = 0.032",
+        "Find a using inverse normal: P(T < a) = 0.032 with μ = 42, σ = 10.7",
+        "Obtain a ≈ 22.2"
+      ],
+      "accepted_alternatives": [
+        "Express P(T < a) = (1/3)(1 − P(a ≤ T ≤ b)) = (1/3)(1 − 0.904) = 0.032 directly, then use inverse normal to find a ≈ 22.2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognition that probabilities sum to 1 (M1); expressing the three regions in one variable (M1) → x + 0.904 + 2x = 1; P(T < a) = 0.032 (A1); a = 22.2 (A1). Alternative: P(T < a) = (1/3)(1 − P(a ≤ T ≤ b)) = 0.032 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

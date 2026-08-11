@@ -78,6 +78,7 @@ export function filterQuestions(items: Question[], filters: import('../types').F
     if (filters.paper !== 'all' && row.paper !== Number(filters.paper)) return false
     if (filters.calculator !== 'all' && row.calculator !== filters.calculator) return false
     if (filters.session !== 'all' && row.session !== filters.session) return false
+    if (filters.zone !== 'all' && row.zone !== filters.zone) return false
     if (filters.status !== 'all' && row.review_status !== filters.status) return false
     if (filters.topics.size && !filters.topics.has(row.topicFamily)) return false
     if (filters.methods.size && !filters.methods.has(row.methodFamily)) return false
@@ -104,7 +105,8 @@ export function filterQuestions(items: Question[], filters: import('../types').F
 
 export function shortId(row: Question): string {
   const part = row.part === '-' ? '' : `-${row.part.toUpperCase()}`
-  const session = row.session === 'May 2024' ? '24M' : '24N'
+  const match = /^(May|November) (\d{4})$/.exec(row.session)
+  const session = match ? `${match[2]!.slice(-2)}${match[1] === 'May' ? 'M' : 'N'}` : row.session
   const zone = row.zone === 'Common' ? 'C' : row.zone
   return `${session}-${zone}-P${row.paper}-Q${row.question.padStart(2, '0')}${part}`
 }
@@ -112,8 +114,8 @@ export function shortId(row: Question): string {
 export function pdfUrl(row: Question, filename: 'question-paper.pdf' | 'markscheme.pdf'): string {
   const pageSource = filename === 'markscheme.pdf' ? row.markscheme_pages : row.source_pages
   const page = pageSource.split('-')[0] ?? pageSource
-  const session = row.session === 'May 2024' ? 'May/TZ1' : 'November/Common'
-  return `/AA_HL/2024/${session}/Paper%20${row.paper}/${filename}#page=${encodeURIComponent(page)}`
+  const root = row.source_root.split('/').map(encodeURIComponent).join('/')
+  return `/${root}/Paper%20${row.paper}/${filename}#page=${encodeURIComponent(page)}`
 }
 
 export function formatKey(key: string): string {

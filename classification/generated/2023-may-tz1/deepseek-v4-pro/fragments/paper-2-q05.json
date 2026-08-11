@@ -1,0 +1,73 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 7,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Find positive constants a and b given that the coefficient of x^6 in (ax^3+b)^8 is 448 and in (ax^3+b)^10 is 2880.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "term_selection",
+        "binomial_coefficient",
+        "equation_setup",
+        "simultaneous_equations",
+        "algebraic_solving"
+      ],
+      "method_path": [
+        "Write the general term of (ax^3+b)^8: C(8,r)(ax^3)^(8-r) b^r = C(8,r) a^(8-r) b^r x^(24-3r)",
+        "Set exponent of x to 6: 24-3r=6 implies r=6, or symmetrically r=2",
+        "Write the x^6 coefficient equation for n=8: C(8,2) a^6 b^2 = 448",
+        "Simplify: 28 a^6 b^2 = 448 implies a^6 b^2 = 16",
+        "Write general term of (ax^3+b)^10, set 30-3r=6 implies r=8 (or r=2)",
+        "Write the x^6 coefficient equation for n=10: C(10,2) a^8 b^2 = 2880",
+        "Simplify: 45 a^8 b^2 = 2880 implies a^8 b^2 = 64",
+        "Solve the system, e.g. divide: a^2 = 4 implies a = 1/2 (a>0)",
+        "Substitute back to find b: b^2 = 4 implies b = 2 (b>0)"
+      ],
+      "accepted_alternatives": [
+        "Using r=6 instead of r=2 for n=8 expansion (or r=8 instead of r=2 for n=10), by symmetry of binomial coefficients.",
+        "Solving the system graphically instead of algebraically."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "product of a binomial coefficient, a power of ax^3 and a power of b seen (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "evidence of correct term chosen: for n=8: r=2 (or r=6) OR for n=10: r=2 (or r=8) (A1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "correct equations (may include powers of x) A1A1"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "C(8,2) a^6 b^2 = 448 implies 28 a^6 b^2 = 448 implies a^6 b^2 = 16, C(10,2) a^8 b^2 = 2880 implies 45 a^8 b^2 = 2880 implies a^8 b^2 = 64"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to solve their system in a and b algebraically or graphically (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "b = 2; a = 1/2 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

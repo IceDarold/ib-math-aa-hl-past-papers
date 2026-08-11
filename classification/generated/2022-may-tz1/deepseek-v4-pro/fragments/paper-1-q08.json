@@ -1,0 +1,65 @@
+{
+  "question": "8",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "17",
+      "task_summary": "Prove by contradiction that if integers a, b satisfy a^2 + b^2 divisible by 4, then a and b cannot both be odd.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "proof_by_contradiction",
+        "parity_representation",
+        "algebraic_expansion",
+        "divisibility_reasoning"
+      ],
+      "method_path": [
+        "Assume a and b are both odd",
+        "Let a = 2m+1, b = 2n+1",
+        "Expand: a^2+b^2 = (2m+1)^2+(2n+1)^2 = 4m^2+4m+1+4n^2+4n+1",
+        "Simplify to 4(m^2+m+n^2+n)+2",
+        "Observe 4 divides 4(m^2+m+n^2+n) but 2 is not divisible by 4",
+        "Conclude a^2+b^2 is not divisible by 4, contradicting the premise"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1: Assume that a and b are both odd."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "A1: Then a = 2m+1 and b = 2n+1."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "A1: a^2+b^2 = (2m+1)^2+(2n+1)^2 = 4m^2+4m+1+4n^2+4n+1."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "(A1): = 4(m^2+m+n^2+n)+2."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "R1: (4(m^2+m+n^2+n) is always divisible by 4) but 2 is not divisible by 4."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "R1: a^2+b^2 is not divisible by 4, a contradiction."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

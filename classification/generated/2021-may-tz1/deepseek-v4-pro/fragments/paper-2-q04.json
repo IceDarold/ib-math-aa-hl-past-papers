@@ -1,0 +1,125 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the smallest value of t for which the particle is at rest, i.e. solve v(t) = t sin t - 3 = 0 on 0 <= t <= 10 and select the smallest root.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_v_equal_zero",
+        "gdc_numerical_solve",
+        "select_smallest_root"
+      ],
+      "method_path": [
+        "Recognise particle at rest implies v(t) = 0",
+        "Solve t sin t - 3 = 0 on [0, 10] using GDC",
+        "Identify smallest positive root t approx 6.74"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognising v = 0 (M1); t = 6.74416... = 6.74 (sec) A1; Note: Do not award A1 if additional values are given."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the total distance travelled by evaluating the definite integral of |v(t)| from 0 to 10, where v(t) = t sin t - 3, using GDC integration.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.rates_of_change"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "distance_as_integral_of_absolute_velocity",
+        "definite_integral_absolute_value",
+        "gdc_numerical_integration"
+      ],
+      "method_path": [
+        "Recognise total distance = integral from 0 to 10 of |v(t)| dt",
+        "Evaluate integral of |t sin t - 3| from 0 to 10 using GDC",
+        "Obtain 37.1 m"
+      ],
+      "accepted_alternatives": [
+        "Split integral at sign changes: negative integral from 0 to 6.744 of v(t) dt + integral from 6.744 to 9.088 of v(t) dt - integral from 9.088 to 10 of v(t) dt, evaluated by GDC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "integral of |v(t)| dt OR split integral with roots 6.744... and 9.088... (A1); = 37.0968... = 37.1 (m) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the acceleration at t = 7 by differentiating v(t) = t sin t - 3 and evaluating v'(7).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "calculus.rates_of_change"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "acceleration_as_velocity_derivative",
+        "evaluate_derivative_at_point",
+        "gdc_derivative"
+      ],
+      "method_path": [
+        "Recognise a(t) = v'(t)",
+        "Differentiate v(t) = t sin t - 3 or use GDC derivative",
+        "Evaluate v'(7) to obtain 5.93 ms^-2"
+      ],
+      "accepted_alternatives": [
+        "Analytic differentiation: v'(t) = sin t + t cos t, then substitute t = 7"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognising acceleration at t = 7 is given by v'(7) (M1); acceleration = 5.93430... = 5.93 (ms^-2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

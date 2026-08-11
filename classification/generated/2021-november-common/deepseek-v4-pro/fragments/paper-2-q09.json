@@ -1,0 +1,274 @@
+{
+  "question": "9",
+  "expected_question_marks": 15,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "12-13",
+      "markscheme_pages": "20",
+      "task_summary": "Show that b = π/6 using the 12-hour period between successive high tides.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "period_determination",
+        "period_formula",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Identify period T = 12 from high tide spacing",
+        "Apply period formula b = 2π/T",
+        "Compute b = 2π/12 = π/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "2π/12 b = OR 2π/12 = b (A1). π/6 b = AG. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "12-13",
+      "markscheme_pages": "20",
+      "task_summary": "Find amplitude a = 2.3 using the given min 2.2 m and max 6.8 m.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "amplitude_formula",
+        "arithmetic"
+      ],
+      "method_path": [
+        "Identify max = 6.8, min = 2.2",
+        "Apply amplitude formula a = (max - min)/2",
+        "Compute a = (6.8 - 2.2)/2 = 2.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "6.8-2.2/2 a = OR max-min/2 a = (M1). 2.3 = (m) A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "12-13",
+      "markscheme_pages": "20",
+      "task_summary": "Find vertical shift d = 4.5 using the given min 2.2 m and max 6.8 m.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "midline_formula",
+        "arithmetic"
+      ],
+      "method_path": [
+        "Identify max = 6.8, min = 2.2",
+        "Apply midline formula d = (max + min)/2",
+        "Compute d = (6.8 + 2.2)/2 = 4.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "6.8+2.2/2 d = OR max+min/2 d = (M1). 4.5 = (m) A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-D",
+      "question": "9",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "12-13",
+      "markscheme_pages": "21",
+      "task_summary": "Find the smallest possible value of c using the first high tide at t = 4.5 (04:30).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solve_trigonometric_equation",
+        "phase_shift_determination"
+      ],
+      "method_path": [
+        "Substitute first high tide point (t = 4.5, H = 6.8) into H(t) = 2.3 sin(π/6(t - c)) + 4.5",
+        "Solve sin(π/6(4.5 - c)) = 1 for c",
+        "Obtain smallest c = 1.5"
+      ],
+      "accepted_alternatives": [
+        "Use horizontal translation: c = 4.5 − 3 = 1.5 since peak of sin(x) is at π/2 and period quarter is 3 hours.",
+        "Use derivative H′(t) = 2.3·(π/6)·cos(π/6(t − c)), set H′(4.5) = 0 and solve for c."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "METHOD 1: substituting t=4.5 and H=6.8 into their equation for H (A1). attempt to solve their equation (M1). c=1.5 A1. METHOD 2: using horizontal translation of 3 (M1). 4.5−c=3 (A1). c=1.5 A1. METHOD 3: derivative approach (A1)(M1) c=1.5 A1. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-E",
+      "question": "9",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "12-13",
+      "markscheme_pages": "21",
+      "task_summary": "Find the height of the water at 12:00 by evaluating H(12).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "function_evaluation",
+        "trigonometric_evaluation"
+      ],
+      "method_path": [
+        "Substitute t = 12 into H(t) = 2.3 sin(π/6(t − 1.5)) + 4.5",
+        "Evaluate: H(12) = 2.3 sin(π/6 · 10.5) + 4.5 ≈ 2.87 m"
+      ],
+      "accepted_alternatives": [
+        "Use t = 0 (midnight): H(0) = 2.3 sin(π/6(−1.5)) + 4.5 ≈ 2.87 m.",
+        "Read graphically from the given graph."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to find H when t=12 or t=0, graphically or algebraically (M1). H=2.87365... H= (2.87 m) A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-F",
+      "question": "9",
+      "part": "F",
+      "marks": 3,
+      "source_pages": "12-13",
+      "markscheme_pages": "22",
+      "task_summary": "Determine total hours in a 24-hour period for which tide height exceeds 5 m, by solving H(t) > 5.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models",
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_trigonometric_inequality",
+        "interval_analysis",
+        "time_accumulation"
+      ],
+      "method_path": [
+        "Solve inequality: 2.3 sin(π/6(t − 1.5)) + 4.5 > 5",
+        "Find intersection times t ≈ 1.919, 7.081 and t ≈ 13.919, 19.081 in [0, 24]",
+        "Sum interval lengths: 2 × (7.081... − 1.919...) ≈ 10.3 hours"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to solve 5 = 2.3 sin(π/6(t−1.5)) + 4.5 (M1). times are t=1.91852... and t=7.08147..., t=13.9185..., t=19.0814... (A1). total time is 2×(7.081...−1.919...) = 10.3258... ≈ 10.3 hours A1. Note: Accept 10. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-G",
+      "question": "9",
+      "part": "G",
+      "marks": 2,
+      "source_pages": "12-13",
+      "markscheme_pages": "22",
+      "task_summary": "Find equation for Folkestone harbour with tides 50 minutes earlier, adjusting phase shift c.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "time_conversion",
+        "phase_shift_adjustment",
+        "model_formulation"
+      ],
+      "method_path": [
+        "Convert 50 minutes to hours: 50/60 = 5/6",
+        "Adjust phase shift: new c = 1.5 − 5/6 = 2/3",
+        "Write model: H(t) = 2.3 sin(π/6(t − 2/3)) + 4.5"
+      ],
+      "accepted_alternatives": [
+        "Substitute t = 11/3 (4:30 minus 50 min) and H = 6.8 into H(t), solve for c to get c = 2/3."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "METHOD 1: substitutes t=11/3 and H=6.8 into equation and solves for c (M1). c=2/3, H(t)=2.3 sin(π/6(t−2/3))+4.5 A1. METHOD 2: uses horizontal translation (M1). c−3=−11/3 ⇒ c=2/3. H(t)=2.3 sin(π/6(t−2/3))+4.5 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

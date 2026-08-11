@@ -1,0 +1,375 @@
+{
+  "question": "2",
+  "expected_question_marks": 24,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-A-I",
+      "question": "2",
+      "part": "a(i)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "16",
+      "task_summary": "Show that (ω - 1)(ω² + ω + 1) = ω³ - 1.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_product",
+        "factor_difference_of_powers"
+      ],
+      "method_path": [
+        "Expand (ω - 1)(ω² + ω + 1)",
+        "Obtain ω³ + ω² + ω - ω² - ω - 1",
+        "Simplify to ω³ - 1"
+      ],
+      "accepted_alternatives": [
+        "Polynomial division: (ω³ - 1) ÷ (ω - 1) = ω² + ω + 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: attempts to expand (ω - 1)(ω² + ω + 1) (M1); = ω³ + ω² + ω - ω² - ω - 1 (A1); AG. METHOD 2: attempts polynomial division on (ω³ - 1)/(ω - 1) (M1); = ω² + ω + 1 (A1); so (ω - 1)(ω² + ω + 1) = ω³ - 1 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-A-II",
+      "question": "2",
+      "part": "a(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "16",
+      "task_summary": "Deduce that ω² + ω + 1 = 0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "root_substitution",
+        "zero_product_property"
+      ],
+      "method_path": [
+        "Since ω is a root of z³ = 1, ω³ - 1 = 0",
+        "From (a)(i), (ω - 1)(ω² + ω + 1) = 0",
+        "Since ω ≠ 1, conclude ω² + ω + 1 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "(since ω is a root of z³ = 1) ω³ - 1 = 0 (R1); and ω ≠ 1 (R1); ⇒ ω² + ω + 1 = 0 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "17",
+      "task_summary": "Show that P0P1 × P0P2 = 3 for n = 3.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus_of_complex_difference",
+        "algebraic_simplification",
+        "geometric_distance"
+      ],
+      "method_path": [
+        "Express P0P1 = |1 - ω|, P0P2 = |1 - ω²|",
+        "Form product |(1 - ω)(1 - ω²)| = |1 - ω - ω² + ω³|",
+        "Use ω³ = 1 to get |2 - (ω + ω²)|",
+        "Apply ω² + ω + 1 = 0 ⇒ ω + ω² = -1",
+        "Obtain |2 - (-1)| = 3"
+      ],
+      "accepted_alternatives": [
+        "Geometric/trigonometric: P0P1 = √3, P0P2 = √3 (using equilateral triangle geometry), product = 3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 1: attempts to find either P0P1 or P0P2 (M1); P0P1 = √3, P0P2 = √3 (A1)(A1); so P0P1 × P0P2 = 3 AG. METHOD 2: attempts to find P0P1 × P0P2 = |1 - ω||1 - ω²| (M1); = |1 - ω - ω² + ω³| (A1); and since ω² + ω + 1 = 0 (R1); so = 3 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "18",
+      "task_summary": "By factorizing z⁴ - 1, or otherwise, deduce that ω³ + ω² + ω + 1 = 0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "factor_difference_of_powers",
+        "root_substitution"
+      ],
+      "method_path": [
+        "Factorize z⁴ - 1 = (z - 1)(z³ + z² + z + 1)",
+        "Since ω⁴ - 1 = 0 and ω ≠ 1",
+        "Conclude ω³ + ω² + ω + 1 = 0"
+      ],
+      "accepted_alternatives": [
+        "Sum of roots of z⁴ - 1 = 0 is zero (no z³ term)",
+        "Substitute ω = i, -1, -i, 1 and sum",
+        "Use (ω⁴ - 1)/(ω - 1) = ω³ + ω² + ω + 1 = 0 since ω⁴ = 1, ω ≠ 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1: z⁴ - 1 = (z - 1)(z³ + z² + z + 1) (A1); ω⁴ - 1 = 0 and ω ≠ 1 (R1); ⇒ ω³ + ω² + ω + 1 = 0 AG. METHOD 2: sum of roots of z⁴ - 1 = 0 is zero (M1)(A1). METHOD 4: (ω⁴ - 1)/(ω - 1) = ω³ + ω² + ω + 1 = 0/(ω - 1) = 0 (A1)(R1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-D",
+      "question": "2",
+      "part": "d",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "19-20",
+      "task_summary": "Show that P0P1 × P0P2 × P0P3 = 4 for n = 4.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus_of_complex_difference",
+        "algebraic_simplification",
+        "roots_of_unity_properties"
+      ],
+      "method_path": [
+        "Identify P0P2 = 2 (diameter)",
+        "Express P0P1 = |1 - ω|, P0P3 = |1 - ω³|",
+        "Form product |(1 - ω)(1 - ω²)(1 - ω³)|",
+        "Use ω⁴ = 1 and ω³ + ω² + ω + 1 = 0 to simplify",
+        "Obtain 4"
+      ],
+      "accepted_alternatives": [
+        "Geometric: P0P1 = √2, P0P2 = 2, P0P3 = √2, product = 4",
+        "Algebraic: |1 - ω||1 - ω²||1 - ω³| = |(1 - ω)(1 + ω)(1 + ω²)| = 4 using ω⁴ = 1 and ω³ + ω² + ω + 1 = 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19-20",
+          "basis": "METHOD 1: P0P2 = 2 (A1); attempts to find P0P1 or P0P3 (M1); P0P1 = √2, P0P3 = √2 (A1)(A1); so P0P1 × P0P2 × P0P3 = 4 AG. METHOD 2: attempts to find |1 - ω||1 - ω²||1 - ω³| (M1); simplifies to 4 using ω⁴ = 1 (A1)(A1)(R1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-E",
+      "question": "2",
+      "part": "e",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "21",
+      "task_summary": "Suggest a value for P0P1 × P0P2 × ... × P0P_{n-1}.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "pattern_recognition",
+        "conjecture"
+      ],
+      "method_path": [
+        "From cases n=3 → 3, n=4 → 4, n=5 → 5, conjecture product = n"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "P0P1 × P0P2 × ... × P0P_{n-1} = n (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-F-I",
+      "question": "2",
+      "part": "f(i)",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "21",
+      "task_summary": "Write down expressions for P0P2 and P0P3 in terms of ω.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "modulus_of_complex_difference",
+        "distance_formula"
+      ],
+      "method_path": [
+        "P0P2 = |1 - ω²|",
+        "P0P3 = |1 - ω³|"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "P0P2 = |1 - ω²|, P0P3 = |1 - ω³| (A1)(A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-F-II",
+      "question": "2",
+      "part": "f(ii)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "21",
+      "task_summary": "Write down an expression for P0P_{n-1} in terms of n and ω.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "modulus_of_complex_difference",
+        "generalization"
+      ],
+      "method_path": [
+        "P0P_{n-1} = |1 - ω^{n-1}|"
+      ],
+      "accepted_alternatives": [
+        "|1 - ω| (by symmetry)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "P0P_{n-1} = |1 - ω^{n-1}| (A1). Note: Accept |1 - ω| from symmetry."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-G-I",
+      "question": "2",
+      "part": "g(i)",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "22",
+      "task_summary": "Express z^{n-1} + z^{n-2} + ... + z + 1 as a product of linear factors over ℂ.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "factorization_over_complex",
+        "roots_of_unity"
+      ],
+      "method_path": [
+        "Recognize z^{n-1} + ... + z + 1 = 0 has roots ω, ω², ..., ω^{n-1}",
+        "Write product (z - ω)(z - ω²)...(z - ω^{n-1})"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "considers the equation z^{n-1} + ... + z + 1 = 0 (M1); the roots are ω, ω², ..., ω^{n-1} (A1); so = (z - ω)(z - ω²)...(z - ω^{n-1}) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q02-G-II",
+      "question": "2",
+      "part": "g(ii)",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "22-23",
+      "task_summary": "Prove that P0P1 × P0P2 × ... × P0P_{n-1} = n using results from (g)(i) and (f).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus_of_product",
+        "factor_substitution",
+        "algebraic_proof"
+      ],
+      "method_path": [
+        "Substitute z = 1 into (z - ω)(z - ω²)...(z - ω^{n-1}) = z^{n-1} + ... + z + 1",
+        "Obtain (1 - ω)(1 - ω²)...(1 - ω^{n-1}) = n",
+        "Take modulus: |1 - ω||1 - ω²|...|1 - ω^{n-1}| = n",
+        "Recognize each |1 - ω^k| = P0P_k, hence product = n"
+      ],
+      "accepted_alternatives": [
+        "Transform to polynomial in v = z - 1 and use product of roots"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22-23",
+          "basis": "METHOD 1: substitutes z = 1 into (z - ω)(z - ω²)...(z - ω^{n-1}) (M1); (1 - ω)(1 - ω²)...(1 - ω^{n-1}) = n (A1); takes modulus of both sides (M1); |1 - ω||1 - ω²|...|1 - ω^{n-1}| = n (A1); so P0P1 × P0P2 × ... × P0P_{n-1} = n AG. METHOD 2: uses transformed polynomial and product of roots."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

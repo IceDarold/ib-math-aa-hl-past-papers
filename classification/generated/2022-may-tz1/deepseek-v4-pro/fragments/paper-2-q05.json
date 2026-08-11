@@ -1,0 +1,80 @@
+{
+  "question": "5",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q05-A",
+      "question": "5",
+      "part": "a",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Given independent A, B with P(A∩B′)=0.16 and P(A′∩B)=0.36, let P(A∩B)=x and find x.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_calculation",
+        "independence",
+        "solve_quadratic"
+      ],
+      "method_path": [
+        "Express P(A)=x+0.16 and P(B)=x+0.36",
+        "Apply independence: P(A∩B)=P(A)P(B)",
+        "Form equation x=(x+0.16)(x+0.36)",
+        "Solve to obtain x=0.24"
+      ],
+      "accepted_alternatives": [
+        "Form equations P(A)(1−P(B))=0.16 and (1−P(A))P(B)=0.36 using independence, solve simultaneously to get P(A)=0.4, P(B)=0.6, then x=P(A)P(B)=0.24"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: one of P(A)=x+0.16 OR P(B)=x+0.36 (A1); attempt to equate P(A∩B) with P(A)×P(B) (M1); x=(0.16+x)(0.36+x) (A1); x=0.24 (A1). METHOD 2: attempt to form at least one equation in P(A) and P(B) using independence (M1); P(A)=0.4 AND P(B)=0.6 (A1); P(A∩B)=P(A)P(B)=0.4×0.6=0.24 (A1); x=0.24 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q05-B",
+      "question": "5",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find P(A′|B′) using the result x=0.24 from part (a).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "independence",
+        "complement_rule"
+      ],
+      "method_path": [
+        "Recognise P(A′|B′)=P(A′) by independence of complements",
+        "Compute P(A′)=1−P(A)=1−(0.16+0.24)=0.6"
+      ],
+      "accepted_alternatives": [
+        "Compute P(B)=0.36+0.24=0.6, then P(A′|B′)=P(A′∩B′)/P(B′)=P(A′)P(B′)/P(B′)=0.6×0.4/0.4=0.6"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: recognising P(A′|B′)=P(A′) (M1); 1−0.16−0.24=0.6 (A1). METHOD 2: P(B)=0.36+0.24=0.6; P(A′|B′)=P(A′∩B′)/P(B′)=0.24/0.4 (A1); =0.6 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

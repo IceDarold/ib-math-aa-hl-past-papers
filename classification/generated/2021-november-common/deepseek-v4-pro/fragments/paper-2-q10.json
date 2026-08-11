@@ -1,0 +1,215 @@
+{
+  "question": "10",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-A",
+      "question": "10",
+      "part": "(a)",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Find x-intercepts by solving x^2 - x - 12 = 0 giving (-3,0) and (4,0); find y-intercept by evaluating f(0) = 4/5 giving (0, 4/5).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_quadratic",
+        "evaluate_function",
+        "find_x_intercepts",
+        "find_y_intercept"
+      ],
+      "method_path": [
+        "solve x^2 - x - 12 = 0",
+        "obtain (-3, 0) and (4, 0)",
+        "evaluate f(0) = 4/5",
+        "obtain (0, 4/5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "attempts to solve (x^2-x-12)/(2x-15)=0 (M1); (-3,0) and (4,0) A1. (0, 4/5) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-B",
+      "question": "10",
+      "part": "(b)",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Write the equation of the vertical asymptote x = 15/2 from denominator 2x - 15 = 0.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_vertical_asymptote",
+        "set_denominator_zero"
+      ],
+      "method_path": [
+        "set 2x - 15 = 0",
+        "write x = 15/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "x = 15/2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-C",
+      "question": "10",
+      "part": "(c)",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "23-26",
+      "task_summary": "Find a = 1/2 and b = 13/4 for oblique asymptote y = ax + b via polynomial division or coefficient equating.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "polynomial_division",
+        "equate_coefficients",
+        "find_oblique_asymptote"
+      ],
+      "method_path": [
+        "set (ax+b)(2x-15) = x^2-x-12",
+        "expand: 2ax^2 + (2b-15a)x - 15b",
+        "equate x^2: 2a=1, a=1/2",
+        "equate x: 2b-15(1/2)=-1",
+        "solve b=13/4"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: direct long division of (x^2-x-12)/(2x-15) giving (x/2)+(13/4)+remainder",
+        "METHOD 3: express as x/2 + b + c/(2x-15), clear denominator, equate coefficients",
+        "METHOD 4: rewrite x^2-x-12 = (2x-15)(x/2) + (13x/2-12), divide remainder"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: (ax+b)(2x-15)=x^2-x-12. expand (M1). a=1/2 A1. equates coefficients of x (M1). b=13/4 A1."
+        },
+        {
+          "markscheme_pages": "24-26",
+          "basis": "METHODS 2-4 all lead to a=1/2, b=13/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-D",
+      "question": "10",
+      "part": "(d)",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Sketch graph of f for -30 <= x <= 30 showing two hyperbolic branches, asymptotes at x=15/2 and y=x/2+13/4, intercepts at (-3,0), (4,0), (0,4/5).",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "plot_asymptotes",
+        "plot_intercepts",
+        "show_asymptotic_behaviour"
+      ],
+      "method_path": [
+        "draw two branches with correct shape",
+        "position vertical asymptote x=15/2",
+        "position oblique asymptote y=x/2+13/4",
+        "show correct asymptotic behaviour",
+        "mark intercepts at (-3,0), (4,0), (0,4/5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "two branches approx correct shape A1; asymptotes in approx correct positions with correct asymptotic behaviour A1; axes intercepts in approx correct positions A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-E",
+      "question": "10",
+      "part": "(e)",
+      "marks": 7,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "Express 1/f(x) = (2x-15)/((x+3)(x-4)) in partial fractions as 3/(x+3) - 1/(x-4); integrate from 0 to 3 obtaining ln 32 or 5 ln 2.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "partial_fractions",
+        "integrate_rational_function",
+        "evaluate_definite_integral",
+        "logarithm_simplification"
+      ],
+      "method_path": [
+        "write 1/f(x) = (2x-15)/((x+3)(x-4))",
+        "set A/(x+3) + B/(x-4)",
+        "solve A=3, B=-1",
+        "express as 3/(x+3) - 1/(x-4)",
+        "integrate to [3ln|x+3|-ln|x-4|]_0^3",
+        "evaluate: (3ln6-ln1)-(3ln3-ln4)",
+        "simplify to ln32 = 5ln2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "(i) split into partial fractions (M1); A=3 A1; B=-1 A1. (ii) integrate, two ln terms (M1); [3ln|x+3|-ln|x-4|]_0^3 A1; =3ln6-ln1-3ln3+ln4 A1; =ln32=5ln2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

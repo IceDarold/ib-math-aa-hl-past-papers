@@ -1,0 +1,216 @@
+{
+  "question": "11",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "(a)",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "21–22",
+      "task_summary": "Solve the differential equation dv/dt = −(1+v) with v(0)=v₀ to show v(t) = (1+v₀)e^(−t) − 1.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "separate_variables",
+        "integrate",
+        "apply_initial_condition",
+        "solve_for_velocity"
+      ],
+      "method_path": [
+        "Write dv/dt = −(1+v)",
+        "Separate variables: ∫ dv/(1+v) = ∫ −dt",
+        "Integrate: ln(1+v) = −t + C",
+        "Apply v(0)=v₀ to find C = ln(1+v₀)",
+        "Obtain t = ln((1+v₀)/(1+v))",
+        "Rearrange to v(t) = (1+v₀)e^(−t) − 1"
+      ],
+      "accepted_alternatives": [
+        "Separation of variables leading via e^(−t−C) = 1+v",
+        "Using integrating factor",
+        "Assuming form v = ke^(−t) − 1 and determining k from initial condition"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "dv/dt = −(1+v) (A1); ∫ 1/(1+v) dv = ∫ −1 dt (or equivalent / use of integrating factor) M1; ln(1+v) = −t + C A1; attempt to find C with initial conditions t=0, v=v₀ M1; t = ln((1+v₀)/(1+v)) ⇒ (1+v₀)/(1+v) = e^t A1; (1+v) = (1+v₀)e^(−t) A1; v(t) = (1+v₀)e^(−t) − 1 AG"
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "OR: e^(−t−C) = 1+v ⇒ v = e^(−t−C) − 1 … OR: v = ke^(−t) − 1, find k with initial conditions"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-B-I-AND-B-II",
+      "question": "11",
+      "part": "(b)(i) and (b)(ii)",
+      "marks": 7,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Show e^T = 1+v₀ by setting v(T)=0; then integrate v(t) to find s(t), apply s(0)=0, substitute T = ln(1+v₀), and simplify to s_max = v₀ − ln(1+v₀).",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "set_velocity_zero",
+        "solve_for_exponential",
+        "integrate_velocity",
+        "apply_initial_condition",
+        "substitute_time",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Set v(T)=0: (1+v₀)e^(−T) − 1 = 0 → e^T = 1+v₀",
+        "Integrate v(t) to get displacement: s(t) = ∫ ((1+v₀)e^(−t) − 1) dt",
+        "Obtain s(t) = −(1+v₀)e^(−t) − t + D",
+        "Apply s(0)=0 to find D = 1+v₀",
+        "At maximum displacement substitute T = ln(1+v₀)",
+        "Compute s_max = −(1+v₀)·1/(1+v₀) − ln(1+v₀) + 1 + v₀",
+        "Simplify to s_max = v₀ − ln(1+v₀)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(b)(i) recognition that when t=T, v=0 M1; (1+v₀)e^(−T)−1=0 ⇒ e^(−T)=1/(1+v₀) A1; e^T=1+v₀ AG. (ii) s(t)=∫v(t)dt=∫((1+v₀)e^(−t)−1)dt (M1); =−(1+v₀)e^(−t)−t+D A1; (t=0, s=0 so) D=1+v₀ A1; substituting T=ln(1+v₀) M1; s_max=−(1+v₀)(1/(1+v₀))−ln(1+v₀)+1+v₀ A1; s_max=v₀−ln(1+v₀)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "(c)",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "23–24",
+      "task_summary": "Show that v(T−k) = e^k − 1 by substituting t = T−k into v(t) and using e^T = 1+v₀.",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_time",
+        "factor_exponential",
+        "simplify_using_given_relation"
+      ],
+      "method_path": [
+        "Substitute t = T−k: v(T−k) = (1+v₀)e^(−(T−k)) − 1",
+        "Factor exponent: (1+v₀)e^(−T)e^k − 1",
+        "Use e^T = 1+v₀ ⇒ e^(−T) = 1/(1+v₀)",
+        "Simplify to e^k − 1"
+      ],
+      "accepted_alternatives": [
+        "Use e^T = 1+v₀ directly: v(T−k) = e^T·e^(−(T−k)) − 1 = e^k − 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23–24",
+          "basis": "METHOD 1: v(T−k) = (1+v₀)e^(−(T−k)) − 1 = (1+v₀)e^(−T)e^k − 1 (M1); = e^k − 1 A1. METHOD 2: v(T−k) = e^T e^(−(T−k)) − 1 M1; = e^k − 1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-D",
+      "question": "11",
+      "part": "(d)",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Deduce that v(T+k) = e^(−k) − 1 by substituting t = T+k and using e^T = 1+v₀.",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_time",
+        "factor_exponential",
+        "simplify_using_given_relation"
+      ],
+      "method_path": [
+        "Substitute t = T+k: v(T+k) = (1+v₀)e^(−(T+k)) − 1",
+        "Factor exponent: (1+v₀)e^(−T)e^(−k) − 1",
+        "Use e^T = 1+v₀ ⇒ e^(−T) = 1/(1+v₀)",
+        "Simplify to e^(−k) − 1"
+      ],
+      "accepted_alternatives": [
+        "Use e^T = 1+v₀ directly: v(T+k) = e^T·e^(−(T+k)) − 1 = e^(−k) − 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 1: v(T+k) = (1+v₀)e^(−(T+k)) − 1 = (1+v₀)e^(−T)e^(−k) − 1 (A1); = e^(−k) − 1 A1. METHOD 2: v(T+k) = e^T e^(−(T+k)) − 1 (A1); = e^(−k) − 1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-E",
+      "question": "11",
+      "part": "(e)",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Show that v(T−k) + v(T+k) ≥ 0 by summing the expressions, simplifying to e^k + e^(−k) − 2, and rewriting as (e^(k/2) − e^(−k/2))^2 ≥ 0.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "add_expressions",
+        "combine_exponentials",
+        "complete_square",
+        "conclude_non_negative"
+      ],
+      "method_path": [
+        "Add the two velocity expressions: v(T−k) + v(T+k) = (e^k − 1) + (e^(−k) − 1)",
+        "Simplify to e^k + e^(−k) − 2",
+        "Rewrite as (e^(k/2) − e^(−k/2))^2",
+        "Conclude (e^(k/2) − e^(−k/2))^2 ≥ 0, hence v(T−k) + v(T+k) ≥ 0"
+      ],
+      "accepted_alternatives": [
+        "Differentiate f(k) = e^k + e^(−k) − 2, find minimum at k=0 gives f(0)=0, conclude f(k) ≥ 0 for all k"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 1: v(T−k)+v(T+k) = e^k+e^(−k)−2 A1; attempt to express as a square M1; = (e^(k/2)−e^(−k/2))^2 ≥ 0 A1; so v(T−k)+v(T+k) ≥ 0 AG. METHOD 2: sum = e^k+e^(−k)−2 A1; Attempt to solve d/dk(e^k+e^(−k)) = 0 (⇒k=0) M1; minimum value of 2, hence e^k+e^(−k) ≥ 2 R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "question": "11",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Find the values of p and q for which f(x)=(2x+3)/(4x^2-1) is undefined by solving 4x^2-1=0",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_quadratic",
+        "factor_denominator",
+        "find_domain_restrictions"
+      ],
+      "method_path": [
+        "Set denominator 4x^2-1=0",
+        "Factor (2x-1)(2x+1)=0",
+        "Solve: p=1/2, q=-1/2 or vice versa"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to solve 4x^2-1=0 e.g. by factorising (M1); p=1/2, q=-1/2 or vice versa A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Differentiate f(x)=(2x+3)/(4x^2-1) using quotient rule or product rule",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "quotient_rule",
+        "product_rule",
+        "differentiate_rational_function",
+        "simplify_algebraic"
+      ],
+      "method_path": [
+        "Apply quotient rule: f'(x)=[2(4x^2-1)-(2x+3)(8x)]/(4x^2-1)^2",
+        "Expand and simplify numerator to -8x^2-12x-3",
+        "Write f'(x)=(-8x^2-12x-3)/(4x^2-1)^2"
+      ],
+      "accepted_alternatives": [
+        "Product rule: write f(x)=(2x+3)(4x^2-1)^(-1) and differentiate using product and chain rules"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to use quotient rule or product rule (M1); EITHER quotient rule form A1A1 OR product rule form A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Find the x-coordinate of the point of inflexion of y=f(x)",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative",
+        "point_of_inflexion",
+        "gdc_solve",
+        "graph_f_prime"
+      ],
+      "method_path": [
+        "Find local minimum on graph of y=f'(x) OR solve f''(x)=0",
+        "Obtain x = -1.60"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to find the local min point on y=f'(x) OR solve f''(x)=0 (M1); x=-1.60 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "d",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "18",
+      "task_summary": "Sketch graph of y=f(x) for -3<=x<=3 showing axes intercepts, local extrema coordinates, and asymptote equations",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "vertical_asymptote",
+        "horizontal_asymptote",
+        "intercepts",
+        "local_extrema"
+      ],
+      "method_path": [
+        "Identify vertical asymptotes x=1/2 and x=-1/2 with equations",
+        "Identify horizontal asymptote y=0 with equation",
+        "Find y-intercept f(0)=-3",
+        "Find x-intercept: 2x+3=0 => x=-3/2",
+        "Sketch three branches with correct asymptotic behaviour, labelling local max and min coordinates"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "A1 for both vertical asymptotes with equations, A1 for horizontal asymptote with equation, A1 for each correct branch (3 branches) including asymptotic behaviour, coordinates of min and max points and axes intercepts (5 marks total)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-E",
+      "question": "11",
+      "part": "e",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Find equations of all asymptotes of g(x)=(4x^2+3)/(2-3x)",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_asymptote",
+        "oblique_asymptote",
+        "polynomial_division"
+      ],
+      "method_path": [
+        "Find vertical asymptote: set denominator=0 => x=-2/3",
+        "Recognise oblique asymptote exists (degree difference = 1)",
+        "Find gradient of oblique asymptote = -4/3 via polynomial division or limits",
+        "Determine equation: y = -(4/3)x - 8/9"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "x=-2/3 A1; gradient -4/3 (A1); appropriate method M1; y=-(4/3)x-8/9 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-F",
+      "question": "11",
+      "part": "f",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Solve inequality f(x) < g(x) for x in R by finding critical values and testing intervals",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_rational_inequality",
+        "critical_values",
+        "gdc_solve",
+        "interval_testing"
+      ],
+      "method_path": [
+        "Form g(x)-f(x) or equivalent rational expression",
+        "Find critical values using GDC: x approx -0.569 and x approx 1.32",
+        "Consider sign across intervals bounded by asymptotes x=-2/3, x=-1/2, x=1/2 and critical values",
+        "State solution: -2/3 < x < -0.569, -0.5 < x < 1.32, x > 1.32"
+      ],
+      "accepted_alternatives": [
+        "Graphical method: consider graph of y=g(x)-f(x) and identify where it is above the x-axis",
+        "GDC solve of f(x)<g(x) directly"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempting to find at least one critical value (M1); x=-0.568729..., x=1.31872...; three solution intervals A1A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "markscheme_ambiguity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q05-A",
+      "question": "5",
+      "part": "(a)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Show that the initial amount A₀ = 100 using the model A = A₀ e^(−kt) and the given condition that the plant has 100 units at time of death (t = 0).",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "exponential_decay",
+        "initial_value"
+      ],
+      "method_path": [
+        "Substitute t = 0 into A = A₀ e^(−kt)",
+        "Set A(0) = 100 to obtain A₀ = 100"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A₀ = 100e⁰ → 100 = A₀ AG [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q05-B",
+      "question": "5",
+      "part": "(b)",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Show that k = ln 2 / 5730 using the half-life of 5730 years, i.e. A(5730) = 50.",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "exponential_equation",
+        "logarithms",
+        "algebraic_manipulation",
+        "half_life"
+      ],
+      "method_path": [
+        "Substitute A = 50, t = 5730 into A = 100 e^(−kt)",
+        "Simplify to e^(−5730k) = 1/2",
+        "Take natural logarithm: −5730k = ln(1/2) = −ln 2",
+        "Solve for k = ln 2 / 5730"
+      ],
+      "accepted_alternatives": [
+        "Substitute e^(−5730k) = 1/2, take ln to get −5730k = −ln 2 → k = ln 2 / 5730",
+        "Rewrite as e^(5730k) = 2, take ln to get 5730k = ln 2 → k = ln 2 / 5730"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "correct substitution: 50 = 100e^(−k·5730) OR e^(−k·5730) = 1/2 (M1); EITHER −5730k = ln(1/2) (A1) and ln(1/2) = −ln 2 (A1); OR e^(5730k) = 2 (A1) and 5730k = ln 2 (A1); THEN k = ln 2 / 5730 AG. Note: Award full marks for at least two correct algebraic steps seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q05-C",
+      "question": "5",
+      "part": "(c)",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Find the time for 25% of carbon-14 to decay (i.e. 75 units remain), correct to the nearest 10 years.",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "exponential_equation",
+        "logarithms",
+        "percentage_decay",
+        "rounding"
+      ],
+      "method_path": [
+        "Recognise 25% decay means 75 units remain",
+        "Substitute A = 75, k = ln 2 / 5730 into 75 = 100 e^(−kt)",
+        "Solve e^(−(ln 2/5730)t) = 0.75",
+        "Take natural logarithm: −(ln 2/5730) t = ln 0.75",
+        "Solve t = −5730 ln 0.75 / ln 2 ≈ 2378.164…",
+        "Round to nearest 10: t = 2380 years"
+      ],
+      "accepted_alternatives": [
+        "Use GDC to graph 75 = 100 e^(−(ln 2/5730)t) and find intersection, obtaining t ≈ 2378 then rounding to 2380"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "75 = 100 e^(−(ln 2/5730)t) (A1); EITHER using an appropriate graph to attempt to solve for t (M1) OR manipulating logs to attempt to solve for t (M1); t = 2378.164... → t = 2380 (years) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

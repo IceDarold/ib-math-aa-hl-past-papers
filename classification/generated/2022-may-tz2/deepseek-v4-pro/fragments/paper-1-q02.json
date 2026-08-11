@@ -1,0 +1,83 @@
+{
+  "question": "2",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Prove that the sum of three consecutive integers n-1, n, n+1 is always divisible by 3.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "algebraic_simplification",
+        "divisibility_proof"
+      ],
+      "method_path": [
+        "Write sum (n-1) + n + (n+1)",
+        "Simplify to 3n",
+        "Conclude 3n is always divisible by 3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(n-1) + n + (n+1) (A1); 3n (A1); which is always divisible by 3 AG [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Prove that the sum of the squares of three consecutive integers n-1, n, n+1 is never divisible by 3.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "algebraic_expansion",
+        "sum_of_squares",
+        "divisibility_proof",
+        "modular_reasoning"
+      ],
+      "method_path": [
+        "Write sum of squares (n-1)² + n² + (n+1)²",
+        "Expand (n-1)² and/or (n+1)²",
+        "Simplify to 3n² + 2",
+        "Argue 3n² is divisible by 3 but 2 is not, so sum is never divisible by 3"
+      ],
+      "accepted_alternatives": [
+        "Observe 3n² is divisible by 3 and 2 is not, therefore 3n² + 2 is never divisible by 3",
+        "Write as 3(n² + 2/3) showing non-integer quotient",
+        "Divide by 3 to obtain n² + 2/3, not an integer"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(n-1)² + n² + (n+1)² = ... (A1); attempts to expand either (n-1)² or (n+1)² (M1); 3n² + 2 (A1); demonstrating recognition that 2 is not divisible by 3 … hence the sum of the squares is never divisible by 3 AG (R1) [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

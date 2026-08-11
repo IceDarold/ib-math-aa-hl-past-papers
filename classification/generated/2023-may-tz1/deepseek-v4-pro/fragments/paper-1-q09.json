@@ -1,0 +1,59 @@
+{
+  "question": "9",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 7,
+      "source_pages": "12",
+      "markscheme_pages": "17-19",
+      "task_summary": "The function x = f(y) = √(r² − y²) for −r ≤ y ≤ r is rotated 360° about the y-axis to form a sphere. A cylindrical hole is drilled along the y-axis, creating a spherical ring of height h and volume π. Find h.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "cylinder_radius_expression",
+        "integration_limits",
+        "definite_integration",
+        "limits_substitution",
+        "volume_relationship",
+        "equation_formation",
+        "algebraic_simplification",
+        "cube_root"
+      ],
+      "method_path": [
+        "Express cylinder radius: R = √(r² − h²/4) or R² = r² − h²/4",
+        "Identify integration limits: 0 to h/2 (or −h/2 to h/2)",
+        "Integrate ∫π(r² − y²)dy to π(r²y − y³/3)",
+        "Substitute limits into the integrated expression",
+        "Recognise volume relationship: V_ring = ∫π(r² − y²)dy − πR²h (or equivalent formulation)",
+        "Form and simplify equation to h³ = 6 (r cancels)",
+        "Solve: h = ∛6"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1 (subtracting volumes): integrate part-sphere and subtract cylinder volume πR²h",
+        "METHOD 2 (volume of cylindrical hole): integrate part-sphere from h/2 to r, add cylinder volume, equate to sphere volume minus ring volume",
+        "METHOD 3 (shells): use cylindrical shells 2π∫x√(r² − x²)dx with limits from R = √(r² − h²/4) to r"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-19",
+          "basis": "Page 17: METHOD 1 with radius (A1), limits (A1), integration (A1), substitution attempt (M1), volume recognition (M1), correct equation (A1). Page 18: continuation with METHOD 2 and final A1 for h = ∛6. Page 19: METHOD 3 (shells) with all corresponding marks, ending with h = ∛6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

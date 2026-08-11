@@ -1,0 +1,53 @@
+{
+  "question": "4",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 7,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Use the exponential model P(t)=15000e^{kt}, k<0, t≥0 to estimate the population on 1 January 2041, given an 11% decrease between 1 January 2014 (t=0) and 1 January 2022 (t=8).",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [
+        "number_algebra.exponential_models"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "exponential_model",
+        "identify_initial_value",
+        "percentage_decrease",
+        "identify_time_parameter",
+        "set_up_exponential_equation",
+        "solve_for_rate_constant",
+        "natural_logarithm",
+        "evaluate_function",
+        "round_final_answer"
+      ],
+      "method_path": [
+        "Identify initial population P(0)=15000",
+        "Compute population after 11% decrease: 15000×0.89=13350",
+        "Determine t=8 for 1 January 2022",
+        "Set up equation 15000e^{8k}=13350",
+        "Solve for k using natural logarithm: k=ln(0.89)/8≈−0.014566",
+        "Determine t=27 for 1 January 2041",
+        "Substitute t=27 into P(t)=15000e^{kt} and compute P(27)≈10100 (10122)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognition that initial population is 15000 (seen anywhere) (A1); P(0)=15000 OR 0.11×15000 OR 0.89×15000; population after 11% decrease is 15000×0.89=13350 (A1); recognizing that t=8 on 1 January 2022 (seen anywhere) (A1); substitution of their value of t for 1 January 2022 and their value of P(8) into the model (M1); 15000×0.89=15000e^{8k} OR 13350=15000e^{8k}; k=ln(0.89)/8≈−0.014566 (A1); substitution of t=2041−2014=27 and their value for k into the model (M1); P(27)=15000e^{−0.0145...×27}=10122.3…; P(27)=10100 (10122) (A1); Total [7 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

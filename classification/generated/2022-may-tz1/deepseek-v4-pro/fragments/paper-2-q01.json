@@ -1,0 +1,86 @@
+{
+  "question": "1",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the unknown frequency x in a grouped frequency table given that the median is 4.5 hours.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "median_position",
+        "cumulative_frequency",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Recognise that median = 4.5 implies total frequency n = 20 and half the total frequency is 10",
+        "Set up cumulative frequency: 5+1+4 = 10 values ≤ 4 hours",
+        "Solve 5+1+4+3+x = 20 to obtain x = 7"
+      ],
+      "accepted_alternatives": [
+        "Set up 5+1+4 = 3+x and solve to obtain x = 7",
+        "State Σf = 20 and solve 13+x = 20 to obtain x = 7"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER: recognising that half the total frequency is 10 (A1). OR: 5+1+4 = 3+x (A1). OR: Σf = 20 (A1). THEN: x = 7 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find the standard deviation of the exercising times.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "mean",
+        "variance",
+        "standard_deviation",
+        "gdc"
+      ],
+      "method_path": [
+        "Calculate mean: μ = (2×5+3×1+4×4+5×3+6×7)/20 = 86/20 = 4.3",
+        "Calculate variance: σ² = Σf(x-μ)²/Σf = 2.51 or σ² = Σfx²/Σf - μ² = 2.51",
+        "Compute standard deviation: σ = √2.51 = 1.58429... ≈ 1.58"
+      ],
+      "accepted_alternatives": [
+        "GDC: obtain σ = 1.58 directly",
+        "Manual using σ² = Σf(x-μ)²/n = 2.51 → σ = 1.58",
+        "Manual using σ² = Σfx²/n - μ² = 2.51 → σ = 1.58"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: 1.58429... 1.58 A2. METHOD 2: variance formula with (A1) for correct setup, then σ = 1.58429... = 1.58 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "question": "8",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17–18",
+      "task_summary": "Show by implicit differentiation that (1 + ln(xy)) dy/dx + (1 + y/x) = 0 for the curve y = x − xy ln(xy), x > 0, y > 0.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "product_rule",
+        "chain_rule",
+        "collect_terms",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "Differentiate y = x − xy ln(xy) implicitly, applying product rule and chain rule to xy ln(xy)",
+        "Collect all dy/dx terms on one side",
+        "Algebraically rearrange to obtain (1 + ln(xy)) dy/dx + (1 + y/x) = 0"
+      ],
+      "accepted_alternatives": [
+        "Method 2: rewrite as y/x = 1 − ln(xy) − y ln(xy) then differentiate implicitly",
+        "Method 3: treat (x ln(xy)) and y as separate factors via product rule",
+        "Method 4: substitute w = xy, differentiate w.r.t. x using dy/dx = dw/dx relation, then simplify"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1: attempts to differentiate implicitly including at least one application of the product rule"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "A1: correct differentiation and simplification to the required form"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "A1: final line (1+ln(xy))(dy/dx)+(1+y/x)=1 leading to AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "18–19",
+      "task_summary": "Hence find the equation of the tangent to C at the point where x = 1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "substitution",
+        "implicit_equation_solving",
+        "evaluate_derivative",
+        "tangent_line_equation"
+      ],
+      "method_path": [
+        "Substitute x = 1 into y = x − xy ln(xy) to obtain y = 1 − y ln y and solve y = 1",
+        "Substitute x = 1, y = 1 into the differentiated result (1 + ln(xy)) dy/dx + (1 + y/x) = 0",
+        "Evaluate to obtain dy/dx = 0",
+        "Write tangent equation y = 1"
+      ],
+      "accepted_alternatives": [
+        "Method 2: substitute x = 1 into the derivative relation first, then use y = 1 − y ln y to determine dy/dx = 0, then find y = 1 and tangent y = 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: substitutes x = 1 into y = x − xy ln(xy)"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "A1: y = 1 − y ln y ⇒ y = 1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: substitutes x = 1 and their non-zero value of y into the derivative expression"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "A1: dy/dx = 0"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "A1: equation of the tangent is y = 1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,1444 @@
+{
+  "session": "November 2021",
+  "zone": "Common",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Find Pearson's product-moment correlation coefficient r for the given paired data on practice hours and diploma scores using a GDC.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_calculation",
+        "pearsons_r",
+        "rounding"
+      ],
+      "method_path": [
+        "Enter data into GDC",
+        "Compute Pearson's r",
+        "Round to r ≈ 0.884"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "use of GDC to give r=0.883529... r=0.884. Award the (M1) for any correct value of r, a, b or r²=0.780624... seen in part (a) or part (b)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Write down the regression coefficients a and b from the linear model D = ah + b obtained via GDC.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_calculation",
+        "linear_regression_coefficients",
+        "rounding"
+      ],
+      "method_path": [
+        "Read a and b from GDC linear regression output",
+        "State a ≈ 1.37, b ≈ 64.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "a=1.36609..., b=64.5171... a=1.37, b=64.5"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Determine the expected change in diploma score for an extra five hours of weekly practice using the regression slope.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "regression_slope",
+        "multiplication",
+        "linear_prediction"
+      ],
+      "method_path": [
+        "Identify expected change = a × Δh",
+        "Compute 5 × a using their value of a",
+        "State expected score increase of about 7 marks"
+      ],
+      "accepted_alternatives": [
+        "Compute D(h+5) − D(h) explicitly using the full regression equation instead of multiplying a by 5."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to find their difference. 5 × 1.36609... OR (1.36609...(h+5)+64.5171...) − (1.36609...h+64.5171...). 6.83045... = 6.83. the student could have expected her score to increase by 7 marks. Note: Accept an increase of 6, 6.83 or 6.85."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-D",
+      "question": "1",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Comment on the validity of the assertion that practice hours have a direct (causal) effect on diploma results.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "causation_vs_correlation",
+        "critical_evaluation"
+      ],
+      "method_path": [
+        "Recognize that correlation does not imply causation",
+        "State that Lucy's assertion of a direct causal effect is not justified by the data alone"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Lucy is incorrect in suggesting there is a causal relationship. This might be true, but the data can only indicate a correlation. Note: Accept ‘Lucy is incorrect as correlation does not imply causation’ or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-E",
+      "question": "1",
+      "part": "E",
+      "marks": 1,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "State how the value of r is affected when a fixed number of hours is deducted from each student's recorded practice hours.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "correlation_invariance",
+        "linear_transformation"
+      ],
+      "method_path": [
+        "Recognize that subtracting a constant from all x-values does not change Pearson's r",
+        "State no effect"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "no effect"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the smallest possible perimeter of triangle ABC given two sides and a non-included angle (ambiguous case), by applying cosine or sine rule, obtaining two possible third-side lengths, and selecting the acute case that minimises the perimeter.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "cosine_rule",
+        "sine_rule",
+        "quadratic_solving",
+        "ambiguous_case_selection",
+        "perimeter_calculation",
+        "trigonometric_equation_solving"
+      ],
+      "method_path": [
+        "Apply cosine rule: 7^2 = 12^2 + AB^2 - 2*12*AB*cos 25 deg, or sine rule: sin B/12 = sin 25 deg/7",
+        "Solve for AB (quadratic) or angles B and C, obtaining two possible values from the ambiguous case",
+        "Select the smaller AB (acute angle C) to minimise the perimeter",
+        "Compute perimeter = 12 + 7 + AB_min",
+        "Round to three significant figures: 25.1"
+      ],
+      "accepted_alternatives": [
+        "Cosine rule route: set up 7^2 = 12^2 + AB^2 - 2*12*AB*cos 25 deg, solve quadratic AB^2 - 21.7513...*AB + 95 = 0, take smaller root AB approx 6.05068, perimeter = 12 + 7 + 6.05068 approx 25.1",
+        "Sine rule route: sin B/12 = sin 25 deg/7 gives sin B approx 0.724488, B approx 46.4263 deg or 133.573 deg, then C = 180 deg - 25 deg - B gives acute C approx 21.4263 deg, find AB via sine or cosine rule, perimeter approx 25.1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "Full markscheme for Q2: EITHER cosine rule (M1)(A1)(A1)(M1)A1 or OR sine rule (M1)(A1)(A1)(M1) THEN A1; final answer minimum perimeter = 25.1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find the probability that there is at least one defective lamp in a random sample of 30, given the probability a lamp is defective is 0.05.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "complement_rule",
+        "evaluate_binomial_probability",
+        "round_answer"
+      ],
+      "method_path": [
+        "Recognise X ~ B(30, 0.05)",
+        "P(X ≥ 1) = 1 − P(X = 0)",
+        "= 1 − 0.95^30",
+        "≈ 0.785"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognize that the variable has a Binomial distribution (M1); attempt to find P(X ≥ 1) (M1); 1 − P(X = 0) OR 1 − 0.95^30 OR 1 − 0.214638... OR 0.785361... ; P(X ≥ 1) = 0.785 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Given that there is at least one defective lamp, find the probability that there are at most two defective lamps.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "binomial_distribution",
+        "compute_binomial_probabilities",
+        "substitute_values",
+        "evaluate_result",
+        "round_answer"
+      ],
+      "method_path": [
+        "Recognise conditional probability: P(X ≤ 2 | X ≥ 1)",
+        "Apply P(X ≤ 2 | X ≥ 1) = P(1 ≤ X ≤ 2) / P(X ≥ 1)",
+        "Compute numerator as P(X ≤ 2) − P(X = 0) or P(X = 1) + P(X = 2)",
+        "Substitute P(X ≥ 1) ≈ 0.78536 from part (a)",
+        "Evaluate ≈ 0.761"
+      ],
+      "accepted_alternatives": [
+        "Compute numerator as P(X ≤ 2) − P(X = 0) ≈ 0.81218 − 0.21464 = 0.59754",
+        "Compute numerator as P(X = 1) + P(X = 2) ≈ 0.33890 + 0.25864 = 0.59754"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognition of conditional probability (M1); P(X ≤ 2 | X ≥ 1) OR P(at most 2 defective | at least 1 defective); P(1 ≤ X ≤ 2) / P(X ≥ 1) OR [P(X = 1) + P(X = 2)] / P(X ≥ 1) (A1); 0.597540... / 0.785361... OR 0.812178... − 0.214638... / 0.785361... OR 0.338903... + 0.258636... / 0.785361... (A1); P(X ≤ 2 | X ≥ 1) = 0.761 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Given a semicircle with centre O, radius r, points P, Q, R on the circumference with PQ = 2r and ∠ROQ = θ, and the two shaded regions having equal area, show that θ = 2 sin θ.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "area_of_segment",
+        "area_of_triangle",
+        "equate_areas",
+        "simplify_equation",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Express area of segment bounded by chord RQ and arc RQ as ½r²θ − ½r² sin θ",
+        "Express area of triangle POR as ½r² sin(π − θ)",
+        "Set areas equal: ½r²θ − ½r² sin θ = ½r² sin(π − θ)",
+        "Cancel ½r² and apply sin(π − θ) = sin θ",
+        "Obtain θ − sin θ = sin θ → θ = 2 sin θ"
+      ],
+      "accepted_alternatives": [
+        "Directly state area of triangle POR as ½r² sin θ (simplifying sin(π − θ) immediately), award maximum M1A1A0A1A1 per markscheme"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to find the area of either shaded region in terms of r and θ (M1); Area of segment = ½r²θ − ½r² sin θ A1; Area of triangle = ½r² sin(π − θ) A1; correct equation in terms of θ only (A1); θ − sin θ = sin θ → θ = 2 sin θ A1 [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Hence determine the value of θ by solving θ = 2 sin θ using GDC.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_trigonometric_equation",
+        "gdc_numerical_solve"
+      ],
+      "method_path": [
+        "Solve θ = 2 sin θ using GDC numerical solver",
+        "Obtain θ = 1.89549… → θ = 1.90"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "1.89549… → θ = 1.90 A1; Note: Award A0 if there is more than one solution. Award A0 for an answer in degrees. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q05-A",
+      "question": "5",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the first term u_1 by evaluating S_1 = (2/3)(7/8)^1 = 7/12.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "evaluate_term",
+        "simplify_fraction"
+      ],
+      "method_path": [
+        "Evaluate u_1 = S_1 = (2/3)(7/8)^1",
+        "Simplify to 14/24 = 7/12"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "u_1 = S_1 = (2/3)(7/8) = 14/24 = 7/12 = 0.583333 (M1)(A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q05-B",
+      "question": "5",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the sum to infinity S_∞ using r = 7/8 and S_∞ = u_1/(1−r) = 14/3.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "identify_common_ratio",
+        "sum_to_infinity_formula",
+        "evaluate_expression"
+      ],
+      "method_path": [
+        "Identify common ratio r = 7/8",
+        "Apply S_∞ = u_1/(1−r)",
+        "Compute S_∞ = (7/12)/(1−7/8) = 14/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "r = 7/8 = 0.875 (A1); substituting their values for u_1 and r into S_∞ = u_1/(1−r) (M1); = 14/3 = 4.66666 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q05-C",
+      "question": "5",
+      "part": "c",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the least integer n such that S_∞ − S_n < 0.001 by solving the exponential inequality.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "set_up_inequality",
+        "solve_exponential_inequality",
+        "find_least_integer"
+      ],
+      "method_path": [
+        "Set up inequality (14/3)(7/8)^n < 0.001 or equivalent using S_n formula",
+        "Solve for n using logarithms, table, or graph",
+        "Obtain critical value n ≈ 63.27",
+        "Conclude least integer n = 64"
+      ],
+      "accepted_alternatives": [
+        "Set up inequality via tail sum: Σ_{r=n+1}^{∞} (2/3)(7/8)^r < 0.001",
+        "Set up inequality via explicit S_n: (14/3) − (7/12)(1−(7/8)^n)/(1−7/8) < 0.001",
+        "Solve using logarithms, table of values, or graphical method"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to substitute their values into the inequality or formula for S_n (M1); attempt to solve using table, graph or logarithms (M1); correct critical value 63.2675 or crossover values S_∞−S_63 = 0.001036…, S_∞−S_64 = 0.000906… (A1); least value is n = 64 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Prove the polynomial identity (p+q)³ − 3pq(p+q) ≡ p³ + q³.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_cubic",
+        "distribute",
+        "collect_like_terms",
+        "factorise_cubic"
+      ],
+      "method_path": [
+        "Expand (p+q)³ = p³ + 3p²q + 3pq² + q³",
+        "Compute 3pq(p+q) = 3p²q + 3pq²",
+        "Subtract to obtain p³ + q³"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Factorise (p+q)³ − 3pq(p+q) = (p+q)[(p+q)² − 3pq] = (p+q)(p² − pq + q²) then expand to p³ + q³.",
+        "METHOD 3: Factorise p³ + q³ = (p+q)(p² − pq + q²) = (p+q)[(p+q)² − 3pq] = (p+q)³ − 3pq(p+q)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: M1 for attempts to expand (p+q)³; A1 for correct simplification to p³+q³ AG. METHOD 2: M1 for attempts to factorise (p+q)³−3pq(p+q); A1 for correct expansion to p³+q³. METHOD 3: M1 for attempts to factorise p³+q³; A1 for correct rewriting as (p+q)³−3pq(p+q)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Given 2x²−5x+1=0 has roots α,β, find m and n in x²+mx+n=0 whose roots are 1/α³ and 1/β³, without solving for α,β.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "vieta_formula",
+        "sum_of_roots",
+        "product_of_roots",
+        "substitute",
+        "simplify_rational_expression",
+        "apply_identity"
+      ],
+      "method_path": [
+        "Find product αβ = 1/2 from 2x²−5x+1=0 using Vieta",
+        "Compute n = 1/(αβ)³ = 8",
+        "Find sum α+β = 5/2 from 2x²−5x+1=0 using Vieta",
+        "Express 1/α³ + 1/β³ = (α³+β³)/(αβ)³",
+        "Compute α³+β³ using identity from (a): (α+β)³−3αβ(α+β) = 95/8",
+        "Set −m = 1/α³+1/β³ = 95, so m = −95"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "product of roots = 1/2 A1; considers n = 1/(αβ)³ M1; n = 8 A1. sum of roots = 5/2 A1; considers −m = ((α+β)³−3αβ(α+β))/(αβ)³ M1 (Note: Award M1 for substituting values; M0 for (α+β)³−3αβ(α+β) only); m = −95 A1."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "Special cases: max A1M0A0A1M0A0 for m=−95, n=8 by using explicit root values α,β=(5±√17)/4. Max A1M1A0A1M0A0 for m=−95, n=8 obtained by solving simultaneously for α,β from sum/product equations."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q07-A",
+      "question": "7",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "15",
+      "task_summary": "Determine the median m of the continuous random variable X with pdf f(x)=arccos(x) on [0,1] by solving ∫₀ᵐ arccos(x)dx = 0.5.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "definite_integral",
+        "inverse_trigonometric_integration",
+        "median_equation",
+        "numerical_equation_solving",
+        "rounding"
+      ],
+      "method_path": [
+        "Set up median equation ∫₀ᵐ arccos(x) dx = 0.5",
+        "Integrate: x·arccos(x) − √(1−x²)",
+        "Evaluate from 0 to m: m·arccos(m) − √(1−m²) + 1 = 0.5",
+        "Solve numerically for m",
+        "m = 0.360"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognises that ∫₀ᵐ arccos x dx = 0.5 (M1); [x arccos x − √(1−x²)]₀ᵐ = 0.5; m = 0.360 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q07-B",
+      "question": "7",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "15,16",
+      "task_summary": "Given P(|X − m| ≤ a) = 0.3, set up the definite integral ∫_{m−a}^{m+a} arccos(x) dx = 0.3 and solve numerically for a.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "absolute_value_inequality",
+        "probability_interval",
+        "definite_integral",
+        "inverse_trigonometric_integration",
+        "numerical_equation_solving",
+        "rounding"
+      ],
+      "method_path": [
+        "Translate |X − m| ≤ a to interval m − a ≤ X ≤ m + a",
+        "Set up P(m−a ≤ X ≤ m+a) = ∫_{m−a}^{m+a} arccos(x) dx = 0.3",
+        "Integrate arccos(x) to obtain expression in m and a",
+        "Substitute m ≈ 0.360 and solve numerically for a",
+        "a = 0.125"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Translate pdf by substituting u = x − m, giving ∫_{−a}^{a} arccos(u + m) du = 0.3, then solve for a.",
+        "METHOD 3: Use ∫_{−a}^{a} arccos(x + m) dx = 0.3 or ∫_{m−a}^{m+a} arccos(m − x) dx = 0.3 or equivalent symmetric forms, then solve for a."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: attempts to find at least one endpoint both in terms of m (or their m) and a (M1); ∫_{m−a}^{m+a} arccos x dx = 0.3 (A1); attempts to solve their equation for a (M1) dependent on first M1; a = 0.125 A1"
+        },
+        {
+          "markscheme_pages": "15,16",
+          "basis": "METHOD 2: ∫_{−a}^{a} arccos(x − 0.360034…) dx = 0.3 (M1)(A1); attempts to solve for a (M1); a = 0.125 A1"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 3: ∫_{−a}^{a} arccos(x + 0.360034…) dx = 0.3 or ∫_{2(0.360034…)−a}^{2(0.360034…)+a} arccos(0.360034… − x) dx = 0.3 (M1)(A1); attempts to solve for a (M1); a = 0.125 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17–18",
+      "task_summary": "Show by implicit differentiation that (1 + ln(xy)) dy/dx + (1 + y/x) = 0 for the curve y = x − xy ln(xy), x > 0, y > 0.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "product_rule",
+        "chain_rule",
+        "collect_terms",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "Differentiate y = x − xy ln(xy) implicitly, applying product rule and chain rule to xy ln(xy)",
+        "Collect all dy/dx terms on one side",
+        "Algebraically rearrange to obtain (1 + ln(xy)) dy/dx + (1 + y/x) = 0"
+      ],
+      "accepted_alternatives": [
+        "Method 2: rewrite as y/x = 1 − ln(xy) − y ln(xy) then differentiate implicitly",
+        "Method 3: treat (x ln(xy)) and y as separate factors via product rule",
+        "Method 4: substitute w = xy, differentiate w.r.t. x using dy/dx = dw/dx relation, then simplify"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1: attempts to differentiate implicitly including at least one application of the product rule"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "A1: correct differentiation and simplification to the required form"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "A1: final line (1+ln(xy))(dy/dx)+(1+y/x)=1 leading to AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "18–19",
+      "task_summary": "Hence find the equation of the tangent to C at the point where x = 1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "substitution",
+        "implicit_equation_solving",
+        "evaluate_derivative",
+        "tangent_line_equation"
+      ],
+      "method_path": [
+        "Substitute x = 1 into y = x − xy ln(xy) to obtain y = 1 − y ln y and solve y = 1",
+        "Substitute x = 1, y = 1 into the differentiated result (1 + ln(xy)) dy/dx + (1 + y/x) = 0",
+        "Evaluate to obtain dy/dx = 0",
+        "Write tangent equation y = 1"
+      ],
+      "accepted_alternatives": [
+        "Method 2: substitute x = 1 into the derivative relation first, then use y = 1 − y ln y to determine dy/dx = 0, then find y = 1 and tangent y = 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: substitutes x = 1 into y = x − xy ln(xy)"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "A1: y = 1 − y ln y ⇒ y = 1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: substitutes x = 1 and their non-zero value of y into the derivative expression"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "A1: dy/dx = 0"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "A1: equation of the tangent is y = 1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "12-13",
+      "markscheme_pages": "20",
+      "task_summary": "Show that b = π/6 using the 12-hour period between successive high tides.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "period_determination",
+        "period_formula",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Identify period T = 12 from high tide spacing",
+        "Apply period formula b = 2π/T",
+        "Compute b = 2π/12 = π/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "2π/12 b = OR 2π/12 = b (A1). π/6 b = AG. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "12-13",
+      "markscheme_pages": "20",
+      "task_summary": "Find amplitude a = 2.3 using the given min 2.2 m and max 6.8 m.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "amplitude_formula",
+        "arithmetic"
+      ],
+      "method_path": [
+        "Identify max = 6.8, min = 2.2",
+        "Apply amplitude formula a = (max - min)/2",
+        "Compute a = (6.8 - 2.2)/2 = 2.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "6.8-2.2/2 a = OR max-min/2 a = (M1). 2.3 = (m) A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "12-13",
+      "markscheme_pages": "20",
+      "task_summary": "Find vertical shift d = 4.5 using the given min 2.2 m and max 6.8 m.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "midline_formula",
+        "arithmetic"
+      ],
+      "method_path": [
+        "Identify max = 6.8, min = 2.2",
+        "Apply midline formula d = (max + min)/2",
+        "Compute d = (6.8 + 2.2)/2 = 4.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "6.8+2.2/2 d = OR max+min/2 d = (M1). 4.5 = (m) A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-D",
+      "question": "9",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "12-13",
+      "markscheme_pages": "21",
+      "task_summary": "Find the smallest possible value of c using the first high tide at t = 4.5 (04:30).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solve_trigonometric_equation",
+        "phase_shift_determination"
+      ],
+      "method_path": [
+        "Substitute first high tide point (t = 4.5, H = 6.8) into H(t) = 2.3 sin(π/6(t - c)) + 4.5",
+        "Solve sin(π/6(4.5 - c)) = 1 for c",
+        "Obtain smallest c = 1.5"
+      ],
+      "accepted_alternatives": [
+        "Use horizontal translation: c = 4.5 − 3 = 1.5 since peak of sin(x) is at π/2 and period quarter is 3 hours.",
+        "Use derivative H′(t) = 2.3·(π/6)·cos(π/6(t − c)), set H′(4.5) = 0 and solve for c."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "METHOD 1: substituting t=4.5 and H=6.8 into their equation for H (A1). attempt to solve their equation (M1). c=1.5 A1. METHOD 2: using horizontal translation of 3 (M1). 4.5−c=3 (A1). c=1.5 A1. METHOD 3: derivative approach (A1)(M1) c=1.5 A1. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-E",
+      "question": "9",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "12-13",
+      "markscheme_pages": "21",
+      "task_summary": "Find the height of the water at 12:00 by evaluating H(12).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "function_evaluation",
+        "trigonometric_evaluation"
+      ],
+      "method_path": [
+        "Substitute t = 12 into H(t) = 2.3 sin(π/6(t − 1.5)) + 4.5",
+        "Evaluate: H(12) = 2.3 sin(π/6 · 10.5) + 4.5 ≈ 2.87 m"
+      ],
+      "accepted_alternatives": [
+        "Use t = 0 (midnight): H(0) = 2.3 sin(π/6(−1.5)) + 4.5 ≈ 2.87 m.",
+        "Read graphically from the given graph."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to find H when t=12 or t=0, graphically or algebraically (M1). H=2.87365... H= (2.87 m) A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-F",
+      "question": "9",
+      "part": "F",
+      "marks": 3,
+      "source_pages": "12-13",
+      "markscheme_pages": "22",
+      "task_summary": "Determine total hours in a 24-hour period for which tide height exceeds 5 m, by solving H(t) > 5.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models",
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_trigonometric_inequality",
+        "interval_analysis",
+        "time_accumulation"
+      ],
+      "method_path": [
+        "Solve inequality: 2.3 sin(π/6(t − 1.5)) + 4.5 > 5",
+        "Find intersection times t ≈ 1.919, 7.081 and t ≈ 13.919, 19.081 in [0, 24]",
+        "Sum interval lengths: 2 × (7.081... − 1.919...) ≈ 10.3 hours"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to solve 5 = 2.3 sin(π/6(t−1.5)) + 4.5 (M1). times are t=1.91852... and t=7.08147..., t=13.9185..., t=19.0814... (A1). total time is 2×(7.081...−1.919...) = 10.3258... ≈ 10.3 hours A1. Note: Accept 10. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q09-G",
+      "question": "9",
+      "part": "G",
+      "marks": 2,
+      "source_pages": "12-13",
+      "markscheme_pages": "22",
+      "task_summary": "Find equation for Folkestone harbour with tides 50 minutes earlier, adjusting phase shift c.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "time_conversion",
+        "phase_shift_adjustment",
+        "model_formulation"
+      ],
+      "method_path": [
+        "Convert 50 minutes to hours: 50/60 = 5/6",
+        "Adjust phase shift: new c = 1.5 − 5/6 = 2/3",
+        "Write model: H(t) = 2.3 sin(π/6(t − 2/3)) + 4.5"
+      ],
+      "accepted_alternatives": [
+        "Substitute t = 11/3 (4:30 minus 50 min) and H = 6.8 into H(t), solve for c to get c = 2/3."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "METHOD 1: substitutes t=11/3 and H=6.8 into equation and solves for c (M1). c=2/3, H(t)=2.3 sin(π/6(t−2/3))+4.5 A1. METHOD 2: uses horizontal translation (M1). c−3=−11/3 ⇒ c=2/3. H(t)=2.3 sin(π/6(t−2/3))+4.5 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-A",
+      "question": "10",
+      "part": "(a)",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Find x-intercepts by solving x^2 - x - 12 = 0 giving (-3,0) and (4,0); find y-intercept by evaluating f(0) = 4/5 giving (0, 4/5).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_quadratic",
+        "evaluate_function",
+        "find_x_intercepts",
+        "find_y_intercept"
+      ],
+      "method_path": [
+        "solve x^2 - x - 12 = 0",
+        "obtain (-3, 0) and (4, 0)",
+        "evaluate f(0) = 4/5",
+        "obtain (0, 4/5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "attempts to solve (x^2-x-12)/(2x-15)=0 (M1); (-3,0) and (4,0) A1. (0, 4/5) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-B",
+      "question": "10",
+      "part": "(b)",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Write the equation of the vertical asymptote x = 15/2 from denominator 2x - 15 = 0.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_vertical_asymptote",
+        "set_denominator_zero"
+      ],
+      "method_path": [
+        "set 2x - 15 = 0",
+        "write x = 15/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "x = 15/2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-C",
+      "question": "10",
+      "part": "(c)",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "23-26",
+      "task_summary": "Find a = 1/2 and b = 13/4 for oblique asymptote y = ax + b via polynomial division or coefficient equating.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "polynomial_division",
+        "equate_coefficients",
+        "find_oblique_asymptote"
+      ],
+      "method_path": [
+        "set (ax+b)(2x-15) = x^2-x-12",
+        "expand: 2ax^2 + (2b-15a)x - 15b",
+        "equate x^2: 2a=1, a=1/2",
+        "equate x: 2b-15(1/2)=-1",
+        "solve b=13/4"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: direct long division of (x^2-x-12)/(2x-15) giving (x/2)+(13/4)+remainder",
+        "METHOD 3: express as x/2 + b + c/(2x-15), clear denominator, equate coefficients",
+        "METHOD 4: rewrite x^2-x-12 = (2x-15)(x/2) + (13x/2-12), divide remainder"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: (ax+b)(2x-15)=x^2-x-12. expand (M1). a=1/2 A1. equates coefficients of x (M1). b=13/4 A1."
+        },
+        {
+          "markscheme_pages": "24-26",
+          "basis": "METHODS 2-4 all lead to a=1/2, b=13/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-D",
+      "question": "10",
+      "part": "(d)",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Sketch graph of f for -30 <= x <= 30 showing two hyperbolic branches, asymptotes at x=15/2 and y=x/2+13/4, intercepts at (-3,0), (4,0), (0,4/5).",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "plot_asymptotes",
+        "plot_intercepts",
+        "show_asymptotic_behaviour"
+      ],
+      "method_path": [
+        "draw two branches with correct shape",
+        "position vertical asymptote x=15/2",
+        "position oblique asymptote y=x/2+13/4",
+        "show correct asymptotic behaviour",
+        "mark intercepts at (-3,0), (4,0), (0,4/5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "two branches approx correct shape A1; asymptotes in approx correct positions with correct asymptotic behaviour A1; axes intercepts in approx correct positions A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q10-E",
+      "question": "10",
+      "part": "(e)",
+      "marks": 7,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "Express 1/f(x) = (2x-15)/((x+3)(x-4)) in partial fractions as 3/(x+3) - 1/(x-4); integrate from 0 to 3 obtaining ln 32 or 5 ln 2.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "partial_fractions",
+        "integrate_rational_function",
+        "evaluate_definite_integral",
+        "logarithm_simplification"
+      ],
+      "method_path": [
+        "write 1/f(x) = (2x-15)/((x+3)(x-4))",
+        "set A/(x+3) + B/(x-4)",
+        "solve A=3, B=-1",
+        "express as 3/(x+3) - 1/(x-4)",
+        "integrate to [3ln|x+3|-ln|x-4|]_0^3",
+        "evaluate: (3ln6-ln1)-(3ln3-ln4)",
+        "simplify to ln32 = 5ln2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "(i) split into partial fractions (M1); A=3 A1; B=-1 A1. (ii) integrate, two ln terms (M1); [3ln|x+3|-ln|x-4|]_0^3 A1; =3ln6-ln1-3ln3+ln4 A1; =ln32=5ln2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 7,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Find vectors AB = (−3,−2,0) and AC = (−2,1,−7), then find the Cartesian equation of plane Π1 through A, B, C in the form ax+by+cz=d.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_subtraction",
+        "cross_product",
+        "plane_equation_from_normal",
+        "point_substitution",
+        "simplify_equation",
+        "parametric_plane_form",
+        "parameter_elimination"
+      ],
+      "method_path": [
+        "AB = B − A = (−3,−2,0)",
+        "AC = C − A = (−2,1,−7)",
+        "n = AB × AC = (14,−21,−7)",
+        "plane form: 14x − 21y − 7z = d",
+        "substitute A(3,0,0): d = 42",
+        "simplify: 2x − 3y − z = 6"
+      ],
+      "accepted_alternatives": [
+        "Parametric plane form r = A + s·AB + t·AC, express x,y,z in terms of s,t, eliminate parameters to obtain 2x−3y−z=6"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "(a)(i) attempts to find either AB or AC (M1); AB=(−3,−2,0) and AC=(−2,1,−7) A1. (a)(ii) METHOD 1: attempts to find AB×AC (M1); AB×AC=(14,−21,−7) A1; EITHER equation form 2x−3y−z=d (A1), substitutes a valid point M1, d=6 A1; OR uses r·n=a·n (M1, A1). METHOD 2: parametric form A1, forms equations M1, eliminates parameters M1, obtains 2x−3y−z=6 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q11-B",
+      "question": "11",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "28-29",
+      "task_summary": "Verify that the vector equation of line L (intersection of Π1 and Π2) can be written as r = (0,−2,0) + λ(1,1,−1).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "substitute_parametric",
+        "verify_plane_satisfaction",
+        "cross_product_of_normals",
+        "point_verification",
+        "solve_simultaneous"
+      ],
+      "method_path": [
+        "substitute x=λ, y=−2+λ, z=−λ into Π1: 2λ−3(−2+λ)−(−λ)=6 → 6=6",
+        "substitute into Π2: 3λ−(−2+λ)+2(−λ)=2 → 2=2",
+        "both equations hold identically for all λ"
+      ],
+      "accepted_alternatives": [
+        "Cross product of normals (2,−3,−1)×(3,−1,2)=(−7,−7,7) parallel to (1,1,−1); verify B(0,−2,0) lies in both planes.",
+        "Solve 2x−3y−z=6 and 3x−y+2z=2 simultaneously to obtain parametric form x=λ, y=−2+λ, z=−λ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28-29",
+          "basis": "METHOD 1: substitutes r=(0,−2,0)+λ(1,1,−1) into Π1 and Π2 (M1); Π1: 2λ−3(−2+λ)−(−λ)=6 and Π2: 3λ−(−2+λ)+2(−λ)=2 A1. METHOD 2: attempts cross product of normals (M1); (2,−3,−1)×(3,−1,2)=(−7,−7,7) OR dot product verifications (M1); substitutes (0,−2,0) into both planes A1. METHOD 3: attempts to solve 2x−3y−z=6 and 3x−y+2z=2 (M1); obtains x=λ, y=−2−λ, z=λ? [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "30",
+      "task_summary": "Show that at the intersection P of L and plane Π3: 2x−2z=3, λ=3/4, and hence find the coordinates of P.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "substitute_parametric",
+        "solve_linear_equation",
+        "evaluate_parametric_point"
+      ],
+      "method_path": [
+        "substitute L into Π3: 2(λ)−2(−λ)=3",
+        "solve: 4λ=3 → λ=3/4",
+        "evaluate P: (3/4, −2+3/4, −3/4) = (3/4,−5/4,−3/4)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "(c)(i) substitutes the equation of L into the equation of Π3 (M1); 2λ+2λ=3⇒λ=3/4 A1 AG. (ii) P has coordinates (3/4,−5/4,−3/4) A1. [3 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q11-D",
+      "question": "11",
+      "part": "d",
+      "marks": 9,
+      "source_pages": "15",
+      "markscheme_pages": "30-32",
+      "task_summary": "Find the reflection B′ of B(0,−2,0) in plane Π3: 2x−2z=3, then find the vector equation of the line formed when L is reflected in Π3.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "identify_normal",
+        "construct_parametric_line",
+        "line_plane_intersection",
+        "point_reflection",
+        "vector_between_points",
+        "form_line_equation"
+      ],
+      "method_path": [
+        "identify normal to Π3: n = (2,0,−2)",
+        "construct line through B normal to Π3: r = (0,−2,0) + μ(2,0,−2)",
+        "intersect with Π3: 2(2μ)−2(−2μ)=3 → 8μ=3 → μ=3/8",
+        "foot of perpendicular: (3/4,−2,−3/4)",
+        "reflect B: B′ = B + 2μ(2,0,−2) = (3/2,−2,−3/2)",
+        "direction of reflected line: B′ − P = (3/4,−3/4,−3/4)",
+        "reflected line: r = (3/2,−2,−3/2) + λ(3/4,−3/4,−3/4) or equivalent"
+      ],
+      "accepted_alternatives": [
+        "Use dot-product condition to find μ on normal line.",
+        "Use plane parallel to Π3 through B′ and solve simultaneously with L.",
+        "Find direction via vector reflection formula using normal."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30-31",
+          "basis": "(d)(i) normal to Π3 is (2,0,−2) (A1); considers line normal to Π3 passing through B(0,−2,0) (M1); r=(0,−2,0)+μ(2,0,−2) A1; EITHER finds intersection with Π3 (M1), 4μ+4μ=3, μ=3/8 A1, point (3/4,−2,−3/4); THEN another point on reflected line r=(0,−2,0)+(3/4)(2,0,−2) (A1); B′=(3/2,−2,−3/2) A1."
+        },
+        {
+          "markscheme_pages": "31-32",
+          "basis": "(d)(ii) EITHER attempts direction using P and B′ (M1): PB′=(3/4,−3/4,−3/4); OR vector approach PB′=PB+BB′ (M1); THEN r=(3/2,−2,−3/2)+λ(3/4,−3/4,−3/4) or equivalent A1. [9 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    }
+  ]
+}

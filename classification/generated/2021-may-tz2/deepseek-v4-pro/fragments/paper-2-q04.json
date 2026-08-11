@@ -1,0 +1,94 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Find the range of the quadratic function f(x) = 6x² − 12x + 1 for x ∈ ℝ.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_vertex",
+        "complete_square",
+        "quadratic_minimum",
+        "state_range"
+      ],
+      "method_path": [
+        "Attempt to find the vertex: x = −b/(2a) = 1 or complete the square to f(x) = 6(x−1)² − 5",
+        "Find the minimum value: f(1) = −5",
+        "State the range: y ≥ −5"
+      ],
+      "accepted_alternatives": [
+        "Use calculus: f′(x) = 12x − 12 = 0 → x = 1, f(1) = −5, range y ≥ −5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempting to find the vertex (M1); x = 1 OR y = −5 OR f(x) = 6(x−1)² − 5; range is y ≥ −5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Given (g∘f)(x) ≤ 0 for all x ∈ ℝ where g(x) = −x + c, determine the set of possible values for c.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "function_composition",
+        "complete_square",
+        "quadratic_maximum",
+        "inequality_setup",
+        "inequality_solving"
+      ],
+      "method_path": [
+        "Form the composite: g(f(x)) = −(6x² − 12x + 1) + c = −6x² + 12x − 1 + c",
+        "Complete the square: g(f(x)) = −6(x−1)² + 5 + c",
+        "Identify the maximum value 5 + c at x = 1",
+        "Apply the condition: 5 + c ≤ 0",
+        "Solve: c ≤ −5"
+      ],
+      "accepted_alternatives": [
+        "Discriminant method: For g(f(x)) = −6x² + 12x − 1 + c ≤ 0 for all x, require Δ ≤ 0: 144 − 4(−6)(−1+c) ≤ 0 → 120 + 24c ≤ 0 → c ≤ −5",
+        "Geometric transformation method: Reflect f vertically then shift by c; new vertex at (1, 5+c); require 5+c ≤ 0 → c ≤ −5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 1: (g∘f)(x) = −(6x²−12x+1)+c = −6(x−1)²−5+c (A1); relating to range of f OR attempting to find g(−5) (M1); 5+c ≤ 0 (A1); c ≤ −5 A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: vertical reflection followed by vertical shift (M1); new vertex is (1, 5+c) (A1); 5+c ≤ 0 (A1); c ≤ −5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

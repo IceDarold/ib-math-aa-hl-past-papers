@@ -1,0 +1,928 @@
+{
+  "session": "November 2022",
+  "zone": "Common",
+  "paper": 3,
+  "calculator": "yes",
+  "expected_total_marks": 55,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-A",
+      "question": "1",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Show that Σᵢ₌₁ⁿ i = n(n+1)/2 for the arithmetic series case q=1.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arithmetic_series_sum",
+        "sum_of_first_n_integers"
+      ],
+      "method_path": [
+        "Apply arithmetic series sum formula S_n = n/2(u₁ + u_n) with u₁ = 1, u_n = n",
+        "Obtain S_n = n(n+1)/2"
+      ],
+      "accepted_alternatives": [
+        "State u₁=1 and d=1, then apply S_n = n/2(2u₁ + (n-1)d)",
+        "Explicitly state the sum 1+2+...+n and simplify to n(n+1)/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "EITHER S_n = n/2(2×1 + (n-1)×1) A1 OR u₁=1 and either u_n=n or d=1 stated explicitly A1 OR 1+2+...+n stated explicitly A1 THEN S_n = n/2(n+1) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-B-I",
+      "question": "1",
+      "part": "b(i)",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write down the value of p = Σᵢ₌₁³ i² using the given table.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sum_of_squares",
+        "evaluate_sum"
+      ],
+      "method_path": [
+        "Compute 1² + 2² + 3² = 1 + 4 + 9 = 14"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "14 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-B-II",
+      "question": "1",
+      "part": "b(ii)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7-8",
+      "task_summary": "Form a system of three linear equations in a₁, a₂, a₃ by substituting n=1,2,3 into Σᵢ₌₁ⁿ i² = a₁n + a₂n² + a₃n³.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_values",
+        "form_linear_system"
+      ],
+      "method_path": [
+        "For n=1: a₁ + a₂ + a₃ = 1",
+        "For n=2: 2a₁ + 4a₂ + 8a₃ = 5",
+        "For n=3: 3a₁ + 9a₂ + 27a₃ = 14"
+      ],
+      "accepted_alternatives": [
+        "Follow-through: third equation 3a₁ + 9a₂ + 27a₃ = p where p is candidate's answer to (b)(i)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "a₁ + a₂ + a₃ = 1 A1; 2a₁ + 4a₂ + 8a₃ = 5 A1; 3a₁ + 9a₂ + 27a₃ = 14 A1"
+        },
+        {
+          "markscheme_pages": "7",
+          "basis": "For the third A mark, award A1FT for 3a₁ + 9a₂ + 27a₃ = p where p is their answer to part (b)(i)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-B-III",
+      "question": "1",
+      "part": "b(iii)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Solve the linear system to find a₁ = 1/6, a₂ = 1/2, a₃ = 1/3.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_linear_system",
+        "gaussian_elimination"
+      ],
+      "method_path": [
+        "Solve the 3×3 system of linear equations",
+        "Obtain a₁ = 1/6, a₂ = 1/2, a₃ = 1/3"
+      ],
+      "accepted_alternatives": [
+        "Follow-through from candidate's three equations in (b)(ii) for their a₁, a₂, a₃"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "a₁ = 1/6 ≈ 0.167, a₂ = 1/2 = 0.5, a₃ = 1/3 ≈ 0.333 A2"
+        },
+        {
+          "markscheme_pages": "8",
+          "basis": "Award A2FT for their a₁, a₂ and a₃. Award A1FT for their a₁, a₂ and a₃ = 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-C",
+      "question": "1",
+      "part": "c",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8-9",
+      "task_summary": "Show that x f′(x) = x + 2x² + 3x³ + … + nxⁿ for f(x) = 1 + x + x² + … + xⁿ.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "termwise_differentiation",
+        "polynomial_derivative"
+      ],
+      "method_path": [
+        "Differentiate f(x) term by term to get f′(x) = 1 + 2x + 3x² + … + nxⁿ⁻¹",
+        "Multiply by x to obtain x f′(x) = x + 2x² + 3x³ + … + nxⁿ"
+      ],
+      "accepted_alternatives": [
+        "Write f′(x) = Σᵢ₌₁ⁿ i xⁱ⁻¹ in sigma notation then multiply by x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "f′(x) = 1 + 2x + 3x² + … + nxⁿ⁻¹ A1"
+        },
+        {
+          "markscheme_pages": "8-9",
+          "basis": "⇒ x f′(x) = x + 2x² + 3x³ + … + nxⁿ AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-D-I",
+      "question": "1",
+      "part": "d(i)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Show that f₂(x) = x f₁′(x) = Σᵢ₌₁ⁿ i² xⁱ.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "termwise_differentiation",
+        "multiply_by_x"
+      ],
+      "method_path": [
+        "Write f₁(x) = x f′(x) = Σᵢ₌₁ⁿ i xⁱ",
+        "Differentiate termwise: f₁′(x) = Σᵢ₌₁ⁿ i² xⁱ⁻¹",
+        "Multiply by x: f₂(x) = x f₁′(x) = Σᵢ₌₁ⁿ i² xⁱ"
+      ],
+      "accepted_alternatives": [
+        "Use product rule: f₂(x) = x f₁′(x) = x[x f″(x) + f′(x)], expand with sums to obtain Σ i² xⁱ"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: f₁′(x) = 1² + 2²x + 3²x² + … + n²xⁿ⁻¹ A1; x f₁′(x) = 1²x + 2²x² + … + n²xⁿ = Σ i² xⁱ AG"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 2: f₂(x) = x f₁′(x); f₁′(x) = x f″(x) + f′(x) A1; leads to Σ i² xⁱ AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-D-II",
+      "question": "1",
+      "part": "d(ii)",
+      "marks": 6,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Prove by mathematical induction that f_q(x) = Σᵢ₌₁ⁿ i^q xⁱ for all q ∈ ℤ⁺.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case",
+        "induction_hypothesis",
+        "inductive_step",
+        "differentiate_induction_hypothesis"
+      ],
+      "method_path": [
+        "Base case q=1: reference part (c) showing f₁(x) = Σ i xⁱ",
+        "Assume true for q=k: f_k(x) = Σ i^k xⁱ",
+        "Consider q=k+1: f_{k+1}(x) = x f_k′(x)",
+        "Differentiate the induction hypothesis: f_k′(x) = Σ i^{k+1} xⁱ⁻¹",
+        "Multiply by x: f_{k+1}(x) = Σ i^{k+1} xⁱ",
+        "Conclude by induction: true for all q ∈ ℤ⁺"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "consider q=1: f₁(x) = x + 2x² + … + nxⁿ (reference to part (c)) R1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "assume true for q=k, f_k(x) = Σ i^k xⁱ M1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "consider q=k+1: f_{k+1}(x) = x f_k′(x) M1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "x Σ i^{k+1} xⁱ⁻¹ = Σ i^{k+1} xⁱ A1, A1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "since true for q=1 and true for q=k+1 if true for q=k, hence true for all q∈ℤ⁺ R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-D-III",
+      "question": "1",
+      "part": "d(iii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Write f_q(1) in sigma notation: f_q(1) = Σᵢ₌₁ⁿ i^q.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sigma_notation",
+        "evaluate_at_x_equals_1"
+      ],
+      "method_path": [
+        "Substitute x=1 into f_q(x) = Σ i^q xⁱ",
+        "Obtain f_q(1) = Σᵢ₌₁ⁿ i^q"
+      ],
+      "accepted_alternatives": [
+        "Write as 1^q + 2^q + 3^q + … + n^q"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "f_q(1) = 1^q + 2^q + 3^q + … + n^q = Σ i^q A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-E",
+      "question": "1",
+      "part": "e",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Show that f(x) = (xⁿ⁺¹ − 1)/(x − 1) for x ≠ 1 by treating f(x) as a geometric series.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "geometric_series_sum",
+        "identify_first_term_and_common_ratio"
+      ],
+      "method_path": [
+        "Identify geometric series with u₁ = 1, r = x, and n+1 terms",
+        "Apply S_{n+1} = u₁(r^{n+1} − 1)/(r − 1) to obtain f(x) = (xⁿ⁺¹ − 1)/(x − 1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "uses S_n = u₁(r^n − 1)/(r − 1) with r=x and u₁=1 M1"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "clear indication there are (n+1) terms R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-F",
+      "question": "1",
+      "part": "f",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "11-12",
+      "task_summary": "Show that f₁(x) = x f′(x) = (nxⁿ⁺² − (n+1)xⁿ⁺¹ + x)/(x − 1)² for x ≠ 1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "quotient_rule",
+        "simplify_rational_expression"
+      ],
+      "method_path": [
+        "Express f(x) = (xⁿ⁺¹ − 1)/(x − 1)",
+        "Differentiate using quotient rule to obtain f′(x)",
+        "Multiply by x: f₁(x) = x f′(x)",
+        "Simplify algebraically to (nxⁿ⁺² − (n+1)xⁿ⁺¹ + x)/(x − 1)²"
+      ],
+      "accepted_alternatives": [
+        "Form (1−x)f₁(x) = nxⁿ⁺¹ − Σᵢ₌₁ⁿ xⁱ, simplify using geometric series to reach the result"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: f₁(x) = x f′(x); f′(x) obtained via quotient rule M1A1; simplifies to (nxⁿ⁺² − (n+1)xⁿ⁺¹ + x)/(x−1)² A1 AG"
+        },
+        {
+          "markscheme_pages": "11-12",
+          "basis": "METHOD 2: attempts to form (1−x)f₁(x) M1; uses geometric sum A1; simplifies to AG A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-G-I",
+      "question": "1",
+      "part": "g(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Show that lim_{x→1} f₁(x) is indeterminate of the form 0/0.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "evaluate_limit",
+        "indeterminate_form",
+        "zero_over_zero"
+      ],
+      "method_path": [
+        "Substitute x=1 into numerator: n(1)ⁿ⁺² − (n+1)(1)ⁿ⁺¹ + 1 = n − n − 1 + 1 = 0",
+        "Substitute x=1 into denominator: (1 − 1)² = 0",
+        "Conclude limit is of indeterminate form 0/0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "lim_{x→1} f₁(x) = (n − (n+1) + 1)/0 = 0/0 R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-G-II",
+      "question": "1",
+      "part": "g(ii)",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Apply l'Hôpital's rule twice to evaluate lim_{x→1} f₁(x) = n(n+1)/2.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "differentiate_numerator_and_denominator",
+        "apply_twice",
+        "evaluate_limit"
+      ],
+      "method_path": [
+        "First l'Hôpital: differentiate numerator and denominator of f₁(x)",
+        "Obtain lim_{x→1} [n(n+2)xⁿ⁺¹ − (n+1)²xⁿ + 1] / [2(x − 1)]",
+        "Verify limit is still 0/0",
+        "Second l'Hôpital: differentiate both again",
+        "Obtain lim_{x→1} [n(n+2)(n+1)xⁿ − n(n+1)²xⁿ⁻¹] / 2",
+        "Substitute x=1: [n(n+2)(n+1) − n(n+1)²]/2 = n(n+1)/2"
+      ],
+      "accepted_alternatives": [
+        "Use alternative intermediate derivative form: lim_{x→1} [n(n+1)xⁿ⁺¹ − (n+1)n xⁿ + …]/[2(x−1)] then second differentiation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempts to differentiate both numerator and denominator M1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "lim (n(n+1)xⁿ⁺¹ − (n+1)²xⁿ + 1)/(2(x−1)) A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "limit is still 0/0 R1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "attempts to differentiate again M1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "= (n(n+1)² − n(n+1)² + …)/2 … = n(n+1)/2 A1 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Show that A = 18√5 π by evaluating the surface area integral A = 2π ∫₀ʰ y √(1 + (dy/dx)²) dx for the line y = 2x with h = 3.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "factor_out_constants",
+        "definite_integral",
+        "evaluate_definite_integral",
+        "simplify_radical"
+      ],
+      "method_path": [
+        "substitute m = 2, h = 3 into A = 2π ∫₀ʰ mx √(1 + m²) dx",
+        "simplify to 4π√5 ∫₀³ x dx",
+        "integrate: 4π√5 [x²/2]₀³",
+        "evaluate to 18π√5"
+      ],
+      "accepted_alternatives": [
+        "Use the general formula A = π m √(1 + m²) h² and substitute m = 2, h = 3 to obtain 18π√5."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "EITHER: A = 2π ∫₀³ 2x √(1 + 2²) dx = 4π√5 ∫₀³ x dx, then [2π√5 x²]₀³ = 18√5 π. OR: A = π m √(1+m²) h² → π·2·√5·9 = 18√5 π. Final answer 18√5 π marked AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-B-I",
+      "question": "2",
+      "part": "b(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Deduce an expression for the radius r of the cone in terms of h and m.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "linear_function_evaluation"
+      ],
+      "method_path": [
+        "r = y(h) = m × h",
+        "r = mh"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "r = mh (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-B-II",
+      "question": "2",
+      "part": "b(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Deduce an expression for the slant height l of the cone in terms of h and m.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "pythagorean_theorem",
+        "substitution",
+        "factorisation"
+      ],
+      "method_path": [
+        "apply Pythagoras: l = √(h² + r²)",
+        "substitute r = mh",
+        "factor: l = √(h² + m²h²) = h√(1 + m²)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "l = √(h² + r²) (M1), then l = √(h² + h²m²) = h√(1 + m²) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-B-III",
+      "question": "2",
+      "part": "b(iii)",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "Using the integral A = 2π ∫₀ʰ y √(1 + (dy/dx)²) dx, show that A = π r l.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "factor_out_constants",
+        "definite_integral",
+        "evaluate_definite_integral",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "substitute y = mx and dy/dx = m into A = 2π ∫₀ʰ y √(1 + (dy/dx)²) dx",
+        "obtain A = 2πm√(1+m²) ∫₀ʰ x dx",
+        "integrate: A = 2πm√(1+m²) [x²/2]₀ʰ = π m√(1+m²) h²",
+        "rewrite as π (mh)(h√(1+m²))",
+        "recognize as π r l"
+      ],
+      "accepted_alternatives": [
+        "Use l = h√(1+m²) from (b)(ii) to substitute directly."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "A = 2π ∫₀ʰ mx √(1+m²) dx (A1); = π m √(1+m²) h² (M1 for integration); = π mh × h√(1+m²) = π r l (A1) AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "15",
+      "task_summary": "Find dy/dx for y = √(r² − x²).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "power_rule",
+        "simplify_rational_expression"
+      ],
+      "method_path": [
+        "apply chain rule: dy/dx = ½(r² − x²)^(−½) × (−2x)",
+        "simplify to −x / √(r² − x²)"
+      ],
+      "accepted_alternatives": [
+        "Use implicit differentiation on y² = r² − x² to obtain 2y(dy/dx) = −2x, giving dy/dx = −x/y = −x/√(r² − x²)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: chain rule (M1); dy/dx = ½(r²−x²)^(−½)(−2x) = −x/√(r²−x²) (A1). METHOD 2: implicit differentiation (M1); dy/dx = −x/y (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-D",
+      "question": "2",
+      "part": "d",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "16",
+      "task_summary": "Show by integration that the surface area of a sphere formed by rotating y = √(r² − x²) about the x-axis is 4πr².",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification",
+        "simplify_radical",
+        "definite_integral",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "substitute y = √(r² − x²) and dy/dx = −x/√(r² − x²) into A = 2π ∫₋ᵣʳ y √(1 + (dy/dx)²) dx",
+        "simplify radical: √(1 + x²/(r² − x²)) = √((r² − x² + x²)/(r² − x²)) = r/√(r² − x²)",
+        "obtain A = 2π ∫₋ᵣʳ r dx",
+        "evaluate: 2πr [x]₋ᵣʳ = 2πr(r − (−r)) = 4πr²"
+      ],
+      "accepted_alternatives": [
+        "Use implicit form: 2π ∫₋ᵣʳ √(y² + x²) dx = 2π ∫₋ᵣʳ r dx = 4πr².",
+        "Use symmetry: A = 4π ∫₀ʳ r dx = 4πr²."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "EITHER: substitute y and dy/dx into A (M1); simplify to 2π ∫₋ᵣʳ r dx (A1, M1); evaluate to 4πr² (A1) AG. OR: 2π ∫₋ᵣʳ √(y²+x²) dx = 2π ∫₋ᵣʳ r dx (M1, A1); = 4πr² (M1, A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-I",
+      "question": "2",
+      "part": "e(i)",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "17",
+      "task_summary": "Describe the geometric transformation from y = f(x) to y = f(kx), k > 0, where f(x) = √(r² − x²).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "geometric_transformation",
+        "horizontal_stretch"
+      ],
+      "method_path": [
+        "identify transformation as horizontal stretch (or dilation from the y-axis)",
+        "state the factor as 1/k"
+      ],
+      "accepted_alternatives": [
+        "Horizontal compression by factor k, invariant line the y-axis. Dilation by factor 1/k from the y-axis."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "EITHER: horizontal stretch, factor 1/k (A1, A1). OR: horizontal compression, factor k, invariant line y-axis (A1, A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-II",
+      "question": "2",
+      "part": "e(ii)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "17",
+      "task_summary": "Write down the x-intercepts of y = f(kx) in terms of r and k.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_equation",
+        "substitution"
+      ],
+      "method_path": [
+        "set f(kx) = 0",
+        "solve kx = ±r",
+        "obtain x = ±r/k"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "±r/k (A1). Note: Award A0 for r/k only and A0 for −r/k only."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-III",
+      "question": "2",
+      "part": "e(iii)",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "18",
+      "task_summary": "Find dy/dx for y = f(kx) = √(r² − k²x²) in terms of x, r and k.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "power_rule",
+        "simplify_rational_expression"
+      ],
+      "method_path": [
+        "apply chain rule: dy/dx = ½(r² − k²x²)^(−½) × (−2k²x)",
+        "simplify to −k²x / √(r² − k²x²)"
+      ],
+      "accepted_alternatives": [
+        "Use implicit differentiation on y² = r² − k²x² to obtain 2y(dy/dx) = −2k²x, giving dy/dx = −k²x/y = −k²x/√(r² − k²x²)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1: chain rule (M1); dy/dx = −k²x/√(r²−k²x²) (A1). METHOD 2: implicit differentiation (M1); dy/dx = −k²x/y (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-IV",
+      "question": "2",
+      "part": "e(iv)",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "19",
+      "task_summary": "Find the surface area A of the ellipsoid formed by rotating y = f(kx) about the x-axis, giving the answer as 2π ∫ √(p(x)) dx where p(x) is a polynomial.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification",
+        "simplify_radical",
+        "definite_integral_setup",
+        "common_denominator"
+      ],
+      "method_path": [
+        "substitute y = √(r² − k²x²) and dy/dx = −k²x/√(r² − k²x²) into A = 2π ∫ y √(1 + (dy/dx)²) dx",
+        "simplify radical: √(1 + k⁴x²/(r² − k²x²)) = √((r² − k²x² + k⁴x²)/(r² − k²x²))",
+        "multiply by y: √(r² − k²x²) × above = √(r² + (k⁴ − k²)x²)",
+        "write A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx with polynomial p(x) = r² + (k⁴ − k²)x²"
+      ],
+      "accepted_alternatives": [
+        "Use implicit form: A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(y² + k⁴x²) dx = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "EITHER: correct substitution (A1); simplify to find p(x) (M1); A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx (A1 for limits, A1 for p(x) correct). OR: A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(y² + k⁴x²) dx = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-V",
+      "question": "2",
+      "part": "e(v)",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "20",
+      "task_summary": "Model Earth as an ellipsoid with polar distance 12 714 km and equatorial diameter 12 756 km; choose suitable r and k, then compute the surface area correct to 4 significant figures in the form a × 10^q.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.mathematical_models"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "parameter_identification",
+        "definite_integral_setup",
+        "numerical_integration",
+        "scientific_notation"
+      ],
+      "method_path": [
+        "identify r = 6378 km (half of equatorial diameter 12 756 km)",
+        "determine k = r / (polar half-distance) = 6378 / 6357 ≈ 1.00330",
+        "substitute r and k into A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx with limits ±6357",
+        "evaluate definite integral numerically to obtain approximately 510 064 226 km²",
+        "express as 5.101 × 10⁸ km² to 4 significant figures"
+      ],
+      "accepted_alternatives": [
+        "Using r = 6357 km and k ≈ 0.996707 leads to 5.089 × 10⁸ km² (markscheme notes this scores A0A1FT(M1)A0)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "r = 6378 km (A1); k = 6378/6357 = 1.00330… (A1); attempt to form definite integral (M1); A = 5.101 × 10⁸ km² (A1). Note: using r = 6357 and k = 0.996707… leads to 5.089 × 10⁸ km² with A0A1FT(M1)A0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

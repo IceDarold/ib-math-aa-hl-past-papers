@@ -1,0 +1,110 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Find the value of a by using the product of roots and recognising that 3−i is also a root (complex conjugate theorem).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "product_of_roots",
+        "complex_conjugate_theorem",
+        "expand_complex_product",
+        "solve_cubic"
+      ],
+      "method_path": [
+        "State product of four roots = 80",
+        "Recognise 3−i is a root (real coefficients implies conjugate pairs)",
+        "Set up (3+i)(3−i)(a)(a²) = 80",
+        "Simplify (3+i)(3−i) = 10 to get 10a³ = 80",
+        "Solve a³ = 8 giving a = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "product of roots = 80 (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "3−i is a root (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to set up an equation involving the product of their four roots and 80 ± (M1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "(3+i)(3−i)(α)(α²) = 80 ⇒ 10α³ = 80 ⇒ α = 2 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Find p using the sum of roots (Vieta) or by expanding the polynomial from its linear factors.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sum_of_roots",
+        "vietas_formulas",
+        "simplify_complex_sum",
+        "solve_linear"
+      ],
+      "method_path": [
+        "State sum of four roots = −p",
+        "Compute sum: (3+i) + (3−i) + 2 + 4 = 12",
+        "Set −p = 12 giving p = −12"
+      ],
+      "accepted_alternatives": [
+        "Form and expand factors (z−(3+i))(z−(3−i))(z−2)(z−4) to obtain z⁴ − 12z³ + …, identify p = −12 from the coefficient of z³"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "sum of roots = −p (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "−p = 3+i + 3−i + 2 + 4 (M1); Note: Accept 3+i + 3−i + 2 + 4 = p for (M1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "p = −12 (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: (z−(3+i))(z−(3−i))(z−2)(z−4) (M1), expand to (z²−6z+10)(z²−6z+8) (A1), p = −12 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

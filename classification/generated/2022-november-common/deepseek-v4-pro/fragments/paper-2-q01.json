@@ -1,0 +1,107 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the regression line coefficients a and b for y on x from the given paired data using GDC.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "linear_regression",
+        "gdc_computation"
+      ],
+      "method_path": [
+        "Enter (x, y) data into GDC",
+        "Compute linear regression of y on x",
+        "Obtain a ≈ 1.01, b ≈ 2.45"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "a =1.01 , b = 2.45 A1A1 [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write down the Pearson product-moment correlation coefficient r from the GDC regression output.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "pearson_correlation",
+        "gdc_computation"
+      ],
+      "method_path": [
+        "Read r from GDC regression output",
+        "State r ≈ 0.981"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "r = 0.981 A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Predict the Science test score for Mathematics score 78 using the regression equation, rounding to the nearest integer.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "rounding"
+      ],
+      "method_path": [
+        "Substitute x = 78 into regression equation y = ax + b",
+        "Compute y ≈ 81.39",
+        "Round to nearest integer: 81"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "correct substitution of 78 into their regression equation (M1), 81 A1 [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

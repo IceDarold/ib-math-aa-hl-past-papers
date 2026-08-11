@@ -1,0 +1,45 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Evaluate the definite integral ∫₁⁹ (3 − 5/√x) dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "rewrite_integrand",
+        "integrate_power_rule",
+        "substitute_limits",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Rewrite 5/√x as 5x^(−1/2)",
+        "Integrate: ∫(3 − 5x^(−1/2)) dx = 3x − 10√x",
+        "Substitute upper and lower limits: F(9) − F(1)",
+        "Evaluate: (27 − 30) − (3 − 10) = 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "∫(3 − 5/√x)dx = ∫(3 − 5x^(−1/2))dx (A1); ∫(3 − 5x^(−1/2))dx = 3x − 10√x (+c) A1A1; substituting limits into their integrated function and subtracting (M1); = 4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

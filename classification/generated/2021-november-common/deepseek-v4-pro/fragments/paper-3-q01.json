@@ -1,0 +1,323 @@
+{
+  "question": "1",
+  "expected_question_marks": 25,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-A",
+      "question": "1",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Verify that u = f(t) satisfies d^2 u/dt^2 = u by differentiating f(t) twice.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_exponential",
+        "second_derivative",
+        "verify_differential_equation"
+      ],
+      "method_path": [
+        "Compute f'(t) = (e^t - e^(-t))/2",
+        "Compute f''(t) = (e^t + e^(-t))/2",
+        "Observe f''(t) = f(t), confirming d^2 u/dt^2 = u"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "f'(t) = (e^t - e^(-t))/2 A1; f''(t) = (e^t + e^(-t))/2 A1; = f(t) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-B",
+      "question": "1",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Show that (f(t))^2 + (g(t))^2 = f(2t) by substituting exponential definitions and simplifying.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.proof",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_definition",
+        "expand_binomial",
+        "collect_terms",
+        "recognize_hyperbolic_form"
+      ],
+      "method_path": [
+        "Substitute f(t) = (e^t + e^(-t))/2, g(t) = (e^t - e^(-t))/2 into LHS",
+        "Expand ((e^t+e^(-t))^2 + (e^t-e^(-t))^2)/4",
+        "Simplify to (e^(2t) + e^(-2t))/2",
+        "Recognize as f(2t)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: start from f(2t) = (e^(2t)+e^(-2t))/2 and expand backwards to (f(t))^2+(g(t))^2. Markscheme accepts combinations of METHODS 1 and 2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: substituting f and g M1; =((e^t+e^(-t))^2+(e^t-e^(-t))^2)/4 (M1); =(e^(2t)+e^(-2t))/2 = f(2t) A1. METHOD 2: f(2t)=(e^(2t)+e^(-2t))/2 =((e^t)^2+(e^(-t))^2)/2 M1; =((e^t+e^(-t))^2+(e^t-e^(-t))^2)/4 M1A1; =(f(t))^2+(g(t))^2 AG. Accept combinations of METHODS 1 and 2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-C-I",
+      "question": "1",
+      "part": "c(i)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Using e^(iu) = cos u + i sin u, find f(iu) in terms of sin u and cos u.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "apply_euler_formula",
+        "substitute_complex",
+        "simplify_to_real"
+      ],
+      "method_path": [
+        "Write f(iu) = (e^(iu) + e^(-iu))/2",
+        "Substitute e^(iu) = cos u + i sin u and e^(-iu) = cos u - i sin u",
+        "Simplify to cos u"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "substituting e^(iu)=cos u + i sin u into expression for f (M1); obtaining e^(-iu)=cos u - i sin u (A1); f(iu)=(cos u + i sin u + cos u - i sin u)/2 = cos u A1. M1 can be awarded for use of sine and cosine being odd and even respectively."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-C-II",
+      "question": "1",
+      "part": "c(ii)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Using e^(iu) = cos u + i sin u, find g(iu) in terms of sin u and cos u.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "apply_euler_formula",
+        "substitute_complex",
+        "simplify_to_imaginary"
+      ],
+      "method_path": [
+        "Write g(iu) = (e^(iu) - e^(-iu))/2",
+        "Substitute e^(iu) = cos u + i sin u and e^(-iu) = cos u - i sin u",
+        "Simplify to i sin u"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "g(iu)=(cos u + i sin u - cos u + i sin u)/2; substituting and attempt to simplify (M1); = 2i sin u / 2 = i sin u A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-D",
+      "question": "1",
+      "part": "d",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Find and simplify (f(iu))^2 + (g(iu))^2 using results from part (c).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_expressions",
+        "compute_squares",
+        "apply_double_angle"
+      ],
+      "method_path": [
+        "Substitute f(iu) = cos u and g(iu) = i sin u",
+        "Compute cos^2 u + (i sin u)^2 = cos^2 u - sin^2 u",
+        "Apply double-angle identity to get cos 2u"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: use f(2iu) = (e^(2iu)+e^(-2iu))/2 = (cos 2u + i sin 2u + cos 2u - i sin 2u)/2 = cos 2u. Equivalent forms such as 2 cos^2 u - 1 accepted."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: substituting expressions from (c) (M1); cos^2 u - sin^2 u (= cos 2u) A1. METHOD 2: f(2iu)=(e^(2iu)+e^(-2iu))/2 = cos 2u M1; cos 2u A1. Accept equivalent final answers simplified removing all imaginary parts eg 2 cos^2 u - 1 etc."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-E",
+      "question": "1",
+      "part": "e",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Show that (f(t))^2 - (g(t))^2 = (f(iu))^2 - (g(iu))^2 by evaluating both sides to 1.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_squares",
+        "simplify_to_constant",
+        "apply_pythagorean_identity",
+        "conclude_equality"
+      ],
+      "method_path": [
+        "Compute LHS: ((e^t+e^(-t))^2 - (e^t-e^(-t))^2)/4 = 1",
+        "Compute RHS: cos^2 u + sin^2 u = 1",
+        "Conclude equality since both sides equal 1"
+      ],
+      "accepted_alternatives": [
+        "Show (f(z))^2 - (g(z))^2 = 1 for all z in C, directly implying equality for both real t and imaginary iu arguments."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "LHS: ((e^t+e^(-t))^2-(e^t-e^(-t))^2)/4 M1; =(e^(2t)+e^(-2t)+2-e^(2t)-e^(-2t)+2)/4 A1; =4/4=1 A1. Award A1 for value 1 from either side. RHS: cos^2 u + sin^2 u M1; =1. Award full marks for showing (f(z))^2-(g(z))^2=1 for all z."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-F",
+      "question": "1",
+      "part": "f",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Sketch the graph of x^2 - y^2 = 1, stating axis intercepts and asymptote equations.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_intercepts",
+        "find_asymptotes",
+        "sketch_hyperbola"
+      ],
+      "method_path": [
+        "Identify x-intercepts at (1, 0) and (-1, 0)",
+        "Identify asymptotes y = x and y = -x",
+        "Sketch upper and lower branches of rectangular hyperbola"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for correct curves in upper quadrants, A1 for correct curves in lower quadrants, A1 for correct x-intercepts of (-1,0) and (1,0) (condone x=-1 and 1), A1 for y=x and y=-x."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P3-Q01-G",
+      "question": "1",
+      "part": "g",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "11",
+      "task_summary": "Find possible values of k such that rotating x^2 - y^2 = 1 yields xy = k.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "rotation_transformation",
+        "coordinate_transform",
+        "evaluate_constant"
+      ],
+      "method_path": [
+        "Recognize rotation by 45 degrees (pi/4) in either direction",
+        "Transform point (1, 0) under 45-degree rotation to (1/sqrt(2), +/-1/sqrt(2))",
+        "Compute k = xy = (1/sqrt(2))*(+/-1/sqrt(2)) = +/-1/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to rotate by 45 degrees in either direction (M1); attempting to rotate a particular point, eg (1,0) (M1); (1,0) rotates to (1/sqrt(2), +/-1/sqrt(2)) (or similar) (A1); hence k = +/-1/2 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "topic_uncertain"
+      ]
+    }
+  ]
+}

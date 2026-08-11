@@ -1,0 +1,122 @@
+{
+  "question": "8",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q08-A",
+      "question": "8",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "For f(x) = cos(x - k) with k = π/2 and domain 0 ≤ x ≤ a, find the largest a for which f⁻¹ exists.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "trigonometric_transformation",
+        "monotonicity_analysis",
+        "horizontal_line_test"
+      ],
+      "method_path": [
+        "Transform f(x) = cos(x - π/2) to sin(x)",
+        "Identify that sin(x) is strictly increasing on [0, π/2] and therefore one-to-one",
+        "Conclude a = π/2 is the largest value preserving one-to-one property"
+      ],
+      "accepted_alternatives": [
+        "Graphical approach via sketching f(x) = sin(x) and applying the horizontal line test."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "a = π/2, A2. Note: For sinusoidal graph through the origin seen with incorrect a, or use of horizontal line test with incorrect a, award A1A0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q08-B",
+      "question": "8",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "For f(x) = cos(x - k) with k = π, find the largest a for which f⁻¹ exists.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "trigonometric_transformation",
+        "monotonicity_analysis"
+      ],
+      "method_path": [
+        "Transform f(x) = cos(x - π) to -cos(x)",
+        "Recognize that -cos(x) is strictly increasing on [0, π]",
+        "Conclude a = π"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "a = π, A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q08-C",
+      "question": "8",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "For f(x) = cos(x - k) with π < k < 2π, find the largest a for which f⁻¹ exists, giving answer in terms of k.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "derivative_analysis",
+        "monotonicity_analysis",
+        "trigonometric_transformation"
+      ],
+      "method_path": [
+        "Compute f'(x) = -sin(x - k) and evaluate sign at x = 0: f'(0) = sin(k) < 0 for k ∈ (π, 2π)",
+        "Find first positive x where f'(x) = 0 by solving sin(x - k) = 0, giving x = k - π",
+        "Conclude that f is strictly decreasing and one-to-one on [0, k - π], so a = k - π"
+      ],
+      "accepted_alternatives": [
+        "Sketch the sinusoidal curve shifted right by k, observe it crosses the y-axis decreasing, and the first turning point occurs at x = k - π."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "sketch showing sinusoidal shape decreasing as it crosses the y-axis (below or above the origin) (A1). a = k - π, A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "question": "6",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the Cartesian equation of plane Π₃, perpendicular to Π₁: 3x+2y+z=6 and Π₂: x-2y+z=4, passing through the origin.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "normal_vector",
+        "cartesian_equation"
+      ],
+      "method_path": [
+        "Compute cross product of normals n₁=(3,2,1) and n₂=(1,-2,1)",
+        "Obtain normal vector (4,-2,-8) or simplified (2,-1,-4)",
+        "Write Cartesian equation 4x-2y-8z=0 or 2x-y-4z=0"
+      ],
+      "accepted_alternatives": [
+        "Any non-zero scalar multiple of the normal vector",
+        "Equation 4x-2y-8z=0 or any equivalent scalar multiple"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "(M1) attempt to find a vector perpendicular to Π₁ and Π₂ using a cross product; (A1) for correct normal vector (4,-2,-8); A1 for equation 4x-2y-8z=0 → 2x-y-4z=0"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the coordinates of the intersection point of planes Π₁, Π₂, and Π₃.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "linear_system",
+        "simultaneous_equations",
+        "intersection_point"
+      ],
+      "method_path": [
+        "Set up 3×3 linear system: 3x+2y+z=6, x-2y+z=4, 2x-y-4z=0",
+        "Solve for x, y, z",
+        "State coordinates (41/21, -10/21, 23/21)"
+      ],
+      "accepted_alternatives": [
+        "Any valid method for solving 3 simultaneous equations (substitution, elimination, matrix inversion, row reduction)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "(M1) attempt to solve 3 simultaneous equations in 3 variables; A1 for correct coordinates; markscheme extract shows (41/21, 10/21, -23/21) with decimals (1.95, 0.476, -1.10) but mathematical verification confirms the correct intersection of the given planes is (41/21, -10/21, 23/21) — possible sign error in markscheme PDF extraction"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "markscheme_ambiguity",
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

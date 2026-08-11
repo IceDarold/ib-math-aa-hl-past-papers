@@ -1,0 +1,220 @@
+{
+  "question": "11",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Show that L = (3/4)sec(alpha) + 6cosec(alpha) by expressing AC and CB using right-triangle trigonometry on the diagram.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "trigonometric_ratio_application",
+        "secant_definition",
+        "cosecant_definition",
+        "algebraic_sum"
+      ],
+      "method_path": [
+        "Express AC via cos(alpha) = (3/4)/AC giving AC = (3/4)sec(alpha)",
+        "Express CB via sin(alpha) = 6/CB giving CB = 6cosec(alpha)",
+        "Sum AC + CB to obtain L = (3/4)sec(alpha) + 6cosec(alpha)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "A1 for AC = (3/4)sec(alpha); A1 for CB = 6cosec(alpha); concluding L = (3/4)sec(alpha) + 6cosec(alpha) AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "(i) Find dL/d(alpha). (ii) When dL/d(alpha) = 0, show that alpha = arctan 2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometric_equations",
+        "calculus.stationary_points"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation_trigonometric",
+        "algebraic_manipulation",
+        "equation_solving",
+        "inverse_trigonometric_function"
+      ],
+      "method_path": [
+        "Differentiate L: dL/d(alpha) = (3/4)sec(alpha)tan(alpha) - 6cosec(alpha)cot(alpha)",
+        "Rewrite derivative in terms of sin(alpha), cos(alpha) or tan(alpha)",
+        "Set dL/d(alpha) = 0 and simplify",
+        "Obtain tan^3(alpha) = 8",
+        "Take cube root: tan(alpha) = 2",
+        "Conclude alpha = arctan 2"
+      ],
+      "accepted_alternatives": [
+        "Derivative equivalently expressed as (3sin(alpha))/(4cos^2(alpha)) - (6cos(alpha))/sin^2(alpha) or via tan(alpha) factors."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "(b)(i) A1 for dL/d(alpha) = (3/4)sec(alpha)tan(alpha) - 6cosec(alpha)cot(alpha). (b)(ii) (M1) for writing derivative in terms of sin,cos or tan; (A1) for setting to zero and manipulating; A1 for tan^3(alpha)=8; A1 for tan(alpha)=2; A1 for alpha=arctan2 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "(i) Find d^2L/d(alpha)^2. (ii) When alpha = arctan 2, show that d^2L/d(alpha)^2 = (45*sqrt(5))/4.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "calculus.stationary_points"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "second_derivative",
+        "trigonometric_identity_application",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply product rule to dL/d(alpha) to find d^2L/d(alpha)^2",
+        "Obtain terms: (3/4)sec(alpha)tan^2(alpha)+(3/4)sec^3(alpha)+6cosec(alpha)cot^2(alpha)+6cosec^3(alpha)",
+        "Use right triangle for tan(alpha)=2 to find sec(alpha)=sqrt(5), cosec(alpha)=sqrt(5)/2, cot(alpha)=1/2",
+        "Substitute ratios into d^2L/d(alpha)^2",
+        "Simplify to (45*sqrt(5))/4"
+      ],
+      "accepted_alternatives": [
+        "Equivalent simplifications using trigonometric identities; ratios may be found via identities rather than right triangle."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(c)(i) (M1) for product rule attempt; A1 for sec terms; A1 for cosec terms. (c)(ii) (M1) for finding trig ratios from tan(alpha)=2; (A1) for one correct ratio; A2 for correct substitution and simplification to (45*sqrt(5))/4 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "(i) Justify that L is a minimum when alpha = arctan 2. (ii) Determine the minimum value of L.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "geometry.trigonometry"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "second_derivative_test",
+        "minimum_verification",
+        "trigonometric_evaluation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Note d^2L/d(alpha)^2 > 0 at alpha = arctan 2, confirming concave up",
+        "Conclude L is a minimum since dL/d(alpha)=0 and d^2L/d(alpha)^2 > 0",
+        "Substitute sec(alpha)=sqrt(5), cosec(alpha)=sqrt(5)/2 into L",
+        "Simplify: L_min = (3/4)sqrt(5) + 6(sqrt(5)/2) = (15*sqrt(5))/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "(d)(i) R1 for d^2L/d(alpha)^2 > 0 or concave up, when dL/d(alpha)=0 hence minimum. (d)(ii) (A1) for L_min = (3/4)sqrt(5) + 6(sqrt(5)/2); A1 for (15*sqrt(5))/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Determine whether a pole of length 11.25 m can be carried horizontally from the passageway into the room, giving a reason.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "numerical_comparison",
+        "contextual_interpretation"
+      ],
+      "method_path": [
+        "Recognise L_min = (15*sqrt(5))/4 is the shortest AB touching corner C",
+        "Evaluate L_min approx 8.39 m",
+        "Compare pole length 11.25 m with L_min",
+        "Conclude pole cannot be carried since 11.25 > L_min"
+      ],
+      "accepted_alternatives": [
+        "Equivalent comparative reasoning e.g. (15*sqrt(5))/4 < 45/4 = 11.25."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "R1 for comparative reasoning showing L_min < 11.25 (or equivalent); A1 for concluding the pole cannot be carried horizontally. Note: markscheme states Do not award R0A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "markscheme_ambiguity"
+      ]
+    }
+  ]
+}

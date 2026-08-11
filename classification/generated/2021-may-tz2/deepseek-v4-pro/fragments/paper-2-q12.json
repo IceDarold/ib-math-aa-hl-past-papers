@@ -1,0 +1,247 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Show that f(x)=arcsin((1-x^2)/(1+x^2)) is an even function.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_neg_x",
+        "simplify_rational",
+        "confirm_parity"
+      ],
+      "method_path": [
+        "Evaluate f(-x)=arcsin((1-(-x)^2)/(1+(-x)^2))",
+        "Simplify to arcsin((1-x^2)/(1+x^2))=f(x)",
+        "Conclude f is even"
+      ],
+      "accepted_alternatives": [
+        "Sketch graph of y=f(x) with line symmetry in the y-axis indicated"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "EITHER f(-x)=arcsin((1-(-x)^2)/(1+(-x)^2))=arcsin((1-x^2)/(1+x^2))=f(x) R1 OR a sketch graph with line symmetry in the y-axis indicated R1. THEN f(x) is an even function AG. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "By considering limits as x approaches +/-infinity, show that y=f(x) has a horizontal asymptote and state its equation.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [
+        "calculus.limits"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "evaluate_limit_infinity",
+        "compute_arcsin_value",
+        "state_asymptote"
+      ],
+      "method_path": [
+        "Take limit as x->+/-inf of (1-x^2)/(1+x^2) equals -1",
+        "Compute arcsin(1)=pi/2",
+        "State horizontal asymptote y=pi/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "as x->+/-inf, f(x)->arcsin(1)->pi/2 A1. horizontal asymptote is y=pi/2 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 9,
+      "source_pages": "14",
+      "markscheme_pages": "25-26",
+      "task_summary": "(i) Show f'(x)=2x/(|x|(1+x^2)) for x not zero using quotient and chain rules. (ii) Using sqrt(x^2)=|x|, show f is decreasing for x<0.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "quotient_rule",
+        "chain_rule",
+        "simplify_derivative",
+        "substitute_absolute_value",
+        "sign_analysis",
+        "conclude_monotonicity"
+      ],
+      "method_path": [
+        "Apply quotient rule to (1-x^2)/(1+x^2) to get 4x/(1+x^2)^2",
+        "Apply chain rule for arcsin(u) with u=(1-x^2)/(1+x^2)",
+        "Combine: f'(x)=(1/sqrt(1-u^2))*(4x/(1+x^2)^2)",
+        "Simplify sqrt(1-u^2)=2|x|/(1+x^2)",
+        "Obtain f'(x)=2x/(|x|(1+x^2))",
+        "For x<0, substitute |x|=-x to get f'(x)=-2/(1+x^2)",
+        "Note numerator negative, denominator positive, so f'(x)<0",
+        "Conclude f is decreasing for x<0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-26",
+          "basis": "(i) M1 quotient rule. A1 d/dx[(1-x^2)/(1+x^2)]=4x/(1+x^2)^2. M1 chain rule. M1 combining. A1 simplification. A1 f'(x)=2x/(|x|(1+x^2)) AG. (ii) EITHER for x<0, |x|=-x (A1) so f'(x)=-2/(1+x^2) A1 OR x<0 and 1+x^2>0 A1, 2x<0, |x|>0 A1. THEN f'(x)<0 R1. [9 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "Find g^{-1}(x) for g(x)=arcsin((1-x^2)/(1+x^2)), x>=0, justifying the choice of root.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "swap_variables",
+        "apply_sine",
+        "solve_rational",
+        "select_positive_root",
+        "state_inverse"
+      ],
+      "method_path": [
+        "Set x=arcsin((1-y^2)/(1+y^2))",
+        "Apply sine: sin x=(1-y^2)/(1+y^2)",
+        "Solve for y^2: y^2=(1+sin x)/(1-sin x)",
+        "Reject negative root because domain of g is x>=0 so range of g^{-1} is y>=0",
+        "State g^{-1}(x)=sqrt((1+sin x)/(1-sin x))"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "M1 x=arcsin((1-y^2)/(1+y^2)). A1 sin x=(1-y^2)/(1+y^2) => sin x + y^2 sin x = 1 - y^2. A1 y^2=(1+sin x)/(1-sin x). R1 positive root taken (domain of g is x>=0 so range of g^{-1} is y>=0). A1 g^{-1}(x)=sqrt((1+sin x)/(1-sin x)). [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain",
+        "markscheme_ambiguity"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "State the domain of g^{-1}.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "state_domain"
+      ],
+      "method_path": [
+        "State domain as -pi/2 <= x < pi/2 or [-pi/2, pi/2)"
+      ],
+      "accepted_alternatives": [
+        "Accept [-pi/2, pi/2[ or [-1.57, 1.57) if correct to 3 s.f."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "domain is -pi/2 <= x < pi/2 A1. Accept correct alternative notations e.g. [-pi/2, pi/2[ or [-pi/2, pi/2). Accept [-1.57, 1.57) if correct to 3 s.f. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-F",
+      "question": "12",
+      "part": "F",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "28",
+      "task_summary": "Sketch the graph of y=g^{-1}(x), indicating asymptotes with equations and axes intercepts.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.inverse_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "indicate_asymptote",
+        "indicate_intercepts",
+        "state_domain_range"
+      ],
+      "method_path": [
+        "Sketch curve with domain [-pi/2, pi/2) and range [0, infinity)",
+        "Mark y-intercept at y=1",
+        "Indicate vertical asymptote x=pi/2",
+        "Show asymptotic behaviour as x approaches pi/2 from below"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A1 for correct domain, correct range and y-intercept at y=1. A1 for asymptotic behaviour x->pi/2. A1 for x=pi/2. Coordinates not required. Do not accept x=1.57 or inexact values. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

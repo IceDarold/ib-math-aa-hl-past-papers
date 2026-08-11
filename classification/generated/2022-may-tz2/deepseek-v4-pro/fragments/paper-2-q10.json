@@ -1,0 +1,180 @@
+{
+  "question": "10",
+  "expected_question_marks": 15,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q10-A-I-II",
+      "question": "10",
+      "part": "(a)(i)(ii)",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Use the scientist's models to find the initial height (t=0) of Plant B and Plant A correct to three significant figures.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "evaluate_function",
+        "substitute_value",
+        "round_to_significant_figures",
+        "trigonometric_evaluation"
+      ],
+      "method_path": [
+        "Substitute t=0 into hB(t)=8t+32",
+        "Obtain hB(0)=32 cm",
+        "Substitute t=0 into hA(t)=sin(2t+6)+9t+27",
+        "Evaluate hA(0)=sin(6)+27",
+        "Compute sin(6)+27≈26.7205...",
+        "Round to 26.7 (3 s.f.)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(i) 32 (cm) A1"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "(ii) hA(0)=sin(6)+27 (M1), =26.7205... =26.7 (cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "(b)",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find the values of t when hA(t)=hB(t) for 0≤t≤9.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_equations_equal",
+        "solve_trigonometric_equation",
+        "numerical_solve_gdc"
+      ],
+      "method_path": [
+        "Set hA(t)=hB(t): sin(2t+6)+9t+27=8t+32",
+        "Simplify to sin(2t+6)+t−5=0",
+        "Solve numerically using GDC for t∈[0,9]",
+        "Obtain t≈4.01, 4.70, 5.88 weeks"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempts to solve hA(t)=hB(t) for t (M1); t=4.0074...,4.7034...,5.88332... ; t=4.01,4.70,5.88 (weeks) A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q10-C",
+      "question": "10",
+      "part": "(c)",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "For t>6, prove that Plant A was always taller than Plant B.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "number_algebra.inequalities",
+        "number_algebra.proof"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "form_difference",
+        "trigonometric_bound",
+        "inequality_proof",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Form difference hA(t)−hB(t)=sin(2t+6)+t−5",
+        "Note for t>6: t−5>1",
+        "Use bound sin(2t+6)≥−1",
+        "Conclude hA(t)−hB(t)>0 for t>6, hence Plant A always taller"
+      ],
+      "accepted_alternatives": [
+        "Use minimum value of sin(2t+6)=−1, so for t>6, hA(t)−hB(t)=t−6>0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "hA(t)−hB(t)=sin(2t+6)+t−5 A1; EITHER for t>6, t−5>1 A1 and as sin(2t+6)≥−1 ⇒ hA(t)−hB(t)>0 R1; OR the minimum value of sin(2t+6)=−1 R1 so for t>6, hA(t)−hB(t)=t−6>0 A1; THEN hence for t>6, Plant A was always taller than Plant B AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "(d)",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "For 0≤t≤9, find the total amount of time when the rate of growth of Plant B was greater than the rate of growth of Plant A.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "calculus.inequalities"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_function",
+        "set_up_inequality",
+        "solve_trigonometric_inequality",
+        "find_interval_lengths",
+        "sum_intervals"
+      ],
+      "method_path": [
+        "Differentiate: hA'(t)=2cos(2t+6)+9, hB'(t)=8",
+        "Set hB'(t)>hA'(t): 8>2cos(2t+6)+9",
+        "Simplify to cos(2t+6)<−1/2",
+        "Solve cos(2t+6)=−1/2 for t∈[0,9] to find interval boundaries",
+        "Identify three intervals where inequality holds: (1.19,2.24), (4.33,5.38), (7.47,8.52)",
+        "Sum interval lengths: 3×(π/3)=π≈3.14 weeks"
+      ],
+      "accepted_alternatives": [
+        "Use exact values t∈(4π/3−3,5π/3−3), (7π/3−3,8π/3−3), (10π/3−3,11π/3−3) giving total time = π weeks"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognises that hA'(t) and hB'(t) are required (M1); attempts to solve hA'(t)=hB'(t) for t (M1); t=1.18879... and 2.23598... OR 4.33038... and 5.37758... OR 7.47197... and 8.51917... (A1); 1.18879...<t<2.23598... OR 4.33038...<t<5.37758... OR 7.47197...<t<8.51917... (A1); attempts to calculate the total amount of time (M1); =(2.2359...−1.1887...)×3=3.14...=π (weeks) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

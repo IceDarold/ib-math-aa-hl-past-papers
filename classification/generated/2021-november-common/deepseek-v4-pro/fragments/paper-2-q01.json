@@ -1,0 +1,178 @@
+{
+  "question": "1",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Find Pearson's product-moment correlation coefficient r for the given paired data on practice hours and diploma scores using a GDC.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_calculation",
+        "pearsons_r",
+        "rounding"
+      ],
+      "method_path": [
+        "Enter data into GDC",
+        "Compute Pearson's r",
+        "Round to r ≈ 0.884"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "use of GDC to give r=0.883529... r=0.884. Award the (M1) for any correct value of r, a, b or r²=0.780624... seen in part (a) or part (b)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Write down the regression coefficients a and b from the linear model D = ah + b obtained via GDC.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_calculation",
+        "linear_regression_coefficients",
+        "rounding"
+      ],
+      "method_path": [
+        "Read a and b from GDC linear regression output",
+        "State a ≈ 1.37, b ≈ 64.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "a=1.36609..., b=64.5171... a=1.37, b=64.5"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Determine the expected change in diploma score for an extra five hours of weekly practice using the regression slope.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "regression_slope",
+        "multiplication",
+        "linear_prediction"
+      ],
+      "method_path": [
+        "Identify expected change = a × Δh",
+        "Compute 5 × a using their value of a",
+        "State expected score increase of about 7 marks"
+      ],
+      "accepted_alternatives": [
+        "Compute D(h+5) − D(h) explicitly using the full regression equation instead of multiplying a by 5."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to find their difference. 5 × 1.36609... OR (1.36609...(h+5)+64.5171...) − (1.36609...h+64.5171...). 6.83045... = 6.83. the student could have expected her score to increase by 7 marks. Note: Accept an increase of 6, 6.83 or 6.85."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-D",
+      "question": "1",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Comment on the validity of the assertion that practice hours have a direct (causal) effect on diploma results.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "causation_vs_correlation",
+        "critical_evaluation"
+      ],
+      "method_path": [
+        "Recognize that correlation does not imply causation",
+        "State that Lucy's assertion of a direct causal effect is not justified by the data alone"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Lucy is incorrect in suggesting there is a causal relationship. This might be true, but the data can only indicate a correlation. Note: Accept ‘Lucy is incorrect as correlation does not imply causation’ or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q01-E",
+      "question": "1",
+      "part": "E",
+      "marks": 1,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "State how the value of r is affected when a fixed number of hours is deducted from each student's recorded practice hours.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "correlation_invariance",
+        "linear_transformation"
+      ],
+      "method_path": [
+        "Recognize that subtracting a constant from all x-values does not change Pearson's r",
+        "State no effect"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "no effect"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

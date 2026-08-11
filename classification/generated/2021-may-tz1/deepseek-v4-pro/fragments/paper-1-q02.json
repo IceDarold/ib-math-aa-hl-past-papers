@@ -1,0 +1,48 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Given an arithmetic sequence where u8 = S8 = 8, find the first term u1 and the common difference d.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_nth_term",
+        "arithmetic_sum_formula",
+        "substitution",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Apply S8 = (8/2)(u1 + u8)",
+        "Substitute S8 = 8, u8 = 8 to obtain 4(u1 + 8) = 8",
+        "Solve to get u1 = −6",
+        "Apply u8 = u1 + 7d",
+        "Substitute u1 = −6, u8 = 8 and solve to get d = 2"
+      ],
+      "accepted_alternatives": [
+        "Set up simultaneous equations u1 + 7d = 8 and 4(u1 + 8) = 8 (or 4(2u1 + 7d) = 8 or u1 = 3d), then solve to obtain u1 = −6, d = 2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: 4(u1 + 8) = 8 (A1), u1 = −6 A1, u1 + 7d = 8 OR 4(2u1 + 7d) = 8 (A1), attempt to substitute their u1 (M1), d = 2 A1. METHOD 2: u1 + 7d = 8 (A1), 4(u1 + 8) = 8 OR 4(2u1 + 7d) = 8 OR u1 = 3d (A1), attempt to solve (M1), u1 = −6, d = 2 A1A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

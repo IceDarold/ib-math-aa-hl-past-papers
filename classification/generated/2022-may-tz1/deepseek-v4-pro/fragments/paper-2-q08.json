@@ -1,0 +1,79 @@
+{
+  "question": "8",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q08-A",
+      "question": "8",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Write down an expression for the product of the roots of kx^2 - (k+3)x + 2k+9 = 0 in terms of k.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "vieta_formula",
+        "product_of_roots",
+        "quadratic_coefficients"
+      ],
+      "method_path": [
+        "Identify coefficients a = k, c = 2k+9",
+        "Apply Vieta: product of roots = c/a = (2k+9)/k"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "product of roots = (2k+9)/k A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q08-B",
+      "question": "8",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Determine the values of k such that the equation kx^2 - (k+3)x + 2k+9 = 0 has one positive and one negative real root.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "product_of_roots",
+        "rational_inequality",
+        "critical_values",
+        "sign_analysis"
+      ],
+      "method_path": [
+        "Recognise one positive and one negative root implies product of roots < 0",
+        "Set (2k+9)/k < 0",
+        "Find critical values k = -9/2 and k = 0",
+        "Solve inequality: -9/2 < k < 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "recognition that the product of the roots will be negative (M1); (2k+9)/k < 0; critical values k = 0, -9/2 seen (A1); -9/2 < k < 0 A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

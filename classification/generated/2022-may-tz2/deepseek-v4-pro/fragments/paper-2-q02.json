@@ -1,0 +1,53 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Given g′(x) = 3x² + 5eˣ and point (0, 4) on g, find g(x).",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "indefinite_integration",
+        "power_rule",
+        "exponential_integration",
+        "constant_of_integration",
+        "initial_condition"
+      ],
+      "method_path": [
+        "Recognise g(x) = ∫(3x² + 5eˣ)dx",
+        "Integrate: g(x) = x³ + 5eˣ + C",
+        "Substitute (0, 4): 4 = 0 + 5 + C",
+        "Solve for constant: C = −1",
+        "Write g(x) = x³ + 5eˣ − 1"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use definite integrals ∫₀ˣ g′(t) dt = ∫₀ˣ (3t² + 5eᵗ) dt, giving g(x) − 4 = x³ + 5eˣ − 5, hence g(x) = x³ + 5eˣ − 1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "M1: recognises that g(x) = ∫(3x² + 5eˣ)dx; A1A1: g(x) = x³ + 5eˣ + C, award A1 for each integrated term; M1: substitutes x = 0 and y = 4 into their integrated function (must involve +C); 4 = 0 + 5 + C ⇒ C = −1; A1: g(x) = x³ + 5eˣ − 1."
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 2 (accepted alternative): attempts to write both sides in the form of a definite integral (M1); ∫₀ˣ g′(t) dt = ∫₀ˣ (3t² + 5eᵗ) dt (A1); g(x) − 4 = x³ + 5eˣ − 5e⁰ (A1A1); g(x) = x³ + 5eˣ − 1 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

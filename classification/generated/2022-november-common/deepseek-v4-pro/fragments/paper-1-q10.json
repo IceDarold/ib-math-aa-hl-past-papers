@@ -1,0 +1,232 @@
+{
+  "question": "10",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "18-19",
+      "task_summary": "Find the roots of f(x)=cos^2 x - 3 sin^2 x = 0 for 0 ≤ x ≤ π.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "trigonometric_identity",
+        "quadratic_trig_equation",
+        "arctan",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "reduce_to_single_trigonometric_function",
+        "solve_for_trigonometric_ratio",
+        "extract_x_values_within_domain"
+      ],
+      "accepted_alternatives": [
+        "tan^2 x = 1/3 leading to tan x = ±1/sqrt(3)",
+        "cos^2 x = 3/4 leading to cos x = ±sqrt(3)/2",
+        "sin^2 x = 1/4 leading to sin x = ±1/2",
+        "cos 2x = 1/2 leading to 2x = π/3, 5π/3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "valid attempt to reduce equation to one involving one trigonometric function (M1)"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "correct equation: tan^2 x = 1/3 OR cos^2 x = 3/4 OR sin^2 x = 1/4 OR cos 2x = 1/2 (A1)"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "tan x = ±1/sqrt(3) OR cos x = ±sqrt(3)/2 OR sin x = ±1/2 OR 2x = π/3, 5π/3 (A1)"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "x = π/6, x = 5π/6 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 7,
+      "source_pages": "11",
+      "markscheme_pages": "19-20",
+      "task_summary": "(i) Find f'(x). (ii) Hence find the coordinates of points on y=f(x) where f'(x)=0.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "trigonometric_derivative",
+        "double_angle_formula",
+        "solving_trigonometric_equation",
+        "coordinate_evaluation"
+      ],
+      "method_path": [
+        "differentiate_using_chain_rule",
+        "simplify_to_fprime_x_equals_neg4sin2x",
+        "solve_fprime_x_equals_zero",
+        "find_x_coordinates_0_pi_over_2_pi",
+        "evaluate_f_at_each_x_for_coordinates"
+      ],
+      "accepted_alternatives": [
+        "f'(x) = -2cos x sin x - 6sin x cos x = -8sin x cos x = -4sin 2x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to use the chain rule (M1)"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "f'(x) = -4sin 2x A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "valid attempt to solve their f'(x)=0 (M1)"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "at least 2 correct x-coordinates: 0, π/2, π (A1)"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "correct coordinates: (0,1), (π,1), (π/2,-3) A1A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Sketch y = |f(x)|, showing coordinates where f'(x)=0 and where the graph meets the coordinate axes.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "absolute_value",
+        "reflection",
+        "graph_sketching",
+        "cusps"
+      ],
+      "method_path": [
+        "reflect_negative_portion_of_f_about_x_axis",
+        "mark_endpoints_0_1_and_pi_1",
+        "mark_smooth_maximum_at_pi_over_2_3",
+        "mark_sharp_cusps_at_x_intercepts_pi_over_6_and_5pi_over_6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to reflect the negative part of the graph of f in the x-axis (M1)"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "endpoints have coordinates (0,1), (π,1) A1"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "smooth maximum at (π/2, 3) A1"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "sharp points (cusps) at x-intercepts π/6, 5π/6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "21",
+      "task_summary": "Hence or otherwise, solve |f(x)| > 1.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "absolute_value_inequality",
+        "boundary_analysis",
+        "trigonometric_equation",
+        "interval_determination"
+      ],
+      "method_path": [
+        "consider_intersection_of_y_equals_fx_and_y_equals_1",
+        "solve_fx_equals_neg1_or_1_to_get_boundary",
+        "obtain_x_equals_pi_over_4_and_3pi_over_4",
+        "conclude_pi_over_4_less_than_x_less_than_3pi_over_4"
+      ],
+      "accepted_alternatives": [
+        "Solving -4sin^2 x = -1 leading to tan^2 x = 1",
+        "Solving 4cos^2 x - 3 = -1 leading to cos^2 x = 1/2",
+        "Solving |2cos 2x - 1| = 1 leading to cos 2x = 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "considers points of intersection of y = f(x) and y = 1 on graph or algebraically (M1)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "tan^2 x = 1 or sin^2 x = 1/2 or cos^2 x = 1/2 or cos 2x = 0 (A1)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "x = π/4, x = 3π/4 (A1)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "π/4 < x < 3π/4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

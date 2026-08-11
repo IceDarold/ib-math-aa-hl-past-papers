@@ -1,0 +1,86 @@
+{
+  "question": "6",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Use the total probability property (integral of pdf over domain equals 1) to integrate ax e^x from 0 to b by parts, then solve for a in terms of b.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "total_probability_equals_one",
+        "definite_integral",
+        "integration_by_parts",
+        "evaluate_antiderivative",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "set ∫₀ᵇ ax eˣ dx = 1",
+        "integrate by parts: u=ax, dv=eˣ dx",
+        "evaluate [ax eˣ]₀ᵇ − a[eˣ]₀ᵇ = 1",
+        "simplify to a(b eᵇ − eᵇ + 1) = 1",
+        "solve a = 1/(b eᵇ − eᵇ + 1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "M1: ∫₀ᵇ ax eˣ dx = 1 (seen anywhere); (M1): attempt to use integration by parts; (A1): [ax eˣ]₀ᵇ − a∫₀ᵇ eˣ dx = 1; A1: [ax eˣ]₀ᵇ − a[eˣ]₀ᵇ = 1; A1: a = 1/(b eᵇ − eᵇ + 1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "With a=b=1, set the cumulative integral from 0 to m equal to 1/2, integrate x e^x by parts, and solve numerically to find the median m ≈ 0.768.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "median_cumulative_equals_half",
+        "definite_integral",
+        "integration_by_parts",
+        "solve_equation_numerically"
+      ],
+      "method_path": [
+        "set ∫₀ᵐ x eˣ dx = 1/2 with a=b=1",
+        "integrate by parts: [x eˣ]₀ᵐ − [eˣ]₀ᵐ = 1/2",
+        "obtain m eᵐ − eᵐ + 1 = 1/2",
+        "solve numerically to find m ≈ 0.768"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "M1: ∫₀ᵐ x eˣ dx = 1/2; (A1): m eᵐ − eᵐ + 1 = 1/2; A1: m = 0.768"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

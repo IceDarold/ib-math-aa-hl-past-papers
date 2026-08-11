@@ -1,0 +1,200 @@
+{
+  "question": "11",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Find the probability that a randomly selected chocolate muffin weighs less than 61 g, given C ~ N(62, 2.9^2).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "probability_less_than",
+        "gdc"
+      ],
+      "method_path": [
+        "Use GDC normal CDF to find P(C < 61) with mu=62, sigma=2.9",
+        "State probability 0.365"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "P(C<61) (M1); =0.365112...=0.365 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "In a random selection of 12 chocolate muffins, find the probability that exactly 5 weigh less than 61 g.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "probability_exact",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize binomial X ~ B(12, 0.365...)",
+        "Use GDC binomial PDF to find P(X=5)",
+        "State probability 0.214"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "recognition of binomial eg X~B(12,0.365...) (M1); P(X=5)=0.213666...=0.214 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-C-I",
+      "question": "11",
+      "part": "C-I",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Find the probability that a randomly selected muffin (60% chocolate, 40% banana) weighs less than 61 g.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "law_of_total_probability",
+        "normal_distribution",
+        "tree_diagram",
+        "gdc"
+      ],
+      "method_path": [
+        "Find P(B<61) using normal CDF with mu=68, sigma=3.4",
+        "Apply law of total probability: 0.6xP(C<61)+0.4xP(B<61)",
+        "Compute combined probability 0.227"
+      ],
+      "accepted_alternatives": [
+        "Tree diagram showing two ways to have a muffin weigh less than 61 g, then sum weighted probabilities."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "P(B<61)=0.0197555... (A1); EITHER sum of weighted probs (M1) OR tree diagram (M1); (0.6x0.365...+0.4x0.0197...) (A1); =0.227 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-C-II",
+      "question": "11",
+      "part": "C-II",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Given that a randomly selected muffin weighs less than 61 g, find the probability that it is chocolate.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "bayes_theorem"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(chocolate | weight<61)",
+        "Compute P(chocolate and weight<61) / P(weight<61)",
+        "Substitute (0.6x0.365...)/0.226969...",
+        "State probability 0.965"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "recognizing conditional probability (M1); 0.365112...x0.6/0.226969... (A1); =0.965 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "27-28",
+      "task_summary": "Find the new standard deviation sigma of chocolate muffins given that the overall probability a randomly selected muffin weighs less than 61 g becomes 0.157.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "law_of_total_probability",
+        "inverse_normal",
+        "equation_solving",
+        "gdc"
+      ],
+      "method_path": [
+        "Set up equation: 0.6xP(C<61|sigma) + 0.4x0.0197555... = 0.157",
+        "Solve for P(C<61|sigma) = 0.248496...",
+        "Use inverse normal or GDC solver to find sigma from N(62,sigma^2)",
+        "State sigma = 1.47"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use inverse normal to find z=-0.679229..., substitute (61-62)/sigma=-0.679229..., solve for sigma=1.47."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "METHOD 1: P(CM)xP(<61|CM)+P(BM)xP(<61|BM)=0.157 (M1); P(C<61)=0.248496... (A1); attempt to solve for sigma using GDC (M1); sigma=1.47(g) A2"
+        },
+        {
+          "markscheme_pages": "28",
+          "basis": "METHOD 2: use of inverse normal to find z score (M1); z=-0.679229...; correct substitution (61-62)/sigma=-0.679229... (A1); sigma=1.47(g) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

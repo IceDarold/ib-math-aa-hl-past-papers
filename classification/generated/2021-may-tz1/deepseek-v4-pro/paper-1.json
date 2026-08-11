@@ -1,0 +1,1123 @@
+{
+  "session": "May 2021",
+  "zone": "TZ1",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q01-A",
+      "question": "1",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Read f(2) from the given graph and evaluate the composite function (f∘f)(2) = f(f(2)).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "read_graph",
+        "evaluate_function_value",
+        "function_composition",
+        "evaluate_composite_function"
+      ],
+      "method_path": [
+        "Read f(2) = 6 from the graph",
+        "Evaluate (f∘f)(2) = f(6) = −2 from the graph"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Markscheme states (a)(i) f(2)=6 A1 and (a)(ii) (f∘f)(2)=−2 A1, totalling [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q01-B",
+      "question": "1",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Sketch g(x) = (1/2)f(x) + 1 by applying a vertical stretch by factor 1/2 and a vertical translation up 1 unit to the given graph of f.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_stretch",
+        "vertical_translation",
+        "graph_transformation",
+        "sketch_function",
+        "identify_key_points"
+      ],
+      "method_path": [
+        "Recognise g as a vertical compression by factor 1/2 followed by vertical translation +1",
+        "Transform key points of f: horizontal segment on [−4,0] becomes y≈3",
+        "Transform remaining region to concave down parabola with maximum at (2,4)",
+        "Ensure correct endpoints at (0,3) and (6,0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Markscheme awards M1 for an attempt to apply any vertical stretch or vertical translation, A1 for a correct horizontal line segment between −4 and 0 located roughly at y=3, A1 for a correct concave down parabola including max point at (2,4) and correct end points at (0,3) and (6,0)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Given an arithmetic sequence where u8 = S8 = 8, find the first term u1 and the common difference d.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_nth_term",
+        "arithmetic_sum_formula",
+        "substitution",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Apply S8 = (8/2)(u1 + u8)",
+        "Substitute S8 = 8, u8 = 8 to obtain 4(u1 + 8) = 8",
+        "Solve to get u1 = −6",
+        "Apply u8 = u1 + 7d",
+        "Substitute u1 = −6, u8 = 8 and solve to get d = 2"
+      ],
+      "accepted_alternatives": [
+        "Set up simultaneous equations u1 + 7d = 8 and 4(u1 + 8) = 8 (or 4(2u1 + 7d) = 8 or u1 = 3d), then solve to obtain u1 = −6, d = 2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: 4(u1 + 8) = 8 (A1), u1 = −6 A1, u1 + 7d = 8 OR 4(2u1 + 7d) = 8 (A1), attempt to substitute their u1 (M1), d = 2 A1. METHOD 2: u1 + 7d = 8 (A1), 4(u1 + 8) = 8 OR 4(2u1 + 7d) = 8 OR u1 = 3d (A1), attempt to solve (M1), u1 = −6, d = 2 A1A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q03-A",
+      "question": "3",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Use the no-outlier condition (max ≤ Q3 + 1.5×IQR) with IQR = 20 and maximum = 75 to find the minimum possible value of the upper quartile U.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "box_and_whisker_plot",
+        "outlier_condition",
+        "inequality_solving",
+        "quartile"
+      ],
+      "method_path": [
+        "State upper outlier boundary condition: max ≤ Q3 + 1.5 × IQR",
+        "Substitute known values: 75 ≤ U + 1.5 × 20",
+        "Simplify: 75 ≤ U + 30",
+        "Solve inequality: U ≥ 45",
+        "State minimum possible value: U = 45"
+      ],
+      "accepted_alternatives": [
+        "Set boundary equality directly: Q3 + 1.5 × 20 = 75, giving U = 45"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1: attempt to use definition of outlier – Q3 + 1.5 × 20. A1: 1.5 × 20 + 75 ≥ U ⇒ (U ≥ 45, accept U > 45) OR Q3 + 1.5 × 20 = 75. A1: minimum value of U = 45."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "markscheme_ambiguity"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q03-B",
+      "question": "3",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Using IQR = U − L = 20 and the minimum U = 45 from part (a), find the minimum possible value of the lower quartile L.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "box_and_whisker_plot",
+        "iqr_formula",
+        "substitution",
+        "quartile"
+      ],
+      "method_path": [
+        "Apply interquartile range definition: IQR = U − L = 20",
+        "Substitute minimum U = 45 from part (a)",
+        "Solve: L = 45 − 20 = 25",
+        "State minimum possible value: L = 25"
+      ],
+      "accepted_alternatives": [
+        "State L ≥ 25 (accept L > 25) as the minimum directly from the outlier and IQR conditions"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1: attempt to use interquartile range. U − L = 20 (may be seen in part (a)) OR L ≥ 25 (accept L > 25). A1: minimum value of L = 25."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Differentiate f(x)=-(x-h)^2+2k to find f'(x).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_quadratic",
+        "chain_rule"
+      ],
+      "method_path": [
+        "f'(x) = -2(x-h)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "f'(x) = -2(x-h)  A1  [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Use f'(3)=g'(3) to show h=(6+e)/2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_exponential",
+        "equate_derivatives",
+        "solve_linear"
+      ],
+      "method_path": [
+        "g'(x)=e^(x-2) or g'(3)=e",
+        "Set f'(3)=g'(3): -2(3-h)=e",
+        "Solve: h=(6+e)/2"
+      ],
+      "accepted_alternatives": [
+        "g'(x) as e^(x-2) or g'(3) as e",
+        "Intermediate: 3-h=-e/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "g'(x)=e^(x-2) OR g'(3)=e^(3-2) A1; recognizing f'(3)=g'(3) (M1); h=(6+e)/2 A1 AG; final A1 dependent on one previous mark"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q04-C",
+      "question": "4",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "10-11",
+      "task_summary": "Use f(3)=g(3) and h from (b) to show k=(2e+e^2)/4.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "equate_functions",
+        "substitute_parameter",
+        "simplify_algebraic"
+      ],
+      "method_path": [
+        "Set f(3)=g(3): -(3-h)^2+2k=e+k",
+        "Substitute h=(6+e)/2",
+        "Simplify to k=(2e+e^2)/4"
+      ],
+      "accepted_alternatives": [
+        "EITHER: substitute h then solve -(3-h)^2+2k=e+k for k",
+        "OR: rearrange to k=((6+e)/2-3)^2+e then simplify"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "f(3)=g(3) (M1); correct equation in k A1; simplification to k=(2e+e^2)/4 A1 AG; EITHER/OR branches shown"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Show sin 2x + cos 2x - 1 = 2 sin x (cos x - sin x) using double angle formulas.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "double_angle_formula",
+        "algebraic_simplification",
+        "factorization"
+      ],
+      "method_path": [
+        "apply double angle formula for sin 2x or cos 2x",
+        "simplify to 2 sin x cos x - 2 sin^2 x",
+        "factor to 2 sin x (cos x - sin x)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1 (LHS to RHS): apply double angle formulas to LHS, simplify, factor",
+        "METHOD 2 (RHS to LHS): expand RHS, apply double angle formulas to obtain LHS"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: attempt double angle formula; A1: 2 sin x cos x - 2 sin^2 x; both METHODS 1 and 2 explicitly accepted; note: do not award A1 for proofs working from both sides to a common expression other than 2 sin x cos x - 2 sin^2 x"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Solve sin 2x + cos 2x - 1 + cos x - sin x = 0 for 0 < x < 2pi using part (a).",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "factorization",
+        "trigonometric_equation_solving",
+        "reference_angle",
+        "quadrant_analysis"
+      ],
+      "method_path": [
+        "substitute identity to get 2 sin x (cos x - sin x) + cos x - sin x = 0",
+        "factor to (cos x - sin x)(2 sin x + 1) = 0",
+        "solve cos x = sin x giving tan x = 1, x = pi/4, 5pi/4",
+        "solve sin x = -1/2 giving x = 7pi/6, 11pi/6",
+        "list four solutions: pi/4, 5pi/4, 7pi/6, 11pi/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: attempt to factorise; A1: (cos x - sin x)(2 sin x + 1) = 0; (M1): recognition sin/cos = tan = 1 or sin x = -1/2; (A1): one correct reference angle pi/4 or pi/6; A2: four solutions 7pi/6, 11pi/6, pi/4, 5pi/4 with A1 for any two correct"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "12-13",
+      "task_summary": "Given cosec θ = 3/2 with π/2 ≤ θ ≤ 3π/2, find the exact value of cot θ.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "trigonometric_identity",
+        "quadrant_analysis",
+        "exact_value"
+      ],
+      "method_path": [
+        "Use identity 1 + cot²θ = cosec²θ",
+        "Substitute cosec θ = 3/2 giving 1 + cot²θ = 9/4",
+        "Solve for cot²θ = 5/4",
+        "Determine θ in Q2 since π/2 ≤ θ ≤ 3π/2 and cosec θ > 0, so cot θ < 0",
+        "cot θ = -√5/2"
+      ],
+      "accepted_alternatives": [
+        "Right-angled triangle method: place values in triangle with θ, deduce adjacent = √5, hypotenuse = 3, opposite = 2, then cot θ = -√5/2 by quadrant sign",
+        "Via sin θ and cos θ: sin θ = 2/3, use sin²θ + cos²θ = 1 giving cos²θ = 5/9, then cos θ = -√5/3 (Q2), so cot θ = cos θ/sin θ = -√5/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for attempt to use 1+cot²θ=cosec²θ; (A1) for cot²θ=5/4; R1 for cot θ<0 (second quadrant); A1 for cot θ=-√5/2"
+        },
+        {
+          "markscheme_pages": "12-13",
+          "basis": "METHOD 2 and METHOD 3 both confirm -√5/2 as the only accepted final answer; R1 awarded independently for negative sign"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q07",
+      "question": "7",
+      "part": "—",
+      "marks": 8,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Given quartic z⁴+4z³+8z²+80z+400=0 with real coefficients, two roots are a+bi and b+ai (a,b∈ℝ). Use Vieta's formulas (sum and product of roots) and conjugate pair properties to find possible values of a.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "complex_conjugate_identification",
+        "vieta_formulas",
+        "sum_of_roots",
+        "product_of_roots",
+        "algebraic_simplification",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Identify the other two roots as conjugates a−bi and b−ai",
+        "Apply Vieta: sum of roots = −4, product of roots = 400",
+        "Form sum equation: (a+bi)+(a−bi)+(b+ai)+(b−ai)=−4",
+        "Simplify to 2(a+b)=−4 ⇒ a+b=−2",
+        "Form product equation: (a+bi)(a−bi)(b+ai)(b−ai)=400",
+        "Simplify to (a²+b²)²=400 ⇒ a²+b²=20",
+        "Solve simultaneous equations a+b=−2 and a²+b²=20",
+        "Obtain a=2 or a=−4"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Form polynomial factors (z−(a+bi))(z−(a−bi))(z−(b+ai))(z−(b−ai)), expand to (z²−2az+a²+b²)(z²−2bz+b²+a²), equate coefficients of z³ and constant term with given quartic, obtain −2a−2b=4 and (a²+b²)²=400, solve simultaneously for a=2 or a=−4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1 marks: A1 for other two roots a−bi and b−ai; A1 for sum=−4 and product=400; M1 for attempt to set sum or product equal; A1 for 2(a+b)=−4 ⇒ a+b=−2; A1 for (a²+b²)²=400; (M1) for attempt to solve simultaneous equations; A1A1 for a=2 or a=−4."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 2 is an explicitly accepted complete alternative route: factor form, expand, equate coefficients, solve simultaneous equations."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Use l'Hopital's rule to evaluate lim(x->0) arctan(2x)/tan(3x).",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "differentiate_numerator",
+        "differentiate_denominator",
+        "substitute_limit",
+        "simplify_fraction"
+      ],
+      "method_path": [
+        "Recognise indeterminate form 0/0",
+        "Differentiate numerator: d/dx arctan(2x) = 2/(1+4x^2)",
+        "Differentiate denominator: d/dx tan(3x) = 3 sec^2(3x)",
+        "Form quotient of derivatives: [2/(1+4x^2)] / [3 sec^2(3x)]",
+        "Substitute x = 0 to obtain 2/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to differentiate numerator and denominator - M1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "2/(1+4x^2) / 3 sec^2(3x) - A1A1 (A1 for numerator, A1 for denominator). Note: Do not condone absence of limits."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to substitute x = 0 - (M1)"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "2/3 - A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find the number of ways to place 5 sheep in 6 pens (each pen holds all sheep) such that Amber and Brownie are not in the same pen.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "multiplication_principle",
+        "restricted_placement",
+        "complementary_counting",
+        "exponentiation"
+      ],
+      "method_path": [
+        "Place Amber: 6 choices",
+        "Place Brownie in a different pen: 5 choices",
+        "Place each of Curly, Daisy, Eden: 6 choices each",
+        "Multiply: 6 × 5 × 6³ = 5 × 6⁴",
+        "5 × 1296 = 6480"
+      ],
+      "accepted_alternatives": [
+        "Total placements without restriction: 6⁵ = 7776. Placements with Amber and Brownie together: choose 1 of 6 pens for both, then 6 choices each for remaining 3 sheep → 6 × 6³ = 6⁴ = 1296. Subtract: 7776 − 1296 = 6480."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: B has one less pen to select (M1), A and B can be placed in 6×5 ways (A1), C, D, E have 6 choices each (A1), 5×6⁴ = 6480 (A1). METHOD 2: total number of ways 6⁵ (A1), number of ways with Amber and Brownie together 6⁴ (A1), attempt to subtract (M1), 6⁵−6⁴ = 5×6⁴ = 6480 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find the number of ways to place 5 sheep in 6 pens (one sheep per pen) such that Amber and Brownie are not in boundary-sharing pens in the 3×2 grid.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "permutations",
+        "restricted_placement",
+        "complementary_counting",
+        "grid_adjacency",
+        "case_analysis"
+      ],
+      "method_path": [
+        "Total unrestricted arrangements: 6! = 720",
+        "Count boundary-sharing adjacent pairs in 3×2 grid: 7 pairs",
+        "Arrangements with Amber and Brownie sharing a boundary: 2 × 7 × 4! = 336",
+        "Subtract: 720 − 336 = 384"
+      ],
+      "accepted_alternatives": [
+        "Case analysis by pen type: A in corner (4 corners) → B has 3 safe pens, remaining 4 sheep in 4! ways → 4 × 3 × 4! = 288. A in middle pen (2 pens) → B has 2 safe pens, remaining 4 sheep in 4! ways → 2 × 2 × 4! = 96. Total: 288 + 96 = 384."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: total number of ways 6! = 720 (A1), number of ways with Amber and Brownie sharing a boundary = 2×7×4! = 336 (A1), attempt to subtract (M1), 720−336 = 384 (A1). METHOD 2: case 1 placing A in corner pen: 4×(3×4×3×2×1) = 12×4! = 288 (A1), case 2 placing A in middle pen: 2×(2×4×3×2×1) = 4×4! = 96 (A1), attempt to add (M1), 288+96 = 384 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Find p by setting the sum of probabilities in the distribution of X equal to 1.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "sum_of_probabilities",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "p + p + p + (1/2)p = 1",
+        "7p/2 = 1",
+        "p = 2/7"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "recognising probabilities sum to 1 (M1); p+p+p+p/2=1; p=2/7 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Hence find E(X) using the probability distribution with p = 2/7.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_value_formula",
+        "substitution"
+      ],
+      "method_path": [
+        "E(X) = 1p + 2p + 3p + 4(p/2) = 8p",
+        "E(X) = 8(2/7) = 16/7"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "valid attempt to find E(X) (M1); E(X)=1p+2p+3p+4(p/2)=8p; E(X)=16/7 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "State the range of r and hence find the range of q from the probability distribution of Y.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_range",
+        "substitution",
+        "solve_compound_inequality"
+      ],
+      "method_path": [
+        "0 <= r <= 1",
+        "3q + r = 1 so r = 1 - 3q",
+        "0 <= 1 - 3q <= 1",
+        "0 <= q <= 1/3"
+      ],
+      "accepted_alternatives": [
+        "Use boundary values: r=0 gives q=1/3; r=1 gives q=0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) 0<=r<=1 A1; (ii) Attempt to find a value of q (M1); 0<=1-3q<=1 OR r=0 gives q=1/3 OR r=1 gives q=0; 0<=q<=1/3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Hence find the range of possible values for E(Y).",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "statistics.discrete_random_variables",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_value_formula",
+        "substitution",
+        "inequality_bounds"
+      ],
+      "method_path": [
+        "E(Y) = 1q + 2q + 3q + 4r = 6q + 4r",
+        "Substitute r = 1 - 3q: E(Y) = 4 - 6q",
+        "At q = 0: E(Y) = 4; at q = 1/3: E(Y) = 2",
+        "2 <= E(Y) <= 4"
+      ],
+      "accepted_alternatives": [
+        "E(Y) = 2 + 2r, with r=0 giving 2 and r=1 giving 4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "E(Y)=1q+2q+3q+4r = 2+2r = 4-6q (A1); one correct boundary value A1; 2<=E(Y)<=4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q10-E",
+      "question": "10",
+      "part": "e",
+      "marks": 6,
+      "source_pages": "11-12",
+      "markscheme_pages": "18-19",
+      "task_summary": "Given P(X < Y) = 1/2, find q, r, and hence E(Y).",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "statistics.probability",
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "combined_event_probability",
+        "solve_linear_equation",
+        "expected_value_formula"
+      ],
+      "method_path": [
+        "List outcomes X<Y: (1,2),(1,3),(1,4),(2,3),(2,4),(3,4)",
+        "P(X<Y) = 3pq + 3pr = 3p(q+r)",
+        "Substitute p=2/7: (6/7)(q+r) = 1/2",
+        "Use r=1-3q: (6/7)(1-2q) = 1/2",
+        "Solve: q=5/24, r=3/8",
+        "E(Y) = 4 - 6q = 4 - 6(5/24) = 11/4"
+      ],
+      "accepted_alternatives": [
+        "Method 2: solve directly for E(Y) by substituting q=(4-E(Y))/6 into P(X<Y)=1/2, obtaining (2E(Y)-1)/7=1/2, giving E(Y)=11/4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "METHOD 1: evidence of choosing outcomes (M1); 6/7 q+6/7 r or 3pq+3pr (A1); solving for q or r (M1); q=5/24, r=3/8 (A1A1); substituting (A1); E(Y)=11/4 A1. METHOD 2: solving directly for E(Y) also accepted."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "(i) Show that the point (−1, 0, 3) lies on L1 by substituting into the Cartesian equation. (ii) Find a vector equation of L1 by setting the Cartesian equation equal to a parameter λ to obtain parametric form, then writing r = (−1, 0, 3) + λ(2, 1, −1).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "substitute_point",
+        "verify_cartesian_equation",
+        "convert_to_parametric",
+        "express_vector_equation"
+      ],
+      "method_path": [
+        "Substitute (−1, 0, 3) into (x+1)/2 = y/1 = (z−3)/(−1)",
+        "Verify all three ratios equal 0",
+        "Set (x+1)/2 = y/1 = (z−3)/(−1) = λ",
+        "Obtain parametric equations x = 2λ−1, y = λ, z = 3−λ",
+        "Express as vector equation r = (−1, 0, 3) + λ(2, 1, −1)"
+      ],
+      "accepted_alternatives": [
+        "Rearrange Cartesian form directly: (x+1)/2 = (y−0)/1 = (z−3)/(−1) without introducing λ, then read off direction vector and point"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "Part (i): substitution (−1+1)/2 = 0/1 = (3−3)/(−1) earns A1 and AG. Part (ii): M1 for attempt to set equal to a parameter or rearrange Cartesian form; (A1) for correct direction vector (2, 1, −1); A1 for r = (−1,0,3) + λ(2,1,−1) or equivalent. Combined [4 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q11-B",
+      "question": "11",
+      "part": "b",
+      "marks": 8,
+      "source_pages": "12",
+      "markscheme_pages": "20–21",
+      "task_summary": "Find the possible values of a when the acute angle between L1 and L2 is 45°, using the scalar product formula cosθ = |d₁·d₂|/(|d₁||d₂|) with d₁ = (2, 1, −1) and d₂ = (a, 1, −1), leading to quadratic a² + 8a − 2 = 0 and solutions a = −4 ± 3√2.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "compute_dot_product",
+        "compute_magnitude",
+        "apply_angle_formula",
+        "solve_absolute_value_equation",
+        "solve_quadratic"
+      ],
+      "method_path": [
+        "Write direction vectors d₁ = (2, 1, −1), d₂ = (a, 1, −1)",
+        "Compute dot product d₁·d₂ = 2a + 2",
+        "Compute magnitudes |d₁| = √6, |d₂| = √(a²+2)",
+        "Apply cos45° = |d₁·d₂|/(|d₁||d₂|) → |2a+2|/(√6√(a²+2)) = 1/√2",
+        "Square both sides and simplify to 4a²+8a+4 = 3a²+6",
+        "Obtain quadratic a² + 8a − 2 = 0",
+        "Solve for a = (−8 ± √72)/2 = −4 ± 3√2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "M1 for attempt to use scalar product formula; (A1)(A1) for LHS and RHS of (2,1,−1)·(a,1,−1) = ±√6√(a²+2)cos45°; A1A1 for simplification to (2a+2)²/(6(a²+2)); A1 for quadratic a²+8a−2=0; M1 for attempt to solve quadratic; A1 for a = −4±3√2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 7,
+      "source_pages": "12",
+      "markscheme_pages": "21–22",
+      "task_summary": "Find k such that L1 and L2 have a unique intersection point only when a ≠ k, and find the coordinates of intersection point A in terms of a. k = 2 (lines parallel when a = 2). Coordinates: A = (a/(a−2), (a−1)/(a−2), (2a−5)/(a−2)).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equate_parametric_forms",
+        "solve_simultaneous_equations",
+        "find_parallel_condition",
+        "find_intersection_point"
+      ],
+      "method_path": [
+        "Write parametric forms: L1: x=2λ−1, y=λ, z=3−λ; L2: x=at, y=1+t, z=2−t",
+        "Equate components to form system of three equations",
+        "Eliminate λ or t to find t = 1/(a−2) or λ = (a−1)/(a−2)",
+        "Identify that solution fails when denominator a−2 = 0, so k = 2",
+        "Substitute t = 1/(a−2) into L2 parametric equations",
+        "Obtain coordinates A = (a/(a−2), (a−1)/(a−2), (2a−5)/(a−2))"
+      ],
+      "accepted_alternatives": [
+        "Method 2: first note that no unique intersection implies parallel direction vectors, so (2,1,−1) ∥ (a,1,−1) giving k=2 independently; then equate parametric forms and solve for intersection point as in Method 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21–22",
+          "basis": "Method 1: M1 for attempt to equate parametric forms; A1 for correct system; M1 for attempt to eliminate λ or t; A1 for k=2; A1 for t=1/(a−2) or λ=(a−1)/(a−2); A2 for coordinates (a/(a−2), (a−1)/(a−2), (2a−5)/(a−2)). Method 2: A1 for k=2 from parallel condition; M1 for equating parametric forms; remaining marks as Method 1. Total [7 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Show that f''(x) = −1/(4(1+x)^(3/2)) for f(x) = √(1+x), x > −1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "power_rule",
+        "second_derivative"
+      ],
+      "method_path": [
+        "rewrite f(x) as (1+x)^(1/2)",
+        "apply chain rule: f'(x) = (1/2)(1+x)^(−1/2)",
+        "differentiate again: f''(x) = −(1/4)(1+x)^(−3/2)",
+        "express as −1/(4(1+x)^(3/2))"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "M1 attempt to use the chain rule; A1 f'(x) = 1/2 (1+x)^(−1/2); A1 f''(x) = −1/4 (1+x)^(−3/2) = −1/(4(1+x)^(3/2)) AG. Note: Award M1A0A0 for f'(x) = 1/(x+1) or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 9,
+      "source_pages": "13",
+      "markscheme_pages": "22-24",
+      "task_summary": "Prove by mathematical induction that f^(n)(x) = ((−1)^(n−1))/4 · (2n−3)!/(n−2)! · (1+x)^(−(2n−1)/2) for n ∈ ℤ, n ≥ 2.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "mathematical_induction",
+        "base_case",
+        "inductive_hypothesis",
+        "inductive_step",
+        "differentiation",
+        "factorial_manipulation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "verify base case n=2 using result from part (a)",
+        "assume formula true for n=k",
+        "differentiate f^(k)(x) to obtain f^(k+1)(x)",
+        "simplify coefficient using factorial identity (2k−1)!/(k−1)! = 2(2k−3)!/(k−2)!",
+        "show result matches formula with n replaced by k+1",
+        "conclude by induction for all n ≥ 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "R1: let n=2, f''(x) = ((−1)^(2−1))/4 · (1!/(0!)) · (1+x)^(−3/2) = −1/4 (1+x)^(−3/2). Note: Award R0 for not starting at n=2."
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "M1: assume true for n=k, f^(k)(x) = ((−1)^(k−1))/4 · ((2k−3)!)/((k−2)!) · (1+x)^(−(2k−1)/2)."
+        },
+        {
+          "markscheme_pages": "22-23",
+          "basis": "M1 consider n=k+1, differentiate f^(k)(x); A1 correct derivative; A1, A1, A1, A1 for algebraic manipulation and factorial simplification."
+        },
+        {
+          "markscheme_pages": "24",
+          "basis": "R1: since true for n=2 and true for n=k+1 if true for n=k, the statement is true for all n≥2 by mathematical induction. Note: at least four previous marks required for final R1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 8,
+      "source_pages": "13",
+      "markscheme_pages": "24-26",
+      "task_summary": "Find possible values of m such that the x² term in the Maclaurin series for h(x) = √(1+x) · e^(mx) has coefficient 7/4.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "maclaurin_series",
+        "product_rule",
+        "second_derivative",
+        "coefficient_equating",
+        "quadratic_solving"
+      ],
+      "method_path": [
+        "apply product rule to find h'(x) and h''(x)",
+        "evaluate h''(0) = m² + m − 1/4",
+        "use Maclaurin formula: coefficient of x² = h''(0)/2!",
+        "equate h''(0)/2 = 7/4 giving h''(0) = 7/2",
+        "form quadratic 4m² + 4m − 15 = 0",
+        "solve: (2m+5)(2m−3)=0",
+        "obtain m = −5/2 or m = 3/2"
+      ],
+      "accepted_alternatives": [
+        "Method 2: find Maclaurin series for f(x)=√(1+x) and g(x)=e^(mx) separately, multiply series, equate x² coefficient to 7/4.",
+        "Method 3: use f(0), f'(0), f''(0) and g(0), g'(0), g''(0) with product rule h'' = f''g + 2f'g' + fg'' evaluated at x=0, equate coefficient."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "Method 1: M1 using product rule; A1 h'(x) = 1/(2√(x+1)) e^(mx) + √(x+1) m e^(mx); A1 h''(x); M1 substituting x=0; A1 h''(0) = m² + m − 1/4."
+        },
+        {
+          "markscheme_pages": "24-25",
+          "basis": "M1 equating x² coefficient to 7/4: h''(0)/2! = 7/4 ⇒ h''(0) = 7/2; A1 4m²+4m−15=0; A1 (2m+5)(2m−3)=0; A1 m=−5/2 or m=3/2."
+        },
+        {
+          "markscheme_pages": "25",
+          "basis": "Method 2: M1 find f(0), f'(0), f''(0); A1 f(x)=1+(1/2)x−(1/8)x²+…; A1 g(x)=1+mx+(m²/2)x²+…; M1 multiply series; A1 coefficient m²/2+m/2−1/8; M1 equate to 7/4; A1 4m²+4m−15=0; A1 m=−5/2 or m=3/2."
+        },
+        {
+          "markscheme_pages": "26",
+          "basis": "Method 3: A1 g'(0)=m, g''(0)=m²; M1 equate coefficient; M1 product rule; A1 h'' = f''g + 2f'g' + fg''; M1 substitute x=0; A1 h''(0)=m²+m−1/4; A1 4m²+4m−15=0; A1 m=−5/2 or m=3/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

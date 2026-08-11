@@ -1,0 +1,145 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q05-A",
+      "question": "5",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given the tangent line y = 6x − 1 to the graph of f at x = 4, write down f′(4).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative_from_tangent_slope"
+      ],
+      "method_path": [
+        "Identify the slope of the tangent line as f′(4)",
+        "f′(4) = 6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "f′(4) = 6  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q05-B",
+      "question": "5",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given the same tangent line, find f(4).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "function_value_from_tangent"
+      ],
+      "method_path": [
+        "Substitute x = 4 into y = 6x − 1 because the point of tangency lies on both curves",
+        "f(4) = 6 × 4 − 1 = 23"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "f(4) = 6 × 4 − 1 = 23  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q05-C",
+      "question": "5",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given g(x) = x² − 3x and h(x) = f(g(x)), find h(4).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "function_composition",
+        "function_evaluation"
+      ],
+      "method_path": [
+        "Evaluate g(4) = 4² − 3 × 4 = 4",
+        "Evaluate h(4) = f(g(4)) = f(4)",
+        "h(4) = 23"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "h(4) = f(g(4)) (M1); g(4) = 4² − 3 × 4 = 4; h(4) = f(4); h(4) = 23  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q05-D",
+      "question": "5",
+      "part": "d",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Hence find the equation of the tangent to the graph of h at x = 4.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "tangent_line_equation"
+      ],
+      "method_path": [
+        "Apply chain rule: h′(x) = f′(g(x)) × g′(x)",
+        "Evaluate g′(x) = 2x − 3, so g′(4) = 5",
+        "Compute h′(4) = f′(4) × 5 = 6 × 5 = 30",
+        "Write tangent equation: y − 23 = 30(x − 4) or y = 30x − 97"
+      ],
+      "accepted_alternatives": [
+        "Tangent equation written as y = 30x − 97"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to use chain rule to find h′ (M1); h′(4) = f′(4) × (2 × 4 − 3) = 30  A1; y − 23 = 30(x − 4) OR y = 30x − 97  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

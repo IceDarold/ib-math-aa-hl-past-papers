@@ -1,0 +1,79 @@
+{
+  "question": "2",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "(a)",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find the largest value of the eldest child's age c that would not be considered an outlier, using the given box and whisker diagram (min=2, Q1=6, median=7, Q3=10, max=18).",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "box_plot_reading",
+        "iqr_calculation",
+        "outlier_fence",
+        "substitution"
+      ],
+      "method_path": [
+        "Read Q1=6 and Q3=10 from the box plot",
+        "Compute IQR = Q3 - Q1 = 10 - 6 = 4",
+        "Compute upper fence: Q3 + 1.5 x IQR = 10 + 1.5 x 4 = 10 + 6 = 16"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "IQR = 10 - 6 (=4) (A1); attempt to find Q3 + 1.5 x IQR (M1); 10 + 6 = 16 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "(i) Estimate the eldest child's age for an adult aged 42 using the regression line of c on a: c = (1/2)a - 9. (ii) Find the mean age of all adults by solving the system formed by the two regression lines at their intersection point.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "linear_regression",
+        "substitution",
+        "system_of_equations",
+        "mean_point"
+      ],
+      "method_path": [
+        "(i) Substitute a = 42 into c = a/2 - 9 to obtain c = 12",
+        "(ii) Solve the system of the two regression lines at the mean point by substitution or elimination to find a-bar = 34"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(i) choosing c = (1/2)a - 9 (M1); 1/2 x 42 - 9 = 12 (years old) (A1). (ii) attempt to solve system by substitution or elimination (M1); 34 (years old) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

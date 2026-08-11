@@ -1,0 +1,81 @@
+{
+  "question": "7",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "Complete the tree diagram by labelling the missing branch probabilities: P(G') and the conditional probabilities P(positive | G), P(negative | G).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "tree_diagram",
+        "complementary_probability",
+        "conditional_probability_branches"
+      ],
+      "method_path": [
+        "Label P(G') = 1 − p on the lower first-level branch",
+        "Label P(positive | G) = 0.95 and P(negative | G) = 0.05 on the branches from G"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "A1 for branch correctly labelled 1−p; A1 for branches correctly labelled 0.95 and 0.05; A0 for G' branch labelled p' or q unless explicitly defined as 1−p."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "15–16",
+      "task_summary": "Given that 18 out of 150 positive test results are false positives, estimate the population proportion p with the gene.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "law_of_total_probability",
+        "equation_solving",
+        "estimation",
+        "rounding"
+      ],
+      "method_path": [
+        "Recognize the conditional probability P(G' | positive) = 18/150",
+        "Express via law of total probability: 0.02(1−p) / (0.95p + 0.02(1−p)) = 18/150",
+        "Solve the equation for p",
+        "Round to p ≈ 0.134"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Set up system 0.95pS = 132 and (1−p)(0.02)S = 18, solve for p.",
+        "METHOD 3: Compute number with gene = 132/0.95 ≈ 138.95, number without = 18/0.02 = 900, total ≈ 1038.95, then p ≈ 138.95/1038.95 ≈ 0.134."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15–16",
+          "basis": "METHOD 1: (M1) recognizing conditional probability; (A1)(A1) correct numerator and denominator in 0.02(1−p)/(0.95p+0.02(1−p)) = 18/150; A1 p = 0.134. METHOD 2: (M1) system of equations; (A1) 0.95pS = 132 and (1−p)(0.02)S = 18; (M1) solve; A1 p = 0.134. METHOD 3: (M1) find numbers; (A1) 132/0.95 and 18/0.02; (M1) find proportion; A1 p = 0.134."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

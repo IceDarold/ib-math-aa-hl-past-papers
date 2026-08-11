@@ -1,0 +1,503 @@
+{
+  "question": "1",
+  "expected_question_marks": 28,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-A",
+      "question": "1",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Show that Σᵢ₌₁ⁿ i = n(n+1)/2 for the arithmetic series case q=1.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arithmetic_series_sum",
+        "sum_of_first_n_integers"
+      ],
+      "method_path": [
+        "Apply arithmetic series sum formula S_n = n/2(u₁ + u_n) with u₁ = 1, u_n = n",
+        "Obtain S_n = n(n+1)/2"
+      ],
+      "accepted_alternatives": [
+        "State u₁=1 and d=1, then apply S_n = n/2(2u₁ + (n-1)d)",
+        "Explicitly state the sum 1+2+...+n and simplify to n(n+1)/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "EITHER S_n = n/2(2×1 + (n-1)×1) A1 OR u₁=1 and either u_n=n or d=1 stated explicitly A1 OR 1+2+...+n stated explicitly A1 THEN S_n = n/2(n+1) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-B-I",
+      "question": "1",
+      "part": "b(i)",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write down the value of p = Σᵢ₌₁³ i² using the given table.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sum_of_squares",
+        "evaluate_sum"
+      ],
+      "method_path": [
+        "Compute 1² + 2² + 3² = 1 + 4 + 9 = 14"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "14 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-B-II",
+      "question": "1",
+      "part": "b(ii)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7-8",
+      "task_summary": "Form a system of three linear equations in a₁, a₂, a₃ by substituting n=1,2,3 into Σᵢ₌₁ⁿ i² = a₁n + a₂n² + a₃n³.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_values",
+        "form_linear_system"
+      ],
+      "method_path": [
+        "For n=1: a₁ + a₂ + a₃ = 1",
+        "For n=2: 2a₁ + 4a₂ + 8a₃ = 5",
+        "For n=3: 3a₁ + 9a₂ + 27a₃ = 14"
+      ],
+      "accepted_alternatives": [
+        "Follow-through: third equation 3a₁ + 9a₂ + 27a₃ = p where p is candidate's answer to (b)(i)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "a₁ + a₂ + a₃ = 1 A1; 2a₁ + 4a₂ + 8a₃ = 5 A1; 3a₁ + 9a₂ + 27a₃ = 14 A1"
+        },
+        {
+          "markscheme_pages": "7",
+          "basis": "For the third A mark, award A1FT for 3a₁ + 9a₂ + 27a₃ = p where p is their answer to part (b)(i)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-B-III",
+      "question": "1",
+      "part": "b(iii)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Solve the linear system to find a₁ = 1/6, a₂ = 1/2, a₃ = 1/3.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_linear_system",
+        "gaussian_elimination"
+      ],
+      "method_path": [
+        "Solve the 3×3 system of linear equations",
+        "Obtain a₁ = 1/6, a₂ = 1/2, a₃ = 1/3"
+      ],
+      "accepted_alternatives": [
+        "Follow-through from candidate's three equations in (b)(ii) for their a₁, a₂, a₃"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "a₁ = 1/6 ≈ 0.167, a₂ = 1/2 = 0.5, a₃ = 1/3 ≈ 0.333 A2"
+        },
+        {
+          "markscheme_pages": "8",
+          "basis": "Award A2FT for their a₁, a₂ and a₃. Award A1FT for their a₁, a₂ and a₃ = 0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-C",
+      "question": "1",
+      "part": "c",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8-9",
+      "task_summary": "Show that x f′(x) = x + 2x² + 3x³ + … + nxⁿ for f(x) = 1 + x + x² + … + xⁿ.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "termwise_differentiation",
+        "polynomial_derivative"
+      ],
+      "method_path": [
+        "Differentiate f(x) term by term to get f′(x) = 1 + 2x + 3x² + … + nxⁿ⁻¹",
+        "Multiply by x to obtain x f′(x) = x + 2x² + 3x³ + … + nxⁿ"
+      ],
+      "accepted_alternatives": [
+        "Write f′(x) = Σᵢ₌₁ⁿ i xⁱ⁻¹ in sigma notation then multiply by x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "f′(x) = 1 + 2x + 3x² + … + nxⁿ⁻¹ A1"
+        },
+        {
+          "markscheme_pages": "8-9",
+          "basis": "⇒ x f′(x) = x + 2x² + 3x³ + … + nxⁿ AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-D-I",
+      "question": "1",
+      "part": "d(i)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Show that f₂(x) = x f₁′(x) = Σᵢ₌₁ⁿ i² xⁱ.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "termwise_differentiation",
+        "multiply_by_x"
+      ],
+      "method_path": [
+        "Write f₁(x) = x f′(x) = Σᵢ₌₁ⁿ i xⁱ",
+        "Differentiate termwise: f₁′(x) = Σᵢ₌₁ⁿ i² xⁱ⁻¹",
+        "Multiply by x: f₂(x) = x f₁′(x) = Σᵢ₌₁ⁿ i² xⁱ"
+      ],
+      "accepted_alternatives": [
+        "Use product rule: f₂(x) = x f₁′(x) = x[x f″(x) + f′(x)], expand with sums to obtain Σ i² xⁱ"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: f₁′(x) = 1² + 2²x + 3²x² + … + n²xⁿ⁻¹ A1; x f₁′(x) = 1²x + 2²x² + … + n²xⁿ = Σ i² xⁱ AG"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 2: f₂(x) = x f₁′(x); f₁′(x) = x f″(x) + f′(x) A1; leads to Σ i² xⁱ AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-D-II",
+      "question": "1",
+      "part": "d(ii)",
+      "marks": 6,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Prove by mathematical induction that f_q(x) = Σᵢ₌₁ⁿ i^q xⁱ for all q ∈ ℤ⁺.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case",
+        "induction_hypothesis",
+        "inductive_step",
+        "differentiate_induction_hypothesis"
+      ],
+      "method_path": [
+        "Base case q=1: reference part (c) showing f₁(x) = Σ i xⁱ",
+        "Assume true for q=k: f_k(x) = Σ i^k xⁱ",
+        "Consider q=k+1: f_{k+1}(x) = x f_k′(x)",
+        "Differentiate the induction hypothesis: f_k′(x) = Σ i^{k+1} xⁱ⁻¹",
+        "Multiply by x: f_{k+1}(x) = Σ i^{k+1} xⁱ",
+        "Conclude by induction: true for all q ∈ ℤ⁺"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "consider q=1: f₁(x) = x + 2x² + … + nxⁿ (reference to part (c)) R1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "assume true for q=k, f_k(x) = Σ i^k xⁱ M1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "consider q=k+1: f_{k+1}(x) = x f_k′(x) M1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "x Σ i^{k+1} xⁱ⁻¹ = Σ i^{k+1} xⁱ A1, A1"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "since true for q=1 and true for q=k+1 if true for q=k, hence true for all q∈ℤ⁺ R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-D-III",
+      "question": "1",
+      "part": "d(iii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Write f_q(1) in sigma notation: f_q(1) = Σᵢ₌₁ⁿ i^q.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sigma_notation",
+        "evaluate_at_x_equals_1"
+      ],
+      "method_path": [
+        "Substitute x=1 into f_q(x) = Σ i^q xⁱ",
+        "Obtain f_q(1) = Σᵢ₌₁ⁿ i^q"
+      ],
+      "accepted_alternatives": [
+        "Write as 1^q + 2^q + 3^q + … + n^q"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "f_q(1) = 1^q + 2^q + 3^q + … + n^q = Σ i^q A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-E",
+      "question": "1",
+      "part": "e",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Show that f(x) = (xⁿ⁺¹ − 1)/(x − 1) for x ≠ 1 by treating f(x) as a geometric series.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "geometric_series_sum",
+        "identify_first_term_and_common_ratio"
+      ],
+      "method_path": [
+        "Identify geometric series with u₁ = 1, r = x, and n+1 terms",
+        "Apply S_{n+1} = u₁(r^{n+1} − 1)/(r − 1) to obtain f(x) = (xⁿ⁺¹ − 1)/(x − 1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "uses S_n = u₁(r^n − 1)/(r − 1) with r=x and u₁=1 M1"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "clear indication there are (n+1) terms R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-F",
+      "question": "1",
+      "part": "f",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "11-12",
+      "task_summary": "Show that f₁(x) = x f′(x) = (nxⁿ⁺² − (n+1)xⁿ⁺¹ + x)/(x − 1)² for x ≠ 1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "quotient_rule",
+        "simplify_rational_expression"
+      ],
+      "method_path": [
+        "Express f(x) = (xⁿ⁺¹ − 1)/(x − 1)",
+        "Differentiate using quotient rule to obtain f′(x)",
+        "Multiply by x: f₁(x) = x f′(x)",
+        "Simplify algebraically to (nxⁿ⁺² − (n+1)xⁿ⁺¹ + x)/(x − 1)²"
+      ],
+      "accepted_alternatives": [
+        "Form (1−x)f₁(x) = nxⁿ⁺¹ − Σᵢ₌₁ⁿ xⁱ, simplify using geometric series to reach the result"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: f₁(x) = x f′(x); f′(x) obtained via quotient rule M1A1; simplifies to (nxⁿ⁺² − (n+1)xⁿ⁺¹ + x)/(x−1)² A1 AG"
+        },
+        {
+          "markscheme_pages": "11-12",
+          "basis": "METHOD 2: attempts to form (1−x)f₁(x) M1; uses geometric sum A1; simplifies to AG A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-G-I",
+      "question": "1",
+      "part": "g(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Show that lim_{x→1} f₁(x) is indeterminate of the form 0/0.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "evaluate_limit",
+        "indeterminate_form",
+        "zero_over_zero"
+      ],
+      "method_path": [
+        "Substitute x=1 into numerator: n(1)ⁿ⁺² − (n+1)(1)ⁿ⁺¹ + 1 = n − n − 1 + 1 = 0",
+        "Substitute x=1 into denominator: (1 − 1)² = 0",
+        "Conclude limit is of indeterminate form 0/0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "lim_{x→1} f₁(x) = (n − (n+1) + 1)/0 = 0/0 R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q01-G-II",
+      "question": "1",
+      "part": "g(ii)",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Apply l'Hôpital's rule twice to evaluate lim_{x→1} f₁(x) = n(n+1)/2.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "differentiate_numerator_and_denominator",
+        "apply_twice",
+        "evaluate_limit"
+      ],
+      "method_path": [
+        "First l'Hôpital: differentiate numerator and denominator of f₁(x)",
+        "Obtain lim_{x→1} [n(n+2)xⁿ⁺¹ − (n+1)²xⁿ + 1] / [2(x − 1)]",
+        "Verify limit is still 0/0",
+        "Second l'Hôpital: differentiate both again",
+        "Obtain lim_{x→1} [n(n+2)(n+1)xⁿ − n(n+1)²xⁿ⁻¹] / 2",
+        "Substitute x=1: [n(n+2)(n+1) − n(n+1)²]/2 = n(n+1)/2"
+      ],
+      "accepted_alternatives": [
+        "Use alternative intermediate derivative form: lim_{x→1} [n(n+1)xⁿ⁺¹ − (n+1)n xⁿ + …]/[2(x−1)] then second differentiation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempts to differentiate both numerator and denominator M1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "lim (n(n+1)xⁿ⁺¹ − (n+1)²xⁿ + 1)/(2(x−1)) A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "limit is still 0/0 R1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "attempts to differentiate again M1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "= (n(n+1)² − n(n+1)² + …)/2 … = n(n+1)/2 A1 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

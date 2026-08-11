@@ -1,0 +1,348 @@
+{
+  "question": "1",
+  "expected_question_marks": 31,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P3-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Sketch y=f1(x)=x(2-x), stating axes intercepts and coordinates of local maximum or minimum points.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "find_intercepts",
+        "find_vertex",
+        "state_coordinates"
+      ],
+      "method_path": [
+        "sketch_parabola_opening_downward",
+        "find_x_intercepts_at_0_and_2",
+        "find_y_intercept_at_0",
+        "find_vertex_at_x_eq_1",
+        "state_local_maximum_at_1_1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "inverted parabola extended below axis A1; axis intercept values 0,2 A1; local maximum at (1,1) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Use GDC to explore y=fn(x) for odd n=3,5 and even n=2,4; complete table of numbers of local maxima, local minima, and points of inflexion with zero gradient.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_explore",
+        "count_local_maxima",
+        "count_local_minima",
+        "count_inflexion_points"
+      ],
+      "method_path": [
+        "use_gdc_to_graph_f3_and_f5",
+        "use_gdc_to_graph_f2_and_f4",
+        "count_local_maximum_points",
+        "count_local_minimum_points",
+        "count_inflexion_points_with_zero_gradient",
+        "complete_table_odd_n_1_0_2_even_n_1_2_0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "n=3,5: max=1, min=0, inflexion=2. n=2,4: max=1, min=2, inflexion=0. A1 each correct value. [6 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "10-11",
+      "task_summary": "Show that fn'(x)=n x^(n-1)(a-2x)(a-x)^(n-1).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "factorisation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "apply_product_rule_to_x_pow_n_times_a_minus_x_pow_n",
+        "compute_derivative_terms",
+        "factorise_common_factors",
+        "simplify_to_n_x_pow_n_minus_1_a_minus_2x_a_minus_x_pow_n_minus_1"
+      ],
+      "accepted_alternatives": [
+        "Rewrite fn(x)=(ax-x^2)^n and apply chain rule: fn'(x)=n(ax-x^2)^(n-1)(a-2x)=n x^(n-1)(a-x)^(n-1)(a-2x)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10-11",
+          "basis": "METHOD 1 product rule: (M1) attempts product rule, A1 correct v(du/dx), A1 correct u(dv/dx), (M1) factorise, A1 final form. METHOD 2 chain rule: (M1) rewrite, A1, (M1) chain rule, A1A1. [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q01-D",
+      "question": "1",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "11",
+      "task_summary": "State the three solutions to fn'(x)=0.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_zero",
+        "solve_equation",
+        "state_solutions"
+      ],
+      "method_path": [
+        "set_derivative_to_zero",
+        "solve_each_factor_equals_zero",
+        "state_x_equals_0_x_equals_a_over_2_x_equals_a"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "x=0, x=a/2, x=a A2. Award A1 for two correct solutions. [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q01-E",
+      "question": "1",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "11-12",
+      "task_summary": "Show that (a/2, fn(a/2)) is always above the horizontal axis.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "evaluate_function",
+        "simplify_expression",
+        "positivity_argument"
+      ],
+      "method_path": [
+        "evaluate_fn_at_a_over_2",
+        "simplify_to_a_over_2_pow_2n",
+        "argue_positive_since_even_power_of_positive_real"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11-12",
+          "basis": "(M1) attempts fn(a/2). A1 (a/2)^n(a/2)^n=(a/2)^(2n). R1 a in R+ so (a/2)^(2n)>0. [3 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q01-F",
+      "question": "1",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "12-13",
+      "task_summary": "Hence or otherwise show fn'(a/4)>0 for n in Z+.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "evaluate_derivative",
+        "sign_analysis"
+      ],
+      "method_path": [
+        "substitute_x_equals_a_over_4_into_derivative",
+        "simplify_factors",
+        "argue_all_factors_positive"
+      ],
+      "accepted_alternatives": [
+        "Use fn(0)=0, fn(a/2)>0 and continuity: gradient positive between 0 and a/2, hence fn'(a/4)>0."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12-13",
+          "basis": "METHOD 1: A1 fn'(a/4)=n(a/4)^(n-1)(a/2)(3a/4)^(n-1), R1 all factors >0. METHOD 2: A1 fn(0)=0 and fn(a/2)>0, R1 gradient positive. [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q01-G-I",
+      "question": "1",
+      "part": "G-I",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "13-14",
+      "task_summary": "Show (0,0) is a local minimum point for even n>1.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "evaluate_derivative",
+        "sign_analysis",
+        "classify_stationary_point",
+        "parity_argument"
+      ],
+      "method_path": [
+        "evaluate_fn_prime_at_minus_one",
+        "determine_sign_for_even_n",
+        "cite_fn_prime_at_0_equals_0_and_fn_prime_at_a_over_4_positive",
+        "conclude_local_minimum_at_0_0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13-14",
+          "basis": "R1 n even: n-1 odd, (-1)^(n-1)<0. A1 fn'(-1)<0. A1 fn'(0)=0 and fn'(a/4)>0. Hence (0,0) local minimum. [3 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q01-G-II",
+      "question": "1",
+      "part": "G-II",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Show (0,0) is a point of inflexion with zero gradient for odd n>1.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "evaluate_derivative",
+        "sign_analysis",
+        "classify_inflexion_point",
+        "parity_argument"
+      ],
+      "method_path": [
+        "evaluate_fn_prime_at_minus_one",
+        "determine_sign_for_odd_n",
+        "cite_fn_prime_at_0_equals_0_and_fn_prime_at_a_over_4_positive",
+        "conclude_inflexion_with_zero_gradient_at_0_0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "R1 n odd: n-1 even, (-1)^(n-1)>0 so fn'(-1)>0. A1 fn'(0)=0 and fn'(a/4)>0. Hence (0,0) point of inflexion with zero gradient. [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P3-Q01-H",
+      "question": "1",
+      "part": "H",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "State conditions on n and k such that x^n(a-x)^n=k has four solutions.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "parity_argument",
+        "find_range",
+        "inequality_conditions"
+      ],
+      "method_path": [
+        "consider_parity_of_n",
+        "conclude_n_must_be_even",
+        "identify_lower_bound_k_greater_than_0",
+        "identify_upper_bound_k_less_than_a_over_2_pow_2n",
+        "state_0_less_than_k_less_than_a_over_2_pow_2n"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(M1) considers parity of n. A1 n even. A1 lower endpoint 0. A1 upper endpoint (a/2)^(2n). A1 strict inequality signs. Condition: n even, 0<k<(a/2)^(2n). [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

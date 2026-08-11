@@ -1,0 +1,93 @@
+{
+  "question": "7",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "12–13",
+      "task_summary": "Integrate the PDF f(x)=x/(x²+k)^(3/2) over [0,4], set the total area equal to 1, and rearrange to obtain the equation (√(16+k)−√k)/(√k √(16+k)) = 1.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate_pdf",
+        "u_substitution",
+        "apply_limits",
+        "set_equal_to_one",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Recognize that for a valid PDF, ∫₀⁴ f(x) dx = 1",
+        "Integrate ∫₀⁴ x/(x²+k)^(3/2) dx using substitution u = x²+k, du = 2x dx",
+        "Obtain antiderivative −(x²+k)^(−1/2)",
+        "Apply limits: [−(x²+k)^(−1/2)]₀⁴ = −(1/√(16+k) − 1/√k)",
+        "Set equal to 1: 1/√k − 1/√(16+k) = 1",
+        "Rearrange to (√(16+k) − √k)/(√k √(16+k)) = 1"
+      ],
+      "accepted_alternatives": [
+        "Direct integration without explicit u-substitution: recognise that d/dx[(x²+k)^(−1/2)] = −x/(x²+k)^(3/2) and integrate directly."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognition of the need to integrate (M1)"
+        },
+        {
+          "markscheme_pages": "12–13",
+          "basis": "EITHER substitution u = x²+k, du = 2x dx → ∫ (1/2) u^(−3/2) du OR direct integration ∫ x/(x²+k)^(3/2) dx = −(x²+k)^(−1/2) (A1)(A1)"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to use correct limits for their integrand and set equal to 1 (M1); [−(x²+k)^(−1/2)]₀⁴ = 1 → 1/√k − 1/√(16+k) = 1 (A1); AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "13",
+      "task_summary": "Solve the equation (√(16+k) − √k)/(√k √(16+k)) = 1 for k, yielding k ≈ 0.645.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_equation",
+        "gdc_numerical"
+      ],
+      "method_path": [
+        "Solve the equation from part (a) for k",
+        "Obtain k ≈ 0.645 (accept k = 0.645038…)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to solve (M1); k = 0.645038…; k = 0.645 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

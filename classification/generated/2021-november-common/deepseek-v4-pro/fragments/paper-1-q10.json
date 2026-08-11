@@ -1,0 +1,131 @@
+{
+  "question": "10",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q10-A-I-AND-A-II",
+      "question": "10",
+      "part": "(a)(i) and (a)(ii)",
+      "marks": 7,
+      "source_pages": "13",
+      "markscheme_pages": "21–22",
+      "task_summary": "Find t for maximum velocity by differentiating v(t)=4+4t−3t², setting v'(t)=0 and solving for t=2/3. Then integrate v(t) to obtain displacement, apply initial condition s(0)=0, and substitute t=2/3 to show distance is 88/27 m.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "differentiate",
+        "set_derivative_to_zero",
+        "solve_linear_equation",
+        "integrate_polynomial",
+        "apply_initial_condition",
+        "substitute_value",
+        "evaluate_rational_expression"
+      ],
+      "method_path": [
+        "Differentiate v(t)=4+4t−3t² to obtain v'(t)=4−6t",
+        "Set v'(t)=0 and solve to get t=2/3",
+        "Integrate v(t) to obtain displacement s(t)=4t+2t²−t³+c",
+        "Apply initial condition s(0)=0 to find c=0",
+        "Substitute t=2/3 into s(t) and simplify to 88/27"
+      ],
+      "accepted_alternatives": [
+        "Use vertex formula t=−b/(2a) to find t=2/3",
+        "Use average of roots to find t=2/3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(i) M1 for valid approach to find turning point (v'=0, −b/(2a), average of roots); A1 for t=2/3. (ii) M1 for attempt to integrate v; A1A1 for ∫v dt = 4t+2t²−t³+c; M1 for substituting their t into integrated expression; A1 for distance = 88/27 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q10-B",
+      "question": "10",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Sketch graph of v against t for 0≤t≤3, showing intercepts with axes, vertex near t=2/3, and correct concave-down parabolic shape.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "solve_quadratic_equation",
+        "find_x_intercept",
+        "identify_vertex",
+        "identify_domain_endpoints",
+        "sketch_parabola"
+      ],
+      "method_path": [
+        "Solve v(t)=0 to find t-intercept at t=2 (reject t=−2/3 outside domain)",
+        "Plot domain endpoints (0,4) and (3,−5) with t=3 clearly indicated",
+        "Plot vertex at approximately t=2/3, v>4",
+        "Sketch concave-down parabola through these points"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "M1 for valid approach to solve 4+4t−3t²=0; A1 for correct x-intercept at t=2. A1 for correct domain from 0 to 3 starting at (0,4) with 3 clearly indicated. A1 for vertex in approximately correct place for t=2/3 and v>4. Shape must be concave-down parabola."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q10-C",
+      "question": "10",
+      "part": "(c)",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find total distance travelled by integrating |v(t)| from t=0 to t=3, splitting at t=2 where velocity changes sign, and summing the absolute areas: 8+5=13 m.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "split_integral_at_sign_change",
+        "integrate_polynomial",
+        "evaluate_definite_integral",
+        "sum_absolute_areas"
+      ],
+      "method_path": [
+        "Recognise total distance = ∫₀³|v(t)|dt, split at t=2 where v(t)=0",
+        "Evaluate ∫₀²(4+4t−3t²)dt = 8",
+        "Evaluate ∫₂³(4+4t−3t²)dt = −5",
+        "Sum absolute areas: 8 + |−5| = 13 m"
+      ],
+      "accepted_alternatives": [
+        "Directly evaluate ∫₀³|4+4t−3t²|dt"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1 for recognising to integrate between 0 and 2, or 2 and 3 OR ∫|v|dt. A1 for ∫₀² = 8. A1 for ∫₂³ = −5. M1 for valid approach to sum the two areas. A1 for total distance 13 m."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

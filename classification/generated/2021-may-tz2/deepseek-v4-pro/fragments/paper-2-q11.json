@@ -1,0 +1,181 @@
+{
+  "question": "11",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Show that the volume of the solid of revolution formed by rotating the region enclosed by y=f(x), the axes, and x=ln 16 about the x-axis is πk²·15/34 cubic units.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "volume_of_revolution",
+        "definite_integral",
+        "integration_by_substitution",
+        "evaluate_definite_integral",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply volume of revolution formula V=π∫[f(x)]²dx from x=0 to x=ln16",
+        "Substitute f(x)=ke^(x/2)/(1+e^x) and square to obtain integrand k²e^x/(1+e^x)²",
+        "Integrate using substitution u=1+e^x (or u=e^x, or by recognition)",
+        "Apply limits: x=0→u=2, x=ln16→u=17",
+        "Obtain πk²[-1/u]₂¹⁷ = πk²(1/2−1/17)",
+        "Simplify to πk²·15/34"
+      ],
+      "accepted_alternatives": [
+        "Integration by recognition (no explicit substitution)",
+        "Substitution u=1+e^x",
+        "Substitution u=e^x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "M1 for attempt to use V=π∫(f(x))²dx; M1 for integration method (by recognition or substitution); A3/A1 for correct antiderivative and integration steps; A1 for evaluating limits; final AG for πk²·15/34"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find the value of k such that the bowl volume equals 300 cm³.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_for_variable",
+        "algebraic_manipulation",
+        "substitute_value"
+      ],
+      "method_path": [
+        "Set πk²·15/34 = 300",
+        "Solve for k²: k² = 300·34/(15π) = 680/π",
+        "Take positive root k = √(680/π) = 2√(170/π) ≈ 14.7"
+      ],
+      "accepted_alternatives": [
+        "GDC numerical solve feature"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "M1 for valid algebraic or graphical attempt to find k; A1 for k=√(680/π)=2√(170/π) with k∈ℝ⁺"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find OA=f(0) and BC=f(ln 16), the cross-sectional radii at the top and base of the bowl.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "evaluate_function",
+        "substitute_value",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "(i) OA = f(0): substitute x=0 into f(x)=ke^(x/2)/(1+e^x) to obtain k/2; then substitute k=√(680/π) to get OA=√(170/π)≈7.36 cm",
+        "(ii) BC = f(ln16): substitute x=ln16 to obtain k·4/17; then substitute k to get BC=8√(170)/(17√π)≈3.46 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "M1 for OA=f(0)=k/2; A1 for OA=√(170/π); M1 for BC=f(ln16)=4k/17; A1 for BC=8√(170)/(17√π)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "23-24",
+      "task_summary": "Find where the cross-sectional radius is decreasing most rapidly by sketching f'(x) or f''(x), and state the radius at that point.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.graphing"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "differentiation",
+        "second_derivative",
+        "find_minimum",
+        "solve_equation",
+        "evaluate_function",
+        "sketch_graph"
+      ],
+      "method_path": [
+        "Find f'(x) using quotient/product rule",
+        "Sketch graph of f'(x) to locate its minimum OR sketch f''(x) and identify where f''(x)=0",
+        "Solve f''(x)=0 to obtain x=ln(2+√3)≈1.76",
+        "Evaluate f at this x-value",
+        "State radius = √(85/π) ≈ 5.20 cm"
+      ],
+      "accepted_alternatives": [
+        "Sketch f'(x) and find its local minimum",
+        "Sketch f''(x) and find where f''(x)=0 (maximum rate of decrease)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "M1 for recognising to graph f'(x) or f''(x); A1 for correct derivative expression; A1 for correct graph features (minimum of f' or x-intercept of f''); A1 for x=ln(2+√3); M1 for evaluating f at this x; A1 for radius=√(85/π)≈5.20 cm"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

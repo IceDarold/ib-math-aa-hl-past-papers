@@ -1,0 +1,212 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-A",
+      "question": "12",
+      "part": "(a)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Use the dot product and the acute angle π/3 between L₁ and L₂ to show that 4t = √(10t²+12t+18).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "scalar_product",
+        "vector_magnitude",
+        "cosine_formula",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "compute scalar product d₁·PA→ = (2t)(1)+(0)(1)+(3+t)(0) = 2t",
+        "compute magnitudes |d₁| = √(1²+1²+0²) = √2 and |PA→| = √((2t)²+0²+(3+t)²)",
+        "substitute into cos(π/3) = |d₁·PA→|/(|d₁||PA→|)",
+        "use cos(π/3)=1/2 and simplify to 4t = √(10t²+12t+18)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1 for scalar product 2t seen anywhere; A1 for one correct magnitude; M1 for correct substitution of magnitudes and scalar product into cosine formula; A1 for correct expression leading to AG statement."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-B",
+      "question": "12",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Solve the equation from part (a) to find t > 0.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "squaring",
+        "quadratic_rearrangement",
+        "factorization",
+        "root_selection"
+      ],
+      "method_path": [
+        "square both sides: 16t² = 10t²+12t+18",
+        "rearrange to 6t²−12t−18=0 and simplify to t²−2t−3=0",
+        "factor (t+1)(t−3)=0",
+        "select t=3 since t>0"
+      ],
+      "accepted_alternatives": [
+        "Quadratic formula: t = (12±√(144+432))/12 or t = (2±√(4+12))/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1 for correct quadratic equation; (M1) for valid attempt to solve quadratic set to 0; (A1) for correct factorisation or quadratic formula setup; A1 for t=3. Note: award A0 if additional answers given."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-C",
+      "question": "12",
+      "part": "(c)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "26,27,28,29",
+      "task_summary": "Find the shortest distance from point A to line L₁, using t=3.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "perpendicular_distance",
+        "trigonometric_ratio",
+        "vector_magnitude",
+        "substitution"
+      ],
+      "method_path": [
+        "compute |PA→| = √(6²+0²+6²) = √72 = 6√2 with t=3",
+        "apply sin(π/3) = x/|PA→| where x is the shortest distance",
+        "compute x = 6√2 × √3/2 = 3√6 = √54"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: shortest distance = |PA→ × v|/|v| using cross product",
+        "METHOD 3: shortest distance = √(|PA→|² − (|PA→·v|/|v|)²) using Pythagorean theorem",
+        "METHOD 4: parametrize B(λ,8+λ,3) on L₁, set AB·v=0 to find λ=3, then compute |AB|"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "METHOD 1: (M1) for recognising shortest distance is perpendicular; (A1) for |PA→|=√72=6√2; (A1) for sin(π/3)=x/√72; A1 for √54=3√6."
+        },
+        {
+          "markscheme_pages": "27",
+          "basis": "METHOD 2: (M1) for recognising distance = |PA→×v|/|v|; (A1) for cross product (6,−6,−6); (A1) for magnitude √108/√2; A1 for √54=3√6."
+        },
+        {
+          "markscheme_pages": "28",
+          "basis": "METHOD 3: (M1) for recognising base = |PA→·v|/|v|; (A1) for base = 3√2; (A1) for |PA→|=6√2; A1 for √54=3√6."
+        },
+        {
+          "markscheme_pages": "29",
+          "basis": "METHOD 4: (M1) attempt to find AB with AB⟂L₁; A1 for AB expression; A1 for λ=3 via derivative or dot product; A1 for shortest distance √54=3√6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-D",
+      "question": "12",
+      "part": "(d)",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "30",
+      "task_summary": "Find a normal vector to plane Π containing L₁ and L₂.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "normal_vector"
+      ],
+      "method_path": [
+        "compute cross product of direction vectors (1,1,0) × (6,0,6)",
+        "obtain normal vector (1,−1,−1) or any scalar multiple"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "(M1) for attempt to find vector product of two direction vectors; A1 for n = (1,−1,−1) or scalar multiple. Award A0 for final answer in coordinate form."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q12-E",
+      "question": "12",
+      "part": "(e)",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "31",
+      "task_summary": "Find the two possible vertex positions of a right cone with base in Π centred at A, L₁ tangent to its base, and volume 90√3π.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cone_volume_formula",
+        "substitution",
+        "unit_vector",
+        "vector_position"
+      ],
+      "method_path": [
+        "substitute r = 3√6 into V = (1/3)πr²h = 90√3π to find h = 5√3",
+        "compute unit normal n̂ = (1,−1,−1)/√3",
+        "compute vertex positions OA ± h·n̂ = (6,8,3) ± (5,−5,−5)",
+        "obtain vertices (11,3,−2) and (1,13,8)"
+      ],
+      "accepted_alternatives": [
+        "Use parameter µ with recognition h = µ|n| ⇒ µ = ±5, then OA ± 5(1,−1,−1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "(M1) for substituting x into volume formula; A1 for h=5√3; (M1) for recognition that position vector is OA+µn or OA+h×n̂; EITHER (M1) recognition h=µ|n|, (A1) µ=±5; OR (M1) attempt height vector h×n̂, (A1) correct; THEN A1A1 for vertices (11,3,−2) and (1,13,8)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

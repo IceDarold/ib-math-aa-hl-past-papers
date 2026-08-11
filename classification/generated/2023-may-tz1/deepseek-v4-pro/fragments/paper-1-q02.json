@@ -1,0 +1,82 @@
+{
+  "question": "2",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "(i) Estimate the probability that a randomly selected visitor will ride The Dragon, using the frequency table of 40 visitors. (ii) Estimate the expected number of times a visitor will ride The Dragon, using the same frequency table.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.probability",
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "sum_frequencies",
+        "relative_frequency",
+        "expected_value_formula",
+        "weighted_sum"
+      ],
+      "method_path": [
+        "Sum non-zero frequencies or use complement to find number of riders: 1+16+13+2+3 = 34",
+        "Divide by total frequency to estimate P(rider) = 34/40",
+        "Set up expected value formula E(X) = sum of x*f_x/n using the frequency table",
+        "Compute weighted sum: (0*6 + 1*16 + 2*13 + 3*2 + 4*3)/40 = 60/40 = 1.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "summing frequencies of riders or finding complement (M1); probability = 34/40 (A1); attempt to find expected value (M1); (0*6 + 1*16 + 2*13 + 3*2 + 4*3)/40 = 60/40 = 1.5 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Given 1000 visitors and The Dragon carries a maximum of 10 people per run, estimate the minimum number of times The Dragon must run to satisfy demand, using the expected rides per visitor from part (a).",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "multiplication",
+        "division",
+        "expected_total_demand"
+      ],
+      "method_path": [
+        "Multiply expected rides per visitor by number of visitors: 1.5 * 1000 = 1500 total expected rides",
+        "Divide total expected rides by ride capacity: 1500 / 10 = 150 runs"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "evidence of their rides/visitor * 1000 or division by 10 (M1); 150 times (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

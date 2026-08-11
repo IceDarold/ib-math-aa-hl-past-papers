@@ -1,0 +1,801 @@
+{
+  "session": "May 2023",
+  "zone": "TZ1",
+  "paper": 3,
+  "calculator": "yes",
+  "expected_total_marks": 55,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P3-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Sketch the graph of y = f₁(x) = xe^(-x) for x ≥ 0, stating the coordinates of the local maximum point.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "differentiate_product",
+        "find_stationary_point",
+        "sketch_graph",
+        "identify_asymptotic_behavior"
+      ],
+      "method_path": [
+        "Differentiate f₁(x)=xe^(-x) using product rule: f₁'(x)=e^(-x)(1-x)",
+        "Set f₁'(x)=0 to find stationary point at x=1",
+        "Evaluate f₁(1)=e^(-1)=1/e",
+        "Sketch graph: through origin, local maximum at (1, 1/e), domain x≥0, asymptotic to x-axis as x→∞"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for (1, 0.368) or (1, 1/e) labelled at local maximum; A1 for graph clearly starting at, or passing through, the origin; A1 for correct domain; A1 for correct shape i.e.: single maximum, and asymptotic behaviour"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Show that the area of the region bounded by y = f₁(x), the x-axis, and x = b (b > 0) is (e^b - b - 1)/e^b.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "definite_integral",
+        "evaluate_limits"
+      ],
+      "method_path": [
+        "Set up definite integral ∫₀ᵇ xe^(-x)dx",
+        "Integrate by parts: u = x, dv = e^(-x)dx → du = dx, v = -e^(-x)",
+        "Obtain [-xe^(-x)]₀ᵇ + ∫₀ᵇ e^(-x)dx = [-xe^(-x)]₀ᵇ + [-e^(-x)]₀ᵇ",
+        "Substitute limits: (-be^(-b) + 0) + (-e^(-b) + 1) = -be^(-b) - e^(-b) + 1",
+        "Simplify to (e^b - b - 1)/e^b"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for correct integrand and limits; Use of integration by parts; A1A1 for each part (including correct sign); A1 for correct second term; attempt to substitute limits M1; A1 for -be^(-b)-e^(-b)+1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q01-C-I",
+      "question": "1",
+      "part": "C-I",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Use l'Hôpital's rule to find lim_{b→∞} (e^b - b - 1)/e^b.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "evaluate_limit"
+      ],
+      "method_path": [
+        "Write limit as lim_{b→∞} (e^b - b - 1)/e^b",
+        "Apply l'Hôpital's rule: differentiate numerator and denominator",
+        "Obtain lim_{b→∞} (e^b - 1)/e^b",
+        "Apply l'Hôpital's rule again: lim_{b→∞} e^b/e^b = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for correct quotient (e^b - b - 1)/e^b; A1 for lim = 1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q01-C-II",
+      "question": "1",
+      "part": "C-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Hence write down the value of A₁ = ∫₀^∞ f₁(x)dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.limits"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "evaluate_improper_integral",
+        "apply_limit"
+      ],
+      "method_path": [
+        "A₁ = lim_{b→∞} (e^b - b - 1)/e^b = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for ∫₀^∞ xe^(-x)dx = 1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q01-D-I",
+      "question": "1",
+      "part": "D-I",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Use a GDC with an appropriate upper limit to determine A₄ = ∫₀^∞ x⁴e^(-x)dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "numerical_integration",
+        "gdc_evaluate"
+      ],
+      "method_path": [
+        "Set up integral ∫₀^∞ x⁴e^(-x)dx on GDC with a large upper limit (e.g. b = 20)",
+        "Obtain A₄ = 24"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1 for correct integrand with limits from 0 to a larger number; A1 for 24"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q01-D-II",
+      "question": "1",
+      "part": "D-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Use a GDC to determine A₅ = ∫₀^∞ x⁵e^(-x)dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "numerical_integration",
+        "gdc_evaluate"
+      ],
+      "method_path": [
+        "Evaluate ∫₀^∞ x⁵e^(-x)dx on GDC with a large upper limit",
+        "Obtain A₅ = 120"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1 for 120; The M1 can be awarded if either part (d)(i) or part (d)(ii) is correct"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q01-E",
+      "question": "1",
+      "part": "E",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Suggest an expression for Aₙ in terms of n, where n ∈ ℤ⁺.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "pattern_recognition",
+        "conjecture_formula"
+      ],
+      "method_path": [
+        "Observe A₁=1, A₂=2, A₃=6, A₄=24, A₅=120",
+        "Conjecture Aₙ = n!"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1 for A_n = n!"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q01-F",
+      "question": "1",
+      "part": "F",
+      "marks": 8,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Use mathematical induction to prove Aₙ = n! for n ∈ ℤ⁺, given that lim_{x→∞} x^m e^(-x) = 0 for any m.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case",
+        "induction_hypothesis",
+        "integration_by_parts",
+        "induction_step",
+        "conclusion"
+      ],
+      "method_path": [
+        "Base case n=1: verify A₁ = 1 = 1!",
+        "Induction hypothesis: assume A_k = k! = ∫₀^∞ x^k e^(-x)dx",
+        "Induction step n=k+1: write A_{k+1} = ∫₀^∞ x^{k+1} e^(-x)dx",
+        "Integrate by parts: u = x^{k+1}, dv = e^(-x)dx → du = (k+1)x^k dx, v = -e^(-x)",
+        "Obtain [-x^{k+1}e^(-x)]₀^∞ + (k+1)∫₀^∞ x^k e^(-x)dx",
+        "Apply given limit: [-x^{k+1}e^(-x)]₀^∞ = 0",
+        "Substitute induction hypothesis: (k+1)·k! = (k+1)!",
+        "Conclude: true for n=1 and if true for n=k then true for n=k+1, therefore true for all n∈ℤ⁺"
+      ],
+      "accepted_alternatives": [
+        "Accept starting induction at n=0 throughout the proof"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "M1A1 for base case n=1 (A₁=1 and 1!=1); M1 for assume true for n=k; M1 for attempt integration by parts; A1 for correct integration by parts expression; A1 for (k+1)∫x^k e^(-x)dx simplified to (k+1)k!; A1 for 0+(k+1)k!; A1 for (k+1)!; R1 for conclusion"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Express the product of x1 and x2 as a function f of x1 only, given x1 + x2 = 12.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "function_definition"
+      ],
+      "method_path": [
+        "Substitute x2 = 12 - x1 using the sum constraint",
+        "Write f(x1) = x1(12 - x1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "x2 = 12 - x1 (M1); f(x1) = x1(12 - x1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-B-I",
+      "question": "2",
+      "part": "b(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Find the value of x1 for which the function f(x1) = x1(12 - x1) is maximum.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "find_maximum_of_quadratic"
+      ],
+      "method_path": [
+        "Determine x1 = 6 by symmetry, vertex formula, derivative, or GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "x1 = 6 A1; Note: Award the A1 if 6 seen in part (ii)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "method_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-B-II",
+      "question": "2",
+      "part": "b(ii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Hence show that the maximum product of x1 and x2 is 36.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "function_evaluation"
+      ],
+      "method_path": [
+        "Evaluate f(6) = 6 * 6 = 36"
+      ],
+      "accepted_alternatives": [
+        "Graph with maximum at (6, 36)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "f(6) OR 6^2 OR graph with maximum at (6, 36) M1; = 36 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Verify that M2(S) = (S/2)^2 is true for S = 12.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_evaluation",
+        "verification"
+      ],
+      "method_path": [
+        "Compute M2(12) = (12/2)^2 = 36",
+        "Link to the maximum product 36 from part (b)(ii)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M2(12) = (12/2)^2 = 36 which is the maximum product (from (b)(ii)) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-D-I",
+      "question": "2",
+      "part": "d(i)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Show that the geometric mean and arithmetic mean are equal when x1 = x2 = ... = xn.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "substitution",
+        "algebraic_equality"
+      ],
+      "method_path": [
+        "Let all xi = x",
+        "GM = (x^n)^(1/n) = x",
+        "AM = nx/n = x",
+        "Conclude GM = AM"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "let all xi be labelled as x (M1); (x^n)^(1/n) = x and nx/n = x A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-D-II",
+      "question": "2",
+      "part": "d(ii)",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Use the AM-GM inequality result to prove that M_n(S) = (S/n)^n.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "apply_am_gm_inequality",
+        "raise_to_power",
+        "equality_condition",
+        "direct_proof"
+      ],
+      "method_path": [
+        "State sum constraint: sum of xi = S",
+        "Apply AM-GM: (product of xi)^(1/n) <= S/n",
+        "Raise both sides to nth power: product of xi <= (S/n)^n",
+        "Note equality holds when all xi = S/n",
+        "Conclude M_n(S) = (S/n)^n"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "x1 + x2 + ... + xn = S (A1); (x1 * ... * xn)^(1/n) <= S/n M1; product <= (S/n)^n M1; equality when all xi = S/n R1; M_n(S) = (S/n)^n AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-E-I",
+      "question": "2",
+      "part": "e(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Determine M3(12).",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_evaluation"
+      ],
+      "method_path": [
+        "Compute M3(12) = (12/3)^3 = 4^3 = 64"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M3(12) = 4^3 = 64 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-E-II",
+      "question": "2",
+      "part": "e(ii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Determine M4(12).",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_evaluation"
+      ],
+      "method_path": [
+        "Compute M4(12) = (12/4)^4 = 3^4 = 81"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M4(12) = 3^4 = 81 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-E-III",
+      "question": "2",
+      "part": "e(iii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Determine M5(12).",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_evaluation"
+      ],
+      "method_path": [
+        "Compute M5(12) = (12/5)^5 = 2.4^5 = 79.6 (79.6262...)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M5(12) = 2.4^5 = 79.6 (79.6262...) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-F",
+      "question": "2",
+      "part": "f",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Write down the value of P(12) and the value of n at which it occurs, where P(S) is the maximum of M_n(S) across all positive integer n.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "discrete_optimization",
+        "comparison"
+      ],
+      "method_path": [
+        "Compare M_n(12) for integer n = 1, 2, 3, 4, 5, ...",
+        "Identify maximum P(12) = 81 at n = 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "considering M_n(12) for higher values of n; P(12) = 81 A1; n = 4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-G",
+      "question": "2",
+      "part": "g",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Determine the value of P(20) and the value of n at which it occurs.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "discrete_optimization",
+        "numerical_evaluation"
+      ],
+      "method_path": [
+        "Explore (20/n)^n for integer n around 20/e using table or graph",
+        "Identify maximum at n = 7",
+        "Compute P(20) = (20/7)^7 = 1550 (1554.260...)"
+      ],
+      "accepted_alternatives": [
+        "n = 7.36 with P(20) = 1570 (awarded M1A0A1: partial credit for continuous rather than discrete optimization)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "Consideration of graph or table of (20/n)^n including values either side of 7 (M1); Maximum occurs when n = 7 A1; P(20) = (20/7)^7 = 1550 (1554.260...) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-H",
+      "question": "2",
+      "part": "h",
+      "marks": 6,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "Find, in terms of S, the x-coordinate of the maximum point A on the graph of g(x) = ln((S/x)^x).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "calculus.stationary_points"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "logarithmic_transformation",
+        "implicit_differentiation",
+        "product_rule",
+        "set_derivative_to_zero",
+        "solve_for_variable"
+      ],
+      "method_path": [
+        "Write ln(g(x)) = x ln(S/x) = x(ln S - ln x)",
+        "Differentiate implicitly: g'(x)/g(x) = ln S - ln x - 1",
+        "Set g'(x) = 0 (since g(x) != 0): ln(S/x) - 1 = 0",
+        "Solve: ln(S/x) = 1, S/x = e, x = S/e"
+      ],
+      "accepted_alternatives": [
+        "Implicit differentiation of original form g(x) = (S/x)^x directly using product rule and chain rule",
+        "Explicit form g(x) = e^{x ln(S/x)} then differentiate using product rule and chain rule"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "ln(g(x)) = x(ln S - ln x) M1; attempt implicit differentiation and product rule M1M1; g'(x)/g(x) = ln S - ln x - 1 A1; g'(x) = 0 => ln(S/x) - 1 = 0 M1; x = S/e A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-I",
+      "question": "2",
+      "part": "i",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "15",
+      "task_summary": "Verify that g(x) = M_x(S) when x is a positive integer.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "logarithmic_rewriting",
+        "exponentiation",
+        "algebraic_verification"
+      ],
+      "method_path": [
+        "Rewrite g(x) = ln((S/x)^x)",
+        "Exponentiate: e^{g(x)} = (S/x)^x",
+        "Recognize (S/x)^x = M_x(S) for positive integer x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "g(x) = ln((S/x)^x) => ln(g(x)) = x ln(S/x) M1; g(x) = (S/x)^x A1; = M_x(S) for x in Z+ AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-J",
+      "question": "2",
+      "part": "j",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "15",
+      "task_summary": "Use the answer to part (h) to find the largest possible product of positive numbers whose sum is 100. Give the answer as a * 10^k with 1 <= a < 10.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "discrete_optimization",
+        "numerical_comparison",
+        "scientific_notation"
+      ],
+      "method_path": [
+        "Compute optimal continuous n = S/e = 100/e = 36.8",
+        "Compare integer n = 36: (100/36)^36 = 9.3996... * 10^15",
+        "Compare integer n = 37: (100/37)^37 = 9.47406... * 10^15",
+        "Identify largest product = 9.47 * 10^15 at n = 37"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "100/e = 36.8 M1; (100/36)^36 = 9.3996... * 10^15 AND (100/37)^37 = 9.47406... * 10^15 R1; largest product is 9.47 * 10^15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

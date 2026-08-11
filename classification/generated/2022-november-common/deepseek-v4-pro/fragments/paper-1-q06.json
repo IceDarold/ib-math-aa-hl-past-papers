@@ -1,0 +1,107 @@
+{
+  "question": "6",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q06-A",
+      "question": "6",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Determine P(A ∩ B) when events A and B are independent, given P(A) = 0.3 and P(B) = 0.8.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "independent_events",
+        "multiplication_rule"
+      ],
+      "method_path": [
+        "P(A ∩ B) = P(A) × P(B) for independent events",
+        "0.3 × 0.8 = 0.24"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "P(A ∩ B) = 0.24 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q06-B",
+      "question": "6",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Determine the minimum possible value of P(A ∩ B), given P(A) = 0.3 and P(B) = 0.8.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "union_formula",
+        "probability_bounds",
+        "inequality"
+      ],
+      "method_path": [
+        "P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+        "P(A ∪ B) = 1.1 − P(A ∩ B)",
+        "0 ≤ P(A ∪ B) ≤ 1 ⇒ P(A ∩ B) ≥ 0.1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "P(A ∪ B) = 1.1 − P(A ∩ B) (A1); 0 ≤ P(A ∪ B) ≤ 1 (M1); minimum value of P(A ∩ B) is 0.1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q06-C",
+      "question": "6",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Determine the maximum possible value of P(A ∩ B) with justification, given P(A) = 0.3 and P(B) = 0.8.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "subset_condition",
+        "probability_bounds"
+      ],
+      "method_path": [
+        "A ⊆ B ⇒ P(A ∩ B) = P(A)",
+        "maximum P(A ∩ B) = 0.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A is a subset of B (so P(A ∩ B) = P(A)) R1; maximum value of P(A ∩ B) is 0.3 A1; Note: Do not award R0A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

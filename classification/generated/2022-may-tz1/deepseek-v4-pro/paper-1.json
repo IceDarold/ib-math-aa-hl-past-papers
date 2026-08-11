@@ -1,0 +1,1065 @@
+{
+  "session": "May 2022",
+  "zone": "TZ1",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Evaluate the definite integral ∫₁⁹ (3 − 5/√x) dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "rewrite_integrand",
+        "integrate_power_rule",
+        "substitute_limits",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Rewrite 5/√x as 5x^(−1/2)",
+        "Integrate: ∫(3 − 5x^(−1/2)) dx = 3x − 10√x",
+        "Substitute upper and lower limits: F(9) − F(1)",
+        "Evaluate: (27 − 30) − (3 − 10) = 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "∫(3 − 5/√x)dx = ∫(3 − 5x^(−1/2))dx (A1); ∫(3 − 5x^(−1/2))dx = 3x − 10√x (+c) A1A1; substituting limits into their integrated function and subtracting (M1); = 4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "(a)",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find the largest value of the eldest child's age c that would not be considered an outlier, using the given box and whisker diagram (min=2, Q1=6, median=7, Q3=10, max=18).",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "box_plot_reading",
+        "iqr_calculation",
+        "outlier_fence",
+        "substitution"
+      ],
+      "method_path": [
+        "Read Q1=6 and Q3=10 from the box plot",
+        "Compute IQR = Q3 - Q1 = 10 - 6 = 4",
+        "Compute upper fence: Q3 + 1.5 x IQR = 10 + 1.5 x 4 = 10 + 6 = 16"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "IQR = 10 - 6 (=4) (A1); attempt to find Q3 + 1.5 x IQR (M1); 10 + 6 = 16 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "(i) Estimate the eldest child's age for an adult aged 42 using the regression line of c on a: c = (1/2)a - 9. (ii) Find the mean age of all adults by solving the system formed by the two regression lines at their intersection point.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "linear_regression",
+        "substitution",
+        "system_of_equations",
+        "mean_point"
+      ],
+      "method_path": [
+        "(i) Substitute a = 42 into c = a/2 - 9 to obtain c = 12",
+        "(ii) Solve the system of the two regression lines at the mean point by substitution or elimination to find a-bar = 34"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(i) choosing c = (1/2)a - 9 (M1); 1/2 x 42 - 9 = 12 (years old) (A1). (ii) attempt to solve system by substitution or elimination (M1); 34 (years old) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Evaluate the composite function: substitute g(x)=2x into f(x) to obtain f(2x)=3 sin 2x / cos 2x.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "composite_function",
+        "function_evaluation",
+        "trig_substitution"
+      ],
+      "method_path": [
+        "(f ∘ g)(x) = f(g(x)) = f(2x)",
+        "f(2x) = (3 sin 2x) / (cos 2x)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "(f ∘ g)(x) = f(2x) (A1); f(2x) = 3 sin 2x / cos 2x (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Solve the trigonometric equation (3 sin 2x)/(cos 2x) = 2 cos 2x, reducing to tan 2x = 1/√3 and obtaining x = π/12, 7π/12 within the given domain.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "trig_equation",
+        "algebraic_simplification",
+        "tan_identity",
+        "inverse_trig_function",
+        "general_solution",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "set (3 sin 2x)/(cos 2x) = 2 cos 2x",
+        "simplify algebraically to tan 2x = 1/√3",
+        "arctan(1/√3) = π/6",
+        "general solution for 2x: 2x = π/6, 7π/6",
+        "x = π/12, 7π/12"
+      ],
+      "accepted_alternatives": [
+        "cot 2x = √3 instead of tan 2x = 1/√3",
+        "use of right-triangle values for tan or cot"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognizing to use tan or cot (M1); tan 2x = 1/√3 OR cot 2x = √3 (A1); arctan(1/√3) = π/6 (A1); 2x = π/6, 7π/6; x = π/12, 7π/12 (A1A1). Do not award final A1 if additional solutions seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "11",
+      "task_summary": "Find k such that the tangent to y=(2x-1)e^{kx} at x=1 is parallel to y=5e^{k}x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "differentiate",
+        "evaluate_derivative",
+        "equate_slopes",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Differentiate using product rule: dy/dx = (2x-1)·ke^{kx} + 2e^{kx} = e^{kx}(2kx - k + 2)",
+        "Evaluate derivative at x=1: dy/dx|₁ = ke^{k} + 2e^{k} = e^{k}(k+2)",
+        "Identify slope of line y=5e^{k}x as 5e^{k}",
+        "Equate slopes: e^{k}(k+2) = 5e^{k}",
+        "Solve: cancel e^{k} (non-zero), giving k+2=5 → k=3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: evidence of using product rule. A1: correct derivative e^{kx}(2kx - k + 2). A1: correct working for dy/dx at x=1 (ke^{k}+2e^{k}) OR slope of tangent (5e^{k}). M1: equate their dy/dx at x=1 to slope 5e^{k}. A1: k=3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Describe the two transformations that map the graph of f(x) = 4 sin x + 2.5 to the graph of g(x) = 4 sin(x − 3π/2) + 2.5 + q.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "horizontal_translation",
+        "vertical_translation"
+      ],
+      "method_path": [
+        "horizontal translation (shift) by 3π/2 to the right",
+        "vertical translation (shift) by q upwards"
+      ],
+      "accepted_alternatives": [
+        "Translation by vector (3π/2, q) accepted as a single combined description."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "translation (shift) by 3π/2 to the right OR positive horizontal direction by 3π/2 A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "translation (shift) by q upwards OR positive vertical direction by q A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "Note: accept translation by (3π/2, q) vector. Do not accept 'move' for translation/shift."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "12-13",
+      "task_summary": "Given that g(x) ≥ 7 for all x, find the smallest possible value of r, the y-intercept of g at (0, r).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sine_minimum",
+        "inequality_setup",
+        "solve_linear_inequality",
+        "substitute_x_zero",
+        "evaluate_trigonometric_expression"
+      ],
+      "method_path": [
+        "Find minimum of 4sin(x − 3π/2) = −4",
+        "Set inequality −4 + 2.5 + q ≥ 7 and solve q ≥ 8.5",
+        "Substitute x = 0 with q = 8.5 into g(x)",
+        "Compute r = 4sin(−3π/2) + 2.5 + 8.5 = 4 + 2.5 + 8.5",
+        "State smallest value r = 15"
+      ],
+      "accepted_alternatives": [
+        "Substitute x=0 first to get r = 6.5 + q; then find minimum −4; set −4 + 2.5 + q ≥ 7; replace q with r − 6.5 to obtain r ≥ 15.",
+        "Rewrite g(x) = 4cos x + 2.5 + q; note y-intercept is a maximum; amplitude is 4; least maximum yields r = 4×2 + 7 = 15."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 1: minimum of 4sin(x−3π/2) is −4 (may be seen in sketch) (M1); −4 + 2.5 + q ≥ 7; q ≥ 8.5 (accept q = 8.5) A1; substituting x = 0 and their (q = 8.5) to find r (M1); r = 4sin(−3π/2) + 2.5 + 8.5 = 4 + 2.5 + 8.5 (A1); smallest value of r is 15 A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 2: substituting x = 0 to find an expression for r in terms of q (M1); r = 4sin(−3π/2) + 2.5 + q = 6.5 + q A1; minimum of 4sin(x−3π/2) is −4 (M1); −4 + 2.5 + q ≥ 7 → −4+2.5+(r−6.5) ≥ 7 (A1); smallest value of r is 15 A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 3: 4sin(x−3π/2)+2.5+q = 4cos x+2.5+q A1; y-intercept of 4cos x+2.5+q is a maximum (M1); amplitude of g(x) is 4 (A1); attempt to find least maximum (M1); r = 4×2 + 7; smallest value of r is 15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Find the general term of (x^3 - 1/(8x))^n, set the exponent of x to zero for a constant term, obtain the condition r = 3n/4, and enforce r integer with 0 <= r <= n to conclude n must be a positive multiple of 4.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_general_term",
+        "exponent_analysis",
+        "integer_condition"
+      ],
+      "method_path": [
+        "Write the general term: T_{r+1} = C(n,r) * (x^3)^{n-r} * (-1/(8x))^r",
+        "Simplify the exponent of x: 3(n-r) - r = 3n - 4r",
+        "Set the exponent to zero for a constant term: 3n - 4r = 0",
+        "Solve for r: r = 3n/4",
+        "Require r to be an integer with 0 <= r <= n, so n must be a multiple of 4",
+        "State answer: n = 4k, k in positive integers (i.e. n = 4, 8, 12, ...)"
+      ],
+      "accepted_alternatives": [
+        "Recognise that the power of x starts at 3n and decreases by 4 each term; set 3n - 4r = 0 to obtain r = 3n/4; continue as above.",
+        "Trial-and-error approach: test n = 1, 2, 3, ... and identify n = 4, 8, 12, ... as giving a constant term, recognising the pattern continues.",
+        "Use the alternative general-term form T_{r+1} = C(n,r) * (-1/(8x))^{n-r} * (x^3)^r, giving exponent 4r - n = 0 so n = 4r."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Markscheme shows 5 marks: (M1) attempt general term or recognise power pattern; (M1) recognise constant term when power of x is zero; A1 for r = 3n/4 or n = 4r/3 or 3n - 4r = 0; (A1) for r multiple of 3 or one correct n; A1 for n = 4k, k positive integer. Notes accept trial-and-error showing n = 4, 8, 12, ... with pattern recognition."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Find k by integrating f(x)=k/√(4−3x²) over [0,1] and setting the integral equal to 1.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integration",
+        "arcsine_antiderivative",
+        "pdf_normalization",
+        "solve_for_constant"
+      ],
+      "method_path": [
+        "Integrate k/√(4−3x²) from 0 to 1",
+        "Obtain antiderivative k·arcsin(√3 x/2)/√3",
+        "Set definite integral equal to 1",
+        "Solve for k = 3√3/π"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to integrate k/√(4−3x²) (M1); k[arcsin(√3 x/2)/√3] (A1); equating their integrand to 1 (M1); k = 3√3/π (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "16",
+      "task_summary": "Find E(X) by evaluating ∫ x·f(x)dx = ∫ (3√3/π)·x/√(4−3x²) dx over [0,1].",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "statistics.expected_value"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "expected_value_integral",
+        "integration_by_inspection",
+        "u_substitution",
+        "definite_integral_evaluation"
+      ],
+      "method_path": [
+        "Write E(X) = ∫₀¹ x·(3√3/π)/√(4−3x²) dx",
+        "Integrate x/√(4−3x²) by inspection or substitute u=4−3x²",
+        "Evaluate definite integral from 0 to 1",
+        "Obtain E(X) = 3/π"
+      ],
+      "accepted_alternatives": [
+        "Integration by inspection: ∫ x/√(4−3x²) dx = −(1/3)√(4−3x²)",
+        "Substitution u=4−3x², du=−6x dx"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "E(X) = ∫₀¹ (3√3/π)·x/√(4−3x²) dx (A1); EITHER attempt to integrate by inspection (M1) giving (3√3/π)[−(1/3)√(4−3x²)]₀¹ (A1); OR substitute u=4−3x² (M1) giving [√u/(2π)]₄¹ (A1); THEN = 3/π (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "17",
+      "task_summary": "Prove by contradiction that if integers a, b satisfy a^2 + b^2 divisible by 4, then a and b cannot both be odd.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "proof_by_contradiction",
+        "parity_representation",
+        "algebraic_expansion",
+        "divisibility_reasoning"
+      ],
+      "method_path": [
+        "Assume a and b are both odd",
+        "Let a = 2m+1, b = 2n+1",
+        "Expand: a^2+b^2 = (2m+1)^2+(2n+1)^2 = 4m^2+4m+1+4n^2+4n+1",
+        "Simplify to 4(m^2+m+n^2+n)+2",
+        "Observe 4 divides 4(m^2+m+n^2+n) but 2 is not divisible by 4",
+        "Conclude a^2+b^2 is not divisible by 4, contradicting the premise"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1: Assume that a and b are both odd."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "A1: Then a = 2m+1 and b = 2n+1."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "A1: a^2+b^2 = (2m+1)^2+(2n+1)^2 = 4m^2+4m+1+4n^2+4n+1."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "(A1): = 4(m^2+m+n^2+n)+2."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "R1: (4(m^2+m+n^2+n) is always divisible by 4) but 2 is not divisible by 4."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "R1: a^2+b^2 is not divisible by 4, a contradiction."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q09-A",
+      "question": "9",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "18",
+      "task_summary": "Find an expression for the product z1z2 in terms of b, where z1 = 1+bi and z2 = (1-b²)-2bi, b∈ℝ, b≠0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "complex_multiplication",
+        "algebraic_expansion",
+        "collect_real_imaginary_parts"
+      ],
+      "method_path": [
+        "Multiply (1+bi)((1-b²)-2bi)",
+        "Expand: 1-b²-2bi+bi-b³i+2b²",
+        "Collect real parts: 1+b²",
+        "Collect imaginary parts: (-b-b³)i",
+        "State product: (1+b²)+(-b-b³)i"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for multiplication/expansion step; A1 for real part 1+b²; A1 for imaginary part -b-b³i. Note explicitly awards A1 for 1+b² and A1 for -b-b³i."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q09-B",
+      "question": "9",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "18",
+      "task_summary": "Given that arg(z1z2)=π/4, use the expression from part (a) to find the value of b.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "argument_of_complex_number",
+        "arctan_equation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Set arctan((-b-b³)/(1+b²)) = π/4",
+        "Simplify (-b-b³)/(1+b²) = -b(1+b²)/(1+b²) = -b",
+        "Obtain arctan(-b) = π/4 or equivalently -b = 1",
+        "Solve to get b = -1"
+      ],
+      "accepted_alternatives": [
+        "Set (-b-b³)/(1+b²) = tan(π/4) = 1, factor numerator as -b(1+b²), cancel to give -b=1, hence b=-1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1 for setting up arctan((-b-b³)/(1+b²))=π/4. EITHER branch: A1 for arctan(-b)=π/4 (since 1+b²≠0 for b∈ℝ). OR branch: A1 for equating fraction to 1. THEN A1 for b=-1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "19-20",
+      "task_summary": "For the geometric series case: show p = ±1/√3; show convergence; given p > 0 and S∞ = 3+√3, find x.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_ratio",
+        "solve_quadratic",
+        "absolute_value_test",
+        "geometric_series_convergence",
+        "sum_to_infinity",
+        "logarithmic_equation",
+        "exponentiation"
+      ],
+      "method_path": [
+        "Form ratio of consecutive terms r = (p ln x)/(ln x) = p and r² = ((1/3)ln x)/(ln x) = 1/3",
+        "Equate to obtain p² = 1/3, hence p = ±1/√3",
+        "Note |p| = 1/√3 < 1, therefore the geometric series converges",
+        "Apply S∞ = a/(1−r) with a = ln x, r = p = 1/√3 (p > 0)",
+        "Set S∞ = 3+√3 and solve for ln x = 2",
+        "Exponentiate to obtain x = e²"
+      ],
+      "accepted_alternatives": [
+        "Set r = p and r² = 1/3 directly without explicit ratio of log terms",
+        "Consider powers of x: 1/p = p/(1/3) yielding p² = 1/3",
+        "Use r instead of p in the convergence argument"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1 for attempt to use ratio from consecutive terms; A1 for p² = 1/3 or r = ±1/√3 leading to p = ±1/√3 AG"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "R1 for |p| = 1/√3 < 1 ⇒ convergence AG; (A1) for S∞ = ln x/(1−1/√3) = 3+√3; A1 for solving to ln x; A1 for x = e²; total [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 12,
+      "source_pages": "12",
+      "markscheme_pages": "21-24",
+      "task_summary": "For the arithmetic series case: show p = 2/3; write d = k ln x; given S_n = ln(1/x³), find n.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "common_difference",
+        "solve_linear_equation",
+        "arithmetic_series_sum",
+        "logarithmic_identity",
+        "substitution",
+        "quadratic_equation",
+        "factorisation"
+      ],
+      "method_path": [
+        "Set up common difference: p ln x − ln x = (1/3)ln x − p ln x",
+        "Solve to obtain p = 2/3",
+        "Compute d = (2/3)ln x − ln x = −(1/3)ln x",
+        "Express ln(1/x³) as −3 ln x",
+        "Substitute a = ln x, d = −(1/3)ln x into S_n = (n/2)[2a + (n−1)d]",
+        "Equate to −3 ln x, cancel ln x",
+        "Simplify to n² − 7n − 18 = 0",
+        "Factorise and solve: (n−9)(n+2) = 0 → n = 9"
+      ],
+      "accepted_alternatives": [
+        "Use arithmetic mean u₂ = (u₁+u₃)/2 to find p = 2/3",
+        "Find d using u₃ = (1/3)ln x then back-substitute to find p",
+        "List first 9 terms and observe that first 7 sum to 0, 8th and 9th sum to −3 ln x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21-22",
+          "basis": "M1 attempt to find difference or arithmetic mean; A1 correct equation; A1 p = 2/3 AG; A1 d = −(1/3)ln x"
+        },
+        {
+          "markscheme_pages": "23-24",
+          "basis": "(M1) substitute into S_n and equate to ln(1/x³); (A1)(A1)(A1) for ln(1/x³)=−3ln x and correct S_n working; A1 equation without ln x; (M1) form quadratic; (M1) solve quadratic; A1 n=9; total [12 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "25-27",
+      "task_summary": "Show that the three planes do not intersect by eliminating a variable to obtain contradictory parallel equations.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "eliminate_variable",
+        "contradiction",
+        "parallel_planes",
+        "inconsistent_system"
+      ],
+      "method_path": [
+        "Eliminate one variable from two pairs of plane equations",
+        "Obtain two equations in two variables with identical left-hand side but different right-hand side",
+        "Conclude the system is inconsistent, hence the three planes do not intersect"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Compute vector product of normals n1 x n2 = (-1,-5,-3), form line r = (1,-2,0) + lambda(1,5,3), substitute into Pi3 to obtain -15 = 32 (contradiction)",
+        "Method 3: Eliminate variable y to obtain -3y+5z = 6 and -3y+5z = 100, giving 0 = 94 (contradiction)",
+        "Any valid elimination leading to contradictory equations"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "Method 1: M1 attempt to eliminate a variable; A1 first equation in two variables; A1 second equation; R1 lines are parallel, contradiction, hence planes do not intersect AG"
+        },
+        {
+          "markscheme_pages": "26",
+          "basis": "Method 2: A1 vector product of normals = (-1,-5,-3); A1 r = (1,-2,0) + lambda(1,5,3); M1 substitute into Pi3; R1 -15=32 contradiction, hence planes do not intersect AG"
+        },
+        {
+          "markscheme_pages": "27",
+          "basis": "Method 3: M1 eliminate variable; A1 -3y+5z=6; A1 -3y+5z=100; R1 0=94 contradiction, hence planes do not intersect AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q11-B-I-II",
+      "question": "11",
+      "part": "b(i)(ii)",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "28-29",
+      "task_summary": "Verify P(1,-2,0) lies on Pi1 and Pi2; find a vector equation of L, the line of intersection of Pi1 and Pi2.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "point_verification",
+        "cross_product",
+        "vector_equation_of_line",
+        "line_of_intersection"
+      ],
+      "method_path": [
+        "Substitute P(1,-2,0) into Pi1: 2(1)-(-2)+0 = 4 and Pi2: 1-2(-2)+3(0) = 5 to verify",
+        "Compute n1 x n2 = (2,-1,1) x (1,-2,3) = (-1,-5,-3)",
+        "Write vector equation r = (1,-2,0) + lambda(-1,-5,-3)"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Eliminate a variable from Pi1 and Pi2 to obtain parametric equations, e.g. x = t, 5x - y = 7 so y = 5t - 7, 3x - z = 3 so z = 3t - 3, giving r = (0,-7,-3) + lambda(1,5,3) or equivalent"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "Part (i): A1 for Pi1: 2+2+0=4 and Pi2: 1+4+0=5. Part (ii) Method 1: M1 vector product of normals; A1 direction (-1,-5,-3); A1A1 r = (1,-2,0) + lambda(-1,-5,-3). Note: Award A1A0 if r= is missing."
+        },
+        {
+          "markscheme_pages": "29",
+          "basis": "Method 2: M1 eliminate variable; A1 obtain parametric form; A1A1 r = (0,-7,3) + lambda(1,5,-3) or equivalent. Note: Award A1A0 if r= is missing."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "30-31",
+      "task_summary": "Find the distance between line L and plane Pi3.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "distance_between_line_and_plane",
+        "parametric_line",
+        "substitution",
+        "distance_formula",
+        "parallel_planes"
+      ],
+      "method_path": [
+        "Form line L1 through P(1,-2,0) with direction normal to Pi3: n3 = (-9,3,-2)",
+        "Substitute parametric point (1-9t, -2+3t, -2t) into Pi3: -9(1-9t) + 3(-2+3t) - 2(-2t) = 32",
+        "Solve 94t = 47 to obtain t = 1/2",
+        "Compute distance = |t| * |n3| = (1/2) * sqrt(81+9+4) = sqrt(94)/2"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use unit normal form. Plane Pi3: (-9x+3y-2z)/sqrt(94) = 32/sqrt(94). Parallel plane Pi4 through P: (-9x+3y-2z)/sqrt(94) = -15/sqrt(94). Distance = |32-(-15)|/sqrt(94) = 47/sqrt(94) = sqrt(94)/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "Method 1: (M1) form L1 with direction n3; A1 L1 equation; M1 substitute into Pi3; A1 t = 1/2; (M1) attempt distance from P to point on Pi3; A1 distance = sqrt(94)/2"
+        },
+        {
+          "markscheme_pages": "31",
+          "basis": "Method 2: (M1) unit normal equation of Pi3; A1 = 32/sqrt(94); M1 plane Pi4 through P parallel to Pi3; A1 unit normal = -15/sqrt(94); (M1) distance between planes; A1 = 47/sqrt(94) = sqrt(94)/2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "32",
+      "task_summary": "Find the Maclaurin series for f(x) = e^x sin x up to and including the x^3 term.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "recognize_series",
+        "series_multiplication",
+        "collect_terms",
+        "differentiate",
+        "evaluate_at_zero",
+        "substitute_maclaurin_formula"
+      ],
+      "method_path": [
+        "Recognize standard Maclaurin series: e^x = 1 + x + x^2/2! + x^3/3! + ... and sin x = x - x^3/3! + ...",
+        "Multiply the two series, retaining terms up to x^3",
+        "Collect like terms: x + x^2 + (1/2! - 1/3!)x^3 + ...",
+        "State result: f(x) = x + x^2 + x^3/3 + ..."
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 (derivatives): Compute f prime, f double prime, f triple prime using product rule; evaluate at x=0; substitute into Maclaurin formula to obtain f(x) = x + x^2 + x^3/3 + ..."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "32",
+          "basis": "METHOD 1: recognition of both known series (M1); attempt to multiply the two series up to x^3 (M1); intermediate expression (A1); final series x + x^2 + x^3/3 + ... (A1). METHOD 2: f'(x) = e^x cos x + e^x sin x (A1); f''(x)=2e^x cos x, f'''(x)=2e^x(cos x - sin x) (A1); substitute x=0 (M1); obtain series (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "33",
+      "task_summary": "Hence find an approximate value for the definite integral from 0 to 1/2 of e^(x^2) sin(x^2) dx.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "substitute_series",
+        "integrate_termwise",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Substitute x -> x^2 into series: e^(x^2) sin(x^2) = x^2 + x^6/3 + ...",
+        "Integrate termwise from 0 to 1/2: integral x^2 dx = x^3/3, integral x^6/3 dx = x^7/21",
+        "Evaluate at limits: [x^3/3 + x^5/5 + x^7/21] from 0 to 1/2",
+        "Compute: 61/105"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "33",
+          "basis": "e^(x^2) sin(x^2) = x^2 + x^6/3 + ... (A1); substitute and attempt to integrate (M1); obtain [x^3/3 + x^5/5 + x^7/21] (A1); final 61/105 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "34",
+      "task_summary": "(i) Show g''(x) = 2(g'(x) - g(x)) for g(x)=e^x cos x. (ii) Hence deduce g^(4)(x) = 2(g'''(x) - g''(x)).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "apply_product_rule",
+        "differentiate",
+        "simplify_expression",
+        "verify_identity",
+        "deduce_higher_derivative"
+      ],
+      "method_path": [
+        "(i) Apply product rule: g'(x) = e^x cos x - e^x sin x",
+        "Differentiate: g''(x) = -2e^x sin x",
+        "Compute 2(g'(x) - g(x)) = -2e^x sin x, confirming identity",
+        "(ii) Differentiate identity: g'''(x) = 2(g''(x) - g'(x))",
+        "Differentiate again: g^(4)(x) = 2(g'''(x) - g''(x))"
+      ],
+      "accepted_alternatives": [
+        "Accept working with each side separately to obtain -2e^x sin x for both parts."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "34",
+          "basis": "(i) attempt product rule (M1); g'(x) = e^x cos x - e^x sin x (A1); g''(x) = -2e^x sin x (A1); show g''(x) = 2(g'(x)-g(x)) (A1). (ii) g'''(x) = 2(g''(x)-g'(x)) (A1); g^(4)(x) = 2(g'''(x)-g''(x)) AG. Note: Accept working with each side separately."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "35",
+      "task_summary": "Using the result from part (c), find the Maclaurin series for g(x) = e^x cos x up to and including the x^4 term.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "evaluate_derivatives_at_zero",
+        "apply_maclaurin_formula",
+        "construct_series"
+      ],
+      "method_path": [
+        "Evaluate g(0)=1, g'(0)=1, g''(0)=0",
+        "Use part (c): g'''(0)=2(g''(0)-g'(0))=-2, g^(4)(0)=2(g'''(0)-g''(0))=-4",
+        "Substitute into Maclaurin formula: g(0)+g'(0)x+g''(0)x^2/2!+g'''(0)x^3/3!+g^(4)(0)x^4/4!",
+        "State: g(x) = 1 + x - x^3/3 - x^4/6 + ..."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "35",
+          "basis": "attempt to substitute x=0 into a derivative (M1); g(0)=1, g'(0)=1, g''(0)=0 (A1); g'''(0)=-2, g^(4)(0)=-4 (A1); attempt to substitute into Maclaurin formula (M1); g(x)=1+x-x^3/3-x^4/6+... (A1). Do not award marks for approaches not using part (c)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "35-36",
+      "task_summary": "Hence, or otherwise, determine lim_{x->0} (e^x cos x - 1 - x) / x^3.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.series",
+        "calculus.differentiation"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "substitute_series_expansion",
+        "evaluate_limit",
+        "apply_lhopitals_rule",
+        "simplify_algebraic_fraction"
+      ],
+      "method_path": [
+        "Substitute Maclaurin series for e^x cos x: numerator = (1+x-x^3/3-x^4/6+...)-1-x = -x^3/3-x^4/6+...",
+        "Divide by x^3: -1/3 - x/6 + ...",
+        "Take limit as x -> 0: -1/3"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 (l'Hopital): 0/0 form; apply l'Hopital three times: lim g'(x)/(3x^2) = lim g''(x)/(6x) = lim g'''(x)/6 = -2/6 = -1/3."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "35-36",
+          "basis": "METHOD 1: substitute series (M1); obtain lim [-1/3 - x/6 + ...] (A1); answer -1/3 (A1). METHOD 2: indeterminate 0/0, apply l'Hopital (M1); successive applications yield lim (-2e^x sin x - 2e^x cos x)/6 (A1); answer -1/3 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

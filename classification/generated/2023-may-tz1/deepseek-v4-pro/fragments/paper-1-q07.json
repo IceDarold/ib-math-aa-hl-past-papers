@@ -1,0 +1,63 @@
+{
+  "question": "7",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "13-15",
+      "task_summary": "Given cubic P(z) with real positive parameter m, use the factor z-3i and the conjugate root theorem to identify roots 3i and -3i, then apply Vieta formulas (sum=36/m, product=4m) to find m=9 and the real root 4, yielding roots 3i, -3i, 4.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "conjugate_root_theorem",
+        "vietas_formulas",
+        "sum_of_roots",
+        "product_of_roots",
+        "equate_and_solve",
+        "factor_theorem"
+      ],
+      "method_path": [
+        "Identify 3i as a root from the given factor z-3i",
+        "Apply conjugate root theorem: -3i is also a root",
+        "Let third root be r; apply Vieta sum of roots: r + 3i + (-3i) = 36/m, so r = 36/m",
+        "Apply Vieta product of roots: (3i)(-3i)r = 4m, so 9r = 4m",
+        "Equate expressions for r: 36/m = 4m/9",
+        "Solve: m^2 = 81, m = 9 (since m > 0)",
+        "Compute third root: r = 36/9 = 4",
+        "State all roots: 3i, -3i, 4"
+      ],
+      "accepted_alternatives": [
+        "Method 2 (factorisation): Write P(z) = (z-3i)(z+3i)(z-r) = (z^2+9)(z-r), expand to z^3 - r z^2 + 9z - 9r, compare coefficients with z^3 - (36/m)z^2 + mz - 4m to obtain m = 9 and r = 4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for 3i is a root; A1 for -3i is the other complex root; M1 for attempt to equate sum of three roots to 36/m or product to 4m."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "(A1) for m = 9; A1 for third root is 4. Total [6 marks]. Method 2 confirmation: recognition of (z+3i) factor, comparison of coefficients."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "Method 2 final answer identical: m = 9, third root is 4. Note: max A0A0(M1)(M1)(A1)A1 if no evidence of roots throughout working."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

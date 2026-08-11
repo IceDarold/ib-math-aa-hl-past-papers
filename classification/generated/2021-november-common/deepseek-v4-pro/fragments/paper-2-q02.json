@@ -1,0 +1,53 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the smallest possible perimeter of triangle ABC given two sides and a non-included angle (ambiguous case), by applying cosine or sine rule, obtaining two possible third-side lengths, and selecting the acute case that minimises the perimeter.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "cosine_rule",
+        "sine_rule",
+        "quadratic_solving",
+        "ambiguous_case_selection",
+        "perimeter_calculation",
+        "trigonometric_equation_solving"
+      ],
+      "method_path": [
+        "Apply cosine rule: 7^2 = 12^2 + AB^2 - 2*12*AB*cos 25 deg, or sine rule: sin B/12 = sin 25 deg/7",
+        "Solve for AB (quadratic) or angles B and C, obtaining two possible values from the ambiguous case",
+        "Select the smaller AB (acute angle C) to minimise the perimeter",
+        "Compute perimeter = 12 + 7 + AB_min",
+        "Round to three significant figures: 25.1"
+      ],
+      "accepted_alternatives": [
+        "Cosine rule route: set up 7^2 = 12^2 + AB^2 - 2*12*AB*cos 25 deg, solve quadratic AB^2 - 21.7513...*AB + 95 = 0, take smaller root AB approx 6.05068, perimeter = 12 + 7 + 6.05068 approx 25.1",
+        "Sine rule route: sin B/12 = sin 25 deg/7 gives sin B approx 0.724488, B approx 46.4263 deg or 133.573 deg, then C = 180 deg - 25 deg - B gives acute C approx 21.4263 deg, find AB via sine or cosine rule, perimeter approx 25.1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "Full markscheme for Q2: EITHER cosine rule (M1)(A1)(A1)(M1)A1 or OR sine rule (M1)(A1)(A1)(M1) THEN A1; final answer minimum perimeter = 25.1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

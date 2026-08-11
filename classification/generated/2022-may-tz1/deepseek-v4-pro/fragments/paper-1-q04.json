@@ -1,0 +1,47 @@
+{
+  "question": "4",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "11",
+      "task_summary": "Find k such that the tangent to y=(2x-1)e^{kx} at x=1 is parallel to y=5e^{k}x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "differentiate",
+        "evaluate_derivative",
+        "equate_slopes",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Differentiate using product rule: dy/dx = (2x-1)·ke^{kx} + 2e^{kx} = e^{kx}(2kx - k + 2)",
+        "Evaluate derivative at x=1: dy/dx|₁ = ke^{k} + 2e^{k} = e^{k}(k+2)",
+        "Identify slope of line y=5e^{k}x as 5e^{k}",
+        "Equate slopes: e^{k}(k+2) = 5e^{k}",
+        "Solve: cancel e^{k} (non-zero), giving k+2=5 → k=3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: evidence of using product rule. A1: correct derivative e^{kx}(2kx - k + 2). A1: correct working for dy/dx at x=1 (ke^{k}+2e^{k}) OR slope of tangent (5e^{k}). M1: equate their dy/dx at x=1 to slope 5e^{k}. A1: k=3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

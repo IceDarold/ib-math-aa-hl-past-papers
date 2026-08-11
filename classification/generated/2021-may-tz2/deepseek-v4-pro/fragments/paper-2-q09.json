@@ -1,0 +1,126 @@
+{
+  "question": "9",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Write the first three terms of the binomial expansion of (1 + t)^(-1) in ascending powers of t.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion"
+      ],
+      "method_path": [
+        "Apply binomial theorem: (1+t)^(-1) = 1 + (-1)t + ((-1)(-2)/2!)t^2 + ...",
+        "Write first three terms: 1 - t + t^2"
+      ],
+      "accepted_alternatives": [
+        "Accept the three terms listed as 1, -t, and t^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "9.(a) 1 - t + t^2 A1. Note: Accept 1, -t and t^2. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Show that the Maclaurin series for sec x up to and including the term in x^4 is 1 + x^2/2 + 5x^4/24, using the Maclaurin series for cos x and the binomial expansion from part (a).",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "binomial_expansion",
+        "series_substitution",
+        "series_truncation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Write Maclaurin series for cos x: 1 - x^2/2! + x^4/4! - ...",
+        "Express sec x = (cos x)^(-1) and set t = cos x - 1 = -x^2/2 + x^4/24 - ...",
+        "Apply part (a) expansion (1+t)^(-1) = 1 - t + t^2 - ...",
+        "Substitute t and expand: 1 - (-x^2/2 + x^4/24) + (-x^2/2 + x^4/24)^2",
+        "Collect terms up to x^4: 1 + x^2/2 - x^4/24 + x^4/4 = 1 + x^2/2 + 5x^4/24"
+      ],
+      "accepted_alternatives": [
+        "Use sec x = 1 - (cos x - 1) + (cos x - 1)^2 - ... directly without explicit t-substitution"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "9.(b) sec x = (1 - x^2/2! + x^4/4! - ...)^(-1) (M1). cos x = 1 - t or sec x = 1 - (cos x - 1) + (cos x - 1)^2 - ... (M1). = 1 - (-x^2/2! + x^4/4! - ...) + (-x^2/2! + x^4/4! - ...)^2 (A1). = 1 + x^2/2 - x^4/24 + x^4/4 (A1); so the Maclaurin series for sec x up to x^4 is 1 + x^2/2 + 5x^4/24 AG. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Find lim(x→0) (x arctan(2x))/(sec x - 1) using the Maclaurin series for arctan x and the series for sec x from part (b).",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.limits"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "series_substitution",
+        "series_truncation",
+        "limit_evaluation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Write Maclaurin series for arctan(2x) with 2x substituted: 2x - (2x)^3/3 + ...",
+        "Multiply by x to obtain numerator: 2x^2 - 8x^4/3 + ...",
+        "Write denominator sec x - 1 from part (b): x^2/2 + 5x^4/24 + ...",
+        "Form ratio (2x^2 - 8x^4/3 + ...) / (x^2/2 + 5x^4/24 + ...)",
+        "Factor x^2 and cancel: (2 - 8x^2/3 + ...) / (1/2 + 5x^2/24 + ...)",
+        "Take limit as x→0: 2 / (1/2) = 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "9.(c) arctan(2x) = 2x - (2x)^3/3 + ... (M1, with note: Do not award M1 unless x is replaced by 2x in arctan). Ratio set up and simplified to (2x^2 - 8x^4/3 + ...)/(x^2/2 + 5x^4/24 + ...) (A1). Final simplification to 4 (A1). [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

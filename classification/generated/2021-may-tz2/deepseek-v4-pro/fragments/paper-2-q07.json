@@ -1,0 +1,78 @@
+{
+  "question": "7",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "16",
+      "task_summary": "Count the number of finishing orders of 8 runners where Jack finishes immediately after Andrea.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "treating_as_unit",
+        "permutation_counting",
+        "factorial_evaluation"
+      ],
+      "method_path": [
+        "Treat Jack and Andrea as a single ordered unit",
+        "Count permutations of the 7 objects: 7!",
+        "Evaluate: 7! = 5040"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "Jack and Andrea finish in that order (as a unit) so we are considering the arrangement of 7 objects (M1); 7! = 5040 ways A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "16",
+      "task_summary": "Count the number of finishing orders of 8 runners where Jack finishes in any position after Andrea.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "symmetry_argument",
+        "permutation_counting",
+        "factorial_evaluation"
+      ],
+      "method_path": [
+        "Note symmetry: Andrea-before-Jack and Jack-before-Andrea are equally likely",
+        "Count total permutations: 8!",
+        "Divide by 2: 8!/2 = 20160"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Fix the 6 other runners in 6! = 720 ways. For a given ordering of the 6, count acceptable positions for Jack relative to Andrea: sum 7+6+5+4+3+2+1 = 28. Multiply: 28 x 6! = 20160."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: the number of ways that Andrea finishes in front of Jack is equal to the number of ways that Jack finishes in front of Andrea (M1); total number of ways is 8! (A1); 8!/2 = 20160 ways A1. METHOD 2: the other six runners can finish in 6! = 720 ways (A1); when Andrea finishes first, Jack can finish in 7 different positions... 7+6+5+4+3+2+1 = 28 ways (A1); hence there are (7+6+5+4+3+2+1) x 6! ways = 28 x 6! = 20160 ways A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

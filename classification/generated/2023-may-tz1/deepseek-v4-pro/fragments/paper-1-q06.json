@@ -1,0 +1,52 @@
+{
+  "question": "6",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the rate at which the area of an equilateral triangle is increasing, given that side lengths x cm increase at 4 cm s⁻¹ when x = 5√3 cm.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "area_of_equilateral_triangle",
+        "differentiation",
+        "chain_rule",
+        "substitution",
+        "related_rates"
+      ],
+      "method_path": [
+        "Express area A in terms of side length x: A = (1/2)x² sin(π/3) = (√3/4)x²",
+        "Differentiate to obtain dA/dx = (√3/2)x",
+        "Apply chain rule: dA/dt = (dA/dx)(dx/dt)",
+        "Substitute x = 5√3 and dx/dt = 4",
+        "Compute dA/dt = 30 cm² s⁻¹"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "A = (1/2)x² sin(π/3) OR A = (1/2)x² sin 60° OR triangle height derivation → (A1); A = (√3/4)x² → A1; attempt to use chain rule or implicit differentiation → (M1); dA/dt = dA/dx × dx/dt, dA/dt = (√3/2)x × 4 → (A1); substitution yields 30 cm² s⁻¹ → A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "Note: Award a maximum of (A1)A1(M1)(A0)A1 for a correct answer with incorrect derivative notation seen throughout."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

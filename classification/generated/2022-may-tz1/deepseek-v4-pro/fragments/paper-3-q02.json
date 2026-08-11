@@ -1,0 +1,475 @@
+{
+  "question": "2",
+  "expected_question_marks": 28,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-A-I",
+      "question": "2",
+      "part": "(a)(i)",
+      "marks": 1,
+      "source_pages": "4-5",
+      "markscheme_pages": "19",
+      "task_summary": "Given roots 1 and 4+i, write down the third root.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "complex_conjugate"
+      ],
+      "method_path": [
+        "Identify the third root as the complex conjugate: 4-i"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "4-i A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-A-II",
+      "question": "2",
+      "part": "(a)(ii)",
+      "marks": 1,
+      "source_pages": "4-5",
+      "markscheme_pages": "19",
+      "task_summary": "Verify that the mean of the two complex roots is 4.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "complex_arithmetic",
+        "mean_calculation"
+      ],
+      "method_path": [
+        "Compute mean: (4+i+4-i)/2 = 8/2 = 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "mean = (4+i+4-i)/2 = 4 AG [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-B",
+      "question": "2",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "4-5",
+      "markscheme_pages": "19-20",
+      "task_summary": "Show that the line y = x-1 is tangent to the curve y = f(x) at the point A(4,3).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "derivative_evaluation",
+        "tangent_verification"
+      ],
+      "method_path": [
+        "Differentiate f(x) using product rule or expansion to obtain f'(x)",
+        "Evaluate f'(4) = 1, matching gradient of y = x-1",
+        "Verify (4,3) lies on both curve and line, confirming tangency"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Set f(x)=x-1, simplify to (x-4)^2(x-1)=0, showing x=4 is a double root hence tangency"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19-20",
+          "basis": "METHOD 1: attempts product rule differentiation (M1) ... f'(4)=1 A1 ... so y=x-1 is tangent AG; METHOD 2: sets f(x)=x-1 ... x=4 is a double root R1 so y=x-1 is tangent AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-C",
+      "question": "2",
+      "part": "(c)",
+      "marks": 2,
+      "source_pages": "4-5",
+      "markscheme_pages": "21",
+      "task_summary": "Sketch the curve y = f(x) and the tangent at point A, clearly showing where the tangent crosses the x-axis.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "cubic_sketch",
+        "tangent_sketch",
+        "x_intercept"
+      ],
+      "method_path": [
+        "Sketch positive cubic with x-intercept at x=1, local maximum and minimum in first quadrant left of A",
+        "Sketch tangent y=x-1 passing through A(4,3) and crossing x-axis at x=1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "a positive cubic with an x-intercept (x=1), and a local maximum and local minimum in the first quadrant both positioned to the left of A A1; a correct sketch of the tangent passing through A and crossing the x-axis at the same point (x=1) as the curve A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-D-I",
+      "question": "2",
+      "part": "(d)(i)",
+      "marks": 2,
+      "source_pages": "4-5",
+      "markscheme_pages": "22",
+      "task_summary": "Show that g'(x) = 2(x-r)(x-a) + x^2 - 2ax + a^2 + b^2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "algebraic_expansion"
+      ],
+      "method_path": [
+        "Apply product rule: g'(x) = (1)(x^2-2ax+a^2+b^2) + (x-r)(2x-2a)",
+        "Simplify to 2(x-r)(x-a) + x^2-2ax+a^2+b^2"
+      ],
+      "accepted_alternatives": [
+        "Expand g(x) as cubic then differentiate term by term, regroup to match required form"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "g'(x) = (x-r)(2x-2a) + x^2-2ax+a^2+b^2 (M1)A1 OR expands cubic and differentiates (M1) ... = 2(x-r)(x-a) + x^2-2ax+a^2+b^2 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-D-II",
+      "question": "2",
+      "part": "(d)(ii)",
+      "marks": 6,
+      "source_pages": "4-5",
+      "markscheme_pages": "23-24",
+      "task_summary": "Prove that the tangent to the curve y = g(x) at the point A(a, g(a)) intersects the x-axis at the point R(r, 0).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "tangent_line",
+        "point_slope_form",
+        "derivative_evaluation",
+        "x_intercept"
+      ],
+      "method_path": [
+        "Evaluate g(a) = b^2(a-r)",
+        "Evaluate g'(a) = b^2",
+        "Substitute into point-slope form: y - b^2(a-r) = b^2(x-a)",
+        "Set y=0 and solve to obtain x=r, proving intersection at R(r,0)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use slope-intercept form y = b^2 x + c, find c = -b^2 r, set y=0",
+        "METHOD 3: Form line through R(r,0) with gradient b^2, equate to g(x), show x=a is a double root"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "METHOD 1: g(a)=b^2(a-r) (A1), g'(a)=b^2 (A1), substitute (M1) ... y=b^2(x-r) (A1), set y=0 (M1), b>0 => x=r (R1); METHOD 2/3 also accepted"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-E",
+      "question": "2",
+      "part": "(e)",
+      "marks": 1,
+      "source_pages": "4-5",
+      "markscheme_pages": "25",
+      "task_summary": "Deduce that the complex roots a+/-bi can be expressed as a+/-i*sqrt(g'(a)).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "derivative_relation",
+        "complex_representation"
+      ],
+      "method_path": [
+        "From (d)(i), g'(a) = b^2, so b = sqrt(g'(a))",
+        "Substitute into a+/-bi to obtain a+/-i*sqrt(g'(a))"
+      ],
+      "accepted_alternatives": [
+        "Note that a+/-bi = a+/-i*b and g'(a)=b^2, so roots are a+/-i*sqrt(g'(a))"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "g'(a)=b^2 => b=sqrt(g'(a)) (since b>0) R1 ... hence the complex roots can be expressed as a+/-i*sqrt(g'(a)) AG [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-F-I",
+      "question": "2",
+      "part": "(f)(i)",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "25",
+      "task_summary": "Use the diagram to determine the roots of (z-r)(z^2-2az+a^2+16)=0.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "diagram_reading",
+        "root_identification",
+        "tangent_gradient"
+      ],
+      "method_path": [
+        "Identify b=4 from b^2=16",
+        "Use tangent gradient 16 and point (a,80) to find a=3",
+        "Identify r=-2 from x-intercept",
+        "State roots: r=-2 and a+/-bi = 3+/-4i"
+      ],
+      "accepted_alternatives": [
+        "Substitute r=-2, x=a, y=80 into (x-r)(x^2-2ax+a^2+16)=80 to solve for a",
+        "Substitute r=-2, x=a, y=80 into y=16(x-r) to solve for a"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "b=4 (seen anywhere) A1; attempts to find gradient and equate to 16 (M1); 80=16(a+2) => a=3; roots are -2 and 3+/-4i A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-F-II",
+      "question": "2",
+      "part": "(f)(ii)",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "25",
+      "task_summary": "State the coordinates of C2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "coordinate_reading"
+      ],
+      "method_path": [
+        "Read C2 from diagram as (a, -4) = (3, -4)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(3, -4) A1 [1 mark]; Do not award A1FT for (a, -4)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-G-I",
+      "question": "2",
+      "part": "(g)(i)",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "26",
+      "task_summary": "Show that the x-coordinate of the point of inflexion P is (1/3)(2a+r).",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative",
+        "inflection_point",
+        "algebraic_solving"
+      ],
+      "method_path": [
+        "Find g''(x) from g'(x) = 2(x-r)(x-a) + x^2-2ax+a^2+b^2",
+        "Set g''(x)=0 and solve: 6x = 4a+2r => x = (2a+r)/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "g''(x) = 2(x-a)+2(x-r)+2(x-a) = 6x-2(2a+r); attempts to find g''(x) (M1); sets g''(x)=0 and solves for x (A1) ... 3x=2a+r so x=(1/3)(2a+r) AG [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-G-II",
+      "question": "2",
+      "part": "(g)(ii)",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "26",
+      "task_summary": "Describe numerically the horizontal position of point P relative to points R and A.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "ratio_interpretation"
+      ],
+      "method_path": [
+        "Express x-coordinate of P as r + (2/3)(a-r); P is 2/3 of the horizontal distance from R to A"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "point P is 2/3 of the horizontal distance (way) from point R to point A A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-H-I",
+      "question": "2",
+      "part": "(h)(i)",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "27",
+      "task_summary": "Sketch the curve y = (x-r)(x^2-2ax+a^2+b^2) for a=r=1 and b=2.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "cubic_sketch",
+        "inflection_point"
+      ],
+      "method_path": [
+        "Substitute values to get y = (x-1)(x^2-2x+5)",
+        "Sketch positive cubic with no stationary points and a non-stationary point of inflexion at x=1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "y = (x-1)(x^2-2x+5) (A1); a positive cubic with no stationary points and a non-stationary point of inflexion at x=1 A1 [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q02-H-II",
+      "question": "2",
+      "part": "(h)(ii)",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "27",
+      "task_summary": "For a=r and b>0, state in terms of r the coordinates of points P and A.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "special_case_evaluation"
+      ],
+      "method_path": [
+        "Substitute a=r into formulas: P and A both coincide at (r, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "(r, 0) A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

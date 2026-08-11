@@ -1,0 +1,76 @@
+{
+  "question": "9",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "Expand (1+ax)^(-1/2) and (1-x)^(1/2) via binomial theorem up to x², equate coefficients to the given form 4bx + bx², and solve for a and b.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion_fractional",
+        "coefficient_equating",
+        "simultaneous_equations",
+        "algebraic_solving"
+      ],
+      "method_path": [
+        "Expand (1+ax)^(-1/2) using binomial theorem: 1 − (1/2)ax + (3/8)a²x² + …",
+        "Expand (1−x)^(1/2) using binomial theorem: 1 − (1/2)x − (1/8)x² + …",
+        "Form the difference and collect terms: ½(1−a)x + ⅛(3a²+1)x² + …",
+        "Equate coefficients: ½(1−a) = 4b and ⅛(3a²+1) = b",
+        "Solve simultaneously to obtain a = −1/3, b = 1/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "M1 for attempt to expand binomial with negative fractional power; A1 for (1+ax)^(-1/2) = 1 − ½ax + ⅜a²x² + …; A1 for (1−x)^(1/2) = 1 − ½x − ⅛x² + …; M1 for attempt to equate coefficients; M1 for attempt to solve simultaneously; A1 for a = −1/3, b = 1/6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "State the restriction |x| < 1 for the binomial expansion to be valid.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "convergence_condition",
+        "absolute_value_inequality"
+      ],
+      "method_path": [
+        "State |x| < 1 as the condition for validity of the binomial expansions"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "A1 for |x| < 1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

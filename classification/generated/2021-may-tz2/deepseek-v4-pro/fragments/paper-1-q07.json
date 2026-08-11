@@ -1,0 +1,45 @@
+{
+  "question": "7",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Use Vieta's formulas on cubic x³ − kx² + 3k = 0 with roots α, β, α+β and given αβ = k²/4 to find k (k > 0).",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "vieta_formulas",
+        "sum_of_roots",
+        "product_of_roots",
+        "substitution",
+        "equation_solving"
+      ],
+      "method_path": [
+        "α + β + (α + β) = k → 2(α + β) = k",
+        "αβ(α + β) = −3k",
+        "Substitute αβ = k²/4 and α + β = k/2 → (k²/4)(k/2) = −3k → k³/8 = −3k",
+        "Rearrange to k³/8 + 3k = 0",
+        "Solve with k > 0: k = √24 = 2√6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "Sum of roots α+β+α+β=k awarded A1; product αβ(α+β)=−3k awarded A1; substitution giving k³/8=−3k awarded M1; attempting to solve k³/8+3k=0 for k awarded M1; final answer k=√24=2√6 (k>0) awarded A1. Five marks total."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

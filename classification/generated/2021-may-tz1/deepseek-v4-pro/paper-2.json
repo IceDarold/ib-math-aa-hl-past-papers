@@ -1,0 +1,1500 @@
+{
+  "session": "May 2021",
+  "zone": "TZ1",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Use GDC to find the regression line coefficients a and b for y on x from the given bivariate data.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_regression",
+        "linear_regression_coefficients"
+      ],
+      "method_path": [
+        "Enter the eight (x, y) data pairs into GDC lists",
+        "Compute linear regression of y on x to obtain y = ax + b",
+        "Read a = 0.433 and b = 4.50"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "a = 0.433156..., b = 4.50265... ; accepts a = 0.433, b = 4.50 with A1A1 for [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "(b)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Predict y when x = 18 by substituting into the regression equation.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "prediction"
+      ],
+      "method_path": [
+        "Substitute x = 18 into their regression equation y = ax + b",
+        "Compute y = 0.433 * 18 + 4.50 = 12.2994...",
+        "Round to y = 12.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to substitute x = 18 into their equation (M1); y = 12.3 A1 for [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q01-C",
+      "question": "1",
+      "part": "(c)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "State the mean point (x-bar, y-bar) = (15, 11) through which the regression line passes.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "mean_point",
+        "read_from_gdc"
+      ],
+      "method_path": [
+        "Identify the mean point from GDC regression output",
+        "State x-bar = 15, y-bar = 11"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "x-bar = 15, y-bar = 11 A1 for [1 mark]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q01-D",
+      "question": "1",
+      "part": "(d)",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Draw the regression line of best fit on the scatter diagram.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "draw_regression_line",
+        "scatter_diagram"
+      ],
+      "method_path": [
+        "Plot the mean point (15, 11) on the scatter diagram",
+        "Draw a straight line through (15, 11)",
+        "Ensure y-intercept lies between b-1.5 and b+1.5 and line covers 3.3 <= x <= 25.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for a straight line going through (15, 11); A1 for intercepting the y-axis between b +/- 1.5, which includes all data for 3.3 <= x <= 25.3. If candidate does not use a ruler, award A0A1 where appropriate. [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find the probability a randomly selected bag is rejected, i.e. P(X < 995) where X ~ N(1000, 3.5²).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "gdc_normal_cdf",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Identify required probability as P(X < 995) for X ~ N(1000, 3.5²)",
+        "Use GDC normal CDF with lower bound −∞, upper bound 995, μ=1000, σ=3.5",
+        "Obtain P(X < 995) = 0.0766 (accept 0.07656…)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "evidence of identifying the correct area (M1)"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "P(X < 995) = 0.0765637… = 0.0766 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Estimate the number of rejected bags from a random sample of 100.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_frequency",
+        "multiplication"
+      ],
+      "method_path": [
+        "Multiply probability of rejection by sample size: 0.0766 × 100",
+        "Obtain ≈ 8 (accept 7.66)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "0.0766 × 100 ≈ 8 A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "Note: Accept 7.66"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Given a bag is not rejected, find the probability its mass exceeds 1005 g, i.e. P(X > 1005 | X ≥ 995).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "normal_distribution",
+        "symmetry",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(X > 1005 | X ≥ 995) is required",
+        "Express as P(X > 1005) / P(X ≥ 995)",
+        "Use symmetry: P(X > 1005) = P(X < 995) = 0.07656…",
+        "Compute 0.07656… / (1 − 0.07656…) = 0.07656… / 0.9234…",
+        "Obtain 0.0829"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognition that P(X > 1005 | X ≥ 995) is required (M1)"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "P(X > 1005) / P(X ≥ 995) = 0.07656…/(1−0.07656…) = 0.07656…/0.9234… (A1)"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "= 0.0829 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find parameters a, b, c in h(t) = a cos(bt) + c for a Ferris wheel of diameter 110 m, lowest point 10 m above ground, period 20 minutes, starting at the lowest point.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "amplitude_from_diameter",
+        "vertical_shift",
+        "period_to_b",
+        "sign_determination",
+        "solving_trigonometric_equation"
+      ],
+      "method_path": [
+        "amplitude = 110/2 = 55",
+        "a = -55 (negative because starts at minimum)",
+        "c = 55 + 10 = 65",
+        "b = 2π/20 = π/10"
+      ],
+      "accepted_alternatives": [
+        "Find b by solving −55cos(20b) + 65 = 10 → cos(20b) = 1 → b = π/10"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "Amplitude is 110/2 = 55 (A1); a = −55 A1; c = 65 A1; (M1) for method to find b; b = 2π/20 (= π/10) A1. OR: −55cos(20b) + 65 = 10 (M1). Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the smallest value of t for which the particle is at rest, i.e. solve v(t) = t sin t - 3 = 0 on 0 <= t <= 10 and select the smallest root.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_v_equal_zero",
+        "gdc_numerical_solve",
+        "select_smallest_root"
+      ],
+      "method_path": [
+        "Recognise particle at rest implies v(t) = 0",
+        "Solve t sin t - 3 = 0 on [0, 10] using GDC",
+        "Identify smallest positive root t approx 6.74"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognising v = 0 (M1); t = 6.74416... = 6.74 (sec) A1; Note: Do not award A1 if additional values are given."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the total distance travelled by evaluating the definite integral of |v(t)| from 0 to 10, where v(t) = t sin t - 3, using GDC integration.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.rates_of_change"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "distance_as_integral_of_absolute_velocity",
+        "definite_integral_absolute_value",
+        "gdc_numerical_integration"
+      ],
+      "method_path": [
+        "Recognise total distance = integral from 0 to 10 of |v(t)| dt",
+        "Evaluate integral of |t sin t - 3| from 0 to 10 using GDC",
+        "Obtain 37.1 m"
+      ],
+      "accepted_alternatives": [
+        "Split integral at sign changes: negative integral from 0 to 6.744 of v(t) dt + integral from 6.744 to 9.088 of v(t) dt - integral from 9.088 to 10 of v(t) dt, evaluated by GDC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "integral of |v(t)| dt OR split integral with roots 6.744... and 9.088... (A1); = 37.0968... = 37.1 (m) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the acceleration at t = 7 by differentiating v(t) = t sin t - 3 and evaluating v'(7).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "calculus.rates_of_change"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "acceleration_as_velocity_derivative",
+        "evaluate_derivative_at_point",
+        "gdc_derivative"
+      ],
+      "method_path": [
+        "Recognise a(t) = v'(t)",
+        "Differentiate v(t) = t sin t - 3 or use GDC derivative",
+        "Evaluate v'(7) to obtain 5.93 ms^-2"
+      ],
+      "accepted_alternatives": [
+        "Analytic differentiation: v'(t) = sin t + t cos t, then substitute t = 7"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognising acceleration at t = 7 is given by v'(7) (M1); acceleration = 5.93430... = 5.93 (ms^-2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Use the binomial theorem to find the coefficient of x^4 in the expansion of (3 + x^2)^(n+1), equate to 20412, and solve for n.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_theorem",
+        "binomial_coefficient",
+        "general_term",
+        "equate_coefficients",
+        "solve_exponential_equation",
+        "gdc_solver"
+      ],
+      "method_path": [
+        "Identify general term: C(n+1, r) * 3^(n+1-r) * (x^2)^r",
+        "Set exponent of x: 2r = 4 so r = 2",
+        "Write coefficient: C(n+1, 2) * 3^(n-1) = n(n+1)/2 * 3^(n-1)",
+        "Equate to given coefficient: n(n+1)/2 * 3^(n-1) = 20412",
+        "Solve using GDC or trial to obtain n = 7"
+      ],
+      "accepted_alternatives": [
+        "Factor out 3^(n+1): write (3 + x^2)^(n+1) = 3^(n+1)*(1 + x^2/3)^(n+1), expand to get term 3^(n+1)*C(n+1,2)*(x^2/3)^2 = 3^(n-1)*C(n+1,2)*x^4, equate n(n+1)/2 * 3^(n-1) = 20412, solve n = 7."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: M1 for product of binomial coefficient, power of 3, power of x^2 seen; A1 for evidence of correct term chosen; M1 for equating coefficient to 20412; remaining A1 marks for solving and n=7. METHOD 2: M1 for product of binomial coefficient and power of x^2/3 or 3^(n+1)(1+x^2/3)^(n+1) seen; A1 for correct term; M1 for equating to 20412; A1 for 3^(n-1)*n(n+1)/2=20412; A1 for n=7. Total 5 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the Cartesian equation of plane Π₃, perpendicular to Π₁: 3x+2y+z=6 and Π₂: x-2y+z=4, passing through the origin.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "normal_vector",
+        "cartesian_equation"
+      ],
+      "method_path": [
+        "Compute cross product of normals n₁=(3,2,1) and n₂=(1,-2,1)",
+        "Obtain normal vector (4,-2,-8) or simplified (2,-1,-4)",
+        "Write Cartesian equation 4x-2y-8z=0 or 2x-y-4z=0"
+      ],
+      "accepted_alternatives": [
+        "Any non-zero scalar multiple of the normal vector",
+        "Equation 4x-2y-8z=0 or any equivalent scalar multiple"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "(M1) attempt to find a vector perpendicular to Π₁ and Π₂ using a cross product; (A1) for correct normal vector (4,-2,-8); A1 for equation 4x-2y-8z=0 → 2x-y-4z=0"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "12",
+      "task_summary": "Find the coordinates of the intersection point of planes Π₁, Π₂, and Π₃.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "linear_system",
+        "simultaneous_equations",
+        "intersection_point"
+      ],
+      "method_path": [
+        "Set up 3×3 linear system: 3x+2y+z=6, x-2y+z=4, 2x-y-4z=0",
+        "Solve for x, y, z",
+        "State coordinates (41/21, -10/21, 23/21)"
+      ],
+      "accepted_alternatives": [
+        "Any valid method for solving 3 simultaneous equations (substitution, elimination, matrix inversion, row reduction)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "(M1) attempt to solve 3 simultaneous equations in 3 variables; A1 for correct coordinates; markscheme extract shows (41/21, 10/21, -23/21) with decimals (1.95, 0.476, -1.10) but mathematical verification confirms the correct intersection of the given planes is (41/21, -10/21, 23/21) — possible sign error in markscheme PDF extraction"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "markscheme_ambiguity",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "12–13",
+      "task_summary": "Integrate the PDF f(x)=x/(x²+k)^(3/2) over [0,4], set the total area equal to 1, and rearrange to obtain the equation (√(16+k)−√k)/(√k √(16+k)) = 1.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate_pdf",
+        "u_substitution",
+        "apply_limits",
+        "set_equal_to_one",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Recognize that for a valid PDF, ∫₀⁴ f(x) dx = 1",
+        "Integrate ∫₀⁴ x/(x²+k)^(3/2) dx using substitution u = x²+k, du = 2x dx",
+        "Obtain antiderivative −(x²+k)^(−1/2)",
+        "Apply limits: [−(x²+k)^(−1/2)]₀⁴ = −(1/√(16+k) − 1/√k)",
+        "Set equal to 1: 1/√k − 1/√(16+k) = 1",
+        "Rearrange to (√(16+k) − √k)/(√k √(16+k)) = 1"
+      ],
+      "accepted_alternatives": [
+        "Direct integration without explicit u-substitution: recognise that d/dx[(x²+k)^(−1/2)] = −x/(x²+k)^(3/2) and integrate directly."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognition of the need to integrate (M1)"
+        },
+        {
+          "markscheme_pages": "12–13",
+          "basis": "EITHER substitution u = x²+k, du = 2x dx → ∫ (1/2) u^(−3/2) du OR direct integration ∫ x/(x²+k)^(3/2) dx = −(x²+k)^(−1/2) (A1)(A1)"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to use correct limits for their integrand and set equal to 1 (M1); [−(x²+k)^(−1/2)]₀⁴ = 1 → 1/√k − 1/√(16+k) = 1 (A1); AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "13",
+      "task_summary": "Solve the equation (√(16+k) − √k)/(√k √(16+k)) = 1 for k, yielding k ≈ 0.645.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_equation",
+        "gdc_numerical"
+      ],
+      "method_path": [
+        "Solve the equation from part (a) for k",
+        "Obtain k ≈ 0.645 (accept k = 0.645038…)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to solve (M1); k = 0.645038…; k = 0.645 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "13",
+      "task_summary": "Find the modulus of zw.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus_of_product"
+      ],
+      "method_path": [
+        "|zw| = |z| * |w|",
+        "|zw| = 2 * 8",
+        "|zw| = 16"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1: (zw) = 16"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "13",
+      "task_summary": "Find the argument of zw in terms of k.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "argument_addition",
+        "argument_simplification"
+      ],
+      "method_path": [
+        "arg(zw) = arg(z) + arg(w)",
+        "arg(z) = pi/5",
+        "arg(w) = -2k*pi/5",
+        "arg(zw) = pi*(1-2k)/5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to find arg(z) + arg(w) (M1); arg(zw) = arg(z) + arg(w) = pi/5 - 2k*pi/5 = pi*(1-2k)/5 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Given zw in R, find the minimum value of k and the corresponding value of zw.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "real_condition",
+        "argument_multiple_of_pi",
+        "linear_diophantine",
+        "polar_evaluation"
+      ],
+      "method_path": [
+        "zw in R implies arg(zw) = n*pi, n in Z",
+        "pi*(1-2k)/5 = n*pi",
+        "1-2k = 5n",
+        "minimum positive integer k gives n = -1, k = 3",
+        "zw = 16(cos(-pi) + i*sin(-pi))",
+        "zw = -16"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "zw in R implies arg(zw) is a multiple of pi (M1); 1-2k is a multiple of 5 (M1); k = 3 (A1); (zw) = 16(cos(-pi) + i*sin(-pi)) = -16 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q09-A",
+      "question": "9",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Show that y = x + 50 cot theta using the tangent ratio from the right triangle formed by the boats' positions.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "tangent_ratio",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "tan theta = 50 / (y - x)",
+        "rearrange to y = x + 50 cot theta"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "50/tan theta = y - x OR cot theta = (y-x)/50 -> y = x + 50 cot theta [A1] [AG]; Note: y-x may be identified as a length on a diagram, and not written explicitly."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q09-B",
+      "question": "9",
+      "part": "b",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Find the speed of boat A at time T given y - x = 10 m, dy/dt = 2 dx/dt, and dtheta/dt = -0.1 rad/s.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "related_rates",
+        "trigonometric_identity",
+        "substitution",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "differentiate y = x + 50 cot theta wrt t to obtain dy/dt = dx/dt - 50 csc^2 theta dtheta/dt",
+        "substitute dy/dt = 2 dx/dt",
+        "simplify to dx/dt = -50 csc^2 theta dtheta/dt",
+        "use y - x = 10 to find cot theta = 1/5",
+        "compute csc^2 theta = 1 + cot^2 theta = 26/25",
+        "substitute dtheta/dt = -0.1 and evaluate dx/dt = 5.2 m/s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to differentiate with respect to t (M1); dy/dt = dx/dt - 50 cosec^2 theta dtheta/dt [A1]"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to set speed of B equal to double the speed of A (M1); dx/dt = -50 cosec^2 theta dtheta/dt [A1]"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "cot theta = 1/5 OR theta = arctan 5 = 1.373... = 78.69... degrees [A1]; Note: This A1 can be awarded independently of previous marks."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "cosec^2 theta = 1 + (1/5)^2 = 26/25; speed of boat A is 5.2 (m/s) [A1]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find the x-coordinate of point P where f(x) = 90e^(-0.5x) intersects the line y = x.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_exponential_equation",
+        "gdc_numerical_solve",
+        "intersection_point"
+      ],
+      "method_path": [
+        "Set 90e^(-0.5x) = x",
+        "Solve numerically using GDC",
+        "x ≈ 5.57"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to find the point of intersection of the graph of f and the line y=x (M1); x=5.56619...=5.57 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find the exact coordinates of point Q where the line L with gradient -1 is tangent to the graph of f.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.exponential_models",
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative_exponential",
+        "set_derivative_equal_to_value",
+        "solve_exponential_equation",
+        "evaluate_function",
+        "exact_coordinates"
+      ],
+      "method_path": [
+        "f'(x) = -45e^(-0.5x)",
+        "Set -45e^(-0.5x) = -1",
+        "e^(-0.5x) = 1/45",
+        "x = 2ln45",
+        "y = f(2ln45) = 90e^(-ln45) = 2",
+        "Q = (2ln45, 2)"
+      ],
+      "accepted_alternatives": [
+        "x-coordinate also accepted as (ln(1/45))/(-0.5)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "f'(x)=-45e^(-0.5x) A1; attempt to set the gradient of f equal to -1 (M1); Q has coordinates (2ln45,2) A1A1 (accept (ln(1/45)/-0.5, 2))"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Show that the equation of tangent L is y = -x + 2ln45 + 2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "point_slope_form",
+        "linear_equation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Substitute Q(2ln45, 2) and m = -1 into y - y₁ = m(x - x₁)",
+        "y - 2 = -(x - 2ln45)",
+        "Simplify to y = -x + 2ln45 + 2"
+      ],
+      "accepted_alternatives": [
+        "Use y = mx + c form: 2 = -2ln45 + c, giving c = 2ln45 + 2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to substitute coordinates of Q into an appropriate equation (M1); y-2=-(x-2ln45) OR 2=-2ln45+c A1; equation of L is y=-x+2ln45+2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Find the x-coordinate where L intersects y = x, then find the area of shaded region A enclosed by f, y = x, and L.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.exponential_models",
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "intersection_of_lines",
+        "area_between_curves",
+        "definite_integral",
+        "gdc_numerical_integration"
+      ],
+      "method_path": [
+        "(i) Set -x + 2ln45 + 2 = x → x = ln45 + 1 ≈ 4.81",
+        "(ii) Area = ∫_{5.566...}^{4.806...} (90e^(-0.5x) - x) dx + ∫_{4.806...}^{2ln45} (90e^(-0.5x) - (-x + 2ln45 + 2)) dx",
+        "Evaluate integrals using GDC",
+        "Area ≈ 1.52"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "(i) x=ln45+1≈4.81 A1; (ii) appropriate method to find the sum of two areas using integrals of the difference of two functions (M1); two correct integral expressions including correct limits and integrand (A1)(A1); =1.51965...=1.52 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q10-E",
+      "question": "10",
+      "part": "e",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "16",
+      "task_summary": "Find the shaded area enclosed by f, f^(-1), and the line L.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.inverse_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "symmetry_argument",
+        "inverse_function_reflection",
+        "area_by_doubling"
+      ],
+      "method_path": [
+        "Recognise region is symmetric about y = x (f and f^(-1) are reflections)",
+        "Area = 2 × 1.52 ≈ 3.04"
+      ],
+      "accepted_alternatives": [
+        "Accept any answer that rounds to 3.0 (but not exactly 3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "by symmetry (M1); 2×1.52=3.03930...=3.04 A1; Note: Accept any answer that rounds to 3.0 (but do not accept 3)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Find the values of p and q for which f(x)=(2x+3)/(4x^2-1) is undefined by solving 4x^2-1=0",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_quadratic",
+        "factor_denominator",
+        "find_domain_restrictions"
+      ],
+      "method_path": [
+        "Set denominator 4x^2-1=0",
+        "Factor (2x-1)(2x+1)=0",
+        "Solve: p=1/2, q=-1/2 or vice versa"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to solve 4x^2-1=0 e.g. by factorising (M1); p=1/2, q=-1/2 or vice versa A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Differentiate f(x)=(2x+3)/(4x^2-1) using quotient rule or product rule",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "quotient_rule",
+        "product_rule",
+        "differentiate_rational_function",
+        "simplify_algebraic"
+      ],
+      "method_path": [
+        "Apply quotient rule: f'(x)=[2(4x^2-1)-(2x+3)(8x)]/(4x^2-1)^2",
+        "Expand and simplify numerator to -8x^2-12x-3",
+        "Write f'(x)=(-8x^2-12x-3)/(4x^2-1)^2"
+      ],
+      "accepted_alternatives": [
+        "Product rule: write f(x)=(2x+3)(4x^2-1)^(-1) and differentiate using product and chain rules"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to use quotient rule or product rule (M1); EITHER quotient rule form A1A1 OR product rule form A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Find the x-coordinate of the point of inflexion of y=f(x)",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative",
+        "point_of_inflexion",
+        "gdc_solve",
+        "graph_f_prime"
+      ],
+      "method_path": [
+        "Find local minimum on graph of y=f'(x) OR solve f''(x)=0",
+        "Obtain x = -1.60"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to find the local min point on y=f'(x) OR solve f''(x)=0 (M1); x=-1.60 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "d",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "18",
+      "task_summary": "Sketch graph of y=f(x) for -3<=x<=3 showing axes intercepts, local extrema coordinates, and asymptote equations",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "vertical_asymptote",
+        "horizontal_asymptote",
+        "intercepts",
+        "local_extrema"
+      ],
+      "method_path": [
+        "Identify vertical asymptotes x=1/2 and x=-1/2 with equations",
+        "Identify horizontal asymptote y=0 with equation",
+        "Find y-intercept f(0)=-3",
+        "Find x-intercept: 2x+3=0 => x=-3/2",
+        "Sketch three branches with correct asymptotic behaviour, labelling local max and min coordinates"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "A1 for both vertical asymptotes with equations, A1 for horizontal asymptote with equation, A1 for each correct branch (3 branches) including asymptotic behaviour, coordinates of min and max points and axes intercepts (5 marks total)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-E",
+      "question": "11",
+      "part": "e",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Find equations of all asymptotes of g(x)=(4x^2+3)/(2-3x)",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_asymptote",
+        "oblique_asymptote",
+        "polynomial_division"
+      ],
+      "method_path": [
+        "Find vertical asymptote: set denominator=0 => x=-2/3",
+        "Recognise oblique asymptote exists (degree difference = 1)",
+        "Find gradient of oblique asymptote = -4/3 via polynomial division or limits",
+        "Determine equation: y = -(4/3)x - 8/9"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "x=-2/3 A1; gradient -4/3 (A1); appropriate method M1; y=-(4/3)x-8/9 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q11-F",
+      "question": "11",
+      "part": "f",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Solve inequality f(x) < g(x) for x in R by finding critical values and testing intervals",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_rational_inequality",
+        "critical_values",
+        "gdc_solve",
+        "interval_testing"
+      ],
+      "method_path": [
+        "Form g(x)-f(x) or equivalent rational expression",
+        "Find critical values using GDC: x approx -0.569 and x approx 1.32",
+        "Consider sign across intervals bounded by asymptotes x=-2/3, x=-1/2, x=1/2 and critical values",
+        "State solution: -2/3 < x < -0.569, -0.5 < x < 1.32, x > 1.32"
+      ],
+      "accepted_alternatives": [
+        "Graphical method: consider graph of y=g(x)-f(x) and identify where it is above the x-axis",
+        "GDC solve of f(x)<g(x) directly"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempting to find at least one critical value (M1); x=-0.568729..., x=1.31872...; three solution intervals A1A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "markscheme_ambiguity"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Decompose f'(x) = 1/(x(k-x)) into partial fractions a/x + b/(k-x) and find a, b in terms of k.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "partial_fraction_decomposition",
+        "compare_coefficients",
+        "solve_linear_system"
+      ],
+      "method_path": [
+        "Write 1/(x(k-x)) = a/x + b/(k-x)",
+        "Multiply through by x(k-x) to obtain 1 = a(k-x) + bx",
+        "Compare coefficients or substitute x=0, x=k to solve for a=1/k, b=1/k"
+      ],
+      "accepted_alternatives": [
+        "compare coefficients (a+b=0, ak=1)",
+        "substitute x=k and x=0 to obtain equations and solve"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "Markscheme shows (A1) for partial fraction setup, (M1) for attempt to compare coefficients OR substitute x=k and x=0 and solve, A1 for a=1/k and b=1/k."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Integrate f'(x) = 1/(kx) + 1/(k(k-x)) to find f(x) = (1/k)ln|x/(k-x)| + c.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate",
+        "logarithmic_integration",
+        "simplify_logarithm"
+      ],
+      "method_path": [
+        "Integrate f'(x) = 1/(kx) + 1/(k(k-x))",
+        "Obtain (1/k)ln|x| - (1/k)ln|k-x| + c",
+        "Simplify to (1/k)ln|x/(k-x)| + c"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "Markscheme: (M1) attempt to integrate their f', A1A1 for f(x) = (1/k)(ln x - ln(k-x)) + c = (1/k)ln(x/(k-x)) + c. Note: Award A1 for each correct term. Condone absence of +c."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 8,
+      "source_pages": "15",
+      "markscheme_pages": "21, 22",
+      "task_summary": "Solve the logistic differential equation dP/dt = P(k-P)/(5k) with P(0)=1200, showing P = 1200k/(1200+(k-1200)e^(-t/5)).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separate_variables",
+        "partial_fractions",
+        "integrate",
+        "substitute_initial_condition",
+        "rearrange"
+      ],
+      "method_path": [
+        "Separate variables: k/(P(k-P)) dP = dt",
+        "Use partial fractions: (1/P + 1/(k-P)) dP = (1/5)dt",
+        "Integrate: 5(ln P - ln(k-P)) = t + c",
+        "Substitute t=0, P=1200 to find c = 5ln(1200/(k-1200))",
+        "Rearrange to isolate P and obtain P = 1200k/(1200+(k-1200)e^(-t/5))"
+      ],
+      "accepted_alternatives": [
+        "Alternative route: ln(P/(k-P)) = t/5 + c, then P/(k-P) = Ae^(t/5), substitute t=0, P=1200 to find A=1200/(k-1200), then rearrange to final form."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21, 22",
+          "basis": "Markscheme: M1 separate variables and integrate. A1 for 5(ln P - ln(k-P)) = t + c. EITHER branch: M1 substitute t=0, P=1200, A1 c = 5ln(1200/(k-1200)), further A1, A1. OR branch: ln(P/(k-P)) = t/5 + c, A1 P/(k-P) = Ae^(t/5), M1 substitute initial conditions, A1, A1. THEN M1 rearrange to isolate P, A1 final answer (AG)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Given population doubles by t=10 (P=2400), find k correct to four significant figures.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute",
+        "solve_equation",
+        "numerical_solution"
+      ],
+      "method_path": [
+        "Substitute t=10, P=2400: 2400 = 1200k/(1200+(k-1200)e^(-2))",
+        "Solve for k numerically",
+        "k ≈ 2845 (4 s.f.)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Markscheme: (M1) attempt to substitute t=10, P=2400. (A1) for correct equation. A1 for k=2845 (4 s.f.). Note: Award (M1)(A1)A0 for any other value of k which rounds to 2850."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Find t when the rate of change of the population dP/dt is at its maximum.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.differential_equations",
+        "functions.equations"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "maximize_rate",
+        "find_vertex",
+        "substitute",
+        "solve"
+      ],
+      "method_path": [
+        "Recognise dP/dt = P(k-P)/(5k) is maximised when P(k-P) is minimised, at P = k/2",
+        "Substitute P = k/2 into P = 1200k/(1200+(k-1200)e^(-t/5))",
+        "Solve for t ≈ 1.58 days"
+      ],
+      "accepted_alternatives": [
+        "Find maximum of the graph of dP/dt",
+        "Find zero of the second derivative graph of P"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Markscheme: (M1) attempt to find maximum of first derivative graph OR zero of second derivative graph OR that P = k/2. A2 for t = 1.58 days (accept any value rounding to 1.6)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find k such that the kth term of the arithmetic sequence with u1=60 and d=-2.5 equals zero.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "nth_term_formula",
+        "linear_equation"
+      ],
+      "method_path": [
+        "Use u_k = u_1 + (k-1)d",
+        "Set 60 + (k-1)(-2.5) = 0",
+        "Solve for k: k = 25"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to use u_n = u_1 + (n-1)d (M1); 60 + (k-1)(-2.5) = 0; k = 25 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find the maximum value of S_n, the sum of the first n terms of the arithmetic sequence with u1=60 and d=-2.5.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "calculus.optimization"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_series_sum",
+        "quadratic_maximum",
+        "gdc_graphical"
+      ],
+      "method_path": [
+        "Recognise that S_n is maximised when the last positive term is included (n = 25 where u_25 = 0)",
+        "Calculate S_25 = 25/2(60 + 0) = 750"
+      ],
+      "accepted_alternatives": [
+        "Express S_n = n/2(2×60 + (n-1)(-2.5)) as a quadratic, use GDC graph or table to find maximum sum = 750",
+        "Calculate S_24 = 24/2(2×60 + 23×(-2.5)) = 750 (symmetry gives same maximum at n=24)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: attempting to express S_n in terms of n (M1); use of a graph or a table to attempt to find the maximum sum (M1); = 750 (A1). METHOD 2: recognizing maximum occurs at n=25 (M1); S_25 = 25/2(60+0), S_25 = 25/2(2×60+24×(-2.5)) (A1); OR attempting to calculate S_24 (M1); S_24 = 24/2(2×60+23×(-2.5)) (A1); THEN = 750 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

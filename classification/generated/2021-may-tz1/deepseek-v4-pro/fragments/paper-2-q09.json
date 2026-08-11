@@ -1,0 +1,96 @@
+{
+  "question": "9",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q09-A",
+      "question": "9",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Show that y = x + 50 cot theta using the tangent ratio from the right triangle formed by the boats' positions.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "tangent_ratio",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "tan theta = 50 / (y - x)",
+        "rearrange to y = x + 50 cot theta"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "50/tan theta = y - x OR cot theta = (y-x)/50 -> y = x + 50 cot theta [A1] [AG]; Note: y-x may be identified as a length on a diagram, and not written explicitly."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q09-B",
+      "question": "9",
+      "part": "b",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Find the speed of boat A at time T given y - x = 10 m, dy/dt = 2 dx/dt, and dtheta/dt = -0.1 rad/s.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "related_rates",
+        "trigonometric_identity",
+        "substitution",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "differentiate y = x + 50 cot theta wrt t to obtain dy/dt = dx/dt - 50 csc^2 theta dtheta/dt",
+        "substitute dy/dt = 2 dx/dt",
+        "simplify to dx/dt = -50 csc^2 theta dtheta/dt",
+        "use y - x = 10 to find cot theta = 1/5",
+        "compute csc^2 theta = 1 + cot^2 theta = 26/25",
+        "substitute dtheta/dt = -0.1 and evaluate dx/dt = 5.2 m/s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to differentiate with respect to t (M1); dy/dt = dx/dt - 50 cosec^2 theta dtheta/dt [A1]"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to set speed of B equal to double the speed of A (M1); dx/dt = -50 cosec^2 theta dtheta/dt [A1]"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "cot theta = 1/5 OR theta = arctan 5 = 1.373... = 78.69... degrees [A1]; Note: This A1 can be awarded independently of previous marks."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "cosec^2 theta = 1 + (1/5)^2 = 26/25; speed of boat A is 5.2 (m/s) [A1]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

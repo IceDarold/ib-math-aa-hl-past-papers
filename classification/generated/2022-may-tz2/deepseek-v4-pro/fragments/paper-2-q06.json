@@ -1,0 +1,60 @@
+{
+  "question": "6",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given the curve x²/36 + (y−4)²/16 = 1 for h ≤ y ≤ 4 rotated about the y‑axis to form a bowl of interior volume 285 cm³, determine the height h of the rectangular base OPQR.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations",
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "express_variable",
+        "volume_of_revolution",
+        "definite_integral",
+        "gdc_equation_solving"
+      ],
+      "method_path": [
+        "Express x² = 36(1 − (y−4)²/16) from the ellipse equation",
+        "Set up volume integral V = π ∫_h^4 36(1 − (y−4)²/16) dy",
+        "Set V = 285 and solve for h using GDC",
+        "Obtain h = 0.793 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempts to express x² in terms of y (M1)"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "π ∫_h^4 36(1 − ((y−4)²)/16) dy A1; Note: Correct limits are required."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "Attempts to solve π ∫_h^4 36(1 − ((y−4)²)/16) dy = 285 for h (M1)"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "h = 0.7926… ; h = 0.793 (cm) A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

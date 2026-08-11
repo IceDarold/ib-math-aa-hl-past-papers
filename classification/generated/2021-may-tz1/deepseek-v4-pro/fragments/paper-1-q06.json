@@ -1,0 +1,54 @@
+{
+  "question": "6",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "12-13",
+      "task_summary": "Given cosec θ = 3/2 with π/2 ≤ θ ≤ 3π/2, find the exact value of cot θ.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "trigonometric_identity",
+        "quadrant_analysis",
+        "exact_value"
+      ],
+      "method_path": [
+        "Use identity 1 + cot²θ = cosec²θ",
+        "Substitute cosec θ = 3/2 giving 1 + cot²θ = 9/4",
+        "Solve for cot²θ = 5/4",
+        "Determine θ in Q2 since π/2 ≤ θ ≤ 3π/2 and cosec θ > 0, so cot θ < 0",
+        "cot θ = -√5/2"
+      ],
+      "accepted_alternatives": [
+        "Right-angled triangle method: place values in triangle with θ, deduce adjacent = √5, hypotenuse = 3, opposite = 2, then cot θ = -√5/2 by quadrant sign",
+        "Via sin θ and cos θ: sin θ = 2/3, use sin²θ + cos²θ = 1 giving cos²θ = 5/9, then cos θ = -√5/3 (Q2), so cot θ = cos θ/sin θ = -√5/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for attempt to use 1+cot²θ=cosec²θ; (A1) for cot²θ=5/4; R1 for cot θ<0 (second quadrant); A1 for cot θ=-√5/2"
+        },
+        {
+          "markscheme_pages": "12-13",
+          "basis": "METHOD 2 and METHOD 3 both confirm -√5/2 as the only accepted final answer; R1 awarded independently for negative sign"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1315 @@
+{
+  "session": "November 2022",
+  "zone": "Common",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Differentiate g(x) = e^(x^2+1) using the chain rule, then evaluate the derivative at x = -1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "derivative_of_exponential",
+        "substitution",
+        "evaluate_derivative"
+      ],
+      "method_path": [
+        "Differentiate g(x) = e^(x^2 + 1) using the chain rule: g'(x) = 2x e^(x^2 + 1)",
+        "Substitute x = -1 into g'(x) to obtain g'(-1) = 2(-1) e^((-1)^2 + 1) = -2e^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "g'(x) = 2x e^(x^2+1) awarded (A2); substitute x = -1 into their derivative (M1); g'(-1) = -2e^2 awarded A1. Total 4 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q02-A-I-A-II",
+      "question": "2",
+      "part": "a-i, a-ii",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the centre (midpoint of A and B) and radius (half of AB) of a circle given endpoints A(1,4,0) and B(−3,2,−4) of a diameter.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.circular_measure"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "midpoint_3d",
+        "distance_formula_3d",
+        "radius_from_diameter"
+      ],
+      "method_path": [
+        "Centre = midpoint of A(1,4,0) and B(−3,2,−4) = ((1−3)/2, (4+2)/2, (0−4)/2) = (−1,3,−2)",
+        "AB = √((−3−1)²+(2−4)²+(−4−0)²) = √(16+4+16) = √36 = 6",
+        "Radius = AB/2 = 3 (or distance centre→A = √((−1−1)²+(3−4)²+(−2−0)²) = √(4+1+4) = 3)"
+      ],
+      "accepted_alternatives": [
+        "Radius via distance from centre to A or B instead of half of AB: √((−1−1)²+(3−4)²+(−2−0)²) = √9 = 3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(a)(i): attempt to find midpoint of A and B (M1); centre (−1,3,−2) A1. (a)(ii): attempt to find AB or half of AB or distance between the centre and A (or B) (M1); √(4²+2²+4²) or √(2²+1²+2²) = 3 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q02-B",
+      "question": "2",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the exact volume of a right cone with the circle as base and vertex V(−1,−1,0), using V = ⅓πr²h.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [
+        "geometry.vectors_3d",
+        "geometry.circular_measure"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "distance_formula_3d",
+        "perpendicular_height",
+        "cone_volume"
+      ],
+      "method_path": [
+        "Height = distance centre(−1,3,−2) to V(−1,−1,0) = √((−1+1)²+(−1−3)²+(0+2)²) = √(0+16+4) = √20 = 2√5",
+        "Volume = ⅓πr²h = ⅓π·3²·√20 = 3π√20 = 6π√5"
+      ],
+      "accepted_alternatives": [
+        "Height via √(slant height² − radius²) using slant height from V to A or B"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(b): attempt to find distance between their centre and V (M1); √(0²+4²+2²) OR √(their slant height² − their radius²); √20 = 2√5 (A1); Volume = ⅓π·3²·√20 = 3π√20 = 6π√5 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Show algebraically that ((a^2-1)/(2a))^2 + 1 = ((a^2+1)/(2a))^2 for constant a > 1.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_binomial_square",
+        "combine_rational_expressions",
+        "factor_perfect_square_trinomial"
+      ],
+      "method_path": [
+        "Expand ((a^2-1)/(2a))^2 to (a^4-2a^2+1)/(4a^2)",
+        "Add 1 as (4a^2)/(4a^2)",
+        "Combine to (a^4+2a^2+1)/(4a^2)",
+        "Recognise as ((a^2+1)/(2a))^2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Expand RHS ((a^2+1)/(2a))^2 to (a^4+2a^2+1)/(4a^2), rewrite as (a^4-2a^2+1)/(4a^2) + (4a^2)/(4a^2), recognise as ((a^2-1)/(2a))^2 + 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: attempting to expand ((a^2-1)/(2a))^2 (M1); LHS = (a^4-2a^2+1)/(4a^2) + (4a^2)/(4a^2) (A1); = (a^4+2a^2+1)/(4a^2) = ((a^2+1)/(2a))^2 = RHS (A1). METHOD 2: attempting to expand ((a^2+1)/(2a))^2 (M1); RHS = (a^4+2a^2+1)/(4a^2) = (a^4-2a^2+1)/(4a^2) + (4a^2)/(4a^2) (A1); = ((a^2-1)/(2a))^2 + 1 = LHS (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find the area of the right-angled triangle with sides a, (a^2-1)/(2a), (a^2+1)/(2a) in terms of a.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_right_triangle_legs",
+        "apply_area_formula",
+        "simplify_rational_expression"
+      ],
+      "method_path": [
+        "Recognise legs as a and (a^2-1)/(2a)",
+        "Substitute into area formula 1/2 * base * height",
+        "Simplify to (a^2-1)/4"
+      ],
+      "accepted_alternatives": [
+        "Any equivalent expression e.g. (a^3-a)/(4a) or a(a^2-1)/(4a)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognise base and height as a and (a^2-1)/(2a) (M1); correct substitution into triangle area formula (A1); Area = 1/2 * a * (a^2-1)/(2a) = (a^2-1)/4 (or equivalent)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "11",
+      "task_summary": "Integrate f'(x)=6x/(1+x^2) to get f(x)=3ln(1+x^2)+c, then use (1,5) to find c=5-3ln2.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration",
+        "u_substitution",
+        "logarithmic_integration",
+        "initial_condition"
+      ],
+      "method_path": [
+        "Integrate f'(x)",
+        "Use u=1+x^2 substitution",
+        "Apply initial condition",
+        "Write final expression"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme: M1 integrate, A1 setup, A1 integrate, M1 substitute, A1 final"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Find the value of a by using the product of roots and recognising that 3−i is also a root (complex conjugate theorem).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "product_of_roots",
+        "complex_conjugate_theorem",
+        "expand_complex_product",
+        "solve_cubic"
+      ],
+      "method_path": [
+        "State product of four roots = 80",
+        "Recognise 3−i is a root (real coefficients implies conjugate pairs)",
+        "Set up (3+i)(3−i)(a)(a²) = 80",
+        "Simplify (3+i)(3−i) = 10 to get 10a³ = 80",
+        "Solve a³ = 8 giving a = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "product of roots = 80 (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "3−i is a root (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to set up an equation involving the product of their four roots and 80 ± (M1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "(3+i)(3−i)(α)(α²) = 80 ⇒ 10α³ = 80 ⇒ α = 2 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Find p using the sum of roots (Vieta) or by expanding the polynomial from its linear factors.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sum_of_roots",
+        "vietas_formulas",
+        "simplify_complex_sum",
+        "solve_linear"
+      ],
+      "method_path": [
+        "State sum of four roots = −p",
+        "Compute sum: (3+i) + (3−i) + 2 + 4 = 12",
+        "Set −p = 12 giving p = −12"
+      ],
+      "accepted_alternatives": [
+        "Form and expand factors (z−(3+i))(z−(3−i))(z−2)(z−4) to obtain z⁴ − 12z³ + …, identify p = −12 from the coefficient of z³"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "sum of roots = −p (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "−p = 3+i + 3−i + 2 + 4 (M1); Note: Accept 3+i + 3−i + 2 + 4 = p for (M1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "p = −12 (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: (z−(3+i))(z−(3−i))(z−2)(z−4) (M1), expand to (z²−6z+10)(z²−6z+8) (A1), p = −12 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q06-A",
+      "question": "6",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Determine P(A ∩ B) when events A and B are independent, given P(A) = 0.3 and P(B) = 0.8.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "independent_events",
+        "multiplication_rule"
+      ],
+      "method_path": [
+        "P(A ∩ B) = P(A) × P(B) for independent events",
+        "0.3 × 0.8 = 0.24"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "P(A ∩ B) = 0.24 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q06-B",
+      "question": "6",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Determine the minimum possible value of P(A ∩ B), given P(A) = 0.3 and P(B) = 0.8.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "union_formula",
+        "probability_bounds",
+        "inequality"
+      ],
+      "method_path": [
+        "P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+        "P(A ∪ B) = 1.1 − P(A ∩ B)",
+        "0 ≤ P(A ∪ B) ≤ 1 ⇒ P(A ∩ B) ≥ 0.1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "P(A ∪ B) = 1.1 − P(A ∩ B) (A1); 0 ≤ P(A ∪ B) ≤ 1 (M1); minimum value of P(A ∩ B) is 0.1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q06-C",
+      "question": "6",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Determine the maximum possible value of P(A ∩ B) with justification, given P(A) = 0.3 and P(B) = 0.8.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "subset_condition",
+        "probability_bounds"
+      ],
+      "method_path": [
+        "A ⊆ B ⇒ P(A ∩ B) = P(A)",
+        "maximum P(A ∩ B) = 0.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A is a subset of B (so P(A ∩ B) = P(A)) R1; maximum value of P(A ∩ B) is 0.3 A1; Note: Do not award R0A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Show that the implicitly defined curve (x^2+y^2)y^2=4x^2 has no local maximum or minimum points for x>0 by using implicit differentiation, setting dy/dx=0, solving, and applying domain restrictions.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "product_rule",
+        "stationary_point_condition",
+        "algebraic_solving",
+        "domain_analysis"
+      ],
+      "method_path": [
+        "Implicitly differentiate (x^2+y^2)y^2 = 4x^2 with respect to x using the product rule",
+        "Set dy/dx = 0 (condition for local maximum or minimum)",
+        "Solve the resulting equation to obtain x = 0 or y^2 = 4, so y = +/-2",
+        "Apply domain restrictions x > 0 and -2 < y < 2 to reject all candidate solutions",
+        "Conclude there are no stationary points for x > 0, hence no local max/min"
+      ],
+      "accepted_alternatives": [
+        "EITHER: differentiate (x^2+y^2)y^2 directly using product rule to get (2x+2y(dy/dx))y^2 + (x^2+y^2)*2y(dy/dx) = 8x",
+        "OR: expand to x^2 y^2 + y^4 = 4x^2 then differentiate term-by-term to get 2xy^2 + 2x^2 y(dy/dx) + 4y^3(dy/dx) = 8x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "M1: attempt at implicit differentiation, including use of the product rule"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "A1A1A1: three marks for correct terms in the differentiated equation (EITHER route: (2x+2y(dy/dx))y^2, (x^2+y^2)*2y(dy/dx), and 8x; OR route: 2xy^2+2x^2 y(dy/dx), 4y^3(dy/dx), and 8x)"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "M1: at a local maximum or minimum point, dy/dx = 0"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "A1: 2xy^2 = 8x gives x=0 or y^2=4 so y=+/-2. Note: Award A0 for x=0 or y=2 only"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "R1: since x>0 and -2<y<2 there are no solutions. AG: hence there are no local maximum or minimum points"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q08-A",
+      "question": "8",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "For f(x) = cos(x - k) with k = π/2 and domain 0 ≤ x ≤ a, find the largest a for which f⁻¹ exists.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "trigonometric_transformation",
+        "monotonicity_analysis",
+        "horizontal_line_test"
+      ],
+      "method_path": [
+        "Transform f(x) = cos(x - π/2) to sin(x)",
+        "Identify that sin(x) is strictly increasing on [0, π/2] and therefore one-to-one",
+        "Conclude a = π/2 is the largest value preserving one-to-one property"
+      ],
+      "accepted_alternatives": [
+        "Graphical approach via sketching f(x) = sin(x) and applying the horizontal line test."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "a = π/2, A2. Note: For sinusoidal graph through the origin seen with incorrect a, or use of horizontal line test with incorrect a, award A1A0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q08-B",
+      "question": "8",
+      "part": "b",
+      "marks": 1,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "For f(x) = cos(x - k) with k = π, find the largest a for which f⁻¹ exists.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "trigonometric_transformation",
+        "monotonicity_analysis"
+      ],
+      "method_path": [
+        "Transform f(x) = cos(x - π) to -cos(x)",
+        "Recognize that -cos(x) is strictly increasing on [0, π]",
+        "Conclude a = π"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "a = π, A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q08-C",
+      "question": "8",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "For f(x) = cos(x - k) with π < k < 2π, find the largest a for which f⁻¹ exists, giving answer in terms of k.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "derivative_analysis",
+        "monotonicity_analysis",
+        "trigonometric_transformation"
+      ],
+      "method_path": [
+        "Compute f'(x) = -sin(x - k) and evaluate sign at x = 0: f'(0) = sin(k) < 0 for k ∈ (π, 2π)",
+        "Find first positive x where f'(x) = 0 by solving sin(x - k) = 0, giving x = k - π",
+        "Conclude that f is strictly decreasing and one-to-one on [0, k - π], so a = k - π"
+      ],
+      "accepted_alternatives": [
+        "Sketch the sinusoidal curve shifted right by k, observe it crosses the y-axis decreasing, and the first turning point occurs at x = k - π."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "sketch showing sinusoidal shape decreasing as it crosses the y-axis (below or above the origin) (A1). a = k - π, A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 8,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Solve the homogeneous DE via substitution y = vx, separation of variables, integration, and initial condition y(1)=2 to obtain y^2 = 4x^2(1 - ln x).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "implicit_differentiation",
+        "algebraic_simplification",
+        "separation_of_variables",
+        "logarithmic_integration",
+        "initial_condition_substitution",
+        "back_substitution"
+      ],
+      "method_path": [
+        "Substitute y = vx, giving dy/dx = v + x dv/dx",
+        "Substitute into DE: (v^2 x^2 - 2x^2)/(v x^2) = v + x dv/dx simplifies to x dv/dx = -2/v",
+        "Separate variables: v dv = -(2/x) dx",
+        "Integrate both sides: v^2/2 = -2 ln|x| + c",
+        "Back-substitute v = y/x: y^2/(2x^2) = -2 ln|x| + c",
+        "Apply initial condition y(1)=2: 2 = 0 + c so c = 2",
+        "Simplify: y^2 = 4x^2(1 - ln x)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "let y = vx implies dy/dx = v + x dv/dx (A1); substitution into DE (M1); simplification to x dv/dx = -2/v (A1); separation integral v dv = -2 integral dx/x (M1); integration v^2/2 = -2 ln x + c (A1); back-substitution y^2/(2x^2) = -2 ln x + c (A1); attempt to substitute x=1, y=2 to find c gives c=2 (M1); final answer y^2 = 4x^2(1 - ln x) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "17",
+      "task_summary": "Set dy/dx = 0 in the DE giving y^2 = 2x^2, hence y = +/- sqrt(2) x and m = +/- sqrt(2).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "zero_gradient_condition",
+        "algebraic_simplification",
+        "ratio_extraction"
+      ],
+      "method_path": [
+        "Set dy/dx = 0 in the differential equation: (y^2 - 2x^2)/(xy) = 0",
+        "Solve: y^2 = 2x^2",
+        "Take square roots: y = +/- sqrt(2) x",
+        "Read off slopes: m = +/- sqrt(2)"
+      ],
+      "accepted_alternatives": [
+        "y = sqrt(2) x and y = -sqrt(2) x",
+        "m = sqrt(2), m = -sqrt(2)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to set dy/dx = 0 in the differential equation (M1); y = sqrt(2) x and y = -sqrt(2) x or m = +/- sqrt(2) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain",
+        "markscheme_ambiguity"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "18-19",
+      "task_summary": "Find the roots of f(x)=cos^2 x - 3 sin^2 x = 0 for 0 ≤ x ≤ π.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "trigonometric_identity",
+        "quadratic_trig_equation",
+        "arctan",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "reduce_to_single_trigonometric_function",
+        "solve_for_trigonometric_ratio",
+        "extract_x_values_within_domain"
+      ],
+      "accepted_alternatives": [
+        "tan^2 x = 1/3 leading to tan x = ±1/sqrt(3)",
+        "cos^2 x = 3/4 leading to cos x = ±sqrt(3)/2",
+        "sin^2 x = 1/4 leading to sin x = ±1/2",
+        "cos 2x = 1/2 leading to 2x = π/3, 5π/3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "valid attempt to reduce equation to one involving one trigonometric function (M1)"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "correct equation: tan^2 x = 1/3 OR cos^2 x = 3/4 OR sin^2 x = 1/4 OR cos 2x = 1/2 (A1)"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "tan x = ±1/sqrt(3) OR cos x = ±sqrt(3)/2 OR sin x = ±1/2 OR 2x = π/3, 5π/3 (A1)"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "x = π/6, x = 5π/6 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 7,
+      "source_pages": "11",
+      "markscheme_pages": "19-20",
+      "task_summary": "(i) Find f'(x). (ii) Hence find the coordinates of points on y=f(x) where f'(x)=0.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "trigonometric_derivative",
+        "double_angle_formula",
+        "solving_trigonometric_equation",
+        "coordinate_evaluation"
+      ],
+      "method_path": [
+        "differentiate_using_chain_rule",
+        "simplify_to_fprime_x_equals_neg4sin2x",
+        "solve_fprime_x_equals_zero",
+        "find_x_coordinates_0_pi_over_2_pi",
+        "evaluate_f_at_each_x_for_coordinates"
+      ],
+      "accepted_alternatives": [
+        "f'(x) = -2cos x sin x - 6sin x cos x = -8sin x cos x = -4sin 2x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to use the chain rule (M1)"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "f'(x) = -4sin 2x A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "valid attempt to solve their f'(x)=0 (M1)"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "at least 2 correct x-coordinates: 0, π/2, π (A1)"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "correct coordinates: (0,1), (π,1), (π/2,-3) A1A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Sketch y = |f(x)|, showing coordinates where f'(x)=0 and where the graph meets the coordinate axes.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "calculus.stationary_points",
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "absolute_value",
+        "reflection",
+        "graph_sketching",
+        "cusps"
+      ],
+      "method_path": [
+        "reflect_negative_portion_of_f_about_x_axis",
+        "mark_endpoints_0_1_and_pi_1",
+        "mark_smooth_maximum_at_pi_over_2_3",
+        "mark_sharp_cusps_at_x_intercepts_pi_over_6_and_5pi_over_6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to reflect the negative part of the graph of f in the x-axis (M1)"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "endpoints have coordinates (0,1), (π,1) A1"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "smooth maximum at (π/2, 3) A1"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "sharp points (cusps) at x-intercepts π/6, 5π/6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "21",
+      "task_summary": "Hence or otherwise, solve |f(x)| > 1.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "absolute_value_inequality",
+        "boundary_analysis",
+        "trigonometric_equation",
+        "interval_determination"
+      ],
+      "method_path": [
+        "consider_intersection_of_y_equals_fx_and_y_equals_1",
+        "solve_fx_equals_neg1_or_1_to_get_boundary",
+        "obtain_x_equals_pi_over_4_and_3pi_over_4",
+        "conclude_pi_over_4_less_than_x_less_than_3pi_over_4"
+      ],
+      "accepted_alternatives": [
+        "Solving -4sin^2 x = -1 leading to tan^2 x = 1",
+        "Solving 4cos^2 x - 3 = -1 leading to cos^2 x = 1/2",
+        "Solving |2cos 2x - 1| = 1 leading to cos 2x = 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "considers points of intersection of y = f(x) and y = 1 on graph or algebraically (M1)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "tan^2 x = 1 or sin^2 x = 1/2 or cos^2 x = 1/2 or cos 2x = 0 (A1)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "x = π/4, x = 3π/4 (A1)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "π/4 < x < 3π/4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-A-I",
+      "question": "11",
+      "part": "A-I",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "22",
+      "task_summary": "Find the total number of possible three-digit codes abc using digits {1,2,3,4,5} with repetition allowed.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "counting_principle",
+        "exponentiation"
+      ],
+      "method_path": [
+        "5 choices for each of 3 positions with repetition allowed",
+        "5^3 = 125"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "5^3 (A1), 125 = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-A-II",
+      "question": "11",
+      "part": "A-II",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "22",
+      "task_summary": "Find the total number of possible three-digit codes abc using digits {1,2,3,4,5} with no repetition.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "permutation",
+        "factorial"
+      ],
+      "method_path": [
+        "5P3 = 5 x 4 x 3",
+        "= 60"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "5P3 = 5x4x3 (A1), 60 = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-B-I",
+      "question": "11",
+      "part": "B-I",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "22-24",
+      "task_summary": "Given P(x)=x^3+ax^2+bx+c has factor (x^2+3x+2) with a,b,c distinct from {1,2,3,4,5}, find b in terms of a.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "factor_theorem",
+        "polynomial_factorization",
+        "system_of_equations",
+        "elimination"
+      ],
+      "method_path": [
+        "factor x^2+3x+2 = (x+1)(x+2)",
+        "apply factor theorem: P(-1)=0 and P(-2)=0",
+        "obtain -1+a-b+c=0 and -8+4a-2b+c=0",
+        "eliminate c by subtracting equations",
+        "obtain b = 3a - 7"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Let P(x)=(x^2+3x+2)(x+d), expand to x^3+(d+3)x^2+(3d+2)x+2d, compare coefficients: a=d+3 and b=3d+2, eliminate d to get b=3a-7",
+        "METHOD 3: Divide x^3+ax^2+bx+c by x^2+3x+2, set remainder 3a-b-7=0",
+        "METHOD 4: Factor x^2+3x+2=(x+1)(x+2), use Vieta with roots -1,-2,p to get b=3a-7"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22-23",
+          "basis": "METHOD 1: (x^2+3x+2)=(x+1)(x+2) A1, factor theorem M1, attempt two equations M1, equations A1, eliminate c M1, b=3a-7 A1"
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 2: P(x)=(x^2+3x+2)(x+d) M1, expansion A1, compare coefficients M1, a=d+3 and b=3d+2 A1, eliminate d M1, b=3a-7 A1"
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 3: division M1, quotient x+a-3 A1, remainder (3a-b-7)x A1, set to zero M1, b=3a-7 A1"
+        },
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 4: Vieta A1, roots -1,-2,p M1, sum a-3=p A1, product pairs b=... A1, eliminate p M1, b=3a-7 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-B-II",
+      "question": "11",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "24",
+      "task_summary": "Show that the only assignment satisfying all conditions is a=4, b=5, c=2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "exhaustive_check",
+        "constraint_satisfaction"
+      ],
+      "method_path": [
+        "use b=3a-7 and c from P(-1)=0 or c=2a-6",
+        "test a=1,2,5: b outside {1,...,5} or repeats a",
+        "a=3 gives b=2, c=0 (0 not allowed)",
+        "only a=4, b=5, c=2 works"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: use c=2a-6, argue a=4 is the only possibility from the digit set {1,2,3,4,5}"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 1: a=1,2,5 lead to invalid values for b R1; a=3 gives b=2, c=0 so not possible R1; so a=4,b=5,c=2 AG"
+        },
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 2: c=2a-6 R1; correctly argues a=4 is the only possibility R1; so a=4,b=5,c=2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-B-III",
+      "question": "11",
+      "part": "B-III",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "24",
+      "task_summary": "Express P(x)=x^3+4x^2+5x+2 as a product of linear factors.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "polynomial_factorization",
+        "linear_factors"
+      ],
+      "method_path": [
+        "P(x)=x^3+4x^2+5x+2 = (x^2+3x+2)(x+1)",
+        "= (x+2)(x+1)(x+1) = (x+2)(x+1)^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "=(x+2)(x+1)(x+1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-B-IV",
+      "question": "11",
+      "part": "B-IV",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "25",
+      "task_summary": "Sketch y=P(x)=x^3+4x^2+5x+2 showing intercepts with axes.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "curve_sketching",
+        "intercepts",
+        "turning_points"
+      ],
+      "method_path": [
+        "positive cubic shape with y-intercept at (0,2)",
+        "x-intercept at (-2,0)",
+        "local minimum point at (-1,0)",
+        "local maximum point between x=-2 and x=-1"
+      ],
+      "accepted_alternatives": [
+        "calculus approach using f'(x) to find turning points"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "positive cubic shape with y-intercept at (0,2) A1; x-intercept at (-2,0) and local maximum point anywhere between x=-2 and x=-1 A1; local minimum point at (-1,0) A1. Note: Accept answers from an approach based on calculus."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q12-A-I-AND-A-II",
+      "question": "12",
+      "part": "(a)(i) and (a)(ii)",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "26",
+      "task_summary": "Find arg(z0) where z0 = 1 + i, and write an expression for arg(zn) in terms of n for zn = (n^2+n+1)+i, n in N.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "evaluate_complex_number",
+        "compute_argument",
+        "arctan"
+      ],
+      "method_path": [
+        "z0 = (0^2+0+1) + i = 1 + i",
+        "arg(z0) = arctan(1/1) = arctan(1) = pi/4 (or 45 deg)",
+        "arg(zn) = arctan(1/(n^2+n+1))"
+      ],
+      "accepted_alternatives": [
+        "For (a)(i): accept arctan(1), pi/4, 45 degrees, or answer marked on an Argand diagram."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "z0 = 1 + i (A1); arg(z0) = arctan(1) = pi/4 = 45 deg (A1); arg(zn) = arctan(1/(n^2+n+1)) (A1); total [3 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q12-B-I-AND-B-II",
+      "question": "12",
+      "part": "(b)(i) and (b)(ii)",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "26-27",
+      "task_summary": "Show arctan(a)+arctan(b)=arctan((a+b)/(1-ab)) for a,b in R+, ab<1; then show arg(w1)=arctan(2) where w1=z0*z1.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "compound_angle_formula",
+        "tan_addition",
+        "arctan_addition_identity",
+        "argument_of_product",
+        "sum_of_arguments"
+      ],
+      "method_path": [
+        "tan(arctan(a)+arctan(b)) = (a+b)/(1-ab) via compound angle formula",
+        "Hence arctan(a)+arctan(b) = arctan((a+b)/(1-ab)) when ab<1",
+        "arg(w1) = arg(z0*z1) = arg(z0) + arg(z1)",
+        "= arctan(1) + arctan(1/3)",
+        "= arctan((1+1/3)/(1-1*1/3)) = arctan(2)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 for (b)(ii): w1 = (1+i)(3+i) = 2+4i, then arg(w1) = arctan(4/2) = arctan(2), or labelled Argand diagram."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(b)(i): M1 for compound angle formula for tan; A1 for tan derivation yielding (a+b)/(1-ab); AG."
+        },
+        {
+          "markscheme_pages": "26-27",
+          "basis": "(b)(ii) METHOD 1: M1 for arg(w1)=arg(z0)+arg(z1); (A1) for arctan(1)+arctan(1/3); A1 for arctan(2). METHOD 2: (M1) for w1=(1+i)(3+i); A1 for 2+4i; A1 for arg(w1)=arctan(2). [5 marks total for (b)]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q12-C",
+      "question": "12",
+      "part": "(c)",
+      "marks": 10,
+      "source_pages": "12",
+      "markscheme_pages": "28-29",
+      "task_summary": "Prove by mathematical induction that arg(wn) = arctan(n+1) for n in N, where wn = z0*z1*...*zn.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.complex_numbers",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_n0",
+        "inductive_hypothesis",
+        "argument_of_product",
+        "arctan_addition",
+        "algebraic_simplification",
+        "inductive_conclusion"
+      ],
+      "method_path": [
+        "Base case n=0: arg(w0)=arg(z0)=arctan(1); RHS=arctan(0+1)=arctan(1); LHS=RHS",
+        "Inductive hypothesis: assume arg(wk)=arctan(k+1)",
+        "arg(w_{k+1})=arg(wk*z_{k+1})=arg(wk)+arg(z_{k+1})",
+        "= arctan(k+1) + arctan(1/((k+1)^2+(k+1)+1))",
+        "Apply arctan addition formula with a=k+1, b=1/((k+1)^2+(k+1)+1)",
+        "Simplify the rational expression to arctan(k+2)",
+        "Conclusion: true for all n in N by mathematical induction"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "R1 for base case n=0; M1 for inductive hypothesis; (M1) for arg(w_{k+1})=arg(wk)+arg(z_{k+1}); A1 for substitution of expressions."
+        },
+        {
+          "markscheme_pages": "28-29",
+          "basis": "M1 for applying arctan addition formula; (A1), A1, A1 for algebraic simplification steps; A1 for arctan(k+2); R1 for induction conclusion. Note: final R1 requires four prior marks awarded. [10 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

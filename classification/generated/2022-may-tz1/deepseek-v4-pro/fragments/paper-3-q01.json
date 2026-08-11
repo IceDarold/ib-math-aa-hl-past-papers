@@ -1,0 +1,355 @@
+{
+  "question": "1",
+  "expected_question_marks": 27,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P3-Q01-A-I",
+      "question": "1",
+      "part": "(a)(i)",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Verify that for triangular numbers, P_3(n) = n(n+1)/2 by substituting r=3 into the general polygonal number formula P_r(n) = (n/2)[(r-2)n - (r-4)].",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Substitute r = 3 into P_r(n) = (n/2)[(r-2)n - (r-4)]",
+        "Simplify to n(n+1)/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for substituting r=3 into formula; A1 for final result n(n+1)/2. Do not award marks for numerical verification. Award A0A1 if only (n^2+n)/2 is seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q01-A-II",
+      "question": "1",
+      "part": "(a)(ii)",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Determine which triangular number 351 is by finding n such that P_3(n) = 351.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equation_setup",
+        "quadratic_solving",
+        "positive_root_selection"
+      ],
+      "method_path": [
+        "Set n(n+1)/2 = 351",
+        "Solve n^2 + n - 702 = 0",
+        "Select positive integer solution n = 26"
+      ],
+      "accepted_alternatives": [
+        "Use GDC table of P_3(n) values to locate 351",
+        "Use GDC numerical solve or graph feature"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "M1 for table of values or solving n(n+1)/2=351. A1 for n=26 (26th triangular number). Award A0 for n=-27,26 or additional solutions."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q01-B-I",
+      "question": "1",
+      "part": "(b)(i)",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "9",
+      "task_summary": "Show that P_3(n) + P_3(n+1) = (n+1)^2.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "algebraic_substitution",
+        "fraction_addition",
+        "factorization"
+      ],
+      "method_path": [
+        "Express P_3(n) + P_3(n+1) as n(n+1)/2 + (n+1)(n+2)/2",
+        "Combine fractions: (n+1)(2n+2)/2",
+        "Factor to (n+1)^2"
+      ],
+      "accepted_alternatives": [
+        "Start from n^2/2 + n/2 + (n+1)^2/2 + (n+1)/2 and combine"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1 for forming expression for P_3(n)+P_3(n+1) in terms of n. A1 for correct simplification to (n+1)^2. Two equivalent algebraic routes accepted (EITHER/OR)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q01-B-II",
+      "question": "1",
+      "part": "(b)(ii)",
+      "marks": 1,
+      "source_pages": "3-4",
+      "markscheme_pages": "9",
+      "task_summary": "State in words what the identity P_3(n) + P_3(n+1) = (n+1)^2 shows about two consecutive triangular numbers.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "verbal_interpretation"
+      ],
+      "method_path": [
+        "State: the sum of the nth and (n+1)th triangular numbers equals the (n+1)th square number"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1 for stating that the sum of the nth and (n+1)th triangular numbers is the (n+1)th square number."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q01-B-III",
+      "question": "1",
+      "part": "(b)(iii)",
+      "marks": 1,
+      "source_pages": "3-4",
+      "markscheme_pages": "10",
+      "task_summary": "For n=4, sketch a diagram clearly showing the geometric interpretation of part (b)(ii).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "diagram_construction",
+        "geometric_visualization"
+      ],
+      "method_path": [
+        "Draw P_3(4) as a triangle of 10 dots",
+        "Draw P_3(5) as a triangle of 15 dots",
+        "Show they combine to form P_4(5), a square of 25 dots"
+      ],
+      "accepted_alternatives": [
+        "Accept any equivalent single diagram clearly showing the 4th and 5th triangular numbers and the 5th square number"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for a diagram showing P_3(4) (triangle with 10 dots), P_3(5) (triangle with 15 dots), and P_4(5) (square with 25 dots). Accept equivalent single diagrams."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q01-C",
+      "question": "1",
+      "part": "(c)",
+      "marks": 3,
+      "source_pages": "3-4",
+      "markscheme_pages": "11-12",
+      "task_summary": "Show that 8P_3(n) + 1 is the square of an odd number for all n in positive integers.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "algebraic_substitution",
+        "expansion",
+        "perfect_square_factorization",
+        "parity_argument"
+      ],
+      "method_path": [
+        "Substitute P_3(n) = n(n+1)/2 into 8P_3(n)+1",
+        "Expand to 4n^2+4n+1",
+        "Factor as (2n+1)^2",
+        "Note that 2n+1 is odd for all n in positive integers"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use recurrence relation with P_3(n+1) and P_3(n)",
+        "Method 3: Assume (An+B)^2 form, expand and equate coefficients to find A=2, B=1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11-12",
+          "basis": "A1 for substituting P_3(n) = n(n+1)/2. M1 for expanding their expression. A1 for (2n+1)^2 and noting 2n+1 is odd. Three methods accepted."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q01-D",
+      "question": "1",
+      "part": "(d)",
+      "marks": 3,
+      "source_pages": "3-4",
+      "markscheme_pages": "13",
+      "task_summary": "Show that P_5(n) = n(3n-1)/2 using the arithmetic series representation P_5(n) = 1+4+7+...+(3n-2).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "series_identification",
+        "arithmetic_sum_formula",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Identify u_1 = 1, common difference d = 3, u_n = 3n-2",
+        "Apply arithmetic sum formula S_n = n(u_1+u_n)/2",
+        "Simplify n(1+3n-2)/2 to n(3n-1)/2"
+      ],
+      "accepted_alternatives": [
+        "Use S_n = n/2[2u_1+(n-1)d] with u_1=1, d=3",
+        "Sum term by term using sigma notation and sum of first n integers",
+        "Use arithmetic mean method: n times mean of first and last term"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for identifying u_1=1 and d=3 (or u_n=3n-2). M1 for substituting into arithmetic sum formula. A1 for n(3n-1)/2. Four equivalent methods accepted (EITHER/OR/OR/OR)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q01-E",
+      "question": "1",
+      "part": "(e)",
+      "marks": 5,
+      "source_pages": "3-4",
+      "markscheme_pages": "14-16",
+      "task_summary": "Determine the smallest positive integer greater than 1 that is both a triangular number and a pentagonal number.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "table_generation",
+        "sequence_comparison",
+        "common_term_identification"
+      ],
+      "method_path": [
+        "Generate table of triangular numbers P_3(n) for n >= 5",
+        "Generate table of pentagonal numbers P_5(m) for m >= 5",
+        "Identify first common value after 1: 210 at n=20, m=12",
+        "State 210"
+      ],
+      "accepted_alternatives": [
+        "Solve n(n+1)/2 = m(3m-1)/2 as quadratic in n or m and find integer solutions",
+        "Let n = m + k, require discriminant to be perfect square, find k=8, m=12",
+        "Let m = n - k, require discriminant to be perfect square, find k=8, n=20"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14-16",
+          "basis": "M1 for table of P_3(n) values including some n>5. M1 for table of P_5(m) values including some m>5. A1 for n=20. A1 for m=12. A1 for 210. Award all five marks for 210 seen anywhere with or without working."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P3-Q01-F",
+      "question": "1",
+      "part": "(f)",
+      "marks": 8,
+      "source_pages": "3-4",
+      "markscheme_pages": "17-18",
+      "task_summary": "Use mathematical induction to prove that P_r(n) = (n/2)[(r-2)n - (r-4)] for all n in positive integers, using the series sum representation.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "inductive_hypothesis_statement",
+        "inductive_step_formulation",
+        "algebraic_manipulation",
+        "factorization",
+        "induction_conclusion"
+      ],
+      "method_path": [
+        "Base case n=1: verify P_r(1) = 1 from both series and formula",
+        "Inductive hypothesis: assume P_r(k) = k[(r-2)k-(r-4)]/2",
+        "Inductive step: express P_r(k+1) = P_r(k) + [1 + k(r-2)]",
+        "Substitute inductive hypothesis and combine terms",
+        "Simplify to (k+1)[(r-2)(k+1)-(r-4)]/2",
+        "Conclude: true for n=1, and if true for n=k then true for n=k+1, hence true for all n"
+      ],
+      "accepted_alternatives": [
+        "Solutions that expand both LHS and RHS of the equation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "R1 for verifying base case n=1. M1 for clear inductive hypothesis. M1 for expressing P_r(k+1) using series sum. A1 for correct substitution. M1 for algebraic manipulation. A1 for (r-2)(k+1)^2-(r-4)(k+1) over 2. A1 for final factorized form. R1 for induction conclusion. Final R1 only if first five marks awarded."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

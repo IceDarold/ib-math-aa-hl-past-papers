@@ -1,0 +1,49 @@
+{
+  "question": "3",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 6,
+      "source_pages": "5",
+      "markscheme_pages": "11",
+      "task_summary": "Given independent events A and B with P(A)=3P(B) and P(A∪B)=0.68, find P(B).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "probability_addition_rule",
+        "independent_events",
+        "substitution",
+        "quadratic_equation",
+        "solve_quadratic",
+        "select_valid_solution"
+      ],
+      "method_path": [
+        "Express P(A∪B) = P(A) + P(B) − P(A∩B)",
+        "Substitute P(A∩B) = P(A)P(B) using independence",
+        "Substitute P(A) = 3P(B)",
+        "Form quadratic: 3P(B) + P(B) − 3[P(B)]² = 0.68, i.e., 3[P(B)]² − 4P(B) + 0.68 = 0",
+        "Solve quadratic to obtain P(B) = 1/5 (=0.2) or P(B) = 17/15 (≈1.133…)",
+        "Select P(B) = 0.2 as the valid probability (≤1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme shows: substitution of P(A)·P(B) for P(A∩B) in P(A∪B) (M1); substitution of 3P(B) for P(A) (M1); 3P(B)+P(B)−3P(B)P(B)=0.68 (A1); attempts to solve their quadratic equation (M1); P(B)=1/5=0.2 (A2). Note: Award A1 if both answers are given as final answers for P(B)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

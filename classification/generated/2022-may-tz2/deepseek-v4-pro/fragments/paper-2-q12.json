@@ -1,0 +1,238 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Interpret the meaning of dP/dt in the context of the population model.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "interpret_derivative"
+      ],
+      "method_path": [
+        "dP/dt represents the rate of growth (change) of the marsupial population with respect to time"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A1: rate of growth (change) of the (marsupial) population (with respect to time)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Show that d2P/dt2 = k2P(1 - P/N)(1 - 2P/N) by differentiating the logistic differential equation.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "chain_rule",
+        "algebraic_substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "expand dP/dt = kP - kP^2/N",
+        "differentiate implicitly with respect to t",
+        "substitute dP/dt = kP(1-P/N)",
+        "factor to obtain k^2 P(1-P/N)(1-2P/N)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: apply product rule to dP/dt = kP(1-P/N), then substitute dP/dt and simplify"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "M1 implicit differentiation; A1A1 for d2P/dt2 = k(dP/dt) - (2kP/N)(dP/dt); A1 factor; AG. METHOD 2: M1 product rule; A1 derivative; M1 substitution; A1 simplify."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "29-30",
+      "task_summary": "Show the population increases at its maximum rate when P = N/2, using the second derivative.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "set_second_derivative_zero",
+        "solve_equation",
+        "concavity_analysis",
+        "second_derivative_test"
+      ],
+      "method_path": [
+        "set d2P/dt2 = k2P(1-P/N)(1-2P/N) = 0",
+        "solve to obtain P = 0, N, N/2",
+        "test concavity at P = N/2 using sign diagram, sketch, or second derivative values",
+        "conclude maximum rate at P = N/2"
+      ],
+      "accepted_alternatives": [
+        "Justification via clearly labelled sketch of d2P/dt2 vs P",
+        "Justification via correct sign diagram",
+        "Justification via evaluating d2P/dt2 at P = N/4 and P = 3N/4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29-30",
+          "basis": "M1: set d2P/dt2 = 0; A2: P = 0, N, N/2 (A1 for N/2 only); M1: test concavity change; R1: sketch/sign diagram/values."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "30",
+      "task_summary": "Determine the maximum value of dP/dt in terms of k and N.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "substitute P = N/2 into dP/dt = kP(1 - P/N)",
+        "simplify to kN/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "M1: substitutes P = N/2; A1: maximum value is kN/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 7,
+      "source_pages": "15",
+      "markscheme_pages": "31-33",
+      "task_summary": "Solve the logistic differential equation to show kt = ln[(P/(N-P))((N-P0)/P0)].",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "partial_fractions_decomposition",
+        "integration",
+        "apply_initial_condition",
+        "logarithmic_manipulation"
+      ],
+      "method_path": [
+        "separate variables to integral N/[P(N-P)] dP = integral k dt",
+        "express N/[P(N-P)] in partial fractions as 1/P + 1/(N-P)",
+        "integrate to ln P - ln(N-P) = kt + C",
+        "apply initial condition t=0, P=P0",
+        "rearrange to kt = ln[(P/(N-P))((N-P0)/P0)]"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: separate variables as 1/[P(1-P/N)], partial fractions 1/P + 1/(N-P)",
+        "METHOD 3: substitute u = 1/P to form linear DE, solve with integrating factor e^(kt)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "31-33",
+          "basis": "M1: separates variables; M1: partial fractions; A1: 1/P + 1/(N-P); A1A1: ln P - ln(N-P) = kt + C; M1: finds C; A1: final rearrangement."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-F",
+      "question": "12",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "35",
+      "task_summary": "Find k given t = 10, P = 3P0, and N = 4P0.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "number_algebra.exponential_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "solve_for_parameter",
+        "logarithmic_evaluation"
+      ],
+      "method_path": [
+        "substitute t=10, P=3P0, N=4P0 into kt = ln(P(N-P0)/(P0(N-P)))",
+        "evaluate to k = (1/10)ln 9 = (1/5)ln 3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "35",
+          "basis": "M1: substitutes t=10, P=3P0, N=4P0; A1: k = (1/10)ln 9 = (1/5)ln 3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

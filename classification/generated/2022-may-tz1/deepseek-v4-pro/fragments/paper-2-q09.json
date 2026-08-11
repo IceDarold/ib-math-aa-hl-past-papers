@@ -1,0 +1,88 @@
+{
+  "question": "9",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Find the number of ways 5 people can be seated next to each other in a row of 10 empty seats.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "block_method",
+        "permutation",
+        "multiplication_principle"
+      ],
+      "method_path": [
+        "Treat the 5 people as a contiguous block",
+        "Count block positions: 10 minus 5 plus 1 equals 6",
+        "Count internal arrangements: 5! equals 120",
+        "Multiply: 6 times 5! equals 720"
+      ],
+      "accepted_alternatives": [
+        "6! (720 expressed as 6 factorial)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "6 times 5! (A1)(A1) equals 720 (accept 6!) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Find the number of ways 4 girls and Peter can be seated in 10 seats such that no girl sits adjacent to Peter; girls need not sit together.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "case_analysis",
+        "permutation",
+        "multiplication_principle",
+        "addition_principle"
+      ],
+      "method_path": [
+        "Identify two cases: Peter at an end vs Peter not at an end",
+        "Case 1 (Peter at either end): 2 times 8P4 equals 3360",
+        "Case 2 (Peter not at end): 8 times 7P4 equals 6720",
+        "Sum: 3360 plus 6720 equals 10080"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 complement: 10P5 minus arrangements where Peter adjacent to at least one girl. Case 1: Peter at end next to girl gives 2 times 4 times 8P3 equals 2688. Case 2: Peter not at end gives 8 times 2 times 4 times 7P3 plus 8 times 4 times 3 times 7P2 equals 17472. Total: 10P5 minus (2688 plus 17472) equals 10080.",
+        "Combination-based: case 1 as 8C4 times 2 times 4! equals 3360; case 2 as 7C4 times 8 times 4! equals 6720"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: case 1 Peter at either end 8P4x2=3360 OR 8C4x2x4!=3360 (A1); case 2 Peter not at end 7P4x8=6720 (A1); Total=3360+6720=10080 A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 2: case 1 Peter at end 8P3x2x4=2688 (A1); case 2 Peter not at end (7P3x8x2x4)+(7P2x4x3)=17472 (A1); Total=10P5-(2688+17472)=10080 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

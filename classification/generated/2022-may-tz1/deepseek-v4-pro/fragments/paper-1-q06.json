@@ -1,0 +1,50 @@
+{
+  "question": "6",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Find the general term of (x^3 - 1/(8x))^n, set the exponent of x to zero for a constant term, obtain the condition r = 3n/4, and enforce r integer with 0 <= r <= n to conclude n must be a positive multiple of 4.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_general_term",
+        "exponent_analysis",
+        "integer_condition"
+      ],
+      "method_path": [
+        "Write the general term: T_{r+1} = C(n,r) * (x^3)^{n-r} * (-1/(8x))^r",
+        "Simplify the exponent of x: 3(n-r) - r = 3n - 4r",
+        "Set the exponent to zero for a constant term: 3n - 4r = 0",
+        "Solve for r: r = 3n/4",
+        "Require r to be an integer with 0 <= r <= n, so n must be a multiple of 4",
+        "State answer: n = 4k, k in positive integers (i.e. n = 4, 8, 12, ...)"
+      ],
+      "accepted_alternatives": [
+        "Recognise that the power of x starts at 3n and decreases by 4 each term; set 3n - 4r = 0 to obtain r = 3n/4; continue as above.",
+        "Trial-and-error approach: test n = 1, 2, 3, ... and identify n = 4, 8, 12, ... as giving a constant term, recognising the pattern continues.",
+        "Use the alternative general-term form T_{r+1} = C(n,r) * (-1/(8x))^{n-r} * (x^3)^r, giving exponent 4r - n = 0 so n = 4r."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Markscheme shows 5 marks: (M1) attempt general term or recognise power pattern; (M1) recognise constant term when power of x is zero; A1 for r = 3n/4 or n = 4r/3 or 3n - 4r = 0; (A1) for r multiple of 3 or one correct n; A1 for n = 4k, k positive integer. Notes accept trial-and-error showing n = 4, 8, 12, ... with pattern recognition."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

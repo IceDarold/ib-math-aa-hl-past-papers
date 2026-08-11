@@ -1,0 +1,183 @@
+{
+  "question": "10",
+  "expected_question_marks": 15,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find the standard deviation σ given that 2% of flight times exceed 82 minutes, where T ~ N(75, σ²).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "inverse_normal",
+        "z_score",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Use inverse normal to find z-score for upper tail area 0.02",
+        "Set up z = (82 − 75)/σ with z ≈ 2.0537",
+        "Solve for σ ≈ 3.41"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "use of inverse normal to find z-score (M1); 2.0537... z = ; (82−75)/σ = 2.0537... (A1); σ = 3.408401... σ = 3.41 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find P(T > 80) for T ~ N(75, σ²) using the σ from part (a).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_probability",
+        "upper_tail"
+      ],
+      "method_path": [
+        "Identify the correct upper tail area under the normal curve",
+        "Compute P(T > 80) ≈ 0.0712"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "evidence of identifying the correct area under the normal curve (M1); P(T > 80) = 0.071193... = 0.0712 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find P(T < 82 | T > 80), the conditional probability that a flight taking longer than 80 minutes takes less than 82 minutes.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "normal_probability",
+        "interval_probability"
+      ],
+      "method_path": [
+        "Recognise that P(80 < T < 82) is required",
+        "Compute P(80 < T < 82) ≈ 0.051193",
+        "Divide by P(T > 80) ≈ 0.071193",
+        "Obtain conditional probability ≈ 0.719"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "recognition that P(80 < T < 82) is required (M1); P(80 < T < 82) / P(T > 80) = 0.051193... / 0.071193... (M1)(A1); = 0.719075... = 0.719 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Find the expected number of flights out of 64 that will have a flight time of more than 80 minutes.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "expected_value"
+      ],
+      "method_path": [
+        "Recognise binomial model X ~ B(64, p) with p = P(T > 80)",
+        "Compute E(X) = np = 64 × 0.071193...",
+        "Obtain E(X) ≈ 4.56 flights"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "recognition of binomial probability (M1); X ~ B(64, 0.071193...) or E(X) = 64 × 0.071193... (A1); E(X) = 4.556353... = 4.56 flights A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-E",
+      "question": "10",
+      "part": "e",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Find the probability that more than 6 of the 64 flights have a flight time exceeding 80 minutes.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_probability",
+        "complement_rule",
+        "cumulative_distribution"
+      ],
+      "method_path": [
+        "Express P(X > 6) = 1 − P(X ≤ 6) for X ~ B(64, 0.071193...)",
+        "Compute P(X ≤ 6) ≈ 0.83088 using binomial cumulative distribution",
+        "Obtain P(X > 6) ≈ 0.169"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "P(X > 6) = P(X ≥ 7) = 1 − P(X ≤ 6) (M1); 1 − 0.83088... (A1); = 0.1691196... = 0.169 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

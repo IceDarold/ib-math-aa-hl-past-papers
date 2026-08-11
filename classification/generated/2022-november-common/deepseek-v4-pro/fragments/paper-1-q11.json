@@ -1,0 +1,244 @@
+{
+  "question": "11",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-A-I",
+      "question": "11",
+      "part": "A-I",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "22",
+      "task_summary": "Find the total number of possible three-digit codes abc using digits {1,2,3,4,5} with repetition allowed.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "counting_principle",
+        "exponentiation"
+      ],
+      "method_path": [
+        "5 choices for each of 3 positions with repetition allowed",
+        "5^3 = 125"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "5^3 (A1), 125 = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-A-II",
+      "question": "11",
+      "part": "A-II",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "22",
+      "task_summary": "Find the total number of possible three-digit codes abc using digits {1,2,3,4,5} with no repetition.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "permutation",
+        "factorial"
+      ],
+      "method_path": [
+        "5P3 = 5 x 4 x 3",
+        "= 60"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "5P3 = 5x4x3 (A1), 60 = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-B-I",
+      "question": "11",
+      "part": "B-I",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "22-24",
+      "task_summary": "Given P(x)=x^3+ax^2+bx+c has factor (x^2+3x+2) with a,b,c distinct from {1,2,3,4,5}, find b in terms of a.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "factor_theorem",
+        "polynomial_factorization",
+        "system_of_equations",
+        "elimination"
+      ],
+      "method_path": [
+        "factor x^2+3x+2 = (x+1)(x+2)",
+        "apply factor theorem: P(-1)=0 and P(-2)=0",
+        "obtain -1+a-b+c=0 and -8+4a-2b+c=0",
+        "eliminate c by subtracting equations",
+        "obtain b = 3a - 7"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Let P(x)=(x^2+3x+2)(x+d), expand to x^3+(d+3)x^2+(3d+2)x+2d, compare coefficients: a=d+3 and b=3d+2, eliminate d to get b=3a-7",
+        "METHOD 3: Divide x^3+ax^2+bx+c by x^2+3x+2, set remainder 3a-b-7=0",
+        "METHOD 4: Factor x^2+3x+2=(x+1)(x+2), use Vieta with roots -1,-2,p to get b=3a-7"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22-23",
+          "basis": "METHOD 1: (x^2+3x+2)=(x+1)(x+2) A1, factor theorem M1, attempt two equations M1, equations A1, eliminate c M1, b=3a-7 A1"
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 2: P(x)=(x^2+3x+2)(x+d) M1, expansion A1, compare coefficients M1, a=d+3 and b=3d+2 A1, eliminate d M1, b=3a-7 A1"
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 3: division M1, quotient x+a-3 A1, remainder (3a-b-7)x A1, set to zero M1, b=3a-7 A1"
+        },
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 4: Vieta A1, roots -1,-2,p M1, sum a-3=p A1, product pairs b=... A1, eliminate p M1, b=3a-7 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-B-II",
+      "question": "11",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "24",
+      "task_summary": "Show that the only assignment satisfying all conditions is a=4, b=5, c=2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "exhaustive_check",
+        "constraint_satisfaction"
+      ],
+      "method_path": [
+        "use b=3a-7 and c from P(-1)=0 or c=2a-6",
+        "test a=1,2,5: b outside {1,...,5} or repeats a",
+        "a=3 gives b=2, c=0 (0 not allowed)",
+        "only a=4, b=5, c=2 works"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: use c=2a-6, argue a=4 is the only possibility from the digit set {1,2,3,4,5}"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 1: a=1,2,5 lead to invalid values for b R1; a=3 gives b=2, c=0 so not possible R1; so a=4,b=5,c=2 AG"
+        },
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 2: c=2a-6 R1; correctly argues a=4 is the only possibility R1; so a=4,b=5,c=2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-B-III",
+      "question": "11",
+      "part": "B-III",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "24",
+      "task_summary": "Express P(x)=x^3+4x^2+5x+2 as a product of linear factors.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "polynomial_factorization",
+        "linear_factors"
+      ],
+      "method_path": [
+        "P(x)=x^3+4x^2+5x+2 = (x^2+3x+2)(x+1)",
+        "= (x+2)(x+1)(x+1) = (x+2)(x+1)^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "=(x+2)(x+1)(x+1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q11-B-IV",
+      "question": "11",
+      "part": "B-IV",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "25",
+      "task_summary": "Sketch y=P(x)=x^3+4x^2+5x+2 showing intercepts with axes.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "curve_sketching",
+        "intercepts",
+        "turning_points"
+      ],
+      "method_path": [
+        "positive cubic shape with y-intercept at (0,2)",
+        "x-intercept at (-2,0)",
+        "local minimum point at (-1,0)",
+        "local maximum point between x=-2 and x=-1"
+      ],
+      "accepted_alternatives": [
+        "calculus approach using f'(x) to find turning points"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "positive cubic shape with y-intercept at (0,2) A1; x-intercept at (-2,0) and local maximum point anywhere between x=-2 and x=-1 A1; local minimum point at (-1,0) A1. Note: Accept answers from an approach based on calculus."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

@@ -8,10 +8,12 @@ interface FilterPanelProps {
   filters: Filters
   topicCounts: Array<[string, number]>
   methodCounts: Array<[string, number]>
+  sessionCounts: Array<[string, number]>
+  zoneCounts: Array<[string, number]>
   compact: boolean
   width: number
   onResize: (width: number) => void
-  onSetSegment: (key: 'paper' | 'calculator' | 'session' | 'status', value: string) => void
+  onSetSegment: (key: 'paper' | 'calculator' | 'session' | 'zone' | 'status', value: string) => void
   onToggleSet: (key: FilterSetKey, value: string) => void
   onReset: () => void
   onClose: () => void
@@ -24,6 +26,8 @@ export function FilterPanel({
   filters,
   topicCounts,
   methodCounts,
+  sessionCounts,
+  zoneCounts,
   compact,
   width,
   onResize,
@@ -58,11 +62,18 @@ export function FilterPanel({
         onChange={(value) => onSetSegment('paper', value)}
       />
 
-      <SegmentField
+      <SelectField
         legend="Сессия"
         value={filters.session}
-        options={[["all", "Все"], ["May 2024", "May 24"], ["November 2024", "Nov 24"]]}
+        options={sessionCounts}
         onChange={(value) => onSetSegment('session', value)}
+      />
+
+      <SelectField
+        legend="Зона"
+        value={filters.zone}
+        options={zoneCounts}
+        onChange={(value) => onSetSegment('zone', value)}
       />
 
       <SegmentField
@@ -104,6 +115,32 @@ export function FilterPanel({
 
       {!compact && <SidebarResizeHandle width={width} onResize={onResize} />}
     </aside>
+  )
+}
+
+function SelectField({
+  legend,
+  value,
+  options,
+  onChange,
+}: {
+  legend: string
+  value: string
+  options: Array<[string, number]>
+  onChange: (value: string) => void
+}) {
+  return (
+    <label className="grid gap-1.5 text-xs font-semibold">
+      {legend}
+      <select
+        className="h-8 w-full cursor-pointer border border-line-strong bg-canvas px-2 text-xs font-normal text-ink outline-none hover:bg-surface focus:border-primary focus:ring-1 focus:ring-primary"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+      >
+        <option value="all">Все</option>
+        {options.map(([option, count]) => <option key={option} value={option}>{option} · {count}</option>)}
+      </select>
+    </label>
   )
 }
 

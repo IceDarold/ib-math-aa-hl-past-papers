@@ -1,0 +1,428 @@
+{
+  "question": "2",
+  "expected_question_marks": 27,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Show that A = 18√5 π by evaluating the surface area integral A = 2π ∫₀ʰ y √(1 + (dy/dx)²) dx for the line y = 2x with h = 3.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "factor_out_constants",
+        "definite_integral",
+        "evaluate_definite_integral",
+        "simplify_radical"
+      ],
+      "method_path": [
+        "substitute m = 2, h = 3 into A = 2π ∫₀ʰ mx √(1 + m²) dx",
+        "simplify to 4π√5 ∫₀³ x dx",
+        "integrate: 4π√5 [x²/2]₀³",
+        "evaluate to 18π√5"
+      ],
+      "accepted_alternatives": [
+        "Use the general formula A = π m √(1 + m²) h² and substitute m = 2, h = 3 to obtain 18π√5."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "EITHER: A = 2π ∫₀³ 2x √(1 + 2²) dx = 4π√5 ∫₀³ x dx, then [2π√5 x²]₀³ = 18√5 π. OR: A = π m √(1+m²) h² → π·2·√5·9 = 18√5 π. Final answer 18√5 π marked AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-B-I",
+      "question": "2",
+      "part": "b(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Deduce an expression for the radius r of the cone in terms of h and m.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "linear_function_evaluation"
+      ],
+      "method_path": [
+        "r = y(h) = m × h",
+        "r = mh"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "r = mh (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-B-II",
+      "question": "2",
+      "part": "b(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Deduce an expression for the slant height l of the cone in terms of h and m.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "pythagorean_theorem",
+        "substitution",
+        "factorisation"
+      ],
+      "method_path": [
+        "apply Pythagoras: l = √(h² + r²)",
+        "substitute r = mh",
+        "factor: l = √(h² + m²h²) = h√(1 + m²)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "l = √(h² + r²) (M1), then l = √(h² + h²m²) = h√(1 + m²) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-B-III",
+      "question": "2",
+      "part": "b(iii)",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "Using the integral A = 2π ∫₀ʰ y √(1 + (dy/dx)²) dx, show that A = π r l.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "factor_out_constants",
+        "definite_integral",
+        "evaluate_definite_integral",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "substitute y = mx and dy/dx = m into A = 2π ∫₀ʰ y √(1 + (dy/dx)²) dx",
+        "obtain A = 2πm√(1+m²) ∫₀ʰ x dx",
+        "integrate: A = 2πm√(1+m²) [x²/2]₀ʰ = π m√(1+m²) h²",
+        "rewrite as π (mh)(h√(1+m²))",
+        "recognize as π r l"
+      ],
+      "accepted_alternatives": [
+        "Use l = h√(1+m²) from (b)(ii) to substitute directly."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "A = 2π ∫₀ʰ mx √(1+m²) dx (A1); = π m √(1+m²) h² (M1 for integration); = π mh × h√(1+m²) = π r l (A1) AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "15",
+      "task_summary": "Find dy/dx for y = √(r² − x²).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "power_rule",
+        "simplify_rational_expression"
+      ],
+      "method_path": [
+        "apply chain rule: dy/dx = ½(r² − x²)^(−½) × (−2x)",
+        "simplify to −x / √(r² − x²)"
+      ],
+      "accepted_alternatives": [
+        "Use implicit differentiation on y² = r² − x² to obtain 2y(dy/dx) = −2x, giving dy/dx = −x/y = −x/√(r² − x²)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: chain rule (M1); dy/dx = ½(r²−x²)^(−½)(−2x) = −x/√(r²−x²) (A1). METHOD 2: implicit differentiation (M1); dy/dx = −x/y (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-D",
+      "question": "2",
+      "part": "d",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "16",
+      "task_summary": "Show by integration that the surface area of a sphere formed by rotating y = √(r² − x²) about the x-axis is 4πr².",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification",
+        "simplify_radical",
+        "definite_integral",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "substitute y = √(r² − x²) and dy/dx = −x/√(r² − x²) into A = 2π ∫₋ᵣʳ y √(1 + (dy/dx)²) dx",
+        "simplify radical: √(1 + x²/(r² − x²)) = √((r² − x² + x²)/(r² − x²)) = r/√(r² − x²)",
+        "obtain A = 2π ∫₋ᵣʳ r dx",
+        "evaluate: 2πr [x]₋ᵣʳ = 2πr(r − (−r)) = 4πr²"
+      ],
+      "accepted_alternatives": [
+        "Use implicit form: 2π ∫₋ᵣʳ √(y² + x²) dx = 2π ∫₋ᵣʳ r dx = 4πr².",
+        "Use symmetry: A = 4π ∫₀ʳ r dx = 4πr²."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "EITHER: substitute y and dy/dx into A (M1); simplify to 2π ∫₋ᵣʳ r dx (A1, M1); evaluate to 4πr² (A1) AG. OR: 2π ∫₋ᵣʳ √(y²+x²) dx = 2π ∫₋ᵣʳ r dx (M1, A1); = 4πr² (M1, A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-I",
+      "question": "2",
+      "part": "e(i)",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "17",
+      "task_summary": "Describe the geometric transformation from y = f(x) to y = f(kx), k > 0, where f(x) = √(r² − x²).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "geometric_transformation",
+        "horizontal_stretch"
+      ],
+      "method_path": [
+        "identify transformation as horizontal stretch (or dilation from the y-axis)",
+        "state the factor as 1/k"
+      ],
+      "accepted_alternatives": [
+        "Horizontal compression by factor k, invariant line the y-axis. Dilation by factor 1/k from the y-axis."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "EITHER: horizontal stretch, factor 1/k (A1, A1). OR: horizontal compression, factor k, invariant line y-axis (A1, A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-II",
+      "question": "2",
+      "part": "e(ii)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "17",
+      "task_summary": "Write down the x-intercepts of y = f(kx) in terms of r and k.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_equation",
+        "substitution"
+      ],
+      "method_path": [
+        "set f(kx) = 0",
+        "solve kx = ±r",
+        "obtain x = ±r/k"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "±r/k (A1). Note: Award A0 for r/k only and A0 for −r/k only."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-III",
+      "question": "2",
+      "part": "e(iii)",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "18",
+      "task_summary": "Find dy/dx for y = f(kx) = √(r² − k²x²) in terms of x, r and k.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "power_rule",
+        "simplify_rational_expression"
+      ],
+      "method_path": [
+        "apply chain rule: dy/dx = ½(r² − k²x²)^(−½) × (−2k²x)",
+        "simplify to −k²x / √(r² − k²x²)"
+      ],
+      "accepted_alternatives": [
+        "Use implicit differentiation on y² = r² − k²x² to obtain 2y(dy/dx) = −2k²x, giving dy/dx = −k²x/y = −k²x/√(r² − k²x²)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1: chain rule (M1); dy/dx = −k²x/√(r²−k²x²) (A1). METHOD 2: implicit differentiation (M1); dy/dx = −k²x/y (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-IV",
+      "question": "2",
+      "part": "e(iv)",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "19",
+      "task_summary": "Find the surface area A of the ellipsoid formed by rotating y = f(kx) about the x-axis, giving the answer as 2π ∫ √(p(x)) dx where p(x) is a polynomial.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification",
+        "simplify_radical",
+        "definite_integral_setup",
+        "common_denominator"
+      ],
+      "method_path": [
+        "substitute y = √(r² − k²x²) and dy/dx = −k²x/√(r² − k²x²) into A = 2π ∫ y √(1 + (dy/dx)²) dx",
+        "simplify radical: √(1 + k⁴x²/(r² − k²x²)) = √((r² − k²x² + k⁴x²)/(r² − k²x²))",
+        "multiply by y: √(r² − k²x²) × above = √(r² + (k⁴ − k²)x²)",
+        "write A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx with polynomial p(x) = r² + (k⁴ − k²)x²"
+      ],
+      "accepted_alternatives": [
+        "Use implicit form: A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(y² + k⁴x²) dx = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "EITHER: correct substitution (A1); simplify to find p(x) (M1); A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx (A1 for limits, A1 for p(x) correct). OR: A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(y² + k⁴x²) dx = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P3-Q02-E-V",
+      "question": "2",
+      "part": "e(v)",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "20",
+      "task_summary": "Model Earth as an ellipsoid with polar distance 12 714 km and equatorial diameter 12 756 km; choose suitable r and k, then compute the surface area correct to 4 significant figures in the form a × 10^q.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.mathematical_models"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "parameter_identification",
+        "definite_integral_setup",
+        "numerical_integration",
+        "scientific_notation"
+      ],
+      "method_path": [
+        "identify r = 6378 km (half of equatorial diameter 12 756 km)",
+        "determine k = r / (polar half-distance) = 6378 / 6357 ≈ 1.00330",
+        "substitute r and k into A = 2π ∫₋ᵣ₍ₖ₎^{r/k} √(r² + (k⁴ − k²)x²) dx with limits ±6357",
+        "evaluate definite integral numerically to obtain approximately 510 064 226 km²",
+        "express as 5.101 × 10⁸ km² to 4 significant figures"
+      ],
+      "accepted_alternatives": [
+        "Using r = 6357 km and k ≈ 0.996707 leads to 5.089 × 10⁸ km² (markscheme notes this scores A0A1FT(M1)A0)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "r = 6378 km (A1); k = 6378/6357 = 1.00330… (A1); attempt to form definite integral (M1); A = 5.101 × 10⁸ km² (A1). Note: using r = 6357 and k = 0.996707… leads to 5.089 × 10⁸ km² with A0A1FT(M1)A0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

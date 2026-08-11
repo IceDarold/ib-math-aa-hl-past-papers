@@ -1,0 +1,506 @@
+{
+  "question": "2",
+  "expected_question_marks": 30,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-A",
+      "question": "2",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Express the product of x1 and x2 as a function f of x1 only, given x1 + x2 = 12.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "function_definition"
+      ],
+      "method_path": [
+        "Substitute x2 = 12 - x1 using the sum constraint",
+        "Write f(x1) = x1(12 - x1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "x2 = 12 - x1 (M1); f(x1) = x1(12 - x1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-B-I",
+      "question": "2",
+      "part": "b(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Find the value of x1 for which the function f(x1) = x1(12 - x1) is maximum.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "find_maximum_of_quadratic"
+      ],
+      "method_path": [
+        "Determine x1 = 6 by symmetry, vertex formula, derivative, or GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "x1 = 6 A1; Note: Award the A1 if 6 seen in part (ii)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "method_uncertain"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-B-II",
+      "question": "2",
+      "part": "b(ii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Hence show that the maximum product of x1 and x2 is 36.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "function_evaluation"
+      ],
+      "method_path": [
+        "Evaluate f(6) = 6 * 6 = 36"
+      ],
+      "accepted_alternatives": [
+        "Graph with maximum at (6, 36)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "f(6) OR 6^2 OR graph with maximum at (6, 36) M1; = 36 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-C",
+      "question": "2",
+      "part": "c",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Verify that M2(S) = (S/2)^2 is true for S = 12.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_evaluation",
+        "verification"
+      ],
+      "method_path": [
+        "Compute M2(12) = (12/2)^2 = 36",
+        "Link to the maximum product 36 from part (b)(ii)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M2(12) = (12/2)^2 = 36 which is the maximum product (from (b)(ii)) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-D-I",
+      "question": "2",
+      "part": "d(i)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Show that the geometric mean and arithmetic mean are equal when x1 = x2 = ... = xn.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "substitution",
+        "algebraic_equality"
+      ],
+      "method_path": [
+        "Let all xi = x",
+        "GM = (x^n)^(1/n) = x",
+        "AM = nx/n = x",
+        "Conclude GM = AM"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "let all xi be labelled as x (M1); (x^n)^(1/n) = x and nx/n = x A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-D-II",
+      "question": "2",
+      "part": "d(ii)",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Use the AM-GM inequality result to prove that M_n(S) = (S/n)^n.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "apply_am_gm_inequality",
+        "raise_to_power",
+        "equality_condition",
+        "direct_proof"
+      ],
+      "method_path": [
+        "State sum constraint: sum of xi = S",
+        "Apply AM-GM: (product of xi)^(1/n) <= S/n",
+        "Raise both sides to nth power: product of xi <= (S/n)^n",
+        "Note equality holds when all xi = S/n",
+        "Conclude M_n(S) = (S/n)^n"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "x1 + x2 + ... + xn = S (A1); (x1 * ... * xn)^(1/n) <= S/n M1; product <= (S/n)^n M1; equality when all xi = S/n R1; M_n(S) = (S/n)^n AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-E-I",
+      "question": "2",
+      "part": "e(i)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Determine M3(12).",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_evaluation"
+      ],
+      "method_path": [
+        "Compute M3(12) = (12/3)^3 = 4^3 = 64"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M3(12) = 4^3 = 64 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-E-II",
+      "question": "2",
+      "part": "e(ii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Determine M4(12).",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_evaluation"
+      ],
+      "method_path": [
+        "Compute M4(12) = (12/4)^4 = 3^4 = 81"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M4(12) = 3^4 = 81 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-E-III",
+      "question": "2",
+      "part": "e(iii)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Determine M5(12).",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_evaluation"
+      ],
+      "method_path": [
+        "Compute M5(12) = (12/5)^5 = 2.4^5 = 79.6 (79.6262...)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M5(12) = 2.4^5 = 79.6 (79.6262...) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-F",
+      "question": "2",
+      "part": "f",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Write down the value of P(12) and the value of n at which it occurs, where P(S) is the maximum of M_n(S) across all positive integer n.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "discrete_optimization",
+        "comparison"
+      ],
+      "method_path": [
+        "Compare M_n(12) for integer n = 1, 2, 3, 4, 5, ...",
+        "Identify maximum P(12) = 81 at n = 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "considering M_n(12) for higher values of n; P(12) = 81 A1; n = 4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-G",
+      "question": "2",
+      "part": "g",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Determine the value of P(20) and the value of n at which it occurs.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "discrete_optimization",
+        "numerical_evaluation"
+      ],
+      "method_path": [
+        "Explore (20/n)^n for integer n around 20/e using table or graph",
+        "Identify maximum at n = 7",
+        "Compute P(20) = (20/7)^7 = 1550 (1554.260...)"
+      ],
+      "accepted_alternatives": [
+        "n = 7.36 with P(20) = 1570 (awarded M1A0A1: partial credit for continuous rather than discrete optimization)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "Consideration of graph or table of (20/n)^n including values either side of 7 (M1); Maximum occurs when n = 7 A1; P(20) = (20/7)^7 = 1550 (1554.260...) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-H",
+      "question": "2",
+      "part": "h",
+      "marks": 6,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "Find, in terms of S, the x-coordinate of the maximum point A on the graph of g(x) = ln((S/x)^x).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "calculus.stationary_points"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "logarithmic_transformation",
+        "implicit_differentiation",
+        "product_rule",
+        "set_derivative_to_zero",
+        "solve_for_variable"
+      ],
+      "method_path": [
+        "Write ln(g(x)) = x ln(S/x) = x(ln S - ln x)",
+        "Differentiate implicitly: g'(x)/g(x) = ln S - ln x - 1",
+        "Set g'(x) = 0 (since g(x) != 0): ln(S/x) - 1 = 0",
+        "Solve: ln(S/x) = 1, S/x = e, x = S/e"
+      ],
+      "accepted_alternatives": [
+        "Implicit differentiation of original form g(x) = (S/x)^x directly using product rule and chain rule",
+        "Explicit form g(x) = e^{x ln(S/x)} then differentiate using product rule and chain rule"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "ln(g(x)) = x(ln S - ln x) M1; attempt implicit differentiation and product rule M1M1; g'(x)/g(x) = ln S - ln x - 1 A1; g'(x) = 0 => ln(S/x) - 1 = 0 M1; x = S/e A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-I",
+      "question": "2",
+      "part": "i",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "15",
+      "task_summary": "Verify that g(x) = M_x(S) when x is a positive integer.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "logarithmic_rewriting",
+        "exponentiation",
+        "algebraic_verification"
+      ],
+      "method_path": [
+        "Rewrite g(x) = ln((S/x)^x)",
+        "Exponentiate: e^{g(x)} = (S/x)^x",
+        "Recognize (S/x)^x = M_x(S) for positive integer x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "g(x) = ln((S/x)^x) => ln(g(x)) = x ln(S/x) M1; g(x) = (S/x)^x A1; = M_x(S) for x in Z+ AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P3-Q02-J",
+      "question": "2",
+      "part": "j",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "15",
+      "task_summary": "Use the answer to part (h) to find the largest possible product of positive numbers whose sum is 100. Give the answer as a * 10^k with 1 <= a < 10.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "discrete_optimization",
+        "numerical_comparison",
+        "scientific_notation"
+      ],
+      "method_path": [
+        "Compute optimal continuous n = S/e = 100/e = 36.8",
+        "Compare integer n = 36: (100/36)^36 = 9.3996... * 10^15",
+        "Compare integer n = 37: (100/37)^37 = 9.47406... * 10^15",
+        "Identify largest product = 9.47 * 10^15 at n = 37"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "100/e = 36.8 M1; (100/36)^36 = 9.3996... * 10^15 AND (100/37)^37 = 9.47406... * 10^15 R1; largest product is 9.47 * 10^15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

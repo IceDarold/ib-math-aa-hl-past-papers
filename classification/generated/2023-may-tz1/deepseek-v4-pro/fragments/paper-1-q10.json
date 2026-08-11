@@ -1,0 +1,197 @@
+{
+  "question": "10",
+  "expected_question_marks": 14,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find S5 and u6 for arithmetic sequence with Sn = n^2 + 4n.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "substitute_n",
+        "evaluate_Sn",
+        "relate_term_to_sum",
+        "find_term"
+      ],
+      "method_path": [
+        "(i) Substitute n=5 into Sn=n^2+4n",
+        "(i) Compute S5=25+20=45",
+        "(ii) Use S5+u6=S6 with S6=60",
+        "(ii) Compute u6=60-45=15"
+      ],
+      "accepted_alternatives": [
+        "(ii) METHOD 2: S6=(6/2)(u1+u6)=60, solve u6=15",
+        "(ii) METHOD 3: find u1 and d, then u6=u1+5d=15"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(a)(i) n=5 (M1), S5=45 (A1). (a)(ii) S5+u6=S6 (M1), u6=15 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find u1, the first term of the arithmetic sequence.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "recognize_u1_equals_S1",
+        "evaluate_Sn"
+      ],
+      "method_path": [
+        "Recognize u1 = S1",
+        "Evaluate S1 = 1^2 + 4(1) = 5"
+      ],
+      "accepted_alternatives": [
+        "Substitute u6=15 into S6=(6/2)(u1+15)=60, solve u1=5",
+        "Set up equations for S5 and S6 in terms of u1 and d, solve u1=5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(b) recognition that u1=S1 (M1), u1=5 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Write an expression for un in terms of n.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "find_common_difference",
+        "apply_arithmetic_term_formula",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Find d, e.g. d=S2-S1-u1=2",
+        "Apply un = u1 + (n-1)d",
+        "Simplify to un = 5 + 2(n-1) = 2n + 3"
+      ],
+      "accepted_alternatives": [
+        "un = Sn - S(n-1) = n^2+4n - [(n-1)^2+4(n-1)] = 2n+3",
+        "Equate (n/2)(5+un) = n^2+4n, giving 2n+8=5+un, so un=2n+3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(c) EITHER find d (M1), d=2 (A1); OR Sn-S(n-1) (M1), expression (A1); OR equating (n/2)(5+un)=n^2+4n (M1), 2n+8=5+un (A1); THEN un=5+2(n-1) OR un=2n+3 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Find possible values of common ratio r for geometric sequence vn where v2=u1 and v4=u6.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "relate_geometric_terms",
+        "solve_for_ratio"
+      ],
+      "method_path": [
+        "Use v4 = v2 * r^2",
+        "Substitute v2=u1=5 and v4=u6=15",
+        "Solve r^2 = 15/5 = 3",
+        "Write r = +/- sqrt(3)"
+      ],
+      "accepted_alternatives": [
+        "Use (v3)^2 = v2 * v4, obtain v3 = +/- sqrt(15), then r = v3/v2 = +/- sqrt(3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(d) recognition that v4=v2*r^2 OR (v3)^2=v2*v4 (M1), r^2=3 OR v3=+/-sqrt(5*3) (A1), r=+/-sqrt(3) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Given v99 < 0, find v5.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "determine_sign_of_ratio",
+        "compute_geometric_term"
+      ],
+      "method_path": [
+        "Since v2=5>0 and v99<0, r must be negative",
+        "Select r = -sqrt(3)",
+        "Compute v5 = v4 * r = 15 * (-sqrt(3)) = -15*sqrt(3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(e) recognition that r is negative (M1), v5 = -15*sqrt(3) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

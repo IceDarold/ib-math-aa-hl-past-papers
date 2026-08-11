@@ -1,0 +1,60 @@
+{
+  "question": "8",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Use l'Hopital's rule to evaluate lim(x->0) arctan(2x)/tan(3x).",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "differentiate_numerator",
+        "differentiate_denominator",
+        "substitute_limit",
+        "simplify_fraction"
+      ],
+      "method_path": [
+        "Recognise indeterminate form 0/0",
+        "Differentiate numerator: d/dx arctan(2x) = 2/(1+4x^2)",
+        "Differentiate denominator: d/dx tan(3x) = 3 sec^2(3x)",
+        "Form quotient of derivatives: [2/(1+4x^2)] / [3 sec^2(3x)]",
+        "Substitute x = 0 to obtain 2/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to differentiate numerator and denominator - M1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "2/(1+4x^2) / 3 sec^2(3x) - A1A1 (A1 for numerator, A1 for denominator). Note: Do not condone absence of limits."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to substitute x = 0 - (M1)"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "2/3 - A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

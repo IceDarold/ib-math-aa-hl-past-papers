@@ -1,0 +1,47 @@
+{
+  "question": "1",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Integrate dy/dx = cos(x - pi/4) to obtain y = sin(x - pi/4) + c, then substitute the initial condition (x = 3pi/4, y = 2) to find c = 1, giving y = sin(x - pi/4) + 1.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "geometry.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate_trigonometric",
+        "apply_initial_condition",
+        "simplify_constant"
+      ],
+      "method_path": [
+        "Integrate cos(x - pi/4) to obtain sin(x - pi/4) + c",
+        "Substitute x = 3pi/4, y = 2 into y = sin(x - pi/4) + c",
+        "Solve for c: 2 = sin(pi/2) + c gives c = 1",
+        "Write final answer y = sin(x - pi/4) + 1"
+      ],
+      "accepted_alternatives": [
+        "Use definite integration from the given point: integrate from x = 3pi/4 to x and from y = 2 to y, yielding y - 2 = sin(x - pi/4) - sin(pi/2), so y = sin(x - pi/4) + 1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: recognition that integration needed (M1), y = sin(x - pi/4) + c (A1), substitute both x and y values into their integrated expression including c (M1), y = sin(x - pi/4) + 1 A1. METHOD 2: definite integration setup (M1)(A1), y - 2 = sin(x - pi/4) - sin(pi/2) A1, y = sin(x - pi/4) + 1 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

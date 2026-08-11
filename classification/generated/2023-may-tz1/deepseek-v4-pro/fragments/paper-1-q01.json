@@ -1,0 +1,126 @@
+{
+  "question": "1",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q01-A",
+      "question": "1",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the zero of f(x) = (7x+7)/(2x-4).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_numerator_to_zero",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Set f(x)=0",
+        "Solve 7x+7=0",
+        "Obtain x=-1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "recognizing f(x)=0 (M1); x=-1 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q01-B",
+      "question": "1",
+      "part": "(b)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write down the equations of the vertical and horizontal asymptotes of y = f(x).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_asymptote",
+        "horizontal_asymptote",
+        "rational_function_asymptotes"
+      ],
+      "method_path": [
+        "Identify vertical asymptote x=2 from denominator 2x-4=0",
+        "Identify horizontal asymptote y=7/2 from ratio of leading coefficients"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "(b)(i) x=2 (must be an equation with x) A1; (b)(ii) y=7/2 (must be an equation with y) A1; [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q01-C",
+      "question": "1",
+      "part": "(c)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the inverse function f⁻¹(x) of f(x) = (7x+7)/(2x-4).",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "interchange_variables",
+        "cross_multiply",
+        "collect_like_terms",
+        "factor",
+        "solve_for_inverse",
+        "state_domain_restriction"
+      ],
+      "method_path": [
+        "Interchange x and y: x = (7y+7)/(2y-4)",
+        "Cross-multiply: x(2y-4) = 7y+7",
+        "Expand: 2xy-4x = 7y+7",
+        "Collect y terms: 2xy-7y = 4x+7",
+        "Factor y: y(2x-7) = 4x+7",
+        "Solve: y = (4x+7)/(2x-7)",
+        "State domain restriction x≠7/2"
+      ],
+      "accepted_alternatives": [
+        "Make x the subject of y = (7x+7)/(2x-4) first: 2yx-4y = 7x+7 → 2yx-7x = 4y+7 → x(2y-7) = 4y+7 → x = (4y+7)/(2y-7), then interchange x and y to obtain f⁻¹(x) = (4x+7)/(2x-7)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "EITHER interchanging x and y (M1); correct working with y terms on the same side: 2xy-4x = 7y+7 (A1); OR 2yx-4y = 7x+7 (A1); interchanging x and y OR making x the subject (M1); THEN f⁻¹(x) = (4x+7)/(2x-7), x≠7/2 (A1) [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "question": "6",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "14",
+      "task_summary": "Show that E(X) = (n+1)/(n+2) for the continuous pdf f(x) = (n+1)x^n on [0,1].",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "expected_value",
+        "definite_integral",
+        "power_rule_for_integration",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Set up E(X) = integral from 0 to 1 of x f(x) dx = (n+1) integral of x^(n+1) dx",
+        "Integrate: (n+1)[x^(n+2)/(n+2)] from 0 to 1",
+        "Evaluate limits and simplify to (n+1)/(n+2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "M1 for setting up E(X) = (n+1) integral of x^(n+1) dx from 0 to 1; A1 for evaluating to (n+1)/(n+2) leading to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "14-15",
+      "task_summary": "Show that Var(X) = (n+1)/((n+2)^2 (n+3)) for the given pdf.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "variance_formula",
+        "expected_value_of_square",
+        "definite_integral",
+        "power_rule_for_integration",
+        "algebraic_expansion",
+        "common_denominator",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply Var(X) = E(X^2) - [E(X)]^2",
+        "Compute E(X^2) = integral from 0 to 1 of x^2 f(x) dx = (n+1)/(n+3)",
+        "Substitute E(X) = (n+1)/(n+2) from part (a)",
+        "Form (n+1)/(n+3) - ((n+1)/(n+2))^2",
+        "Combine over common denominator (n+2)^2 (n+3)",
+        "Expand numerator: (n+1)(n+2)^2 - (n+1)^2 (n+3) = n+1",
+        "Obtain Var(X) = (n+1)/((n+2)^2 (n+3))"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use Var(X) = integral of (x - mu)^2 f(x) dx directly. Expand (x - (n+1)/(n+2))^2, multiply by (n+1)x^n, integrate term by term from 0 to 1, and simplify to the same result."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14-15",
+          "basis": "M1 for use of Var(X) = E(X^2) - [E(X)]^2; A1 for correct algebraic setup with integrals; M1 for algebraic manipulation to common denominator; A1 for final result AG. METHOD 2 shown as equivalent alternative with same mark allocation."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

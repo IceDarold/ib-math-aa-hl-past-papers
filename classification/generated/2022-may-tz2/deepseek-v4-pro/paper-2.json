@@ -1,0 +1,1335 @@
+{
+  "session": "May 2022",
+  "zone": "TZ2",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the length of chord AB in a circle of radius 5 m, given central angle AOB = 1.9 radians.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "cosine_rule",
+        "chord_length",
+        "substitution",
+        "radian_measure",
+        "sine_rule",
+        "right_angled_trigonometry"
+      ],
+      "method_path": [
+        "apply cosine rule: AB² = 5² + 5² − 2×5×5×cos(1.9)",
+        "compute AB = √(50 − 50 cos 1.9)",
+        "round to AB = 8.13 m"
+      ],
+      "accepted_alternatives": [
+        "Use right-angled trigonometry: AB/2 = 5 sin 0.95, giving AB = 10 sin 0.95 = 8.13 m",
+        "Use sine rule: α = (π − 1.9)/2 = 0.6207…, AB/sin 1.9 = 5/sin 0.6207…, giving AB = 8.13 m"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER uses the cosine rule (M1); AB² = 5² + 5² − 2×5×5×cos 1.9 (A1); OR uses right-angled trigonometry (M1); AB/2 = 5 sin 0.95 (A1); OR uses the sine rule (M1); THEN AB = 8.1341…, AB = 8.13 m (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Find the area of the shaded (larger) sector of a circle with radius 5 m and central angle 1.9 radians.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "reflex_angle",
+        "sector_area",
+        "substitution",
+        "radian_measure"
+      ],
+      "method_path": [
+        "find reflex angle: 2π − 1.9 = 4.3831…",
+        "apply sector area formula: A = ½ × 5² × (2π − 1.9)",
+        "compute A = 54.8 m²"
+      ],
+      "accepted_alternatives": [
+        "Find area of full circle π × 5², subtract unshaded sector ½ × 5² × 1.9: A = π × 25 − ½ × 25 × 1.9 = 78.5398… − 23.75 = 54.8 m²"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: Attempt at finding reflex angle (M1); AÔB = 2π − 1.9 = 4.3831…; substitution into area formula (A1); A = ½ × 5² × 4.3831… = 54.7898… = 54.8 m² (A1). METHOD 2: A = AC − AU = π×5² − ½×5²×1.9 = 78.5398… − 23.75 = 54.7898… = 54.8 m² (M1)(A1)(A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Given g′(x) = 3x² + 5eˣ and point (0, 4) on g, find g(x).",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "indefinite_integration",
+        "power_rule",
+        "exponential_integration",
+        "constant_of_integration",
+        "initial_condition"
+      ],
+      "method_path": [
+        "Recognise g(x) = ∫(3x² + 5eˣ)dx",
+        "Integrate: g(x) = x³ + 5eˣ + C",
+        "Substitute (0, 4): 4 = 0 + 5 + C",
+        "Solve for constant: C = −1",
+        "Write g(x) = x³ + 5eˣ − 1"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use definite integrals ∫₀ˣ g′(t) dt = ∫₀ˣ (3t² + 5eᵗ) dt, giving g(x) − 4 = x³ + 5eˣ − 5, hence g(x) = x³ + 5eˣ − 1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "M1: recognises that g(x) = ∫(3x² + 5eˣ)dx; A1A1: g(x) = x³ + 5eˣ + C, award A1 for each integrated term; M1: substitutes x = 0 and y = 4 into their integrated function (must involve +C); 4 = 0 + 5 + C ⇒ C = −1; A1: g(x) = x³ + 5eˣ − 1."
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 2 (accepted alternative): attempts to write both sides in the form of a definite integral (M1); ∫₀ˣ g′(t) dt = ∫₀ˣ (3t² + 5eᵗ) dt (A1); g(x) − 4 = x³ + 5eˣ − 5e⁰ (A1A1); g(x) = x³ + 5eˣ − 1 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 6,
+      "source_pages": "5",
+      "markscheme_pages": "11",
+      "task_summary": "Given independent events A and B with P(A)=3P(B) and P(A∪B)=0.68, find P(B).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "probability_addition_rule",
+        "independent_events",
+        "substitution",
+        "quadratic_equation",
+        "solve_quadratic",
+        "select_valid_solution"
+      ],
+      "method_path": [
+        "Express P(A∪B) = P(A) + P(B) − P(A∩B)",
+        "Substitute P(A∩B) = P(A)P(B) using independence",
+        "Substitute P(A) = 3P(B)",
+        "Form quadratic: 3P(B) + P(B) − 3[P(B)]² = 0.68, i.e., 3[P(B)]² − 4P(B) + 0.68 = 0",
+        "Solve quadratic to obtain P(B) = 1/5 (=0.2) or P(B) = 17/15 (≈1.133…)",
+        "Select P(B) = 0.2 as the valid probability (≤1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme shows: substitution of P(A)·P(B) for P(A∩B) in P(A∪B) (M1); substitution of 3P(B) for P(A) (M1); 3P(B)+P(B)−3P(B)P(B)=0.68 (A1); attempts to solve their quadratic equation (M1); P(B)=1/5=0.2 (A2). Note: Award A1 if both answers are given as final answers for P(B)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "State the median reaction time after sleeping well from the box and whisker diagram.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "read_box_plot",
+        "identify_median"
+      ],
+      "method_path": [
+        "Read median value from the 'slept well' box and whisker diagram",
+        "State median = 0.28 s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "0.28 (s)  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Verify that the measurement of 0.46 seconds is not an outlier using the IQR method.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "read_box_plot",
+        "identify_quartiles",
+        "calculate_iqr",
+        "calculate_upper_fence",
+        "apply_outlier_test"
+      ],
+      "method_path": [
+        "Read Q1 = 0.27 and Q3 = 0.35 from the box plot",
+        "Calculate IQR = 0.35 − 0.27 = 0.08",
+        "Calculate upper fence = 0.35 + 1.5 × 0.08 = 0.47",
+        "Compare 0.46 < 0.47, conclude 0.46 is not an outlier"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "IQR = 0.35 − 0.27 = 0.08 (A1); substituting their IQR into correct expression for upper fence (A1); 0.35 + 1.5 × 0.08 = 0.47; 0.46 < 0.47 R1 so 0.46 (s) is not an outlier AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q04-C",
+      "question": "4",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "State why it appears that the mean reaction time is greater than the median reaction time.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "interpret_skewness",
+        "relate_mean_median_skewness"
+      ],
+      "method_path": [
+        "Observe the box plot is positively skewed (median closer to Q1 than Q3, or lower range smaller than upper range)",
+        "Conclude that for a positively skewed distribution the mean exceeds the median"
+      ],
+      "accepted_alternatives": [
+        "The median is closer to the lower quartile (positively skewed)",
+        "The distribution is positively skewed",
+        "The range of reaction times below the median is smaller than the range of reaction times above the median",
+        "A correctly and clearly labelled diagram showing positive skew"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "EITHER the median is closer to the lower quartile (positively skewed) R1 OR the distribution is positively skewed R1 OR the range of reaction times below the median is smaller than the range of reaction times above the median R1. Accept a correctly and clearly labelled diagram."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q04-D",
+      "question": "4",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Comment on whether the two box and whisker diagrams provide evidence that not sleeping well causes an increase in reaction time.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "compare_box_plots",
+        "evaluate_causation_evidence"
+      ],
+      "method_path": [
+        "Compare the centres and quartiles of the two box plots (noting higher median and quartiles for 'not slept well')",
+        "State whether this provides evidence of causation, or note the sample size is too small to draw conclusions"
+      ],
+      "accepted_alternatives": [
+        "The distribution for 'not sleeping well' is centred at a higher reaction time",
+        "The median reaction time after not sleeping well is equal to the upper quartile reaction time after sleeping well",
+        "75% of reaction times are <0.35 seconds after sleeping well, compared with 50% after not sleeping well",
+        "The sample size of 9 is too small to draw any conclusions"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "EITHER the distribution for 'not sleeping well' is centred at a higher reaction time R1 OR the median reaction time after not sleeping well is equal to the upper quartile reaction time after sleeping well R1 OR 75% of reaction times are <0.35 seconds after sleeping well, compared with 50% after not sleeping well R1 OR the sample size of 9 is too small to draw any conclusions R1. Do not accept a comparison of means. Award R0 to 'correlation does not imply causation'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Determine when the particle changes direction by solving v(t)=0 for t in [0,3].",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "calculus.rates_of_change"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "recognise_zero_velocity",
+        "solve_trigonometric_equation"
+      ],
+      "method_path": [
+        "Set v(t)=0",
+        "Solve cos t = 0 since (t/(t^2+1))^4 > 0 for t>0",
+        "Obtain t = pi/2 approx 1.57 s within [0,3]"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognises the need to find the value of t when v = 0 (M1); t = pi/2 = 1.5707... (s) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find the times when acceleration is -1.9 m/s^2 by differentiating v(t) to obtain a(t) and solving a(t)=-1.9 on [0,3] using GDC.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "recognise_acceleration_as_derivative",
+        "differentiate",
+        "solve_equation_gdc"
+      ],
+      "method_path": [
+        "Recognise a(t) = v'(t)",
+        "Differentiate v(t) to obtain a(t)",
+        "Solve a(t) = -1.9 for t in [0,3] using GDC",
+        "Obtain t1 approx 2.26 s and t2 approx 2.96 s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognises that a(t) = v'(t) (M1); t1 = 2.2627..., t2 = 2.9573... A1A1; Note: Award M1A1A0 if the two correct answers are given with additional values outside 0 <= t <= 3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q05-C",
+      "question": "5",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find the particle's acceleration when its speed is greatest by identifying t=3 as maximising |v(t)| and evaluating a(3).",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "identify_max_speed",
+        "evaluate_acceleration"
+      ],
+      "method_path": [
+        "Identify that speed |v(t)| is greatest at endpoint t=3 on [0,3]",
+        "Evaluate a(3)",
+        "Obtain a approx -1.84 m/s^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "speed is greatest at t = 3 (A1); a = -1.8377... approx -1.84 (m s^-2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 5,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given the curve x²/36 + (y−4)²/16 = 1 for h ≤ y ≤ 4 rotated about the y‑axis to form a bowl of interior volume 285 cm³, determine the height h of the rectangular base OPQR.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations",
+        "geometry.solid_geometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "express_variable",
+        "volume_of_revolution",
+        "definite_integral",
+        "gdc_equation_solving"
+      ],
+      "method_path": [
+        "Express x² = 36(1 − (y−4)²/16) from the ellipse equation",
+        "Set up volume integral V = π ∫_h^4 36(1 − (y−4)²/16) dy",
+        "Set V = 285 and solve for h using GDC",
+        "Obtain h = 0.793 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempts to express x² in terms of y (M1)"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "π ∫_h^4 36(1 − ((y−4)²)/16) dy A1; Note: Correct limits are required."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "Attempts to solve π ∫_h^4 36(1 − ((y−4)²)/16) dy = 285 for h (M1)"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "h = 0.7926… ; h = 0.793 (cm) A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Show that a finite limit exists only for k = π/4 by requiring the indeterminate form 0/0.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "indeterminate_form",
+        "limit_condition",
+        "arctan_evaluation",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Recognise finite limit with denominator approaching 0 requires numerator also approaching 0 (0/0 form)",
+        "Set lim_{x to 0} (arctan(cos x) - k) = 0",
+        "Evaluate arctan(cos 0) = arctan(1) = pi/4",
+        "Solve k = pi/4"
+      ],
+      "accepted_alternatives": [
+        "Verification approach: start with k = pi/4 and confirm 0/0 form (awarded M1A0 as it does not prove uniqueness)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1 for implying lim_{x to 0} (arctan(cos x) - k) = 0; A1 for arctan(1) - k = 0; so k = pi/4 AG. Note: Award M1A0 for using k = pi/4 to show the limit is 0/0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "16-17",
+      "task_summary": "Use l'Hopital's rule twice to evaluate the limit algebraically and show its value is -1/4.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "differentiation",
+        "chain_rule",
+        "trigonometric_derivative",
+        "indeterminate_form",
+        "evaluate_limit",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute k = pi/4 to obtain 0/0 form",
+        "First l'Hopital: differentiate numerator to -sin x/(1+cos^2 x) and denominator to 2x",
+        "Obtain lim_{x to 0} [-sin x] / [2x(1+cos^2 x)]",
+        "Recognise result is still 0/0",
+        "Second l'Hopital: differentiate numerator and denominator again",
+        "Substitute x = 0 to obtain -1/4"
+      ],
+      "accepted_alternatives": [
+        "Two alternative differentiation routes for the second l'Hopital step: EITHER differentiate the combined fraction using quotient/product rules, OR differentiate numerator and denominator separately then simplify"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "First application: A1 for correct numerator -sin x/(1+cos^2 x), A1 for correct denominator 2x. M1 for recognising to apply l'Hopital again (must be 0/0). Second application: EITHER A1A1 for two correct numerator terms, OR A1A1 for correct numerator and denominator. Final A1 (dependent on all previous marks) for substituting x = 0 to get -1/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 7,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Given R~N(56.5,3²) and S~N(57.5,1.8²), each with 5 throws, find the probability that exactly one of Rachel or Sophia records at least one throw ≥60m and thus qualifies.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables",
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_cdf",
+        "binomial_distribution",
+        "complement_rule",
+        "probability_of_independent_events",
+        "probability_of_exactly_one_event"
+      ],
+      "method_path": [
+        "Compute P(R≥60) using normal distribution N(56.5,3²)",
+        "Compute P(S≥60) using normal distribution N(57.5,1.8²)",
+        "Recognise N_R~B(5,p_R) and N_S~B(5,p_S)",
+        "Compute P(N_R≥1)=1−P(N_R=0)=1−(1−p_R)⁵",
+        "Compute P(N_S≥1)=1−P(N_S=0)=1−(1−p_S)⁵",
+        "Compute P(exactly one qualifies)=P(N_R≥1)·P(N_S=0)+P(N_S≥1)·P(N_R=0)"
+      ],
+      "accepted_alternatives": [
+        "Compute P(exactly one qualifies) = P(N_R≥1) + P(N_S≥1) − 2·P(N_R≥1)·P(N_S≥1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "Full markscheme: two A1 for P(R≥60) and P(S≥60), M1 for recognising binomial n=5, A1 for P(N_R≥1), A1 for P(N_S≥1), M1 for combining with either of two accepted formulas, A1 for final answer 0.493."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Count six-digit positive integers with distinct digits chosen from 0–9, where the first digit cannot be zero.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "permutation",
+        "counting_principle",
+        "restricted_first_digit"
+      ],
+      "method_path": [
+        "First digit (cannot be 0): 9 choices from {1,…,9}",
+        "Remaining 5 positions: arrange 5 from the 9 remaining digits (including 0): P(9,5) = 9 × 8 × 7 × 6 × 5",
+        "Multiply: 9 × P(9,5) = 9 × 15120 = 136080"
+      ],
+      "accepted_alternatives": [
+        "9 × 9 × 8 × 7 × 6 × 5",
+        "9 × (9! / 4!)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "Markscheme shows M1 for 9 × 9 × 8 × 7 × 6 × 5 or 9 × P(9,5); A1 for 136080 or 9 × 9!/4!. Notes award M1A0 for common errors 10_P_6 = 151200 and 9_P_6 = 60480."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Count six-digit positive integers with distinct digits in strictly increasing order, chosen from digits 0–9.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combination",
+        "selection_with_unique_ordering",
+        "restricted_first_digit"
+      ],
+      "method_path": [
+        "Digits must be non-zero (0 cannot appear as first/smallest digit in an increasing six-digit number)",
+        "Choose 6 distinct digits from {1,…,9}: C(9,6)",
+        "Each unordered selection yields exactly one increasing arrangement",
+        "Answer: C(9,6) = 84"
+      ],
+      "accepted_alternatives": [
+        "C(9,3) = 84 (remove 3 digits from 9 non-zero digits; remaining 6 have exactly one increasing arrangement)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: every unordered subset of 6 digits from the set of 9 non-zero digits can be arranged in exactly one way into a 6-digit number with the digits in increasing order. C(9,6) × 1. Answer 84. METHOD 2: removes 3 digits from the set of 9 non-zero digits and these 6 remaining digits can be arranged in exactly one way. C(9,3) × 1. Answer 84."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q10-A-I-II",
+      "question": "10",
+      "part": "(a)(i)(ii)",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Use the scientist's models to find the initial height (t=0) of Plant B and Plant A correct to three significant figures.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "evaluate_function",
+        "substitute_value",
+        "round_to_significant_figures",
+        "trigonometric_evaluation"
+      ],
+      "method_path": [
+        "Substitute t=0 into hB(t)=8t+32",
+        "Obtain hB(0)=32 cm",
+        "Substitute t=0 into hA(t)=sin(2t+6)+9t+27",
+        "Evaluate hA(0)=sin(6)+27",
+        "Compute sin(6)+27≈26.7205...",
+        "Round to 26.7 (3 s.f.)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(i) 32 (cm) A1"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "(ii) hA(0)=sin(6)+27 (M1), =26.7205... =26.7 (cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "(b)",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find the values of t when hA(t)=hB(t) for 0≤t≤9.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_equations_equal",
+        "solve_trigonometric_equation",
+        "numerical_solve_gdc"
+      ],
+      "method_path": [
+        "Set hA(t)=hB(t): sin(2t+6)+9t+27=8t+32",
+        "Simplify to sin(2t+6)+t−5=0",
+        "Solve numerically using GDC for t∈[0,9]",
+        "Obtain t≈4.01, 4.70, 5.88 weeks"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempts to solve hA(t)=hB(t) for t (M1); t=4.0074...,4.7034...,5.88332... ; t=4.01,4.70,5.88 (weeks) A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q10-C",
+      "question": "10",
+      "part": "(c)",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "For t>6, prove that Plant A was always taller than Plant B.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "number_algebra.inequalities",
+        "number_algebra.proof"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "form_difference",
+        "trigonometric_bound",
+        "inequality_proof",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Form difference hA(t)−hB(t)=sin(2t+6)+t−5",
+        "Note for t>6: t−5>1",
+        "Use bound sin(2t+6)≥−1",
+        "Conclude hA(t)−hB(t)>0 for t>6, hence Plant A always taller"
+      ],
+      "accepted_alternatives": [
+        "Use minimum value of sin(2t+6)=−1, so for t>6, hA(t)−hB(t)=t−6>0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "hA(t)−hB(t)=sin(2t+6)+t−5 A1; EITHER for t>6, t−5>1 A1 and as sin(2t+6)≥−1 ⇒ hA(t)−hB(t)>0 R1; OR the minimum value of sin(2t+6)=−1 R1 so for t>6, hA(t)−hB(t)=t−6>0 A1; THEN hence for t>6, Plant A was always taller than Plant B AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "(d)",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "For 0≤t≤9, find the total amount of time when the rate of growth of Plant B was greater than the rate of growth of Plant A.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "calculus.inequalities"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_function",
+        "set_up_inequality",
+        "solve_trigonometric_inequality",
+        "find_interval_lengths",
+        "sum_intervals"
+      ],
+      "method_path": [
+        "Differentiate: hA'(t)=2cos(2t+6)+9, hB'(t)=8",
+        "Set hB'(t)>hA'(t): 8>2cos(2t+6)+9",
+        "Simplify to cos(2t+6)<−1/2",
+        "Solve cos(2t+6)=−1/2 for t∈[0,9] to find interval boundaries",
+        "Identify three intervals where inequality holds: (1.19,2.24), (4.33,5.38), (7.47,8.52)",
+        "Sum interval lengths: 3×(π/3)=π≈3.14 weeks"
+      ],
+      "accepted_alternatives": [
+        "Use exact values t∈(4π/3−3,5π/3−3), (7π/3−3,8π/3−3), (10π/3−3,11π/3−3) giving total time = π weeks"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognises that hA'(t) and hB'(t) are required (M1); attempts to solve hA'(t)=hB'(t) for t (M1); t=1.18879... and 2.23598... OR 4.33038... and 5.37758... OR 7.47197... and 8.51917... (A1); 1.18879...<t<2.23598... OR 4.33038...<t<5.37758... OR 7.47197...<t<8.51917... (A1); attempts to calculate the total amount of time (M1); =(2.2359...−1.1887...)×3=3.14...=π (weeks) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Find the three-figure bearing on which airplane B is travelling from its direction vector.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "extract_vector_components",
+        "bearing_angle",
+        "arctan",
+        "horizontal_plane"
+      ],
+      "method_path": [
+        "Extract horizontal components of B's direction vector: 4 km/min east, 2 km/min north",
+        "Compute bearing angle from north: arctan(4/2) = arctan(2) ≈ 63.4°",
+        "Express as three-figure bearing: 063°"
+      ],
+      "accepted_alternatives": [
+        "Use dot product with east unit vector: cos φ = (4,2)·(1,0)/(√20 × 1) = 4/√20, then φ = arccos(4/√20) = 063°"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "EITHER φ = 90° − arctan(1/2) = arctan(2) (M1). OR cos φ = (vector dot product with (1,0,0)) / (√20 × 1) (M1). THEN 063° (A1). Note: Do not accept 063.4° or 63.4° or 1.10ᶜ. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "22-23",
+      "task_summary": "Show that airplane A travels at a greater speed than airplane B by comparing magnitudes of their direction vectors.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "vector_magnitude",
+        "speed_calculation",
+        "comparison"
+      ],
+      "method_path": [
+        "Compute speed of A as magnitude: |vA| = √((−6)²+2²+4²) = √56 ≈ 7.48 km/min",
+        "Compute speed of B as magnitude: |vB| = √(4²+2²+(−2)²) = √24 ≈ 4.89 km/min",
+        "Compare: √56 > √24, so A travels at greater speed (AG)"
+      ],
+      "accepted_alternatives": [
+        "Use distance/time ratio, e.g. speed = |r(1)−r(0)|/1 for each airplane, yielding √56 and √24 respectively"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22-23",
+          "basis": "Method 1: speed of A = √(6²+2²+4²) = √56 ≈ 7.48 km min⁻¹, speed of B = √(4²+2²+2²) = √24 ≈ 4.89 km min⁻¹ (M1)(A1). Method 2: speed using distance/time (M1)(A1). √56 > √24 so A travels at greater speed (AG). [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "Find the acute angle between the two airplanes' lines of flight using the dot product of their direction vectors.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product",
+        "angle_between_vectors",
+        "arccos",
+        "acute_angle",
+        "supplementary_angle"
+      ],
+      "method_path": [
+        "Compute dot product: vA·vB = (−6)(4) + (2)(2) + (4)(−2) = −28",
+        "Compute magnitudes: |vA| = √56, |vB| = √24",
+        "Compute cos θ = −28/(√56 × √24) = −7/√84 ≈ −0.7637",
+        "Find obtuse angle: θ = arccos(−7/√84) ≈ 139.8°",
+        "Acute angle = 180° − θ = 40.2°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "cos θ = ((−6)(4)+(2)(2)+(4)(−2)) / (√((−6)²+2²+4²) × √(4²+2²+(−2)²)) (M1)(A1). cos θ = −7/√84 ≈ −0.7637. Acute angle = 180° − arccos(−0.7637...) = 40.2° (M1)(A1). [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "d",
+      "marks": 7,
+      "source_pages": "15",
+      "markscheme_pages": "25-26",
+      "task_summary": "Find the coordinates of intersection point P of the two flight lines by equating position vectors, and determine the time difference between the two airplanes arriving at P.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_equation",
+        "system_of_linear_equations",
+        "parametric_equations",
+        "substitution",
+        "time_difference",
+        "absolute_value"
+      ],
+      "method_path": [
+        "Set rA(t₁) = rB(t₂) to form three component equations",
+        "Solve system: 19−6t₁=1+4t₂, −1+2t₁=2t₂, 1+4t₁=12−2t₂ → t₁=2, t₂=3/2",
+        "Substitute t₁=2 into rA to get P(7,3,9)",
+        "Compute time difference: |t₁−t₂| = |2−1.5| = 0.5 minutes (30 seconds)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(i) Set rA(t₁)=rB(t₂), form equations: 19−6t₁=1+4t₂, −1+2t₁=2t₂, 1+4t₁=12−2t₂ (M1). Solve for t₁=2 and t₂=3/2 (M1)(A1). Substitute into rA to get P(7,3,9) (M1)(A1)."
+        },
+        {
+          "markscheme_pages": "26",
+          "basis": "(ii) |t₁−t₂| = |2−3/2| = 0.5 minutes (30 seconds) (M1)(A1). [7 marks total]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q11-E",
+      "question": "11",
+      "part": "e",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "27",
+      "task_summary": "Find the minimum distance D(t) between the two airplanes for 0 ≤ t ≤ 2.5 by forming the distance function and using calculus to minimize it.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.vectors",
+        "calculus.differentiation"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "vector_difference",
+        "distance_formula",
+        "expand_quadratic",
+        "differentiate",
+        "critical_point",
+        "minimize_distance"
+      ],
+      "method_path": [
+        "Form vector difference using common t: rB−rA = (−18,1,11) + t(10,0,−6)",
+        "Form distance squared: D(t)² = (−18+10t)² + 1² + (11−6t)² = 136t²−492t+446",
+        "Differentiate D² and set to zero: 272t−492=0 → t = 123/68 ≈ 1.8088",
+        "Compute minimum distance: D(123/68) = √1190/34 ≈ 1.01 km"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "Form rB−rA = (−18,1,11) + t(10,0,−6) (M1). D(t) = √((−18+10t)² + 1 + (11−6t)²) (M1)(A1). Set D'(t)=0 or find local minimum → t = 123/68 (M1). Minimum D = √1190/34 ≈ 1.01 km (A1). Award M0 for attempts at shortest distance between two lines. [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Interpret the meaning of dP/dt in the context of the population model.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "interpret_derivative"
+      ],
+      "method_path": [
+        "dP/dt represents the rate of growth (change) of the marsupial population with respect to time"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A1: rate of growth (change) of the (marsupial) population (with respect to time)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Show that d2P/dt2 = k2P(1 - P/N)(1 - 2P/N) by differentiating the logistic differential equation.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "chain_rule",
+        "algebraic_substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "expand dP/dt = kP - kP^2/N",
+        "differentiate implicitly with respect to t",
+        "substitute dP/dt = kP(1-P/N)",
+        "factor to obtain k^2 P(1-P/N)(1-2P/N)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: apply product rule to dP/dt = kP(1-P/N), then substitute dP/dt and simplify"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "M1 implicit differentiation; A1A1 for d2P/dt2 = k(dP/dt) - (2kP/N)(dP/dt); A1 factor; AG. METHOD 2: M1 product rule; A1 derivative; M1 substitution; A1 simplify."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "29-30",
+      "task_summary": "Show the population increases at its maximum rate when P = N/2, using the second derivative.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "set_second_derivative_zero",
+        "solve_equation",
+        "concavity_analysis",
+        "second_derivative_test"
+      ],
+      "method_path": [
+        "set d2P/dt2 = k2P(1-P/N)(1-2P/N) = 0",
+        "solve to obtain P = 0, N, N/2",
+        "test concavity at P = N/2 using sign diagram, sketch, or second derivative values",
+        "conclude maximum rate at P = N/2"
+      ],
+      "accepted_alternatives": [
+        "Justification via clearly labelled sketch of d2P/dt2 vs P",
+        "Justification via correct sign diagram",
+        "Justification via evaluating d2P/dt2 at P = N/4 and P = 3N/4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29-30",
+          "basis": "M1: set d2P/dt2 = 0; A2: P = 0, N, N/2 (A1 for N/2 only); M1: test concavity change; R1: sketch/sign diagram/values."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "30",
+      "task_summary": "Determine the maximum value of dP/dt in terms of k and N.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "substitute P = N/2 into dP/dt = kP(1 - P/N)",
+        "simplify to kN/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "M1: substitutes P = N/2; A1: maximum value is kN/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 7,
+      "source_pages": "15",
+      "markscheme_pages": "31-33",
+      "task_summary": "Solve the logistic differential equation to show kt = ln[(P/(N-P))((N-P0)/P0)].",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "partial_fractions_decomposition",
+        "integration",
+        "apply_initial_condition",
+        "logarithmic_manipulation"
+      ],
+      "method_path": [
+        "separate variables to integral N/[P(N-P)] dP = integral k dt",
+        "express N/[P(N-P)] in partial fractions as 1/P + 1/(N-P)",
+        "integrate to ln P - ln(N-P) = kt + C",
+        "apply initial condition t=0, P=P0",
+        "rearrange to kt = ln[(P/(N-P))((N-P0)/P0)]"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: separate variables as 1/[P(1-P/N)], partial fractions 1/P + 1/(N-P)",
+        "METHOD 3: substitute u = 1/P to form linear DE, solve with integrating factor e^(kt)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "31-33",
+          "basis": "M1: separates variables; M1: partial fractions; A1: 1/P + 1/(N-P); A1A1: ln P - ln(N-P) = kt + C; M1: finds C; A1: final rearrangement."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q12-F",
+      "question": "12",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "35",
+      "task_summary": "Find k given t = 10, P = 3P0, and N = 4P0.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "number_algebra.exponential_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "solve_for_parameter",
+        "logarithmic_evaluation"
+      ],
+      "method_path": [
+        "substitute t=10, P=3P0, N=4P0 into kt = ln(P(N-P0)/(P0(N-P)))",
+        "evaluate to k = (1/10)ln 9 = (1/5)ln 3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "35",
+          "basis": "M1: substitutes t=10, P=3P0, N=4P0; A1: k = (1/10)ln 9 = (1/5)ln 3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

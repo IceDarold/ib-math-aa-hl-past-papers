@@ -1,0 +1,56 @@
+{
+  "question": "8",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "16-17",
+      "task_summary": "Given dV/dt = 2 cm^3/s and V = 5 pi h^2 - (1/3) pi h^3, find dh/dt when V = 200 cm^3 using related rates.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative_computation",
+        "chain_rule",
+        "implicit_differentiation",
+        "equation_solving",
+        "substitution",
+        "related_rates"
+      ],
+      "method_path": [
+        "dV/dh = 10 pi h - pi h^2",
+        "chain rule: dh/dt = (dV/dt) / (dV/dh) or implicit differentiation dV/dt = (10 pi h - pi h^2) dh/dt",
+        "rearrange to dh/dt = 2 / (10 pi h - pi h^2)",
+        "solve 200 = 5 pi h^2 - (1/3) pi h^3 for h approx 4.20648",
+        "substitute h to obtain dh/dt approx 0.0261 cm s^{-1}"
+      ],
+      "accepted_alternatives": [
+        "Differentiate V = 5 pi h^2 - (1/3) pi h^3 implicitly with respect to t to obtain dV/dt = (10 pi h - pi h^2) dh/dt, set dV/dt = 2, solve for h from V = 200, then compute dh/dt."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "EITHER: dV/dh = 10 pi h - pi h^2 (A1); attempt to use chain rule to find relationship between dh/dt, dV/dt, and dV/dh (M1). OR: attempt to differentiate V = 5 pi h^2 - (1/3) pi h^3 throughout with respect to t (M1); dV/dt = 10 pi h dh/dt - pi h^2 dh/dt (A1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "THEN: 2 = (10 pi h - pi h^2) dh/dt OR dh/dt = 2/(10 pi h - pi h^2) (A1); attempt to solve 200 = 5 pi h^2 - (1/3) pi h^3 (M1); h = 4.20648... (A1); dh/dt = 0.0261227... approx 0.0261 cm s^{-1} (A1). [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

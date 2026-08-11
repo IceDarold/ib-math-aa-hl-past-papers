@@ -1,0 +1,85 @@
+{
+  "question": "7",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q07-A",
+      "question": "7",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Find cos θ in terms of n using the scalar product formula (or Argand diagram).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "scalar_product",
+        "vector_magnitude",
+        "cosine_formula"
+      ],
+      "method_path": [
+        "Compute u·v = cos(1/n) + sin(1/n)",
+        "Compute |u| = √2, |v| = √(cos²(1/n)+sin²(1/n)) = 1",
+        "cos θ = (u·v)/(|u||v|) = (cos(1/n)+sin(1/n))/√2"
+      ],
+      "accepted_alternatives": [
+        "Argand diagram: arg(u) = π/4, arg(v) = 1/n, cos θ = cos(π/4 − 1/n)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: (M1) attempt to use scalar product or formula for angle between two vectors; (A1) u·v = cos(1/n) + sin(1/n); (A1) cos θ = (cos(1/n)+sin(1/n))/√2. METHOD 2: (M1) Argand diagram with angle θ marked; (A1) arg(u)=π/4 and arg(v)=1/n; (A1) cos θ = cos(π/4 − 1/n)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q07-B",
+      "question": "7",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "15",
+      "task_summary": "Find lim_{n→∞} θ by evaluating the limit of cos θ or the limit of vector v.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "geometry.vectors"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "trigonometric_limit",
+        "inverse_cosine"
+      ],
+      "method_path": [
+        "Recognise 1/n → 0 as n → ∞",
+        "cos θ → (1+0)/√2 = 1/√2 (or v → i)",
+        "θ → arccos(1/√2) = π/4"
+      ],
+      "accepted_alternatives": [
+        "Alternative reasoning: v → i so the angle between u = i+j and v = i is π/4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(M1) use of 1/n→0 as n→∞; (A1) EITHER cos θ → 1/√2 OR v → i; (A1) the limit is π/4. Note: Accept 45°. Do not accept rounded values such as 0.785."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

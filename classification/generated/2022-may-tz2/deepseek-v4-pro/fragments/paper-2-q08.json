@@ -1,0 +1,53 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 7,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Given R~N(56.5,3²) and S~N(57.5,1.8²), each with 5 throws, find the probability that exactly one of Rachel or Sophia records at least one throw ≥60m and thus qualifies.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables",
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_cdf",
+        "binomial_distribution",
+        "complement_rule",
+        "probability_of_independent_events",
+        "probability_of_exactly_one_event"
+      ],
+      "method_path": [
+        "Compute P(R≥60) using normal distribution N(56.5,3²)",
+        "Compute P(S≥60) using normal distribution N(57.5,1.8²)",
+        "Recognise N_R~B(5,p_R) and N_S~B(5,p_S)",
+        "Compute P(N_R≥1)=1−P(N_R=0)=1−(1−p_R)⁵",
+        "Compute P(N_S≥1)=1−P(N_S=0)=1−(1−p_S)⁵",
+        "Compute P(exactly one qualifies)=P(N_R≥1)·P(N_S=0)+P(N_S≥1)·P(N_R=0)"
+      ],
+      "accepted_alternatives": [
+        "Compute P(exactly one qualifies) = P(N_R≥1) + P(N_S≥1) − 2·P(N_R≥1)·P(N_S≥1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "Full markscheme: two A1 for P(R≥60) and P(S≥60), M1 for recognising binomial n=5, A1 for P(N_R≥1), A1 for P(N_S≥1), M1 for combining with either of two accepted formulas, A1 for final answer 0.493."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "question": "3",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q03-A-I-A-II",
+      "question": "3",
+      "part": "(a)(i), (a)(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Write equations of the vertical and horizontal asymptotes of f(x)=(2x-1)/(x+1).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_vertical_asymptote",
+        "identify_horizontal_asymptote"
+      ],
+      "method_path": [
+        "set denominator x+1=0 to obtain vertical asymptote x=-1",
+        "identify horizontal asymptote y=2 from ratio of leading coefficients"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "(i) x=-1 A1; (ii) y=2 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q03-B",
+      "question": "3",
+      "part": "(b)",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "10-11",
+      "task_summary": "Sketch rational function with asymptotes x=-1, y=2 and intercepts at x=1/2, y=-1.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "show_asymptotes",
+        "find_intercepts",
+        "asymptotic_behaviour"
+      ],
+      "method_path": [
+        "sketch rational function with two branches in opposite quadrants",
+        "draw asymptotes x=-1 and y=2 with correct asymptotic approach",
+        "mark x-intercept at x=1/2",
+        "mark y-intercept at y=-1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10-11",
+          "basis": "rational function shape with two branches in opposite quadrants, with two correctly positioned asymptotes and asymptotic behaviour shown A1; axes intercepts clearly shown at x=1/2 and y=-1 A1A1. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q03-C",
+      "question": "3",
+      "part": "(c)",
+      "marks": 1,
+      "source_pages": "4-5",
+      "markscheme_pages": "12",
+      "task_summary": "Use the graph from (b) to solve the compound inequality 0 < f(x) < 2.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "read_inequality_from_graph"
+      ],
+      "method_path": [
+        "read from graph: 0 < f(x) < 2 when x > 1/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "x > 1/2 A1. Accept alternative notation. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q03-D",
+      "question": "3",
+      "part": "(d)",
+      "marks": 2,
+      "source_pages": "4-5",
+      "markscheme_pages": "12",
+      "task_summary": "Solve the absolute-value inequality by sketching |f(x)| or finding critical points.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_absolute_inequality",
+        "sketch_absolute_function",
+        "find_critical_points"
+      ],
+      "method_path": [
+        "sketch |(2x-1)/(x+1)| or solve 2x-1=0 to identify critical points x=1/2 and x=-1/2",
+        "determine solution x < -1/2 or x > 1/2"
+      ],
+      "accepted_alternatives": [
+        "EITHER sketch |(2x-1)/(x+1)| and read solution; OR solve 2x-1=0 algebraically to find critical points and test intervals"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "EITHER attempts to sketch |(2x-1)/(x+1)| (M1) OR attempts to solve 2x-1=0 (M1). Note: Award M1 if x=1/2 and x=-1/2 are identified. THEN x < -1/2 or x > 1/2 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

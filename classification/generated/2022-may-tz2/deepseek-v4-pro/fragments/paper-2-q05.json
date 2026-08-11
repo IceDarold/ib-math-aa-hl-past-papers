@@ -1,0 +1,116 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Determine when the particle changes direction by solving v(t)=0 for t in [0,3].",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "calculus.rates_of_change"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "recognise_zero_velocity",
+        "solve_trigonometric_equation"
+      ],
+      "method_path": [
+        "Set v(t)=0",
+        "Solve cos t = 0 since (t/(t^2+1))^4 > 0 for t>0",
+        "Obtain t = pi/2 approx 1.57 s within [0,3]"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognises the need to find the value of t when v = 0 (M1); t = pi/2 = 1.5707... (s) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find the times when acceleration is -1.9 m/s^2 by differentiating v(t) to obtain a(t) and solving a(t)=-1.9 on [0,3] using GDC.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "recognise_acceleration_as_derivative",
+        "differentiate",
+        "solve_equation_gdc"
+      ],
+      "method_path": [
+        "Recognise a(t) = v'(t)",
+        "Differentiate v(t) to obtain a(t)",
+        "Solve a(t) = -1.9 for t in [0,3] using GDC",
+        "Obtain t1 approx 2.26 s and t2 approx 2.96 s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognises that a(t) = v'(t) (M1); t1 = 2.2627..., t2 = 2.9573... A1A1; Note: Award M1A1A0 if the two correct answers are given with additional values outside 0 <= t <= 3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q05-C",
+      "question": "5",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find the particle's acceleration when its speed is greatest by identifying t=3 as maximising |v(t)| and evaluating a(3).",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "identify_max_speed",
+        "evaluate_acceleration"
+      ],
+      "method_path": [
+        "Identify that speed |v(t)| is greatest at endpoint t=3 on [0,3]",
+        "Evaluate a(3)",
+        "Obtain a approx -1.84 m/s^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "speed is greatest at t = 3 (A1); a = -1.8377... approx -1.84 (m s^-2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

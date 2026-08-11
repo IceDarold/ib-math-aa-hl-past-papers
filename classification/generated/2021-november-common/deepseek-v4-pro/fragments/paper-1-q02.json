@@ -1,0 +1,164 @@
+{
+  "question": "2",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q02-A-I-II",
+      "question": "2",
+      "part": "(a)(i)(ii)",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the equations of the vertical and horizontal asymptotes of f(x) = (2x+4)/(3−x).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_asymptote",
+        "horizontal_asymptote",
+        "rational_function"
+      ],
+      "method_path": [
+        "Set denominator to zero: 3−x=0 → vertical asymptote x=3",
+        "Take limit as x→∞: ratio of leading coefficients 2/(−1)=−2 → horizontal asymptote y=−2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(a)(i) x=3 A1; (ii) y=−2 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q02-B-I-II",
+      "question": "2",
+      "part": "(b)(i)(ii)",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the coordinates where the graph of f crosses the x-axis and the y-axis.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "x_intercept",
+        "y_intercept",
+        "rational_function"
+      ],
+      "method_path": [
+        "Set numerator to zero: 2x+4=0 → x=−2, giving point (−2,0)",
+        "Evaluate f(0): f(0)=4/3, giving point (0,4/3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(b)(i) (−2,0) (accept x=−2) A1; (ii) (0,4/3) (accept y=4/3 and f(0)=4/3) A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q02-C",
+      "question": "2",
+      "part": "(c)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Sketch the graph of f on the given axes, showing asymptotic behaviour with two branches in the correct quadrants.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_rational_function",
+        "asymptotic_behaviour",
+        "branches",
+        "intercepts"
+      ],
+      "method_path": [
+        "Draw asymptotes x=3 and y=−2 as dashed lines",
+        "Plot intercepts (−2,0) and (0,4/3)",
+        "Sketch two hyperbolic branches approaching asymptotes in correct quadrants"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for completely correct shape: two branches in correct quadrants with asymptotic behaviour. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q02-D",
+      "question": "2",
+      "part": "(d)",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "11-12",
+      "task_summary": "Given g(x) = (ax+4)/(x−3) and g(x) = g⁻¹(x), determine the value of a.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "inverse_function",
+        "rational_function",
+        "equate_function_and_inverse",
+        "compare_coefficients",
+        "solve_parameter"
+      ],
+      "method_path": [
+        "Write y = (ax+4)/(x−3)",
+        "Swap x and y: x = (ay+4)/(y−3), then solve for y to obtain g⁻¹(x)",
+        "Equate g(x) = g⁻¹(x)",
+        "Cross-multiply and compare coefficients to obtain a = −3"
+      ],
+      "accepted_alternatives": [
+        "Use g(g(x)) = x: substitute g(x) into itself, simplify the compound rational expression, cross-multiply, and compare coefficients of x² to obtain a = −3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: attempt to find x in terms of y (M1) … g⁻¹(x) expression (A1) … equating g(x) and g⁻¹(x) ⇒ a = −3 (A1)."
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: attempt to find g(g(x)) and equate to x (M1) … simplification steps (A1) … equating coefficients of x² ⇒ a = −3 (A1). [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

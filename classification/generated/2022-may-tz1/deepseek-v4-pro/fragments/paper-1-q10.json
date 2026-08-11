@@ -1,0 +1,116 @@
+{
+  "question": "10",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "19-20",
+      "task_summary": "For the geometric series case: show p = ±1/√3; show convergence; given p > 0 and S∞ = 3+√3, find x.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_ratio",
+        "solve_quadratic",
+        "absolute_value_test",
+        "geometric_series_convergence",
+        "sum_to_infinity",
+        "logarithmic_equation",
+        "exponentiation"
+      ],
+      "method_path": [
+        "Form ratio of consecutive terms r = (p ln x)/(ln x) = p and r² = ((1/3)ln x)/(ln x) = 1/3",
+        "Equate to obtain p² = 1/3, hence p = ±1/√3",
+        "Note |p| = 1/√3 < 1, therefore the geometric series converges",
+        "Apply S∞ = a/(1−r) with a = ln x, r = p = 1/√3 (p > 0)",
+        "Set S∞ = 3+√3 and solve for ln x = 2",
+        "Exponentiate to obtain x = e²"
+      ],
+      "accepted_alternatives": [
+        "Set r = p and r² = 1/3 directly without explicit ratio of log terms",
+        "Consider powers of x: 1/p = p/(1/3) yielding p² = 1/3",
+        "Use r instead of p in the convergence argument"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1 for attempt to use ratio from consecutive terms; A1 for p² = 1/3 or r = ±1/√3 leading to p = ±1/√3 AG"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "R1 for |p| = 1/√3 < 1 ⇒ convergence AG; (A1) for S∞ = ln x/(1−1/√3) = 3+√3; A1 for solving to ln x; A1 for x = e²; total [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 12,
+      "source_pages": "12",
+      "markscheme_pages": "21-24",
+      "task_summary": "For the arithmetic series case: show p = 2/3; write d = k ln x; given S_n = ln(1/x³), find n.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "common_difference",
+        "solve_linear_equation",
+        "arithmetic_series_sum",
+        "logarithmic_identity",
+        "substitution",
+        "quadratic_equation",
+        "factorisation"
+      ],
+      "method_path": [
+        "Set up common difference: p ln x − ln x = (1/3)ln x − p ln x",
+        "Solve to obtain p = 2/3",
+        "Compute d = (2/3)ln x − ln x = −(1/3)ln x",
+        "Express ln(1/x³) as −3 ln x",
+        "Substitute a = ln x, d = −(1/3)ln x into S_n = (n/2)[2a + (n−1)d]",
+        "Equate to −3 ln x, cancel ln x",
+        "Simplify to n² − 7n − 18 = 0",
+        "Factorise and solve: (n−9)(n+2) = 0 → n = 9"
+      ],
+      "accepted_alternatives": [
+        "Use arithmetic mean u₂ = (u₁+u₃)/2 to find p = 2/3",
+        "Find d using u₃ = (1/3)ln x then back-substitute to find p",
+        "List first 9 terms and observe that first 7 sum to 0, 8th and 9th sum to −3 ln x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21-22",
+          "basis": "M1 attempt to find difference or arithmetic mean; A1 correct equation; A1 p = 2/3 AG; A1 d = −(1/3)ln x"
+        },
+        {
+          "markscheme_pages": "23-24",
+          "basis": "(M1) substitute into S_n and equate to ln(1/x³); (A1)(A1)(A1) for ln(1/x³)=−3ln x and correct S_n working; A1 equation without ln x; (M1) form quadratic; (M1) solve quadratic; A1 n=9; total [12 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

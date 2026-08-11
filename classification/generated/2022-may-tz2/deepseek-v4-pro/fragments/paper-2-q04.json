@@ -1,0 +1,165 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "State the median reaction time after sleeping well from the box and whisker diagram.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "read_box_plot",
+        "identify_median"
+      ],
+      "method_path": [
+        "Read median value from the 'slept well' box and whisker diagram",
+        "State median = 0.28 s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "0.28 (s)  A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Verify that the measurement of 0.46 seconds is not an outlier using the IQR method.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "read_box_plot",
+        "identify_quartiles",
+        "calculate_iqr",
+        "calculate_upper_fence",
+        "apply_outlier_test"
+      ],
+      "method_path": [
+        "Read Q1 = 0.27 and Q3 = 0.35 from the box plot",
+        "Calculate IQR = 0.35 − 0.27 = 0.08",
+        "Calculate upper fence = 0.35 + 1.5 × 0.08 = 0.47",
+        "Compare 0.46 < 0.47, conclude 0.46 is not an outlier"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "IQR = 0.35 − 0.27 = 0.08 (A1); substituting their IQR into correct expression for upper fence (A1); 0.35 + 1.5 × 0.08 = 0.47; 0.46 < 0.47 R1 so 0.46 (s) is not an outlier AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q04-C",
+      "question": "4",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "State why it appears that the mean reaction time is greater than the median reaction time.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "interpret_skewness",
+        "relate_mean_median_skewness"
+      ],
+      "method_path": [
+        "Observe the box plot is positively skewed (median closer to Q1 than Q3, or lower range smaller than upper range)",
+        "Conclude that for a positively skewed distribution the mean exceeds the median"
+      ],
+      "accepted_alternatives": [
+        "The median is closer to the lower quartile (positively skewed)",
+        "The distribution is positively skewed",
+        "The range of reaction times below the median is smaller than the range of reaction times above the median",
+        "A correctly and clearly labelled diagram showing positive skew"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "EITHER the median is closer to the lower quartile (positively skewed) R1 OR the distribution is positively skewed R1 OR the range of reaction times below the median is smaller than the range of reaction times above the median R1. Accept a correctly and clearly labelled diagram."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "topic_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q04-D",
+      "question": "4",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Comment on whether the two box and whisker diagrams provide evidence that not sleeping well causes an increase in reaction time.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "compare_box_plots",
+        "evaluate_causation_evidence"
+      ],
+      "method_path": [
+        "Compare the centres and quartiles of the two box plots (noting higher median and quartiles for 'not slept well')",
+        "State whether this provides evidence of causation, or note the sample size is too small to draw conclusions"
+      ],
+      "accepted_alternatives": [
+        "The distribution for 'not sleeping well' is centred at a higher reaction time",
+        "The median reaction time after not sleeping well is equal to the upper quartile reaction time after sleeping well",
+        "75% of reaction times are <0.35 seconds after sleeping well, compared with 50% after not sleeping well",
+        "The sample size of 9 is too small to draw any conclusions"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "EITHER the distribution for 'not sleeping well' is centred at a higher reaction time R1 OR the median reaction time after not sleeping well is equal to the upper quartile reaction time after sleeping well R1 OR 75% of reaction times are <0.35 seconds after sleeping well, compared with 50% after not sleeping well R1 OR the sample size of 9 is too small to draw any conclusions R1. Do not accept a comparison of means. Award R0 to 'correlation does not imply causation'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "topic_uncertain"
+      ]
+    }
+  ]
+}

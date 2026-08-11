@@ -1,0 +1,87 @@
+{
+  "question": "2",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find the area of one shaded circular segment in terms of θ, given radius 2 cm and angle θ.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "area_of_sector",
+        "area_of_triangle",
+        "subtraction",
+        "substitution"
+      ],
+      "method_path": [
+        "Area of sector = ½r²θ",
+        "Area of triangle = ½r²sinθ",
+        "Area of segment = area of sector − area of triangle",
+        "Substitute r = 2: 2θ − 2sinθ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "valid approach to find area of segment by finding area of sector – area of triangle (M1); ½r²θ − ½r²sinθ; ½(2)²θ − ½(2)²sinθ (A1); area = 2θ − 2sinθ A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Given logo area = 13.4 cm², formed by removing two equal segments from a 5×4 cm rectangle, find θ using GDC.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "area_of_rectangle",
+        "subtract_segment_areas",
+        "form_equation",
+        "gdc_solve",
+        "round"
+      ],
+      "method_path": [
+        "Area of rectangle = 5 × 4 = 20",
+        "Area of logo = 20 − 2(2θ − 2sinθ) = 13.4",
+        "Solve 20 − 4θ + 4sinθ = 13.4 using GDC",
+        "θ = 2.36"
+      ],
+      "accepted_alternatives": [
+        "Find area of one segment = (20 − 13.4)/2 = 3.3, solve 2θ − 2sinθ = 3.3 using GDC, θ = 2.36"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "EITHER area of logo = area of rectangle – area of segments (M1); 5×4 − 2×(2θ−2sinθ) = 13.4 (A1); OR area of one segment = (20−13.4)/2 = 3.3 (M1); 2θ−2sinθ = 3.3 (A1); THEN θ = 2.35672...; θ = 2.36 (do not accept an answer in degrees) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

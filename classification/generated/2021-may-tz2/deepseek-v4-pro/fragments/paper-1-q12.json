@@ -1,0 +1,168 @@
+{
+  "question": "12",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Describe a sequence of transformations mapping y=arctan(x) to y=arctan(2x+1)+π/4.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "horizontal_stretch",
+        "horizontal_translation",
+        "vertical_translation"
+      ],
+      "method_path": [
+        "horizontal stretch by factor 1/2",
+        "horizontal translation 1/2 left",
+        "vertical translation up by π/4"
+      ],
+      "accepted_alternatives": [
+        "horizontal translation 1 left, then horizontal stretch factor 1/2, then vertical translation π/4 up"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "Markscheme awards A2 for either: horizontal stretch factor 1/2 then horizontal translation 1/2 left; or horizontal translation 1 left then horizontal stretch factor 1/2. A1 for vertical translation up by π/4 (may be seen anywhere). Total 3 marks. Note: Do not allow 'shrink' or 'compression'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "25-26",
+      "task_summary": "Show that arctan(p)+arctan(q) ≡ arctan((p+q)/(1−pq)) for p,q>0, pq<1.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "trigonometric_substitution",
+        "tan_addition_formula",
+        "arctan_identity"
+      ],
+      "method_path": [
+        "let α=arctan(p), β=arctan(q)",
+        "state tan(α)=p, tan(β)=q",
+        "apply tan(α+β)=(p+q)/(1−pq)",
+        "conclude arctan(p)+arctan(q)=arctan((p+q)/(1−pq))"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-26",
+          "basis": "Markscheme awards M1 for let α=arctan(p), β=arctan(q); (A1) for tan(α)=p, tan(β)=q; A1 for tan(α+β)=(p+q)/(1−pq); A1 for α+β=arctan((p+q)/(1−pq)) and conclusion AG. Total 4 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "26-27",
+      "task_summary": "Verify that arctan(2x+1) ≡ π/4 + arctan(x/(x+1)) for x∈ℝ, x>0.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "arctan_identity",
+        "tan_addition_formula",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "note arctan(1)=π/4",
+        "apply arctan addition formula from part (b) with p=1, q=x/(x+1)",
+        "simplify (1+x/(x+1))/(1−x/(x+1)) to 2x+1",
+        "conclude identity holds"
+      ],
+      "accepted_alternatives": [
+        "Method 2: verify tan(arctan(2x+1)−arctan(x/(x+1)))=1=tan(π/4)",
+        "Method 3: take tan of both sides; LHS=2x+1, RHS simplifies to 2x+1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26-27",
+          "basis": "Markscheme Method 1: A1 for arctan(1)=π/4; A1 for applying part (b) formula arctan(1)+arctan(x/(x+1))=arctan((1+x/(x+1))/(1−x/(x+1))); A1 for simplifying to arctan(2x+1) AG. Methods 2 and 3 also awarded 3 marks (A1, A1, A1). Total 3 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 9,
+      "source_pages": "16",
+      "markscheme_pages": "28-29",
+      "task_summary": "Prove by mathematical induction that Σ(r=1 to n) arctan(1/(2r²)) = arctan(n/(n+1)) for n∈ℤ⁺.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "calculus.series"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "inductive_hypothesis",
+        "summation_splitting",
+        "arctan_addition_formula",
+        "algebraic_simplification",
+        "inductive_conclusion"
+      ],
+      "method_path": [
+        "verify P(1): Σ(r=1 to 1) arctan(1/(2r²))=arctan(1/2)=RHS",
+        "assume P(k): Σ(r=1 to k) arctan(1/(2r²))=arctan(k/(k+1))",
+        "consider P(k+1): split sum at k+1",
+        "apply inductive hypothesis to first k terms",
+        "apply arctan addition formula from part (b) with p=k/(k+1), q=1/(2(k+1)²)",
+        "simplify algebraic fraction to arctan((k+1)/(k+2))",
+        "conclude P(k+1) true",
+        "state by induction P(n) true for all n∈ℤ⁺"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "R1 for verifying P(1) true. M1 for assuming P(k) true. (M1) for considering P(k+1) with sum split. A1 for substituting inductive hypothesis. M1 for applying arctan addition formula from (b). A1 for correct numerator with (k+1) factored. A1 for denominator correctly expanded. A1 for final simplification to arctan((k+1)/(k+2)). R1 for induction conclusion (requires at least 4 previous marks and mention of P(k) truth). Total 9 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

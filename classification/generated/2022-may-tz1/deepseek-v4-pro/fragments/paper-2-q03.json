@@ -1,0 +1,118 @@
+{
+  "question": "3",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Show that setting the sum of probabilities to 1 yields 2k^2 - k + 0.12 = 0.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "sum_of_probabilities_equals_one",
+        "algebraic_simplification",
+        "quadratic_equation"
+      ],
+      "method_path": [
+        "Set 0.41 + (k - 0.28) + 0.46 + (0.29 - 2k^2) = 1",
+        "Simplify to obtain 2k^2 - k + 0.12 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "0.41 + k - 0.28 + 0.46 + 0.29 - 2k^2 = 1 OR 2k^2 - k + 0.12 = 0 (or equivalent) A1 ... 2k^2 - k + 0.12 = 0 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Solve the quadratic for k, reject k = 0.2 because it makes P(X=1) negative, and give k = 0.3.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "solve_quadratic",
+        "check_probability_constraint",
+        "reject_extraneous_solution",
+        "nonnegative_probability"
+      ],
+      "method_path": [
+        "Solve 2k^2 - k + 0.12 = 0 to obtain k = 0.2 or k = 0.3",
+        "Note that P(X=1) = k - 0.28 must be nonnegative",
+        "Reject k = 0.2 because it gives P(X=1) < 0",
+        "Conclude k = 0.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "one of 0.2 OR 0.3 (M1) ... k = 0.3 A1 ... reasoning to reject k = 0.2 eg P(1) = k - 0.28 >= 0 therefore k != 0.2 R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Use E(X) = sum x * P(X=x) with k = 0.3 to obtain E(X) = 1.27.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_value_formula",
+        "weighted_sum",
+        "substitution"
+      ],
+      "method_path": [
+        "Apply E(X) = sum x * P(X=x)",
+        "Substitute k = 0.3 and compute: 0*0.41 + 1*(0.3-0.28) + 2*0.46 + 3*(0.29-2*0.3^2)",
+        "Obtain E(X) = 1.27"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempting to use the expected value formula (M1) ... = 1.27 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

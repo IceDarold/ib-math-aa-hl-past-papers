@@ -1,0 +1,88 @@
+{
+  "question": "9",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q09-A-I-III",
+      "question": "9",
+      "part": "(a)(i)-(iii)",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Apply cosine rule to find AC in terms of α and β, then equate the expressions to derive α = arccos(6cos β − 5).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "cosine_rule",
+        "algebraic_manipulation",
+        "equating_expressions",
+        "inverse_trigonometric_function"
+      ],
+      "method_path": [
+        "Apply cosine rule to triangle ABC: AC² = 2² + 4² − 2(2)(4)cos α → AC = √(20 − 16cos α) = 2√(5 − 4cos α)",
+        "Apply cosine rule to triangle ADC: AC² = 6² + 8² − 2(6)(8)cos β → AC = √(100 − 96cos β) = 2√(25 − 24cos β)",
+        "Equate the two expressions: 5 − 4cos α = 25 − 24cos β",
+        "Solve for α: cos α = 6cos β − 5 → α = arccos(6cos β − 5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "(a)(i): (M1) attempt to use cosine rule; A1 for AC = √(20−16cos α) = 2√(5−4cos α). (a)(ii): A1 for AC = √(100−96cos β) = 2√(25−24cos β). (a)(iii): A1 for α = arccos(6cos β − 5)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q09-B",
+      "question": "9",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Find the maximum area of quadrilateral ABCD by summing the areas of triangles ABC and ADC using (1/2)ab sin C, expressing in one variable, and optimizing with GDC.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "calculus.optimization"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "triangle_area_formula",
+        "trigonometric_substitution",
+        "single_variable_expression",
+        "gdc_optimization"
+      ],
+      "method_path": [
+        "Express total area as sum of two triangle areas: Area = (1/2)(2)(4)sin α + (1/2)(6)(8)sin β = 4 sin α + 24 sin β",
+        "Substitute α = arccos(6cos β − 5) from part (a) to express area in terms of β only",
+        "Use GDC to find the maximum value of the single-variable expression",
+        "Maximum area = 19.5959… ≈ 19.6"
+      ],
+      "accepted_alternatives": [
+        "Express area in terms of α only: 4 sin α + 24 sin(arccos((5 + cos α)/6)), then optimize with GDC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "(M1) attempt to find sum of two triangle areas using (1/2)ab sin C; (A1) Area = 4 sin α + 24 sin β; (M1) attempt to express area in one variable only; A1 Max area = 19.6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

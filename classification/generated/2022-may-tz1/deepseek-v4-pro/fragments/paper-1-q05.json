@@ -1,0 +1,103 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "12",
+      "task_summary": "Describe the two transformations that map the graph of f(x) = 4 sin x + 2.5 to the graph of g(x) = 4 sin(x − 3π/2) + 2.5 + q.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "horizontal_translation",
+        "vertical_translation"
+      ],
+      "method_path": [
+        "horizontal translation (shift) by 3π/2 to the right",
+        "vertical translation (shift) by q upwards"
+      ],
+      "accepted_alternatives": [
+        "Translation by vector (3π/2, q) accepted as a single combined description."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "translation (shift) by 3π/2 to the right OR positive horizontal direction by 3π/2 A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "translation (shift) by q upwards OR positive vertical direction by q A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "Note: accept translation by (3π/2, q) vector. Do not accept 'move' for translation/shift."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "12-13",
+      "task_summary": "Given that g(x) ≥ 7 for all x, find the smallest possible value of r, the y-intercept of g at (0, r).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sine_minimum",
+        "inequality_setup",
+        "solve_linear_inequality",
+        "substitute_x_zero",
+        "evaluate_trigonometric_expression"
+      ],
+      "method_path": [
+        "Find minimum of 4sin(x − 3π/2) = −4",
+        "Set inequality −4 + 2.5 + q ≥ 7 and solve q ≥ 8.5",
+        "Substitute x = 0 with q = 8.5 into g(x)",
+        "Compute r = 4sin(−3π/2) + 2.5 + 8.5 = 4 + 2.5 + 8.5",
+        "State smallest value r = 15"
+      ],
+      "accepted_alternatives": [
+        "Substitute x=0 first to get r = 6.5 + q; then find minimum −4; set −4 + 2.5 + q ≥ 7; replace q with r − 6.5 to obtain r ≥ 15.",
+        "Rewrite g(x) = 4cos x + 2.5 + q; note y-intercept is a maximum; amplitude is 4; least maximum yields r = 4×2 + 7 = 15."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 1: minimum of 4sin(x−3π/2) is −4 (may be seen in sketch) (M1); −4 + 2.5 + q ≥ 7; q ≥ 8.5 (accept q = 8.5) A1; substituting x = 0 and their (q = 8.5) to find r (M1); r = 4sin(−3π/2) + 2.5 + 8.5 = 4 + 2.5 + 8.5 (A1); smallest value of r is 15 A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 2: substituting x = 0 to find an expression for r in terms of q (M1); r = 4sin(−3π/2) + 2.5 + q = 6.5 + q A1; minimum of 4sin(x−3π/2) is −4 (M1); −4 + 2.5 + q ≥ 7 → −4+2.5+(r−6.5) ≥ 7 (A1); smallest value of r is 15 A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 3: 4sin(x−3π/2)+2.5+q = 4cos x+2.5+q A1; y-intercept of 4cos x+2.5+q is a maximum (M1); amplitude of g(x) is 4 (A1); attempt to find least maximum (M1); r = 4×2 + 7; smallest value of r is 15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

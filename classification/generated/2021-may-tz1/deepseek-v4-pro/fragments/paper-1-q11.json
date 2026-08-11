@@ -1,0 +1,130 @@
+{
+  "question": "11",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "(i) Show that the point (−1, 0, 3) lies on L1 by substituting into the Cartesian equation. (ii) Find a vector equation of L1 by setting the Cartesian equation equal to a parameter λ to obtain parametric form, then writing r = (−1, 0, 3) + λ(2, 1, −1).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "substitute_point",
+        "verify_cartesian_equation",
+        "convert_to_parametric",
+        "express_vector_equation"
+      ],
+      "method_path": [
+        "Substitute (−1, 0, 3) into (x+1)/2 = y/1 = (z−3)/(−1)",
+        "Verify all three ratios equal 0",
+        "Set (x+1)/2 = y/1 = (z−3)/(−1) = λ",
+        "Obtain parametric equations x = 2λ−1, y = λ, z = 3−λ",
+        "Express as vector equation r = (−1, 0, 3) + λ(2, 1, −1)"
+      ],
+      "accepted_alternatives": [
+        "Rearrange Cartesian form directly: (x+1)/2 = (y−0)/1 = (z−3)/(−1) without introducing λ, then read off direction vector and point"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "Part (i): substitution (−1+1)/2 = 0/1 = (3−3)/(−1) earns A1 and AG. Part (ii): M1 for attempt to set equal to a parameter or rearrange Cartesian form; (A1) for correct direction vector (2, 1, −1); A1 for r = (−1,0,3) + λ(2,1,−1) or equivalent. Combined [4 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q11-B",
+      "question": "11",
+      "part": "b",
+      "marks": 8,
+      "source_pages": "12",
+      "markscheme_pages": "20–21",
+      "task_summary": "Find the possible values of a when the acute angle between L1 and L2 is 45°, using the scalar product formula cosθ = |d₁·d₂|/(|d₁||d₂|) with d₁ = (2, 1, −1) and d₂ = (a, 1, −1), leading to quadratic a² + 8a − 2 = 0 and solutions a = −4 ± 3√2.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "compute_dot_product",
+        "compute_magnitude",
+        "apply_angle_formula",
+        "solve_absolute_value_equation",
+        "solve_quadratic"
+      ],
+      "method_path": [
+        "Write direction vectors d₁ = (2, 1, −1), d₂ = (a, 1, −1)",
+        "Compute dot product d₁·d₂ = 2a + 2",
+        "Compute magnitudes |d₁| = √6, |d₂| = √(a²+2)",
+        "Apply cos45° = |d₁·d₂|/(|d₁||d₂|) → |2a+2|/(√6√(a²+2)) = 1/√2",
+        "Square both sides and simplify to 4a²+8a+4 = 3a²+6",
+        "Obtain quadratic a² + 8a − 2 = 0",
+        "Solve for a = (−8 ± √72)/2 = −4 ± 3√2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "M1 for attempt to use scalar product formula; (A1)(A1) for LHS and RHS of (2,1,−1)·(a,1,−1) = ±√6√(a²+2)cos45°; A1A1 for simplification to (2a+2)²/(6(a²+2)); A1 for quadratic a²+8a−2=0; M1 for attempt to solve quadratic; A1 for a = −4±3√2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 7,
+      "source_pages": "12",
+      "markscheme_pages": "21–22",
+      "task_summary": "Find k such that L1 and L2 have a unique intersection point only when a ≠ k, and find the coordinates of intersection point A in terms of a. k = 2 (lines parallel when a = 2). Coordinates: A = (a/(a−2), (a−1)/(a−2), (2a−5)/(a−2)).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equate_parametric_forms",
+        "solve_simultaneous_equations",
+        "find_parallel_condition",
+        "find_intersection_point"
+      ],
+      "method_path": [
+        "Write parametric forms: L1: x=2λ−1, y=λ, z=3−λ; L2: x=at, y=1+t, z=2−t",
+        "Equate components to form system of three equations",
+        "Eliminate λ or t to find t = 1/(a−2) or λ = (a−1)/(a−2)",
+        "Identify that solution fails when denominator a−2 = 0, so k = 2",
+        "Substitute t = 1/(a−2) into L2 parametric equations",
+        "Obtain coordinates A = (a/(a−2), (a−1)/(a−2), (2a−5)/(a−2))"
+      ],
+      "accepted_alternatives": [
+        "Method 2: first note that no unique intersection implies parallel direction vectors, so (2,1,−1) ∥ (a,1,−1) giving k=2 independently; then equate parametric forms and solve for intersection point as in Method 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21–22",
+          "basis": "Method 1: M1 for attempt to equate parametric forms; A1 for correct system; M1 for attempt to eliminate λ or t; A1 for k=2; A1 for t=1/(a−2) or λ=(a−1)/(a−2); A2 for coordinates (a/(a−2), (a−1)/(a−2), (2a−5)/(a−2)). Method 2: A1 for k=2 from parallel condition; M1 for equating parametric forms; remaining marks as Method 1. Total [7 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "question": "2",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the coordinates of local maximum A of f(x) = ln(xe^x + 1) - x^4 on [0, 2].",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_find_maximum",
+        "extract_coordinates",
+        "round_values"
+      ],
+      "method_path": [
+        "Use GDC to locate local maximum of f on [0, 2]",
+        "Obtain coordinates (0.709, 0.640)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(0.708519..., 0.639580...) gives (0.709, 0.640); A1A1 for both coordinates. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the x-coordinate of point B, the non-zero x-intercept of f on [0, 2].",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_find_root",
+        "round_value"
+      ],
+      "method_path": [
+        "Use GDC to find x-intercept of f on (0, 2]",
+        "Obtain x = 1.10"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "1.09885... yields x = 1.10; accept (1.10, 0). A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the total area enclosed by the graph of f, the x-axis, and the line x = 2.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "gdc_evaluate",
+        "absolute_area",
+        "round_value"
+      ],
+      "method_path": [
+        "Set up definite integral of f(x) from 0 to 2 on GDC",
+        "Evaluate to obtain 4.61"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Split at x-intercept B. Compute absolute areas: |integral from 0 to 1.09885 of f(x)| + integral from 1.09885 to 2 of f(x) = 0.435901 + 4.17527 = 4.61"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: integral from 0 to 2 of f(x) dx (A1); 4.61117... area = 4.61 (A2). METHOD 2: split at 1.09885, sum absolute areas (A1)(A1); 4.61117... area = 4.61 (A1). [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

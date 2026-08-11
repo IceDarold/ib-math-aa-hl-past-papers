@@ -1,0 +1,92 @@
+{
+  "question": "3",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q03-A",
+      "question": "3",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Use the no-outlier condition (max ≤ Q3 + 1.5×IQR) with IQR = 20 and maximum = 75 to find the minimum possible value of the upper quartile U.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "box_and_whisker_plot",
+        "outlier_condition",
+        "inequality_solving",
+        "quartile"
+      ],
+      "method_path": [
+        "State upper outlier boundary condition: max ≤ Q3 + 1.5 × IQR",
+        "Substitute known values: 75 ≤ U + 1.5 × 20",
+        "Simplify: 75 ≤ U + 30",
+        "Solve inequality: U ≥ 45",
+        "State minimum possible value: U = 45"
+      ],
+      "accepted_alternatives": [
+        "Set boundary equality directly: Q3 + 1.5 × 20 = 75, giving U = 45"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1: attempt to use definition of outlier – Q3 + 1.5 × 20. A1: 1.5 × 20 + 75 ≥ U ⇒ (U ≥ 45, accept U > 45) OR Q3 + 1.5 × 20 = 75. A1: minimum value of U = 45."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "markscheme_ambiguity"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q03-B",
+      "question": "3",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Using IQR = U − L = 20 and the minimum U = 45 from part (a), find the minimum possible value of the lower quartile L.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "box_and_whisker_plot",
+        "iqr_formula",
+        "substitution",
+        "quartile"
+      ],
+      "method_path": [
+        "Apply interquartile range definition: IQR = U − L = 20",
+        "Substitute minimum U = 45 from part (a)",
+        "Solve: L = 45 − 20 = 25",
+        "State minimum possible value: L = 25"
+      ],
+      "accepted_alternatives": [
+        "State L ≥ 25 (accept L > 25) as the minimum directly from the outlier and IQR conditions"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1: attempt to use interquartile range. U − L = 20 (may be seen in part (a)) OR L ≥ 25 (accept L > 25). A1: minimum value of L = 25."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

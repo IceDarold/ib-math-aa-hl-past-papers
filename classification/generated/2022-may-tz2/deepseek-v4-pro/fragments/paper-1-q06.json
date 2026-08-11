@@ -1,0 +1,109 @@
+{
+  "question": "6",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Show that f(x) = x√(1−x²) is an odd function on [−1, 1].",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_variable",
+        "simplify_expression",
+        "identify_odd_function",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Compute f(−x) by substituting −x for x in f(x)=x√(1−x²)",
+        "Simplify f(−x)=−x√(1−(−x)²)=−x√(1−x²)=−f(x)",
+        "Conclude f is an odd function since f(−x)=−f(x)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempts to replace x with −x M1; f(−x) = −x/√(1−(−x)²) = −(x/√(1−x²)) = −f(x) A1; so f is an odd function AG"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "Note: Award M1A0 for a graphical approach including evidence that the graph is invariant after rotation by 180° about the origin or after a reflection in the y-axis then x-axis"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Find the range a ≤ y ≤ b of f(x)=x√(1−x²) on [−1,1] by locating stationary points.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "chain_rule",
+        "differentiate",
+        "set_derivative_zero",
+        "solve_equation",
+        "evaluate_function",
+        "determine_range"
+      ],
+      "method_path": [
+        "Differentiate f(x)=x(1−x²)^(1/2) using product rule and chain rule",
+        "Obtain f′(x)=(1−2x²)/√(1−x²)",
+        "Set f′(x)=0 and solve",
+        "Obtain critical points x=±1/√2",
+        "Evaluate f(±1/√2)=±1/2",
+        "Conclude range a=−1/2, b=1/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempts both product rule and chain rule differentiation to find f′(x) M1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "f′(x) = (1−2x²)/√(1−x²) A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "sets their f′(x)=0 M1; x=±1/√2 A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "attempts to find at least one of f(±1/√2) (M1); a=−1/2 and b=1/2 A1; Note: Award A1 for −1/2≤y≤1/2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

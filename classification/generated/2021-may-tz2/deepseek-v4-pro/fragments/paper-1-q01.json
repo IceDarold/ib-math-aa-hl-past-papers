@@ -1,0 +1,48 @@
+{
+  "question": "1",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Prove algebraically that (n+1)^2 - n^2 = n + (n+1) for consecutive positive integers n and n+1.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "algebraic_expansion",
+        "factor_difference_of_squares",
+        "algebraic_simplification",
+        "verify_equality"
+      ],
+      "method_path": [
+        "Write difference of squares as (n+1)^2 - n^2",
+        "Either: expand (n+1)^2 = n^2 + 2n + 1, subtract n^2, simplify to 2n+1",
+        "Or: factor as (n+1-n)(n+1+n) = 1*(2n+1) = 2n+1",
+        "Rewrite 2n+1 as n + (n+1), the sum of the two integers"
+      ],
+      "accepted_alternatives": [
+        "Expand and simplify: (n+1)^2 - n^2 = n^2 + 2n + 1 - n^2 = 2n + 1 = n + (n+1)",
+        "Factor difference of squares: (n+1)^2 - n^2 = (n+1-n)(n+1+n) = 1*(2n+1) = n + (n+1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(M1) for attempt to subtract squares of integers. EITHER correct order of subtraction and correct expansion of (n+1)^2, seen anywhere A1A1. OR correct order of subtraction and correct factorization of difference of squares A1A1. THEN = n+(n+1) = RHS A1. Note: Do not award final A1 unless all previous working is correct."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

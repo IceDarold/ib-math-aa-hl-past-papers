@@ -1,0 +1,88 @@
+{
+  "question": "5",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Show sin 2x + cos 2x - 1 = 2 sin x (cos x - sin x) using double angle formulas.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "double_angle_formula",
+        "algebraic_simplification",
+        "factorization"
+      ],
+      "method_path": [
+        "apply double angle formula for sin 2x or cos 2x",
+        "simplify to 2 sin x cos x - 2 sin^2 x",
+        "factor to 2 sin x (cos x - sin x)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1 (LHS to RHS): apply double angle formulas to LHS, simplify, factor",
+        "METHOD 2 (RHS to LHS): expand RHS, apply double angle formulas to obtain LHS"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: attempt double angle formula; A1: 2 sin x cos x - 2 sin^2 x; both METHODS 1 and 2 explicitly accepted; note: do not award A1 for proofs working from both sides to a common expression other than 2 sin x cos x - 2 sin^2 x"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Solve sin 2x + cos 2x - 1 + cos x - sin x = 0 for 0 < x < 2pi using part (a).",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "factorization",
+        "trigonometric_equation_solving",
+        "reference_angle",
+        "quadrant_analysis"
+      ],
+      "method_path": [
+        "substitute identity to get 2 sin x (cos x - sin x) + cos x - sin x = 0",
+        "factor to (cos x - sin x)(2 sin x + 1) = 0",
+        "solve cos x = sin x giving tan x = 1, x = pi/4, 5pi/4",
+        "solve sin x = -1/2 giving x = 7pi/6, 11pi/6",
+        "list four solutions: pi/4, 5pi/4, 7pi/6, 11pi/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "M1: attempt to factorise; A1: (cos x - sin x)(2 sin x + 1) = 0; (M1): recognition sin/cos = tan = 1 or sin x = -1/2; (A1): one correct reference angle pi/4 or pi/6; A2: four solutions 7pi/6, 11pi/6, pi/4, 5pi/4 with A1 for any two correct"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

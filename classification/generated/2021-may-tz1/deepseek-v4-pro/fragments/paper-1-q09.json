@@ -1,0 +1,86 @@
+{
+  "question": "9",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find the number of ways to place 5 sheep in 6 pens (each pen holds all sheep) such that Amber and Brownie are not in the same pen.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "multiplication_principle",
+        "restricted_placement",
+        "complementary_counting",
+        "exponentiation"
+      ],
+      "method_path": [
+        "Place Amber: 6 choices",
+        "Place Brownie in a different pen: 5 choices",
+        "Place each of Curly, Daisy, Eden: 6 choices each",
+        "Multiply: 6 × 5 × 6³ = 5 × 6⁴",
+        "5 × 1296 = 6480"
+      ],
+      "accepted_alternatives": [
+        "Total placements without restriction: 6⁵ = 7776. Placements with Amber and Brownie together: choose 1 of 6 pens for both, then 6 choices each for remaining 3 sheep → 6 × 6³ = 6⁴ = 1296. Subtract: 7776 − 1296 = 6480."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: B has one less pen to select (M1), A and B can be placed in 6×5 ways (A1), C, D, E have 6 choices each (A1), 5×6⁴ = 6480 (A1). METHOD 2: total number of ways 6⁵ (A1), number of ways with Amber and Brownie together 6⁴ (A1), attempt to subtract (M1), 6⁵−6⁴ = 5×6⁴ = 6480 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find the number of ways to place 5 sheep in 6 pens (one sheep per pen) such that Amber and Brownie are not in boundary-sharing pens in the 3×2 grid.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "permutations",
+        "restricted_placement",
+        "complementary_counting",
+        "grid_adjacency",
+        "case_analysis"
+      ],
+      "method_path": [
+        "Total unrestricted arrangements: 6! = 720",
+        "Count boundary-sharing adjacent pairs in 3×2 grid: 7 pairs",
+        "Arrangements with Amber and Brownie sharing a boundary: 2 × 7 × 4! = 336",
+        "Subtract: 720 − 336 = 384"
+      ],
+      "accepted_alternatives": [
+        "Case analysis by pen type: A in corner (4 corners) → B has 3 safe pens, remaining 4 sheep in 4! ways → 4 × 3 × 4! = 288. A in middle pen (2 pens) → B has 2 safe pens, remaining 4 sheep in 4! ways → 2 × 2 × 4! = 96. Total: 288 + 96 = 384."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: total number of ways 6! = 720 (A1), number of ways with Amber and Brownie sharing a boundary = 2×7×4! = 336 (A1), attempt to subtract (M1), 720−336 = 384 (A1). METHOD 2: case 1 placing A in corner pen: 4×(3×4×3×2×1) = 12×4! = 288 (A1), case 2 placing A in middle pen: 2×(2×4×3×2×1) = 4×4! = 96 (A1), attempt to add (M1), 288+96 = 384 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

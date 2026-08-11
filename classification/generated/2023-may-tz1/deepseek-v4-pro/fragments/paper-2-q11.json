@@ -1,0 +1,241 @@
+{
+  "question": "11",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Find the exact value of E(X) where X has PDF f(x)=6/(π√(16-x²)) for 0≤x≤2.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "expected_value",
+        "definite_integral",
+        "substitution",
+        "trigonometric_substitution",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Set up E(X)=∫₀² x·6/(π√(16-x²)) dx",
+        "Integrate by substitution u=16-x² or x=4sinθ",
+        "Obtain antiderivative expression with correct constants",
+        "Substitute limits x=0 and x=2",
+        "Simplify to exact value (12/π)(2-√3) or equivalent"
+      ],
+      "accepted_alternatives": [
+        "Trigonometric substitution x=4sinθ leading to (24/π)(1-cos(π/6))"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "E(X)=∫₀² x·6/(π√(16-x²))dx (A1); attempt to integrate using inspection/substitution (M1); integrated expression e.g. (6/2π)(-2√(16-x²)) (A1); attempt to substitute limits and evaluate (M1); final answer (A1). Note accepts (24/π)(1-cos(π/6)) for final A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Find P(X<0.5) for the given continuous PDF.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "cumulative_probability",
+        "definite_integral",
+        "gdc_integration"
+      ],
+      "method_path": [
+        "Set up P(X<0.5)=∫₀^0.5 6/(π√(16-x²)) dx",
+        "Evaluate integral using GDC to obtain 0.239"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "∫₀^0.5 f(x)dx (M1); 0.239358… ≈ 0.239 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Determine the least number of independent trials required to be 99% sure of at least one success, where success is defined as X<0.5.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "complement_rule",
+        "inequality",
+        "solve_for_n"
+      ],
+      "method_path": [
+        "Recognise P(at least one success)=1−P(no successes)=1−(1−p)^n",
+        "Set up inequality 1−(1−0.239…)^n ≥ 0.99",
+        "Solve for n obtaining n ≥ 16.83…",
+        "Conclude minimum n=17 trials"
+      ],
+      "accepted_alternatives": [
+        "Recognise Y~B(n, 0.239…), test n=16 (P≈0.987…) and n=17 (P≈0.990…), select n=17"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "EITHER: recognition P(at least one success)=1−P(no successes) (M1); 1−(1−0.239…)^n ≥ 0.99 (A1); n=16.8321… so 17 trials (A1). OR: recognition Y~B(n,0.239…) (M1); n=16 gives 0.987443… and n=17 gives 0.990448… (A1); 17 trials (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "For ten independent trials, find the probability that exactly three trials are successful.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "binomial_probability",
+        "gdc"
+      ],
+      "method_path": [
+        "Identify Y~B(10, 0.239…)",
+        "Compute P(Y=3)=C(10,3)·p³·(1−p)⁷ using GDC",
+        "Obtain 0.242"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "Recognition that Y~B(10, their part b) (M1); P(X=3)=0.242430… ≈ 0.242 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Write down the number of ways three successful trials could have occurred consecutively in ten trials.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "consecutive_arrangement",
+        "direct_count"
+      ],
+      "method_path": [
+        "Count starting positions for a block of 3 consecutive successes in 10 trials: positions 1–3 through 8–10",
+        "Conclude 8 ways"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "8 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "(i) Write an expression for the number of ways three successful trials could occur consecutively in n trials. (ii) Find the greatest n such that the probability of three consecutive successes is more than 0.05.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [
+        "statistics.probability",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "consecutive_arrangement",
+        "binomial_coefficient",
+        "probability_expression",
+        "inequality",
+        "solve_for_n"
+      ],
+      "method_path": [
+        "(i) Express number of ways as n−2",
+        "(ii) Express total ways to choose 3 successes from n as C(n,3)",
+        "Form probability as (n−2)/C(n,3) and simplify to 6/(n(n−1))",
+        "Set up inequality 6/(n(n−1)) > 0.05",
+        "Solve for n obtaining n < 11.466…",
+        "Conclude greatest integer n = 11"
+      ],
+      "accepted_alternatives": [
+        "Solve (n−2)/C(n,3) > 0.05 directly; use table of values for n=11 and n=12"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(i) n−2 (A1). (ii) C(n,3) (A1); (n−2)/C(n,3) (A1); attempt to solve their expression > 0.05 OR 6/(n(n−1)) > 0.05 (M1); n=11 gives 0.0545454… and n=12 gives 0.0454545… (A1); n=11 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "question": "5",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Find m in terms of q, given f(x) = sin(qx) with x-intercepts at x = 0, 2m, 4m.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "recognize_period",
+        "relate_period_to_coefficient",
+        "equate_expressions",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Recognize period of sin(qx) is 2π/q",
+        "Identify period = 4m from given x-intercepts",
+        "Set 2π/q = 4m",
+        "Solve to obtain m = π/(2q)"
+      ],
+      "accepted_alternatives": [
+        "Substitute x = m where sin(qm) = 1 (maximum), giving qm = π/2 and m = π/(2q)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "recognition that period is 4m OR substitution of a point on f (except the origin) (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "2π/q = 4m OR sin qm = 1 ... m = π/(2q) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Sketch the graph of g(x) = 3 sin(2qx/3) for 0 <= x <= 6m on the given axes.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "identify_transformation",
+        "calculate_period",
+        "identify_amplitude",
+        "identify_domain",
+        "locate_intercepts",
+        "locate_extrema",
+        "sketch_curve"
+      ],
+      "method_path": [
+        "Identify horizontal stretch factor = 3/2 from g(x) = 3 sin(2qx/3)",
+        "Determine period = 6m (or half-period = 3m)",
+        "Identify amplitude = 3",
+        "Identify domain [0, 6m]",
+        "Locate x-intercepts at x = 0, 3m, 6m",
+        "Locate maximum at (3m/2, 3) and minimum at (9m/2, -3)",
+        "Sketch sinusoidal curve through these points on the provided axes"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "horizontal scale factor is 3/2 (seen anywhere) (A1). Note: This (A1) may be earned by seeing a period of 6m, half period of 3m or the correct x-coordinate of the maximum/minimum point."
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "Curve must be an approximate sinusoidal shape (sine or cosine). Only in this case, award the following: A1 for correct amplitude. A1 for correct domain. A1 for correct max and min points and correct x-intercepts."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

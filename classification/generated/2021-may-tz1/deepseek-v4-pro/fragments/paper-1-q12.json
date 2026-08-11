@@ -1,0 +1,158 @@
+{
+  "question": "12",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Show that f''(x) = −1/(4(1+x)^(3/2)) for f(x) = √(1+x), x > −1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "power_rule",
+        "second_derivative"
+      ],
+      "method_path": [
+        "rewrite f(x) as (1+x)^(1/2)",
+        "apply chain rule: f'(x) = (1/2)(1+x)^(−1/2)",
+        "differentiate again: f''(x) = −(1/4)(1+x)^(−3/2)",
+        "express as −1/(4(1+x)^(3/2))"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "M1 attempt to use the chain rule; A1 f'(x) = 1/2 (1+x)^(−1/2); A1 f''(x) = −1/4 (1+x)^(−3/2) = −1/(4(1+x)^(3/2)) AG. Note: Award M1A0A0 for f'(x) = 1/(x+1) or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 9,
+      "source_pages": "13",
+      "markscheme_pages": "22-24",
+      "task_summary": "Prove by mathematical induction that f^(n)(x) = ((−1)^(n−1))/4 · (2n−3)!/(n−2)! · (1+x)^(−(2n−1)/2) for n ∈ ℤ, n ≥ 2.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "mathematical_induction",
+        "base_case",
+        "inductive_hypothesis",
+        "inductive_step",
+        "differentiation",
+        "factorial_manipulation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "verify base case n=2 using result from part (a)",
+        "assume formula true for n=k",
+        "differentiate f^(k)(x) to obtain f^(k+1)(x)",
+        "simplify coefficient using factorial identity (2k−1)!/(k−1)! = 2(2k−3)!/(k−2)!",
+        "show result matches formula with n replaced by k+1",
+        "conclude by induction for all n ≥ 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "R1: let n=2, f''(x) = ((−1)^(2−1))/4 · (1!/(0!)) · (1+x)^(−3/2) = −1/4 (1+x)^(−3/2). Note: Award R0 for not starting at n=2."
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "M1: assume true for n=k, f^(k)(x) = ((−1)^(k−1))/4 · ((2k−3)!)/((k−2)!) · (1+x)^(−(2k−1)/2)."
+        },
+        {
+          "markscheme_pages": "22-23",
+          "basis": "M1 consider n=k+1, differentiate f^(k)(x); A1 correct derivative; A1, A1, A1, A1 for algebraic manipulation and factorial simplification."
+        },
+        {
+          "markscheme_pages": "24",
+          "basis": "R1: since true for n=2 and true for n=k+1 if true for n=k, the statement is true for all n≥2 by mathematical induction. Note: at least four previous marks required for final R1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 8,
+      "source_pages": "13",
+      "markscheme_pages": "24-26",
+      "task_summary": "Find possible values of m such that the x² term in the Maclaurin series for h(x) = √(1+x) · e^(mx) has coefficient 7/4.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "maclaurin_series",
+        "product_rule",
+        "second_derivative",
+        "coefficient_equating",
+        "quadratic_solving"
+      ],
+      "method_path": [
+        "apply product rule to find h'(x) and h''(x)",
+        "evaluate h''(0) = m² + m − 1/4",
+        "use Maclaurin formula: coefficient of x² = h''(0)/2!",
+        "equate h''(0)/2 = 7/4 giving h''(0) = 7/2",
+        "form quadratic 4m² + 4m − 15 = 0",
+        "solve: (2m+5)(2m−3)=0",
+        "obtain m = −5/2 or m = 3/2"
+      ],
+      "accepted_alternatives": [
+        "Method 2: find Maclaurin series for f(x)=√(1+x) and g(x)=e^(mx) separately, multiply series, equate x² coefficient to 7/4.",
+        "Method 3: use f(0), f'(0), f''(0) and g(0), g'(0), g''(0) with product rule h'' = f''g + 2f'g' + fg'' evaluated at x=0, equate coefficient."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "Method 1: M1 using product rule; A1 h'(x) = 1/(2√(x+1)) e^(mx) + √(x+1) m e^(mx); A1 h''(x); M1 substituting x=0; A1 h''(0) = m² + m − 1/4."
+        },
+        {
+          "markscheme_pages": "24-25",
+          "basis": "M1 equating x² coefficient to 7/4: h''(0)/2! = 7/4 ⇒ h''(0) = 7/2; A1 4m²+4m−15=0; A1 (2m+5)(2m−3)=0; A1 m=−5/2 or m=3/2."
+        },
+        {
+          "markscheme_pages": "25",
+          "basis": "Method 2: M1 find f(0), f'(0), f''(0); A1 f(x)=1+(1/2)x−(1/8)x²+…; A1 g(x)=1+mx+(m²/2)x²+…; M1 multiply series; A1 coefficient m²/2+m/2−1/8; M1 equate to 7/4; A1 4m²+4m−15=0; A1 m=−5/2 or m=3/2."
+        },
+        {
+          "markscheme_pages": "26",
+          "basis": "Method 3: A1 g'(0)=m, g''(0)=m²; M1 equate coefficient; M1 product rule; A1 h'' = f''g + 2f'g' + fg''; M1 substitute x=0; A1 h''(0)=m²+m−1/4; A1 4m²+4m−15=0; A1 m=−5/2 or m=3/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

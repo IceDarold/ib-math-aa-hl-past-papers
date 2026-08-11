@@ -1,0 +1,1445 @@
+{
+  "session": "May 2021",
+  "zone": "TZ2",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Use GDC to find the regression line y = ax + b and Pearson's r for the given (x, y) data on customers ahead and waiting time.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "linear_regression",
+        "pearson_correlation_coefficient",
+        "gdc_calculation"
+      ],
+      "method_path": [
+        "Input (x, y) data into GDC",
+        "Compute linear regression of y on x to obtain a and b",
+        "Read Pearson's product-moment correlation coefficient r from GDC output"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "a = 0.805084… and b = 2.88135… (accept a = 0.805, b = 2.88) A1A1; r = 0.97777… (accept r = 0.978) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Interpret the slope a in context: the average increase in waiting time per additional customer ahead.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "slope_interpretation",
+        "contextual_application"
+      ],
+      "method_path": [
+        "Interpret a as the average increase in waiting time (minutes) per additional customer waiting ahead"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "a represents the (average) increase in waiting time (0.805 mins) per additional customer (waiting to receive their coffee) R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Estimate Sarah's waiting time when x = 7 by substituting into the regression equation.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "prediction_from_model"
+      ],
+      "method_path": [
+        "Substitute x = 7 into y = ax + b using their values of a and b",
+        "Compute y ≈ 8.52 minutes"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to substitute x = 7 into their equation (M1); 8.51693… ≈ 8.52 (mins) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find k such that the kth term of the arithmetic sequence with u1=60 and d=-2.5 equals zero.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "nth_term_formula",
+        "linear_equation"
+      ],
+      "method_path": [
+        "Use u_k = u_1 + (k-1)d",
+        "Set 60 + (k-1)(-2.5) = 0",
+        "Solve for k: k = 25"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to use u_n = u_1 + (n-1)d (M1); 60 + (k-1)(-2.5) = 0; k = 25 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find the maximum value of S_n, the sum of the first n terms of the arithmetic sequence with u1=60 and d=-2.5.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "calculus.optimization"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_series_sum",
+        "quadratic_maximum",
+        "gdc_graphical"
+      ],
+      "method_path": [
+        "Recognise that S_n is maximised when the last positive term is included (n = 25 where u_25 = 0)",
+        "Calculate S_25 = 25/2(60 + 0) = 750"
+      ],
+      "accepted_alternatives": [
+        "Express S_n = n/2(2×60 + (n-1)(-2.5)) as a quadratic, use GDC graph or table to find maximum sum = 750",
+        "Calculate S_24 = 24/2(2×60 + 23×(-2.5)) = 750 (symmetry gives same maximum at n=24)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: attempting to express S_n in terms of n (M1); use of a graph or a table to attempt to find the maximum sum (M1); = 750 (A1). METHOD 2: recognizing maximum occurs at n=25 (M1); S_25 = 25/2(60+0), S_25 = 25/2(2×60+24×(-2.5)) (A1); OR attempting to calculate S_24 (M1); S_24 = 24/2(2×60+23×(-2.5)) (A1); THEN = 750 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find P(S ∩ T), the probability that a randomly selected student plays a sport and is involved in theatre.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_addition_rule",
+        "complement_rule",
+        "probability_intersection"
+      ],
+      "method_path": [
+        "Use complement: P(S ∪ T) = 1 − P(neither) = 1 − 0.18 = 0.82",
+        "Apply addition rule: P(S ∪ T) = P(S) + P(T) − P(S ∩ T)",
+        "Solve: P(S ∩ T) = 0.70 + 0.20 − 0.82 = 0.08"
+      ],
+      "accepted_alternatives": [
+        "Use a clearly labelled Venn diagram with all values correctly placed"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "EITHER P(S)+P(T)+P(S′∩T′)−P(S∩T)=1 OR P(S∪T)=1−0.18. THEN P(S∩T)=0.08 (accept 8%)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find P(T ∩ S′), the probability that a student is involved in theatre but does not play a sport.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_difference",
+        "set_difference"
+      ],
+      "method_path": [
+        "Compute P(T ∩ S′) = P(T) − P(S ∩ T)",
+        "Substitute: 0.20 − 0.08 = 0.12"
+      ],
+      "accepted_alternatives": [
+        "P(T ∩ S′) = P(T ∪ S) − P(S) = 0.82 − 0.70 = 0.12",
+        "Use a clearly labelled Venn diagram"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "EITHER P(T∩S′)=P(T)−P(T∩S)=0.2−0.08 OR P(T∩S′)=P(T∪S)−P(S)=0.82−0.7. THEN =0.12 (accept 12%)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find P(G ∩ T) given that 48% of students are girls and 25% of girls are involved in theatre.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "multiplication_rule"
+      ],
+      "method_path": [
+        "Apply P(G ∩ T) = P(T | G) × P(G)",
+        "Substitute: 0.25 × 0.48 = 0.12"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "P(G∩T)=P(T|G)P(G)=(0.25×0.48). =0.12."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q03-D",
+      "question": "3",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Determine if events G (girl) and T (theatre) are independent, justifying the answer.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "independence_test",
+        "probability_multiplication"
+      ],
+      "method_path": [
+        "Compute P(G) × P(T) = 0.48 × 0.20 = 0.096",
+        "Compare with P(G ∩ T) = 0.12 from part (c)",
+        "Conclude not independent because P(G) × P(T) ≠ P(G ∩ T)"
+      ],
+      "accepted_alternatives": [
+        "Compare P(T | G) = 0.25 with P(T) = 0.20; since P(T | G) ≠ P(T), G and T are not independent"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: P(G)×P(T)=0.48×0.2=0.096. P(G)×P(T)≠P(G∩T)⇒G and T are not independent. METHOD 2: P(T|G)=0.25. P(T|G)≠P(T)⇒G and T are not independent. Note: Do not award A0R1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Find the range of the quadratic function f(x) = 6x² − 12x + 1 for x ∈ ℝ.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_vertex",
+        "complete_square",
+        "quadratic_minimum",
+        "state_range"
+      ],
+      "method_path": [
+        "Attempt to find the vertex: x = −b/(2a) = 1 or complete the square to f(x) = 6(x−1)² − 5",
+        "Find the minimum value: f(1) = −5",
+        "State the range: y ≥ −5"
+      ],
+      "accepted_alternatives": [
+        "Use calculus: f′(x) = 12x − 12 = 0 → x = 1, f(1) = −5, range y ≥ −5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempting to find the vertex (M1); x = 1 OR y = −5 OR f(x) = 6(x−1)² − 5; range is y ≥ −5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Given (g∘f)(x) ≤ 0 for all x ∈ ℝ where g(x) = −x + c, determine the set of possible values for c.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "function_composition",
+        "complete_square",
+        "quadratic_maximum",
+        "inequality_setup",
+        "inequality_solving"
+      ],
+      "method_path": [
+        "Form the composite: g(f(x)) = −(6x² − 12x + 1) + c = −6x² + 12x − 1 + c",
+        "Complete the square: g(f(x)) = −6(x−1)² + 5 + c",
+        "Identify the maximum value 5 + c at x = 1",
+        "Apply the condition: 5 + c ≤ 0",
+        "Solve: c ≤ −5"
+      ],
+      "accepted_alternatives": [
+        "Discriminant method: For g(f(x)) = −6x² + 12x − 1 + c ≤ 0 for all x, require Δ ≤ 0: 144 − 4(−6)(−1+c) ≤ 0 → 120 + 24c ≤ 0 → c ≤ −5",
+        "Geometric transformation method: Reflect f vertically then shift by c; new vertex at (1, 5+c); require 5+c ≤ 0 → c ≤ −5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 1: (g∘f)(x) = −(6x²−12x+1)+c = −6(x−1)²−5+c (A1); relating to range of f OR attempting to find g(−5) (M1); 5+c ≤ 0 (A1); c ≤ −5 A1"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "METHOD 2: vertical reflection followed by vertical shift (M1); new vertex is (1, 5+c) (A1); 5+c ≤ 0 (A1); c ≤ −5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q05-A",
+      "question": "5",
+      "part": "(a)",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Show that the initial amount A₀ = 100 using the model A = A₀ e^(−kt) and the given condition that the plant has 100 units at time of death (t = 0).",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "exponential_decay",
+        "initial_value"
+      ],
+      "method_path": [
+        "Substitute t = 0 into A = A₀ e^(−kt)",
+        "Set A(0) = 100 to obtain A₀ = 100"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A₀ = 100e⁰ → 100 = A₀ AG [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q05-B",
+      "question": "5",
+      "part": "(b)",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Show that k = ln 2 / 5730 using the half-life of 5730 years, i.e. A(5730) = 50.",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "exponential_equation",
+        "logarithms",
+        "algebraic_manipulation",
+        "half_life"
+      ],
+      "method_path": [
+        "Substitute A = 50, t = 5730 into A = 100 e^(−kt)",
+        "Simplify to e^(−5730k) = 1/2",
+        "Take natural logarithm: −5730k = ln(1/2) = −ln 2",
+        "Solve for k = ln 2 / 5730"
+      ],
+      "accepted_alternatives": [
+        "Substitute e^(−5730k) = 1/2, take ln to get −5730k = −ln 2 → k = ln 2 / 5730",
+        "Rewrite as e^(5730k) = 2, take ln to get 5730k = ln 2 → k = ln 2 / 5730"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "correct substitution: 50 = 100e^(−k·5730) OR e^(−k·5730) = 1/2 (M1); EITHER −5730k = ln(1/2) (A1) and ln(1/2) = −ln 2 (A1); OR e^(5730k) = 2 (A1) and 5730k = ln 2 (A1); THEN k = ln 2 / 5730 AG. Note: Award full marks for at least two correct algebraic steps seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q05-C",
+      "question": "5",
+      "part": "(c)",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "13",
+      "task_summary": "Find the time for 25% of carbon-14 to decay (i.e. 75 units remain), correct to the nearest 10 years.",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "exponential_equation",
+        "logarithms",
+        "percentage_decay",
+        "rounding"
+      ],
+      "method_path": [
+        "Recognise 25% decay means 75 units remain",
+        "Substitute A = 75, k = ln 2 / 5730 into 75 = 100 e^(−kt)",
+        "Solve e^(−(ln 2/5730)t) = 0.75",
+        "Take natural logarithm: −(ln 2/5730) t = ln 0.75",
+        "Solve t = −5730 ln 0.75 / ln 2 ≈ 2378.164…",
+        "Round to nearest 10: t = 2380 years"
+      ],
+      "accepted_alternatives": [
+        "Use GDC to graph 75 = 100 e^(−(ln 2/5730)t) and find intersection, obtaining t ≈ 2378 then rounding to 2380"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "75 = 100 e^(−(ln 2/5730)t) (A1); EITHER using an appropriate graph to attempt to solve for t (M1) OR manipulating logs to attempt to solve for t (M1); t = 2378.164... → t = 2380 (years) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "14",
+      "task_summary": "Show that E(X) = (n+1)/(n+2) for the continuous pdf f(x) = (n+1)x^n on [0,1].",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "expected_value",
+        "definite_integral",
+        "power_rule_for_integration",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Set up E(X) = integral from 0 to 1 of x f(x) dx = (n+1) integral of x^(n+1) dx",
+        "Integrate: (n+1)[x^(n+2)/(n+2)] from 0 to 1",
+        "Evaluate limits and simplify to (n+1)/(n+2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "M1 for setting up E(X) = (n+1) integral of x^(n+1) dx from 0 to 1; A1 for evaluating to (n+1)/(n+2) leading to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "14-15",
+      "task_summary": "Show that Var(X) = (n+1)/((n+2)^2 (n+3)) for the given pdf.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "variance_formula",
+        "expected_value_of_square",
+        "definite_integral",
+        "power_rule_for_integration",
+        "algebraic_expansion",
+        "common_denominator",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply Var(X) = E(X^2) - [E(X)]^2",
+        "Compute E(X^2) = integral from 0 to 1 of x^2 f(x) dx = (n+1)/(n+3)",
+        "Substitute E(X) = (n+1)/(n+2) from part (a)",
+        "Form (n+1)/(n+3) - ((n+1)/(n+2))^2",
+        "Combine over common denominator (n+2)^2 (n+3)",
+        "Expand numerator: (n+1)(n+2)^2 - (n+1)^2 (n+3) = n+1",
+        "Obtain Var(X) = (n+1)/((n+2)^2 (n+3))"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use Var(X) = integral of (x - mu)^2 f(x) dx directly. Expand (x - (n+1)/(n+2))^2, multiply by (n+1)x^n, integrate term by term from 0 to 1, and simplify to the same result."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14-15",
+          "basis": "M1 for use of Var(X) = E(X^2) - [E(X)]^2; A1 for correct algebraic setup with integrals; M1 for algebraic manipulation to common denominator; A1 for final result AG. METHOD 2 shown as equivalent alternative with same mark allocation."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "16",
+      "task_summary": "Count the number of finishing orders of 8 runners where Jack finishes immediately after Andrea.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "treating_as_unit",
+        "permutation_counting",
+        "factorial_evaluation"
+      ],
+      "method_path": [
+        "Treat Jack and Andrea as a single ordered unit",
+        "Count permutations of the 7 objects: 7!",
+        "Evaluate: 7! = 5040"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "Jack and Andrea finish in that order (as a unit) so we are considering the arrangement of 7 objects (M1); 7! = 5040 ways A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "16",
+      "task_summary": "Count the number of finishing orders of 8 runners where Jack finishes in any position after Andrea.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "symmetry_argument",
+        "permutation_counting",
+        "factorial_evaluation"
+      ],
+      "method_path": [
+        "Note symmetry: Andrea-before-Jack and Jack-before-Andrea are equally likely",
+        "Count total permutations: 8!",
+        "Divide by 2: 8!/2 = 20160"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Fix the 6 other runners in 6! = 720 ways. For a given ordering of the 6, count acceptable positions for Jack relative to Andrea: sum 7+6+5+4+3+2+1 = 28. Multiply: 28 x 6! = 20160."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: the number of ways that Andrea finishes in front of Jack is equal to the number of ways that Jack finishes in front of Andrea (M1); total number of ways is 8! (A1); 8!/2 = 20160 ways A1. METHOD 2: the other six runners can finish in 6! = 720 ways (A1); when Andrea finishes first, Jack can finish in 7 different positions... 7+6+5+4+3+2+1 = 28 ways (A1); hence there are (7+6+5+4+3+2+1) x 6! ways = 28 x 6! = 20160 ways A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "17",
+      "task_summary": "Show that the real part of (1+z)/(1−z) equals zero, given z = cos θ + i sin θ, by rationalising the denominator using its complex conjugate, expanding, extracting the real part, and simplifying with cos²θ + sin²θ = 1.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "complex_conjugate_rationalisation",
+        "algebraic_expansion",
+        "real_part_extraction",
+        "pythagorean_identity"
+      ],
+      "method_path": [
+        "Express (1+z)/(1−z) as (1+cos θ+i sin θ)/(1−cos θ−i sin θ)",
+        "Multiply numerator and denominator by the complex conjugate of the denominator (1−cos θ+i sin θ)",
+        "Expand the numerator: (1+cos θ + i sin θ)(1−cos θ + i sin θ)",
+        "Expand the denominator: (1−cos θ)² + sin²θ",
+        "Extract the real part of the numerator: 1−cos²θ−sin²θ",
+        "Apply cos²θ + sin²θ = 1 to simplify the numerator to 0",
+        "Conclude Re((1+z)/(1−z)) = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1: attempt to use the complex conjugate of their denominator. A1: correct conjugate expression with (1−cos θ + i sin θ). M1A1: expanding numerator and denominator — M1 for expanding, A1 for correct numerator (1−cos²θ−sin²θ). (M1): using cos²θ+sin²θ=1 to simplify numerator to zero. AG concludes the proof. Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Write the first three terms of the binomial expansion of (1 + t)^(-1) in ascending powers of t.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion"
+      ],
+      "method_path": [
+        "Apply binomial theorem: (1+t)^(-1) = 1 + (-1)t + ((-1)(-2)/2!)t^2 + ...",
+        "Write first three terms: 1 - t + t^2"
+      ],
+      "accepted_alternatives": [
+        "Accept the three terms listed as 1, -t, and t^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "9.(a) 1 - t + t^2 A1. Note: Accept 1, -t and t^2. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Show that the Maclaurin series for sec x up to and including the term in x^4 is 1 + x^2/2 + 5x^4/24, using the Maclaurin series for cos x and the binomial expansion from part (a).",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "binomial_expansion",
+        "series_substitution",
+        "series_truncation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Write Maclaurin series for cos x: 1 - x^2/2! + x^4/4! - ...",
+        "Express sec x = (cos x)^(-1) and set t = cos x - 1 = -x^2/2 + x^4/24 - ...",
+        "Apply part (a) expansion (1+t)^(-1) = 1 - t + t^2 - ...",
+        "Substitute t and expand: 1 - (-x^2/2 + x^4/24) + (-x^2/2 + x^4/24)^2",
+        "Collect terms up to x^4: 1 + x^2/2 - x^4/24 + x^4/4 = 1 + x^2/2 + 5x^4/24"
+      ],
+      "accepted_alternatives": [
+        "Use sec x = 1 - (cos x - 1) + (cos x - 1)^2 - ... directly without explicit t-substitution"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "9.(b) sec x = (1 - x^2/2! + x^4/4! - ...)^(-1) (M1). cos x = 1 - t or sec x = 1 - (cos x - 1) + (cos x - 1)^2 - ... (M1). = 1 - (-x^2/2! + x^4/4! - ...) + (-x^2/2! + x^4/4! - ...)^2 (A1). = 1 + x^2/2 - x^4/24 + x^4/4 (A1); so the Maclaurin series for sec x up to x^4 is 1 + x^2/2 + 5x^4/24 AG. [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Find lim(x→0) (x arctan(2x))/(sec x - 1) using the Maclaurin series for arctan x and the series for sec x from part (b).",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.limits"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "series_substitution",
+        "series_truncation",
+        "limit_evaluation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Write Maclaurin series for arctan(2x) with 2x substituted: 2x - (2x)^3/3 + ...",
+        "Multiply by x to obtain numerator: 2x^2 - 8x^4/3 + ...",
+        "Write denominator sec x - 1 from part (b): x^2/2 + 5x^4/24 + ...",
+        "Form ratio (2x^2 - 8x^4/3 + ...) / (x^2/2 + 5x^4/24 + ...)",
+        "Factor x^2 and cancel: (2 - 8x^2/3 + ...) / (1/2 + 5x^2/24 + ...)",
+        "Take limit as x→0: 2 / (1/2) = 4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "9.(c) arctan(2x) = 2x - (2x)^3/3 + ... (M1, with note: Do not award M1 unless x is replaced by 2x in arctan). Ratio set up and simplified to (2x^2 - 8x^4/3 + ...)/(x^2/2 + 5x^4/24 + ...) (A1). Final simplification to 4 (A1). [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find the standard deviation σ given that 2% of flight times exceed 82 minutes, where T ~ N(75, σ²).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "inverse_normal",
+        "z_score",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Use inverse normal to find z-score for upper tail area 0.02",
+        "Set up z = (82 − 75)/σ with z ≈ 2.0537",
+        "Solve for σ ≈ 3.41"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "use of inverse normal to find z-score (M1); 2.0537... z = ; (82−75)/σ = 2.0537... (A1); σ = 3.408401... σ = 3.41 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find P(T > 80) for T ~ N(75, σ²) using the σ from part (a).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_probability",
+        "upper_tail"
+      ],
+      "method_path": [
+        "Identify the correct upper tail area under the normal curve",
+        "Compute P(T > 80) ≈ 0.0712"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "evidence of identifying the correct area under the normal curve (M1); P(T > 80) = 0.071193... = 0.0712 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find P(T < 82 | T > 80), the conditional probability that a flight taking longer than 80 minutes takes less than 82 minutes.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "normal_probability",
+        "interval_probability"
+      ],
+      "method_path": [
+        "Recognise that P(80 < T < 82) is required",
+        "Compute P(80 < T < 82) ≈ 0.051193",
+        "Divide by P(T > 80) ≈ 0.071193",
+        "Obtain conditional probability ≈ 0.719"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "recognition that P(80 < T < 82) is required (M1); P(80 < T < 82) / P(T > 80) = 0.051193... / 0.071193... (M1)(A1); = 0.719075... = 0.719 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Find the expected number of flights out of 64 that will have a flight time of more than 80 minutes.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "expected_value"
+      ],
+      "method_path": [
+        "Recognise binomial model X ~ B(64, p) with p = P(T > 80)",
+        "Compute E(X) = np = 64 × 0.071193...",
+        "Obtain E(X) ≈ 4.56 flights"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "recognition of binomial probability (M1); X ~ B(64, 0.071193...) or E(X) = 64 × 0.071193... (A1); E(X) = 4.556353... = 4.56 flights A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q10-E",
+      "question": "10",
+      "part": "e",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Find the probability that more than 6 of the 64 flights have a flight time exceeding 80 minutes.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_probability",
+        "complement_rule",
+        "cumulative_distribution"
+      ],
+      "method_path": [
+        "Express P(X > 6) = 1 − P(X ≤ 6) for X ~ B(64, 0.071193...)",
+        "Compute P(X ≤ 6) ≈ 0.83088 using binomial cumulative distribution",
+        "Obtain P(X > 6) ≈ 0.169"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "P(X > 6) = P(X ≥ 7) = 1 − P(X ≤ 6) (M1); 1 − 0.83088... (A1); = 0.1691196... = 0.169 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Show that the volume of the solid of revolution formed by rotating the region enclosed by y=f(x), the axes, and x=ln 16 about the x-axis is πk²·15/34 cubic units.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "volume_of_revolution",
+        "definite_integral",
+        "integration_by_substitution",
+        "evaluate_definite_integral",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply volume of revolution formula V=π∫[f(x)]²dx from x=0 to x=ln16",
+        "Substitute f(x)=ke^(x/2)/(1+e^x) and square to obtain integrand k²e^x/(1+e^x)²",
+        "Integrate using substitution u=1+e^x (or u=e^x, or by recognition)",
+        "Apply limits: x=0→u=2, x=ln16→u=17",
+        "Obtain πk²[-1/u]₂¹⁷ = πk²(1/2−1/17)",
+        "Simplify to πk²·15/34"
+      ],
+      "accepted_alternatives": [
+        "Integration by recognition (no explicit substitution)",
+        "Substitution u=1+e^x",
+        "Substitution u=e^x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "M1 for attempt to use V=π∫(f(x))²dx; M1 for integration method (by recognition or substitution); A3/A1 for correct antiderivative and integration steps; A1 for evaluating limits; final AG for πk²·15/34"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find the value of k such that the bowl volume equals 300 cm³.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_for_variable",
+        "algebraic_manipulation",
+        "substitute_value"
+      ],
+      "method_path": [
+        "Set πk²·15/34 = 300",
+        "Solve for k²: k² = 300·34/(15π) = 680/π",
+        "Take positive root k = √(680/π) = 2√(170/π) ≈ 14.7"
+      ],
+      "accepted_alternatives": [
+        "GDC numerical solve feature"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "M1 for valid algebraic or graphical attempt to find k; A1 for k=√(680/π)=2√(170/π) with k∈ℝ⁺"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find OA=f(0) and BC=f(ln 16), the cross-sectional radii at the top and base of the bowl.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "evaluate_function",
+        "substitute_value",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "(i) OA = f(0): substitute x=0 into f(x)=ke^(x/2)/(1+e^x) to obtain k/2; then substitute k=√(680/π) to get OA=√(170/π)≈7.36 cm",
+        "(ii) BC = f(ln16): substitute x=ln16 to obtain k·4/17; then substitute k to get BC=8√(170)/(17√π)≈3.46 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "M1 for OA=f(0)=k/2; A1 for OA=√(170/π); M1 for BC=f(ln16)=4k/17; A1 for BC=8√(170)/(17√π)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "23-24",
+      "task_summary": "Find where the cross-sectional radius is decreasing most rapidly by sketching f'(x) or f''(x), and state the radius at that point.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.graphing"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "differentiation",
+        "second_derivative",
+        "find_minimum",
+        "solve_equation",
+        "evaluate_function",
+        "sketch_graph"
+      ],
+      "method_path": [
+        "Find f'(x) using quotient/product rule",
+        "Sketch graph of f'(x) to locate its minimum OR sketch f''(x) and identify where f''(x)=0",
+        "Solve f''(x)=0 to obtain x=ln(2+√3)≈1.76",
+        "Evaluate f at this x-value",
+        "State radius = √(85/π) ≈ 5.20 cm"
+      ],
+      "accepted_alternatives": [
+        "Sketch f'(x) and find its local minimum",
+        "Sketch f''(x) and find where f''(x)=0 (maximum rate of decrease)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "M1 for recognising to graph f'(x) or f''(x); A1 for correct derivative expression; A1 for correct graph features (minimum of f' or x-intercept of f''); A1 for x=ln(2+√3); M1 for evaluating f at this x; A1 for radius=√(85/π)≈5.20 cm"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Show that f(x)=arcsin((1-x^2)/(1+x^2)) is an even function.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_neg_x",
+        "simplify_rational",
+        "confirm_parity"
+      ],
+      "method_path": [
+        "Evaluate f(-x)=arcsin((1-(-x)^2)/(1+(-x)^2))",
+        "Simplify to arcsin((1-x^2)/(1+x^2))=f(x)",
+        "Conclude f is even"
+      ],
+      "accepted_alternatives": [
+        "Sketch graph of y=f(x) with line symmetry in the y-axis indicated"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "EITHER f(-x)=arcsin((1-(-x)^2)/(1+(-x)^2))=arcsin((1-x^2)/(1+x^2))=f(x) R1 OR a sketch graph with line symmetry in the y-axis indicated R1. THEN f(x) is an even function AG. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "By considering limits as x approaches +/-infinity, show that y=f(x) has a horizontal asymptote and state its equation.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [
+        "calculus.limits"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "evaluate_limit_infinity",
+        "compute_arcsin_value",
+        "state_asymptote"
+      ],
+      "method_path": [
+        "Take limit as x->+/-inf of (1-x^2)/(1+x^2) equals -1",
+        "Compute arcsin(1)=pi/2",
+        "State horizontal asymptote y=pi/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "as x->+/-inf, f(x)->arcsin(1)->pi/2 A1. horizontal asymptote is y=pi/2 A1. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 9,
+      "source_pages": "14",
+      "markscheme_pages": "25-26",
+      "task_summary": "(i) Show f'(x)=2x/(|x|(1+x^2)) for x not zero using quotient and chain rules. (ii) Using sqrt(x^2)=|x|, show f is decreasing for x<0.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "quotient_rule",
+        "chain_rule",
+        "simplify_derivative",
+        "substitute_absolute_value",
+        "sign_analysis",
+        "conclude_monotonicity"
+      ],
+      "method_path": [
+        "Apply quotient rule to (1-x^2)/(1+x^2) to get 4x/(1+x^2)^2",
+        "Apply chain rule for arcsin(u) with u=(1-x^2)/(1+x^2)",
+        "Combine: f'(x)=(1/sqrt(1-u^2))*(4x/(1+x^2)^2)",
+        "Simplify sqrt(1-u^2)=2|x|/(1+x^2)",
+        "Obtain f'(x)=2x/(|x|(1+x^2))",
+        "For x<0, substitute |x|=-x to get f'(x)=-2/(1+x^2)",
+        "Note numerator negative, denominator positive, so f'(x)<0",
+        "Conclude f is decreasing for x<0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-26",
+          "basis": "(i) M1 quotient rule. A1 d/dx[(1-x^2)/(1+x^2)]=4x/(1+x^2)^2. M1 chain rule. M1 combining. A1 simplification. A1 f'(x)=2x/(|x|(1+x^2)) AG. (ii) EITHER for x<0, |x|=-x (A1) so f'(x)=-2/(1+x^2) A1 OR x<0 and 1+x^2>0 A1, 2x<0, |x|>0 A1. THEN f'(x)<0 R1. [9 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "Find g^{-1}(x) for g(x)=arcsin((1-x^2)/(1+x^2)), x>=0, justifying the choice of root.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "swap_variables",
+        "apply_sine",
+        "solve_rational",
+        "select_positive_root",
+        "state_inverse"
+      ],
+      "method_path": [
+        "Set x=arcsin((1-y^2)/(1+y^2))",
+        "Apply sine: sin x=(1-y^2)/(1+y^2)",
+        "Solve for y^2: y^2=(1+sin x)/(1-sin x)",
+        "Reject negative root because domain of g is x>=0 so range of g^{-1} is y>=0",
+        "State g^{-1}(x)=sqrt((1+sin x)/(1-sin x))"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "M1 x=arcsin((1-y^2)/(1+y^2)). A1 sin x=(1-y^2)/(1+y^2) => sin x + y^2 sin x = 1 - y^2. A1 y^2=(1+sin x)/(1-sin x). R1 positive root taken (domain of g is x>=0 so range of g^{-1} is y>=0). A1 g^{-1}(x)=sqrt((1+sin x)/(1-sin x)). [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain",
+        "markscheme_ambiguity"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "State the domain of g^{-1}.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "state_domain"
+      ],
+      "method_path": [
+        "State domain as -pi/2 <= x < pi/2 or [-pi/2, pi/2)"
+      ],
+      "accepted_alternatives": [
+        "Accept [-pi/2, pi/2[ or [-1.57, 1.57) if correct to 3 s.f."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "domain is -pi/2 <= x < pi/2 A1. Accept correct alternative notations e.g. [-pi/2, pi/2[ or [-pi/2, pi/2). Accept [-1.57, 1.57) if correct to 3 s.f. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P2-Q12-F",
+      "question": "12",
+      "part": "F",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "28",
+      "task_summary": "Sketch the graph of y=g^{-1}(x), indicating asymptotes with equations and axes intercepts.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.inverse_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "indicate_asymptote",
+        "indicate_intercepts",
+        "state_domain_range"
+      ],
+      "method_path": [
+        "Sketch curve with domain [-pi/2, pi/2) and range [0, infinity)",
+        "Mark y-intercept at y=1",
+        "Indicate vertical asymptote x=pi/2",
+        "Show asymptotic behaviour as x approaches pi/2 from below"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A1 for correct domain, correct range and y-intercept at y=1. A1 for asymptotic behaviour x->pi/2. A1 for x=pi/2. Coordinates not required. Do not accept x=1.57 or inexact values. [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "question": "1",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Use GDC to find the regression line coefficients a and b for y on x from the given bivariate data.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_regression",
+        "linear_regression_coefficients"
+      ],
+      "method_path": [
+        "Enter the eight (x, y) data pairs into GDC lists",
+        "Compute linear regression of y on x to obtain y = ax + b",
+        "Read a = 0.433 and b = 4.50"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "a = 0.433156..., b = 4.50265... ; accepts a = 0.433, b = 4.50 with A1A1 for [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "(b)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Predict y when x = 18 by substituting into the regression equation.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "prediction"
+      ],
+      "method_path": [
+        "Substitute x = 18 into their regression equation y = ax + b",
+        "Compute y = 0.433 * 18 + 4.50 = 12.2994...",
+        "Round to y = 12.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to substitute x = 18 into their equation (M1); y = 12.3 A1 for [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q01-C",
+      "question": "1",
+      "part": "(c)",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "State the mean point (x-bar, y-bar) = (15, 11) through which the regression line passes.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "mean_point",
+        "read_from_gdc"
+      ],
+      "method_path": [
+        "Identify the mean point from GDC regression output",
+        "State x-bar = 15, y-bar = 11"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "x-bar = 15, y-bar = 11 A1 for [1 mark]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q01-D",
+      "question": "1",
+      "part": "(d)",
+      "marks": 2,
+      "source_pages": "3-4",
+      "markscheme_pages": "8",
+      "task_summary": "Draw the regression line of best fit on the scatter diagram.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "draw_regression_line",
+        "scatter_diagram"
+      ],
+      "method_path": [
+        "Plot the mean point (15, 11) on the scatter diagram",
+        "Draw a straight line through (15, 11)",
+        "Ensure y-intercept lies between b-1.5 and b+1.5 and line covers 3.3 <= x <= 25.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for a straight line going through (15, 11); A1 for intercepting the y-axis between b +/- 1.5, which includes all data for 3.3 <= x <= 25.3. If candidate does not use a ruler, award A0A1 where appropriate. [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

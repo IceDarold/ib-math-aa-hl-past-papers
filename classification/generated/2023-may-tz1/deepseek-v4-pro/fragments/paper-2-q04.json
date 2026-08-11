@@ -1,0 +1,54 @@
+{
+  "question": "4",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find the standard deviation s of a normal distribution with mean 32 given that the interquartile range is 0.28 mm.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "inverse_normal_distribution",
+        "z_score",
+        "interquartile_range",
+        "normal_distribution_properties",
+        "algebraic_solution"
+      ],
+      "method_path": [
+        "Recognize area below Q1 or above Q3 is 0.25, so P(D < Q1) = 0.25",
+        "Obtain inverse normal z-value: z = inv_Phi(0.75) = 0.674489...",
+        "Express IQR = Q3 - Q1 = (mu + z*sigma) - (mu - z*sigma) = 2*z*sigma = 0.28",
+        "Solve sigma = 0.28/(2 * 0.674489...) = 0.20756...",
+        "Round to 3 significant figures: sigma = 0.208 mm"
+      ],
+      "accepted_alternatives": [
+        "Method 1: Compute Q1 = 31.86 and Q3 = 32.14 from IQR = 0.28 and symmetry about mean 32; set up standardised equation (Q3 - 32)/sigma = 0.674489... or (31.86 - 32)/sigma = -0.674489...; solve for sigma = 0.208 mm. Alternative: equate normal CDF to 0.25 or 0.75 directly using GDC.",
+        "Method 2: Express Q1 = 32 - 0.674489...*sigma and Q3 = 32 + 0.674489...*sigma; use IQR = Q3 - Q1 = 2 * 0.674489...*sigma = 0.28; solve for sigma = 0.208 mm."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "Q1 = 31.86 OR Q3 = 32.14 (A1); recognition that area under the normal curve below Q1 or above Q3 is 0.25 OR area between Q1 and Q3 is 0.5 (M1); z = -0.674489... OR z = 0.674489... (A1); (31.86-32)/sigma = -0.674489... OR (32.14-32)/sigma = 0.674489... (A1); sigma = 0.207564... approx 0.208 (mm) A1."
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "Method 2: Q1 = 32 - 0.674489...sigma and Q3 = 32 + 0.674489...sigma (A1); Q3 - Q1 = 2*0.674489...sigma = 0.28 (A1); Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

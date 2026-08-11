@@ -1,0 +1,59 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the range of k for which the equation e^(2x) + ln k = 3e^x has at least one real solution, by substituting A = e^x to form a quadratic, applying the discriminant condition, and solving the resulting inequality with domain restriction.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.inequalities",
+        "functions.exponential_models",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "quadratic_recognition",
+        "discriminant_condition",
+        "inequality_solving",
+        "exponentiation",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "Recognize quadratic in e^x: (e^x)^2 - 3e^x + ln k = 0",
+        "Apply discriminant condition: (-3)^2 - 4(1)(ln k) >= 0",
+        "Simplify to 9 - 4 ln k >= 0 implies ln k <= 9/4",
+        "Exponentiate: k <= e^(9/4)",
+        "Apply domain restriction from ln k: k > 0",
+        "Combine: 0 < k <= e^(9/4)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognition of quadratic in e^x (M1); (e^x)^2 - 3e^x + ln k = 0 OR A^2 - 3A + ln k = 0"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "recognizing discriminant >= 0 (seen anywhere) (M1); (-3)^2 - 4(1)(ln k) OR 9 - 4 ln k (A1)"
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "ln k <= 9/4 (A1); e^(9/4) (seen anywhere) A1; 0 < k <= e^(9/4) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

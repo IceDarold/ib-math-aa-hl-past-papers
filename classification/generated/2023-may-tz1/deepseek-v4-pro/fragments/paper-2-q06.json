@@ -1,0 +1,86 @@
+{
+  "question": "6",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the smallest positive integer n such that z^n = −i for z = cos(11π/18) + i sin(11π/18).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivres_theorem",
+        "equate_arguments",
+        "solve_trigonometric_equation",
+        "integer_solution"
+      ],
+      "method_path": [
+        "Apply De Moivre's theorem: z^n = cos(11πn/18) + i sin(11πn/18)",
+        "Set z^n = −i and equate arguments: 11πn/18 = 3π/2 + 2kπ, k ∈ ℤ",
+        "Solve for n: 11n = 27 + 36k → n = (27+36k)/11",
+        "Find least positive integer solution: k = 2 ⇒ n = 9"
+      ],
+      "accepted_alternatives": [
+        "Equate imaginary parts instead of arguments: sin(11πn/18) = −1 along with cos(11πn/18) = 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to use De Moivre's theorem (M1); attempt to consider imaginary part (M1) OR attempt to consider argument of −i (M1); 11πn/18 = 3π/2 + 2kπ or 110n = 270 + 360k (A1); n = 9 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "13",
+      "task_summary": "Describe a single geometric transformation applied to z on the Argand diagram that results in z^10.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "argument_of_complex_number",
+        "rotation_transformation",
+        "argand_diagram"
+      ],
+      "method_path": [
+        "Compute arg(z^10) = 10 × 11π/18 = 55π/9 ≡ π/9 (mod 2π)",
+        "Find angular difference: arg(z^10) − arg(z) = π/9 − 11π/18 = −π/2",
+        "State transformation: rotation about the origin by −π/2 (clockwise π/2, or 3π/2 counterclockwise)"
+      ],
+      "accepted_alternatives": [
+        "Recognise z^10 = z^9 × z and use z^9 = −i from part (a); multiplication by −i corresponds to rotation by 3π/2 (or −π/2) about the origin."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "EITHER arg(z^10) = 55π/9 = π/9 (A1); recognising that the difference between arg(z^10) and arg(z) is needed (M1); arg(z^10)−arg(z) = −π/2 OR recognising that z^10 = z^9 × z (M1); z^9 = e^{i·3π/2} (A1); THEN a rotation 3π/2 OR π/2 clockwise about the origin A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

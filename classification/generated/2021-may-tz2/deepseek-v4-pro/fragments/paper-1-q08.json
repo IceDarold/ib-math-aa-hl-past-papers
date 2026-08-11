@@ -1,0 +1,109 @@
+{
+  "question": "8",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Show that the two lines l₁ and l₂ do not intersect.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "set_components_equal",
+        "solve_linear_system",
+        "find_contradiction",
+        "recognize_parallel_vectors",
+        "compare_position_vectors"
+      ],
+      "method_path": [
+        "Set at least two components of l₁ and l₂ equal to form a system of linear equations in λ and μ",
+        "Attempt to solve two of the equations",
+        "Obtain a contradiction (e.g. 5 = 2), proving no solution exists",
+        "Conclude that l₁ and l₂ do not intersect"
+      ],
+      "accepted_alternatives": [
+        "Recognize that direction vectors (2,−2,2) and (1,−1,1) are scalar multiples, so lines are parallel; subtract position vectors to get (1,2,−5) and show it is not a scalar multiple of the direction vector, proving lines are distinct and do not intersect."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: 'setting at least two components of l1 and l2 equal' M1; 'attempt to solve two of the equations' M1; 'gives a contradiction (no solution), eg 5=2' R1; 'so l1 and l2 do not intersect AG' [3 marks]"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 2: 'l1 and l2 are parallel, so l1 and l2 are either identical or distinct.' R1; 'Attempt to subtract two position vectors from each line' M1; showing resulting vector is not a multiple of direction vector A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "16–18",
+      "task_summary": "Find the minimum distance between the two parallel lines l₁ and l₂.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "calculus.optimization"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "identify_parallel_lines",
+        "find_vector_between_points",
+        "cross_product",
+        "vector_magnitude",
+        "distance_between_parallel_lines",
+        "minimize_squared_distance",
+        "derivative"
+      ],
+      "method_path": [
+        "Note that l₁ and l₂ are parallel (direction vectors are scalar multiples)",
+        "Pick point A(3,2,−1) on l₁ and point B(2,0,4) on l₂",
+        "Find vector AB = (−1, −2, 5)",
+        "Compute cross product AB × v where v = (1,−1,1), obtaining (3, 6, 3)",
+        "Find magnitude |AB × v| = √54 = 3√6",
+        "Divide by |v| = √3 to obtain minimum distance = 3√2 = √18"
+      ],
+      "accepted_alternatives": [
+        "Let A be fixed on l₁, B general on l₂; express |AB|² = 3μ² + 12μ + 30; minimize by derivative d|AB|²/dμ = 6μ + 12 = 0 → μ = −2, or complete square 3(μ+2)²+18; minimum distance = √18 = 3√2.",
+        "Use dot-product condition AB·v = 0 with AB expressed in terms of μ (or λ); solve for μ = −2 or λ = 1; compute minimum distance = √18 = 3√2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16–17",
+          "basis": "METHOD 1: 'l1 and l2 are parallel'; 'let A be (3,2,−1) on l1 and let B be (2,0,4) on l2'; 'Attempt to find vector AB = (−1,−2,5)' (M1); 'Distance required is |AB × v|/|v|' M1; cross product = (3,6,3) (A1); 'minimum distance is √18 = 3√2' A1 [5 marks]"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 2: 'let A be a fixed point on l1 eg (3,2,−1) and let B be a general point on l2 (2+μ,−μ,4+μ)'; 'attempt to find vector AB' (M1); AB = (−1+μ,−2−μ,5+μ) A1; |AB|² = 3μ²+12μ+30 M1; derivative or completing square → μ=−2 A1; 'minimum distance is √18 = 3√2' A1 [5 marks]"
+        },
+        {
+          "markscheme_pages": "17–18",
+          "basis": "METHOD 3: 'let A be (3,2,−1) on l1 and let B be (2+μ,−μ,4+μ) on l2' (M1); AB = (−1+μ,−2−μ,5+μ) A1; dot product AB·v = 0 → μ=−2 (or λ=1) M1, A1; 'minimum distance is √18 = 3√2' A1 [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Find angle JDL in triangle JDL given bearing 034 degrees from J to D, JL = 500 km east, and angle JLD = 25 degrees.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "bearing_conversion",
+        "triangle_angle_sum"
+      ],
+      "method_path": [
+        "Convert bearing 034 degrees to interior angle DJL = 90 - 34 = 56 degrees",
+        "Apply triangle angle sum: JDL = 180 - 56 - 25 = 99 degrees"
+      ],
+      "accepted_alternatives": [
+        "Answer accepted in radians: 11pi/20 or 1.73"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "Let N be North. NJD = 34 degrees OR DJL = 56 degrees (must be labelled or indicated in diagram): (A1). JDL = 99 degrees A1. Note: Accept 11pi/20, 1.73 (radians)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Find the distance DL between Lucknow and Delhi using the sine rule in triangle JDL.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "sine_rule",
+        "side_calculation"
+      ],
+      "method_path": [
+        "Set up sine rule: DL / sin(56 degrees) = 500 / sin(99 degrees)",
+        "Solve for DL: DL = 500 * sin(56 degrees) / sin(99 degrees) = 419.685...",
+        "Round to 420 km"
+      ],
+      "accepted_alternatives": [
+        "Use radian equivalents: DL / sin(0.977384...) = 500 / sin(1.72787...)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempt to apply the sine rule (M1). DL/500 = sin56/sin99 OR DL/500 = sin0.977384.../sin1.72787... (A1). DL = 419.685... then DL = 420 (km) A1. Note: Award M1A1A0 for 261 (km) from use of degrees with GDC set in radians."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "13",
+      "task_summary": "Find the modulus of zw.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus_of_product"
+      ],
+      "method_path": [
+        "|zw| = |z| * |w|",
+        "|zw| = 2 * 8",
+        "|zw| = 16"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1: (zw) = 16"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "13",
+      "task_summary": "Find the argument of zw in terms of k.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "argument_addition",
+        "argument_simplification"
+      ],
+      "method_path": [
+        "arg(zw) = arg(z) + arg(w)",
+        "arg(z) = pi/5",
+        "arg(w) = -2k*pi/5",
+        "arg(zw) = pi*(1-2k)/5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to find arg(z) + arg(w) (M1); arg(zw) = arg(z) + arg(w) = pi/5 - 2k*pi/5 = pi*(1-2k)/5 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ1-P2-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "14",
+      "task_summary": "Given zw in R, find the minimum value of k and the corresponding value of zw.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "real_condition",
+        "argument_multiple_of_pi",
+        "linear_diophantine",
+        "polar_evaluation"
+      ],
+      "method_path": [
+        "zw in R implies arg(zw) = n*pi, n in Z",
+        "pi*(1-2k)/5 = n*pi",
+        "1-2k = 5n",
+        "minimum positive integer k gives n = -1, k = 3",
+        "zw = 16(cos(-pi) + i*sin(-pi))",
+        "zw = -16"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "zw in R implies arg(zw) is a multiple of pi (M1); 1-2k is a multiple of 5 (M1); k = 3 (A1); (zw) = 16(cos(-pi) + i*sin(-pi)) = -16 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

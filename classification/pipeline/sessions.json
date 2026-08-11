@@ -1,0 +1,26 @@
+[
+  { "slug": "2021-may-tz1", "session": "May 2021", "zone": "TZ1", "id_prefix": "2021-MAY-TZ1", "source": "AA_HL/2021/May/TZ1" },
+  { "slug": "2021-may-tz2", "session": "May 2021", "zone": "TZ2", "id_prefix": "2021-MAY-TZ2", "source": "AA_HL/2021/May/TZ2" },
+  { "slug": "2021-november-common", "session": "November 2021", "zone": "Common", "id_prefix": "2021-NOV-COMMON", "source": "AA_HL/2021/November/Common" },
+  { "slug": "2022-may-tz1", "session": "May 2022", "zone": "TZ1", "id_prefix": "2022-MAY-TZ1", "source": "AA_HL/2022/May/TZ1" },
+  { "slug": "2022-may-tz2", "session": "May 2022", "zone": "TZ2", "id_prefix": "2022-MAY-TZ2", "source": "AA_HL/2022/May/TZ2" },
+  { "slug": "2022-november-common", "session": "November 2022", "zone": "Common", "id_prefix": "2022-NOV-COMMON", "source": "AA_HL/2022/November/Common" },
+  { "slug": "2023-may-tz1", "session": "May 2023", "zone": "TZ1", "id_prefix": "2023-MAY-TZ1", "source": "AA_HL/2023/May/TZ1" },
+  { "slug": "2023-may-tz2", "session": "May 2023", "zone": "TZ2", "id_prefix": "2023-MAY-TZ2", "source": "AA_HL/2023/May/TZ2" },
+  {
+    "slug": "2023-november-tz1", "session": "November 2023", "zone": "TZ1", "id_prefix": "2023-NOV-TZ1",
+    "sources": { "1": "AA_HL/2023/November/TZ1", "2": "AA_HL/2023/November/TZ1", "3": "AA_HL/2023/November/Common" }
+  },
+  {
+    "slug": "2023-november-tz2", "session": "November 2023", "zone": "TZ2", "id_prefix": "2023-NOV-TZ2",
+    "sources": { "1": "AA_HL/2023/November/TZ2", "2": "AA_HL/2023/November/TZ2", "3": "AA_HL/2023/November/Common" }
+  },
+  { "slug": "2024-may-tz1", "session": "May 2024", "zone": "TZ1", "id_prefix": "2024-MAY-TZ1", "source": "AA_HL/2024/May/TZ1", "processed": true },
+  { "slug": "2024-may-tz2", "session": "May 2024", "zone": "TZ2", "id_prefix": "2024-MAY-TZ2", "source": "AA_HL/2024/May/TZ2" },
+  { "slug": "2024-november-common", "session": "November 2024", "zone": "Common", "id_prefix": "2024-NOV-COMMON", "source": "AA_HL/2024/November/Common", "processed": true },
+  { "slug": "2025-may-tz1", "session": "May 2025", "zone": "TZ1", "id_prefix": "2025-MAY-TZ1", "source": "AA_HL/2025/May/TZ1" },
+  { "slug": "2025-may-tz2", "session": "May 2025", "zone": "TZ2", "id_prefix": "2025-MAY-TZ2", "source": "AA_HL/2025/May/TZ2" },
+  { "slug": "2025-may-tz3", "session": "May 2025", "zone": "TZ3", "id_prefix": "2025-MAY-TZ3", "source": "AA_HL/2025/May/TZ3" },
+  { "slug": "2025-november-tz1", "session": "November 2025", "zone": "TZ1", "id_prefix": "2025-NOV-TZ1", "source": "AA_HL/2025/November/TZ1" },
+  { "slug": "2025-november-tz3", "session": "November 2025", "zone": "TZ3", "id_prefix": "2025-NOV-TZ3", "source": "AA_HL/2025/November/TZ3/English" }
+]

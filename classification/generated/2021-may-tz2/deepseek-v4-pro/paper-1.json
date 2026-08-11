@@ -1,0 +1,1045 @@
+{
+  "session": "May 2021",
+  "zone": "TZ2",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Prove algebraically that (n+1)^2 - n^2 = n + (n+1) for consecutive positive integers n and n+1.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "algebraic_expansion",
+        "factor_difference_of_squares",
+        "algebraic_simplification",
+        "verify_equality"
+      ],
+      "method_path": [
+        "Write difference of squares as (n+1)^2 - n^2",
+        "Either: expand (n+1)^2 = n^2 + 2n + 1, subtract n^2, simplify to 2n+1",
+        "Or: factor as (n+1-n)(n+1+n) = 1*(2n+1) = 2n+1",
+        "Rewrite 2n+1 as n + (n+1), the sum of the two integers"
+      ],
+      "accepted_alternatives": [
+        "Expand and simplify: (n+1)^2 - n^2 = n^2 + 2n + 1 - n^2 = 2n + 1 = n + (n+1)",
+        "Factor difference of squares: (n+1)^2 - n^2 = (n+1-n)(n+1+n) = 1*(2n+1) = n + (n+1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(M1) for attempt to subtract squares of integers. EITHER correct order of subtraction and correct expansion of (n+1)^2, seen anywhere A1A1. OR correct order of subtraction and correct factorization of difference of squares A1A1. THEN = n+(n+1) = RHS A1. Note: Do not award final A1 unless all previous working is correct."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 7,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Solve 2 cos² x + 5 sin x = 4 for 0 ≤ x ≤ 2π by substituting cos² x = 1 − sin² x, forming and solving a quadratic in sin x, rejecting the impossible root, and finding all solutions in the interval.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "trigonometric_identity_substitution",
+        "quadratic_in_sine",
+        "factorisation",
+        "quadratic_formula",
+        "inverse_trigonometric_function"
+      ],
+      "method_path": [
+        "Use cos² x = 1 − sin² x to rewrite the equation entirely in terms of sin x",
+        "Rearrange to form the quadratic 2 sin² x − 5 sin x + 2 = 0",
+        "Factorise as (2 sin x − 1)(sin x − 2) = 0 or apply the quadratic formula sin x = (5 ± √(25−16))/4",
+        "Obtain sin x = 1/2, reject sin x = 2 as impossible",
+        "Solve sin x = 1/2 for x ∈ [0, 2π] to obtain x = π/6 and x = 5π/6"
+      ],
+      "accepted_alternatives": [
+        "Factorisation route: factorise 2 sin² x − 5 sin x + 2 = 0 as (2 sin x − 1)(sin x − 2) = 0, then sin x = 1/2",
+        "Quadratic formula route: sin x = (5 ± √(25−16))/4 = (5 ± 3)/4, giving sin x = 2 (reject) or sin x = 1/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "M1 for attempt to use cos² x = 1 − sin² x. A1 for 2 sin² x − 5 sin x + 2 = 0. EITHER M1 for attempting to factorise with A1 for (2 sin x − 1)(sin x − 2). OR M1 for attempting quadratic formula with A1 for sin x = (5 ± 3)/4. THEN (A1) for sin x = 1/2. A1A1 for x = π/6, 5π/6. Total [7 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "In the expansion of (x + k)^7, the coefficient of x^5 is 63. Find the possible values of k.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "binomial_coefficient",
+        "equating_coefficients",
+        "solving_quadratic"
+      ],
+      "method_path": [
+        "Identify the term in x^5 from (x + k)^7 as 7C2 x^5 k^2",
+        "Compute 7C2 = 21",
+        "Set 21k^2 = 63",
+        "Solve k^2 = 3",
+        "State k = ±√3"
+      ],
+      "accepted_alternatives": [
+        "Use general term 7Cr x^{7-r} k^r with r=2 (or r=5) to identify the x^5 term, then proceed identically."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "Markscheme shows M1 for attempt to use binomial expansion or general term, A1 for identifying correct term 7C2 x^5 k^2 (or r=2/r=5), A1 for 7C2 = 21, A1 for 21k^2 = 63 leading to k^2 = 3, A1 for k = ±√3. Note: M1A1A1A1A0 for k=3 only."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Find the exact value of a where f(x) = ln(x² − 16) crosses the x-axis at A(a, 0), given x > 4.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_logarithmic_equation",
+        "exponentiate",
+        "solve_quadratic_equation",
+        "apply_domain_condition"
+      ],
+      "method_path": [
+        "set_ln_x_squared_minus_16_equal_to_zero",
+        "exponentiate_to_x_squared_minus_16_equals_1",
+        "solve_x_squared_equals_17",
+        "select_positive_square_root_since_x_greater_than_4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme shows: ln(x² − 16) = 0 (M1), e⁰ = x² − 16 = 1, x² = 17 OR x = ±√17 (A1), a = √17 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Given the gradient of the tangent L at point B is 1/3, find the x-coordinate of B.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_composite_function",
+        "chain_rule",
+        "set_derivative_equal_to_constant",
+        "cross_multiply",
+        "rearrange_quadratic",
+        "solve_quadratic_equation",
+        "apply_domain_condition"
+      ],
+      "method_path": [
+        "differentiate_fx_equals_ln_x_squared_minus_16",
+        "obtain_f_prime_x_equals_2x_over_x_squared_minus_16",
+        "set_f_prime_x_equal_to_one_third",
+        "cross_multiply_to_6x_equals_x_squared_minus_16",
+        "rearrange_to_x_squared_minus_6x_minus_16_equals_0",
+        "solve_quadratic_to_x_equals_8_or_x_equals_negative_2",
+        "select_x_equals_8_since_x_greater_than_4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme shows: attempt to differentiate (M1), f′(x) = 2x/(x² − 16) (A1), setting derivative = 1/3 (M1), x² − 16 = 6x OR x² − 6x − 16 = 0 (A1), valid attempt to solve quadratic (M1), x = 8 (A1). Note: Award A0 if final answer includes additional solutions."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 4,
+      "source_pages": "8 of 17",
+      "markscheme_pages": "12 of 29",
+      "task_summary": "Show that |a × b|² = |a|²|b|² − (a · b)² for any two non-zero vectors a and b.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product_magnitude",
+        "trigonometric_substitution",
+        "pythagorean_identity",
+        "dot_product_substitution",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "|a × b|² = |a|²|b|² sin²θ using |a × b| = |a||b| sinθ",
+        "|a|²|b|²(1 − cos²θ) using sin²θ = 1 − cos²θ",
+        "|a|²|b|² − |a|²|b|² cos²θ",
+        "|a|²|b|² − (a · b)² using a · b = |a||b| cosθ"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Start from RHS, substitute a · b = |a||b| cosθ, factor |a|²|b|²(1 − cos²θ) = |a|²|b|² sin²θ = |a × b|².",
+        "Cartesian component method: Expand both sides using a = (a₁, a₂, a₃), b = (b₁, b₂, b₃) and verify identity algebraically. Full marks only if fully developed."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12 of 29",
+          "basis": "METHOD 1: M1 for use of sinθ = |a×b|/(|a||b|) on LHS; A1 for |a×b|² = |a|²|b|² sin²θ; M1 for = |a|²|b|²(1 − cos²θ); A1 for = |a|²|b|² − |a|²|b|² cos²θ OR = |a|²|b|² − (|a||b|cosθ)²; AG for = |a|²|b|² − (a·b)². Note: Cartesian vector approach award full marks if fully developed, otherwise no marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "13-14",
+      "task_summary": "Given triangle ABC with AB=10, BC=x, AC=2x, and cos C=3/4, find the area in the form (p sqrt q)/2.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "cosine_rule",
+        "pythagorean_identity",
+        "area_formula_sine",
+        "equation_solving",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply cosine rule: 10^2 = (2x)^2 + x^2 - 2(2x)(x)(3/4)",
+        "Simplify to 100 = 2x^2, giving x^2 = 50, x = 5 sqrt 2",
+        "Find sin C = sqrt(1 - cos^2 C) = sqrt 7 / 4",
+        "Substitute into area = (1/2)(AC)(BC) sin C = (1/2)(2x)(x)(sqrt 7 / 4)",
+        "Simplify to 25 sqrt 7 / 2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 (height approach): Express height h = x sin C = (sqrt 7 / 4)x. Use Pythagoras to equate h^2 expressions from two right triangles: h^2 + (3x/4)^2 = x^2 and h^2 + (5x/4)^2 = 10^2. Solve for x^2 = 50. Then area = (1/2)(2x)(h) = (1/2)(2x)(sqrt 7 / 4)x = 25 sqrt 7 / 2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: attempt to use the cosine rule to find the value of x (M1); 100 = (2x)^2 + x^2 - 2(2x)(x)(3/4) A1; x^2 = 50 OR x = sqrt 50 = 5 sqrt 2 A1; attempt to find sin C (seen anywhere) (M1); sin C = sqrt 7 / 4 (A1); correct substitution into the area formula using their value of x (or x^2) and their value of sin C (M1); A = 25 sqrt 7 / 2 A1. Total [7 marks]."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 2: attempt to find the height h of the triangle in terms of x (M1); h = (sqrt 7 / 4)x A1; equating their expressions for either h^2 or h (M1); correct equation A1; x^2 = 50 OR x = sqrt 50 = 5 sqrt 2 A1; correct substitution into the area formula using their value of x (or x^2) (M1); A = 25 sqrt 7 / 2 A1. Total [7 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Use Vieta's formulas on cubic x³ − kx² + 3k = 0 with roots α, β, α+β and given αβ = k²/4 to find k (k > 0).",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "vieta_formulas",
+        "sum_of_roots",
+        "product_of_roots",
+        "substitution",
+        "equation_solving"
+      ],
+      "method_path": [
+        "α + β + (α + β) = k → 2(α + β) = k",
+        "αβ(α + β) = −3k",
+        "Substitute αβ = k²/4 and α + β = k/2 → (k²/4)(k/2) = −3k → k³/8 = −3k",
+        "Rearrange to k³/8 + 3k = 0",
+        "Solve with k > 0: k = √24 = 2√6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "Sum of roots α+β+α+β=k awarded A1; product αβ(α+β)=−3k awarded A1; substitution giving k³/8=−3k awarded M1; attempting to solve k³/8+3k=0 for k awarded M1; final answer k=√24=2√6 (k>0) awarded A1. Five marks total."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Show that the two lines l₁ and l₂ do not intersect.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "set_components_equal",
+        "solve_linear_system",
+        "find_contradiction",
+        "recognize_parallel_vectors",
+        "compare_position_vectors"
+      ],
+      "method_path": [
+        "Set at least two components of l₁ and l₂ equal to form a system of linear equations in λ and μ",
+        "Attempt to solve two of the equations",
+        "Obtain a contradiction (e.g. 5 = 2), proving no solution exists",
+        "Conclude that l₁ and l₂ do not intersect"
+      ],
+      "accepted_alternatives": [
+        "Recognize that direction vectors (2,−2,2) and (1,−1,1) are scalar multiples, so lines are parallel; subtract position vectors to get (1,2,−5) and show it is not a scalar multiple of the direction vector, proving lines are distinct and do not intersect."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: 'setting at least two components of l1 and l2 equal' M1; 'attempt to solve two of the equations' M1; 'gives a contradiction (no solution), eg 5=2' R1; 'so l1 and l2 do not intersect AG' [3 marks]"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 2: 'l1 and l2 are parallel, so l1 and l2 are either identical or distinct.' R1; 'Attempt to subtract two position vectors from each line' M1; showing resulting vector is not a multiple of direction vector A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "16–18",
+      "task_summary": "Find the minimum distance between the two parallel lines l₁ and l₂.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "calculus.optimization"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "identify_parallel_lines",
+        "find_vector_between_points",
+        "cross_product",
+        "vector_magnitude",
+        "distance_between_parallel_lines",
+        "minimize_squared_distance",
+        "derivative"
+      ],
+      "method_path": [
+        "Note that l₁ and l₂ are parallel (direction vectors are scalar multiples)",
+        "Pick point A(3,2,−1) on l₁ and point B(2,0,4) on l₂",
+        "Find vector AB = (−1, −2, 5)",
+        "Compute cross product AB × v where v = (1,−1,1), obtaining (3, 6, 3)",
+        "Find magnitude |AB × v| = √54 = 3√6",
+        "Divide by |v| = √3 to obtain minimum distance = 3√2 = √18"
+      ],
+      "accepted_alternatives": [
+        "Let A be fixed on l₁, B general on l₂; express |AB|² = 3μ² + 12μ + 30; minimize by derivative d|AB|²/dμ = 6μ + 12 = 0 → μ = −2, or complete square 3(μ+2)²+18; minimum distance = √18 = 3√2.",
+        "Use dot-product condition AB·v = 0 with AB expressed in terms of μ (or λ); solve for μ = −2 or λ = 1; compute minimum distance = √18 = 3√2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16–17",
+          "basis": "METHOD 1: 'l1 and l2 are parallel'; 'let A be (3,2,−1) on l1 and let B be (2,0,4) on l2'; 'Attempt to find vector AB = (−1,−2,5)' (M1); 'Distance required is |AB × v|/|v|' M1; cross product = (3,6,3) (A1); 'minimum distance is √18 = 3√2' A1 [5 marks]"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 2: 'let A be a fixed point on l1 eg (3,2,−1) and let B be a general point on l2 (2+μ,−μ,4+μ)'; 'attempt to find vector AB' (M1); AB = (−1+μ,−2−μ,5+μ) A1; |AB|² = 3μ²+12μ+30 M1; derivative or completing square → μ=−2 A1; 'minimum distance is √18 = 3√2' A1 [5 marks]"
+        },
+        {
+          "markscheme_pages": "17–18",
+          "basis": "METHOD 3: 'let A be (3,2,−1) on l1 and let B be (2+μ,−μ,4+μ) on l2' (M1); AB = (−1+μ,−2−μ,5+μ) A1; dot product AB·v = 0 → μ=−2 (or λ=1) M1, A1; 'minimum distance is √18 = 3√2' A1 [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 7,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Evaluate the indefinite integral using u = sin x substitution, partial fractions, and logarithmic integration.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "u_substitution",
+        "partial_fractions",
+        "logarithmic_integration",
+        "back_substitution"
+      ],
+      "method_path": [
+        "du = cos x dx",
+        "transform to integral of u/(u^2 - u - 2) du",
+        "factor denominator: (u + 1)(u - 2)",
+        "partial fractions: u/((u + 1)(u - 2)) = A/(u + 1) + B/(u - 2)",
+        "solve: A = 1/3, B = 2/3",
+        "integrate: (1/3)ln|u + 1| + (2/3)ln|u - 2| + C",
+        "back-substitute: (1/3)ln|sin x + 1| + (2/3)ln|sin x - 2| + C"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "u = sin x implies du = cos x dx (or equivalent) A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "integral of u/(u^2 - u - 2) du A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to use partial fractions M1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "Valid attempt to solve for A and B (M1)"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "A = 1/3 and B = 2/3 A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "integral = (1/3)ln|u+1| + (2/3)ln|u-2| + C (or equivalent) A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "(1/3)ln|sin x + 1| + (2/3)ln|sin x - 2| + C A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find the x-coordinates of A and B where the graph of f(x)=6+6cos x touches the x-axis for 0 less than or equal to x less than or equal to 4pi.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_trigonometric_equation",
+        "evaluate_cosine"
+      ],
+      "method_path": [
+        "Set f(x)=0: 6+6cos x=0",
+        "Solve: cos x=-1",
+        "Identify solutions in [0,4pi]: x=pi, x=3pi"
+      ],
+      "accepted_alternatives": [
+        "Set f'(x)=0 giving sin x=0, then verify x=pi, 3pi are minima touching x-axis."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "6+6cos x=0 (or setting their f'(x)=0) (M1); cos x=-1 (or sin x=0); x=pi, x=3pi A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Show that the area of the shaded region enclosed by y=f(x) and the x-axis between A(pi) and B(3pi) is 12pi.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "integrate_trigonometric_function",
+        "substitute_limits",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Set up definite integral from pi to 3pi of (6+6cos x) dx",
+        "Integrate: [6x+6sin x]",
+        "Substitute upper limit: 18pi+6sin(3pi)",
+        "Substitute lower limit: 6pi+6sin(pi)",
+        "Subtract: (18pi+0)-(6pi+0)=12pi"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to integrate from pi to 3pi of (6+6cos x)dx (M1); [6x+6sin x] A1A1; substitute their limits into their integrated expression and subtract (M1); (18pi+6sin3pi)-(6pi+6sin pi) = (18pi-6pi) A1; area = 12pi AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Find the slant height l of a right cone with total surface area 12pi and base radius 2.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "surface_area_of_cone",
+        "substitute_values",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Write total surface area equation: pi r^2 + pi r l = 12pi",
+        "Substitute r=2: 4pi + 2pi l = 12pi",
+        "Solve: 2pi l = 8pi, therefore l=4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to substitute into the formula for surface area (including base) (M1); pi(2)^2 + pi(2)l = 12pi (A1); 4pi + 2pi l = 12pi; 2pi l = 8pi; l=4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Find the volume of the cone with base radius 2 and slant height 4.",
+      "primary_topic": "geometry.solid_geometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "pythagorean_theorem",
+        "volume_of_cone",
+        "substitute_values",
+        "simplify_surd"
+      ],
+      "method_path": [
+        "Apply Pythagoras: h^2 + r^2 = l^2 to find h",
+        "Compute: h^2 + 4 = 16 gives h = sqrt(12) = 2 sqrt(3)",
+        "Apply volume formula: V = (1/3) pi r^2 h",
+        "Substitute and simplify: V = (1/3) pi (4)(2 sqrt(3)) = 8 pi sqrt(3) / 3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "valid attempt to find the height of the cone (M1); e.g. h^2 + 2^2 = l^2; h = sqrt(12) = 2 sqrt(3) (A1); attempt to use V = (1/3) pi r^2 h with their values substituted M1; volume = 8 pi sqrt(3) / 3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "(a)",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "21–22",
+      "task_summary": "Solve the differential equation dv/dt = −(1+v) with v(0)=v₀ to show v(t) = (1+v₀)e^(−t) − 1.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "separate_variables",
+        "integrate",
+        "apply_initial_condition",
+        "solve_for_velocity"
+      ],
+      "method_path": [
+        "Write dv/dt = −(1+v)",
+        "Separate variables: ∫ dv/(1+v) = ∫ −dt",
+        "Integrate: ln(1+v) = −t + C",
+        "Apply v(0)=v₀ to find C = ln(1+v₀)",
+        "Obtain t = ln((1+v₀)/(1+v))",
+        "Rearrange to v(t) = (1+v₀)e^(−t) − 1"
+      ],
+      "accepted_alternatives": [
+        "Separation of variables leading via e^(−t−C) = 1+v",
+        "Using integrating factor",
+        "Assuming form v = ke^(−t) − 1 and determining k from initial condition"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "dv/dt = −(1+v) (A1); ∫ 1/(1+v) dv = ∫ −1 dt (or equivalent / use of integrating factor) M1; ln(1+v) = −t + C A1; attempt to find C with initial conditions t=0, v=v₀ M1; t = ln((1+v₀)/(1+v)) ⇒ (1+v₀)/(1+v) = e^t A1; (1+v) = (1+v₀)e^(−t) A1; v(t) = (1+v₀)e^(−t) − 1 AG"
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "OR: e^(−t−C) = 1+v ⇒ v = e^(−t−C) − 1 … OR: v = ke^(−t) − 1, find k with initial conditions"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-B-I-AND-B-II",
+      "question": "11",
+      "part": "(b)(i) and (b)(ii)",
+      "marks": 7,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Show e^T = 1+v₀ by setting v(T)=0; then integrate v(t) to find s(t), apply s(0)=0, substitute T = ln(1+v₀), and simplify to s_max = v₀ − ln(1+v₀).",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "set_velocity_zero",
+        "solve_for_exponential",
+        "integrate_velocity",
+        "apply_initial_condition",
+        "substitute_time",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Set v(T)=0: (1+v₀)e^(−T) − 1 = 0 → e^T = 1+v₀",
+        "Integrate v(t) to get displacement: s(t) = ∫ ((1+v₀)e^(−t) − 1) dt",
+        "Obtain s(t) = −(1+v₀)e^(−t) − t + D",
+        "Apply s(0)=0 to find D = 1+v₀",
+        "At maximum displacement substitute T = ln(1+v₀)",
+        "Compute s_max = −(1+v₀)·1/(1+v₀) − ln(1+v₀) + 1 + v₀",
+        "Simplify to s_max = v₀ − ln(1+v₀)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(b)(i) recognition that when t=T, v=0 M1; (1+v₀)e^(−T)−1=0 ⇒ e^(−T)=1/(1+v₀) A1; e^T=1+v₀ AG. (ii) s(t)=∫v(t)dt=∫((1+v₀)e^(−t)−1)dt (M1); =−(1+v₀)e^(−t)−t+D A1; (t=0, s=0 so) D=1+v₀ A1; substituting T=ln(1+v₀) M1; s_max=−(1+v₀)(1/(1+v₀))−ln(1+v₀)+1+v₀ A1; s_max=v₀−ln(1+v₀)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "(c)",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "23–24",
+      "task_summary": "Show that v(T−k) = e^k − 1 by substituting t = T−k into v(t) and using e^T = 1+v₀.",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_time",
+        "factor_exponential",
+        "simplify_using_given_relation"
+      ],
+      "method_path": [
+        "Substitute t = T−k: v(T−k) = (1+v₀)e^(−(T−k)) − 1",
+        "Factor exponent: (1+v₀)e^(−T)e^k − 1",
+        "Use e^T = 1+v₀ ⇒ e^(−T) = 1/(1+v₀)",
+        "Simplify to e^k − 1"
+      ],
+      "accepted_alternatives": [
+        "Use e^T = 1+v₀ directly: v(T−k) = e^T·e^(−(T−k)) − 1 = e^k − 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23–24",
+          "basis": "METHOD 1: v(T−k) = (1+v₀)e^(−(T−k)) − 1 = (1+v₀)e^(−T)e^k − 1 (M1); = e^k − 1 A1. METHOD 2: v(T−k) = e^T e^(−(T−k)) − 1 M1; = e^k − 1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-D",
+      "question": "11",
+      "part": "(d)",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Deduce that v(T+k) = e^(−k) − 1 by substituting t = T+k and using e^T = 1+v₀.",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_time",
+        "factor_exponential",
+        "simplify_using_given_relation"
+      ],
+      "method_path": [
+        "Substitute t = T+k: v(T+k) = (1+v₀)e^(−(T+k)) − 1",
+        "Factor exponent: (1+v₀)e^(−T)e^(−k) − 1",
+        "Use e^T = 1+v₀ ⇒ e^(−T) = 1/(1+v₀)",
+        "Simplify to e^(−k) − 1"
+      ],
+      "accepted_alternatives": [
+        "Use e^T = 1+v₀ directly: v(T+k) = e^T·e^(−(T+k)) − 1 = e^(−k) − 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 1: v(T+k) = (1+v₀)e^(−(T+k)) − 1 = (1+v₀)e^(−T)e^(−k) − 1 (A1); = e^(−k) − 1 A1. METHOD 2: v(T+k) = e^T e^(−(T+k)) − 1 (A1); = e^(−k) − 1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q11-E",
+      "question": "11",
+      "part": "(e)",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Show that v(T−k) + v(T+k) ≥ 0 by summing the expressions, simplifying to e^k + e^(−k) − 2, and rewriting as (e^(k/2) − e^(−k/2))^2 ≥ 0.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "add_expressions",
+        "combine_exponentials",
+        "complete_square",
+        "conclude_non_negative"
+      ],
+      "method_path": [
+        "Add the two velocity expressions: v(T−k) + v(T+k) = (e^k − 1) + (e^(−k) − 1)",
+        "Simplify to e^k + e^(−k) − 2",
+        "Rewrite as (e^(k/2) − e^(−k/2))^2",
+        "Conclude (e^(k/2) − e^(−k/2))^2 ≥ 0, hence v(T−k) + v(T+k) ≥ 0"
+      ],
+      "accepted_alternatives": [
+        "Differentiate f(k) = e^k + e^(−k) − 2, find minimum at k=0 gives f(0)=0, conclude f(k) ≥ 0 for all k"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 1: v(T−k)+v(T+k) = e^k+e^(−k)−2 A1; attempt to express as a square M1; = (e^(k/2)−e^(−k/2))^2 ≥ 0 A1; so v(T−k)+v(T+k) ≥ 0 AG. METHOD 2: sum = e^k+e^(−k)−2 A1; Attempt to solve d/dk(e^k+e^(−k)) = 0 (⇒k=0) M1; minimum value of 2, hence e^k+e^(−k) ≥ 2 R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Describe a sequence of transformations mapping y=arctan(x) to y=arctan(2x+1)+π/4.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "horizontal_stretch",
+        "horizontal_translation",
+        "vertical_translation"
+      ],
+      "method_path": [
+        "horizontal stretch by factor 1/2",
+        "horizontal translation 1/2 left",
+        "vertical translation up by π/4"
+      ],
+      "accepted_alternatives": [
+        "horizontal translation 1 left, then horizontal stretch factor 1/2, then vertical translation π/4 up"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "Markscheme awards A2 for either: horizontal stretch factor 1/2 then horizontal translation 1/2 left; or horizontal translation 1 left then horizontal stretch factor 1/2. A1 for vertical translation up by π/4 (may be seen anywhere). Total 3 marks. Note: Do not allow 'shrink' or 'compression'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "25-26",
+      "task_summary": "Show that arctan(p)+arctan(q) ≡ arctan((p+q)/(1−pq)) for p,q>0, pq<1.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "trigonometric_substitution",
+        "tan_addition_formula",
+        "arctan_identity"
+      ],
+      "method_path": [
+        "let α=arctan(p), β=arctan(q)",
+        "state tan(α)=p, tan(β)=q",
+        "apply tan(α+β)=(p+q)/(1−pq)",
+        "conclude arctan(p)+arctan(q)=arctan((p+q)/(1−pq))"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25-26",
+          "basis": "Markscheme awards M1 for let α=arctan(p), β=arctan(q); (A1) for tan(α)=p, tan(β)=q; A1 for tan(α+β)=(p+q)/(1−pq); A1 for α+β=arctan((p+q)/(1−pq)) and conclusion AG. Total 4 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "26-27",
+      "task_summary": "Verify that arctan(2x+1) ≡ π/4 + arctan(x/(x+1)) for x∈ℝ, x>0.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "arctan_identity",
+        "tan_addition_formula",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "note arctan(1)=π/4",
+        "apply arctan addition formula from part (b) with p=1, q=x/(x+1)",
+        "simplify (1+x/(x+1))/(1−x/(x+1)) to 2x+1",
+        "conclude identity holds"
+      ],
+      "accepted_alternatives": [
+        "Method 2: verify tan(arctan(2x+1)−arctan(x/(x+1)))=1=tan(π/4)",
+        "Method 3: take tan of both sides; LHS=2x+1, RHS simplifies to 2x+1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26-27",
+          "basis": "Markscheme Method 1: A1 for arctan(1)=π/4; A1 for applying part (b) formula arctan(1)+arctan(x/(x+1))=arctan((1+x/(x+1))/(1−x/(x+1))); A1 for simplifying to arctan(2x+1) AG. Methods 2 and 3 also awarded 3 marks (A1, A1, A1). Total 3 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 9,
+      "source_pages": "16",
+      "markscheme_pages": "28-29",
+      "task_summary": "Prove by mathematical induction that Σ(r=1 to n) arctan(1/(2r²)) = arctan(n/(n+1)) for n∈ℤ⁺.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "calculus.series"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case_verification",
+        "inductive_hypothesis",
+        "summation_splitting",
+        "arctan_addition_formula",
+        "algebraic_simplification",
+        "inductive_conclusion"
+      ],
+      "method_path": [
+        "verify P(1): Σ(r=1 to 1) arctan(1/(2r²))=arctan(1/2)=RHS",
+        "assume P(k): Σ(r=1 to k) arctan(1/(2r²))=arctan(k/(k+1))",
+        "consider P(k+1): split sum at k+1",
+        "apply inductive hypothesis to first k terms",
+        "apply arctan addition formula from part (b) with p=k/(k+1), q=1/(2(k+1)²)",
+        "simplify algebraic fraction to arctan((k+1)/(k+2))",
+        "conclude P(k+1) true",
+        "state by induction P(n) true for all n∈ℤ⁺"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "R1 for verifying P(1) true. M1 for assuming P(k) true. (M1) for considering P(k+1) with sum split. A1 for substituting inductive hypothesis. M1 for applying arctan addition formula from (b). A1 for correct numerator with (k+1) factored. A1 for denominator correctly expanded. A1 for final simplification to arctan((k+1)/(k+2)). R1 for induction conclusion (requires at least 4 previous marks and mention of P(k) truth). Total 9 marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

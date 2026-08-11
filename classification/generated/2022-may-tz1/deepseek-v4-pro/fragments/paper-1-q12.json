@@ -1,0 +1,213 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "32",
+      "task_summary": "Find the Maclaurin series for f(x) = e^x sin x up to and including the x^3 term.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "recognize_series",
+        "series_multiplication",
+        "collect_terms",
+        "differentiate",
+        "evaluate_at_zero",
+        "substitute_maclaurin_formula"
+      ],
+      "method_path": [
+        "Recognize standard Maclaurin series: e^x = 1 + x + x^2/2! + x^3/3! + ... and sin x = x - x^3/3! + ...",
+        "Multiply the two series, retaining terms up to x^3",
+        "Collect like terms: x + x^2 + (1/2! - 1/3!)x^3 + ...",
+        "State result: f(x) = x + x^2 + x^3/3 + ..."
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 (derivatives): Compute f prime, f double prime, f triple prime using product rule; evaluate at x=0; substitute into Maclaurin formula to obtain f(x) = x + x^2 + x^3/3 + ..."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "32",
+          "basis": "METHOD 1: recognition of both known series (M1); attempt to multiply the two series up to x^3 (M1); intermediate expression (A1); final series x + x^2 + x^3/3 + ... (A1). METHOD 2: f'(x) = e^x cos x + e^x sin x (A1); f''(x)=2e^x cos x, f'''(x)=2e^x(cos x - sin x) (A1); substitute x=0 (M1); obtain series (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "33",
+      "task_summary": "Hence find an approximate value for the definite integral from 0 to 1/2 of e^(x^2) sin(x^2) dx.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "substitute_series",
+        "integrate_termwise",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Substitute x -> x^2 into series: e^(x^2) sin(x^2) = x^2 + x^6/3 + ...",
+        "Integrate termwise from 0 to 1/2: integral x^2 dx = x^3/3, integral x^6/3 dx = x^7/21",
+        "Evaluate at limits: [x^3/3 + x^5/5 + x^7/21] from 0 to 1/2",
+        "Compute: 61/105"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "33",
+          "basis": "e^(x^2) sin(x^2) = x^2 + x^6/3 + ... (A1); substitute and attempt to integrate (M1); obtain [x^3/3 + x^5/5 + x^7/21] (A1); final 61/105 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "34",
+      "task_summary": "(i) Show g''(x) = 2(g'(x) - g(x)) for g(x)=e^x cos x. (ii) Hence deduce g^(4)(x) = 2(g'''(x) - g''(x)).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "apply_product_rule",
+        "differentiate",
+        "simplify_expression",
+        "verify_identity",
+        "deduce_higher_derivative"
+      ],
+      "method_path": [
+        "(i) Apply product rule: g'(x) = e^x cos x - e^x sin x",
+        "Differentiate: g''(x) = -2e^x sin x",
+        "Compute 2(g'(x) - g(x)) = -2e^x sin x, confirming identity",
+        "(ii) Differentiate identity: g'''(x) = 2(g''(x) - g'(x))",
+        "Differentiate again: g^(4)(x) = 2(g'''(x) - g''(x))"
+      ],
+      "accepted_alternatives": [
+        "Accept working with each side separately to obtain -2e^x sin x for both parts."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "34",
+          "basis": "(i) attempt product rule (M1); g'(x) = e^x cos x - e^x sin x (A1); g''(x) = -2e^x sin x (A1); show g''(x) = 2(g'(x)-g(x)) (A1). (ii) g'''(x) = 2(g''(x)-g'(x)) (A1); g^(4)(x) = 2(g'''(x)-g''(x)) AG. Note: Accept working with each side separately."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "35",
+      "task_summary": "Using the result from part (c), find the Maclaurin series for g(x) = e^x cos x up to and including the x^4 term.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "evaluate_derivatives_at_zero",
+        "apply_maclaurin_formula",
+        "construct_series"
+      ],
+      "method_path": [
+        "Evaluate g(0)=1, g'(0)=1, g''(0)=0",
+        "Use part (c): g'''(0)=2(g''(0)-g'(0))=-2, g^(4)(0)=2(g'''(0)-g''(0))=-4",
+        "Substitute into Maclaurin formula: g(0)+g'(0)x+g''(0)x^2/2!+g'''(0)x^3/3!+g^(4)(0)x^4/4!",
+        "State: g(x) = 1 + x - x^3/3 - x^4/6 + ..."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "35",
+          "basis": "attempt to substitute x=0 into a derivative (M1); g(0)=1, g'(0)=1, g''(0)=0 (A1); g'''(0)=-2, g^(4)(0)=-4 (A1); attempt to substitute into Maclaurin formula (M1); g(x)=1+x-x^3/3-x^4/6+... (A1). Do not award marks for approaches not using part (c)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "35-36",
+      "task_summary": "Hence, or otherwise, determine lim_{x->0} (e^x cos x - 1 - x) / x^3.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.series",
+        "calculus.differentiation"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "substitute_series_expansion",
+        "evaluate_limit",
+        "apply_lhopitals_rule",
+        "simplify_algebraic_fraction"
+      ],
+      "method_path": [
+        "Substitute Maclaurin series for e^x cos x: numerator = (1+x-x^3/3-x^4/6+...)-1-x = -x^3/3-x^4/6+...",
+        "Divide by x^3: -1/3 - x/6 + ...",
+        "Take limit as x -> 0: -1/3"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 (l'Hopital): 0/0 form; apply l'Hopital three times: lim g'(x)/(3x^2) = lim g''(x)/(6x) = lim g'''(x)/6 = -2/6 = -1/3."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "35-36",
+          "basis": "METHOD 1: substitute series (M1); obtain lim [-1/3 - x/6 + ...] (A1); answer -1/3 (A1). METHOD 2: indeterminate 0/0, apply l'Hopital (M1); successive applications yield lim (-2e^x sin x - 2e^x cos x)/6 (A1); answer -1/3 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "question": "7",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q07-A",
+      "question": "7",
+      "part": "a",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "18",
+      "task_summary": "Rearrange to 3px^2+2px+(1-p)=0, apply discriminant b^2-4ac>0 with a=3p, b=2p, c=1-p to obtain 16p^2-12p>0, factor to 4p(4p-3)>0, find critical values p=0 and p=3/4, solve the quadratic inequality to get p<0 or p>3/4.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.polynomials",
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "rearrange_equation",
+        "discriminant",
+        "quadratic_inequality",
+        "factoring",
+        "critical_values",
+        "interval_testing"
+      ],
+      "method_path": [
+        "Rearrange to 3px^2 + 2px + (1-p) = 0",
+        "Set discriminant condition: b^2 - 4ac > 0 for distinct real roots",
+        "Substitute a=3p, b=2p, c=1-p: (2p)^2 - 4(3p)(1-p) > 0",
+        "Expand and simplify: 16p^2 - 12p > 0",
+        "Factor: 4p(4p-3) > 0",
+        "Find critical values: p=0, p=3/4",
+        "Solve inequality: p < 0 or p > 3/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1: attempt to use discriminant (b^2-4ac > 0). (2p)^2-4(3p)(1-p) > 0 leads to 16p^2-12p > 0 (A1). M1: attempt to find critical values p=0, p=3/4. M1: recognition that discriminant > 0. A1: p < 0 or p > 3/4."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q07-B",
+      "question": "7",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "18",
+      "task_summary": "Substitute p=4 to get 12x^2+8x-3=0, solve via quadratic formula to obtain x=(-2+/-sqrt(13))/6, and match to the form x=(a+/-sqrt(13))/6 to find a=-2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "quadratic_formula",
+        "simplify_surd"
+      ],
+      "method_path": [
+        "Substitute p=4: 12x^2 + 8x - 3 = 0",
+        "Apply quadratic formula: x = (-8 +/- sqrt(64+144)) / 24",
+        "Simplify: x = (-8 +/- sqrt(208)) / 24 = (-8 +/- 4sqrt(13)) / 24 = (-2 +/- sqrt(13)) / 6",
+        "Match to form x = (a +/- sqrt(13))/6: a = -2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "p=4 implies 12x^2+8x-3=0. M1: valid attempt to use quadratic formula (-b +/- sqrt(b^2-4ac))/(2a) or equivalent. x = (-8 +/- sqrt(208))/24 = (-2 +/- sqrt(13))/6. A1: a = -2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "question": "8",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "17",
+      "task_summary": "Show that the real part of (1+z)/(1−z) equals zero, given z = cos θ + i sin θ, by rationalising the denominator using its complex conjugate, expanding, extracting the real part, and simplifying with cos²θ + sin²θ = 1.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "complex_conjugate_rationalisation",
+        "algebraic_expansion",
+        "real_part_extraction",
+        "pythagorean_identity"
+      ],
+      "method_path": [
+        "Express (1+z)/(1−z) as (1+cos θ+i sin θ)/(1−cos θ−i sin θ)",
+        "Multiply numerator and denominator by the complex conjugate of the denominator (1−cos θ+i sin θ)",
+        "Expand the numerator: (1+cos θ + i sin θ)(1−cos θ + i sin θ)",
+        "Expand the denominator: (1−cos θ)² + sin²θ",
+        "Extract the real part of the numerator: 1−cos²θ−sin²θ",
+        "Apply cos²θ + sin²θ = 1 to simplify the numerator to 0",
+        "Conclude Re((1+z)/(1−z)) = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1: attempt to use the complex conjugate of their denominator. A1: correct conjugate expression with (1−cos θ + i sin θ). M1A1: expanding numerator and denominator — M1 for expanding, A1 for correct numerator (1−cos²θ−sin²θ). (M1): using cos²θ+sin²θ=1 to simplify numerator to zero. AG concludes the proof. Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

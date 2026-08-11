@@ -1,0 +1,1241 @@
+{
+  "session": "May 2023",
+  "zone": "TZ1",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Find angle JDL in triangle JDL given bearing 034 degrees from J to D, JL = 500 km east, and angle JLD = 25 degrees.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "bearing_conversion",
+        "triangle_angle_sum"
+      ],
+      "method_path": [
+        "Convert bearing 034 degrees to interior angle DJL = 90 - 34 = 56 degrees",
+        "Apply triangle angle sum: JDL = 180 - 56 - 25 = 99 degrees"
+      ],
+      "accepted_alternatives": [
+        "Answer accepted in radians: 11pi/20 or 1.73"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "Let N be North. NJD = 34 degrees OR DJL = 56 degrees (must be labelled or indicated in diagram): (A1). JDL = 99 degrees A1. Note: Accept 11pi/20, 1.73 (radians)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Find the distance DL between Lucknow and Delhi using the sine rule in triangle JDL.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "sine_rule",
+        "side_calculation"
+      ],
+      "method_path": [
+        "Set up sine rule: DL / sin(56 degrees) = 500 / sin(99 degrees)",
+        "Solve for DL: DL = 500 * sin(56 degrees) / sin(99 degrees) = 419.685...",
+        "Round to 420 km"
+      ],
+      "accepted_alternatives": [
+        "Use radian equivalents: DL / sin(0.977384...) = 500 / sin(1.72787...)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempt to apply the sine rule (M1). DL/500 = sin56/sin99 OR DL/500 = sin0.977384.../sin1.72787... (A1). DL = 419.685... then DL = 420 (km) A1. Note: Award M1A1A0 for 261 (km) from use of degrees with GDC set in radians."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the composite function (f composed with g)(x) = 2tan x - tan^3 x by substituting g into f.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "function_composition",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute g(x) = tan x into f(x) = 2x - x^3",
+        "Write (f composed with g)(x) = 2tan x - tan^3 x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to substitute g into f (M1); f composed with g of x = 2tan x - tan^3 x (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Sketch the graph of y = 2tan x - tan^3 x for -1 <= x <= 1, labeling local maximum at approximately (0.685, 1.09) and local minimum at approximately (-0.685, -1.09).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "graph_sketching",
+        "local_extrema",
+        "odd_function_symmetry"
+      ],
+      "method_path": [
+        "Sketch odd function curve passing through origin with a maximum above y = 1 and a minimum below y = -1",
+        "Plot endpoints at x = +/-1 with y in [0.6, 0.8] and [-0.8, -0.6] respectively",
+        "Label local maximum at (0.685, 1.09) and local minimum at (-0.685, -1.09)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for approximately correct odd function passing through origin with max above y=1 and min below y=-1; A1 for endpoints at x=+/-1 and y in [0.6,0.8] and [-0.8,-0.6]; A1 for maximum at (0.685,1.09) and minimum at (-0.685,-1.09)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Use the quadratic model y = -0.6T^2 + 23T + 110 to estimate the number of children y when the highest temperature T = 25 deg C.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_quadratic"
+      ],
+      "method_path": [
+        "substitute T=25 into y=-0.6T^2+23T+110",
+        "evaluate to obtain y=310"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognising to find y(25) (M1); y(25) = -0.6 x 25^2 + 23 x 25 + 110 = 310 (children) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find a regression equation to predict ice creams sold x from the total number of children y, using the given five-pair data set.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "regression_x_on_y",
+        "gdc_linear_regression",
+        "rounding_coefficients"
+      ],
+      "method_path": [
+        "recognise that x-on-y regression is required to predict x from y",
+        "use GDC to compute linear regression of x on y, obtaining a=0.0935114, b=7.43053",
+        "write regression equation as x=0.0935y+7.43"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognizing x on y is required (M1); 0.0935114 and 7.43053 (A1); x = 0.0935y + 7.43 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Use the regression equation from part (b) with y=310 from part (a) to predict the number of ice creams sold x when T=25 deg C.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "prediction_from_regression",
+        "follow_through"
+      ],
+      "method_path": [
+        "substitute y=310 into regression equation x=0.0935y+7.43",
+        "compute x=36.419, round to 36 (accept 37 or 36.4)"
+      ],
+      "accepted_alternatives": [
+        "Use y-on-x regression y=9.39x-41.5 from part (b), substitute y=310, solve to get x=37"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to substitute their answer to part (a) into their regression equation (M1); x = 0.0935114 x 310 + 7.43053 = 36.4190 = 36 (accept 37 or 36.4) A1; Note: Award (M1)A1FT for x=37 found from using y=9.39x-41.5; Award (M1)A0FT for a correct FT answer that lies outside [15,46]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find the standard deviation s of a normal distribution with mean 32 given that the interquartile range is 0.28 mm.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "inverse_normal_distribution",
+        "z_score",
+        "interquartile_range",
+        "normal_distribution_properties",
+        "algebraic_solution"
+      ],
+      "method_path": [
+        "Recognize area below Q1 or above Q3 is 0.25, so P(D < Q1) = 0.25",
+        "Obtain inverse normal z-value: z = inv_Phi(0.75) = 0.674489...",
+        "Express IQR = Q3 - Q1 = (mu + z*sigma) - (mu - z*sigma) = 2*z*sigma = 0.28",
+        "Solve sigma = 0.28/(2 * 0.674489...) = 0.20756...",
+        "Round to 3 significant figures: sigma = 0.208 mm"
+      ],
+      "accepted_alternatives": [
+        "Method 1: Compute Q1 = 31.86 and Q3 = 32.14 from IQR = 0.28 and symmetry about mean 32; set up standardised equation (Q3 - 32)/sigma = 0.674489... or (31.86 - 32)/sigma = -0.674489...; solve for sigma = 0.208 mm. Alternative: equate normal CDF to 0.25 or 0.75 directly using GDC.",
+        "Method 2: Express Q1 = 32 - 0.674489...*sigma and Q3 = 32 + 0.674489...*sigma; use IQR = Q3 - Q1 = 2 * 0.674489...*sigma = 0.28; solve for sigma = 0.208 mm."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "Q1 = 31.86 OR Q3 = 32.14 (A1); recognition that area under the normal curve below Q1 or above Q3 is 0.25 OR area between Q1 and Q3 is 0.5 (M1); z = -0.674489... OR z = 0.674489... (A1); (31.86-32)/sigma = -0.674489... OR (32.14-32)/sigma = 0.674489... (A1); sigma = 0.207564... approx 0.208 (mm) A1."
+        },
+        {
+          "markscheme_pages": "10",
+          "basis": "Method 2: Q1 = 32 - 0.674489...sigma and Q3 = 32 + 0.674489...sigma (A1); Q3 - Q1 = 2*0.674489...sigma = 0.28 (A1); Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 7,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Find positive constants a and b given that the coefficient of x^6 in (ax^3+b)^8 is 448 and in (ax^3+b)^10 is 2880.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "term_selection",
+        "binomial_coefficient",
+        "equation_setup",
+        "simultaneous_equations",
+        "algebraic_solving"
+      ],
+      "method_path": [
+        "Write the general term of (ax^3+b)^8: C(8,r)(ax^3)^(8-r) b^r = C(8,r) a^(8-r) b^r x^(24-3r)",
+        "Set exponent of x to 6: 24-3r=6 implies r=6, or symmetrically r=2",
+        "Write the x^6 coefficient equation for n=8: C(8,2) a^6 b^2 = 448",
+        "Simplify: 28 a^6 b^2 = 448 implies a^6 b^2 = 16",
+        "Write general term of (ax^3+b)^10, set 30-3r=6 implies r=8 (or r=2)",
+        "Write the x^6 coefficient equation for n=10: C(10,2) a^8 b^2 = 2880",
+        "Simplify: 45 a^8 b^2 = 2880 implies a^8 b^2 = 64",
+        "Solve the system, e.g. divide: a^2 = 4 implies a = 1/2 (a>0)",
+        "Substitute back to find b: b^2 = 4 implies b = 2 (b>0)"
+      ],
+      "accepted_alternatives": [
+        "Using r=6 instead of r=2 for n=8 expansion (or r=8 instead of r=2 for n=10), by symmetry of binomial coefficients.",
+        "Solving the system graphically instead of algebraically."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "product of a binomial coefficient, a power of ax^3 and a power of b seen (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "evidence of correct term chosen: for n=8: r=2 (or r=6) OR for n=10: r=2 (or r=8) (A1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "correct equations (may include powers of x) A1A1"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "C(8,2) a^6 b^2 = 448 implies 28 a^6 b^2 = 448 implies a^6 b^2 = 16, C(10,2) a^8 b^2 = 2880 implies 45 a^8 b^2 = 2880 implies a^8 b^2 = 64"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to solve their system in a and b algebraically or graphically (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "b = 2; a = 1/2 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the smallest positive integer n such that z^n = −i for z = cos(11π/18) + i sin(11π/18).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivres_theorem",
+        "equate_arguments",
+        "solve_trigonometric_equation",
+        "integer_solution"
+      ],
+      "method_path": [
+        "Apply De Moivre's theorem: z^n = cos(11πn/18) + i sin(11πn/18)",
+        "Set z^n = −i and equate arguments: 11πn/18 = 3π/2 + 2kπ, k ∈ ℤ",
+        "Solve for n: 11n = 27 + 36k → n = (27+36k)/11",
+        "Find least positive integer solution: k = 2 ⇒ n = 9"
+      ],
+      "accepted_alternatives": [
+        "Equate imaginary parts instead of arguments: sin(11πn/18) = −1 along with cos(11πn/18) = 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to use De Moivre's theorem (M1); attempt to consider imaginary part (M1) OR attempt to consider argument of −i (M1); 11πn/18 = 3π/2 + 2kπ or 110n = 270 + 360k (A1); n = 9 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "13",
+      "task_summary": "Describe a single geometric transformation applied to z on the Argand diagram that results in z^10.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "argument_of_complex_number",
+        "rotation_transformation",
+        "argand_diagram"
+      ],
+      "method_path": [
+        "Compute arg(z^10) = 10 × 11π/18 = 55π/9 ≡ π/9 (mod 2π)",
+        "Find angular difference: arg(z^10) − arg(z) = π/9 − 11π/18 = −π/2",
+        "State transformation: rotation about the origin by −π/2 (clockwise π/2, or 3π/2 counterclockwise)"
+      ],
+      "accepted_alternatives": [
+        "Recognise z^10 = z^9 × z and use z^9 = −i from part (a); multiplication by −i corresponds to rotation by 3π/2 (or −π/2) about the origin."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "EITHER arg(z^10) = 55π/9 = π/9 (A1); recognising that the difference between arg(z^10) and arg(z) is needed (M1); arg(z^10)−arg(z) = −π/2 OR recognising that z^10 = z^9 × z (M1); z^9 = e^{i·3π/2} (A1); THEN a rotation 3π/2 OR π/2 clockwise about the origin A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "Complete the tree diagram by labelling the missing branch probabilities: P(G') and the conditional probabilities P(positive | G), P(negative | G).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "tree_diagram",
+        "complementary_probability",
+        "conditional_probability_branches"
+      ],
+      "method_path": [
+        "Label P(G') = 1 − p on the lower first-level branch",
+        "Label P(positive | G) = 0.95 and P(negative | G) = 0.05 on the branches from G"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "A1 for branch correctly labelled 1−p; A1 for branches correctly labelled 0.95 and 0.05; A0 for G' branch labelled p' or q unless explicitly defined as 1−p."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "15–16",
+      "task_summary": "Given that 18 out of 150 positive test results are false positives, estimate the population proportion p with the gene.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "law_of_total_probability",
+        "equation_solving",
+        "estimation",
+        "rounding"
+      ],
+      "method_path": [
+        "Recognize the conditional probability P(G' | positive) = 18/150",
+        "Express via law of total probability: 0.02(1−p) / (0.95p + 0.02(1−p)) = 18/150",
+        "Solve the equation for p",
+        "Round to p ≈ 0.134"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Set up system 0.95pS = 132 and (1−p)(0.02)S = 18, solve for p.",
+        "METHOD 3: Compute number with gene = 132/0.95 ≈ 138.95, number without = 18/0.02 = 900, total ≈ 1038.95, then p ≈ 138.95/1038.95 ≈ 0.134."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15–16",
+          "basis": "METHOD 1: (M1) recognizing conditional probability; (A1)(A1) correct numerator and denominator in 0.02(1−p)/(0.95p+0.02(1−p)) = 18/150; A1 p = 0.134. METHOD 2: (M1) system of equations; (A1) 0.95pS = 132 and (1−p)(0.02)S = 18; (M1) solve; A1 p = 0.134. METHOD 3: (M1) find numbers; (A1) 132/0.95 and 18/0.02; (M1) find proportion; A1 p = 0.134."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 7,
+      "source_pages": "10",
+      "markscheme_pages": "17-18",
+      "task_summary": "Find the angle α (0<α<π/2) between a line and a plane, given the line in symmetric form (x−1)/3=(y+2)/2=(z−5)/(−1) and the plane 4x+(cosα)y+(sinα)z=1.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "extract_direction_vector",
+        "extract_normal_vector",
+        "compute_dot_product",
+        "compute_magnitudes",
+        "angle_between_line_and_plane",
+        "solve_trigonometric_equation"
+      ],
+      "method_path": [
+        "Extract direction vector d=⟨3,2,−1⟩ from symmetric line equation",
+        "Extract normal vector n=⟨4,cosα,sinα⟩ from plane equation",
+        "Compute scalar product d·n=12+2cosα−sinα",
+        "Compute magnitudes |d|=√14 and |n|=√17",
+        "Recognise angle between d and n is π/2−α",
+        "Substitute into cos(π/2−α)=d·n/(|d||n|) to obtain 12+2cosα−sinα=√17√14 sinα",
+        "Solve trigonometric equation for α≈0.932"
+      ],
+      "accepted_alternatives": [
+        "Cross-product route: compute |d×n|²=(2sinα+cosα)²+(−4−3sinα)²+(3cosα−8)², substitute into sin(π/2−α)=|d×n|/(|d||n|) to obtain √((2sinα+cosα)²+(4+3sinα)²+(3cosα−8)²)=√17√14 cosα, solve for α≈0.932"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "direction vector of the line is (3,2,−1) (seen anywhere) (A1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "normal vector of the plane is (4,cosα,sinα) (seen anywhere) (A1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "correct scalar product 12+2cosα−sinα (seen anywhere) (A1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "one correct magnitude (seen anywhere) (A1); √(16+cos²α+sin²α)=√17, √(9+4+1)=√14"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "recognizing angle between normal and direction vector is π/2−α (seen anywhere) (M1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "attempt to substitute into the formula for the angle between two vectors to form an equation in α (M1); 12+2cosα−sinα=√17√14 sinα"
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "α=0.932389… → α=0.932 A1; Note: maximum (A1)(A1)(A1)(A1)(M1)(M1)A0 for correct answer in degrees (54.4219…°)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Prove by contradiction that p² − 8q − 11 ≠ 0 for any integers p, q.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "assume_negation",
+        "parity_analysis",
+        "algebraic_substitution",
+        "algebraic_simplification",
+        "contradiction_detection"
+      ],
+      "method_path": [
+        "Assume p² − 8q − 11 = 0 for p, q ∈ ℤ.",
+        "Show p must be odd by parity argument.",
+        "Set p = 2k + 1, k ∈ ℤ.",
+        "Substitute and expand: (2k + 1)² = 8q + 11 → 4k² + 4k + 1 = 8q + 11.",
+        "Simplify to 2k² + 2k = 4q + 5, with LHS even and RHS odd.",
+        "State contradiction: even ≠ odd, therefore original statement holds."
+      ],
+      "accepted_alternatives": [
+        "For the parity step: Either argue p² = 2(4q+5)+1 ⇒ p² odd ⇒ p odd, OR argue p even ⇒ p² − 8q even, contradicting 11 odd, so p must be odd. Also accept work based on p = 2k − 1 instead of 2k + 1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: 'Assume p² − 8q − 11 = 0, (p,q ∈ ℤ)'. R1 (parity): 'p² = 8q + 11 = 2(4q+5) + 1 so p² odd ⇒ p odd' or 'p even ⇒ p² − 8q = even which is a contradiction so p is odd'. M1: 'p = 2k + 1, k ∈ ℤ'. (A1): '(2k+1)² = 8q + 11 → 4k² + 4k + 1 = 8q + 11'. A1: '2k² + 2k = 4q + 5 or equivalent with one side odd and one side even'. R1: 'a contradiction as LHS is even and RHS is odd'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Show that θ = 2.08 radians (3 s.f.) by equating the total sheet-metal width 45 cm to twice the vertical side 10 cm plus the arc length, then using arc length = rθ with r = 12 cm.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "total_width = 2 × vertical_height + arc_length",
+        "45 = 20 + arc_length",
+        "arc_length = 25 cm",
+        "arc_length = rθ",
+        "25 = 12θ",
+        "θ = 25/12 ≈ 2.0833...",
+        "θ = 2.08 (3 s.f.)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "recognition that 45 = 10 + 10 + arc length (M1); arc length = 25 (cm) (A1); 25 = 12θ, θ = 2.08 correct to 3 significant figures AG (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 7,
+      "source_pages": "13-14",
+      "markscheme_pages": "20-22",
+      "task_summary": "Find the cross-sectional area of the gutter by first determining the width w (via cosine rule, sine rule, or right-triangle trigonometry with θ/2), then computing the area as (sector OAB − triangle OAB + rectangle CDBA) or as (2 × trapezium CGOA + sector OAB), giving approximately 294 cm².",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "cosine_rule",
+        "sine_rule",
+        "right_triangle_trigonometry",
+        "sector_area",
+        "triangle_area",
+        "rectangle_area",
+        "trapezium_area",
+        "area_decomposition"
+      ],
+      "method_path": [
+        "find_w: w² = 12² + 12² − 2·12·12·cos(2.08) → w ≈ 20.70",
+        "OR sin(θ/2) = (w/2)/12 → w/2 ≈ 10.35",
+        "segment_AHB = sector_OAB − triangle_OAB",
+        "sector_OAB = ½·12²·2.08 = 149.76",
+        "triangle_OAB = ½·12²·sin(2.08) = 62.87",
+        "segment_AHB ≈ 86.89",
+        "rectangle_CDBA = 10 × w ≈ 206.98",
+        "total_cross_section = segment + rectangle ≈ 293.87 → 294 cm²"
+      ],
+      "accepted_alternatives": [
+        "Use sine rule 12/sin(θ) = w/sin(π−θ)/2 to find w",
+        "Use right-triangle trig with angle θ/2 and hypotenuse 12 to find w/2",
+        "Area via 2 × trapezium CGOA + sector OAB",
+        "Area via rectangle CDFE + 2 × triangle EOA + sector OAB"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "First three marks for finding w: evidence of using cosine rule OR sine rule (M1); w² = 12²+12²−2·12·12·cos(2.08) OR 12/sin(2.08) = w/sin(0.530796...) (A1); w ≈ 20.6977 or w/2 ≈ 10.3488 (A1). OR using trig ratios in right triangle with angle 2.08/2 and side w/2 (M1); sin(2.08/2) = (w/2)/12 (A1); w ≈ 20.6977 (A1)."
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "(segment AHB =) sector OAB − triangle OAB (M1); = ½·12²·2.08 − ½·12²·sin(2.08) = 149.76 − 62.8655... = 86.8944... (A1); valid approach to find total cross-sectional area (M1); sector OAB − triangle OAB + rectangle CDBA = 86.8944... + 10w = 86.8944... + 206.977... (A1 for final area 294 cm²)."
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "OR trapezium CGOA approach: trapezium CGOA (M1); = ½(20.6977... + 10 + 10 − 12cos(1.04)) × 10 ≈ 72.0557 (A1); valid approach to total area (M1); 2 × trapezium CGOA + sector OAB = 2(72.0557...) + ½·12²·2.08 = 144.111... + 149.76 (A1 for final 294 cm²)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Determine whether the gutter overflows by computing gutter volume (600 × cross-sectional area ≈ 176,323–176,658 cm³) and comparing with the total rainfall over 60 seconds, given R′(t) = 50 cos(2πt/5) + 3000. The rainfall ∫₀⁶⁰ R′(t) dt = 180,000 cm³ exceeds the gutter volume, so it overflows.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "trigonometric_integration",
+        "volume_from_cross_section",
+        "inequality_comparison"
+      ],
+      "method_path": [
+        "volume_gutter = 600 × cross_sectional_area ≈ 600 × 293.87 = 176,323 cm³",
+        "integrate_R′(t): ∫₀⁶⁰ (50 cos(2πt/5) + 3000) dt",
+        "= [50·5/(2π)·sin(2πt/5) + 3000t]₀⁶⁰",
+        "= (125/π)(sin(24π) − sin 0) + 3000·60",
+        "= 0 + 180,000 = 180,000 cm³",
+        "180,000 > 176,323 → gutter overflows"
+      ],
+      "accepted_alternatives": [
+        "Use minimum of R′(t) = 2950 cm³/s to bound rainfall from below: 60 × 2950 = 177,000 > gutter volume",
+        "Solve ∫₀ᵀ R′(t) dt = gutter volume to find T ≈ 58.8 s < 60 s"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: volume of gutter = 176323 OR 176658 (OR 600×their area) (A1); recognising rainfall can be represented by an integral (M1); ∫₀⁶⁰ R′(t) dt (A1); rainfall over 60 seconds = 180000 (cm³) (A1); the gutter will overflow because the rainfall > gutter volume (A1)."
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 2 (alternative): volume of gutter (A1); recognition that cosine has a minimum value of −1 (M1); R′(t) ≥ −1×50 + 3000 = 2950 cm³/s (A1); rainfall over 60 seconds ≥ 177000 (A1); overflow because rainfall > gutter volume (A1)."
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 3 (alternative): volume of gutter (A1); recognising rainfall as integral (M1); attempt to solve 60 > 58.8 OR ∫₀ᵀ R′(t) dt = 176658 (M1); time to reach overflow = 58.7875... or 58.8990... (A1); gutter overflows because 60 > 58.8 or 60 > 58.9 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Find the exact value of E(X) where X has PDF f(x)=6/(π√(16-x²)) for 0≤x≤2.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "expected_value",
+        "definite_integral",
+        "substitution",
+        "trigonometric_substitution",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Set up E(X)=∫₀² x·6/(π√(16-x²)) dx",
+        "Integrate by substitution u=16-x² or x=4sinθ",
+        "Obtain antiderivative expression with correct constants",
+        "Substitute limits x=0 and x=2",
+        "Simplify to exact value (12/π)(2-√3) or equivalent"
+      ],
+      "accepted_alternatives": [
+        "Trigonometric substitution x=4sinθ leading to (24/π)(1-cos(π/6))"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "E(X)=∫₀² x·6/(π√(16-x²))dx (A1); attempt to integrate using inspection/substitution (M1); integrated expression e.g. (6/2π)(-2√(16-x²)) (A1); attempt to substitute limits and evaluate (M1); final answer (A1). Note accepts (24/π)(1-cos(π/6)) for final A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Find P(X<0.5) for the given continuous PDF.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "cumulative_probability",
+        "definite_integral",
+        "gdc_integration"
+      ],
+      "method_path": [
+        "Set up P(X<0.5)=∫₀^0.5 6/(π√(16-x²)) dx",
+        "Evaluate integral using GDC to obtain 0.239"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "∫₀^0.5 f(x)dx (M1); 0.239358… ≈ 0.239 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Determine the least number of independent trials required to be 99% sure of at least one success, where success is defined as X<0.5.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "complement_rule",
+        "inequality",
+        "solve_for_n"
+      ],
+      "method_path": [
+        "Recognise P(at least one success)=1−P(no successes)=1−(1−p)^n",
+        "Set up inequality 1−(1−0.239…)^n ≥ 0.99",
+        "Solve for n obtaining n ≥ 16.83…",
+        "Conclude minimum n=17 trials"
+      ],
+      "accepted_alternatives": [
+        "Recognise Y~B(n, 0.239…), test n=16 (P≈0.987…) and n=17 (P≈0.990…), select n=17"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "EITHER: recognition P(at least one success)=1−P(no successes) (M1); 1−(1−0.239…)^n ≥ 0.99 (A1); n=16.8321… so 17 trials (A1). OR: recognition Y~B(n,0.239…) (M1); n=16 gives 0.987443… and n=17 gives 0.990448… (A1); 17 trials (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "For ten independent trials, find the probability that exactly three trials are successful.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "binomial_probability",
+        "gdc"
+      ],
+      "method_path": [
+        "Identify Y~B(10, 0.239…)",
+        "Compute P(Y=3)=C(10,3)·p³·(1−p)⁷ using GDC",
+        "Obtain 0.242"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "Recognition that Y~B(10, their part b) (M1); P(X=3)=0.242430… ≈ 0.242 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Write down the number of ways three successful trials could have occurred consecutively in ten trials.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "consecutive_arrangement",
+        "direct_count"
+      ],
+      "method_path": [
+        "Count starting positions for a block of 3 consecutive successes in 10 trials: positions 1–3 through 8–10",
+        "Conclude 8 ways"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "8 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "(i) Write an expression for the number of ways three successful trials could occur consecutively in n trials. (ii) Find the greatest n such that the probability of three consecutive successes is more than 0.05.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [
+        "statistics.probability",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "consecutive_arrangement",
+        "binomial_coefficient",
+        "probability_expression",
+        "inequality",
+        "solve_for_n"
+      ],
+      "method_path": [
+        "(i) Express number of ways as n−2",
+        "(ii) Express total ways to choose 3 successes from n as C(n,3)",
+        "Form probability as (n−2)/C(n,3) and simplify to 6/(n(n−1))",
+        "Set up inequality 6/(n(n−1)) > 0.05",
+        "Solve for n obtaining n < 11.466…",
+        "Conclude greatest integer n = 11"
+      ],
+      "accepted_alternatives": [
+        "Solve (n−2)/C(n,3) > 0.05 directly; use table of values for n=11 and n=12"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(i) n−2 (A1). (ii) C(n,3) (A1); (n−2)/C(n,3) (A1); attempt to solve their expression > 0.05 OR 6/(n(n−1)) > 0.05 (M1); n=11 gives 0.0545454… and n=12 gives 0.0454545… (A1); n=11 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "(a)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Use Euler's method with step 0.03 to approximate y at x=0.15 for dy/dx=(x²-y²)/(x²+1) with y(0)=3, answer to 6 sf.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "eulers_method",
+        "numerical_iteration",
+        "DE_step_evaluation"
+      ],
+      "method_path": [
+        "Set up iteration y_{n+1}=y_n+0.03×(x_n²-y_n²)/(x_n²+1)",
+        "Compute y₁ from (0,3): y₁=2.91",
+        "Iterate through x=0.03,0.06,0.09,0.12,0.15 to get y₅≈2.58046",
+        "Round to 6 sf: 2.58046"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "M1 attempt Euler's method; A1 y₁=2.91; A1 at least one correct intermediate to 3+ sf; A1 2.58046 [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-B-I-II",
+      "question": "12",
+      "part": "(b)(i)-(ii)",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "28",
+      "task_summary": "(i) Write dy/dx at x=0 by substituting into DE. (ii) Show d²y/dx²=3 at x=0 by implicit differentiation using quotient/product rules.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "substitution",
+        "implicit_differentiation",
+        "quotient_rule",
+        "product_rule",
+        "second_derivative"
+      ],
+      "method_path": [
+        "Substitute x=0,y=3 into DE: dy/dx=(0-9)/(0+1)=-3",
+        "Differentiate DE implicitly using quotient rule on (x²-y²)/(x²+1)",
+        "Apply product rule to d/dx(2xy) implicitly",
+        "Substitute x=0,y=3,dy/dx=-3 to evaluate d²y/dx²",
+        "Conclude d²y/dx²=3"
+      ],
+      "accepted_alternatives": [
+        "Rearrange DE to (x²+1)dy/dx=x²-y² then differentiate both sides using product rule and implicit differentiation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "(i) dy/dx=-3 A1; (ii) METHOD 1: quotient rule M1, product & implicit diff M1, deriv expression A1, d²y/dx²=3 AG A1. METHOD 2: rearrange then differentiate, A1 for LHS/RHS, M1 product & implicit. [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-C-I-II",
+      "question": "12",
+      "part": "(c)(i)-(ii)",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "(i) Given d³y/dx³=9 at x=0, find first four terms of Maclaurin series for y. (ii) Use series to approximate y(0.15) to 6 sf.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "series_expansion",
+        "evaluation"
+      ],
+      "method_path": [
+        "Form Maclaurin series: y≈y(0)+y'(0)x+y''(0)x²/2!+y'''(0)x³/3!",
+        "Substitute y(0)=3, y'(0)=-3, y''(0)=3, y'''(0)=9",
+        "Simplify to 3-3x+(3/2)x²+(3/2)x³",
+        "Evaluate at x=0.15: 2.58881"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "Maclaurin series 3-3x+(3/2)x²+(3/2)x³ A1A1 (A1 first three terms, A1 fourth term); y(0.15)=2.58881 A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-D-I-II",
+      "question": "12",
+      "part": "(d)(i)-(ii)",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "30–31",
+      "task_summary": "(i) Solve DE using partial fraction (1-x²)/(1+x²)≡2/(1+x²)-1, with y(0)=3, giving y=f(x). (ii) Evaluate y(0.15) to 6 sf.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "partial_fraction_decomposition",
+        "integration",
+        "arctan_integral",
+        "initial_condition",
+        "exponential_form"
+      ],
+      "method_path": [
+        "Apply partial fraction: (1-x²)/(1+x²)=2/(1+x²)-1",
+        "Separate variables: ∫(1/y)dy=∫[2/(1+x²)-1]dx",
+        "Integrate: ln|y|=2arctan x-x+c",
+        "Apply y(0)=3 to find c=ln3",
+        "Write y=3e^{2arctan x-x}",
+        "Evaluate at x=0.15: 2.58786"
+      ],
+      "accepted_alternatives": [
+        "Integrating factor method: rewrite DE as dy/dx+(2x/(x²+1))y=0, IF=e^{∫2x/(x²+1)dx}=e^{-x+2arctan x}, then d/dx(e^{-x+2arctan x}y)=0, solve to y=3e^{2arctan x-x}"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30–31",
+          "basis": "EITHER separation of variables M1, ln y=2arctan x-x+c A1A1; OR integrating factor M1, IF=e^{-x+2arctan x} A1, e^{-x+2arctan x}y=A A1. M1 find c or A using (0,3); A1 c=ln3 or A=3; A1 y=3e^{2arctan x-x}. (ii) y(0.15)=2.58786 A1. [7 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-E",
+      "question": "12",
+      "part": "(e)",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "31",
+      "task_summary": "For 0≤x<1, explain why Euler's method always gives an underestimate for y.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.inequalities"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "concavity_analysis",
+        "underestimation",
+        "tangent_line_approximation"
+      ],
+      "method_path": [
+        "Note d²y/dx²>0 for 0≤x<1 (graph is concave up)",
+        "Euler's method uses tangent lines which lie below a concave up curve",
+        "Conclude the approximation is an underestimate"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "graph of y=f(x) is concave up OR d²y/dx²>0 for 0≤x<1 A1; hence tangents used in Euler's method give an underestimate R1 (dependent on A1, reference to tangents required). [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

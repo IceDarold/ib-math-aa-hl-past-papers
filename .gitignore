@@ -3,3 +3,4 @@
 **/node_modules/
 **/dist/
 classification/work/
+classification/generated/*/deepseek-v4-pro/raw/

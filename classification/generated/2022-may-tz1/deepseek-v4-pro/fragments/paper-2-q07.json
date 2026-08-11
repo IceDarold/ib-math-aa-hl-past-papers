@@ -1,0 +1,124 @@
+{
+  "question": "7",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Find the possible range of values for |a + b| given a = (12, −5) and |b| = 15.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "magnitude_of_vector",
+        "triangle_inequality"
+      ],
+      "method_path": [
+        "|a| = √(12² + (−5)²) = 13",
+        "min |a + b| = | |b| − |a| | = 2",
+        "max |a + b| = |a| + |b| = 28",
+        "2 ≤ |a + b| ≤ 28"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "|a| = √(12²+(−5)²) = 13 (A1); 2 ≤ |a+b| ≤ 28 (accept min 2 and max 28) A1. Note: Award (A1)A0 for 2 and 28 seen with no indication that they are the endpoints of an interval."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Given that |a + b| is a minimum, find vector p = a + b.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "antiparallel_vectors",
+        "scalar_multiplication",
+        "vector_addition"
+      ],
+      "method_path": [
+        "recognise that for minimum |a + b|, b is antiparallel to a",
+        "b = −(15/13)a",
+        "p = a + b = −(2/13)a = (−24/13, 10/13)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "recognition that p or b is a negative multiple of a (M1); p = −(2/13)a OR b = (15/13)(−12, 5) and p = (−12/13, 5/13)×2 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q07-C",
+      "question": "7",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "16, 17",
+      "task_summary": "Find q = (x, y) with x, y ∈ ℝ⁺ such that |q| = 15 and q is perpendicular to a = (12, −5).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "perpendicular_vectors",
+        "dot_product",
+        "magnitude_of_vector",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "q ⟂ a ⇒ direction of q is (5, 12)",
+        "q = k(5, 12)",
+        "|q| = |k|√(5² + 12²) = 13|k| = 15",
+        "k = 15/13",
+        "q = (75/13, 180/13) ≈ (5.77, 13.8)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: set scalar product q·a = 0 ⇒ 12x − 5y = 0; solve simultaneously with x² + y² = 225 to obtain q = (75/13, 180/13)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: q is perpendicular to (12, −5) ⇒ q is in direction (5, 12) (M1); q = k(5, 12) (A1); |q| = √((5k)²+(12k)²) = 15 (M1); k = 15/13 (A1); q = (75/13, 180/13) (A1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 2: attempt to set scalar product q·a = 0 OR product of gradients = −1 (M1); 12x − 5y = 0 (A1); |q| = √(x²+y²) = 15; attempt to solve simultaneously to find a quadratic in x or in y (M1); q = (75/13, 180/13) (A1A1). Note: Award A1 independently for each value."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

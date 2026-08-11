@@ -1,0 +1,49 @@
+{
+  "question": "5",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ2-P1-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 4,
+      "source_pages": "8 of 17",
+      "markscheme_pages": "12 of 29",
+      "task_summary": "Show that |a × b|² = |a|²|b|² − (a · b)² for any two non-zero vectors a and b.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product_magnitude",
+        "trigonometric_substitution",
+        "pythagorean_identity",
+        "dot_product_substitution",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "|a × b|² = |a|²|b|² sin²θ using |a × b| = |a||b| sinθ",
+        "|a|²|b|²(1 − cos²θ) using sin²θ = 1 − cos²θ",
+        "|a|²|b|² − |a|²|b|² cos²θ",
+        "|a|²|b|² − (a · b)² using a · b = |a||b| cosθ"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Start from RHS, substitute a · b = |a||b| cosθ, factor |a|²|b|²(1 − cos²θ) = |a|²|b|² sin²θ = |a × b|².",
+        "Cartesian component method: Expand both sides using a = (a₁, a₂, a₃), b = (b₁, b₂, b₃) and verify identity algebraically. Full marks only if fully developed."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12 of 29",
+          "basis": "METHOD 1: M1 for use of sinθ = |a×b|/(|a||b|) on LHS; A1 for |a×b|² = |a|²|b|² sin²θ; M1 for = |a|²|b|²(1 − cos²θ); A1 for = |a|²|b|² − |a|²|b|² cos²θ OR = |a|²|b|² − (|a||b|cosθ)²; AG for = |a|²|b|² − (a·b)². Note: Cartesian vector approach award full marks if fully developed, otherwise no marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

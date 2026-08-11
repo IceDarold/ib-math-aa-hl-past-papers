@@ -1,0 +1,51 @@
+{
+  "question": "3",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Solve a logarithmic equation for x>0, applying change‑of‑base, power rule and product/quotient rule for logs to obtain an algebraic equation and then the solution x=1/2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "change_of_base",
+        "power_rule_of_logs",
+        "product_rule_of_logs",
+        "equate_log_arguments",
+        "solve_power_equation"
+      ],
+      "method_path": [
+        "Apply change‑of‑base to rewrite any log term with a non‑3 base in base 3",
+        "Apply the power rule of logarithms to move coefficients inside the log argument",
+        "Apply the product or quotient rule to combine log terms on one side",
+        "Equate the arguments of the equal base‑3 logs to obtain a polynomial equation in x",
+        "Solve the resulting equation x^5 = 1/32 to obtain x = 1/2"
+      ],
+      "accepted_alternatives": [
+        "Log rules may be applied in any order; all three M1 marks are awarded for attempting the relevant rule at any point in the solution."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to use change the base (M1) … attempt to use the power rule (M1) … attempt to use product or quotient rule for logs (M1) … leading to x^5 = 1/32 (A1) and x = 1/2 (A1). Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

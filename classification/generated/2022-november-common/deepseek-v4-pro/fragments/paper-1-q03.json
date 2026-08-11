@@ -1,0 +1,83 @@
+{
+  "question": "3",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Show algebraically that ((a^2-1)/(2a))^2 + 1 = ((a^2+1)/(2a))^2 for constant a > 1.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_binomial_square",
+        "combine_rational_expressions",
+        "factor_perfect_square_trinomial"
+      ],
+      "method_path": [
+        "Expand ((a^2-1)/(2a))^2 to (a^4-2a^2+1)/(4a^2)",
+        "Add 1 as (4a^2)/(4a^2)",
+        "Combine to (a^4+2a^2+1)/(4a^2)",
+        "Recognise as ((a^2+1)/(2a))^2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Expand RHS ((a^2+1)/(2a))^2 to (a^4+2a^2+1)/(4a^2), rewrite as (a^4-2a^2+1)/(4a^2) + (4a^2)/(4a^2), recognise as ((a^2-1)/(2a))^2 + 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: attempting to expand ((a^2-1)/(2a))^2 (M1); LHS = (a^4-2a^2+1)/(4a^2) + (4a^2)/(4a^2) (A1); = (a^4+2a^2+1)/(4a^2) = ((a^2+1)/(2a))^2 = RHS (A1). METHOD 2: attempting to expand ((a^2+1)/(2a))^2 (M1); RHS = (a^4+2a^2+1)/(4a^2) = (a^4-2a^2+1)/(4a^2) + (4a^2)/(4a^2) (A1); = ((a^2-1)/(2a))^2 + 1 = LHS (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find the area of the right-angled triangle with sides a, (a^2-1)/(2a), (a^2+1)/(2a) in terms of a.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_right_triangle_legs",
+        "apply_area_formula",
+        "simplify_rational_expression"
+      ],
+      "method_path": [
+        "Recognise legs as a and (a^2-1)/(2a)",
+        "Substitute into area formula 1/2 * base * height",
+        "Simplify to (a^2-1)/4"
+      ],
+      "accepted_alternatives": [
+        "Any equivalent expression e.g. (a^3-a)/(4a) or a(a^2-1)/(4a)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognise base and height as a and (a^2-1)/(2a) (M1); correct substitution into triangle area formula (A1); Area = 1/2 * a * (a^2-1)/(2a) = (a^2-1)/4 (or equivalent)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

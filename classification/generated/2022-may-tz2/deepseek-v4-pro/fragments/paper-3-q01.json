@@ -1,0 +1,443 @@
+{
+  "question": "1",
+  "expected_question_marks": 28,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-A-I",
+      "question": "1",
+      "part": "(a)(i)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Sketch y^2 = x^3, x >= 0, for -2 <= x,y <= 2, indicating coordinate-axes intersections.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_curve",
+        "identify_symmetry",
+        "identify_cusp",
+        "identify_intercepts"
+      ],
+      "method_path": [
+        "Recognise symmetry about x-axis from y^2 = x^3",
+        "Sketch upper/lower branches for x >= 0",
+        "Identify cusp at (0,0)",
+        "Mark intercept at origin"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1: approximately symmetric about the x-axis graph of y^2 = x^3. A1: including cusp/sharp point at (0,0)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-A-II",
+      "question": "1",
+      "part": "(a)(ii)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Sketch y^2 = x^3 + 1, x >= -1, for -2 <= x,y <= 2, indicating coordinate-axes intersections.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_curve",
+        "identify_symmetry",
+        "identify_intercepts"
+      ],
+      "method_path": [
+        "Recognise symmetry about x-axis from y^2 = x^3 + 1",
+        "Find x-intercept at x = -1",
+        "Find y-intercepts at y = +/-1",
+        "Sketch branches with correct gradient at intercepts"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1: approximately symmetric about x-axis graph of y^2 = x^3 + 1 with correct gradient at axes intercepts. A1: indication of intersections at x = -1, y = +/-1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-B-I",
+      "question": "1",
+      "part": "(b)(i)",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the coordinates of the two points of inflexion on y^2 = x^3 + 1.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "identify_inflection_points",
+        "state_coordinates"
+      ],
+      "method_path": [
+        "Identify points of inflexion: (0,1) and (0,-1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1: (0,1) and (0,-1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-B-II",
+      "question": "1",
+      "part": "(b)(ii)",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Identify two key features distinguishing the curves from part (a).",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "compare_curves",
+        "identify_distinguishing_features"
+      ],
+      "method_path": [
+        "State two distinguishing features, e.g., y^2 = x^3 has a cusp; y^2 = x^3 + 1 has points of inflexion; different domains; different intercepts"
+      ],
+      "accepted_alternatives": [
+        "y^2 = x^3 has a cusp/sharp point, the other does not",
+        "graphs have different domains",
+        "y^2 = x^3 + 1 has points of inflexion, the other does not",
+        "different x-axis intercepts",
+        "different y-axis intercepts"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "A1: Any two from the listed distinguishing features. Mark first two responses only."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-C",
+      "question": "1",
+      "part": "(c)",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "For y^2 = x^3 + b, b in Z+, suggest two key features common to these curves.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "identify_common_features",
+        "generalize_from_parameter"
+      ],
+      "method_path": [
+        "State two common features, e.g., symmetry about x-axis; x-intercept at x = -cuberoot(b); y-intercepts at y = +/-sqrt(b); two points of inflexion; no cusp"
+      ],
+      "accepted_alternatives": [
+        "as x -> infinity, y -> +/-infinity",
+        "x-intercepts at x = -cbrt(b)",
+        "y-intercepts at y = +/-sqrt(b)",
+        "y = 0 is a line of symmetry",
+        "two points of inflexion",
+        "vertical gradient at x-axis intercepts",
+        "no cusp at x-axis intercepts"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1A1: Any two from the listed common features."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-D-I",
+      "question": "1",
+      "part": "(d)(i)",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "11",
+      "task_summary": "Show that dy/dx = +/- (3x^2+1)/(2 sqrt(x^3+x)) for x > 0 on y^2 = x^3 + x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "algebraic_simplification",
+        "chain_rule"
+      ],
+      "method_path": [
+        "Differentiate implicitly: 2y(dy/dx) = 3x^2+1",
+        "Solve: dy/dx = (3x^2+1)/(2y)",
+        "Substitute y = +/-sqrt(x^3+x)",
+        "Obtain dy/dx = +/-(3x^2+1)/(2 sqrt(x^3+x))"
+      ],
+      "accepted_alternatives": [
+        "Use chain rule on y = +/-sqrt(x^3+x): dy/dx = +/-(1/2)(x^3+x)^(-1/2)*(3x^2+1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: M1 implicit differentiation, A1 2y(dy/dx)=3x^2+1, A1 final result. METHOD 2: M1 chain rule, A1A1 correct derivative."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-D-II",
+      "question": "1",
+      "part": "(d)(ii)",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "11",
+      "task_summary": "Hence deduce that y^2 = x^3 + x has no local minimum or maximum points.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "set_derivative_zero",
+        "reason_about_sign"
+      ],
+      "method_path": [
+        "Set dy/dx = 0 giving 3x^2+1 = 0",
+        "Note 3x^2+1 > 0 for all real x, so dy/dx != 0",
+        "Conclude no local min or max"
+      ],
+      "accepted_alternatives": [
+        "Since x >= 0 implies 3x^2+1 > 0, dy/dx != 0, hence no local min/max"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "R1: local minima/maxima when dy/dx=0, 3x^2+1=0 has no real solutions; OR x>=0 => 3x^2+1>0 so dy/dx!=0."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-E",
+      "question": "1",
+      "part": "(e)",
+      "marks": 7,
+      "source_pages": "3",
+      "markscheme_pages": "12-13",
+      "task_summary": "Find the x-coordinate of the points of inflexion on y^2 = x^3 + x, giving answer as x = sqrt(p+q sqrt(3))/r with p,q,r integers.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative",
+        "implicit_differentiation",
+        "quotient_rule",
+        "set_second_derivative_zero",
+        "algebraic_simplification",
+        "quadratic_formula"
+      ],
+      "method_path": [
+        "Find d^2y/dx^2 by quotient/product rule or implicit differentiation",
+        "Set d^2y/dx^2 = 0",
+        "Simplify to 3x^4 + 6x^2 - 1 = 0",
+        "Solve quadratic in x^2: x^2 = (-6 +/- sqrt(48))/6",
+        "Take positive solution: x^2 = (2 sqrt(3) - 3)/3",
+        "x = sqrt((2 sqrt(3) - 3)/3); answer with p=2,q=-3,r=3"
+      ],
+      "accepted_alternatives": [
+        "Use product rule instead of quotient rule for second derivative",
+        "Use implicit differentiation to find second derivative",
+        "Accept any integer multiple of p,q,r (e.g., 4,-6,6)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12-13",
+          "basis": "M1 quotient/product rule or implicit diff for d^2y/dx^2. A1A1 correct derivative. (M1) set d^2y/dx^2=0. A1 3x^4+6x^2-1=0. (M1) quadratic formula. A1 x=sqrt((2 sqrt(3)-3)/3) with p=2,q=-3,r=3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-F-I",
+      "question": "1",
+      "part": "(f)(i)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Find the equation of the tangent to C: y^2 = x^3 + 2 at the rational point P(-1,-1).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "evaluate_derivative_at_point",
+        "tangent_line_equation"
+      ],
+      "method_path": [
+        "Differentiate implicitly: 2y(dy/dx) = 3x^2",
+        "Evaluate at P(-1,-1): dy/dx = 3(-1)^2/(2(-1)) = -3/2",
+        "Tangent: y + 1 = (-3/2)(x + 1) i.e. y = -1.5x - 2.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "M1: attempt to find tangent line through (-1,-1). A1: y+1 = -3/2(x+1) OR y = -1.5x - 2.5."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-F-II",
+      "question": "1",
+      "part": "(f)(ii)",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "14",
+      "task_summary": "Find the coordinates of rational point Q where the tangent intersects C, expressing each coordinate as a fraction.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_simultaneous_equations",
+        "substitution",
+        "polynomial_equation"
+      ],
+      "method_path": [
+        "Substitute y = -3x/2 - 5/2 into y^2 = x^3 + 2",
+        "Expand to polynomial, factor out (x+1) for known root at P",
+        "Solve remaining quadratic: x = 17/4",
+        "Find y = -71/8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "M1: attempt to solve simultaneously with y^2 = x^3 + 2. A1: obtain (17/4, -71/8)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q01-G",
+      "question": "1",
+      "part": "(g)",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "15",
+      "task_summary": "S(-1,1) lies on C. Line QS intersects C at a further point. Determine its coordinates.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "find_line_equation",
+        "solve_simultaneous_equations",
+        "substitution",
+        "polynomial_equation"
+      ],
+      "method_path": [
+        "Find slope QS: m = (-71/8 - 1)/(17/4 + 1) = -79/42",
+        "Line equation: y - 1 = (-79/42)(x + 1)",
+        "Substitute into y^2 = x^3 + 2",
+        "Solve cubic; known roots at x = -1 (S) and x = 17/4 (Q)",
+        "Find remaining root x = 127/441",
+        "Find y = -13175/9261"
+      ],
+      "accepted_alternatives": [
+        "Use vector equation of QS: (x,y) = (-1,1) + lambda*(21/4, -79/8), solve (1-79*lambda/8)^2 = (-1+21*lambda/4)^3 + 2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "M1: find equation of QS. (A1): y-1 = -79/42(x+1). (M1): solve simultaneously with y^2 = x^3+2. A1: x = 127/441. A1: y = -13175/9261."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

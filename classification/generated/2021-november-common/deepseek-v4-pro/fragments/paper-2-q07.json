@@ -1,0 +1,100 @@
+{
+  "question": "7",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q07-A",
+      "question": "7",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "15",
+      "task_summary": "Determine the median m of the continuous random variable X with pdf f(x)=arccos(x) on [0,1] by solving ∫₀ᵐ arccos(x)dx = 0.5.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "definite_integral",
+        "inverse_trigonometric_integration",
+        "median_equation",
+        "numerical_equation_solving",
+        "rounding"
+      ],
+      "method_path": [
+        "Set up median equation ∫₀ᵐ arccos(x) dx = 0.5",
+        "Integrate: x·arccos(x) − √(1−x²)",
+        "Evaluate from 0 to m: m·arccos(m) − √(1−m²) + 1 = 0.5",
+        "Solve numerically for m",
+        "m = 0.360"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognises that ∫₀ᵐ arccos x dx = 0.5 (M1); [x arccos x − √(1−x²)]₀ᵐ = 0.5; m = 0.360 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q07-B",
+      "question": "7",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "15,16",
+      "task_summary": "Given P(|X − m| ≤ a) = 0.3, set up the definite integral ∫_{m−a}^{m+a} arccos(x) dx = 0.3 and solve numerically for a.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "absolute_value_inequality",
+        "probability_interval",
+        "definite_integral",
+        "inverse_trigonometric_integration",
+        "numerical_equation_solving",
+        "rounding"
+      ],
+      "method_path": [
+        "Translate |X − m| ≤ a to interval m − a ≤ X ≤ m + a",
+        "Set up P(m−a ≤ X ≤ m+a) = ∫_{m−a}^{m+a} arccos(x) dx = 0.3",
+        "Integrate arccos(x) to obtain expression in m and a",
+        "Substitute m ≈ 0.360 and solve numerically for a",
+        "a = 0.125"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Translate pdf by substituting u = x − m, giving ∫_{−a}^{a} arccos(u + m) du = 0.3, then solve for a.",
+        "METHOD 3: Use ∫_{−a}^{a} arccos(x + m) dx = 0.3 or ∫_{m−a}^{m+a} arccos(m − x) dx = 0.3 or equivalent symmetric forms, then solve for a."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: attempts to find at least one endpoint both in terms of m (or their m) and a (M1); ∫_{m−a}^{m+a} arccos x dx = 0.3 (A1); attempts to solve their equation for a (M1) dependent on first M1; a = 0.125 A1"
+        },
+        {
+          "markscheme_pages": "15,16",
+          "basis": "METHOD 2: ∫_{−a}^{a} arccos(x − 0.360034…) dx = 0.3 (M1)(A1); attempts to solve for a (M1); a = 0.125 A1"
+        },
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 3: ∫_{−a}^{a} arccos(x + 0.360034…) dx = 0.3 or ∫_{2(0.360034…)−a}^{2(0.360034…)+a} arccos(0.360034… − x) dx = 0.3 (M1)(A1); attempts to solve for a (M1); a = 0.125 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

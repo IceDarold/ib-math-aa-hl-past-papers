@@ -1,0 +1,1162 @@
+{
+  "session": "November 2022",
+  "zone": "Common",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the regression line coefficients a and b for y on x from the given paired data using GDC.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "linear_regression",
+        "gdc_computation"
+      ],
+      "method_path": [
+        "Enter (x, y) data into GDC",
+        "Compute linear regression of y on x",
+        "Obtain a ≈ 1.01, b ≈ 2.45"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "a =1.01 , b = 2.45 A1A1 [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write down the Pearson product-moment correlation coefficient r from the GDC regression output.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "pearson_correlation",
+        "gdc_computation"
+      ],
+      "method_path": [
+        "Read r from GDC regression output",
+        "State r ≈ 0.981"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "r = 0.981 A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Predict the Science test score for Mathematics score 78 using the regression equation, rounding to the nearest integer.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "rounding"
+      ],
+      "method_path": [
+        "Substitute x = 78 into regression equation y = ax + b",
+        "Compute y ≈ 81.39",
+        "Round to nearest integer: 81"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "correct substitution of 78 into their regression equation (M1), 81 A1 [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the coordinates of local maximum A of f(x) = ln(xe^x + 1) - x^4 on [0, 2].",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_find_maximum",
+        "extract_coordinates",
+        "round_values"
+      ],
+      "method_path": [
+        "Use GDC to locate local maximum of f on [0, 2]",
+        "Obtain coordinates (0.709, 0.640)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "(0.708519..., 0.639580...) gives (0.709, 0.640); A1A1 for both coordinates. [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the x-coordinate of point B, the non-zero x-intercept of f on [0, 2].",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_find_root",
+        "round_value"
+      ],
+      "method_path": [
+        "Use GDC to find x-intercept of f on (0, 2]",
+        "Obtain x = 1.10"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "1.09885... yields x = 1.10; accept (1.10, 0). A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the total area enclosed by the graph of f, the x-axis, and the line x = 2.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "gdc_evaluate",
+        "absolute_area",
+        "round_value"
+      ],
+      "method_path": [
+        "Set up definite integral of f(x) from 0 to 2 on GDC",
+        "Evaluate to obtain 4.61"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Split at x-intercept B. Compute absolute areas: |integral from 0 to 1.09885 of f(x)| + integral from 1.09885 to 2 of f(x) = 0.435901 + 4.17527 = 4.61"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: integral from 0 to 2 of f(x) dx (A1); 4.61117... area = 4.61 (A2). METHOD 2: split at 1.09885, sum absolute areas (A1)(A1); 4.61117... area = 4.61 (A1). [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Given u1 = 50 and u4 = 86.4 of a geometric sequence, find the common ratio r, set up the sum inequality Sn > 33 500, and solve for the smallest integer n.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_sequence_term",
+        "solve_for_common_ratio",
+        "geometric_series_sum",
+        "solve_exponential_inequality",
+        "round_up"
+      ],
+      "method_path": [
+        "Use u4 = ar^3: 50r^3 = 86.4",
+        "Solve for r: r = (86.4/50)^(1/3) = 1.2",
+        "Write geometric sum inequality: 50(1.2^n - 1)/(1.2 - 1) > 33 500",
+        "Solve for n by GDC sketch, logarithmic manipulation, or trial of S26 and S27",
+        "Select smallest integer: n = 27"
+      ],
+      "accepted_alternatives": [
+        "Solve the inequality by GDC sketch or by computing S26 = 28 368.8 and S27 = 34 092.6 directly, rather than algebraic manipulation with logarithms."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "86.4 = 50r^3 (A1); r = (86.4/50)^(1/3) = 1.2 seen anywhere (A1); 50(1.2^n - 1)/0.2 > 33500 OR 250(1.2^n - 1) > 33500 (A1); attempt to solve their geometric Sn inequality or equation (M1); sketch OR n > 26.9045, n = 26.9 OR S26 = 28368.8 OR S27 = 34092.6 OR algebraic manipulation involving logarithms; n = 27 (accept n >= 27) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 7,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Use the exponential model P(t)=15000e^{kt}, k<0, t≥0 to estimate the population on 1 January 2041, given an 11% decrease between 1 January 2014 (t=0) and 1 January 2022 (t=8).",
+      "primary_topic": "functions.exponential_models",
+      "secondary_topics": [
+        "number_algebra.exponential_models"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "exponential_model",
+        "identify_initial_value",
+        "percentage_decrease",
+        "identify_time_parameter",
+        "set_up_exponential_equation",
+        "solve_for_rate_constant",
+        "natural_logarithm",
+        "evaluate_function",
+        "round_final_answer"
+      ],
+      "method_path": [
+        "Identify initial population P(0)=15000",
+        "Compute population after 11% decrease: 15000×0.89=13350",
+        "Determine t=8 for 1 January 2022",
+        "Set up equation 15000e^{8k}=13350",
+        "Solve for k using natural logarithm: k=ln(0.89)/8≈−0.014566",
+        "Determine t=27 for 1 January 2041",
+        "Substitute t=27 into P(t)=15000e^{kt} and compute P(27)≈10100 (10122)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognition that initial population is 15000 (seen anywhere) (A1); P(0)=15000 OR 0.11×15000 OR 0.89×15000; population after 11% decrease is 15000×0.89=13350 (A1); recognizing that t=8 on 1 January 2022 (seen anywhere) (A1); substitution of their value of t for 1 January 2022 and their value of P(8) into the model (M1); 15000×0.89=15000e^{8k} OR 13350=15000e^{8k}; k=ln(0.89)/8≈−0.014566 (A1); substitution of t=2041−2014=27 and their value for k into the model (M1); P(27)=15000e^{−0.0145...×27}=10122.3…; P(27)=10100 (10122) (A1); Total [7 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 6,
+      "source_pages": "6",
+      "markscheme_pages": "11–12",
+      "task_summary": "Use the binomial theorem to expand (ax + 1/x^2)^9, identify the term in x^4 (or x^6), extract its coefficient, equate to (8/7)a^5 (or a derived expression for x^6), and solve for a.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "general_term",
+        "coefficient_extraction",
+        "equation_solving",
+        "power_matching"
+      ],
+      "method_path": [
+        "Write the general term: C(9,r)(ax)^(9-r)(1/x^2)^r = C(9,r)a^(9-r)x^(9−3r)",
+        "Determine r for the x^6 term (r=1) giving coefficient 9a^8, OR recognise r=3 gives the x^6 term in the alternative route",
+        "Extract the relevant coefficient (e.g. 84a^6 for the x^6 term in the alternative route)",
+        "Equate the extracted coefficient to the given or derived expression: 84a^6 = 24a^5 or equivalent",
+        "Solve for a: a = 24/84 = 2/7"
+      ],
+      "accepted_alternatives": [
+        "Use term in x^4 directly: C(9,6)a^6x^4 with coefficient set equal to (8/7)a^5, giving a = 2/7."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "valid approach for expansion (must be the product of a binomial coefficient with n=9 and a power of ax) (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "recognizing that the term in x^6 is needed (M1)"
+        },
+        {
+          "markscheme_pages": "11",
+          "basis": "correct term or coefficient in binomial expansion (seen anywhere) (A1): C(9,6)(ax)^3(1)^6 OR 84a^6x^6 OR 84a^6"
+        },
+        {
+          "markscheme_pages": "11–12",
+          "basis": "EITHER correct term in x^4 or coefficient (A1) … OR correct term in x^6 or coefficient (A1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "Set their term in x^6 or coefficient of x^6 equal to 24a^5x^6 or 24a^5 (M1)"
+        },
+        {
+          "markscheme_pages": "12",
+          "basis": "a = 2/7 (≈0.286, 0.285714…) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "medium"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Use the total probability property (integral of pdf over domain equals 1) to integrate ax e^x from 0 to b by parts, then solve for a in terms of b.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "total_probability_equals_one",
+        "definite_integral",
+        "integration_by_parts",
+        "evaluate_antiderivative",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "set ∫₀ᵇ ax eˣ dx = 1",
+        "integrate by parts: u=ax, dv=eˣ dx",
+        "evaluate [ax eˣ]₀ᵇ − a[eˣ]₀ᵇ = 1",
+        "simplify to a(b eᵇ − eᵇ + 1) = 1",
+        "solve a = 1/(b eᵇ − eᵇ + 1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "M1: ∫₀ᵇ ax eˣ dx = 1 (seen anywhere); (M1): attempt to use integration by parts; (A1): [ax eˣ]₀ᵇ − a∫₀ᵇ eˣ dx = 1; A1: [ax eˣ]₀ᵇ − a[eˣ]₀ᵇ = 1; A1: a = 1/(b eᵇ − eᵇ + 1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "With a=b=1, set the cumulative integral from 0 to m equal to 1/2, integrate x e^x by parts, and solve numerically to find the median m ≈ 0.768.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "median_cumulative_equals_half",
+        "definite_integral",
+        "integration_by_parts",
+        "solve_equation_numerically"
+      ],
+      "method_path": [
+        "set ∫₀ᵐ x eˣ dx = 1/2 with a=b=1",
+        "integrate by parts: [x eˣ]₀ᵐ − [eˣ]₀ᵐ = 1/2",
+        "obtain m eᵐ − eᵐ + 1 = 1/2",
+        "solve numerically to find m ≈ 0.768"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "M1: ∫₀ᵐ x eˣ dx = 1/2; (A1): m eᵐ − eᵐ + 1 = 1/2; A1: m = 0.768"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q07-A",
+      "question": "7",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "14",
+      "task_summary": "Find cos θ in terms of n using the scalar product formula (or Argand diagram).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "scalar_product",
+        "vector_magnitude",
+        "cosine_formula"
+      ],
+      "method_path": [
+        "Compute u·v = cos(1/n) + sin(1/n)",
+        "Compute |u| = √2, |v| = √(cos²(1/n)+sin²(1/n)) = 1",
+        "cos θ = (u·v)/(|u||v|) = (cos(1/n)+sin(1/n))/√2"
+      ],
+      "accepted_alternatives": [
+        "Argand diagram: arg(u) = π/4, arg(v) = 1/n, cos θ = cos(π/4 − 1/n)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: (M1) attempt to use scalar product or formula for angle between two vectors; (A1) u·v = cos(1/n) + sin(1/n); (A1) cos θ = (cos(1/n)+sin(1/n))/√2. METHOD 2: (M1) Argand diagram with angle θ marked; (A1) arg(u)=π/4 and arg(v)=1/n; (A1) cos θ = cos(π/4 − 1/n)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q07-B",
+      "question": "7",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "15",
+      "task_summary": "Find lim_{n→∞} θ by evaluating the limit of cos θ or the limit of vector v.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "geometry.vectors"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "trigonometric_limit",
+        "inverse_cosine"
+      ],
+      "method_path": [
+        "Recognise 1/n → 0 as n → ∞",
+        "cos θ → (1+0)/√2 = 1/√2 (or v → i)",
+        "θ → arccos(1/√2) = π/4"
+      ],
+      "accepted_alternatives": [
+        "Alternative reasoning: v → i so the angle between u = i+j and v = i is π/4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(M1) use of 1/n→0 as n→∞; (A1) EITHER cos θ → 1/√2 OR v → i; (A1) the limit is π/4. Note: Accept 45°. Do not accept rounded values such as 0.785."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "16-17",
+      "task_summary": "Given dV/dt = 2 cm^3/s and V = 5 pi h^2 - (1/3) pi h^3, find dh/dt when V = 200 cm^3 using related rates.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative_computation",
+        "chain_rule",
+        "implicit_differentiation",
+        "equation_solving",
+        "substitution",
+        "related_rates"
+      ],
+      "method_path": [
+        "dV/dh = 10 pi h - pi h^2",
+        "chain rule: dh/dt = (dV/dt) / (dV/dh) or implicit differentiation dV/dt = (10 pi h - pi h^2) dh/dt",
+        "rearrange to dh/dt = 2 / (10 pi h - pi h^2)",
+        "solve 200 = 5 pi h^2 - (1/3) pi h^3 for h approx 4.20648",
+        "substitute h to obtain dh/dt approx 0.0261 cm s^{-1}"
+      ],
+      "accepted_alternatives": [
+        "Differentiate V = 5 pi h^2 - (1/3) pi h^3 implicitly with respect to t to obtain dV/dt = (10 pi h - pi h^2) dh/dt, set dV/dt = 2, solve for h from V = 200, then compute dh/dt."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "EITHER: dV/dh = 10 pi h - pi h^2 (A1); attempt to use chain rule to find relationship between dh/dt, dV/dt, and dV/dh (M1). OR: attempt to differentiate V = 5 pi h^2 - (1/3) pi h^3 throughout with respect to t (M1); dV/dt = 10 pi h dh/dt - pi h^2 dh/dt (A1)."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "THEN: 2 = (10 pi h - pi h^2) dh/dt OR dh/dt = 2/(10 pi h - pi h^2) (A1); attempt to solve 200 = 5 pi h^2 - (1/3) pi h^3 (M1); h = 4.20648... (A1); dh/dt = 0.0261227... approx 0.0261 cm s^{-1} (A1). [6 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q09-A-I-III",
+      "question": "9",
+      "part": "(a)(i)-(iii)",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Apply cosine rule to find AC in terms of α and β, then equate the expressions to derive α = arccos(6cos β − 5).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "cosine_rule",
+        "algebraic_manipulation",
+        "equating_expressions",
+        "inverse_trigonometric_function"
+      ],
+      "method_path": [
+        "Apply cosine rule to triangle ABC: AC² = 2² + 4² − 2(2)(4)cos α → AC = √(20 − 16cos α) = 2√(5 − 4cos α)",
+        "Apply cosine rule to triangle ADC: AC² = 6² + 8² − 2(6)(8)cos β → AC = √(100 − 96cos β) = 2√(25 − 24cos β)",
+        "Equate the two expressions: 5 − 4cos α = 25 − 24cos β",
+        "Solve for α: cos α = 6cos β − 5 → α = arccos(6cos β − 5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "(a)(i): (M1) attempt to use cosine rule; A1 for AC = √(20−16cos α) = 2√(5−4cos α). (a)(ii): A1 for AC = √(100−96cos β) = 2√(25−24cos β). (a)(iii): A1 for α = arccos(6cos β − 5)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q09-B",
+      "question": "9",
+      "part": "(b)",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Find the maximum area of quadrilateral ABCD by summing the areas of triangles ABC and ADC using (1/2)ab sin C, expressing in one variable, and optimizing with GDC.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "calculus.optimization"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "triangle_area_formula",
+        "trigonometric_substitution",
+        "single_variable_expression",
+        "gdc_optimization"
+      ],
+      "method_path": [
+        "Express total area as sum of two triangle areas: Area = (1/2)(2)(4)sin α + (1/2)(6)(8)sin β = 4 sin α + 24 sin β",
+        "Substitute α = arccos(6cos β − 5) from part (a) to express area in terms of β only",
+        "Use GDC to find the maximum value of the single-variable expression",
+        "Maximum area = 19.5959… ≈ 19.6"
+      ],
+      "accepted_alternatives": [
+        "Express area in terms of α only: 4 sin α + 24 sin(arccos((5 + cos α)/6)), then optimize with GDC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "(M1) attempt to find sum of two triangle areas using (1/2)ab sin C; (A1) Area = 4 sin α + 24 sin β; (M1) attempt to express area in one variable only; A1 Max area = 19.6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find P(T > 40) for T ~ N(42, 10.7²).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "gdc_calculation"
+      ],
+      "method_path": [
+        "Recognise need to find P(T > 40) using normal distribution with μ = 42, σ = 10.7",
+        "Compute P(T > 40) ≈ 0.574 using GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "recognising to find P(T > 40) (M1); P(T > 40) = 0.574 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "19",
+      "task_summary": "Find probability that the fourth of four employees is the only one working >40 hours per week.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "independent_events",
+        "binomial_or_geometric"
+      ],
+      "method_path": [
+        "Recognise independent trials with p = P(T > 40) from (a)",
+        "Multiply (1 − p)³ × p for exactly the fourth being the first success",
+        "Compute ≈ 0.0443"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to multiply four independent probabilities using their P(T > 40) and P(T < 40) (M1); (1−p)³·p (A1); 0.0443 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 7,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "(i) Find P(T < 55 | T > 40) using conditional probability. (ii) Find P(exactly 5 of 10 from the >40h group work <55h) using binomial distribution.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables",
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "normal_distribution",
+        "binomial_distribution"
+      ],
+      "method_path": [
+        "(i) Recognise conditional probability P(T < 55 | T > 40)",
+        "Compute P(40 < T < 55) / P(T > 40) using normal distribution",
+        "Obtain ≈ 0.805",
+        "(ii) Recognise binomial model X ~ B(10, p) with p from (i)",
+        "Compute P(X = 5) ≈ 0.0242"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(i) recognizing conditional probability (M1); P(40 < T < 55)/P(T > 40) (A1); 0.461944…/0.574136… (A1); = 0.805 (A1). (ii) recognizing binomial probability (M1); n = 10 and p = 0.804… (A1); P(X = 5) = 0.0242 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "21",
+      "task_summary": "Given P(a ≤ T ≤ b) = 0.904 and P(T > b) = 2P(T < a), find a (maximum part-time hours) using probability-sum-to-one and inverse normal.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "probability_sum_to_one",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Let P(T < a) = x, then P(T > b) = 2x",
+        "Use total probability: x + 0.904 + 2x = 1",
+        "Solve x = 0.032",
+        "Find a using inverse normal: P(T < a) = 0.032 with μ = 42, σ = 10.7",
+        "Obtain a ≈ 22.2"
+      ],
+      "accepted_alternatives": [
+        "Express P(T < a) = (1/3)(1 − P(a ≤ T ≤ b)) = (1/3)(1 − 0.904) = 0.032 directly, then use inverse normal to find a ≈ 22.2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognition that probabilities sum to 1 (M1); expressing the three regions in one variable (M1) → x + 0.904 + 2x = 1; P(T < a) = 0.032 (A1); a = 22.2 (A1). Alternative: P(T < a) = (1/3)(1 − P(a ≤ T ≤ b)) = 0.032 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "22",
+      "task_summary": "Differentiate f(x) = e^(2x)(3x-4) using the product rule and simplify.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "product_rule",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "apply product rule: d/dx[e^(2x)]*(3x-4) + e^(2x)*d/dx[3x-4]",
+        "obtain 2e^(2x)(3x-4) + 3e^(2x)",
+        "simplify to e^(2x)(6x-5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "(M1) attempt to use product rule; A2 for f'(x) = 3e^(2x) + 2e^(2x)(3x-4) = e^(2x)(6x-5); Note: A1 for 2 out of 3 of 3e^(2x), 6xe^(2x) and -8e^(2x) seen or implied."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q11-B",
+      "question": "11",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "22",
+      "task_summary": "Find the coordinates of the point on y = f(x) where the tangent is parallel to y = x by solving f'(x) = 1 and evaluating f at that x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_equal_to_value",
+        "solve_equation_gdc",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "set f'(x) = 1",
+        "solve e^(2x)(6x-5) = 1 using GDC to obtain x = 0.863",
+        "substitute x into f(x) to obtain y = -7.93"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "(M1) f'(x) = 1; A1 x = 0.863; A1 y = -7.93; coordinates (0.863, -7.93)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "22",
+      "task_summary": "Find the volume of the solid formed by rotating the region enclosed by y = f(x), the x-axis, and the y-axis through 2pi about the x-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "find_x_intercept",
+        "volume_of_revolution_formula",
+        "evaluate_definite_integral_gdc"
+      ],
+      "method_path": [
+        "find x-intercept at x = 4/3",
+        "set up volume integral V = pi * integral[0 to 4/3] (e^(2x)(3x-4))^2 dx",
+        "evaluate integral using GDC to obtain V = 165"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "(A1) x-intercept is at 4/3 (1.33); (M1) attempt to use formula for volume of revolution, condone 2pi and incorrect/absent limits; (A1) for pi * integral[0 to 4/3] (e^(2x)(3x-4))^2 dx; A1 164.849... = 165."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q11-D-I",
+      "question": "11",
+      "part": "d(i)",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "23",
+      "task_summary": "Evaluate (f o g)(0) given g(0) = 1 by composing and computing f(1).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "function_composition",
+        "function_evaluation"
+      ],
+      "method_path": [
+        "evaluate (f o g)(0) = f(g(0)) = f(1)",
+        "compute f(1) = e^2*(3-4) = -e^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(M1) attempt to compose functions in the correct order; A1 (f o g)(0) = f(g(0)) = f(1) = -7.38905... = -e^2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q11-D-II",
+      "question": "11",
+      "part": "d(ii)",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "23",
+      "task_summary": "Evaluate (f o g)'(0) using the chain rule with g(0) = 1 and g'(0) = 2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "derivative_evaluation",
+        "function_evaluation"
+      ],
+      "method_path": [
+        "apply chain rule: (f o g)'(0) = f'(g(0)) * g'(0)",
+        "compute f'(1) = e^2*(6*1-5) = e^2",
+        "multiply: e^2 * 2 = 2e^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "(M1) attempt to use the chain rule, multiplication of two derivatives seen or implied; (A1) f'(1) = 2 * 7.38905... intermediate; A1 14.7781... = 2e^2 = 14.8."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q12-A",
+      "question": "12",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "24",
+      "task_summary": "Write down AB→ = (k−1, −4, −2) and AC→ = (4, −2, −1) from A(1,2,3), B(k,−2,1), C(5,0,2).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_subtraction"
+      ],
+      "method_path": [
+        "AB→ = B − A = (k−1, −4, −2)",
+        "AC→ = C − A = (4, −2, −1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "A1A1 for both AB→ and AC→ correct; vectors shown with components (k−1, −4, −2) and (4, −2, −1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q12-B",
+      "question": "12",
+      "part": "(b)",
+      "marks": 1,
+      "source_pages": "12",
+      "markscheme_pages": "24",
+      "task_summary": "Given collinear A, B, C, use AB→ parallel to AC→ to show k = 9.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "collinearity_condition",
+        "scalar_multiple"
+      ],
+      "method_path": [
+        "Set AB→ = t × AC→ for collinearity",
+        "From y: −4 = −2t ⇒ t = 2",
+        "From x: k−1 = 2×4 = 8 ⇒ k = 9"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: order points by y or z coordinate as (k,−2,1), (5,0,2), (1,2,3); set (k−5)/(5−1) equal to the ratio of successive coordinate differences to obtain k = 9."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "METHOD 1: 'k−1 = 2×4 M1, k=9 AG'. METHOD 2: 'order by y or z-ordinate … k=9 AG'. [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q12-C",
+      "question": "12",
+      "part": "(c)",
+      "marks": 10,
+      "source_pages": "12",
+      "markscheme_pages": "25-28",
+      "task_summary": "For k=9: (i) find vector equation of L1 through A, B, C; (ii) show L1 and L2 are skew by proving they do not intersect and are not parallel.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_equation_of_line",
+        "parametric_form",
+        "simultaneous_equations",
+        "contradiction_check",
+        "parallelism_check",
+        "skew_lines"
+      ],
+      "method_path": [
+        "(i) Write r = (1,2,3) + λ(4,−2,−1) using point A and direction AC→",
+        "(ii) Express L2 parametrically: (x,y,z) = (1+2μ, 3μ, 1−μ) with μ ≠ λ",
+        "Equate coordinates: 1+4λ = 1+2μ, 2−2λ = 3μ, 3−λ = 1−μ",
+        "Solve two equations to obtain λ = 0.25, μ = 0.5",
+        "Substitute into third equation: 3−0.25 ≠ 1−0.5 (contradiction)",
+        "Verify direction vectors (4,−2,−1) and (2,3,−1) are not parallel",
+        "Conclude L1 and L2 are skew"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 for (ii): use L2 equation to generate equations in single parameter λ from L1 coordinates; solve and obtain contradiction.",
+        "METHOD 3 for (ii): find Cartesian equations for both lines, solve for intersection, obtain contradiction."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(c)(i): '(M1) attempt to set up a vector equation … A1 … Note: r = or equivalent must be seen for A1.'"
+        },
+        {
+          "markscheme_pages": "26-28",
+          "basis": "(c)(ii) METHOD 1: M1 different parameter, (A1) point on L2, A1 any two equations, (M1) solve simultaneous, A1 values, M1 substitute into third, R1 contradiction, R1 not parallel, AG. Three full methods awarded."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-NOV-COMMON-P2-Q12-D",
+      "question": "12",
+      "part": "(d)",
+      "marks": 9,
+      "source_pages": "12",
+      "markscheme_pages": "29-32",
+      "task_summary": "For k ≠ 9: (i) find Cartesian equation of plane Π through A, B, C; (ii) find the point on Π closest to the origin.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "normal_vector",
+        "plane_equation_cartesian",
+        "perpendicular_line",
+        "line_plane_intersection"
+      ],
+      "method_path": [
+        "(i) Compute AB→ × AC→ = (0, 9−k, 2k−18)",
+        "Form plane: (9−k)(y−2) + (2k−18)(z−3) = 0",
+        "Simplify using k ≠ 9 to obtain y − 2z = −4",
+        "(ii) Line through origin perpendicular to plane: r = t(0, 1, −2)",
+        "Intersect with plane: t − 2(−2t) = −4 ⇒ t = −4/5",
+        "Closest point: (0, −0.8, 1.6)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 for (i): use parametric equations and eliminate parameters to obtain y − 2z = −4.",
+        "METHOD 2 for (ii): minimise squared distance d² = p² + (2r−4)² + r² with p=0, giving r=1.6, then (0, −0.8, 1.6).",
+        "METHOD 3 for (ii): use r = t(0,1,−2), compute |r| = √5|t|, check sign with plane to get t=−4/5."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "(d)(i): M1 cross product, A1 (0, 9−k, 2k−18), (M1) substitute into plane equation, A1 final equation y − 2z = −4 for k ≠ 9."
+        },
+        {
+          "markscheme_pages": "30-32",
+          "basis": "(d)(ii): M1 line through origin perpendicular to plane, (A1) r = t(0,1,−2) or r = t(k−9)(0,1,−2), (M1) intersect, (A1) t = −4/5, A1 point (0, −0.8, 1.6). Three methods shown."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

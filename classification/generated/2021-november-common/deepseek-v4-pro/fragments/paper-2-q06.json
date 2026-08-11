@@ -1,0 +1,94 @@
+{
+  "question": "6",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Prove the polynomial identity (p+q)³ − 3pq(p+q) ≡ p³ + q³.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_cubic",
+        "distribute",
+        "collect_like_terms",
+        "factorise_cubic"
+      ],
+      "method_path": [
+        "Expand (p+q)³ = p³ + 3p²q + 3pq² + q³",
+        "Compute 3pq(p+q) = 3p²q + 3pq²",
+        "Subtract to obtain p³ + q³"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Factorise (p+q)³ − 3pq(p+q) = (p+q)[(p+q)² − 3pq] = (p+q)(p² − pq + q²) then expand to p³ + q³.",
+        "METHOD 3: Factorise p³ + q³ = (p+q)(p² − pq + q²) = (p+q)[(p+q)² − 3pq] = (p+q)³ − 3pq(p+q)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: M1 for attempts to expand (p+q)³; A1 for correct simplification to p³+q³ AG. METHOD 2: M1 for attempts to factorise (p+q)³−3pq(p+q); A1 for correct expansion to p³+q³. METHOD 3: M1 for attempts to factorise p³+q³; A1 for correct rewriting as (p+q)³−3pq(p+q)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2021-NOV-COMMON-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Given 2x²−5x+1=0 has roots α,β, find m and n in x²+mx+n=0 whose roots are 1/α³ and 1/β³, without solving for α,β.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "vieta_formula",
+        "sum_of_roots",
+        "product_of_roots",
+        "substitute",
+        "simplify_rational_expression",
+        "apply_identity"
+      ],
+      "method_path": [
+        "Find product αβ = 1/2 from 2x²−5x+1=0 using Vieta",
+        "Compute n = 1/(αβ)³ = 8",
+        "Find sum α+β = 5/2 from 2x²−5x+1=0 using Vieta",
+        "Express 1/α³ + 1/β³ = (α³+β³)/(αβ)³",
+        "Compute α³+β³ using identity from (a): (α+β)³−3αβ(α+β) = 95/8",
+        "Set −m = 1/α³+1/β³ = 95, so m = −95"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "product of roots = 1/2 A1; considers n = 1/(αβ)³ M1; n = 8 A1. sum of roots = 5/2 A1; considers −m = ((α+β)³−3αβ(α+β))/(αβ)³ M1 (Note: Award M1 for substituting values; M0 for (α+β)³−3αβ(α+β) only); m = −95 A1."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "Special cases: max A1M0A0A1M0A0 for m=−95, n=8 by using explicit root values α,β=(5±√17)/4. Max A1M1A0A1M0A0 for m=−95, n=8 obtained by solving simultaneously for α,β from sum/product equations."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

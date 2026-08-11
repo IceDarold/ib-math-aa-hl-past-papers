@@ -1,0 +1,82 @@
+{
+  "question": "9",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Count six-digit positive integers with distinct digits chosen from 0–9, where the first digit cannot be zero.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "permutation",
+        "counting_principle",
+        "restricted_first_digit"
+      ],
+      "method_path": [
+        "First digit (cannot be 0): 9 choices from {1,…,9}",
+        "Remaining 5 positions: arrange 5 from the 9 remaining digits (including 0): P(9,5) = 9 × 8 × 7 × 6 × 5",
+        "Multiply: 9 × P(9,5) = 9 × 15120 = 136080"
+      ],
+      "accepted_alternatives": [
+        "9 × 9 × 8 × 7 × 6 × 5",
+        "9 × (9! / 4!)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "Markscheme shows M1 for 9 × 9 × 8 × 7 × 6 × 5 or 9 × P(9,5); A1 for 136080 or 9 × 9!/4!. Notes award M1A0 for common errors 10_P_6 = 151200 and 9_P_6 = 60480."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Count six-digit positive integers with distinct digits in strictly increasing order, chosen from digits 0–9.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combination",
+        "selection_with_unique_ordering",
+        "restricted_first_digit"
+      ],
+      "method_path": [
+        "Digits must be non-zero (0 cannot appear as first/smallest digit in an increasing six-digit number)",
+        "Choose 6 distinct digits from {1,…,9}: C(9,6)",
+        "Each unordered selection yields exactly one increasing arrangement",
+        "Answer: C(9,6) = 84"
+      ],
+      "accepted_alternatives": [
+        "C(9,3) = 84 (remove 3 digits from 9 non-zero digits; remaining 6 have exactly one increasing arrangement)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: every unordered subset of 6 digits from the set of 9 non-zero digits can be arranged in exactly one way into a 6-digit number with the digits in increasing order. C(9,6) × 1. Answer 84. METHOD 2: removes 3 digits from the set of 9 non-zero digits and these 6 remaining digits can be arranged in exactly one way. C(9,3) × 1. Answer 84."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

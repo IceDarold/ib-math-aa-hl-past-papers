@@ -1,0 +1,222 @@
+{
+  "question": "10",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Show that p=0.4 and q=0.2 using ΣP(X=x)=1 and E(X)=2.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "sum_of_probabilities",
+        "expected_value_formula",
+        "linear_equation",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Form equation from ΣP(X=x)=1: p+q+0.3+0.1=1 → p+q=0.6",
+        "Form equation from E(X)=2: 1·p+2·0.3+3·q+4·0.1=2 → p+3q=1",
+        "Solve simultaneously to obtain p=0.4 and q=0.2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "uses ΣP(X=x)=1 to form a linear equation in p and q (M1); correct equation in terms of p and q from summing to 1 A1; 0.3+0.1+p+q=1 OR p+q=0.6 (or equivalent)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "uses E(X)=2 to form a linear equation in p and q (M1); correct equation in terms of p and q from E(X)=2 A1; p+0.6+3q+0.4=2 OR p+3q=1 (or equivalent)"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "evidence of correctly solving these equations simultaneously A1; for example, 2q=0.4⇒q=0.2 or p+3(0.6−p)=1⇒p=0.4; so p=0.4 and q=0.2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Find P(X>2) using the probability distribution.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_from_distribution",
+        "complementary_event"
+      ],
+      "method_path": [
+        "P(X>2)=P(X=3)+P(X=4)=q+0.1=0.2+0.1=0.3"
+      ],
+      "accepted_alternatives": [
+        "P(X>2)=1−P(X=1)−P(X=2)=1−0.4−0.3=0.3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "valid approach (M1); P(X>2)=P(X=3)+P(X=4) OR P(X>2)=1−P(X=1)−P(X=2); 0.3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find the probability that Nicky wins the game given she has score 4 after three rolls and needs at least 10 from at most five rolls.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "identify_target_scores",
+        "enumerate_outcomes",
+        "independent_events",
+        "compound_probability"
+      ],
+      "method_path": [
+        "Identify required score from last two rolls: 6, 7, or 8",
+        "Compute P(T=6)=2(0.3)(0.1)+0.2²=0.1",
+        "Compute P(T=7)=2(0.2)(0.1)=0.04",
+        "Compute P(T=8)=0.1²=0.01",
+        "Sum: P(win)=0.1+0.04+0.01=0.15"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "recognises at least one of the valid scores (6, 7, or 8) required to win the game (M1); Note: Award M0 if candidate also considers scores other than 6, 7, or 8 (such as 5)."
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "a score of 6 is obtained by rolling (2,4), (4,2) or (3,3); P(T=6)=2(0.3)(0.1)+(0.2)²=0.1 A1"
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "a score of 7 is obtained by rolling (3,4) or (4,3); P(T=7)=2(0.2)(0.1)=0.04 A1"
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "a score of 8 is obtained by rolling (4,4); P(T=8)=(0.1)²=0.01 A1; Note: The above 3 A1 marks are independent of each other."
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "P(Nicky wins)=0.1+0.04+0.01=0.15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Determine the value of b given the red dice pair sum distribution matches the yellow pair sum distribution.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "maximum_sum",
+        "linear_equation"
+      ],
+      "method_path": [
+        "Equate maximum possible sums: 3+b=8 → b=5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "3+b=8 (M1); b=5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P1-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "23-24",
+      "task_summary": "Find the value of a given the red dice pair sum distribution matches the yellow pair distribution.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "distribution_matching",
+        "counting_outcomes",
+        "sample_space"
+      ],
+      "method_path": [
+        "Match probability for a specific sum to form an equation, e.g. P(S=5)=4/16 for both distributions",
+        "Count outcomes for red dice to equate: 2+a=5 → a=3"
+      ],
+      "accepted_alternatives": [
+        "Use P(S=6)=3/16 matching: a+3=6 → a=3",
+        "Use P(S=4)=3/16 matching: a+1=4 → a=3",
+        "List sample space and eliminate possibilities for a<5, showing a≠2,4, concluding a=3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1 EITHER: P(S=5)=4/16; P(S=2+a)=4/16⇒2+a=5 A1; OR: P(S=6)=3/16; P(S=a+3)=3/16⇒a+3=6; OR: P(S=4)=3/16; P(S=a+1)=3/16⇒a+1=4; THEN a=3 A1"
+        },
+        {
+          "markscheme_pages": "23-24",
+          "basis": "METHOD 2: correctly lists a relevant part of the sample space A1; eliminates possibilities for a<5, convincingly shows that a≠2,4; THEN a=3 A1; Note: Award A0A0 for a=3 obtained without working/reasoning/justification."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q01-A",
+      "question": "1",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Read f(2) from the given graph and evaluate the composite function (f∘f)(2) = f(f(2)).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "read_graph",
+        "evaluate_function_value",
+        "function_composition",
+        "evaluate_composite_function"
+      ],
+      "method_path": [
+        "Read f(2) = 6 from the graph",
+        "Evaluate (f∘f)(2) = f(6) = −2 from the graph"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Markscheme states (a)(i) f(2)=6 A1 and (a)(ii) (f∘f)(2)=−2 A1, totalling [2 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2021-MAY-TZ1-P1-Q01-B",
+      "question": "1",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Sketch g(x) = (1/2)f(x) + 1 by applying a vertical stretch by factor 1/2 and a vertical translation up 1 unit to the given graph of f.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "vertical_stretch",
+        "vertical_translation",
+        "graph_transformation",
+        "sketch_function",
+        "identify_key_points"
+      ],
+      "method_path": [
+        "Recognise g as a vertical compression by factor 1/2 followed by vertical translation +1",
+        "Transform key points of f: horizontal segment on [−4,0] becomes y≈3",
+        "Transform remaining region to concave down parabola with maximum at (2,4)",
+        "Ensure correct endpoints at (0,3) and (6,0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Markscheme awards M1 for an attempt to apply any vertical stretch or vertical translation, A1 for a correct horizontal line segment between −4 and 0 located roughly at y=3, A1 for a correct concave down parabola including max point at (2,4) and correct end points at (0,3) and (6,0)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    }
+  ]
+}

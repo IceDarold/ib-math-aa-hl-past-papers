@@ -1,0 +1,68 @@
+{
+  "question": "7",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Show that the implicitly defined curve (x^2+y^2)y^2=4x^2 has no local maximum or minimum points for x>0 by using implicit differentiation, setting dy/dx=0, solving, and applying domain restrictions.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "product_rule",
+        "stationary_point_condition",
+        "algebraic_solving",
+        "domain_analysis"
+      ],
+      "method_path": [
+        "Implicitly differentiate (x^2+y^2)y^2 = 4x^2 with respect to x using the product rule",
+        "Set dy/dx = 0 (condition for local maximum or minimum)",
+        "Solve the resulting equation to obtain x = 0 or y^2 = 4, so y = +/-2",
+        "Apply domain restrictions x > 0 and -2 < y < 2 to reject all candidate solutions",
+        "Conclude there are no stationary points for x > 0, hence no local max/min"
+      ],
+      "accepted_alternatives": [
+        "EITHER: differentiate (x^2+y^2)y^2 directly using product rule to get (2x+2y(dy/dx))y^2 + (x^2+y^2)*2y(dy/dx) = 8x",
+        "OR: expand to x^2 y^2 + y^4 = 4x^2 then differentiate term-by-term to get 2xy^2 + 2x^2 y(dy/dx) + 4y^3(dy/dx) = 8x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "M1: attempt at implicit differentiation, including use of the product rule"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "A1A1A1: three marks for correct terms in the differentiated equation (EITHER route: (2x+2y(dy/dx))y^2, (x^2+y^2)*2y(dy/dx), and 8x; OR route: 2xy^2+2x^2 y(dy/dx), 4y^3(dy/dx), and 8x)"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "M1: at a local maximum or minimum point, dy/dx = 0"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "A1: 2xy^2 = 8x gives x=0 or y^2=4 so y=+/-2. Note: Award A0 for x=0 or y=2 only"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "R1: since x>0 and -2<y<2 there are no solutions. AG: hence there are no local maximum or minimum points"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

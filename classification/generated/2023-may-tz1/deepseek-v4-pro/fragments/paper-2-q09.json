@@ -1,0 +1,50 @@
+{
+  "question": "9",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Prove by contradiction that p² − 8q − 11 ≠ 0 for any integers p, q.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "assume_negation",
+        "parity_analysis",
+        "algebraic_substitution",
+        "algebraic_simplification",
+        "contradiction_detection"
+      ],
+      "method_path": [
+        "Assume p² − 8q − 11 = 0 for p, q ∈ ℤ.",
+        "Show p must be odd by parity argument.",
+        "Set p = 2k + 1, k ∈ ℤ.",
+        "Substitute and expand: (2k + 1)² = 8q + 11 → 4k² + 4k + 1 = 8q + 11.",
+        "Simplify to 2k² + 2k = 4q + 5, with LHS even and RHS odd.",
+        "State contradiction: even ≠ odd, therefore original statement holds."
+      ],
+      "accepted_alternatives": [
+        "For the parity step: Either argue p² = 2(4q+5)+1 ⇒ p² odd ⇒ p odd, OR argue p even ⇒ p² − 8q even, contradicting 11 odd, so p must be odd. Also accept work based on p = 2k − 1 instead of 2k + 1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: 'Assume p² − 8q − 11 = 0, (p,q ∈ ℤ)'. R1 (parity): 'p² = 8q + 11 = 2(4q+5) + 1 so p² odd ⇒ p odd' or 'p even ⇒ p² − 8q = even which is a contradiction so p is odd'. M1: 'p = 2k + 1, k ∈ ℤ'. (A1): '(2k+1)² = 8q + 11 → 4k² + 4k + 1 = 8q + 11'. A1: '2k² + 2k = 4q + 5 or equivalent with one side odd and one side even'. R1: 'a contradiction as LHS is even and RHS is odd'."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

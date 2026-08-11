@@ -1,0 +1,92 @@
+{
+  "question": "6",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2021-NOV-COMMON-P1-Q06-A",
+      "question": "6",
+      "part": "(a)",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Show that (2x² − 5x − 3)/(x − 1) = 2x − 3 − 6/(x − 1), x ∈ ℝ, x ≠ 1.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "common_denominator",
+        "algebraic_simplification",
+        "polynomial_division"
+      ],
+      "method_path": [
+        "Write all LHS terms over common denominator (x − 1)",
+        "Combine numerators: 2x² − 2x − 3x + 3 − 6",
+        "Simplify to (2x² − 5x − 3)/(x − 1)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use algebraic division on RHS to obtain quotient 2x − 3 and remainder −6, giving 2x − 3 − 6/(x − 1)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: attempt to write all LHS terms over a common denominator of x − 1 (M1). Correct simplification to (2x² − 5x − 3)/(x − 1) (A1). METHOD 2: attempt to use algebraic division on RHS (M1); correctly obtains quotient of 2x − 3 and remainder −6 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2021-NOV-COMMON-P1-Q06-B",
+      "question": "6",
+      "part": "(b)",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "16–17",
+      "task_summary": "Solve (2sin²2θ − 5sin2θ − 3)/(sin2θ − 1) = 0 for 0 ≤ θ ≤ π, θ ≠ π/4.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "substitution",
+        "rational_to_polynomial",
+        "quadratic_factoring",
+        "solve_trigonometric_equation",
+        "unit_circle_values"
+      ],
+      "method_path": [
+        "Set numerator to zero: 2sin²2θ − 5sin2θ − 3 = 0",
+        "Factorise: (2sin2θ + 1)(sin2θ − 3) = 0",
+        "Solve: sin2θ = −1/2, reject sin2θ = 3",
+        "Find 2θ: 7π/6 or 11π/6",
+        "Solve for θ: θ = 7π/12, 11π/12"
+      ],
+      "accepted_alternatives": [
+        "Use quadratic formula sin2θ = (5 ± √49)/4 instead of factorisation to obtain sin2θ = −1/2 (reject sin2θ = 3)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16–17",
+          "basis": "M1: consider the equation (2sin²2θ − 5sin2θ − 3)/(sin2θ − 1) = 0 ⇒ 2sin²2θ − 5sin2θ − 3 = 0. M1: attempt to factorise or substitute into quadratic formula. A1: sin2θ = −1/2 only. A1: one of 7π/6 or 11π/6. A1: θ = 7π/12, 11π/12 (must be in radians)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    }
+  ]
+}

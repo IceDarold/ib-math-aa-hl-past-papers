@@ -1,0 +1,48 @@
+{
+  "question": "3",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P2-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find parameters a, b, c in h(t) = a cos(bt) + c for a Ferris wheel of diameter 110 m, lowest point 10 m above ground, period 20 minutes, starting at the lowest point.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "amplitude_from_diameter",
+        "vertical_shift",
+        "period_to_b",
+        "sign_determination",
+        "solving_trigonometric_equation"
+      ],
+      "method_path": [
+        "amplitude = 110/2 = 55",
+        "a = -55 (negative because starts at minimum)",
+        "c = 55 + 10 = 65",
+        "b = 2π/20 = π/10"
+      ],
+      "accepted_alternatives": [
+        "Find b by solving −55cos(20b) + 65 = 10 → cos(20b) = 1 → b = π/10"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "Amplitude is 110/2 = 55 (A1); a = −55 A1; c = 65 A1; (M1) for method to find b; b = 2π/20 (= π/10) A1. OR: −55cos(20b) + 65 = 10 (M1). Total [5 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

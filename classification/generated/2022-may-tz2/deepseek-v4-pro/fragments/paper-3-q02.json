@@ -1,0 +1,478 @@
+{
+  "question": "2",
+  "expected_question_marks": 27,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "16",
+      "task_summary": "Expand (x-a)(x-b)(x-g) and compare coefficients with x³+px²+qx+r to show p=-(a+b+g), q=ab+bg+ga, r=-abg.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "expand_polynomial",
+        "compare_coefficients",
+        "symmetric_sums"
+      ],
+      "method_path": [
+        "Expand (x-a)(x-b)(x-g)",
+        "Collect coefficients of x², x, constant",
+        "Equate to p, q, r from x³+px²+qx+r"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1 attempt to expand; A1 intermediate expansion; A1 final expansion x³-(α+β+γ)x²+(αβ+βγ+γα)x-αβγ; comparing coefficients gives p=-(α+β+γ) AG, q=αβ+βγ+γα AG, r=-αβγ AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-B-I",
+      "question": "2",
+      "part": "B-I",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "16-17",
+      "task_summary": "Show that p²-2q = a²+b²+g² using the expressions for p and q from part (a).",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_square_of_sum",
+        "substitute_symmetric_sums",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Write p²-2q = (α+β+γ)²-2(αβ+βγ+γα)",
+        "Expand (α+β+γ)² = α²+β²+γ²+2(αβ+βγ+γα)",
+        "Subtract 2(αβ+βγ+γα) to obtain α²+β²+γ²"
+      ],
+      "accepted_alternatives": [
+        "Work from RHS to LHS by expanding α²+β²+γ² to show it equals p²-2q"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16-17",
+          "basis": "A1: p²-2q = (α+β+γ)²-2(αβ+βγ+γα); M1: attempt to expand (α+β+γ)²; A1: obtains α²+β²+γ² AG. Note: Accept equivalent working from RHS to LHS."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-B-II",
+      "question": "2",
+      "part": "B-II",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "17",
+      "task_summary": "Hence show (a-b)²+(b-g)²+(g-a)² = 2p²-6q.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_squared_differences",
+        "substitute_symmetric_sums",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Expand (α-β)²+(β-γ)²+(γ-α)² = 2(α²+β²+γ²)-2(αβ+βγ+γα)",
+        "Substitute α²+β²+γ² = p²-2q and αβ+βγ+γα = q",
+        "Simplify to 2(p²-2q)-2q = 2p²-6q"
+      ],
+      "accepted_alternatives": [
+        "Work from RHS: expand 2p²-6q in terms of α,β,γ to show it equals sum of squared differences"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "EITHER: M1 expand sum of squared differences; A1 2(α²+β²+γ²)-2(αβ+βγ+γα); A1 = 2(p²-2q)-2q = 2p²-6q AG. OR: M1 write 2p²-6q in terms of α,β,γ; A1 expand to 2(α²+β²+γ²)-2(αβ+βγ+γα); A1 factorise to sum of squared differences AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "18",
+      "task_summary": "Given p²<3q, deduce a,b,g cannot all be real.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "inequality_manipulation",
+        "proof_by_contradiction",
+        "root_reality_condition"
+      ],
+      "method_path": [
+        "From p²<3q obtain 2p²-6q<0",
+        "Use part (b)(ii): (α-β)²+(β-γ)²+(γ-α)² = 2p²-6q < 0",
+        "Argue: if all roots real, sum of squared differences ≥ 0",
+        "Conclude roots cannot all be real"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "A1: p²<3q ⇒ 2p²-6q<0 ⇒ (α-β)²+(β-γ)²+(γ-α)²<0; R1: if all roots were real, sum of squared differences ≥ 0. Note: Do not award A0R1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-D",
+      "question": "2",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "18",
+      "task_summary": "Using result from part (c), show that when q=17, x³-7x²+qx+1=0 has at least one complex root.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_coefficients",
+        "compute_p_squared",
+        "compare_with_3q",
+        "apply_condition"
+      ],
+      "method_path": [
+        "Identify p = -7 from x³-7x²+17x+1=0",
+        "Compute p² = 49",
+        "Compute 3q = 51",
+        "Compare: 49 < 51 so p² < 3q",
+        "Apply part (c): at least one complex root"
+      ],
+      "accepted_alternatives": [
+        "Check 2p² < 6q: 98 < 102"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "A1: p²=(-7)²=49 and 3q=51; R1: so p²<3q ⇒ at least one complex root. Allow equivalent comparisons e.g. 2p²<6q."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-E-I",
+      "question": "2",
+      "part": "E-I",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "18",
+      "task_summary": "Noah believes if p²≥3q then all roots real. By varying q in x³-7x²+qx+1=0, determine smallest positive integer q showing Noah is incorrect.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "gdc_exploration",
+        "find_counterexample",
+        "test_integer_values"
+      ],
+      "method_path": [
+        "Use GDC (graphs or tables) to explore integer q for x³-7x²+qx+1=0",
+        "Find smallest q where p²≥3q (49≥3q) yet roots not all real",
+        "Identify q = 12"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "M1: use of GDC (e.g. graphs or tables); A1: q=12."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-E-II",
+      "question": "2",
+      "part": "E-II",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "18",
+      "task_summary": "Explain why x³-7x²+qx+1=0 has at least one real root for all q.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "conjugate_root_theorem",
+        "cubic_behaviour"
+      ],
+      "method_path": [
+        "State: complex roots occur in conjugate pairs, so cubic with complex roots has one real root; or cubic curve always crosses x-axis"
+      ],
+      "accepted_alternatives": [
+        "A cubic curve always crosses the x-axis at at least one point"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "R1: complex roots appear in conjugate pairs (so if complex roots occur the other root will be real OR all 3 roots will be real). OR a cubic curve always crosses the x-axis at at least one point."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-F-I",
+      "question": "2",
+      "part": "F-I",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "19",
+      "task_summary": "Find a²+b²+g²+d² in terms of p and q for quartic with roots a,b,g,d.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_square_of_sum",
+        "substitute_symmetric_sums",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Expand (α+β+γ+δ)² = α²+β²+γ²+δ²+2(αβ+αγ+αδ+βγ+βδ+γδ)",
+        "Substitute p = -(α+β+γ+δ) so (α+β+γ+δ)² = p²",
+        "Substitute q = sum of pairwise products",
+        "Obtain α²+β²+γ²+δ² = p²-2q"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1: attempt to expand (α+β+γ+δ)²; A1: obtains sum of squares plus twice sum of pairwise products; A1: α²+β²+γ²+δ² = p²-2q."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-F-II",
+      "question": "2",
+      "part": "F-II",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "19",
+      "task_summary": "State a condition in terms of p and q implying the quartic has at least one complex root.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "state_condition",
+        "root_reality_criterion"
+      ],
+      "method_path": [
+        "State p² < 2q (or p²-2q < 0) as the condition"
+      ],
+      "accepted_alternatives": [
+        "p²-2q < 0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "A1: p² < 2q OR p²-2q < 0. Note: Allow FT on result from (f)(i)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-G",
+      "question": "2",
+      "part": "G",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "19",
+      "task_summary": "Use result from (f)(ii) to show x⁴-2x³+3x²-4x+5=0 has at least one complex root.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_coefficients",
+        "compute_p_squared",
+        "compare_with_2q",
+        "apply_condition"
+      ],
+      "method_path": [
+        "Identify p = -2, q = 3",
+        "Compute p² = 4",
+        "Compute 2q = 6",
+        "Compare: 4 < 6 so p² < 2q",
+        "Conclude at least one complex root"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "R1: 4 < 6 OR 2²-2×3 < 0; hence at least one complex root AG. Allow FT from (f)(ii) for R mark provided numerical reasoning is seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-H-I",
+      "question": "2",
+      "part": "H-I",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "20",
+      "task_summary": "State what result from (f)(ii) tells us about x⁴-9x³+24x²+22x-12=0.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "identify_coefficients",
+        "compare_with_condition",
+        "interpret_result"
+      ],
+      "method_path": [
+        "Identify p = -9, q = 24",
+        "Compute p² = 81, 2q = 48",
+        "Compare: 81 > 48 so p² > 2q",
+        "State: nothing can be deduced"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "R1: p² > 2q (81 > 2×24) so nothing can be deduced. Do not allow FT for R mark."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-H-II",
+      "question": "2",
+      "part": "H-II",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "20",
+      "task_summary": "Write down the integer root of x⁴-9x³+24x²+22x-12=0.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "find_integer_root",
+        "rational_root_test"
+      ],
+      "method_path": [
+        "Identify integer root as -1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "A1: -1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ2-P3-Q02-H-III",
+      "question": "2",
+      "part": "H-III",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "20",
+      "task_summary": "By writing quartic as product of linear and cubic factor, prove equation has at least one complex root.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "polynomial_factorisation",
+        "synthetic_division",
+        "apply_cubic_condition",
+        "proof_by_factorisation"
+      ],
+      "method_path": [
+        "Factor out (x+1) to get cubic x³-10x²+34x-12",
+        "For cubic, identify p = -10, q = 34",
+        "Compute p² = 100, 3q = 102",
+        "Compare: 100 < 102 so p² < 3q",
+        "Apply part (c): cubic has complex root, therefore quartic does too"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "M1: attempt to express as product of linear and cubic factor; A1A1: (x+1)(x³-10x²+34x-12). Award A1 for each factor (A1A0 if not written as product). R1: for the cubic, p²<3q (100<102), so at least one complex root AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

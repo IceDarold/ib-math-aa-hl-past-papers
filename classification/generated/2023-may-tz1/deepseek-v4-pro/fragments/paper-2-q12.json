@@ -1,0 +1,214 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "(a)",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "27",
+      "task_summary": "Use Euler's method with step 0.03 to approximate y at x=0.15 for dy/dx=(x²-y²)/(x²+1) with y(0)=3, answer to 6 sf.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "eulers_method",
+        "numerical_iteration",
+        "DE_step_evaluation"
+      ],
+      "method_path": [
+        "Set up iteration y_{n+1}=y_n+0.03×(x_n²-y_n²)/(x_n²+1)",
+        "Compute y₁ from (0,3): y₁=2.91",
+        "Iterate through x=0.03,0.06,0.09,0.12,0.15 to get y₅≈2.58046",
+        "Round to 6 sf: 2.58046"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "M1 attempt Euler's method; A1 y₁=2.91; A1 at least one correct intermediate to 3+ sf; A1 2.58046 [4 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-B-I-II",
+      "question": "12",
+      "part": "(b)(i)-(ii)",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "28",
+      "task_summary": "(i) Write dy/dx at x=0 by substituting into DE. (ii) Show d²y/dx²=3 at x=0 by implicit differentiation using quotient/product rules.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "substitution",
+        "implicit_differentiation",
+        "quotient_rule",
+        "product_rule",
+        "second_derivative"
+      ],
+      "method_path": [
+        "Substitute x=0,y=3 into DE: dy/dx=(0-9)/(0+1)=-3",
+        "Differentiate DE implicitly using quotient rule on (x²-y²)/(x²+1)",
+        "Apply product rule to d/dx(2xy) implicitly",
+        "Substitute x=0,y=3,dy/dx=-3 to evaluate d²y/dx²",
+        "Conclude d²y/dx²=3"
+      ],
+      "accepted_alternatives": [
+        "Rearrange DE to (x²+1)dy/dx=x²-y² then differentiate both sides using product rule and implicit differentiation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "(i) dy/dx=-3 A1; (ii) METHOD 1: quotient rule M1, product & implicit diff M1, deriv expression A1, d²y/dx²=3 AG A1. METHOD 2: rearrange then differentiate, A1 for LHS/RHS, M1 product & implicit. [5 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-C-I-II",
+      "question": "12",
+      "part": "(c)(i)-(ii)",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "(i) Given d³y/dx³=9 at x=0, find first four terms of Maclaurin series for y. (ii) Use series to approximate y(0.15) to 6 sf.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "series_expansion",
+        "evaluation"
+      ],
+      "method_path": [
+        "Form Maclaurin series: y≈y(0)+y'(0)x+y''(0)x²/2!+y'''(0)x³/3!",
+        "Substitute y(0)=3, y'(0)=-3, y''(0)=3, y'''(0)=9",
+        "Simplify to 3-3x+(3/2)x²+(3/2)x³",
+        "Evaluate at x=0.15: 2.58881"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "Maclaurin series 3-3x+(3/2)x²+(3/2)x³ A1A1 (A1 first three terms, A1 fourth term); y(0.15)=2.58881 A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-D-I-II",
+      "question": "12",
+      "part": "(d)(i)-(ii)",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "30–31",
+      "task_summary": "(i) Solve DE using partial fraction (1-x²)/(1+x²)≡2/(1+x²)-1, with y(0)=3, giving y=f(x). (ii) Evaluate y(0.15) to 6 sf.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "partial_fraction_decomposition",
+        "integration",
+        "arctan_integral",
+        "initial_condition",
+        "exponential_form"
+      ],
+      "method_path": [
+        "Apply partial fraction: (1-x²)/(1+x²)=2/(1+x²)-1",
+        "Separate variables: ∫(1/y)dy=∫[2/(1+x²)-1]dx",
+        "Integrate: ln|y|=2arctan x-x+c",
+        "Apply y(0)=3 to find c=ln3",
+        "Write y=3e^{2arctan x-x}",
+        "Evaluate at x=0.15: 2.58786"
+      ],
+      "accepted_alternatives": [
+        "Integrating factor method: rewrite DE as dy/dx+(2x/(x²+1))y=0, IF=e^{∫2x/(x²+1)dx}=e^{-x+2arctan x}, then d/dx(e^{-x+2arctan x}y)=0, solve to y=3e^{2arctan x-x}"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30–31",
+          "basis": "EITHER separation of variables M1, ln y=2arctan x-x+c A1A1; OR integrating factor M1, IF=e^{-x+2arctan x} A1, e^{-x+2arctan x}y=A A1. M1 find c or A using (0,3); A1 c=ln3 or A=3; A1 y=3e^{2arctan x-x}. (ii) y(0.15)=2.58786 A1. [7 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q12-E",
+      "question": "12",
+      "part": "(e)",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "31",
+      "task_summary": "For 0≤x<1, explain why Euler's method always gives an underestimate for y.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.inequalities"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "concavity_analysis",
+        "underestimation",
+        "tangent_line_approximation"
+      ],
+      "method_path": [
+        "Note d²y/dx²>0 for 0≤x<1 (graph is concave up)",
+        "Euler's method uses tangent lines which lie below a concave up curve",
+        "Conclude the approximation is an underestimate"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "31",
+          "basis": "graph of y=f(x) is concave up OR d²y/dx²>0 for 0≤x<1 A1; hence tangents used in Euler's method give an underestimate R1 (dependent on A1, reference to tangents required). [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

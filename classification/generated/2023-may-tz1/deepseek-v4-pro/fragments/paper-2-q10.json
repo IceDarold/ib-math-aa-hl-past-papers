@@ -1,0 +1,164 @@
+{
+  "question": "10",
+  "expected_question_marks": 15,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Show that θ = 2.08 radians (3 s.f.) by equating the total sheet-metal width 45 cm to twice the vertical side 10 cm plus the arc length, then using arc length = rθ with r = 12 cm.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length",
+        "algebraic_rearrangement"
+      ],
+      "method_path": [
+        "total_width = 2 × vertical_height + arc_length",
+        "45 = 20 + arc_length",
+        "arc_length = 25 cm",
+        "arc_length = rθ",
+        "25 = 12θ",
+        "θ = 25/12 ≈ 2.0833...",
+        "θ = 2.08 (3 s.f.)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "recognition that 45 = 10 + 10 + arc length (M1); arc length = 25 (cm) (A1); 25 = 12θ, θ = 2.08 correct to 3 significant figures AG (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 7,
+      "source_pages": "13-14",
+      "markscheme_pages": "20-22",
+      "task_summary": "Find the cross-sectional area of the gutter by first determining the width w (via cosine rule, sine rule, or right-triangle trigonometry with θ/2), then computing the area as (sector OAB − triangle OAB + rectangle CDBA) or as (2 × trapezium CGOA + sector OAB), giving approximately 294 cm².",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "cosine_rule",
+        "sine_rule",
+        "right_triangle_trigonometry",
+        "sector_area",
+        "triangle_area",
+        "rectangle_area",
+        "trapezium_area",
+        "area_decomposition"
+      ],
+      "method_path": [
+        "find_w: w² = 12² + 12² − 2·12·12·cos(2.08) → w ≈ 20.70",
+        "OR sin(θ/2) = (w/2)/12 → w/2 ≈ 10.35",
+        "segment_AHB = sector_OAB − triangle_OAB",
+        "sector_OAB = ½·12²·2.08 = 149.76",
+        "triangle_OAB = ½·12²·sin(2.08) = 62.87",
+        "segment_AHB ≈ 86.89",
+        "rectangle_CDBA = 10 × w ≈ 206.98",
+        "total_cross_section = segment + rectangle ≈ 293.87 → 294 cm²"
+      ],
+      "accepted_alternatives": [
+        "Use sine rule 12/sin(θ) = w/sin(π−θ)/2 to find w",
+        "Use right-triangle trig with angle θ/2 and hypotenuse 12 to find w/2",
+        "Area via 2 × trapezium CGOA + sector OAB",
+        "Area via rectangle CDFE + 2 × triangle EOA + sector OAB"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "First three marks for finding w: evidence of using cosine rule OR sine rule (M1); w² = 12²+12²−2·12·12·cos(2.08) OR 12/sin(2.08) = w/sin(0.530796...) (A1); w ≈ 20.6977 or w/2 ≈ 10.3488 (A1). OR using trig ratios in right triangle with angle 2.08/2 and side w/2 (M1); sin(2.08/2) = (w/2)/12 (A1); w ≈ 20.6977 (A1)."
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "(segment AHB =) sector OAB − triangle OAB (M1); = ½·12²·2.08 − ½·12²·sin(2.08) = 149.76 − 62.8655... = 86.8944... (A1); valid approach to find total cross-sectional area (M1); sector OAB − triangle OAB + rectangle CDBA = 86.8944... + 10w = 86.8944... + 206.977... (A1 for final area 294 cm²)."
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "OR trapezium CGOA approach: trapezium CGOA (M1); = ½(20.6977... + 10 + 10 − 12cos(1.04)) × 10 ≈ 72.0557 (A1); valid approach to total area (M1); 2 × trapezium CGOA + sector OAB = 2(72.0557...) + ½·12²·2.08 = 144.111... + 149.76 (A1 for final 294 cm²)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Determine whether the gutter overflows by computing gutter volume (600 × cross-sectional area ≈ 176,323–176,658 cm³) and comparing with the total rainfall over 60 seconds, given R′(t) = 50 cos(2πt/5) + 3000. The rainfall ∫₀⁶⁰ R′(t) dt = 180,000 cm³ exceeds the gutter volume, so it overflows.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "trigonometric_integration",
+        "volume_from_cross_section",
+        "inequality_comparison"
+      ],
+      "method_path": [
+        "volume_gutter = 600 × cross_sectional_area ≈ 600 × 293.87 = 176,323 cm³",
+        "integrate_R′(t): ∫₀⁶⁰ (50 cos(2πt/5) + 3000) dt",
+        "= [50·5/(2π)·sin(2πt/5) + 3000t]₀⁶⁰",
+        "= (125/π)(sin(24π) − sin 0) + 3000·60",
+        "= 0 + 180,000 = 180,000 cm³",
+        "180,000 > 176,323 → gutter overflows"
+      ],
+      "accepted_alternatives": [
+        "Use minimum of R′(t) = 2950 cm³/s to bound rainfall from below: 60 × 2950 = 177,000 > gutter volume",
+        "Solve ∫₀ᵀ R′(t) dt = gutter volume to find T ≈ 58.8 s < 60 s"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: volume of gutter = 176323 OR 176658 (OR 600×their area) (A1); recognising rainfall can be represented by an integral (M1); ∫₀⁶⁰ R′(t) dt (A1); rainfall over 60 seconds = 180000 (cm³) (A1); the gutter will overflow because the rainfall > gutter volume (A1)."
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 2 (alternative): volume of gutter (A1); recognition that cosine has a minimum value of −1 (M1); R′(t) ≥ −1×50 + 3000 = 2950 cm³/s (A1); rainfall over 60 seconds ≥ 177000 (A1); overflow because rainfall > gutter volume (A1)."
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 3 (alternative): volume of gutter (A1); recognising rainfall as integral (M1); attempt to solve 60 > 58.8 OR ∫₀ᵀ R′(t) dt = 176658 (M1); time to reach overflow = 58.7875... or 58.8990... (A1); gutter overflows because 60 > 58.8 or 60 > 58.9 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

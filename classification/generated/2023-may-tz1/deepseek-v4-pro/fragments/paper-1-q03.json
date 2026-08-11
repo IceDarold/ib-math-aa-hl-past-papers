@@ -1,0 +1,49 @@
+{
+  "question": "3",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 6,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Solve cos 2x = sin x for x ∈ [−π, π].",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "trigonometric_identity",
+        "quadratic_equation",
+        "factoring",
+        "arcsin",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "Apply double angle identity cos 2x = 1 − 2sin²x",
+        "Form quadratic 2sin²x + sin x − 1 = 0",
+        "Factorise (2sin x − 1)(sin x + 1) = 0 or use quadratic formula",
+        "Obtain sin x = 1/2 or sin x = −1",
+        "Find x = π/6, 5π/6 from sin x = 1/2",
+        "Find x = −π/2 from sin x = −1",
+        "Verify all solutions lie in [−π, π]"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "cos 2x = 1 − 2sin²x → 2sin²x + sin x − 1 = 0 (A1). Valid attempt to solve quadratic (M1). (2sin x − 1)(sin x + 1) OR quadratic formula (M1). sin x = −1, sin x = 1/2 (A1, A1). Final answer x = −π/2, π/6, 5π/6 (A1). Total [6 marks]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

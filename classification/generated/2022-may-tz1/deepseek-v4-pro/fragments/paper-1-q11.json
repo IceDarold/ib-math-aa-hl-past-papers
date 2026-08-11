@@ -1,0 +1,148 @@
+{
+  "question": "11",
+  "expected_question_marks": 15,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "a",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "25-27",
+      "task_summary": "Show that the three planes do not intersect by eliminating a variable to obtain contradictory parallel equations.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "eliminate_variable",
+        "contradiction",
+        "parallel_planes",
+        "inconsistent_system"
+      ],
+      "method_path": [
+        "Eliminate one variable from two pairs of plane equations",
+        "Obtain two equations in two variables with identical left-hand side but different right-hand side",
+        "Conclude the system is inconsistent, hence the three planes do not intersect"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Compute vector product of normals n1 x n2 = (-1,-5,-3), form line r = (1,-2,0) + lambda(1,5,3), substitute into Pi3 to obtain -15 = 32 (contradiction)",
+        "Method 3: Eliminate variable y to obtain -3y+5z = 6 and -3y+5z = 100, giving 0 = 94 (contradiction)",
+        "Any valid elimination leading to contradictory equations"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "Method 1: M1 attempt to eliminate a variable; A1 first equation in two variables; A1 second equation; R1 lines are parallel, contradiction, hence planes do not intersect AG"
+        },
+        {
+          "markscheme_pages": "26",
+          "basis": "Method 2: A1 vector product of normals = (-1,-5,-3); A1 r = (1,-2,0) + lambda(1,5,3); M1 substitute into Pi3; R1 -15=32 contradiction, hence planes do not intersect AG"
+        },
+        {
+          "markscheme_pages": "27",
+          "basis": "Method 3: M1 eliminate variable; A1 -3y+5z=6; A1 -3y+5z=100; R1 0=94 contradiction, hence planes do not intersect AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q11-B-I-II",
+      "question": "11",
+      "part": "b(i)(ii)",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "28-29",
+      "task_summary": "Verify P(1,-2,0) lies on Pi1 and Pi2; find a vector equation of L, the line of intersection of Pi1 and Pi2.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "point_verification",
+        "cross_product",
+        "vector_equation_of_line",
+        "line_of_intersection"
+      ],
+      "method_path": [
+        "Substitute P(1,-2,0) into Pi1: 2(1)-(-2)+0 = 4 and Pi2: 1-2(-2)+3(0) = 5 to verify",
+        "Compute n1 x n2 = (2,-1,1) x (1,-2,3) = (-1,-5,-3)",
+        "Write vector equation r = (1,-2,0) + lambda(-1,-5,-3)"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Eliminate a variable from Pi1 and Pi2 to obtain parametric equations, e.g. x = t, 5x - y = 7 so y = 5t - 7, 3x - z = 3 so z = 3t - 3, giving r = (0,-7,-3) + lambda(1,5,3) or equivalent"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "Part (i): A1 for Pi1: 2+2+0=4 and Pi2: 1+4+0=5. Part (ii) Method 1: M1 vector product of normals; A1 direction (-1,-5,-3); A1A1 r = (1,-2,0) + lambda(-1,-5,-3). Note: Award A1A0 if r= is missing."
+        },
+        {
+          "markscheme_pages": "29",
+          "basis": "Method 2: M1 eliminate variable; A1 obtain parametric form; A1A1 r = (0,-7,3) + lambda(1,5,-3) or equivalent. Note: Award A1A0 if r= is missing."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P1-Q11-C",
+      "question": "11",
+      "part": "c",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "30-31",
+      "task_summary": "Find the distance between line L and plane Pi3.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "distance_between_line_and_plane",
+        "parametric_line",
+        "substitution",
+        "distance_formula",
+        "parallel_planes"
+      ],
+      "method_path": [
+        "Form line L1 through P(1,-2,0) with direction normal to Pi3: n3 = (-9,3,-2)",
+        "Substitute parametric point (1-9t, -2+3t, -2t) into Pi3: -9(1-9t) + 3(-2+3t) - 2(-2t) = 32",
+        "Solve 94t = 47 to obtain t = 1/2",
+        "Compute distance = |t| * |n3| = (1/2) * sqrt(81+9+4) = sqrt(94)/2"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use unit normal form. Plane Pi3: (-9x+3y-2z)/sqrt(94) = 32/sqrt(94). Parallel plane Pi4 through P: (-9x+3y-2z)/sqrt(94) = -15/sqrt(94). Distance = |32-(-15)|/sqrt(94) = 47/sqrt(94) = sqrt(94)/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "Method 1: (M1) form L1 with direction n3; A1 L1 equation; M1 substitute into Pi3; A1 t = 1/2; (M1) attempt distance from P to point on Pi3; A1 distance = sqrt(94)/2"
+        },
+        {
+          "markscheme_pages": "31",
+          "basis": "Method 2: (M1) unit normal equation of Pi3; A1 = 32/sqrt(94); M1 plane Pi4 through P parallel to Pi3; A1 unit normal = -15/sqrt(94); (M1) distance between planes; A1 = 47/sqrt(94) = sqrt(94)/2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

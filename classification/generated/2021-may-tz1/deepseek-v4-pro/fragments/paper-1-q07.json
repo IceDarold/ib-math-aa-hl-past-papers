@@ -1,0 +1,59 @@
+{
+  "question": "7",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2021-MAY-TZ1-P1-Q07",
+      "question": "7",
+      "part": "—",
+      "marks": 8,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Given quartic z⁴+4z³+8z²+80z+400=0 with real coefficients, two roots are a+bi and b+ai (a,b∈ℝ). Use Vieta's formulas (sum and product of roots) and conjugate pair properties to find possible values of a.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "complex_conjugate_identification",
+        "vieta_formulas",
+        "sum_of_roots",
+        "product_of_roots",
+        "algebraic_simplification",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Identify the other two roots as conjugates a−bi and b−ai",
+        "Apply Vieta: sum of roots = −4, product of roots = 400",
+        "Form sum equation: (a+bi)+(a−bi)+(b+ai)+(b−ai)=−4",
+        "Simplify to 2(a+b)=−4 ⇒ a+b=−2",
+        "Form product equation: (a+bi)(a−bi)(b+ai)(b−ai)=400",
+        "Simplify to (a²+b²)²=400 ⇒ a²+b²=20",
+        "Solve simultaneous equations a+b=−2 and a²+b²=20",
+        "Obtain a=2 or a=−4"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Form polynomial factors (z−(a+bi))(z−(a−bi))(z−(b+ai))(z−(b−ai)), expand to (z²−2az+a²+b²)(z²−2bz+b²+a²), equate coefficients of z³ and constant term with given quartic, obtain −2a−2b=4 and (a²+b²)²=400, solve simultaneously for a=2 or a=−4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1 marks: A1 for other two roots a−bi and b−ai; A1 for sum=−4 and product=400; M1 for attempt to set sum or product equal; A1 for 2(a+b)=−4 ⇒ a+b=−2; A1 for (a²+b²)²=400; (M1) for attempt to solve simultaneous equations; A1A1 for a=2 or a=−4."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 2 is an explicitly accepted complete alternative route: factor form, expand, equate coefficients, solve simultaneous equations."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    }
+  ]
+}

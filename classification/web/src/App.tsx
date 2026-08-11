@@ -11,11 +11,17 @@ const DEFAULT_SIDEBAR_WIDTH = 248
 const MIN_SIDEBAR_WIDTH = 208
 const MAX_SIDEBAR_WIDTH = 384
 
+function sessionSortKey(session: string) {
+  const match = /^(May|November) (\d{4})$/.exec(session)
+  return match ? Number(match[2]) * 100 + (match[1] === 'May' ? 5 : 11) : Number.MAX_SAFE_INTEGER
+}
+
 const initialFilters: Filters = {
   query: '',
   paper: 'all',
   calculator: 'all',
   session: 'all',
+  zone: 'all',
   status: 'all',
   topics: new Set(),
   methods: new Set(),
@@ -49,6 +55,26 @@ export default function App() {
   )
   const topicCounts = useMemo(() => countBy(questions, (question) => question.topicFamily), [])
   const methodCounts = useMemo(() => countBy(questions, (question) => question.methodFamily), [])
+  const sessionCounts = useMemo(
+    () => countBy(questions, (question) => question.session).sort((a, b) => sessionSortKey(a[0]) - sessionSortKey(b[0])),
+    [],
+  )
+  const zoneCounts = useMemo(
+    () => countBy(questions, (question) => question.zone).sort((a, b) => a[0].localeCompare(b[0])),
+    [],
+  )
+  const archiveSessionCount = useMemo(
+    () => new Set(questions.map((question) => `${question.session}|${question.zone}`)).size,
+    [],
+  )
+  const verifiedCount = useMemo(() => questions.filter((question) => question.review_status === 'manual_verified').length, [])
+  const draftCount = questions.length - verifiedCount
+  const yearRange = useMemo(() => {
+    const years = questions.map((question) => Number(question.session.slice(-4))).filter(Number.isFinite)
+    const first = Math.min(...years)
+    const last = Math.max(...years)
+    return first === last ? String(first) : `${first}–${last}`
+  }, [])
 
   useEffect(() => {
     if (selectedId && !filteredQuestions.some((question) => question.id === selectedId)) {
@@ -111,7 +137,7 @@ export default function App() {
     return () => document.removeEventListener('keydown', handleKeyboard)
   }, [moveSelection])
 
-  const setSegment = (key: 'paper' | 'calculator' | 'session' | 'status', value: string) => {
+  const setSegment = (key: 'paper' | 'calculator' | 'session' | 'zone' | 'status', value: string) => {
     setFilters((current) => ({ ...current, [key]: value }))
   }
 
@@ -142,6 +168,8 @@ export default function App() {
         query={filters.query}
         resultCount={filteredQuestions.length}
         resultMarks={resultMarks}
+        sessionCount={archiveSessionCount}
+        yearRange={yearRange}
         searchRef={searchRef}
         sidebarVisible={sidebarVisible}
         filtersOpen={filtersOpen}
@@ -160,6 +188,8 @@ export default function App() {
             filters={filters}
             topicCounts={topicCounts}
             methodCounts={methodCounts}
+            sessionCounts={sessionCounts}
+            zoneCounts={zoneCounts}
             compact={compactLayout}
             width={sidebarWidth}
             onResize={setSidebarWidth}
@@ -187,7 +217,7 @@ export default function App() {
         )}
       </div>
 
-      <StatusBar />
+      <StatusBar sessionCount={archiveSessionCount} verifiedCount={verifiedCount} draftCount={draftCount} />
     </div>
   )
 }

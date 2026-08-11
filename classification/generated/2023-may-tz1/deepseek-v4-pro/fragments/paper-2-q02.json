@@ -1,0 +1,76 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2023-MAY-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the composite function (f composed with g)(x) = 2tan x - tan^3 x by substituting g into f.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "function_composition",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute g(x) = tan x into f(x) = 2x - x^3",
+        "Write (f composed with g)(x) = 2tan x - tan^3 x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to substitute g into f (M1); f composed with g of x = 2tan x - tan^3 x (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2023-MAY-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Sketch the graph of y = 2tan x - tan^3 x for -1 <= x <= 1, labeling local maximum at approximately (0.685, 1.09) and local minimum at approximately (-0.685, -1.09).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "graph_sketching",
+        "local_extrema",
+        "odd_function_symmetry"
+      ],
+      "method_path": [
+        "Sketch odd function curve passing through origin with a maximum above y = 1 and a minimum below y = -1",
+        "Plot endpoints at x = +/-1 with y in [0.6, 0.8] and [-0.8, -0.6] respectively",
+        "Label local maximum at (0.685, 1.09) and local minimum at (-0.685, -1.09)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "A1 for approximately correct odd function passing through origin with max above y=1 and min below y=-1; A1 for endpoints at x=+/-1 and y in [0.6,0.8] and [-0.8,-0.6]; A1 for maximum at (0.685,1.09) and minimum at (-0.685,-1.09)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

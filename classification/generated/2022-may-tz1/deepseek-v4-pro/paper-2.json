@@ -1,0 +1,1377 @@
+{
+  "session": "May 2022",
+  "zone": "TZ1",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2022-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the unknown frequency x in a grouped frequency table given that the median is 4.5 hours.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "median_position",
+        "cumulative_frequency",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Recognise that median = 4.5 implies total frequency n = 20 and half the total frequency is 10",
+        "Set up cumulative frequency: 5+1+4 = 10 values ≤ 4 hours",
+        "Solve 5+1+4+3+x = 20 to obtain x = 7"
+      ],
+      "accepted_alternatives": [
+        "Set up 5+1+4 = 3+x and solve to obtain x = 7",
+        "State Σf = 20 and solve 13+x = 20 to obtain x = 7"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER: recognising that half the total frequency is 10 (A1). OR: 5+1+4 = 3+x (A1). OR: Σf = 20 (A1). THEN: x = 7 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find the standard deviation of the exercising times.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "mean",
+        "variance",
+        "standard_deviation",
+        "gdc"
+      ],
+      "method_path": [
+        "Calculate mean: μ = (2×5+3×1+4×4+5×3+6×7)/20 = 86/20 = 4.3",
+        "Calculate variance: σ² = Σf(x-μ)²/Σf = 2.51 or σ² = Σfx²/Σf - μ² = 2.51",
+        "Compute standard deviation: σ = √2.51 = 1.58429... ≈ 1.58"
+      ],
+      "accepted_alternatives": [
+        "GDC: obtain σ = 1.58 directly",
+        "Manual using σ² = Σf(x-μ)²/n = 2.51 → σ = 1.58",
+        "Manual using σ² = Σfx²/n - μ² = 2.51 → σ = 1.58"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: 1.58429... 1.58 A2. METHOD 2: variance formula with (A1) for correct setup, then σ = 1.58429... = 1.58 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find the area of one shaded circular segment in terms of θ, given radius 2 cm and angle θ.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "area_of_sector",
+        "area_of_triangle",
+        "subtraction",
+        "substitution"
+      ],
+      "method_path": [
+        "Area of sector = ½r²θ",
+        "Area of triangle = ½r²sinθ",
+        "Area of segment = area of sector − area of triangle",
+        "Substitute r = 2: 2θ − 2sinθ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "valid approach to find area of segment by finding area of sector – area of triangle (M1); ½r²θ − ½r²sinθ; ½(2)²θ − ½(2)²sinθ (A1); area = 2θ − 2sinθ A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Given logo area = 13.4 cm², formed by removing two equal segments from a 5×4 cm rectangle, find θ using GDC.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "area_of_rectangle",
+        "subtract_segment_areas",
+        "form_equation",
+        "gdc_solve",
+        "round"
+      ],
+      "method_path": [
+        "Area of rectangle = 5 × 4 = 20",
+        "Area of logo = 20 − 2(2θ − 2sinθ) = 13.4",
+        "Solve 20 − 4θ + 4sinθ = 13.4 using GDC",
+        "θ = 2.36"
+      ],
+      "accepted_alternatives": [
+        "Find area of one segment = (20 − 13.4)/2 = 3.3, solve 2θ − 2sinθ = 3.3 using GDC, θ = 2.36"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "EITHER area of logo = area of rectangle – area of segments (M1); 5×4 − 2×(2θ−2sinθ) = 13.4 (A1); OR area of one segment = (20−13.4)/2 = 3.3 (M1); 2θ−2sinθ = 3.3 (A1); THEN θ = 2.35672...; θ = 2.36 (do not accept an answer in degrees) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Show that setting the sum of probabilities to 1 yields 2k^2 - k + 0.12 = 0.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "sum_of_probabilities_equals_one",
+        "algebraic_simplification",
+        "quadratic_equation"
+      ],
+      "method_path": [
+        "Set 0.41 + (k - 0.28) + 0.46 + (0.29 - 2k^2) = 1",
+        "Simplify to obtain 2k^2 - k + 0.12 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "0.41 + k - 0.28 + 0.46 + 0.29 - 2k^2 = 1 OR 2k^2 - k + 0.12 = 0 (or equivalent) A1 ... 2k^2 - k + 0.12 = 0 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Solve the quadratic for k, reject k = 0.2 because it makes P(X=1) negative, and give k = 0.3.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "solve_quadratic",
+        "check_probability_constraint",
+        "reject_extraneous_solution",
+        "nonnegative_probability"
+      ],
+      "method_path": [
+        "Solve 2k^2 - k + 0.12 = 0 to obtain k = 0.2 or k = 0.3",
+        "Note that P(X=1) = k - 0.28 must be nonnegative",
+        "Reject k = 0.2 because it gives P(X=1) < 0",
+        "Conclude k = 0.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "one of 0.2 OR 0.3 (M1) ... k = 0.3 A1 ... reasoning to reject k = 0.2 eg P(1) = k - 0.28 >= 0 therefore k != 0.2 R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Use E(X) = sum x * P(X=x) with k = 0.3 to obtain E(X) = 1.27.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "statistics.discrete_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_value_formula",
+        "weighted_sum",
+        "substitution"
+      ],
+      "method_path": [
+        "Apply E(X) = sum x * P(X=x)",
+        "Substitute k = 0.3 and compute: 0*0.41 + 1*(0.3-0.28) + 2*0.46 + 3*(0.29-2*0.3^2)",
+        "Obtain E(X) = 1.27"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempting to use the expected value formula (M1) ... = 1.27 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the time t when the particle is at rest by solving v(t) = e^(sin t) + 4 sin t = 0 for t in [0, 6].",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_expression_to_zero",
+        "solve_using_gdc",
+        "select_domain_solution"
+      ],
+      "method_path": [
+        "Set v(t) = 0 (particle at rest)",
+        "Solve e^(sin t) + 4 sin t = 0 using GDC",
+        "Select t = 3.35 in domain [0, 6]"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognizing at rest v=0 (M1); t = 3.34692... t = 3.35 (seconds) A1; Note: Award (M1)A0 for any other solution to v=0 eg t=-0.205 or t=6.08."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the acceleration when the particle changes direction by differentiating v(t) and evaluating a(t) at the t from part (a).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "identify_direction_change_condition",
+        "differentiate_composite_function",
+        "evaluate_at_point"
+      ],
+      "method_path": [
+        "Recognize direction change occurs when v = 0 at t = 3.34692...",
+        "Differentiate v(t): a(t) = e^(sin t) cos t + 4 cos t",
+        "Evaluate a(3.34692...) using GDC",
+        "State a = -4.71 m s^-2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognizing particle changes direction when v=0 OR when t=3.34692... (M1); a = -4.71439... a = -4.71 (ms^-2) A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "c",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the total distance travelled by integrating the absolute value of v(t) from t = 0 to 6.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "set_up_definite_integral",
+        "absolute_value_integral",
+        "split_integral_at_sign_change",
+        "evaluate_integral_gdc"
+      ],
+      "method_path": [
+        "Set total distance = integral of |v(t)| from 0 to 6",
+        "Split at t = 3.34692... where v changes sign",
+        "Evaluate integral of v(t) from 0 to 3.34692... plus integral of -v(t) from 3.34692... to 6 using GDC",
+        "State distance = 20.8 m"
+      ],
+      "accepted_alternatives": [
+        "Direct evaluation of integral of |v(t)| from 0 to 6 using GDC without explicit splitting"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "distance travelled = integral_0^6 |v| dt OR split integrals (A1); = 20.7534... = 20.8 (metres) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q05-A",
+      "question": "5",
+      "part": "a",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Given independent A, B with P(A∩B′)=0.16 and P(A′∩B)=0.36, let P(A∩B)=x and find x.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_calculation",
+        "independence",
+        "solve_quadratic"
+      ],
+      "method_path": [
+        "Express P(A)=x+0.16 and P(B)=x+0.36",
+        "Apply independence: P(A∩B)=P(A)P(B)",
+        "Form equation x=(x+0.16)(x+0.36)",
+        "Solve to obtain x=0.24"
+      ],
+      "accepted_alternatives": [
+        "Form equations P(A)(1−P(B))=0.16 and (1−P(A))P(B)=0.36 using independence, solve simultaneously to get P(A)=0.4, P(B)=0.6, then x=P(A)P(B)=0.24"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: one of P(A)=x+0.16 OR P(B)=x+0.36 (A1); attempt to equate P(A∩B) with P(A)×P(B) (M1); x=(0.16+x)(0.36+x) (A1); x=0.24 (A1). METHOD 2: attempt to form at least one equation in P(A) and P(B) using independence (M1); P(A)=0.4 AND P(B)=0.6 (A1); P(A∩B)=P(A)P(B)=0.4×0.6=0.24 (A1); x=0.24 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q05-B",
+      "question": "5",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find P(A′|B′) using the result x=0.24 from part (a).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "independence",
+        "complement_rule"
+      ],
+      "method_path": [
+        "Recognise P(A′|B′)=P(A′) by independence of complements",
+        "Compute P(A′)=1−P(A)=1−(0.16+0.24)=0.6"
+      ],
+      "accepted_alternatives": [
+        "Compute P(B)=0.36+0.24=0.6, then P(A′|B′)=P(A′∩B′)/P(B′)=P(A′)P(B′)/P(B′)=0.6×0.4/0.4=0.6"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: recognising P(A′|B′)=P(A′) (M1); 1−0.16−0.24=0.6 (A1). METHOD 2: P(B)=0.36+0.24=0.6; P(A′|B′)=P(A′∩B′)/P(B′)=0.24/0.4 (A1); =0.6 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q06-A",
+      "question": "6",
+      "part": "a",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Show that f(x) = 1/(2^x) - 2^x is an odd function.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "number_algebra.exponential_models"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_negative_x",
+        "simplify_exponential_expression",
+        "verify_function_parity"
+      ],
+      "method_path": [
+        "Substitute -x into f(x) = 2^(-x) - 2^x",
+        "Simplify f(-x) to 2^x - 2^(-x)",
+        "Show f(-x) = -f(x) and conclude f is odd"
+      ],
+      "accepted_alternatives": [
+        "Graphical approach: show graph is invariant under 180 degree rotation about origin, or invariant under reflection in y-axis then x-axis (earns M1A0 per markscheme)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to replace x with -x M1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "EITHER f(-x) = (1-2^(-x))/2^(-x) = -(1-2^x)/2^x = -f(x) OR equivalent simplification A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "so f is an odd function AG"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "Note: Award M1A0 for a graphical approach including evidence that either the graph is invariant after rotation by 180 degrees about the origin or the graph is invariant after a reflection in the y-axis and then in the x-axis (or vice versa)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "b",
+      "marks": 4,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Solve the inequality f(x) >= g(x) where f(x) = 2^(-x) - 2^x and g(x) = (x-1)/(x^2-2x-3), with x not equal to -1, 3.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.equations",
+        "functions.exponential_models"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_up_inequality",
+        "find_intersection_gdc",
+        "interval_analysis",
+        "union_of_intervals",
+        "domain_restrictions"
+      ],
+      "method_path": [
+        "Set up inequality 2^(-x) - 2^x >= (x-1)/(x^2-2x-3)",
+        "Find intersection points using GDC: x = -1.26686..., 0.177935..., 3.06167...",
+        "Round to 3 s.f.: x = -1.27, 0.178, 3.06",
+        "Test intervals and account for domain restrictions x != -1, 3",
+        "State solution: [-1.27, -1) U [0.178, 3) U [3.06, infinity)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to find at least one intersection point (M1)"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "x = -1.26686..., x = 0.177935..., x = 3.06167... then x = -1.27, x = 0.178, x = 3.06"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "-1.27 <= x < -1, A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "0.178 <= x < 3, A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "x >= 3.06 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Find the possible range of values for |a + b| given a = (12, −5) and |b| = 15.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "magnitude_of_vector",
+        "triangle_inequality"
+      ],
+      "method_path": [
+        "|a| = √(12² + (−5)²) = 13",
+        "min |a + b| = | |b| − |a| | = 2",
+        "max |a + b| = |a| + |b| = 28",
+        "2 ≤ |a + b| ≤ 28"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "|a| = √(12²+(−5)²) = 13 (A1); 2 ≤ |a+b| ≤ 28 (accept min 2 and max 28) A1. Note: Award (A1)A0 for 2 and 28 seen with no indication that they are the endpoints of an interval."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Given that |a + b| is a minimum, find vector p = a + b.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "antiparallel_vectors",
+        "scalar_multiplication",
+        "vector_addition"
+      ],
+      "method_path": [
+        "recognise that for minimum |a + b|, b is antiparallel to a",
+        "b = −(15/13)a",
+        "p = a + b = −(2/13)a = (−24/13, 10/13)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "recognition that p or b is a negative multiple of a (M1); p = −(2/13)a OR b = (15/13)(−12, 5) and p = (−12/13, 5/13)×2 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q07-C",
+      "question": "7",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "11",
+      "markscheme_pages": "16, 17",
+      "task_summary": "Find q = (x, y) with x, y ∈ ℝ⁺ such that |q| = 15 and q is perpendicular to a = (12, −5).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "perpendicular_vectors",
+        "dot_product",
+        "magnitude_of_vector",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "q ⟂ a ⇒ direction of q is (5, 12)",
+        "q = k(5, 12)",
+        "|q| = |k|√(5² + 12²) = 13|k| = 15",
+        "k = 15/13",
+        "q = (75/13, 180/13) ≈ (5.77, 13.8)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: set scalar product q·a = 0 ⇒ 12x − 5y = 0; solve simultaneously with x² + y² = 225 to obtain q = (75/13, 180/13)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: q is perpendicular to (12, −5) ⇒ q is in direction (5, 12) (M1); q = k(5, 12) (A1); |q| = √((5k)²+(12k)²) = 15 (M1); k = 15/13 (A1); q = (75/13, 180/13) (A1)"
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 2: attempt to set scalar product q·a = 0 OR product of gradients = −1 (M1); 12x − 5y = 0 (A1); |q| = √(x²+y²) = 15; attempt to solve simultaneously to find a quadratic in x or in y (M1); q = (75/13, 180/13) (A1A1). Note: Award A1 independently for each value."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q08-A",
+      "question": "8",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Write down an expression for the product of the roots of kx^2 - (k+3)x + 2k+9 = 0 in terms of k.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "vieta_formula",
+        "product_of_roots",
+        "quadratic_coefficients"
+      ],
+      "method_path": [
+        "Identify coefficients a = k, c = 2k+9",
+        "Apply Vieta: product of roots = c/a = (2k+9)/k"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "product of roots = (2k+9)/k A1 [1 mark]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q08-B",
+      "question": "8",
+      "part": "b",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "18",
+      "task_summary": "Determine the values of k such that the equation kx^2 - (k+3)x + 2k+9 = 0 has one positive and one negative real root.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "product_of_roots",
+        "rational_inequality",
+        "critical_values",
+        "sign_analysis"
+      ],
+      "method_path": [
+        "Recognise one positive and one negative root implies product of roots < 0",
+        "Set (2k+9)/k < 0",
+        "Find critical values k = -9/2 and k = 0",
+        "Solve inequality: -9/2 < k < 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "recognition that the product of the roots will be negative (M1); (2k+9)/k < 0; critical values k = 0, -9/2 seen (A1); -9/2 < k < 0 A1 [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Find the number of ways 5 people can be seated next to each other in a row of 10 empty seats.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "block_method",
+        "permutation",
+        "multiplication_principle"
+      ],
+      "method_path": [
+        "Treat the 5 people as a contiguous block",
+        "Count block positions: 10 minus 5 plus 1 equals 6",
+        "Count internal arrangements: 5! equals 120",
+        "Multiply: 6 times 5! equals 720"
+      ],
+      "accepted_alternatives": [
+        "6! (720 expressed as 6 factorial)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "6 times 5! (A1)(A1) equals 720 (accept 6!) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Find the number of ways 4 girls and Peter can be seated in 10 seats such that no girl sits adjacent to Peter; girls need not sit together.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "case_analysis",
+        "permutation",
+        "multiplication_principle",
+        "addition_principle"
+      ],
+      "method_path": [
+        "Identify two cases: Peter at an end vs Peter not at an end",
+        "Case 1 (Peter at either end): 2 times 8P4 equals 3360",
+        "Case 2 (Peter not at end): 8 times 7P4 equals 6720",
+        "Sum: 3360 plus 6720 equals 10080"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 complement: 10P5 minus arrangements where Peter adjacent to at least one girl. Case 1: Peter at end next to girl gives 2 times 4 times 8P3 equals 2688. Case 2: Peter not at end gives 8 times 2 times 4 times 7P3 plus 8 times 4 times 3 times 7P2 equals 17472. Total: 10P5 minus (2688 plus 17472) equals 10080.",
+        "Combination-based: case 1 as 8C4 times 2 times 4! equals 3360; case 2 as 7C4 times 8 times 4! equals 6720"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: case 1 Peter at either end 8P4x2=3360 OR 8C4x2x4!=3360 (A1); case 2 Peter not at end 7P4x8=6720 (A1); Total=3360+6720=10080 A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 2: case 1 Peter at end 8P3x2x4=2688 (A1); case 2 Peter not at end (7P3x8x2x4)+(7P2x4x3)=17472 (A1); Total=10P5-(2688+17472)=10080 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Sketch the curve y=f(x) on [1,2], clearly indicating the coordinates of the endpoints.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "curve_sketching",
+        "identify_endpoints"
+      ],
+      "method_path": [
+        "Sketch concave down curve on the given domain [1,2]",
+        "Label endpoints (1,0) and (2,√3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "correct shape (concave down) within the given domain 1≤x≤2 A1; (1,0) and (2,√3)≈(2,1.73) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "high"
+      },
+      "review_flags": [
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Show that f⁻¹(x)=2/x²+1; state the domain and range of f⁻¹.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "interchange_variables",
+        "algebraic_manipulation",
+        "inverse_function",
+        "domain_range"
+      ],
+      "method_path": [
+        "Interchange x and y to obtain x=√(2/(y-1))",
+        "Square both sides: x²=2/(y-1)",
+        "Rearrange and solve for y: y=2/x²+1",
+        "Conclude f⁻¹(x)=2/x²+1",
+        "State domain of f⁻¹ as [0,√3]",
+        "State range of f⁻¹ as [1,2]"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "interchanging x and y (seen anywhere) M1; x²=2/(y-1) A1; y=2/x²+1 A1; f⁻¹(x)=2/x²+1 AG; 0≤x≤√3 OR domain [0,√3] A1; 1≤y≤2 OR range [1,2] A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Show that V=π(h+h³/3); hence determine the maximum volume of the container.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.solid_geometry",
+        "functions.inverse_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "volume_of_revolution",
+        "integration",
+        "substitution",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Substitute x=f⁻¹(y) into V=π∫₀ʰx²dy",
+        "Integrate to obtain V=π[y+y³/3]₀ʰ",
+        "Simplify to V=π(h+h³/3)",
+        "Substitute h=√3 into V",
+        "Compute V_max=2π√3≈10.9 m³"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to substitute … into the correct volume formula (M1); V=∫₀ʰπ(…)²dy A1; =π[y+y³/3]₀ʰ A1; =π(h+h³/3) AG; attempt to substitute h=√3 into V (M1); V=10.9 (m³) (=2√3π) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "medium",
+        "method": "medium"
+      },
+      "review_flags": [
+        "shared_marks",
+        "formula_extraction_uncertain"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "23",
+      "task_summary": "Find the time to fill the container to its maximum volume at a constant rate of 0.4 m³/s.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "formula_application",
+        "division"
+      ],
+      "method_path": [
+        "Divide maximum volume by the constant flow rate: t=V_max/0.4",
+        "Compute t=2π√3/0.4=5π√3≈27.2 s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "time = 10.8828…/0.4 (= 2√3π/0.4) (M1); =27.2 (s) (=5√3π) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "24",
+      "task_summary": "Find the rate of change of the height of the water when the container is filled to half its maximum volume.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "calculus.integration_applications"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "related_rates",
+        "chain_rule",
+        "implicit_differentiation",
+        "solve_equation",
+        "substitution"
+      ],
+      "method_path": [
+        "Set V=V_max/2=π√3 and solve π(h+h³/3)=π√3 for h≈1.18",
+        "Differentiate V=π(h+h³/3) w.r.t. h: dV/dh=π(1+h²)",
+        "Apply chain rule: dh/dt=(dV/dt)/(dV/dh)",
+        "Substitute dV/dt=0.4 and h≈1.18",
+        "Compute dh/dt≈0.0531 m/s"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "attempt to find height when V=5.4414…=√3π (M1); h=1.1818… (A1); attempt to use chain rule or differentiate V w.r.t. t (M1); dh/dt = dV/dt ÷ dV/dh = dV/dt × 1/(π(1+h²)) (A1); attempt to substitute h and dV/dt=0.4 (M1); dh/dt=0.0531 (m/s) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Find the probability that a randomly selected chocolate muffin weighs less than 61 g, given C ~ N(62, 2.9^2).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "probability_less_than",
+        "gdc"
+      ],
+      "method_path": [
+        "Use GDC normal CDF to find P(C < 61) with mu=62, sigma=2.9",
+        "State probability 0.365"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "P(C<61) (M1); =0.365112...=0.365 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "In a random selection of 12 chocolate muffins, find the probability that exactly 5 weigh less than 61 g.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "probability_exact",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize binomial X ~ B(12, 0.365...)",
+        "Use GDC binomial PDF to find P(X=5)",
+        "State probability 0.214"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "recognition of binomial eg X~B(12,0.365...) (M1); P(X=5)=0.213666...=0.214 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-C-I",
+      "question": "11",
+      "part": "C-I",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Find the probability that a randomly selected muffin (60% chocolate, 40% banana) weighs less than 61 g.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "law_of_total_probability",
+        "normal_distribution",
+        "tree_diagram",
+        "gdc"
+      ],
+      "method_path": [
+        "Find P(B<61) using normal CDF with mu=68, sigma=3.4",
+        "Apply law of total probability: 0.6xP(C<61)+0.4xP(B<61)",
+        "Compute combined probability 0.227"
+      ],
+      "accepted_alternatives": [
+        "Tree diagram showing two ways to have a muffin weigh less than 61 g, then sum weighted probabilities."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "P(B<61)=0.0197555... (A1); EITHER sum of weighted probs (M1) OR tree diagram (M1); (0.6x0.365...+0.4x0.0197...) (A1); =0.227 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-C-II",
+      "question": "11",
+      "part": "C-II",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Given that a randomly selected muffin weighs less than 61 g, find the probability that it is chocolate.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "bayes_theorem"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(chocolate | weight<61)",
+        "Compute P(chocolate and weight<61) / P(weight<61)",
+        "Substitute (0.6x0.365...)/0.226969...",
+        "State probability 0.965"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "recognizing conditional probability (M1); 0.365112...x0.6/0.226969... (A1); =0.965 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "27-28",
+      "task_summary": "Find the new standard deviation sigma of chocolate muffins given that the overall probability a randomly selected muffin weighs less than 61 g becomes 0.157.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "statistics.probability"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "law_of_total_probability",
+        "inverse_normal",
+        "equation_solving",
+        "gdc"
+      ],
+      "method_path": [
+        "Set up equation: 0.6xP(C<61|sigma) + 0.4x0.0197555... = 0.157",
+        "Solve for P(C<61|sigma) = 0.248496...",
+        "Use inverse normal or GDC solver to find sigma from N(62,sigma^2)",
+        "State sigma = 1.47"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Use inverse normal to find z=-0.679229..., substitute (61-62)/sigma=-0.679229..., solve for sigma=1.47."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "METHOD 1: P(CM)xP(<61|CM)+P(BM)xP(<61|BM)=0.157 (M1); P(C<61)=0.248496... (A1); attempt to solve for sigma using GDC (M1); sigma=1.47(g) A2"
+        },
+        {
+          "markscheme_pages": "28",
+          "basis": "METHOD 2: use of inverse normal to find z score (M1); z=-0.679229...; correct substitution (61-62)/sigma=-0.679229... (A1); sigma=1.47(g) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "Apply Euler's method with step h=0.1 to approximate y(1.5) given dy/dx=(y²-2x²)/x² and initial condition y(1)=3.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "iterative_approximation",
+        "step_length",
+        "first_order_de"
+      ],
+      "method_path": [
+        "Apply Euler formula y_{n+1} = y_n + 0.1 × (y_n² - 2x_n²)/x_n²",
+        "Iterate from (x₀,y₀)=(1,3): (1.1,3.7), (1.2,4.6314...), (1.3,5.9210...), (1.4,7.7954...), (1.5,10.6958...)",
+        "Round final value to 10.7"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "attempt to use Euler's method (M1); correct intermediate y-values (A1)(A1): 3.7, 4.63140..., 5.92098..., 7.79542...; final y = 10.6958... → 10.7 (A1). Note: final A1 requires 10.7 as last value or standalone answer."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "29",
+      "task_summary": "Use the substitution y=vx to transform dy/dx=(y²-2x²)/x² into the separable DE x dv/dx = v²-v-2.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "product_rule",
+        "algebraic_simplification",
+        "first_order_de"
+      ],
+      "method_path": [
+        "Set y = vx and differentiate: dy/dx = v + x dv/dx",
+        "Substitute y=vx and dy/dx=v+x dv/dx into dy/dx = (y²-2x²)/x²",
+        "Simplify: v + x dv/dx = v² - 2 → x dv/dx = v² - v - 2 (AG)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "29",
+          "basis": "y = vx ⇒ dy/dx = v + x dv/dx (A1); replacing y with vx and dy/dx with v + x dv/dx (M1); v + x dv/dx = v² - 2 (A1) leading to x dv/dx = v² - v - 2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2022-MAY-TZ1-P2-Q12-C-I-II-III",
+      "question": "12",
+      "part": "C (i)(ii)(iii)",
+      "marks": 12,
+      "source_pages": "16",
+      "markscheme_pages": "30–32",
+      "task_summary": "Solve the separable DE via partial fractions to obtain the exact solution, evaluate at x=1.5, and interpret the poor Euler approximation using gradient behaviour or the vertical asymptote.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.asymptotes"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "partial_fractions",
+        "logarithmic_integration",
+        "initial_condition",
+        "substitution_back",
+        "algebraic_rearrangement",
+        "evaluation_at_point",
+        "graphical_interpretation"
+      ],
+      "method_path": [
+        "Separate variables: dv/(v²-v-2) = dx/x",
+        "Factor denominator: dv/((v-2)(v+1)) = dx/x",
+        "Partial fractions: 1/((v-2)(v+1)) = (1/3)(1/(v-2) - 1/(v+1))",
+        "Integrate both sides: (1/3)(ln|v-2| - ln|v+1|) = ln|x| + c",
+        "Use initial condition v=3 at x=1 to find c = (1/3)ln(1/4) or A = 1/4",
+        "Combine logarithms to ln|(v-2)/(v+1)| = ln|(1/4)x³| or equivalent",
+        "Substitute v=y/x and solve for y to obtain y = (4x³+8x)/(4-x³)",
+        "Evaluate at x=1.5: y = 27.3",
+        "Explain poor Euler estimate: gradient changes rapidly on [1, 1.5] / vertical asymptote at x = ∛4 ≈ 1.5874"
+      ],
+      "accepted_alternatives": [
+        "Constant of integration found via c = (1/3)ln(1/4) and single-logarithm combination, or via combined-logarithm constant A = 1/4 (both accepted in markscheme)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "(c)(i) attempt to separate variables (M1); dv/(v²-v-2) = dx/x (A1); attempt partial fractions (M1); 1/((v-2)(v+1)) = (1/3)(1/(v-2)-1/(v+1)) (A1); (1/3)(ln|v-2|-ln|v+1|)=ln x + c (A1); attempt to find c (M1); single logarithm (M1)"
+        },
+        {
+          "markscheme_pages": "31",
+          "basis": "EITHER/OR routes for constant; substitute v=y/x (M1); attempt to make y the subject (M1); y=(4x³+8x)/(4-x³) (A1)"
+        },
+        {
+          "markscheme_pages": "32",
+          "basis": "(c)(ii) actual y at x=1.5 is 27.3 (A1); (c)(iii) gradient changes rapidly / vertical asymptote at x=∛4≈1.5874... (R1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

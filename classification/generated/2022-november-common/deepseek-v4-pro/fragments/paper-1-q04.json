@@ -1,0 +1,43 @@
+{
+  "question": "4",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2022-NOV-COMMON-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "11",
+      "task_summary": "Integrate f'(x)=6x/(1+x^2) to get f(x)=3ln(1+x^2)+c, then use (1,5) to find c=5-3ln2.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration",
+        "u_substitution",
+        "logarithmic_integration",
+        "initial_condition"
+      ],
+      "method_path": [
+        "Integrate f'(x)",
+        "Use u=1+x^2 substitution",
+        "Apply initial condition",
+        "Write final expression"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme: M1 integrate, A1 setup, A1 integrate, M1 substitute, A1 final"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
