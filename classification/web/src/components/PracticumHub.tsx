@@ -178,8 +178,9 @@ function ExerciseCard({ exercise, index, exam, onComplete, onNext }: { exercise:
   const [solution, setSolution] = useState(false)
   const [seconds, setSeconds] = useState(0)
   const [running, setRunning] = useState(false)
+  const [started, setStarted] = useState(false)
 
-  useEffect(() => { setAnswer(''); setResult(null); setHint(false); setSolution(false); setSeconds(0); setRunning(false) }, [exercise.id])
+  useEffect(() => { setAnswer(''); setResult(null); setHint(false); setSolution(false); setSeconds(0); setRunning(false); setStarted(false) }, [exercise.id])
   useEffect(() => {
     if (!running) return
     const timer = window.setInterval(() => setSeconds((value) => value + 1), 1000)
@@ -194,8 +195,34 @@ function ExerciseCard({ exercise, index, exam, onComplete, onNext }: { exercise:
     if (valid) onComplete()
   }
   const time = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`
+  const beginTimer = () => { setStarted(true); setRunning(true) }
 
-  return <article className="border border-line bg-surface"><header className="flex flex-wrap items-start justify-between gap-3 border-b border-line bg-canvas p-4 sm:p-5"><div><p className="m-0 font-mono text-[11px] text-primary">{exercise.level} · Шаг {index + 1} · {exercise.skillId}</p><h2 className="mt-1 mb-0 text-xl leading-tight font-semibold">{exercise.title}</h2></div><span className="border border-line px-2 py-1 font-mono text-[10.5px] text-muted">{exercise.unit === 'degrees' ? 'ответ в градусах' : 'ответ в радианах'}</span></header><div className="p-4 sm:p-5"><div className="max-w-165 text-[16px] leading-relaxed"><MathText>{exercise.prompt}</MathText></div><p className="mt-4 mb-0 text-xs text-muted">Источник: {exercise.source}</p>{exam && <div className="mt-5 flex items-center justify-between border border-primary/30 bg-primary-soft p-3"><span className="text-sm">Финальное задание: решай с закрытыми подсказками.</span><button className="cursor-pointer border border-primary bg-canvas px-2.5 py-1 text-sm" type="button" onClick={() => setRunning((value) => !value)}>{running ? 'Пауза' : seconds ? 'Продолжить' : 'Старт'} · {time}</button></div>}<div className="mt-6 border-t border-line pt-5"><label className="block text-sm font-medium" htmlFor={`answer-${exercise.id}`}>{exercise.answerMode === 'roots' ? 'Все корни' : 'Значение'}</label><p className="mt-1 mb-2 text-xs text-muted">Вводи через запятую. Поддерживаются `pi`, `π`, десятичные дроби и операции: например `pi/6, 5*pi/6`.</p><div className="flex flex-col gap-2 sm:flex-row"><input id={`answer-${exercise.id}`} className="min-h-10 min-w-0 flex-1 border border-line-strong bg-canvas px-3 font-mono text-sm outline-none focus:border-primary" value={answer} onChange={(event) => setAnswer(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') check() }} placeholder={exercise.answerMode === 'roots' ? 'pi/6, 5*pi/6' : '17*pi/6'} /><button className="min-h-10 cursor-pointer border border-primary bg-primary px-4 font-medium text-white hover:bg-primary-dark" type="button" onClick={check}>Проверить</button></div>{result && <div className={`mt-3 border p-3 text-sm ${result === 'correct' ? 'border-verified/40 bg-verified-soft text-verified' : 'border-primary/30 bg-primary-soft text-ink'}`}>{result === 'correct' ? '✓ Верно. Все требуемые значения найдены.' : 'Пока не сходится. Проверь область, число корней и формат ответа.'}</div>}</div><div className="mt-5 flex flex-wrap gap-2"><button className="min-h-8 cursor-pointer border border-line-strong bg-canvas px-3 text-sm hover:bg-surface-strong" type="button" onClick={() => setHint((value) => !value)}>{hint ? 'Скрыть подсказку' : 'Нужна подсказка'}</button><button className="min-h-8 cursor-pointer border border-line-strong bg-canvas px-3 text-sm hover:bg-surface-strong" type="button" onClick={() => setSolution(true)}>Показать решение</button>{result === 'correct' && index < c3Exercises.length - 1 && <button className="min-h-8 cursor-pointer border border-verified bg-verified px-3 text-sm text-white" type="button" onClick={onNext}>Следующее задание →</button>}</div>{hint && <div className="mt-3 border-l-3 border-primary bg-primary-soft p-3 text-sm leading-relaxed"><strong>Подсказка.</strong> <MathText>{exercise.hint}</MathText></div>}{solution && <div className="mt-3 border-l-3 border-line-strong bg-canvas p-3 text-sm leading-relaxed"><strong>Ход решения.</strong> <MathText>{exercise.solution}</MathText></div>}</div></article>
+  return (
+    <article className="border border-line bg-surface">
+      <header className="flex flex-wrap items-start justify-between gap-3 border-b border-line bg-canvas p-4 sm:p-5">
+        <div><p className="m-0 font-mono text-[11px] text-primary">{exercise.level} · Шаг {index + 1} · {exercise.skillId}</p><h2 className="mt-1 mb-0 text-xl leading-tight font-semibold">{exercise.title}</h2></div>
+        <span className="border border-line px-2 py-1 font-mono text-[10.5px] text-muted">{exercise.unit === 'degrees' ? 'ответ в градусах' : 'ответ в радианах'}</span>
+      </header>
+      <div className="p-4 sm:p-5">
+        <div className="relative">
+          <div className={exam && !started ? 'pointer-events-none select-none blur-[7px] opacity-45' : ''} aria-hidden={exam && !started}>
+            <div className="max-w-165 text-[16px] leading-relaxed"><MathText>{exercise.prompt}</MathText></div>
+            <p className="mt-4 mb-0 text-xs text-muted">Источник: {exercise.source}</p>
+          </div>
+          {exam && !started && <div className="absolute inset-0 grid place-items-center bg-surface/45 backdrop-blur-[2px]"><div className="max-w-85 p-4 text-center"><p className="m-0 text-sm leading-relaxed">Условие откроется только вместе с таймером. Решай без подсказок и не останавливайся на первом корне.</p><button className="mt-4 min-h-10 cursor-pointer border border-primary bg-primary px-4 font-medium text-white hover:bg-primary-dark" type="button" onClick={beginTimer}>Начать таймер</button></div></div>}
+        </div>
+
+        {exam && started && <div className="mt-5 flex items-center justify-between border border-primary/30 bg-primary-soft p-3"><span className="text-sm">Финальное задание: решай с закрытыми подсказками.</span><button className="cursor-pointer border border-primary bg-canvas px-2.5 py-1 text-sm" type="button" onClick={() => setRunning((value) => !value)}>{running ? 'Пауза' : 'Продолжить'} · {time}</button></div>}
+
+        {(!exam || started) && <>
+          <div className="mt-6 border-t border-line pt-5"><label className="block text-sm font-medium" htmlFor={`answer-${exercise.id}`}>{exercise.answerMode === 'roots' ? 'Все корни' : 'Значение'}</label><p className="mt-1 mb-2 text-xs text-muted">Вводи через запятую. Поддерживаются `pi`, `π`, десятичные дроби и операции: например `pi/6, 5*pi/6`.</p><div className="flex flex-col gap-2 sm:flex-row"><input id={`answer-${exercise.id}`} className="min-h-10 min-w-0 flex-1 border border-line-strong bg-canvas px-3 font-mono text-sm outline-none focus:border-primary" value={answer} onChange={(event) => setAnswer(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') check() }} placeholder={exercise.answerMode === 'roots' ? 'pi/6, 5*pi/6' : '17*pi/6'} /><button className="min-h-10 cursor-pointer border border-primary bg-primary px-4 font-medium text-white hover:bg-primary-dark" type="button" onClick={check}>Проверить</button></div>{result && <div className={`mt-3 border p-3 text-sm ${result === 'correct' ? 'border-verified/40 bg-verified-soft text-verified' : 'border-primary/30 bg-primary-soft text-ink'}`}>{result === 'correct' ? '✓ Верно. Все требуемые значения найдены.' : 'Пока не сходится. Проверь область, число корней и формат ответа.'}</div>}</div>
+          <div className="mt-5 flex flex-wrap gap-2"><button className="min-h-8 cursor-pointer border border-line-strong bg-canvas px-3 text-sm hover:bg-surface-strong" type="button" onClick={() => setHint((value) => !value)}>{hint ? 'Скрыть подсказку' : 'Нужна подсказка'}</button><button className="min-h-8 cursor-pointer border border-line-strong bg-canvas px-3 text-sm hover:bg-surface-strong" type="button" onClick={() => setSolution(true)}>Показать решение</button>{result === 'correct' && index < c3Exercises.length - 1 && <button className="min-h-8 cursor-pointer border border-verified bg-verified px-3 text-sm text-white" type="button" onClick={onNext}>Следующее задание →</button>}</div>
+          {hint && <div className="mt-3 border-l-3 border-primary bg-primary-soft p-3 text-sm leading-relaxed"><strong>Подсказка.</strong> <MathText>{exercise.hint}</MathText></div>}
+          {solution && <div className="mt-3 border-l-3 border-line-strong bg-canvas p-3 text-sm leading-relaxed"><strong>Ход решения.</strong> <MathText>{exercise.solution}</MathText></div>}
+        </>}
+      </div>
+    </article>
+  )
 }
 
 function PlannedPracticum({ practicum, onBack, onOpenAtlas }: { practicum: Practicum; onBack: () => void; onOpenAtlas: (topic: string) => void }) {
