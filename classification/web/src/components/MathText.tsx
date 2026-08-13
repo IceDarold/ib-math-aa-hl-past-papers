@@ -12,20 +12,20 @@ export function MathText({ children, className }: MathTextProps) {
   return (
     <span className={className}>
       {segments.map((segment, index) => segment.type === 'math'
-        ? <InlineMath key={`${index}-${segment.value}`} tex={segment.value} fallback={segment.source ?? segment.value} />
+        ? <InlineMath key={`${index}-${segment.value}`} tex={segment.value} fallback={segment.source ?? segment.value} display={segment.display} />
         : <span key={`${index}-${segment.value}`}>{segment.value}</span>)}
     </span>
   )
 }
 
-function InlineMath({ tex, fallback }: { tex: string; fallback: string }) {
+function InlineMath({ tex, fallback, display = false }: { tex: string; fallback: string; display?: boolean }) {
   const elementRef = useRef<HTMLSpanElement>(null)
 
   useLayoutEffect(() => {
     if (!elementRef.current) return
     try {
       katex.render(tex, elementRef.current, {
-        displayMode: false,
+        displayMode: display,
         output: 'htmlAndMathml',
         throwOnError: true,
         strict: 'ignore',

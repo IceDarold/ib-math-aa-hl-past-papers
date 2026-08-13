@@ -2,6 +2,7 @@ export interface TextSegment {
   type: 'text' | 'math'
   value: string
   source?: string
+  display?: boolean
 }
 
 interface Token {
@@ -68,6 +69,22 @@ const subscripts: Record<string, string> = {
 };
 
 export function tokenizeMathText(text: string): TextSegment[] {
+  const explicit = /\$\$([\s\S]+?)\$\$|\$([^$\n]+?)\$/gu
+  const segments: TextSegment[] = [];
+  let cursor = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = explicit.exec(text)) !== null) {
+    if (match.index > cursor) segments.push(...tokenizeImplicitMath(text.slice(cursor, match.index)));
+    const value = (match[1] ?? match[2] ?? '').trim();
+    if (value) segments.push({ type: 'math', value, source: value, display: Boolean(match[1]) });
+    cursor = match.index + match[0].length;
+  }
+  if (cursor < text.length) segments.push(...tokenizeImplicitMath(text.slice(cursor)));
+  return segments.length ? segments : [{ type: 'text', value: text }];
+}
+
+function tokenizeImplicitMath(text: string): TextSegment[] {
   const tokens = [...text.matchAll(tokenPattern)].map((match) => ({
     value: match[0],
     start: match.index,
