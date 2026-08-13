@@ -1,0 +1,220 @@
+version: 0.1
+practicum: E7
+title: Дифференциальные уравнения первого порядка
+source_topic: calculus.differential_equations
+corpus:
+  blocks: 64
+  marks: 254
+  sessions: May 2021 — November 2025
+  papers: {1: 6, 2: 31, 3: 17}
+
+# Приём — атомарная единица навыка внутри практикума.
+# trigger  — по какому признаку в условии приём узнаётся; главное, чего нет в архиве
+# chain    — логическая цепочка шагов, сведённая из method_path корпуса
+# traps    — где теряются баллы, по markscheme
+# raw_tags — сырые method_tags корпуса, схлопнутые в этот приём
+# blocks   — вопросы архива, на которых приём отрабатывается
+
+skills:
+  - id: direct_integration
+    name: Прямое интегрирование
+    rung: 1
+    trigger: В правой части нет y — только x или только константа.
+    chain:
+      - Проинтегрировать правую часть по x
+      - Не потерять произвольную постоянную
+      - Подставить начальное условие и найти постоянную
+    traps:
+      - "Забытая постоянная интегрирования: начальное условие становится непроверяемым"
+      - Начальное условие подставляют до интегрирования
+    calculator:
+      mode: speeds_up
+      note: >
+        Определённый интеграл считается численно, и в задачах на накопление величины это
+        экономит время. Общее решение с постоянной калькулятор не даёт.
+    prereq: []
+    raw_tags: [integrate_trigonometric, apply_initial_condition, simplify_constant,
+               indefinite_integral, initial_value_problem, constant_of_integration]
+    blocks: [2021-NOV-COMMON-P1-Q01, 2025-MAY-TZ1-P2-Q03]
+
+  - id: separation
+    name: Разделение переменных
+    rung: 2
+    trigger: Правая часть разбивается в произведение f(x)·g(y) — в том числе когда
+      это видно только после вынесения множителя.
+    chain:
+      - Перенести всё с y влево, всё с x вправо
+      - Проинтегрировать обе части, постоянную писать один раз
+      - Подставить начальное условие
+      - Выразить y явно, если этого требует форма ответа
+    traps:
+      - Деление на g(y) без оговорки о случае g(y) = 0
+      - Модуль под логарифмом теряют раньше, чем оправдано начальным условием
+      - Ответ оставляют неявным, когда в условии сказано «в форме y = f(x)»
+    calculator:
+      mode: checks
+      note: >
+        Замкнутую форму GDC не выдаёт. Зато полученный ответ проверяется за секунды:
+        постройте своё решение и убедитесь, что оно проходит через начальное условие.
+        Половина вопросов на этот приём — «show that», где ход обязателен.
+    prereq: [direct_integration]
+    raw_tags: [separation_of_variables, separate_variables, indefinite_integration,
+               logarithmic_integration, exponentiation, exponential_form,
+               initial_condition, initial_conditions, substitute_initial_condition]
+    blocks: [2021-MAY-TZ2-P1-Q11-A, 2021-NOV-COMMON-P3-Q02-A-I, 2023-NOV-TZ1-P2-Q09-B,
+             2023-NOV-TZ2-P2-Q09-B, 2023-NOV-TZ1-P3-Q02-A-III, 2025-NOV-TZ1-P1-Q07-A]
+
+  - id: separation_partial_fractions
+    name: Разделение с дробно-рациональным разложением
+    rung: 3
+    trigger: После разделения слева стоит дробь, знаменатель которой раскладывается
+      на линейные множители. Типовой источник — логистическая модель P(N − P).
+    chain:
+      - Разделить переменные
+      - Разложить знаменатель на множители и расписать на простейшие дроби
+      - "Проинтегрировать: получится разность логарифмов"
+      - Свернуть разность логарифмов в логарифм отношения
+      - Подставить начальное условие и потенцировать
+    traps:
+      - Коэффициенты разложения находят неверно из-за знака в (v − 2)(v + 1)
+      - Разность логарифмов не сворачивают, и потенцирование становится невозможным
+    calculator:
+      mode: checks
+      note: >
+        Разложение на простейшие дроби — ручная работа. Калькулятор годится только для
+        проверки числового ответа в конце.
+    prereq: [separation]
+    raw_tags: [partial_fractions, partial_fraction_decomposition, partial_fractions_decomposition,
+               logarithmic_manipulation, logarithmic_integration]
+    blocks: [2021-MAY-TZ1-P2-Q12-C, 2022-MAY-TZ2-P2-Q12-E, 2022-MAY-TZ1-P2-Q12-C-I-II-III,
+             2023-MAY-TZ1-P2-Q12-D-I-II]
+
+  - id: homogeneous_substitution
+    name: Однородное уравнение, подстановка y = vx
+    rung: 4
+    trigger: Правая часть зависит только от отношения y/x — числитель и знаменатель
+      одной степени однородности.
+    chain:
+      - Положить y = vx, откуда dy/dx = v + x·dv/dx
+      - Подставить и сократить x
+      - Привести к виду x·dv/dx = h(v) — это уже разделяющееся уравнение
+      - Решить разделением переменных
+      - Вернуться к v = y/x
+    traps:
+      - Пишут dy/dx = x·dv/dx, теряя слагаемое v из произведения
+      - Забывают обратную подстановку и оставляют ответ через v
+    calculator:
+      mode: forbidden
+      note: >
+        Пять вопросов из семи требуют точную форму или «show that»: ответ уже написан в
+        условии, и баллы даются за вывод. Калькулятор здесь бесполезен полностью.
+    prereq: [separation, separation_partial_fractions]
+    raw_tags: [substitution, substitution_y_equals_vx, homogeneous_substitution_y_equals_vx,
+               homogeneous_differential_equation, back_substitution, substitute_back,
+               product_rule, implicit_differentiation]
+    blocks: [2022-MAY-TZ1-P2-Q12-B, 2022-NOV-COMMON-P1-Q09-A, 2023-MAY-TZ2-P2-Q12-B,
+             2023-NOV-TZ1-P3-Q02-E-II, 2023-NOV-TZ2-P3-Q02-E-II, 2025-MAY-TZ1-P1-Q09,
+             2025-MAY-TZ2-P3-Q01-F]
+
+  - id: integrating_factor
+    name: Интегрирующий множитель
+    rung: 5
+    trigger: >
+      Уравнение линейно по y: приводится к dy/dx + P(x)·y = Q(x). Разделение
+      переменных здесь не проходит, потому что Q(x) мешает собрать y в одной части.
+    chain:
+      - Привести к стандартному виду dy/dx + P(x)y = Q(x)
+      - Вычислить множитель I = exp(∫P dx)
+      - Домножить и опознать левую часть как производную произведения (I·y)′
+      - Проинтегрировать правую часть, часто по частям
+      - Выразить y и подставить начальное условие
+    traps:
+      - Уравнение не приведено к стандартному виду, знак P(x) взят неверно
+      - Постоянную интегрирования вносят до деления на I и теряют множитель
+      - Не опознают, что левая часть уже является производной произведения
+    calculator:
+      mode: checks
+      note: >
+        Ни один GDC не строит интегрирующий множитель. Проверить найденное решение
+        подстановкой в уравнение — можно и стоит, если осталось время.
+    prereq: [separation]
+    raw_tags: [integrating_factor, integrating_factor_method, find_integrating_factor,
+               multiply_by_integrating_factor, rearrange_linear_de, first_order_linear_ode,
+               solving_first_order_linear_ode, product_rule_recognition,
+               recognize_derivative, integration_by_parts, particular_solution]
+    blocks: [2021-NOV-COMMON-P1-Q08, 2021-NOV-COMMON-P3-Q02-A-III, 2024-MAY-TZ1-P2-Q07,
+             2024-MAY-TZ2-P2-Q12-C, 2024-MAY-TZ2-P2-Q12-D, 2025-MAY-TZ3-P2-Q12-B]
+
+  - id: euler_method
+    name: Метод Эйлера
+    rung: 6
+    trigger: В условии дан шаг h и требуется приближённое значение. Аналитическое
+      решение при этом может не существовать в замкнутой форме.
+    chain:
+      - Записать итерацию y_{n+1} = y_n + h·f(x_n, y_n)
+      - Определить число шагов от x_0 до целевого x
+      - Вести таблицу, не округляя промежуточные значения
+      - Округлить только итог, до требуемого числа значащих цифр
+    traps:
+      - Промежуточные округления, из-за чего итог не сходится в последней цифре
+      - "Ошибка на один шаг: считают n шагов вместо (x_target − x_0)/h"
+      - Округление до заданного числа десятичных знаков вместо значащих цифр
+    calculator:
+      mode: required
+      note: >
+        Все семь вопросов архива на этот приём — Paper 2. Итерация вводится как
+        рекуррентная последовательность или таблица; промежуточные значения не округлять,
+        иначе последняя значащая цифра не сойдётся.
+    prereq: []
+    raw_tags: [euler_method, eulers_method, iterative_approximation, step_iteration,
+               numerical_approximation, numerical_iteration, step_length,
+               recursive_formula, DE_step_evaluation]
+    blocks: [2022-MAY-TZ1-P2-Q12-A, 2023-MAY-TZ1-P2-Q12-A, 2023-MAY-TZ2-P2-Q12-A,
+             2023-NOV-TZ1-P2-Q09-A, 2023-NOV-TZ2-P2-Q09-A, 2024-MAY-TZ2-P2-Q12-A,
+             2025-MAY-TZ1-P2-Q09-A]
+
+  - id: euler_error_sign
+    name: Знак ошибки Эйлера через вогнутость
+    rung: 7
+    trigger: Спрашивают, приближение занижено или завышено, либо почему оно плохое.
+      Приём почти всегда идёт следующим пунктом после самого метода Эйлера.
+    chain:
+      - Определить знак второй производной на отрезке
+      - Вогнутая вверх кривая лежит выше касательных, значит Эйлер занижает
+      - Вогнутая вниз — завышает
+      - "Отдельно: если градиент резко меняется на отрезке, приближение грубое
+        независимо от знака"
+    traps:
+      - Ответ дают без ссылки на вторую производную или вогнутость — балл за
+        обоснование не засчитывается
+      - Путают причину «занижено» с причиной «неточно»
+    calculator:
+      mode: speeds_up
+      note: >
+        Точное решение и ломаную Эйлера можно построить рядом и увидеть знак ошибки
+        глазами. Но балл дают за ссылку на вогнутость или знак второй производной, поэтому
+        обосновывать всё равно придётся словами.
+    prereq: [euler_method]
+    raw_tags: [concavity_analysis, concavity, tangent_line_approximation,
+               tangent_underestimate, underestimation, euler_method_error,
+               euler_method_interpretation, error_analysis, absolute_error,
+               approximation_error, numerical_vs_exact, gradient_analysis]
+    blocks: [2023-MAY-TZ1-P2-Q12-E, 2023-MAY-TZ2-P2-Q12-D, 2023-NOV-TZ1-P2-Q09-C,
+             2023-NOV-TZ2-P2-Q09-C, 2024-MAY-TZ2-P2-Q12-E-I-II-III, 2025-MAY-TZ1-P2-Q09-B]
+
+# Приёмы, встречающиеся в теме, но принадлежащие другим практикумам.
+# Здесь только повторяются, а ставятся в своих темах.
+imported:
+  - {id: integration_by_parts, from: E5}
+  - {id: trig_identity_double_angle, from: C3}
+  - {id: second_order_linear_ansatz, from: E7b, note: только Paper 3}
+
+# Лестница: каждый следующий приём сводится к предыдущему или расширяет его.
+ladder:
+  - direct_integration
+  - separation
+  - separation_partial_fractions
+  - homogeneous_substitution
+  - integrating_factor
+  - euler_method
+  - euler_error_sign

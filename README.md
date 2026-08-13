@@ -26,6 +26,16 @@ The first manual topic-and-method classification covers the complete November 20
 - [Topic taxonomy](classification/taxonomy/topics.yaml)
 - [Method-family taxonomy](classification/taxonomy/method-families.yaml)
 
+## Практикумы
+
+Учебный слой поверх архива: ноутбуки, которые проводят по всем приёмам темы от
+простого к сложному, с самопроверкой и заданием на таймере. Архитектура,
+правило гранулярности и карта из 36 практикумов описаны в [PRACTICUM.md](PRACTICUM.md).
+
+- [Карта практикумов](practicum/map.yaml) и проверка `python practicum/check_map.py`
+- [Карточки приёмов](practicum/skills/) — нормализованный слой над `method_tags`
+- Собранные практикумы: [E7 — дифференциальные уравнения](practicum/calculus/practicum-e7-differential-equations.ipynb), [C3 — тригонометрические уравнения](practicum/geometry/practicum-c3-trigonometric-equations.ipynb)
+
 ## Question Atlas
 
 The pilot can be explored in a React, TypeScript, Tailwind CSS, and Vite research interface:

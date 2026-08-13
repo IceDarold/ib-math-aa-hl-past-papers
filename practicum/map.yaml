@@ -1,0 +1,159 @@
+# Карта практикумов: разбиение архива на ноутбуки.
+#
+# Правило гранулярности: практикум = 60–200 баллов исходного материала,
+# 5–9 приёмов, одна связная лестница. Меньше 60 — мало практики, тему нужно
+# слить с соседней. Больше 200 — ноутбук не проходится за один заход, тему
+# нужно резать. Проверяется скриптом check_map.py по classification/generated.
+#
+# subtopics — темы корпуса, из которых берётся материал. Элемент списка это
+# либо имя темы целиком, либо {topic: ..., share: ...}, когда тему делят
+# несколько практикумов. Сумма долей по одной теме должна давать 1.
+#
+# exception — осознанный выход за диапазон с обоснованием. Скрипт такие
+# практикумы показывает, но не считает ошибкой.
+
+version: 0.2
+status: draft
+
+sections:
+  A:
+    title: Number and algebra
+    practicums:
+      - id: A1
+        title: Арифметические прогрессии и суммы
+        subtopics: [{topic: number_algebra.sequences, share: 0.6}]
+      - id: A2
+        title: Геометрические прогрессии и бесконечные суммы
+        subtopics: [{topic: number_algebra.sequences, share: 0.4}, number_algebra.geometric_sequences]
+      - id: A3
+        title: Биномиальная теорема
+        subtopics: [number_algebra.binomial_theorem]
+      - id: A4
+        title: "Многочлены: Виета, деление, кратность корней"
+        subtopics: [number_algebra.polynomials]
+      - id: A5
+        title: "Комплексные числа: формы и арифметика"
+        subtopics: [{topic: number_algebra.complex_numbers, share: 0.5}]
+      - id: A6
+        title: Муавр, корни из единицы, геометрия на плоскости
+        subtopics: [{topic: number_algebra.complex_numbers, share: 0.5}]
+      - id: A7
+        title: "Доказательство: индукция, прямое, от противного"
+        subtopics: [number_algebra.mathematical_induction, number_algebra.proof]
+      - id: A8
+        title: Неравенства
+        subtopics: [number_algebra.inequalities, functions.inequalities]
+
+  B:
+    title: Functions
+    practicums:
+      - id: B1
+        title: "Уравнения: квадратные, дробные, с параметром"
+        subtopics: [{topic: functions.equations, share: 0.55}]
+      - id: B2
+        title: Композиция и обратные функции
+        subtopics: [{topic: functions.equations, share: 0.45}, functions.inverse_functions]
+      - id: B3
+        title: Преобразования графиков
+        subtopics: [functions.graphing]
+      - id: B4
+        title: Исследование функции, асимптоты, эскиз
+        subtopics: [functions.curve_sketching, functions.asymptotes]
+      - id: B5
+        title: Показательные и логарифмические модели
+        subtopics: [functions.logarithmic_functions, functions.exponential_models,
+                    functions.mathematical_models, number_algebra.exponential_models]
+
+  C:
+    title: Geometry and trigonometry
+    practicums:
+      - id: C1
+        title: "Треугольник: синусы, косинусы, площадь"
+        subtopics: [geometry.trigonometry]
+      - id: C2
+        title: Радианная мера, сектор, объёмные тела
+        subtopics: [geometry.circular_measure, geometry.solid_geometry]
+      - id: C3
+        title: Тригонометрические уравнения
+        subtopics: [geometry.trigonometric_equations]
+        status: ready
+        notebook: practicum/geometry/practicum-c3-trigonometric-equations.ipynb
+        kaggle: ib-math-praktikum-c3-trigonometric-equations
+      - id: C4
+        title: Тождества и тригонометрические функции
+        subtopics: [geometry.trigonometric_identities, functions.trigonometric_functions]
+      - id: C5
+        title: "Векторы: операции, прямые, углы"
+        subtopics: [geometry.vectors]
+      - id: C6
+        title: Прямые и плоскости в пространстве
+        subtopics: [{topic: geometry.vectors_3d, share: 0.5}]
+      - id: C7
+        title: Расстояния, углы и векторное произведение
+        subtopics: [{topic: geometry.vectors_3d, share: 0.5}]
+
+  D:
+    title: Statistics and probability
+    practicums:
+      - id: D1
+        title: "Комбинаторика: размещения, блоки, дополнение"
+        subtopics: [statistics.combinatorics]
+      - id: D2
+        title: "Вероятность: условная, независимость, деревья"
+        subtopics: [{topic: statistics.probability, share: 0.55}]
+      - id: D3
+        title: Биномиальное распределение
+        subtopics: [{topic: statistics.probability, share: 0.45}]
+      - id: D4
+        title: Дискретные случайные величины и математическое ожидание
+        subtopics: [statistics.discrete_random_variables, statistics.expected_value]
+      - id: D5
+        title: Нормальное распределение и обратная задача
+        subtopics: [{topic: statistics.continuous_random_variables, share: 0.55}]
+      - id: D6
+        title: "Непрерывные СВ: плотность, медиана, квантили"
+        subtopics: [{topic: statistics.continuous_random_variables, share: 0.45}]
+      - id: D7
+        title: Регрессия и корреляция
+        subtopics: [statistics.regression]
+
+  E:
+    title: Calculus
+    practicums:
+      - id: E1
+        title: Пределы, неопределённости, правило Лопиталя
+        subtopics: [calculus.limits]
+      - id: E2
+        title: Ряды Маклорена
+        subtopics: [calculus.series]
+      - id: E3
+        title: Техника дифференцирования
+        subtopics: [{topic: calculus.differentiation, share: 0.5}]
+      - id: E4
+        title: Неявное и параметрическое дифференцирование
+        subtopics: [{topic: calculus.differentiation, share: 0.5}]
+      - id: E5
+        title: Техника интегрирования
+        subtopics: [{topic: calculus.integration_applications, share: 0.5}]
+      - id: E6
+        title: Площади, объёмы вращения, накопление
+        subtopics: [{topic: calculus.integration_applications, share: 0.5}]
+      - id: E7
+        title: Дифференциальные уравнения первого порядка
+        subtopics: [calculus.differential_equations]
+        status: ready
+        notebook: practicum/calculus/practicum-e7-differential-equations.ipynb
+        kaggle: ib-math-praktikum-e7-differential-equations
+        exception: >
+          Тема идёт одним практикумом, хотя выходит за верхнюю границу.
+          Естественный разрез — после приёма 5, между аналитическими методами
+          и численными. Но в Paper 2 эти половины стоят в одном вопросе: сначала
+          Эйлер, потом точное решение, потом сравнение. Разрезав тему, мы потеряем
+          связку, ради которой вопрос и составлен. Пересмотреть, если ноутбук
+          перестанет проходиться за один заход.
+      - id: E8
+        title: Стационарные точки, вогнутость, перегиб
+        subtopics: [calculus.stationary_points]
+      - id: E9
+        title: Оптимизация и связанные скорости
+        subtopics: [calculus.optimization, calculus.rates_of_change]

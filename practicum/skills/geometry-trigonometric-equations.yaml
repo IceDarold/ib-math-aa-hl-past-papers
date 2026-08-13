@@ -1,0 +1,248 @@
+version: 0.1
+practicum: C3
+title: Тригонометрические уравнения
+source_topic: geometry.trigonometric_equations
+corpus:
+  blocks: 31
+  marks: 127
+  sessions: May 2021 — November 2025
+  papers: {1: 23, 2: 8}
+  note: >
+    Без калькулятора 23 блока из 31. Это самая «бумажная» тема архива: почти всё
+    решается точными значениями на единичной окружности, и почти нигде не нужен GDC.
+
+skills:
+  - id: reference_angle
+    name: Опорный угол и все корни в области
+    rung: 1
+    trigger: Одна тригонометрическая функция, аргумент равен самому x.
+    chain:
+      - Выразить sin x, cos x или tan x числом
+      - Найти опорный угол через обратную функцию
+      - Достроить остальные корни по симметрии четвертей
+      - Оставить только попавшие в заданную область
+    traps:
+      - Найден один корень, остальные потеряны — самая частая потеря баллов в теме
+      - Область задана шире 2π, а корни выписаны только для одного оборота
+      - Синус и косинус дают по два корня на оборот, тангенс — один; их путают
+    calculator:
+      mode: replaces
+      note: >
+        В Paper 2 уравнение строится графиком и корни считываются напрямую — приём нужен
+        только для того, чтобы понимать, сколько корней искать на экране. В Paper 1, куда
+        попадают почти все вопросы темы, замены ему нет.
+    prereq: []
+    raw_tags: [solve_trigonometric_equation, solving_trigonometric_equation,
+               trigonometric_equation_solving, trig_equation, trigonometric_equation,
+               reference_angle, quadrant_analysis, unit_circle_values, evaluate_cosine,
+               inverse_trigonometric_function, inverse_trig_function, inverse_tangent,
+               inverse_cosine, arcsin, arctan, angle_solution]
+    blocks: [2021-MAY-TZ2-P1-Q10-A, 2022-MAY-TZ2-P2-Q05-A, 2023-MAY-TZ2-P2-Q05-B]
+
+  - id: compound_argument
+    name: Составной аргумент
+    rung: 2
+    trigger: Под функцией стоит не x, а ax + b — например 2x − 5°, x/2 + π/3, 2θ.
+    chain:
+      - Обозначить аргумент за новую переменную
+      - Пересчитать область для неё, а не для x
+      - Решить обычным способом внутри новой области
+      - Вернуться к x и проверить, что все корни попали в исходную область
+    traps:
+      - "Область не пересчитана, из-за чего теряются корни: при 2x на [0, π] аргумент
+        пробегает [0, 2π], то есть корней вдвое больше"
+      - Корни находят для x, а потом делят на коэффициент — порядок обратный
+      - «Наименьшее положительное значение» ищут среди первых корней, не проверив,
+        что они отрицательны
+    calculator:
+      mode: replaces
+      note: >
+        Калькулятор не различает составной аргумент: он строит график по x, и вся возня с
+        пересчётом области исчезает. Все четыре вопроса архива на этот приём из Paper 1,
+        так что рассчитывать на это нельзя.
+    prereq: [reference_angle]
+    raw_tags: [domain_restriction, general_solution, angle_range_restriction,
+               algebraic_manipulation, index_shift]
+    blocks: [2022-MAY-TZ1-P1-Q03-B, 2022-MAY-TZ2-P1-Q04, 2024-MAY-TZ2-P1-Q01,
+             2021-NOV-COMMON-P1-Q06-B]
+
+  - id: pythagorean_reduction
+    name: Пифагорово тождество и квадратное уравнение
+    rung: 3
+    trigger: В уравнении есть квадрат одной функции и первая степень другой.
+    chain:
+      - Заменить cos²x на 1 − sin²x (или наоборот), чтобы осталась одна функция
+      - Привести к квадратному уравнению относительно неё
+      - Разложить на множители или применить формулу корней
+      - Отбросить корень вне отрезка [−1, 1]
+      - Решить оставшиеся простые уравнения
+    traps:
+      - Корень вне [−1, 1] не отброшен, и для него ищут углы
+      - Заменяют не ту функцию, и квадрат остаётся у обеих
+    calculator:
+      mode: replaces
+      note: >
+        Графиком корни находятся без всякого тождества. Но два вопроса из трёх просят
+        точную форму или «show that», где десятичный корень баллов не приносит.
+    prereq: [reference_angle]
+    raw_tags: [trigonometric_identity_substitution, quadratic_in_sine, pythagorean_identity,
+               quadratic_trig_equation, quadratic_formula, quadratic_equation,
+               quadratic_solving, quadratic_factoring, factorisation, factorization,
+               factoring, root_selection, quadratic_in_sine_squared]
+    blocks: [2021-MAY-TZ2-P1-Q02, 2023-MAY-TZ2-P1-Q08-C, 2023-NOV-TZ1-P1-Q12-C]
+
+  - id: double_angle_reduction
+    name: Двойной угол и квадратное уравнение
+    rung: 4
+    trigger: В одном уравнении встречаются и 2x, и x.
+    chain:
+      - Выбрать форму двойного угла под ту функцию, которая уже есть
+      - cos 2x = 1 − 2sin²x, если рядом стоит sin x
+      - cos 2x = 2cos²x − 1, если рядом стоит cos x
+      - sin 2x = 2 sin x cos x, если предстоит разложение на множители
+      - Привести к квадратному и решить как в приёме 3
+    traps:
+      - Выбрана форма, вводящая вторую функцию, и уравнение усложняется
+      - sin 2x раскрывают там, где нужно было оставить как множитель
+    calculator:
+      mode: replaces
+      note: >
+        То же самое: график снимает необходимость выбирать форму двойного угла. Выбор формы
+        остаётся нужен там, где ответ требуется точным.
+    prereq: [pythagorean_reduction]
+    raw_tags: [double_angle_identity, trigonometric_identity, substitution]
+    blocks: [2023-MAY-TZ1-P1-Q03, 2025-MAY-TZ3-P1-Q03, 2025-NOV-TZ3-P2-Q01-B]
+
+  - id: factor_not_divide
+    name: Разложение на множители вместо деления
+    rung: 5
+    trigger: Обе части содержат общий множитель, или уравнение сводится к A·B = 0.
+    chain:
+      - Перенести всё в одну часть
+      - Вынести общий множитель, не сокращая на него
+      - Приравнять каждый множитель к нулю
+      - Решить полученные простые уравнения и объединить корни
+    traps:
+      - Делят на cos x или sin x и теряют корни, где этот множитель равен нулю.
+        Это самая дорогая ошибка темы — теряется целая серия решений
+      - Забывают, что после разложения решать надо оба множителя
+    calculator:
+      mode: replaces
+      note: >
+        Здесь калькулятор ещё и страхует от главной ошибки приёма: на графике видно все
+        точки пересечения, включая ту, что теряется при делении на cos x. Если в Paper 2
+        сомневаетесь, не потерян ли корень, стройте график.
+    prereq: [double_angle_reduction]
+    raw_tags: [factorisation, factorization, quadratic_factoring, set_equality,
+               solve_trigonometric_factor, solve_linear_factor]
+    blocks: [2021-MAY-TZ1-P1-Q05-B, 2024-MAY-TZ1-P1-Q04-A, 2023-MAY-TZ2-P2-Q05-B]
+
+  - id: reduce_to_tangent
+    name: Сведение к тангенсу
+    rung: 6
+    trigger: sin и cos входят в одинаковой степени, и уравнение однородно по ним.
+    chain:
+      - Поделить обе части на cos x в нужной степени
+      - Отдельно проверить, не является ли cos x = 0 решением
+      - Получить уравнение относительно tan x и решить его
+      - Помнить, что тангенс даёт один корень на период π, а не два
+    traps:
+      - Случай cos x = 0 не рассмотрен, хотя деление его исключило
+      - Из tan²x = k извлекают только положительный корень, теряя вторую серию
+    calculator:
+      mode: replaces
+      note: >
+        Однородность уравнения нужна только для ручного решения. С графиком обе серии
+        корней видны сразу, и забытый минус у tan x = ±k перестаёт быть ловушкой.
+    prereq: [factor_not_divide]
+    raw_tags: [tan_identity, arctan, trigonometric_identity, algebraic_simplification]
+    blocks: [2022-NOV-COMMON-P1-Q10-A, 2022-MAY-TZ1-P1-Q03-B, 2023-MAY-TZ2-P1-Q08-A]
+
+  - id: root_selection
+    name: Отбор корней и посторонние решения
+    rung: 7
+    trigger: >
+      В условии есть оговорка вида θ ≠ π/4, дробь, корень, обратная функция,
+      либо просят «наименьшее положительное». Признак: решать придётся больше,
+      чем найти корни.
+    chain:
+      - Выписать все ограничения до начала решения
+      - Дробь равна нулю там, где числитель ноль, а знаменатель нет
+      - Возведение в квадрат порождает посторонние корни — подставлять обязательно
+      - Область определения arcsin и arccos сужает допустимые x
+      - Проверить каждый найденный корень подстановкой в исходное уравнение
+    traps:
+      - Возвели в квадрат и не проверили корни подстановкой
+      - Не учли, что аргумент arccos обязан лежать в [−1, 1]
+      - Знаменатель обратился в ноль вместе с числителем, а корень оставлен
+    calculator:
+      mode: speeds_up
+      note: >
+        График исходного уравнения мгновенно показывает, какой из кандидатов посторонний:
+        достаточно посмотреть, проходит ли кривая через ноль. А вот область определения
+        arccos и оговорки условия калькулятор не читает — это остаётся ручной работой в
+        любой бумаге.
+    prereq: [compound_argument, reduce_to_tangent]
+    raw_tags: [check_solutions, root_selection, constraint_application, case_analysis,
+               rational_to_polynomial, solve_radical_equation, domain_restriction,
+               boundary_analysis, interval_determination, order_roots, identify_second_root]
+    blocks: [2021-NOV-COMMON-P1-Q06-B, 2025-MAY-TZ2-P1-Q08-B, 2022-MAY-TZ2-P1-Q04,
+             2022-NOV-COMMON-P1-Q10-D]
+
+  - id: numeric_gdc
+    name: Численное решение
+    rung: 8
+    trigger: >
+      Коэффициенты не дают точных значений на единичной окружности, задача из
+      Paper 2, ответ просят с точностью до трёх значащих цифр.
+    chain:
+      - Привести уравнение к виду f(x) = 0
+      - Найти корни численно, следя за областью
+      - Проверить, сколько корней на отрезке, а не остановиться на первом
+      - Округлить только итог
+    traps:
+      - Найден первый корень, хотя спрашивали все или второй по счёту
+      - Калькулятор в градусах, а область в радианах
+    calculator:
+      mode: required
+      note: >
+        Приём и есть работа с калькулятором. Все три вопроса архива из Paper 2. Следите за
+        режимом градусов и радианов и за тем, что корней на отрезке может быть больше
+        одного.
+    prereq: [reference_angle]
+    raw_tags: [gdc_numerical_solve, gdc_solver, numerical_solution, gdc]
+    blocks: [2021-NOV-COMMON-P2-Q04-B, 2023-MAY-TZ2-P2-Q10-D, 2025-MAY-TZ1-P2-Q05-B]
+
+# Приёмы, встречающиеся в теме, но принадлежащие другим практикумам.
+imported:
+  - {id: compound_angle_formula, from: C4}
+  - {id: complex_argument_locus, from: A6, note: разметка относит к этой теме ошибочно}
+
+# Замечания к классификации, отправить в classification/reviews.
+corpus_issues:
+  - block: 2025-MAY-TZ2-P1-Q08-B
+    issue: >
+      В method_path записан ответ x = ±1/2, но при таком x величина arccos(3x)
+      не определена: |3x| = 1.5 > 1. Возведение в квадрат даёт x = ±1/√10,
+      и проверка подстановкой оставляет единственный корень x = −1/√10,
+      поскольку +1/√10 даёт сумму π/2, а не 3π/2.
+  - blocks: [2022-MAY-TZ2-P1-Q12-B, 2025-MAY-TZ3-P1-Q12-B, 2025-MAY-TZ3-P1-Q12-C,
+             2025-NOV-TZ3-P1-Q11-C]
+    issue: >
+      Помечены темой trigonometric_equations, но по существу это комплексные числа
+      (аргумент, геометрическое место точек). Тригонометрическое уравнение там —
+      один шаг из многих.
+  - blocks: [2025-MAY-TZ2-P2-Q12-D, 2025-MAY-TZ2-P2-Q12-E, 2023-MAY-TZ2-P1-Q12-B]
+    issue: >
+      Тригонометрии в этих блоках нет вовсе: касательная через дискриминант
+      и сдвиг индекса последовательности.
+
+ladder:
+  - reference_angle
+  - compound_argument
+  - pythagorean_reduction
+  - double_angle_reduction
+  - factor_not_divide
+  - reduce_to_tangent
+  - root_selection
+  - numeric_gdc

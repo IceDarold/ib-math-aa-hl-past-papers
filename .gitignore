@@ -4,3 +4,10 @@
 **/dist/
 classification/work/
 classification/generated/*/deepseek-v4-pro/raw/
+
+# Собранные Kaggle-версии практикумов
+/build/
+
+# Python
+__pycache__/
+*.pyc
