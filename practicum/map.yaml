@@ -99,6 +99,20 @@ sections:
       - id: C4
         title: "Синусоидальные модели: амплитуда, период, сдвиг"
         subtopics: [functions.trigonometric_functions]
+        status: ready
+        notebook: practicum/functions/practicum-c4-sinusoidal-models.ipynb
+        kaggle: ib-math-praktikum-c4-sinusoidal-models
+        skills: practicum/skills/functions-trigonometric-models.yaml
+        note: >
+          Зеркало C3: там 77% баллов без калькулятора, здесь 87% с ним.
+          Восемь приёмов, первые пять собирают модель, последние три ей
+          пользуются. Восьмой (оценка через ±1) стоит особняком — это
+          единственное место темы, где калькулятор бесполезен, и почти
+          весь Paper 1 приходится на него.
+
+          Чётность и композиция с тригонометрией (по 4 балла) приёмами
+          не стали: разобраны в разделе про Paper 1 и записаны в leftovers
+          карточки. По существу они принадлежат B2 и C3.
       - id: C5
         title: "Векторы: операции, прямые, углы"
         subtopics: [geometry.vectors]
