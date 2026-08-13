@@ -145,6 +145,8 @@ function BrowserPracticum({ practicum, progress, onProgress, onBack, onOpenAtlas
           <div className="mt-5 h-1.5 overflow-hidden bg-line"><motion.div className="h-full bg-verified" animate={{ width: `${progress.completed.length / c3Exercises.length * 100}%` }} /></div>
         </header>
 
+        <PracticumIntroduction />
+
         <nav className="mt-5 flex overflow-x-auto border-b border-line" aria-label="Разделы практикума">
           <TabButton active={tab === 'route'} onClick={() => setTab('route')}>Маршрут</TabButton>
           <TabButton active={tab === 'practice'} onClick={() => setTab('practice')}>Практика · {progress.completed.length}/{c3Exercises.length - 1}</TabButton>
@@ -161,6 +163,20 @@ function BrowserPracticum({ practicum, progress, onProgress, onBack, onOpenAtlas
       </div>
     </main>
   )
+}
+
+function PracticumIntroduction() {
+  return <section className="mt-5 border border-line bg-surface/45" aria-labelledby="practicum-introduction-title">
+    <div className="border-b border-line bg-canvas px-4 py-3 sm:px-5"><p className="m-0 font-mono text-[11px] tracking-[0.1em] text-primary uppercase">Перед началом</p><h2 id="practicum-introduction-title" className="mt-1 mb-0 text-lg font-semibold">Как устроен этот практикум</h2></div>
+    <div className="grid gap-5 p-4 sm:p-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)]">
+      <div className="space-y-3 leading-relaxed text-muted">
+        <p className="mt-0 mb-0">Тригонометрические уравнения почти не требуют калькулятора: 23 из 31 отобранного блока — Paper 1. Баллы здесь теряются обычно не на тождестве, а на одном и том же: найден один корень, а остальные не попали в ответ.</p>
+        <p className="m-0">Лестница идёт от опорного угла и составного аргумента к двойному углу, разложению на множители и отбору посторонних решений. Главный вопрос до вычислений: <strong className="text-ink">сколько функций и сколько разных аргументов стоит в уравнении?</strong> Цель — свести оба числа к одному.</p>
+        <p className="m-0">Все задания — реальные вопросы AA HL из May 2021 — November 2025. Проверка принимает эквивалентные записи вроде <MathText>{'$\\pi/6$'}</MathText> и десятичного приближения, но отдельно проверяет, что не потеряны другие корни на области.</p>
+      </div>
+      <aside className="border border-line bg-canvas p-4"><h3 className="mt-0 mb-3 text-sm font-semibold">Как проходить</h3><ol className="m-0 space-y-2 pl-4 text-sm leading-relaxed text-muted"><li>Открой «Маршрут» и прочитай триггеры приёмов.</li><li>Решай каждую задачу на бумаге до ввода ответа.</li><li>Используй подсказку только после собственной попытки.</li><li>Финальное задание открывай по таймеру и повтори через неделю.</li></ol><p className="mt-4 mb-0 border-t border-line pt-3 text-xs leading-relaxed text-muted">Уровни: 🟢 чистый приём · 🟡 неочевидная обёртка · 🔴 комбинация приёмов или экзаменационный формат.</p></aside>
+    </div>
+  </section>
 }
 
 function RouteView({ skills, completed, onStart }: { skills: PracticumSkill[]; completed: string[]; onStart: () => void }) {
