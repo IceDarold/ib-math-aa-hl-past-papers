@@ -81,12 +81,13 @@ md(r"""
 code(r"""
 import sys
 sys.path.append('..')          # из practicum/geometry к practicum/kit.py
-from kit import *              # verify_roots, check_expr, check_num, trigger_check
-import sympy as sp
+import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
+from kit import *              # проверки + sin, cos, pi, sqrt, solve и прочие имена
 
-x, theta = sp.symbols('x theta')
-P = sp.pi
+x, theta = symbols('x theta')
+
 print('готово; sympy', sp.__version__)
+print('пишите ответ обычными именами: sin(pi/6) =', sin(pi/6))
 """)
 
 md(r"""
@@ -155,7 +156,7 @@ code(r"""
 # (a) выражение через sin и cos
 my_f = ...
 
-verify_identity('Задание Т1(a)', my_f, 4*sp.cot(x) + sp.sin(x))
+verify_identity('Задание Т1(a)', my_f, 4*cot(x) + sin(x))
 
 # (b) значение f(a), три значащие цифры
 my_fa = ...
@@ -204,7 +205,7 @@ code(r"""
 # ваш ответ: список корней
 my_roots = ...
 
-verify_roots('Задание 1', my_roots, 6 + 6*sp.cos(x), (0, 4*P))
+verify_roots('Задание 1', my_roots, 6 + 6*cos(x), (0, 4*pi))
 """)
 
 md(r"""
@@ -223,7 +224,7 @@ md(r"""
 code(r"""
 my_roots = ...           # в градусах, например [10, 100]
 
-verify_roots('Задание 2', my_roots, sp.tan(2*x - 5*P/180) - 1, (0, 180), deg=True)
+verify_roots('Задание 2', my_roots, tan(2*x - 5*pi/180) - 1, (0, 180), deg=True)
 """)
 
 md(r"""
@@ -395,8 +396,8 @@ code(r"""
 # левая часть, переписанная через x: замените sin 2x и cos 2x
 my_left = ...
 
-verify_identity('Задание Т3, переход', my_left, sp.sin(2*x) + sp.cos(2*x) - 1)
-verify_identity('Задание Т3, тождество', my_left, 2*sp.sin(x)*(sp.cos(x) - sp.sin(x)))
+verify_identity('Задание Т3, переход', my_left, sin(2*x) + cos(2*x) - 1)
+verify_identity('Задание Т3, тождество', my_left, 2*sin(x)*(cos(x) - sin(x)))
 """)
 
 md(r"""
@@ -434,7 +435,7 @@ md(r"""
 code(r"""
 my_roots = ...
 
-verify_roots('Задание 4', my_roots, 2*sp.cos(x)**2 + 5*sp.sin(x) - 4, (0, 2*P))
+verify_roots('Задание 4', my_roots, 2*cos(x)**2 + 5*sin(x) - 4, (0, 2*pi))
 """)
 
 md(r"""
@@ -451,7 +452,7 @@ md(r"""
 code(r"""
 my_roots = ...
 
-verify_roots('Задание 5', my_roots, sp.cos(2*x) - sp.sin(x), (-P, P))
+verify_roots('Задание 5', my_roots, cos(2*x) - sin(x), (-pi, pi))
 """)
 
 md(r"""
@@ -468,8 +469,8 @@ md(r"""
 code(r"""
 my_roots = ...
 
-verify_roots('Задание 6', my_roots, 2*sp.cos(2*theta) - 5*sp.cos(theta) + 2,
-             (P, 2*P), var=theta)
+verify_roots('Задание 6', my_roots, 2*cos(2*theta) - 5*cos(theta) + 2,
+             (pi, 2*pi), var=theta)
 """)
 
 md(r"""
@@ -510,7 +511,7 @@ md(r"""
 code(r"""
 my_roots = ...
 
-verify_roots('Задание 7', my_roots, sp.cos(x) - sp.sin(2*x), (0, P))
+verify_roots('Задание 7', my_roots, cos(x) - sin(2*x), (0, pi))
 """)
 
 md(r"""
@@ -543,7 +544,7 @@ md(r"""
 code(r"""
 my_roots = ...
 
-verify_roots('Задание 8', my_roots, sp.cos(x)**2 - 3*sp.sin(x)**2, (0, P))
+verify_roots('Задание 8', my_roots, cos(x)**2 - 3*sin(x)**2, (0, pi))
 """)
 
 md(r"""
@@ -585,8 +586,8 @@ code(r"""
 my_roots = ...
 
 verify_roots('Задание 9', my_roots,
-             (2*sp.sin(2*theta)**2 - 5*sp.sin(2*theta) - 3)/(sp.sin(2*theta) - 1),
-             (0, P), var=theta)
+             (2*sin(2*theta)**2 - 5*sin(2*theta) - 3)/(sin(2*theta) - 1),
+             (0, pi), var=theta)
 """)
 
 md(r"""
@@ -612,10 +613,10 @@ if my_x is Ellipsis:
 elif abs(3*float(my_x)) > 1:
     print(f'❌ Задание 10: при x = {my_x} величина arccos(3x) не определена')
 else:
-    lhs = float(sp.acos(my_x) + sp.acos(3*my_x))
-    ok = abs(lhs - float(3*P/2)) < 1e-9
+    lhs = float(acos(my_x) + acos(3*my_x))
+    ok = abs(lhs - float(3*pi/2)) < 1e-9
     print(f'{"✅" if ok else "❌"} Задание 10: слева получилось '
-          f'{lhs/float(P):.4f}*pi, нужно 1.5000*pi')
+          f'{lhs/float(pi):.4f}*pi, нужно 1.5000*pi')
 """)
 
 md(r"""
@@ -639,7 +640,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 f = lambda t: 2*np.cos(t)**2 + 5*np.sin(t) - 4
-grid = np.linspace(0, float(2*P), 600)
+grid = np.linspace(0, float(2*pi), 600)
 
 plt.figure(figsize=(8, 3))
 plt.axhline(0, color='0.6', lw=1)
@@ -783,7 +784,7 @@ t0 = time.time()
 my_roots = ...
 
 verify_roots('Задание 12', my_roots,
-             sp.sin(2*x) + sp.cos(2*x) - 1 + sp.cos(x) - sp.sin(x), (0, 2*P))
+             sin(2*x) + cos(2*x) - 1 + cos(x) - sin(x), (0, 2*pi))
 print(f'потрачено {(time.time() - t0)/60:.1f} мин')
 """)
 
@@ -813,8 +814,8 @@ $$f(a) = \frac{4 \cdot \tfrac{2}{3}}{\tfrac{\sqrt5}{3}} + \frac{\sqrt5}{3}
 = \frac{8}{\sqrt5} + \frac{\sqrt5}{3} = \frac{29\sqrt5}{15} \approx 4.32.$$
 
 ```python
-my_f = 4*sp.cos(x)/sp.sin(x) + sp.sin(x)
-my_fa = 8/sp.sqrt(5) + sp.sqrt(5)/3        # 29*sqrt(5)/15
+my_f = 4*cos(x)/sin(x) + sin(x)
+my_fa = 8/sqrt(5) + sqrt(5)/3        # 29*sqrt(5)/15
 ```
 """)
 
@@ -838,7 +839,7 @@ $$\cos 75^\circ = \cos45^\circ\cos30^\circ - \sin45^\circ\sin30^\circ
 Если знаки перепутать, числа поменяются местами, и это видно сразу.
 
 ```python
-my_cos75 = (sp.sqrt(6) - sp.sqrt(2))/4
+my_cos75 = (sqrt(6) - sqrt(2))/4
 ```
 """)
 
@@ -865,7 +866,7 @@ $$\sin 2x + \cos 2x - 1 = 2\sin x\cos x + (1 - 2\sin^2 x) - 1
 = 2\sin x\cos x - 2\sin^2 x = 2\sin x(\cos x - \sin x).$$
 
 ```python
-my_left = 2*sp.sin(x)*sp.cos(x) + (1 - 2*sp.sin(x)**2) - 1
+my_left = 2*sin(x)*cos(x) + (1 - 2*sin(x)**2) - 1
 ```
 """)
 
@@ -887,7 +888,7 @@ md(r"""
 а балл за область не взят.
 
 ```python
-my_cot = -sp.sqrt(5)/2
+my_cot = -sqrt(5)/2
 ```
 """)
 
@@ -916,7 +917,7 @@ $$\arctan\frac12 + \arctan\frac13
 = \arctan\frac{5/6}{5/6} = \arctan 1 = \frac{\pi}{4}.$$
 
 ```python
-my_sum = P/4
+my_sum = pi/4
 ```
 """)
 
@@ -929,7 +930,7 @@ md(r"""
 3. $\cos x = -1$ при $x = \pi$ и, добавляя период $2\pi$, при $x = 3\pi$.
 
 ```python
-my_roots = [P, 3*P]
+my_roots = [pi, 3*pi]
 ```
 """)
 
@@ -961,7 +962,7 @@ md(r"""
 5. Наименьшее положительное — $\dfrac{17\pi}{6}$.
 
 ```python
-my_x = 17*P/6
+my_x = 17*pi/6
 ```
 
 Период по $x$ здесь равен $4\pi$, а не $2\pi$: аргумент содержит $x/2$.
@@ -979,7 +980,7 @@ md(r"""
 5. На обороте $[0, 2\pi]$ это два корня: $x = \dfrac{\pi}{6}$ и $x = \dfrac{5\pi}{6}$.
 
 ```python
-my_roots = [P/6, 5*P/6]
+my_roots = [pi/6, 5*pi/6]
 ```
 """)
 
@@ -993,7 +994,7 @@ md(r"""
    из $\sin x = -1$ получаем $x = -\dfrac{\pi}{2}$.
 
 ```python
-my_roots = [-P/2, P/6, 5*P/6]
+my_roots = [-pi/2, pi/6, 5*pi/6]
 ```
 
 Корень $-\dfrac{\pi}{2}$ — тот, который теряют: область захватывает
@@ -1010,7 +1011,7 @@ md(r"""
 5. На $[\pi, 2\pi]$ это единственная точка $\theta = \dfrac{3\pi}{2}$.
 
 ```python
-my_roots = [3*P/2]
+my_roots = [3*pi/2]
 ```
 
 Обратите внимание на шаг 3: свободного члена не осталось, и уравнение
@@ -1027,7 +1028,7 @@ md(r"""
 5. $\sin x = \dfrac{1}{2}$ на $[0, \pi]$ даёт $x = \dfrac{\pi}{6},\ \dfrac{5\pi}{6}$.
 
 ```python
-my_roots = [P/6, P/2, 5*P/6]
+my_roots = [pi/6, pi/2, 5*pi/6]
 ```
 
 Если поделить на $\cos x$, останется $\sin x = 1/2$ и два корня вместо трёх.
@@ -1045,7 +1046,7 @@ md(r"""
    $\tan x = -\dfrac{1}{\sqrt{3}}$ даёт $x = \dfrac{5\pi}{6}$.
 
 ```python
-my_roots = [P/6, 5*P/6]
+my_roots = [pi/6, 5*pi/6]
 ```
 
 Шаг 1 стоит проговаривать вслух даже когда ответ очевиден: в вопросах,
@@ -1067,7 +1068,7 @@ md(r"""
 6. Возвращаемся: $\theta = \dfrac{7\pi}{12},\ \dfrac{11\pi}{12}$.
 
 ```python
-my_roots = [7*P/12, 11*P/12]
+my_roots = [7*pi/12, 11*pi/12]
 ```
 """)
 
@@ -1091,7 +1092,7 @@ md(r"""
 $$\boxed{x = -\frac{1}{\sqrt{10}}}$$
 
 ```python
-my_x = -1/sp.sqrt(10)
+my_x = -1/sqrt(10)
 ```
 
 Почему посторонний корень возник: на шаге 3 левая часть $3x^2$ неотрицательна,
@@ -1132,7 +1133,7 @@ md(r"""
    На $(0, 2\pi)$ это $x = \dfrac{7\pi}{6}$ и $x = \dfrac{11\pi}{6}$.
 
 ```python
-my_roots = [P/4, 7*P/6, 5*P/4, 11*P/6]
+my_roots = [pi/4, 7*pi/6, 5*pi/4, 11*pi/6]
 ```
 
 Здесь работают сразу три приёма: разложение на множители, сведение к тангенсу

@@ -14,6 +14,33 @@ import math
 
 import sympy as sp
 
+# Имена, которыми записывают ответ. Задача практикума — математика, а не синтаксис
+# sympy, поэтому в ячейке пишут sin(x), pi/6, sqrt(5), а не sp.sin(x), sp.pi/6.
+#
+# Список явный, а не `from sympy import *`: тот тянет под тысячу имён и молча
+# перекрывает встроенные (в том числе N и S), а отладка такого в чужом ноутбуке
+# занимает больше времени, чем стоит вся экономия на буквах.
+from sympy import (                                                  # noqa: E402
+    sin, cos, tan, cot, sec, csc,
+    asin, acos, atan, acot,
+    sinh, cosh, tanh, asinh, acosh, atanh,
+    sqrt, cbrt, root, exp, log, Abs, sign, floor, ceiling,
+    pi, E, I, oo, zoo, nan,
+    Rational, Integer, Float, S, Symbol, symbols, sympify,
+    simplify, trigsimp, expand, expand_trig, factor, cancel, together, apart,
+    solve, solveset, nsolve, Eq, Ne,
+    diff, integrate, limit, series, dsolve, Derivative, Integral, Function,
+    factorial, binomial, Sum, Product, Matrix, lambdify, nsimplify,
+)
+
+# IB пишет arcsin и cosec там, где sympy пишет asin и csc. Принимаем обе записи:
+# ответ не должен зависеть от того, в какой нотации вы привыкли писать.
+arcsin, arccos, arctan, arccot = asin, acos, atan, acot
+cosec = csc
+ln = log
+
+# Символы по умолчанию. Определяются после импорта sympy, чтобы при совпадении
+# имён побеждали они: N здесь переменная задачи, а не функция округления.
 x, y, v, t, u, C, A, B, k, N = sp.symbols('x y v t u C A B k N')
 
 OK, NO = "✅", "❌"

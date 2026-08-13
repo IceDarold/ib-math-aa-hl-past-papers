@@ -75,11 +75,13 @@ md(r"""
 code(r"""
 import sys
 sys.path.append('..')          # из practicum/calculus к practicum/kit.py
-from kit import *              # verify_ode, verify_implicit, check_num, check_expr, euler, trigger_check
-import sympy as sp
+import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
+from kit import *              # проверки + exp, log, sqrt, Eq, diff и прочие имена
 
-x, y, v, t, C = sp.symbols('x y v t C')
+x, y, v, t, C = symbols('x y v t C')
+
 print('готово; sympy', sp.__version__)
+print('пишите ответ обычными именами: exp(1) =', exp(1))
 """)
 
 md(r"""
@@ -134,7 +136,7 @@ code(r"""
 # ваш ответ здесь: y как выражение от x
 my_y = ...
 
-verify_ode('Задание 1', my_y, sp.cos(x - sp.pi/4), ic=(3*sp.pi/4, 2))
+verify_ode('Задание 1', my_y, cos(x - pi/4), ic=(3*pi/4, 2))
 """)
 
 md(r"""
@@ -144,16 +146,16 @@ md(r"""
 $x^2 + y^2 = k$.
 
 Здесь ответ неявный, и это нормально: выражать $y$ явно условие не требует.
-Введите ответ как `sp.Eq(левая_часть, правая_часть)`.
+Введите ответ как `Eq(левая_часть, правая_часть)`.
 
 *Источник: November 2023 TZ1, Paper 3, Q2(a)(iii) (2 балла).*
 """)
 
 code(r"""
-K = sp.Symbol('k')
-my_family = ...          # например sp.Eq(x**2 + y**2, K)
+K = Symbol('k')
+my_family = ...          # например Eq(x**2 + y**2, K)
 
-verify_implicit('Задание 2', my_family, sp.Eq(x**2 + y**2, K))
+verify_implicit('Задание 2', my_family, Eq(x**2 + y**2, K))
 """)
 
 md(r"""
@@ -217,7 +219,7 @@ check_expr('Задание 4(b), b', my_b, '""" + D_B + r"""')
 # полная проверка: собранное решение должно удовлетворять уравнению и условию
 if my_a is not Ellipsis and my_b is not Ellipsis:
     verify_ode('Задание 4, решение целиком',
-               my_a/(2*x + sp.sin(2*x) + my_b), y**2*sp.cos(x)**2, ic=(sp.pi/2, 1))
+               my_a/(2*x + sin(2*x) + my_b), y**2*cos(x)**2, ic=(pi/2, 1))
 """)
 
 md(r"""
@@ -290,9 +292,9 @@ $y = vx$, и покажите, что решение имеет вид $x^2 - 2x
 """)
 
 code(r"""
-my_curve = ...        # sp.Eq(..., ...)
+my_curve = ...        # Eq(..., ...)
 
-verify_implicit('Задание 6', my_curve, sp.Eq(x**2 - 2*x*y - y**2, 4))
+verify_implicit('Задание 6', my_curve, Eq(x**2 - 2*x*y - y**2, 4))
 """)
 
 md(r"""
@@ -441,10 +443,10 @@ my_approx = ...
 check_num('Задание 10(a)', my_approx, 3, '""" + D_EULER2 + r"""')
 
 # (b) проверьте подстановку символьно: подставьте y = v(x)*x в обе части
-vx = sp.Function('v')(x)
-left = sp.diff(vx*x, x)
+vx = Function('v')(x)
+left = diff(vx*x, x)
 right = ((vx*x)**2 - 2*x**2)/x**2
-print('после подстановки:', sp.simplify(sp.solve(sp.Eq(left, right), sp.diff(vx, x))[0]*x))
+print('после подстановки:', simplify(solve(Eq(left, right), diff(vx, x))[0]*x))
 """)
 
 md(r"""
@@ -568,7 +570,7 @@ import time
 t0 = time.time()
 
 my_y = ...            # явная ветвь решения, проходящая через (1, 2)
-my_m = ...            # оба значения списком, например [sp.sqrt(2), -sp.sqrt(2)]
+my_m = ...            # оба значения списком, например [sqrt(2), -sqrt(2)]
 
 verify_ode('11(a)', my_y, (y**2 - 2*x**2)/(x*y), ic=(1, 2))
 
@@ -594,7 +596,7 @@ md(r"""
 3. $c = 1$, откуда $y = \sin\!\left(x - \frac{\pi}{4}\right) + 1$.
 
 ```python
-my_y = sp.sin(x - sp.pi/4) + 1
+my_y = sin(x - pi/4) + 1
 ```
 """)
 
@@ -608,7 +610,7 @@ md(r"""
 Ответ неявный и таким и остаётся: это семейство окружностей.
 
 ```python
-my_family = sp.Eq(x**2 + y**2, K)
+my_family = Eq(x**2 + y**2, K)
 ```
 """)
 
@@ -622,7 +624,7 @@ md(r"""
 5. $4 - y = 2e^{-x/10}$, то есть $y = 4 - 2e^{-x/10}$.
 
 ```python
-my_y = 4 - 2*sp.exp(-x/10)
+my_y = 4 - 2*exp(-x/10)
 ```
 """)
 
@@ -638,7 +640,7 @@ md(r"""
 
 ```python
 my_a = -4
-my_b = -4 - sp.pi
+my_b = -4 - pi
 ```
 
 Знак минус в $a$ — то место, где вопрос отсеивает: если потерять минус при
@@ -664,7 +666,7 @@ $$10k = \ln\left[\frac{3P_0}{P_0}\cdot\frac{3P_0}{P_0}\right] = \ln 9,
 \qquad k = \frac{\ln 9}{10} = \frac{\ln 3}{5}.$$
 
 ```python
-my_k = sp.log(3)/5
+my_k = log(3)/5
 ```
 """)
 
@@ -684,7 +686,7 @@ md(r"""
 8. Условие $y(2) = 0$: $4 = A$, то есть $x^2 - 2xy - y^2 = 4$.
 
 ```python
-my_curve = sp.Eq(x**2 - 2*x*y - y**2, 4)
+my_curve = Eq(x**2 - 2*x*y - y**2, 4)
 ```
 
 Шаг 5 — тот самый, ради которого стоит держать в голове приём «числитель есть
@@ -704,7 +706,7 @@ md(r"""
 7. $y = 3e^{x} - x - 1$.
 
 ```python
-my_y = 3*sp.exp(x) - x - 1
+my_y = 3*exp(x) - x - 1
 ```
 """)
 
@@ -720,7 +722,7 @@ md(r"""
    $y = x^2 - 2x - 3 + Ce^{-x}$.
 
 ```python
-my_y = x**2 - 2*x - 3 + C*sp.exp(-x)
+my_y = x**2 - 2*x - 3 + C*exp(-x)
 ```
 """)
 
@@ -800,8 +802,8 @@ md(r"""
 берут первым, если время поджимает.
 
 ```python
-my_y = 2*x*sp.sqrt(1 - sp.log(x))
-my_m = [sp.sqrt(2), -sp.sqrt(2)]
+my_y = 2*x*sqrt(1 - log(x))
+my_m = [sqrt(2), -sqrt(2)]
 ```
 """)
 
