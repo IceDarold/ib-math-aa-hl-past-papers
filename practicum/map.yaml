@@ -36,7 +36,14 @@ sections:
         subtopics: [{topic: number_algebra.complex_numbers, share: 0.5}]
       - id: A6
         title: Муавр, корни из единицы, геометрия на плоскости
-        subtopics: [{topic: number_algebra.complex_numbers, share: 0.5}]
+        subtopics: [{topic: number_algebra.complex_numbers, share: 0.5},
+                    {topic: geometry.trigonometric_identities, share: 0.34}]
+        note: >
+          Доля тождеств — четыре блока (18 баллов), где тригонометрическое
+          тождество получают возведением в степень по Муавру и приравниванием
+          мнимых частей: sin 5θ, (1 ± i tan θ)^4, tan(π/12) через аргумент.
+          Приём здесь комплексный, тождество — результат, поэтому материал
+          живёт тут, а не в C3.
       - id: A7
         title: "Доказательство: индукция, прямое, от противного"
         subtopics: [number_algebra.mathematical_induction, number_algebra.proof]
@@ -74,14 +81,23 @@ sections:
         title: Радианная мера, сектор, объёмные тела
         subtopics: [geometry.circular_measure, geometry.solid_geometry]
       - id: C3
-        title: Тригонометрические уравнения
-        subtopics: [geometry.trigonometric_equations]
+        title: Тригонометрические тождества и уравнения
+        subtopics: [geometry.trigonometric_equations,
+                    {topic: geometry.trigonometric_identities, share: 0.66}]
         status: ready
         notebook: practicum/geometry/practicum-c3-trigonometric-equations.ipynb
         kaggle: ib-math-praktikum-c3-trigonometric-equations
+        note: >
+          Тождества не выделены в отдельный практикум: на них всего 53 балла
+          при нижней границе 60, а без доли Муавра — 35. Приёмы почти все уже
+          есть здесь, разница в направлении: «докажи» вместо «реши»
+          (pythagorean_reduction и double_angle_reduction разворачиваются
+          в заданиях Т3 и Т4). Настоящее добавление одно — формулы сложения
+          углов sin(A±B), cos(A±B), tan(A±B), которых в теме уравнений
+          не было; под них заведены Теория 2а и задания Т2, Т5.
       - id: C4
-        title: Тождества и тригонометрические функции
-        subtopics: [geometry.trigonometric_identities, functions.trigonometric_functions]
+        title: "Синусоидальные модели: амплитуда, период, сдвиг"
+        subtopics: [functions.trigonometric_functions]
       - id: C5
         title: "Векторы: операции, прямые, углы"
         subtopics: [geometry.vectors]

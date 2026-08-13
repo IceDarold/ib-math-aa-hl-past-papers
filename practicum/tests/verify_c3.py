@@ -29,7 +29,26 @@ def t(name, ok):
     res.append((name, ok))
 
 
-print('=== эталонные ответы ===')
+print('=== тождества ===')
+t('T1a', verify_identity('Задание Т1(a)', 4*sp.cos(x)/sp.sin(x) + sp.sin(x),
+                         4*sp.cot(x) + sp.sin(x)))
+t('T1b', check_num('Задание Т1(b)', 8/sp.sqrt(5) + sp.sqrt(5)/3, 3, D['Задание Т1(b)']))
+t('T2', check_expr('Задание Т2(b)', (sp.sqrt(6) - sp.sqrt(2))/4, D['Задание Т2(b)']))
+
+T3 = 2*sp.sin(x)*sp.cos(x) + (1 - 2*sp.sin(x)**2) - 1
+t('T3a', verify_identity('Задание Т3, переход', T3, sp.sin(2*x) + sp.cos(2*x) - 1))
+t('T3b', verify_identity('Задание Т3, тождество', T3,
+                         2*sp.sin(x)*(sp.cos(x) - sp.sin(x))))
+t('T4', check_expr('Задание Т4', -sp.sqrt(5)/2, D['Задание Т4']))
+t('T5', check_expr('Задание Т5(b)', P/4, D['Задание Т5(b)']))
+
+# check_expr сверяет хеш канонической формы: убеждаемся, что эквивалентные
+# записи ответа проходят, иначе верное решение получило бы ❌
+for name, form in [('atan(1)', sp.atan(1)), ('45*pi/180', 45*P/180),
+                   ('acos(1/sqrt2)', sp.acos(1/sp.sqrt(2))), ('2*pi/8', 2*P/8)]:
+    t(f'T5~{name}', check_expr(f'Задание Т5(b) как {name}', form, D['Задание Т5(b)']))
+
+print('\n=== эталонные ответы ===')
 t('1', verify_roots('Задание 1', [P, 3*P], 6 + 6*sp.cos(x), (0, 4*P)))
 t('2', verify_roots('Задание 2', [25, 115], sp.tan(2*x - 5*P/180) - 1, (0, 180), deg=True))
 t('3', check_expr('Задание 3', 17*P/6, D['Задание 3']))
@@ -59,7 +78,8 @@ print('\n=== тренажёр ===')
 KEY = eval([l.split('KEY = ')[1] for s in src.values() for l in s.split('\n')
             if l.startswith('KEY = ')][0])
 good_k = {1: 'base', 2: 'arg', 3: 'pyth', 4: 'dbl', 5: 'fact', 6: 'tan',
-          7: 'select', 8: 'gdc', 9: 'arg', 10: 'dbl', 11: 'select', 12: 'fact'}
+          7: 'select', 8: 'gdc', 9: 'arg', 10: 'dbl', 11: 'select', 12: 'fact',
+          13: 'sum', 14: 'pyth', 15: 'sum'}
 t('trigger', trigger_check(good_k, KEY))
 print('  порча пункта 5:', end=' ')
 t('trigger-neg', not trigger_check({**good_k, 5: 'dbl'}, KEY))
@@ -76,6 +96,17 @@ t('n5', not verify_roots('область не пересчитана для 2x',
                          (2*sp.sin(2*theta)**2 - 5*sp.sin(2*theta) - 3)/(sp.sin(2*theta) - 1),
                          (0, P), var=theta))
 t('n6', not check_expr('шаг на 2pi вместо 4pi', 23*P/6, D['Задание 3']))
+t('n7', not check_expr('Т4 без учёта четверти', sp.sqrt(5)/2, D['Задание Т4']))
+t('n8', not check_expr('Т2 со знаком плюс', (sp.sqrt(6) + sp.sqrt(2))/4, D['Задание Т2(b)']))
+t('n9', not verify_identity('Т1 с потерянным множителем',
+                            sp.cos(x)/sp.sin(x) + sp.sin(x), 4*sp.cot(x) + sp.sin(x)))
+
+# Т3 допускает не одну форму cos 2x: «неудобная» тоже даёт верное тождество,
+# просто выкладка длиннее. Проверка обязана её принимать
+print('\n=== другая форма cos 2x в Т3 (должна пройти) ===')
+t('T3-alt', verify_identity('Т3 через 2cos^2 x - 1',
+                            2*sp.sin(x)*sp.cos(x) + (2*sp.cos(x)**2 - 1) - 1,
+                            2*sp.sin(x)*(sp.cos(x) - sp.sin(x))))
 
 bad = [n for n, ok in res if not ok]
 print(f'\n{"ВСЁ ПРОШЛО" if not bad else "ПРОВАЛЫ: " + str(bad)}  ({len(res) - len(bad)}/{len(res)})')

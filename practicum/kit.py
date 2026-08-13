@@ -10,6 +10,7 @@
 """
 
 import hashlib
+import math
 
 import sympy as sp
 
@@ -118,6 +119,45 @@ def check_set(label, values, want_digest):
         return True
     print(f"{NO} {label}: {{{', '.join(str(i) for i in items)}}} — не сходится")
     return False
+
+
+def verify_identity(label, got, want, var=x,
+                    samples=(0.3, 0.7, 1.1, 1.9, 2.6, 3.4, 4.1, 5.2), tol=1e-9):
+    """Тождество got ≡ want. Проверяет переход, а не ответ.
+
+    В вопросах «show that» ответ напечатан в условии, прятать его бессмысленно:
+    смысл задания в выкладке. Поэтому проверяется, что записанное вами
+    промежуточное выражение действительно равно исходному при всех значениях.
+
+    Символьное упрощение тригонометрии часто не доводит разность до нуля,
+    хотя она тождественно нулевая, поэтому за simplify идёт численная проверка
+    в нескольких точках. Особые точки (полюсы tan, ноль в знаменателе)
+    пропускаются: расхождением они не считаются.
+    """
+    if _blank(label, got):
+        return False
+    diff = sp.simplify(sp.expand_trig(sp.sympify(got) - sp.sympify(want)))
+    if diff == 0:
+        print(f"{OK} {label}: тождество выполняется")
+        return True
+
+    checked = 0
+    for s in samples:
+        try:
+            val = complex(diff.subs(var, sp.Float(s)).evalf())
+        except (TypeError, ValueError):
+            continue
+        if not (math.isfinite(val.real) and math.isfinite(val.imag)):
+            continue
+        checked += 1
+        if abs(val) > tol:
+            print(f"{NO} {label}: при {var} = {s:g} стороны расходятся на {abs(val):.3g}")
+            return False
+    if checked < 3:
+        print(f"{NO} {label}: проверить не удалось — слишком много особых точек")
+        return False
+    print(f"{OK} {label}: тождество выполняется (проверено в {checked} точках)")
+    return True
 
 
 def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
