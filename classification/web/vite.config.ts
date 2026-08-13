@@ -6,8 +6,9 @@ import type { Connect, Plugin } from 'vite'
 import { defineConfig } from 'vite'
 
 const archiveRoot = resolve(import.meta.dirname, '../../AA_HL')
+const practicumRoot = resolve(import.meta.dirname, '../../practicum')
 
-function archiveMiddleware(): Connect.NextHandleFunction {
+function fileMiddleware(root: string, contentType: string): Connect.NextHandleFunction {
   return (request, response, next) => {
     if (!request.url || !['GET', 'HEAD'].includes(request.method ?? 'GET')) {
       next()
@@ -15,12 +16,12 @@ function archiveMiddleware(): Connect.NextHandleFunction {
     }
 
     const pathname = decodeURIComponent(request.url.split('?')[0] ?? '')
-    const relativePath = pathname.replace(/^\/AA_HL\/?/, '').replace(/^\/+/, '')
-    const filePath = resolve(archiveRoot, relativePath)
+    const relativePath = pathname.replace(/^\/+/, '')
+    const filePath = resolve(root, relativePath)
 
     if (
-      filePath !== archiveRoot &&
-      !filePath.startsWith(`${archiveRoot}${sep}`)
+      filePath !== root &&
+      !filePath.startsWith(`${root}${sep}`)
     ) {
       response.statusCode = 403
       response.end('Forbidden')
@@ -32,7 +33,7 @@ function archiveMiddleware(): Connect.NextHandleFunction {
       return
     }
 
-    response.setHeader('Content-Type', 'application/pdf')
+    response.setHeader('Content-Type', contentType)
     response.setHeader('Content-Length', statSync(filePath).size)
     if (request.method === 'HEAD') {
       response.end()
@@ -43,14 +44,17 @@ function archiveMiddleware(): Connect.NextHandleFunction {
 }
 
 function serveArchive(): Plugin {
-  const handler = archiveMiddleware()
+  const archiveHandler = fileMiddleware(archiveRoot, 'application/pdf')
+  const practicumHandler = fileMiddleware(practicumRoot, 'application/x-ipynb+json; charset=utf-8')
   return {
-    name: 'serve-aa-hl-archive',
+    name: 'serve-learning-materials',
     configureServer(server) {
-      server.middlewares.use('/AA_HL', handler)
+      server.middlewares.use('/AA_HL', archiveHandler)
+      server.middlewares.use('/practicum', practicumHandler)
     },
     configurePreviewServer(server) {
-      server.middlewares.use('/AA_HL', handler)
+      server.middlewares.use('/AA_HL', archiveHandler)
+      server.middlewares.use('/practicum', practicumHandler)
     },
   }
 }

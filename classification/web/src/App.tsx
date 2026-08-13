@@ -5,6 +5,7 @@ import { Inspector } from './components/Inspector'
 import { ResultsTable } from './components/ResultsTable'
 import { StatusBar } from './components/StatusBar'
 import { TopBar } from './components/TopBar'
+import { PracticumHub } from './components/PracticumHub'
 import { countBy, filterQuestions, questions } from './lib/questions'
 import { useI18n } from './i18n'
 import type { Filters, FilterSetKey } from './types'
@@ -31,6 +32,7 @@ const initialFilters: Filters = {
 
 export default function App() {
   const { t } = useI18n()
+  const [mode, setMode] = useState<'atlas' | 'practicums'>(() => window.location.hash === '#practicums' ? 'practicums' : 'atlas')
   const [filters, setFilters] = useState<Filters>(initialFilters)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [sidebarVisible, setSidebarVisible] = useState(() => localStorage.getItem('question-atlas:sidebar-visible') !== 'false')
@@ -120,6 +122,7 @@ export default function App() {
 
   useEffect(() => {
     const handleKeyboard = (event: KeyboardEvent) => {
+      if (mode !== 'atlas') return
       const typing = /input|textarea|select/i.test(document.activeElement?.tagName ?? '')
       if (event.key === '/' && !typing) {
         event.preventDefault()
@@ -138,7 +141,13 @@ export default function App() {
     }
     document.addEventListener('keydown', handleKeyboard)
     return () => document.removeEventListener('keydown', handleKeyboard)
-  }, [moveSelection])
+  }, [mode, moveSelection])
+
+  useEffect(() => {
+    if (window.location.hash !== (mode === 'practicums' ? '#practicums' : '#atlas')) {
+      window.history.replaceState(null, '', mode === 'practicums' ? '#practicums' : '#atlas')
+    }
+  }, [mode])
 
   const setSegment = (key: 'paper' | 'calculator' | 'session' | 'zone' | 'status', value: string) => {
     setFilters((current) => ({ ...current, [key]: value }))
@@ -161,13 +170,19 @@ export default function App() {
     setInspectorOpen(false)
   }
 
+  const openPracticumQuestions = (topic: string) => {
+    setFilters({ ...initialFilters, topics: new Set(), methods: new Set(), query: topic })
+    setMode('atlas')
+  }
+
   return (
     <div className="flex h-full flex-col bg-canvas text-ink">
-      <a className="fixed top-1.5 left-2 z-50 -translate-y-[150%] bg-ink px-3 py-2 text-canvas focus:translate-y-0" href="#results">
-        {t('app.skipResults')}
+      <a className="fixed top-1.5 left-2 z-50 -translate-y-[150%] bg-ink px-3 py-2 text-canvas focus:translate-y-0" href={mode === 'atlas' ? '#results' : '#practicums'}>
+        {mode === 'atlas' ? t('app.skipResults') : t('top.practicums')}
       </a>
 
       <TopBar
+        mode={mode}
         query={filters.query}
         resultCount={filteredQuestions.length}
         resultMarks={resultMarks}
@@ -179,9 +194,10 @@ export default function App() {
         onQueryChange={(query) => setFilters((current) => ({ ...current, query }))}
         onOpenFilters={() => setFiltersOpen(true)}
         onToggleSidebar={() => setSidebarVisible((visible) => !visible)}
+        onModeChange={setMode}
       />
 
-      <div className="relative flex min-h-0 flex-1 overflow-hidden">
+      {mode === 'practicums' ? <PracticumHub questions={questions} onOpenAtlas={openPracticumQuestions} /> : <div className="relative flex min-h-0 flex-1 overflow-hidden">
         <AnimatePresence initial={false}>
           {compactLayout && (filtersOpen || inspectorOpen) && (
             <motion.button
@@ -233,7 +249,7 @@ export default function App() {
             />
           )}
         </AnimatePresence>
-      </div>
+      </div>}
 
       <StatusBar sessionCount={archiveSessionCount} verifiedCount={verifiedCount} draftCount={draftCount} />
     </div>

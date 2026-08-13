@@ -4,6 +4,7 @@ import { useI18n } from '../i18n'
 import { MenuIcon, PanelLeftIcon, SearchIcon } from './Icons'
 
 interface TopBarProps {
+  mode: 'atlas' | 'practicums'
   query: string
   resultCount: number
   resultMarks: number
@@ -15,9 +16,11 @@ interface TopBarProps {
   onQueryChange: (query: string) => void
   onOpenFilters: () => void
   onToggleSidebar: () => void
+  onModeChange: (mode: 'atlas' | 'practicums') => void
 }
 
 export function TopBar({
+  mode,
   query,
   resultCount,
   resultMarks,
@@ -29,10 +32,11 @@ export function TopBar({
   onQueryChange,
   onOpenFilters,
   onToggleSidebar,
+  onModeChange,
 }: TopBarProps) {
   const { count, locale, setLocale, t } = useI18n()
   return (
-    <header className="grid h-13 shrink-0 grid-cols-[auto_auto_auto_minmax(260px,1fr)_auto_auto] items-center gap-4 border-b border-line bg-canvas px-3 max-[1220px]:gap-3 max-[960px]:grid-cols-[auto_auto_minmax(0,1fr)_auto] max-[960px]:gap-2.5 max-[960px]:pl-2">
+    <header className="grid h-13 shrink-0 grid-cols-[auto_auto_auto_auto_minmax(220px,1fr)_auto_auto] items-center gap-3 border-b border-line bg-canvas px-3 max-[1220px]:gap-2.5 max-[960px]:grid-cols-[auto_auto_minmax(0,1fr)_auto] max-[960px]:gap-2.5 max-[960px]:pl-2">
       <motion.button
         className="grid size-8 cursor-pointer place-items-center border border-transparent bg-transparent hover:border-line hover:bg-surface max-[960px]:hidden"
         type="button"
@@ -67,12 +71,17 @@ export function TopBar({
         <span className="max-[960px]:hidden">{t('brand.atlas')}</span>
       </div>
 
+      <nav className="flex border border-line-strong max-[960px]:hidden" aria-label="Раздел платформы">
+        <button className={`h-7 cursor-pointer border-0 px-2 font-mono text-[10px] ${mode === 'atlas' ? 'bg-ink text-canvas' : 'bg-canvas text-muted hover:bg-surface'}`} type="button" aria-pressed={mode === 'atlas'} onClick={() => onModeChange('atlas')}>{t('top.atlas')}</button>
+        <button className={`h-7 cursor-pointer border-0 border-l border-line px-2 font-mono text-[10px] ${mode === 'practicums' ? 'bg-ink text-canvas' : 'bg-canvas text-muted hover:bg-surface'}`} type="button" aria-pressed={mode === 'practicums'} onClick={() => onModeChange('practicums')}>{t('top.practicums')}</button>
+      </nav>
+
       <div className="whitespace-nowrap max-[960px]:hidden">
-        {yearRange} <span className="text-faint">· {count('sessions', sessionCount)}</span>
+        {mode === 'atlas' ? <>{yearRange} <span className="text-faint">· {count('sessions', sessionCount)}</span></> : <span className="text-muted">36 {t('top.practicums').toLowerCase()} · 2 {t('top.ready')}</span>}
       </div>
 
-      <motion.label
-        className="group/search mx-auto grid h-8.5 w-full min-w-0 max-w-155 grid-cols-[24px_1fr_auto] items-center gap-1.5 border border-line-strong bg-canvas px-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary max-[960px]:justify-self-stretch max-[680px]:grid-cols-[20px_1fr]"
+      {mode === 'atlas' ? <motion.label
+        className="group/search mx-auto grid h-8.5 w-full min-w-0 max-w-155 grid-cols-[24px_1fr_auto_auto] items-center gap-1.5 border border-line-strong bg-canvas px-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary max-[960px]:justify-self-stretch max-[680px]:grid-cols-[20px_1fr_auto]"
         whileHover={{ scale: 1.006 }}
       >
         <SearchIcon className="text-muted" />
@@ -86,13 +95,15 @@ export function TopBar({
           value={query}
           onChange={(event) => onQueryChange(event.target.value)}
         />
-        <kbd className="inline-flex h-5 min-w-5 items-center justify-center rounded-[3px] border border-line border-b-line-strong bg-surface px-1.5 font-mono text-[11px] text-muted max-[680px]:hidden">/</kbd>
+        <button className="hidden h-5 min-w-5 cursor-pointer items-center justify-center rounded-[3px] border border-line border-b-line-strong bg-surface px-1.5 font-mono text-[11px] text-muted hover:bg-primary-soft max-[960px]:inline-flex" type="button" aria-label={t('top.practicums')} onClick={() => onModeChange('practicums')}>П</button>
+        <kbd className="inline-flex h-5 min-w-5 items-center justify-center rounded-[3px] border border-line border-b-line-strong bg-surface px-1.5 font-mono text-[11px] text-muted max-[960px]:hidden">/</kbd>
       </motion.label>
+      : <div className="min-w-0 text-center text-sm text-muted max-[960px]:text-right"><span className="max-[960px]:hidden">{t('top.practicums')}</span><button className="hidden h-7 cursor-pointer border border-line-strong bg-canvas px-2 font-mono text-[10px] text-muted hover:bg-surface max-[960px]:inline-flex" type="button" onClick={() => onModeChange('atlas')}>← {t('top.atlas')}</button></div>}
 
-      <div className="whitespace-nowrap text-xs text-muted max-[1220px]:hidden">
+      {mode === 'atlas' && <div className="whitespace-nowrap text-xs text-muted max-[1220px]:hidden">
         <AnimatedMetric value={`${locale}-${resultCount}`} label={count('blocks', resultCount)} /> <span className="text-faint">·</span>{' '}
         <AnimatedMetric value={`${locale}-${resultMarks}`} label={count('marks', resultMarks)} />
-      </div>
+      </div>}
 
       <LayoutGroup id="language-toggle">
         <div className="grid grid-cols-2 border border-line-strong" role="group" aria-label={t('language.label')}>

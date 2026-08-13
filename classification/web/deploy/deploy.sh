@@ -32,14 +32,15 @@ fi
 repository_root=$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)
 web_dist="$repository_root/classification/web/dist"
 archive="$repository_root/AA_HL"
+practicum="$repository_root/practicum"
 remote_root=/var/www/math.archik.tech
 release_id="${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 release="$remote_root/releases/$release_id"
 current="$remote_root/current"
 remote="${DEPLOY_USER}@${DEPLOY_HOST}"
 
-if [[ ! -f "$web_dist/index.html" || ! -d "$archive" ]]; then
-  printf 'Build output or AA_HL archive is missing.\n' >&2
+if [[ ! -f "$web_dist/index.html" || ! -d "$archive" || ! -d "$practicum" ]]; then
+  printf 'Build output, AA_HL archive, or practicum directory is missing.\n' >&2
   exit 66
 fi
 
@@ -89,6 +90,9 @@ rsync -rlptz --delete --exclude='/AA_HL/' -e "$rsync_ssh" \
 rsync -rlptzc --delete -e "$rsync_ssh" \
   "$archive/" "$remote:$release/AA_HL/"
 
+rsync -rlptzc --delete --include='*/' --include='*.ipynb' --exclude='*' -e "$rsync_ssh" \
+  "$practicum/" "$remote:$release/practicum/"
+
 ssh "${ssh_args[@]}" "$remote" bash -s -- "$release" "$current" "$release_id" <<'REMOTE'
 set -euo pipefail
 
@@ -100,6 +104,7 @@ next="${current}.next.${release_id}"
 test -f "$release/index.html"
 test -d "$release/assets"
 test -d "$release/AA_HL"
+test -f "$release/practicum/calculus/practicum-e7-differential-equations.ipynb"
 
 ln -s -- "$release" "$next"
 mv -Tf -- "$next" "$current"
@@ -134,6 +139,13 @@ fi
 if ! curl --fail --silent --show-error --head \
   --retry 5 --retry-delay 2 --max-time 20 \
   'https://math.archik.tech/AA_HL/2022/May/TZ2/Paper%201/question-paper.pdf' >/dev/null; then
+  rollback
+  exit 1
+fi
+
+if ! curl --fail --silent --show-error --head \
+  --retry 5 --retry-delay 2 --max-time 20 \
+  'https://math.archik.tech/practicum/calculus/practicum-e7-differential-equations.ipynb' >/dev/null; then
   rollback
   exit 1
 fi
