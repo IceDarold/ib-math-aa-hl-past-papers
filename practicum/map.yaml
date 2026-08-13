@@ -87,6 +87,7 @@ sections:
         status: ready
         notebook: practicum/geometry/practicum-c3-trigonometric-equations.ipynb
         kaggle: ib-math-praktikum-c3-trigonometric-equations
+        skills: practicum/skills/geometry-trigonometric-equations.yaml
         note: >
           Тождества не выделены в отдельный практикум: на них всего 53 балла
           при нижней границе 60, а без доли Муавра — 35. Приёмы почти все уже
@@ -104,6 +105,23 @@ sections:
       - id: C6
         title: Прямые и плоскости в пространстве
         subtopics: [{topic: geometry.vectors_3d, share: 0.5}]
+        skills: practicum/skills/geometry-vectors-3d.yaml
+        note: >
+          Сюда же идут системы линейных уравнений с параметром (18 баллов,
+          6 блоков): решить систему из трёх уравнений и определить взаимное
+          расположение трёх плоскостей — одно и то же действие, «нет
+          единственного решения» значит «общей точки нет», «бесконечно много»
+          значит «пересекаются по прямой». Своего практикума тема не тянет,
+          до нижней границы 60 далеко.
+
+          Но по карте эти блоки сюда пока не попадают: подтемы под системы
+          в таксономии нет, и они размечены как vectors и inequalities,
+          то есть уезжают в C5 и A8. Разбор и предложение завести
+          number_algebra.systems_of_equations — в corpus_issues карточки.
+        revisit: >
+          Пять блоков из шести — из сессий 2025 года, в 2021–2024 таких
+          вопросов нет. Пересмотреть при следующем пополнении архива:
+          если тема наберёт 60 баллов, выносить её в секцию A отдельно.
       - id: C7
         title: Расстояния, углы и векторное произведение
         subtopics: [{topic: geometry.vectors_3d, share: 0.5}]
@@ -160,6 +178,7 @@ sections:
         status: ready
         notebook: practicum/calculus/practicum-e7-differential-equations.ipynb
         kaggle: ib-math-praktikum-e7-differential-equations
+        skills: practicum/skills/calculus-differential-equations.yaml
         exception: >
           Тема идёт одним практикумом, хотя выходит за верхнюю границу.
           Естественный разрез — после приёма 5, между аналитическими методами
