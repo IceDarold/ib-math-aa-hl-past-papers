@@ -1,0 +1,47 @@
+{
+  "question": "3",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 6,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find the predicted population at the start of 2026 given the rate of change dP/dt = 104000 e^{-0.0145t} and initial population 6.78 × 10^6 at t=0 (start of 2022).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "indefinite_integral",
+        "initial_value_problem",
+        "exponential_function",
+        "evaluate_at_t"
+      ],
+      "method_path": [
+        "Set up integral of rate of change from t=0 to t=4",
+        "Evaluate definite integral to find change in population",
+        "Add initial population to change to get final population"
+      ],
+      "accepted_alternatives": [
+        "Use indefinite integral to find general solution P(t) = -7172413.7... e^{-0.0145t} + c, determine c using initial condition, then evaluate at t=4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 1: attempt to find change in population using a definite integral (M1); t=4 at the start of 2026 (A1); ∫_0^4 104000 e^{-0.0145t} dt (A1); = -404165.8... (A1); attempt to add initial population to their change (M1); population = 6.78×10^6 - 404165.8... = 6375834.1... ≈ 6.38×10^6 (A1). METHOD 2: indefinite integral approach with same final answer."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

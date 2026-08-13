@@ -1,0 +1,228 @@
+{
+  "question": "12",
+  "expected_question_marks": 22,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Use implicit differentiation to show that dy/dx = (4(3-x))/(y+2).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Differentiate both sides of 4x^2 + y^2 - 24x + 4y + 20 = 0 with respect to x",
+        "Apply chain rule to y terms",
+        "Collect dy/dx terms",
+        "Solve for dy/dx",
+        "Simplify to (4(3-x))/(y+2)"
+      ],
+      "accepted_alternatives": [
+        "Use partial derivatives: dy/dx = -(∂C/∂x)/(∂C/∂y)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "METHOD 1: attempt to differentiate implicitly (M1); 8x + 2y dy/dx - 24 + 4 dy/dx = 0 A1A1; dy/dx = (24-8x)/(2y+4) = (12-4x)/(y+2) A1; AG. METHOD 2: dC/dx = 8x-24 A1; dC/dy = 2y+4 A1; dy/dx = - (dC/dx)/(dC/dy) (M1); dy/dx = (24-8x)/(2y+4) = (12-4x)/(y+2) A1; AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Determine the domain of C in the form 3-√a ≤ x ≤ 3+√a, where a ∈ ℝ⁺.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "domain_from_vertical_tangent",
+        "substitution",
+        "solving_quadratic"
+      ],
+      "method_path": [
+        "Recognise domain boundaries where dy/dx is undefined, i.e., y+2=0",
+        "Solve y = -2",
+        "Substitute y = -2 into curve equation",
+        "Solve resulting quadratic in x: x^2 - 6x + 4 = 0",
+        "Obtain x = 3 ± √5",
+        "State domain: 3-√5 ≤ x ≤ 3+√5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "recognising boundaries of domain when dy/dx undefined (M1); y+2=0; y=-2 (A1); substituting their y value into curve equation and attempt to solve for x (M1); x^2 - 6x + 4 = 0; x = 3 ± √5; 3-√5 ≤ x ≤ 3+√5 (accept a=5) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Find the coordinates of the maximum point A.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "stationary_point",
+        "substitution"
+      ],
+      "method_path": [
+        "Set dy/dx = 0 to find x-coordinate of maximum: 4(3-x)=0 ⇒ x=3",
+        "Substitute x=3 into curve equation",
+        "Solve for y: y = -2 + 2√5 ≈ 2.47"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "x_A = 3 A1; substituting their x value into curve equation (M1); y_A = 2.472135... OR -2+2√5 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Find the possible values of m for which the line y = mx is tangent to C.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "tangent_condition",
+        "discriminant_zero",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute y = mx into curve equation",
+        "Obtain quadratic in x: (4+m^2)x^2 + (4m-24)x + 20 = 0",
+        "Set discriminant Δ = 0 for tangency",
+        "Solve (4m-24)^2 - 4(4+m^2)(20) = 0",
+        "Obtain m = -4 or m = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "4x^2 + (mx)^2 - 24x + 4(mx) + 20 = 0 ⇒ (4+m^2)x^2 + (4m-24)x + 20 = 0 (A1); (4m-24)^2 - 4(4+m^2)(20) A1; recognising discriminant = 0 (M1); both m = -4 and m = 1 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "Find the y-coordinate of point B where the line y = -4x touches C.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solving_quadratic"
+      ],
+      "method_path": [
+        "Substitute y = -4x into curve equation (or x = -y/4 into curve equation)",
+        "Solve for x (or y)",
+        "Obtain x = 1, then y_B = -4 (or directly y_B = -4)"
+      ],
+      "accepted_alternatives": [
+        "Substitute x = -y/4 into curve equation and solve for y"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "METHOD 1: attempt to form an equation in y by substituting x = -y/4 (M1); 4(-y/4)^2 + y^2 - 24(-y/4) + 4y + 20 = 0 (A1); y_B = -4 A1. METHOD 2: attempt to form an equation in x by substituting y = -4x (M1); 4x^2 + (-4x)^2 - 24x + 4(-4x) + 20 = 0; x = 1 (A1); y_B = -4 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-F",
+      "question": "12",
+      "part": "F",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "Find the volume of the solid formed by rotating the region bounded by C, the y-axis, y=y_A and y=y_B about the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "volume_of_revolution",
+        "integration",
+        "substitution"
+      ],
+      "method_path": [
+        "Express x in terms of y by solving curve equation for x",
+        "Set up volume integral V = π ∫_{y_B}^{y_A} x^2 dy",
+        "Integrate and evaluate"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "attempt to solve for x by quadratic formula or completing the square (M1); x = (24 ± √(256-64y-16y^2))/8 = 3 ± √(16-4y-y^2)/4 A1; V = π ∫_{-4}^{-2+2√5} (3 - √(16-4y-y^2)/4)^2 dy A1; volume = 29.7 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "question": "12",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Show that ∫ cos^n x dx = cos^{n-1} x sin x + (n-1)∫ cos^{n-2} x dx - (n-1)∫ cos^n x dx for n>1 using integration by parts on cos^{n-1} x cos x.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "algebraic_manipulation",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Write cos^n x = cos^{n-1} x cos x",
+        "Apply integration by parts with u = cos^{n-1} x, dv = cos x dx",
+        "Compute du = -(n-1) cos^{n-2} x sin x dx, v = sin x",
+        "Substitute into integration by parts formula",
+        "Use identity sin^2 x = 1 - cos^2 x",
+        "Expand and rearrange to obtain the required expression"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1: attempt to use integration by parts on cos^{n-1} x cos x; A1A1: each term with correct signs; A1: use of sin^2 x = 1 - cos^2 x and rearrangement to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Hence show that ∫ f_n(x) dx = (1/n) cos^{n-1} x sin x + ((n-1)/n) ∫ f_{n-2}(x) dx for n>1.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "algebraic_manipulation",
+        "rearrangement"
+      ],
+      "method_path": [
+        "Start from the equation in part (a)",
+        "Collect terms involving ∫ cos^n x dx on one side",
+        "Factor and solve for ∫ cos^n x dx",
+        "Express in terms of f_n(x) and f_{n-2}(x)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1: attempt to rearrange the equation given in part (a) to collect terms in ∫ f_n(x) dx or ∫ cos^n x dx; A1: correct rearrangement leading to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "Find an expression for ∫ cos^4 x dx in the form p cos^3 x sin x + q cos x sin x + r x + c with p, q, r ∈ ℚ^+.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "reduction_formula",
+        "algebraic_manipulation",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Apply reduction formula from part (b) with n=4",
+        "Apply reduction formula again with n=2 or use double-angle identity",
+        "Integrate the resulting expression",
+        "Simplify to required form"
+      ],
+      "accepted_alternatives": [
+        "Use double-angle formula to rewrite cos^2 x in terms of cos 2x instead of second reduction."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1: attempt to use equation from part (a) to reduce the power of cos x; M1: attempt to use equation from part (a) again or use double angle formula; A1: correct integration; A1: final answer (1/4) cos^3 x sin x + (3/8) cos x sin x + (3/8) x + c."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "Find the volume of the solid formed by rotating region R (enclosed by y = cos^2 x and x-axis from -π/2 to π/2) by 2π around the x-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "volume_of_revolution",
+        "definite_integral",
+        "substitution_of_limits"
+      ],
+      "method_path": [
+        "Set up volume integral V = π ∫ (cos^2 x)^2 dx from -π/2 to π/2",
+        "Use result from part (c) for ∫ cos^4 x dx",
+        "Substitute limits and subtract",
+        "Simplify to obtain 3π^2/8"
+      ],
+      "accepted_alternatives": [
+        "Use symmetry: V = 2π ∫_0^{π/2} cos^4 x dx."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1: attempt to use formula for volume of revolution using π and (cos^2 x)^2; A1: correct integral expression; M1: attempt to substitute correct limits into their (c) and subtract; A1: final answer 3π^2/8."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-E-I",
+      "question": "12",
+      "part": "E-I",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "25",
+      "task_summary": "Find the Maclaurin series of f_n(x) up to the term in x^2.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "binomial_expansion",
+        "differentiation"
+      ],
+      "method_path": [
+        "Method 1: Use Maclaurin series for cos x, raise to power n, expand up to x^2",
+        "Method 2: Differentiate f_n(x) twice, evaluate at 0, construct series"
+      ],
+      "accepted_alternatives": [
+        "Method 1: (1 - x^2/2 + ...)^n ≈ 1 - n x^2/2 + ...",
+        "Method 2: f_n(0)=1, f_n'(0)=0, f_n''(0)=-n, so f_n(x) ≈ 1 - (n/2) x^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "M1: attempt to raise Maclaurin expansion for cos x to power n or differentiate twice; A2: correct series 1 - (n/2) x^2 + ... (A1 for each correct term)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-E-II",
+      "question": "12",
+      "part": "E-II",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "25",
+      "task_summary": "Find lim_{x→0} (f_n(x) - 1)/x^2 in terms of n.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "maclaurin_series",
+        "lhopitals_rule"
+      ],
+      "method_path": [
+        "Method 1: Substitute Maclaurin series from (i) into limit expression, simplify, take limit",
+        "Method 2: Apply l'Hôpital's rule twice to (cos^n x - 1)/x^2"
+      ],
+      "accepted_alternatives": [
+        "Method 1: lim_{x→0} (1 - n x^2/2 + ... - 1)/x^2 = -n/2",
+        "Method 2: lim_{x→0} (-n cos^{n-1} x sin x)/(2x) = lim_{x→0} (-n(n-1) cos^{n-2} x sin^2 x - n cos^n x)/2 = -n/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "M1: attempt to use Maclaurin expansion or l'Hôpital's rule twice; A1: final answer -n/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

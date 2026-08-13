@@ -1,0 +1,77 @@
+{
+  "question": "5",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "11",
+      "task_summary": "Estimate the mean and standard deviation from a grouped frequency table.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "grouped_data_mean",
+        "grouped_data_standard_deviation"
+      ],
+      "method_path": [
+        "Calculate midpoints of class intervals",
+        "Compute estimated mean using sum of frequency × midpoint divided by total frequency",
+        "Compute estimated standard deviation using formula for grouped data"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme gives mean = 27.5 (A1) and standard deviation = 6.26 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "11",
+      "task_summary": "Approximate the interquartile range using a normal distribution with the estimated mean and standard deviation from part (a).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "percentile",
+        "interquartile_range"
+      ],
+      "method_path": [
+        "Use normal distribution with mean 27.5 and standard deviation 6.26",
+        "Find 75th percentile (Q3) using inverse normal",
+        "Find 25th percentile (Q1) using inverse normal",
+        "Compute IQR = Q3 - Q1",
+        "Round to two significant figures"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme shows 75th percentile = 31.7248... (A1), 25th percentile = 23.2751... (A1), IQR = 8.4 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

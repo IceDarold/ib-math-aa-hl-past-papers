@@ -1,0 +1,330 @@
+{
+  "question": "1",
+  "expected_question_marks": 27,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P3-Q01-A-I",
+      "question": "1",
+      "part": "A-I",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Show that f^2(x) = m^2 x + c(1+m) for f(x)=mx+c.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "function_composition",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Compute f(f(x)) = m(mx+c)+c",
+        "Expand to m^2 x + mc + c",
+        "Factor c to get m^2 x + c(1+m)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempts to find an expression for f^2(x) (M1); (m(mx+c)+c) A1; m^2 x + cm + c A1; f^2(x) = m^2 x + c(1+m) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q01-A-II",
+      "question": "1",
+      "part": "A-II",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Show that f^3(x) = m^3 x + c(1+m+m^2).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "function_composition",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Compute f(f^2(x)) = m(m^2 x + c(1+m)) + c",
+        "Expand to m^3 x + m c (1+m) + c",
+        "Simplify to m^3 x + c(1+m+m^2)"
+      ],
+      "accepted_alternatives": [
+        "Compute f^2(f(x)) = m^2(mx+c) + c(1+m) and simplify."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempts to find an expression for f^3(x) (M1); EITHER f^3(x) = m(mx+c)+c(1+m) ... A1; OR f^3(x) = m^2(mx+c)+c(1+m) ... A1; THEN f^3(x) = m^3 x + c(1+m+m^2) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q01-B-I",
+      "question": "1",
+      "part": "B-I",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Write down an expression for f^4(x).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "pattern_recognition",
+        "function_composition"
+      ],
+      "method_path": [
+        "Extend pattern to f^4(x) = m^4 x + c(1+m+m^2+m^3)"
+      ],
+      "accepted_alternatives": [
+        "f^4(x) = m^4 x + c \\sum_{i=0}^{3} m^i",
+        "f^4(x) = m(m^3 x + c(1+m+m^2)) + c"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "f^4(x) = m^4 x + c(1+m+m^2+m^3) A1; Note: Award A1 for equivalent forms"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q01-B-II",
+      "question": "1",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Suggest a similar expression for f^n(x), n in positive integers.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "pattern_recognition",
+        "generalization"
+      ],
+      "method_path": [
+        "Generalize to f^n(x) = m^n x + c(1+m+...+m^{n-1})"
+      ],
+      "accepted_alternatives": [
+        "f^n(x) = m^n x + c \\sum_{i=0}^{n-1} m^i",
+        "f^n(x) = m^n x + c \\frac{1-m^n}{1-m}"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "f^n(x) = m^n x + c(1+m+...+m^{n-1}) A1A1; Note: Award A1 for m^n x and A1 for c(1+m+...+m^{n-1}) or equivalent"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q01-B-III",
+      "question": "1",
+      "part": "B-III",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find an expression in terms of n for f^n(x) when m=1.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "simplification"
+      ],
+      "method_path": [
+        "Substitute m=1 into f^n(x) expression",
+        "Simplify constant term to nc",
+        "Obtain f^n(x) = x + nc"
+      ],
+      "accepted_alternatives": [
+        "Use iterative composition: f(x)=x+c, f^2(x)=x+2c, deduce f^n(x)=x+nc."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: attempts to substitute m=1 into their f^n(x) (M1); f^n(x) = x + c(1+1+...+1) (A1); f^n(x) = x + nc A1; METHOD 2: f(x)=x+c (A1); attempts to find f^2(x) with their f(x) and m=1 (M1); f^2(x)=x+2c => f^n(x)=x+nc A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 8,
+      "source_pages": "3",
+      "markscheme_pages": "9-10",
+      "task_summary": "Prove by mathematical induction that for m≠1, f^n(x) = m^n x + c(1-m^n)/(1-m) for n in positive integers.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case",
+        "inductive_hypothesis",
+        "inductive_step",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Base case n=1: f^1(x)=mx+c matches formula",
+        "Assume true for n=k",
+        "Show true for n=k+1 using f^{k+1}(x)=f(f^k(x))",
+        "Simplify to m^{k+1} x + c(1-m^{k+1})/(1-m)"
+      ],
+      "accepted_alternatives": [
+        "Use f^{k+1}(x)=f^k(f(x)) and simplify.",
+        "Use geometric series representation."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9-10",
+          "basis": "consider n=1: f^1(x)=m^1 x + c(1-m^1)/(1-m) => f(x)=mx+c, R1; assume true for n=k M1; EITHER Attempting to find f(f^k(x)) (M1); ... A1; OR Attempting to find f^k(f(x)) (M1); ... A1; THEN attempts to put c over a common denominator (M1); ... A1; OR recognizes geometric series (M1); ... A1; THEN f^{k+1}(x)=m^{k+1} x + c(1-m^{k+1})/(1-m) A1; since true for n=1 and true for n=k+1 if true for n=k, hence true for all n in positive integers R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q01-D",
+      "question": "1",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "As n→∞, the family of graphs y=f^n(x) approaches a straight line L. Determine the equation of L in terms of c and m, given -1<m<1.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "asymptotic_behavior"
+      ],
+      "method_path": [
+        "Take limit as n→∞ of f^n(x) = m^n x + c(1-m^n)/(1-m)",
+        "Since |m|<1, m^n → 0",
+        "Thus f^n(x) → c/(1-m)",
+        "Equation of L: y = c/(1-m)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempts to apply m^n → 0 (as n→∞) to at least one term in expression (M1); m^n x → 0; c(1-m^n)/(1-m) → c/(1-m) (as n→∞) (A1)A1; y = c/(1-m) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q01-E-I",
+      "question": "1",
+      "part": "E-I",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Show that f^n(x) = -x + c when n is odd, given m=-1.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "parity_reasoning"
+      ],
+      "method_path": [
+        "Substitute m=-1 into f^n(x) formula",
+        "Simplify (-1)^n x term to -x for odd n",
+        "Simplify constant term to c for odd n"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "f^n(x) = (-1)^n x + c(1-(-1)^n)/(1-(-1)) A1; (-1)^n = -1 (when n is odd) R1; f^n(x) = -x + c AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q01-E-II",
+      "question": "1",
+      "part": "E-II",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Find an expression for f^n(x) when n is even, given m=-1.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "parity_reasoning"
+      ],
+      "method_path": [
+        "Substitute m=-1 into f^n(x) formula",
+        "Simplify (-1)^n x term to x for even n",
+        "Simplify constant term to 0 for even n",
+        "Obtain f^n(x) = x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "evidence that an even n has been considered (M1); for example, (-1)^2 = 1; f^n(x) = x A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

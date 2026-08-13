@@ -1,0 +1,1203 @@
+{
+  "session": "May 2025",
+  "zone": "TZ1",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the local minimum point (p, q) with p>0 for f(x)=4x^3/3 - 16/x.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "set_derivative_zero",
+        "solve_equation",
+        "substitute",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Differentiate f(x) to get f'(x)=4x^2 - 16/x^2",
+        "Set f'(x)=0",
+        "Solve 4x^2 - 16/x^2 = 0 to get x=2 (positive root)",
+        "Substitute x=2 into f(x)",
+        "Compute f(2)=4(8)/3 - 16/2 = 32/3 - 8 = -64/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Markscheme shows derivative, setting to zero, solving for p=2, substituting to get q=-64/3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the value of k in the expression 1000(1+k)^4 for an investment with 4% nominal annual interest compounded quarterly.",
+      "primary_topic": "number_algebra.exponential_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "compound_interest",
+        "quarterly_compounding",
+        "interest_rate_conversion"
+      ],
+      "method_path": [
+        "Convert nominal annual rate 4% compounded quarterly to quarterly rate: k = 0.04/4 = 0.01"
+      ],
+      "accepted_alternatives": [
+        "k = 0.01",
+        "k = 1/100",
+        "k = 4/400"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "k = 4/400 = 1/100 = 0.01 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Expand and simplify (1+x)^4.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "binomial_expansion",
+        "pascal_triangle",
+        "polynomial_expansion"
+      ],
+      "method_path": [
+        "Obtain binomial coefficients (1,4,6,4,1) or multiply out brackets",
+        "Write expansion: 1 + 4x + 6x^2 + 4x^3 + x^4"
+      ],
+      "accepted_alternatives": [
+        "1 + 4x + 6x^2 + 4x^3 + x^4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to find binomial coefficients or multiply out brackets (M1); e.g. Pascal's triangle down to correct row OR (1+2x+x^2)^2 OR substitute into binomial expansion; (1+x)^4 = 1 + 4x + 6x^2 + 4x^3 + x^4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Hence or otherwise, find the amount of money in the account after one complete year, giving your answer correct to the nearest dinar.",
+      "primary_topic": "number_algebra.exponential_models",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "compound_interest",
+        "binomial_approximation",
+        "direct_calculation",
+        "rounding"
+      ],
+      "method_path": [
+        "Recognize that (1+k)^4 can be expanded using binomial theorem with x=k=0.01",
+        "Substitute k=0.01 into expansion: 1 + 4(0.01) + 6(0.01)^2 + 4(0.01)^3 + (0.01)^4",
+        "Calculate terms: 1 + 0.04 + 0.0006 + 0.000004 + 0.00000001 = 1.04060401",
+        "Multiply by 1000: 1040.60401",
+        "Round to nearest dinar: 1041"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Use binomial expansion with x=0.01, multiply by 1000, round to 1041",
+        "METHOD 2: Calculate (1.01)^4 = 1.04060401 by hand, multiply by 1000, round to 1041"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: recognition that the expansion can be used with x replaced with k (M1); (1+1/100)^4 = 1 + 4/100 + 6/100^2 + ... = 1 + 0.04 + 0.0006 + ... (A1); multiplies by 1000 (seen anywhere) (M1); 1000(1+1/100)^4 = 1000 + 40 + 0.6 + ... = 1040.6... = 1041 (dinar) A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 2: attempt to find the value of (1+k)^4 by hand (M1); (1.01)^4 = (1.0201)(1.01) = (1.030301)(1.01) = 1.0406... (A1); multiplies by 1000 (seen anywhere) (M1); 1000(1.01)^4 = 1040.6... = 1041 (dinar) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find the area completely enclosed by the curves y = e^x, y = -e^x, and the lines x = -1 and x = 1.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "area_between_curves",
+        "exponential_function",
+        "symmetry"
+      ],
+      "method_path": [
+        "Set up integral of (e^x - (-e^x)) = 2e^x from x=-1 to x=1",
+        "Integrate 2e^x to get 2e^x",
+        "Substitute limits: 2e^1 - 2e^{-1}",
+        "Simplify to 2(e - 1/e)"
+      ],
+      "accepted_alternatives": [
+        "Integrate e^x from -1 to 1 and -e^x from -1 to 1 separately, then subtract: (e - e^{-1}) - (-(e - e^{-1})) = 2(e - e^{-1})"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 1: attempt to set up integral (e^x - (-e^x)) = 2e^x or e^x and then double (M1); ∫(e^x - (-e^x))dx OR 2∫e^x dx; = 2∫_{-1}^{1} e^x dx; = 2[e^x]_{-1}^{1} (A1); attempt to substitute correct limits into their integrated function and subtract (M1); = 2(e - 1/e), 2e - 2/e, 2e - 2e^{-1} A1. METHOD 2: ∫_{-1}^{1} e^x dx = [e^x]_{-1}^{1} and ∫_{-1}^{1} -e^x dx = [-e^x]_{-1}^{1} (A1); attempt to substitute correct limits into both their integrated functions and subtract (M1); = e - e^{-1} and -(e^{-1} - e); subtracts their two integrals in correct order (M1); = (e - e^{-1}) - (-(e - e^{-1})) = 2(e - 1/e), 2e - 2/e, 2e - 2e^{-1} A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Find P(A ∩ B) given P(A') = 3/4 and P(B|A) = 2/3.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "complement_rule",
+        "conditional_probability_formula",
+        "multiplication"
+      ],
+      "method_path": [
+        "Find P(A) = 1 - P(A') = 1/4",
+        "Use P(B|A) = P(A ∩ B) / P(A)",
+        "Solve P(A ∩ B) = P(B|A) * P(A) = (2/3)*(1/4) = 1/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "P(A) = 1/4 (A1); attempt to use P(B|A) = P(A ∩ B) / P(A) (M1); P(A ∩ B) = 2/3 * 1/4 = 1/6 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Show that events A and B are independent.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "union_formula",
+        "independence_check",
+        "conditional_probability_equality"
+      ],
+      "method_path": [
+        "Use P(A ∪ B) = P(A) + P(B) - P(A ∩ B) or Venn diagram to find P(B)",
+        "Substitute known values: 3/4 = 1/4 + P(B) - 1/6",
+        "Solve for P(B) = 2/3",
+        "Verify P(B|A) = P(B) or P(A ∩ B) = P(A)P(B) to conclude independence"
+      ],
+      "accepted_alternatives": [
+        "Use P(A ∪ B) = P(A) + P(B) - P(A ∩ B) with P(A ∪ B) = 1 - P(A' ∩ B') = 3/4 (implied) to find P(B) = 2/3, then check P(A ∩ B) = P(A)P(B) = 1/6."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to use P(A ∪ B) = P(A) + P(B) - P(A ∩ B) OR a Venn diagram (M1); P(B) = 2/3 (A1); P(B|A) = P(B) OR P(A)P(B) = 1/6 so P(A ∩ B) = P(A)P(B) (R1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "12",
+      "task_summary": "Show that the area of picture frame F_n is 20*(9/4)^(n-1) cm^2, and hence find the mean area of the ten picture frames in the form p*(9^a/4^10) cm^2.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "identify_geometric_sequence",
+        "find_common_ratio",
+        "derive_nth_term",
+        "sum_geometric_series",
+        "calculate_mean"
+      ],
+      "method_path": [
+        "Recognise that widths and heights form geometric sequences with common ratio 3/2",
+        "Deduce that areas form a geometric sequence with first term 20 and common ratio 9/4",
+        "Derive nth term formula: area of F_n = 20*(9/4)^(n-1)",
+        "Sum the first 10 terms using S_n = u_1*(1 - r^n)/(1 - r)",
+        "Divide sum by 10 to obtain mean area",
+        "Simplify to required form p*(9^a/4^10) with p=8/5, a=10"
+      ],
+      "accepted_alternatives": [
+        "Use product of width and height sequences: area = (4*(3/2)^(n-1))*(5*(3/2)^(n-1)) = 20*(9/4)^(n-1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for using two consecutive terms to find common ratio or recognising geometric sequences; A1 for areas form geometric sequence with first term 20 and common ratio 45/20; AG for area formula; (M1) for attempt to find sum using formula; (A1) for correct sum expression; A1 for mean area simplified to 8/5*(9^10/4^10) with p=8/5, a=10."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Find the median area of the ten picture frames in the form q*(9/4)^4 cm^2.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "identify_median_position",
+        "evaluate_terms",
+        "calculate_median"
+      ],
+      "method_path": [
+        "Recognise that median is between the 5th and 6th terms",
+        "Calculate area of F_5 = 20*(9/4)^4",
+        "Calculate area of F_6 = 20*(9/4)^5",
+        "Compute median as average of these two areas",
+        "Simplify to q*(9/4)^4 with q=65/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "(M1) for recognition that median is between 5th and 6th picture frame; (A1) for correct expression of median area; A1 for simplified median area 65/2*(9/4)^4 with q=65/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 6,
+      "source_pages": "8",
+      "markscheme_pages": "13",
+      "task_summary": "Find a and b such that lines L1 and L2 are perpendicular and intersect at a unique point.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "extract_direction_vectors",
+        "scalar_product_zero",
+        "solve_linear_equations",
+        "intersection_conditions"
+      ],
+      "method_path": [
+        "Extract direction vectors d1 = (0, a, 1) and d2 = (1, 2, 3).",
+        "Set scalar product d1·d2 = 0 to get 2a + 3 = 0, so a = -3/2.",
+        "Set position vectors equal: (4, 0, -1) + λ(0, a, 1) = (1, 0, -b) + μ(1, 2, 3).",
+        "Solve the system: 4 = 1 + μ, 0 + aλ = 0 + 2μ, -1 + λ = -b + 3μ.",
+        "Obtain μ = 3, λ = -4, b = 14."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "direction vectors are (0, a, 1) and (1, 2, 3) (A1); recognition that scalar product is 0 (M1); 2a+3=0 → a=-3/2 A1; at point of intersection 4=1+μ, 0+aλ=2μ, -1+λ=-b+3μ (A1); attempt to solve (M1); μ=3, λ=-4, b=14 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Write the integer 3 in the form e^a where a ∈ ℝ.",
+      "primary_topic": "number_algebra.exponential_models",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "exponentiate",
+        "natural_logarithm"
+      ],
+      "method_path": [
+        "Express 3 as e^{ln 3}"
+      ],
+      "accepted_alternatives": [
+        "a = ln 3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "3 = e^{ln 3} OR a = ln 3"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find Re(z) and Re(1/z) for z = 3^{i-1}, giving answers in the form p cos(ln q) where p, q ∈ ℤ+.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "exponentiate",
+        "euler_formula",
+        "real_part_extraction",
+        "reciprocal",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Rewrite z = 3^{i-1} as e^{(i-1) ln 3}",
+        "Separate into e^{-ln 3} e^{i ln 3}",
+        "Apply Euler's formula to get cos(ln 3) + i sin(ln 3)",
+        "Extract real part: Re(z) = e^{-ln 3} cos(ln 3) = (1/3) cos(ln 3)",
+        "For 1/z, write as 3^{1-i} = e^{(1-i) ln 3} = e^{ln 3} e^{-i ln 3}",
+        "Apply Euler's formula to get cos(-ln 3) + i sin(-ln 3)",
+        "Extract real part: Re(1/z) = e^{ln 3} cos(-ln 3) = 3 cos(ln 3)"
+      ],
+      "accepted_alternatives": [
+        "Re(z) = 3^{-1} cos(ln 3) = (1/3) cos(ln 3)",
+        "Re(1/z) = 3 cos(ln 3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "z = 3^{i-1} = e^{(i-1) ln 3} OR Re(z) = e^{-ln 3} cos(ln 3)"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "Re(z) = (1/3) cos(ln 3)"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "1/z = 3^{1-i} = e^{(1-i) ln 3} = e^{ln 3} (cos(-ln 3) + i sin(-ln 3)) OR Re(1/z) = e^{ln 3} cos(-ln 3)"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "Re(1/z) = 3 cos(ln 3)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Show that 1 + log_2 n ≥ log_2 (n + 1) for n ∈ ℤ⁺.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "logarithm_properties",
+        "inequality_manipulation",
+        "monotonic_function"
+      ],
+      "method_path": [
+        "Rewrite 1 + log_2 n as log_2 (2n)",
+        "Note 2n ≥ n + 1 for n ∈ ℤ⁺",
+        "Apply increasing property of log_2 to obtain log_2 (2n) ≥ log_2 (n + 1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "1 + log_2 n = log_2 2 + log_2 n = log_2 (2n) (A1); 2n ≥ n + 1 OR log_2 (2n) ≥ log_2 (n + 1) (R1); AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Use mathematical induction and the result from part (a) to prove that n > log_2 n for n ∈ ℤ⁺.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.inequalities",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case",
+        "inductive_hypothesis",
+        "inductive_step",
+        "inequality_manipulation"
+      ],
+      "method_path": [
+        "Base case n = 1: 1 > log_2 1 = 0",
+        "Assume true for n = k: k > log_2 k",
+        "Inductive step: k + 1 > 1 + log_2 k (by assumption)",
+        "Apply part (a): 1 + log_2 k ≥ log_2 (k + 1)",
+        "Conclude k + 1 > log_2 (k + 1), hence true for n = k + 1",
+        "By induction, true for all n ∈ ℤ⁺"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "for n = 1: log_2 1 = 0 and 1 > 0 OR LHS = 1, RHS = log_2 1 = 0 OR log_2 2 > log_2 1 (R1); assume true for n = k, ie k > log_2 k (M1); hence k + 1 > 1 + log_2 k (M1); ≥ log_2 (k + 1) (using result from part (a)) (A1); hence if true for n = k then true for n = k + 1 (R1); and as true for n = 1, therefore true for all n ∈ ℤ⁺."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 8,
+      "source_pages": "11",
+      "markscheme_pages": "16-17",
+      "task_summary": "Solve the homogeneous differential equation dy/dx = (x - y)/(x + y) with y(2) = 0 using the substitution y = vx, and show that the solution is x^2 - 2xy - y^2 = 4.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "separation_of_variables",
+        "integration",
+        "logarithmic_integration",
+        "initial_condition",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Substitute y = vx to get dy/dx = v + x dv/dx",
+        "Rewrite the differential equation in terms of v and x",
+        "Simplify to obtain a separable equation",
+        "Separate variables and integrate both sides",
+        "Use substitution or inspection to integrate the rational function in v",
+        "Obtain an equation involving ln|x| and ln|1 - 2v - v^2|",
+        "Substitute back v = y/x",
+        "Apply the initial condition y(2) = 0 to find the constant of integration",
+        "Simplify to obtain x^2 - 2xy - y^2 = 4"
+      ],
+      "accepted_alternatives": [
+        "Alternative constant determination: write the integrated equation with an arbitrary constant A, then substitute x=2, y=0 to find A, and simplify to the final form."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "Markscheme shows substitution y=vx, separation of variables, integration steps, and application of initial condition leading to the final equation."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "Note about absolute value signs and total marks."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Write f(x) = 5(x+1)(x+3) in the form a(x-h)^2 + k.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "completing_the_square",
+        "vertex_form",
+        "expand",
+        "factor",
+        "symmetry"
+      ],
+      "method_path": [
+        "Identify a = 5",
+        "Find h using roots symmetry or completing square or differentiation",
+        "Calculate k by substituting h into f(x)"
+      ],
+      "accepted_alternatives": [
+        "Use roots and symmetry: h = (-1 + -3)/2 = -2, then k = f(-2) = -5",
+        "Expand to 5x^2+20x+15, complete square to 5(x+2)^2 -5",
+        "Expand, differentiate to find vertex x = -2, then k = f(-2) = -5",
+        "Expand, use axis of symmetry h = -b/(2a) = -20/(10) = -2, then k = f(-2) = -5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1: a=5 (A1), attempt to use roots and symmetry to find h (M1), h=-2 (A1), f(x)=5(x+2)^2-5 A1. METHOD 2: a=5 (A1), attempt to expand (M1), complete square or differentiate or axis of symmetry (A1), h=-2, f(x)=5(x+2)^2-5 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Sketch the graph of y = f(x), showing intercepts and vertex.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_parabola",
+        "intercepts",
+        "vertex"
+      ],
+      "method_path": [
+        "Draw roughly symmetric concave up curve",
+        "Mark x-intercepts at -3 and -1",
+        "Mark y-intercept at 15",
+        "Mark vertex at (-2, -5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1 for roughly symmetric curve concave up, A1 for x-intercepts at -3 and -1, A1 for y-intercept at 15, A1 for vertex at (-2,-5)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Solve the inequality f(x) ≤ 40.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quadratic_inequality",
+        "critical_values",
+        "interval_testing"
+      ],
+      "method_path": [
+        "Set up inequality 5(x+2)^2 -5 ≤ 40 or equivalent",
+        "Simplify to (x+2)^2 ≤ 9 or x^2+4x-5 ≤ 0",
+        "Find critical values x = -5, 1",
+        "Determine solution interval -5 ≤ x ≤ 1"
+      ],
+      "accepted_alternatives": [
+        "Use 5(x+1)(x+3) ≤ 40 leading to (x+1)(x+3) ≤ 8, then x^2+4x-5 ≤ 0, critical values -5,1, solution -5 ≤ x ≤ 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "5(x+2)^2-5 ≤ 40 OR 5(x+1)(x+3) ≤ 40 OR (x+1)(x+3) ≤ 8 leading to (x+2)^2 ≤ 9 OR 5x^2+20x-25 ≤ 0 OR x^2+4x-5 ≤ 0 (A1), valid attempt to find critical values (M1), x=-5, x=1 (A1), -5 ≤ x ≤ 1 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "Write (f ∘ g)(x) and solve (f ∘ g)(x) ≤ 40.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "composite_function",
+        "substitution",
+        "logarithmic_inequality"
+      ],
+      "method_path": [
+        "Write (f ∘ g)(x) = 5(ln x + 1)(ln x + 3) or equivalent",
+        "Replace x with ln x in solution from part (c)",
+        "Solve -5 ≤ ln x ≤ 1 to get e^{-5} ≤ x ≤ e"
+      ],
+      "accepted_alternatives": [
+        "Use expanded form 5(ln x)^2 + 20 ln x + 15 ≤ 40, solve quadratic inequality in ln x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(i) (f ∘ g)(x) = 5(ln x + 1)(ln x + 3) OR 5(ln x + 2)^2 -5 OR 5(ln x)^2 + 20 ln x + 15 A1. (ii) attempt to replace x with ln x using their solution to part (c) (M1), -5 ≤ ln x ≤ 1, e^{-5} ≤ x ≤ e A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "Find the domain of g ∘ f.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "composite_function",
+        "domain_restriction",
+        "inequality_solving"
+      ],
+      "method_path": [
+        "Write (g ∘ f)(x) = ln(f(x))",
+        "Require f(x) > 0",
+        "Solve (x+1)(x+3) > 0",
+        "Domain: x < -3 or x > -1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(g ∘ f)(x) = ln(f(x)), recognition that domain requires f(x) > 0 (M1), (x+1)(x+3) > 0, x < -3, x > -1 A1A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Show that the acute angle between planes P1 and P2 is 60°.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "extract_normal_vectors",
+        "scalar_product",
+        "magnitude_calculation",
+        "solve_for_angle",
+        "acute_angle_adjustment"
+      ],
+      "method_path": [
+        "Identify normal vectors n1 = (1,2,1) and n2 = (1,-1,-2)",
+        "Compute scalar product n1·n2 = 1*1 + 2*(-1) + 1*(-2) = -3",
+        "Compute magnitudes |n1| = sqrt(6), |n2| = sqrt(6)",
+        "Use cos θ = (n1·n2)/(|n1||n2|) = -3/6 = -1/2",
+        "Obtain θ = 120°",
+        "Acute angle = 180° - 120° = 60°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "normals of Π1 and Π2 are (1,2,1) and (1,-1,-2) (A1); attempt to use the scalar product for the angle between two vectors M1; -3 = 6 cos θ A1A1; cos θ = -1/2 A1; θ = 120° OR cos(180-θ) = 1/2 A1; acute angle is 60° AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Find the Cartesian equation of plane P3, which is perpendicular to both P1 and P2 and passes through R(5,-5,5).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "normal_vector",
+        "plane_equation",
+        "substitute_point"
+      ],
+      "method_path": [
+        "Compute cross product of normals n1 × n2 = (-3,3,-3) or (1,-1,1)",
+        "Form plane equation: -3x + 3y - 3z = d or x - y + z = d",
+        "Substitute R(5,-5,5) to find d = -45 or d = 15",
+        "Write Cartesian equation: -3x + 3y - 3z = -45 or x - y + z = 15"
+      ],
+      "accepted_alternatives": [
+        "Use cross product to get normal (1,-1,1) and equation x - y + z = 15"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to find vector product of their normal vectors M1; cross product result (A1); equation of Π3 is -3x+3y-3z=d or x-y+z=d or equivalent; attempt to substitute (5,-5,5) into their equation (M1); equation of Π3 is -3x+3y-3z=-45 (so x-y+z=15) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q11-C-I",
+      "question": "11",
+      "part": "C-I",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Using an appropriate compound angle identity, show that sin75° = (√2 + √6)/4.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "compound_angle_identity",
+        "exact_trigonometric_values",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Express sin75° as sin(30°+45°)",
+        "Apply sin(A+B) = sinA cosB + cosA sinB",
+        "Substitute exact values: sin30°=1/2, cos45°=√2/2, cos30°=√3/2, sin45°=√2/2",
+        "Simplify to (√2 + √6)/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to use the identity for sin(30°+45°) (M1); sin(30°+45°) = sin30°cos45°+cos30°sin45°; = (1/2)(√2/2)+(√3/2)(√2/2) A1A1; = (√2+√6)/4 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q11-C-II",
+      "question": "11",
+      "part": "C-II",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Find QR in the form p(√q - 1) cm, where p,q ∈ ℚ.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "sine_rule",
+        "exact_trigonometric_values",
+        "rationalize_denominator",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Let x = QR",
+        "Apply sine rule: x/sin75° = 5/sin45°",
+        "Substitute sin75° = (√2+√6)/4, sin45° = √2/2",
+        "Solve for x: x = 5 sin75° / sin45° = 20/(√2+√6) or equivalent",
+        "Rationalize denominator by multiplying numerator and denominator by (√6-√2)",
+        "Simplify to x = 5(√3 - 1) cm"
+      ],
+      "accepted_alternatives": [
+        "Use x = 20/(√2+√6) and rationalize to 5(√3-1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to use the sine rule with the angles 75°,45° (M1); x/sin75° = 5/sin45°; x = 20/(√2+√6) or equivalent A1; attempt to rationalise a denominator of the form a/(b+√c) by multiplying numerator and denominator by (b-√c) or equivalent (M1); x = 5(√3-1) (cm) (p=5, q=3) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Show that ∫ cos^n x dx = cos^{n-1} x sin x + (n-1)∫ cos^{n-2} x dx - (n-1)∫ cos^n x dx for n>1 using integration by parts on cos^{n-1} x cos x.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "algebraic_manipulation",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Write cos^n x = cos^{n-1} x cos x",
+        "Apply integration by parts with u = cos^{n-1} x, dv = cos x dx",
+        "Compute du = -(n-1) cos^{n-2} x sin x dx, v = sin x",
+        "Substitute into integration by parts formula",
+        "Use identity sin^2 x = 1 - cos^2 x",
+        "Expand and rearrange to obtain the required expression"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1: attempt to use integration by parts on cos^{n-1} x cos x; A1A1: each term with correct signs; A1: use of sin^2 x = 1 - cos^2 x and rearrangement to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Hence show that ∫ f_n(x) dx = (1/n) cos^{n-1} x sin x + ((n-1)/n) ∫ f_{n-2}(x) dx for n>1.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "algebraic_manipulation",
+        "rearrangement"
+      ],
+      "method_path": [
+        "Start from the equation in part (a)",
+        "Collect terms involving ∫ cos^n x dx on one side",
+        "Factor and solve for ∫ cos^n x dx",
+        "Express in terms of f_n(x) and f_{n-2}(x)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1: attempt to rearrange the equation given in part (a) to collect terms in ∫ f_n(x) dx or ∫ cos^n x dx; A1: correct rearrangement leading to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "Find an expression for ∫ cos^4 x dx in the form p cos^3 x sin x + q cos x sin x + r x + c with p, q, r ∈ ℚ^+.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "reduction_formula",
+        "algebraic_manipulation",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Apply reduction formula from part (b) with n=4",
+        "Apply reduction formula again with n=2 or use double-angle identity",
+        "Integrate the resulting expression",
+        "Simplify to required form"
+      ],
+      "accepted_alternatives": [
+        "Use double-angle formula to rewrite cos^2 x in terms of cos 2x instead of second reduction."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1: attempt to use equation from part (a) to reduce the power of cos x; M1: attempt to use equation from part (a) again or use double angle formula; A1: correct integration; A1: final answer (1/4) cos^3 x sin x + (3/8) cos x sin x + (3/8) x + c."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "24",
+      "task_summary": "Find the volume of the solid formed by rotating region R (enclosed by y = cos^2 x and x-axis from -π/2 to π/2) by 2π around the x-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "volume_of_revolution",
+        "definite_integral",
+        "substitution_of_limits"
+      ],
+      "method_path": [
+        "Set up volume integral V = π ∫ (cos^2 x)^2 dx from -π/2 to π/2",
+        "Use result from part (c) for ∫ cos^4 x dx",
+        "Substitute limits and subtract",
+        "Simplify to obtain 3π^2/8"
+      ],
+      "accepted_alternatives": [
+        "Use symmetry: V = 2π ∫_0^{π/2} cos^4 x dx."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1: attempt to use formula for volume of revolution using π and (cos^2 x)^2; A1: correct integral expression; M1: attempt to substitute correct limits into their (c) and subtract; A1: final answer 3π^2/8."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-E-I",
+      "question": "12",
+      "part": "E-I",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "25",
+      "task_summary": "Find the Maclaurin series of f_n(x) up to the term in x^2.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "binomial_expansion",
+        "differentiation"
+      ],
+      "method_path": [
+        "Method 1: Use Maclaurin series for cos x, raise to power n, expand up to x^2",
+        "Method 2: Differentiate f_n(x) twice, evaluate at 0, construct series"
+      ],
+      "accepted_alternatives": [
+        "Method 1: (1 - x^2/2 + ...)^n ≈ 1 - n x^2/2 + ...",
+        "Method 2: f_n(0)=1, f_n'(0)=0, f_n''(0)=-n, so f_n(x) ≈ 1 - (n/2) x^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "M1: attempt to raise Maclaurin expansion for cos x to power n or differentiate twice; A2: correct series 1 - (n/2) x^2 + ... (A1 for each correct term)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q12-E-II",
+      "question": "12",
+      "part": "E-II",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "25",
+      "task_summary": "Find lim_{x→0} (f_n(x) - 1)/x^2 in terms of n.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "maclaurin_series",
+        "lhopitals_rule"
+      ],
+      "method_path": [
+        "Method 1: Substitute Maclaurin series from (i) into limit expression, simplify, take limit",
+        "Method 2: Apply l'Hôpital's rule twice to (cos^n x - 1)/x^2"
+      ],
+      "accepted_alternatives": [
+        "Method 1: lim_{x→0} (1 - n x^2/2 + ... - 1)/x^2 = -n/2",
+        "Method 2: lim_{x→0} (-n cos^{n-1} x sin x)/(2x) = lim_{x→0} (-n(n-1) cos^{n-2} x sin^2 x - n cos^n x)/2 = -n/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "M1: attempt to use Maclaurin expansion or l'Hôpital's rule twice; A1: final answer -n/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

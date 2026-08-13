@@ -1,0 +1,80 @@
+{
+  "question": "4",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "8",
+      "task_summary": "Show that the curve y = x^2 - x - 1 and the line y = mx - 3 meet when x^2 - (m + 1)x + 2 = 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "equate_expressions",
+        "rearrange_equation",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Set x^2 - x - 1 = mx - 3",
+        "Rearrange to x^2 - x - 1 - mx + 3 = 0",
+        "Simplify to x^2 - (m + 1)x + 2 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "equating y = mx - 3 and y = x^2 - x - 1 M1; x^2 - x - 1 - (mx - 3) = 0 OR mx - x^2 + x + 2 = 0 A1; x^2 - (m + 1)x + 2 = 0 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "8",
+      "task_summary": "Find the values of m when the line is tangent to the curve.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_discriminant_zero",
+        "solve_quadratic",
+        "apply_derivative_condition",
+        "substitute_into_quadratic"
+      ],
+      "method_path": [
+        "Set discriminant of x^2 - (m + 1)x + 2 = 0 to zero: (m + 1)^2 - 8 = 0",
+        "Solve (m + 1)^2 = 8 to get m = -1 ± 2√2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 (derivative): Find derivative dy/dx = 2x - 1, set equal to m, substitute x = (m + 1)/2 into x^2 - (m + 1)x + 2 = 0, solve for m to get m = -1 ± 2√2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: correct substitution into discriminant (A1); (m+1)^2 - 4(1)(2) A1; discriminant equals 0 A1; m = -1 - 2√2, -1 + 2√2 A1A1. METHOD 2: derivative dy/dx = 2x - 1 A1; substituting 2x - 1 = m or x = (m+1)/2 into AG (A1); x = ±√2 or m^2 + 2m - 7 = 0 A1; m = -1 - 2√2, -1 + 2√2 A1A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "question": "9",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "17-18",
+      "task_summary": "Show that the Cartesian equation of plane P1 containing line L1 and point (2,1,5) is x + y - z = -2.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "find_direction_vector",
+        "vector_product",
+        "find_normal_vector",
+        "substitute_point",
+        "derive_cartesian_equation"
+      ],
+      "method_path": [
+        "Find direction vector from given point to point on line",
+        "Compute normal vector via vector product of direction vectors",
+        "Substitute point into plane equation to find constant d",
+        "Write Cartesian equation x + y - z = -2"
+      ],
+      "accepted_alternatives": [
+        "Form parametric equations of plane using two vectors and point (0,0,2), eliminate parameters to obtain Cartesian equation."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 1: correct direction vector, e.g. (2,1,3)-(0,0,2)=(2,1,1) A1; attempt to find direction normal using vector product (M1); (2,1,1)×(1,0,1) = (1,1,-1) A1; correct substitution of a point on the line to obtain d A1; hence equation x+y-z=-2 AG"
+        },
+        {
+          "markscheme_pages": "17-18",
+          "basis": "METHOD 2: attempt to form parametric equations of a plane through point (0,0,2) and two vectors (1,0,1) and (2,1,3) M1; r = (0,0,2)+λ(1,0,1)+μ(2,1,3) A1; x=λ+2μ, y=μ, z=2+λ+3μ; λ=x-2y; z=2+(x-2y)+3y => x+y-z=-2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "18-20",
+      "task_summary": "Find b and d such that the three planes P1: x+y-z=-2, P2: 2x+by-z=3, P3: x-y+2z=d intersect in a line.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "eliminate_variable",
+        "solve_for_parameters",
+        "row_reduction",
+        "determinant_zero"
+      ],
+      "method_path": [
+        "Form equations to eliminate one variable",
+        "Obtain condition for consistency (infinite solutions along line)",
+        "Solve for b and d"
+      ],
+      "accepted_alternatives": [
+        "Use row reduction to obtain condition for infinite solutions, leading to b=4/3, d=19.",
+        "Set determinant of coefficient matrix to zero to find b, then use consistency condition to find d."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "METHOD 1: attempt to form an equation to eliminate one of the variables M1; (b-2)y+z=7 A1; 2y-3z=-2-d A1; (b-4/3)y = (d-19)/3 => b=4/3, d=19 A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 2: attempt to use row reduction M1; matrix [1 1 -1 -2; 2 b -1 3; 1 -1 2 d] -> [1 1 -1 -2; 0 b-2 1 7; 0 -2 3 d+2] A1; further reduction yields condition (b-4/3)=0 and d=19 A1"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 3: attempt to use determinant and equate it to zero (M1); det = 3b-4 = 0 => b=4/3 A1; then use determinant with constants to find d=19 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

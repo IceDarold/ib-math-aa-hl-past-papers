@@ -1,0 +1,49 @@
+{
+  "question": "8",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "13-14",
+      "markscheme_pages": "15",
+      "task_summary": "Find the volume of the solid formed by rotating the region bounded by f(x)=x^2/16, g(x)=x^2/25, and both axes about the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "inverse_function",
+        "volume_of_revolution",
+        "definite_integral",
+        "subtraction_of_volumes"
+      ],
+      "method_path": [
+        "Express x in terms of y for f: x^2 = 16y",
+        "Express x in terms of y for g: x^2 = 25 - 50y",
+        "Set up volume integral for f: π ∫ (16y) dy from 0 to 3",
+        "Set up volume integral for g: π ∫ (25 - 50y) dy from 0 to 3",
+        "Subtract volumes: V = π ∫_0^3 (16y) dy - π ∫_0^3 (25 - 50y) dy",
+        "Evaluate integrals and simplify to V = 140"
+      ],
+      "accepted_alternatives": [
+        "V = π ∫_0^3 (16y - (25 - 50y)) dy"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to write at least one function in terms of y (M1); x^2 = 16y OR x^2 = 25 - 50y (A1); one correct expression for volume π ∫ 16y dy OR π ∫ (25 - 50y) dy (A1); attempt to subtract two volumes with limits for y (M1); π ∫_0^3 16y dy - π ∫_0^3 (25 - 50y) dy (A1); V = 140 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

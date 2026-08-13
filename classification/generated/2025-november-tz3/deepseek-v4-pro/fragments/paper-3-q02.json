@@ -1,0 +1,355 @@
+{
+  "question": "2",
+  "expected_question_marks": 29,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P3-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Find the sum to infinity of the geometric series 1 - x^2 + x^4 - x^6 + ... for |x| < 1.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_series",
+        "sum_to_infinity"
+      ],
+      "method_path": [
+        "Identify first term a=1 and common ratio r=-x^2",
+        "Apply sum to infinity formula S = a/(1-r)",
+        "Simplify to 1/(1+x^2)"
+      ],
+      "accepted_alternatives": [
+        "Use a=1-x^2 and r=x^4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to use S∞ = u1/(1-r) (M1); 1/(1+x^2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Use integration to show that the Maclaurin series of arctan x is x - x^3/3 + x^5/5 - x^7/7 + ...",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "maclaurin_series",
+        "integration",
+        "termwise_integration"
+      ],
+      "method_path": [
+        "Integrate 1/(1+x^2) to get arctan x + c",
+        "Expand 1/(1+x^2) as geometric series 1 - x^2 + x^4 - x^6 + ...",
+        "Integrate termwise to get x - x^3/3 + x^5/5 - x^7/7 + ... + c",
+        "Use x=0, arctan 0 = 0 to find c=0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "∫ 1/(1+x^2) dx = arctan x + c A1; ∫ (1 - x^2 + x^4 - x^6 + ...) dx = x - x^3/3 + x^5/5 - x^7/7 + ... + c A1; when x=0, arctan 0 = 0 => c=0 R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Using x=1/√3 and the first three non-zero terms of the Maclaurin series of arctan x, find an approximation for π to three decimal places.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "geometry.trigonometric_equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "maclaurin_series",
+        "substitution",
+        "approximation"
+      ],
+      "method_path": [
+        "Recognize arctan(1/√3) = π/6",
+        "Substitute x=1/√3 into first three terms: x - x^3/3 + x^5/5",
+        "Evaluate expression to get π/6 ≈ 0.526...",
+        "Multiply by 6 to get π ≈ 3.156"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "π/6 = arctan(1/√3) A1; attempt to evaluate (1/√3) - (1/√3)^3/3 + (1/√3)^5/5 M1; π ≈ 3.156 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q02-D",
+      "question": "2",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "13",
+      "task_summary": "Determine how many non-zero terms of the series are needed so that the error in approximating arctan(1/√3) is less than 0.0001.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "alternating_series_error_bound",
+        "inequality_solving",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize error term is x^(2m-1)/(2m-1) for m-th non-zero term",
+        "Set up inequality |(1/√3)^(2m-1)/(2m-1)| < 0.0001",
+        "Solve using GDC to get m > 6.6...",
+        "Conclude 6 non-zero terms needed"
+      ],
+      "accepted_alternatives": [
+        "Use error term x^(2m+1)/(2m+1) leading to m>5.6... and 6 terms",
+        "Use error term x^n/n leading to n>12.2... and 6 terms",
+        "Method 2: evaluate error terms for consecutive m until <0.0001",
+        "Method 3: find actual error using arctan x - partial sum for consecutive m"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "recognition that error term is x^(2m-1)/(2m-1) (M1); attempt to solve |(1/√3)^(2m-1)/(2m-1)| < 0.0001 (M1); 6 non-zero terms needed A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q02-E",
+      "question": "2",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "By using integration by parts, show that ∫_0^(1/√3) (arctan x)/x dx = (π/(6√3)) - (1/2) ln(4/3).",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "definite_integral",
+        "logarithmic_integration"
+      ],
+      "method_path": [
+        "Set u = arctan x, dv = 1/x dx",
+        "Compute du = 1/(1+x^2) dx, v = ln x",
+        "Apply integration by parts: ∫ u dv = uv - ∫ v du",
+        "Evaluate uv from 0 to 1/√3",
+        "Evaluate remaining integral ∫ ln x / (1+x^2) dx using substitution or known result",
+        "Simplify to (π/(6√3)) - (1/2) ln(4/3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "u = arctan x and dv = 1/x dx (A1); [x arctan x]_0^(1/√3) - ∫_0^(1/√3) x/(1+x^2) dx A1A1; = (1/√3) arctan(1/√3) - (1/2)[ln(1+x^2)]_0^(1/√3) A1; = π/(6√3) - (1/2) ln(4/3) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q02-F",
+      "question": "2",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "Determine the value of ∫_0^(1/√3) (x - x^3/3 + x^5/5 - x^7/7) dx to six decimal places.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "polynomial_integration",
+        "gdc"
+      ],
+      "method_path": [
+        "Integrate termwise: x^2/2 - x^4/12 + x^6/30 - x^8/56",
+        "Evaluate from 0 to 1/√3",
+        "Compute numerical value to six decimal places: 0.158422"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "∫_0^(1/√3) (x - x^3/3 + x^5/5 - x^7/7) dx = 0.158422 A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q02-G",
+      "question": "2",
+      "part": "G",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "Use the results in parts (e) and (f) to find an approximation for π to four decimal places.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "approximation"
+      ],
+      "method_path": [
+        "Set (π/(6√3)) - (1/2) ln(4/3) ≈ 0.158422",
+        "Solve for π: π ≈ 6√3 (0.158422 + (1/2) ln(4/3))",
+        "Compute to four decimal places: π ≈ 3.1412"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to solve π/(6√3) - (1/2) ln(4/3) ≈ 0.158422 M1; π ≈ 3.1412 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q02-H",
+      "question": "2",
+      "part": "H",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "15",
+      "task_summary": "Verify that the alternating series error theorem holds when approximating ∫_0^(1/√3) (arctan x)/x dx using the sum of the first four definite integrals.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "alternating_series_error_bound",
+        "definite_integral",
+        "error_analysis"
+      ],
+      "method_path": [
+        "Identify the next term (9th term) integral: ∫_0^(1/√3) x^9/9 dx",
+        "Evaluate integral: (1/√3)^10 / 90 ≈ 4.57×10^-5",
+        "Compute actual error: |exact value - approximation| ≈ 3.69×10^-5",
+        "Compare: 3.69×10^-5 < 4.57×10^-5, so theorem holds"
+      ],
+      "accepted_alternatives": [
+        "Use unrounded answer from part (f) giving error 3.73×10^-5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "theorem error is given by ∫_0^(1/√3) x^9/9 dx = (1/√3)^10/90 (M1); = 4.57×10^-5 A1; attempt to evaluate their error (M1); π/(6√3) - (1/2) ln(4/3) - 0.158422 = 3.69×10^-5 A1; 3.69×10^-5 < 4.57×10^-5 R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q02-I",
+      "question": "2",
+      "part": "I",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "16-17",
+      "task_summary": "Determine the smallest number of non-zero terms of the Maclaurin series for arctan x that should be used so that the maximum error in approximating ∫_0^(1/√3) (arctan x)/x dx is at most 1×10^-6.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "alternating_series_error_bound",
+        "definite_integral",
+        "inequality_solving",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize error is of the form ∫_0^(1/√3) x^n/n dx",
+        "Set up inequality |(1/√3)^(n+1)/(n(n+1))| < 1×10^-6",
+        "Solve using GDC to get n > 14.33...",
+        "Conclude n=15, so 8th term is error term, thus 7 non-zero terms needed"
+      ],
+      "accepted_alternatives": [
+        "Method 2: use error term ∫ x^(2m-1)/(2m-1) dx leading to m>7.66... and 7 terms",
+        "Method 3: evaluate integrals for consecutive odd n until <1×10^-6",
+        "Method 4: find actual error using exact integral minus partial sums for consecutive m"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16-17",
+          "basis": "recognition error is of the form ∫_0^(1/√3) x^n/n dx (M1); |(1/√3)^(n+1)/(n(n+1))| < 1×10^-6 A1; attempt to solve using GDC (M1); n=14.33... => n=15 A1; we require 7 non-zero terms A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

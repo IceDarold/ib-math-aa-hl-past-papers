@@ -1,0 +1,52 @@
+{
+  "question": "6",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "12-13",
+      "task_summary": "Find q and r for P(x)=2x^2+qx+r given remainder when divided by (x+1) is 12 and a^2+b^2=37/4 where a,b are roots.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "remainder_theorem",
+        "sum_of_roots",
+        "product_of_roots",
+        "algebraic_identity",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Apply remainder theorem: P(-1)=12 to get 2-q+r=12 => r-q=10",
+        "Use sum of roots a+b=-q/2 and product ab=r/2",
+        "Use identity a^2+b^2=(a+b)^2-2ab with given 37/4 to get equation in q and r",
+        "Solve simultaneous equations r-q=10 and q^2/4 - r = 37/4 to find q=-7, r=3"
+      ],
+      "accepted_alternatives": [
+        "Alternative method: Recognize a and b are roots, add equations 2a^2+qa+r=0 and 2b^2+qb+r=0, use a+b=-q/2 and a^2+b^2=37/4 to form equation in q, then find r."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to use remainder theorem (M1); 2-q+r=12 A1; r-q=10; EITHER sum and product of roots (A1); attempt to use identity (M1); equation (A1); attempt to solve simultaneous equations (M1); THEN q=-7, r=3 A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "Alternative method: recognition that a and b are roots, adding equations (M1); a+b=-q/2 (A1); use of a^2+b^2=37/4 to form equation in q (M1); equation (A1); THEN q=-7, r=3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

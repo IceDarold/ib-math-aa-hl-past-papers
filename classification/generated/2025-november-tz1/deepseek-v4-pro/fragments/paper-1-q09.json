@@ -1,0 +1,189 @@
+{
+  "question": "9",
+  "expected_question_marks": 14,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find the values of a and b where the graph of y=f(x) has horizontal tangents, given f'(x)=3x^2+12x-15.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_zero",
+        "solve_quadratic",
+        "identify_roots"
+      ],
+      "method_path": [
+        "Set f'(x)=0",
+        "Solve 3x^2+12x-15=0",
+        "Identify a=-5, b=1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognition that f'(x)=0 (M1); attempt to solve quadratic equation (M1); a=-5, b=1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "State whether there is a local maximum or minimum at x=a, with a reason based on the sign of the first derivative.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "first_derivative_test",
+        "sign_change"
+      ],
+      "method_path": [
+        "Observe sign of f'(x) changes from positive to negative at x=a",
+        "Conclude local maximum"
+      ],
+      "accepted_alternatives": [
+        "f'(x)/gradient changes from positive to negative",
+        "f(x) changes from increasing to decreasing",
+        "f''(a)=-18 (accept f''(a)<0)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(local) maximum A1; f'(x)/gradient changes from positive to negative (at x=a) OR f(x) changes from increasing to decreasing (at x=a) OR f''(a)=-18 (accept f''(a)<0) R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find the value of c where the second derivative f''(x) is zero.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "second_derivative",
+        "set_to_zero",
+        "solve_linear"
+      ],
+      "method_path": [
+        "Find f''(x)=6x+12",
+        "Set f''(c)=0",
+        "Solve 6c+12=0 to get c=-2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "f''(x)=6x+12 (A1); 6c+12=0 (A1); c=-2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-D",
+      "question": "9",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21-22",
+      "task_summary": "State whether there is a point of inflexion at x=c, with a reason based on the sign of the second derivative.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "second_derivative_test",
+        "sign_change",
+        "concavity_change"
+      ],
+      "method_path": [
+        "Observe sign of f''(x) changes at x=c",
+        "Conclude point of inflexion"
+      ],
+      "accepted_alternatives": [
+        "f''(x)/second derivative changes sign at x=c",
+        "concavity (of f) changes at x=c",
+        "f'(x)/gradient decreasing to the left of c, and increasing to the right of c"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21-22",
+          "basis": "yes (there is a point of inflexion at x=c) A1; f''(x)/second derivative changes sign at x=c OR concavity (of f) changes at x=c OR f'(x)/gradient decreasing to the left of c, and increasing to the right of c R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-E",
+      "question": "9",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "22",
+      "task_summary": "Given f(-2)=36, find f(x) by integrating f'(x) and using the point to determine the constant of integration.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "indefinite_integral",
+        "constant_of_integration",
+        "substitute_point"
+      ],
+      "method_path": [
+        "Integrate f'(x) to get x^3+6x^2-15x+C",
+        "Substitute x=-2, f(-2)=36",
+        "Solve for C=-10",
+        "Write f(x)=x^3+6x^2-15x-10"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "recognize to find ∫f'(x)dx (M1); x^3+6x^2-15x+C (A1); substitution of (-2,36) into their integrated expression (must contain +C) (M1); C=-10 A1; f(x)=x^3+6x^2-15x-10"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

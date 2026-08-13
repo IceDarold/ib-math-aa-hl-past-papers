@@ -1,0 +1,43 @@
+{
+  "question": "4",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "8",
+      "task_summary": "Find the length of major arc ACB given the area of triangle AOB is 26 cm² and angle AOB = 2.51 radians.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "area_of_triangle_sine_formula",
+        "solve_for_radius",
+        "arc_length_formula",
+        "major_arc_calculation"
+      ],
+      "method_path": [
+        "Use area of triangle formula (1/2)r² sinθ = 26 to find radius r",
+        "Calculate major arc length using r(2π - θ)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Attempts to use the area formula for triangle AOB AND equate it to 26 (M1); 1/2 r^2 sin(2.51) = 26 (A1); r = 9.38462... (A1); use of arc length formula to find the major arc ACB (M1); 9.38462... (2π - 2.51) OR 2π × 9.38462... - 9.38462... × 2.51 OR 9.38462... × 3.773185...; 35.4099…; (arc length =) 35.4 (cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

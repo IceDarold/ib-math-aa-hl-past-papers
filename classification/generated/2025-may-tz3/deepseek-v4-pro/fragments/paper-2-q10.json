@@ -1,0 +1,146 @@
+{
+  "question": "10",
+  "expected_question_marks": 14,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Evaluate v(1) and solve v(t)=5 for t.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Substitute t=1 into v(t)=8.14t/(0.2+t^2)",
+        "Set v(t)=5 and solve for t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(i) 7.43076... v(1)=7.43 (ms^-1) A1 (ii) equating v(t) and 5 (M1) 0.348114... 0.348 (seconds) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find time when acceleration is 4 m/s^2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Differentiate v(t) to get a(t)",
+        "Set a(t)=4 and solve for t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognizing a=v'(t) (M1) 0.590930... 0.591 (seconds) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find limit of v(t) as t→∞ and explain why it is not valid in context.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "contextual_interpretation"
+      ],
+      "method_path": [
+        "Evaluate lim_{t→∞} v(t)",
+        "State a reason why the limit is not valid in the race context"
+      ],
+      "accepted_alternatives": [
+        "Any valid reason that does not contradict the limit value, e.g., race lasts finite time, graph approaches limiting value but never attained, cannot maintain speed for long period."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(i) considering large values of t (M1) lim v(t)=8.14 (ms^-1) A1 (ii) EITHER the race lasts a finite time ... OR the graph approaches the limiting value but Fiona will never attain that speed OR Fiona cannot maintain that speed for a long period of time R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Find distance Lucy is from finishing line when Fiona completes 200 m.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "equation_solving",
+        "distance_calculation"
+      ],
+      "method_path": [
+        "Find time t_f when Fiona's distance = 200 m by integrating v(t) from 0 to t_f and solving",
+        "Integrate Lucy's velocity w(t) from 0 to t_f to get Lucy's distance",
+        "Subtract Lucy's distance from 200 m"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "recognizing distance travelled by either athlete in the first t seconds is ∫ v(t) dt or ∫ w(t) dt (M1) equating distance travelled by Fiona to 200 (m) (M1) ∫_0^{t_f} v(t) dt = 200 OR attempt to integrate v(t) (M1) s(t)=8.14t+0.2/(3.64031...) equating 200 to their s(t) (M1) t_f = 25.0132... (A1) recognition that a definite integral of w(t) with 0 and their t_f is required (M1) (Lucy's distance =) ∫_0^{25.0132...} w(t) dt (=195.772...) distance from finishing line = 200 – their Lucy's distance (M1) 4.22788… 4.23 (m) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

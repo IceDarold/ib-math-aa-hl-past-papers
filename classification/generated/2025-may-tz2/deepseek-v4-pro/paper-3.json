@@ -1,0 +1,701 @@
+{
+  "session": "May 2025",
+  "zone": "TZ2",
+  "paper": 3,
+  "calculator": "yes",
+  "expected_total_marks": 55,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-A-I",
+      "question": "1",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Sketch the curve of y = (x^2 - 16)/(x^2 + 16) for -10 ≤ x ≤ 10.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_curve",
+        "identify_intercepts",
+        "identify_asymptotes"
+      ],
+      "method_path": [
+        "Sketch general shape passing through (0,0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "general shape of curve passing through (0,0) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-A-II",
+      "question": "1",
+      "part": "A-II",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "State the coordinates of the points where the curve crosses the x-axis.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_x_intercepts",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Set y = 0, solve (x^2 - 16)/(x^2 + 16) = 0 to get x = ±4, 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "(-4,0), (0,0), (4,0) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-A-III",
+      "question": "1",
+      "part": "A-III",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "State the coordinates of the local maximum and local minimum points.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "find_critical_points",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Find derivative, set to zero, solve for x, evaluate y"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "Max (-1.94, 1.20) A1, Min (1.94, -1.20) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "State whether f(x) = (x^2 - 16)/(x^2 + 16) is odd, even or neither, and justify.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "test_parity",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Evaluate f(-x) and compare to f(x) or -f(x)"
+      ],
+      "accepted_alternatives": [
+        "odd, since graph has rotational symmetry order 2 about (0,0)",
+        "odd, since graph has reflection symmetry over x-axis then y-axis"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "odd A1, since f(-x) = -f(x) R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Prove that f'(√A) is independent of A for f(x) = (x^2 - A)/(x^2 + A).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "quotient_rule",
+        "evaluate_derivative"
+      ],
+      "method_path": [
+        "Apply quotient rule to f(x)",
+        "Simplify f'(x)",
+        "Substitute x = √A",
+        "Show result is constant"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to use quotient rule (M1), correct derivative A1A1, f'(√A) = 1/(2√A) A1, hence independent AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-D-I",
+      "question": "1",
+      "part": "D-I",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Show that x - (2Ax)/(x^2 + A) = (x^2 - A)/(x^2 + A).",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "algebraic_manipulation",
+        "common_denominator"
+      ],
+      "method_path": [
+        "Combine x - (2Ax)/(x^2 + A) over common denominator",
+        "Simplify to (x^2 - A)/(x^2 + A)"
+      ],
+      "accepted_alternatives": [
+        "Long division of (x^3 - Ax)/(x^2 + A) to get x - (2Ax)/(x^2 + A)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: M1 for combining, A1 for simplification; METHOD 2: M1 for long division, A1 for quotient and remainder"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-D-II",
+      "question": "1",
+      "part": "D-II",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Determine the equation of the oblique asymptote to the curve.",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_oblique_asymptote",
+        "limit_analysis"
+      ],
+      "method_path": [
+        "As x → ±∞, (2Ax)/(x^2 + A) → 0, so y = x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "hence oblique asymptote is y = x A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-D-III",
+      "question": "1",
+      "part": "D-III",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "10",
+      "task_summary": "Write down the coordinates of a point on the curve where the oblique asymptote is parallel to the tangent.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "find_point_with_given_slope",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Set derivative equal to 1 (slope of asymptote), solve for x, find y"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "(√A, 0) OR (-√A, 0) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-E",
+      "question": "1",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Using partial fractions, show that ∫ 1/(1 - v^2) dv = (1/2) ln|(1 + v)/(1 - v)| + (1/2) ln A.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "partial_fractions",
+        "integrate_rational_function"
+      ],
+      "method_path": [
+        "Decompose 1/(1 - v^2) into partial fractions",
+        "Integrate each term",
+        "Combine logarithms"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to write in partial fractions (M1), B=1/2, C=1/2 A1, integrate (M1), ln terms A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-F",
+      "question": "1",
+      "part": "F",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "12",
+      "task_summary": "Show that a solution to the differential equation may be expressed as x^2 = A(x + y)/(x - y).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "integrate",
+        "substitute_back"
+      ],
+      "method_path": [
+        "Separate variables: ∫ dv/(1 - v^2) = ∫ dx/x",
+        "Integrate using result from (e)",
+        "Apply power rule of logs",
+        "Substitute v = y/x",
+        "Simplify to x^2 = A(x + y)/(x - y)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to separate variables and integrate (M1), correct integration A1, attempt to use power rule of logs (M1), correct expression A1, substitute y/x A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q01-G",
+      "question": "1",
+      "part": "G",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "13",
+      "task_summary": "Show that a solution to the original differential equation is y = (x^2 - A)/(x^2 + A).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "algebraic_manipulation",
+        "solve_for_y"
+      ],
+      "method_path": [
+        "Start from x^2 = A(x + y)/(x - y)",
+        "Clear denominator",
+        "Expand and collect terms",
+        "Isolate y to get y = (x^2 - A)/(x^2 + A)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "x^2 = A(x + y)/(x - y) (A1), attempt to clear denominator M1, attempt to isolate y M1, correct expression A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-A-I",
+      "question": "2",
+      "part": "A-I",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "Find the distance from Bogotá to Moscow using Pythagoras' theorem on a flat surface.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "pythagorean_theorem",
+        "distance_calculation"
+      ],
+      "method_path": [
+        "Apply Pythagoras' theorem: sqrt(12500^2 + 6000^2)",
+        "Compute distance = 13900 km"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to use Pythagoras' theorem (M1) ... =13900 (km) (13865.4...) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-A-II",
+      "question": "2",
+      "part": "A-II",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "Find the bearing of Moscow from Bogotá using inverse trigonometry.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "inverse_trigonometric_ratio",
+        "bearing_calculation"
+      ],
+      "method_path": [
+        "Set up inverse trig ratio, e.g., arctan(12500/6000)",
+        "Identify the correct angle as bearing",
+        "Compute bearing = 064° (64.4°)"
+      ],
+      "accepted_alternatives": [
+        "Use arctan(6000/12500) and adjust to bearing"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to use an appropriate inverse trig ratio (M1) ... identifying the correct angle (M1) ... = 064° OR 064 (64.3589...)° A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-B-I",
+      "question": "2",
+      "part": "B-I",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "14",
+      "task_summary": "Use scalar product to find the angle between position vectors p and n.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "scalar_product",
+        "angle_between_vectors"
+      ],
+      "method_path": [
+        "Compute scalar product p·n = 0",
+        "Conclude angle = 90°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "p.n = 0 M1 so the angle is 90° OR π/2 rads A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-B-II",
+      "question": "2",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "14",
+      "task_summary": "Show that the arc distance between P and N is 3000π km.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length_formula",
+        "circumference_fraction"
+      ],
+      "method_path": [
+        "Use arc length formula s = rθ with θ = π/2",
+        "Compute s = 6000 * π/2 = 3000π km"
+      ],
+      "accepted_alternatives": [
+        "Use fraction of circumference: (90/360) * 2π * 6000"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to use arc length formula s = θr OR 90/360 of circumference (M1) ... = 3π thousand km OR 3000π km AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-C-I",
+      "question": "2",
+      "part": "C-I",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "15",
+      "task_summary": "Find the vector a × p.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product"
+      ],
+      "method_path": [
+        "Compute cross product a × p",
+        "Obtain (0, -36, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to find cross product (e.g. correct except for sign error) (M1) ... (0, -36, 0) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-C-II",
+      "question": "2",
+      "part": "C-II",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "15",
+      "task_summary": "Show that the angle at vertex A in the spherical triangle is 90°.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "scalar_product",
+        "angle_between_vectors"
+      ],
+      "method_path": [
+        "Find a × n = (0, 0, 36)",
+        "Compute scalar product (a × p)·(a × n) = 0",
+        "Conclude angle = 90°"
+      ],
+      "accepted_alternatives": [
+        "Use cross product magnitude: |(a × p) × (a × n)| = |a × p||a × n| sin θ, find sin θ = 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: a × n = (0,0,36) A1 ... (a × p)·(a × n) = 0 A1 ... so angle is 90° AG. METHOD 2: a × n = (0,0,36) A1 ... attempt to use cross product ... sin θ = 1 A1 ... so angle is 90° AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-D",
+      "question": "2",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "16",
+      "task_summary": "Show that θ = 57.3° given the shortest distance from Moscow to Nairobi is 6000 km.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length_formula",
+        "angle_conversion"
+      ],
+      "method_path": [
+        "Use arc length formula s = rθ with s = 6, r = 6",
+        "Solve θ = 1 radian",
+        "Convert to degrees: θ = 57.3°"
+      ],
+      "accepted_alternatives": [
+        "Use proportion: (θ/360) * 2π * 6 = 6"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to use 2πr * θ/360 = s OR s = θr (M1) ... θ = 57.2957... A1 ... θ = 57.3° to 3 significant figures AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-E",
+      "question": "2",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "17-18",
+      "task_summary": "Find the shortest distance from Bogotá to Moscow on the sphere.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.circular_measure"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "scalar_product",
+        "cross_product",
+        "arc_length_formula",
+        "angle_between_vectors"
+      ],
+      "method_path": [
+        "Find angle BOM using scalar product or cosine rule",
+        "Compute angle BOM ≈ 105.673°",
+        "Use arc length formula s = rθ with θ in radians",
+        "Calculate distance ≈ 11.1 thousand km"
+      ],
+      "accepted_alternatives": [
+        "Use cross product to find sin(BOM) and then angle, then arc length"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "METHOD 1: attempt to use scalar product (M1) ... arccos(...) (A1) ... 106° (105.673°) (A1) ... attempt to use arc length (M1) ... 11.1 (11.0660) thousand km A1. METHOD 2: attempt to use cross product (M1) ... sin(...)=0.962818 (A1) ... 106° (105.673°) (A1) ... attempt to use arc length (M1) ... 11.1 thousand km A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-F",
+      "question": "2",
+      "part": "F",
+      "marks": 6,
+      "source_pages": "8",
+      "markscheme_pages": "19",
+      "task_summary": "Find the bearing from Bogotá to Moscow using the method from part (c).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "scalar_product",
+        "angle_between_vectors",
+        "bearing_calculation"
+      ],
+      "method_path": [
+        "Compute b × m",
+        "Compute scalar product (b × m)·(b × p)",
+        "Find angle between vectors using cos θ = ((b × m)·(b × p)) / (|b × m||b × p|)",
+        "Obtain bearing ≈ 29.1°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to calculate b × m (M1) ... (A1) ... attempt to use scalar product to find angle between vectors (M1) ... (A1)(A1) ... bearing is 029.1° (29.0770...°) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

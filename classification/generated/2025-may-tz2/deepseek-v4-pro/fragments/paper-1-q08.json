@@ -1,0 +1,92 @@
+{
+  "question": "8",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Sketch the graph of y = arccos x for -1 ≤ x ≤ 1, indicating the y-intercept and coordinates of the end points.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "identify_intercepts",
+        "identify_endpoints"
+      ],
+      "method_path": [
+        "Sketch the curve of y = arccos x with correct shape within domain [-1, 1]",
+        "Label y-intercept at (0, π/2)",
+        "Label endpoints at (-1, π) and (1, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "For a curve with correct shape within the domain, correct labelled y-intercept and end points. A2. Note: Award A1 for any two of the following provided a curve is seen: correct shape within the domain, correctly labelled y-intercept, correctly labelled end points."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "17-18",
+      "task_summary": "Solve arccos x + arccos(3x) = 3π/2 for x.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_compound_angle_formula",
+        "use_pythagorean_identity",
+        "solve_radical_equation",
+        "check_solutions"
+      ],
+      "method_path": [
+        "Apply compound angle formula for cos(A+B) or sin(A+B)",
+        "Express sin(arccos x) and sin(arccos(3x)) using √(1 - x²) and √(1 - 9x²)",
+        "Substitute known value cos(3π/2)=0 or sin(3π/2)=-1",
+        "Form equation without square roots",
+        "Solve for x, obtaining x = ±1/2",
+        "Reject x = 1/2 using graph from part (a) or domain check, leaving x = -1/2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Use cos(A+B) formula, leading to x = -1/2.",
+        "METHOD 2: Use sin(A+B) formula, leading to x = -1/2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 1: recognizing to use compound angle rule for cos(A+B) (M1); valid attempt to find sin(arccos x) or sin(arccos 3x) in terms of x (M1); use of the identity sin²θ = 1 - cos²θ OR use of a right-angled triangle ... A1; cos(3π/2)=0 (seen anywhere) (A1); attempt to write an equation in x without the square roots (M1); x = ±1/2 ... x = -1/2 A1."
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 2: recognizing to use compound angle rule for sin(A+B) (M1); valid attempt to find sin(arccos x) or sin(arccos 3x) in terms of x (M1); use of the identity sin²θ = 1 - cos²θ OR use of a right-angled triangle ... A1; sin(3π/2)=-1 (seen anywhere) (A1); attempt to write an equation in x without the square roots (M1); x = ±1/2 ... x = -1/2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

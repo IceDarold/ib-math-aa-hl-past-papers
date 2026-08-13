@@ -1,0 +1,1198 @@
+{
+  "session": "November 2025",
+  "zone": "TZ1",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the 13th term of an arithmetic sequence given the 1st term 36 and 5th term 12.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "find_common_difference",
+        "apply_term_formula"
+      ],
+      "method_path": [
+        "Find common difference d using u5 = u1 + 4d",
+        "Calculate u13 using u13 = u1 + 12d"
+      ],
+      "accepted_alternatives": [
+        "Use u13 = u5 + 8d after finding d"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempt to find the common difference (M1); 12 = 36 + 4d OR (12-36)/(5-1); d = -6 (A1); attempt to use the term formula (M1); u13 = u1 + 12(-6) OR u5 + 8(-6); u13 = -36 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find n such that the sum of the first n terms of the arithmetic sequence is zero.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "set_sum_to_zero",
+        "solve_for_n"
+      ],
+      "method_path": [
+        "Set sum formula Sn = n/2 [2u1 + (n-1)d] = 0",
+        "Solve for n, discarding n=0"
+      ],
+      "accepted_alternatives": [
+        "Recognize symmetry: terms sum to zero when positive and negative terms cancel, giving n=13"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "METHOD 1: attempt to set Sn = 0 (M1); n/2 [2(36) + (n-1)(-6)] = 0 OR n/2 (36 + un) = 0 => un = -36; n = 13 A1. METHOD 2: attempt to recognize symmetry (M1); 36+30+...+0+...-30-36; n = 13 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Given x > 7, show that (x(x^2-1))/((x^2-8x+7)(x+1)) = x/(x-7).",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "factorization",
+        "cancellation"
+      ],
+      "method_path": [
+        "Factorize x^2-1 as (x-1)(x+1)",
+        "Factorize x^2-8x+7 as (x-7)(x-1)",
+        "Cancel common factors (x-1) and (x+1)",
+        "Obtain x/(x-7)"
+      ],
+      "accepted_alternatives": [
+        "Factorize and cancel in one step: (x(x-1)(x+1))/((x-7)(x-1)(x+1)) = x/(x-7)",
+        "Rewrite as (x(x^2-1))/((x-7)(x-1)(x+1)) and cancel"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to factorize at least one expression (M1); correct factorization and cancellation leading to x/(x-7) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Solve log_2[x(x^2-1)] - 1 = log_2[(x^2-8x+7)(x+1)].",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "logarithm_properties",
+        "quotient_rule",
+        "exponentiation",
+        "algebraic_simplification",
+        "solving_linear_equation"
+      ],
+      "method_path": [
+        "Use log property: log_2 A - log_2 B = log_2(A/B)",
+        "Rewrite 1 as log_2 2",
+        "Combine logs: log_2[(x(x^2-1))/((x^2-8x+7)(x+1))] = log_2 2",
+        "Use result from part (a) to simplify left side to log_2(x/(x-7))",
+        "Equate arguments: x/(x-7) = 2",
+        "Solve for x: x = 14"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Rewrite 1 as log_2 2, use quotient rule to get log_2[(x(x^2-1))/2] = log_2[(x^2-8x+7)(x+1)], then equate arguments and simplify to x/(x-7) = 2, giving x = 14"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: attempt to use subtraction/quotient property of logs (M1); valid attempt to rewrite equation with or without logs (M1); x/(x-7) = 2 (A1); x = 14 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the value of c and a for the parabola y = ax^2 + c passing through P(0,9) and Q(3,0).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solving_linear_equation"
+      ],
+      "method_path": [
+        "Write down c = 9 from point P(0,9).",
+        "Substitute Q(3,0) into y = ax^2 + c with c = 9.",
+        "Solve 0 = 9a + 9 to get a = -1."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(i) c = 9 A1; (ii) attempt to substitute (3,0) into y = ax^2 + c with their c (M1); 0 = 9a + 9; a = -1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "9-10",
+      "task_summary": "Find the area of the region enclosed by the line y = -3x + 9 and the parabola y = -x^2 + 9.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "area_between_curves",
+        "subtraction_of_areas"
+      ],
+      "method_path": [
+        "Set up integral of (parabola - line) from x=0 to x=3: ∫[0,3] ((-x^2+9) - (-3x+9)) dx = ∫[0,3] (-x^2+3x) dx.",
+        "Integrate: [-(1/3)x^3 + (3/2)x^2] from 0 to 3.",
+        "Evaluate at 3: -(1/3)(27) + (3/2)(9) = -9 + 27/2 = 9/2.",
+        "Subtract value at 0 (0) to get area = 9/2."
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Evaluate ∫[0,3] (-x^2+9) dx and subtract triangle area (1/2*3*9) or evaluate ∫[0,3] (-3x+9) dx separately and subtract."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9-10",
+          "basis": "METHOD 1: attempt to subtract areas (M1); ∫[0,3] (-x^2+3x) dx; correct integration (A1); attempt to substitute limits (M1); Area = 9/2 A1. METHOD 2: correct integration (A1); substitute limits (M1); subtract integrals (M1); Area = 9/2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Show that p = -1 given that the vertex A of f(x) = -x^2 + 4x + p lies on the line y = 2x - 1.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "vertex_x_coordinate",
+        "substitution",
+        "solve_for_p"
+      ],
+      "method_path": [
+        "Find x-coordinate of vertex A: x = -b/(2a) = -4/(2*(-1)) = 2",
+        "Substitute x = 2 into line equation y = 2x - 1 to get y = 3",
+        "Substitute x = 2 into f(x) = -x^2 + 4x + p, set equal to 3, solve for p: -4 + 8 + p = 3 => p = -1"
+      ],
+      "accepted_alternatives": [
+        "Find x-coordinate of vertex A = 2, substitute into f(x) to get f(2) = p + 4, set equal to 2(2)-1 = 3, solve p = -1.",
+        "Complete the square: f(x) = -(x-2)^2 + 4 + p, vertex A(2, 4+p), substitute into line: 4+p = 2(2)-1 => p = -1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: x-coordinate of the vertex at A is 2 (A1); attempt to substitute their x-coordinate into equation of line (M1); 2(2)-1=3; 3 = -2^2 + 4(2) + p; p = -1 AG. METHOD 2: x-coordinate of the vertex at A is 2 (A1); attempt to substitute their x-coordinate into f(x) (M1); f(2) = p+4; p+4 = 2(2)-1; p = -1 AG. METHOD 3: attempt to complete the square on f(x) (M1); -(x-2)^2 + 4 + p; A x=2 OR A y=4+p (A1); 4+p = 2(2)-1; p = -1 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "12-13",
+      "task_summary": "Find the value of q given that the vertex B of g(x) = x^2 + qx - 1 lies on the line y = 2x - 1.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "vertex_x_coordinate",
+        "substitution",
+        "solve_quadratic",
+        "discard_zero"
+      ],
+      "method_path": [
+        "Find x-coordinate of vertex B: x = -q/2",
+        "Substitute x = -q/2 into line equation y = 2x - 1 to get y = -q - 1",
+        "Substitute x = -q/2 into g(x) = x^2 + qx - 1, set equal to -q - 1, simplify to q^2 - 4q = 0",
+        "Solve quadratic: q(q - 4) = 0, discard q = 0 (non-zero constant), so q = 4"
+      ],
+      "accepted_alternatives": [
+        "Find x-coordinate of vertex B = -q/2, substitute into g(x) to get y = -q^2/4 - 1, set equal to 2(-q/2)-1 = -q-1, solve q^2 - 4q = 0, q = 4.",
+        "Complete the square: g(x) = (x + q/2)^2 - q^2/4 - 1, vertex B(-q/2, -q^2/4 - 1), substitute into line: -q^2/4 - 1 = 2(-q/2) - 1 => q^2 - 4q = 0, q = 4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12-13",
+          "basis": "METHOD 1: x-coordinate is -q/2 (A1); attempt to find intersection points, equating g(x) and 2x-1 (M1); x^2 + qx - 1 = 2x - 1; attempt to substitute their x-coordinate (M1); (-q/2)^2 + q(-q/2) - 1 = 2(-q/2) - 1; q^2 - 4q = 0 (A1); q = 4 (since q ≠ 0) A1. METHOD 2: x-coordinate is -q/2 (A1); EITHER attempt to substitute their x-coordinate into y=2x-1 (M1); 2(-q/2)-1 => B(-q/2, -q-1); attempt to substitute their coordinates of B into g(x) (M1); -q-1 = (-q/2)^2 + q(-q/2) - 1; OR attempt to substitute their x-coordinate into g(x) (M1); (-q/2)^2 + q(-q/2) - 1 => B(-q/2, -q^2/4 - 1); attempt to substitute their coordinates of B into the line (M1); -q^2/4 - 1 = 2(-q/2) - 1; THEN q^2 - 4q = 0 (A1); q = 4 (since q ≠ 0) A1. METHOD 3: attempt to complete the square on g(x) (M1); (x + q/2)^2 - q^2/4 - 1; B x = -q/2 OR y = -q^2/4 - 1 (A1); attempt to substitute their coordinates of B into equation of line (M1); -q^2/4 - 1 = 2(-q/2) - 1; q^2 - 4q = 0 (A1); q = 4 (since q ≠ 0) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "14-15",
+      "task_summary": "Find the Maclaurin series coefficients a and b for (1-x)^(-4) given the first four terms 1 + a x + b x^2 + 20 x^3.",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "maclaurin_series",
+        "differentiation",
+        "binomial_expansion",
+        "coefficient_extraction"
+      ],
+      "method_path": [
+        "Differentiate (1-x)^(-4) to find f'(x) = 4(1-x)^(-5)",
+        "Evaluate f'(0) = 4 to show a = 4",
+        "Differentiate again to find f''(x) = 20(1-x)^(-6)",
+        "Evaluate f''(0) = 20",
+        "Use Maclaurin formula: coefficient of x^2 is f''(0)/2! = 10, so b = 10"
+      ],
+      "accepted_alternatives": [
+        "Use binomial expansion: (1-x)^(-4) = 1 + (-4)(-x) + [(-4)(-5)/2!](-x)^2 + ... = 1 + 4x + 10x^2 + 20x^3, giving a=4, b=10."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: f'(x)=4(1-x)^(-5), substitution x=0 gives a=4. f''(x)=20(1-x)^(-6), f''(0)=20, b=20/2!=10. METHOD 2: binomial expansion to at least two terms, correct expansion gives a=4, b=10."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "15",
+      "task_summary": "Estimate the car's value four years ago using the Maclaurin expansion from part (a) with depreciation rate 10% per year and current value $1000.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [
+        "calculus.series"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "substitution",
+        "maclaurin_series_application",
+        "depreciation_model"
+      ],
+      "method_path": [
+        "Recognize that the value four years ago is 1000 * (1 - 0.1)^(-4)",
+        "Substitute x = 0.1 into the expansion 1 + 4x + 10x^2 + 20x^3",
+        "Calculate 1 + 4(0.1) + 10(0.1)^2 + 20(0.1)^3 = 1.52",
+        "Multiply by 1000 to get $1520"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to substitute 0.1 into the expansion (M1), 1.52, 1520 (dollars) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "16-18",
+      "task_summary": "Find α and β for which the linear system has infinitely many solutions.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "row_reduction",
+        "elimination",
+        "infinite_solutions",
+        "parameter_determination"
+      ],
+      "method_path": [
+        "Write augmented matrix",
+        "Row reduce to echelon form",
+        "Set third row coefficients to zero for consistency",
+        "Solve for α and β"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Eliminate one variable, substitute into third equation, set coefficients to zero.",
+        "METHOD 3: Add/subtract equations, compare coefficients with third equation.",
+        "METHOD 4: Vector approach: find direction vector of intersection of first two planes, require normal of third plane perpendicular to it, then find β using a common point.",
+        "METHOD 5: Find general point on line of intersection of first two planes, substitute into third plane, require coefficient of parameter zero and constant term equal to β."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1 Row Reduction: attempt to reduce a matrix or eliminate one variable (M1); two correct rows or equivalent equations A1A1; correct third row or equivalent equation A1; equating the third row coefficients to zero (M1); α = 2 and β = 10 A1."
+        },
+        {
+          "markscheme_pages": "16-17",
+          "basis": "METHOD 2 Writing an equation in one variable: attempt to eliminate either x or z using the first two equations (M1); one correct equation A1; correct substitution into the third equation to create an equation in either x or z A2; attempt to set coefficients equal to zero for infinite solutions (M1); α = 2 and β = 10 A1."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 3 Subtracting and comparing equations: attempt to add or subtract two equations (M1); A2; attempt to compare coefficients with the third equation (M1); α = 2 and β = 10 A1A1."
+        },
+        {
+          "markscheme_pages": "17-18",
+          "basis": "METHOD 4 Vector approach: attempt to find direction vector of line of intersection using π1 and π2 (M1); d = (2, -3, 2) A1; normal of π3 is perpendicular to d (M1); α = 2 A1; correct substitution of a point common to the first two planes into the third plane A1; β = 10 A1."
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 5 Finding a general point on the line of intersection: attempt to find intersection of π1 and π2 (M1); x = 4 + 2t, y = 3 - 3t, z = 2t A1A1; correct substitution of general point into π3 A1; recognizing that the coefficient of t must be zero OR the constant term must be β (M1); α = 2 and β = 10 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "19",
+      "task_summary": "Solve the differential equation dy/dx = y^2 cos^2 x to find the value of a in the solution form y = a/(2x + sin 2x + b).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "trigonometric_identity",
+        "integration",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Separate variables: ∫ y^{-2} dy = ∫ cos^2 x dx",
+        "Apply identity cos^2 x = (1 + cos 2x)/2",
+        "Integrate both sides: -1/y = (1/2)(x + (1/2) sin 2x) + C",
+        "Rearrange to y = -4/(2x + sin 2x + C')",
+        "Compare with given form to obtain a = -4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to separate variables (M1); ∫ y^{-2} dy = ∫ cos^2 x dx; attempt to use an identity for cos^2 x (M1); (1/2)(1+cos2x); -1/y = 1/2(x + 1/2 sin 2x) + C A1A1; -1/y = (2x + sin 2x)/4 + C OR y = -4/(2x + sin 2x + C) (A1); a = -4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "19",
+      "task_summary": "Given y = 1 when x = π/2, find the value of b using the solution from part (a).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solving_for_constant"
+      ],
+      "method_path": [
+        "Substitute x = π/2, y = 1 into y = -4/(2x + sin 2x + b)",
+        "Solve for b: 1 = -4/(π + 0 + b) → b = -4 - π"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to substitute initial conditions with their a (M1); 1 = -4/(π + 0 + b); b = -4 - π A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Show that sin 3θ ≡ 3 sin θ − 4 sin³ θ.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "angle_sum_formula",
+        "double_angle_identity",
+        "pythagorean_identity",
+        "algebraic_simplification",
+        "de_moivre_theorem",
+        "binomial_expansion",
+        "equating_imaginary_parts"
+      ],
+      "method_path": [
+        "Express sin 3θ as sin(2θ + θ) using angle sum formula",
+        "Apply double angle identities for sin 2θ and cos 2θ",
+        "Use Pythagorean identity to express cos² θ in terms of sin θ",
+        "Simplify to 3 sin θ − 4 sin³ θ"
+      ],
+      "accepted_alternatives": [
+        "Use de Moivre's theorem: (cos θ + i sin θ)³ = cos 3θ + i sin 3θ, expand LHS, equate imaginary parts, and simplify using cos² θ = 1 − sin² θ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 1: attempt to use angle sum formula (M1), sin 2θ cos θ + cos 2θ sin θ (A1), attempt to use a double angle identity or the Pythagorean identity (M1), 2 sin θ cos² θ + (1 − 2 sin² θ) sin θ OR 2 sin θ (1 − sin² θ) + cos 2θ sin θ, leading to 3 sin θ − 4 sin³ θ (A1). METHOD 2: (cos θ + i sin θ)³ = cos 3θ + i sin 3θ (A1), attempt to expand LHS (M1), comparing imaginary parts (M1), sin 3θ = 3 cos² θ sin θ − sin³ θ (A1), then 3 sin θ − 4 sin³ θ."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Describe a sequence of transformations that maps the graph of y = sin θ onto the graph of y = (8 sin³ θ + 6 sin θ) / (6 sin θ).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "algebraic_simplification",
+        "trigonometric_identity",
+        "vertical_stretch",
+        "horizontal_stretch",
+        "horizontal_translation"
+      ],
+      "method_path": [
+        "Simplify the given expression using the identity from part (a) to obtain y = 2 sin(3θ + π/2) or y = 2 sin(3(θ + π/6))",
+        "Identify vertical stretch by factor 2",
+        "Identify horizontal stretch by factor 1/3",
+        "Identify horizontal translation by π/6 to the left (or π/2 to the left before horizontal stretch)"
+      ],
+      "accepted_alternatives": [
+        "Horizontal translation by π/2 to the left followed by horizontal stretch by factor 1/3."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to rewrite expression using result of part (a) (M1), y = 2 sin(3θ + π/2) or y = 2 sin(3(θ + π/6)), vertical stretch factor 2 (A1), horizontal stretch factor 1/3 followed by horizontal translation π/6 to the left (A2) OR horizontal translation π/2 to the left followed by horizontal stretch factor 1/3 (A2). Note: Award A1A0 for correct horizontal transformations specified in the wrong order."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find the values of a and b where the graph of y=f(x) has horizontal tangents, given f'(x)=3x^2+12x-15.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_zero",
+        "solve_quadratic",
+        "identify_roots"
+      ],
+      "method_path": [
+        "Set f'(x)=0",
+        "Solve 3x^2+12x-15=0",
+        "Identify a=-5, b=1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognition that f'(x)=0 (M1); attempt to solve quadratic equation (M1); a=-5, b=1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "State whether there is a local maximum or minimum at x=a, with a reason based on the sign of the first derivative.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "first_derivative_test",
+        "sign_change"
+      ],
+      "method_path": [
+        "Observe sign of f'(x) changes from positive to negative at x=a",
+        "Conclude local maximum"
+      ],
+      "accepted_alternatives": [
+        "f'(x)/gradient changes from positive to negative",
+        "f(x) changes from increasing to decreasing",
+        "f''(a)=-18 (accept f''(a)<0)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(local) maximum A1; f'(x)/gradient changes from positive to negative (at x=a) OR f(x) changes from increasing to decreasing (at x=a) OR f''(a)=-18 (accept f''(a)<0) R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find the value of c where the second derivative f''(x) is zero.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "second_derivative",
+        "set_to_zero",
+        "solve_linear"
+      ],
+      "method_path": [
+        "Find f''(x)=6x+12",
+        "Set f''(c)=0",
+        "Solve 6c+12=0 to get c=-2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "f''(x)=6x+12 (A1); 6c+12=0 (A1); c=-2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-D",
+      "question": "9",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21-22",
+      "task_summary": "State whether there is a point of inflexion at x=c, with a reason based on the sign of the second derivative.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "second_derivative_test",
+        "sign_change",
+        "concavity_change"
+      ],
+      "method_path": [
+        "Observe sign of f''(x) changes at x=c",
+        "Conclude point of inflexion"
+      ],
+      "accepted_alternatives": [
+        "f''(x)/second derivative changes sign at x=c",
+        "concavity (of f) changes at x=c",
+        "f'(x)/gradient decreasing to the left of c, and increasing to the right of c"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21-22",
+          "basis": "yes (there is a point of inflexion at x=c) A1; f''(x)/second derivative changes sign at x=c OR concavity (of f) changes at x=c OR f'(x)/gradient decreasing to the left of c, and increasing to the right of c R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q09-E",
+      "question": "9",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "22",
+      "task_summary": "Given f(-2)=36, find f(x) by integrating f'(x) and using the point to determine the constant of integration.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "indefinite_integral",
+        "constant_of_integration",
+        "substitute_point"
+      ],
+      "method_path": [
+        "Integrate f'(x) to get x^3+6x^2-15x+C",
+        "Substitute x=-2, f(-2)=36",
+        "Solve for C=-10",
+        "Write f(x)=x^3+6x^2-15x-10"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "recognize to find ∫f'(x)dx (M1); x^3+6x^2-15x+C (A1); substitution of (-2,36) into their integrated expression (must contain +C) (M1); C=-10 A1; f(x)=x^3+6x^2-15x-10"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-A-I",
+      "question": "10",
+      "part": "A-I",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Show that the first four terms in the binomial expansion of (1+x^2)^(-1) are 1 - x^2 + x^4 - x^6.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "negative_exponent",
+        "series_expansion"
+      ],
+      "method_path": [
+        "Apply binomial theorem with n=-1 to (1+x^2)^(-1)",
+        "Expand to four terms: 1 + (-1)(x^2) + [(-1)(-2)/2!](x^2)^2 + [(-1)(-2)(-3)/3!](x^2)^3",
+        "Simplify to 1 - x^2 + x^4 - x^6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "attempt to create binomial expansion to four terms with n=-1 (M1); expansion shown with A1 for third term and A1 for fourth term; final result 1 - x^2 + x^4 - x^6 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-A-II",
+      "question": "10",
+      "part": "A-II",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find an approximation for the integral of 1/(1+x^2) dx up to and including the term in x^7.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "termwise_integration",
+        "series_expansion",
+        "antiderivative"
+      ],
+      "method_path": [
+        "Integrate the series 1 - x^2 + x^4 - x^6 termwise",
+        "Obtain x - x^3/3 + x^5/5 - x^7/7 + C"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "Award A2 for x - x^3/3 + x^5/5 - x^7/7 + C; Note: Award A1A0 for any three correct terms."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-B-I",
+      "question": "10",
+      "part": "B-I",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Expand 1/sqrt(1-x^2) up to and including the term in x^4.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "negative_exponent",
+        "series_expansion"
+      ],
+      "method_path": [
+        "Apply binomial theorem with n=-1/2 to (1-x^2)^(-1/2)",
+        "Expand to three terms: 1 + (-1/2)(-x^2) + [(-1/2)(-3/2)/2!](-x^2)^2",
+        "Simplify to 1 + (1/2)x^2 + (3/8)x^4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "attempt to create binomial expansion the term in x^4 with n=-1/2 (M1); expansion shown with (A1) for first two terms and (A1) for third term; final result 1 + (1/2)x^2 + (3/8)x^4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-B-II",
+      "question": "10",
+      "part": "B-II",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find a polynomial expression for the integral of 1/sqrt(1-x^2) dx up to and including the term in x^5.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "termwise_integration",
+        "series_expansion",
+        "antiderivative"
+      ],
+      "method_path": [
+        "Integrate the series 1 + (1/2)x^2 + (3/8)x^4 termwise",
+        "Obtain x + (1/6)x^3 + (3/40)x^5 + C"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "Award A1 for x + (1/6)x^3 + (3/40)x^5 + C"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "24",
+      "task_summary": "Use the result from part (b)(ii) to find the value of k in the approximation arcsin(1/2) ≈ 25/48 + k/1280.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "series_evaluation",
+        "antiderivative"
+      ],
+      "method_path": [
+        "Recognize that ∫ 1/√(1-x^2) dx = arcsin x + C",
+        "Substitute x=1/2 into the antiderivative from (b)(ii): arcsin(1/2) ≈ (1/2) + (1/6)(1/2)^3 + (3/40)(1/2)^5",
+        "Simplify to 1/2 + 1/48 + 3/1280 = 25/48 + 3/1280",
+        "Identify k=3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "∫ 1/√(1-x^2) dx = arcsin x (seen anywhere) (A1); attempt to substitute x=1/2 into their antiderivative (M1); arcsin(1/2) ≈ 1/2 + 1/48 + 3/1280 = 25/48 + 3/1280 A1; k=3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "24",
+      "task_summary": "Find an approximation for π in the form p/640 using the result from part (c).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "algebraic_manipulation",
+        "approximation"
+      ],
+      "method_path": [
+        "Recall arcsin(1/2) = π/6",
+        "Equate π/6 to the approximation from (c): π/6 ≈ 25/48 + 3/1280",
+        "Solve for π: π ≈ 6*(25/48 + 3/1280) = 25/8 + 18/1280 = 4000/1280 + 18/1280 = 4018/1280",
+        "Simplify to 2009/640, so p=2009"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "arcsin(1/2) = π/6 (seen anywhere) (A1); equating their value of arcsin(1/2) to their expression from (c) (M1); π ≈ 6*(25/48 + 3/1280) = 25/8 + 18/1280 = 4000/1280 + 18/1280 (A1); π ≈ 2009/640, p=2009 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Show that w = sqrt(3) + i by rationalizing the denominator.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "multiply_by_conjugate",
+        "simplify_complex_fraction"
+      ],
+      "method_path": [
+        "Multiply numerator and denominator by conjugate of denominator",
+        "Simplify to obtain sqrt(3) + i"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to multiply by conjugate M1; 4i/(1+i sqrt(3)) * (1-i sqrt(3))/(1-i sqrt(3)) = (4 sqrt(3) + 4i)/4, (i(1-i sqrt(3))) A1; w = sqrt(3) + i AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Find |w| and arg w.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "modulus_of_complex_number",
+        "argument_of_complex_number"
+      ],
+      "method_path": [
+        "Calculate modulus: sqrt((sqrt(3))^2 + 1^2) = 2",
+        "Calculate argument: arctan(1/sqrt(3)) = pi/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(b)(i) attempt to find either |w| or arg w (M1); |w| = sqrt(3+1) OR arctan(1/sqrt(3)) OR labelled diagram; |w| = 2 A1; (ii) arg w = pi/6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Use De Moivre's theorem to find the two square roots of w in the form re^(iθ).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "de_moivres_theorem",
+        "nth_roots_of_complex_number"
+      ],
+      "method_path": [
+        "Express w in polar form: 2e^(iπ/6)",
+        "Apply De Moivre's theorem with n=1/2 to get first root: sqrt(2)e^(iπ/12)",
+        "Add π to argument to get second root: sqrt(2)e^(i(π/12+π)) = sqrt(2)e^(i13π/12) = sqrt(2)e^(-i11π/12)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to find a root using de Moivre's theorem with n=1/2 (M1); sqrt(2)e^(iπ/12) A1; attempt to find second root by adding or subtracting π from their argument (M1); sqrt(2)e^(-11πi/12) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 8,
+      "source_pages": "14",
+      "markscheme_pages": "26-27",
+      "task_summary": "Given w = (a+bi)^2 with a,b>0, show a^2 = (sqrt(3)+1)/2 and find b^2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_binomial",
+        "equate_real_and_imaginary_parts",
+        "solve_simultaneous_equations",
+        "quadratic_formula"
+      ],
+      "method_path": [
+        "Expand (a+bi)^2 = a^2 - b^2 + 2abi",
+        "Equate to sqrt(3) + i: a^2 - b^2 = sqrt(3), 2ab = 1",
+        "Substitute b = 1/(2a) into first equation",
+        "Obtain 4a^4 - 4sqrt(3)a^2 - 1 = 0",
+        "Solve quadratic in a^2: a^2 = (4sqrt(3) ± sqrt(48+16))/8 = (sqrt(3) ± 1)/2",
+        "Since a>0, a^2 = (sqrt(3)+1)/2",
+        "Find b^2 = a^2 - sqrt(3) = (sqrt(3)-1)/2"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use polar form w = 2e^(iπ/6), then a+bi = sqrt(2)e^(iπ/12), equate real part a = sqrt(2)cos(π/12), square and use double angle to get a^2 = (sqrt(3)+1)/2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26-27",
+          "basis": "(d)(i) METHOD 1: attempt to expand and equate to sqrt(3)+i (M1); a^2 - b^2 + 2abi = sqrt(3) + i; at least one correct equation A1; a^2 - b^2 = sqrt(3) OR 2ab = 1; substituting b = 1/(2a) (M1); a^2 - (1/(2a))^2 = sqrt(3); 4a^4 - 4sqrt(3)a^2 - 1 = 0 A1; attempt to solve quadratic in a^2 M1; a^2 = (4sqrt(3) ± sqrt(48+16))/8 = (sqrt(3) ± 1)/2; since a^2 > 0 R1; a^2 = (sqrt(3)+1)/2 AG; METHOD 2: w = a+bi (A1); a+bi = sqrt(2)(cos(π/12) + i sin(π/12)) A1; attempt to equate Re(w) M1; a = sqrt(2)cos(π/12); a^2 = 2cos^2(π/12) A1; attempt to use double angle formula (M1); cos2α = 2cos^2α - 1; a^2 = 2cos^2(π/12) = cos(π/6)+1 = sqrt(3)/2 + 1 A1; a^2 = (sqrt(3)+1)/2 AG; (ii) attempt to substitute a^2 into a^2 - b^2 = sqrt(3) OR b^2 = 1/(4a^2) (M1); b^2 = (sqrt(3)+1)/2 - sqrt(3) = (sqrt(3)-1)/2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "28",
+      "task_summary": "Express tan(π/12) in the form p + q sqrt(3).",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "argument_of_complex_number",
+        "tangent_ratio",
+        "rationalize_denominator"
+      ],
+      "method_path": [
+        "Recognize that tan(π/12) = b/a from the complex number a+bi = sqrt(2)e^(iπ/12)",
+        "Substitute a = sqrt((sqrt(3)+1)/2), b = sqrt((sqrt(3)-1)/2)",
+        "Simplify tan(π/12) = sqrt((sqrt(3)-1)/(sqrt(3)+1))",
+        "Rationalize to get 2 - sqrt(3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "attempt to set up an equation using an argument of π/12 (M1); tan(π/12) = b/a (A1); substitution of the given a and their b M1; sqrt((sqrt(3)-1)/2) / sqrt((sqrt(3)+1)/2) = sqrt((sqrt(3)-1)/(sqrt(3)+1)) A1; tan(π/12) = 2 - sqrt(3), accept p=2, q=-1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "question": "2",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the period of f(x) = a tan(2x) + b.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "period_of_tangent",
+        "coefficient_effect"
+      ],
+      "method_path": [
+        "Identify coefficient of x in tan(2x) as 2.",
+        "Apply period formula for tangent: period = π / |coefficient|.",
+        "Compute period = π/2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "period is π/2 (1.57079..., 1.57) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find a and b given graph passes through (π/12, 5) and (π/3, 7).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "system_of_equations",
+        "tangent_values",
+        "solving_linear_system"
+      ],
+      "method_path": [
+        "Substitute x = π/12, f(x) = 5 into f(x) = a tan(2x) + b to get a tan(π/6) + b = 5.",
+        "Substitute x = π/3, f(x) = 7 into f(x) = a tan(2x) + b to get a tan(2π/3) + b = 7.",
+        "Evaluate tan(π/6) = 1/√3 and tan(2π/3) = -√3.",
+        "Obtain system: a/√3 + b = 5, -a√3 + b = 7.",
+        "Solve system to find a = -√3/2, b = 11/2."
+      ],
+      "accepted_alternatives": [
+        "Work with x values converted to degrees."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to substitute ... to obtain two equations (M1)"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "a tan(π/6) + b = 5 and a tan(2π/3) + b = 7 ⇒ a/√3 + b = 5 and -a√3 + b = 7"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "a = -√3/2 (0.866025..., 0.866) A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "b = 11/2 (5.5) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

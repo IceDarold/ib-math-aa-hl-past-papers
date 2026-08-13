@@ -1,0 +1,289 @@
+{
+  "question": "11",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-A-I",
+      "question": "11",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Evaluate the definite integral of f(t) from 2.25 to 4.5.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "trigonometric_integration"
+      ],
+      "method_path": [
+        "Set up integral of f(t) from 2.25 to 4.5",
+        "Integrate using antiderivative involving sine",
+        "Evaluate to get 3/7 or 0.429"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "A1 for 3/7 or 0.428571... or 0.429"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-A-II",
+      "question": "11",
+      "part": "A-II",
+      "marks": 1,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Write down the mode of T.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "mode_from_graph"
+      ],
+      "method_path": [
+        "Identify mode as t-value at maximum of pdf",
+        "State mode = 4.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "A1 for mode of T = 4.5"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-A-III",
+      "question": "11",
+      "part": "A-III",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Determine which is greater, the mode or the median of T, justifying your answer.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "median_comparison",
+        "probability_inequality"
+      ],
+      "method_path": [
+        "Compare P(T < 4.5) to 0.5",
+        "Conclude median > mode because P(T < 4.5) < 0.5"
+      ],
+      "accepted_alternatives": [
+        "P(T > 4.5) > 0.5",
+        "P(T < 4.5) < P(T > 4.5)",
+        "median = 4.69"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "A1 for the median is greater; R1 for justification: P(T<4.5)<0.5 OR P(T>4.5)>0.5 OR P(T<4.5)<P(T>4.5) OR median=4.69"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Find the probability that a randomly chosen runner is a fast runner (finishes in 3.5 hours or less).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "probability_from_pdf"
+      ],
+      "method_path": [
+        "Set up integral of f(t) from 2.25 to 3.5",
+        "Evaluate to get 0.103749...",
+        "Round to 0.104"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1 for recognition of need to integrate f; A1 for 0.104"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Find the probability that a fast runner chosen at random finishes in 3 hours or less.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "definite_integral"
+      ],
+      "method_path": [
+        "Set up conditional probability P(T ≤ 3 | T ≤ 3.5)",
+        "Compute P(T ≤ 3) and P(T ≤ 3.5) via integration",
+        "Divide to get 0.238"
+      ],
+      "accepted_alternatives": [
+        "P(T < 3) / P(T < 3.5)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1 for attempt to use formula for conditional probability; (A1) for 0.0247152.../0.103749...; A1 for 0.238"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Find the lower quartile of T.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quartile_from_cdf",
+        "definite_integral",
+        "trigonometric_equation"
+      ],
+      "method_path": [
+        "Set up integral equation ∫_{2.25}^{q} f(t) dt = 0.25",
+        "Integrate to get expression involving sine",
+        "Solve for q to get 4.01"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for recognition that lower quartile q satisfies ∫_{2.25}^{q} f(t) dt = 0.25; (A1) for correct integral equation; A1 for q = 4.01"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Determine the values of a and b to the nearest integer given E(P)=100, max score 150, and E(T)=4.723.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "linear_transformation",
+        "expected_value",
+        "system_of_equations"
+      ],
+      "method_path": [
+        "Write E(P) = a - b E(T) = 100",
+        "Recognize max score occurs at min t = 2.25: a - 2.25b = 150",
+        "Solve system for a and b",
+        "Round to nearest integer: a=195, b=20"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for attempt to find expected value for transformed linear variable; (A1) for 100 = a - 4.723b; M1 for recognition that max score is achieved with fastest time t=2.25; (A1) for 150 = a - 2.25b; A1 for a=195, b=20"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Find Var(P) given Var(T)=0.906.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "variance_of_linear_transformation"
+      ],
+      "method_path": [
+        "Apply Var(P) = b^2 Var(T)",
+        "Substitute b=20.2183... and Var(T)=0.906",
+        "Compute to get 370"
+      ],
+      "accepted_alternatives": [
+        "Any answer rounding to 362-370 based on less accurate b"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for attempt to find variance for transformed linear variable; A1 for Var(P)=370 (accept 362-370)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

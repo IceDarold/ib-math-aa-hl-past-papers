@@ -1,0 +1,64 @@
+{
+  "question": "6",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 6,
+      "source_pages": "8",
+      "markscheme_pages": "13-14",
+      "task_summary": "Find the radius r of a circle given the area of a shaded segment P = 12.8 cm² and the ratio of areas P:Q = 3:5, where Q is the triangle in sector OAB with central angle θ.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "ratio_application",
+        "area_of_sector",
+        "area_of_triangle",
+        "area_of_segment",
+        "substitution",
+        "solving_equation",
+        "numerical_solution"
+      ],
+      "method_path": [
+        "Use ratio P:Q = 3:5 to find area of triangle Q = (5/3)*12.8 = 21.3333...",
+        "Find area of sector = P + Q = 34.1333...",
+        "Write equation for sector area: (1/2) r^2 θ = 34.1333...",
+        "Write equation for triangle area: (1/2) r^2 sin θ = 21.3333...",
+        "Eliminate r^2 to get equation in θ: (θ - sin θ)/θ = 3/8 or equivalent",
+        "Solve numerically for θ ≈ 1.59934...",
+        "Substitute θ into segment area formula (1/2) r^2 (θ - sin θ) = 12.8 and solve for r ≈ 6.53"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Use sector area = 34.1333... and triangle area = 21.3333... to form equations, then eliminate r^2 or θ to solve.",
+        "METHOD 2: Use segment area formula and ratio to get equation in θ only, solve for θ, then find r.",
+        "METHOD 3: Recognize segment area = (3/8) sector area, use segment formula, eliminate r^2 to get equation in θ, solve for θ, then find r."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: recognising segment area / triangle area = 3/5 (M1); triangle area = 21.3333... OR sector area = 34.1333... A1; correct equation in r and θ (A1); correct equation in one variable A1; attempt to solve (M1); r = 6.53 A1."
+        },
+        {
+          "markscheme_pages": "13-14",
+          "basis": "METHOD 2: recognising ratio (M1); segment area formula (A1); correct equation without r A1; θ = 1.59934... (A1); attempt to solve for r (M1); r = 6.53 A1."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 3: recognising segment area = 3/8 × sector area (M1); segment area formula (A1); correct equation without r A1; θ = 1.59934... (A1); attempt to solve for r (M1); r = 6.53 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "question": "7",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Write the integer 3 in the form e^a where a ∈ ℝ.",
+      "primary_topic": "number_algebra.exponential_models",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "exponentiate",
+        "natural_logarithm"
+      ],
+      "method_path": [
+        "Express 3 as e^{ln 3}"
+      ],
+      "accepted_alternatives": [
+        "a = ln 3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "3 = e^{ln 3} OR a = ln 3"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Find Re(z) and Re(1/z) for z = 3^{i-1}, giving answers in the form p cos(ln q) where p, q ∈ ℤ+.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "exponentiate",
+        "euler_formula",
+        "real_part_extraction",
+        "reciprocal",
+        "trigonometric_identity"
+      ],
+      "method_path": [
+        "Rewrite z = 3^{i-1} as e^{(i-1) ln 3}",
+        "Separate into e^{-ln 3} e^{i ln 3}",
+        "Apply Euler's formula to get cos(ln 3) + i sin(ln 3)",
+        "Extract real part: Re(z) = e^{-ln 3} cos(ln 3) = (1/3) cos(ln 3)",
+        "For 1/z, write as 3^{1-i} = e^{(1-i) ln 3} = e^{ln 3} e^{-i ln 3}",
+        "Apply Euler's formula to get cos(-ln 3) + i sin(-ln 3)",
+        "Extract real part: Re(1/z) = e^{ln 3} cos(-ln 3) = 3 cos(ln 3)"
+      ],
+      "accepted_alternatives": [
+        "Re(z) = 3^{-1} cos(ln 3) = (1/3) cos(ln 3)",
+        "Re(1/z) = 3 cos(ln 3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "z = 3^{i-1} = e^{(i-1) ln 3} OR Re(z) = e^{-ln 3} cos(ln 3)"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "Re(z) = (1/3) cos(ln 3)"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "1/z = 3^{1-i} = e^{(1-i) ln 3} = e^{ln 3} (cos(-ln 3) + i sin(-ln 3)) OR Re(1/z) = e^{ln 3} cos(-ln 3)"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "Re(1/z) = 3 cos(ln 3)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

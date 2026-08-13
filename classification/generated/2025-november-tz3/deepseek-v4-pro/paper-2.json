@@ -1,0 +1,1300 @@
+{
+  "session": "November 2025",
+  "zone": "TZ3",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Show that 3cos2x + 11sinx = 3 + 11sinx - 6sin^2x.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "double_angle_formula",
+        "algebraic_substitution",
+        "simplification"
+      ],
+      "method_path": [
+        "Apply double angle formula cos2x = 1 - 2sin^2x",
+        "Substitute into 3cos2x + 11sinx",
+        "Simplify to 3 + 11sinx - 6sin^2x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempt to use double angle formula for cos2x (M1); 3(1-2sin^2x) = 3 - 6sin^2x (A1); 3cos2x + 11sinx = 3 + 11sinx - 6sin^2x AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Solve 3cos2x + 11sinx - 6 = 0 for 0° ≤ x ≤ 180°.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quadratic_in_sine",
+        "inverse_trigonometric_function",
+        "angle_solution"
+      ],
+      "method_path": [
+        "Substitute identity to get quadratic in sinx",
+        "Solve quadratic to get sinx = 1/3",
+        "Find x = arcsin(1/3) and 180° - arcsin(1/3)",
+        "Give answers to 3 significant figures: 19.5°, 161°"
+      ],
+      "accepted_alternatives": [
+        "Solve 3cos2x + 11sinx - 6 = 0 directly using GDC or sketch (M1 for attempt, A1A1 for correct answers)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "METHOD 1: attempt to solve a quadratic equation in sinx (M1); sinx = 1/3; x = 19.4712..., 160.528...; x = 19.5, 161 (A1A1). METHOD 2: attempt to solve 3cos2x + 11sinx - 6 = 0 (M1); x = 19.4712..., 160.528...; x = 19.5, 161 (A1A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Explain why the median score for all 30 pupils would still be 10.5.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "median_reasoning",
+        "data_interpretation"
+      ],
+      "method_path": [
+        "State that the median is the middle value",
+        "Note that Aiden's score is below 10.5 and Brett's score is above 10.5",
+        "Conclude that the middle value remains unchanged"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "the median is the middle value and as Aiden’s score is below 10.5 and Brett’s score is above 10.5, hence the middle value stays in the same place"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Determine Aiden's score and Brett's score given the mean and range of all 30 pupils.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "mean_calculation",
+        "range_calculation",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Calculate sum of scores for 28 pupils: 28 × 10.5",
+        "Calculate sum of scores for 30 pupils: 30 × 10.6",
+        "Find sum of Aiden and Brett's scores: 30×10.6 − 28×10.5 = 24",
+        "Use range: Brett's score − Aiden's score = 14",
+        "Solve simultaneous equations to get Aiden = 5, Brett = 19"
+      ],
+      "accepted_alternatives": [
+        "Trial and improvement to find scores satisfying sum 24 and difference 14"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to use that the sum of scores is n×mean (M1); 10.5×28 OR 10.6×30; sum of Aiden and Brett’s scores = 24 (A1); difference between Aiden and Brett’s scores = 14 (A1); attempt to solve their two simultaneous equations or by trial and improvement (M1); (Aiden’s score =) 5, (Brett’s score =) 19 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Show that r = 24π/(θ+2) given the sector perimeter is 1.5 times the circle circumference.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "perimeter_of_sector",
+        "circumference_of_circle",
+        "equation_setup",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Write perimeter of sector = 1.5 × circumference of circle",
+        "Substitute circumference = 2π(8) = 16π, so 1.5 × 16π = 24π",
+        "Express sector perimeter as rθ + 2r",
+        "Set rθ + 2r = 24π",
+        "Factor r(θ+2) = 24π",
+        "Solve for r: r = 24π/(θ+2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "perimeter of sector is 1.5 × circumference of circle (seen anywhere) A1; 1.5 × 16π OR 24π OR 75.3982...; perimeter of sector rθ + 2r (M1); 24π = rθ + 2r A1; r = 24π/(θ+2) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Determine the value of θ given the area of the circle equals the area of the sector.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "area_of_circle",
+        "area_of_sector",
+        "substitution",
+        "quadratic_equation",
+        "solving"
+      ],
+      "method_path": [
+        "Set area of circle = area of sector: π(8)^2 = (1/2) r^2 θ",
+        "Substitute r = 24π/(θ+2) from part (a)",
+        "Obtain 64π = (1/2) (24π/(θ+2))^2 θ",
+        "Simplify to a quadratic equation in θ",
+        "Solve the quadratic equation",
+        "Select the acute angle solution θ ≈ 0.411"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "correct substitution of r = 24π/(θ+2) into (1/2) r^2 θ (A1); 64π = (1/2) × (24π/(θ+2))^2 × θ; attempt to solve their equation (must be quadratic) (M1); θ = 0.411273...; θ = 0.411 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Given that 25% of large sunflowers exceed 180 cm and m + As = 180, find A.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "z_score"
+      ],
+      "method_path": [
+        "Recognize P(height > 180) = 0.25",
+        "Find z-score for upper 25% tail: z = 0.674489...",
+        "Set up equation: (180 - m)/s = 0.674489...",
+        "Rearrange to m + 0.674489... s = 180",
+        "Identify A = 0.674489..."
+      ],
+      "accepted_alternatives": [
+        "Use of m + 0.674s = 180 directly from inverse normal"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognition that P(height of large sunflower > 180) = 0.25 (M1); (180 - μ)/σ = 0.674489... OR μ + 0.674σ = 180 (A1); A = 0.674489... A = 0.674 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Given giant sunflowers have mean m+35 and standard deviation 2s, and 98% exceed 180 cm, determine m and s.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Identify parameters for giant sunflowers: mean = m + 35, sd = 2s",
+        "Recognize P(height > 180) = 0.98 for giant sunflowers",
+        "Find z-score for lower 2% tail: z = -2.05374...",
+        "Set up equation: (180 - (m + 35)) / (2s) = -2.05374...",
+        "Solve simultaneously with m + 0.674489... s = 180 from part (a)",
+        "Obtain m ≈ 175.063..., s ≈ 7.31913..."
+      ],
+      "accepted_alternatives": [
+        "Use of standard normal table or GDC to find z-values and solve system"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "correct parameters for the height of giant sunflowers (A1); (180 - (μ + 35)) / (2σ) = -2.05374... (A1); attempt to solve their two simultaneous equations (M1); μ = 175.063..., σ = 7.31913... (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Find the volume of the solid formed by rotating the region enclosed by y = e^(3x/4), y = 8, and the y-axis about the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.inverse_functions",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "rearrange_for_x",
+        "inverse_function",
+        "volume_of_revolution_about_y_axis",
+        "definite_integral",
+        "evaluate_integral"
+      ],
+      "method_path": [
+        "Rearrange y = e^(3x/4) to x = (4/3) ln y",
+        "Set up volume integral π ∫ x^2 dy from y=1 to y=8",
+        "Substitute x = (4/3) ln y",
+        "Evaluate definite integral to obtain volume"
+      ],
+      "accepted_alternatives": [
+        "Use x = (4/3) ln x and integrate π ∫ ( (4/3) ln x )^2 dx from 1 to 8"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to rearrange ... to get an expression for x in terms of y OR find f^{-1}(x) (M1); x = (4/3) ln y OR f^{-1}(x) = (4/3) ln x (A1); attempt to use π ∫ x^2 dy OR π ∫ (f^{-1}(x))^2 dx (M1); π ∫ ( (4/3) ln y )^2 dy OR π ∫ ( (4/3) ln x )^2 dx (A1); = 85.6 (85.5716...) ... A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "12-13",
+      "task_summary": "Find q and r for P(x)=2x^2+qx+r given remainder when divided by (x+1) is 12 and a^2+b^2=37/4 where a,b are roots.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "remainder_theorem",
+        "sum_of_roots",
+        "product_of_roots",
+        "algebraic_identity",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Apply remainder theorem: P(-1)=12 to get 2-q+r=12 => r-q=10",
+        "Use sum of roots a+b=-q/2 and product ab=r/2",
+        "Use identity a^2+b^2=(a+b)^2-2ab with given 37/4 to get equation in q and r",
+        "Solve simultaneous equations r-q=10 and q^2/4 - r = 37/4 to find q=-7, r=3"
+      ],
+      "accepted_alternatives": [
+        "Alternative method: Recognize a and b are roots, add equations 2a^2+qa+r=0 and 2b^2+qb+r=0, use a+b=-q/2 and a^2+b^2=37/4 to form equation in q, then find r."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to use remainder theorem (M1); 2-q+r=12 A1; r-q=10; EITHER sum and product of roots (A1); attempt to use identity (M1); equation (A1); attempt to solve simultaneous equations (M1); THEN q=-7, r=3 A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "Alternative method: recognition that a and b are roots, adding equations (M1); a+b=-q/2 (A1); use of a^2+b^2=37/4 to form equation in q (M1); equation (A1); THEN q=-7, r=3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "Determine the general solution in parametric form for the system of two equations: 2x + 6y - 8z = 13 and 3x - y + 3z = 12.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_linear_system",
+        "parametric_form",
+        "gaussian_elimination",
+        "gdc"
+      ],
+      "method_path": [
+        "Set up augmented matrix or use elimination",
+        "Reduce to row-echelon form",
+        "Express variables in terms of a parameter t"
+      ],
+      "accepted_alternatives": [
+        "x = -1/2 + 17/4 t, y = 3/2 + 3/4 t, z = t",
+        "x = -0.5 + 4.25 t, y = 1.5 + 0.75 t, z = t",
+        "x = 2/3 t - 1/9, y = t, z = 1/2 - 2/3 t",
+        "x = 0.667 t - 0.5, y = t, z = 4.5 - 0.333 t",
+        "x = 27/2 t, y = 17 - 3t, z = 2 - 2t",
+        "x = 13.5 t, y = 8.5 - 3t, z = 2 - 2t"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Markscheme shows M1 for attempt to solve using GDC or manual row operations or elimination, and A1 for any correct parametric form."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "For a = 3 and k = -3, determine the unique solution to the system of three equations.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_linear_system",
+        "substitution",
+        "gdc",
+        "gaussian_elimination"
+      ],
+      "method_path": [
+        "Substitute a=3, k=-3 into third equation",
+        "Solve the 3x3 system using GDC or elimination",
+        "Obtain x=29, y=-73.5, z=-49.5"
+      ],
+      "accepted_alternatives": [
+        "Substitute parametric solution from part (a) into third equation and solve for parameter, then find x, y, z"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Markscheme shows M1 for attempt to solve using GDC or manual row operations or elimination, and A1 for x=29, y=-73.5, z=-49.5. Alternative method using parametric substitution also accepted."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q07-C",
+      "question": "7",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "Find the value of a for which there is no unique solution, and the corresponding value of k for infinite solutions.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "linear_dependence",
+        "consistency_condition"
+      ],
+      "method_path": [
+        "Determine a such that the third equation is a linear combination of the first two",
+        "Find a = 4",
+        "For infinite solutions, find k such that the third equation is consistent with the first two",
+        "Find k = 26"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Markscheme gives A1 for a=4 and A1 for k=26."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "15",
+      "task_summary": "Find the number of different ways of arranging 15 books in a line on a shelf.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "factorial",
+        "permutation"
+      ],
+      "method_path": [
+        "Calculate 15!"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "15! OR 1.31×10^12 (1.30767...×10^12) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "15",
+      "task_summary": "Determine the number of different ways to arrange the books so that books from each continent are grouped together.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "factorial",
+        "permutation",
+        "grouping"
+      ],
+      "method_path": [
+        "Recognise that books need to be arranged in separate groups",
+        "Calculate 6!, 5!, 4!",
+        "Recognise that the three groups can be placed in any order",
+        "Calculate 3!",
+        "Multiply 6! × 5! × 4! × 3!"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognise that the books need to be arranged in separate groups (M1); 6!(720) OR 5!(120) OR 4!(24) seen; recognise that the three groups can be placed in any order (M1); 3! seen; (6!×5!×4!×3!) = 12441600 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "15",
+      "task_summary": "Determine the number of different choices of four books all from the same continent.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combination",
+        "addition_principle"
+      ],
+      "method_path": [
+        "Recognise the combination(s) required",
+        "Calculate C(6,4), C(5,4), C(4,4)",
+        "Recognise that the sum of 3 different cases is required",
+        "Sum C(6,4) + C(5,4) + C(4,4)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognition of the combination(s) required (M1); 6C4(=15) OR 5C4(=5) OR 4C4(=1) seen; recognition that the sum of 3 different cases is required (M1); 6C4+5C4+4C4 = 15+5+1 = 21 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Prove by contradiction that sqrt(xy) ≤ (x+y)/2 for all x, y ∈ ℝ⁺.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "assume_negation",
+        "square_both_sides",
+        "algebraic_manipulation",
+        "complete_square",
+        "contradiction"
+      ],
+      "method_path": [
+        "Assume sqrt(xy) > (x+y)/2",
+        "Square both sides (valid since x,y > 0)",
+        "Simplify to 0 > x^2 - 2xy + y^2",
+        "Rewrite as 0 > (x - y)^2",
+        "Conclude contradiction since square is non-negative"
+      ],
+      "accepted_alternatives": [
+        "Rewrite as 0 > (y - x)^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1: assume sqrt(xy) > (x+y)/2; M1: attempt to square both sides; A1: 0 > x^2 - 4xy + y^2 OR 0 > y^2 - 4xy + x^2; A1: 0 > (x - y)^2 OR 0 > (y - x)^2; R1: a square number can never be negative hence contradiction"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the maximum displacement and maximum velocity of particle P from its displacement function s(t).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "find_maximum",
+        "differentiate",
+        "evaluate_derivative_at_point"
+      ],
+      "method_path": [
+        "Find maximum displacement by locating maximum point of s(t) using GDC or calculus.",
+        "Recognize velocity v = ds/dt.",
+        "Recognize maximum velocity occurs at t=0 (maximum gradient).",
+        "Evaluate ds/dt at t=0 to get maximum velocity."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) attempt to find a maximum point (M1) ... (maximum displacement) = 1.81 (cm) A1 (ii) recognition that ds/dt = v (M1) recognition that the gradient at t=0 represents the maximum velocity (M1) ds/dt at t=0 ... 4.19 (cms-1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the minimum displacement and the displacement at t=3.5.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "find_minimum",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Find minimum displacement by locating minimum point of s(t) using GDC or calculus.",
+        "Evaluate s(3.5) to find displacement at t=3.5."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) attempt to find a minimum point (M1) ... -1.47 A1 (ii) t=3.5 s=1.06620... s=1.07 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Determine the total distance travelled by P in the first 3.5 seconds.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "total_distance",
+        "sum_absolute_displacements",
+        "integrate_absolute_velocity"
+      ],
+      "method_path": [
+        "Sum distances from O using maximum, minimum, and displacement at t=3.5: 1.80645 + 2*1.46729 + 2*1.06620.",
+        "Alternatively, integrate absolute value of velocity from 0 to 3.5."
+      ],
+      "accepted_alternatives": [
+        "Integrate absolute value of velocity: ∫|ds/dt| dt from 0 to 3.5."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1 attempt to sum distances from O involving maximum, minimum and distance at t=3.5 (M1) 1.80645... + 2*1.46729... + 2*1.06620... (A1) =7.61369... 7.61(cm) A1 METHOD 2 attempt to integrate the absolute value of ds/dt (M1) ... =7.61369... 7.61(cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Write down the value of T, the first time P returns and passes through O.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_root",
+        "periodic_behavior"
+      ],
+      "method_path": [
+        "Identify T as the first positive root of s(t)=0 after t=0, which is T=1.5."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "(T=)1.5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Determine the common ratio r of the geometric sequence of largest distances in each interval, and calculate the total distance travelled indefinitely.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_sequence",
+        "common_ratio",
+        "sum_to_infinity",
+        "total_distance"
+      ],
+      "method_path": [
+        "Find common ratio r by dividing u2 by u1 (or u3 by u2) using maximum displacements in successive intervals.",
+        "Use sum to infinity formula S∞ = u1/(1-r) for the geometric series of largest distances.",
+        "Recognize total distance is double S∞ because particle travels to maximum and back to O in each interval."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "(i) attempt to divide two of u1, u2, u3... (M1) u2/u1 = 1.46729.../1.80645... or u3/u2 = 1.19181.../1.46729... or r^2 = u3/u1 = 1.19181.../1.80645... 0.812252... (r=)0.812 A1 (ii) attempt to use the sum to infinity of the GP (M1) S∞ = 1.80645.../(1-0.812252...) = 9.62167... recognition that the total distance is double their S∞ (M1) 2 × S∞ = 2 × 1.80645.../(1-0.812252...) OR 2 × 9.62167... = 19.2433... (19.2 cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Show that 324a + 72b = 1 by integrating the probability density function over its domain and setting the total area to 1.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate_polynomial",
+        "apply_total_probability_condition",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Set integral of f(x) from 3 to 9 equal to 1",
+        "Integrate a(x-3)^3 + b(x-3)^2",
+        "Evaluate definite integral from 3 to 9",
+        "Simplify to 324a + 72b = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to use ∫ f(x) dx = 1 (M1); recognition for the need to integrate a(x-3)^3 + b(x-3)^2 with limits of 3 and 9 (M1); correct integration and evaluation leading to 324a + 72b = 1 (A1, A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-B-I",
+      "question": "11",
+      "part": "B-I",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Show that 6a + b = 0 by substituting x = 9 into f(x) and using f(9) = 0.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_value",
+        "simplify_expression",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Substitute x = 9 into f(x) = a(x-3)^3 + b(x-3)^2",
+        "Set f(9) = 0",
+        "Simplify to 6a + b = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to substitute x = 9 into a(x-3)^3 + b(x-3)^2 (M1); 6^3 a + 6^2 b = 0 or 216a + 36b = 0 leading to 6a + b = 0 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-B-II",
+      "question": "11",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Determine the values of a and b by solving the system of linear equations 324a + 72b = 1 and 6a + b = 0.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_system_of_linear_equations",
+        "substitution"
+      ],
+      "method_path": [
+        "Solve 324a + 72b = 1 and 6a + b = 0 simultaneously",
+        "Obtain a = -1/108, b = 1/18"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to solve two linear equations in a and b (M1); a = -1/108, b = 1/18 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "21",
+      "task_summary": "Show that the median of X is less than the mode of X by finding the mode (maximum of f) and comparing it to the median (value m such that area to left is 0.5).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_mode",
+        "find_median",
+        "compare_values",
+        "integrate_pdf",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Find mode by locating maximum of f(x) on [3,9]",
+        "Compute mode = 7",
+        "Find median m by solving ∫_3^m f(x) dx = 0.5",
+        "Compute median ≈ 6.68563",
+        "Conclude median < mode"
+      ],
+      "accepted_alternatives": [
+        "Find area under f from 3 to 7, show it is > 0.5, implying median < 7 = mode."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to find the maximum point on the graph of f (M1); mode = 7 (A1); attempt to find the median by solving ∫_3^m f(x) = 0.5 (M1); equation set up correctly (A1); median = 6.68563... (A1); median < mode AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "21",
+      "task_summary": "Find the conditional probability P(X > 8.52 | X > 8) using the given probability density function.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables",
+        "calculus.integration_applications"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "integrate_pdf",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(X > 8.52 | X > 8)",
+        "Express as P(X > 8.52) / P(X > 8)",
+        "Compute integrals ∫_{8.52}^9 f(x) dx and ∫_8^9 f(x) dx",
+        "Evaluate ratio to get approximately 0.261"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognising conditional probability in context (M1); recognition that P(X > 8.52 ∩ X > 8) = P(X > 8.52) (M1); correct integrals set up (A1); answer 0.260919... ≈ 0.261 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-A-I",
+      "question": "12",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "22",
+      "task_summary": "Find the value of dy/dx when x=1.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_derivative"
+      ],
+      "method_path": [
+        "Substitute x=1, y=3/2 into given differential equation",
+        "Compute dy/dx"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "d y/d x = -1.7 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-A-II",
+      "question": "12",
+      "part": "A-II",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "22",
+      "task_summary": "Use Euler's method with two equal steps to estimate y when x=1.4.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "step_length",
+        "iteration"
+      ],
+      "method_path": [
+        "Set step length h=0.2",
+        "Apply Euler's method: y_{n+1} = y_n + h * f(x_n, y_n)",
+        "Compute y(1.2) using dy/dx at x=1",
+        "Compute y(1.4) using dy/dx at x=1.2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to use Euler's formula with step length 0.2 (M1); step table with x=1, y=1.5; x=1.2, y=1.16; x=1.4, y=1.07491524 (A1); 1.07 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-A-III",
+      "question": "12",
+      "part": "A-III",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "22",
+      "task_summary": "State the concavity of the solution curve for 1 ≤ x ≤ 1.4 and give a reason.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "concavity",
+        "reasoning"
+      ],
+      "method_path": [
+        "Observe that the change in y values is decreasing or gradient is increasing",
+        "Conclude concave up"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "change (decrease) in the y values is decreasing. OR the gradient is increasing as the gradient at 1.2 is -0.425423... R1; concave up A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-B-I",
+      "question": "12",
+      "part": "B-I",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Show that (x^2+xy)d^2y/dx^2 = 2(x(dy/dx)-y)(dy/dx+1) + (x^2+xy)(dy/dx) - (x^2+3xy-2y^2).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "implicit_differentiation",
+        "product_rule",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Differentiate both sides of given differential equation implicitly with respect to x",
+        "Apply product rule to terms involving y and dy/dx",
+        "Rearrange to obtain the required expression"
+      ],
+      "accepted_alternatives": [
+        "Rearrange into dy/dx = (x^2+3xy-2y^2)/(x^2+xy) and differentiate RHS using quotient rule"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: d/dx(xy) = x dy/dx + y (seen anywhere) A1; attempt to differentiate either the LHS or the RHS implicitly using the product rule M1; ... AG"
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 2: attempt to rearrange into the form dy/dx = (x^2+3xy-2y^2)/(x^2+xy) and attempt to differentiate the RHS implicitly using quotient rule M1; ... AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-B-II",
+      "question": "12",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Find the value of d^2y/dx^2 when x=1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_second_derivative"
+      ],
+      "method_path": [
+        "Substitute x=1, y=3/2, dy/dx=-1.7 into the expression from part (b)(i)",
+        "Solve for d^2y/dx^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "attempt to substitute their dy/dx and x=1, y=3/2 (M1); 8.064 or 1008/125 or 8.06 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Determine constants A, B ∈ ℝ such that 1/(1-4v^2) = A/(1-2v) + B/(1+2v).",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "partial_fractions",
+        "equating_coefficients"
+      ],
+      "method_path": [
+        "Set up equation 1 = A(1+2v) + B(1-2v)",
+        "Solve for A and B"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "attempt to make the numerators of common denominator equivalent (M1); A=3/4 (0.75), B=1/4 (0.25) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 8,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Solve the differential equation and show that x^6(2y-x)^3 = 2(x+2y).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "separation_of_variables",
+        "partial_fractions",
+        "integration",
+        "logarithmic_simplification",
+        "initial_condition"
+      ],
+      "method_path": [
+        "Substitute y = vx, dy/dx = v + x dv/dx",
+        "Simplify to separable form (1+v)/(1-4v^2) dv = (1/x) dx",
+        "Use partial fractions from part (c)",
+        "Integrate both sides",
+        "Apply initial condition x=1, y=3/2 (v=3/2)",
+        "Simplify to required form"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to replace y and dy/dx by substitution of y=vx and dy/dx = v + x dv/dx (M1); ... A1; ... A1; ... A1A1; substitution of x=1, v=1.5 OR x=1, y=1.5 to find a value of c (M1); ... A1; ... A1; ... AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

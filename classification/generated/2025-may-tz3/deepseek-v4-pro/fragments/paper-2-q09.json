@@ -1,0 +1,84 @@
+{
+  "question": "9",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "12",
+      "task_summary": "Show that the viewing angle θ equals arctan((x+2)/6) - arctan(x/6).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "angle_difference",
+        "arctan_definition",
+        "right_triangle_trigonometry"
+      ],
+      "method_path": [
+        "Let α = angle APG",
+        "Express tan α = (x+2)/6 and tan(angle BPG) = x/6",
+        "Note θ = α - angle BPG",
+        "Take arctan of both sides to obtain θ = arctan((x+2)/6) - arctan(x/6)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "Let APG = α ... tan α = (x+2)/6 ⇒ α = arctan((x+2)/6) AND tan(angle BPG) = x/6 ⇒ angle BPG = arctan(x/6) ... θ = arctan((x+2)/6) - arctan(x/6) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 7,
+      "source_pages": "11",
+      "markscheme_pages": "12-14",
+      "task_summary": "Given θ = 0.178 rad and dθ/dt = 12.5 rad/h, find the speed of the airplane.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "chain_rule",
+        "related_rates",
+        "arctan_derivative",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Set θ = 0.178 and solve arctan((x+2)/6) - arctan(x/6) = 0.178 for x",
+        "Differentiate θ = arctan((x+2)/6) - arctan(x/6) with respect to t using chain rule",
+        "Substitute x and dθ/dt = 12.5 to find dx/dt",
+        "Take absolute value for speed"
+      ],
+      "accepted_alternatives": [
+        "Use implicit differentiation on tan θ = (12)/(x^2+2x+36) and chain rule to find dx/dt"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12-14",
+          "basis": "METHOD 1: setting θ = 0.178 ... x = 4.63047... ; derivative of arctan terms; chain rule; substituting to get dx/dt = -424.881... ; speed = 425 km/h. METHOD 2: find dθ/dx at x, use chain rule dθ/dt = dθ/dx * dx/dt, solve for dx/dt."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "question": "9",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Use Euler's method with step 0.25 to estimate y when x=2 for dy/dx = (x+2)/(x+y), given (1,0).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "iterative_approximation"
+      ],
+      "method_path": [
+        "Set step h=0.25",
+        "Iterate x_{n+1}=x_n+h, y_{n+1}=y_n+h*(x_n+2)/(x_n+y_n) from (1,0) to x=2",
+        "Compute y at x=2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "attempt to use Euler’s method with a step of 0.25 (M1); intermediate values (A1); y=1.26 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Determine if Euler estimate is over/underestimate and justify; explain why Euler method from (1,0) does not give negative y at x=2.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "concavity_analysis",
+        "gradient_analysis",
+        "euler_method_interpretation"
+      ],
+      "method_path": [
+        "State overestimate",
+        "Justify: tangents lie above curve (concave down)",
+        "Explain: gradient at (1,0) is positive, so method follows upper branch"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "(i) overestimate A1; because tangents lie above curve (concave down) R1; (ii) gradient at (1,0) is positive so method works in direction of upper part R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

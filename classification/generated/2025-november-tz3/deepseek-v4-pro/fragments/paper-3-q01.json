@@ -1,0 +1,329 @@
+{
+  "question": "1",
+  "expected_question_marks": 26,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P3-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Sketch and label graphs of y = S1(x) and y = S2(x) on same axes, showing axis intercepts.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "identify_intercepts",
+        "compare_shapes"
+      ],
+      "method_path": [
+        "Sketch y = sin x with correct shape and domain [0, 2π].",
+        "Mark x-intercepts at 0, π, 2π.",
+        "Sketch y = sin(sin x) with smaller maximum, larger minimum, same x-intercepts."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for correct shape y=sin x; A1 for correct domain; A1 for intercepts on x-axis at 0, π, 2π; A1 for correct shape sin(sin x) with smaller max, larger min, same x-intercepts."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q01-B-I",
+      "question": "1",
+      "part": "B-I",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Determine the maximum value of S1(x).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_maximum"
+      ],
+      "method_path": [
+        "Maximum of sin x is 1."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q01-B-II",
+      "question": "1",
+      "part": "B-II",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Determine the maximum value of S2(x).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_maximum"
+      ],
+      "method_path": [
+        "Maximum of sin(sin x) is sin 1 ≈ 0.841."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "0.841(0.841470…) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q01-B-III",
+      "question": "1",
+      "part": "B-III",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Determine the maximum value of S3(x).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_maximum"
+      ],
+      "method_path": [
+        "Maximum of sin(sin(sin x)) is sin(sin 1) ≈ 0.746."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "0.746(0.745624…) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the least n for which the maximum value of Sn(x) is less than 0.6.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "use_gdc",
+        "iterate_composition",
+        "find_threshold"
+      ],
+      "method_path": [
+        "Use GDC to evaluate Sn(π/2) for increasing n.",
+        "Find n=6 gives S6(π/2) ≈ 0.587 < 0.6."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "use of GDC eg tables (to vary the value of n) (M1); S4(π/2)=0.678430..., S5(π/2)=0.627571..., S6(π/2)=0.587180...; n = 6 A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q01-D",
+      "question": "1",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "3",
+      "markscheme_pages": "9",
+      "task_summary": "Show that y = S2(x) has exactly two points of zero gradient at x = π/2 and x = 3π/2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "set_derivative_zero",
+        "solve_trigonometric_equation",
+        "justify_no_other_solutions"
+      ],
+      "method_path": [
+        "Differentiate y = sin(sin x) using chain rule to get dy/dx = cos(sin x) cos x.",
+        "Set dy/dx = 0.",
+        "Solve cos x = 0 to get x = π/2, 3π/2.",
+        "Solve cos(sin x) = 0, leading to sin x = π/2, which has no solution.",
+        "Conclude exactly two points."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to find dy/dx using chain rule (M1); dy/dx = cos(sin x) cos x A1; considers cos x = 0 M1; x = π/2 and 3π/2 A1; considers cos(sin x) = 0 M1; sin x = π/2 ⇒ no other solution for x R1; hence curve has exactly two points of zero gradient at x = π/2 and 3π/2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q01-E",
+      "question": "1",
+      "part": "E",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Show that S'_3(x) = cos(sin(sin x)) cos(sin x) cos x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "apply_given_formula"
+      ],
+      "method_path": [
+        "Substitute n=3 into S'_n(x) = cos(S_{n-1}(x)) cos(S_{n-2}(x)) ... cos x.",
+        "Obtain cos(S_2(x)) cos(S_1(x)) cos x = cos(sin(sin x)) cos(sin x) cos x."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "S'_3(x) = cos(S_2(x)) cos(S_1(x)) cos x A1; = cos(sin(sin x)) cos(sin x) cos x AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q01-F",
+      "question": "1",
+      "part": "F",
+      "marks": 6,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Prove by mathematical induction that S'_n(x) = cos(S_{n-1}(x)) cos(S_{n-2}(x)) ... cos x for all n ∈ ℤ+.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case",
+        "inductive_hypothesis",
+        "chain_rule",
+        "inductive_step"
+      ],
+      "method_path": [
+        "Base case n=1: LHS = d/dx sin x = cos x, RHS = cos x.",
+        "Assume true for n=k: S'_k(x) = cos(S_{k-1}(x)) ... cos x.",
+        "For n=k+1: S_{k+1}(x) = sin(S_k(x)).",
+        "Differentiate using chain rule: S'_{k+1}(x) = cos(S_k(x)) S'_k(x).",
+        "Substitute inductive hypothesis to get product of cosines up to cos x.",
+        "Conclude true for all positive integers n."
+      ],
+      "accepted_alternatives": [
+        "Alternative approach: S_{k+1}(x) = sin(S_k(x)), differentiate using chain rule and substitute assumption directly."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "consider case when n=1 LHS = d/dx sin x = cos x = RHS A1; assume true for some k M1; recognition that S_{k+1}(x) = sin(S_k(x)) M1; d/dx S_{k+1}(x) = cos(S_k(x)) S'_k(x) A1; = cos(S_k(x)) cos(S_{k-1}(x)) ... cos x (by assumption) A1; hence true for case n=k+1; true for n=1, when case n=k assumed true, case n=k+1 proven true. Hence true for all positive integers n. R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P3-Q01-G",
+      "question": "1",
+      "part": "G",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "11",
+      "task_summary": "Use l'Hôpital's rule to show that lim_{x→0} S_n(x)/x = 1 for n ∈ ℤ+.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "differentiate_numerator_denominator",
+        "evaluate_limit"
+      ],
+      "method_path": [
+        "Apply l'Hôpital's rule: differentiate numerator S_n(x) and denominator x.",
+        "Numerator derivative is S'_n(x) = cos(S_{n-1}(x)) ... cos x.",
+        "Evaluate limit as x→0: each cosine term → cos 0 = 1.",
+        "Limit equals 1."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to differentiate numerator and denominator (M1); lim_{x→0} S_n(x)/x = lim_{x→0} cos(S_{n-1}(x)) ... cos x / 1 A1; = cos 0 cos 0 ... cos 0 / 1 = 1 A1; = 1 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

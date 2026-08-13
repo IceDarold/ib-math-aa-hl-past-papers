@@ -1,0 +1,82 @@
+{
+  "question": "3",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Determine the values of A and B in y = (Ax + B)/(x - 4) given points P(-10, 1) and Q(3, -12).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_coordinates",
+        "solve_simultaneous_equations"
+      ],
+      "method_path": [
+        "Substitute P(-10, 1) into y = (Ax + B)/(x - 4) to obtain 1 = (-10A + B)/(-14)",
+        "Substitute Q(3, -12) into y = (Ax + B)/(x - 4) to obtain -12 = (3A + B)/(-1)",
+        "Solve the simultaneous equations to find A = 2, B = 6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "substitute P(-10,1) or Q(3,-12) into y = (Ax+B)/(x-4) (M1); 1 = (-10A+B)/(-14) (or equivalent); -12 = (3A+B)/(-1) (or equivalent); attempt to solve their equations simultaneously (M1); A=2, B=6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Describe a sequence of transformations mapping y = 1/x onto y = (Ax + B)/(x - 4) with A=2, B=6.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "rewrite_rational_function",
+        "identify_asymptotes",
+        "describe_transformations"
+      ],
+      "method_path": [
+        "Rewrite y = (2x + 6)/(x - 4) as y = 2 + 14/(x - 4)",
+        "Identify vertical asymptote x = 4 (horizontal translation 4 right)",
+        "Identify horizontal asymptote y = 2 (vertical translation 2 up)",
+        "Describe sequence: horizontal translation 4 right, vertical stretch scale factor 14, vertical translation 2 up (or alternative order)"
+      ],
+      "accepted_alternatives": [
+        "Vertical stretch scale factor 14, followed by translation by vector (4, 2)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to express y in the form P + Q/(x-4) (M1) OR attempt to find asymptotes (M1); recognizing vertical asymptote at x=4 OR horizontal shift 4 right (A1); recognizing horizontal asymptote at y=2 OR vertical shift 2 up (A1); 2 + 14/(x-4) (A1); horizontal translation 4 right; vertical stretch scale factor 14 followed by vertical translation 2 up (A1) OR vertical stretch scale factor 14; followed by translation (4,2) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

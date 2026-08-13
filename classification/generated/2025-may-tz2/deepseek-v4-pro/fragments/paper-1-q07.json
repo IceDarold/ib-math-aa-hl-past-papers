@@ -1,0 +1,63 @@
+{
+  "question": "7",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "14-15",
+      "task_summary": "Find p and q such that x^4 + px^3 - 2x^2 + qx - 3 is exactly divisible by (x+1)^2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "polynomial_division",
+        "equating_coefficients",
+        "solving_simultaneous_equations"
+      ],
+      "method_path": [
+        "Express divisibility by (x+1)^2 as a product of quadratic factors or use repeated division or double root condition.",
+        "Obtain equations relating p and q by comparing coefficients or evaluating f(-1)=0 and f'(-1)=0.",
+        "Solve the system to find p=2, q=-6."
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Write as (x^2+2x+1)(x^2+bx-3), compare coefficients to get b=0, p=2, q=-6.",
+        "METHOD 2: Use f(-1)=0 and f'(-1)=0 to get p+q=-4 and 3p+q=0, solve for p=2, q=-6.",
+        "METHOD 3: Divide by (x+1) twice, set remainders to zero to get p+q=-4 and 3p+q=0.",
+        "METHOD 4: Divide by x^2+2x+1, set remainder coefficients to zero to get 3p+q=0 and 2p-4=0.",
+        "METHOD 5: Use sum and product of roots with roots -1, -1, α, β to derive equations and solve."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: attempt to write as product of two quadratic factors (M1); (x^2+2x+1)(x^2+bx-3) A1; attempt to compare their coefficients (M1); b=0 (A1); p=2, q=-6 A1"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 2: recognition that f(-1)=0 (M1); p+q=-4 A1; recognition that f'(x)=0 at x=-1 since double root (M1); 3p+q=0 A1; p=2, q=-6 A1"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 3: attempt to use division with (x+1) to find remainder (M1); p+q=-4 A1; attempt to use division once again with (x+1) to find remainder (M1); 3p+q=0 A1; p=2, q=-6 A1"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 4: attempt to use division to find remainder (M1); (q+3p)x+(2p-4)=0 (A1); equating the coefficients of their remainder to 0 (M1); 3p+q=0 and 2p-4=0 A1; p=2, q=-6 A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 5: attempt to set sum of four roots equal to -p OR product of four roots equal to -3 (M1); α+β=-p+2 and αβ=-3 A1; sum of product of pairs and sum of product of roots taken three at a time A1; attempt to solve their four equations (M1); p=2, q=-6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

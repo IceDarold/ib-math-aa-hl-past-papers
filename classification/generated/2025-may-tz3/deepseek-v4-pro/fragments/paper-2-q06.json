@@ -1,0 +1,77 @@
+{
+  "question": "6",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "10",
+      "task_summary": "Find expressions for a·c and b·c in terms of p.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "scalar_product",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute vector components into scalar product formula a·c = a1*c1 + a2*c2",
+        "Substitute vector components into scalar product formula b·c = b1*c1 + b2*c2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "substituting into scalar product formula (M1) (i) (a·c =) 5p - 42 A1 (ii) (b·c =) 8p - 54 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "10",
+      "task_summary": "Find p such that the angle between a and c equals the angle between b and c.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "angle_between_vectors",
+        "scalar_product",
+        "magnitude",
+        "equating_expressions",
+        "solving_equation"
+      ],
+      "method_path": [
+        "Write cosθ = (a·c)/(|a||c|) using expression from (a)(i) and magnitudes",
+        "Write cosθ = (b·c)/(|b||c|) using expression from (a)(ii) and magnitudes",
+        "Equate the two expressions for cosθ",
+        "Solve the resulting equation for p"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "substituting into the angle between two vectors formula to find either a·c or b·c (M1) cosθ = (5p-42)/(√74 √(p^2+36)), cosθ = (8p-54)/(√145 √(p^2+36)) (A1)(A1) equating their two expressions for cosθ (M1) p = 4.78727... (p =) 4.79 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

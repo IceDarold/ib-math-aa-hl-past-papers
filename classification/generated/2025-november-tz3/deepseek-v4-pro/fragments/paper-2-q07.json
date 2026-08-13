@@ -1,0 +1,128 @@
+{
+  "question": "7",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "Determine the general solution in parametric form for the system of two equations: 2x + 6y - 8z = 13 and 3x - y + 3z = 12.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_linear_system",
+        "parametric_form",
+        "gaussian_elimination",
+        "gdc"
+      ],
+      "method_path": [
+        "Set up augmented matrix or use elimination",
+        "Reduce to row-echelon form",
+        "Express variables in terms of a parameter t"
+      ],
+      "accepted_alternatives": [
+        "x = -1/2 + 17/4 t, y = 3/2 + 3/4 t, z = t",
+        "x = -0.5 + 4.25 t, y = 1.5 + 0.75 t, z = t",
+        "x = 2/3 t - 1/9, y = t, z = 1/2 - 2/3 t",
+        "x = 0.667 t - 0.5, y = t, z = 4.5 - 0.333 t",
+        "x = 27/2 t, y = 17 - 3t, z = 2 - 2t",
+        "x = 13.5 t, y = 8.5 - 3t, z = 2 - 2t"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Markscheme shows M1 for attempt to solve using GDC or manual row operations or elimination, and A1 for any correct parametric form."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "For a = 3 and k = -3, determine the unique solution to the system of three equations.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_linear_system",
+        "substitution",
+        "gdc",
+        "gaussian_elimination"
+      ],
+      "method_path": [
+        "Substitute a=3, k=-3 into third equation",
+        "Solve the 3x3 system using GDC or elimination",
+        "Obtain x=29, y=-73.5, z=-49.5"
+      ],
+      "accepted_alternatives": [
+        "Substitute parametric solution from part (a) into third equation and solve for parameter, then find x, y, z"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Markscheme shows M1 for attempt to solve using GDC or manual row operations or elimination, and A1 for x=29, y=-73.5, z=-49.5. Alternative method using parametric substitution also accepted."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q07-C",
+      "question": "7",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "14",
+      "task_summary": "Find the value of a for which there is no unique solution, and the corresponding value of k for infinite solutions.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "linear_dependence",
+        "consistency_condition"
+      ],
+      "method_path": [
+        "Determine a such that the third equation is a linear combination of the first two",
+        "Find a = 4",
+        "For infinite solutions, find k such that the third equation is consistent with the first two",
+        "Find k = 26"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Markscheme gives A1 for a=4 and A1 for k=26."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

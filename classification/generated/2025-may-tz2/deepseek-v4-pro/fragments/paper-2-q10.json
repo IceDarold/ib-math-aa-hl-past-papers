@@ -1,0 +1,215 @@
+{
+  "question": "10",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find P(W < 170) for W ~ N(175, 8^2).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Recognise to find P(W < 170)",
+        "Calculate P(W < 170) = 0.266"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognising to find P(W < 170) (M1); P(W < 170) = 0.266 (accept 26.6%) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find w such that P(W > w) = 0.2, correct to four significant figures.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal"
+      ],
+      "method_path": [
+        "Recognise P(W > w) = 0.2",
+        "Find w = 181.7 (4 sf)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognising P(W > w) = 0.2 OR labelled sketch (or equivalent) (M1); w = 181.7 (grams) (must be 4 sf) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find the percentage of apples that are premium (weight between 170 and 185 grams).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Recognise to find P(170 < W < 185)",
+        "Calculate P(170 < W < 185) = 0.628364...",
+        "Express as 62.8%"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognizing the need to find P(170 < W < 185) (M1); 62.8% A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "21-22",
+      "task_summary": "Find the probability that a box of 40 apples contains at least 30 premium apples.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Recognise binomial probability",
+        "Identify X ~ B(40, 0.628364...)",
+        "Calculate P(X ≥ 30) = 0.0739"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21-22",
+          "basis": "recognising binomial probability (M1); X ~ B(40,0.628364...) OR n = 40 and p = 0.628364... (A1); P(X ≥ 30) = 0.0739 (accept 7.39%) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "22",
+      "task_summary": "Find the probability that exactly 4 out of 10 boxes have at least 30 premium apples.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Identify Y ~ B(10, 0.073861...)",
+        "Calculate P(Y = 4) = 0.00394"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Y ~ B(10, 0.073861...) (A1); P(Y = 4) = 0.00394 (accept 0.394%) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-F",
+      "question": "10",
+      "part": "F",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "22",
+      "task_summary": "Find the mean m of a normal distribution given that 82% of apples are premium and P(M < 170) = 2 * P(M > 185).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "system_of_equations"
+      ],
+      "method_path": [
+        "Determine P(M < 170) = 0.12 and P(M > 185) = 0.06",
+        "Find z-scores: z1 = -1.174986..., z2 = 1.554773...",
+        "Set up equations: (170 - m)/s = -1.174986... and (185 - m)/s = 1.554773...",
+        "Solve for m = 176 (grams)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "P(W < 170) = 0.12 OR P(W > 185) = 0.06 (A1); use of inverse normal to find z score for their probability (M1); z = -1.174986..., z = 1.554773... (A1)(A1); attempt to solve their two equations (M1); µ = 176 (grams) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

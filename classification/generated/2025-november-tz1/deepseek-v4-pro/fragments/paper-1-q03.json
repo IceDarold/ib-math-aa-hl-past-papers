@@ -1,0 +1,78 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the value of c and a for the parabola y = ax^2 + c passing through P(0,9) and Q(3,0).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solving_linear_equation"
+      ],
+      "method_path": [
+        "Write down c = 9 from point P(0,9).",
+        "Substitute Q(3,0) into y = ax^2 + c with c = 9.",
+        "Solve 0 = 9a + 9 to get a = -1."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(i) c = 9 A1; (ii) attempt to substitute (3,0) into y = ax^2 + c with their c (M1); 0 = 9a + 9; a = -1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "9-10",
+      "task_summary": "Find the area of the region enclosed by the line y = -3x + 9 and the parabola y = -x^2 + 9.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "area_between_curves",
+        "subtraction_of_areas"
+      ],
+      "method_path": [
+        "Set up integral of (parabola - line) from x=0 to x=3: ∫[0,3] ((-x^2+9) - (-3x+9)) dx = ∫[0,3] (-x^2+3x) dx.",
+        "Integrate: [-(1/3)x^3 + (3/2)x^2] from 0 to 3.",
+        "Evaluate at 3: -(1/3)(27) + (3/2)(9) = -9 + 27/2 = 9/2.",
+        "Subtract value at 0 (0) to get area = 9/2."
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Evaluate ∫[0,3] (-x^2+9) dx and subtract triangle area (1/2*3*9) or evaluate ∫[0,3] (-3x+9) dx separately and subtract."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9-10",
+          "basis": "METHOD 1: attempt to subtract areas (M1); ∫[0,3] (-x^2+3x) dx; correct integration (A1); attempt to substitute limits (M1); Area = 9/2 A1. METHOD 2: correct integration (A1); substitute limits (M1); subtract integrals (M1); Area = 9/2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

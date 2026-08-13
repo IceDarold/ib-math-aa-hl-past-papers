@@ -1,0 +1,88 @@
+{
+  "question": "4",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Show that p = -1 given that the vertex A of f(x) = -x^2 + 4x + p lies on the line y = 2x - 1.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "vertex_x_coordinate",
+        "substitution",
+        "solve_for_p"
+      ],
+      "method_path": [
+        "Find x-coordinate of vertex A: x = -b/(2a) = -4/(2*(-1)) = 2",
+        "Substitute x = 2 into line equation y = 2x - 1 to get y = 3",
+        "Substitute x = 2 into f(x) = -x^2 + 4x + p, set equal to 3, solve for p: -4 + 8 + p = 3 => p = -1"
+      ],
+      "accepted_alternatives": [
+        "Find x-coordinate of vertex A = 2, substitute into f(x) to get f(2) = p + 4, set equal to 2(2)-1 = 3, solve p = -1.",
+        "Complete the square: f(x) = -(x-2)^2 + 4 + p, vertex A(2, 4+p), substitute into line: 4+p = 2(2)-1 => p = -1."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: x-coordinate of the vertex at A is 2 (A1); attempt to substitute their x-coordinate into equation of line (M1); 2(2)-1=3; 3 = -2^2 + 4(2) + p; p = -1 AG. METHOD 2: x-coordinate of the vertex at A is 2 (A1); attempt to substitute their x-coordinate into f(x) (M1); f(2) = p+4; p+4 = 2(2)-1; p = -1 AG. METHOD 3: attempt to complete the square on f(x) (M1); -(x-2)^2 + 4 + p; A x=2 OR A y=4+p (A1); 4+p = 2(2)-1; p = -1 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "12-13",
+      "task_summary": "Find the value of q given that the vertex B of g(x) = x^2 + qx - 1 lies on the line y = 2x - 1.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "vertex_x_coordinate",
+        "substitution",
+        "solve_quadratic",
+        "discard_zero"
+      ],
+      "method_path": [
+        "Find x-coordinate of vertex B: x = -q/2",
+        "Substitute x = -q/2 into line equation y = 2x - 1 to get y = -q - 1",
+        "Substitute x = -q/2 into g(x) = x^2 + qx - 1, set equal to -q - 1, simplify to q^2 - 4q = 0",
+        "Solve quadratic: q(q - 4) = 0, discard q = 0 (non-zero constant), so q = 4"
+      ],
+      "accepted_alternatives": [
+        "Find x-coordinate of vertex B = -q/2, substitute into g(x) to get y = -q^2/4 - 1, set equal to 2(-q/2)-1 = -q-1, solve q^2 - 4q = 0, q = 4.",
+        "Complete the square: g(x) = (x + q/2)^2 - q^2/4 - 1, vertex B(-q/2, -q^2/4 - 1), substitute into line: -q^2/4 - 1 = 2(-q/2) - 1 => q^2 - 4q = 0, q = 4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12-13",
+          "basis": "METHOD 1: x-coordinate is -q/2 (A1); attempt to find intersection points, equating g(x) and 2x-1 (M1); x^2 + qx - 1 = 2x - 1; attempt to substitute their x-coordinate (M1); (-q/2)^2 + q(-q/2) - 1 = 2(-q/2) - 1; q^2 - 4q = 0 (A1); q = 4 (since q ≠ 0) A1. METHOD 2: x-coordinate is -q/2 (A1); EITHER attempt to substitute their x-coordinate into y=2x-1 (M1); 2(-q/2)-1 => B(-q/2, -q-1); attempt to substitute their coordinates of B into g(x) (M1); -q-1 = (-q/2)^2 + q(-q/2) - 1; OR attempt to substitute their x-coordinate into g(x) (M1); (-q/2)^2 + q(-q/2) - 1 => B(-q/2, -q^2/4 - 1); attempt to substitute their coordinates of B into the line (M1); -q^2/4 - 1 = 2(-q/2) - 1; THEN q^2 - 4q = 0 (A1); q = 4 (since q ≠ 0) A1. METHOD 3: attempt to complete the square on g(x) (M1); (x + q/2)^2 - q^2/4 - 1; B x = -q/2 OR y = -q^2/4 - 1 (A1); attempt to substitute their coordinates of B into equation of line (M1); -q^2/4 - 1 = 2(-q/2) - 1; q^2 - 4q = 0 (A1); q = 4 (since q ≠ 0) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,1237 @@
+{
+  "session": "November 2025",
+  "zone": "TZ1",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the angle θ and radius r of a regular pentagon inscribed in a circle, given arc length AB = 12 cm.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length_formula",
+        "central_angle_of_regular_polygon",
+        "solve_for_variable"
+      ],
+      "method_path": [
+        "θ = 2π/5",
+        "arc length = rθ",
+        "12 = r × (2π/5)",
+        "r = 12 × 5/(2π) = 30/π"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for θ = 2π/5 (1.25663...), (A1) for 12 = (2π/5) × r or equivalent, A1 for r = 9.55 (cm) (30/π)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the area of the shaded region (five circular segments) of the regular pentagon inscribed in a circle.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "area_of_sector",
+        "area_of_triangle",
+        "area_of_segment",
+        "multiplication"
+      ],
+      "method_path": [
+        "area of one segment = (1/2) r^2 θ - (1/2) r^2 sin θ",
+        "shaded area = 5 × segment area"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: area of circle minus area of pentagon: π r^2 - 5 × (1/2) r^2 sin θ"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "METHOD 1: (M1) attempt to find area of at least one shaded segment, (A1) for correct expression, A1 for 69.7 (cm^2). METHOD 2: (M1) attempt to find area of one triangle, (M1) attempt to subtract five times their triangle area from their circle area, A1 for 69.7 (cm^2)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Determine the number of ways to select a committee of seven from ten members by first choosing a chairperson, vice-chairperson, and treasurer, then selecting four additional members.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "permutation",
+        "combination",
+        "multiplication_principle"
+      ],
+      "method_path": [
+        "Calculate number of ways to choose and order three distinct officers from ten: 10P3 = 720",
+        "Calculate number of ways to choose four additional members from remaining seven: 7C4 = 35",
+        "Multiply the two results: 720 × 35 = 25200"
+      ],
+      "accepted_alternatives": [
+        "10 × 9 × 8 for officers, then 7C4 for remaining",
+        "10C3 × 3! for officers, then 7C4 for remaining",
+        "10C7 × 3! for officers, then 7C4 for remaining"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "10P3 OR 10×9×8 OR 10C3×3! OR 10C7×3! (720) (A1); correct number of ways the remaining four members can be selected 7C4 OR 35 (A1); attempt to use the multiplication principle with their values (M1); 720×35 25200 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find the mean of x.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "mean",
+        "summation"
+      ],
+      "method_path": [
+        "Sum the x-values",
+        "Divide by 8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to find mean of x-values (M1); x = 6.45 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find y-bar and the value of p using the regression line of y on x.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "mean",
+        "regression_line",
+        "substitution",
+        "summation"
+      ],
+      "method_path": [
+        "Substitute x-bar into regression equation to find y-bar",
+        "Use formula for mean: sum of y = 8 * y-bar",
+        "Set sum of known y plus p equal to total sum, solve for p"
+      ],
+      "accepted_alternatives": [
+        "Find p first by substituting x=8.9 into regression equation, then find y-bar using p (not awarded marks per markscheme note)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(i) attempt to substitute their x into regression equation (M1); y = 0.014375 + 2.1625 * 6.45; y = 14.0 (13.9625 exact) A1; (ii) attempt to use formula for the mean (M1); sum y_i = 8 * 13.9625... = 93.2 + p = 111.7 => p = 18.5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find Pearson's product-moment correlation coefficient r.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "correlation_coefficient",
+        "gdc"
+      ],
+      "method_path": [
+        "Use GDC to compute r from the data"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "0.953958...; r = 0.954 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the values of a and b for the function g(x) = a cos(bx) - 3 given a local minimum at (0, -8) and a local maximum at (16, 2).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_for_parameter",
+        "use_given_points",
+        "determine_period",
+        "solve_trigonometric_equation"
+      ],
+      "method_path": [
+        "Use local minimum (0, -8) to set up equation: a cos(0) - 3 = -8, solve for a = -5.",
+        "Determine period from given points: distance from minimum to maximum is 16, so period = 32.",
+        "Use period to find b: b = 2π / period = 2π / 32 = π/16 ≈ 0.196."
+      ],
+      "accepted_alternatives": [
+        "Use local maximum (16, 2) to set up equation: -5 cos(16b) - 3 = 2, solve for b = π/16."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "a = -5 A1; period = 32 (A1); b = 2π/32 = π/16 ≈ 0.196 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Write down the smallest positive value of k such that g(x + k) = g(x) for all x.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_period",
+        "state_period"
+      ],
+      "method_path": [
+        "Recognize that k is the period of the function.",
+        "State k = 32 from part (a)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "k = 32 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Express g(x) in the form f(x) = p sin(b(x - q)) - 3, find the smallest positive q and the corresponding p.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "horizontal_translation",
+        "phase_shift",
+        "solve_for_parameter",
+        "use_given_points"
+      ],
+      "method_path": [
+        "Use horizontal translation: shift cosine to sine, q = 8.",
+        "Determine p = 5 from amplitude."
+      ],
+      "accepted_alternatives": [
+        "Substitute a point into f(x) = p sin(b(x - q)) - 3 and solve for q and p."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to use a horizontal translation (M1); q = 8 A1; p = 5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "11",
+      "task_summary": "Estimate the mean and standard deviation from a grouped frequency table.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "grouped_data_mean",
+        "grouped_data_standard_deviation"
+      ],
+      "method_path": [
+        "Calculate midpoints of class intervals",
+        "Compute estimated mean using sum of frequency × midpoint divided by total frequency",
+        "Compute estimated standard deviation using formula for grouped data"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme gives mean = 27.5 (A1) and standard deviation = 6.26 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "11",
+      "task_summary": "Approximate the interquartile range using a normal distribution with the estimated mean and standard deviation from part (a).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "percentile",
+        "interquartile_range"
+      ],
+      "method_path": [
+        "Use normal distribution with mean 27.5 and standard deviation 6.26",
+        "Find 75th percentile (Q3) using inverse normal",
+        "Find 25th percentile (Q1) using inverse normal",
+        "Compute IQR = Q3 - Q1",
+        "Round to two significant figures"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme shows 75th percentile = 31.7248... (A1), 25th percentile = 23.2751... (A1), IQR = 8.4 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "12",
+      "task_summary": "Find the exact value of the infinite sum S∞ for the series with first term 53/1000 and common ratio 1/100.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "identify_first_term",
+        "identify_common_ratio",
+        "apply_sum_to_infinity_formula"
+      ],
+      "method_path": [
+        "Identify first term u1 = 53/1000",
+        "Identify common ratio r = 1/100",
+        "Apply sum to infinity formula S∞ = u1/(1 - r)",
+        "Simplify to exact value 53/990"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "u1 = 53/1000, r = 1/100, S∞ = (53/1000)/(1 - 1/100) = 53/990"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "12",
+      "task_summary": "Use the result from part (a) to express the repeating decimal 0.2535353... as a fraction in simplest form.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "decompose_repeating_decimal",
+        "add_fractions",
+        "simplify_fraction"
+      ],
+      "method_path": [
+        "Write 0.2535353... as 0.2 + 0.0535353...",
+        "Recognize 0.0535353... as S∞ from part (a) = 53/990",
+        "Add 0.2 = 1/5 to 53/990",
+        "Simplify to 251/990"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "0.2 + 53/990 = 251/990"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "13",
+      "task_summary": "Find the probability that exactly two semiconductors are defective, given two machines with different defect rates and equal selection probability.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "law_of_total_probability",
+        "binomial_probability_formula"
+      ],
+      "method_path": [
+        "Recognize binomial distribution for each machine",
+        "Compute P(exactly 2 defective | machine A) using B(10, 0.1)",
+        "Compute P(exactly 2 defective | machine B) using B(10, 0.05)",
+        "Apply law of total probability: 0.5 * P_A + 0.5 * P_B"
+      ],
+      "accepted_alternatives": [
+        "Use of calculator notation such as binompdf for binomial probabilities"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "recognition of binomial distribution (M1); attempt to consider both machines using p=0.1 AND p=0.05 (M1); 0.5*0.193710...+0.5*0.0746347... (A1); 0.134 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "14",
+      "task_summary": "Given exactly two defective semiconductors, find the probability they were manufactured by machine A.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "bayes_theorem"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(A | 2 defective)",
+        "Compute P(A ∩ 2 defective) = 0.5 * P(2 defective | A)",
+        "Divide by P(2 defective) from part (a)"
+      ],
+      "accepted_alternatives": [
+        "Use of 3 sf values from part (a) leading to 0.723 or 0.724"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognition of conditional probability (M1); 0.0968.../0.134... (A1); 0.722 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 6,
+      "source_pages": "13-14",
+      "markscheme_pages": "15",
+      "task_summary": "Find the volume of the solid formed by rotating the region bounded by f(x)=x^2/16, g(x)=x^2/25, and both axes about the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "inverse_function",
+        "volume_of_revolution",
+        "definite_integral",
+        "subtraction_of_volumes"
+      ],
+      "method_path": [
+        "Express x in terms of y for f: x^2 = 16y",
+        "Express x in terms of y for g: x^2 = 25 - 50y",
+        "Set up volume integral for f: π ∫ (16y) dy from 0 to 3",
+        "Set up volume integral for g: π ∫ (25 - 50y) dy from 0 to 3",
+        "Subtract volumes: V = π ∫_0^3 (16y) dy - π ∫_0^3 (25 - 50y) dy",
+        "Evaluate integrals and simplify to V = 140"
+      ],
+      "accepted_alternatives": [
+        "V = π ∫_0^3 (16y - (25 - 50y)) dy"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to write at least one function in terms of y (M1); x^2 = 16y OR x^2 = 25 - 50y (A1); one correct expression for volume π ∫ 16y dy OR π ∫ (25 - 50y) dy (A1); attempt to subtract two volumes with limits for y (M1); π ∫_0^3 16y dy - π ∫_0^3 (25 - 50y) dy (A1); V = 140 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 7,
+      "source_pages": "15",
+      "markscheme_pages": "16",
+      "task_summary": "Determine how fast the length AC is changing when the area of triangle ABC is 140 cm², given AB=15 cm, BC=20 cm, AC=x cm, angle ABC=θ decreasing at π/60 rad/min.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "cosine_rule",
+        "implicit_differentiation",
+        "chain_rule",
+        "area_of_triangle",
+        "related_rates"
+      ],
+      "method_path": [
+        "Express x in terms of θ using cosine rule: x² = 15² + 20² - 2·15·20·cosθ = 625 - 600cosθ",
+        "Differentiate x with respect to θ: dx/dθ = (1/2)(625 - 600cosθ)^(-1/2) · 600sinθ",
+        "Apply chain rule: dx/dt = (dx/dθ)·(dθ/dt)",
+        "Find sinθ or cosθ when area = 140 cm² using area formula (1/2)·15·20·sinθ = 140 → sinθ = 14/15, cosθ = √(1 - sin²θ) = √29/15",
+        "Substitute sinθ, cosθ, and dθ/dt = -π/60 into dx/dt expression",
+        "Compute dx/dt ≈ -0.724 cm/min"
+      ],
+      "accepted_alternatives": [
+        "Implicit differentiation with respect to t: 2x·dx/dt = 600sinθ·dθ/dt, then solve for dx/dt.",
+        "Use GDC to find dx/dθ numerically, then multiply by dθ/dt."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1 for attempt to find relationship between x and θ using cosine rule; M1 for attempt to relate the rates; A1 for derivative; M1 for attempt to find cosθ or sinθ or θ when area is 140; A1 for sinθ=14/15 or cosθ=√29/15 or θ=1.20358...; A1 for correct substitution into expression; A1 for final answer -0.724 cm/min."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "17",
+      "task_summary": "Write down the speed of the airplane and the car at t=0.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "evaluate_at_point",
+        "read_initial_condition"
+      ],
+      "method_path": [
+        "Substitute t=0 into v_air = 60e^{-0.1t} to get 60",
+        "Substitute t=0 into v_car = 5t to get 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) speed of airplane = 60 (ms−1) A1 (ii) speed of car = 0 (ms−1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "17",
+      "task_summary": "Find the time when the airplane and car have the same speed, and that speed.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_equal",
+        "solve_equation",
+        "evaluate_at_point"
+      ],
+      "method_path": [
+        "Set v_air = v_car: 60e^{-0.1t} = 5t",
+        "Solve for t using GDC to get t ≈ 6.36",
+        "Substitute t into either velocity to get speed ≈ 31.8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) recognizing v_air = v_car when speeds are the same (M1) 6.35564... t = 6.36 (s) A1 (ii) 31.7782... speed = 31.8 (ms−1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "17-18",
+      "task_summary": "Find d(t), the distance between the car and the back of the airplane, given d(0)=100.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate",
+        "initial_condition",
+        "subtract_displacements"
+      ],
+      "method_path": [
+        "Integrate v_air: ∫60e^{-0.1t} dt = -600e^{-0.1t} + C1",
+        "Integrate v_car: ∫5t dt = (5/2)t^2 + C2",
+        "Recognize d(t) = s_car(t) - s_air(t) + 100 (or equivalent)",
+        "Use d(0)=100 to find constant: 100 = (0) - (-600 + C1) + 100? Actually markscheme shows C=700",
+        "Obtain d(t) = -600e^{-0.1t} - (5/2)t^2 + 700 (or equivalent)"
+      ],
+      "accepted_alternatives": [
+        "d(t) = 600e^{-0.1t} + (5/2)t^2 - 700 (signs reversed)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "recognizing to integrate either velocity function (M1) 60e^{-0.1t} dt, 5t dt correct integration (A1)(A1) -600e^{-0.1t}, (5/2)t^2 (award A1 for each term) recognize to subtract displacements (seen anywhere) (M1) substituting initial condition into their d(t) (M1) C = 700 (or -700) (A1) d(t) = -600e^{-0.1t} - (5/2)t^2 + 700 (accept d(t) = 600e^{-0.1t} + (5/2)t^2 - 700) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "18",
+      "task_summary": "Find the time it takes for the car to reach the back of the airplane.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_equal_to_zero",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Set d(t) = 0",
+        "Solve for t using GDC to get t ≈ 15.1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "recognizing to solve their d(t) = 0 (M1) 15.0586... t = 15.1 (s) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "18",
+      "task_summary": "Find the distance travelled by the car when it reaches the back of the airplane.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Integrate v_car from 0 to t_found: ∫_0^{15.0586} 5t dt",
+        "Evaluate to get (5/2)(15.0586)^2 ≈ 567"
+      ],
+      "accepted_alternatives": [
+        "Use (5/2)t^2 directly with t=15.0586"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "attempt to find the distance travelled by the car (M1) ∫_0^{15.0586} 5t dt, (5/2)(15.0586)^2 (A1) 566.904... 567 (m) (accept 570 (m) from 3 sf answer in (d)) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "17",
+      "markscheme_pages": "19",
+      "task_summary": "Use integration by parts to find ∫ arccos x dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "substitution",
+        "indefinite_integral"
+      ],
+      "method_path": [
+        "Set u = arccos x, dv = dx",
+        "Compute du = -1/√(1-x^2) dx, v = x",
+        "Apply integration by parts: ∫ u dv = uv - ∫ v du",
+        "Integrate ∫ x/√(1-x^2) dx by substitution u = 1-x^2",
+        "Obtain x arccos x - √(1-x^2) + C"
+      ],
+      "accepted_alternatives": [
+        "Substitute x = cos θ, then integrate by parts to get θ cos θ - sin θ + C, back-substitute to x arccos x - √(1-x^2) + C"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: attempt to use integration by parts M1; u=arccos x, dv=1, du=-1/√(1-x^2), v=x (A1); attempt to integrate x/√(1-x^2) by substitution or inspection (M1); x arccos x - √(1-x^2) + C A1. METHOD 2: attempt to use substitution (M1); x=cos θ, dx=-sin θ dθ, ∫ -θ sin θ dθ (A1); attempt to use integration by parts M1; θ cos θ - sin θ, back-substitute to x arccos x - √(1-x^2) + C A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "17",
+      "markscheme_pages": "20",
+      "task_summary": "Show that ∫_0^k 3 arccos(x/2) dx = 1 leads to k^2/4 arccos(k/2) - √(1 - k^2/4) + 1 = 1/3, and hence find k to six significant figures.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "substitution",
+        "equation_solving",
+        "numerical_gdc"
+      ],
+      "method_path": [
+        "Set up total probability integral ∫_0^k 3 arccos(x/2) dx = 1",
+        "Use substitution u = x/2 to get 6 ∫_0^(k/2) arccos u du",
+        "Integrate using result from part (a): 6 [u arccos u - √(1-u^2)]_0^(k/2)",
+        "Evaluate limits to obtain 6[(k/2) arccos(k/2) - √(1-(k/2)^2) + 1] = 1",
+        "Simplify to k^2/4 arccos(k/2) - √(1 - k^2/4) + 1 = 1/3",
+        "Solve numerically using GDC to get k = 0.713250"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(b)(i) ∫_0^k 3 arccos(x/2) dx = 1 (seen anywhere) M1; attempt to integrate (M1); 3∫ arccos(u) du (A1); [3/2 (u arccos u - √(1-u^2))]_0^(k/2) = 1, leading to k^2/4 arccos(k/2) - √(1 - k^2/4) + 1 = 1/3 AG. (ii) k = 0.713250 A2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "17",
+      "markscheme_pages": "21",
+      "task_summary": "Find E(X) and Var(X) for the given probability density function.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "expected_value",
+        "variance",
+        "definite_integral",
+        "numerical_gdc"
+      ],
+      "method_path": [
+        "Compute E(X) = ∫_0^k x * 3 arccos(x/2) dx using GDC with k=0.713250",
+        "Compute E(X^2) = ∫_0^k x^2 * 3 arccos(x/2) dx",
+        "Calculate Var(X) = E(X^2) - [E(X)]^2"
+      ],
+      "accepted_alternatives": [
+        "Compute Var(X) directly as ∫_0^k (x - μ)^2 f(x) dx"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "(c)(i) attempt to substitute their value of k into the formula for E(X) (M1); ∫_0^k 3x arccos(x/2) dx; 0.456309...; E(X)=0.456 A1. (ii) METHOD 1: E(X^2)=0.237... (A1); attempt to use formula for variance (M1); Var(X)=0.0290 A1. METHOD 2: Var(X)=∫_0^k (x-0.456309...)^2 f(x) dx (M1)(A1); Var(X)=0.0290 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "17",
+      "markscheme_pages": "22",
+      "task_summary": "Given μ = E(X) and σ^2 = Var(X), find P(μ - σ < X < μ + σ).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_calculation",
+        "definite_integral",
+        "numerical_gdc"
+      ],
+      "method_path": [
+        "Compute σ = √Var(X) = 0.170236...",
+        "Set up integral ∫_{μ-σ}^{μ+σ} f(x) dx",
+        "Evaluate using GDC to get 0.620"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "(d) σ = 0.170236... (seen anywhere) (A1); ∫_{0.28607...}^{0.626549...} f(x) dx (A1); 0.620 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "18",
+      "markscheme_pages": "23",
+      "task_summary": "Show that the position vector of the intersection of L1 and L2 is (1, 8, -2).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_up_system_of_equations",
+        "solve_linear_equations",
+        "substitute_parameter",
+        "verify_position_vector"
+      ],
+      "method_path": [
+        "Set up equations by equating components of L1 and L2.",
+        "Solve for parameters s and t.",
+        "Substitute parameter into line equation to find intersection point.",
+        "Verify the position vector is (1, 8, -2)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1: attempt to set up a system of equations with at least one correct equation; A1: t=1 OR s=-4; A1: point of intersection (1,8,-2) AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "18",
+      "markscheme_pages": "23-24",
+      "task_summary": "Write vector equation of plane Π containing L1 and L2, and show Cartesian equation is 4x+y-3z=18.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "write_plane_equation",
+        "vector_form",
+        "cross_product",
+        "normal_vector",
+        "cartesian_equation"
+      ],
+      "method_path": [
+        "Write plane equation in form r = a + λb + μc using point on L1 or L2 and direction vectors of L1 and L2.",
+        "Find normal vector n = b × c = (4,1,-3).",
+        "Use r·n = a·n to get Cartesian equation 4x+y-3z=18."
+      ],
+      "accepted_alternatives": [
+        "Use any point on L1 or L2 for a.",
+        "Use r·n = a·n with any point from L1 or L2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "b(i) A1: r = (5,4,2)+λ(1,-1,1)+μ(2,1,3) or equivalent; b(ii) M1: attempt to write equation in form r·n = a·n; A1: 4x+y-3z=18 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "18",
+      "markscheme_pages": "24",
+      "task_summary": "Write down the values of q and r where plane intersects axes at Q(0,q,0) and R(0,0,r).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "find_intercepts",
+        "substitute_coordinates"
+      ],
+      "method_path": [
+        "Substitute y=0, z=0 into 4x+y-3z=18 to find x-intercept (given).",
+        "Substitute x=0, z=0 to find q=18.",
+        "Substitute x=0, y=0 to find r=-6."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "c(i) A1: q=18; c(ii) A1: r=-6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "18",
+      "markscheme_pages": "25",
+      "task_summary": "Use a vector method to find the area of triangle PQR.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_product",
+        "magnitude",
+        "area_of_triangle"
+      ],
+      "method_path": [
+        "Find vectors PQ and PR.",
+        "Compute cross product PQ × PR.",
+        "Find magnitude of cross product.",
+        "Area = 1/2 |PQ × PR|."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1: PQ or PR seen; M1: attempt to find vector product; A1: PQ×PR = (-108, -27, 81); M1: attempt magnitude; A1: Area = 1/2 √18954 ≈ 68.8."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "18",
+      "markscheme_pages": "25",
+      "task_summary": "Write equation of line L3 normal to Π through intersection point.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "line_equation",
+        "normal_vector"
+      ],
+      "method_path": [
+        "Use intersection point (1,8,-2) as position vector.",
+        "Use normal vector (4,1,-3) as direction vector.",
+        "Write r = (1,8,-2) + γ(4,1,-3)."
+      ],
+      "accepted_alternatives": [
+        "Any multiple of direction vector (4,1,-3)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A2: r = (1,8,-2) + γ(4,1,-3); Note: Accept any multiple of direction vector. Award A1A0 if r= is not seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-F",
+      "question": "12",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "18",
+      "markscheme_pages": "26",
+      "task_summary": "Given S(-11,5,7) lies on L3, find γ.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_point",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Set r3 = (-11,5,7).",
+        "Solve component equations for γ.",
+        "Obtain γ = 3."
+      ],
+      "accepted_alternatives": [
+        "γ = -3 if direction vector is (-4,-1,3)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "M1: attempt to set r3 equal to (-11,5,7); A1: γ=3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-G",
+      "question": "12",
+      "part": "G",
+      "marks": 4,
+      "source_pages": "18",
+      "markscheme_pages": "26",
+      "task_summary": "Find the volume of pyramid PQRS.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_subtraction",
+        "magnitude",
+        "volume_of_pyramid"
+      ],
+      "method_path": [
+        "Find vector from S to intersection point (height direction).",
+        "Compute height = magnitude of this vector.",
+        "Use volume = 1/3 × base area × height.",
+        "Base area from part (d)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "M1: attempt to subtract appropriate vectors; A1: height = √234; M1: attempt to substitute into volume formula; A1: V=351."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "question": "6",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q06-A-I",
+      "question": "6",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Write f(x) = 4 cot x + sin x in terms of sin x and cos x.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "rewrite_cot_in_terms_of_sin_cos"
+      ],
+      "method_path": [
+        "Rewrite cot x as cos x / sin x",
+        "Combine to get f(x) = (4 cos x)/sin x + sin x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for f(x) = (4 cos x)/sin x + sin x"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q06-A-II",
+      "question": "6",
+      "part": "A-II",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Sketch the graph of y = f(x) for 0 < x < π, showing the x-intercept.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "find_x_intercept"
+      ],
+      "method_path": [
+        "Determine domain and curvature",
+        "Find x-intercept by solving f(x)=0, x ≈ 1.81"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for correct domain and curvature; A1 for correct x-intercept at x = 1.80911... ≈ 1.81"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Find the value of f^{-1}(2).",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_fx_equals_constant",
+        "inverse_function_evaluation"
+      ],
+      "method_path": [
+        "Solve f(x) = 2 for x in (0, π)",
+        "Obtain x ≈ 1.32"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for f^{-1}(2) = 1.31837... ≈ 1.32"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q06-C",
+      "question": "6",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Given sec a = 1.5, 0 < a < π, find f(a).",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "sec_to_cos",
+        "find_sin_from_cos",
+        "evaluate_trig_expression"
+      ],
+      "method_path": [
+        "Use sec a = 1/cos a to get cos a = 2/3",
+        "Find sin a = √5/3 (positive since 0 < a < π)",
+        "Compute f(a) = 4 cot a + sin a = 4(cos a/sin a) + sin a = 4(2/√5) + √5/3 = (29√5)/15 ≈ 4.32"
+      ],
+      "accepted_alternatives": [
+        "Use arcsec(1.5) to find a ≈ 0.841, then evaluate f(a) directly."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: M1 for recognition sec x = 1/cos x; (A1) for cos α = 2/3 or α = arccos(2/3) ≈ 0.841; A1 for f(α) = 4.32306... ≈ 4.32. METHOD 2: M1 for recognition sec x = 1/cos x; (A1) for cos α = 2/3, sin α = √5/3, cot α = 2/√5; A1 for f(α) = (29√5)/15 ≈ 4.32."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

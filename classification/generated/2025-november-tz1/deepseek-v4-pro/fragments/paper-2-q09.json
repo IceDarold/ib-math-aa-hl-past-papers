@@ -1,0 +1,52 @@
+{
+  "question": "9",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 7,
+      "source_pages": "15",
+      "markscheme_pages": "16",
+      "task_summary": "Determine how fast the length AC is changing when the area of triangle ABC is 140 cm², given AB=15 cm, BC=20 cm, AC=x cm, angle ABC=θ decreasing at π/60 rad/min.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "cosine_rule",
+        "implicit_differentiation",
+        "chain_rule",
+        "area_of_triangle",
+        "related_rates"
+      ],
+      "method_path": [
+        "Express x in terms of θ using cosine rule: x² = 15² + 20² - 2·15·20·cosθ = 625 - 600cosθ",
+        "Differentiate x with respect to θ: dx/dθ = (1/2)(625 - 600cosθ)^(-1/2) · 600sinθ",
+        "Apply chain rule: dx/dt = (dx/dθ)·(dθ/dt)",
+        "Find sinθ or cosθ when area = 140 cm² using area formula (1/2)·15·20·sinθ = 140 → sinθ = 14/15, cosθ = √(1 - sin²θ) = √29/15",
+        "Substitute sinθ, cosθ, and dθ/dt = -π/60 into dx/dt expression",
+        "Compute dx/dt ≈ -0.724 cm/min"
+      ],
+      "accepted_alternatives": [
+        "Implicit differentiation with respect to t: 2x·dx/dt = 600sinθ·dθ/dt, then solve for dx/dt.",
+        "Use GDC to find dx/dθ numerically, then multiply by dθ/dt."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1 for attempt to find relationship between x and θ using cosine rule; M1 for attempt to relate the rates; A1 for derivative; M1 for attempt to find cosθ or sinθ or θ when area is 140; A1 for sinθ=14/15 or cosθ=√29/15 or θ=1.20358...; A1 for correct substitution into expression; A1 for final answer -0.724 cm/min."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

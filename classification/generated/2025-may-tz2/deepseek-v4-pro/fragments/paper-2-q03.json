@@ -1,0 +1,82 @@
+{
+  "question": "3",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the values of x for which f is decreasing, given f'(x) = 4 + 2x - 3e^x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_inequality",
+        "find_critical_values",
+        "test_intervals"
+      ],
+      "method_path": [
+        "Set f'(x) < 0",
+        "Find critical values by solving f'(x) = 0",
+        "Determine intervals where f'(x) < 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "one critical value (seen anywhere) (A1); recognizing that for f to be decreasing f' < 0 (M1); x ≤ -1.74 and x ≥ 0.518 OR x < -1.74 and x > 0.518 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the values of x for which the graph of f is concave-up.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "second_derivative",
+        "solve_inequality",
+        "find_critical_value"
+      ],
+      "method_path": [
+        "Find f''(x) = 2 - 3e^x",
+        "Set f''(x) > 0",
+        "Solve inequality to get x < ln(2/3)"
+      ],
+      "accepted_alternatives": [
+        "Attempt to find maximum of f' OR recognising that f''(x) > 0 OR sketching graph of f''"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "correct critical value x = -0.405465... (= ln(2/3)) (seen anywhere) (A1); attempt to find maximum of f' OR recognising that f''(x) > 0 OR sketching graph of f'' OR f''(x) = 2 - 3e^x (M1); concave-up for x < ln(2/3) OR x < -0.405 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "question": "7",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Find the speed of the helicopter from its position vector.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "magnitude_of_velocity",
+        "speed_calculation"
+      ],
+      "method_path": [
+        "Recognize speed is magnitude of velocity vector",
+        "Compute magnitude sqrt(4^2 + 10^2 + (-25)^2)",
+        "Simplify to sqrt(741) or 107.703... km/h"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognition that the speed is the magnitude of the velocity (M1); speed = sqrt(4^2 + 10^2 + (-25)^2) = sqrt(741) = 107.703... = 108 (km/h) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "15-16",
+      "task_summary": "Find the angle of descent β in degrees.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "angle_between_vectors",
+        "trigonometric_ratio",
+        "descent_angle"
+      ],
+      "method_path": [
+        "Use horizontal speed from part (a) and vertical descent rate 16 km/h",
+        "Compute tan β = 16 / (horizontal speed) or use vector angle methods",
+        "Calculate β = arctan(16 / sqrt(741)) ≈ 8.45°"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: tan β = 16 / (horizontal speed) → β = 8.45°",
+        "METHOD 2: angle between velocity vectors (10, -25, -4) and (10, -25, 0) using dot product",
+        "METHOD 3: angle between velocity vector and horizontal plane using sin β = 4 / sqrt(741)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15-16",
+          "basis": "METHOD 1: attempt to use right-angled triangle with horizontal speed (M1); tan β = 16 / sqrt(741) (A1); β = 8.45° A1. METHOD 2: attempt to find angle between vectors (M1); cos β = 725 / sqrt(741*725) (A1); β = 8.45° A1. METHOD 3: attempt to find angle between vector and horizontal plane (M1); sin β = 4 / sqrt(741) (A1); β = 8.45° A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

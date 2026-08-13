@@ -1,0 +1,79 @@
+{
+  "question": "2",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Explain why the median score for all 30 pupils would still be 10.5.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "median_reasoning",
+        "data_interpretation"
+      ],
+      "method_path": [
+        "State that the median is the middle value",
+        "Note that Aiden's score is below 10.5 and Brett's score is above 10.5",
+        "Conclude that the middle value remains unchanged"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "the median is the middle value and as Aiden’s score is below 10.5 and Brett’s score is above 10.5, hence the middle value stays in the same place"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Determine Aiden's score and Brett's score given the mean and range of all 30 pupils.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "mean_calculation",
+        "range_calculation",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Calculate sum of scores for 28 pupils: 28 × 10.5",
+        "Calculate sum of scores for 30 pupils: 30 × 10.6",
+        "Find sum of Aiden and Brett's scores: 30×10.6 − 28×10.5 = 24",
+        "Use range: Brett's score − Aiden's score = 14",
+        "Solve simultaneous equations to get Aiden = 5, Brett = 19"
+      ],
+      "accepted_alternatives": [
+        "Trial and improvement to find scores satisfying sum 24 and difference 14"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to use that the sum of scores is n×mean (M1); 10.5×28 OR 10.6×30; sum of Aiden and Brett’s scores = 24 (A1); difference between Aiden and Brett’s scores = 14 (A1); attempt to solve their two simultaneous equations or by trial and improvement (M1); (Aiden’s score =) 5, (Brett’s score =) 19 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

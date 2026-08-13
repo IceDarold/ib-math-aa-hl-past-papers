@@ -1,0 +1,219 @@
+{
+  "question": "11",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-A-I",
+      "question": "11",
+      "part": "A-I",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the probability that Amanda entered at most six surveys inaccurately out of 50, given 8% inaccuracy rate.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "cumulative_probability",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize binomial distribution X ~ B(50, 0.08)",
+        "Calculate P(X ≤ 6) using GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "recognizing binomial distribution (M1); P(E ≤ 6) = 0.898128... A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-A-II",
+      "question": "11",
+      "part": "A-II",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Given that at most six surveys were entered inaccurately, find the probability that exactly four surveys were entered inaccurately.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "binomial_distribution",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(E=4 | E≤6)",
+        "Calculate P(E=4) and P(E≤6) using binomial distribution",
+        "Compute P(E=4)/P(E≤6)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "recognition of conditional probability (M1); P(E=4|E≤6) = P(E=4)/P(E≤6) (A1); = 0.227 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the value of n such that the probability that at most six surveys were entered inaccurately is approximately 0.367.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "cumulative_probability",
+        "gdc",
+        "trial_and_error"
+      ],
+      "method_path": [
+        "Use binomial distribution with p=0.08",
+        "Find n such that P(X ≤ 6) ≈ 0.367 using GDC or tables"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "use of tables (M1); n=94 ⇒ P(E≤6)=0.366746... A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-C-I",
+      "question": "11",
+      "part": "C-I",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the probability that a randomly selected survey was entered inaccurately, given error rates and proportions for Amanda, Bryce, and Carmen.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "law_of_total_probability",
+        "tree_diagram"
+      ],
+      "method_path": [
+        "Apply law of total probability: P(I) = P(I|A)P(A) + P(I|B)P(B) + P(I|C)P(C)",
+        "Substitute given probabilities: 0.55×0.08 + 0.25×0.06 + 0.2×0.11",
+        "Calculate result"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "P(I) = P(I∩A) + P(I∩B) + P(I∩C) (M1); = 0.55×0.08 + 0.25×0.06 + 0.2×0.11 (A1); = 0.081 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-C-II",
+      "question": "11",
+      "part": "C-II",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the probability that a survey was entered by Amanda, given that it was entered inaccurately.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "bayes_theorem"
+      ],
+      "method_path": [
+        "Apply Bayes' theorem: P(A|I) = P(I|A)P(A) / P(I)",
+        "Substitute values: (0.55×0.08)/0.081",
+        "Calculate result"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "P(A|I) = P(A∩I)/P(I) (M1); = 0.55×0.08/0.081 (A1); = 0.543 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Find Carmen's new inaccuracy rate x% such that the overall probability of an inaccurate survey equals the probability that Carmen makes an error.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "law_of_total_probability",
+        "algebraic_equation",
+        "percentage_conversion"
+      ],
+      "method_path": [
+        "Set up equation: P(I) = x/100",
+        "Express P(I) using law of total probability with new x: 0.55×0.08 + 0.25×0.06 + 0.2×(x/100)",
+        "Equate to x/100 and solve for x"
+      ],
+      "accepted_alternatives": [
+        "Let y = x/100, set up P(I) = y, solve for y then multiply by 100"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1: P(I|C) = x/100 (M1); P(I) = 0.55×0.08 + 0.25×0.06 + 0.2×(x/100) (A1); equating to x/100 (M1); x = 7.38 A1. METHOD 2: P(I) = 0.55×0.08 + 0.25×0.06 + 0.2×y (A1); equating to y (M1); y = 0.07375; multiply by 100 (M1); x = 7.38 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

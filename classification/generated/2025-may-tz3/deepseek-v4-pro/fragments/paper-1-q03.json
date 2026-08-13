@@ -1,0 +1,50 @@
+{
+  "question": "3",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "8",
+      "task_summary": "Solve 2cos(2θ) - 5cosθ + 2 = 0 for π ≤ θ ≤ 2π.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "double_angle_identity",
+        "substitution",
+        "quadratic_solving",
+        "factorization",
+        "trigonometric_solution"
+      ],
+      "method_path": [
+        "Apply double-angle identity cos(2θ) = 2cos²θ - 1",
+        "Substitute to obtain quadratic in cosθ: 4cos²θ - 5cosθ = 0",
+        "Factorize: cosθ(4cosθ - 5) = 0",
+        "Solve cosθ = 0 and cosθ = 5/4 (reject as impossible)",
+        "Find θ = 3π/2 in the given interval"
+      ],
+      "accepted_alternatives": [
+        "Use quadratic formula on 4cos²θ - 5cosθ = 0 to obtain cosθ = 0 or cosθ = 5/4, then solve for θ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Markscheme shows: recognizing to use cos2θ = 2cos²θ - 1 (M1); 2(2cos²θ - 1) - 5cosθ + 2 = 0 (A1); 4cos²θ - 5cosθ = 0 (A1); choosing method to solve quadratic (M1); cosθ(4cosθ - 5) or quadratic formula (A1); cosθ = 0; θ = 3π/2 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

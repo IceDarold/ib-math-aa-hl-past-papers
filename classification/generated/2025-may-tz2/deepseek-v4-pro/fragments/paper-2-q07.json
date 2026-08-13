@@ -1,0 +1,81 @@
+{
+  "question": "7",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Find the second term of a geometric sequence given first term 80 and fourth term 0.74088.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "geometric_sequence",
+        "common_ratio",
+        "nth_term"
+      ],
+      "method_path": [
+        "Set up equation for fourth term: 80 * r^3 = 0.74088",
+        "Solve for common ratio r = 0.21",
+        "Calculate second term: 80 * 0.21 = 16.8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to find common ratio (M1); 80 r^3 = 0.74088; r = 0.21 (A1); u_2 = 16.8 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given the first two terms of the geometric sequence are the first and eleventh terms of an arithmetic sequence, find the greatest value of the sum S_n of the first n terms of the arithmetic sequence to two decimal places.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arithmetic_sequence",
+        "common_difference",
+        "sum_of_arithmetic_sequence",
+        "maximization"
+      ],
+      "method_path": [
+        "Find common difference d using u_1 = 80 and u_11 = 16.8: 80 + 10d = 16.8 => d = -6.32",
+        "Determine n for maximum S_n by finding when u_n > 0: 80 + (n-1)(-6.32) > 0 => n < 13.6582, so n = 13",
+        "Calculate S_13 = (13/2) * (2*80 + (13-1)*(-6.32)) = 547.04"
+      ],
+      "accepted_alternatives": [
+        "Use table or graph of S_n to find maximum at n=13, then compute S_13 = 547.04"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: attempt to find common difference (M1); d = -6.32 (A1); attempt to find n using table or graph of S_n (M1); S_13 = 547.04 A1. METHOD 2: attempt to find common difference (M1); d = -6.32 (A1); attempt to find n using u_n > 0 (M1); S_13 = 547.04 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

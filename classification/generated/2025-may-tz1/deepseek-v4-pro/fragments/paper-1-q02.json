@@ -1,0 +1,126 @@
+{
+  "question": "2",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the value of k in the expression 1000(1+k)^4 for an investment with 4% nominal annual interest compounded quarterly.",
+      "primary_topic": "number_algebra.exponential_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "compound_interest",
+        "quarterly_compounding",
+        "interest_rate_conversion"
+      ],
+      "method_path": [
+        "Convert nominal annual rate 4% compounded quarterly to quarterly rate: k = 0.04/4 = 0.01"
+      ],
+      "accepted_alternatives": [
+        "k = 0.01",
+        "k = 1/100",
+        "k = 4/400"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "k = 4/400 = 1/100 = 0.01 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Expand and simplify (1+x)^4.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "binomial_expansion",
+        "pascal_triangle",
+        "polynomial_expansion"
+      ],
+      "method_path": [
+        "Obtain binomial coefficients (1,4,6,4,1) or multiply out brackets",
+        "Write expansion: 1 + 4x + 6x^2 + 4x^3 + x^4"
+      ],
+      "accepted_alternatives": [
+        "1 + 4x + 6x^2 + 4x^3 + x^4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to find binomial coefficients or multiply out brackets (M1); e.g. Pascal's triangle down to correct row OR (1+2x+x^2)^2 OR substitute into binomial expansion; (1+x)^4 = 1 + 4x + 6x^2 + 4x^3 + x^4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Hence or otherwise, find the amount of money in the account after one complete year, giving your answer correct to the nearest dinar.",
+      "primary_topic": "number_algebra.exponential_models",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "compound_interest",
+        "binomial_approximation",
+        "direct_calculation",
+        "rounding"
+      ],
+      "method_path": [
+        "Recognize that (1+k)^4 can be expanded using binomial theorem with x=k=0.01",
+        "Substitute k=0.01 into expansion: 1 + 4(0.01) + 6(0.01)^2 + 4(0.01)^3 + (0.01)^4",
+        "Calculate terms: 1 + 0.04 + 0.0006 + 0.000004 + 0.00000001 = 1.04060401",
+        "Multiply by 1000: 1040.60401",
+        "Round to nearest dinar: 1041"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Use binomial expansion with x=0.01, multiply by 1000, round to 1041",
+        "METHOD 2: Calculate (1.01)^4 = 1.04060401 by hand, multiply by 1000, round to 1041"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 1: recognition that the expansion can be used with x replaced with k (M1); (1+1/100)^4 = 1 + 4/100 + 6/100^2 + ... = 1 + 0.04 + 0.0006 + ... (A1); multiplies by 1000 (seen anywhere) (M1); 1000(1+1/100)^4 = 1000 + 40 + 0.6 + ... = 1040.6... = 1041 (dinar) A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "METHOD 2: attempt to find the value of (1+k)^4 by hand (M1); (1.01)^4 = (1.0201)(1.01) = (1.030301)(1.01) = 1.0406... (A1); multiplies by 1000 (seen anywhere) (M1); 1000(1.01)^4 = 1040.6... = 1041 (dinar) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

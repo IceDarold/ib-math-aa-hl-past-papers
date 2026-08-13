@@ -1,0 +1,1306 @@
+{
+  "session": "May 2025",
+  "zone": "TZ3",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Express log10 24 in terms of p and q, where p = log10 2 and q = log10 3.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "logarithm_product_rule",
+        "logarithm_power_rule",
+        "substitution"
+      ],
+      "method_path": [
+        "Apply log10(24) = log10(8 × 3) = log10(8) + log10(3)",
+        "Apply log10(8) = log10(2^3) = 3 log10(2)",
+        "Substitute p = log10(2) and q = log10(3) to get 3p + q"
+      ],
+      "accepted_alternatives": [
+        "log10(24) = log10(2^3 × 3) = 3 log10(2) + log10(3) = 3p + q"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "correct application of log_a(xy) = log_a(x) + log_a(y) or log_a(x^m) = m log_a(x) (M1); correct expression in terms of log10 2 AND log10 3 (A1); 3p + q (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Express log3 8 in terms of p and q.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "change_of_base",
+        "logarithm_power_rule",
+        "substitution"
+      ],
+      "method_path": [
+        "Apply change of base: log3(8) = log10(8) / log10(3)",
+        "Apply log10(8) = log10(2^3) = 3 log10(2)",
+        "Substitute p = log10(2) and q = log10(3) to get 3p / q"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "log3(8) = log10(8)/log10(3) = 3log10(2)/log10(3) (A1); 3p/q (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "7",
+      "task_summary": "Write down the value of f(-3) from the graph.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "read_graph",
+        "function_value"
+      ],
+      "method_path": [
+        "Read f(-3) from graph as -1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "(a) ( 3) 1 f − = − A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "7",
+      "task_summary": "State the domain of the inverse function f^{-1}.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "inverse_function",
+        "domain_from_range"
+      ],
+      "method_path": [
+        "Identify range of f from graph as [-3, 5]",
+        "State domain of f^{-1} as [-3, 5]"
+      ],
+      "accepted_alternatives": [
+        "Interval notation [-3, 5]"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "(b) 3 5 − ≤ x ≤ A1 Note: Award A1 for answers using interval notation [−3, 5]."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "7",
+      "task_summary": "Find x such that f^{-1}(2x - 7) = -3.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "inverse_function_property",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Apply f to both sides: 2x - 7 = f(-3)",
+        "Substitute f(-3) = -1 from part (a)",
+        "Solve 2x - 7 = -1 to get x = 3"
+      ],
+      "accepted_alternatives": [
+        "Use f^{-1}(-1) = -3 to set 2x - 7 = -1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "(c) ( ) 1(2 7) 3 2 7 ( 3) f x x f − − = − ⇒ − = − OR 1( 1) 3 f − − = − (M1) 2 7 1 x − = − (A1) x = 3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "8",
+      "task_summary": "Solve 2cos(2θ) - 5cosθ + 2 = 0 for π ≤ θ ≤ 2π.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "double_angle_identity",
+        "substitution",
+        "quadratic_solving",
+        "factorization",
+        "trigonometric_solution"
+      ],
+      "method_path": [
+        "Apply double-angle identity cos(2θ) = 2cos²θ - 1",
+        "Substitute to obtain quadratic in cosθ: 4cos²θ - 5cosθ = 0",
+        "Factorize: cosθ(4cosθ - 5) = 0",
+        "Solve cosθ = 0 and cosθ = 5/4 (reject as impossible)",
+        "Find θ = 3π/2 in the given interval"
+      ],
+      "accepted_alternatives": [
+        "Use quadratic formula on 4cos²θ - 5cosθ = 0 to obtain cosθ = 0 or cosθ = 5/4, then solve for θ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Markscheme shows: recognizing to use cos2θ = 2cos²θ - 1 (M1); 2(2cos²θ - 1) - 5cosθ + 2 = 0 (A1); 4cos²θ - 5cosθ = 0 (A1); choosing method to solve quadratic (M1); cosθ(4cosθ - 5) or quadratic formula (A1); cosθ = 0; θ = 3π/2 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "8",
+      "task_summary": "Show that the curve y = x^2 - x - 1 and the line y = mx - 3 meet when x^2 - (m + 1)x + 2 = 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "equate_expressions",
+        "rearrange_equation",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Set x^2 - x - 1 = mx - 3",
+        "Rearrange to x^2 - x - 1 - mx + 3 = 0",
+        "Simplify to x^2 - (m + 1)x + 2 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "equating y = mx - 3 and y = x^2 - x - 1 M1; x^2 - x - 1 - (mx - 3) = 0 OR mx - x^2 + x + 2 = 0 A1; x^2 - (m + 1)x + 2 = 0 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "8",
+      "task_summary": "Find the values of m when the line is tangent to the curve.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_discriminant_zero",
+        "solve_quadratic",
+        "apply_derivative_condition",
+        "substitute_into_quadratic"
+      ],
+      "method_path": [
+        "Set discriminant of x^2 - (m + 1)x + 2 = 0 to zero: (m + 1)^2 - 8 = 0",
+        "Solve (m + 1)^2 = 8 to get m = -1 ± 2√2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2 (derivative): Find derivative dy/dx = 2x - 1, set equal to m, substitute x = (m + 1)/2 into x^2 - (m + 1)x + 2 = 0, solve for m to get m = -1 ± 2√2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: correct substitution into discriminant (A1); (m+1)^2 - 4(1)(2) A1; discriminant equals 0 A1; m = -1 - 2√2, -1 + 2√2 A1A1. METHOD 2: derivative dy/dx = 2x - 1 A1; substituting 2x - 1 = m or x = (m+1)/2 into AG (A1); x = ±√2 or m^2 + 2m - 7 = 0 A1; m = -1 - 2√2, -1 + 2√2 A1A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "9",
+      "task_summary": "Find b such that P(X > b) = P(Y > 22) given X ~ N(7, a^2) and Y ~ N(19, a^2).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "standardize_normal",
+        "equate_probabilities",
+        "solve_linear"
+      ],
+      "method_path": [
+        "Recognize that X and Y have same variance, so equate standardized scores: (b - 7)/a = (22 - 19)/a",
+        "Solve for b: b = 7 + (22 - 19) = 10"
+      ],
+      "accepted_alternatives": [
+        "b = 7 + (22 - 19) = 10",
+        "b = 10"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognizing constant change from Y to X and/or comparing the two distributions (M1); b = 10 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "8",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the approximate value of P(7 - a < X < 7 + a) correct to two significant figures.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "empirical_rule",
+        "normal_probability"
+      ],
+      "method_path": [
+        "Recall that for a normal distribution, approximately 68% of data lies within one standard deviation of the mean.",
+        "State P(7 - a < X < 7 + a) ≈ 0.68."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "P(7 - a < X < 7 + a) = 0.68 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q05-C",
+      "question": "5",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "9",
+      "task_summary": "Given a = 3, calculate the approximate value of P(Y < 22) correct to two significant figures.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "standardize_normal",
+        "empirical_rule",
+        "normal_probability",
+        "symmetry"
+      ],
+      "method_path": [
+        "Recognize that 22 is one standard deviation above the mean (since a = 3, mean = 19).",
+        "Use symmetry and empirical rule: P(Y < 22) = 1 - P(Y > 22) = 1 - 0.16 = 0.84, or 0.5 + 0.34 = 0.84."
+      ],
+      "accepted_alternatives": [
+        "P(Y < 22) = 1 - 0.16 = 0.84",
+        "P(Y < 22) = 0.5 + 0.34 = 0.84",
+        "P(Y < 22) = 0.68 + 0.16 = 0.84"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognizing that 22 is one standard deviation above the mean (M1); 0.16 or 0.34 (or equivalent) seen in correct sketch or probability statement (A1); P(Y < 22) = 1 - 0.32 OR 0.5 + 0.34 OR 0.68 + 0.16 = 0.84 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "9-10",
+      "markscheme_pages": "10",
+      "task_summary": "Sketch the graph of y = |f(x)|, clearly indicating any asymptotes.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "absolute_value_transformation",
+        "asymptote_identification",
+        "reflection_in_x_axis",
+        "sketching"
+      ],
+      "method_path": [
+        "Identify original graph features: local max A(-1/2, 5/2), local min B(0, -15/2), vertical asymptote x = -1/2, oblique asymptote y = 5x + 5.",
+        "Apply absolute value: reflect negative parts of f(x) across x-axis.",
+        "Sketch right branch: minimum in approximately correct position, asymptotic to y = 5x + 5.",
+        "Sketch left branch: reflect original left branch (which was below x-axis) across x-axis, so minimum becomes positive, asymptotic to x = -1/2.",
+        "Draw new oblique asymptote y = -5x - 5 for left branch (reflected).",
+        "Indicate vertical asymptote x = -1/2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "right branch with minimum in approximately correct position AND showing asymptotic behaviour to y = 5x + 5 (A1); asymptotic behaviour on both branches at x = -1/2 (A1); left branch reflected in x-axis with minimum in approximately correct position (M1); oblique asymptote (y = -5x - 5) drawn in approximately correct position AND left branch with correct asymptotic behaviour (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "11",
+      "task_summary": "Sketch the graph of y = 15/f(x), clearly indicating any asymptotes and intercepts with the axes.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "reciprocal_transformation",
+        "asymptote_identification",
+        "intercept_calculation",
+        "sketching"
+      ],
+      "method_path": [
+        "Identify original graph features: local max A(-1/2, 5/2), local min B(0, -15/2), vertical asymptote x = -1/2, oblique asymptote y = 5x + 5.",
+        "Apply reciprocal transformation: y = 15/f(x).",
+        "Determine intercepts: when f(x) = 15, y = 1; when f(x) = -15, y = -1. Use original graph to estimate x-intercepts of new function.",
+        "Determine asymptotes: vertical asymptote remains x = -1/2; horizontal asymptote y = 0 as |f(x)| → ∞.",
+        "Sketch: axes intercepts in approximately correct positions (A1); local extrema in approximately correct positions (A1); asymptotic behavior to y = 0 on both sides (A1)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "axes intercepts in approximately correct positions (A1); local extrema in approximately correct positions (A1); asymptotic behavior to y = 0 on both sides OR asymptote at y = 0 indicated on sketch (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "12",
+      "task_summary": "Find the volume of the solid formed by rotating the region enclosed by x^2 + y^4 = r^4 (0 ≤ x ≤ r^2) and the y-axis about the y-axis, expressing it as V = aπr^b with a, b ∈ ℚ+.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "rearrange_equation",
+        "volume_of_revolution",
+        "definite_integral",
+        "evaluate_integral",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Express x^2 = r^4 - y^4",
+        "Set up volume integral V = π ∫ x^2 dy from y = -r to y = r",
+        "Integrate π(r^4 - y^4) dy",
+        "Evaluate antiderivative π[r^4 y - y^5/5] from -r to r",
+        "Substitute limits and simplify to (8π/5) r^5"
+      ],
+      "accepted_alternatives": [
+        "Use symmetry: V = 2π ∫_0^r (r^4 - y^4) dy, leading to same result."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "x^2 = r^4 - y^4 (A1); substituting into π∫x^2 dy (M1); π∫(r^4 - y^4) dy from -r to r OR 2π∫_0^r (r^4 - y^4) dy (A1); antiderivative π[r^4 y - y^5/5] (A1); evaluating limits (A1); final answer 8πr^5/5 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "12",
+      "task_summary": "Express z1 = 3 - 3i in the form re^{iθ} with r > 0 and -π < θ ≤ π.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus_calculation",
+        "argument_calculation",
+        "polar_form_conversion"
+      ],
+      "method_path": [
+        "Calculate modulus r = sqrt(3^2 + (-3)^2) = sqrt(18) = 3√2",
+        "Calculate argument θ = arctan(-3/3) = -π/4",
+        "Write z1 = 3√2 e^{-iπ/4}"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to find modulus OR argument of z1 (M1); r = √12 = 2√3 or θ = -π/3 (A1); z1 = √12 e^{-iπ/3} = 2√3 e^{-iπ/3} (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "12",
+      "task_summary": "Find the cube roots u, v, w of z2/z1 where z2 = 2√3 e^{i5π/6}.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "complex_division",
+        "cube_root_extraction",
+        "de_moivre_theorem"
+      ],
+      "method_path": [
+        "Compute z2/z1 = (2√3 e^{i5π/6}) / (2√3 e^{-iπ/3}) = e^{i7π/6}",
+        "Recognize three cube roots with arguments (7π/6 + 2kπ)/3 for k = 0, 1, 2",
+        "Apply de Moivre's theorem to find roots: e^{i7π/18}, e^{i19π/18}, e^{i31π/18}",
+        "Simplify arguments to principal range: e^{i7π/18}, e^{-i17π/18}, e^{-i5π/18}"
+      ],
+      "accepted_alternatives": [
+        "e^{i7π/18}, e^{i19π/18}, e^{i31π/18}",
+        "e^{i7π/18}, e^{-i17π/18}, e^{-i5π/18}"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "z2/z1 = e^{i7π/6} (A1); recognizing three equivalent arguments (M1); attempt to find a root using de Moivre's theorem (M1); e^{i(7π/18 + 2kπ/3)} (A1); e^{i7π/18}, e^{-i17π/18}, e^{-i5π/18} (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "13-15",
+      "task_summary": "Determine the value of lim_{x→0} (sin x / (1 - cos x)).",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "trigonometric_limits",
+        "algebraic_manipulation",
+        "maclaurin_series",
+        "half_angle_identities"
+      ],
+      "method_path": [
+        "Recognize indeterminate form 0/0",
+        "Apply l'Hôpital's rule to get (cos x + x sin x)/sin x",
+        "Apply l'Hôpital's rule again or use fundamental limit sin x/x → 1",
+        "Substitute x = 0 to obtain limit 2"
+      ],
+      "accepted_alternatives": [
+        "Multiply numerator and denominator by (1 + cos x), simplify to (1 + cos x)/sin x, use fundamental limit sin x/x → 1, substitute x = 0 to get 2.",
+        "Expand sin x and 1 - cos x as Maclaurin series, factor x^2, cancel, substitute x = 0 to get 2.",
+        "Express in half angles: sin x = 2 sin(x/2) cos(x/2), 1 - cos x = 2 sin^2(x/2), simplify to 2 cos(x/2) / sin(x/2), use limit tan(x/2)/(x/2) → 1 to get 2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: indeterminate form, attempt to apply l'Hôpital's rule R1; derivative steps A1; applying l'Hôpital's rule again (M1); derivative A1; OR recognizing fundamental trig limit R1; substituting x=0 (M1); limit = 2 A1."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 2: multiplying numerator and denominator by 1+cos x M1; simplification A1; (A1); recognizing fundamental trig limit R1; substituting x=0 (M1); limit = 2 A1."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 3: expressing as Maclaurin series (M1); series A1; recognizing multiples of x^2 (M1); factoring A1; substituting x=0 (M1); limit = 2 A1."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 4: expressing in half angles M1; simplification A1A1; rewriting (M1); using limit tan x/x → 1 M1; limit = 2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-A-I",
+      "question": "10",
+      "part": "a-i",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "16",
+      "task_summary": "Find the value of k for which the sequence is arithmetic.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equate_differences",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Equate differences of consecutive terms: (3-2k)-(k-5) = (5k+3)-(3-2k)",
+        "Simplify to 8-3k = 7k",
+        "Solve for k: k = 4/5"
+      ],
+      "accepted_alternatives": [
+        "Set up system of equations with common difference d, e.g., k-5+d=3-2k and 3-2k+d=5k+3, solve for k",
+        "Use arithmetic mean: (u1+u3)/2 = u2, solve (k-5+5k+3)/2 = 3-2k",
+        "Express u3 in terms of k: u3 = 2u2 - u1, solve 5k+3 = 2(3-2k) - (k-5)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: attempt to equate differences (M1), correct equation (A1), k=4/5 (A1). METHOD 2: two correct equations (A1), valid attempt to solve (M1), k=4/5 (A1). METHOD 3: expression for u3 (A1), combining like terms (M1), k=4/5 (A1). METHOD 4: attempt to find mean (M1), correct equation (A1), k=4/5 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-A-II",
+      "question": "10",
+      "part": "a-ii",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "16",
+      "task_summary": "Find u3 using the value of k from part (a)(i).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute",
+        "evaluate_expression"
+      ],
+      "method_path": [
+        "Substitute k = 4/5 into u3 = 5k+3",
+        "Compute u3 = 5*(4/5)+3 = 7"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "substituting their value of k into expression for u3 (A1), =7 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-B-I",
+      "question": "10",
+      "part": "b-i",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Show that the first three terms form a geometric sequence when k=12.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute",
+        "compute_terms",
+        "verify_common_ratio"
+      ],
+      "method_path": [
+        "Substitute k=12 into u1, u2, u3 to get 7, -21, 63",
+        "Show common ratio r = -21/7 = -3 and 63/(-21) = -3"
+      ],
+      "accepted_alternatives": [
+        "Show u2^2 = u1*u3: (-21)^2 = 7*63"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "substituting k=12 (M1), u1=7, u2=-21, u3=63 (A1), r=-3 or equivalent (R1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-B-II",
+      "question": "10",
+      "part": "b-ii",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "State why the sum to infinity does not exist for this geometric sequence.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "state_condition",
+        "convergence_criterion"
+      ],
+      "method_path": [
+        "State that |r| ≥ 1 (or r ≤ -1 or r > 1), so the series is not convergent"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "since |r| ≥ 1 (accept |r| > 1 or r < -1) R1, hence not convergent AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-C-I",
+      "question": "10",
+      "part": "c-i",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Show that k satisfies k^2 - 10k - 24 = 0 for a second geometric case.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "equate_ratios",
+        "cross_multiply",
+        "expand",
+        "simplify_to_quadratic"
+      ],
+      "method_path": [
+        "Equate ratios of consecutive terms: (3-2k)/(k-5) = (5k+3)/(3-2k)",
+        "Cross-multiply: (3-2k)^2 = (k-5)(5k+3)",
+        "Expand and simplify to k^2 - 10k - 24 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempts to find ratios, in terms of k, of consecutive terms and equating (M1), correct expansion leading to given result (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-C-II",
+      "question": "10",
+      "part": "c-ii",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Find the first three terms for the second value of k.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_quadratic",
+        "factorize",
+        "substitute",
+        "compute_terms"
+      ],
+      "method_path": [
+        "Solve k^2 - 10k - 24 = 0 by factorizing (k+2)(k-12)=0",
+        "Select k = -2 (the second value, not 12)",
+        "Substitute k = -2 into u1 = k-5, u2 = 3-2k, u3 = 5k+3",
+        "Obtain u1 = -7, u2 = 7, u3 = -7"
+      ],
+      "accepted_alternatives": [
+        "Use quadratic formula or completing the square to find k = -2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "recognizing need to factorize, complete the square or substitute into quadratic formula (M1), k=-2 (A1), substituting their value of k (other than k=12) to find u1, u2 or u3 (M1), u1=-7, u2=7, u3=-7 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-C-III",
+      "question": "10",
+      "part": "c-iii",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Write down S_{2m}, the sum of the first 2m terms, for this second value of k.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "recognize_alternating_sequence",
+        "sum_of_pairs"
+      ],
+      "method_path": [
+        "Observe that terms alternate: -7, 7, -7, 7, ...",
+        "Sum of first 2m terms is 0 because pairs sum to 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "S_{2m} = 0 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "18",
+      "task_summary": "Find the coordinates of D, the vertex diagonally opposite B in parallelogram ABCD.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_addition",
+        "parallelogram_property"
+      ],
+      "method_path": [
+        "Find vector BC or BA",
+        "Use parallelogram property to find D"
+      ],
+      "accepted_alternatives": [
+        "Use BC = AD to find D",
+        "Use BA = CD to find D"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "BC = (2,4,2) OR BA = (4,2,-2) (A1); (3,0,2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "18",
+      "task_summary": "Find the coordinates of E, the intersection of diagonals AC and BD.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "midpoint_formula",
+        "vector_equation"
+      ],
+      "method_path": [
+        "Find midpoint of AC or BD",
+        "Or set up vector equation AE = EC"
+      ],
+      "accepted_alternatives": [
+        "Midpoint of AC",
+        "Midpoint of BD",
+        "Solve AE = EC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "recognizing to find midpoint of [AC] or [BD] (M1); (0,-3,2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "19",
+      "task_summary": "Find m from cross product AB × AD = m(1,1,1) and hence find the area of parallelogram ABCD.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "magnitude",
+        "area_of_parallelogram"
+      ],
+      "method_path": [
+        "Find vectors AB and AD",
+        "Compute cross product AB × AD",
+        "Equate to m(1,1,1) to find m",
+        "Find magnitude of cross product",
+        "Area = magnitude"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "AB = (-4,-2,2) AND AD = (2,4,2) A1; cross product = (-12,12,-12) A1; m=12 A1; magnitude = 12√3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "19",
+      "task_summary": "Find the Cartesian equation of plane P1 containing parallelogram ABCD.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "plane_equation",
+        "cross_product",
+        "normal_vector"
+      ],
+      "method_path": [
+        "Use cross product of AB and AD as normal vector",
+        "Substitute a point to find constant"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "substituting cross product and a point into the equation of a plane (M1); -x + y - z = -5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Show that cos θ = 1/5, where θ is the acute angle between planes P1 and P2.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "angle_between_planes",
+        "dot_product",
+        "normal_vectors"
+      ],
+      "method_path": [
+        "Identify normal vectors n1 and n2",
+        "Compute dot product n1·n2",
+        "Compute magnitudes |n1| and |n2|",
+        "Use cos θ = |n1·n2|/(|n1||n2|)",
+        "Simplify to 1/5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "n1 = (-1,1,-1), n2 = (5,1,-7); recognizing angle between n1 and n2 (M1); |n2| = √75 A1; cos θ = 1/5 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Find the coordinates of F, the intersection of line L (through E perpendicular to P1) with plane P2.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "line_equation",
+        "plane_intersection",
+        "parametric_form"
+      ],
+      "method_path": [
+        "Write vector equation of line L using E and normal of P1",
+        "Substitute parametric coordinates into P2 equation",
+        "Solve for parameter λ",
+        "Find coordinates of F"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to substitute normal to P1 and their E into vector equation of line (M1); r = (0,-3,2) + λ(-1,1,-1) A1; substitutes into P2 (M1); λ = 6 A1; (-6,3,-4) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "21",
+      "task_summary": "Show that the modulus condition |z - (2 + i)| = 3 leads to the Cartesian equation x^2 + y^2 - 4x - 2y - 4 = 0.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_modulus_formula",
+        "expand_squares",
+        "simplify_equation"
+      ],
+      "method_path": [
+        "Substitute z = x + yi into |z - (2 + i)| = 3",
+        "Write modulus as sqrt((x-2)^2 + (y-1)^2) = 3",
+        "Square both sides: (x-2)^2 + (y-1)^2 = 9",
+        "Expand: x^2 - 4x + 4 + y^2 - 2y + 1 = 9",
+        "Simplify to x^2 + y^2 - 4x - 2y - 4 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "substituting into modulus formula with either correct real part or correct imaginary part (M1); (x-2)^2 + (y-1)^2 = 3 (A1); x^2 - 4x + 4 + y^2 - 2y + 1 = 9 A1; x^2 + y^2 - 4x - 2y - 4 = 0 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "21-22",
+      "task_summary": "Show that the argument condition arg((z + p)/(z - 1)) = π/4 leads to the Cartesian equation x^2 + y^2 + (p - 1)x + (p + 1)y - p = 0.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.complex_numbers",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "express_complex_fraction",
+        "rationalize_denominator",
+        "expand_numerator",
+        "equate_argument",
+        "use_tangent_identity",
+        "simplify_equation"
+      ],
+      "method_path": [
+        "Express (z + p)/(z - 1) in the form a + bi by multiplying numerator and denominator by conjugate of denominator",
+        "Expand numerator and denominator to obtain real and imaginary parts",
+        "Set argument equal to π/4, so arctan(imaginary/real) = π/4",
+        "Equate imaginary/real = tan(π/4) = 1",
+        "Cross-multiply and simplify to obtain x^2 + y^2 + (p - 1)x + (p + 1)y - p = 0"
+      ],
+      "accepted_alternatives": [
+        "Use arg((z + p)/(z - 1)) = arg(z + p) - arg(z - 1) and apply compound angle formula for tangent to derive the equation."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21-22",
+          "basis": "METHOD 1: recognizing the need to express (z+p)/(z-1) in the form a+ib (M1); multiplying by conjugate (A1); expanding (M1); obtaining expression (A1); equating argument to π/4 (M1); equating real and imaginary parts (A1); final equation AG. METHOD 2: arg((z+p)/(z-1)) = arg(z+p) - arg(z-1) (M1); arctan expressions (A1); compound angle formula (M1); equating to tan(π/4)=1 (M1); simplification to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Use the equations from parts (a) and (b) with p = 4 to find the two complex numbers z1 and z2 satisfying both conditions.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.complex_numbers",
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_p_value",
+        "solve_simultaneous_equations",
+        "substitute_linear_relation",
+        "solve_quadratic",
+        "find_complex_roots"
+      ],
+      "method_path": [
+        "From part (b) with p = 4, obtain equation x + y = 0",
+        "Solve simultaneously with x^2 + y^2 - 4x - 2y - 4 = 0 from part (a)",
+        "Substitute y = -x into the circle equation",
+        "Solve quadratic 2x^2 - 2x - 4 = 0 to get x = -1, x = 2",
+        "Find corresponding y values: y = 1, y = -2",
+        "Write z1 = -1 + i, z2 = 2 - 2i"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "arg((z+4)/(z-1)) = π/4 ⇒ x + y = 0 (A1); solving simultaneously their equations in x and y (M1); x + y = 0 ⇒ y = -x (A1); substituting to obtain an equation in either x or y (M1); 2x^2 - 2x - 4 = 0 or 2y^2 + 2y - 4 = 0; solving for either x or y (M1); x = -1 and x = 2 OR y = -2 and y = 1 (A1); z1 = -1 + i and z2 = 2 - 2i (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Given that z1 and z2 are roots of a quartic with real coefficients, find the value of a (coefficient of z^3).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "identify_conjugate_roots",
+        "sum_of_roots",
+        "calculate_coefficient"
+      ],
+      "method_path": [
+        "Recognize that since coefficients are real, the other two roots are conjugates of z1 and z2: -1 - i and 2 + 2i",
+        "Use sum of roots = -a for monic quartic",
+        "Sum all four roots: (-1 + i) + (-1 - i) + (2 - 2i) + (2 + 2i) = 2",
+        "Thus a = -2"
+      ],
+      "accepted_alternatives": [
+        "Expand (z - z1)(z - z2)(z - z3)(z - z4) and equate coefficient of z^3 to a."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "EITHER a = -(z1 + z2 + z3 + z4) (A1); OR expanding to obtain term in z^3 (A1); recognizing that z3 and z4 are conjugates of z1 and z2 (M1); roots are -1+i, -1-i, 2-2i, 2+2i (A1); a = -((-1+i)+(-1-i)+(2-2i)+(2+2i)) = -2 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

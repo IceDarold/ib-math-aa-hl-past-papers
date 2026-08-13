@@ -1,0 +1,85 @@
+{
+  "question": "5",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "7",
+      "markscheme_pages": "12",
+      "task_summary": "Show that the area of picture frame F_n is 20*(9/4)^(n-1) cm^2, and hence find the mean area of the ten picture frames in the form p*(9^a/4^10) cm^2.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "identify_geometric_sequence",
+        "find_common_ratio",
+        "derive_nth_term",
+        "sum_geometric_series",
+        "calculate_mean"
+      ],
+      "method_path": [
+        "Recognise that widths and heights form geometric sequences with common ratio 3/2",
+        "Deduce that areas form a geometric sequence with first term 20 and common ratio 9/4",
+        "Derive nth term formula: area of F_n = 20*(9/4)^(n-1)",
+        "Sum the first 10 terms using S_n = u_1*(1 - r^n)/(1 - r)",
+        "Divide sum by 10 to obtain mean area",
+        "Simplify to required form p*(9^a/4^10) with p=8/5, a=10"
+      ],
+      "accepted_alternatives": [
+        "Use product of width and height sequences: area = (4*(3/2)^(n-1))*(5*(3/2)^(n-1)) = 20*(9/4)^(n-1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "M1 for using two consecutive terms to find common ratio or recognising geometric sequences; A1 for areas form geometric sequence with first term 20 and common ratio 45/20; AG for area formula; (M1) for attempt to find sum using formula; (A1) for correct sum expression; A1 for mean area simplified to 8/5*(9^10/4^10) with p=8/5, a=10."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "13",
+      "task_summary": "Find the median area of the ten picture frames in the form q*(9/4)^4 cm^2.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "identify_median_position",
+        "evaluate_terms",
+        "calculate_median"
+      ],
+      "method_path": [
+        "Recognise that median is between the 5th and 6th terms",
+        "Calculate area of F_5 = 20*(9/4)^4",
+        "Calculate area of F_6 = 20*(9/4)^5",
+        "Compute median as average of these two areas",
+        "Simplify to q*(9/4)^4 with q=65/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "(M1) for recognition that median is between 5th and 6th picture frame; (A1) for correct expression of median area; A1 for simplified median area 65/2*(9/4)^4 with q=65/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

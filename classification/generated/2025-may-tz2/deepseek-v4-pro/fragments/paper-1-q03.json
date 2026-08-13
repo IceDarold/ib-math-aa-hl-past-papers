@@ -1,0 +1,117 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Using the sine rule, show that cos θ = (3√2)/5.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "sine_rule",
+        "double_angle_identity",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Apply sine rule: sin θ / 5 = sin 2θ / (6√2)",
+        "Use double angle identity: sin 2θ = 2 sin θ cos θ",
+        "Simplify to cos θ = (3√2)/5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "correct substitution in sine rule (A1); attempt to use double angle rule for sin2θ (M1); 3√2 cos θ = 5 AG [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Hence, find sin θ.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "pythagorean_identity",
+        "right_triangle_trigonometry"
+      ],
+      "method_path": [
+        "Use sin² θ + cos² θ = 1 with cos θ = (3√2)/5",
+        "Solve for sin θ = √7/5"
+      ],
+      "accepted_alternatives": [
+        "Use right triangle with adjacent side 3√2 and hypotenuse 5 to find opposite side √7, then sin θ = √7/5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "valid attempt to find sinθ (M1); sin θ = √7/5 A1 [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find DC given area of triangle BCD is 2√14.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.circular_measure"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "area_of_triangle",
+        "sine_formula",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Use area formula: (1/2) × BC × DC × sin θ = 2√14",
+        "Substitute BC = 6√2 and sin θ = √7/5",
+        "Solve for DC = 10/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "1/2 × 6√2 × DC × √7/5 = 2√14 (A1); DC = 10/3 A1 [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

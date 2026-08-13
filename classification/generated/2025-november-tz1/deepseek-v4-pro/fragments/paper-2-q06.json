@@ -1,0 +1,80 @@
+{
+  "question": "6",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "12",
+      "task_summary": "Find the exact value of the infinite sum S∞ for the series with first term 53/1000 and common ratio 1/100.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "identify_first_term",
+        "identify_common_ratio",
+        "apply_sum_to_infinity_formula"
+      ],
+      "method_path": [
+        "Identify first term u1 = 53/1000",
+        "Identify common ratio r = 1/100",
+        "Apply sum to infinity formula S∞ = u1/(1 - r)",
+        "Simplify to exact value 53/990"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "u1 = 53/1000, r = 1/100, S∞ = (53/1000)/(1 - 1/100) = 53/990"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "12",
+      "task_summary": "Use the result from part (a) to express the repeating decimal 0.2535353... as a fraction in simplest form.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "decompose_repeating_decimal",
+        "add_fractions",
+        "simplify_fraction"
+      ],
+      "method_path": [
+        "Write 0.2535353... as 0.2 + 0.0535353...",
+        "Recognize 0.0535353... as S∞ from part (a) = 53/990",
+        "Add 0.2 = 1/5 to 53/990",
+        "Simplify to 251/990"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "0.2 + 53/990 = 251/990"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

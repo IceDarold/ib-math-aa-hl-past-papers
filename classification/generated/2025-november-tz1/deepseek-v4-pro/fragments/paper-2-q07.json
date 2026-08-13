@@ -1,0 +1,82 @@
+{
+  "question": "7",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "13",
+      "task_summary": "Find the probability that exactly two semiconductors are defective, given two machines with different defect rates and equal selection probability.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "law_of_total_probability",
+        "binomial_probability_formula"
+      ],
+      "method_path": [
+        "Recognize binomial distribution for each machine",
+        "Compute P(exactly 2 defective | machine A) using B(10, 0.1)",
+        "Compute P(exactly 2 defective | machine B) using B(10, 0.05)",
+        "Apply law of total probability: 0.5 * P_A + 0.5 * P_B"
+      ],
+      "accepted_alternatives": [
+        "Use of calculator notation such as binompdf for binomial probabilities"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "recognition of binomial distribution (M1); attempt to consider both machines using p=0.1 AND p=0.05 (M1); 0.5*0.193710...+0.5*0.0746347... (A1); 0.134 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "14",
+      "task_summary": "Given exactly two defective semiconductors, find the probability they were manufactured by machine A.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "bayes_theorem"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(A | 2 defective)",
+        "Compute P(A ∩ 2 defective) = 0.5 * P(2 defective | A)",
+        "Divide by P(2 defective) from part (a)"
+      ],
+      "accepted_alternatives": [
+        "Use of 3 sf values from part (a) leading to 0.723 or 0.724"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "recognition of conditional probability (M1); 0.0968.../0.134... (A1); 0.722 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

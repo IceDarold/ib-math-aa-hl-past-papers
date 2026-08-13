@@ -1,0 +1,45 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the first term and common difference of an arithmetic sequence given the 7th term is 6 and the sum of the 6th and 12th terms is 24.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "arithmetic_sequence",
+        "nth_term_formula",
+        "system_of_equations",
+        "solve_simultaneous"
+      ],
+      "method_path": [
+        "Write equations using u_n = u_1 + (n-1)d: u_7 = u_1 + 6d = 6",
+        "u_6 + u_12 = (u_1 + 5d) + (u_1 + 11d) = 24",
+        "Simplify to 2u_1 + 16d = 24",
+        "Solve the system to get u_1 = -12, d = 3"
+      ],
+      "accepted_alternatives": [
+        "Express u_6 and u_12 in terms of u_7 and d: u_6 = 6 - d, u_12 = 6 + 5d, sum to 24 gives 12 + 4d = 24, so d = 3, then u_1 = u_7 - 6d = -12"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: attempt to use u_n = u_1 + (n-1)d (M1); u_1 + 6d = 6 (A1); u_1 + 5d + u_1 + 11d = 24 (A1); attempt to solve their equations simultaneously (M1); u_1 = -12 and d = 3 A1. METHOD 2: attempt to express u_6 and u_12 in terms of the 7th term and d (M1); u_6 = 6 - d (A1); u_12 = 6 + 5d (A1); setting their sum equal to 24 (M1); 12 + 4d = 24; d = 3 and u_1 = -12 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

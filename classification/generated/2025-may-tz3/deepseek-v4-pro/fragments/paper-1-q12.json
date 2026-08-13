@@ -1,0 +1,173 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "21",
+      "task_summary": "Show that the modulus condition |z - (2 + i)| = 3 leads to the Cartesian equation x^2 + y^2 - 4x - 2y - 4 = 0.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_modulus_formula",
+        "expand_squares",
+        "simplify_equation"
+      ],
+      "method_path": [
+        "Substitute z = x + yi into |z - (2 + i)| = 3",
+        "Write modulus as sqrt((x-2)^2 + (y-1)^2) = 3",
+        "Square both sides: (x-2)^2 + (y-1)^2 = 9",
+        "Expand: x^2 - 4x + 4 + y^2 - 2y + 1 = 9",
+        "Simplify to x^2 + y^2 - 4x - 2y - 4 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "substituting into modulus formula with either correct real part or correct imaginary part (M1); (x-2)^2 + (y-1)^2 = 3 (A1); x^2 - 4x + 4 + y^2 - 2y + 1 = 9 A1; x^2 + y^2 - 4x - 2y - 4 = 0 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "21-22",
+      "task_summary": "Show that the argument condition arg((z + p)/(z - 1)) = π/4 leads to the Cartesian equation x^2 + y^2 + (p - 1)x + (p + 1)y - p = 0.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.complex_numbers",
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "express_complex_fraction",
+        "rationalize_denominator",
+        "expand_numerator",
+        "equate_argument",
+        "use_tangent_identity",
+        "simplify_equation"
+      ],
+      "method_path": [
+        "Express (z + p)/(z - 1) in the form a + bi by multiplying numerator and denominator by conjugate of denominator",
+        "Expand numerator and denominator to obtain real and imaginary parts",
+        "Set argument equal to π/4, so arctan(imaginary/real) = π/4",
+        "Equate imaginary/real = tan(π/4) = 1",
+        "Cross-multiply and simplify to obtain x^2 + y^2 + (p - 1)x + (p + 1)y - p = 0"
+      ],
+      "accepted_alternatives": [
+        "Use arg((z + p)/(z - 1)) = arg(z + p) - arg(z - 1) and apply compound angle formula for tangent to derive the equation."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21-22",
+          "basis": "METHOD 1: recognizing the need to express (z+p)/(z-1) in the form a+ib (M1); multiplying by conjugate (A1); expanding (M1); obtaining expression (A1); equating argument to π/4 (M1); equating real and imaginary parts (A1); final equation AG. METHOD 2: arg((z+p)/(z-1)) = arg(z+p) - arg(z-1) (M1); arctan expressions (A1); compound angle formula (M1); equating to tan(π/4)=1 (M1); simplification to AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Use the equations from parts (a) and (b) with p = 4 to find the two complex numbers z1 and z2 satisfying both conditions.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.complex_numbers",
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_p_value",
+        "solve_simultaneous_equations",
+        "substitute_linear_relation",
+        "solve_quadratic",
+        "find_complex_roots"
+      ],
+      "method_path": [
+        "From part (b) with p = 4, obtain equation x + y = 0",
+        "Solve simultaneously with x^2 + y^2 - 4x - 2y - 4 = 0 from part (a)",
+        "Substitute y = -x into the circle equation",
+        "Solve quadratic 2x^2 - 2x - 4 = 0 to get x = -1, x = 2",
+        "Find corresponding y values: y = 1, y = -2",
+        "Write z1 = -1 + i, z2 = 2 - 2i"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "arg((z+4)/(z-1)) = π/4 ⇒ x + y = 0 (A1); solving simultaneously their equations in x and y (M1); x + y = 0 ⇒ y = -x (A1); substituting to obtain an equation in either x or y (M1); 2x^2 - 2x - 4 = 0 or 2y^2 + 2y - 4 = 0; solving for either x or y (M1); x = -1 and x = 2 OR y = -2 and y = 1 (A1); z1 = -1 + i and z2 = 2 - 2i (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Given that z1 and z2 are roots of a quartic with real coefficients, find the value of a (coefficient of z^3).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "identify_conjugate_roots",
+        "sum_of_roots",
+        "calculate_coefficient"
+      ],
+      "method_path": [
+        "Recognize that since coefficients are real, the other two roots are conjugates of z1 and z2: -1 - i and 2 + 2i",
+        "Use sum of roots = -a for monic quartic",
+        "Sum all four roots: (-1 + i) + (-1 - i) + (2 - 2i) + (2 + 2i) = 2",
+        "Thus a = -2"
+      ],
+      "accepted_alternatives": [
+        "Expand (z - z1)(z - z2)(z - z3)(z - z4) and equate coefficient of z^3 to a."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "EITHER a = -(z1 + z2 + z3 + z4) (A1); OR expanding to obtain term in z^3 (A1); recognizing that z3 and z4 are conjugates of z1 and z2 (M1); roots are -1+i, -1-i, 2-2i, 2+2i (A1); a = -((-1+i)+(-1-i)+(2-2i)+(2+2i)) = -2 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

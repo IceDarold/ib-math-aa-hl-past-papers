@@ -1,0 +1,79 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Show that 3cos2x + 11sinx = 3 + 11sinx - 6sin^2x.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "double_angle_formula",
+        "algebraic_substitution",
+        "simplification"
+      ],
+      "method_path": [
+        "Apply double angle formula cos2x = 1 - 2sin^2x",
+        "Substitute into 3cos2x + 11sinx",
+        "Simplify to 3 + 11sinx - 6sin^2x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempt to use double angle formula for cos2x (M1); 3(1-2sin^2x) = 3 - 6sin^2x (A1); 3cos2x + 11sinx = 3 + 11sinx - 6sin^2x AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Solve 3cos2x + 11sinx - 6 = 0 for 0° ≤ x ≤ 180°.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quadratic_in_sine",
+        "inverse_trigonometric_function",
+        "angle_solution"
+      ],
+      "method_path": [
+        "Substitute identity to get quadratic in sinx",
+        "Solve quadratic to get sinx = 1/3",
+        "Find x = arcsin(1/3) and 180° - arcsin(1/3)",
+        "Give answers to 3 significant figures: 19.5°, 161°"
+      ],
+      "accepted_alternatives": [
+        "Solve 3cos2x + 11sinx - 6 = 0 directly using GDC or sketch (M1 for attempt, A1A1 for correct answers)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "METHOD 1: attempt to solve a quadratic equation in sinx (M1); sinx = 1/3; x = 19.4712..., 160.528...; x = 19.5, 161 (A1A1). METHOD 2: attempt to solve 3cos2x + 11sinx - 6 = 0 (M1); x = 19.4712..., 160.528...; x = 19.5, 161 (A1A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

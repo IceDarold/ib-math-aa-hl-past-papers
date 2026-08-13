@@ -1,0 +1,893 @@
+{
+  "session": "November 2025",
+  "zone": "TZ1",
+  "paper": 3,
+  "calculator": "yes",
+  "expected_total_marks": 55,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-A-I",
+      "question": "1",
+      "part": "A-I",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Show that the gradient of the normal line N to H at x=t is t^2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "negative_reciprocal",
+        "substitution"
+      ],
+      "method_path": [
+        "Differentiate y=1/x to get dy/dx = -1/x^2",
+        "Evaluate at x=t to get gradient of tangent = -1/t^2",
+        "Take negative reciprocal to get gradient of normal = t^2"
+      ],
+      "accepted_alternatives": [
+        "Use parametric differentiation: dy/dx = (dy/dt)/(dx/dt) with x=t, y=1/t, leading to same result."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "METHOD 1: attempts to find dy/dx (M1); dy/dx = -1/x^2; dy/dx = -1/t^2 AND m_N = 1/(1/t^2) (or equivalent) A1; so gradient of N is t^2 AG. METHOD 2: uses dy/dx = (dy/dt)/(dx/dt) (M1); dy/dx = -1/t^2; m_N = 1/(1/t^2) A1; so gradient of N is t^2 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-A-II",
+      "question": "1",
+      "part": "A-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Show that the equation of the normal line N is y = t^2 x + (1/t) - t^3.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "point_slope_form",
+        "substitution",
+        "simplification"
+      ],
+      "method_path": [
+        "Use point-slope form with point (t, 1/t) and gradient t^2",
+        "Simplify to y = t^2 x + 1/t - t^3"
+      ],
+      "accepted_alternatives": [
+        "Use y = t^2 x + c, substitute (t, 1/t) to find c = 1/t - t^3.",
+        "Write as t^2 x - y - t^3 + 1/t = 0."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER y - 1/t = t^2 (x - t) OR y = t^2 x - t^3 + 1/t A1; leading to y = t^2 x + 1/t - t^3 AG. OR 1/t = t^3 + c => c = 1/t - t^3 A1. OR t^2 x - y - t^3 + 1/t = 0 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-B-I",
+      "question": "1",
+      "part": "B-I",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Show that either c = 1/(m^(1/2)) - 1/m^(1/2) or c = -1/(m^(1/2)) + 1/m^(1/2).",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "solving_for_variable",
+        "square_root",
+        "simplification"
+      ],
+      "method_path": [
+        "Set m = t^2 and c = 1/t - t^3",
+        "Express t = ±√m",
+        "Substitute t = √m or t = -√m into c",
+        "Simplify to obtain the two expressions"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "m = t^2 (=> m = t^2) OR c = 1/t - t^3 OR c = 1/t (1 - t^4) (A1); t = ±√m (seen anywhere) A1; substitutes one of their t = √m OR t = -√m into c = 1/t - t^3 OR c = 1/t (1 - t^4) M1; c = ±(1/√m - m√m) A1; so either c = 1/√m - √m OR c = -1/√m + √m AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-B-II",
+      "question": "1",
+      "part": "B-II",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Determine the set of values of m for which there exists at least one line normal to H.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "domain_analysis",
+        "inequality"
+      ],
+      "method_path": [
+        "Recognize that m = t^2 and t ≠ 0",
+        "Conclude m > 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "m ∈ ℝ^+ (or equivalent) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-C-I",
+      "question": "1",
+      "part": "C-I",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Determine the set of values of m for which there exists exactly one line normal to H.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "critical_value",
+        "equality"
+      ],
+      "method_path": [
+        "Identify that exactly one normal occurs when the two expressions for c are equal",
+        "Solve 1/√m - √m = -1/√m + √m to get m = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "m = 1 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-C-II",
+      "question": "1",
+      "part": "C-II",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Determine the set of values of m for which there exist exactly two lines normal to H.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "inequality",
+        "set_notation"
+      ],
+      "method_path": [
+        "Recognize that two normals exist when the two c expressions are distinct and real",
+        "Combine with m > 0 and m ≠ 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "m ∈ ℝ^+, m ≠ 1 (or equivalent) A1A1. Note: Award A1 for 0 < m < 1 and A1 for m > 1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-D-I",
+      "question": "1",
+      "part": "D-I",
+      "marks": 1,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Sketch the curve H: y = 1/x.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketching",
+        "hyperbola"
+      ],
+      "method_path": [
+        "Draw the hyperbola y = 1/x with asymptotes at axes"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "a correct sketch of y = 1/x A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-D-II",
+      "question": "1",
+      "part": "D-II",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Sketch two normal lines for an appropriate m, indicating points of normality.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketching",
+        "normal_line",
+        "parallel_lines"
+      ],
+      "method_path": [
+        "Choose m > 0, m ≠ 1",
+        "Draw two parallel normal lines with non-zero y-intercepts approximately equidistant from origin",
+        "Mark points where lines are normal to H"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "a line normal to H such that c ≠ 0 A1; a second parallel line which is normal to H such that c ≠ 0 A1. Note: For normal lines that cross the y-axis, award A1A0 if the y-axis intercepts are not approximately equidistant from O. Award a maximum A1A0 for a normal line sketched for 0 < m < 1 and a normal line sketched for m > 1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-E-I",
+      "question": "1",
+      "part": "E-I",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Show that the x-coordinates of A and B satisfy the quadratic equation x^2 - k(t^3 - 1/t)x - k^2/t^2 = 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "forming_quadratic",
+        "simplification"
+      ],
+      "method_path": [
+        "Set equation of normal equal to curve F: k/x^2 = t^2 x - kt^3 + k/t",
+        "Multiply by x^2 and rearrange to form quadratic in x",
+        "Simplify to given equation"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "k/x^2 = t^2 x - kt^3 + k/t (A1); attempts to form a quadratic equation in x (M1); eg. t^2 x^3 - kt^3 x^2 + (k/t)x^2 - k = 0 OR x^2 - k(t^3 - 1/t)x - k^2/t^2 = 0 A1. Note: Award (A0)M1A0 for attempting to verify that kt is a root of the AG (or its equivalent quadratic equation). Award (A0)M0A0 for showing that A lies on F."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-E-II",
+      "question": "1",
+      "part": "E-II",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "11-12",
+      "task_summary": "Determine the coordinates of B using sum or product of roots.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "polynomial_structure",
+      "method_tags": [
+        "sum_of_roots",
+        "product_of_roots",
+        "substitution"
+      ],
+      "method_path": [
+        "Let α = kt (x-coordinate of A), β = x-coordinate of B",
+        "Use sum of roots: α + β = k(t^3 - 1/t) or product: αβ = -k^2/t^2",
+        "Solve for β = -k/t^3",
+        "Find y-coordinate by substituting into F: y = -kt^3"
+      ],
+      "accepted_alternatives": [
+        "Factor the quadratic: (x - kt)(x + k/t^3) = 0, giving x = -k/t^3.",
+        "Use quadratic formula to find roots, identify the one not equal to kt."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11-12",
+          "basis": "METHOD 1: recognizes that the sum of roots is k(t^3 - 1/t) (M1); kt + β = k(t^3 - 1/t) OR recognizes that the product of roots is -k^2/t^2 (M1); kt * β = -k^2/t^2; THEN β = -k/t^3 is the other root A1; y = -kt^3 A1; coordinates of B are (-k/t^3, -kt^3). METHOD 2: recognizes that (x - kt) is a factor (M1); (x - kt)(x + k/t^3) = 0 => x = -k/t^3 A1; y = -kt^3 A1. METHOD 3: attempts to use the quadratic formula (M1); x = [k(t^3 - 1/t) ± √(k^2(t^3 - 1/t)^2 + 4k^2/t^2)]/2 => x = kt, -k/t^3 A1; y = -kt^3 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q01-F",
+      "question": "1",
+      "part": "F",
+      "marks": 6,
+      "source_pages": "6",
+      "markscheme_pages": "13-15",
+      "task_summary": "Prove that angle BCA is a right angle.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product",
+        "perpendicular_lines",
+        "slope_product",
+        "pythagorean_theorem"
+      ],
+      "method_path": [
+        "Identify coordinates: A(kt, k/t), B(-k/t^3, -kt^3), C(-kt, -k/t)",
+        "Find vectors CA and CB (or slopes of CA and CB)",
+        "Show dot product CA·CB = 0 (or product of slopes = -1, or AB^2 = AC^2 + BC^2)"
+      ],
+      "accepted_alternatives": [
+        "Use slopes: m_AC = 1/t^2, m_BC = -t^2, product = -1.",
+        "Show that B lies on the perpendicular to AC at C.",
+        "Use Pythagoras: AB^2 = AC^2 + BC^2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13-15",
+          "basis": "METHOD 1: A(kt, k/t), B(-k/t^3, -kt^3), C(-kt, -k/t) (A1); attempts to find m_AC or m_BC (M1); m_AC = 1/t^2 AND m_BC = -t^2 (or equivalent) A1; attempts to find m_AC × m_BC OR recognizes that m_AC = -1/m_BC (M1); (1/t^2)(-t^2) = -1 A1; = -1 and so [BC] ⟂ [CA] R1; hence BCA is a right angle AG. METHOD 2: A(kt, k/t), B(-k/t^3, -kt^3), C(-kt, -k/t) (A1); m_AC = 1/t^2 A1; attempts to find equation of perpendicular to [AC] at C (M1); y + k/t = -t^2 (x + kt); substitutes x = -k/t^3 (M1); y = -kt^3 A1; B lies on perpendicular to [AC] at C (B ≠ C) and so [BC] ⟂ [CA] R1; hence BCA is a right angle AG. METHOD 3: A(kt, k/t), B(-k/t^3, -kt^3), C(-kt, -k/t) OR OC = (-kt, -k/t) (A1); attempts to find CA or CB (M1); CA = (2kt, 2k/t) AND CB = (-k/t^3 + kt, -kt^3 + k/t) A1; attempts to find CA·CB (M1); CA·CB = 2kt(-k/t^3 + kt) + (2k/t)(-kt^3 + k/t) = -2k^2/t^2 + 2k^2t^2 - 2k^2t^2 + 2k^2/t^2 = 0 A1; = 0 (and since t ≠ ±1, CB ≠ 0) R1; then BCA is a right angle AG. METHOD 4: A(kt, k/t), B(-k/t^3, -kt^3), C(-kt, -k/t) (A1); attempts to find one of AB^2, AC^2 or BC^2 (M1); AB^2 = (kt + k/t^3)^2 + (k/t + kt^3)^2 A1; attempts to show AB^2 = AC^2 + BC^2 (M1); AB^2 = k^2(t^2 + 2/t^2 + 1/t^6) + k^2(1/t^2 + 2t^2 + t^6) = k^2(t^2 + 3/t^2 + 1/t^6 + t^6) AND AC^2 + BC^2 = (2kt)^2 + (2k/t)^2 + (-k/t^3 + kt)^2 + (-kt^3 + k/t)^2 = 4k^2t^2 + 4k^2/t^2 + k^2/t^6 - 2k^2/t^2 + k^2t^2 + k^2t^6 - 2k^2t^2 + k^2/t^2 = k^2(t^2 + 3/t^2 + 1/t^6 + t^6) A1; AB^2 = AC^2 + BC^2 (and so, by converse of Pythagoras) R1; BCA is a right angle AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-A-I",
+      "question": "2",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "7",
+      "markscheme_pages": "16",
+      "task_summary": "State the assumption made by setting L=200 in the logistic model.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "interpret_parameter"
+      ],
+      "method_path": [
+        "State that the stable/long-term population will be the same as before the reduction."
+      ],
+      "accepted_alternatives": [
+        "The maximum value / carrying capacity of the population will be 200."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "that the stable/long term population will be the same as before the reduction. A1 Note: Condone ‘the maximum value / carrying capacity of the population will be 200’."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-A-II",
+      "question": "2",
+      "part": "A-II",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "16",
+      "task_summary": "Find the value of C given x(0)=40 and L=200.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_initial_condition",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Substitute t=0, x=40, L=200 into logistic equation.",
+        "Solve 40 = 200/(1+C) to get C=4."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to substitute into logistic function (M1) 200/(1+Ce^0)=40 -> 40+40C=200 -> C=4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-A-III",
+      "question": "2",
+      "part": "A-III",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "16",
+      "task_summary": "Find the value of k given x(5)=70.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_data",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Substitute t=5, x=70, L=200, C=4 into logistic equation.",
+        "Solve 70 = 200/(1+4e^{-5k}) to get k ≈ 0.153."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "correct substitution into their logistic function (A1) 70 = 200/(1+4e^{-5k}) -> k = 1/5 ln(130/280) ≈ 0.153 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-A-IV",
+      "question": "2",
+      "part": "A-IV",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "16",
+      "task_summary": "Predict wolf population at t=10 using logistic model, to nearest whole number.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_time",
+        "evaluate_model",
+        "round_to_nearest_integer"
+      ],
+      "method_path": [
+        "Substitute t=10, L=200, C=4, k≈0.153451 into logistic equation.",
+        "Compute x ≈ 107.397...",
+        "Round to nearest whole number: 107."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "correct substitution into their logistic function (A1) x = 200/(1+4e^{-10*0.153451...}) = 107.397... -> x=107 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-B-I",
+      "question": "2",
+      "part": "B-I",
+      "marks": 1,
+      "source_pages": "7",
+      "markscheme_pages": "17",
+      "task_summary": "Write down the value of dx/dt when x=200.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "evaluate_derivative"
+      ],
+      "method_path": [
+        "Substitute x=200 into dx/dt = a x ln(200/x) to get 0."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "dx/dt = 0 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-B-II",
+      "question": "2",
+      "part": "B-II",
+      "marks": 1,
+      "source_pages": "7",
+      "markscheme_pages": "17",
+      "task_summary": "Interpret dx/dt=0 at x=200 in context.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "interpret_derivative"
+      ],
+      "method_path": [
+        "State that the population is steady/stable at 200, or this is the equilibrium population."
+      ],
+      "accepted_alternatives": [
+        "The rate of change of wolf population is zero."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "the population is steady/stable (at 200) OR this (200) is the equilibrium population A1 Note: Accept phrases such as ‘the rate of change of wolf population is zero’. Do not accept 200 is the maximum."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-B-III",
+      "question": "2",
+      "part": "B-III",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "17",
+      "task_summary": "Show that f'(x) = 1/(x ln(200/x)) for f(x)=ln(ln200 - ln x).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_logarithmic_function",
+        "chain_rule"
+      ],
+      "method_path": [
+        "Differentiate f(x)=ln(ln200 - ln x) using chain rule.",
+        "Obtain f'(x) = 1/(ln200 - ln x) * (-1/x) = -1/(x ln(200/x))."
+      ],
+      "accepted_alternatives": [
+        "Use f(x)=ln(ln(200/x)) and differentiate to get 1/(ln(200/x)) * (x/200)*(-200/x^2) = -1/(x ln(200/x))."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "EITHER 1/(ln200 - ln x) * (-1/x) M1 -> f'(x) = -1/(x ln(200/x)) A1 OR product of three expressions M1A1 -> AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-B-IV",
+      "question": "2",
+      "part": "B-IV",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "18",
+      "task_summary": "Use separation of variables to show general solution ln x = ln 200 - A e^{-a t}.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "integrate",
+        "solve_differential_equation"
+      ],
+      "method_path": [
+        "Separate variables: 1/(x ln(200/x)) dx = -a dt.",
+        "Integrate both sides: ∫ 1/(x ln(200/x)) dx = ∫ -a dt.",
+        "Use result from (iii) to get ln(ln200 - ln x) = -a t + c.",
+        "Exponentiate: ln200 - ln x = e^{-a t + c} = A e^{-a t}.",
+        "Rearrange to ln x = ln200 - A e^{-a t}."
+      ],
+      "accepted_alternatives": [
+        "Separate as 1/(x ln(200/x)) dx = a dt and integrate to get -ln(ln200 - ln x) = a t + c, leading to same result."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "attempt to separate variables M1; 1/(x ln(200/x)) dx = -a dt A1; ln(ln200 - ln x) = -a t + c A1A1; ln200 - ln x = e^{-a t + c} = A e^{-a t} A1; ln x = ln200 - A e^{-a t} AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-B-V",
+      "question": "2",
+      "part": "B-V",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "18",
+      "task_summary": "Find A using x(0)=40, giving answer as A=ln p.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_initial_condition",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Substitute t=0, x=40 into ln x = ln200 - A e^{-a t}.",
+        "Solve ln40 = ln200 - A to get A = ln200 - ln40 = ln(200/40) = ln5."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "correct substitution ln40 = ln200 - A e^0 (A1) -> A = ln5 A1 (p=5)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-B-VI",
+      "question": "2",
+      "part": "B-VI",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "19",
+      "task_summary": "Show that a=0.0855 using x(5)=70.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_data",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Substitute t=5, x=70, A=ln5 into ln x = ln200 - A e^{-a t}.",
+        "Solve ln70 = ln200 - ln5 e^{-5a} to get a ≈ 0.0854528...",
+        "Round to 0.0855 (3 s.f.)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "correct substitution ln70 = ln200 - ln5 e^{-5a} A1; a = 0.0854528... A1; a = 0.0855 to 3 s.f. AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-B-VII",
+      "question": "2",
+      "part": "B-VII",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "19",
+      "task_summary": "Predict wolf population at t=10 using Gompertz model, to nearest whole number.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_time",
+        "evaluate_model",
+        "round_to_nearest_integer"
+      ],
+      "method_path": [
+        "Substitute t=10, a≈0.0854528, A=ln5 into ln x = ln200 - A e^{-a t}.",
+        "Compute ln x ≈ ln200 - ln5 e^{-0.854528...} ≈ 4.613...",
+        "Exponentiate to get x ≈ 100.839...",
+        "Round to nearest whole number: 101."
+      ],
+      "accepted_alternatives": [
+        "Using a=0.0855 gives x≈100.871..., rounded to 101."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "correct substitution (A1); 100.839… (A1); 101 to the nearest whole number A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "8",
+      "markscheme_pages": "19",
+      "task_summary": "Comment on the predictions made by the two models compared to actual population 85.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "compare_models",
+        "comment_on_accuracy"
+      ],
+      "method_path": [
+        "State that both models overestimate, or that the Gompertz model is closer to the true value."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "both are overestimates OR the Gompertz is closer to the true value A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-D-I",
+      "question": "2",
+      "part": "D-I",
+      "marks": 4,
+      "source_pages": "8",
+      "markscheme_pages": "20",
+      "task_summary": "Use Euler's method with step 0.5 from t=5, x0=70 to estimate population at t=10.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "numerical_approximation"
+      ],
+      "method_path": [
+        "Set up Euler iteration: x_{n+1} = x_n + 0.5 * (0.0855 x_n ln(200/x_n) - 0.03 x_n).",
+        "Perform iterations from t=5 to t=10 with step 0.5.",
+        "Obtain final estimate x ≈ 89.42803...",
+        "Round to nearest whole number: 89."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to use Euler (M1); correct formula (A1); evidence of correct use (A1); after 10 years population 89 wolves (89.42803…) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P3-Q02-D-II",
+      "question": "2",
+      "part": "D-II",
+      "marks": 1,
+      "source_pages": "8",
+      "markscheme_pages": "20",
+      "task_summary": "Comment on the Euler estimate compared to actual or other models.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "comment_on_accuracy"
+      ],
+      "method_path": [
+        "Compare result to actual number of wolves or to other models, e.g., it is more accurate/realistic."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "correctly compare their result to the actual number of wolves or to the other models or both. A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

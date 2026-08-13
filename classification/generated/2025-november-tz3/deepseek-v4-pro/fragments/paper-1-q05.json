@@ -1,0 +1,87 @@
+{
+  "question": "5",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "7-8",
+      "markscheme_pages": "12-13",
+      "task_summary": "Sketch y = f(|x|) and y = |f(x)| given the graph of y = f(x) for -5 ≤ x ≤ 5, showing approximate intercepts.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "reflect_graph",
+        "sketch_transformation",
+        "identify_intercepts"
+      ],
+      "method_path": [
+        "For y = f(|x|): reflect the part of y = f(x) for x ≥ 0 across the y-axis to x ≤ 0, keeping the right side unchanged.",
+        "For y = |f(x)|: reflect the parts of y = f(x) below the x-axis (y ≤ 0) across the x-axis, keeping the parts above unchanged.",
+        "Mark approximate intercepts and cusps as per markscheme notes."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to reflect graph in y-axis for x ≥ 0 M1; intercepts with x-axis and y-axis and clear cusp on y-axis in approximately the correct places A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to reflect graph in x-axis for y ≤ 0 M1; intercept with y-axis, maximum point and two cusps on x-axis in approximately the correct places A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "8",
+      "markscheme_pages": "13",
+      "task_summary": "Solve the inequality |f(x)| ≥ (f(x))^2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "absolute_value_inequality",
+        "quadratic_inequality",
+        "interval_notation"
+      ],
+      "method_path": [
+        "Recognize that |f(x)| ≥ (f(x))^2 implies f(x) ≤ 1.",
+        "Identify x-intervals where f(x) ≤ 1 from the graph: x ≥ -4.93 or x ≤ 5, and x ≤ -4.27 or x ≥ 0.292.",
+        "Combine intervals to get -4.93 ≤ x ≤ -4.27 and 0.292 ≤ x ≤ 5."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "recognition that |f(x)| ≥ (f(x))^2 when f(x) ≤ 1 (M1); x ≥ -4.93 OR x ≤ 5, x ≤ -4.27 OR x ≥ 0.292 seen (A1); -4.93 ≤ x ≤ -4.27, 0.292 ≤ x ≤ 5 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

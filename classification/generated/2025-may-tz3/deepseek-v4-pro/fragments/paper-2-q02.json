@@ -1,0 +1,44 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Find p and q given f(x)=2x^4-6x^3+px^2+qx-2, (x-1) is a factor, and remainder when divided by (x-3) is -2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "factor_theorem",
+        "remainder_theorem",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Apply factor theorem: f(1)=0",
+        "Apply remainder theorem: f(3)=-2",
+        "Form two linear equations in p and q",
+        "Solve simultaneously for p and q"
+      ],
+      "accepted_alternatives": [
+        "Use synthetic or long division to find remainders, then form equations and solve simultaneously."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "EITHER use of the remainder or factor theorem (M1) f(1)=0 OR f(3)=-2 ... (A1) ... (A1) ... solving simultaneously their two equations in p and q (M1) p=-3, q=9 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

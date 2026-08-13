@@ -1,0 +1,114 @@
+{
+  "question": "4",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find the values of a and b for the function g(x) = a cos(bx) - 3 given a local minimum at (0, -8) and a local maximum at (16, 2).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_for_parameter",
+        "use_given_points",
+        "determine_period",
+        "solve_trigonometric_equation"
+      ],
+      "method_path": [
+        "Use local minimum (0, -8) to set up equation: a cos(0) - 3 = -8, solve for a = -5.",
+        "Determine period from given points: distance from minimum to maximum is 16, so period = 32.",
+        "Use period to find b: b = 2π / period = 2π / 32 = π/16 ≈ 0.196."
+      ],
+      "accepted_alternatives": [
+        "Use local maximum (16, 2) to set up equation: -5 cos(16b) - 3 = 2, solve for b = π/16."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "a = -5 A1; period = 32 (A1); b = 2π/32 = π/16 ≈ 0.196 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Write down the smallest positive value of k such that g(x + k) = g(x) for all x.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "identify_period",
+        "state_period"
+      ],
+      "method_path": [
+        "Recognize that k is the period of the function.",
+        "State k = 32 from part (a)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "k = 32 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Express g(x) in the form f(x) = p sin(b(x - q)) - 3, find the smallest positive q and the corresponding p.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "horizontal_translation",
+        "phase_shift",
+        "solve_for_parameter",
+        "use_given_points"
+      ],
+      "method_path": [
+        "Use horizontal translation: shift cosine to sine, q = 8.",
+        "Determine p = 5 from amplitude."
+      ],
+      "accepted_alternatives": [
+        "Substitute a point into f(x) = p sin(b(x - q)) - 3 and solve for q and p."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to use a horizontal translation (M1); q = 8 A1; p = 5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

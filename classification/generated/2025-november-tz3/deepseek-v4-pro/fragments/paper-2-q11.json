@@ -1,0 +1,198 @@
+{
+  "question": "11",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Show that 324a + 72b = 1 by integrating the probability density function over its domain and setting the total area to 1.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate_polynomial",
+        "apply_total_probability_condition",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Set integral of f(x) from 3 to 9 equal to 1",
+        "Integrate a(x-3)^3 + b(x-3)^2",
+        "Evaluate definite integral from 3 to 9",
+        "Simplify to 324a + 72b = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to use ∫ f(x) dx = 1 (M1); recognition for the need to integrate a(x-3)^3 + b(x-3)^2 with limits of 3 and 9 (M1); correct integration and evaluation leading to 324a + 72b = 1 (A1, A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-B-I",
+      "question": "11",
+      "part": "B-I",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Show that 6a + b = 0 by substituting x = 9 into f(x) and using f(9) = 0.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_value",
+        "simplify_expression",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Substitute x = 9 into f(x) = a(x-3)^3 + b(x-3)^2",
+        "Set f(9) = 0",
+        "Simplify to 6a + b = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to substitute x = 9 into a(x-3)^3 + b(x-3)^2 (M1); 6^3 a + 6^2 b = 0 or 216a + 36b = 0 leading to 6a + b = 0 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-B-II",
+      "question": "11",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Determine the values of a and b by solving the system of linear equations 324a + 72b = 1 and 6a + b = 0.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_system_of_linear_equations",
+        "substitution"
+      ],
+      "method_path": [
+        "Solve 324a + 72b = 1 and 6a + b = 0 simultaneously",
+        "Obtain a = -1/108, b = 1/18"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to solve two linear equations in a and b (M1); a = -1/108, b = 1/18 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "21",
+      "task_summary": "Show that the median of X is less than the mode of X by finding the mode (maximum of f) and comparing it to the median (value m such that area to left is 0.5).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_mode",
+        "find_median",
+        "compare_values",
+        "integrate_pdf",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Find mode by locating maximum of f(x) on [3,9]",
+        "Compute mode = 7",
+        "Find median m by solving ∫_3^m f(x) dx = 0.5",
+        "Compute median ≈ 6.68563",
+        "Conclude median < mode"
+      ],
+      "accepted_alternatives": [
+        "Find area under f from 3 to 7, show it is > 0.5, implying median < 7 = mode."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to find the maximum point on the graph of f (M1); mode = 7 (A1); attempt to find the median by solving ∫_3^m f(x) = 0.5 (M1); equation set up correctly (A1); median = 6.68563... (A1); median < mode AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "21",
+      "task_summary": "Find the conditional probability P(X > 8.52 | X > 8) using the given probability density function.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables",
+        "calculus.integration_applications"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "integrate_pdf",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(X > 8.52 | X > 8)",
+        "Express as P(X > 8.52) / P(X > 8)",
+        "Compute integrals ∫_{8.52}^9 f(x) dx and ∫_8^9 f(x) dx",
+        "Evaluate ratio to get approximately 0.261"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognising conditional probability in context (M1); recognition that P(X > 8.52 ∩ X > 8) = P(X > 8.52) (M1); correct integrals set up (A1); answer 0.260919... ≈ 0.261 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "question": "1",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the area of sector BOA with radius 19.5 cm and angle 210°.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "convert_degrees_to_radians",
+        "area_of_sector_radians",
+        "area_of_sector_degrees"
+      ],
+      "method_path": [
+        "Convert 210° to radians: 210π/180 = 7π/6",
+        "Apply sector area formula: (1/2) × r² × θ = (1/2) × 19.5² × (7π/6)",
+        "Compute area = 3549π/16 ≈ 697 cm²"
+      ],
+      "accepted_alternatives": [
+        "Use degree formula: area = (210/360) × π × 19.5² = 3549π/16"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER 210° = 210π/180 = 7π/6 radians (A1); attempt to use radian formula for area of sector (M1); area = (1/2)(19.5²)(7π/6) OR attempt to use degree formula for area of sector (M1); area = (210/360)π(19.5²) (A1); THEN area = 3549π/16 = 696.844... ≈ 697 cm² A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the radius of the cone formed by joining the radii of the sector.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length",
+        "circumference_of_circle",
+        "equate_arc_length_to_circumference",
+        "solve_for_radius"
+      ],
+      "method_path": [
+        "Calculate arc length of sector: arc = rθ = 19.5 × (7π/6) = 91π/4 ≈ 71.4712 cm",
+        "Set arc length equal to circumference of cone base: 2πr_cone = 71.4712",
+        "Solve for r_cone: r_cone = 71.4712/(2π) = 91/8 = 11.375 cm"
+      ],
+      "accepted_alternatives": [
+        "Use area from part (a): set π × r_cone × 19.5 = area, solve for r_cone"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER arc length = 19.5 × (7π/6) OR (210/360) × 2π × 19.5 = 91π/4 = 71.4712... (A1); attempt to set 2πr equal to arc length (M1); 2πr = 71.4712... OR attempt to set πrl equal to their area from (a) (M1); 19.5πr = 696.844... (A1); THEN r = 91/8 = 11.375 ≈ 11.4 cm A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

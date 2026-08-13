@@ -1,0 +1,199 @@
+{
+  "question": "11",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-A-I",
+      "question": "11",
+      "part": "A-I",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Express w = 1 + i√3 in the form w = re^{iα} with r > 0 and -π < α ≤ π.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus_calculation",
+        "argument_calculation",
+        "polar_form_conversion"
+      ],
+      "method_path": [
+        "Calculate modulus r = √(1^2 + (√3)^2) = 2",
+        "Calculate argument α = arctan(√3/1) = π/3",
+        "Write w = 2 e^{iπ/3}"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Award A1 for r = 2 and A1 for α = π/3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-A-II",
+      "question": "11",
+      "part": "A-II",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Show that (1 + i√3)^8 + (1 - i√3)^8 = -256.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivre_theorem",
+        "polar_form_exponentiation",
+        "complex_addition"
+      ],
+      "method_path": [
+        "Apply De Moivre's theorem: (1 + i√3)^8 = 2^8 e^{i8π/3}",
+        "Apply De Moivre's theorem: (1 - i√3)^8 = 2^8 e^{-i8π/3}",
+        "Add the two results: 256(e^{i8π/3} + e^{-i8π/3}) = 256 * 2 cos(8π/3) = 256 * 2 * (-1/2) = -256"
+      ],
+      "accepted_alternatives": [
+        "Use cis notation: 2^8 cis(8π/3) + 2^8 cis(-8π/3) = 256 * 2 cos(8π/3) = -256"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to apply De Moivre’s theorem: M1; (1 + i√3)^8 = 2^8 e^{i8π/3} A1; (1 - i√3)^8 = 2^8 e^{-i8π/3} A1; sum = -256 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Show that (1 + i tan θ)^4 + (1 - i tan θ)^4 = 2 cos 4θ / cos^4 θ.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "complex_to_trigonometric_conversion",
+        "de_moivre_theorem",
+        "trigonometric_identity_simplification"
+      ],
+      "method_path": [
+        "Rewrite 1 - i tan θ as 1 + i tan(-θ)",
+        "Express (1 + i tan θ)^4 + (1 + i tan(-θ))^4 using (cos θ + i sin θ)^4 / cos^4 θ",
+        "Apply De Moivre: (cos 4θ + i sin 4θ)/cos^4 θ + (cos 4θ - i sin 4θ)/cos^4 θ = 2 cos 4θ / cos^4 θ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "recognition that (1 - i tan θ) = (1 + i tan(-θ)) M1; expression in terms of cos and sin A1; simplification to 2 cos 4θ / cos^4 θ A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Determine the four roots of (1 + z)^4 + (1 - z)^4 = 0 in the form z = i tan(kπ/8) with k ∈ ℤ+.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "trigonometric_equation_solving",
+        "root_extraction"
+      ],
+      "method_path": [
+        "Set z = i tan θ, then equation becomes 2 cos 4θ / cos^4 θ = 0",
+        "Solve cos 4θ = 0 for θ in (0, π)",
+        "Obtain θ = π/8, 3π/8, 5π/8, 7π/8",
+        "Write roots as z = i tan(kπ/8) for k = 1, 3, 5, 7"
+      ],
+      "accepted_alternatives": [
+        "Use θ = -π/2, -3π/2, π/2, 3π/2 leading to same tan values but markscheme awards M1A1A0A0 for that approach"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "considering cos 4θ = 0 M1; 4θ = π/2, 3π/2, 5π/2, 7π/2 A1; θ = π/8, 3π/8, 5π/8, 7π/8 A1; roots z = i tan(kπ/8) with k = 1,3,5,7 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 7,
+      "source_pages": "15",
+      "markscheme_pages": "23-24",
+      "task_summary": "By considering the binomial expansion of (1 + z)^4 + (1 - z)^4, show that tan(π/8) = √(3 - 2√2).",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "geometry.trigonometric_equations",
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "binomial_expansion",
+        "polynomial_simplification",
+        "quadratic_solving",
+        "substitution",
+        "root_selection"
+      ],
+      "method_path": [
+        "Expand (1 + z)^4 + (1 - z)^4 = 2 + 12z^2 + 2z^4",
+        "Set equal to 0 from part (c) to get 2z^4 + 12z^2 + 2 = 0",
+        "Solve quadratic in z^2: z^2 = -3 ± 2√2",
+        "Substitute z = i tan(π/8) to get -tan^2(π/8) = -3 ± 2√2",
+        "Select positive root and appropriate sign: tan(π/8) = √(3 - 2√2)"
+      ],
+      "accepted_alternatives": [
+        "Solve for tan^2(π/8) = 3 ± 2√2 and argue that tan(π/8) is the smallest positive root, hence take negative sign inside"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "attempt to use binomial expansion M1; 2 + 12z^2 + 2z^4 A1; attempt to solve quadratic M1; z^2 = -3 ± 2√2 A1; substituting z = i tan(π/8) M1; tan^2(π/8) = 3 ∓ 2√2 A1; justification that tan(π/8) is smallest positive root R1; tan(π/8) = √(3 - 2√2) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

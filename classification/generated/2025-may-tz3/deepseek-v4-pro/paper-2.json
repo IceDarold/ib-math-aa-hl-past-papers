@@ -1,0 +1,1078 @@
+{
+  "session": "May 2025",
+  "zone": "TZ3",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the length of side BC in triangle ABC using the cosine rule.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "cosine_rule",
+        "substitution",
+        "evaluate_square_root"
+      ],
+      "method_path": [
+        "Substitute AB=7, AC=12, angle A=116° into cosine rule: BC^2 = 7^2 + 12^2 - 2*7*12*cos(116°)",
+        "Calculate BC^2 = 266.646...",
+        "Take square root to get BC = 16.3293...",
+        "Round to 3 significant figures: BC = 16.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "substituting into cosine rule (M1); BC^2 = 12^2 + 7^2 - 2*12*7*cos116° (A1); BC = 16.3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find angle ACB in triangle ABC using the sine rule or cosine rule.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sine_rule",
+        "cosine_rule",
+        "angle_sum_of_triangle",
+        "substitution",
+        "inverse_sine"
+      ],
+      "method_path": [
+        "Apply sine rule: sin(ACB)/7 = sin(116°)/BC, or cosine rule: 7^2 = 12^2 + BC^2 - 2*12*BC*cos(ACB), or find angle ABC first then use angle sum",
+        "Solve for angle ACB: sin(ACB) = 7*sin(116°)/16.3293...",
+        "Take inverse sine to get ACB = 22.6618...°",
+        "Round to 3 significant figures: ACB = 22.7° (or 22.8° if using cosine rule with previous 3sf)"
+      ],
+      "accepted_alternatives": [
+        "Use cosine rule: 7^2 = 12^2 + 16.3293...^2 - 2*12*16.3293...*cos(ACB) to find ACB = 22.8°",
+        "Find angle ABC first using sine rule or cosine rule, then ACB = 180° - 116° - ABC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "substituting into sine rule or cosine rule for angle ACB or angle ABC (M1); sin(ACB)/7 = sin116°/16.3293... OR 7^2 = 12^2 + 16.3293...^2 - 2*12*16.3293...*cos(ACB) OR 180° - 116° - 41.3° (A1); ACB = 22.7° (accept 22.8° if using previous 3sf AND the cosine rule) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Find p and q given f(x)=2x^4-6x^3+px^2+qx-2, (x-1) is a factor, and remainder when divided by (x-3) is -2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "factor_theorem",
+        "remainder_theorem",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Apply factor theorem: f(1)=0",
+        "Apply remainder theorem: f(3)=-2",
+        "Form two linear equations in p and q",
+        "Solve simultaneously for p and q"
+      ],
+      "accepted_alternatives": [
+        "Use synthetic or long division to find remainders, then form equations and solve simultaneously."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "EITHER use of the remainder or factor theorem (M1) f(1)=0 OR f(3)=-2 ... (A1) ... (A1) ... solving simultaneously their two equations in p and q (M1) p=-3, q=9 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Find the value of a from the probability distribution and write down the mode of X.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "sum_probabilities",
+        "solve_linear_equation",
+        "identify_mode"
+      ],
+      "method_path": [
+        "Sum all probabilities and set equal to 1",
+        "Solve for a",
+        "Identify the value with highest probability as mode"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "summing probabilities and equating to 1 (M1); 1.5a + 2a + 0.281 + a + 0.026 = 1; (a =) 0.154 A1; (ii) 2 (days) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Find the mean of X.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "expected_value_formula",
+        "sum_product"
+      ],
+      "method_path": [
+        "Apply E(X) = sum x * P(X=x)",
+        "Compute sum using given probabilities and a=0.154"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "using expected value formula (M1); (mean =)2.44 (2.436 (exact)) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Identify the sampling method as convenience sampling.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "identify_sampling_method"
+      ],
+      "method_path": [
+        "Recognize that surveying the first 50 customers is convenience sampling"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "convenience (sampling) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "8",
+      "task_summary": "Find the length of major arc ACB given the area of triangle AOB is 26 cm² and angle AOB = 2.51 radians.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "area_of_triangle_sine_formula",
+        "solve_for_radius",
+        "arc_length_formula",
+        "major_arc_calculation"
+      ],
+      "method_path": [
+        "Use area of triangle formula (1/2)r² sinθ = 26 to find radius r",
+        "Calculate major arc length using r(2π - θ)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Attempts to use the area formula for triangle AOB AND equate it to 26 (M1); 1/2 r^2 sin(2.51) = 26 (A1); r = 9.38462... (A1); use of arc length formula to find the major arc ACB (M1); 9.38462... (2π - 2.51) OR 2π × 9.38462... - 9.38462... × 2.51 OR 9.38462... × 3.773185...; 35.4099…; (arc length =) 35.4 (cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "9",
+      "task_summary": "Find f'(x) for f(x) = (2x + a)^3 / (x + 5)^2, a > 0, x ≠ -5.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "quotient_rule",
+        "product_rule",
+        "chain_rule",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply quotient rule or product rule with chain rule",
+        "Differentiate numerator and denominator",
+        "Simplify to obtain f'(x)"
+      ],
+      "accepted_alternatives": [
+        "Use quotient rule: f'(x) = [3(2x+a)^2 * 2 * (x+5)^2 - (2x+a)^3 * 2(x+5)] / (x+5)^4, simplify to 2(2x+a)^2 (x+15-a) / (x+5)^3",
+        "Use product rule: f(x) = (2x+a)^3 (x+5)^{-2}, f'(x) = 3(2x+a)^2 * 2 * (x+5)^{-2} + (2x+a)^3 * (-2)(x+5)^{-3}, simplify to 2(2x+a)^2 (x+15-a) / (x+5)^3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "use of quotient rule or product rule (M1); EITHER ... A1 ... A1; OR ... A1 ... A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "9",
+      "task_summary": "Given tangent at x=1 makes 70° to horizontal, find two possible values of a.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "tangent_slope",
+        "trigonometric_equation",
+        "substitution",
+        "solving_quadratic"
+      ],
+      "method_path": [
+        "Set f'(1) = tan(70°)",
+        "Substitute x=1 into f'(x) expression",
+        "Solve resulting equation for a",
+        "Obtain two positive values"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognizing f'(1) is equal to tan 70° (M1); ... (A1); a = 2.73, 15.0 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "10",
+      "task_summary": "Find expressions for a·c and b·c in terms of p.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "scalar_product",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute vector components into scalar product formula a·c = a1*c1 + a2*c2",
+        "Substitute vector components into scalar product formula b·c = b1*c1 + b2*c2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "substituting into scalar product formula (M1) (i) (a·c =) 5p - 42 A1 (ii) (b·c =) 8p - 54 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "10",
+      "task_summary": "Find p such that the angle between a and c equals the angle between b and c.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "angle_between_vectors",
+        "scalar_product",
+        "magnitude",
+        "equating_expressions",
+        "solving_equation"
+      ],
+      "method_path": [
+        "Write cosθ = (a·c)/(|a||c|) using expression from (a)(i) and magnitudes",
+        "Write cosθ = (b·c)/(|b||c|) using expression from (a)(ii) and magnitudes",
+        "Equate the two expressions for cosθ",
+        "Solve the resulting equation for p"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "substituting into the angle between two vectors formula to find either a·c or b·c (M1) cosθ = (5p-42)/(√74 √(p^2+36)), cosθ = (8p-54)/(√145 √(p^2+36)) (A1)(A1) equating their two expressions for cosθ (M1) p = 4.78727... (p =) 4.79 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "10",
+      "task_summary": "Find q given that in the expansion of (1/(2 - qx)) the coefficient of x^6 is 5120, where q > 0.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "rewrite_expression",
+        "binomial_expansion",
+        "identify_term",
+        "equate_coefficient",
+        "solve_for_variable"
+      ],
+      "method_path": [
+        "Rewrite (1/(2 - qx)) as (1/2)(1 - (q/2)x)^{-1} or (2 - qx)^{-1}",
+        "Apply binomial expansion to find the term in x^6",
+        "Extract the coefficient of x^6",
+        "Set the coefficient equal to 5120",
+        "Solve for q"
+      ],
+      "accepted_alternatives": [
+        "Rewrite as (1/2)(1 - (q/2)x)^{-1} and expand",
+        "Rewrite as (2 - qx)^{-1} and expand"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for rewriting, M1 for substituting into binomial theorem, A1 for correct term, A1 for simplified coefficient, M1 for equating to 5120, A1 for q = 1/16"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "11",
+      "task_summary": "Determine the original number of students in a class given that each pair plays twice, Stephen leaves after 7 games, and total games played is 513.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combinations",
+        "quadratic_equation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Express total games as 2 * C(n-1, 2) + 7 or n(n-1) - (2(n-1) - 7)",
+        "Set expression equal to 513",
+        "Solve quadratic equation for n",
+        "Obtain n = 24"
+      ],
+      "accepted_alternatives": [
+        "Let N = n-1, total games = N(N-1) + 7, set equal to 513, solve N=23, then n=24"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: number of games played by n-1 players 2 × C(n-1, 2) OR (n-1)(n-2) (A2); total number of games is 2 × C(n-1, 2) + 7 OR (n-1)(n-2) + 7 (A1); OR total number of games that should have been played is 2 × C(n, 2) OR n(n-1) (A1); Stephen should have played 2(n-1) so he missed 2(n-1) - 7 games (A1); total number of games played is n(n-1) - (2(n-1) - 7) (A1); THEN equating their total number of games to 513 (M1); n = 24 A1. METHOD 2: there are N students other than Stephen; number of games played by N students is (N-1) + (N-2) + ... + 2 + 1 = N(N-1) (A1); total number of games that are played N(N-1) + 7 (A1); equating their total number of games to 513 (M1); N = 23 (A1); number of students in class = 24 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "12",
+      "task_summary": "Show that the viewing angle θ equals arctan((x+2)/6) - arctan(x/6).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "angle_difference",
+        "arctan_definition",
+        "right_triangle_trigonometry"
+      ],
+      "method_path": [
+        "Let α = angle APG",
+        "Express tan α = (x+2)/6 and tan(angle BPG) = x/6",
+        "Note θ = α - angle BPG",
+        "Take arctan of both sides to obtain θ = arctan((x+2)/6) - arctan(x/6)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "Let APG = α ... tan α = (x+2)/6 ⇒ α = arctan((x+2)/6) AND tan(angle BPG) = x/6 ⇒ angle BPG = arctan(x/6) ... θ = arctan((x+2)/6) - arctan(x/6) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 7,
+      "source_pages": "11",
+      "markscheme_pages": "12-14",
+      "task_summary": "Given θ = 0.178 rad and dθ/dt = 12.5 rad/h, find the speed of the airplane.",
+      "primary_topic": "calculus.rates_of_change",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "chain_rule",
+        "related_rates",
+        "arctan_derivative",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Set θ = 0.178 and solve arctan((x+2)/6) - arctan(x/6) = 0.178 for x",
+        "Differentiate θ = arctan((x+2)/6) - arctan(x/6) with respect to t using chain rule",
+        "Substitute x and dθ/dt = 12.5 to find dx/dt",
+        "Take absolute value for speed"
+      ],
+      "accepted_alternatives": [
+        "Use implicit differentiation on tan θ = (12)/(x^2+2x+36) and chain rule to find dx/dt"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12-14",
+          "basis": "METHOD 1: setting θ = 0.178 ... x = 4.63047... ; derivative of arctan terms; chain rule; substituting to get dx/dt = -424.881... ; speed = 425 km/h. METHOD 2: find dθ/dx at x, use chain rule dθ/dt = dθ/dx * dx/dt, solve for dx/dt."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Evaluate v(1) and solve v(t)=5 for t.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Substitute t=1 into v(t)=8.14t/(0.2+t^2)",
+        "Set v(t)=5 and solve for t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(i) 7.43076... v(1)=7.43 (ms^-1) A1 (ii) equating v(t) and 5 (M1) 0.348114... 0.348 (seconds) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find time when acceleration is 4 m/s^2.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiation",
+        "equation_solving"
+      ],
+      "method_path": [
+        "Differentiate v(t) to get a(t)",
+        "Set a(t)=4 and solve for t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognizing a=v'(t) (M1) 0.590930... 0.591 (seconds) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "15",
+      "task_summary": "Find limit of v(t) as t→∞ and explain why it is not valid in context.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "limit_evaluation",
+        "contextual_interpretation"
+      ],
+      "method_path": [
+        "Evaluate lim_{t→∞} v(t)",
+        "State a reason why the limit is not valid in the race context"
+      ],
+      "accepted_alternatives": [
+        "Any valid reason that does not contradict the limit value, e.g., race lasts finite time, graph approaches limiting value but never attained, cannot maintain speed for long period."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "(i) considering large values of t (M1) lim v(t)=8.14 (ms^-1) A1 (ii) EITHER the race lasts a finite time ... OR the graph approaches the limiting value but Fiona will never attain that speed OR Fiona cannot maintain that speed for a long period of time R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Find distance Lucy is from finishing line when Fiona completes 200 m.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "equation_solving",
+        "distance_calculation"
+      ],
+      "method_path": [
+        "Find time t_f when Fiona's distance = 200 m by integrating v(t) from 0 to t_f and solving",
+        "Integrate Lucy's velocity w(t) from 0 to t_f to get Lucy's distance",
+        "Subtract Lucy's distance from 200 m"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "recognizing distance travelled by either athlete in the first t seconds is ∫ v(t) dt or ∫ w(t) dt (M1) equating distance travelled by Fiona to 200 (m) (M1) ∫_0^{t_f} v(t) dt = 200 OR attempt to integrate v(t) (M1) s(t)=8.14t+0.2/(3.64031...) equating 200 to their s(t) (M1) t_f = 25.0132... (A1) recognition that a definite integral of w(t) with 0 and their t_f is required (M1) (Lucy's distance =) ∫_0^{25.0132...} w(t) dt (=195.772...) distance from finishing line = 200 – their Lucy's distance (M1) 4.22788… 4.23 (m) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-A-I",
+      "question": "11",
+      "part": "A-I",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the probability that Amanda entered at most six surveys inaccurately out of 50, given 8% inaccuracy rate.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "cumulative_probability",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize binomial distribution X ~ B(50, 0.08)",
+        "Calculate P(X ≤ 6) using GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "recognizing binomial distribution (M1); P(E ≤ 6) = 0.898128... A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-A-II",
+      "question": "11",
+      "part": "A-II",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Given that at most six surveys were entered inaccurately, find the probability that exactly four surveys were entered inaccurately.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "binomial_distribution",
+        "gdc"
+      ],
+      "method_path": [
+        "Recognize conditional probability P(E=4 | E≤6)",
+        "Calculate P(E=4) and P(E≤6) using binomial distribution",
+        "Compute P(E=4)/P(E≤6)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "recognition of conditional probability (M1); P(E=4|E≤6) = P(E=4)/P(E≤6) (A1); = 0.227 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the value of n such that the probability that at most six surveys were entered inaccurately is approximately 0.367.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "cumulative_probability",
+        "gdc",
+        "trial_and_error"
+      ],
+      "method_path": [
+        "Use binomial distribution with p=0.08",
+        "Find n such that P(X ≤ 6) ≈ 0.367 using GDC or tables"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "use of tables (M1); n=94 ⇒ P(E≤6)=0.366746... A2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-C-I",
+      "question": "11",
+      "part": "C-I",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the probability that a randomly selected survey was entered inaccurately, given error rates and proportions for Amanda, Bryce, and Carmen.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "law_of_total_probability",
+        "tree_diagram"
+      ],
+      "method_path": [
+        "Apply law of total probability: P(I) = P(I|A)P(A) + P(I|B)P(B) + P(I|C)P(C)",
+        "Substitute given probabilities: 0.55×0.08 + 0.25×0.06 + 0.2×0.11",
+        "Calculate result"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "P(I) = P(I∩A) + P(I∩B) + P(I∩C) (M1); = 0.55×0.08 + 0.25×0.06 + 0.2×0.11 (A1); = 0.081 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-C-II",
+      "question": "11",
+      "part": "C-II",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the probability that a survey was entered by Amanda, given that it was entered inaccurately.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "bayes_theorem"
+      ],
+      "method_path": [
+        "Apply Bayes' theorem: P(A|I) = P(I|A)P(A) / P(I)",
+        "Substitute values: (0.55×0.08)/0.081",
+        "Calculate result"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "P(A|I) = P(A∩I)/P(I) (M1); = 0.55×0.08/0.081 (A1); = 0.543 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Find Carmen's new inaccuracy rate x% such that the overall probability of an inaccurate survey equals the probability that Carmen makes an error.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "law_of_total_probability",
+        "algebraic_equation",
+        "percentage_conversion"
+      ],
+      "method_path": [
+        "Set up equation: P(I) = x/100",
+        "Express P(I) using law of total probability with new x: 0.55×0.08 + 0.25×0.06 + 0.2×(x/100)",
+        "Equate to x/100 and solve for x"
+      ],
+      "accepted_alternatives": [
+        "Let y = x/100, set up P(I) = y, solve for y then multiply by 100"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1: P(I|C) = x/100 (M1); P(I) = 0.55×0.08 + 0.25×0.06 + 0.2×(x/100) (A1); equating to x/100 (M1); x = 7.38 A1. METHOD 2: P(I) = 0.55×0.08 + 0.25×0.06 + 0.2×y (A1); equating to y (M1); y = 0.07375; multiply by 100 (M1); x = 7.38 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Find the indefinite integral of (x^2 - 5) e^x dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "indefinite_integral",
+        "exponential_function",
+        "polynomial"
+      ],
+      "method_path": [
+        "Apply integration by parts with u = x^2 - 5, dv = e^x dx",
+        "Apply integration by parts a second time to the resulting integral",
+        "Simplify to obtain (x^2 - 2x - 3) e^x + C"
+      ],
+      "accepted_alternatives": [
+        "Integration by parts with u = e^x, dv = (x^2 - 5) dx, then integrate by parts again"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to use integration by parts (M1); (x^2 - 5) e^x - ∫ e^x (2x) dx OR ... A1; attempt to use integration by parts a second time (M1); ... A1; (x^2 - 5) e^x - (2x e^x - 2 e^x) (A1); (x^2 - 2x - 3) e^x + c OR ... A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Solve the differential equation dy/dx + y = x^2 - 5 and show the solution can be expressed as y = x^2 - 2x - 3 + C e^{-x}.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integrating_factor",
+        "first_order_linear_ode",
+        "exponential_function",
+        "polynomial"
+      ],
+      "method_path": [
+        "Rearrange to standard form dy/dx + y = x^2 - 5",
+        "Find integrating factor e^{∫ 1 dx} = e^x",
+        "Multiply both sides by e^x and recognize left side as derivative of e^x y",
+        "Integrate both sides using result from part (a)",
+        "Solve for y to obtain y = x^2 - 2x - 3 + C e^{-x}"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "rearranging to dy/dx + y = x^2 - 5 AND attempt to find integrating factor (M1); e^{∫ 1 dx} = e^x (seen anywhere) A1; e^x dy/dx + e^x y = e^x (x^2 - 5) ... M1; e^x y = (x^2 - 2x - 3) e^x + C OR ... A1; y = x^2 - 2x - 3 + C e^{-x} AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Sketch the particular solution passing through (-3, 2) for -4 ≤ x ≤ 4, labelling local maximum and minimum points.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "substitution",
+        "particular_solution",
+        "curve_sketching",
+        "local_extrema",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "Substitute x = -3, y = 2 into general solution to find C",
+        "Obtain particular solution y = x^2 - 2x - 3 - 0.498 e^{-x} (or equivalent)",
+        "Sketch curve with correct shape, x-intercepts, local maximum at (-2.70, 2.28), local minimum at (0.899, -4.19), domain -4 ≤ x ≤ 4"
+      ],
+      "accepted_alternatives": [
+        "C = -10 e^{-3} leading to y = x^2 - 2x - 3 - 10 e^{-x-3}"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "substituting x = -3, y = 2 into y = x^2 - 2x - 3 + C e^{-x} (M1); C = -0.497870... (= -10 e^{-3}) A1; y = x^2 - 2x - 3 - 0.498 e^{-x} (accept y = x^2 - 2x - 3 - 10 e^{-x-3}) A1A1A1; Note: A1 for approximately correct shape AND x-intercepts in approximately correct place; A1 for maximum in approximately correct position and labelled (-2.70, 2.28) AND minimum in approximately correct position and labelled (0.899, -4.19); A1 for domain."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Show that all tangents at x = -3 to the family of solution curves intersect at a common point, and state its coordinates.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "tangent_line",
+        "differential_equation",
+        "simultaneous_equations",
+        "intersection_point"
+      ],
+      "method_path": [
+        "Substitute x = -3 into dy/dx = x^2 - 5 - y to find gradient in terms of y-coordinate",
+        "Write equations of tangents at (-3, p) and (-3, q)",
+        "Solve the two tangent equations simultaneously to find intersection point",
+        "Show intersection point is (-2, 4) independent of p and q"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "substituting -3 and p OR -3 and q into dy/dx (M1); gradient of tangent at (-3, p) is 4 - p and at (-3, q) is 4 - q; finding equation of tangents (M1); y - p = (4 - p)(x + 3) AND y - q = (4 - q)(x + 3) A1; solving their equations simultaneously (M1); ... x + 3 = 1 (since p ≠ q) x = -2 A1; y - p = 4 - p OR y - q = 4 - q y = 4 A1; hence all tangents intersect at (-2, 4) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
