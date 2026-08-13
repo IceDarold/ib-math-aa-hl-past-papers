@@ -65,7 +65,7 @@ export function TopBar({
         <MenuIcon />
       </motion.button>
 
-      <div className="flex items-baseline gap-2 whitespace-nowrap text-[15px] max-[680px]:text-sm" aria-label={`IB Math AA HL — ${t('brand.atlas')}`}>
+      <div className="flex items-baseline gap-2 whitespace-nowrap text-[15px] max-[680px]:text-sm" aria-label={`IB Math AA HL | ${t('brand.atlas')}`}>
         <strong className="text-base max-[680px]:text-sm">IB Math AA HL</strong>
         <span className="text-faint max-[960px]:hidden">/</span>
         <span className="max-[960px]:hidden">{t('brand.atlas')}</span>
@@ -77,7 +77,7 @@ export function TopBar({
       </nav>
 
       <div className="whitespace-nowrap max-[960px]:hidden">
-        {mode === 'atlas' ? <>{yearRange} <span className="text-faint">— {count('sessions', sessionCount)}</span></> : <span className="text-muted">36 {t('top.practicums').toLowerCase()} — 2 {t('top.ready')}</span>}
+        {mode === 'atlas' ? <>{yearRange} <span className="text-faint">| {count('sessions', sessionCount)}</span></> : <span className="text-muted">36 {t('top.practicums').toLowerCase()} | 2 {t('top.ready')}</span>}
       </div>
 
       {mode === 'atlas' ? <motion.label
@@ -101,7 +101,7 @@ export function TopBar({
       : <div className="min-w-0 text-center text-sm text-muted max-[960px]:text-right"><span className="max-[960px]:hidden">{t('top.practicums')}</span><button className="hidden h-7 cursor-pointer border border-line-strong bg-canvas px-2 font-mono text-[10px] text-muted hover:bg-surface max-[960px]:inline-flex" type="button" onClick={() => onModeChange('atlas')}>← {t('top.atlas')}</button></div>}
 
       {mode === 'atlas' && <div className="whitespace-nowrap text-xs text-muted max-[1220px]:hidden">
-        <AnimatedMetric value={`${locale}-${resultCount}`} label={count('blocks', resultCount)} /> <span className="text-faint">—</span>{' '}
+        <AnimatedMetric value={`${locale}-${resultCount}`} label={count('blocks', resultCount)} /> <span className="text-faint">|</span>{' '}
         <AnimatedMetric value={`${locale}-${resultMarks}`} label={count('marks', resultMarks)} />
       </div>}
 

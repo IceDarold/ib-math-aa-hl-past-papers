@@ -70,10 +70,10 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
         </div>
         <h2 className="my-3 mb-1.5 text-lg leading-tight font-semibold tracking-[-0.01em] text-pretty"><MathText>{question.task_summary}</MathText></h2>
         <div className="flex flex-wrap gap-1.5 text-[11px] text-muted">
-          <span>{t('inspector.paper')} {question.paper}</span><span>—</span><span>{questionLabel}</span><span>—</span>
-          <span>{count('marks', question.marks)}</span><span>—</span>
+          <span>{t('inspector.paper')} {question.paper}</span><span>|</span><span>{questionLabel}</span><span>|</span>
+          <span>{count('marks', question.marks)}</span><span>|</span>
           <span className={question.calculator === 'yes' ? 'text-info' : ''}>{question.calculator === 'yes' ? t('inspector.calculator') : t('inspector.nonCalculator')}</span>
-          <span>—</span><span>{question.session} — {question.zone}</span>
+          <span>|</span><span>{question.session} | {question.zone}</span>
         </div>
       </header>
 
@@ -125,7 +125,7 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
       {question.review_status === 'ai_draft' && (
         <Section title={t('inspector.evidence')}>
           <div className="mb-2 text-[11px] text-muted">
-            {t('inspector.confidence')}: {t('inspector.segmentation')} {question.confidenceLevels.segmentation} — {t('inspector.topic')} {question.confidenceLevels.topic} — {t('inspector.method')} {question.confidenceLevels.method}
+            {t('inspector.confidence')}: {t('inspector.segmentation')} {question.confidenceLevels.segmentation} | {t('inspector.topic')} {question.confidenceLevels.topic} | {t('inspector.method')} {question.confidenceLevels.method}
           </div>
           {question.evidenceItems.length > 0 ? (
             <div className="grid gap-1.5">

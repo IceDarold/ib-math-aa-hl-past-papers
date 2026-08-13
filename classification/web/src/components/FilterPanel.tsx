@@ -155,7 +155,7 @@ function SelectField({
         onChange={(event) => onChange(event.target.value)}
       >
         <option value="all">{t('filters.all')}</option>
-        {options.map(([option, count]) => <option key={option} value={option}>{option} — {count}</option>)}
+        {options.map(([option, count]) => <option key={option} value={option}>{option} | {count}</option>)}
       </motion.select>
     </label>
   )
@@ -297,7 +297,7 @@ function CheckboxFilter({ label, counts, selected, onToggle }: CheckboxFilterPro
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.7, y: -3 }}
             >
-              — {selected.size}
+              | {selected.size}
             </motion.span>
           )}
         </AnimatePresence>

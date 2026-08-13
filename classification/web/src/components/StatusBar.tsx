@@ -19,13 +19,13 @@ export function StatusBar({ sessionCount, verifiedCount, draftCount }: StatusBar
           animate={reduceMotion ? undefined : { scale: [1, 1.35, 1], opacity: [0.75, 1, 0.75] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
         />
-        {count('sessions', sessionCount)} — {count('drafts', draftCount)} — {count('verifiedBlocks', verifiedCount)}
+        {count('sessions', sessionCount)} | {count('drafts', draftCount)} | {count('verifiedBlocks', verifiedCount)}
       </span>
       <span className="flex items-center gap-1.5 max-[680px]:hidden">
         <kbd className="inline-flex h-5 items-center gap-0.5 rounded-[3px] border border-line border-b-line-strong bg-surface px-1.5 font-mono text-[11px]"><ArrowUpDownIcon className="size-3" />↑↓</kbd> {t('status.select')}
-        <i className="not-italic text-faint">—</i>
+        <i className="not-italic text-faint">|</i>
         <kbd className="inline-flex h-5 min-w-5 items-center justify-center rounded-[3px] border border-line border-b-line-strong bg-surface px-1.5 font-mono text-[11px]">/</kbd> {t('status.search')}
-        <i className="not-italic text-faint">—</i>
+        <i className="not-italic text-faint">|</i>
         <kbd className="inline-flex h-5 items-center justify-center rounded-[3px] border border-line border-b-line-strong bg-surface px-1.5 font-mono text-[11px]">esc</kbd> {t('status.close')}
       </span>
     </footer>

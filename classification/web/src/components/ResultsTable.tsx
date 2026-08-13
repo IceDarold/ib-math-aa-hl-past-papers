@@ -91,7 +91,7 @@ export function ResultsTable({
                     <td className="results-task h-12 overflow-hidden border-b border-line px-2.5 py-1.5 leading-[1.35]">
                       <MathText>{question.task_summary}</MathText>
                       <small className="mt-0.5 block text-muted max-[680px]:hidden">
-                        {question.session} — {question.review_status === 'ai_draft' ? t('filters.aiDraft') : t('results.verified')} — Q{question.question}{question.part === '-' ? '' : `(${question.part})`} — {t('results.pages')} {question.source_pages}
+                        {question.session} | {question.review_status === 'ai_draft' ? t('filters.aiDraft') : t('results.verified')} | Q{question.question}{question.part === '-' ? '' : `(${question.part})`} | {t('results.pages')} {question.source_pages}
                       </small>
                     </td>
                     <td className="results-col-topic h-12 overflow-hidden border-b border-line px-2.5 py-1.5">
