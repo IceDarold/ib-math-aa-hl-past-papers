@@ -195,7 +195,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     localStorage.setItem('question-atlas:locale', locale)
     document.documentElement.lang = locale
-    document.title = `IB Math AA HL · ${messages[locale]['brand.atlas']}`
+    document.title = `IB Math AA HL — ${messages[locale]['brand.atlas']}`
   }, [locale])
 
   const value = useMemo<I18nValue>(() => ({
