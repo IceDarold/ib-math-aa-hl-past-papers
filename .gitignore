@@ -4,6 +4,7 @@
 **/dist/
 classification/work/
 classification/generated/*/deepseek-v4-pro/raw/
+classification/api/data/
 
 # Собранные Kaggle-версии практикумов
 /build/

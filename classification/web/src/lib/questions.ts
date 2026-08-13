@@ -1,4 +1,3 @@
-import questionData from '../data/questions.json'
 import type { Question, RawQuestion } from '../types'
 
 const methodRules: ReadonlyArray<readonly [string, RegExp]> = [
@@ -38,7 +37,7 @@ function inferMethodFamily(tags: string[], path: string): string {
   return methodRules.find(([, pattern]) => pattern.test(text))?.[0] ?? 'formula_application'
 }
 
-function normalizeQuestion(row: RawQuestion): Question {
+export function normalizeQuestion(row: RawQuestion): Question {
   const tags = splitPipe(row.method_tags)
   const evidenceItems = JSON.parse(row.evidence || '[]') as Question['evidenceItems']
   const confidenceLevels = JSON.parse(row.confidence || '{}') as Question['confidenceLevels']
@@ -58,50 +57,6 @@ function normalizeQuestion(row: RawQuestion): Question {
   }
 }
 
-export const questions = (questionData as RawQuestion[]).map(normalizeQuestion)
-
-export function countBy(
-  items: Question[],
-  getValue: (item: Question) => string,
-): Array<[string, number]> {
-  const counts = new Map<string, number>()
-  items.forEach((item) => {
-    const value = getValue(item)
-    counts.set(value, (counts.get(value) ?? 0) + 1)
-  })
-  return [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-}
-
-export function filterQuestions(items: Question[], filters: import('../types').Filters): Question[] {
-  const query = filters.query.trim().toLowerCase()
-  return items.filter((row) => {
-    if (filters.paper !== 'all' && row.paper !== Number(filters.paper)) return false
-    if (filters.calculator !== 'all' && row.calculator !== filters.calculator) return false
-    if (filters.session !== 'all' && row.session !== filters.session) return false
-    if (filters.zone !== 'all' && row.zone !== filters.zone) return false
-    if (filters.status !== 'all' && row.review_status !== filters.status) return false
-    if (filters.topics.size && !filters.topics.has(row.topicFamily)) return false
-    if (filters.methods.size && !filters.methods.has(row.methodFamily)) return false
-    if (!query) return true
-
-    return [
-      row.id,
-      row.task_summary,
-      row.primary_topic,
-      row.secondary_topics,
-      row.method_tags,
-      row.method_path,
-      row.accepted_alternatives,
-      row.methodFamily,
-      row.session,
-      row.zone,
-      row.review_status,
-      row.review_flags,
-      `paper ${row.paper}`,
-      `p${row.paper}`,
-    ].join(' ').toLowerCase().includes(query)
-  })
-}
 
 export function shortId(row: Question): string {
   const part = row.part === '-' ? '' : `-${row.part.toUpperCase()}`

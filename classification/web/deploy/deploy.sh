@@ -33,14 +33,17 @@ repository_root=$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)
 web_dist="$repository_root/classification/web/dist"
 archive="$repository_root/AA_HL"
 practicum="$repository_root/practicum"
+api_source="$repository_root/classification/api"
+api_database="$api_source/data/questions.sqlite"
+nginx_source="$repository_root/classification/web/deploy/math.archik.tech.conf"
 remote_root=/var/www/math.archik.tech
 release_id="${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 release="$remote_root/releases/$release_id"
 current="$remote_root/current"
 remote="${DEPLOY_USER}@${DEPLOY_HOST}"
 
-if [[ ! -f "$web_dist/index.html" || ! -d "$archive" || ! -d "$practicum" ]]; then
-  printf 'Build output, AA_HL archive, or practicum directory is missing.\n' >&2
+if [[ ! -f "$web_dist/index.html" || ! -d "$archive" || ! -d "$practicum" || ! -f "$api_database" || ! -f "$nginx_source" ]]; then
+  printf 'Build output, archive, practicum, API index, or nginx configuration is missing.\n' >&2
   exit 66
 fi
 
@@ -93,18 +96,88 @@ rsync -rlptzc --delete -e "$rsync_ssh" \
 rsync -rlptzc --delete --include='*/' --include='*.ipynb' --exclude='*' -e "$rsync_ssh" \
   "$practicum/" "$remote:$release/practicum/"
 
-ssh "${ssh_args[@]}" "$remote" bash -s -- "$release" "$current" "$release_id" <<'REMOTE'
+rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' -e "$rsync_ssh" \
+  "$api_source/" "$remote:$release/api/"
+
+rsync -rlptz -e "$rsync_ssh" \
+  "$nginx_source" "$remote:$release/math.archik.tech.conf"
+
+ssh "${ssh_args[@]}" "$remote" bash -s -- "$release" "$current" "$release_id" "$remote_root" <<'REMOTE'
 set -euo pipefail
 
 release=$1
 current=$2
 release_id=$3
+remote_root=$4
 next="${current}.next.${release_id}"
+api_runtime="$remote_root/api-runtime"
+api_venv="$api_runtime/venv"
+api_pid="$api_runtime/question-atlas-api.pid"
+api_log="$api_runtime/question-atlas-api.log"
+
+api_failure() {
+  status=$?
+  printf 'Question Atlas API deployment failed. Recent service log:\n' >&2
+  if [[ -f "$api_log" ]]; then
+    tail -n 80 "$api_log" >&2 || true
+  fi
+  exit "$status"
+}
+trap api_failure ERR
 
 test -f "$release/index.html"
 test -d "$release/assets"
 test -d "$release/AA_HL"
 test -f "$release/practicum/calculus/practicum-e7-differential-equations.ipynb"
+test -f "$release/api/data/questions.sqlite"
+
+install -d -m 755 "$api_runtime"
+if [[ ! -x "$api_venv/bin/python" ]]; then
+  printf 'Creating Question Atlas API virtual environment.\n'
+  python3 -m venv "$api_venv"
+fi
+printf 'Installing Question Atlas API dependencies.\n'
+"$api_venv/bin/pip" install --disable-pip-version-check --quiet -r "$release/api/requirements.txt"
+
+if [[ -f "$api_pid" ]]; then
+  old_pid=$(cat "$api_pid" || true)
+  if [[ "$old_pid" =~ ^[0-9]+$ ]] && kill -0 "$old_pid" 2>/dev/null; then
+    kill "$old_pid"
+    for _ in {1..20}; do
+      kill -0 "$old_pid" 2>/dev/null || break
+      sleep 0.1
+    done
+  fi
+fi
+
+nohup env QUESTION_ATLAS_DB="$release/api/data/questions.sqlite" \
+  "$api_venv/bin/uvicorn" --app-dir "$release/api" app:app --host 127.0.0.1 --port 8041 \
+  >> "$api_log" 2>&1 &
+api_process=$!
+printf '%s\n' "$api_process" > "$api_pid"
+
+printf 'Waiting for Question Atlas API health check.\n'
+for _ in {1..30}; do
+  if curl --fail --silent http://127.0.0.1:8041/health >/dev/null; then
+    break
+  fi
+  sleep 0.1
+done
+curl --fail --silent --show-error http://127.0.0.1:8041/health >/dev/null
+
+printf 'Updating nginx proxy configuration.\n'
+if ! sudo -n true 2>&1; then
+  printf 'The deploy user is not permitted to update nginx.\n' >&2
+  exit 65
+fi
+nginx_target=$(sudo -n grep -rl --include='*.conf' 'server_name math.archik.tech' /etc/nginx /opt/hiddify-manager/nginx 2>/dev/null | head -n 1)
+if [[ -z "$nginx_target" ]]; then
+  printf 'Could not locate the nginx virtual host for math.archik.tech.\n' >&2
+  exit 65
+fi
+sudo -n install -m 644 "$release/math.archik.tech.conf" "$nginx_target"
+sudo -n nginx -t
+sudo -n systemctl reload nginx
 
 ln -s -- "$release" "$next"
 mv -Tf -- "$next" "$current"
@@ -139,6 +212,12 @@ fi
 if ! curl --fail --silent --show-error --head \
   --retry 5 --retry-delay 2 --max-time 20 \
   'https://math.archik.tech/AA_HL/2022/May/TZ2/Paper%201/question-paper.pdf' >/dev/null; then
+  rollback
+  exit 1
+fi
+
+if ! curl --fail --silent --show-error --max-time 20 \
+  'https://math.archik.tech/api/health' | grep -q '"ok":true'; then
   rollback
   exit 1
 fi

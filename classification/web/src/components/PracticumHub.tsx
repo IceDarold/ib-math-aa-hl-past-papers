@@ -1,11 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { practicumSections, practicums, type Practicum, type PracticumSkill } from '../data/practicums'
-import type { Question } from '../types'
 import { MathText } from './MathText'
 
 interface PracticumHubProps {
-  questions: Question[]
   onOpenAtlas: (topic: string) => void
 }
 
@@ -33,12 +31,7 @@ function calculatorLabel(mode: PracticumSkill['calculator']) {
   }[mode]
 }
 
-function sourceStats(practicum: Practicum, questions: Question[]) {
-  const matches = questions.filter((question) => practicum.topics.includes(question.primary_topic))
-  return { blocks: matches.length, marks: matches.reduce((sum, question) => sum + question.marks, 0) }
-}
-
-export function PracticumHub({ questions, onOpenAtlas }: PracticumHubProps) {
+export function PracticumHub({ onOpenAtlas }: PracticumHubProps) {
   const ready = practicums.filter((practicum) => practicum.status === 'ready')
   const [selectedId, setSelectedId] = useState(ready[0]?.id ?? null)
   const [progress, setProgress] = useState<Record<string, boolean>>(loadProgress)
@@ -56,7 +49,6 @@ export function PracticumHub({ questions, onOpenAtlas }: PracticumHubProps) {
   }
 
   const completed = selected?.skills?.filter((skill) => progress[`${selected.id}:${skill.id}`]).length ?? 0
-  const selectedStats = useMemo(() => selected ? sourceStats(selected, questions) : null, [questions, selected])
 
   useEffect(() => {
     setStudyOpen(false)
@@ -179,7 +171,7 @@ export function PracticumHub({ questions, onOpenAtlas }: PracticumHubProps) {
                   {selected.notebook && <a className="mb-2 flex min-h-9 items-center justify-center border border-primary bg-primary px-3 text-center font-medium text-white hover:bg-primary-dark" href={`/${selected.notebook}`} download>Скачать ноутбук .ipynb</a>}
                   <button className="mb-2 flex min-h-9 w-full cursor-pointer items-center justify-center border border-line-strong bg-canvas px-3 font-medium hover:bg-surface-strong" type="button" onClick={() => setStudyOpen((open) => !open)}>{studyOpen ? 'Закрыть режим обучения' : 'Учиться в браузере'}</button>
                   <button className="flex min-h-9 w-full cursor-pointer items-center justify-center border border-line-strong bg-canvas px-3 font-medium hover:bg-surface-strong" type="button" onClick={() => onOpenAtlas(selected.topics[0]!)}>Открыть задания этого практикума</button>
-                  {selectedStats && <p className="mt-3 mb-0 text-xs leading-relaxed text-muted">В текущем атласе по основной теме: {selectedStats.blocks} блоков · {selectedStats.marks} баллов. Карта практикумов оставляет отбор и порядок упражнений за ноутбуком.</p>}
+                  <p className="mt-3 mb-0 text-xs leading-relaxed text-muted">Кнопка откроет отфильтрованный корпус Атласа. Отбор и порядок упражнений остаются за ноутбуком.</p>
                 </aside>
               </div>
               {studyOpen && <NotebookStudy notebook={notebook} error={notebookError} />}

@@ -6,9 +6,9 @@ import { ResultsTable } from './components/ResultsTable'
 import { StatusBar } from './components/StatusBar'
 import { TopBar } from './components/TopBar'
 import { PracticumHub } from './components/PracticumHub'
-import { countBy, filterQuestions, questions } from './lib/questions'
+import { fetchFacets, fetchQuestion, fetchQuestions, type AtlasFacets } from './lib/api'
 import { useI18n } from './i18n'
-import type { Filters, FilterSetKey } from './types'
+import type { Filters, FilterSetKey, Question } from './types'
 
 const DEFAULT_SIDEBAR_WIDTH = 248
 const MIN_SIDEBAR_WIDTH = 208
@@ -35,6 +35,13 @@ export default function App() {
   const [mode, setMode] = useState<'atlas' | 'practicums'>(() => window.location.hash === '#practicums' ? 'practicums' : 'atlas')
   const [filters, setFilters] = useState<Filters>(initialFilters)
   const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null)
+  const [pageQuestions, setPageQuestions] = useState<Question[]>([])
+  const [facets, setFacets] = useState<AtlasFacets | null>(null)
+  const [page, setPage] = useState(1)
+  const [total, setTotal] = useState(0)
+  const [resultMarks, setResultMarks] = useState(0)
+  const [loading, setLoading] = useState(true)
   const [sidebarVisible, setSidebarVisible] = useState(() => localStorage.getItem('question-atlas:sidebar-visible') !== 'false')
   const [sidebarWidth, setSidebarWidth] = useState(() => {
     const storedValue = localStorage.getItem('question-atlas:sidebar-width')
@@ -49,44 +56,62 @@ export default function App() {
   const [inspectorOpen, setInspectorOpen] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
 
-  const filteredQuestions = useMemo(() => filterQuestions(questions, filters), [filters])
-  const resultMarks = useMemo(
-    () => filteredQuestions.reduce((sum, question) => sum + question.marks, 0),
-    [filteredQuestions],
-  )
-  const selectedQuestion = useMemo(
-    () => questions.find((question) => question.id === selectedId) ?? null,
-    [selectedId],
-  )
-  const topicCounts = useMemo(() => countBy(questions, (question) => question.topicFamily), [])
-  const methodCounts = useMemo(() => countBy(questions, (question) => question.methodFamily), [])
-  const sessionCounts = useMemo(
-    () => countBy(questions, (question) => question.session).sort((a, b) => sessionSortKey(a[0]) - sessionSortKey(b[0])),
-    [],
-  )
-  const zoneCounts = useMemo(
-    () => countBy(questions, (question) => question.zone).sort((a, b) => a[0].localeCompare(b[0])),
-    [],
-  )
-  const archiveSessionCount = useMemo(
-    () => new Set(questions.map((question) => `${question.session}|${question.zone}`)).size,
-    [],
-  )
-  const verifiedCount = useMemo(() => questions.filter((question) => question.review_status === 'manual_verified').length, [])
-  const draftCount = questions.length - verifiedCount
+  const topicCounts = facets?.topics ?? []
+  const methodCounts = facets?.methods ?? []
+  const sessionCounts = useMemo(() => [...(facets?.sessions ?? [])].sort((a, b) => sessionSortKey(a[0]) - sessionSortKey(b[0])), [facets])
+  const zoneCounts = useMemo(() => [...(facets?.zones ?? [])].sort((a, b) => a[0].localeCompare(b[0])), [facets])
+  const archiveSessionCount = facets?.session_zones ?? 0
+  const verifiedCount = facets?.verified ?? 0
+  const draftCount = (facets?.total ?? 0) - verifiedCount
   const yearRange = useMemo(() => {
-    const years = questions.map((question) => Number(question.session.slice(-4))).filter(Number.isFinite)
+    const years = sessionCounts.map(([session]) => Number(session.slice(-4))).filter(Number.isFinite)
+    if (years.length === 0) return '—'
     const first = Math.min(...years)
     const last = Math.max(...years)
     return first === last ? String(first) : `${first}–${last}`
+  }, [sessionCounts])
+
+  useEffect(() => {
+    const controller = new AbortController()
+    fetchFacets(controller.signal).then(setFacets).catch(() => setFacets(null))
+    return () => controller.abort()
   }, [])
 
   useEffect(() => {
-    if (selectedId && !filteredQuestions.some((question) => question.id === selectedId)) {
-      setSelectedId(null)
+    const controller = new AbortController()
+    const delay = window.setTimeout(() => {
+      setLoading(true)
+      fetchQuestions(filters, page, controller.signal)
+        .then((result) => {
+          setPageQuestions(result.items)
+          setTotal(result.total)
+          setResultMarks(result.totalMarks)
+          if (selectedId && !result.items.some((question) => question.id === selectedId)) {
+            setSelectedId(null)
+            setSelectedQuestion(null)
+            setInspectorOpen(false)
+          }
+        })
+        .catch((error: unknown) => {
+          if (error instanceof DOMException && error.name === 'AbortError') return
+          setPageQuestions([])
+          setTotal(0)
+          setResultMarks(0)
+        })
+        .finally(() => { if (!controller.signal.aborted) setLoading(false) })
+    }, filters.query ? 180 : 0)
+    return () => { controller.abort(); window.clearTimeout(delay) }
+  }, [filters, page, selectedId])
+
+  useEffect(() => {
+    if (!selectedId) return
+    const controller = new AbortController()
+    fetchQuestion(selectedId, controller.signal).then(setSelectedQuestion).catch(() => {
+      setSelectedQuestion(null)
       setInspectorOpen(false)
-    }
-  }, [filteredQuestions, selectedId])
+    })
+    return () => controller.abort()
+  }, [selectedId])
 
   useEffect(() => {
     const media = window.matchMedia('(max-width: 960px)')
@@ -105,20 +130,21 @@ export default function App() {
 
   const selectQuestion = useCallback((id: string) => {
     setSelectedId(id)
+    setSelectedQuestion(pageQuestions.find((question) => question.id === id) ?? null)
     setInspectorOpen(true)
-  }, [])
+  }, [pageQuestions])
 
   const moveSelection = useCallback((delta: number) => {
-    if (filteredQuestions.length === 0) return
-    const currentIndex = filteredQuestions.findIndex((question) => question.id === selectedId)
+    if (pageQuestions.length === 0) return
+    const currentIndex = pageQuestions.findIndex((question) => question.id === selectedId)
     const nextIndex = currentIndex === -1
-      ? (delta > 0 ? 0 : filteredQuestions.length - 1)
-      : (currentIndex + delta + filteredQuestions.length) % filteredQuestions.length
-    const next = filteredQuestions[nextIndex]
+      ? (delta > 0 ? 0 : pageQuestions.length - 1)
+      : (currentIndex + delta + pageQuestions.length) % pageQuestions.length
+    const next = pageQuestions[nextIndex]
     if (!next) return
     setSelectedId(next.id)
     document.querySelector<HTMLElement>(`[data-question-id="${CSS.escape(next.id)}"]`)?.scrollIntoView({ block: 'nearest' })
-  }, [filteredQuestions, selectedId])
+  }, [pageQuestions, selectedId])
 
   useEffect(() => {
     const handleKeyboard = (event: KeyboardEvent) => {
@@ -151,6 +177,7 @@ export default function App() {
 
   const setSegment = (key: 'paper' | 'calculator' | 'session' | 'zone' | 'status', value: string) => {
     setFilters((current) => ({ ...current, [key]: value }))
+    setPage(1)
   }
 
   const toggleSet = (key: FilterSetKey, value: string) => {
@@ -159,10 +186,12 @@ export default function App() {
       next.has(value) ? next.delete(value) : next.add(value)
       return { ...current, [key]: next }
     })
+    setPage(1)
   }
 
   const resetFilters = () => {
     setFilters({ ...initialFilters, topics: new Set(), methods: new Set() })
+    setPage(1)
   }
 
   const closeOverlays = () => {
@@ -172,6 +201,7 @@ export default function App() {
 
   const openPracticumQuestions = (topic: string) => {
     setFilters({ ...initialFilters, topics: new Set(), methods: new Set(), query: topic })
+    setPage(1)
     setMode('atlas')
   }
 
@@ -184,20 +214,20 @@ export default function App() {
       <TopBar
         mode={mode}
         query={filters.query}
-        resultCount={filteredQuestions.length}
+        resultCount={total}
         resultMarks={resultMarks}
         sessionCount={archiveSessionCount}
         yearRange={yearRange}
         searchRef={searchRef}
         sidebarVisible={sidebarVisible}
         filtersOpen={filtersOpen}
-        onQueryChange={(query) => setFilters((current) => ({ ...current, query }))}
+        onQueryChange={(query) => { setFilters((current) => ({ ...current, query })); setPage(1) }}
         onOpenFilters={() => setFiltersOpen(true)}
         onToggleSidebar={() => setSidebarVisible((visible) => !visible)}
         onModeChange={setMode}
       />
 
-      {mode === 'practicums' ? <PracticumHub questions={questions} onOpenAtlas={openPracticumQuestions} /> : <div className="relative flex min-h-0 flex-1 overflow-hidden">
+      {mode === 'practicums' ? <PracticumHub onOpenAtlas={openPracticumQuestions} /> : <div className="relative flex min-h-0 flex-1 overflow-hidden">
         <AnimatePresence initial={false}>
           {compactLayout && (filtersOpen || inspectorOpen) && (
             <motion.button
@@ -233,11 +263,16 @@ export default function App() {
         </AnimatePresence>
 
         <ResultsTable
-          questions={filteredQuestions}
+          questions={pageQuestions}
           selectedId={selectedId}
           marks={resultMarks}
+          total={total}
+          page={page}
+          pageSize={50}
+          loading={loading}
           onSelect={selectQuestion}
           onReset={resetFilters}
+          onPageChange={setPage}
         />
 
         <AnimatePresence initial={false}>

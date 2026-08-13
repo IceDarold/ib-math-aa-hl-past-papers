@@ -8,16 +8,26 @@ interface ResultsTableProps {
   questions: Question[]
   selectedId: string | null
   marks: number
+  total: number
+  page: number
+  pageSize: number
+  loading: boolean
   onSelect: (id: string) => void
   onReset: () => void
+  onPageChange: (page: number) => void
 }
 
 export function ResultsTable({
   questions,
   selectedId,
   marks,
+  total,
+  page,
+  pageSize,
+  loading,
   onSelect,
   onReset,
+  onPageChange,
 }: ResultsTableProps) {
   const { count, t } = useI18n()
   return (
@@ -25,8 +35,8 @@ export function ResultsTable({
       <div className="hidden min-h-10.5 items-center border-b border-line px-3 max-[960px]:flex">
         <div className="flex items-baseline gap-2">
           <AnimatePresence initial={false} mode="popLayout">
-            <motion.strong key={questions.length} initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 6 }}>
-              {count('blocks', questions.length)}
+            <motion.strong key={total} initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 6 }}>
+              {count('blocks', total)}
             </motion.strong>
           </AnimatePresence>
           <AnimatePresence initial={false} mode="popLayout">
@@ -98,8 +108,10 @@ export function ResultsTable({
           </table>
         </LayoutGroup>
 
+        {total > pageSize && <Pagination page={page} pageSize={pageSize} total={total} onChange={onPageChange} />}
+
         <AnimatePresence>
-          {questions.length === 0 && (
+          {!loading && questions.length === 0 && (
             <motion.div
               className="grid min-h-65 place-content-center justify-items-center gap-2 text-muted"
               initial={{ opacity: 0, scale: 0.96, filter: 'blur(5px)' }}
@@ -122,6 +134,19 @@ export function ResultsTable({
         </AnimatePresence>
       </div>
     </main>
+  )
+}
+
+function Pagination({ page, pageSize, total, onChange }: { page: number; pageSize: number; total: number; onChange: (page: number) => void }) {
+  const lastPage = Math.max(1, Math.ceil(total / pageSize))
+  return (
+    <nav className="sticky bottom-0 flex items-center justify-between border-t border-line bg-canvas/96 px-2.5 py-2 text-xs backdrop-blur-[2px]" aria-label="Пагинация">
+      <span className="text-muted">{(page - 1) * pageSize + 1}–{Math.min(page * pageSize, total)} из {total}</span>
+      <div className="flex gap-1">
+        <button className="h-7 cursor-pointer border border-line-strong bg-canvas px-2 hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40" type="button" disabled={page <= 1} onClick={() => onChange(page - 1)}>←</button>
+        <button className="h-7 cursor-pointer border border-line-strong bg-canvas px-2 hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40" type="button" disabled={page >= lastPage} onClick={() => onChange(page + 1)}>→</button>
+      </div>
+    </nav>
   )
 }
 

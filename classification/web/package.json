@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "data:build": "node build-data.mjs",
-    "dev": "npm run data:build && vite",
-    "build": "npm run data:build && tsc -b && vite build",
+    "api:build": "python3 ../api/build_db.py src/data/questions.json ../api/data/questions.sqlite",
+    "dev": "npm run data:build && npm run api:build && vite",
+    "build": "npm run data:build && npm run api:build && tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "tsc -b --pretty false"
   },
