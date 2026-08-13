@@ -33,11 +33,26 @@ sections:
         subtopics: [number_algebra.polynomials]
       - id: A5
         title: "Комплексные числа: формы и арифметика"
-        subtopics: [{topic: number_algebra.complex_numbers, share: 0.5}]
+        subtopics: [{topic: number_algebra.complex_numbers, share: 0.605}]
+        status: ready
+        notebook: practicum/number_algebra/practicum-a5-complex-forms.ipynb
+        kaggle: ib-math-praktikum-a5-complex-forms
+        skills: practicum/skills/number-algebra-complex-forms.yaml
+        note: >
+          Доля 0.605 не подобрана на глаз: все 69 блоков темы разнесены между
+          A5 и A6 поимённо, списки лежат в blocks карточек. A5 получил
+          42 блока и 144 балла, A6 — 27 блоков и 94 балла.
+
+          Граница проходит там, где кончается арифметика и начинается
+          возведение в степень: если в решении появляется z^n, это A6.
       - id: A6
         title: Муавр, корни из единицы, геометрия на плоскости
-        subtopics: [{topic: number_algebra.complex_numbers, share: 0.5},
+        subtopics: [{topic: number_algebra.complex_numbers, share: 0.395},
                     {topic: geometry.trigonometric_identities, share: 0.34}]
+        status: ready
+        notebook: practicum/number_algebra/practicum-a6-de-moivre.ipynb
+        kaggle: ib-math-praktikum-a6-de-moivre
+        skills: practicum/skills/number-algebra-de-moivre.yaml
         note: >
           Доля тождеств — четыре блока (18 баллов), где тригонометрическое
           тождество получают возведением в степень по Муавру и приравниванием

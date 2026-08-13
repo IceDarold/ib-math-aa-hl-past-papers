@@ -27,11 +27,17 @@ from sympy import (                                                  # noqa: E40
     sqrt, cbrt, root, exp, log, Abs, sign, floor, ceiling,
     pi, E, I, oo, zoo, nan,
     Rational, Integer, Float, S, Symbol, symbols, sympify,
+    re, im, arg, conjugate, Add, Mul, Pow,
     simplify, trigsimp, expand, expand_trig, factor, cancel, together, apart,
     solve, solveset, nsolve, Eq, Ne,
     diff, integrate, limit, series, dsolve, Derivative, Integral, Function,
     factorial, binomial, Sum, Product, Matrix, lambdify, nsimplify,
 )
+
+# Осторожно: `re` здесь — функция sympy «действительная часть», и она перекрывает
+# стандартный модуль регулярных выражений. В ноутбуке практикума это то, что нужно
+# (Re(z) пишут постоянно, регулярные выражения — никогда), но в скрипте,
+# которому нужен модуль re, импортируйте его после `from kit import *`.
 
 # IB пишет arcsin и cosec там, где sympy пишет asin и csc. Принимаем обе записи:
 # ответ не должен зависеть от того, в какой нотации вы привыкли писать.
@@ -132,6 +138,52 @@ def check_expr(label, got, want_digest):
         print(f"{OK} {label}: {got}")
         return True
     print(f"{NO} {label}: {got} — не сходится")
+    return False
+
+
+def _complex_canon(value, sf=6, tol=1e-9):
+    """Каноническая запись комплексного числа: пара округлённых частей.
+
+    Сравнивать комплексные ответы через srepr нельзя. sympy не приводит
+    2·e^{2πi/3}, 2(cos 2π/3 + i sin 2π/3) и −1 + √3 i к общему виду:
+    первое упрощается до 2·(−1)^{2/3}, второе до −1 + √3 i, и хеши расходятся.
+    Верный ответ в полярной форме получил бы ❌ против декартова эталона.
+    Поэтому сверяется само число, а не его запись.
+    """
+    z = complex(sp.N(sp.sympify(value)))
+    re_ = 0.0 if abs(z.real) < tol else z.real
+    im_ = 0.0 if abs(z.imag) < tol else z.imag
+    return f"{sig(re_, sf)}|{sig(im_, sf)}"
+
+
+def check_complex(label, got, want_digest, sf=6):
+    """Комплексный ответ в любой форме записи.
+
+    sf задаёт требуемую точность: 6 значащих цифр означает «нужна точная
+    форма» (десятичное приближение не пройдёт), 3 — «достаточно трёх
+    значащих цифр», как в Paper 2.
+    """
+    if _blank(label, got):
+        return False
+    if digest(_complex_canon(got, sf)) == want_digest:
+        print(f"{OK} {label}: {got}")
+        return True
+    print(f"{NO} {label}: {got} — не сходится")
+    return False
+
+
+def check_complex_set(label, values, want_digest, sf=6):
+    """Набор комплексных чисел: корни n-й степени, вершины многоугольника.
+
+    Порядок не важен, форма записи каждого элемента тоже.
+    """
+    if _blank(label, values, *values):
+        return False
+    canon = '|'.join(sorted(_complex_canon(v, sf) for v in values))
+    if digest(canon) == want_digest:
+        print(f"{OK} {label}: {{{', '.join(str(v) for v in values)}}}")
+        return True
+    print(f"{NO} {label}: {{{', '.join(str(v) for v in values)}}} — не сходится")
     return False
 
 

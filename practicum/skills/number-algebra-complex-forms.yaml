@@ -1,0 +1,215 @@
+version: 0.1
+practicum: A5
+title: "Комплексные числа: формы и арифметика"
+source_topic: number_algebra.complex_numbers
+corpus:
+  blocks: 42
+  marks: 144
+  sessions: May 2021 — November 2025
+  papers: {1: 102, 2: 24, 3: 18}
+  gdc_marks: 42
+  note: >
+    Самая «бумажная» тема архива после тригонометрических уравнений:
+    102 балла из 144 — Paper 1, доля с калькулятором 29%. Считать нечего,
+    всё решается переходом между тремя записями одного числа.
+
+    Тема комплексных чисел в архиве занимает 238 баллов и делится между A5
+    и A6 не пополам, а по существу приёма. Все 69 блоков разнесены поимённо;
+    граница проходит там, где кончается арифметика и начинается возведение
+    в степень: появилось z^n — это A6.
+
+skills:
+  - id: cartesian_arithmetic
+    name: Арифметика и сопряжённое
+    rung: 1
+    trigger: >
+      В выражении есть дробь с i в знаменателе, либо в условии стоит слово
+      rationalise. Также любое произведение, которое просят «выразить через».
+    chain:
+      - Умножить числитель и знаменатель на сопряжённое знаменателю
+      - Раскрыть скобки, помня i² = −1
+      - Собрать действительную и мнимую части отдельно
+    traps:
+      - "Слагаемое вида qi·i действительное, а не мнимое: минус на минус даёт
+        плюс, и оно уходит не в ту часть"
+      - Сопряжённое берут к числителю вместо знаменателя
+    calculator:
+      mode: checks
+      note: >
+        GDC умеет комплексную арифметику и проверяет ответ мгновенно,
+        но 102 балла темы из Paper 1, где его нет.
+    prereq: []
+    raw_tags: [complex_conjugate, complex_conjugate_rationalisation, complex_division,
+               rationalising_denominator, multiply_by_conjugate, use_conjugate,
+               simplify_complex_fraction, complex_multiplication, algebraic_expansion,
+               expand_product, find_reciprocal, real_part_extraction]
+    blocks: [2025-NOV-TZ1-P1-Q11-A, 2021-MAY-TZ2-P2-Q08, 2021-NOV-COMMON-P1-Q12-E,
+             2022-MAY-TZ1-P1-Q09-A]
+
+  - id: equate_parts
+    name: Приравнять действительные и мнимые части
+    rung: 2
+    trigger: >
+      Комплексное уравнение, в котором неизвестные объявлены действительными.
+      Слова «where p, q ∈ ℝ» в условии — прямое указание на приём.
+    chain:
+      - Записать неизвестное как a + bi с действительными a, b
+      - Раскрыть всё и собрать части
+      - Приравнять части по отдельности — получится система из двух уравнений
+      - Решить систему, начиная с того уравнения, где неизвестное одно
+    traps:
+      - "Уравнения решают в неверном порядке: начав с того, где две неизвестные,
+        приходится делать лишнюю работу"
+      - "Уравнение делят на переменную, которая может быть нулём. В z² = 2z̄
+        деление на b теряет два корня из трёх"
+      - Забывают, что модуль даёт третье уравнение бесплатно (a² + b² = |z|²),
+        и решают нелинейную систему вместо линейной
+    calculator:
+      mode: forbidden
+      note: >
+        Все блоки приёма из Paper 1. Символьного решателя, который разложил бы
+        уравнение на части, у GDC нет.
+    prereq: [cartesian_arithmetic]
+    raw_tags: [equate_real_imaginary_parts, real_imaginary_equating, substitution,
+               expand_complex_square, simultaneous_equations, case_analysis,
+               collect_real_imaginary_parts, real_imaginary_separation,
+               binomial_expansion, solve_simultaneous_equations]
+    blocks: [2023-NOV-TZ1-P1-Q07, 2023-NOV-TZ2-P1-Q07, 2023-MAY-TZ2-P1-Q11-D,
+             2025-NOV-TZ1-P1-Q11-D, 2024-MAY-TZ1-P1-Q12-A]
+
+  - id: modulus_argument
+    name: Модуль, аргумент и четверть
+    rung: 3
+    trigger: "«Find |z| and arg z», либо ответ требуется в полярной форме."
+    chain:
+      - Модуль по теореме Пифагора
+      - Отметить число на плоскости и назвать четверть
+      - Найти острый угол через арктангенс модуля отношения
+      - "Достроить: I — α, II — π − α, III — α − π, IV — −α"
+    traps:
+      - "Аргумент берут как arctan(b/a) напрямую. Формула верна только при a > 0:
+        у −1 + √3i она даёт −π/3 вместо 2π/3"
+      - Аргумент не приведён к требуемому промежутку (−π, π]
+    calculator:
+      mode: speeds_up
+      note: >
+        Считает арктангенс, но четверть определяет человек. Именно на четверти
+        и теряют балл, поэтому рисунок надёжнее калькулятора.
+    prereq: []
+    raw_tags: [modulus, modulus_calculation, argument, argument_calculation,
+               compute_argument, argument_of_complex_number, complex_modulus,
+               reference_angle, quadrant_determination, arctan, distance_formula,
+               modulus_of_complex_difference]
+    blocks: [2023-MAY-TZ2-P1-Q11-A, 2025-NOV-TZ1-P1-Q11-B, 2024-MAY-TZ2-P2-Q08-A-I,
+             2024-MAY-TZ2-P2-Q08-A-II, 2021-NOV-COMMON-P1-Q12-C]
+
+  - id: form_conversion
+    name: Перевод между тремя формами
+    rung: 4
+    trigger: "«In the form re^{iθ}», «in Cartesian form», «in the form r(cos θ + i sin θ)»."
+    chain:
+      - Из a + bi в полярную — через приём 3
+      - Из полярной в a + bi — подставить значения синуса и косинуса
+      - Формула Эйлера e^{iθ} = cos θ + i sin θ связывает две последние
+    traps:
+      - Ответ оставлен не в той форме, которую просили
+      - "Правило выбора формы забыто: складывают в декартовой, умножают в полярной"
+    calculator:
+      mode: speeds_up
+      note: >
+        Переводит между формами одной кнопкой, но 18 баллов приёма приходятся
+        на Paper 3, где важнее понимать формулу Эйлера, чем её вычислять.
+    prereq: [modulus_argument]
+    raw_tags: [polar_form, polar_form_conversion, polar_to_cartesian_conversion,
+               convert_to_polar, convert_to_cartesian, apply_euler_formula,
+               euler_formula, substitute_complex, trigonometric_form_conversion,
+               cartesian_form, argand_diagram_plotting, factor_complex_exponential]
+    blocks: [2025-MAY-TZ3-P1-Q08-A, 2025-NOV-TZ3-P1-Q11-A-I, 2025-MAY-TZ1-P1-Q07-B,
+             2025-MAY-TZ1-P2-Q08-B, 2021-NOV-COMMON-P3-Q01-C-I]
+
+  - id: product_properties
+    name: Свойства модуля и аргумента произведения
+    rung: 5
+    trigger: >
+      Спрашивают |z₁z₂| или arg(z₁z₂), либо дано условие «z₁z₂ действительно»
+      или «чисто мнимое».
+    chain:
+      - Модули перемножаются, аргументы складываются
+      - "Условие перевести на язык аргумента: действительно ⟺ arg = kπ,
+        чисто мнимое ⟺ arg = π/2 + kπ"
+      - Решить получившееся уравнение в целых числах
+      - Выбрать наименьшее подходящее значение
+    traps:
+      - "Берут первое k, не проверив, что искомое число вышло целым
+        и положительным"
+      - "Положительный множитель влияет на модуль, но не на аргумент.
+        Забыв это, решают лишнее уравнение"
+      - "Ноль как значение аргумента тоже подходит под «кратно π»"
+    calculator:
+      mode: speeds_up
+      note: >
+        Перебор целых решений быстрее делать руками, чем вводить в GDC.
+        Единственный блок приёма с калькулятором — из Paper 2.
+    prereq: [modulus_argument]
+    raw_tags: [modulus_of_product, argument_addition, argument_simplification,
+               real_condition, argument_multiple_of_pi, linear_diophantine,
+               polar_evaluation, product_of_complex_numbers, modulus_argument_form,
+               arg_properties, modulus_properties, sum_of_arguments,
+               arctan_addition_identity, compound_angle_formula]
+    blocks: [2021-MAY-TZ1-P2-Q08-A, 2021-MAY-TZ1-P2-Q08-B, 2021-MAY-TZ1-P2-Q08-C,
+             2022-MAY-TZ1-P1-Q09-B, 2022-MAY-TZ2-P1-Q12-A,
+             2022-NOV-COMMON-P1-Q12-B-I-AND-B-II]
+
+  - id: conjugate_roots
+    name: Сопряжённые корни многочлена
+    rung: 6
+    trigger: >
+      Многочлен с действительными коэффициентами, и дан один комплексный
+      корень. Слова «real coefficients» в условии обязательны — без них
+      теорема неверна.
+    chain:
+      - Сопряжённое данному корню — тоже корень, это бесплатный балл
+      - Записать сумму и произведение корней по Виету
+      - "Сумма сопряжённой пары равна 2Re(z), произведение равно |z|² —
+        оба действительны, мнимые части сократятся сами"
+      - Найти оставшиеся неизвестные из полученных уравнений
+    traps:
+      - Теорему применяют к многочлену с комплексными коэффициентами
+      - Раскрывают произведение линейных множителей в лоб вместо Виета —
+        путь рабочий, markscheme его принимает, но втрое длиннее
+      - "У многочлена нечётной степени забывают, что один корень обязан быть
+        действительным"
+    calculator:
+      mode: checks
+      note: >
+        Подстановка найденного корня в многочлен — проверка на десять секунд.
+        Сам приём калькулятором не делается.
+    prereq: [cartesian_arithmetic]
+    raw_tags: [complex_conjugate_theorem, conjugate_root_theorem, vieta_formulas,
+               vietas_formulas, sum_of_roots, product_of_roots, identify_conjugate_roots,
+               coefficient_comparison, factorization, solve_cubic, root_substitution,
+               calculate_coefficient, complex_conjugate_identification]
+    blocks: [2021-MAY-TZ1-P1-Q07, 2022-NOV-COMMON-P1-Q05-A, 2022-NOV-COMMON-P1-Q05-B,
+             2023-MAY-TZ2-P1-Q11-C, 2025-MAY-TZ3-P1-Q12-D, 2022-MAY-TZ1-P3-Q02-A-I]
+
+# Замечания к классификации, отправить в classification/reviews.
+corpus_issues:
+  - block: 2025-NOV-TZ1-P1-Q11-D
+    issue: >
+      В task_summary и method_path записано a² = (√3 + 1)/2. Это неверно.
+      Из (a + bi)² = √3 + i следует a² − b² = √3 и 2ab = 1, а модуль даёт
+      a² + b² = |√3 + i| = 2, откуда a² = (2 + √3)/2 ≈ 1.866.
+      Значение из разметки, 1.366, даёт 2ab = 1.861 вместо 1.
+
+      Ошибка внутри самого method_path: там написано
+      a² = (4√3 ± √(48+16))/8 = (√3 ± 1)/2, но √64 = 8, и выражение
+      равно (4√3 ± 8)/8 = (√3 ± 2)/2. Проверено независимо двумя путями
+      в practicum/tests/verify_a5.py.
+
+ladder:
+  - cartesian_arithmetic
+  - equate_parts
+  - modulus_argument
+  - form_conversion
+  - product_properties
+  - conjugate_roots
