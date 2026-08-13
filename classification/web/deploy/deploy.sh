@@ -35,15 +35,14 @@ archive="$repository_root/AA_HL"
 practicum="$repository_root/practicum"
 api_source="$repository_root/classification/api"
 api_database="$api_source/data/questions.sqlite"
-nginx_source="$repository_root/classification/web/deploy/math.archik.tech.conf"
 remote_root=/var/www/math.archik.tech
 release_id="${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 release="$remote_root/releases/$release_id"
 current="$remote_root/current"
 remote="${DEPLOY_USER}@${DEPLOY_HOST}"
 
-if [[ ! -f "$web_dist/index.html" || ! -d "$archive" || ! -d "$practicum" || ! -f "$api_database" || ! -f "$nginx_source" ]]; then
-  printf 'Build output, archive, practicum, API index, or nginx configuration is missing.\n' >&2
+if [[ ! -f "$web_dist/index.html" || ! -d "$archive" || ! -d "$practicum" || ! -f "$api_database" ]]; then
+  printf 'Build output, archive, practicum, or API index is missing.\n' >&2
   exit 66
 fi
 
@@ -98,9 +97,6 @@ rsync -rlptzc --delete --include='*/' --include='*.ipynb' --exclude='*' -e "$rsy
 
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' -e "$rsync_ssh" \
   "$api_source/" "$remote:$release/api/"
-
-rsync -rlptz -e "$rsync_ssh" \
-  "$nginx_source" "$remote:$release/math.archik.tech.conf"
 
 ssh "${ssh_args[@]}" "$remote" bash -s -- "$release" "$current" "$release_id" "$remote_root" <<'REMOTE'
 set -euo pipefail
@@ -164,20 +160,6 @@ for _ in {1..30}; do
   sleep 0.1
 done
 curl --fail --silent --show-error http://127.0.0.1:8041/health >/dev/null
-
-printf 'Updating nginx proxy configuration.\n'
-if ! sudo -n true 2>&1; then
-  printf 'The deploy user is not permitted to update nginx.\n' >&2
-  exit 65
-fi
-nginx_target=$(sudo -n grep -rl --include='*.conf' 'server_name math.archik.tech' /etc/nginx /opt/hiddify-manager/nginx 2>/dev/null | head -n 1)
-if [[ -z "$nginx_target" ]]; then
-  printf 'Could not locate the nginx virtual host for math.archik.tech.\n' >&2
-  exit 65
-fi
-sudo -n install -m 644 "$release/math.archik.tech.conf" "$nginx_target"
-sudo -n nginx -t
-sudo -n systemctl reload nginx
 
 ln -s -- "$release" "$next"
 mv -Tf -- "$next" "$current"

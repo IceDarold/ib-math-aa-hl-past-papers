@@ -99,6 +99,7 @@ def count_by(connection: sqlite3.Connection, column: str) -> list[list[object]]:
 
 
 @app.get("/health")
+@app.get("/api/health")
 def health() -> dict[str, object]:
     with database() as connection:
         question_count = connection.execute("SELECT COUNT(*) FROM questions").fetchone()[0]
