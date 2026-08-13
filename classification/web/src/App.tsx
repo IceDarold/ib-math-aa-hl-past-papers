@@ -32,7 +32,7 @@ const initialFilters: Filters = {
 
 export default function App() {
   const { t } = useI18n()
-  const [mode, setMode] = useState<'atlas' | 'practicums'>(() => window.location.hash === '#practicums' ? 'practicums' : 'atlas')
+  const [mode, setMode] = useState<'atlas' | 'practicums'>(() => window.location.hash.startsWith('#practicums') ? 'practicums' : 'atlas')
   const [filters, setFilters] = useState<Filters>(initialFilters)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null)
@@ -170,8 +170,10 @@ export default function App() {
   }, [mode, moveSelection])
 
   useEffect(() => {
-    if (window.location.hash !== (mode === 'practicums' ? '#practicums' : '#atlas')) {
-      window.history.replaceState(null, '', mode === 'practicums' ? '#practicums' : '#atlas')
+    if (mode === 'practicums') {
+      if (!window.location.hash.startsWith('#practicums')) window.history.replaceState(null, '', '#practicums')
+    } else if (window.location.hash !== '#atlas') {
+      window.history.replaceState(null, '', '#atlas')
     }
   }, [mode])
 
