@@ -1,0 +1,83 @@
+{
+  "question": "1",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the length of side BC in triangle ABC using the cosine rule.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "cosine_rule",
+        "substitution",
+        "evaluate_square_root"
+      ],
+      "method_path": [
+        "Substitute AB=7, AC=12, angle A=116° into cosine rule: BC^2 = 7^2 + 12^2 - 2*7*12*cos(116°)",
+        "Calculate BC^2 = 266.646...",
+        "Take square root to get BC = 16.3293...",
+        "Round to 3 significant figures: BC = 16.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "substituting into cosine rule (M1); BC^2 = 12^2 + 7^2 - 2*12*7*cos116° (A1); BC = 16.3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find angle ACB in triangle ABC using the sine rule or cosine rule.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "sine_rule",
+        "cosine_rule",
+        "angle_sum_of_triangle",
+        "substitution",
+        "inverse_sine"
+      ],
+      "method_path": [
+        "Apply sine rule: sin(ACB)/7 = sin(116°)/BC, or cosine rule: 7^2 = 12^2 + BC^2 - 2*12*BC*cos(ACB), or find angle ABC first then use angle sum",
+        "Solve for angle ACB: sin(ACB) = 7*sin(116°)/16.3293...",
+        "Take inverse sine to get ACB = 22.6618...°",
+        "Round to 3 significant figures: ACB = 22.7° (or 22.8° if using cosine rule with previous 3sf)"
+      ],
+      "accepted_alternatives": [
+        "Use cosine rule: 7^2 = 12^2 + 16.3293...^2 - 2*12*16.3293...*cos(ACB) to find ACB = 22.8°",
+        "Find angle ABC first using sine rule or cosine rule, then ACB = 180° - 116° - ABC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "substituting into sine rule or cosine rule for angle ACB or angle ABC (M1); sin(ACB)/7 = sin116°/16.3293... OR 7^2 = 12^2 + 16.3293...^2 - 2*12*16.3293...*cos(ACB) OR 180° - 116° - 41.3° (A1); ACB = 22.7° (accept 22.8° if using previous 3sf AND the cosine rule) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

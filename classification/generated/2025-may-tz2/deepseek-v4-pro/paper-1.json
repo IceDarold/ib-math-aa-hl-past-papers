@@ -1,0 +1,1220 @@
+{
+  "session": "May 2025",
+  "zone": "TZ2",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Evaluate f(0) for f(x) = (3x-2)/(2x+1).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Substitute x=0 into f(x) = (3x-2)/(2x+1) to get f(0) = -2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1: -2 (accept (0, -2))"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write the equation of the horizontal asymptote of f(x) = (3x-2)/(2x+1).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "horizontal_asymptote",
+        "rational_function"
+      ],
+      "method_path": [
+        "Identify horizontal asymptote as y = 3/2 from leading coefficients."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1: y = 3/2 (must be an equation)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the range of g(x) = -f(x) for x ≥ 0, where f(x) = (3x-2)/(2x+1).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "reflection",
+        "range",
+        "inequality"
+      ],
+      "method_path": [
+        "Reflect graph of f in x-axis to get g.",
+        "Determine g(0) = 2 and horizontal asymptote y = -3/2.",
+        "Combine to get range -3/2 < y ≤ 2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1: attempt to reflect the graph of f in the x-axis OR one correct value seen; A1: both correct values -3/2 and 2 (seen anywhere); A1: -3/2 < y ≤ 2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Find a vector equation of line L1 given its Cartesian equation (x-1)/2 = (y+2)/3 = z/1.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "convert_cartesian_to_vector",
+        "parameter_introduction"
+      ],
+      "method_path": [
+        "Set each Cartesian fraction equal to a parameter λ",
+        "Express x, y, z in terms of λ",
+        "Write vector equation r = position vector + λ * direction vector"
+      ],
+      "accepted_alternatives": [
+        "Use symmetric form (y+2)/3 = (x-1)/2 = z/1 and write directly as r = (1, -2, 0) + λ(2, 3, 1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "M1 for attempt to set equal to a parameter or to add detail to cartesian form; A1 for correct vector equation r = (1, -2, 0) + λ(2, 3, 1) or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Find the intersection point of L1 and L2 given L2: r = (0,4,8) + t(1,0,-2).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equate_components",
+        "solve_linear_system",
+        "find_intersection"
+      ],
+      "method_path": [
+        "Equate components of L1 and L2: 1+2λ = t, -2+3λ = 4, λ = 8-2t",
+        "Solve for λ and t",
+        "Substitute back to find coordinates"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "M1 for attempt to equate at least one component; (A1) for λ=2 or t=5; A1 for intersection point (5,4,2)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Using the sine rule, show that cos θ = (3√2)/5.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "sine_rule",
+        "double_angle_identity",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Apply sine rule: sin θ / 5 = sin 2θ / (6√2)",
+        "Use double angle identity: sin 2θ = 2 sin θ cos θ",
+        "Simplify to cos θ = (3√2)/5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "correct substitution in sine rule (A1); attempt to use double angle rule for sin2θ (M1); 3√2 cos θ = 5 AG [3 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Hence, find sin θ.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "pythagorean_identity",
+        "right_triangle_trigonometry"
+      ],
+      "method_path": [
+        "Use sin² θ + cos² θ = 1 with cos θ = (3√2)/5",
+        "Solve for sin θ = √7/5"
+      ],
+      "accepted_alternatives": [
+        "Use right triangle with adjacent side 3√2 and hypotenuse 5 to find opposite side √7, then sin θ = √7/5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "valid attempt to find sinθ (M1); sin θ = √7/5 A1 [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find DC given area of triangle BCD is 2√14.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.circular_measure"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "area_of_triangle",
+        "sine_formula",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Use area formula: (1/2) × BC × DC × sin θ = 2√14",
+        "Substitute BC = 6√2 and sin θ = √7/5",
+        "Solve for DC = 10/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "1/2 × 6√2 × DC × √7/5 = 2√14 (A1); DC = 10/3 A1 [2 marks]"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Find P(B) given P(A ∪ B) = 5/8 and P(A ∩ B′) = 7/24.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "venn_diagram",
+        "law_of_addition",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Use law of addition: P(A ∪ B) = P(A ∩ B′) + P(B)",
+        "Substitute given values: 5/8 = 7/24 + P(B)",
+        "Solve for P(B) = 1/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to use a Venn diagram OR law of addition (M1); P(A ∪ B) = P(A ∩ B′) + P(B) (A1); P(B) = 1/3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "10-11",
+      "task_summary": "Given A and B are independent, find P(A′ | B).",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "independence",
+        "complement_rule"
+      ],
+      "method_path": [
+        "Find P(A) using independence: P(A ∩ B) = P(A) × P(B) and P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+        "Solve for P(A) = 7/16",
+        "Compute P(A′ | B) = P(A′ ∩ B) / P(B) = P(A′) × P(B) / P(B) = P(A′) = 1 − 7/16 = 9/16"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Find P(A ∩ B) = 7/48 using independence, then P(A′ | B) = 1 − P(A) + P(A ∩ B) − P(A ∪ B) / P(B) = 9/16"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10-11",
+          "basis": "METHOD 1: attempt to find P(A) M1; P(A) = 7/16 (A1); P(A′ | B) = P(A′) = 9/16 A1. METHOD 2: attempt to use P(A ∩ B) = P(A) × P(B) M1; x = 7/48 A1; P(A′ | B) = 9/16 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the possible values of k for which the quadratic equation x^2 + kx + 15 - k = 0 has two distinct real roots.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "discriminant",
+        "quadratic_inequality",
+        "factorization"
+      ],
+      "method_path": [
+        "Set discriminant Δ > 0",
+        "Compute Δ = k^2 - 4(15 - k) = k^2 + 4k - 60",
+        "Solve k^2 + 4k - 60 > 0",
+        "Factorize (k - 6)(k + 10) > 0",
+        "Determine solution k < -10 or k > 6"
+      ],
+      "accepted_alternatives": [
+        "Use quadratic formula to find critical values -10 and 6, then test intervals."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognising Δ > 0 (M1); Δ = k^2 - 4(15 - k) = k^2 + 4k - 60 A1; valid attempt to solve quadratic inequality (M1); (k - 6)(k + 10) OR two correct values -10 and 6 A1; k < -10, k > 6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the possible values of k for which the two distinct real roots are both positive or both negative.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "product_of_roots",
+        "inequality_intersection"
+      ],
+      "method_path": [
+        "Recognize that product of roots > 0 for both positive or both negative",
+        "Set product = 15 - k > 0",
+        "Solve k < 15",
+        "Intersect with k < -10 or k > 6 from part (a)",
+        "Obtain k < -10 or 6 < k < 15"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognising constant or product of roots is positive (M1); 15 - k > 0 ⇒ k < 15; k < -10, 6 < k < 15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Show that the distance l between the origin and any point on the graph of f is given by l = sqrt(x^2 + (x/2 - 4 ln x)^2).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "distance_formula",
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply distance formula between (0,0) and (x, f(x))",
+        "Substitute f(x) = x/2 - 4 ln x",
+        "Simplify to obtain l = sqrt(x^2 + (x/2 - 4 ln x)^2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "correct substitution into distance formula A1 ... 2 ln 4 l x x = + AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Find the x-coordinate of the point on the graph of f which is closest to the origin.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "distance_minimization",
+        "chain_rule",
+        "product_rule",
+        "derivative_set_to_zero",
+        "logarithmic_differentiation",
+        "critical_point"
+      ],
+      "method_path": [
+        "Set derivative of l with respect to x to zero",
+        "Apply chain rule to differentiate l = sqrt(x^2 + (x/2 - 4 ln x)^2)",
+        "Apply product rule to differentiate (x/2 - 4 ln x)^2",
+        "Simplify derivative to (x + 2 ln x)/l",
+        "Set numerator x + 2 ln x = 0",
+        "Solve for x: ln x = -1/2, so x = e^(-1/2) = 1/sqrt(e)"
+      ],
+      "accepted_alternatives": [
+        "Minimize l^2 = x^2 + (x/2 - 4 ln x)^2 instead of l, differentiate using product rule, set derivative to zero, solve x + 2 ln x = 0, x = e^(-1/2)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "recognising d 0 d l x = (seen anywhere) (M1) ... attempt to use chain rule with l (M1) ... attempt to use product rule ... A1 ... OR recognising to minimise 2 ln 4 x x + (M1) attempt to use product rule (M1) ... A1 ... THEN 2 ln 0 x x x + = (or equivalent) A1 ... 1 ln 2 x ⇒ = − ... 1 2 1 e e x − = = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "14-15",
+      "task_summary": "Find p and q such that x^4 + px^3 - 2x^2 + qx - 3 is exactly divisible by (x+1)^2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "polynomial_division",
+        "equating_coefficients",
+        "solving_simultaneous_equations"
+      ],
+      "method_path": [
+        "Express divisibility by (x+1)^2 as a product of quadratic factors or use repeated division or double root condition.",
+        "Obtain equations relating p and q by comparing coefficients or evaluating f(-1)=0 and f'(-1)=0.",
+        "Solve the system to find p=2, q=-6."
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Write as (x^2+2x+1)(x^2+bx-3), compare coefficients to get b=0, p=2, q=-6.",
+        "METHOD 2: Use f(-1)=0 and f'(-1)=0 to get p+q=-4 and 3p+q=0, solve for p=2, q=-6.",
+        "METHOD 3: Divide by (x+1) twice, set remainders to zero to get p+q=-4 and 3p+q=0.",
+        "METHOD 4: Divide by x^2+2x+1, set remainder coefficients to zero to get 3p+q=0 and 2p-4=0.",
+        "METHOD 5: Use sum and product of roots with roots -1, -1, α, β to derive equations and solve."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: attempt to write as product of two quadratic factors (M1); (x^2+2x+1)(x^2+bx-3) A1; attempt to compare their coefficients (M1); b=0 (A1); p=2, q=-6 A1"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 2: recognition that f(-1)=0 (M1); p+q=-4 A1; recognition that f'(x)=0 at x=-1 since double root (M1); 3p+q=0 A1; p=2, q=-6 A1"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 3: attempt to use division with (x+1) to find remainder (M1); p+q=-4 A1; attempt to use division once again with (x+1) to find remainder (M1); 3p+q=0 A1; p=2, q=-6 A1"
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 4: attempt to use division to find remainder (M1); (q+3p)x+(2p-4)=0 (A1); equating the coefficients of their remainder to 0 (M1); 3p+q=0 and 2p-4=0 A1; p=2, q=-6 A1"
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 5: attempt to set sum of four roots equal to -p OR product of four roots equal to -3 (M1); α+β=-p+2 and αβ=-3 A1; sum of product of pairs and sum of product of roots taken three at a time A1; attempt to solve their four equations (M1); p=2, q=-6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Sketch the graph of y = arccos x for -1 ≤ x ≤ 1, indicating the y-intercept and coordinates of the end points.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "identify_intercepts",
+        "identify_endpoints"
+      ],
+      "method_path": [
+        "Sketch the curve of y = arccos x with correct shape within domain [-1, 1]",
+        "Label y-intercept at (0, π/2)",
+        "Label endpoints at (-1, π) and (1, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "For a curve with correct shape within the domain, correct labelled y-intercept and end points. A2. Note: Award A1 for any two of the following provided a curve is seen: correct shape within the domain, correctly labelled y-intercept, correctly labelled end points."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "17-18",
+      "task_summary": "Solve arccos x + arccos(3x) = 3π/2 for x.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_compound_angle_formula",
+        "use_pythagorean_identity",
+        "solve_radical_equation",
+        "check_solutions"
+      ],
+      "method_path": [
+        "Apply compound angle formula for cos(A+B) or sin(A+B)",
+        "Express sin(arccos x) and sin(arccos(3x)) using √(1 - x²) and √(1 - 9x²)",
+        "Substitute known value cos(3π/2)=0 or sin(3π/2)=-1",
+        "Form equation without square roots",
+        "Solve for x, obtaining x = ±1/2",
+        "Reject x = 1/2 using graph from part (a) or domain check, leaving x = -1/2"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Use cos(A+B) formula, leading to x = -1/2.",
+        "METHOD 2: Use sin(A+B) formula, leading to x = -1/2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 1: recognizing to use compound angle rule for cos(A+B) (M1); valid attempt to find sin(arccos x) or sin(arccos 3x) in terms of x (M1); use of the identity sin²θ = 1 - cos²θ OR use of a right-angled triangle ... A1; cos(3π/2)=0 (seen anywhere) (A1); attempt to write an equation in x without the square roots (M1); x = ±1/2 ... x = -1/2 A1."
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 2: recognizing to use compound angle rule for sin(A+B) (M1); valid attempt to find sin(arccos x) or sin(arccos 3x) in terms of x (M1); use of the identity sin²θ = 1 - cos²θ OR use of a right-angled triangle ... A1; sin(3π/2)=-1 (seen anywhere) (A1); attempt to write an equation in x without the square roots (M1); x = ±1/2 ... x = -1/2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "19-21",
+      "task_summary": "Prove by contradiction that 1/(x(1-x)) ≥ 4 for x ∈ ℝ, 0 < x < 1.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.inequalities",
+        "calculus.differentiation"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "assume_negation",
+        "algebraic_manipulation",
+        "quadratic_inequality",
+        "contradiction",
+        "differentiation",
+        "partial_fractions",
+        "optimization"
+      ],
+      "method_path": [
+        "Assume 1/(x(1-x)) < 4",
+        "Multiply by positive x(1-x) to get 1 < 4x(1-x)",
+        "Rearrange to 4x^2 - 4x + 1 < 0",
+        "Factor to (2x-1)^2 < 0",
+        "Contradiction since square is non-negative",
+        "Conclude original inequality holds"
+      ],
+      "accepted_alternatives": [
+        "Use partial fractions and calculus to find minimum of 1/(x(1-x)) is 4, contradicting assumption <4",
+        "Use product rule to differentiate 1/(x(1-x)), find minimum 4, contradicting assumption <4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: assume that 1/(x(1-x)) < 4 ... attempt to form a quadratic inequality ... 4x^2 - 4x + 1 < 0 ... (2x-1)^2 < 0 ... a contradiction, since (2x-1)^2 ≥ 0"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 2: assume that 1/(x(1-x)) < 4 ... partial fractions ... minimum value is 4 ... a contradiction, since 4 < 4"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "METHOD 3: assume that 1/(x(1-x)) < 4 ... product rule ... minimum value is 4 ... a contradiction, since 4 < 4"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find f^{-1}(8) for f(x)=4^x, expressing answer as p/q.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "number_algebra.exponential_models"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_exponential_equation",
+        "express_as_fraction"
+      ],
+      "method_path": [
+        "Set 4^x = 8",
+        "Rewrite with common base: 2^{2x} = 2^3",
+        "Equate exponents: 2x = 3",
+        "Solve for x: x = 3/2"
+      ],
+      "accepted_alternatives": [
+        "Use inverse function f^{-1}(x) = log_4 x, evaluate log_4 8 = 3/2",
+        "Use change of base: log_4 8 = log_2 8 / log_2 4 = 3/2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "4^x = 8 OR f^{-1}(x) = log_4 x OR f^{-1}(8) = log_4 8 (A1); attempt to use indices with same base OR change of base of logs (M1); 3/2 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "22",
+      "task_summary": "Find g^{-1}(x) for g(x)=1+log_2 x and describe transformations from y=g^{-1}(x) to y=f(x).",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_inverse_function",
+        "describe_transformations"
+      ],
+      "method_path": [
+        "Interchange x and y: x = 1 + log_2 y",
+        "Solve for y: log_2 y = x - 1, so y = 2^{x-1}",
+        "Describe transformations: horizontal translation left by 1 unit, then horizontal stretch by scale factor 1/2"
+      ],
+      "accepted_alternatives": [
+        "Horizontal stretch by scale factor 1/2, then vertical stretch by scale factor 2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "interchanging x and y (M1); g^{-1}(x) = 2^{x-1} (A1); one correct transformation (A1); two correct transformations in correct order (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Show that (f ∘ g)(x) = 4x^2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "compose_functions",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Compute f(g(x)) = 4^{1+log_2 x}",
+        "Rewrite as 4 * 4^{log_2 x}",
+        "Express 4^{log_2 x} as (2^2)^{log_2 x} = 2^{2 log_2 x} = x^2",
+        "Obtain 4x^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "attempt to find composite function (M1); 4^{1+log_2 x} = 4 * 4^{log_2 x} (A1); = 4 * 2^{2 log_2 x} = 4x^2 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 7,
+      "source_pages": "13",
+      "markscheme_pages": "23-24",
+      "task_summary": "Show identity and find area of region R enclosed by h(x) and x-axis from x=1 to x=3.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "algebraic_manipulation",
+        "definite_integral",
+        "area_under_curve"
+      ],
+      "method_path": [
+        "Show identity: 2 - 1/(2x+1) = (4x+1)/(2x+1)",
+        "Set up integral: ∫_1^3 (2 - 1/(2x+1)) dx",
+        "Integrate: 2x - (1/2) ln(2x+1)",
+        "Evaluate from 1 to 3: (6 - (1/2) ln 7) - (2 - (1/2) ln 3)",
+        "Simplify to 4 + (1/2) ln(3/7) or equivalent"
+      ],
+      "accepted_alternatives": [
+        "Use substitution u = 2x+1 or u = 2x-1, integrate, and evaluate limits"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "part (i): (A1) for correct expansion, (A1) for simplification to (4x+1)/(2x+1); part (ii): (M1) for attempt to integrate, (A1)(A1) for 2x - x and (1/2) ln(2x+1), (M1) for substituting limits, (A1) for final answer 4 + (1/2) ln(3/7) or equivalent"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Find the first four terms in the binomial expansion of (1+5x)^(1/2) in ascending powers of x.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "fractional_exponent",
+        "ascending_powers"
+      ],
+      "method_path": [
+        "Identify n=1/2",
+        "Apply binomial theorem: (1+5x)^(1/2) = 1 + (1/2)(5x) + (1/2)(-1/2)/2! (5x)^2 + (1/2)(-1/2)(-3/2)/3! (5x)^3 + ...",
+        "Simplify coefficients to obtain 1 + (5/2)x - (25/8)x^2 + (125/16)x^3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to use the binomial expansion with n=1/2 (M1); correct substitution into at least three terms (A1); 1 + (5/2)x - (25/8)x^2 + (125/16)x^3 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Find the expansion of (1+px)(1+qx)^(-1) in ascending powers of x up to x^2.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "binomial_expansion",
+        "negative_exponent",
+        "series_multiplication"
+      ],
+      "method_path": [
+        "Expand (1+qx)^(-1) = 1 - qx + q^2 x^2 + ...",
+        "Multiply by (1+px): (1+px)(1 - qx + q^2 x^2) = 1 + (p - q)x + (q^2 - pq)x^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "at least 3 correct terms in expansion of (1+qx)^(-1) (A1); attempt to find product (M1); 1 + (p - q)x + (q^2 - pq)x^2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Show that q = 5/4 given that the expansions from (a) and (b) are identical up to the first three terms.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equating_coefficients",
+        "solving_simultaneous_equations"
+      ],
+      "method_path": [
+        "Equate coefficients of x: p - q = 5/2",
+        "Equate coefficients of x^2: q^2 - pq = -25/8",
+        "Solve for q: substitute p = q + 5/2 into second equation, simplify to q = 5/4"
+      ],
+      "accepted_alternatives": [
+        "Solve for p first: p = 15/4, then substitute into p - q = 5/2 to get q = 5/4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "equating their coefficients of either x or x^2 (M1); one correct equation A1; valid attempt to solve for q or p (M1); q = 5/4 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "26-27",
+      "task_summary": "Use the approximation (1+px)/(1+qx) with p=15/4, q=5/4 to approximate sqrt(1.2) and explain why the approximation for sqrt(5/2) is less accurate.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "substitution",
+        "approximation",
+        "error_analysis"
+      ],
+      "method_path": [
+        "Set sqrt(1+5x) = 1.2, solve for x: x = 0.04 = 1/25",
+        "Substitute x = 1/25, p = 15/4, q = 5/4 into (1+px)/(1+qx) to get 115/105 = 23/21",
+        "For sqrt(5/2) = sqrt(1.25), x = 1/20",
+        "Note that 1/20 > 1/25, so the approximation is less accurate because the expansion is valid for |x| < 1/5 and larger x leads to larger error"
+      ],
+      "accepted_alternatives": [
+        "Use the expansion from part (a) or (b) to approximate sqrt(1.2) as 219/200 or 2191/2000"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26-27",
+          "basis": "attempt to find x (M1); x = 1/25 (A1); substituting their value of x with p and q (M1); 115/105 = 23/21 A1; x = 1/20 A1; recognising 1/20 > 1/25 R1; therefore approximation for sqrt(5/2) is not as accurate AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Solve z^2 = -1 - sqrt(3)i, giving answers in polar form r(cosθ + i sinθ).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "convert_to_polar",
+        "apply_de_moivre",
+        "find_roots"
+      ],
+      "method_path": [
+        "Express -1 - sqrt(3)i in polar form: 2(cos(-2π/3) + i sin(-2π/3))",
+        "Apply De Moivre's theorem to find square roots: z = sqrt(2)(cos((-2π/3 + 2kπ)/2) + i sin((-2π/3 + 2kπ)/2))",
+        "Substitute k=0,1 to get z = sqrt(2)(cos(-π/3) + i sin(-π/3)) and z = sqrt(2)(cos(2π/3) + i sin(2π/3))"
+      ],
+      "accepted_alternatives": [
+        "Use 4π/3 as initial argument: z^2 = 2(cos(4π/3) + i sin(4π/3)), then roots are sqrt(2)(cos(2π/3) + i sin(2π/3)) and sqrt(2)(cos(5π/3) + i sin(5π/3))"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A2 for correct polar forms; M1 for attempt to use De Moivre's theorem; A1 for final two roots."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Find z1, z2 (square roots of -1 - sqrt(3)i, Re(z1)>0) and deduce z3, z4 (square roots of -1 + sqrt(3)i, Re(z3)>0) in Cartesian form a+bi.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "convert_to_cartesian",
+        "use_conjugate"
+      ],
+      "method_path": [
+        "Convert polar roots from (a) to Cartesian: z1 = sqrt(2)/2 - sqrt(6)/2 i, z2 = -sqrt(2)/2 + sqrt(6)/2 i",
+        "Deduce z3 and z4 as conjugates: z3 = sqrt(2)/2 + sqrt(6)/2 i, z4 = -sqrt(2)/2 - sqrt(6)/2 i"
+      ],
+      "accepted_alternatives": [
+        "Factorised form accepted, e.g., z1 = (1/2)(sqrt(2) - sqrt(6)i)",
+        "Award A1FTA1FT for z3 = (z1)* and z4 = (z2)* with Re(z3)>0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A1A1 for z1 and z2; A1A1 for z3 and z4; note on interchange and FT."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "29-30",
+      "task_summary": "Plot points A, B, C, D on Argand diagram and find area of polygon formed.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "plot_complex_numbers",
+        "calculate_area_rectangle"
+      ],
+      "method_path": [
+        "Plot points: A(sqrt(2)/2, -sqrt(6)/2), B(-sqrt(2)/2, sqrt(6)/2), C(sqrt(2)/2, sqrt(6)/2), D(-sqrt(2)/2, -sqrt(6)/2)",
+        "Recognize shape as rectangle with length = sqrt(6) and width = sqrt(2)",
+        "Area = length * width = sqrt(6) * sqrt(2) = 2*sqrt(3)"
+      ],
+      "accepted_alternatives": [
+        "Method 2: area = 4 * (1/2 * sqrt(2) * sqrt(2) * sin(2π/3)) = 2*sqrt(3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29-30",
+          "basis": "A2 for correct Argand diagram; M1 for attempt to find length/width or triangle area; A1 for area = 2*sqrt(3)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "30",
+      "task_summary": "Given z^4 + 2z^2 + 4 = 0, find p, q, r such that 1/z1, 1/z2, 1/z3, 1/z4 satisfy pw^4 + qw^2 + r = 0.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_reciprocal",
+        "clear_denominators"
+      ],
+      "method_path": [
+        "Let w = 1/z, substitute into z^4 + 2z^2 + 4 = 0",
+        "Obtain 1/w^4 + 2/w^2 + 4 = 0",
+        "Multiply by w^4: 1 + 2w^2 + 4w^4 = 0, rearrange to 4w^4 + 2w^2 + 1 = 0",
+        "Identify p=4, q=2, r=1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "M1 for recognition that w=1/z; A1 for correct equation; A1 for p=4, q=2, r=1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "30-31",
+      "task_summary": "Find 1/z1 in Cartesian form and deduce area of polygon formed by points E, F, G, H representing 1/z1, 1/z2, 1/z3, 1/z4.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "find_reciprocal",
+        "use_conjugate",
+        "apply_dilation",
+        "calculate_area"
+      ],
+      "method_path": [
+        "Find 1/z1 by multiplying numerator and denominator by conjugate: (sqrt(2)/2 + sqrt(6)/2 i) / ((sqrt(2)/2)^2 + (sqrt(6)/2)^2) = sqrt(2)/4 + sqrt(6)/4 i",
+        "Recognize that mapping z -> 1/z is a dilation by factor 1/|z|^2 = 1/2 for these points",
+        "Area of new polygon = (1/2)^2 * area from (c)(ii) = (1/4) * 2*sqrt(3) = sqrt(3)/2"
+      ],
+      "accepted_alternatives": [
+        "Use De Moivre: 1/z1 = (1/sqrt(2))(cos(π/3) + i sin(π/3)) = sqrt(2)/4 + sqrt(6)/4 i"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30-31",
+          "basis": "M1 for attempt to take conjugate or use De Moivre; A1 for 1/z1 = sqrt(2)/4 + sqrt(6)/4 i; M1 for recognition of dilation by 1/2; A1 for area = sqrt(3)/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "question": "10",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "17",
+      "task_summary": "Write down the speed of the airplane and the car at t=0.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "evaluate_at_point",
+        "read_initial_condition"
+      ],
+      "method_path": [
+        "Substitute t=0 into v_air = 60e^{-0.1t} to get 60",
+        "Substitute t=0 into v_car = 5t to get 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) speed of airplane = 60 (ms−1) A1 (ii) speed of car = 0 (ms−1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "17",
+      "task_summary": "Find the time when the airplane and car have the same speed, and that speed.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_equal",
+        "solve_equation",
+        "evaluate_at_point"
+      ],
+      "method_path": [
+        "Set v_air = v_car: 60e^{-0.1t} = 5t",
+        "Solve for t using GDC to get t ≈ 6.36",
+        "Substitute t into either velocity to get speed ≈ 31.8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) recognizing v_air = v_car when speeds are the same (M1) 6.35564... t = 6.36 (s) A1 (ii) 31.7782... speed = 31.8 (ms−1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "16",
+      "markscheme_pages": "17-18",
+      "task_summary": "Find d(t), the distance between the car and the back of the airplane, given d(0)=100.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate",
+        "initial_condition",
+        "subtract_displacements"
+      ],
+      "method_path": [
+        "Integrate v_air: ∫60e^{-0.1t} dt = -600e^{-0.1t} + C1",
+        "Integrate v_car: ∫5t dt = (5/2)t^2 + C2",
+        "Recognize d(t) = s_car(t) - s_air(t) + 100 (or equivalent)",
+        "Use d(0)=100 to find constant: 100 = (0) - (-600 + C1) + 100? Actually markscheme shows C=700",
+        "Obtain d(t) = -600e^{-0.1t} - (5/2)t^2 + 700 (or equivalent)"
+      ],
+      "accepted_alternatives": [
+        "d(t) = 600e^{-0.1t} + (5/2)t^2 - 700 (signs reversed)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "recognizing to integrate either velocity function (M1) 60e^{-0.1t} dt, 5t dt correct integration (A1)(A1) -600e^{-0.1t}, (5/2)t^2 (award A1 for each term) recognize to subtract displacements (seen anywhere) (M1) substituting initial condition into their d(t) (M1) C = 700 (or -700) (A1) d(t) = -600e^{-0.1t} - (5/2)t^2 + 700 (accept d(t) = 600e^{-0.1t} + (5/2)t^2 - 700) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "18",
+      "task_summary": "Find the time it takes for the car to reach the back of the airplane.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_equal_to_zero",
+        "solve_equation"
+      ],
+      "method_path": [
+        "Set d(t) = 0",
+        "Solve for t using GDC to get t ≈ 15.1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "recognizing to solve their d(t) = 0 (M1) 15.0586... t = 15.1 (s) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "18",
+      "task_summary": "Find the distance travelled by the car when it reaches the back of the airplane.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integrate",
+        "evaluate_definite_integral"
+      ],
+      "method_path": [
+        "Integrate v_car from 0 to t_found: ∫_0^{15.0586} 5t dt",
+        "Evaluate to get (5/2)(15.0586)^2 ≈ 567"
+      ],
+      "accepted_alternatives": [
+        "Use (5/2)t^2 directly with t=15.0586"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "attempt to find the distance travelled by the car (M1) ∫_0^{15.0586} 5t dt, (5/2)(15.0586)^2 (A1) 566.904... 567 (m) (accept 570 (m) from 3 sf answer in (d)) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

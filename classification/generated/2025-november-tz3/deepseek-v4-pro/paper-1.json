@@ -1,0 +1,1123 @@
+{
+  "session": "November 2025",
+  "zone": "TZ3",
+  "paper": 1,
+  "calculator": "no",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the first term and common difference of an arithmetic sequence given the 7th term is 6 and the sum of the 6th and 12th terms is 24.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "arithmetic_sequence",
+        "nth_term_formula",
+        "system_of_equations",
+        "solve_simultaneous"
+      ],
+      "method_path": [
+        "Write equations using u_n = u_1 + (n-1)d: u_7 = u_1 + 6d = 6",
+        "u_6 + u_12 = (u_1 + 5d) + (u_1 + 11d) = 24",
+        "Simplify to 2u_1 + 16d = 24",
+        "Solve the system to get u_1 = -12, d = 3"
+      ],
+      "accepted_alternatives": [
+        "Express u_6 and u_12 in terms of u_7 and d: u_6 = 6 - d, u_12 = 6 + 5d, sum to 24 gives 12 + 4d = 24, so d = 3, then u_1 = u_7 - 6d = -12"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: attempt to use u_n = u_1 + (n-1)d (M1); u_1 + 6d = 6 (A1); u_1 + 5d + u_1 + 11d = 24 (A1); attempt to solve their equations simultaneously (M1); u_1 = -12 and d = 3 A1. METHOD 2: attempt to express u_6 and u_12 in terms of the 7th term and d (M1); u_6 = 6 - d (A1); u_12 = 6 + 5d (A1); setting their sum equal to 24 (M1); 12 + 4d = 24; d = 3 and u_1 = -12 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find P(A ∩ B) given P(A)=1/2, P(B)=1/3, P(A|B)=1/4.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "conditional_probability",
+        "multiplication_rule"
+      ],
+      "method_path": [
+        "Use P(A|B) = P(A ∩ B) / P(B)",
+        "Rearrange to P(A ∩ B) = P(A|B) × P(B)",
+        "Substitute values: (1/4) × (1/3)",
+        "Compute 1/12"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to use P(A|B) = P(A ∩ B) / P(B) = (1/4) × (1/3) (M1); 1/12 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Find P(A | B′) using P(A)=1/2, P(B)=1/3, P(A|B)=1/4.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "conditional_probability",
+        "complement_rule",
+        "probability_of_intersection"
+      ],
+      "method_path": [
+        "Find P(B′) = 1 − P(B) = 2/3",
+        "Find P(A ∩ B′) = P(A) − P(A ∩ B) = 1/2 − 1/12 = 5/12",
+        "Use P(A | B′) = P(A ∩ B′) / P(B′)",
+        "Substitute: (5/12) / (2/3)",
+        "Simplify to 5/8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "P(B′) = 2/3 or P(A ∩ B′) = 5/12 (A1); attempt to use P(A|B′) = P(A ∩ B′) / P(B′) (M1); (5/12)/(2/3) (A1); 5/8 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Determine the values of A and B in y = (Ax + B)/(x - 4) given points P(-10, 1) and Q(3, -12).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_coordinates",
+        "solve_simultaneous_equations"
+      ],
+      "method_path": [
+        "Substitute P(-10, 1) into y = (Ax + B)/(x - 4) to obtain 1 = (-10A + B)/(-14)",
+        "Substitute Q(3, -12) into y = (Ax + B)/(x - 4) to obtain -12 = (3A + B)/(-1)",
+        "Solve the simultaneous equations to find A = 2, B = 6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "substitute P(-10,1) or Q(3,-12) into y = (Ax+B)/(x-4) (M1); 1 = (-10A+B)/(-14) (or equivalent); -12 = (3A+B)/(-1) (or equivalent); attempt to solve their equations simultaneously (M1); A=2, B=6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Describe a sequence of transformations mapping y = 1/x onto y = (Ax + B)/(x - 4) with A=2, B=6.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "rewrite_rational_function",
+        "identify_asymptotes",
+        "describe_transformations"
+      ],
+      "method_path": [
+        "Rewrite y = (2x + 6)/(x - 4) as y = 2 + 14/(x - 4)",
+        "Identify vertical asymptote x = 4 (horizontal translation 4 right)",
+        "Identify horizontal asymptote y = 2 (vertical translation 2 up)",
+        "Describe sequence: horizontal translation 4 right, vertical stretch scale factor 14, vertical translation 2 up (or alternative order)"
+      ],
+      "accepted_alternatives": [
+        "Vertical stretch scale factor 14, followed by translation by vector (4, 2)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "attempt to express y in the form P + Q/(x-4) (M1) OR attempt to find asymptotes (M1); recognizing vertical asymptote at x=4 OR horizontal shift 4 right (A1); recognizing horizontal asymptote at y=2 OR vertical shift 2 up (A1); 2 + 14/(x-4) (A1); horizontal translation 4 right; vertical stretch scale factor 14 followed by vertical translation 2 up (A1) OR vertical stretch scale factor 14; followed by translation (4,2) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Solve the equation 3 log_8(10x) - log_4(x) = 1 for x > 0.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_logarithm_power_rule",
+        "apply_change_of_base",
+        "simplify_logarithmic_equation",
+        "solve_exponential_equation"
+      ],
+      "method_path": [
+        "Apply logarithm power rule to rewrite 3 log_8(10x) as log_8((10x)^3)",
+        "Apply change of base to express all logarithms with the same base (e.g., base 2)",
+        "Combine logarithms using product or quotient rule to obtain a single logarithmic equation",
+        "Convert the logarithmic equation to an exponential equation",
+        "Solve the resulting algebraic equation for x"
+      ],
+      "accepted_alternatives": [
+        "Use base 4 instead of base 2 for the change of base",
+        "Apply quotient rule before change of base",
+        "Use natural logarithms for change of base"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme shows M1 for attempt to apply power rule, quotient rule, or product rule; M1 for attempt to apply change of base rule; A1 for correct equation with same base in all logarithms; A1 for correct equation without logarithms; A1 for x = 1/25."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "7-8",
+      "markscheme_pages": "12-13",
+      "task_summary": "Sketch y = f(|x|) and y = |f(x)| given the graph of y = f(x) for -5 ≤ x ≤ 5, showing approximate intercepts.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "reflect_graph",
+        "sketch_transformation",
+        "identify_intercepts"
+      ],
+      "method_path": [
+        "For y = f(|x|): reflect the part of y = f(x) for x ≥ 0 across the y-axis to x ≤ 0, keeping the right side unchanged.",
+        "For y = |f(x)|: reflect the parts of y = f(x) below the x-axis (y ≤ 0) across the x-axis, keeping the parts above unchanged.",
+        "Mark approximate intercepts and cusps as per markscheme notes."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to reflect graph in y-axis for x ≥ 0 M1; intercepts with x-axis and y-axis and clear cusp on y-axis in approximately the correct places A1"
+        },
+        {
+          "markscheme_pages": "13",
+          "basis": "attempt to reflect graph in x-axis for y ≤ 0 M1; intercept with y-axis, maximum point and two cusps on x-axis in approximately the correct places A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "8",
+      "markscheme_pages": "13",
+      "task_summary": "Solve the inequality |f(x)| ≥ (f(x))^2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "absolute_value_inequality",
+        "quadratic_inequality",
+        "interval_notation"
+      ],
+      "method_path": [
+        "Recognize that |f(x)| ≥ (f(x))^2 implies f(x) ≤ 1.",
+        "Identify x-intervals where f(x) ≤ 1 from the graph: x ≥ -4.93 or x ≤ 5, and x ≤ -4.27 or x ≥ 0.292.",
+        "Combine intervals to get -4.93 ≤ x ≤ -4.27 and 0.292 ≤ x ≤ 5."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "recognition that |f(x)| ≥ (f(x))^2 when f(x) ≤ 1 (M1); x ≥ -4.93 OR x ≤ 5, x ≤ -4.27 OR x ≥ 0.292 seen (A1); -4.93 ≤ x ≤ -4.27, 0.292 ≤ x ≤ 5 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 7,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Solve the first-order linear differential equation x dy/dx + y = x^3 cosec^2 x, given y(π/2) = 8/π^2, and express the particular solution as y = f(x).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "linear_first_order_ode",
+        "integrating_factor",
+        "exact_differential",
+        "integration_by_parts",
+        "initial_value_problem"
+      ],
+      "method_path": [
+        "Rewrite DE in standard linear form: dy/dx + (1/x) y = x^2 cosec^2 x",
+        "Find integrating factor μ(x) = e^{∫ (1/x) dx} = x",
+        "Multiply DE by μ(x) to get d/dx (x y) = x^3 cosec^2 x",
+        "Integrate both sides using given integral: ∫ x^3 cosec^2 x dx = ln|sin x| - x cot x + c",
+        "Solve for y: y = (ln|sin x| - x cot x + c) / x^3",
+        "Apply initial condition y(π/2) = 8/π^2 to find c = π",
+        "Write particular solution: y = (ln|sin x| - x cot x + π) / x^3"
+      ],
+      "accepted_alternatives": [
+        "Multiply DE directly by x^2 instead of standard integrating factor method, leading to same exact differential."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "Markscheme shows: rewrite DE, find IF = x, multiply through, write LHS as exact differential, integrate to get x^3 y = ln|sin x| - x cot x + c, substitute initial condition to find c = π, final answer y = (ln|sin x| - x cot x + π) / x^3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Find the range of possible values of a from the given probability distribution.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "probability_distribution_conditions",
+        "inequality_solving"
+      ],
+      "method_path": [
+        "Set each probability between 0 and 1: 0.6-2a ≥ 0, 3a ≥ 0, 0.4-a ≥ 0",
+        "Solve inequalities to get 0 ≤ a ≤ 0.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "considers at least two of 0.6-2a≥0, 3a≥0 and 0.4-a≥0 (M1); 0≤a≤0.3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Given a=0.2, determine Var(2-X).",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "variance_properties",
+        "expected_value_calculation",
+        "variance_calculation"
+      ],
+      "method_path": [
+        "Recognize Var(2-X)=Var(X)",
+        "Calculate E(X) using symmetry or formula",
+        "Calculate E(X^2) using sum of x^2 * P(X=x)",
+        "Compute Var(X)=E(X^2)-[E(X)]^2"
+      ],
+      "accepted_alternatives": [
+        "Define Y=2-X, find distribution of Y, compute E(Y) and E(Y^2), then Var(Y)=E(Y^2)-[E(Y)]^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: recognition that Var(2-X)=Var(X) R1; E(X)=2 A1; attempt to use E(X^2)=∑x^2 P(X=x) (M1); E(X^2)=4.4 (A1); attempt to use Var(X)=E(X^2)-[E(X)]^2 (M1); Var(X)=0.4 A1. METHOD 2: attempt to find distribution for Y=2-X M1; E(Y)=0 A1; attempt to use E(Y^2)=∑y^2 P(Y=y) (M1); E(Y^2)=0.4 (A1); attempt to use Var(Y)=E(Y^2)-[E(Y)]^2 (M1); Var(Y)=0.4 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Show that T = 500 sec θ + (2500 - 1000 tan θ)/3.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "time_sum",
+        "distance_speed",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Sum times for both sections using T = D/S",
+        "Substitute distances and speeds: 400 sec θ / 0.8 + (1000 - 400 tan θ) / 1.2",
+        "Simplify to 500 sec θ + (2500 - 1000 tan θ)/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to sum times for both sections using D/T = S (M1); 400secθ/0.8 + (1000-400tanθ)/1.2 (A1); 500secθ + (2500-1000tanθ)/3 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Find dT/dθ.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_trigonometric",
+        "sec_derivative",
+        "tan_derivative"
+      ],
+      "method_path": [
+        "Differentiate T = 500 sec θ + (2500 - 1000 tan θ)/3",
+        "d/dθ (sec θ) = sec θ tan θ, d/dθ (tan θ) = sec^2 θ",
+        "dT/dθ = 500 sec θ tan θ - (1000/3) sec^2 θ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to differentiate T (secθ tanθ or sec^2 seen) M1; dT/dθ = 500 secθ tanθ - (1000/3) sec^2 θ A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Show that PX = 160√5 m when T is minimized.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "set_derivative_zero",
+        "solve_trigonometric_equation",
+        "find_tan",
+        "find_sec",
+        "distance_calculation"
+      ],
+      "method_path": [
+        "Set dT/dθ = 0 and solve",
+        "Obtain 500 sin θ - 1000/3 = 0 → sin θ = 2/3",
+        "Find tan θ = 2/√5 or sec θ = 3/√5",
+        "PX = 400 tan θ = 400 * 2/√5 = 800/√5 = 160√5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "set their dT/dθ = 0 and attempt to solve (M1); 500 sin θ - 1000/3 = 0 → sin θ = 2/3 A1; tan θ = 2/√5 OR sec θ = 3/√5 A1; PX = 400 tan θ (seen anywhere) OR 800/√5 A1; = 160√5 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Given f(x) = (1/2)x^2 + kx + 13 has no real roots, show the greatest possible value of k is 5.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "discriminant",
+        "inequality",
+        "positive_integer"
+      ],
+      "method_path": [
+        "Find discriminant: k^2 - 26",
+        "Set discriminant < 0 for no real roots",
+        "Solve k^2 < 26",
+        "Since k ∈ ℤ+, greatest integer k is 5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "finding correct discriminant k^2 - 26 A1; recognition that discriminant < 0 M1; k = 5 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "For k=5, write down the axis of symmetry and find the coordinates of the minimum point.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "axis_of_symmetry",
+        "substitution",
+        "completing_the_square"
+      ],
+      "method_path": [
+        "Axis of symmetry: x = -5",
+        "Substitute x = -5 into f(x) or complete the square",
+        "Minimum point: (-5, 1/2)"
+      ],
+      "accepted_alternatives": [
+        "Use completing the square to find vertex"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) x = -5 A1; (ii) attempt to substitute their value of x into f or complete the square M1; (-5, 1/2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Show that the equation of the normal line L at x = -3 is y = -1/2 x + 1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative",
+        "normal_line",
+        "point_slope_form"
+      ],
+      "method_path": [
+        "Find y-coordinate at x = -3: y = 5/2",
+        "Find derivative f'(x) = x + 5",
+        "Evaluate derivative at x = -3: f'(-3) = 2",
+        "Gradient of normal = -1/2",
+        "Equation of normal: y - 5/2 = -1/2 (x + 3) → y = -1/2 x + 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "at x=-3, y=5/2 A1; dy/dx = x+5 A1; at x=-3, dy/dx=2 A1; normal gradient is negative reciprocal M1; gradient of normal = -1/2; y-5/2 = -1/2(x+3) → y = -1/2 x + 1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q09-D",
+      "question": "9",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Find the shaded area bounded by the curve, the normal line L, and the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "area_between_curves",
+        "trapezium"
+      ],
+      "method_path": [
+        "Set up integral of difference: ∫ from -3 to 0 of [f(x) - (-1/2 x + 1)] dx",
+        "Integrate: (1/6)x^3 + (5/2)x^2 + 13x - (-1/4 x^2 + x) evaluated from -3 to 0",
+        "Simplify to (1/6)x^3 + (11/4)x^2 + 12x",
+        "Substitute limits: 0 - [ (1/6)(-27) + (11/4)(9) + 12(-3) ]",
+        "Compute: 0 - [ -9/2 + 99/4 - 36 ] = 63/4"
+      ],
+      "accepted_alternatives": [
+        "Use area of trapezium and integral of curve",
+        "Integrate f(x) - (1/2 x + 1) directly"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "attempt to describe shaded area as difference of two integrals or one integral and area of trapezium M1; correct integration A2; substituting limits M1; 63/4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Write down a vector equation for L1 in the form r = a + λb.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "vector_equation_of_line"
+      ],
+      "method_path": [
+        "Identify point P(-1,1,-13) as position vector a",
+        "Identify direction vector b = (7,1,2)",
+        "Write r = a + λb"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "r = (-1,1,-13) + λ(7,1,2) A1. Note: The r = must be seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Find a vector equation for line L2 in the form s = c + μd, given that L2 passes through points A(2,-4,2) and B(7,-6,1).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "vector_equation_of_line",
+        "direction_vector_from_two_points"
+      ],
+      "method_path": [
+        "Choose position vector c = (2,-4,2) or (7,-6,1)",
+        "Calculate direction vector d = B - A = (5,-2,-1) or A - B",
+        "Write s = c + μd"
+      ],
+      "accepted_alternatives": [
+        "s = (7,-6,1) + μ(5,-2,-1) or equivalent"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "s = (2,-4,2) + μ(5,-2,-1) OR s = (7,-6,1) + μ(5,-2,-1) (or equivalent) A1A1. Note: The s = must be seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Show that L1 and L2 are skew.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "check_parallel",
+        "solve_intersection",
+        "skew_lines"
+      ],
+      "method_path": [
+        "Check if direction vectors are parallel: (5,-2,-1) ≠ k(7,1,2) → not parallel",
+        "Set up parametric equations for intersection: (-1+7λ, 1+λ, -13+2λ) = (2+5μ, -4-2μ, 2-μ)",
+        "Equate two components and solve for λ, μ",
+        "Check third component: does not satisfy → no intersection",
+        "Conclude lines are not parallel and do not intersect → skew"
+      ],
+      "accepted_alternatives": [
+        "Use cross product to show not parallel"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "5/7 ≠ -2/1 ≠ -1/2 so L1, L2 are not parallel R1. equating any two components from each line M1. solve simultaneously M1. λ=-1, μ=-2 OR λ=78/17, μ=99/17 OR λ=35/3, μ=-25/3 A1. check for remaining component, e.g. 3rd component: -13+2(-1) ≠ 2+(-1)(-2) R1. hence lines are not parallel and do not intersect, so are skew. AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Find PN · AB in terms of m.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_subtraction",
+        "dot_product"
+      ],
+      "method_path": [
+        "Express ON = (2+5μ, -4-2μ, 2-μ)",
+        "Calculate PN = ON - OP = (3+5μ, -5-2μ, 15-μ)",
+        "Compute dot product PN · AB = (3+5μ, -5-2μ, 15-μ) · (5, -2, -1)",
+        "Simplify to 10 + 30μ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to calculate PN = ON - OP (M1). PN = (3+5μ, -5-2μ, 15-μ) A1. attempt to calculate PN · AB (M1). = 10 + 30μ A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Given that N is the point on L2 that lies closest to P, find the coordinates of N.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "dot_product_zero",
+        "solve_linear_equation",
+        "substitute_parameter"
+      ],
+      "method_path": [
+        "Set PN · AB = 0 for closest point",
+        "Solve 10 + 30μ = 0 → μ = -1/3",
+        "Substitute μ into L2 equation to get N = (1/3, -10/3, 7/3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "setting and solving 10 + 30μ = 0 (M1). μ = -1/3 A1. so N = (1/3, -10/3, 7/3) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q10-F",
+      "question": "10",
+      "part": "F",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Find the equation of the plane containing points O, P and N, giving your answer in the form ax + by + γz = d.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "plane_equation_from_normal"
+      ],
+      "method_path": [
+        "Consider vectors OP = (-1,1,-13) and ON = (1/3, -10/3, 7/3) or equivalent",
+        "Find normal vector n = OP × ON = (-123, -6, 9)",
+        "Use point O(0,0,0) to get plane equation -123x - 6y + 9z = 0"
+      ],
+      "accepted_alternatives": [
+        "Use any scalar multiple of normal vector"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "considers the vectors (-1,1,-13) and (1/3,-10/3,7/3) or equivalent (A1). attempt to find cross product (M1). = (-123, -6, 9) A1. equation of plane is -123x - 6y + 9z = 0 (or equivalent) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-A-I",
+      "question": "11",
+      "part": "A-I",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Express w = 1 + i√3 in the form w = re^{iα} with r > 0 and -π < α ≤ π.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus_calculation",
+        "argument_calculation",
+        "polar_form_conversion"
+      ],
+      "method_path": [
+        "Calculate modulus r = √(1^2 + (√3)^2) = 2",
+        "Calculate argument α = arctan(√3/1) = π/3",
+        "Write w = 2 e^{iπ/3}"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Award A1 for r = 2 and A1 for α = π/3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-A-II",
+      "question": "11",
+      "part": "A-II",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Show that (1 + i√3)^8 + (1 - i√3)^8 = -256.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "de_moivre_theorem",
+        "polar_form_exponentiation",
+        "complex_addition"
+      ],
+      "method_path": [
+        "Apply De Moivre's theorem: (1 + i√3)^8 = 2^8 e^{i8π/3}",
+        "Apply De Moivre's theorem: (1 - i√3)^8 = 2^8 e^{-i8π/3}",
+        "Add the two results: 256(e^{i8π/3} + e^{-i8π/3}) = 256 * 2 cos(8π/3) = 256 * 2 * (-1/2) = -256"
+      ],
+      "accepted_alternatives": [
+        "Use cis notation: 2^8 cis(8π/3) + 2^8 cis(-8π/3) = 256 * 2 cos(8π/3) = -256"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to apply De Moivre’s theorem: M1; (1 + i√3)^8 = 2^8 e^{i8π/3} A1; (1 - i√3)^8 = 2^8 e^{-i8π/3} A1; sum = -256 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "22",
+      "task_summary": "Show that (1 + i tan θ)^4 + (1 - i tan θ)^4 = 2 cos 4θ / cos^4 θ.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "complex_to_trigonometric_conversion",
+        "de_moivre_theorem",
+        "trigonometric_identity_simplification"
+      ],
+      "method_path": [
+        "Rewrite 1 - i tan θ as 1 + i tan(-θ)",
+        "Express (1 + i tan θ)^4 + (1 + i tan(-θ))^4 using (cos θ + i sin θ)^4 / cos^4 θ",
+        "Apply De Moivre: (cos 4θ + i sin 4θ)/cos^4 θ + (cos 4θ - i sin 4θ)/cos^4 θ = 2 cos 4θ / cos^4 θ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "recognition that (1 - i tan θ) = (1 + i tan(-θ)) M1; expression in terms of cos and sin A1; simplification to 2 cos 4θ / cos^4 θ A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Determine the four roots of (1 + z)^4 + (1 - z)^4 = 0 in the form z = i tan(kπ/8) with k ∈ ℤ+.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "trigonometric_equation_solving",
+        "root_extraction"
+      ],
+      "method_path": [
+        "Set z = i tan θ, then equation becomes 2 cos 4θ / cos^4 θ = 0",
+        "Solve cos 4θ = 0 for θ in (0, π)",
+        "Obtain θ = π/8, 3π/8, 5π/8, 7π/8",
+        "Write roots as z = i tan(kπ/8) for k = 1, 3, 5, 7"
+      ],
+      "accepted_alternatives": [
+        "Use θ = -π/2, -3π/2, π/2, 3π/2 leading to same tan values but markscheme awards M1A1A0A0 for that approach"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "considering cos 4θ = 0 M1; 4θ = π/2, 3π/2, 5π/2, 7π/2 A1; θ = π/8, 3π/8, 5π/8, 7π/8 A1; roots z = i tan(kπ/8) with k = 1,3,5,7 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 7,
+      "source_pages": "15",
+      "markscheme_pages": "23-24",
+      "task_summary": "By considering the binomial expansion of (1 + z)^4 + (1 - z)^4, show that tan(π/8) = √(3 - 2√2).",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "geometry.trigonometric_equations",
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "binomial_expansion",
+        "polynomial_simplification",
+        "quadratic_solving",
+        "substitution",
+        "root_selection"
+      ],
+      "method_path": [
+        "Expand (1 + z)^4 + (1 - z)^4 = 2 + 12z^2 + 2z^4",
+        "Set equal to 0 from part (c) to get 2z^4 + 12z^2 + 2 = 0",
+        "Solve quadratic in z^2: z^2 = -3 ± 2√2",
+        "Substitute z = i tan(π/8) to get -tan^2(π/8) = -3 ± 2√2",
+        "Select positive root and appropriate sign: tan(π/8) = √(3 - 2√2)"
+      ],
+      "accepted_alternatives": [
+        "Solve for tan^2(π/8) = 3 ± 2√2 and argue that tan(π/8) is the smallest positive root, hence take negative sign inside"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "attempt to use binomial expansion M1; 2 + 12z^2 + 2z^4 A1; attempt to solve quadratic M1; z^2 = -3 ± 2√2 A1; substituting z = i tan(π/8) M1; tan^2(π/8) = 3 ∓ 2√2 A1; justification that tan(π/8) is smallest positive root R1; tan(π/8) = √(3 - 2√2) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

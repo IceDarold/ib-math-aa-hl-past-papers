@@ -1,0 +1,62 @@
+{
+  "question": "9",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "19-21",
+      "task_summary": "Prove by contradiction that 1/(x(1-x)) ≥ 4 for x ∈ ℝ, 0 < x < 1.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [
+        "number_algebra.inequalities",
+        "calculus.differentiation"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "assume_negation",
+        "algebraic_manipulation",
+        "quadratic_inequality",
+        "contradiction",
+        "differentiation",
+        "partial_fractions",
+        "optimization"
+      ],
+      "method_path": [
+        "Assume 1/(x(1-x)) < 4",
+        "Multiply by positive x(1-x) to get 1 < 4x(1-x)",
+        "Rearrange to 4x^2 - 4x + 1 < 0",
+        "Factor to (2x-1)^2 < 0",
+        "Contradiction since square is non-negative",
+        "Conclude original inequality holds"
+      ],
+      "accepted_alternatives": [
+        "Use partial fractions and calculus to find minimum of 1/(x(1-x)) is 4, contradicting assumption <4",
+        "Use product rule to differentiate 1/(x(1-x)), find minimum 4, contradicting assumption <4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 1: assume that 1/(x(1-x)) < 4 ... attempt to form a quadratic inequality ... 4x^2 - 4x + 1 < 0 ... (2x-1)^2 < 0 ... a contradiction, since (2x-1)^2 ≥ 0"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 2: assume that 1/(x(1-x)) < 4 ... partial fractions ... minimum value is 4 ... a contradiction, since 4 < 4"
+        },
+        {
+          "markscheme_pages": "21",
+          "basis": "METHOD 3: assume that 1/(x(1-x)) < 4 ... product rule ... minimum value is 4 ... a contradiction, since 4 < 4"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "question": "5",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q05",
+      "question": "5",
+      "part": "",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "11",
+      "task_summary": "Find the volume of the solid formed by rotating the region enclosed by y = e^(3x/4), y = 8, and the y-axis about the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.inverse_functions",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "rearrange_for_x",
+        "inverse_function",
+        "volume_of_revolution_about_y_axis",
+        "definite_integral",
+        "evaluate_integral"
+      ],
+      "method_path": [
+        "Rearrange y = e^(3x/4) to x = (4/3) ln y",
+        "Set up volume integral π ∫ x^2 dy from y=1 to y=8",
+        "Substitute x = (4/3) ln y",
+        "Evaluate definite integral to obtain volume"
+      ],
+      "accepted_alternatives": [
+        "Use x = (4/3) ln x and integrate π ∫ ( (4/3) ln x )^2 dx from 1 to 8"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to rearrange ... to get an expression for x in terms of y OR find f^{-1}(x) (M1); x = (4/3) ln y OR f^{-1}(x) = (4/3) ln x (A1); attempt to use π ∫ x^2 dy OR π ∫ (f^{-1}(x))^2 dx (M1); π ∫ ( (4/3) ln y )^2 dy OR π ∫ ( (4/3) ln x )^2 dx (A1); = 85.6 (85.5716...) ... A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

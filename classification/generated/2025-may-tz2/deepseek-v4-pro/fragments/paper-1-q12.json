@@ -1,0 +1,194 @@
+{
+  "question": "12",
+  "expected_question_marks": 19,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Solve z^2 = -1 - sqrt(3)i, giving answers in polar form r(cosθ + i sinθ).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "convert_to_polar",
+        "apply_de_moivre",
+        "find_roots"
+      ],
+      "method_path": [
+        "Express -1 - sqrt(3)i in polar form: 2(cos(-2π/3) + i sin(-2π/3))",
+        "Apply De Moivre's theorem to find square roots: z = sqrt(2)(cos((-2π/3 + 2kπ)/2) + i sin((-2π/3 + 2kπ)/2))",
+        "Substitute k=0,1 to get z = sqrt(2)(cos(-π/3) + i sin(-π/3)) and z = sqrt(2)(cos(2π/3) + i sin(2π/3))"
+      ],
+      "accepted_alternatives": [
+        "Use 4π/3 as initial argument: z^2 = 2(cos(4π/3) + i sin(4π/3)), then roots are sqrt(2)(cos(2π/3) + i sin(2π/3)) and sqrt(2)(cos(5π/3) + i sin(5π/3))"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A2 for correct polar forms; M1 for attempt to use De Moivre's theorem; A1 for final two roots."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "28",
+      "task_summary": "Find z1, z2 (square roots of -1 - sqrt(3)i, Re(z1)>0) and deduce z3, z4 (square roots of -1 + sqrt(3)i, Re(z3)>0) in Cartesian form a+bi.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "convert_to_cartesian",
+        "use_conjugate"
+      ],
+      "method_path": [
+        "Convert polar roots from (a) to Cartesian: z1 = sqrt(2)/2 - sqrt(6)/2 i, z2 = -sqrt(2)/2 + sqrt(6)/2 i",
+        "Deduce z3 and z4 as conjugates: z3 = sqrt(2)/2 + sqrt(6)/2 i, z4 = -sqrt(2)/2 - sqrt(6)/2 i"
+      ],
+      "accepted_alternatives": [
+        "Factorised form accepted, e.g., z1 = (1/2)(sqrt(2) - sqrt(6)i)",
+        "Award A1FTA1FT for z3 = (z1)* and z4 = (z2)* with Re(z3)>0"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "A1A1 for z1 and z2; A1A1 for z3 and z4; note on interchange and FT."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "29-30",
+      "task_summary": "Plot points A, B, C, D on Argand diagram and find area of polygon formed.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "geometric_reasoning",
+      "method_tags": [
+        "plot_complex_numbers",
+        "calculate_area_rectangle"
+      ],
+      "method_path": [
+        "Plot points: A(sqrt(2)/2, -sqrt(6)/2), B(-sqrt(2)/2, sqrt(6)/2), C(sqrt(2)/2, sqrt(6)/2), D(-sqrt(2)/2, -sqrt(6)/2)",
+        "Recognize shape as rectangle with length = sqrt(6) and width = sqrt(2)",
+        "Area = length * width = sqrt(6) * sqrt(2) = 2*sqrt(3)"
+      ],
+      "accepted_alternatives": [
+        "Method 2: area = 4 * (1/2 * sqrt(2) * sqrt(2) * sin(2π/3)) = 2*sqrt(3)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "29-30",
+          "basis": "A2 for correct Argand diagram; M1 for attempt to find length/width or triangle area; A1 for area = 2*sqrt(3)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "30",
+      "task_summary": "Given z^4 + 2z^2 + 4 = 0, find p, q, r such that 1/z1, 1/z2, 1/z3, 1/z4 satisfy pw^4 + qw^2 + r = 0.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute_reciprocal",
+        "clear_denominators"
+      ],
+      "method_path": [
+        "Let w = 1/z, substitute into z^4 + 2z^2 + 4 = 0",
+        "Obtain 1/w^4 + 2/w^2 + 4 = 0",
+        "Multiply by w^4: 1 + 2w^2 + 4w^4 = 0, rearrange to 4w^4 + 2w^2 + 1 = 0",
+        "Identify p=4, q=2, r=1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "30",
+          "basis": "M1 for recognition that w=1/z; A1 for correct equation; A1 for p=4, q=2, r=1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "30-31",
+      "task_summary": "Find 1/z1 in Cartesian form and deduce area of polygon formed by points E, F, G, H representing 1/z1, 1/z2, 1/z3, 1/z4.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "find_reciprocal",
+        "use_conjugate",
+        "apply_dilation",
+        "calculate_area"
+      ],
+      "method_path": [
+        "Find 1/z1 by multiplying numerator and denominator by conjugate: (sqrt(2)/2 + sqrt(6)/2 i) / ((sqrt(2)/2)^2 + (sqrt(6)/2)^2) = sqrt(2)/4 + sqrt(6)/4 i",
+        "Recognize that mapping z -> 1/z is a dilation by factor 1/|z|^2 = 1/2 for these points",
+        "Area of new polygon = (1/2)^2 * area from (c)(ii) = (1/4) * 2*sqrt(3) = sqrt(3)/2"
+      ],
+      "accepted_alternatives": [
+        "Use De Moivre: 1/z1 = (1/sqrt(2))(cos(π/3) + i sin(π/3)) = sqrt(2)/4 + sqrt(6)/4 i"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "30-31",
+          "basis": "M1 for attempt to take conjugate or use De Moivre; A1 for 1/z1 = sqrt(2)/4 + sqrt(6)/4 i; M1 for recognition of dilation by 1/2; A1 for area = sqrt(3)/2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

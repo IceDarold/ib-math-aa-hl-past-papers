@@ -1,0 +1,1286 @@
+{
+  "session": "May 2025",
+  "zone": "TZ2",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the regression line coefficients a and b for y on x from given data.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "linear_regression",
+        "gdc"
+      ],
+      "method_path": [
+        "Calculate regression line y = ax + b using GDC",
+        "State a ≈ 1.98, b ≈ 40.2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "1.97651...,40.2286... a =1.98, b = 40.2 ( y = 1.98 x + 40.2 ) A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Estimate sleep time for play time 20 hours using the regression line.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "linear_regression"
+      ],
+      "method_path": [
+        "Substitute x = 20 into regression equation",
+        "Calculate y ≈ 79.8 hours"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempt to substitute x = 20 into their regression equation (M1) 1.97651... 20 40.2286... y = × + 79.7589... 79.8 (hours) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the distance VX between points V(1,7,0) and X(-3,4,2).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "distance_formula_3d",
+        "simplify_surd"
+      ],
+      "method_path": [
+        "Apply 3D distance formula: sqrt((x2-x1)^2+(y2-y1)^2+(z2-z1)^2)",
+        "Simplify to sqrt(29) or 5.39"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to find distance between two points (M1); VX = sqrt(29) = 5.39 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the length of diagonal AC of the square base with side length 5 cm.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "pythagoras_theorem",
+        "square_diagonal"
+      ],
+      "method_path": [
+        "Apply Pythagoras: AC = sqrt(5^2+5^2)",
+        "Simplify to 5*sqrt(2) or 7.07"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to use Pythagoras' theorem (M1); AC = 5*sqrt(2) = 7.07 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the angle between edge VC and the base of the pyramid.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.vectors_3d"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "right_triangle_trigonometry",
+        "tangent_ratio",
+        "inverse_tangent"
+      ],
+      "method_path": [
+        "Identify right triangle VXC with VX=sqrt(29) and XC=AC/2=5*sqrt(2)/2",
+        "Use tan(theta)=VX/XC",
+        "Compute theta = arctan(sqrt(29)/(5*sqrt(2)/2))",
+        "Obtain 56.7° or 0.990 rad"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "valid attempt to use trig ratio in triangle VXC (M1); tan(theta)=sqrt(29)/(5*sqrt(2)/2); theta=56.7° or 0.990 rad (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the values of x for which f is decreasing, given f'(x) = 4 + 2x - 3e^x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_inequality",
+        "find_critical_values",
+        "test_intervals"
+      ],
+      "method_path": [
+        "Set f'(x) < 0",
+        "Find critical values by solving f'(x) = 0",
+        "Determine intervals where f'(x) < 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "one critical value (seen anywhere) (A1); recognizing that for f to be decreasing f' < 0 (M1); x ≤ -1.74 and x ≥ 0.518 OR x < -1.74 and x > 0.518 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find the values of x for which the graph of f is concave-up.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "second_derivative",
+        "solve_inequality",
+        "find_critical_value"
+      ],
+      "method_path": [
+        "Find f''(x) = 2 - 3e^x",
+        "Set f''(x) > 0",
+        "Solve inequality to get x < ln(2/3)"
+      ],
+      "accepted_alternatives": [
+        "Attempt to find maximum of f' OR recognising that f''(x) > 0 OR sketching graph of f''"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "correct critical value x = -0.405465... (= ln(2/3)) (seen anywhere) (A1); attempt to find maximum of f' OR recognising that f''(x) > 0 OR sketching graph of f'' OR f''(x) = 2 - 3e^x (M1); concave-up for x < ln(2/3) OR x < -0.405 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find the value of a car after ten years given initial value €30,000 and annual depreciation of 15%, to two decimal places.",
+      "primary_topic": "number_algebra.exponential_models",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "depreciation_formula",
+        "exponential_decay",
+        "gdc_solver"
+      ],
+      "method_path": [
+        "Apply depreciation formula: 30000*(1 - 15/100)^10",
+        "Compute value: 5906.232130...",
+        "Round to two decimal places: €5906.23"
+      ],
+      "accepted_alternatives": [
+        "Use GDC TVM solver with PV=30000, I%=15, P/Y=1, C/Y=1, N=10, compute FV."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 1: 30000(1 - 15/100)^10 OR 30000(0.85)^10 (M1); 5906.232130...; €5906.23 A1. METHOD 2: GDC TVM with PV=30000, FV=5906.23213..., I%=15%, P/Y=1, C/Y=1, N=10 (M1); €5906.23 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "10-11",
+      "task_summary": "Find the number of months for the real value of an investment of €50,000 to first exceed €55,000, given monthly compound interest of 1.5% and monthly inflation of 0.8%.",
+      "primary_topic": "number_algebra.exponential_models",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "real_interest_rate",
+        "compound_interest",
+        "inequality",
+        "gdc_solver"
+      ],
+      "method_path": [
+        "Calculate real monthly interest rate: r = 1.5 - 0.8 = 0.7%",
+        "Set up inequality: 50000*(1 + 0.7/100)^n > 55000",
+        "Solve for n: n > log(55000/50000)/log(1.007) ≈ 13.6633",
+        "Round up to next integer: 14 months"
+      ],
+      "accepted_alternatives": [
+        "Use exact monthly factors: (1+1.5/100)/(1+0.8/100) = 1.00694..., then solve 50000*(1.00694...)^n > 55000, giving n ≈ 13.7722, round up to 14."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10-11",
+          "basis": "METHOD 1: r = 1.5 - 0.8 = 0.7% (A1); attempt to substitute into inequality (M1); 50000(1 + 0.7/100)^n > 55000; correct critical value n=13.6633... OR crossover values n=13 (€54746.09), n=14 (€55129.31) (A1); 14 months A1. METHOD 2: (1+1.5/100)/(1+0.8/100) = 1.00694... (A1); attempt inequality (M1); 50000(1.00694...)^n > 55000; critical value n=13.7722... OR crossover values n=13 (€54706.84), n=14 (€55086.75) (A1); 14 months A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "12",
+      "task_summary": "Find the maximum speed of P given v(t)=e^{-sin t} cos(2t) for 0≤t≤5.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_maximum",
+        "gdc_graphical_analysis",
+        "trigonometric_function"
+      ],
+      "method_path": [
+        "Recognize maximum speed occurs at maximum of |v(t)|",
+        "Use GDC to find minimum of v(t) (most negative value)",
+        "Report absolute value as maximum speed"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognition that maximum speed occurs when |v| is greatest (M1); one correct coordinate for minimum (4.71238..., -2.71828...) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "12",
+      "task_summary": "Find the total distance travelled by P from t=0 to t=5.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "absolute_value",
+        "gdc_numerical_integration"
+      ],
+      "method_path": [
+        "Set up integral of |v(t)| from 0 to 5",
+        "Evaluate numerically using GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "substitution of limits into correct formula (M1); ∫|v|dt = 3.84591... (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q05-C",
+      "question": "5",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "12",
+      "task_summary": "Find the acceleration when P changes direction for the second time.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "find_roots",
+        "second_derivative",
+        "gdc_solve",
+        "trigonometric_equation"
+      ],
+      "method_path": [
+        "Set v(t)=0 to find direction changes",
+        "Identify second positive root t=3π/4",
+        "Compute a(t)=v'(t) at that t using GDC"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "v=0 (seen anywhere) (M1); t=3π/4 (2.35619...) (A1); a=0.986137... (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 6,
+      "source_pages": "8",
+      "markscheme_pages": "13-14",
+      "task_summary": "Find the radius r of a circle given the area of a shaded segment P = 12.8 cm² and the ratio of areas P:Q = 3:5, where Q is the triangle in sector OAB with central angle θ.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "geometry.trigonometry",
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "ratio_application",
+        "area_of_sector",
+        "area_of_triangle",
+        "area_of_segment",
+        "substitution",
+        "solving_equation",
+        "numerical_solution"
+      ],
+      "method_path": [
+        "Use ratio P:Q = 3:5 to find area of triangle Q = (5/3)*12.8 = 21.3333...",
+        "Find area of sector = P + Q = 34.1333...",
+        "Write equation for sector area: (1/2) r^2 θ = 34.1333...",
+        "Write equation for triangle area: (1/2) r^2 sin θ = 21.3333...",
+        "Eliminate r^2 to get equation in θ: (θ - sin θ)/θ = 3/8 or equivalent",
+        "Solve numerically for θ ≈ 1.59934...",
+        "Substitute θ into segment area formula (1/2) r^2 (θ - sin θ) = 12.8 and solve for r ≈ 6.53"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: Use sector area = 34.1333... and triangle area = 21.3333... to form equations, then eliminate r^2 or θ to solve.",
+        "METHOD 2: Use segment area formula and ratio to get equation in θ only, solve for θ, then find r.",
+        "METHOD 3: Recognize segment area = (3/8) sector area, use segment formula, eliminate r^2 to get equation in θ, solve for θ, then find r."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: recognising segment area / triangle area = 3/5 (M1); triangle area = 21.3333... OR sector area = 34.1333... A1; correct equation in r and θ (A1); correct equation in one variable A1; attempt to solve (M1); r = 6.53 A1."
+        },
+        {
+          "markscheme_pages": "13-14",
+          "basis": "METHOD 2: recognising ratio (M1); segment area formula (A1); correct equation without r A1; θ = 1.59934... (A1); attempt to solve for r (M1); r = 6.53 A1."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 3: recognising segment area = 3/8 × sector area (M1); segment area formula (A1); correct equation without r A1; θ = 1.59934... (A1); attempt to solve for r (M1); r = 6.53 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Find the second term of a geometric sequence given first term 80 and fourth term 0.74088.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "geometric_sequence",
+        "common_ratio",
+        "nth_term"
+      ],
+      "method_path": [
+        "Set up equation for fourth term: 80 * r^3 = 0.74088",
+        "Solve for common ratio r = 0.21",
+        "Calculate second term: 80 * 0.21 = 16.8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to find common ratio (M1); 80 r^3 = 0.74088; r = 0.21 (A1); u_2 = 16.8 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "9",
+      "markscheme_pages": "15",
+      "task_summary": "Given the first two terms of the geometric sequence are the first and eleventh terms of an arithmetic sequence, find the greatest value of the sum S_n of the first n terms of the arithmetic sequence to two decimal places.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.geometric_sequences"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arithmetic_sequence",
+        "common_difference",
+        "sum_of_arithmetic_sequence",
+        "maximization"
+      ],
+      "method_path": [
+        "Find common difference d using u_1 = 80 and u_11 = 16.8: 80 + 10d = 16.8 => d = -6.32",
+        "Determine n for maximum S_n by finding when u_n > 0: 80 + (n-1)(-6.32) > 0 => n < 13.6582, so n = 13",
+        "Calculate S_13 = (13/2) * (2*80 + (13-1)*(-6.32)) = 547.04"
+      ],
+      "accepted_alternatives": [
+        "Use table or graph of S_n to find maximum at n=13, then compute S_13 = 547.04"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: attempt to find common difference (M1); d = -6.32 (A1); attempt to find n using table or graph of S_n (M1); S_13 = 547.04 A1. METHOD 2: attempt to find common difference (M1); d = -6.32 (A1); attempt to find n using u_n > 0 (M1); S_13 = 547.04 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 7,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find p and q given the frequency table, mean 31, and variance 124.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "setup_mean_equation",
+        "setup_variance_equation",
+        "substitution",
+        "solve_quadratic"
+      ],
+      "method_path": [
+        "Write total frequency as 20 + q",
+        "Set up mean equation: (240 + 35q + 8p) / (20 + q) = 31",
+        "Simplify to 8p + 4q = 380 or p = (95 - q)/2",
+        "Set up variance equation using formula with sum of squares or sum of squared deviations",
+        "Substitute p in terms of q into variance equation",
+        "Solve quadratic for q, then find p"
+      ],
+      "accepted_alternatives": [
+        "Substitute q in terms of p into variance equation and solve for p first."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1 for attempt to set up mean or variance; A1 for 8p+4q=380 or p=(95-q)/2; A1 for variance expression; A1 for substitution; M1 for solving; A1 for p=45; A1 for q=5."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "17-18",
+      "task_summary": "Show that the Cartesian equation of plane P1 containing line L1 and point (2,1,5) is x + y - z = -2.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "find_direction_vector",
+        "vector_product",
+        "find_normal_vector",
+        "substitute_point",
+        "derive_cartesian_equation"
+      ],
+      "method_path": [
+        "Find direction vector from given point to point on line",
+        "Compute normal vector via vector product of direction vectors",
+        "Substitute point into plane equation to find constant d",
+        "Write Cartesian equation x + y - z = -2"
+      ],
+      "accepted_alternatives": [
+        "Form parametric equations of plane using two vectors and point (0,0,2), eliminate parameters to obtain Cartesian equation."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 1: correct direction vector, e.g. (2,1,3)-(0,0,2)=(2,1,1) A1; attempt to find direction normal using vector product (M1); (2,1,1)×(1,0,1) = (1,1,-1) A1; correct substitution of a point on the line to obtain d A1; hence equation x+y-z=-2 AG"
+        },
+        {
+          "markscheme_pages": "17-18",
+          "basis": "METHOD 2: attempt to form parametric equations of a plane through point (0,0,2) and two vectors (1,0,1) and (2,1,3) M1; r = (0,0,2)+λ(1,0,1)+μ(2,1,3) A1; x=λ+2μ, y=μ, z=2+λ+3μ; λ=x-2y; z=2+(x-2y)+3y => x+y-z=-2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "18-20",
+      "task_summary": "Find b and d such that the three planes P1: x+y-z=-2, P2: 2x+by-z=3, P3: x-y+2z=d intersect in a line.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "eliminate_variable",
+        "solve_for_parameters",
+        "row_reduction",
+        "determinant_zero"
+      ],
+      "method_path": [
+        "Form equations to eliminate one variable",
+        "Obtain condition for consistency (infinite solutions along line)",
+        "Solve for b and d"
+      ],
+      "accepted_alternatives": [
+        "Use row reduction to obtain condition for infinite solutions, leading to b=4/3, d=19.",
+        "Set determinant of coefficient matrix to zero to find b, then use consistency condition to find d."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18-19",
+          "basis": "METHOD 1: attempt to form an equation to eliminate one of the variables M1; (b-2)y+z=7 A1; 2y-3z=-2-d A1; (b-4/3)y = (d-19)/3 => b=4/3, d=19 A1"
+        },
+        {
+          "markscheme_pages": "19",
+          "basis": "METHOD 2: attempt to use row reduction M1; matrix [1 1 -1 -2; 2 b -1 3; 1 -1 2 d] -> [1 1 -1 -2; 0 b-2 1 7; 0 -2 3 d+2] A1; further reduction yields condition (b-4/3)=0 and d=19 A1"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 3: attempt to use determinant and equate it to zero (M1); det = 3b-4 = 0 => b=4/3 A1; then use determinant with constants to find d=19 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find P(W < 170) for W ~ N(175, 8^2).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Recognise to find P(W < 170)",
+        "Calculate P(W < 170) = 0.266"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognising to find P(W < 170) (M1); P(W < 170) = 0.266 (accept 26.6%) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find w such that P(W > w) = 0.2, correct to four significant figures.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal"
+      ],
+      "method_path": [
+        "Recognise P(W > w) = 0.2",
+        "Find w = 181.7 (4 sf)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognising P(W > w) = 0.2 OR labelled sketch (or equivalent) (M1); w = 181.7 (grams) (must be 4 sf) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "21",
+      "task_summary": "Find the percentage of apples that are premium (weight between 170 and 185 grams).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "normal_distribution",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Recognise to find P(170 < W < 185)",
+        "Calculate P(170 < W < 185) = 0.628364...",
+        "Express as 62.8%"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "recognizing the need to find P(170 < W < 185) (M1); 62.8% A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "21-22",
+      "task_summary": "Find the probability that a box of 40 apples contains at least 30 premium apples.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Recognise binomial probability",
+        "Identify X ~ B(40, 0.628364...)",
+        "Calculate P(X ≥ 30) = 0.0739"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21-22",
+          "basis": "recognising binomial probability (M1); X ~ B(40,0.628364...) OR n = 40 and p = 0.628364... (A1); P(X ≥ 30) = 0.0739 (accept 7.39%) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "12",
+      "markscheme_pages": "22",
+      "task_summary": "Find the probability that exactly 4 out of 10 boxes have at least 30 premium apples.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.combinatorics"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "binomial_distribution",
+        "probability_calculation"
+      ],
+      "method_path": [
+        "Identify Y ~ B(10, 0.073861...)",
+        "Calculate P(Y = 4) = 0.00394"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "Y ~ B(10, 0.073861...) (A1); P(Y = 4) = 0.00394 (accept 0.394%) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q10-F",
+      "question": "10",
+      "part": "F",
+      "marks": 6,
+      "source_pages": "12",
+      "markscheme_pages": "22",
+      "task_summary": "Find the mean m of a normal distribution given that 82% of apples are premium and P(M < 170) = 2 * P(M > 185).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "system_of_equations"
+      ],
+      "method_path": [
+        "Determine P(M < 170) = 0.12 and P(M > 185) = 0.06",
+        "Find z-scores: z1 = -1.174986..., z2 = 1.554773...",
+        "Set up equations: (170 - m)/s = -1.174986... and (185 - m)/s = 1.554773...",
+        "Solve for m = 176 (grams)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "P(W < 170) = 0.12 OR P(W > 185) = 0.06 (A1); use of inverse normal to find z score for their probability (M1); z = -1.174986..., z = 1.554773... (A1)(A1); attempt to solve their two equations (M1); µ = 176 (grams) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find the total number of ways to choose three equal size teams from 15 students.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "multinomial_coefficient",
+        "division_by_permutations"
+      ],
+      "method_path": [
+        "Calculate 15C5 * 10C5 * 5C5",
+        "Divide by 3! to account for indistinguishable teams"
+      ],
+      "accepted_alternatives": [
+        "15!/(5!5!5!3!)",
+        "14C4 * 9C4 * 4C4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: 15C5 * 10C5 * 5C5 / 3! = 126126. METHOD 2: 14C4 * 9C4 * 4C4 = 126126."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "23-24",
+      "task_summary": "Show that ∫_0^a f(t) dt = (k/9)[1 - e^{-a/3}(3a+1)].",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "definite_integral"
+      ],
+      "method_path": [
+        "Set u = t, dv = e^{-t/3} dt",
+        "Integrate by parts to obtain ∫ t e^{-t/3} dt = -3t e^{-t/3} - 9 e^{-t/3}",
+        "Evaluate definite integral from 0 to a",
+        "Multiply by k and simplify to given expression"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "M1 for attempt to use integration by parts; A1 for ∫ e^{-t/3} dt = -3 e^{-t/3}; A1 for correct integration; A1 for final expression AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "24",
+      "task_summary": "Use l'Hôpital's rule to find lim_{x→∞} (3x+1)/e^{x/3} and hence find k.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "limit_at_infinity",
+        "probability_density_function_property"
+      ],
+      "method_path": [
+        "Apply l'Hôpital's rule to lim_{x→∞} (3x+1)/e^{x/3}",
+        "Obtain limit 0",
+        "Take limit as a→∞ of ∫_0^a f(t) dt",
+        "Set limit equal to 1 (total probability)",
+        "Solve for k = 9"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "A1 for l'Hôpital's rule application; A1 for limit 0; (A1) for limit expression; (M1) for recognising area = 1; A1 for k = 9."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "24",
+      "task_summary": "Find the median time the spinning top is in motion.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "median_of_continuous_distribution",
+        "numerical_solution"
+      ],
+      "method_path": [
+        "Set ∫_0^m f(t) dt = 0.5",
+        "Solve for m using GDC",
+        "Obtain median ≈ 0.559 min (or 33.6 sec)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for recognition that integral equals 0.5; A1 for median = 0.559 (min) or 33.6 (sec)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Use implicit differentiation to show that dy/dx = (4(3-x))/(y+2).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "implicit_differentiation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Differentiate both sides of 4x^2 + y^2 - 24x + 4y + 20 = 0 with respect to x",
+        "Apply chain rule to y terms",
+        "Collect dy/dx terms",
+        "Solve for dy/dx",
+        "Simplify to (4(3-x))/(y+2)"
+      ],
+      "accepted_alternatives": [
+        "Use partial derivatives: dy/dx = -(∂C/∂x)/(∂C/∂y)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "METHOD 1: attempt to differentiate implicitly (M1); 8x + 2y dy/dx - 24 + 4 dy/dx = 0 A1A1; dy/dx = (24-8x)/(2y+4) = (12-4x)/(y+2) A1; AG. METHOD 2: dC/dx = 8x-24 A1; dC/dy = 2y+4 A1; dy/dx = - (dC/dx)/(dC/dy) (M1); dy/dx = (24-8x)/(2y+4) = (12-4x)/(y+2) A1; AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Determine the domain of C in the form 3-√a ≤ x ≤ 3+√a, where a ∈ ℝ⁺.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "domain_from_vertical_tangent",
+        "substitution",
+        "solving_quadratic"
+      ],
+      "method_path": [
+        "Recognise domain boundaries where dy/dx is undefined, i.e., y+2=0",
+        "Solve y = -2",
+        "Substitute y = -2 into curve equation",
+        "Solve resulting quadratic in x: x^2 - 6x + 4 = 0",
+        "Obtain x = 3 ± √5",
+        "State domain: 3-√5 ≤ x ≤ 3+√5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "recognising boundaries of domain when dy/dx undefined (M1); y+2=0; y=-2 (A1); substituting their y value into curve equation and attempt to solve for x (M1); x^2 - 6x + 4 = 0; x = 3 ± √5; 3-√5 ≤ x ≤ 3+√5 (accept a=5) A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Find the coordinates of the maximum point A.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "stationary_point",
+        "substitution"
+      ],
+      "method_path": [
+        "Set dy/dx = 0 to find x-coordinate of maximum: 4(3-x)=0 ⇒ x=3",
+        "Substitute x=3 into curve equation",
+        "Solve for y: y = -2 + 2√5 ≈ 2.47"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "x_A = 3 A1; substituting their x value into curve equation (M1); y_A = 2.472135... OR -2+2√5 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Find the possible values of m for which the line y = mx is tangent to C.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "tangent_condition",
+        "discriminant_zero",
+        "substitution"
+      ],
+      "method_path": [
+        "Substitute y = mx into curve equation",
+        "Obtain quadratic in x: (4+m^2)x^2 + (4m-24)x + 20 = 0",
+        "Set discriminant Δ = 0 for tangency",
+        "Solve (4m-24)^2 - 4(4+m^2)(20) = 0",
+        "Obtain m = -4 or m = 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "4x^2 + (mx)^2 - 24x + 4(mx) + 20 = 0 ⇒ (4+m^2)x^2 + (4m-24)x + 20 = 0 (A1); (4m-24)^2 - 4(4+m^2)(20) A1; recognising discriminant = 0 (M1); both m = -4 and m = 1 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "Find the y-coordinate of point B where the line y = -4x touches C.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solving_quadratic"
+      ],
+      "method_path": [
+        "Substitute y = -4x into curve equation (or x = -y/4 into curve equation)",
+        "Solve for x (or y)",
+        "Obtain x = 1, then y_B = -4 (or directly y_B = -4)"
+      ],
+      "accepted_alternatives": [
+        "Substitute x = -y/4 into curve equation and solve for y"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "METHOD 1: attempt to form an equation in y by substituting x = -y/4 (M1); 4(-y/4)^2 + y^2 - 24(-y/4) + 4y + 20 = 0 (A1); y_B = -4 A1. METHOD 2: attempt to form an equation in x by substituting y = -4x (M1); 4x^2 + (-4x)^2 - 24x + 4(-4x) + 20 = 0; x = 1 (A1); y_B = -4 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q12-F",
+      "question": "12",
+      "part": "F",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "27",
+      "task_summary": "Find the volume of the solid formed by rotating the region bounded by C, the y-axis, y=y_A and y=y_B about the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "volume_of_revolution",
+        "integration",
+        "substitution"
+      ],
+      "method_path": [
+        "Express x in terms of y by solving curve equation for x",
+        "Set up volume integral V = π ∫_{y_B}^{y_A} x^2 dy",
+        "Integrate and evaluate"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "27",
+          "basis": "attempt to solve for x by quadratic formula or completing the square (M1); x = (24 ± √(256-64y-16y^2))/8 = 3 ± √(16-4y-y^2)/4 A1; V = π ∫_{-4}^{-2+2√5} (3 - √(16-4y-y^2)/4)^2 dy A1; volume = 29.7 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

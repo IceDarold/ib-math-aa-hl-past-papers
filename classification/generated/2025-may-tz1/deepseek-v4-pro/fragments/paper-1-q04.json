@@ -1,0 +1,79 @@
+{
+  "question": "4",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Find P(A ∩ B) given P(A') = 3/4 and P(B|A) = 2/3.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "complement_rule",
+        "conditional_probability_formula",
+        "multiplication"
+      ],
+      "method_path": [
+        "Find P(A) = 1 - P(A') = 1/4",
+        "Use P(B|A) = P(A ∩ B) / P(A)",
+        "Solve P(A ∩ B) = P(B|A) * P(A) = (2/3)*(1/4) = 1/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "P(A) = 1/4 (A1); attempt to use P(B|A) = P(A ∩ B) / P(A) (M1); P(A ∩ B) = 2/3 * 1/4 = 1/6 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Show that events A and B are independent.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "union_formula",
+        "independence_check",
+        "conditional_probability_equality"
+      ],
+      "method_path": [
+        "Use P(A ∪ B) = P(A) + P(B) - P(A ∩ B) or Venn diagram to find P(B)",
+        "Substitute known values: 3/4 = 1/4 + P(B) - 1/6",
+        "Solve for P(B) = 2/3",
+        "Verify P(B|A) = P(B) or P(A ∩ B) = P(A)P(B) to conclude independence"
+      ],
+      "accepted_alternatives": [
+        "Use P(A ∪ B) = P(A) + P(B) - P(A ∩ B) with P(A ∪ B) = 1 - P(A' ∩ B') = 3/4 (implied) to find P(B) = 2/3, then check P(A ∩ B) = P(A)P(B) = 1/6."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to use P(A ∪ B) = P(A) + P(B) - P(A ∩ B) OR a Venn diagram (M1); P(B) = 2/3 (A1); P(B|A) = P(B) OR P(A)P(B) = 1/6 so P(A ∩ B) = P(A)P(B) (R1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

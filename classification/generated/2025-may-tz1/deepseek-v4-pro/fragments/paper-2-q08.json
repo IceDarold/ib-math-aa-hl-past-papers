@@ -1,0 +1,121 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Show that h(t) = Im(e^(2ti)(e^i + e^(3i))) using f(t)=sin(2t+1) and g(t)=sin(2t+3).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "expand_product",
+        "add_exponents",
+        "take_imaginary_part",
+        "use_trigonometric_identity"
+      ],
+      "method_path": [
+        "Expand e^(2ti)(e^i + e^(3i)) to e^((2t+1)i) + e^((2t+3)i)",
+        "Take imaginary part: sin(2t+1) + sin(2t+3)",
+        "Recognize as f(t)+g(t)=h(t)"
+      ],
+      "accepted_alternatives": [
+        "Use cos(2t)+i sin(2t) expansion and multiply to show real and imaginary parts, then sum imaginary parts."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "A1 for clearly showing that the powers are added. A1 for sin(2t+1)+sin(2t+3) = h(t)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Write e^i + e^(3i) in the form re^(iθ) with r>0 and -π<θ≤π.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "factor_complex_exponential",
+        "compute_modulus",
+        "compute_argument"
+      ],
+      "method_path": [
+        "Factor e^(2i): e^i + e^(3i) = e^(2i)(e^(-i) + e^i) = 2cos(1)e^(2i)",
+        "Modulus r = 2cos(1) ≈ 1.08, argument θ = 2"
+      ],
+      "accepted_alternatives": [
+        "Direct conversion to Cartesian: cos1+isin1+cos3+isin3, then compute modulus and argument."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "A1 for modulus, A1 for argument. r=2cos(1)≈1.08, θ=2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Hence or otherwise, write h(t) in the form p sin(2t+q) with p>0 and 0<q<2π.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "substitute_polar_form",
+        "take_imaginary_part",
+        "extract_amplitude_and_phase"
+      ],
+      "method_path": [
+        "From (a) and (b): h(t) = Im(e^(2ti) * re^(iθ)) with r=2cos(1), θ=2",
+        "h(t) = Im(r e^((2t+2)i)) = r sin(2t+2)",
+        "Thus p = 2cos(1) ≈ 1.08, q = 2"
+      ],
+      "accepted_alternatives": [
+        "Graphical method: find amplitude and horizontal shift from graph of h(t). Amplitude ≈1.08, first negative zero at t=-1 gives shift, leading to h(t)=1.08sin(2(t+1))=1.08sin(2t+2)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1 for attempt to use answers from (a) and (b) to write h(t) as imaginary part of re^(iθ) form. A1 for h(t)=1.08060...sin(2t+2)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

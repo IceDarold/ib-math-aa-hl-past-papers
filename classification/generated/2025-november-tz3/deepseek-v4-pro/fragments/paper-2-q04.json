@@ -1,0 +1,85 @@
+{
+  "question": "4",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Given that 25% of large sunflowers exceed 180 cm and m + As = 180, find A.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "z_score"
+      ],
+      "method_path": [
+        "Recognize P(height > 180) = 0.25",
+        "Find z-score for upper 25% tail: z = 0.674489...",
+        "Set up equation: (180 - m)/s = 0.674489...",
+        "Rearrange to m + 0.674489... s = 180",
+        "Identify A = 0.674489..."
+      ],
+      "accepted_alternatives": [
+        "Use of m + 0.674s = 180 directly from inverse normal"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "recognition that P(height of large sunflower > 180) = 0.25 (M1); (180 - μ)/σ = 0.674489... OR μ + 0.674σ = 180 (A1); A = 0.674489... A = 0.674 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "10",
+      "task_summary": "Given giant sunflowers have mean m+35 and standard deviation 2s, and 98% exceed 180 cm, determine m and s.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "simultaneous_equations"
+      ],
+      "method_path": [
+        "Identify parameters for giant sunflowers: mean = m + 35, sd = 2s",
+        "Recognize P(height > 180) = 0.98 for giant sunflowers",
+        "Find z-score for lower 2% tail: z = -2.05374...",
+        "Set up equation: (180 - (m + 35)) / (2s) = -2.05374...",
+        "Solve simultaneously with m + 0.674489... s = 180 from part (a)",
+        "Obtain m ≈ 175.063..., s ≈ 7.31913..."
+      ],
+      "accepted_alternatives": [
+        "Use of standard normal table or GDC to find z-values and solve system"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "correct parameters for the height of giant sunflowers (A1); (180 - (μ + 35)) / (2σ) = -2.05374... (A1); attempt to solve their two simultaneous equations (M1); μ = 175.063..., σ = 7.31913... (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

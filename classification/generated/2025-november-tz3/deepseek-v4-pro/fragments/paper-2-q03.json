@@ -1,0 +1,89 @@
+{
+  "question": "3",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Show that r = 24π/(θ+2) given the sector perimeter is 1.5 times the circle circumference.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "perimeter_of_sector",
+        "circumference_of_circle",
+        "equation_setup",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Write perimeter of sector = 1.5 × circumference of circle",
+        "Substitute circumference = 2π(8) = 16π, so 1.5 × 16π = 24π",
+        "Express sector perimeter as rθ + 2r",
+        "Set rθ + 2r = 24π",
+        "Factor r(θ+2) = 24π",
+        "Solve for r: r = 24π/(θ+2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "perimeter of sector is 1.5 × circumference of circle (seen anywhere) A1; 1.5 × 16π OR 24π OR 75.3982...; perimeter of sector rθ + 2r (M1); 24π = rθ + 2r A1; r = 24π/(θ+2) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Determine the value of θ given the area of the circle equals the area of the sector.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "area_of_circle",
+        "area_of_sector",
+        "substitution",
+        "quadratic_equation",
+        "solving"
+      ],
+      "method_path": [
+        "Set area of circle = area of sector: π(8)^2 = (1/2) r^2 θ",
+        "Substitute r = 24π/(θ+2) from part (a)",
+        "Obtain 64π = (1/2) (24π/(θ+2))^2 θ",
+        "Simplify to a quadratic equation in θ",
+        "Solve the quadratic equation",
+        "Select the acute angle solution θ ≈ 0.411"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "correct substitution of r = 24π/(θ+2) into (1/2) r^2 θ (A1); 64π = (1/2) × (24π/(θ+2))^2 × θ; attempt to solve their equation (must be quadratic) (M1); θ = 0.411273...; θ = 0.411 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

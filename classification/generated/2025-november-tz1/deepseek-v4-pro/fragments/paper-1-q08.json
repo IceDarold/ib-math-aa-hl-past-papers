@@ -1,0 +1,90 @@
+{
+  "question": "8",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Show that sin 3θ ≡ 3 sin θ − 4 sin³ θ.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "angle_sum_formula",
+        "double_angle_identity",
+        "pythagorean_identity",
+        "algebraic_simplification",
+        "de_moivre_theorem",
+        "binomial_expansion",
+        "equating_imaginary_parts"
+      ],
+      "method_path": [
+        "Express sin 3θ as sin(2θ + θ) using angle sum formula",
+        "Apply double angle identities for sin 2θ and cos 2θ",
+        "Use Pythagorean identity to express cos² θ in terms of sin θ",
+        "Simplify to 3 sin θ − 4 sin³ θ"
+      ],
+      "accepted_alternatives": [
+        "Use de Moivre's theorem: (cos θ + i sin θ)³ = cos 3θ + i sin 3θ, expand LHS, equate imaginary parts, and simplify using cos² θ = 1 − sin² θ."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 1: attempt to use angle sum formula (M1), sin 2θ cos θ + cos 2θ sin θ (A1), attempt to use a double angle identity or the Pythagorean identity (M1), 2 sin θ cos² θ + (1 − 2 sin² θ) sin θ OR 2 sin θ (1 − sin² θ) + cos 2θ sin θ, leading to 3 sin θ − 4 sin³ θ (A1). METHOD 2: (cos θ + i sin θ)³ = cos 3θ + i sin 3θ (A1), attempt to expand LHS (M1), comparing imaginary parts (M1), sin 3θ = 3 cos² θ sin θ − sin³ θ (A1), then 3 sin θ − 4 sin³ θ."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "20",
+      "task_summary": "Describe a sequence of transformations that maps the graph of y = sin θ onto the graph of y = (8 sin³ θ + 6 sin θ) / (6 sin θ).",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "algebraic_simplification",
+        "trigonometric_identity",
+        "vertical_stretch",
+        "horizontal_stretch",
+        "horizontal_translation"
+      ],
+      "method_path": [
+        "Simplify the given expression using the identity from part (a) to obtain y = 2 sin(3θ + π/2) or y = 2 sin(3(θ + π/6))",
+        "Identify vertical stretch by factor 2",
+        "Identify horizontal stretch by factor 1/3",
+        "Identify horizontal translation by π/6 to the left (or π/2 to the left before horizontal stretch)"
+      ],
+      "accepted_alternatives": [
+        "Horizontal translation by π/2 to the left followed by horizontal stretch by factor 1/3."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to rewrite expression using result of part (a) (M1), y = 2 sin(3θ + π/2) or y = 2 sin(3(θ + π/6)), vertical stretch factor 2 (A1), horizontal stretch factor 1/3 followed by horizontal translation π/6 to the left (A2) OR horizontal translation π/2 to the left followed by horizontal stretch factor 1/3 (A2). Note: Award A1A0 for correct horizontal transformations specified in the wrong order."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

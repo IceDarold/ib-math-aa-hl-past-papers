@@ -1,0 +1,76 @@
+{
+  "question": "1",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the 13th term of an arithmetic sequence given the 1st term 36 and 5th term 12.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "find_common_difference",
+        "apply_term_formula"
+      ],
+      "method_path": [
+        "Find common difference d using u5 = u1 + 4d",
+        "Calculate u13 using u13 = u1 + 12d"
+      ],
+      "accepted_alternatives": [
+        "Use u13 = u5 + 8d after finding d"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "attempt to find the common difference (M1); 12 = 36 + 4d OR (12-36)/(5-1); d = -6 (A1); attempt to use the term formula (M1); u13 = u1 + 12(-6) OR u5 + 8(-6); u13 = -36 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find n such that the sum of the first n terms of the arithmetic sequence is zero.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "set_sum_to_zero",
+        "solve_for_n"
+      ],
+      "method_path": [
+        "Set sum formula Sn = n/2 [2u1 + (n-1)d] = 0",
+        "Solve for n, discarding n=0"
+      ],
+      "accepted_alternatives": [
+        "Recognize symmetry: terms sum to zero when positive and negative terms cancel, giving n=13"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "METHOD 1: attempt to set Sn = 0 (M1); n/2 [2(36) + (n-1)(-6)] = 0 OR n/2 (36 + un) = 0 => un = -36; n = 13 A1. METHOD 2: attempt to recognize symmetry (M1); 36+30+...+0+...-30-36; n = 13 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

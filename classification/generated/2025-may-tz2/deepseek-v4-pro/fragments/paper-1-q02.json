@@ -1,0 +1,77 @@
+{
+  "question": "2",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Find a vector equation of line L1 given its Cartesian equation (x-1)/2 = (y+2)/3 = z/1.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "convert_cartesian_to_vector",
+        "parameter_introduction"
+      ],
+      "method_path": [
+        "Set each Cartesian fraction equal to a parameter λ",
+        "Express x, y, z in terms of λ",
+        "Write vector equation r = position vector + λ * direction vector"
+      ],
+      "accepted_alternatives": [
+        "Use symmetric form (y+2)/3 = (x-1)/2 = z/1 and write directly as r = (1, -2, 0) + λ(2, 3, 1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "M1 for attempt to set equal to a parameter or to add detail to cartesian form; A1 for correct vector equation r = (1, -2, 0) + λ(2, 3, 1) or equivalent."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Find the intersection point of L1 and L2 given L2: r = (0,4,8) + t(1,0,-2).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equate_components",
+        "solve_linear_system",
+        "find_intersection"
+      ],
+      "method_path": [
+        "Equate components of L1 and L2: 1+2λ = t, -2+3λ = 4, λ = 8-2t",
+        "Solve for λ and t",
+        "Substitute back to find coordinates"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "M1 for attempt to equate at least one component; (A1) for λ=2 or t=5; A1 for intersection point (5,4,2)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

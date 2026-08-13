@@ -1,0 +1,66 @@
+{
+  "question": "6",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "16-18",
+      "task_summary": "Find α and β for which the linear system has infinitely many solutions.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "geometry.vectors"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "row_reduction",
+        "elimination",
+        "infinite_solutions",
+        "parameter_determination"
+      ],
+      "method_path": [
+        "Write augmented matrix",
+        "Row reduce to echelon form",
+        "Set third row coefficients to zero for consistency",
+        "Solve for α and β"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Eliminate one variable, substitute into third equation, set coefficients to zero.",
+        "METHOD 3: Add/subtract equations, compare coefficients with third equation.",
+        "METHOD 4: Vector approach: find direction vector of intersection of first two planes, require normal of third plane perpendicular to it, then find β using a common point.",
+        "METHOD 5: Find general point on line of intersection of first two planes, substitute into third plane, require coefficient of parameter zero and constant term equal to β."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1 Row Reduction: attempt to reduce a matrix or eliminate one variable (M1); two correct rows or equivalent equations A1A1; correct third row or equivalent equation A1; equating the third row coefficients to zero (M1); α = 2 and β = 10 A1."
+        },
+        {
+          "markscheme_pages": "16-17",
+          "basis": "METHOD 2 Writing an equation in one variable: attempt to eliminate either x or z using the first two equations (M1); one correct equation A1; correct substitution into the third equation to create an equation in either x or z A2; attempt to set coefficients equal to zero for infinite solutions (M1); α = 2 and β = 10 A1."
+        },
+        {
+          "markscheme_pages": "17",
+          "basis": "METHOD 3 Subtracting and comparing equations: attempt to add or subtract two equations (M1); A2; attempt to compare coefficients with the third equation (M1); α = 2 and β = 10 A1A1."
+        },
+        {
+          "markscheme_pages": "17-18",
+          "basis": "METHOD 4 Vector approach: attempt to find direction vector of line of intersection using π1 and π2 (M1); d = (2, -3, 2) A1; normal of π3 is perpendicular to d (M1); α = 2 A1; correct substitution of a point common to the first two planes into the third plane A1; β = 10 A1."
+        },
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 5 Finding a general point on the line of intersection: attempt to find intersection of π1 and π2 (M1); x = 4 + 2t, y = 3 - 3t, z = 2t A1A1; correct substitution of general point into π3 A1; recognizing that the coefficient of t must be zero OR the constant term must be β (M1); α = 2 and β = 10 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "18",
+      "markscheme_pages": "23",
+      "task_summary": "Show that the position vector of the intersection of L1 and L2 is (1, 8, -2).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_up_system_of_equations",
+        "solve_linear_equations",
+        "substitute_parameter",
+        "verify_position_vector"
+      ],
+      "method_path": [
+        "Set up equations by equating components of L1 and L2.",
+        "Solve for parameters s and t.",
+        "Substitute parameter into line equation to find intersection point.",
+        "Verify the position vector is (1, 8, -2)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1: attempt to set up a system of equations with at least one correct equation; A1: t=1 OR s=-4; A1: point of intersection (1,8,-2) AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "18",
+      "markscheme_pages": "23-24",
+      "task_summary": "Write vector equation of plane Π containing L1 and L2, and show Cartesian equation is 4x+y-3z=18.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "write_plane_equation",
+        "vector_form",
+        "cross_product",
+        "normal_vector",
+        "cartesian_equation"
+      ],
+      "method_path": [
+        "Write plane equation in form r = a + λb + μc using point on L1 or L2 and direction vectors of L1 and L2.",
+        "Find normal vector n = b × c = (4,1,-3).",
+        "Use r·n = a·n to get Cartesian equation 4x+y-3z=18."
+      ],
+      "accepted_alternatives": [
+        "Use any point on L1 or L2 for a.",
+        "Use r·n = a·n with any point from L1 or L2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "b(i) A1: r = (5,4,2)+λ(1,-1,1)+μ(2,1,3) or equivalent; b(ii) M1: attempt to write equation in form r·n = a·n; A1: 4x+y-3z=18 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "18",
+      "markscheme_pages": "24",
+      "task_summary": "Write down the values of q and r where plane intersects axes at Q(0,q,0) and R(0,0,r).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "find_intercepts",
+        "substitute_coordinates"
+      ],
+      "method_path": [
+        "Substitute y=0, z=0 into 4x+y-3z=18 to find x-intercept (given).",
+        "Substitute x=0, z=0 to find q=18.",
+        "Substitute x=0, y=0 to find r=-6."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "c(i) A1: q=18; c(ii) A1: r=-6."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "18",
+      "markscheme_pages": "25",
+      "task_summary": "Use a vector method to find the area of triangle PQR.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_product",
+        "magnitude",
+        "area_of_triangle"
+      ],
+      "method_path": [
+        "Find vectors PQ and PR.",
+        "Compute cross product PQ × PR.",
+        "Find magnitude of cross product.",
+        "Area = 1/2 |PQ × PR|."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A1: PQ or PR seen; M1: attempt to find vector product; A1: PQ×PR = (-108, -27, 81); M1: attempt magnitude; A1: Area = 1/2 √18954 ≈ 68.8."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 2,
+      "source_pages": "18",
+      "markscheme_pages": "25",
+      "task_summary": "Write equation of line L3 normal to Π through intersection point.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "line_equation",
+        "normal_vector"
+      ],
+      "method_path": [
+        "Use intersection point (1,8,-2) as position vector.",
+        "Use normal vector (4,1,-3) as direction vector.",
+        "Write r = (1,8,-2) + γ(4,1,-3)."
+      ],
+      "accepted_alternatives": [
+        "Any multiple of direction vector (4,1,-3)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "A2: r = (1,8,-2) + γ(4,1,-3); Note: Accept any multiple of direction vector. Award A1A0 if r= is not seen."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-F",
+      "question": "12",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "18",
+      "markscheme_pages": "26",
+      "task_summary": "Given S(-11,5,7) lies on L3, find γ.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitute_point",
+        "solve_for_parameter"
+      ],
+      "method_path": [
+        "Set r3 = (-11,5,7).",
+        "Solve component equations for γ.",
+        "Obtain γ = 3."
+      ],
+      "accepted_alternatives": [
+        "γ = -3 if direction vector is (-4,-1,3)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "M1: attempt to set r3 equal to (-11,5,7); A1: γ=3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q12-G",
+      "question": "12",
+      "part": "G",
+      "marks": 4,
+      "source_pages": "18",
+      "markscheme_pages": "26",
+      "task_summary": "Find the volume of pyramid PQRS.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_subtraction",
+        "magnitude",
+        "volume_of_pyramid"
+      ],
+      "method_path": [
+        "Find vector from S to intersection point (height direction).",
+        "Compute height = magnitude of this vector.",
+        "Use volume = 1/3 × base area × height.",
+        "Base area from part (d)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "M1: attempt to subtract appropriate vectors; A1: height = √234; M1: attempt to substitute into volume formula; A1: V=351."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

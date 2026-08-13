@@ -1,0 +1,80 @@
+{
+  "question": "8",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "12",
+      "task_summary": "Express z1 = 3 - 3i in the form re^{iθ} with r > 0 and -π < θ ≤ π.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "modulus_calculation",
+        "argument_calculation",
+        "polar_form_conversion"
+      ],
+      "method_path": [
+        "Calculate modulus r = sqrt(3^2 + (-3)^2) = sqrt(18) = 3√2",
+        "Calculate argument θ = arctan(-3/3) = -π/4",
+        "Write z1 = 3√2 e^{-iπ/4}"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempt to find modulus OR argument of z1 (M1); r = √12 = 2√3 or θ = -π/3 (A1); z1 = √12 e^{-iπ/3} = 2√3 e^{-iπ/3} (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "12",
+      "task_summary": "Find the cube roots u, v, w of z2/z1 where z2 = 2√3 e^{i5π/6}.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "complex_division",
+        "cube_root_extraction",
+        "de_moivre_theorem"
+      ],
+      "method_path": [
+        "Compute z2/z1 = (2√3 e^{i5π/6}) / (2√3 e^{-iπ/3}) = e^{i7π/6}",
+        "Recognize three cube roots with arguments (7π/6 + 2kπ)/3 for k = 0, 1, 2",
+        "Apply de Moivre's theorem to find roots: e^{i7π/18}, e^{i19π/18}, e^{i31π/18}",
+        "Simplify arguments to principal range: e^{i7π/18}, e^{-i17π/18}, e^{-i5π/18}"
+      ],
+      "accepted_alternatives": [
+        "e^{i7π/18}, e^{i19π/18}, e^{i31π/18}",
+        "e^{i7π/18}, e^{-i17π/18}, e^{-i5π/18}"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "z2/z1 = e^{i7π/6} (A1); recognizing three equivalent arguments (M1); attempt to find a root using de Moivre's theorem (M1); e^{i(7π/18 + 2kπ/3)} (A1); e^{i7π/18}, e^{-i17π/18}, e^{-i5π/18} (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

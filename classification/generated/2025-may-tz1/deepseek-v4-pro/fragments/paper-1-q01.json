@@ -1,0 +1,47 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q01",
+      "question": "1",
+      "part": "",
+      "marks": 5,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the local minimum point (p, q) with p>0 for f(x)=4x^3/3 - 16/x.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate",
+        "set_derivative_zero",
+        "solve_equation",
+        "substitute",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Differentiate f(x) to get f'(x)=4x^2 - 16/x^2",
+        "Set f'(x)=0",
+        "Solve 4x^2 - 16/x^2 = 0 to get x=2 (positive root)",
+        "Substitute x=2 into f(x)",
+        "Compute f(2)=4(8)/3 - 16/2 = 32/3 - 8 = -64/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "Markscheme shows derivative, setting to zero, solving for p=2, substituting to get q=-64/3."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

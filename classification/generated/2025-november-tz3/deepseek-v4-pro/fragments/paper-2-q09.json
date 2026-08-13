@@ -1,0 +1,49 @@
+{
+  "question": "9",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 5,
+      "source_pages": "12",
+      "markscheme_pages": "16",
+      "task_summary": "Prove by contradiction that sqrt(xy) ≤ (x+y)/2 for all x, y ∈ ℝ⁺.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "assume_negation",
+        "square_both_sides",
+        "algebraic_manipulation",
+        "complete_square",
+        "contradiction"
+      ],
+      "method_path": [
+        "Assume sqrt(xy) > (x+y)/2",
+        "Square both sides (valid since x,y > 0)",
+        "Simplify to 0 > x^2 - 2xy + y^2",
+        "Rewrite as 0 > (x - y)^2",
+        "Conclude contradiction since square is non-negative"
+      ],
+      "accepted_alternatives": [
+        "Rewrite as 0 > (y - x)^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1: assume sqrt(xy) > (x+y)/2; M1: attempt to square both sides; A1: 0 > x^2 - 4xy + y^2 OR 0 > y^2 - 4xy + x^2; A1: 0 > (x - y)^2 OR 0 > (y - x)^2; R1: a square number can never be negative hence contradiction"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

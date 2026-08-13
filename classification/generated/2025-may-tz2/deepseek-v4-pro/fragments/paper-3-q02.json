@@ -1,0 +1,326 @@
+{
+  "question": "2",
+  "expected_question_marks": 27,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-A-I",
+      "question": "2",
+      "part": "A-I",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "Find the distance from Bogotá to Moscow using Pythagoras' theorem on a flat surface.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "pythagorean_theorem",
+        "distance_calculation"
+      ],
+      "method_path": [
+        "Apply Pythagoras' theorem: sqrt(12500^2 + 6000^2)",
+        "Compute distance = 13900 km"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to use Pythagoras' theorem (M1) ... =13900 (km) (13865.4...) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-A-II",
+      "question": "2",
+      "part": "A-II",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "Find the bearing of Moscow from Bogotá using inverse trigonometry.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "inverse_trigonometric_ratio",
+        "bearing_calculation"
+      ],
+      "method_path": [
+        "Set up inverse trig ratio, e.g., arctan(12500/6000)",
+        "Identify the correct angle as bearing",
+        "Compute bearing = 064° (64.4°)"
+      ],
+      "accepted_alternatives": [
+        "Use arctan(6000/12500) and adjust to bearing"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to use an appropriate inverse trig ratio (M1) ... identifying the correct angle (M1) ... = 064° OR 064 (64.3589...)° A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-B-I",
+      "question": "2",
+      "part": "B-I",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "14",
+      "task_summary": "Use scalar product to find the angle between position vectors p and n.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "scalar_product",
+        "angle_between_vectors"
+      ],
+      "method_path": [
+        "Compute scalar product p·n = 0",
+        "Conclude angle = 90°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "p.n = 0 M1 so the angle is 90° OR π/2 rads A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-B-II",
+      "question": "2",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "14",
+      "task_summary": "Show that the arc distance between P and N is 3000π km.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length_formula",
+        "circumference_fraction"
+      ],
+      "method_path": [
+        "Use arc length formula s = rθ with θ = π/2",
+        "Compute s = 6000 * π/2 = 3000π km"
+      ],
+      "accepted_alternatives": [
+        "Use fraction of circumference: (90/360) * 2π * 6000"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempt to use arc length formula s = θr OR 90/360 of circumference (M1) ... = 3π thousand km OR 3000π km AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-C-I",
+      "question": "2",
+      "part": "C-I",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "15",
+      "task_summary": "Find the vector a × p.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product"
+      ],
+      "method_path": [
+        "Compute cross product a × p",
+        "Obtain (0, -36, 0)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempt to find cross product (e.g. correct except for sign error) (M1) ... (0, -36, 0) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-C-II",
+      "question": "2",
+      "part": "C-II",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "15",
+      "task_summary": "Show that the angle at vertex A in the spherical triangle is 90°.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "scalar_product",
+        "angle_between_vectors"
+      ],
+      "method_path": [
+        "Find a × n = (0, 0, 36)",
+        "Compute scalar product (a × p)·(a × n) = 0",
+        "Conclude angle = 90°"
+      ],
+      "accepted_alternatives": [
+        "Use cross product magnitude: |(a × p) × (a × n)| = |a × p||a × n| sin θ, find sin θ = 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: a × n = (0,0,36) A1 ... (a × p)·(a × n) = 0 A1 ... so angle is 90° AG. METHOD 2: a × n = (0,0,36) A1 ... attempt to use cross product ... sin θ = 1 A1 ... so angle is 90° AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-D",
+      "question": "2",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "16",
+      "task_summary": "Show that θ = 57.3° given the shortest distance from Moscow to Nairobi is 6000 km.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length_formula",
+        "angle_conversion"
+      ],
+      "method_path": [
+        "Use arc length formula s = rθ with s = 6, r = 6",
+        "Solve θ = 1 radian",
+        "Convert to degrees: θ = 57.3°"
+      ],
+      "accepted_alternatives": [
+        "Use proportion: (θ/360) * 2π * 6 = 6"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to use 2πr * θ/360 = s OR s = θr (M1) ... θ = 57.2957... A1 ... θ = 57.3° to 3 significant figures AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-E",
+      "question": "2",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "17-18",
+      "task_summary": "Find the shortest distance from Bogotá to Moscow on the sphere.",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [
+        "geometry.circular_measure"
+      ],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "scalar_product",
+        "cross_product",
+        "arc_length_formula",
+        "angle_between_vectors"
+      ],
+      "method_path": [
+        "Find angle BOM using scalar product or cosine rule",
+        "Compute angle BOM ≈ 105.673°",
+        "Use arc length formula s = rθ with θ in radians",
+        "Calculate distance ≈ 11.1 thousand km"
+      ],
+      "accepted_alternatives": [
+        "Use cross product to find sin(BOM) and then angle, then arc length"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "METHOD 1: attempt to use scalar product (M1) ... arccos(...) (A1) ... 106° (105.673°) (A1) ... attempt to use arc length (M1) ... 11.1 (11.0660) thousand km A1. METHOD 2: attempt to use cross product (M1) ... sin(...)=0.962818 (A1) ... 106° (105.673°) (A1) ... attempt to use arc length (M1) ... 11.1 thousand km A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P3-Q02-F",
+      "question": "2",
+      "part": "F",
+      "marks": 6,
+      "source_pages": "8",
+      "markscheme_pages": "19",
+      "task_summary": "Find the bearing from Bogotá to Moscow using the method from part (c).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "scalar_product",
+        "angle_between_vectors",
+        "bearing_calculation"
+      ],
+      "method_path": [
+        "Compute b × m",
+        "Compute scalar product (b × m)·(b × p)",
+        "Find angle between vectors using cos θ = ((b × m)·(b × p)) / (|b × m||b × p|)",
+        "Obtain bearing ≈ 29.1°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to calculate b × m (M1) ... (A1) ... attempt to use scalar product to find angle between vectors (M1) ... (A1)(A1) ... bearing is 029.1° (29.0770...°) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

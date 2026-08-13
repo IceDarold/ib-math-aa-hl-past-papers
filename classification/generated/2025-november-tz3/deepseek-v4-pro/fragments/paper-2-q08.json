@@ -1,0 +1,110 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "11",
+      "markscheme_pages": "15",
+      "task_summary": "Find the number of different ways of arranging 15 books in a line on a shelf.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "factorial",
+        "permutation"
+      ],
+      "method_path": [
+        "Calculate 15!"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "15! OR 1.31×10^12 (1.30767...×10^12) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "15",
+      "task_summary": "Determine the number of different ways to arrange the books so that books from each continent are grouped together.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "factorial",
+        "permutation",
+        "grouping"
+      ],
+      "method_path": [
+        "Recognise that books need to be arranged in separate groups",
+        "Calculate 6!, 5!, 4!",
+        "Recognise that the three groups can be placed in any order",
+        "Calculate 3!",
+        "Multiply 6! × 5! × 4! × 3!"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognise that the books need to be arranged in separate groups (M1); 6!(720) OR 5!(120) OR 4!(24) seen; recognise that the three groups can be placed in any order (M1); 3! seen; (6!×5!×4!×3!) = 12441600 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "15",
+      "task_summary": "Determine the number of different choices of four books all from the same continent.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combination",
+        "addition_principle"
+      ],
+      "method_path": [
+        "Recognise the combination(s) required",
+        "Calculate C(6,4), C(5,4), C(4,4)",
+        "Recognise that the sum of 3 different cases is required",
+        "Sum C(6,4) + C(5,4) + C(4,4)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognition of the combination(s) required (M1); 6C4(=15) OR 5C4(=5) OR 4C4(=1) seen; recognition that the sum of 3 different cases is required (M1); 6C4+5C4+4C4 = 15+5+1 = 21 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

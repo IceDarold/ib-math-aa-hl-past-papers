@@ -1,0 +1,87 @@
+{
+  "question": "6",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "9-10",
+      "markscheme_pages": "10",
+      "task_summary": "Sketch the graph of y = |f(x)|, clearly indicating any asymptotes.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "absolute_value_transformation",
+        "asymptote_identification",
+        "reflection_in_x_axis",
+        "sketching"
+      ],
+      "method_path": [
+        "Identify original graph features: local max A(-1/2, 5/2), local min B(0, -15/2), vertical asymptote x = -1/2, oblique asymptote y = 5x + 5.",
+        "Apply absolute value: reflect negative parts of f(x) across x-axis.",
+        "Sketch right branch: minimum in approximately correct position, asymptotic to y = 5x + 5.",
+        "Sketch left branch: reflect original left branch (which was below x-axis) across x-axis, so minimum becomes positive, asymptotic to x = -1/2.",
+        "Draw new oblique asymptote y = -5x - 5 for left branch (reflected).",
+        "Indicate vertical asymptote x = -1/2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "right branch with minimum in approximately correct position AND showing asymptotic behaviour to y = 5x + 5 (A1); asymptotic behaviour on both branches at x = -1/2 (A1); left branch reflected in x-axis with minimum in approximately correct position (M1); oblique asymptote (y = -5x - 5) drawn in approximately correct position AND left branch with correct asymptotic behaviour (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "11",
+      "task_summary": "Sketch the graph of y = 15/f(x), clearly indicating any asymptotes and intercepts with the axes.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "functions.asymptotes"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "reciprocal_transformation",
+        "asymptote_identification",
+        "intercept_calculation",
+        "sketching"
+      ],
+      "method_path": [
+        "Identify original graph features: local max A(-1/2, 5/2), local min B(0, -15/2), vertical asymptote x = -1/2, oblique asymptote y = 5x + 5.",
+        "Apply reciprocal transformation: y = 15/f(x).",
+        "Determine intercepts: when f(x) = 15, y = 1; when f(x) = -15, y = -1. Use original graph to estimate x-intercepts of new function.",
+        "Determine asymptotes: vertical asymptote remains x = -1/2; horizontal asymptote y = 0 as |f(x)| → ∞.",
+        "Sketch: axes intercepts in approximately correct positions (A1); local extrema in approximately correct positions (A1); asymptotic behavior to y = 0 on both sides (A1)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "axes intercepts in approximately correct positions (A1); local extrema in approximately correct positions (A1); asymptotic behavior to y = 0 on both sides OR asymptote at y = 0 indicated on sketch (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

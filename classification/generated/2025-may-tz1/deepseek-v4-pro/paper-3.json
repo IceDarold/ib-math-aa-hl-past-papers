@@ -1,0 +1,688 @@
+{
+  "session": "May 2025",
+  "zone": "TZ1",
+  "paper": 3,
+  "calculator": "yes",
+  "expected_total_marks": 55,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P3-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find E(M) from the given probability distribution of M.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "expected_value",
+        "summation"
+      ],
+      "method_path": [
+        "E(M) = sum m * P(M=m)",
+        "substitute values",
+        "compute 25/8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempts to use E(M) = sum m P(M=m) (M1); 1*(1/16)+2*(3/16)+3*(5/16)+4*(7/16) = 25/8 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find G(1) for the polynomial G(t) = (1/16)t + (3/16)t^2 + (5/16)t^3 + (7/16)t^4.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "evaluate_polynomial"
+      ],
+      "method_path": [
+        "substitute t=1 into G(t)",
+        "G(1)=1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "G(1)=1 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q01-C-I",
+      "question": "1",
+      "part": "C-I",
+      "marks": 2,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find G'(t) for G(t) = (1/16)t + (3/16)t^2 + (5/16)t^3 + (7/16)t^4.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "power_rule",
+        "polynomial_differentiation"
+      ],
+      "method_path": [
+        "differentiate term by term",
+        "G'(t) = 1/16 + (6/16)t + (15/16)t^2 + (28/16)t^3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "G'(t) = 1/16 + 3/8 t + 15/16 t^2 + 7/4 t^3 (A2); Note: Award A1A0 for three correct terms."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q01-C-II",
+      "question": "1",
+      "part": "C-II",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Show that G'(1) = E(M).",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "calculus.differentiation"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "evaluate_derivative",
+        "expected_value"
+      ],
+      "method_path": [
+        "substitute t=1 into G'(t)",
+        "compute G'(1) = 25/8",
+        "compare with E(M) from part (a)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "substitutes t=1 into their G'(t) (M1); G'(1) = 1/16 + 3/8 + 15/16 + 7/4 = 25/8 (A1); = E(M) (A1) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q01-D",
+      "question": "1",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "4",
+      "markscheme_pages": "9",
+      "task_summary": "Show that G_X(t) = 3/10 + (3/5)t + (1/10)t^2 by determining the coefficients from the probability distribution of X.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_distribution",
+        "polynomial_representation",
+        "without_replacement"
+      ],
+      "method_path": [
+        "find P(X=0) = (3/5)*(2/4) = 3/10",
+        "find P(X=1) = (2/5)*(3/4) + (3/5)*(2/4) = 3/5",
+        "find P(X=2) = (2/5)*(1/4) = 1/10",
+        "write G_X(t) = P(X=0) + P(X=1)t + P(X=2)t^2"
+      ],
+      "accepted_alternatives": [
+        "use combinations: P(X=0) = C(3,2)/C(5,2) = 3/10, P(X=1) = C(2,1)C(3,1)/C(5,2) = 3/5, P(X=2) = C(2,2)/C(5,2) = 1/10"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempts to find at least one required probability (M1); P(X=0) = 3/10 (A1); P(X=1) = 2/5*3/4 + 3/5*2/4 = 3/5 (A1A1); P(X=2) = 2/5*1/4 = 1/10 (A1); leading to G_X(t) = 3/10 + 3/5 t + 1/10 t^2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q01-E-I",
+      "question": "1",
+      "part": "E-I",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Given the coefficient of t^2 in G_Y(t) is 1/3, find the value of p.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_distribution",
+        "solve_equation"
+      ],
+      "method_path": [
+        "recognize P(Y=2) = (1/2)*p",
+        "set (1/2)p = 1/3",
+        "solve p = 2/3"
+      ],
+      "accepted_alternatives": [
+        "set p/2 = 1/3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "EITHER P(Y=2) = p/2 (A1); OR 1/2 p = 1/3 (A1); THEN p = 2/3 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q01-E-II",
+      "question": "1",
+      "part": "E-II",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "10",
+      "task_summary": "Find an expression for G_Y(t) using the value of p.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "probability_distribution",
+        "polynomial_representation"
+      ],
+      "method_path": [
+        "find P(Y=0) = (1/2)*(1-p) = 1/6",
+        "find P(Y=1) = (1/2)*p + (1/2)*(1-p) = 1/2",
+        "find P(Y=2) = (1/2)*p = 1/3",
+        "write G_Y(t) = 1/6 + (1/2)t + (1/3)t^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "uses their G_Y(t) = P(Y=0) + P(Y=1)t + P(Y=2)t^2 with their value of p (M1); P(Y=0) = 1/6 (A1); P(Y=1) = 1/2 (A1); G_Y(t) = 1/6 + 1/2 t + 1/3 t^2 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q01-F",
+      "question": "1",
+      "part": "F",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "11-12",
+      "task_summary": "Use G_Z'(1) = E(Z) to find E(Z) where G_Z(t) = G_X(t) G_Y(t).",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.equations"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "product_rule",
+        "evaluate_derivative",
+        "expected_value"
+      ],
+      "method_path": [
+        "multiply G_X(t) and G_Y(t) to get G_Z(t)",
+        "differentiate G_Z(t) or use product rule",
+        "evaluate G_Z'(1)",
+        "obtain E(Z) = 59/30"
+      ],
+      "accepted_alternatives": [
+        "use E(Z) = E(X) + E(Y) by linearity of expectation"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11-12",
+          "basis": "METHOD 1: G_Z(t) = (3/10 + 3/5 t + 1/10 t^2)(1/6 + 1/2 t + 1/3 t^2) (A1); attempts to evaluate their G_Z'(1) (M1); G_Z'(1) = 1.96666... (A2) = 59/30. METHOD 2: differentiate G_Z(t) (M1); substitute t=1 (M1); G_Z'(1) = 59/30 (A1). METHOD 3: recognize G_Z'(1) = G_X'(1) + G_Y'(1) (M1); evaluate G_X'(1) = 4/5, G_Y'(1) = 7/6 (M1); E(Z) = 59/30 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "13",
+      "task_summary": "Show that curvature k(x)=0 for linear functions g(x)=mx+c.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "differentiate_linear",
+        "substitute_into_curvature_formula",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Find g'(x)=m and g''(x)=0.",
+        "Substitute into k(x)=|g''(x)|/(1+(g'(x))^2)^(3/2).",
+        "Simplify to 0."
+      ],
+      "accepted_alternatives": [
+        "Note numerator is zero and denominator non-zero."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "g'(x)=m OR g''(x)=0 (A1). EITHER k(x)=0/(1+m^2)^(3/2) OR numerator zero and denominator non-zero (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-B-I",
+      "question": "2",
+      "part": "B-I",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "13",
+      "task_summary": "Find x where kmax occurs by solving k'(x)=0 for quadratic family.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_zero",
+        "solve_for_x"
+      ],
+      "method_path": [
+        "Set k'(x)=0.",
+        "Solve to get x=-b/(2a)."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "x=-b/(2a) (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-B-II",
+      "question": "2",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "13",
+      "task_summary": "Determine expression for kmax in terms of a only.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_x_value",
+        "simplify_expression",
+        "absolute_value"
+      ],
+      "method_path": [
+        "Substitute x=-b/(2a) into k(x).",
+        "Simplify to 2|a|."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "substitutes their value of x into k(x) (M1). =2|a| (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-B-III",
+      "question": "2",
+      "part": "B-III",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "State limit of k(x) as x→∞ and explain significance.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "evaluate_limit",
+        "interpret_curvature"
+      ],
+      "method_path": [
+        "State lim_{x→∞} k(x)=0.",
+        "Explain that for large x, quadratic behaves like a straight line."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "lim_{x→∞} k(x)=0 (A1). For large positive x, quadratic functions are close to being straight (R1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-B-IV",
+      "question": "2",
+      "part": "B-IV",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "14",
+      "task_summary": "Compare kmax of p(x) and q(x) and justify.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "compare_absolute_values",
+        "justify_equality"
+      ],
+      "method_path": [
+        "State C: kmax of p = kmax of q.",
+        "Justify: kmax=2|a|, both have |a|=2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "C (kmax of p = kmax of q) (A1). kmax of p is 2×|−2|=4 and kmax of q is 2×2=4 (R1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-C-I",
+      "question": "2",
+      "part": "C-I",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "14",
+      "task_summary": "Determine exact x where kmax occurs for v(x)=ln x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_zero",
+        "solve_for_x"
+      ],
+      "method_path": [
+        "Set k'(x)=0.",
+        "Solve to get x=1/√2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "sets k'(x)=0 and attempts to solve for x (M1). x=1/√2 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-C-II",
+      "question": "2",
+      "part": "C-II",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "15",
+      "task_summary": "Show that kmax = 2√3/9 for v(x)=ln x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_x_value",
+        "simplify_expression",
+        "rationalize_denominator"
+      ],
+      "method_path": [
+        "Substitute x=1/√2 into k(x).",
+        "Simplify denominator to (3/2)^(3/2).",
+        "Simplify to 2/(3√3).",
+        "Rationalize to 2√3/9."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "substitutes their value of x into k(x) (M1). denominator (3/2)^(3/2) (A1). 3√3/2√2 (A1). 2/(3√3) (A1). kmax=2√3/9 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-D-I",
+      "question": "2",
+      "part": "D-I",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "16",
+      "task_summary": "Show that kmax = 2√3/9 for w(x)=e^x.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "set_derivative_zero",
+        "solve_for_e2x",
+        "substitute_into_curvature",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Set k'(x)=0 and solve for e^(2x)=1/2.",
+        "Find e^x=1/√2.",
+        "Substitute into k(x).",
+        "Simplify to 2/(3√3).",
+        "Rationalize to 2√3/9."
+      ],
+      "accepted_alternatives": [
+        "Solve for x=ln(1/√2) and substitute."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "sets k'(x)=0 and attempts to solve for e^(2x) (M1). e^(2x)=1/2 (A1). substitutes into k(x) (M1). k=1/√2 / (3/2)^(3/2) (A1). 2/(3√3) (A1). kmax=2√3/9 AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-D-II",
+      "question": "2",
+      "part": "D-II",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "17",
+      "task_summary": "Suggest why v and w have the same kmax.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "inverse_functions",
+        "reflection_property"
+      ],
+      "method_path": [
+        "State that w and v are inverse functions, or their graphs are reflections in y=x, or they have the same shape."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "w and v are inverse functions of each other (R1). OR graphs are reflections in y=x (R1). OR same shape (R1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-E-I",
+      "question": "2",
+      "part": "E-I",
+      "marks": 6,
+      "source_pages": "6",
+      "markscheme_pages": "17-18",
+      "task_summary": "Show that d^2y/dx^2 = -r^2/y^3 for y=√(r^2-x^2).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "chain_rule",
+        "quotient_rule",
+        "implicit_differentiation",
+        "substitute_derivative"
+      ],
+      "method_path": [
+        "Find dy/dx = -x/y using chain rule.",
+        "Find d^2y/dx^2 using quotient rule or implicit differentiation.",
+        "Substitute dy/dx to simplify to -r^2/y^3."
+      ],
+      "accepted_alternatives": [
+        "Method 2: express in terms of r and x.",
+        "Method 3: implicit differentiation on y^2=r^2-x^2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17-18",
+          "basis": "Method 1: attempts chain rule (M1). dy/dx=-x/y (A1). attempts quotient/product rule (M1). d^2y/dx^2 = -(1/y + x^2/y^3) (A1). substitution (A1). -r^2/y^3 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P3-Q02-E-II",
+      "question": "2",
+      "part": "E-II",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "20-22",
+      "task_summary": "Show that curvature k is constant for y=√(r^2-x^2).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute_derivatives",
+        "simplify_expression",
+        "absolute_value",
+        "constant_curvature"
+      ],
+      "method_path": [
+        "Substitute dy/dx and d^2y/dx^2 into k(x).",
+        "Simplify numerator to r^2/y^3.",
+        "Simplify denominator to (r^2/y^2)^(3/2)=r^3/y^3.",
+        "Obtain k=1/r, a constant."
+      ],
+      "accepted_alternatives": [
+        "Method 2: express in terms of r and x.",
+        "Method 3: express in terms of x and y."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20-22",
+          "basis": "substitutes into k(x) (M1). numerator r^2/y^3 (A1). denominator (r^2/y^2)^(3/2) (M1, A1). k=1/r (A1). constant AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

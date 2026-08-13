@@ -1,0 +1,150 @@
+{
+  "question": "11",
+  "expected_question_marks": 14,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find the total number of ways to choose three equal size teams from 15 students.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "multinomial_coefficient",
+        "division_by_permutations"
+      ],
+      "method_path": [
+        "Calculate 15C5 * 10C5 * 5C5",
+        "Divide by 3! to account for indistinguishable teams"
+      ],
+      "accepted_alternatives": [
+        "15!/(5!5!5!3!)",
+        "14C4 * 9C4 * 4C4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: 15C5 * 10C5 * 5C5 / 3! = 126126. METHOD 2: 14C4 * 9C4 * 4C4 = 126126."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "23-24",
+      "task_summary": "Show that ∫_0^a f(t) dt = (k/9)[1 - e^{-a/3}(3a+1)].",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "definite_integral"
+      ],
+      "method_path": [
+        "Set u = t, dv = e^{-t/3} dt",
+        "Integrate by parts to obtain ∫ t e^{-t/3} dt = -3t e^{-t/3} - 9 e^{-t/3}",
+        "Evaluate definite integral from 0 to a",
+        "Multiply by k and simplify to given expression"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23-24",
+          "basis": "M1 for attempt to use integration by parts; A1 for ∫ e^{-t/3} dt = -3 e^{-t/3}; A1 for correct integration; A1 for final expression AG."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "24",
+      "task_summary": "Use l'Hôpital's rule to find lim_{x→∞} (3x+1)/e^{x/3} and hence find k.",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "limit_at_infinity",
+        "probability_density_function_property"
+      ],
+      "method_path": [
+        "Apply l'Hôpital's rule to lim_{x→∞} (3x+1)/e^{x/3}",
+        "Obtain limit 0",
+        "Take limit as a→∞ of ∫_0^a f(t) dt",
+        "Set limit equal to 1 (total probability)",
+        "Solve for k = 9"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "A1 for l'Hôpital's rule application; A1 for limit 0; (A1) for limit expression; (M1) for recognising area = 1; A1 for k = 9."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "24",
+      "task_summary": "Find the median time the spinning top is in motion.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "median_of_continuous_distribution",
+        "numerical_solution"
+      ],
+      "method_path": [
+        "Set ∫_0^m f(t) dt = 0.5",
+        "Solve for m using GDC",
+        "Obtain median ≈ 0.559 min (or 33.6 sec)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for recognition that integral equals 0.5; A1 for median = 0.559 (min) or 33.6 (sec)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

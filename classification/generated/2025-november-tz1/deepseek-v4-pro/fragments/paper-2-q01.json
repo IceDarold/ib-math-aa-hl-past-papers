@@ -1,0 +1,79 @@
+{
+  "question": "1",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the angle θ and radius r of a regular pentagon inscribed in a circle, given arc length AB = 12 cm.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length_formula",
+        "central_angle_of_regular_polygon",
+        "solve_for_variable"
+      ],
+      "method_path": [
+        "θ = 2π/5",
+        "arc length = rθ",
+        "12 = r × (2π/5)",
+        "r = 12 × 5/(2π) = 30/π"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1 for θ = 2π/5 (1.25663...), (A1) for 12 = (2π/5) × r or equivalent, A1 for r = 9.55 (cm) (30/π)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the area of the shaded region (five circular segments) of the regular pentagon inscribed in a circle.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "area_of_sector",
+        "area_of_triangle",
+        "area_of_segment",
+        "multiplication"
+      ],
+      "method_path": [
+        "area of one segment = (1/2) r^2 θ - (1/2) r^2 sin θ",
+        "shaded area = 5 × segment area"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: area of circle minus area of pentagon: π r^2 - 5 × (1/2) r^2 sin θ"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "METHOD 1: (M1) attempt to find area of at least one shaded segment, (A1) for correct expression, A1 for 69.7 (cm^2). METHOD 2: (M1) attempt to find area of one triangle, (M1) attempt to subtract five times their triangle area from their circle area, A1 for 69.7 (cm^2)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

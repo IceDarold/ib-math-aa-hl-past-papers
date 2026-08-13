@@ -1,0 +1,90 @@
+{
+  "question": "5",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the gradient of the tangent T_k to the curve y = h(x) at the point (k, h(k)) in terms of k, where h(x) = 15 cos(πx/50).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_trigonometric",
+        "chain_rule",
+        "evaluate_derivative_at_point"
+      ],
+      "method_path": [
+        "Recognize need to differentiate h(x)",
+        "Apply chain rule: derivative of 15 cos(πx/50) is -15 * (π/50) * sin(πx/50)",
+        "Simplify to h'(x) = -(15π/50) sin(πx/50) = -(3π/10) sin(πx/50)",
+        "Evaluate at x = k to get gradient: h'(k) = -(15π/50) sin(πk/50) = -(3π/10) sin(πk/50)"
+      ],
+      "accepted_alternatives": [
+        "h'(k) = -15 sin(πk/50) * (π/50) (unsimplified)",
+        "h'(k) = -(3π/10) sin(πk/50)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognition of the need to differentiate (M1); h'(x) = -15 sin(πx/50) * (π/50) = -(15π/50) sin(πx/50) = -(3π/10) sin(πx/50) A1A1; Note: Award A1 for -15 sin(πk/50) and A1 for factor of π/50."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Given the angle between T_k and the x-axis is π/8 radians, find the possible values of k.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "gradient_tangent_angle_relation",
+        "set_derivative_equal_to_tangent_slope",
+        "solve_trigonometric_equation",
+        "numerical_solution"
+      ],
+      "method_path": [
+        "Recognize that gradient of tangent equals tan(angle with x-axis), but since angle is π/8 and tangent slopes downward, gradient = -tan(π/8) (or tan(7π/8))",
+        "Set h'(k) = -tan(π/8)",
+        "Solve -(15π/50) sin(πk/50) = -tan(π/8) for k in [0,50]",
+        "Obtain two solutions: k ≈ 7.24 and k ≈ 42.8"
+      ],
+      "accepted_alternatives": [
+        "Using tan(7π/8) instead of -tan(π/8)",
+        "Accept k = 7.24211... and k = 42.7578... (exact from GDC)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognition that gradient of tangent = -tan(π/8) OR tan(7π/8) (M1); setting their h'(k) equal to -tan(π/8) OR tan(7π/8) (A1); k = 7.24211..., k = 42.7578...; k = 7.24, k = 42.8 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

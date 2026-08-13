@@ -1,0 +1,88 @@
+{
+  "question": "2",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Given x > 7, show that (x(x^2-1))/((x^2-8x+7)(x+1)) = x/(x-7).",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "factorization",
+        "cancellation"
+      ],
+      "method_path": [
+        "Factorize x^2-1 as (x-1)(x+1)",
+        "Factorize x^2-8x+7 as (x-7)(x-1)",
+        "Cancel common factors (x-1) and (x+1)",
+        "Obtain x/(x-7)"
+      ],
+      "accepted_alternatives": [
+        "Factorize and cancel in one step: (x(x-1)(x+1))/((x-7)(x-1)(x+1)) = x/(x-7)",
+        "Rewrite as (x(x^2-1))/((x-7)(x-1)(x+1)) and cancel"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to factorize at least one expression (M1); correct factorization and cancellation leading to x/(x-7) (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Solve log_2[x(x^2-1)] - 1 = log_2[(x^2-8x+7)(x+1)].",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "logarithm_properties",
+        "quotient_rule",
+        "exponentiation",
+        "algebraic_simplification",
+        "solving_linear_equation"
+      ],
+      "method_path": [
+        "Use log property: log_2 A - log_2 B = log_2(A/B)",
+        "Rewrite 1 as log_2 2",
+        "Combine logs: log_2[(x(x^2-1))/((x^2-8x+7)(x+1))] = log_2 2",
+        "Use result from part (a) to simplify left side to log_2(x/(x-7))",
+        "Equate arguments: x/(x-7) = 2",
+        "Solve for x: x = 14"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Rewrite 1 as log_2 2, use quotient rule to get log_2[(x(x^2-1))/2] = log_2[(x^2-8x+7)(x+1)], then equate arguments and simplify to x/(x-7) = 2, giving x = 14"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "METHOD 1: attempt to use subtraction/quotient property of logs (M1); valid attempt to rewrite equation with or without logs (M1); x/(x-7) = 2 (A1); x = 14 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

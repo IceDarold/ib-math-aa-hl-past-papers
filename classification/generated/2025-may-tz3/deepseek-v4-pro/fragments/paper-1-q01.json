@@ -1,0 +1,78 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Express log10 24 in terms of p and q, where p = log10 2 and q = log10 3.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "logarithm_product_rule",
+        "logarithm_power_rule",
+        "substitution"
+      ],
+      "method_path": [
+        "Apply log10(24) = log10(8 × 3) = log10(8) + log10(3)",
+        "Apply log10(8) = log10(2^3) = 3 log10(2)",
+        "Substitute p = log10(2) and q = log10(3) to get 3p + q"
+      ],
+      "accepted_alternatives": [
+        "log10(24) = log10(2^3 × 3) = 3 log10(2) + log10(3) = 3p + q"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "correct application of log_a(xy) = log_a(x) + log_a(y) or log_a(x^m) = m log_a(x) (M1); correct expression in terms of log10 2 AND log10 3 (A1); 3p + q (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "7",
+      "task_summary": "Express log3 8 in terms of p and q.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "change_of_base",
+        "logarithm_power_rule",
+        "substitution"
+      ],
+      "method_path": [
+        "Apply change of base: log3(8) = log10(8) / log10(3)",
+        "Apply log10(8) = log10(2^3) = 3 log10(2)",
+        "Substitute p = log10(2) and q = log10(3) to get 3p / q"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "log3(8) = log10(8)/log10(3) = 3log10(2)/log10(3) (A1); 3p/q (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

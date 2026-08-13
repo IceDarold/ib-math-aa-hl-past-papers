@@ -1,0 +1,187 @@
+{
+  "question": "10",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the maximum displacement and maximum velocity of particle P from its displacement function s(t).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "find_maximum",
+        "differentiate",
+        "evaluate_derivative_at_point"
+      ],
+      "method_path": [
+        "Find maximum displacement by locating maximum point of s(t) using GDC or calculus.",
+        "Recognize velocity v = ds/dt.",
+        "Recognize maximum velocity occurs at t=0 (maximum gradient).",
+        "Evaluate ds/dt at t=0 to get maximum velocity."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) attempt to find a maximum point (M1) ... (maximum displacement) = 1.81 (cm) A1 (ii) recognition that ds/dt = v (M1) recognition that the gradient at t=0 represents the maximum velocity (M1) ds/dt at t=0 ... 4.19 (cms-1) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Find the minimum displacement and the displacement at t=3.5.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "find_minimum",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Find minimum displacement by locating minimum point of s(t) using GDC or calculus.",
+        "Evaluate s(3.5) to find displacement at t=3.5."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) attempt to find a minimum point (M1) ... -1.47 A1 (ii) t=3.5 s=1.06620... s=1.07 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Determine the total distance travelled by P in the first 3.5 seconds.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "total_distance",
+        "sum_absolute_displacements",
+        "integrate_absolute_velocity"
+      ],
+      "method_path": [
+        "Sum distances from O using maximum, minimum, and displacement at t=3.5: 1.80645 + 2*1.46729 + 2*1.06620.",
+        "Alternatively, integrate absolute value of velocity from 0 to 3.5."
+      ],
+      "accepted_alternatives": [
+        "Integrate absolute value of velocity: ∫|ds/dt| dt from 0 to 3.5."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1 attempt to sum distances from O involving maximum, minimum and distance at t=3.5 (M1) 1.80645... + 2*1.46729... + 2*1.06620... (A1) =7.61369... 7.61(cm) A1 METHOD 2 attempt to integrate the absolute value of ds/dt (M1) ... =7.61369... 7.61(cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Write down the value of T, the first time P returns and passes through O.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "find_root",
+        "periodic_behavior"
+      ],
+      "method_path": [
+        "Identify T as the first positive root of s(t)=0 after t=0, which is T=1.5."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "(T=)1.5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Determine the common ratio r of the geometric sequence of largest distances in each interval, and calculate the total distance travelled indefinitely.",
+      "primary_topic": "number_algebra.geometric_sequences",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "geometric_sequence",
+        "common_ratio",
+        "sum_to_infinity",
+        "total_distance"
+      ],
+      "method_path": [
+        "Find common ratio r by dividing u2 by u1 (or u3 by u2) using maximum displacements in successive intervals.",
+        "Use sum to infinity formula S∞ = u1/(1-r) for the geometric series of largest distances.",
+        "Recognize total distance is double S∞ because particle travels to maximum and back to O in each interval."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "(i) attempt to divide two of u1, u2, u3... (M1) u2/u1 = 1.46729.../1.80645... or u3/u2 = 1.19181.../1.46729... or r^2 = u3/u1 = 1.19181.../1.80645... 0.812252... (r=)0.812 A1 (ii) attempt to use the sum to infinity of the GP (M1) S∞ = 1.80645.../(1-0.812252...) = 9.62167... recognition that the total distance is double their S∞ (M1) 2 × S∞ = 2 × 1.80645.../(1-0.812252...) OR 2 × 9.62167... = 19.2433... (19.2 cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

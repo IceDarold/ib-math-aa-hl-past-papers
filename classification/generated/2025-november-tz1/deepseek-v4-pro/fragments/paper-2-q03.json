@@ -1,0 +1,111 @@
+{
+  "question": "3",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find the mean of x.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "mean",
+        "summation"
+      ],
+      "method_path": [
+        "Sum the x-values",
+        "Divide by 8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to find mean of x-values (M1); x = 6.45 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find y-bar and the value of p using the regression line of y on x.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "mean",
+        "regression_line",
+        "substitution",
+        "summation"
+      ],
+      "method_path": [
+        "Substitute x-bar into regression equation to find y-bar",
+        "Use formula for mean: sum of y = 8 * y-bar",
+        "Set sum of known y plus p equal to total sum, solve for p"
+      ],
+      "accepted_alternatives": [
+        "Find p first by substituting x=8.9 into regression equation, then find y-bar using p (not awarded marks per markscheme note)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "(i) attempt to substitute their x into regression equation (M1); y = 0.014375 + 2.1625 * 6.45; y = 14.0 (13.9625 exact) A1; (ii) attempt to use formula for the mean (M1); sum y_i = 8 * 13.9625... = 93.2 + p = 111.7 => p = 18.5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "9",
+      "task_summary": "Find Pearson's product-moment correlation coefficient r.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "correlation_coefficient",
+        "gdc"
+      ],
+      "method_path": [
+        "Use GDC to compute r from the data"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "0.953958...; r = 0.954 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

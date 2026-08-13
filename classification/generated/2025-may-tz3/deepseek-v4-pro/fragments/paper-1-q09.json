@@ -1,0 +1,62 @@
+{
+  "question": "9",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q09",
+      "question": "9",
+      "part": "",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "13-15",
+      "task_summary": "Determine the value of lim_{x→0} (sin x / (1 - cos x)).",
+      "primary_topic": "calculus.limits",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "lhopitals_rule",
+        "trigonometric_limits",
+        "algebraic_manipulation",
+        "maclaurin_series",
+        "half_angle_identities"
+      ],
+      "method_path": [
+        "Recognize indeterminate form 0/0",
+        "Apply l'Hôpital's rule to get (cos x + x sin x)/sin x",
+        "Apply l'Hôpital's rule again or use fundamental limit sin x/x → 1",
+        "Substitute x = 0 to obtain limit 2"
+      ],
+      "accepted_alternatives": [
+        "Multiply numerator and denominator by (1 + cos x), simplify to (1 + cos x)/sin x, use fundamental limit sin x/x → 1, substitute x = 0 to get 2.",
+        "Expand sin x and 1 - cos x as Maclaurin series, factor x^2, cancel, substitute x = 0 to get 2.",
+        "Express in half angles: sin x = 2 sin(x/2) cos(x/2), 1 - cos x = 2 sin^2(x/2), simplify to 2 cos(x/2) / sin(x/2), use limit tan(x/2)/(x/2) → 1 to get 2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "METHOD 1: indeterminate form, attempt to apply l'Hôpital's rule R1; derivative steps A1; applying l'Hôpital's rule again (M1); derivative A1; OR recognizing fundamental trig limit R1; substituting x=0 (M1); limit = 2 A1."
+        },
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 2: multiplying numerator and denominator by 1+cos x M1; simplification A1; (A1); recognizing fundamental trig limit R1; substituting x=0 (M1); limit = 2 A1."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 3: expressing as Maclaurin series (M1); series A1; recognizing multiples of x^2 (M1); factoring A1; substituting x=0 (M1); limit = 2 A1."
+        },
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 4: expressing in half angles M1; simplification A1A1; rewriting (M1); using limit tan x/x → 1 M1; limit = 2 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

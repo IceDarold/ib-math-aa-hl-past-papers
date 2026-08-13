@@ -1,0 +1,162 @@
+{
+  "question": "11",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Show that the acute angle between planes P1 and P2 is 60°.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "extract_normal_vectors",
+        "scalar_product",
+        "magnitude_calculation",
+        "solve_for_angle",
+        "acute_angle_adjustment"
+      ],
+      "method_path": [
+        "Identify normal vectors n1 = (1,2,1) and n2 = (1,-1,-2)",
+        "Compute scalar product n1·n2 = 1*1 + 2*(-1) + 1*(-2) = -3",
+        "Compute magnitudes |n1| = sqrt(6), |n2| = sqrt(6)",
+        "Use cos θ = (n1·n2)/(|n1||n2|) = -3/6 = -1/2",
+        "Obtain θ = 120°",
+        "Acute angle = 180° - 120° = 60°"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "normals of Π1 and Π2 are (1,2,1) and (1,-1,-2) (A1); attempt to use the scalar product for the angle between two vectors M1; -3 = 6 cos θ A1A1; cos θ = -1/2 A1; θ = 120° OR cos(180-θ) = 1/2 A1; acute angle is 60° AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Find the Cartesian equation of plane P3, which is perpendicular to both P1 and P2 and passes through R(5,-5,5).",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "normal_vector",
+        "plane_equation",
+        "substitute_point"
+      ],
+      "method_path": [
+        "Compute cross product of normals n1 × n2 = (-3,3,-3) or (1,-1,1)",
+        "Form plane equation: -3x + 3y - 3z = d or x - y + z = d",
+        "Substitute R(5,-5,5) to find d = -45 or d = 15",
+        "Write Cartesian equation: -3x + 3y - 3z = -45 or x - y + z = 15"
+      ],
+      "accepted_alternatives": [
+        "Use cross product to get normal (1,-1,1) and equation x - y + z = 15"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "attempt to find vector product of their normal vectors M1; cross product result (A1); equation of Π3 is -3x+3y-3z=d or x-y+z=d or equivalent; attempt to substitute (5,-5,5) into their equation (M1); equation of Π3 is -3x+3y-3z=-45 (so x-y+z=15) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q11-C-I",
+      "question": "11",
+      "part": "C-I",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Using an appropriate compound angle identity, show that sin75° = (√2 + √6)/4.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "compound_angle_identity",
+        "exact_trigonometric_values",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Express sin75° as sin(30°+45°)",
+        "Apply sin(A+B) = sinA cosB + cosA sinB",
+        "Substitute exact values: sin30°=1/2, cos45°=√2/2, cos30°=√3/2, sin45°=√2/2",
+        "Simplify to (√2 + √6)/4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to use the identity for sin(30°+45°) (M1); sin(30°+45°) = sin30°cos45°+cos30°sin45°; = (1/2)(√2/2)+(√3/2)(√2/2) A1A1; = (√2+√6)/4 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q11-C-II",
+      "question": "11",
+      "part": "C-II",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Find QR in the form p(√q - 1) cm, where p,q ∈ ℚ.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "sine_rule",
+        "exact_trigonometric_values",
+        "rationalize_denominator",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Let x = QR",
+        "Apply sine rule: x/sin75° = 5/sin45°",
+        "Substitute sin75° = (√2+√6)/4, sin45° = √2/2",
+        "Solve for x: x = 5 sin75° / sin45° = 20/(√2+√6) or equivalent",
+        "Rationalize denominator by multiplying numerator and denominator by (√6-√2)",
+        "Simplify to x = 5(√3 - 1) cm"
+      ],
+      "accepted_alternatives": [
+        "Use x = 20/(√2+√6) and rationalize to 5(√3-1)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to use the sine rule with the angles 75°,45° (M1); x/sin75° = 5/sin45°; x = 20/(√2+√6) or equivalent A1; attempt to rationalise a denominator of the form a/(b+√c) by multiplying numerator and denominator by (b-√c) or equivalent (M1); x = 5(√3-1) (cm) (p=5, q=3) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

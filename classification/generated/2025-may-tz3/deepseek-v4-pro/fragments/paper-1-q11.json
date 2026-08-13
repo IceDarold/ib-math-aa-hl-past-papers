@@ -1,0 +1,223 @@
+{
+  "question": "11",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "18",
+      "task_summary": "Find the coordinates of D, the vertex diagonally opposite B in parallelogram ABCD.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "vector_addition",
+        "parallelogram_property"
+      ],
+      "method_path": [
+        "Find vector BC or BA",
+        "Use parallelogram property to find D"
+      ],
+      "accepted_alternatives": [
+        "Use BC = AD to find D",
+        "Use BA = CD to find D"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "BC = (2,4,2) OR BA = (4,2,-2) (A1); (3,0,2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "18",
+      "task_summary": "Find the coordinates of E, the intersection of diagonals AC and BD.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "midpoint_formula",
+        "vector_equation"
+      ],
+      "method_path": [
+        "Find midpoint of AC or BD",
+        "Or set up vector equation AE = EC"
+      ],
+      "accepted_alternatives": [
+        "Midpoint of AC",
+        "Midpoint of BD",
+        "Solve AE = EC"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "recognizing to find midpoint of [AC] or [BD] (M1); (0,-3,2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "15",
+      "markscheme_pages": "19",
+      "task_summary": "Find m from cross product AB × AD = m(1,1,1) and hence find the area of parallelogram ABCD.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "cross_product",
+        "magnitude",
+        "area_of_parallelogram"
+      ],
+      "method_path": [
+        "Find vectors AB and AD",
+        "Compute cross product AB × AD",
+        "Equate to m(1,1,1) to find m",
+        "Find magnitude of cross product",
+        "Area = magnitude"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "AB = (-4,-2,2) AND AD = (2,4,2) A1; cross product = (-12,12,-12) A1; m=12 A1; magnitude = 12√3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "19",
+      "task_summary": "Find the Cartesian equation of plane P1 containing parallelogram ABCD.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "plane_equation",
+        "cross_product",
+        "normal_vector"
+      ],
+      "method_path": [
+        "Use cross product of AB and AD as normal vector",
+        "Substitute a point to find constant"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "substituting cross product and a point into the equation of a plane (M1); -x + y - z = -5 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Show that cos θ = 1/5, where θ is the acute angle between planes P1 and P2.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "angle_between_planes",
+        "dot_product",
+        "normal_vectors"
+      ],
+      "method_path": [
+        "Identify normal vectors n1 and n2",
+        "Compute dot product n1·n2",
+        "Compute magnitudes |n1| and |n2|",
+        "Use cos θ = |n1·n2|/(|n1||n2|)",
+        "Simplify to 1/5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "n1 = (-1,1,-1), n2 = (5,1,-7); recognizing angle between n1 and n2 (M1); |n2| = √75 A1; cos θ = 1/5 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 5,
+      "source_pages": "15",
+      "markscheme_pages": "20",
+      "task_summary": "Find the coordinates of F, the intersection of line L (through E perpendicular to P1) with plane P2.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "line_equation",
+        "plane_intersection",
+        "parametric_form"
+      ],
+      "method_path": [
+        "Write vector equation of line L using E and normal of P1",
+        "Substitute parametric coordinates into P2 equation",
+        "Solve for parameter λ",
+        "Find coordinates of F"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to substitute normal to P1 and their E into vector equation of line (M1); r = (0,-3,2) + λ(-1,1,-1) A1; substitutes into P2 (M1); λ = 6 A1; (-6,3,-4) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 7,
+      "source_pages": "10",
+      "markscheme_pages": "16",
+      "task_summary": "Find p and q given the frequency table, mean 31, and variance 124.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "setup_mean_equation",
+        "setup_variance_equation",
+        "substitution",
+        "solve_quadratic"
+      ],
+      "method_path": [
+        "Write total frequency as 20 + q",
+        "Set up mean equation: (240 + 35q + 8p) / (20 + q) = 31",
+        "Simplify to 8p + 4q = 380 or p = (95 - q)/2",
+        "Set up variance equation using formula with sum of squares or sum of squared deviations",
+        "Substitute p in terms of q into variance equation",
+        "Solve quadratic for q, then find p"
+      ],
+      "accepted_alternatives": [
+        "Substitute q in terms of p into variance equation and solve for p first."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "M1 for attempt to set up mean or variance; A1 for 8p+4q=380 or p=(95-q)/2; A1 for variance expression; A1 for substitution; M1 for solving; A1 for p=45; A1 for q=5."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

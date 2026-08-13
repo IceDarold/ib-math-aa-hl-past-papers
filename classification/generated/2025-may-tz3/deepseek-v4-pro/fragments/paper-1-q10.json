@@ -1,0 +1,259 @@
+{
+  "question": "10",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-A-I",
+      "question": "10",
+      "part": "a-i",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "16",
+      "task_summary": "Find the value of k for which the sequence is arithmetic.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equate_differences",
+        "solve_linear_equation"
+      ],
+      "method_path": [
+        "Equate differences of consecutive terms: (3-2k)-(k-5) = (5k+3)-(3-2k)",
+        "Simplify to 8-3k = 7k",
+        "Solve for k: k = 4/5"
+      ],
+      "accepted_alternatives": [
+        "Set up system of equations with common difference d, e.g., k-5+d=3-2k and 3-2k+d=5k+3, solve for k",
+        "Use arithmetic mean: (u1+u3)/2 = u2, solve (k-5+5k+3)/2 = 3-2k",
+        "Express u3 in terms of k: u3 = 2u2 - u1, solve 5k+3 = 2(3-2k) - (k-5)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "METHOD 1: attempt to equate differences (M1), correct equation (A1), k=4/5 (A1). METHOD 2: two correct equations (A1), valid attempt to solve (M1), k=4/5 (A1). METHOD 3: expression for u3 (A1), combining like terms (M1), k=4/5 (A1). METHOD 4: attempt to find mean (M1), correct equation (A1), k=4/5 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-A-II",
+      "question": "10",
+      "part": "a-ii",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "16",
+      "task_summary": "Find u3 using the value of k from part (a)(i).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitute",
+        "evaluate_expression"
+      ],
+      "method_path": [
+        "Substitute k = 4/5 into u3 = 5k+3",
+        "Compute u3 = 5*(4/5)+3 = 7"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "substituting their value of k into expression for u3 (A1), =7 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-B-I",
+      "question": "10",
+      "part": "b-i",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Show that the first three terms form a geometric sequence when k=12.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitute",
+        "compute_terms",
+        "verify_common_ratio"
+      ],
+      "method_path": [
+        "Substitute k=12 into u1, u2, u3 to get 7, -21, 63",
+        "Show common ratio r = -21/7 = -3 and 63/(-21) = -3"
+      ],
+      "accepted_alternatives": [
+        "Show u2^2 = u1*u3: (-21)^2 = 7*63"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "substituting k=12 (M1), u1=7, u2=-21, u3=63 (A1), r=-3 or equivalent (R1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-B-II",
+      "question": "10",
+      "part": "b-ii",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "State why the sum to infinity does not exist for this geometric sequence.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "state_condition",
+        "convergence_criterion"
+      ],
+      "method_path": [
+        "State that |r| ≥ 1 (or r ≤ -1 or r > 1), so the series is not convergent"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "since |r| ≥ 1 (accept |r| > 1 or r < -1) R1, hence not convergent AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-C-I",
+      "question": "10",
+      "part": "c-i",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Show that k satisfies k^2 - 10k - 24 = 0 for a second geometric case.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "equate_ratios",
+        "cross_multiply",
+        "expand",
+        "simplify_to_quadratic"
+      ],
+      "method_path": [
+        "Equate ratios of consecutive terms: (3-2k)/(k-5) = (5k+3)/(3-2k)",
+        "Cross-multiply: (3-2k)^2 = (k-5)(5k+3)",
+        "Expand and simplify to k^2 - 10k - 24 = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "attempts to find ratios, in terms of k, of consecutive terms and equating (M1), correct expansion leading to given result (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-C-II",
+      "question": "10",
+      "part": "c-ii",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Find the first three terms for the second value of k.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_quadratic",
+        "factorize",
+        "substitute",
+        "compute_terms"
+      ],
+      "method_path": [
+        "Solve k^2 - 10k - 24 = 0 by factorizing (k+2)(k-12)=0",
+        "Select k = -2 (the second value, not 12)",
+        "Substitute k = -2 into u1 = k-5, u2 = 3-2k, u3 = 5k+3",
+        "Obtain u1 = -7, u2 = 7, u3 = -7"
+      ],
+      "accepted_alternatives": [
+        "Use quadratic formula or completing the square to find k = -2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "recognizing need to factorize, complete the square or substitute into quadratic formula (M1), k=-2 (A1), substituting their value of k (other than k=12) to find u1, u2 or u3 (M1), u1=-7, u2=7, u3=-7 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q10-C-III",
+      "question": "10",
+      "part": "c-iii",
+      "marks": 1,
+      "source_pages": "14",
+      "markscheme_pages": "17",
+      "task_summary": "Write down S_{2m}, the sum of the first 2m terms, for this second value of k.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "recognize_alternating_sequence",
+        "sum_of_pairs"
+      ],
+      "method_path": [
+        "Observe that terms alternate: -7, 7, -7, 7, ...",
+        "Sum of first 2m terms is 0 because pairs sum to 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "S_{2m} = 0 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

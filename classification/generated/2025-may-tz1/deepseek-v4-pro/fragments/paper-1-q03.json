@@ -1,0 +1,47 @@
+{
+  "question": "3",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "10",
+      "task_summary": "Find the area completely enclosed by the curves y = e^x, y = -e^x, and the lines x = -1 and x = 1.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "area_between_curves",
+        "exponential_function",
+        "symmetry"
+      ],
+      "method_path": [
+        "Set up integral of (e^x - (-e^x)) = 2e^x from x=-1 to x=1",
+        "Integrate 2e^x to get 2e^x",
+        "Substitute limits: 2e^1 - 2e^{-1}",
+        "Simplify to 2(e - 1/e)"
+      ],
+      "accepted_alternatives": [
+        "Integrate e^x from -1 to 1 and -e^x from -1 to 1 separately, then subtract: (e - e^{-1}) - (-(e - e^{-1})) = 2(e - e^{-1})"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 1: attempt to set up integral (e^x - (-e^x)) = 2e^x or e^x and then double (M1); ∫(e^x - (-e^x))dx OR 2∫e^x dx; = 2∫_{-1}^{1} e^x dx; = 2[e^x]_{-1}^{1} (A1); attempt to substitute correct limits into their integrated function and subtract (M1); = 2(e - 1/e), 2e - 2/e, 2e - 2e^{-1} A1. METHOD 2: ∫_{-1}^{1} e^x dx = [e^x]_{-1}^{1} and ∫_{-1}^{1} -e^x dx = [-e^x]_{-1}^{1} (A1); attempt to substitute correct limits into both their integrated functions and subtract (M1); = e - e^{-1} and -(e^{-1} - e); subtracts their two integrals in correct order (M1); = (e - e^{-1}) - (-(e - e^{-1})) = 2(e - 1/e), 2e - 2/e, 2e - 2e^{-1} A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

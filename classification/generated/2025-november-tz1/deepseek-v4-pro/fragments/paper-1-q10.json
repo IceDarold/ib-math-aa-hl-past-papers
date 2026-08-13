@@ -1,0 +1,224 @@
+{
+  "question": "10",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-A-I",
+      "question": "10",
+      "part": "A-I",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Show that the first four terms in the binomial expansion of (1+x^2)^(-1) are 1 - x^2 + x^4 - x^6.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "negative_exponent",
+        "series_expansion"
+      ],
+      "method_path": [
+        "Apply binomial theorem with n=-1 to (1+x^2)^(-1)",
+        "Expand to four terms: 1 + (-1)(x^2) + [(-1)(-2)/2!](x^2)^2 + [(-1)(-2)(-3)/3!](x^2)^3",
+        "Simplify to 1 - x^2 + x^4 - x^6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "attempt to create binomial expansion to four terms with n=-1 (M1); expansion shown with A1 for third term and A1 for fourth term; final result 1 - x^2 + x^4 - x^6 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-A-II",
+      "question": "10",
+      "part": "A-II",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find an approximation for the integral of 1/(1+x^2) dx up to and including the term in x^7.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "termwise_integration",
+        "series_expansion",
+        "antiderivative"
+      ],
+      "method_path": [
+        "Integrate the series 1 - x^2 + x^4 - x^6 termwise",
+        "Obtain x - x^3/3 + x^5/5 - x^7/7 + C"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "Award A2 for x - x^3/3 + x^5/5 - x^7/7 + C; Note: Award A1A0 for any three correct terms."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-B-I",
+      "question": "10",
+      "part": "B-I",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Expand 1/sqrt(1-x^2) up to and including the term in x^4.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "negative_exponent",
+        "series_expansion"
+      ],
+      "method_path": [
+        "Apply binomial theorem with n=-1/2 to (1-x^2)^(-1/2)",
+        "Expand to three terms: 1 + (-1/2)(-x^2) + [(-1/2)(-3/2)/2!](-x^2)^2",
+        "Simplify to 1 + (1/2)x^2 + (3/8)x^4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "attempt to create binomial expansion the term in x^4 with n=-1/2 (M1); expansion shown with (A1) for first two terms and (A1) for third term; final result 1 + (1/2)x^2 + (3/8)x^4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-B-II",
+      "question": "10",
+      "part": "B-II",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "23",
+      "task_summary": "Find a polynomial expression for the integral of 1/sqrt(1-x^2) dx up to and including the term in x^5.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "number_algebra.binomial_theorem"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "termwise_integration",
+        "series_expansion",
+        "antiderivative"
+      ],
+      "method_path": [
+        "Integrate the series 1 + (1/2)x^2 + (3/8)x^4 termwise",
+        "Obtain x + (1/6)x^3 + (3/40)x^5 + C"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "Award A1 for x + (1/6)x^3 + (3/40)x^5 + C"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "24",
+      "task_summary": "Use the result from part (b)(ii) to find the value of k in the approximation arcsin(1/2) ≈ 25/48 + k/1280.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "substitution",
+        "series_evaluation",
+        "antiderivative"
+      ],
+      "method_path": [
+        "Recognize that ∫ 1/√(1-x^2) dx = arcsin x + C",
+        "Substitute x=1/2 into the antiderivative from (b)(ii): arcsin(1/2) ≈ (1/2) + (1/6)(1/2)^3 + (3/40)(1/2)^5",
+        "Simplify to 1/2 + 1/48 + 3/1280 = 25/48 + 3/1280",
+        "Identify k=3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "∫ 1/√(1-x^2) dx = arcsin x (seen anywhere) (A1); attempt to substitute x=1/2 into their antiderivative (M1); arcsin(1/2) ≈ 1/2 + 1/48 + 3/1280 = 25/48 + 3/1280 A1; k=3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 4,
+      "source_pages": "13",
+      "markscheme_pages": "24",
+      "task_summary": "Find an approximation for π in the form p/640 using the result from part (c).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "algebraic_manipulation",
+        "approximation"
+      ],
+      "method_path": [
+        "Recall arcsin(1/2) = π/6",
+        "Equate π/6 to the approximation from (c): π/6 ≈ 25/48 + 3/1280",
+        "Solve for π: π ≈ 6*(25/48 + 3/1280) = 25/8 + 18/1280 = 4000/1280 + 18/1280 = 4018/1280",
+        "Simplify to 2009/640, so p=2009"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "arcsin(1/2) = π/6 (seen anywhere) (A1); equating their value of arcsin(1/2) to their expression from (c) (M1); π ≈ 6*(25/48 + 3/1280) = 25/8 + 18/1280 = 4000/1280 + 18/1280 (A1); π ≈ 2009/640, p=2009 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

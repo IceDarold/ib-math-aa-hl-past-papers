@@ -1,0 +1,46 @@
+{
+  "question": "8",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q08",
+      "question": "8",
+      "part": "",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "11",
+      "task_summary": "Determine the original number of students in a class given that each pair plays twice, Stephen leaves after 7 games, and total games played is 513.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [
+        "number_algebra.equations"
+      ],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "combinations",
+        "quadratic_equation",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Express total games as 2 * C(n-1, 2) + 7 or n(n-1) - (2(n-1) - 7)",
+        "Set expression equal to 513",
+        "Solve quadratic equation for n",
+        "Obtain n = 24"
+      ],
+      "accepted_alternatives": [
+        "Let N = n-1, total games = N(N-1) + 7, set equal to 513, solve N=23, then n=24"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: number of games played by n-1 players 2 × C(n-1, 2) OR (n-1)(n-2) (A2); total number of games is 2 × C(n-1, 2) + 7 OR (n-1)(n-2) + 7 (A1); OR total number of games that should have been played is 2 × C(n, 2) OR n(n-1) (A1); Stephen should have played 2(n-1) so he missed 2(n-1) - 7 games (A1); total number of games played is n(n-1) - (2(n-1) - 7) (A1); THEN equating their total number of games to 513 (M1); n = 24 A1. METHOD 2: there are N students other than Stephen; number of games played by N students is (N-1) + (N-2) + ... + 2 + 1 = N(N-1) (A1); total number of games that are played N(N-1) + 7 (A1); equating their total number of games to 513 (M1); N = 23 (A1); number of students in class = 24 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

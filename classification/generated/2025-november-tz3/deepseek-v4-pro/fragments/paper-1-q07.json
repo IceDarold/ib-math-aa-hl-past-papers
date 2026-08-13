@@ -1,0 +1,81 @@
+{
+  "question": "7",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P1-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Find the range of possible values of a from the given probability distribution.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "probability_distribution_conditions",
+        "inequality_solving"
+      ],
+      "method_path": [
+        "Set each probability between 0 and 1: 0.6-2a ≥ 0, 3a ≥ 0, 0.4-a ≥ 0",
+        "Solve inequalities to get 0 ≤ a ≤ 0.3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "considers at least two of 0.6-2a≥0, 3a≥0 and 0.4-a≥0 (M1); 0≤a≤0.3 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Given a=0.2, determine Var(2-X).",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [
+        "statistics.expected_value"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "variance_properties",
+        "expected_value_calculation",
+        "variance_calculation"
+      ],
+      "method_path": [
+        "Recognize Var(2-X)=Var(X)",
+        "Calculate E(X) using symmetry or formula",
+        "Calculate E(X^2) using sum of x^2 * P(X=x)",
+        "Compute Var(X)=E(X^2)-[E(X)]^2"
+      ],
+      "accepted_alternatives": [
+        "Define Y=2-X, find distribution of Y, compute E(Y) and E(Y^2), then Var(Y)=E(Y^2)-[E(Y)]^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "METHOD 1: recognition that Var(2-X)=Var(X) R1; E(X)=2 A1; attempt to use E(X^2)=∑x^2 P(X=x) (M1); E(X^2)=4.4 (A1); attempt to use Var(X)=E(X^2)-[E(X)]^2 (M1); Var(X)=0.4 A1. METHOD 2: attempt to find distribution for Y=2-X M1; E(Y)=0 A1; attempt to use E(Y^2)=∑y^2 P(Y=y) (M1); E(Y^2)=0.4 (A1); attempt to use Var(Y)=E(Y^2)-[E(Y)]^2 (M1); Var(Y)=0.4 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

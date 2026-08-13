@@ -1,0 +1,49 @@
+{
+  "question": "7",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 6,
+      "source_pages": "11",
+      "markscheme_pages": "12",
+      "task_summary": "Find the volume of the solid formed by rotating the region enclosed by x^2 + y^4 = r^4 (0 ≤ x ≤ r^2) and the y-axis about the y-axis, expressing it as V = aπr^b with a, b ∈ ℚ+.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "rearrange_equation",
+        "volume_of_revolution",
+        "definite_integral",
+        "evaluate_integral",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Express x^2 = r^4 - y^4",
+        "Set up volume integral V = π ∫ x^2 dy from y = -r to y = r",
+        "Integrate π(r^4 - y^4) dy",
+        "Evaluate antiderivative π[r^4 y - y^5/5] from -r to r",
+        "Substitute limits and simplify to (8π/5) r^5"
+      ],
+      "accepted_alternatives": [
+        "Use symmetry: V = 2π ∫_0^r (r^4 - y^4) dy, leading to same result."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "x^2 = r^4 - y^4 (A1); substituting into π∫x^2 dy (M1); π∫(r^4 - y^4) dy from -r to r OR 2π∫_0^r (r^4 - y^4) dy (A1); antiderivative π[r^4 y - y^5/5] (A1); evaluating limits (A1); final answer 8πr^5/5 (A1)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "question": "11",
+  "expected_question_marks": 17,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Find the first four terms in the binomial expansion of (1+5x)^(1/2) in ascending powers of x.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "binomial_expansion",
+        "fractional_exponent",
+        "ascending_powers"
+      ],
+      "method_path": [
+        "Identify n=1/2",
+        "Apply binomial theorem: (1+5x)^(1/2) = 1 + (1/2)(5x) + (1/2)(-1/2)/2! (5x)^2 + (1/2)(-1/2)(-3/2)/3! (5x)^3 + ...",
+        "Simplify coefficients to obtain 1 + (5/2)x - (25/8)x^2 + (125/16)x^3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to use the binomial expansion with n=1/2 (M1); correct substitution into at least three terms (A1); 1 + (5/2)x - (25/8)x^2 + (125/16)x^3 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Find the expansion of (1+px)(1+qx)^(-1) in ascending powers of x up to x^2.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "binomial_expansion",
+        "negative_exponent",
+        "series_multiplication"
+      ],
+      "method_path": [
+        "Expand (1+qx)^(-1) = 1 - qx + q^2 x^2 + ...",
+        "Multiply by (1+px): (1+px)(1 - qx + q^2 x^2) = 1 + (p - q)x + (q^2 - pq)x^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "at least 3 correct terms in expansion of (1+qx)^(-1) (A1); attempt to find product (M1); 1 + (p - q)x + (q^2 - pq)x^2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "26",
+      "task_summary": "Show that q = 5/4 given that the expansions from (a) and (b) are identical up to the first three terms.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "equating_coefficients",
+        "solving_simultaneous_equations"
+      ],
+      "method_path": [
+        "Equate coefficients of x: p - q = 5/2",
+        "Equate coefficients of x^2: q^2 - pq = -25/8",
+        "Solve for q: substitute p = q + 5/2 into second equation, simplify to q = 5/4"
+      ],
+      "accepted_alternatives": [
+        "Solve for p first: p = 15/4, then substitute into p - q = 5/2 to get q = 5/4"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "equating their coefficients of either x or x^2 (M1); one correct equation A1; valid attempt to solve for q or p (M1); q = 5/4 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "26-27",
+      "task_summary": "Use the approximation (1+px)/(1+qx) with p=15/4, q=5/4 to approximate sqrt(1.2) and explain why the approximation for sqrt(5/2) is less accurate.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [
+        "functions.mathematical_models"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "substitution",
+        "approximation",
+        "error_analysis"
+      ],
+      "method_path": [
+        "Set sqrt(1+5x) = 1.2, solve for x: x = 0.04 = 1/25",
+        "Substitute x = 1/25, p = 15/4, q = 5/4 into (1+px)/(1+qx) to get 115/105 = 23/21",
+        "For sqrt(5/2) = sqrt(1.25), x = 1/20",
+        "Note that 1/20 > 1/25, so the approximation is less accurate because the expansion is valid for |x| < 1/5 and larger x leads to larger error"
+      ],
+      "accepted_alternatives": [
+        "Use the expansion from part (a) or (b) to approximate sqrt(1.2) as 219/200 or 2191/2000"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26-27",
+          "basis": "attempt to find x (M1); x = 1/25 (A1); substituting their value of x with p and q (M1); 115/105 = 23/21 A1; x = 1/20 A1; recognising 1/20 > 1/25 R1; therefore approximation for sqrt(5/2) is not as accurate AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    }
+  ]
+}

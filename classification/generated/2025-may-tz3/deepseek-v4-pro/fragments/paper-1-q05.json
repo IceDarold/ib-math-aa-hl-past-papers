@@ -1,0 +1,115 @@
+{
+  "question": "5",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "9",
+      "task_summary": "Find b such that P(X > b) = P(Y > 22) given X ~ N(7, a^2) and Y ~ N(19, a^2).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "standardize_normal",
+        "equate_probabilities",
+        "solve_linear"
+      ],
+      "method_path": [
+        "Recognize that X and Y have same variance, so equate standardized scores: (b - 7)/a = (22 - 19)/a",
+        "Solve for b: b = 7 + (22 - 19) = 10"
+      ],
+      "accepted_alternatives": [
+        "b = 7 + (22 - 19) = 10",
+        "b = 10"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognizing constant change from Y to X and/or comparing the two distributions (M1); b = 10 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "8",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the approximate value of P(7 - a < X < 7 + a) correct to two significant figures.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "empirical_rule",
+        "normal_probability"
+      ],
+      "method_path": [
+        "Recall that for a normal distribution, approximately 68% of data lies within one standard deviation of the mean.",
+        "State P(7 - a < X < 7 + a) ≈ 0.68."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "P(7 - a < X < 7 + a) = 0.68 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P1-Q05-C",
+      "question": "5",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "9",
+      "task_summary": "Given a = 3, calculate the approximate value of P(Y < 22) correct to two significant figures.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "standardize_normal",
+        "empirical_rule",
+        "normal_probability",
+        "symmetry"
+      ],
+      "method_path": [
+        "Recognize that 22 is one standard deviation above the mean (since a = 3, mean = 19).",
+        "Use symmetry and empirical rule: P(Y < 22) = 1 - P(Y > 22) = 1 - 0.16 = 0.84, or 0.5 + 0.34 = 0.84."
+      ],
+      "accepted_alternatives": [
+        "P(Y < 22) = 1 - 0.16 = 0.84",
+        "P(Y < 22) = 0.5 + 0.34 = 0.84",
+        "P(Y < 22) = 0.68 + 0.16 = 0.84"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognizing that 22 is one standard deviation above the mean (M1); 0.16 or 0.34 (or equivalent) seen in correct sketch or probability statement (A1); P(Y < 22) = 1 - 0.32 OR 0.5 + 0.34 OR 0.68 + 0.16 = 0.84 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "question": "3",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q03-A",
+      "question": "3",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Find the value of a from the probability distribution and write down the mode of X.",
+      "primary_topic": "statistics.discrete_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "sum_probabilities",
+        "solve_linear_equation",
+        "identify_mode"
+      ],
+      "method_path": [
+        "Sum all probabilities and set equal to 1",
+        "Solve for a",
+        "Identify the value with highest probability as mode"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "summing probabilities and equating to 1 (M1); 1.5a + 2a + 0.281 + a + 0.026 = 1; (a =) 0.154 A1; (ii) 2 (days) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q03-B",
+      "question": "3",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Find the mean of X.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "expected_value_formula",
+        "sum_product"
+      ],
+      "method_path": [
+        "Apply E(X) = sum x * P(X=x)",
+        "Compute sum using given probabilities and a=0.154"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "using expected value formula (M1); (mean =)2.44 (2.436 (exact)) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q03-C",
+      "question": "3",
+      "part": "C",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Identify the sampling method as convenience sampling.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "identify_sampling_method"
+      ],
+      "method_path": [
+        "Recognize that surveying the first 50 customers is convenience sampling"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "convenience (sampling) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "question": "8",
+  "expected_question_marks": 9,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Show that T = 500 sec θ + (2500 - 1000 tan θ)/3.",
+      "primary_topic": "functions.mathematical_models",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "mathematical_modelling",
+      "method_tags": [
+        "time_sum",
+        "distance_speed",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Sum times for both sections using T = D/S",
+        "Substitute distances and speeds: 400 sec θ / 0.8 + (1000 - 400 tan θ) / 1.2",
+        "Simplify to 500 sec θ + (2500 - 1000 tan θ)/3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to sum times for both sections using D/T = S (M1); 400secθ/0.8 + (1000-400tanθ)/1.2 (A1); 500secθ + (2500-1000tanθ)/3 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Find dT/dθ.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_trigonometric",
+        "sec_derivative",
+        "tan_derivative"
+      ],
+      "method_path": [
+        "Differentiate T = 500 sec θ + (2500 - 1000 tan θ)/3",
+        "d/dθ (sec θ) = sec θ tan θ, d/dθ (tan θ) = sec^2 θ",
+        "dT/dθ = 500 sec θ tan θ - (1000/3) sec^2 θ"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempt to differentiate T (secθ tanθ or sec^2 seen) M1; dT/dθ = 500 secθ tanθ - (1000/3) sec^2 θ A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "11",
+      "markscheme_pages": "16",
+      "task_summary": "Show that PX = 160√5 m when T is minimized.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "optimization",
+      "method_tags": [
+        "set_derivative_zero",
+        "solve_trigonometric_equation",
+        "find_tan",
+        "find_sec",
+        "distance_calculation"
+      ],
+      "method_path": [
+        "Set dT/dθ = 0 and solve",
+        "Obtain 500 sin θ - 1000/3 = 0 → sin θ = 2/3",
+        "Find tan θ = 2/√5 or sec θ = 3/√5",
+        "PX = 400 tan θ = 400 * 2/√5 = 800/√5 = 160√5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "set their dT/dθ = 0 and attempt to solve (M1); 500 sin θ - 1000/3 = 0 → sin θ = 2/3 A1; tan θ = 2/√5 OR sec θ = 3/√5 A1; PX = 400 tan θ (seen anywhere) OR 800/√5 A1; = 160√5 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

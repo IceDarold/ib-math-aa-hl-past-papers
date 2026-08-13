@@ -1,0 +1,203 @@
+{
+  "question": "10",
+  "expected_question_marks": 18,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-A",
+      "question": "10",
+      "part": "A",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Write f(x) = 5(x+1)(x+3) in the form a(x-h)^2 + k.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "completing_the_square",
+        "vertex_form",
+        "expand",
+        "factor",
+        "symmetry"
+      ],
+      "method_path": [
+        "Identify a = 5",
+        "Find h using roots symmetry or completing square or differentiation",
+        "Calculate k by substituting h into f(x)"
+      ],
+      "accepted_alternatives": [
+        "Use roots and symmetry: h = (-1 + -3)/2 = -2, then k = f(-2) = -5",
+        "Expand to 5x^2+20x+15, complete square to 5(x+2)^2 -5",
+        "Expand, differentiate to find vertex x = -2, then k = f(-2) = -5",
+        "Expand, use axis of symmetry h = -b/(2a) = -20/(10) = -2, then k = f(-2) = -5"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "METHOD 1: a=5 (A1), attempt to use roots and symmetry to find h (M1), h=-2 (A1), f(x)=5(x+2)^2-5 A1. METHOD 2: a=5 (A1), attempt to expand (M1), complete square or differentiate or axis of symmetry (A1), h=-2, f(x)=5(x+2)^2-5 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-B",
+      "question": "10",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Sketch the graph of y = f(x), showing intercepts and vertex.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_parabola",
+        "intercepts",
+        "vertex"
+      ],
+      "method_path": [
+        "Draw roughly symmetric concave up curve",
+        "Mark x-intercepts at -3 and -1",
+        "Mark y-intercept at 15",
+        "Mark vertex at (-2, -5)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "M1 for roughly symmetric curve concave up, A1 for x-intercepts at -3 and -1, A1 for y-intercept at 15, A1 for vertex at (-2,-5)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-C",
+      "question": "10",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "12",
+      "markscheme_pages": "19",
+      "task_summary": "Solve the inequality f(x) ≤ 40.",
+      "primary_topic": "functions.inequalities",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quadratic_inequality",
+        "critical_values",
+        "interval_testing"
+      ],
+      "method_path": [
+        "Set up inequality 5(x+2)^2 -5 ≤ 40 or equivalent",
+        "Simplify to (x+2)^2 ≤ 9 or x^2+4x-5 ≤ 0",
+        "Find critical values x = -5, 1",
+        "Determine solution interval -5 ≤ x ≤ 1"
+      ],
+      "accepted_alternatives": [
+        "Use 5(x+1)(x+3) ≤ 40 leading to (x+1)(x+3) ≤ 8, then x^2+4x-5 ≤ 0, critical values -5,1, solution -5 ≤ x ≤ 1"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "5(x+2)^2-5 ≤ 40 OR 5(x+1)(x+3) ≤ 40 OR (x+1)(x+3) ≤ 8 leading to (x+2)^2 ≤ 9 OR 5x^2+20x-25 ≤ 0 OR x^2+4x-5 ≤ 0 (A1), valid attempt to find critical values (M1), x=-5, x=1 (A1), -5 ≤ x ≤ 1 A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-D",
+      "question": "10",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "Write (f ∘ g)(x) and solve (f ∘ g)(x) ≤ 40.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "composite_function",
+        "substitution",
+        "logarithmic_inequality"
+      ],
+      "method_path": [
+        "Write (f ∘ g)(x) = 5(ln x + 1)(ln x + 3) or equivalent",
+        "Replace x with ln x in solution from part (c)",
+        "Solve -5 ≤ ln x ≤ 1 to get e^{-5} ≤ x ≤ e"
+      ],
+      "accepted_alternatives": [
+        "Use expanded form 5(ln x)^2 + 20 ln x + 15 ≤ 40, solve quadratic inequality in ln x"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(i) (f ∘ g)(x) = 5(ln x + 1)(ln x + 3) OR 5(ln x + 2)^2 -5 OR 5(ln x)^2 + 20 ln x + 15 A1. (ii) attempt to replace x with ln x using their solution to part (c) (M1), -5 ≤ ln x ≤ 1, e^{-5} ≤ x ≤ e A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q10-E",
+      "question": "10",
+      "part": "E",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "20",
+      "task_summary": "Find the domain of g ∘ f.",
+      "primary_topic": "functions.domain",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "composite_function",
+        "domain_restriction",
+        "inequality_solving"
+      ],
+      "method_path": [
+        "Write (g ∘ f)(x) = ln(f(x))",
+        "Require f(x) > 0",
+        "Solve (x+1)(x+3) > 0",
+        "Domain: x < -3 or x > -1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "(g ∘ f)(x) = ln(f(x)), recognition that domain requires f(x) > 0 (M1), (x+1)(x+3) > 0, x < -3, x > -1 A1A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

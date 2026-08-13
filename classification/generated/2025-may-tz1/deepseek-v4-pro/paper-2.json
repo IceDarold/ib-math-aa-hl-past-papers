@@ -1,0 +1,1518 @@
+{
+  "session": "May 2025",
+  "zone": "TZ1",
+  "paper": 2,
+  "calculator": "yes",
+  "expected_total_marks": 110,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the area of sector BOA with radius 19.5 cm and angle 210°.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "convert_degrees_to_radians",
+        "area_of_sector_radians",
+        "area_of_sector_degrees"
+      ],
+      "method_path": [
+        "Convert 210° to radians: 210π/180 = 7π/6",
+        "Apply sector area formula: (1/2) × r² × θ = (1/2) × 19.5² × (7π/6)",
+        "Compute area = 3549π/16 ≈ 697 cm²"
+      ],
+      "accepted_alternatives": [
+        "Use degree formula: area = (210/360) × π × 19.5² = 3549π/16"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER 210° = 210π/180 = 7π/6 radians (A1); attempt to use radian formula for area of sector (M1); area = (1/2)(19.5²)(7π/6) OR attempt to use degree formula for area of sector (M1); area = (210/360)π(19.5²) (A1); THEN area = 3549π/16 = 696.844... ≈ 697 cm² A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "8",
+      "task_summary": "Find the radius of the cone formed by joining the radii of the sector.",
+      "primary_topic": "geometry.circular_measure",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "arc_length",
+        "circumference_of_circle",
+        "equate_arc_length_to_circumference",
+        "solve_for_radius"
+      ],
+      "method_path": [
+        "Calculate arc length of sector: arc = rθ = 19.5 × (7π/6) = 91π/4 ≈ 71.4712 cm",
+        "Set arc length equal to circumference of cone base: 2πr_cone = 71.4712",
+        "Solve for r_cone: r_cone = 71.4712/(2π) = 91/8 = 11.375 cm"
+      ],
+      "accepted_alternatives": [
+        "Use area from part (a): set π × r_cone × 19.5 = area, solve for r_cone"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "EITHER arc length = 19.5 × (7π/6) OR (210/360) × 2π × 19.5 = 91π/4 = 71.4712... (A1); attempt to set 2πr equal to arc length (M1); 2πr = 71.4712... OR attempt to set πrl equal to their area from (a) (M1); 19.5πr = 696.844... (A1); THEN r = 91/8 = 11.375 ≈ 11.4 cm A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Write down the period of f(x) = a tan(2x) + b.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "period_of_tangent",
+        "coefficient_effect"
+      ],
+      "method_path": [
+        "Identify coefficient of x in tan(2x) as 2.",
+        "Apply period formula for tangent: period = π / |coefficient|.",
+        "Compute period = π/2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "period is π/2 (1.57079..., 1.57) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "5",
+      "markscheme_pages": "9",
+      "task_summary": "Find a and b given graph passes through (π/12, 5) and (π/3, 7).",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "number_algebra.inequalities"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "system_of_equations",
+        "tangent_values",
+        "solving_linear_system"
+      ],
+      "method_path": [
+        "Substitute x = π/12, f(x) = 5 into f(x) = a tan(2x) + b to get a tan(π/6) + b = 5.",
+        "Substitute x = π/3, f(x) = 7 into f(x) = a tan(2x) + b to get a tan(2π/3) + b = 7.",
+        "Evaluate tan(π/6) = 1/√3 and tan(2π/3) = -√3.",
+        "Obtain system: a/√3 + b = 5, -a√3 + b = 7.",
+        "Solve system to find a = -√3/2, b = 11/2."
+      ],
+      "accepted_alternatives": [
+        "Work with x values converted to degrees."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "attempt to substitute ... to obtain two equations (M1)"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "a tan(π/6) + b = 5 and a tan(2π/3) + b = 7 ⇒ a/√3 + b = 5 and -a√3 + b = 7"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "a = -√3/2 (0.866025..., 0.866) A1"
+        },
+        {
+          "markscheme_pages": "9",
+          "basis": "b = 11/2 (5.5) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q03",
+      "question": "3",
+      "part": "",
+      "marks": 6,
+      "source_pages": "6",
+      "markscheme_pages": "10",
+      "task_summary": "Find the predicted population at the start of 2026 given the rate of change dP/dt = 104000 e^{-0.0145t} and initial population 6.78 × 10^6 at t=0 (start of 2022).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.exponential_models"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "indefinite_integral",
+        "initial_value_problem",
+        "exponential_function",
+        "evaluate_at_t"
+      ],
+      "method_path": [
+        "Set up integral of rate of change from t=0 to t=4",
+        "Evaluate definite integral to find change in population",
+        "Add initial population to change to get final population"
+      ],
+      "accepted_alternatives": [
+        "Use indefinite integral to find general solution P(t) = -7172413.7... e^{-0.0145t} + c, determine c using initial condition, then evaluate at t=4."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "METHOD 1: attempt to find change in population using a definite integral (M1); t=4 at the start of 2026 (A1); ∫_0^4 104000 e^{-0.0145t} dt (A1); = -404165.8... (A1); attempt to add initial population to their change (M1); population = 6.78×10^6 - 404165.8... = 6375834.1... ≈ 6.38×10^6 (A1). METHOD 2: indefinite integral approach with same final answer."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Estimate arm span for foot length 19.8 cm using the regression line of A on F.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "regression_line_application"
+      ],
+      "method_path": [
+        "Substitute F=19.8 into A=2.89F+99.3",
+        "Calculate A=156.522",
+        "Round to 157 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to substitute F=19.8 into the regression line for A on F (M1); A=2.89(19.8)+99.3=156.522; arm span=157 (cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Find the mean arm span and mean foot length using the intersection of the two regression lines.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "intersection_of_lines",
+        "solving_linear_equations"
+      ],
+      "method_path": [
+        "Recognize that the regression lines intersect at the mean point",
+        "Set 0.335A - 32.6 = (A - 99.3)/2.89 or equivalent",
+        "Solve for A and F",
+        "Round to A=160 cm, F=20.9 cm"
+      ],
+      "accepted_alternatives": [
+        "Solve 2.89F + 99.3 = (F + 32.6)/0.335"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "recognition that the lines intersect at the mean point (M1); 0.335A - 32.6 = (A - 99.3)/2.89 OR 2.89F + 99.3 = (F + 32.6)/0.335; mean arm span=160 (cm), mean foot length=20.9 (cm) A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Find the standard deviation s of heights given that 88% lie between 153 cm and 173 cm with mean 163 cm.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "z_score"
+      ],
+      "method_path": [
+        "Recognize symmetry: P(H<153)=0.06 or P(H<173)=0.94",
+        "Find z-score: z = -1.55477... or 1.55477...",
+        "Solve (153-163)/s = -1.55477... or (173-163)/s = 1.55477...",
+        "Calculate s = 6.43181...",
+        "Round to s = 6.43 cm"
+      ],
+      "accepted_alternatives": [
+        "Use GDC normal CDF function: normcdf(153,173,163,s)=0.88 and solve for s"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: recognition of symmetry (M1); P(H<153)=0.06 or P(H<173)=0.94; (153-163)/σ = -1.55477... or (173-163)/σ = 1.55477... (A1); σ = 6.43181...; σ = 6.43 (cm) A1. METHOD 2: attempt to find σ by equating normal CDF to 0.88 (M1); σ = 6.43181...; σ = 6.43 (cm) A2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the gradient of the tangent T_k to the curve y = h(x) at the point (k, h(k)) in terms of k, where h(x) = 15 cos(πx/50).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_trigonometric",
+        "chain_rule",
+        "evaluate_derivative_at_point"
+      ],
+      "method_path": [
+        "Recognize need to differentiate h(x)",
+        "Apply chain rule: derivative of 15 cos(πx/50) is -15 * (π/50) * sin(πx/50)",
+        "Simplify to h'(x) = -(15π/50) sin(πx/50) = -(3π/10) sin(πx/50)",
+        "Evaluate at x = k to get gradient: h'(k) = -(15π/50) sin(πk/50) = -(3π/10) sin(πk/50)"
+      ],
+      "accepted_alternatives": [
+        "h'(k) = -15 sin(πk/50) * (π/50) (unsimplified)",
+        "h'(k) = -(3π/10) sin(πk/50)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognition of the need to differentiate (M1); h'(x) = -15 sin(πx/50) * (π/50) = -(15π/50) sin(πx/50) = -(3π/10) sin(πx/50) A1A1; Note: Award A1 for -15 sin(πk/50) and A1 for factor of π/50."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Given the angle between T_k and the x-axis is π/8 radians, find the possible values of k.",
+      "primary_topic": "geometry.trigonometric_equations",
+      "secondary_topics": [
+        "calculus.differentiation",
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "gradient_tangent_angle_relation",
+        "set_derivative_equal_to_tangent_slope",
+        "solve_trigonometric_equation",
+        "numerical_solution"
+      ],
+      "method_path": [
+        "Recognize that gradient of tangent equals tan(angle with x-axis), but since angle is π/8 and tangent slopes downward, gradient = -tan(π/8) (or tan(7π/8))",
+        "Set h'(k) = -tan(π/8)",
+        "Solve -(15π/50) sin(πk/50) = -tan(π/8) for k in [0,50]",
+        "Obtain two solutions: k ≈ 7.24 and k ≈ 42.8"
+      ],
+      "accepted_alternatives": [
+        "Using tan(7π/8) instead of -tan(π/8)",
+        "Accept k = 7.24211... and k = 42.7578... (exact from GDC)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognition that gradient of tangent = -tan(π/8) OR tan(7π/8) (M1); setting their h'(k) equal to -tan(π/8) OR tan(7π/8) (A1); k = 7.24211..., k = 42.7578...; k = 7.24, k = 42.8 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q06-A-I",
+      "question": "6",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Write f(x) = 4 cot x + sin x in terms of sin x and cos x.",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "rewrite_cot_in_terms_of_sin_cos"
+      ],
+      "method_path": [
+        "Rewrite cot x as cos x / sin x",
+        "Combine to get f(x) = (4 cos x)/sin x + sin x"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for f(x) = (4 cos x)/sin x + sin x"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q06-A-II",
+      "question": "6",
+      "part": "A-II",
+      "marks": 2,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Sketch the graph of y = f(x) for 0 < x < π, showing the x-intercept.",
+      "primary_topic": "functions.graphing",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "sketch_graph",
+        "find_x_intercept"
+      ],
+      "method_path": [
+        "Determine domain and curvature",
+        "Find x-intercept by solving f(x)=0, x ≈ 1.81"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for correct domain and curvature; A1 for correct x-intercept at x = 1.80911... ≈ 1.81"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "diagram_dependent"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Find the value of f^{-1}(2).",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_fx_equals_constant",
+        "inverse_function_evaluation"
+      ],
+      "method_path": [
+        "Solve f(x) = 2 for x in (0, π)",
+        "Obtain x ≈ 1.32"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "A1 for f^{-1}(2) = 1.31837... ≈ 1.32"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q06-C",
+      "question": "6",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "9",
+      "markscheme_pages": "14",
+      "task_summary": "Given sec a = 1.5, 0 < a < π, find f(a).",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "sec_to_cos",
+        "find_sin_from_cos",
+        "evaluate_trig_expression"
+      ],
+      "method_path": [
+        "Use sec a = 1/cos a to get cos a = 2/3",
+        "Find sin a = √5/3 (positive since 0 < a < π)",
+        "Compute f(a) = 4 cot a + sin a = 4(cos a/sin a) + sin a = 4(2/√5) + √5/3 = (29√5)/15 ≈ 4.32"
+      ],
+      "accepted_alternatives": [
+        "Use arcsec(1.5) to find a ≈ 0.841, then evaluate f(a) directly."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "METHOD 1: M1 for recognition sec x = 1/cos x; (A1) for cos α = 2/3 or α = arccos(2/3) ≈ 0.841; A1 for f(α) = 4.32306... ≈ 4.32. METHOD 2: M1 for recognition sec x = 1/cos x; (A1) for cos α = 2/3, sin α = √5/3, cot α = 2/√5; A1 for f(α) = (29√5)/15 ≈ 4.32."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Find the speed of the helicopter from its position vector.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "magnitude_of_velocity",
+        "speed_calculation"
+      ],
+      "method_path": [
+        "Recognize speed is magnitude of velocity vector",
+        "Compute magnitude sqrt(4^2 + 10^2 + (-25)^2)",
+        "Simplify to sqrt(741) or 107.703... km/h"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "recognition that the speed is the magnitude of the velocity (M1); speed = sqrt(4^2 + 10^2 + (-25)^2) = sqrt(741) = 107.703... = 108 (km/h) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "10",
+      "markscheme_pages": "15-16",
+      "task_summary": "Find the angle of descent β in degrees.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "angle_between_vectors",
+        "trigonometric_ratio",
+        "descent_angle"
+      ],
+      "method_path": [
+        "Use horizontal speed from part (a) and vertical descent rate 16 km/h",
+        "Compute tan β = 16 / (horizontal speed) or use vector angle methods",
+        "Calculate β = arctan(16 / sqrt(741)) ≈ 8.45°"
+      ],
+      "accepted_alternatives": [
+        "METHOD 1: tan β = 16 / (horizontal speed) → β = 8.45°",
+        "METHOD 2: angle between velocity vectors (10, -25, -4) and (10, -25, 0) using dot product",
+        "METHOD 3: angle between velocity vector and horizontal plane using sin β = 4 / sqrt(741)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15-16",
+          "basis": "METHOD 1: attempt to use right-angled triangle with horizontal speed (M1); tan β = 16 / sqrt(741) (A1); β = 8.45° A1. METHOD 2: attempt to find angle between vectors (M1); cos β = 725 / sqrt(741*725) (A1); β = 8.45° A1. METHOD 3: attempt to find angle between vector and horizontal plane (M1); sin β = 4 / sqrt(741) (A1); β = 8.45° A1."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Show that h(t) = Im(e^(2ti)(e^i + e^(3i))) using f(t)=sin(2t+1) and g(t)=sin(2t+3).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "expand_product",
+        "add_exponents",
+        "take_imaginary_part",
+        "use_trigonometric_identity"
+      ],
+      "method_path": [
+        "Expand e^(2ti)(e^i + e^(3i)) to e^((2t+1)i) + e^((2t+3)i)",
+        "Take imaginary part: sin(2t+1) + sin(2t+3)",
+        "Recognize as f(t)+g(t)=h(t)"
+      ],
+      "accepted_alternatives": [
+        "Use cos(2t)+i sin(2t) expansion and multiply to show real and imaginary parts, then sum imaginary parts."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "A1 for clearly showing that the powers are added. A1 for sin(2t+1)+sin(2t+3) = h(t)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Write e^i + e^(3i) in the form re^(iθ) with r>0 and -π<θ≤π.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "factor_complex_exponential",
+        "compute_modulus",
+        "compute_argument"
+      ],
+      "method_path": [
+        "Factor e^(2i): e^i + e^(3i) = e^(2i)(e^(-i) + e^i) = 2cos(1)e^(2i)",
+        "Modulus r = 2cos(1) ≈ 1.08, argument θ = 2"
+      ],
+      "accepted_alternatives": [
+        "Direct conversion to Cartesian: cos1+isin1+cos3+isin3, then compute modulus and argument."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "A1 for modulus, A1 for argument. r=2cos(1)≈1.08, θ=2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q08-C",
+      "question": "8",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "11",
+      "markscheme_pages": "17",
+      "task_summary": "Hence or otherwise, write h(t) in the form p sin(2t+q) with p>0 and 0<q<2π.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "complex_number_reasoning",
+      "method_tags": [
+        "substitute_polar_form",
+        "take_imaginary_part",
+        "extract_amplitude_and_phase"
+      ],
+      "method_path": [
+        "From (a) and (b): h(t) = Im(e^(2ti) * re^(iθ)) with r=2cos(1), θ=2",
+        "h(t) = Im(r e^((2t+2)i)) = r sin(2t+2)",
+        "Thus p = 2cos(1) ≈ 1.08, q = 2"
+      ],
+      "accepted_alternatives": [
+        "Graphical method: find amplitude and horizontal shift from graph of h(t). Amplitude ≈1.08, first negative zero at t=-1 gives shift, leading to h(t)=1.08sin(2(t+1))=1.08sin(2t+2)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "M1 for attempt to use answers from (a) and (b) to write h(t) as imaginary part of re^(iθ) form. A1 for h(t)=1.08060...sin(2t+2)."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Use Euler's method with step 0.25 to estimate y when x=2 for dy/dx = (x+2)/(x+y), given (1,0).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "iterative_approximation"
+      ],
+      "method_path": [
+        "Set step h=0.25",
+        "Iterate x_{n+1}=x_n+h, y_{n+1}=y_n+h*(x_n+2)/(x_n+y_n) from (1,0) to x=2",
+        "Compute y at x=2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "attempt to use Euler’s method with a step of 0.25 (M1); intermediate values (A1); y=1.26 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "12",
+      "markscheme_pages": "18",
+      "task_summary": "Determine if Euler estimate is over/underestimate and justify; explain why Euler method from (1,0) does not give negative y at x=2.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "concavity_analysis",
+        "gradient_analysis",
+        "euler_method_interpretation"
+      ],
+      "method_path": [
+        "State overestimate",
+        "Justify: tangents lie above curve (concave down)",
+        "Explain: gradient at (1,0) is positive, so method follows upper branch"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "(i) overestimate A1; because tangents lie above curve (concave down) R1; (ii) gradient at (1,0) is positive so method works in direction of upper part R1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Write down t3, the number of cards for a pyramid with 3 rows.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "read_from_diagram",
+        "count_cards"
+      ],
+      "method_path": [
+        "Count cards in diagram for n=3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Find t4, the number of cards for a pyramid with 4 rows.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "extend_pattern",
+        "add_cards",
+        "arithmetic_sequence"
+      ],
+      "method_path": [
+        "Add 11 cards to t3 or sum cards in 4 rows"
+      ],
+      "accepted_alternatives": [
+        "t4 = 15 + 11",
+        "t4 = 2 + 5 + 8 + 11"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to add 11 cards onto a stack with 3 rows OR attempt to consider all 4 rows (M1); valid diagram with 4 rows OR t4 = 15 + 11 OR t4 = 2 + 5 + 8 + 11; = 26 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "19-20",
+      "task_summary": "Show that t_n = (n/2)(3n + 1).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_series",
+        "sum_formula",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Recognize t_n as sum of arithmetic sequence 2,5,8,...",
+        "Apply sum formula S_n = n/2 (2a + (n-1)d)",
+        "Simplify to (n/2)(3n+1)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Split into stacked and horizontal cards, sum separately, combine.",
+        "METHOD 3: Recognize stack as complete triangles minus bottom row, sum arithmetic sequence."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19-20",
+          "basis": "METHOD 1: recognition that t_n is a sum of an arithmetic sequence (M1); attempt to use formula for the sum of n terms of an arithmetic sequence M1; t_n = n/2 (2*2 + 3(n-1)) A1; t_n = n/2 (3n+1) AG"
+        },
+        {
+          "markscheme_pages": "19-20",
+          "basis": "METHOD 2: attempt to split t_n into the total number of stacked and horizontal cards (M1); stacked = ... A1; horizontal = ... A1; t_n = ... = n/2 (3n+1) AG"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 3: recognition that a stack with n rows is made up of complete triangles ... (M1); attempt to use formula for the sum of n terms of an arithmetic sequence M1; t_n = ... = n/2 (3n+1) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find the maximum number of rows using cards from 14 full packs (14*52=728 cards).",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_inequality",
+        "quadratic_inequality",
+        "integer_solution"
+      ],
+      "method_path": [
+        "Set up inequality (n/2)(3n+1) ≤ 728",
+        "Solve for n",
+        "Take integer part"
+      ],
+      "accepted_alternatives": [
+        "Solve equation (n/2)(3n+1) = 728 and test integer values."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to solve (n/2)(3n+1) ≤ 14(52) = 728 (M1); n = 21.8642... OR n=21, t_21=672 and n=22, t_22=737 (A1); max number of rows is 21 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-E",
+      "question": "10",
+      "part": "e",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Find the minimum number of rows such that the total number of cards is a multiple of 52 (no cards left over).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "list_terms",
+        "check_divisibility",
+        "integer_condition"
+      ],
+      "method_path": [
+        "List t_n values until t_n is a multiple of 52",
+        "Identify smallest n"
+      ],
+      "accepted_alternatives": [
+        "Recognize that (1/52) * (n/2)(3n+1) must be an integer, solve for n."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "EITHER attempt to solve by listing at least six values of t_n (M1); 2,7,15,26,40,57... OR recognition that (1/52)*(n/2)(3n+1) must be an integer (M1); min number of rows is 13 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-F",
+      "question": "10",
+      "part": "f",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Find the minimum number of cards needed for a pyramid stack with vertical height > 2 metres, ignoring card thickness.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "number_algebra.sequences",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "pythagoras",
+        "trigonometric_ratio",
+        "equilateral_triangle_height",
+        "solve_inequality",
+        "substitute_into_sequence"
+      ],
+      "method_path": [
+        "Find height of one equilateral triangle card (side 88 mm) using Pythagoras or trigonometry",
+        "Set up inequality n * height > 2000 mm",
+        "Solve for n",
+        "Round up to integer rows",
+        "Calculate t_n for that n"
+      ],
+      "accepted_alternatives": [
+        "Find side length of equilateral triangle with height 2000 mm, then solve 88n > side."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "EITHER attempt to use Pythagoras’s Theorem or trigonometry to find the height of an equilateral triangle with sides 88mm (M1); height = sqrt(88^2 - 44^2) OR 88 sin60° OR 88 cos30° OR 44 tan60° OR 44/tan30° OR 44√3 = 76.2102... (A1); attempt to solve 44√3 n > 2000 OR their perpendicular height * n > 2000 (M1); n > 26.2431... so min number of rows is 27 (A1); t_27 = 1107 A1"
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "OR attempt to use trigonometry to find the side of an equilateral triangle with height 2000mm (M1); side = 2000/sin60° OR 2000/cos30° OR 4000/√3 = 2309.40... (A1); attempt to solve 88n > 2309.40... OR 88n > their side (M1); n > 26.2431... so min number of rows is 27 (A1); t_27 = 1107 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-A-I",
+      "question": "11",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Evaluate the definite integral of f(t) from 2.25 to 4.5.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "trigonometric_integration"
+      ],
+      "method_path": [
+        "Set up integral of f(t) from 2.25 to 4.5",
+        "Integrate using antiderivative involving sine",
+        "Evaluate to get 3/7 or 0.429"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "A1 for 3/7 or 0.428571... or 0.429"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-A-II",
+      "question": "11",
+      "part": "A-II",
+      "marks": 1,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Write down the mode of T.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "mode_from_graph"
+      ],
+      "method_path": [
+        "Identify mode as t-value at maximum of pdf",
+        "State mode = 4.5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "A1 for mode of T = 4.5"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-A-III",
+      "question": "11",
+      "part": "A-III",
+      "marks": 2,
+      "source_pages": "15",
+      "markscheme_pages": "23",
+      "task_summary": "Determine which is greater, the mode or the median of T, justifying your answer.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "median_comparison",
+        "probability_inequality"
+      ],
+      "method_path": [
+        "Compare P(T < 4.5) to 0.5",
+        "Conclude median > mode because P(T < 4.5) < 0.5"
+      ],
+      "accepted_alternatives": [
+        "P(T > 4.5) > 0.5",
+        "P(T < 4.5) < P(T > 4.5)",
+        "median = 4.69"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "A1 for the median is greater; R1 for justification: P(T<4.5)<0.5 OR P(T>4.5)>0.5 OR P(T<4.5)<P(T>4.5) OR median=4.69"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Find the probability that a randomly chosen runner is a fast runner (finishes in 3.5 hours or less).",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "probability_from_pdf"
+      ],
+      "method_path": [
+        "Set up integral of f(t) from 2.25 to 3.5",
+        "Evaluate to get 0.103749...",
+        "Round to 0.104"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1 for recognition of need to integrate f; A1 for 0.104"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Find the probability that a fast runner chosen at random finishes in 3 hours or less.",
+      "primary_topic": "statistics.probability",
+      "secondary_topics": [
+        "statistics.continuous_random_variables"
+      ],
+      "method_family": "probability_and_distributions",
+      "method_tags": [
+        "conditional_probability",
+        "definite_integral"
+      ],
+      "method_path": [
+        "Set up conditional probability P(T ≤ 3 | T ≤ 3.5)",
+        "Compute P(T ≤ 3) and P(T ≤ 3.5) via integration",
+        "Divide to get 0.238"
+      ],
+      "accepted_alternatives": [
+        "P(T < 3) / P(T < 3.5)"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "M1 for attempt to use formula for conditional probability; (A1) for 0.0247152.../0.103749...; A1 for 0.238"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Find the lower quartile of T.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "quartile_from_cdf",
+        "definite_integral",
+        "trigonometric_equation"
+      ],
+      "method_path": [
+        "Set up integral equation ∫_{2.25}^{q} f(t) dt = 0.25",
+        "Integrate to get expression involving sine",
+        "Solve for q to get 4.01"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for recognition that lower quartile q satisfies ∫_{2.25}^{q} f(t) dt = 0.25; (A1) for correct integral equation; A1 for q = 4.01"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Determine the values of a and b to the nearest integer given E(P)=100, max score 150, and E(T)=4.723.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "linear_transformation",
+        "expected_value",
+        "system_of_equations"
+      ],
+      "method_path": [
+        "Write E(P) = a - b E(T) = 100",
+        "Recognize max score occurs at min t = 2.25: a - 2.25b = 150",
+        "Solve system for a and b",
+        "Round to nearest integer: a=195, b=20"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for attempt to find expected value for transformed linear variable; (A1) for 100 = a - 4.723b; M1 for recognition that max score is achieved with fastest time t=2.25; (A1) for 150 = a - 2.25b; A1 for a=195, b=20"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q11-F",
+      "question": "11",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Find Var(P) given Var(T)=0.906.",
+      "primary_topic": "statistics.expected_value",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "variance_of_linear_transformation"
+      ],
+      "method_path": [
+        "Apply Var(P) = b^2 Var(T)",
+        "Substitute b=20.2183... and Var(T)=0.906",
+        "Compute to get 370"
+      ],
+      "accepted_alternatives": [
+        "Any answer rounding to 362-370 based on less accurate b"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "M1 for attempt to find variance for transformed linear variable; A1 for Var(P)=370 (accept 362-370)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "17",
+      "markscheme_pages": "25",
+      "task_summary": "Show that f_n is an even function for all n.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "substitute_negative_x",
+        "simplify_expression",
+        "conclude_even_function"
+      ],
+      "method_path": [
+        "Replace x with -x in f_n(x)",
+        "Simplify to show f_n(-x) = f_n(x)",
+        "Conclude f_n is even"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to replace x with -x (M1); f_n(-x) = ... (A1); f_n(-x) = f_n(x) (A1); so f_n is even for all values of n AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "17",
+      "markscheme_pages": "25",
+      "task_summary": "Show f_3(x) = 1 - 2x^2 + 4x^4 - 8x^6 and write similar expression for f_4(x).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "expand_polynomial",
+        "write_series"
+      ],
+      "method_path": [
+        "Expand f_3(x) using binomial theorem or given formula",
+        "Simplify to 1 - 2x^2 + 4x^4 - 8x^6",
+        "Write f_4(x) = 1 - 2x^2 + 4x^4 - 8x^6 + 16x^8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(i) f_3(x) = (1 - 2x^2 + 2x^4 - 2x^6) ... = 1 - 2x^2 + 4x^4 - 8x^6 AG (A1); (ii) 1 - 2x^2 + 4x^4 - 8x^6 + 16x^8 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "17",
+      "markscheme_pages": "25",
+      "task_summary": "Find K (exact) and express f(x) as rational function 1/(a + bx^2).",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "recognize_geometric_series",
+        "find_radius_of_convergence",
+        "sum_infinite_geometric_series",
+        "rational_function_form"
+      ],
+      "method_path": [
+        "Recognize f_n(x) as partial sum of geometric series with r = -2x^2",
+        "Convergence condition |r| < 1 gives | -2x^2 | < 1 => |x| < 1/sqrt(2)",
+        "Largest K = 1/sqrt(2)",
+        "Sum to infinity S∞ = 1/(1 - (-2x^2)) = 1/(1 + 2x^2)",
+        "Thus a = 1, b = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(i) recognition of geometric series with common ratio -2x^2 (M1); converges for | -2x^2 | < 1 => |x| < 1/sqrt(2) (A1); largest K = 1/sqrt(2) (A1); (ii) use of formula for S∞ with first term 1, common ratio -2x^2 (M1); f(x) = 1/(1 - (-2x^2)) = 1/(1 + 2x^2) (A1); a = 1, b = 2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "17",
+      "markscheme_pages": "26",
+      "task_summary": "Justify g^{-1} exists and find g^{-1}(x) with domain.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "one_to_one_check",
+        "monotonic_decreasing",
+        "swap_x_and_y",
+        "solve_for_y",
+        "determine_domain"
+      ],
+      "method_path": [
+        "State g is one-to-one (decreasing on [0, K))",
+        "Set y = 1/(1+2x^2), swap x and y",
+        "Solve for y: x = 1/(1+2y^2) => y^2 = (1-x)/(2x)",
+        "Take positive root (since y ≥ 0): y = sqrt((1-x)/(2x))",
+        "Thus g^{-1}(x) = sqrt((1-x)/(2x))",
+        "Domain: 1/2 < x ≤ 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(i) g is a one-to-one function (A1); since g is a (strictly) decreasing function OR g has no points of zero gradient (turning points) (R1); (ii) attempt to rearrange and swap x and y (M1); x = 1/(1+2y^2) => 1+2y^2 = 1/x => y^2 = (1-x)/(2x) (A1); y = sqrt((1-x)/(2x)) (A1); domain 1/2 < x ≤ 1 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "17",
+      "markscheme_pages": "27-28",
+      "task_summary": "Find area of region R enclosed by y = g(x), y = g^{-1}(x), and axes.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "find_intersection",
+        "definite_integral",
+        "area_between_curves",
+        "numerical_integration"
+      ],
+      "method_path": [
+        "Find intersection of g(x) and g^{-1}(x) (or g(x)=x) at x ≈ 0.5897545",
+        "Set up integral(s) for area: e.g., ∫_0^a g(x) dx + ∫_a^1 g^{-1}(x) dx",
+        "Evaluate integrals numerically",
+        "Sum to get area ≈ 0.635"
+      ],
+      "accepted_alternatives": [
+        "Method 2: area = 2 * ∫_0^a (g(x) - x) dx",
+        "Method 3: area = 2 * ∫_a^1 (g^{-1}(x) - x) dx + a^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27-28",
+          "basis": "curves intersect at x = 0.5897545107... (A1); attempt to add areas (M1); integrals evaluated (A1); Area = 0.635 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

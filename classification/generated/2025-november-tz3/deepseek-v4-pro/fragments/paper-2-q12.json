@@ -1,0 +1,258 @@
+{
+  "question": "12",
+  "expected_question_marks": 22,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-A-I",
+      "question": "12",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "16",
+      "markscheme_pages": "22",
+      "task_summary": "Find the value of dy/dx when x=1.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_derivative"
+      ],
+      "method_path": [
+        "Substitute x=1, y=3/2 into given differential equation",
+        "Compute dy/dx"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "d y/d x = -1.7 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-A-II",
+      "question": "12",
+      "part": "A-II",
+      "marks": 3,
+      "source_pages": "16",
+      "markscheme_pages": "22",
+      "task_summary": "Use Euler's method with two equal steps to estimate y when x=1.4.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "euler_method",
+        "step_length",
+        "iteration"
+      ],
+      "method_path": [
+        "Set step length h=0.2",
+        "Apply Euler's method: y_{n+1} = y_n + h * f(x_n, y_n)",
+        "Compute y(1.2) using dy/dx at x=1",
+        "Compute y(1.4) using dy/dx at x=1.2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "attempt to use Euler's formula with step length 0.2 (M1); step table with x=1, y=1.5; x=1.2, y=1.16; x=1.4, y=1.07491524 (A1); 1.07 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-A-III",
+      "question": "12",
+      "part": "A-III",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "22",
+      "task_summary": "State the concavity of the solution curve for 1 ≤ x ≤ 1.4 and give a reason.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "interpretation_and_validation",
+      "method_tags": [
+        "concavity",
+        "reasoning"
+      ],
+      "method_path": [
+        "Observe that the change in y values is decreasing or gradient is increasing",
+        "Conclude concave up"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "change (decrease) in the y values is decreasing. OR the gradient is increasing as the gradient at 1.2 is -0.425423... R1; concave up A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-B-I",
+      "question": "12",
+      "part": "B-I",
+      "marks": 4,
+      "source_pages": "16",
+      "markscheme_pages": "23",
+      "task_summary": "Show that (x^2+xy)d^2y/dx^2 = 2(x(dy/dx)-y)(dy/dx+1) + (x^2+xy)(dy/dx) - (x^2+3xy-2y^2).",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "implicit_differentiation",
+        "product_rule",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Differentiate both sides of given differential equation implicitly with respect to x",
+        "Apply product rule to terms involving y and dy/dx",
+        "Rearrange to obtain the required expression"
+      ],
+      "accepted_alternatives": [
+        "Rearrange into dy/dx = (x^2+3xy-2y^2)/(x^2+xy) and differentiate RHS using quotient rule"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 1: d/dx(xy) = x dy/dx + y (seen anywhere) A1; attempt to differentiate either the LHS or the RHS implicitly using the product rule M1; ... AG"
+        },
+        {
+          "markscheme_pages": "23",
+          "basis": "METHOD 2: attempt to rearrange into the form dy/dx = (x^2+3xy-2y^2)/(x^2+xy) and attempt to differentiate the RHS implicitly using quotient rule M1; ... AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-B-II",
+      "question": "12",
+      "part": "B-II",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Find the value of d^2y/dx^2 when x=1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_second_derivative"
+      ],
+      "method_path": [
+        "Substitute x=1, y=3/2, dy/dx=-1.7 into the expression from part (b)(i)",
+        "Solve for d^2y/dx^2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "attempt to substitute their dy/dx and x=1, y=3/2 (M1); 8.064 or 1008/125 or 8.06 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "16",
+      "markscheme_pages": "24",
+      "task_summary": "Determine constants A, B ∈ ℝ such that 1/(1-4v^2) = A/(1-2v) + B/(1+2v).",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "partial_fractions",
+        "equating_coefficients"
+      ],
+      "method_path": [
+        "Set up equation 1 = A(1+2v) + B(1-2v)",
+        "Solve for A and B"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "24",
+          "basis": "attempt to make the numerators of common denominator equivalent (M1); A=3/4 (0.75), B=1/4 (0.25) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 8,
+      "source_pages": "16",
+      "markscheme_pages": "25",
+      "task_summary": "Solve the differential equation and show that x^6(2y-x)^3 = 2(x+2y).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "calculus.integration_applications"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "separation_of_variables",
+        "partial_fractions",
+        "integration",
+        "logarithmic_simplification",
+        "initial_condition"
+      ],
+      "method_path": [
+        "Substitute y = vx, dy/dx = v + x dv/dx",
+        "Simplify to separable form (1+v)/(1-4v^2) dv = (1/x) dx",
+        "Use partial fractions from part (c)",
+        "Integrate both sides",
+        "Apply initial condition x=1, y=3/2 (v=3/2)",
+        "Simplify to required form"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to replace y and dy/dx by substitution of y=vx and dy/dx = v + x dv/dx (M1); ... A1; ... A1; ... A1A1; substitution of x=1, v=1.5 OR x=1, y=1.5 to find a value of c (M1); ... A1; ... A1; ... AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

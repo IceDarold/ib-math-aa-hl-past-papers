@@ -1,0 +1,44 @@
+{
+  "question": "6",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q06",
+      "question": "6",
+      "part": "",
+      "marks": 6,
+      "source_pages": "8",
+      "markscheme_pages": "13",
+      "task_summary": "Find a and b such that lines L1 and L2 are perpendicular and intersect at a unique point.",
+      "primary_topic": "geometry.vectors",
+      "secondary_topics": [],
+      "method_family": "vector_reasoning",
+      "method_tags": [
+        "extract_direction_vectors",
+        "scalar_product_zero",
+        "solve_linear_equations",
+        "intersection_conditions"
+      ],
+      "method_path": [
+        "Extract direction vectors d1 = (0, a, 1) and d2 = (1, 2, 3).",
+        "Set scalar product d1·d2 = 0 to get 2a + 3 = 0, so a = -3/2.",
+        "Set position vectors equal: (4, 0, -1) + λ(0, a, 1) = (1, 0, -b) + μ(1, 2, 3).",
+        "Solve the system: 4 = 1 + μ, 0 + aλ = 0 + 2μ, -1 + λ = -b + 3μ.",
+        "Obtain μ = 3, λ = -4, b = 14."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "direction vectors are (0, a, 1) and (1, 2, 3) (A1); recognition that scalar product is 0 (M1); 2a+3=0 → a=-3/2 A1; at point of intersection 4=1+μ, 0+aλ=2μ, -1+λ=-b+3μ (A1); attempt to solve (M1); μ=3, λ=-4, b=14 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

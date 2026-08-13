@@ -1,0 +1,191 @@
+{
+  "question": "11",
+  "expected_question_marks": 22,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-A",
+      "question": "11",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Show that w = sqrt(3) + i by rationalizing the denominator.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "multiply_by_conjugate",
+        "simplify_complex_fraction"
+      ],
+      "method_path": [
+        "Multiply numerator and denominator by conjugate of denominator",
+        "Simplify to obtain sqrt(3) + i"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to multiply by conjugate M1; 4i/(1+i sqrt(3)) * (1-i sqrt(3))/(1-i sqrt(3)) = (4 sqrt(3) + 4i)/4, (i(1-i sqrt(3))) A1; w = sqrt(3) + i AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-B",
+      "question": "11",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Find |w| and arg w.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "modulus_of_complex_number",
+        "argument_of_complex_number"
+      ],
+      "method_path": [
+        "Calculate modulus: sqrt((sqrt(3))^2 + 1^2) = 2",
+        "Calculate argument: arctan(1/sqrt(3)) = pi/6"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(b)(i) attempt to find either |w| or arg w (M1); |w| = sqrt(3+1) OR arctan(1/sqrt(3)) OR labelled diagram; |w| = 2 A1; (ii) arg w = pi/6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-C",
+      "question": "11",
+      "part": "C",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "25",
+      "task_summary": "Use De Moivre's theorem to find the two square roots of w in the form re^(iθ).",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "de_moivres_theorem",
+        "nth_roots_of_complex_number"
+      ],
+      "method_path": [
+        "Express w in polar form: 2e^(iπ/6)",
+        "Apply De Moivre's theorem with n=1/2 to get first root: sqrt(2)e^(iπ/12)",
+        "Add π to argument to get second root: sqrt(2)e^(i(π/12+π)) = sqrt(2)e^(i13π/12) = sqrt(2)e^(-i11π/12)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to find a root using de Moivre's theorem with n=1/2 (M1); sqrt(2)e^(iπ/12) A1; attempt to find second root by adding or subtracting π from their argument (M1); sqrt(2)e^(-11πi/12) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-D",
+      "question": "11",
+      "part": "D",
+      "marks": 8,
+      "source_pages": "14",
+      "markscheme_pages": "26-27",
+      "task_summary": "Given w = (a+bi)^2 with a,b>0, show a^2 = (sqrt(3)+1)/2 and find b^2.",
+      "primary_topic": "number_algebra.complex_numbers",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_binomial",
+        "equate_real_and_imaginary_parts",
+        "solve_simultaneous_equations",
+        "quadratic_formula"
+      ],
+      "method_path": [
+        "Expand (a+bi)^2 = a^2 - b^2 + 2abi",
+        "Equate to sqrt(3) + i: a^2 - b^2 = sqrt(3), 2ab = 1",
+        "Substitute b = 1/(2a) into first equation",
+        "Obtain 4a^4 - 4sqrt(3)a^2 - 1 = 0",
+        "Solve quadratic in a^2: a^2 = (4sqrt(3) ± sqrt(48+16))/8 = (sqrt(3) ± 1)/2",
+        "Since a>0, a^2 = (sqrt(3)+1)/2",
+        "Find b^2 = a^2 - sqrt(3) = (sqrt(3)-1)/2"
+      ],
+      "accepted_alternatives": [
+        "Method 2: Use polar form w = 2e^(iπ/6), then a+bi = sqrt(2)e^(iπ/12), equate real part a = sqrt(2)cos(π/12), square and use double angle to get a^2 = (sqrt(3)+1)/2."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "26-27",
+          "basis": "(d)(i) METHOD 1: attempt to expand and equate to sqrt(3)+i (M1); a^2 - b^2 + 2abi = sqrt(3) + i; at least one correct equation A1; a^2 - b^2 = sqrt(3) OR 2ab = 1; substituting b = 1/(2a) (M1); a^2 - (1/(2a))^2 = sqrt(3); 4a^4 - 4sqrt(3)a^2 - 1 = 0 A1; attempt to solve quadratic in a^2 M1; a^2 = (4sqrt(3) ± sqrt(48+16))/8 = (sqrt(3) ± 1)/2; since a^2 > 0 R1; a^2 = (sqrt(3)+1)/2 AG; METHOD 2: w = a+bi (A1); a+bi = sqrt(2)(cos(π/12) + i sin(π/12)) A1; attempt to equate Re(w) M1; a = sqrt(2)cos(π/12); a^2 = 2cos^2(π/12) A1; attempt to use double angle formula (M1); cos2α = 2cos^2α - 1; a^2 = 2cos^2(π/12) = cos(π/6)+1 = sqrt(3)/2 + 1 A1; a^2 = (sqrt(3)+1)/2 AG; (ii) attempt to substitute a^2 into a^2 - b^2 = sqrt(3) OR b^2 = 1/(4a^2) (M1); b^2 = (sqrt(3)+1)/2 - sqrt(3) = (sqrt(3)-1)/2 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks",
+        "alternative_route"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q11-E",
+      "question": "11",
+      "part": "E",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "28",
+      "task_summary": "Express tan(π/12) in the form p + q sqrt(3).",
+      "primary_topic": "geometry.trigonometric_identities",
+      "secondary_topics": [
+        "number_algebra.complex_numbers"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "argument_of_complex_number",
+        "tangent_ratio",
+        "rationalize_denominator"
+      ],
+      "method_path": [
+        "Recognize that tan(π/12) = b/a from the complex number a+bi = sqrt(2)e^(iπ/12)",
+        "Substitute a = sqrt((sqrt(3)+1)/2), b = sqrt((sqrt(3)-1)/2)",
+        "Simplify tan(π/12) = sqrt((sqrt(3)-1)/(sqrt(3)+1))",
+        "Rationalize to get 2 - sqrt(3)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "28",
+          "basis": "attempt to set up an equation using an argument of π/12 (M1); tan(π/12) = b/a (A1); substitution of the given a and their b M1; sqrt((sqrt(3)-1)/2) / sqrt((sqrt(3)+1)/2) = sqrt((sqrt(3)-1)/(sqrt(3)+1)) A1; tan(π/12) = 2 - sqrt(3), accept p=2, q=-1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

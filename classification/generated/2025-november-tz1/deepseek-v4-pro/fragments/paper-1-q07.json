@@ -1,0 +1,79 @@
+{
+  "question": "7",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P1-Q07-A",
+      "question": "7",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "10",
+      "markscheme_pages": "19",
+      "task_summary": "Solve the differential equation dy/dx = y^2 cos^2 x to find the value of a in the solution form y = a/(2x + sin 2x + b).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [
+        "functions.trigonometric_functions"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "separation_of_variables",
+        "trigonometric_identity",
+        "integration",
+        "algebraic_manipulation"
+      ],
+      "method_path": [
+        "Separate variables: ∫ y^{-2} dy = ∫ cos^2 x dx",
+        "Apply identity cos^2 x = (1 + cos 2x)/2",
+        "Integrate both sides: -1/y = (1/2)(x + (1/2) sin 2x) + C",
+        "Rearrange to y = -4/(2x + sin 2x + C')",
+        "Compare with given form to obtain a = -4"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to separate variables (M1); ∫ y^{-2} dy = ∫ cos^2 x dx; attempt to use an identity for cos^2 x (M1); (1/2)(1+cos2x); -1/y = 1/2(x + 1/2 sin 2x) + C A1A1; -1/y = (2x + sin 2x)/4 + C OR y = -4/(2x + sin 2x + C) (A1); a = -4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ1-P1-Q07-B",
+      "question": "7",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "19",
+      "task_summary": "Given y = 1 when x = π/2, find the value of b using the solution from part (a).",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "substitution",
+        "solving_for_constant"
+      ],
+      "method_path": [
+        "Substitute x = π/2, y = 1 into y = -4/(2x + sin 2x + b)",
+        "Solve for b: 1 = -4/(π + 0 + b) → b = -4 - π"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to substitute initial conditions with their a (M1); 1 = -4/(π + 0 + b); b = -4 - π A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

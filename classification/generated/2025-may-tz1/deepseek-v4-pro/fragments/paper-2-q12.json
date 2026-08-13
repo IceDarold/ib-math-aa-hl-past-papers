@@ -1,0 +1,193 @@
+{
+  "question": "12",
+  "expected_question_marks": 20,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "17",
+      "markscheme_pages": "25",
+      "task_summary": "Show that f_n is an even function for all n.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "substitute_negative_x",
+        "simplify_expression",
+        "conclude_even_function"
+      ],
+      "method_path": [
+        "Replace x with -x in f_n(x)",
+        "Simplify to show f_n(-x) = f_n(x)",
+        "Conclude f_n is even"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "attempt to replace x with -x (M1); f_n(-x) = ... (A1); f_n(-x) = f_n(x) (A1); so f_n is even for all values of n AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "17",
+      "markscheme_pages": "25",
+      "task_summary": "Show f_3(x) = 1 - 2x^2 + 4x^4 - 8x^6 and write similar expression for f_4(x).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "expand_polynomial",
+        "write_series"
+      ],
+      "method_path": [
+        "Expand f_3(x) using binomial theorem or given formula",
+        "Simplify to 1 - 2x^2 + 4x^4 - 8x^6",
+        "Write f_4(x) = 1 - 2x^2 + 4x^4 - 8x^6 + 16x^8"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(i) f_3(x) = (1 - 2x^2 + 2x^4 - 2x^6) ... = 1 - 2x^2 + 4x^4 - 8x^6 AG (A1); (ii) 1 - 2x^2 + 4x^4 - 8x^6 + 16x^8 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "17",
+      "markscheme_pages": "25",
+      "task_summary": "Find K (exact) and express f(x) as rational function 1/(a + bx^2).",
+      "primary_topic": "calculus.series",
+      "secondary_topics": [],
+      "method_family": "limits_and_series",
+      "method_tags": [
+        "recognize_geometric_series",
+        "find_radius_of_convergence",
+        "sum_infinite_geometric_series",
+        "rational_function_form"
+      ],
+      "method_path": [
+        "Recognize f_n(x) as partial sum of geometric series with r = -2x^2",
+        "Convergence condition |r| < 1 gives | -2x^2 | < 1 => |x| < 1/sqrt(2)",
+        "Largest K = 1/sqrt(2)",
+        "Sum to infinity S∞ = 1/(1 - (-2x^2)) = 1/(1 + 2x^2)",
+        "Thus a = 1, b = 2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "25",
+          "basis": "(i) recognition of geometric series with common ratio -2x^2 (M1); converges for | -2x^2 | < 1 => |x| < 1/sqrt(2) (A1); largest K = 1/sqrt(2) (A1); (ii) use of formula for S∞ with first term 1, common ratio -2x^2 (M1); f(x) = 1/(1 - (-2x^2)) = 1/(1 + 2x^2) (A1); a = 1, b = 2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "17",
+      "markscheme_pages": "26",
+      "task_summary": "Justify g^{-1} exists and find g^{-1}(x) with domain.",
+      "primary_topic": "functions.inverse_functions",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "one_to_one_check",
+        "monotonic_decreasing",
+        "swap_x_and_y",
+        "solve_for_y",
+        "determine_domain"
+      ],
+      "method_path": [
+        "State g is one-to-one (decreasing on [0, K))",
+        "Set y = 1/(1+2x^2), swap x and y",
+        "Solve for y: x = 1/(1+2y^2) => y^2 = (1-x)/(2x)",
+        "Take positive root (since y ≥ 0): y = sqrt((1-x)/(2x))",
+        "Thus g^{-1}(x) = sqrt((1-x)/(2x))",
+        "Domain: 1/2 < x ≤ 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "26",
+          "basis": "(i) g is a one-to-one function (A1); since g is a (strictly) decreasing function OR g has no points of zero gradient (turning points) (R1); (ii) attempt to rearrange and swap x and y (M1); x = 1/(1+2y^2) => 1+2y^2 = 1/x => y^2 = (1-x)/(2x) (A1); y = sqrt((1-x)/(2x)) (A1); domain 1/2 < x ≤ 1 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q12-E",
+      "question": "12",
+      "part": "E",
+      "marks": 4,
+      "source_pages": "17",
+      "markscheme_pages": "27-28",
+      "task_summary": "Find area of region R enclosed by y = g(x), y = g^{-1}(x), and axes.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "find_intersection",
+        "definite_integral",
+        "area_between_curves",
+        "numerical_integration"
+      ],
+      "method_path": [
+        "Find intersection of g(x) and g^{-1}(x) (or g(x)=x) at x ≈ 0.5897545",
+        "Set up integral(s) for area: e.g., ∫_0^a g(x) dx + ∫_a^1 g^{-1}(x) dx",
+        "Evaluate integrals numerically",
+        "Sum to get area ≈ 0.635"
+      ],
+      "accepted_alternatives": [
+        "Method 2: area = 2 * ∫_0^a (g(x) - x) dx",
+        "Method 3: area = 2 * ∫_a^1 (g^{-1}(x) - x) dx + a^2"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "27-28",
+          "basis": "curves intersect at x = 0.5897545107... (A1); attempt to add areas (M1); integrals evaluated (A1); Area = 0.635 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

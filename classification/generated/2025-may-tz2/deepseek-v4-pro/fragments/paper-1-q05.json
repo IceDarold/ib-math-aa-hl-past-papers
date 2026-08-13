@@ -1,0 +1,85 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 5,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the possible values of k for which the quadratic equation x^2 + kx + 15 - k = 0 has two distinct real roots.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "discriminant",
+        "quadratic_inequality",
+        "factorization"
+      ],
+      "method_path": [
+        "Set discriminant Δ > 0",
+        "Compute Δ = k^2 - 4(15 - k) = k^2 + 4k - 60",
+        "Solve k^2 + 4k - 60 > 0",
+        "Factorize (k - 6)(k + 10) > 0",
+        "Determine solution k < -10 or k > 6"
+      ],
+      "accepted_alternatives": [
+        "Use quadratic formula to find critical values -10 and 6, then test intervals."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognising Δ > 0 (M1); Δ = k^2 - 4(15 - k) = k^2 + 4k - 60 A1; valid attempt to solve quadratic inequality (M1); (k - 6)(k + 10) OR two correct values -10 and 6 A1; k < -10, k > 6 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "8",
+      "markscheme_pages": "12",
+      "task_summary": "Find the possible values of k for which the two distinct real roots are both positive or both negative.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.polynomials"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "product_of_roots",
+        "inequality_intersection"
+      ],
+      "method_path": [
+        "Recognize that product of roots > 0 for both positive or both negative",
+        "Set product = 15 - k > 0",
+        "Solve k < 15",
+        "Intersect with k < -10 or k > 6 from part (a)",
+        "Obtain k < -10 or 6 < k < 15"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "recognising constant or product of roots is positive (M1); 15 - k > 0 ⇒ k < 15; k < -10, 6 < k < 15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

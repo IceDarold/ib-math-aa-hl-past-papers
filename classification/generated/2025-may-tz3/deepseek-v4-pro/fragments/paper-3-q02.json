@@ -1,0 +1,394 @@
+{
+  "question": "2",
+  "expected_question_marks": 28,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-A-I",
+      "question": "2",
+      "part": "A-I",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Write down the value of V when x = 0.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_volume"
+      ],
+      "method_path": [
+        "Substitute x = 0 into V = x(a-2x)(b-2x)",
+        "V = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "0 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-A-II",
+      "question": "2",
+      "part": "A-II",
+      "marks": 1,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Write down the value of V when x = a/2.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_volume"
+      ],
+      "method_path": [
+        "Substitute x = a/2 into V = x(a-2x)(b-2x)",
+        "V = 0"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "0 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "5",
+      "markscheme_pages": "12",
+      "task_summary": "Show that V = 4x^3 - 2(a+b)x^2 + abx.",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "expand_product",
+        "simplify_expression"
+      ],
+      "method_path": [
+        "Expand V = x(a-2x)(b-2x)",
+        "Obtain V = 4x^3 - 2(a+b)x^2 + abx"
+      ],
+      "accepted_alternatives": [
+        "Expand (ax-2x^2)(b-2x) to get 4x^3 - 2ax^2 - 2bx^2 + abx",
+        "Expand (a-2x)(bx-2x^2) to get 4x^3 - 2ax^2 - 2bx^2 + abx"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "12",
+          "basis": "attempts to expand a product of two of the side lengths (M1) ... V = 4x^3 - 2(a+b)x^2 + abx AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 6,
+      "source_pages": "5",
+      "markscheme_pages": "13",
+      "task_summary": "Show that the only solutions of dV/dx = 0 are x = (a+b ± sqrt(a^2 - ab + b^2))/6.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "differentiate_polynomial",
+        "solve_quadratic",
+        "quadratic_formula",
+        "simplify_radical"
+      ],
+      "method_path": [
+        "Differentiate V to get dV/dx = 12x^2 - 4(a+b)x + ab",
+        "Set dV/dx = 0",
+        "Apply quadratic formula",
+        "Simplify discriminant to 16(a^2 - ab + b^2)",
+        "Obtain x = (a+b ± sqrt(a^2 - ab + b^2))/6"
+      ],
+      "accepted_alternatives": [
+        "Substitute each given x into dV/dx and verify it equals zero, then note quadratic has at most two solutions"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "attempts to find dV/dx (M1) ... dV/dx = 12x^2 - 4(a+b)x + ab A1 ... attempts to solve dV/dx = 0 for x using the quadratic formula (M1) ... x = (a+b ± sqrt(a^2 - ab + b^2))/6 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-D",
+      "question": "2",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "14",
+      "task_summary": "Use d^2V/dx^2 to show that there is a local maximum of V at x = x_m.",
+      "primary_topic": "calculus.stationary_points",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "second_derivative_test",
+        "substitute_critical_point",
+        "sign_analysis"
+      ],
+      "method_path": [
+        "Find d^2V/dx^2 = 24x - 4(a+b)",
+        "Substitute x_m = (a+b - sqrt(a^2 - ab + b^2))/6",
+        "Simplify to -4 sqrt(a^2 - ab + b^2) < 0",
+        "Conclude local maximum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "attempts to find their d^2V/dx^2 (M1) ... d^2V/dx^2 = 24x - 4(a+b) A1 ... d^2V/dx^2 < 0 R1 ... substitutes x_m ... = -4 sqrt(a^2 - ab + b^2) < 0 A1 ... so x_m gives a local maximum AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-E",
+      "question": "2",
+      "part": "E",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "14",
+      "task_summary": "Explain why x_m gives the maximum volume V_m of the box.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "endpoint_analysis",
+        "global_maximum"
+      ],
+      "method_path": [
+        "Note V = 0 at endpoints x = 0 and x = a/2",
+        "Since V > 0 at local maximum x_m, it is the global maximum"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "14",
+          "basis": "the maximum volume will occur at either the endpoints or at the local maximum. R1 ... hence the maximum volume of the box occurs at x_m / the local maximum is a global maximum. AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-F",
+      "question": "2",
+      "part": "F",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "15",
+      "task_summary": "Given a = 2st - s^2, b = t^2 - s^2, and a < b, show that t > 2s.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "inequality_manipulation",
+        "factorization"
+      ],
+      "method_path": [
+        "Substitute a and b into a < b",
+        "Obtain 2st - s^2 < t^2 - s^2",
+        "Simplify to 2st < t^2",
+        "Divide by t > 0 to get 2s < t"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "2st - s^2 < t^2 - s^2 A1 ... t^2 > 2st and since t ∈ ℝ+ (dividing both sides by t) R1 ... t > 2s AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-G",
+      "question": "2",
+      "part": "G",
+      "marks": 3,
+      "source_pages": "6",
+      "markscheme_pages": "15",
+      "task_summary": "By substituting for a, b, and sqrt(a^2 - ab + b^2) in terms of s and t, show that x_m = s(t - s)/2.",
+      "primary_topic": "number_algebra.polynomials",
+      "secondary_topics": [],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "substitution",
+        "simplify_expression",
+        "factorization"
+      ],
+      "method_path": [
+        "Substitute a = 2st - s^2, b = t^2 - s^2, sqrt(a^2 - ab + b^2) = s^2 - st + t^2 into x_m formula",
+        "Simplify numerator to (2st - s^2 + t^2 - s^2) - (s^2 - st + t^2) = 3st - 3s^2",
+        "Divide by 6 to get s(t - s)/2"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "attempts to substitute for each of a, b and sqrt(a^2 - ab + b^2) in terms of s and t (M1) ... x_m = ( (2st - s^2) + (t^2 - s^2) - (s^2 - st + t^2) ) / 6 A1 ... = (3st - 3s^2)/6 A1 ... x_m = s(t - s)/2 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-H-I",
+      "question": "2",
+      "part": "H-I",
+      "marks": 2,
+      "source_pages": "6",
+      "markscheme_pages": "15",
+      "task_summary": "Given a, b ∈ ℤ+, use V_m = x_m(a - 2x_m)(b - 2x_m) to explain why s being even implies that V_m is an integer.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "parity_argument",
+        "integer_product"
+      ],
+      "method_path": [
+        "If s is even, x_m = s(t - s)/2 is integer",
+        "Then a, b are integers, so V_m is product of integers"
+      ],
+      "accepted_alternatives": [
+        "Substitute expressions and note that even s makes all factors integers"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "when s is even, x_m is an integer R1 ... hence V_m is a product of integers (a, b ∈ ℤ+) R1 ... hence V_m is an integer AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-H-II",
+      "question": "2",
+      "part": "H-II",
+      "marks": 1,
+      "source_pages": "6",
+      "markscheme_pages": "16",
+      "task_summary": "State another condition on s and a corresponding condition on t that implies both x_m and V_m are integers.",
+      "primary_topic": "number_algebra.proof",
+      "secondary_topics": [],
+      "method_family": "direct_proof",
+      "method_tags": [
+        "parity_condition",
+        "integer_condition"
+      ],
+      "method_path": [
+        "s odd and t odd ⇒ (t - s) even ⇒ x_m integer",
+        "Then V_m integer as before"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "when s is odd AND t is odd ((t - s) is even) A1 ... x_m and V_m are both integers AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P3-Q02-H-III",
+      "question": "2",
+      "part": "H-III",
+      "marks": 4,
+      "source_pages": "6",
+      "markscheme_pages": "16",
+      "task_summary": "Find an integer value of x_m and the corresponding integer value of V_m.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "numerical_gdc",
+      "method_tags": [
+        "choose_parameters",
+        "compute_xm",
+        "compute_Vm"
+      ],
+      "method_path": [
+        "Choose s, t satisfying conditions (e.g., s=1, t=3)",
+        "Compute x_m = s(t - s)/2",
+        "Compute a = 2st - s^2, b = t^2 - s^2",
+        "Compute V_m = x_m(a - 2x_m)(b - 2x_m)"
+      ],
+      "accepted_alternatives": [
+        "Any valid (s,t) pair with correct x_m and V_m"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "16",
+          "basis": "attempts to use values of s and t to find either x_m or a and b or V_m (M1) ... a corresponding correct x_m value A1 ... corresponding correct a and b values (A1) ... a corresponding correct V_m value A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

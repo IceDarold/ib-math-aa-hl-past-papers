@@ -1,0 +1,48 @@
+{
+  "question": "7",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q07",
+      "question": "7",
+      "part": "",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "10",
+      "task_summary": "Find q given that in the expansion of (1/(2 - qx)) the coefficient of x^6 is 5120, where q > 0.",
+      "primary_topic": "number_algebra.binomial_theorem",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "rewrite_expression",
+        "binomial_expansion",
+        "identify_term",
+        "equate_coefficient",
+        "solve_for_variable"
+      ],
+      "method_path": [
+        "Rewrite (1/(2 - qx)) as (1/2)(1 - (q/2)x)^{-1} or (2 - qx)^{-1}",
+        "Apply binomial expansion to find the term in x^6",
+        "Extract the coefficient of x^6",
+        "Set the coefficient equal to 5120",
+        "Solve for q"
+      ],
+      "accepted_alternatives": [
+        "Rewrite as (1/2)(1 - (q/2)x)^{-1} and expand",
+        "Rewrite as (2 - qx)^{-1} and expand"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "10",
+          "basis": "A1 for rewriting, M1 for substituting into binomial theorem, A1 for correct term, A1 for simplified coefficient, M1 for equating to 5120, A1 for q = 1/16"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

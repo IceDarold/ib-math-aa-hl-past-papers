@@ -1,0 +1,50 @@
+{
+  "question": "4",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P1-Q04",
+      "question": "4",
+      "part": "",
+      "marks": 5,
+      "source_pages": "6",
+      "markscheme_pages": "11",
+      "task_summary": "Solve the equation 3 log_8(10x) - log_4(x) = 1 for x > 0.",
+      "primary_topic": "functions.logarithmic_functions",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "apply_logarithm_power_rule",
+        "apply_change_of_base",
+        "simplify_logarithmic_equation",
+        "solve_exponential_equation"
+      ],
+      "method_path": [
+        "Apply logarithm power rule to rewrite 3 log_8(10x) as log_8((10x)^3)",
+        "Apply change of base to express all logarithms with the same base (e.g., base 2)",
+        "Combine logarithms using product or quotient rule to obtain a single logarithmic equation",
+        "Convert the logarithmic equation to an exponential equation",
+        "Solve the resulting algebraic equation for x"
+      ],
+      "accepted_alternatives": [
+        "Use base 4 instead of base 2 for the change of base",
+        "Apply quotient rule before change of base",
+        "Use natural logarithms for change of base"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "Markscheme shows M1 for attempt to apply power rule, quotient rule, or product rule; M1 for attempt to apply change of base rule; A1 for correct equation with same base in all logarithms; A1 for correct equation without logarithms; A1 for x = 1/25."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

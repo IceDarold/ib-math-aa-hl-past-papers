@@ -1,0 +1,89 @@
+{
+  "question": "6",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q06-A",
+      "question": "6",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Show that the distance l between the origin and any point on the graph of f is given by l = sqrt(x^2 + (x/2 - 4 ln x)^2).",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "formula_application",
+      "method_tags": [
+        "distance_formula",
+        "substitution",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply distance formula between (0,0) and (x, f(x))",
+        "Substitute f(x) = x/2 - 4 ln x",
+        "Simplify to obtain l = sqrt(x^2 + (x/2 - 4 ln x)^2)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "correct substitution into distance formula A1 ... 2 ln 4 l x x = + AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q06-B",
+      "question": "6",
+      "part": "B",
+      "marks": 6,
+      "source_pages": "9",
+      "markscheme_pages": "13",
+      "task_summary": "Find the x-coordinate of the point on the graph of f which is closest to the origin.",
+      "primary_topic": "calculus.optimization",
+      "secondary_topics": [
+        "functions.logarithmic_functions",
+        "calculus.differentiation"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "distance_minimization",
+        "chain_rule",
+        "product_rule",
+        "derivative_set_to_zero",
+        "logarithmic_differentiation",
+        "critical_point"
+      ],
+      "method_path": [
+        "Set derivative of l with respect to x to zero",
+        "Apply chain rule to differentiate l = sqrt(x^2 + (x/2 - 4 ln x)^2)",
+        "Apply product rule to differentiate (x/2 - 4 ln x)^2",
+        "Simplify derivative to (x + 2 ln x)/l",
+        "Set numerator x + 2 ln x = 0",
+        "Solve for x: ln x = -1/2, so x = e^(-1/2) = 1/sqrt(e)"
+      ],
+      "accepted_alternatives": [
+        "Minimize l^2 = x^2 + (x/2 - 4 ln x)^2 instead of l, differentiate using product rule, set derivative to zero, solve x + 2 ln x = 0, x = e^(-1/2)."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "13",
+          "basis": "recognising d 0 d l x = (seen anywhere) (M1) ... attempt to use chain rule with l (M1) ... attempt to use product rule ... A1 ... OR recognising to minimise 2 ln 4 x x + (M1) attempt to use product rule (M1) ... A1 ... THEN 2 ln 0 x x x + = (or equivalent) A1 ... 1 ln 2 x ⇒ = − ... 1 2 1 e e x − = = A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

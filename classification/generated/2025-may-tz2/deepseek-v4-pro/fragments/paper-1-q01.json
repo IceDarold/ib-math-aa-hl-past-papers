@@ -1,0 +1,107 @@
+{
+  "question": "1",
+  "expected_question_marks": 5,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P1-Q01-A",
+      "question": "1",
+      "part": "A",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Evaluate f(0) for f(x) = (3x-2)/(2x+1).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "evaluate_function"
+      ],
+      "method_path": [
+        "Substitute x=0 into f(x) = (3x-2)/(2x+1) to get f(0) = -2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1: -2 (accept (0, -2))"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q01-B",
+      "question": "1",
+      "part": "B",
+      "marks": 1,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Write the equation of the horizontal asymptote of f(x) = (3x-2)/(2x+1).",
+      "primary_topic": "functions.asymptotes",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "horizontal_asymptote",
+        "rational_function"
+      ],
+      "method_path": [
+        "Identify horizontal asymptote as y = 3/2 from leading coefficients."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "A1: y = 3/2 (must be an equation)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P1-Q01-C",
+      "question": "1",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "3",
+      "markscheme_pages": "7",
+      "task_summary": "Find the range of g(x) = -f(x) for x ≥ 0, where f(x) = (3x-2)/(2x+1).",
+      "primary_topic": "functions.equations",
+      "secondary_topics": [
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "reflection",
+        "range",
+        "inequality"
+      ],
+      "method_path": [
+        "Reflect graph of f in x-axis to get g.",
+        "Determine g(0) = 2 and horizontal asymptote y = -3/2.",
+        "Combine to get range -3/2 < y ≤ 2."
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "7",
+          "basis": "M1: attempt to reflect the graph of f in the x-axis OR one correct value seen; A1: both correct values -3/2 and 2 (seen anywhere); A1: -3/2 < y ≤ 2"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

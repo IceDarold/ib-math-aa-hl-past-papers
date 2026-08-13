@@ -1,0 +1,166 @@
+{
+  "question": "9",
+  "expected_question_marks": 15,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ3-P1-Q09-A",
+      "question": "9",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Given f(x) = (1/2)x^2 + kx + 13 has no real roots, show the greatest possible value of k is 5.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "discriminant",
+        "inequality",
+        "positive_integer"
+      ],
+      "method_path": [
+        "Find discriminant: k^2 - 26",
+        "Set discriminant < 0 for no real roots",
+        "Solve k^2 < 26",
+        "Since k ∈ ℤ+, greatest integer k is 5"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "finding correct discriminant k^2 - 26 A1; recognition that discriminant < 0 M1; k = 5 AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q09-B",
+      "question": "9",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "For k=5, write down the axis of symmetry and find the coordinates of the minimum point.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.stationary_points"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "axis_of_symmetry",
+        "substitution",
+        "completing_the_square"
+      ],
+      "method_path": [
+        "Axis of symmetry: x = -5",
+        "Substitute x = -5 into f(x) or complete the square",
+        "Minimum point: (-5, 1/2)"
+      ],
+      "accepted_alternatives": [
+        "Use completing the square to find vertex"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "(i) x = -5 A1; (ii) attempt to substitute their value of x into f or complete the square M1; (-5, 1/2) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": [
+        "shared_marks"
+      ]
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q09-C",
+      "question": "9",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "17",
+      "task_summary": "Show that the equation of the normal line L at x = -3 is y = -1/2 x + 1.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "differentiation",
+      "method_tags": [
+        "derivative",
+        "normal_line",
+        "point_slope_form"
+      ],
+      "method_path": [
+        "Find y-coordinate at x = -3: y = 5/2",
+        "Find derivative f'(x) = x + 5",
+        "Evaluate derivative at x = -3: f'(-3) = 2",
+        "Gradient of normal = -1/2",
+        "Equation of normal: y - 5/2 = -1/2 (x + 3) → y = -1/2 x + 1"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "17",
+          "basis": "at x=-3, y=5/2 A1; dy/dx = x+5 A1; at x=-3, dy/dx=2 A1; normal gradient is negative reciprocal M1; gradient of normal = -1/2; y-5/2 = -1/2(x+3) → y = -1/2 x + 1 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-NOV-TZ3-P1-Q09-D",
+      "question": "9",
+      "part": "D",
+      "marks": 5,
+      "source_pages": "13",
+      "markscheme_pages": "18",
+      "task_summary": "Find the shaded area bounded by the curve, the normal line L, and the y-axis.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [
+        "functions.curve_sketching"
+      ],
+      "method_family": "integration",
+      "method_tags": [
+        "definite_integral",
+        "area_between_curves",
+        "trapezium"
+      ],
+      "method_path": [
+        "Set up integral of difference: ∫ from -3 to 0 of [f(x) - (-1/2 x + 1)] dx",
+        "Integrate: (1/6)x^3 + (5/2)x^2 + 13x - (-1/4 x^2 + x) evaluated from -3 to 0",
+        "Simplify to (1/6)x^3 + (11/4)x^2 + 12x",
+        "Substitute limits: 0 - [ (1/6)(-27) + (11/4)(9) + 12(-3) ]",
+        "Compute: 0 - [ -9/2 + 99/4 - 36 ] = 63/4"
+      ],
+      "accepted_alternatives": [
+        "Use area of trapezium and integral of curve",
+        "Integrate f(x) - (1/2 x + 1) directly"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "18",
+          "basis": "attempt to describe shaded area as difference of two integrals or one integral and area of trapezium M1; correct integration A2; substituting limits M1; 63/4 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

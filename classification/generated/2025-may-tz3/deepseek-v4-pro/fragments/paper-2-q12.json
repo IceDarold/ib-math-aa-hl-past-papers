@@ -1,0 +1,162 @@
+{
+  "question": "12",
+  "expected_question_marks": 21,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q12-A",
+      "question": "12",
+      "part": "A",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Find the indefinite integral of (x^2 - 5) e^x dx.",
+      "primary_topic": "calculus.integration_applications",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integration_by_parts",
+        "indefinite_integral",
+        "exponential_function",
+        "polynomial"
+      ],
+      "method_path": [
+        "Apply integration by parts with u = x^2 - 5, dv = e^x dx",
+        "Apply integration by parts a second time to the resulting integral",
+        "Simplify to obtain (x^2 - 2x - 3) e^x + C"
+      ],
+      "accepted_alternatives": [
+        "Integration by parts with u = e^x, dv = (x^2 - 5) dx, then integrate by parts again"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to use integration by parts (M1); (x^2 - 5) e^x - ∫ e^x (2x) dx OR ... A1; attempt to use integration by parts a second time (M1); ... A1; (x^2 - 5) e^x - (2x e^x - 2 e^x) (A1); (x^2 - 2x - 3) e^x + c OR ... A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q12-B",
+      "question": "12",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "14",
+      "markscheme_pages": "19",
+      "task_summary": "Solve the differential equation dy/dx + y = x^2 - 5 and show the solution can be expressed as y = x^2 - 2x - 3 + C e^{-x}.",
+      "primary_topic": "calculus.differential_equations",
+      "secondary_topics": [],
+      "method_family": "integration",
+      "method_tags": [
+        "integrating_factor",
+        "first_order_linear_ode",
+        "exponential_function",
+        "polynomial"
+      ],
+      "method_path": [
+        "Rearrange to standard form dy/dx + y = x^2 - 5",
+        "Find integrating factor e^{∫ 1 dx} = e^x",
+        "Multiply both sides by e^x and recognize left side as derivative of e^x y",
+        "Integrate both sides using result from part (a)",
+        "Solve for y to obtain y = x^2 - 2x - 3 + C e^{-x}"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "rearranging to dy/dx + y = x^2 - 5 AND attempt to find integrating factor (M1); e^{∫ 1 dx} = e^x (seen anywhere) A1; e^x dy/dx + e^x y = e^x (x^2 - 5) ... M1; e^x y = (x^2 - 2x - 3) e^x + C OR ... A1; y = x^2 - 2x - 3 + C e^{-x} AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q12-C",
+      "question": "12",
+      "part": "C",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "20",
+      "task_summary": "Sketch the particular solution passing through (-3, 2) for -4 ≤ x ≤ 4, labelling local maximum and minimum points.",
+      "primary_topic": "functions.curve_sketching",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "function_analysis",
+      "method_tags": [
+        "substitution",
+        "particular_solution",
+        "curve_sketching",
+        "local_extrema",
+        "domain_restriction"
+      ],
+      "method_path": [
+        "Substitute x = -3, y = 2 into general solution to find C",
+        "Obtain particular solution y = x^2 - 2x - 3 - 0.498 e^{-x} (or equivalent)",
+        "Sketch curve with correct shape, x-intercepts, local maximum at (-2.70, 2.28), local minimum at (0.899, -4.19), domain -4 ≤ x ≤ 4"
+      ],
+      "accepted_alternatives": [
+        "C = -10 e^{-3} leading to y = x^2 - 2x - 3 - 10 e^{-x-3}"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "substituting x = -3, y = 2 into y = x^2 - 2x - 3 + C e^{-x} (M1); C = -0.497870... (= -10 e^{-3}) A1; y = x^2 - 2x - 3 - 0.498 e^{-x} (accept y = x^2 - 2x - 3 - 10 e^{-x-3}) A1A1A1; Note: A1 for approximately correct shape AND x-intercepts in approximately correct place; A1 for maximum in approximately correct position and labelled (-2.70, 2.28) AND minimum in approximately correct position and labelled (0.899, -4.19); A1 for domain."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q12-D",
+      "question": "12",
+      "part": "D",
+      "marks": 6,
+      "source_pages": "14",
+      "markscheme_pages": "21",
+      "task_summary": "Show that all tangents at x = -3 to the family of solution curves intersect at a common point, and state its coordinates.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "calculus.differential_equations"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "tangent_line",
+        "differential_equation",
+        "simultaneous_equations",
+        "intersection_point"
+      ],
+      "method_path": [
+        "Substitute x = -3 into dy/dx = x^2 - 5 - y to find gradient in terms of y-coordinate",
+        "Write equations of tangents at (-3, p) and (-3, q)",
+        "Solve the two tangent equations simultaneously to find intersection point",
+        "Show intersection point is (-2, 4) independent of p and q"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "substituting -3 and p OR -3 and q into dy/dx (M1); gradient of tangent at (-3, p) is 4 - p and at (-3, q) is 4 - q; finding equation of tangents (M1); y - p = (4 - p)(x + 3) AND y - q = (4 - q)(x + 3) A1; solving their equations simultaneously (M1); ... x + 3 = 1 (since p ≠ q) x = -2 A1; y - p = 4 - p OR y - q = 4 - q y = 4 A1; hence all tangents intersect at (-2, 4) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

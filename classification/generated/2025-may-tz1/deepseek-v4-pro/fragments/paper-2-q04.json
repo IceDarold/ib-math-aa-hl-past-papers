@@ -1,0 +1,116 @@
+{
+  "question": "4",
+  "expected_question_marks": 8,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q04-A",
+      "question": "4",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Estimate arm span for foot length 19.8 cm using the regression line of A on F.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "substitution",
+        "regression_line_application"
+      ],
+      "method_path": [
+        "Substitute F=19.8 into A=2.89F+99.3",
+        "Calculate A=156.522",
+        "Round to 157 cm"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "attempt to substitute F=19.8 into the regression line for A on F (M1); A=2.89(19.8)+99.3=156.522; arm span=157 (cm) A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q04-B",
+      "question": "4",
+      "part": "B",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Find the mean arm span and mean foot length using the intersection of the two regression lines.",
+      "primary_topic": "statistics.regression",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "intersection_of_lines",
+        "solving_linear_equations"
+      ],
+      "method_path": [
+        "Recognize that the regression lines intersect at the mean point",
+        "Set 0.335A - 32.6 = (A - 99.3)/2.89 or equivalent",
+        "Solve for A and F",
+        "Round to A=160 cm, F=20.9 cm"
+      ],
+      "accepted_alternatives": [
+        "Solve 2.89F + 99.3 = (F + 32.6)/0.335"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "recognition that the lines intersect at the mean point (M1); 0.335A - 32.6 = (A - 99.3)/2.89 OR 2.89F + 99.3 = (F + 32.6)/0.335; mean arm span=160 (cm), mean foot length=20.9 (cm) A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q04-C",
+      "question": "4",
+      "part": "C",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "11",
+      "task_summary": "Find the standard deviation s of heights given that 88% lie between 153 cm and 173 cm with mean 163 cm.",
+      "primary_topic": "statistics.continuous_random_variables",
+      "secondary_topics": [],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "normal_distribution",
+        "inverse_normal",
+        "z_score"
+      ],
+      "method_path": [
+        "Recognize symmetry: P(H<153)=0.06 or P(H<173)=0.94",
+        "Find z-score: z = -1.55477... or 1.55477...",
+        "Solve (153-163)/s = -1.55477... or (173-163)/s = 1.55477...",
+        "Calculate s = 6.43181...",
+        "Round to s = 6.43 cm"
+      ],
+      "accepted_alternatives": [
+        "Use GDC normal CDF function: normcdf(153,173,163,s)=0.88 and solve for s"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "11",
+          "basis": "METHOD 1: recognition of symmetry (M1); P(H<153)=0.06 or P(H<173)=0.94; (153-163)/σ = -1.55477... or (173-163)/σ = 1.55477... (A1); σ = 6.43181...; σ = 6.43 (cm) A1. METHOD 2: attempt to find σ by equating normal CDF to 0.88 (M1); σ = 6.43181...; σ = 6.43 (cm) A2."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

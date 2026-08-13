@@ -1,0 +1,245 @@
+{
+  "question": "10",
+  "expected_question_marks": 16,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-A",
+      "question": "10",
+      "part": "a",
+      "marks": 1,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Write down t3, the number of cards for a pyramid with 3 rows.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "read_from_diagram",
+        "count_cards"
+      ],
+      "method_path": [
+        "Count cards in diagram for n=3"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "15 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-B",
+      "question": "10",
+      "part": "b",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "19",
+      "task_summary": "Find t4, the number of cards for a pyramid with 4 rows.",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "extend_pattern",
+        "add_cards",
+        "arithmetic_sequence"
+      ],
+      "method_path": [
+        "Add 11 cards to t3 or sum cards in 4 rows"
+      ],
+      "accepted_alternatives": [
+        "t4 = 15 + 11",
+        "t4 = 2 + 5 + 8 + 11"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19",
+          "basis": "attempt to add 11 cards onto a stack with 3 rows OR attempt to consider all 4 rows (M1); valid diagram with 4 rows OR t4 = 15 + 11 OR t4 = 2 + 5 + 8 + 11; = 26 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-C",
+      "question": "10",
+      "part": "c",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "19-20",
+      "task_summary": "Show that t_n = (n/2)(3n + 1).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "arithmetic_series",
+        "sum_formula",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Recognize t_n as sum of arithmetic sequence 2,5,8,...",
+        "Apply sum formula S_n = n/2 (2a + (n-1)d)",
+        "Simplify to (n/2)(3n+1)"
+      ],
+      "accepted_alternatives": [
+        "METHOD 2: Split into stacked and horizontal cards, sum separately, combine.",
+        "METHOD 3: Recognize stack as complete triangles minus bottom row, sum arithmetic sequence."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "19-20",
+          "basis": "METHOD 1: recognition that t_n is a sum of an arithmetic sequence (M1); attempt to use formula for the sum of n terms of an arithmetic sequence M1; t_n = n/2 (2*2 + 3(n-1)) A1; t_n = n/2 (3n+1) AG"
+        },
+        {
+          "markscheme_pages": "19-20",
+          "basis": "METHOD 2: attempt to split t_n into the total number of stacked and horizontal cards (M1); stacked = ... A1; horizontal = ... A1; t_n = ... = n/2 (3n+1) AG"
+        },
+        {
+          "markscheme_pages": "20",
+          "basis": "METHOD 3: recognition that a stack with n rows is made up of complete triangles ... (M1); attempt to use formula for the sum of n terms of an arithmetic sequence M1; t_n = ... = n/2 (3n+1) AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-D",
+      "question": "10",
+      "part": "d",
+      "marks": 3,
+      "source_pages": "13",
+      "markscheme_pages": "20",
+      "task_summary": "Find the maximum number of rows using cards from 14 full packs (14*52=728 cards).",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "number_algebra.sequences"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "solve_inequality",
+        "quadratic_inequality",
+        "integer_solution"
+      ],
+      "method_path": [
+        "Set up inequality (n/2)(3n+1) ≤ 728",
+        "Solve for n",
+        "Take integer part"
+      ],
+      "accepted_alternatives": [
+        "Solve equation (n/2)(3n+1) = 728 and test integer values."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "20",
+          "basis": "attempt to solve (n/2)(3n+1) ≤ 14(52) = 728 (M1); n = 21.8642... OR n=21, t_21=672 and n=22, t_22=737 (A1); max number of rows is 21 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-E",
+      "question": "10",
+      "part": "e",
+      "marks": 2,
+      "source_pages": "13",
+      "markscheme_pages": "21",
+      "task_summary": "Find the minimum number of rows such that the total number of cards is a multiple of 52 (no cards left over).",
+      "primary_topic": "number_algebra.sequences",
+      "secondary_topics": [
+        "number_algebra.proof"
+      ],
+      "method_family": "sequences_and_recurrences",
+      "method_tags": [
+        "list_terms",
+        "check_divisibility",
+        "integer_condition"
+      ],
+      "method_path": [
+        "List t_n values until t_n is a multiple of 52",
+        "Identify smallest n"
+      ],
+      "accepted_alternatives": [
+        "Recognize that (1/52) * (n/2)(3n+1) must be an integer, solve for n."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "21",
+          "basis": "EITHER attempt to solve by listing at least six values of t_n (M1); 2,7,15,26,40,57... OR recognition that (1/52)*(n/2)(3n+1) must be an integer (M1); min number of rows is 13 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P2-Q10-F",
+      "question": "10",
+      "part": "f",
+      "marks": 5,
+      "source_pages": "14",
+      "markscheme_pages": "22",
+      "task_summary": "Find the minimum number of cards needed for a pyramid stack with vertical height > 2 metres, ignoring card thickness.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "number_algebra.sequences",
+        "number_algebra.inequalities"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "pythagoras",
+        "trigonometric_ratio",
+        "equilateral_triangle_height",
+        "solve_inequality",
+        "substitute_into_sequence"
+      ],
+      "method_path": [
+        "Find height of one equilateral triangle card (side 88 mm) using Pythagoras or trigonometry",
+        "Set up inequality n * height > 2000 mm",
+        "Solve for n",
+        "Round up to integer rows",
+        "Calculate t_n for that n"
+      ],
+      "accepted_alternatives": [
+        "Find side length of equilateral triangle with height 2000 mm, then solve 88n > side."
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "22",
+          "basis": "EITHER attempt to use Pythagoras’s Theorem or trigonometry to find the height of an equilateral triangle with sides 88mm (M1); height = sqrt(88^2 - 44^2) OR 88 sin60° OR 88 cos30° OR 44 tan60° OR 44/tan30° OR 44√3 = 76.2102... (A1); attempt to solve 44√3 n > 2000 OR their perpendicular height * n > 2000 (M1); n > 26.2431... so min number of rows is 27 (A1); t_27 = 1107 A1"
+        },
+        {
+          "markscheme_pages": "22",
+          "basis": "OR attempt to use trigonometry to find the side of an equilateral triangle with height 2000mm (M1); side = 2000/sin60° OR 2000/cos30° OR 4000/√3 = 2309.40... (A1); attempt to solve 88n > 2309.40... OR 88n > their side (M1); n > 26.2431... so min number of rows is 27 (A1); t_27 = 1107 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

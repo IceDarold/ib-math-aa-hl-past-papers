@@ -1,0 +1,85 @@
+{
+  "question": "8",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ1-P1-Q08-A",
+      "question": "8",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Show that 1 + log_2 n ≥ log_2 (n + 1) for n ∈ ℤ⁺.",
+      "primary_topic": "number_algebra.inequalities",
+      "secondary_topics": [
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "algebraic_transformation",
+      "method_tags": [
+        "logarithm_properties",
+        "inequality_manipulation",
+        "monotonic_function"
+      ],
+      "method_path": [
+        "Rewrite 1 + log_2 n as log_2 (2n)",
+        "Note 2n ≥ n + 1 for n ∈ ℤ⁺",
+        "Apply increasing property of log_2 to obtain log_2 (2n) ≥ log_2 (n + 1)"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "1 + log_2 n = log_2 2 + log_2 n = log_2 (2n) (A1); 2n ≥ n + 1 OR log_2 (2n) ≥ log_2 (n + 1) (R1); AG"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ1-P1-Q08-B",
+      "question": "8",
+      "part": "B",
+      "marks": 5,
+      "source_pages": "10",
+      "markscheme_pages": "15",
+      "task_summary": "Use mathematical induction and the result from part (a) to prove that n > log_2 n for n ∈ ℤ⁺.",
+      "primary_topic": "number_algebra.mathematical_induction",
+      "secondary_topics": [
+        "number_algebra.inequalities",
+        "functions.logarithmic_functions"
+      ],
+      "method_family": "mathematical_induction",
+      "method_tags": [
+        "base_case",
+        "inductive_hypothesis",
+        "inductive_step",
+        "inequality_manipulation"
+      ],
+      "method_path": [
+        "Base case n = 1: 1 > log_2 1 = 0",
+        "Assume true for n = k: k > log_2 k",
+        "Inductive step: k + 1 > 1 + log_2 k (by assumption)",
+        "Apply part (a): 1 + log_2 k ≥ log_2 (k + 1)",
+        "Conclude k + 1 > log_2 (k + 1), hence true for n = k + 1",
+        "By induction, true for all n ∈ ℤ⁺"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "15",
+          "basis": "for n = 1: log_2 1 = 0 and 1 > 0 OR LHS = 1, RHS = log_2 1 = 0 OR log_2 2 > log_2 1 (R1); assume true for n = k, ie k > log_2 k (M1); hence k + 1 > 1 + log_2 k (M1); ≥ log_2 (k + 1) (using result from part (a)) (A1); hence if true for n = k then true for n = k + 1 (R1); and as true for n = 1, therefore true for all n ∈ ℤ⁺."
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

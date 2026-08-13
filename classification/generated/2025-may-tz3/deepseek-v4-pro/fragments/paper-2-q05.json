@@ -1,0 +1,84 @@
+{
+  "question": "5",
+  "expected_question_marks": 7,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ3-P2-Q05-A",
+      "question": "5",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "7",
+      "markscheme_pages": "9",
+      "task_summary": "Find f'(x) for f(x) = (2x + a)^3 / (x + 5)^2, a > 0, x ≠ -5.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [],
+      "method_family": "differentiation",
+      "method_tags": [
+        "quotient_rule",
+        "product_rule",
+        "chain_rule",
+        "algebraic_simplification"
+      ],
+      "method_path": [
+        "Apply quotient rule or product rule with chain rule",
+        "Differentiate numerator and denominator",
+        "Simplify to obtain f'(x)"
+      ],
+      "accepted_alternatives": [
+        "Use quotient rule: f'(x) = [3(2x+a)^2 * 2 * (x+5)^2 - (2x+a)^3 * 2(x+5)] / (x+5)^4, simplify to 2(2x+a)^2 (x+15-a) / (x+5)^3",
+        "Use product rule: f(x) = (2x+a)^3 (x+5)^{-2}, f'(x) = 3(2x+a)^2 * 2 * (x+5)^{-2} + (2x+a)^3 * (-2)(x+5)^{-3}, simplify to 2(2x+a)^2 (x+15-a) / (x+5)^3"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "use of quotient rule or product rule (M1); EITHER ... A1 ... A1; OR ... A1 ... A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ3-P2-Q05-B",
+      "question": "5",
+      "part": "B",
+      "marks": 4,
+      "source_pages": "7",
+      "markscheme_pages": "9",
+      "task_summary": "Given tangent at x=1 makes 70° to horizontal, find two possible values of a.",
+      "primary_topic": "calculus.differentiation",
+      "secondary_topics": [
+        "geometry.trigonometry"
+      ],
+      "method_family": "equation_and_inequality_solving",
+      "method_tags": [
+        "tangent_slope",
+        "trigonometric_equation",
+        "substitution",
+        "solving_quadratic"
+      ],
+      "method_path": [
+        "Set f'(1) = tan(70°)",
+        "Substitute x=1 into f'(x) expression",
+        "Solve resulting equation for a",
+        "Obtain two positive values"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "9",
+          "basis": "recognizing f'(1) is equal to tan 70° (M1); ... (A1); a = 2.73, 15.0 A1A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

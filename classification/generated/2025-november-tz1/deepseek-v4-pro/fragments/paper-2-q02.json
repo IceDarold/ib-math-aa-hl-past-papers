@@ -1,0 +1,45 @@
+{
+  "question": "2",
+  "expected_question_marks": 4,
+  "blocks": [
+    {
+      "id": "2025-NOV-TZ1-P2-Q02",
+      "question": "2",
+      "part": "",
+      "marks": 4,
+      "source_pages": "5",
+      "markscheme_pages": "8",
+      "task_summary": "Determine the number of ways to select a committee of seven from ten members by first choosing a chairperson, vice-chairperson, and treasurer, then selecting four additional members.",
+      "primary_topic": "statistics.combinatorics",
+      "secondary_topics": [],
+      "method_family": "combinatorial_counting",
+      "method_tags": [
+        "permutation",
+        "combination",
+        "multiplication_principle"
+      ],
+      "method_path": [
+        "Calculate number of ways to choose and order three distinct officers from ten: 10P3 = 720",
+        "Calculate number of ways to choose four additional members from remaining seven: 7C4 = 35",
+        "Multiply the two results: 720 × 35 = 25200"
+      ],
+      "accepted_alternatives": [
+        "10 × 9 × 8 for officers, then 7C4 for remaining",
+        "10C3 × 3! for officers, then 7C4 for remaining",
+        "10C7 × 3! for officers, then 7C4 for remaining"
+      ],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "10P3 OR 10×9×8 OR 10C3×3! OR 10C7×3! (720) (A1); correct number of ways the remaining four members can be selected 7C4 OR 35 (A1); attempt to use the multiplication principle with their values (M1); 720×35 25200 A1"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}

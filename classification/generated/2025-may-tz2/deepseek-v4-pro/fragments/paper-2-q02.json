@@ -1,0 +1,110 @@
+{
+  "question": "2",
+  "expected_question_marks": 6,
+  "blocks": [
+    {
+      "id": "2025-MAY-TZ2-P2-Q02-A",
+      "question": "2",
+      "part": "A",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the distance VX between points V(1,7,0) and X(-3,4,2).",
+      "primary_topic": "geometry.vectors_3d",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "distance_formula_3d",
+        "simplify_surd"
+      ],
+      "method_path": [
+        "Apply 3D distance formula: sqrt((x2-x1)^2+(y2-y1)^2+(z2-z1)^2)",
+        "Simplify to sqrt(29) or 5.39"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to find distance between two points (M1); VX = sqrt(29) = 5.39 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q02-B",
+      "question": "2",
+      "part": "B",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the length of diagonal AC of the square base with side length 5 cm.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [],
+      "method_family": "formula_application",
+      "method_tags": [
+        "pythagoras_theorem",
+        "square_diagonal"
+      ],
+      "method_path": [
+        "Apply Pythagoras: AC = sqrt(5^2+5^2)",
+        "Simplify to 5*sqrt(2) or 7.07"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "attempt to use Pythagoras' theorem (M1); AC = 5*sqrt(2) = 7.07 (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    },
+    {
+      "id": "2025-MAY-TZ2-P2-Q02-C",
+      "question": "2",
+      "part": "C",
+      "marks": 2,
+      "source_pages": "4",
+      "markscheme_pages": "8",
+      "task_summary": "Find the angle between edge VC and the base of the pyramid.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.vectors_3d"
+      ],
+      "method_family": "trigonometric_reasoning",
+      "method_tags": [
+        "right_triangle_trigonometry",
+        "tangent_ratio",
+        "inverse_tangent"
+      ],
+      "method_path": [
+        "Identify right triangle VXC with VX=sqrt(29) and XC=AC/2=5*sqrt(2)/2",
+        "Use tan(theta)=VX/XC",
+        "Compute theta = arctan(sqrt(29)/(5*sqrt(2)/2))",
+        "Obtain 56.7° or 0.990 rad"
+      ],
+      "accepted_alternatives": [],
+      "evidence": [
+        {
+          "markscheme_pages": "8",
+          "basis": "valid attempt to use trig ratio in triangle VXC (M1); tan(theta)=sqrt(29)/(5*sqrt(2)/2); theta=56.7° or 0.990 rad (A1)"
+        }
+      ],
+      "confidence": {
+        "segmentation": "high",
+        "topic": "high",
+        "method": "high"
+      },
+      "review_flags": []
+    }
+  ]
+}
