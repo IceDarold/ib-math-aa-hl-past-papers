@@ -118,7 +118,14 @@ skills:
     prereq: [reference_angle]
     raw_tags: [compound_angle_identity, angle_sum_formula, tan_addition_formula,
                arctan_identity, exact_trigonometric_values, trigonometric_substitution]
-    blocks: [2025-MAY-TZ1-P1-Q11-C-I, 2021-MAY-TZ2-P1-Q12-B, 2021-MAY-TZ2-P1-Q12-C]
+    blocks: [2025-MAY-TZ1-P1-Q11-C, 2021-MAY-TZ2-P1-Q12-B, 2021-MAY-TZ2-P1-Q12-C]
+    block_note: >
+      Пересмотр разметки в августе 2026 склеил 2025-MAY-TZ1-P1-Q11-C-I
+      (3 балла, trigonometric_identities) и -C-II (4 балла, trigonometry)
+      в один блок -C на 7 баллов с темой geometry.trigonometry. Материал
+      приёма — тождество sin 75° = (√2+√6)/4 — остался на месте, но по теме
+      блок теперь целиком уходит в C1. Приём отрабатывается здесь потому,
+      что формула сложения углов принадлежит этой теме, а не теореме синусов.
 
   - id: pythagorean_reduction
     name: Пифагорово тождество и квадратное уравнение
