@@ -1,0 +1,202 @@
+version: 0.1
+practicum: A6
+title: Муавр, корни из единицы, геометрия на плоскости
+source_topic: number_algebra.complex_numbers
+also_covers:
+  - topic: geometry.trigonometric_identities
+    share: 0.34
+    what: >
+      Четыре блока, 18 баллов: тождества, которые получают возведением
+      в степень по Муавру и приравниванием мнимых частей — sin 5θ, sin 3θ,
+      (1 ± i tan θ)^4, tan(π/12) через аргумент. Приём комплексный,
+      тождество лишь результат, поэтому материал здесь, а не в C3.
+corpus:
+  blocks: 33
+  marks: 112
+  sessions: May 2021 — November 2025
+  papers: {1: 66, 2: 7, 3: 21}
+  gdc_marks: 28
+  note: >
+    Продолжение A5. Граница между практикумами: появилось z^n — это сюда.
+    Пятая часть материала приходится на Paper 3, где корни из единицы
+    разворачиваются в длинное исследование про правильный n-угольник.
+
+principle: >
+  Все шесть приёмов — прочтения одной формулы (re^{iθ})^n = r^n e^{inθ}
+  в разные стороны. Приём 1 применяет её напрямую, приём 2 обращает,
+  приём 3 — частный случай при z^n = 1, приём 4 смотрит только на аргумент,
+  приём 5 читает умножение как движение плоскости, приём 6 раскрывает
+  степень дважды и приравнивает результаты.
+
+skills:
+  - id: de_moivre_power
+    name: Возведение в степень
+    rung: 1
+    trigger: "z^n при большом n; «show that (…)^8 = −256»."
+    chain:
+      - Перевести основание в полярную форму
+      - Модуль возвести в степень, аргумент умножить на n
+      - Привести аргумент к (−π, π], вычитая 2π нужное число раз
+      - "Для суммы z^n + z̄^n взять удвоенную действительную часть"
+    traps:
+      - Раскрывают по биному вместо Муавра — девять слагаемых вместо двух строк
+      - Аргумент не приведён к требуемому промежутку
+    calculator:
+      mode: checks
+      note: >
+        GDC возводит комплексное число в степень напрямую, но 60 из 66 баллов
+        приёма — Paper 1.
+    prereq: []
+    raw_tags: [de_moivre_theorem, de_moivres_theorem, polar_form_exponentiation,
+               complex_addition, evaluation, polar_form_alternative, cubing_roots]
+    blocks: [2025-NOV-TZ3-P1-Q11-A-II, 2024-MAY-TZ1-P1-Q12-B, 2024-MAY-TZ1-P1-Q12-F]
+
+  - id: nth_roots
+    name: Корни n-й степени
+    rung: 2
+    trigger: "«Find the square roots», уравнение вида z^n = c."
+    chain:
+      - Записать правую часть как R e^{iφ}
+      - "Корни: R^{1/n} e^{i(φ + 2πk)/n} при k = 0 … n−1"
+      - Привести каждый аргумент к (−π, π]
+      - "Проверить: корни делят окружность на n равных частей"
+    traps:
+      - "Находят один корень вместо n. Ответ «z = −2» для z³ = −8 стоит
+        двух баллов из трёх"
+      - Продолжают перебирать k после n−1 и получают повторы
+      - "Аргумент делят на n до того, как учли периодичность 2π —
+        тогда остальные корни не появляются"
+    calculator:
+      mode: partial
+      note: >
+        Полином GDC решает численно, но ответ требуется в точной полярной
+        форме, а её калькулятор не даёт.
+    prereq: [de_moivre_power]
+    raw_tags: [nth_roots_of_complex_number, complex_root_extraction,
+               cube_root_extraction, find_roots, apply_de_moivre, roots_of_unity]
+    blocks: [2025-NOV-TZ1-P1-Q11-C, 2025-MAY-TZ2-P1-Q12-A, 2025-MAY-TZ3-P1-Q08-B,
+             2025-MAY-TZ2-P1-Q12-B]
+
+  - id: roots_of_unity
+    name: Корни из единицы
+    rung: 3
+    trigger: "z^n = 1, обозначение ω, правильный n-угольник, вершины P₀ … P_{n−1}."
+    chain:
+      - "Корни: ω_k = e^{2πik/n}, вершины правильного n-угольника"
+      - "Сумма всех корней равна нулю: 1 + ω + … + ω^{n−1} = 0"
+      - "Степени замыкаются: показатели считаются по остатку от деления на n"
+      - "Разложение z^n − 1 = (z − 1)(z^{n−1} + … + 1) даёт тождество для ω ≠ 1"
+    traps:
+      - Сумму корней доказывают перебором вместо разложения на множители
+      - "Забывают исключить ω = 1 при делении на (z − 1)"
+    calculator:
+      mode: forbidden
+      note: >
+        Весь сюжет Paper 3 — доказательство в общем виде для произвольного n.
+        Численно оно не делается.
+    prereq: [nth_roots]
+    raw_tags: [cube_root_of_unity, roots_of_unity_properties, factor_difference_of_powers,
+               zero_product_property, expand_product, pattern_recognition, conjecture,
+               generalization, algebraic_proof, factor_substitution, modulus_of_product]
+    blocks: [2021-MAY-TZ2-P3-Q02-A-I, 2021-MAY-TZ2-P3-Q02-A-II, 2021-MAY-TZ2-P3-Q02-C,
+             2021-MAY-TZ2-P3-Q02-G-II, 2024-MAY-TZ1-P1-Q12-C, 2024-MAY-TZ1-P1-Q12-G]
+
+  - id: periodicity_condition
+    name: Условие на аргумент
+    rung: 4
+    trigger: >
+      «Наименьшее n, при котором z^n действительно / чисто мнимо / равно −i».
+      Модуль в таких вопросах роли не играет вовсе.
+    chain:
+      - "Действительно ⟺ nθ = kπ"
+      - "Чисто мнимое ⟺ nθ = π/2 + kπ"
+      - "Равно −i ⟺ nθ = −π/2 + 2kπ"
+      - Решить в целых числах и взять наименьшее натуральное n
+    traps:
+      - "Берут первое k, а не то, при котором n выходит целым.
+        Для z^n = −i при arg z = 11π/18 подходит только k = 3"
+      - "Путают «действительно» с «равно −i»: в первом случае годится любое
+        кратное π, во втором — одно значение по модулю 2π, и n получается больше"
+    calculator:
+      mode: speeds_up
+      note: >
+        Перебор целых решений — единственное, чем он тут помогает.
+    prereq: [de_moivre_power]
+    raw_tags: [real_condition, integer_solution, equate_arguments, argument_difference,
+               solve_trigonometric_equation, common_denominator, lcm]
+    blocks: [2023-MAY-TZ2-P1-Q11-B, 2023-MAY-TZ1-P2-Q06-A, 2021-MAY-TZ1-P2-Q08-C]
+
+  - id: rotation_geometry
+    name: Умножение как движение плоскости
+    rung: 5
+    trigger: >
+      «Опишите преобразование», поворот точки, равносторонний треугольник
+      или другая фигура на плоскости Аргана.
+    chain:
+      - "Умножение на re^{iα} — поворот на α и растяжение в r раз"
+      - "Умножение на i — поворот на π/2; на −1 — на π"
+      - "Равносторонний треугольник Z₁OZ₂ означает z₁ = z₂ e^{iπ/3}"
+      - Дальше геометрия заменяется алгеброй
+    traps:
+      - "Направление поворота выбрано наугад. Условие вида 0 < α − θ < π
+        дано именно для того, чтобы его зафиксировать"
+      - Забывают, что при |z| = 1 растяжения нет и преобразование чистый поворот
+    calculator:
+      mode: checks
+      note: >
+        Точки можно нанести на диаграмму и посмотреть, но ответ здесь
+        словесное описание либо выкладка.
+    prereq: [de_moivre_power]
+    raw_tags: [rotation, rotation_transformation, argand_diagram, complex_translation,
+               equilateral_triangle, complex_exponential, geometric_distance,
+               apply_dilation, calculate_area, euler_identity]
+    blocks: [2023-MAY-TZ1-P2-Q06-B, 2024-MAY-TZ1-P1-Q12-E, 2022-MAY-TZ2-P1-Q12-C,
+             2025-MAY-TZ2-P1-Q12-E, 2021-NOV-COMMON-P1-Q12-B]
+
+  - id: trig_via_de_moivre
+    name: Тригонометрические тождества через Муавра
+    rung: 6
+    direction: prove
+    trigger: >
+      «Show that sin 5θ ≡ …» — тождество, где кратный угол выражают через
+      степени одинарного. Также выражения вида (1 ± i tan θ)^n.
+    chain:
+      - "Взять z = cos θ + i sin θ, у него модуль 1"
+      - "Раскрыть z^n по биному Ньютона"
+      - "Заменить i² = −1, i³ = −i, i⁴ = 1 и разделить на части"
+      - "Приравнять мнимую часть к sin nθ, действительную к cos nθ"
+      - Убрать лишнюю функцию пифагоровым тождеством
+    traps:
+      - "Последний шаг пропущен, и в ответе остались обе функции,
+        а требуется через одну"
+      - Знаки степеней мнимой единицы перепутаны
+    calculator:
+      mode: forbidden
+      note: >
+        Все четыре блока приёма — Paper 1, ответ есть выкладка.
+        Это те самые 18 баллов, что пришли из темы тождеств.
+    prereq: [de_moivre_power]
+    raw_tags: [equate_imaginary_parts, take_imaginary_part, pythagorean_identity_substitution,
+               trigonometric_simplification, algebraic_expansion, double_angle_identities,
+               complex_to_trigonometric_conversion, binomial_expansion,
+               argument_of_complex_number, tangent_ratio, rationalize_denominator]
+    blocks: [2023-NOV-TZ2-P1-Q12-B, 2025-NOV-TZ1-P1-Q08-A, 2025-NOV-TZ3-P1-Q11-B,
+             2025-NOV-TZ1-P1-Q11-E]
+
+# Что проверка практикума принципиально не ловит.
+verification_limits:
+  - what: приведение аргумента к (−π, π]
+    why: >
+      check_complex сверяет само число, а e^{13iπ/12} и e^{−11iπ/12} — это
+      одно и то же число. Математически верно, но на экзамене за приведение
+      к требуемому промежутку стоит отдельный балл. В ноутбуке об этом сказано
+      прямо, в тестах поведение зафиксировано отдельной проверкой,
+      чтобы не выглядело недосмотром.
+
+ladder:
+  - de_moivre_power
+  - nth_roots
+  - roots_of_unity
+  - periodicity_condition
+  - rotation_geometry
+  - trig_via_de_moivre

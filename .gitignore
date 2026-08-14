@@ -12,3 +12,4 @@ classification/api/data/
 # Python
 __pycache__/
 *.pyc
+/.venv-practicum/

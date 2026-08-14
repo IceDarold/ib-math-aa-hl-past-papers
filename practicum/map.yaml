@@ -28,18 +28,100 @@ sections:
       - id: A3
         title: Биномиальная теорема
         subtopics: [number_algebra.binomial_theorem]
+        status: ready
+        notebook: practicum/number_algebra/practicum-a3-binomial.ipynb
+        kaggle: ib-math-praktikum-a3-binomial
+        skills: practicum/skills/number-algebra-binomial.yaml
+        note: >
+          Тема взята целиком: 109 баллов, 24 блока, внутри диапазона.
+          Единственная тема секции A без единого блока Paper 3 — вопросы
+          короткие и самостоятельные, в длинные исследования бином не заходит.
+
+          Шесть приёмов из семи — прочтения формулы общего члена, поэтому
+          лестница получилась однородной: раскрыть целиком, найти один член,
+          приравнять коэффициенты, связать коэффициенты последовательностью,
+          продолжить на нецелые показатели, перемножить ряды, подставить i.
+
+          Проверка разложений сверяет значения, а не запись: у ученика
+          выходит 5*x/2, у Python 2.5, и хеш от srepr тут бесполезен.
+          Обратная сторона — нераскрытая скобка численно равна своему
+          разложению, и такой ответ проверка примет.
       - id: A4
         title: "Многочлены: Виета, деление, кратность корней"
         subtopics: [number_algebra.polynomials]
+        status: ready
+        notebook: practicum/number_algebra/practicum-a4-polynomials.ipynb
+        kaggle: ib-math-praktikum-a4-polynomials
+        skills: practicum/skills/number-algebra-polynomials.yaml
+        note: >
+          Тема взята целиком: 145 баллов, 50 блоков. Самая широкая в секции A
+          и единственная в архиве, где Paper 3 весит больше Paper 2
+          (49 баллов против 34).
+
+          Девять приёмов ложатся в две половины. Первая идёт от коэффициентов
+          к корням: множитель, деление, кратный корень. Вторая — обратно:
+          Виета, сопряжённые пары, симметричные суммы, преобразование корней.
+          Отсюда главное умение темы — до начала счёта понять, спрашивают ли
+          корни вообще. Простейшие дроби стоят девятым приёмом особняком:
+          они ничего не говорят о корнях и ведут в E5 и E7.
+
+          Формально 57% баллов с калькулятором, но реальной работы для GDC
+          здесь на 4 балла из 145.
+
+          Проверка устроена обратно к A3. Там сверялись значения, и
+          нераскрытая скобка проходила. Здесь «представьте в виде
+          произведения линейных множителей» — требование к записи, и
+          verify_factored разбирает написанное, не факторизуя его сам.
       - id: A5
         title: "Комплексные числа: формы и арифметика"
-        subtopics: [{topic: number_algebra.complex_numbers, share: 0.5}]
+        subtopics: [{topic: number_algebra.complex_numbers, share: 0.605}]
+        status: ready
+        notebook: practicum/number_algebra/practicum-a5-complex-forms.ipynb
+        kaggle: ib-math-praktikum-a5-complex-forms
+        skills: practicum/skills/number-algebra-complex-forms.yaml
+        note: >
+          Доля 0.605 не подобрана на глаз: все 69 блоков темы разнесены между
+          A5 и A6 поимённо, списки лежат в blocks карточек. A5 получил
+          42 блока и 144 балла, A6 — 27 блоков и 94 балла.
+
+          Граница проходит там, где кончается арифметика и начинается
+          возведение в степень: если в решении появляется z^n, это A6.
       - id: A6
         title: Муавр, корни из единицы, геометрия на плоскости
-        subtopics: [{topic: number_algebra.complex_numbers, share: 0.5}]
+        subtopics: [{topic: number_algebra.complex_numbers, share: 0.395},
+                    {topic: geometry.trigonometric_identities, share: 0.34}]
+        status: ready
+        notebook: practicum/number_algebra/practicum-a6-de-moivre.ipynb
+        kaggle: ib-math-praktikum-a6-de-moivre
+        skills: practicum/skills/number-algebra-de-moivre.yaml
+        note: >
+          Доля тождеств — четыре блока (18 баллов), где тригонометрическое
+          тождество получают возведением в степень по Муавру и приравниванием
+          мнимых частей: sin 5θ, (1 ± i tan θ)^4, tan(π/12) через аргумент.
+          Приём здесь комплексный, тождество — результат, поэтому материал
+          живёт тут, а не в C3.
       - id: A7
         title: "Доказательство: индукция, прямое, от противного"
         subtopics: [number_algebra.mathematical_induction, number_algebra.proof]
+        status: ready
+        notebook: practicum/number_algebra/practicum-a7-proof.ipynb
+        kaggle: ib-math-praktikum-a7-proof
+        skills: practicum/skills/number-algebra-proof.yaml
+        note: >
+          Две темы корпуса взяты целиком: индукция (112 баллов) и proof
+          (48 баллов). Резать не пришлось — 160 баллов внутри диапазона,
+          и делить их нечем: шаг индукции сам является прямым
+          доказательством, а индукция для делимости построена
+          на представлении целых из темы proof.
+
+          Единственная тема архива без калькулятора вообще. Формально
+          доля с GDC 34%, но 48 из 54 таких баллов — части длинных
+          исследований Paper 3, где GDC работает в соседних пунктах.
+
+          Проверка здесь устроена иначе, чем в остальных практикумах:
+          ответ напечатан в условии, поэтому сверяются переход и остаток,
+          а не итог. Словесную часть — два-три балла из семи в каждом
+          задании — ноутбук проверить не может, о чём в нём сказано прямо.
       - id: A8
         title: Неравенства
         subtopics: [number_algebra.inequalities, functions.inequalities]
@@ -74,20 +156,61 @@ sections:
         title: Радианная мера, сектор, объёмные тела
         subtopics: [geometry.circular_measure, geometry.solid_geometry]
       - id: C3
-        title: Тригонометрические уравнения
-        subtopics: [geometry.trigonometric_equations]
+        title: Тригонометрические тождества и уравнения
+        subtopics: [geometry.trigonometric_equations,
+                    {topic: geometry.trigonometric_identities, share: 0.66}]
         status: ready
         notebook: practicum/geometry/practicum-c3-trigonometric-equations.ipynb
         kaggle: ib-math-praktikum-c3-trigonometric-equations
+        skills: practicum/skills/geometry-trigonometric-equations.yaml
+        note: >
+          Тождества не выделены в отдельный практикум: на них всего 53 балла
+          при нижней границе 60, а без доли Муавра — 35. Приёмы почти все уже
+          есть здесь, разница в направлении: «докажи» вместо «реши»
+          (pythagorean_reduction и double_angle_reduction разворачиваются
+          в заданиях Т3 и Т4). Настоящее добавление одно — формулы сложения
+          углов sin(A±B), cos(A±B), tan(A±B), которых в теме уравнений
+          не было; под них заведены Теория 2а и задания Т2, Т5.
       - id: C4
-        title: Тождества и тригонометрические функции
-        subtopics: [geometry.trigonometric_identities, functions.trigonometric_functions]
+        title: "Синусоидальные модели: амплитуда, период, сдвиг"
+        subtopics: [functions.trigonometric_functions]
+        status: ready
+        notebook: practicum/functions/practicum-c4-sinusoidal-models.ipynb
+        kaggle: ib-math-praktikum-c4-sinusoidal-models
+        skills: practicum/skills/functions-trigonometric-models.yaml
+        note: >
+          Зеркало C3: там 77% баллов без калькулятора, здесь 87% с ним.
+          Восемь приёмов, первые пять собирают модель, последние три ей
+          пользуются. Восьмой (оценка через ±1) стоит особняком — это
+          единственное место темы, где калькулятор бесполезен, и почти
+          весь Paper 1 приходится на него.
+
+          Чётность и композиция с тригонометрией (по 4 балла) приёмами
+          не стали: разобраны в разделе про Paper 1 и записаны в leftovers
+          карточки. По существу они принадлежат B2 и C3.
       - id: C5
         title: "Векторы: операции, прямые, углы"
         subtopics: [geometry.vectors]
       - id: C6
         title: Прямые и плоскости в пространстве
         subtopics: [{topic: geometry.vectors_3d, share: 0.5}]
+        skills: practicum/skills/geometry-vectors-3d.yaml
+        note: >
+          Сюда же идут системы линейных уравнений с параметром (18 баллов,
+          6 блоков): решить систему из трёх уравнений и определить взаимное
+          расположение трёх плоскостей — одно и то же действие, «нет
+          единственного решения» значит «общей точки нет», «бесконечно много»
+          значит «пересекаются по прямой». Своего практикума тема не тянет,
+          до нижней границы 60 далеко.
+
+          Но по карте эти блоки сюда пока не попадают: подтемы под системы
+          в таксономии нет, и они размечены как vectors и inequalities,
+          то есть уезжают в C5 и A8. Разбор и предложение завести
+          number_algebra.systems_of_equations — в corpus_issues карточки.
+        revisit: >
+          Пять блоков из шести — из сессий 2025 года, в 2021–2024 таких
+          вопросов нет. Пересмотреть при следующем пополнении архива:
+          если тема наберёт 60 баллов, выносить её в секцию A отдельно.
       - id: C7
         title: Расстояния, углы и векторное произведение
         subtopics: [{topic: geometry.vectors_3d, share: 0.5}]
@@ -144,6 +267,7 @@ sections:
         status: ready
         notebook: practicum/calculus/practicum-e7-differential-equations.ipynb
         kaggle: ib-math-praktikum-e7-differential-equations
+        skills: practicum/skills/calculus-differential-equations.yaml
         exception: >
           Тема идёт одним практикумом, хотя выходит за верхнюю границу.
           Естественный разрез — после приёма 5, между аналитическими методами

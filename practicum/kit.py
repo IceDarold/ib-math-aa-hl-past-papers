@@ -10,9 +10,45 @@
 """
 
 import hashlib
+import itertools
+import math
 
 import sympy as sp
 
+# Имена, которыми записывают ответ. Задача практикума — математика, а не синтаксис
+# sympy, поэтому в ячейке пишут sin(x), pi/6, sqrt(5), а не sp.sin(x), sp.pi/6.
+#
+# Список явный, а не `from sympy import *`: тот тянет под тысячу имён и молча
+# перекрывает встроенные (в том числе N и S), а отладка такого в чужом ноутбуке
+# занимает больше времени, чем стоит вся экономия на буквах.
+from sympy import (                                                  # noqa: E402
+    sin, cos, tan, cot, sec, csc,
+    asin, acos, atan, acot,
+    sinh, cosh, tanh, asinh, acosh, atanh,
+    sqrt, cbrt, root, exp, log, Abs, sign, floor, ceiling,
+    pi, E, I, oo, zoo, nan,
+    Rational, Integer, Float, S, Symbol, symbols, sympify,
+    re, im, arg, conjugate, Add, Mul, Pow,
+    simplify, trigsimp, expand, expand_trig, factor, cancel, together, apart,
+    div, quo, rem, Poly, degree, discriminant, real_roots, fraction,
+    solve, solveset, nsolve, Eq, Ne,
+    diff, integrate, limit, series, dsolve, Derivative, Integral, Function,
+    factorial, binomial, Sum, Product, Matrix, lambdify, nsimplify,
+)
+
+# Осторожно: `re` здесь — функция sympy «действительная часть», и она перекрывает
+# стандартный модуль регулярных выражений. В ноутбуке практикума это то, что нужно
+# (Re(z) пишут постоянно, регулярные выражения — никогда), но в скрипте,
+# которому нужен модуль re, импортируйте его после `from kit import *`.
+
+# IB пишет arcsin и cosec там, где sympy пишет asin и csc. Принимаем обе записи:
+# ответ не должен зависеть от того, в какой нотации вы привыкли писать.
+arcsin, arccos, arctan, arccot = asin, acos, atan, acot
+cosec = csc
+ln = log
+
+# Символы по умолчанию. Определяются после импорта sympy, чтобы при совпадении
+# имён побеждали они: N здесь переменная задачи, а не функция округления.
 x, y, v, t, u, C, A, B, k, N = sp.symbols('x y v t u C A B k N')
 
 OK, NO = "✅", "❌"
@@ -29,8 +65,18 @@ def _blank(label, *values):
     Ноутбук должен проходиться сверху вниз и с пустыми заданиями — иначе
     его нельзя ни запустить целиком, ни залить туда, где ячейки исполняются
     автоматически.
+
+    Внутрь списков смотрим рекурсивно: там, где ответ это набор, в ячейке
+    стоит `[...]`, и снаружи такой список от заполненного не отличается.
     """
-    if any(v is Ellipsis for v in values):
+    def has_gap(v):
+        if v is Ellipsis:
+            return True
+        if isinstance(v, (list, tuple, set, frozenset)):
+            return any(has_gap(i) for i in v)
+        return False
+
+    if any(has_gap(v) for v in values):
         print(f"⬜ {label}: ответ не заполнен")
         return True
     return False
@@ -107,6 +153,101 @@ def check_expr(label, got, want_digest):
     return False
 
 
+def _complex_canon(value, sf=6, tol=1e-9):
+    """Каноническая запись комплексного числа: пара округлённых частей.
+
+    Сравнивать комплексные ответы через srepr нельзя. sympy не приводит
+    2·e^{2πi/3}, 2(cos 2π/3 + i sin 2π/3) и −1 + √3 i к общему виду:
+    первое упрощается до 2·(−1)^{2/3}, второе до −1 + √3 i, и хеши расходятся.
+    Верный ответ в полярной форме получил бы ❌ против декартова эталона.
+    Поэтому сверяется само число, а не его запись.
+    """
+    z = complex(sp.N(sp.sympify(value)))
+    re_ = 0.0 if abs(z.real) < tol else z.real
+    im_ = 0.0 if abs(z.imag) < tol else z.imag
+    return f"{sig(re_, sf)}|{sig(im_, sf)}"
+
+
+def check_complex(label, got, want_digest, sf=6):
+    """Комплексный ответ в любой форме записи.
+
+    sf задаёт требуемую точность: 6 значащих цифр означает «нужна точная
+    форма» (десятичное приближение не пройдёт), 3 — «достаточно трёх
+    значащих цифр», как в Paper 2.
+    """
+    if _blank(label, got):
+        return False
+    if digest(_complex_canon(got, sf)) == want_digest:
+        print(f"{OK} {label}: {got}")
+        return True
+    print(f"{NO} {label}: {got} — не сходится")
+    return False
+
+
+def check_complex_set(label, values, want_digest, sf=6):
+    """Набор комплексных чисел: корни n-й степени, вершины многоугольника.
+
+    Порядок не важен, форма записи каждого элемента тоже.
+    """
+    if _blank(label, values, *values):
+        return False
+    canon = '|'.join(sorted(_complex_canon(v, sf) for v in values))
+    if digest(canon) == want_digest:
+        print(f"{OK} {label}: {{{', '.join(str(v) for v in values)}}}")
+        return True
+    print(f"{NO} {label}: {{{', '.join(str(v) for v in values)}}} — не сходится")
+    return False
+
+
+# Точки, в которых сверяются разложения, и заполнение для прочих букв.
+# Значения входят в хеш: меняя их, вы обесцениваете все записанные эталоны.
+_SERIES_SAMPLES = (0.31, 0.72, 1.37, 2.13, 3.41)
+_SERIES_FILL = (0.7, 1.3, 2.1, 0.4, 1.9)
+
+
+def _series_canon(expr, var, sf=6, tol=1e-12):
+    """Канонический вид разложения: значения в нескольких точках.
+
+    Сравнивать записи бессмысленно. Ученик напишет 5*x/2, sympy — 2.5*x,
+    а srepr у Rational(5,2) и Float(2.5) разный; сворачивать (1+x)**4 обратно
+    в многочлен simplify тоже не станет. Значения же совпадают при любой
+    верной записи, а разные многочлены в пяти точках не совпадают никогда.
+    """
+    e = sp.sympify(expr)
+    free = sorted(e.free_symbols - {var}, key=str)
+    out = []
+    for i, s in enumerate(_SERIES_SAMPLES):
+        sub = {var: sp.Float(s)}
+        sub.update({f: sp.Float(_SERIES_FILL[(i + j) % len(_SERIES_FILL)])
+                    for j, f in enumerate(free)})
+        z = complex(sp.N(e.subs(sub)))
+        re_ = 0.0 if abs(z.real) < tol else z.real
+        im_ = 0.0 if abs(z.imag) < tol else z.imag
+        out.append(f"{sig(re_, sf)}|{sig(im_, sf)}")
+    return ';'.join(out)
+
+
+def check_series(label, got, want_digest, var=x, sf=6):
+    """Ответ — многочлен или отрезок ряда от var.
+
+    Засчитывается любая эквивалентная запись: 5*x/2 и 2.5*x, порядок слагаемых,
+    вынесенный за скобку множитель. Если в ответе есть другие буквы (p, q, a),
+    называть их надо так же, как в условии: по ним проверка тоже подставляет
+    значения.
+
+    Чего проверка не делает: не требует раскрытых скобок. Ответ (1+x)**4
+    численно равен своему разложению, и отличить их по значениям нельзя.
+    """
+    if _blank(label, got):
+        return False
+    canon = _series_canon(got, var, sf)
+    if digest(canon) == want_digest:
+        print(f"{OK} {label}: {sp.expand(sp.sympify(got))}")
+        return True
+    print(f"{NO} {label}: {sp.expand(sp.sympify(got))} — не сходится")
+    return False
+
+
 def check_set(label, values, want_digest):
     """Ответ — набор значений (корни, углы). Порядок не важен."""
     if _blank(label, values):
@@ -118,6 +259,450 @@ def check_set(label, values, want_digest):
         return True
     print(f"{NO} {label}: {{{', '.join(str(i) for i in items)}}} — не сходится")
     return False
+
+
+def verify_identity(label, got, want, var=x,
+                    samples=(0.3, 0.7, 1.1, 1.9, 2.6, 3.4, 4.1, 5.2), tol=1e-9):
+    """Тождество got ≡ want. Проверяет переход, а не ответ.
+
+    В вопросах «show that» ответ напечатан в условии, прятать его бессмысленно:
+    смысл задания в выкладке. Поэтому проверяется, что записанное вами
+    промежуточное выражение действительно равно исходному при всех значениях.
+
+    Символьное упрощение тригонометрии часто не доводит разность до нуля,
+    хотя она тождественно нулевая, поэтому за simplify идёт численная проверка
+    в нескольких точках. Особые точки (полюсы tan, ноль в знаменателе)
+    пропускаются: расхождением они не считаются.
+    """
+    if _blank(label, got):
+        return False
+    diff = sp.simplify(sp.expand_trig(sp.sympify(got) - sp.sympify(want)))
+    if diff == 0:
+        print(f"{OK} {label}: тождество выполняется")
+        return True
+
+    checked = 0
+    for s in samples:
+        try:
+            val = complex(diff.subs(var, sp.Float(s)).evalf())
+        except (TypeError, ValueError):
+            continue
+        if not (math.isfinite(val.real) and math.isfinite(val.imag)):
+            continue
+        checked += 1
+        if abs(val) > tol:
+            print(f"{NO} {label}: при {var} = {s:g} стороны расходятся на {abs(val):.3g}")
+            return False
+    if checked < 3:
+        print(f"{NO} {label}: проверить не удалось — слишком много особых точек")
+        return False
+    print(f"{OK} {label}: тождество выполняется (проверено в {checked} точках)")
+    return True
+
+
+def _agrees(got, want, var, samples, tol=1e-9):
+    """Совпадают ли два выражения при целых var из samples.
+
+    Возвращает (ок, пояснение). Сначала символьно: expand, потом simplify —
+    именно в этом порядке, потому что m·m^k само по себе до m^(k+1)
+    не сворачивается, а после expand разность уходит в ноль.
+
+    Численная проверка нужна для факториалов и биномов, где simplify
+    до нуля доходит не всегда. Свободные символы, кроме var (в задачах
+    про n-ю производную это x), заполняются числами.
+    """
+    d = sp.sympify(got) - sp.sympify(want)
+    try:
+        if sp.simplify(sp.expand(d)) == 0:
+            return True, None
+    except (TypeError, ValueError, AttributeError):
+        pass
+
+    free = sorted(d.free_symbols - {var}, key=str)
+    fill = (0.7, 1.3, 2.1, 0.4, 1.9)
+    checked = 0
+    for i, s in enumerate(samples):
+        sub = {var: sp.Integer(s)}
+        sub.update({f: sp.Float(fill[(i + j) % len(fill)]) for j, f in enumerate(free)})
+        try:
+            val = complex(d.subs(sub).evalf())
+            scale = abs(complex(sp.sympify(want).subs(sub).evalf()))
+        except (TypeError, ValueError):
+            continue
+        if not (math.isfinite(val.real) and math.isfinite(val.imag)
+                and math.isfinite(scale)):
+            continue
+        checked += 1
+        if abs(val) > tol * max(1.0, scale):
+            return False, f"при {var} = {s} расхождение {abs(val):.3g}"
+    if checked < 3:
+        return False, "проверить не удалось: слишком много особых точек"
+    return True, f"проверено в {checked} точках"
+
+
+def verify_induction(label, got, formula, var=k, n0=1, base_lhs=None,
+                     samples=(1, 2, 3, 4, 5, 6, 7)):
+    """База и переход индукции разом.
+
+    formula  — доказываемая правая часть как выражение от var.
+    got      — то, что получилось в шаге после подстановки гипотезы;
+               должно совпасть с formula при var → var + 1.
+    base_lhs — левая часть при var = n0. Без неё база не проверяется,
+               а в markscheme это отдельный балл R1, и терять его жаль.
+
+    Прятать ответ здесь не от кого: в задачах «prove that» он напечатан
+    в условии. Проверяется ровно то, за что дают баллы, — что ваш переход
+    действительно приводит к утверждению для k + 1.
+    """
+    if _blank(label, got):
+        return False
+    formula = sp.sympify(formula)
+    ok = True
+
+    if base_lhs is not None:
+        if base_lhs is Ellipsis:
+            print(f"⬜ {label}, база: не заполнена")
+            ok = False
+        else:
+            diff = sp.simplify(sp.expand(sp.sympify(base_lhs) - formula.subs(var, n0)))
+            if diff == 0:
+                print(f"{OK} {label}, база: при {var} = {n0} стороны равны")
+            else:
+                print(f"{NO} {label}, база: при {var} = {n0} стороны расходятся на {diff}")
+                ok = False
+
+    good, note = _agrees(got, formula.subs(var, var + 1), var, samples)
+    tail = f" ({note})" if note else ""
+    if good:
+        print(f"{OK} {label}, переход: получено утверждение для {var} + 1{tail}")
+    else:
+        print(f"{NO} {label}, переход: это не утверждение для {var} + 1 — {note}")
+    return ok and good
+
+
+def verify_divisibility(label, expr, d, mult, var=k, n0=1, samples=(1, 2, 3, 4, 5)):
+    """Индукция для делимости: expr(n) кратно d при всех n ≥ n0.
+
+    mult — множитель, с которым гипотеза входит в шаг. Проверяется, что
+    expr(k+1) − mult·expr(k) делится на d **как выражение**, то есть после
+    деления на d остаются целые коэффициенты.
+
+    Требование про коэффициенты не придирка. Разность бывает кратна d при
+    каждом целом k и без этого — но тогда её нельзя записать в виде d·(целое)
+    одной строкой, и доказательства не получается. Markscheme даёт A1 именно
+    за вынесение d за скобку.
+    """
+    if _blank(label, expr, mult):
+        return False
+    expr, d = sp.sympify(expr), sp.sympify(d)
+    ok = True
+
+    base = sp.simplify(expr.subs(var, n0))
+    if sp.simplify(base / d).is_integer:
+        print(f"{OK} {label}, база: при {var} = {n0} получается {base} = {d}·{base / d}")
+    else:
+        print(f"{NO} {label}, база: при {var} = {n0} получается {base}, а оно не кратно {d}")
+        ok = False
+
+    rest = sp.expand(expr.subs(var, var + 1) - sp.sympify(mult) * expr)
+    quot = sp.expand(rest / d)
+    bad = [c for c in quot.as_coefficients_dict().values() if not sp.sympify(c).is_Integer]
+    if bad:
+        print(f"{NO} {label}, шаг: остаток {rest} на {d} нацело не делится "
+              f"(после деления остаются дроби {bad})")
+        return False
+    for s in samples:
+        if not sp.sympify(quot.subs(var, s)).is_integer:
+            print(f"{NO} {label}, шаг: при {var} = {s} частное {quot.subs(var, s)} не целое")
+            return False
+    print(f"{OK} {label}, шаг: остаток равен {d}·({quot})")
+    return ok
+
+
+def verify_rewrite(label, left, right, original, var=x, factor=1):
+    """Равенство left = right получено из original = 0 переносами и делением.
+
+    В доказательстве от противного исходное уравнение приводят к виду, где
+    у сторон разная чётность. Проверяется, что по дороге ничего не потерялось:
+    factor·(left − right) обязано совпасть с original. factor нужен там, где
+    равенство делили — деление на 2 возвращается умножением на 2.
+
+    Отдельная функция, а не выражение прямо в ячейке: пока задание не решено,
+    в left и right лежат многоточия, и вычитать их нельзя. Ноутбук обязан
+    проходиться сверху вниз с пустыми ответами.
+    """
+    if _blank(label, left, right):
+        return False
+    return verify_identity(
+        label, sp.sympify(factor) * (sp.sympify(left) - sp.sympify(right)),
+        original, var=var)
+
+
+def verify_residue(label, expr, mod, want, samples=(-3, -2, -1, 0, 1, 2, 3, 4, 5),
+                   limit=400):
+    """Остаток expr при делении на mod одинаков и равен want при всех целых символах.
+
+    Этим проверяется почти вся некомбинаторная часть темы: «делится на 3»
+    (остаток 0), «никогда не делится на 3» (остаток 2), «чётно» (mod 2, остаток 0).
+    В markscheme за такой вывод стоит R1, и формулируется он теми же словами.
+
+    Перебираются все свободные символы выражения, поэтому запись через
+    два целых, как (2m+1)² + (2n+1)², проверяется без дополнительных усилий.
+    """
+    if _blank(label, expr, want):
+        return False
+    expr, mod = sp.sympify(expr), sp.sympify(mod)
+    free = sorted(expr.free_symbols, key=str)
+    grids = (itertools.islice(itertools.product(samples, repeat=len(free)), limit)
+             if free else [()])
+    checked = 0
+    for combo in grids:
+        val = sp.simplify(expr.subs(dict(zip(free, map(sp.Integer, combo)))))
+        if not val.is_integer:
+            print(f"{NO} {label}: при {dict(zip(map(str, free), combo))} "
+                  f"получается {val}, а это не целое")
+            return False
+        got = int(val) % int(mod)
+        if got != int(want) % int(mod):
+            print(f"{NO} {label}: при {dict(zip(map(str, free), combo))} остаток "
+                  f"от деления на {mod} равен {got}, а не {want}")
+            return False
+        checked += 1
+    print(f"{OK} {label}: остаток от деления на {mod} всегда {int(want) % int(mod)} "
+          f"(проверено наборов: {checked})")
+    return True
+
+
+def check_order(label, seq, want_digest, n=None):
+    """Ответ — порядок шагов доказательства. В отличие от check_set порядок важен."""
+    if _blank(label, seq):
+        return False
+    items = [str(s).strip().lower() for s in seq]
+    if n is not None and len(items) != n:
+        print(f"{NO} {label}: шагов должно быть {n}, а получено {len(items)}")
+        return False
+    if digest('|'.join(items)) == want_digest:
+        print(f"{OK} {label}: {' → '.join(items)}")
+        return True
+    print(f"{NO} {label}: {' → '.join(items)} — порядок не тот")
+    return False
+
+
+# --- многочлены -------------------------------------------------------------
+#
+# Здесь проверки устроены не так, как в A3. Там ответ сверялся по значениям
+# и нераскрытая скобка проходила, потому что «раскрыть» — просьба к записи,
+# а не к числу. В теме многочленов ровно наоборот: «представьте в виде
+# произведения линейных множителей» — это и есть задача, и ответ, равный
+# исходному многочлену, но записанный одной строкой, неверен.
+#
+# Поэтому verify_factored и check_apart смотрят на то, что написано
+# в ячейке, а не только на значение: сначала разбирают структуру записи,
+# потом сверяют равенство.
+
+
+def _poly_degree(expr, var):
+    """Степень многочлена; None, если это не многочлен от var."""
+    try:
+        return sp.degree(sp.Poly(sp.expand(sp.sympify(expr)), var))
+    except (sp.PolynomialError, sp.GeneratorsNeeded, TypeError, ValueError):
+        return None
+
+
+def verify_factored(label, got, original, var=x, max_deg=1, n=None):
+    """Разложение многочлена на множители: и равенство, и форма записи.
+
+    Эталон не хранится: original — это тот же многочлен, что напечатан
+    в условии, прятать его незачем. Проверяется два условия.
+
+    Первое — структурное. Разбирается именно записанное произведение,
+    без факторизации: sp.factor_list разложил бы и раскрытый многочлен,
+    и проверка стала бы бессмысленной. Каждый множитель обязан иметь
+    степень не выше max_deg (по умолчанию 1 — «product of linear factors»),
+    кратные множители считаются столько раз, какова кратность.
+
+    Второе — равенство: произведение должно раскрываться в original.
+    """
+    if _blank(label, got):
+        return False
+    e = sp.sympify(got)
+    orig = sp.sympify(original)
+
+    args = sp.Mul.make_args(e)
+    if len(args) == 1 and not args[0].is_Pow:
+        print(f"{NO} {label}: это не произведение — многочлен записан одной строкой")
+        return False
+
+    facs = []
+    for arg in args:
+        if var not in arg.free_symbols:
+            continue                                   # числовой множитель
+        base, exp = arg.as_base_exp()
+        if not (exp.is_Integer and exp > 0):
+            print(f"{NO} {label}: множитель {arg} — не многочлен")
+            return False
+        d = _poly_degree(base, var)
+        if d is None:
+            print(f"{NO} {label}: множитель {base} — не многочлен от {var}")
+            return False
+        if d > max_deg:
+            print(f"{NO} {label}: множитель {base} имеет степень {d}, "
+                  f"а нужны множители степени не выше {max_deg} — "
+                  f"разложение не доведено до конца")
+            return False
+        facs.extend([base] * int(exp))
+
+    if not facs:
+        print(f"{NO} {label}: множителей с {var} не нашлось")
+        return False
+    if n is not None and len(facs) != n:
+        print(f"{NO} {label}: множителей должно быть {n} (кратные считаются "
+              f"по разу за каждую степень), а получилось {len(facs)}")
+        return False
+    if sp.expand(e - orig) != 0:
+        print(f"{NO} {label}: произведение раскрывается в {sp.expand(e)}, "
+              f"а исходный многочлен {sp.expand(orig)}")
+        return False
+    print(f"{OK} {label}: {e}")
+    return True
+
+
+def verify_division(label, quotient, remainder, dividend, divisor, var=x):
+    """Деление с остатком: dividend = divisor·quotient + remainder.
+
+    Эталона нет — восстанавливается делимое. Отдельно проверяется условие,
+    без которого равенство ничего не значит: степень остатка должна быть
+    строго меньше степени делителя, иначе делить можно дальше.
+    """
+    if _blank(label, quotient, remainder):
+        return False
+    quo, rem = sp.sympify(quotient), sp.sympify(remainder)
+    num, den = sp.sympify(dividend), sp.sympify(divisor)
+
+    resid = sp.expand(num - (den * quo + rem))
+    if sp.simplify(resid) != 0:
+        print(f"{NO} {label}: делимое не восстанавливается, невязка = {resid}")
+        return False
+
+    d_den = _poly_degree(den, var)
+    d_rem = -1 if sp.simplify(rem) == 0 else _poly_degree(rem, var)
+    if d_den is None or d_rem is None:
+        print(f"{NO} {label}: делитель и остаток должны быть многочленами от {var}")
+        return False
+    if d_rem >= d_den:
+        print(f"{NO} {label}: остаток степени {d_rem} не ниже делителя "
+              f"(степень {d_den}) — делить можно дальше")
+        return False
+    print(f"{OK} {label}: {sp.expand(num)} = ({den})·({quo}) + ({rem})")
+    return True
+
+
+def verify_divisible(label, poly, divisor, subs=None, var=x):
+    """Многочлен делится на divisor нацело.
+
+    Найденные значения букв подставляются в poly, и считается настоящий
+    остаток. Эталон не хранится вовсе: проверяется то самое условие,
+    которое стоит в задаче, а не совпадение с записанным ответом.
+    """
+    subs = dict(subs or {})
+    if _blank(label, list(subs.values())):
+        return False
+    p = sp.expand(sp.sympify(poly).subs(subs))
+    d = sp.sympify(divisor)
+    quo, rem = sp.div(p, d, var)
+    if sp.simplify(rem) != 0:
+        print(f"{NO} {label}: остаток от деления равен {sp.expand(rem)}, "
+              f"а должен быть нулём")
+        return False
+    print(f"{OK} {label}: {p} делится на {sp.expand(d)} нацело, частное {quo}")
+    return True
+
+
+def check_apart(label, got, original, var=x):
+    """Разложение на простейшие дроби: и равенство, и форма записи.
+
+    Как и с множителями, равенства мало: исходная дробь равна сама себе.
+    Поэтому каждое слагаемое обязано быть простейшей дробью — числитель
+    без var, знаменатель степень одного неприводимого множителя.
+    Знаменатель (x+1)(2x+1) проверку не пройдёт: он не разложен.
+    """
+    if _blank(label, got):
+        return False
+    e = sp.sympify(got)
+    orig = sp.sympify(original)
+
+    for term in sp.Add.make_args(e):
+        num, den = sp.fraction(sp.together(term))
+        if var not in den.free_symbols:
+            print(f"{NO} {label}: слагаемое {term} — не дробь с {var} в знаменателе")
+            return False
+        if var in num.free_symbols:
+            print(f"{NO} {label}: у слагаемого {term} числитель зависит от {var}; "
+                  f"простейшая дробь так не выглядит")
+            return False
+        try:
+            _, pieces = sp.factor_list(den, var)
+        except (sp.PolynomialError, sp.GeneratorsNeeded):
+            print(f"{NO} {label}: знаменатель {den} — не многочлен от {var}")
+            return False
+        if len(pieces) != 1:
+            print(f"{NO} {label}: знаменатель {den} сам раскладывается на множители — "
+                  f"дробь не доведена до простейшей")
+            return False
+        d = _poly_degree(pieces[0][0], var)
+        if d is None or d > 1:
+            print(f"{NO} {label}: знаменатель {den} не является степенью "
+                  f"линейного множителя")
+            return False
+
+    if sp.simplify(sp.cancel(sp.together(e - orig))) != 0:
+        print(f"{NO} {label}: сумма дробей не равна исходному выражению")
+        return False
+    print(f"{OK} {label}: {e}")
+    return True
+
+
+def verify_root_transform(label, coeffs, original, transform, var=x, tol=1e-6):
+    """Корни нового многочлена — это transform от корней исходного.
+
+    Ровно то, о чём спрашивает задача «составьте уравнение с корнями 1/α³»,
+    и ровно то, что проверяется: эталонных коэффициентов нет, оба набора
+    корней считаются численно и сравниваются как мультимножества.
+
+    coeffs — коэффициенты нового многочлена по убыванию степени. Список,
+    а не готовое выражение: иначе незаполненный ответ уронил бы ячейку
+    ещё до входа в проверку.
+    """
+    if _blank(label, coeffs):
+        return False
+    cs = [sp.sympify(c) for c in coeffs]
+    new = sum(c * var**(len(cs) - 1 - i) for i, c in enumerate(cs))
+    if sp.expand(new) == 0:
+        print(f"{NO} {label}: многочлен получился нулевым")
+        return False
+
+    want = []
+    for r in sp.Poly(sp.expand(sp.sympify(original)), var).nroots(n=20):
+        try:
+            want.append(complex(sp.N(transform(r))))
+        except (ZeroDivisionError, TypeError, ValueError):
+            print(f"{NO} {label}: преобразование не определено для корня {r}")
+            return False
+    got = [complex(v) for v in sp.Poly(sp.expand(new), var).nroots(n=20)]
+
+    if len(got) != len(want):
+        print(f"{NO} {label}: корней должно быть {len(want)}, а у многочлена {len(got)}")
+        return False
+
+    free = list(want)
+    for g in got:
+        near = min(range(len(free)), key=lambda i: abs(free[i] - g), default=None)
+        if near is None or abs(free[near] - g) > tol * max(1.0, abs(g)):
+            print(f"{NO} {label}: корень {g:.6g} не совпадает ни с одним нужным")
+            return False
+        free.pop(near)
+    print(f"{OK} {label}: {sp.expand(new)} = 0 — корни те, что нужно")
+    return True
 
 
 def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
