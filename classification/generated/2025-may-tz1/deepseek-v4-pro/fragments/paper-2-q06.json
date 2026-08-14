@@ -3,60 +3,36 @@
   "expected_question_marks": 7,
   "blocks": [
     {
-      "id": "2025-MAY-TZ1-P2-Q06-A-I",
+      "id": "2025-MAY-TZ1-P2-Q06-A",
       "question": "6",
-      "part": "A-I",
-      "marks": 1,
-      "source_pages": "9",
+      "part": "A",
+      "marks": 3,
+      "source_pages": "8",
       "markscheme_pages": "13",
-      "task_summary": "Write f(x) = 4 cot x + sin x in terms of sin x and cos x.",
-      "primary_topic": "geometry.trigonometric_identities",
-      "secondary_topics": [],
-      "method_family": "algebraic_transformation",
+      "task_summary": "Write f(x) = 4 cot x + sin x in terms of sin x and cos x, then sketch y = f(x) for 0 < x < π and show its x-intercept.",
+      "primary_topic": "functions.trigonometric_functions",
+      "secondary_topics": [
+        "geometry.trigonometric_identities",
+        "functions.graphing"
+      ],
+      "method_family": "function_analysis",
       "method_tags": [
-        "rewrite_cot_in_terms_of_sin_cos"
+        "rewrite_cot_in_terms_of_sin_cos",
+        "sketch_graph",
+        "find_x_intercept"
       ],
       "method_path": [
-        "Rewrite cot x as cos x / sin x",
-        "Combine to get f(x) = (4 cos x)/sin x + sin x"
+        "(i) Rewrite cot x as cos x / sin x",
+        "(i) Combine to get f(x) = (4 cos x)/sin x + sin x",
+        "(ii) Determine domain and curvature",
+        "(ii) Find x-intercept by solving f(x)=0, x ≈ 1.81"
       ],
       "accepted_alternatives": [],
       "evidence": [
         {
           "markscheme_pages": "13",
           "basis": "A1 for f(x) = (4 cos x)/sin x + sin x"
-        }
-      ],
-      "confidence": {
-        "segmentation": "high",
-        "topic": "high",
-        "method": "high"
-      },
-      "review_flags": []
-    },
-    {
-      "id": "2025-MAY-TZ1-P2-Q06-A-II",
-      "question": "6",
-      "part": "A-II",
-      "marks": 2,
-      "source_pages": "9",
-      "markscheme_pages": "13",
-      "task_summary": "Sketch the graph of y = f(x) for 0 < x < π, showing the x-intercept.",
-      "primary_topic": "functions.graphing",
-      "secondary_topics": [
-        "geometry.trigonometric_identities"
-      ],
-      "method_family": "function_analysis",
-      "method_tags": [
-        "sketch_graph",
-        "find_x_intercept"
-      ],
-      "method_path": [
-        "Determine domain and curvature",
-        "Find x-intercept by solving f(x)=0, x ≈ 1.81"
-      ],
-      "accepted_alternatives": [],
-      "evidence": [
+        },
         {
           "markscheme_pages": "13",
           "basis": "A1 for correct domain and curvature; A1 for correct x-intercept at x = 1.80911... ≈ 1.81"
@@ -64,10 +40,11 @@
       ],
       "confidence": {
         "segmentation": "high",
-        "topic": "high",
-        "method": "high"
+        "topic": "medium",
+        "method": "medium"
       },
       "review_flags": [
+        "shared_marks",
         "diagram_dependent"
       ]
     },
@@ -76,12 +53,12 @@
       "question": "6",
       "part": "B",
       "marks": 1,
-      "source_pages": "9",
+      "source_pages": "8",
       "markscheme_pages": "13",
       "task_summary": "Find the value of f^{-1}(2).",
       "primary_topic": "functions.inverse_functions",
       "secondary_topics": [],
-      "method_family": "equation_and_inequality_solving",
+      "method_family": "numerical_gdc",
       "method_tags": [
         "solve_fx_equals_constant",
         "inverse_function_evaluation"
@@ -109,7 +86,7 @@
       "question": "6",
       "part": "C",
       "marks": 3,
-      "source_pages": "9",
+      "source_pages": "8",
       "markscheme_pages": "14",
       "task_summary": "Given sec a = 1.5, 0 < a < π, find f(a).",
       "primary_topic": "geometry.trigonometric_identities",

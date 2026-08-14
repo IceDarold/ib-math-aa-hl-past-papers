@@ -8,15 +8,15 @@
   "papers": [
     {
       "paper": 1,
-      "blocks": 30,
+      "blocks": 29,
       "marks": 110,
-      "flagged": 3
+      "flagged": 5
     },
     {
       "paper": 2,
-      "blocks": 40,
+      "blocks": 39,
       "marks": 110,
-      "flagged": 2
+      "flagged": 3
     },
     {
       "paper": 3,
@@ -25,7 +25,7 @@
       "flagged": 0
     }
   ],
-  "total_blocks": 89,
+  "total_blocks": 87,
   "total_marks": 275,
-  "flagged_blocks": 5
+  "flagged_blocks": 8
 }

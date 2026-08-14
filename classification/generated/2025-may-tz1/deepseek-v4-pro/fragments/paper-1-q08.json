@@ -10,7 +10,7 @@
       "source_pages": "10",
       "markscheme_pages": "15",
       "task_summary": "Show that 1 + log_2 n ≥ log_2 (n + 1) for n ∈ ℤ⁺.",
-      "primary_topic": "number_algebra.inequalities",
+      "primary_topic": "functions.logarithmic_functions",
       "secondary_topics": [
         "functions.logarithmic_functions"
       ],

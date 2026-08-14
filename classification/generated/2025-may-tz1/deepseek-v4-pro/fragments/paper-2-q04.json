@@ -7,7 +7,7 @@
       "question": "4",
       "part": "A",
       "marks": 2,
-      "source_pages": "7",
+      "source_pages": "6",
       "markscheme_pages": "11",
       "task_summary": "Estimate arm span for foot length 19.8 cm using the regression line of A on F.",
       "primary_topic": "statistics.regression",
@@ -41,7 +41,7 @@
       "question": "4",
       "part": "B",
       "marks": 3,
-      "source_pages": "7",
+      "source_pages": "6",
       "markscheme_pages": "11",
       "task_summary": "Find the mean arm span and mean foot length using the intersection of the two regression lines.",
       "primary_topic": "statistics.regression",
@@ -78,12 +78,12 @@
       "question": "4",
       "part": "C",
       "marks": 3,
-      "source_pages": "7",
+      "source_pages": "6",
       "markscheme_pages": "11",
       "task_summary": "Find the standard deviation s of heights given that 88% lie between 153 cm and 173 cm with mean 163 cm.",
       "primary_topic": "statistics.continuous_random_variables",
       "secondary_topics": [],
-      "method_family": "equation_and_inequality_solving",
+      "method_family": "probability_and_distributions",
       "method_tags": [
         "normal_distribution",
         "inverse_normal",
@@ -110,7 +110,9 @@
         "topic": "high",
         "method": "high"
       },
-      "review_flags": []
+      "review_flags": [
+        "alternative_route"
+      ]
     }
   ]
 }

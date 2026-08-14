@@ -7,7 +7,7 @@
       "question": "11",
       "part": "A",
       "marks": 6,
-      "source_pages": "13",
+      "source_pages": "12",
       "markscheme_pages": "21",
       "task_summary": "Show that the acute angle between planes P1 and P2 is 60°.",
       "primary_topic": "geometry.vectors",
@@ -47,7 +47,7 @@
       "question": "11",
       "part": "B",
       "marks": 4,
-      "source_pages": "13",
+      "source_pages": "12",
       "markscheme_pages": "21",
       "task_summary": "Find the Cartesian equation of plane P3, which is perpendicular to both P1 and P2 and passes through R(5,-5,5).",
       "primary_topic": "geometry.vectors",
@@ -82,73 +82,42 @@
       "review_flags": []
     },
     {
-      "id": "2025-MAY-TZ1-P1-Q11-C-I",
+      "id": "2025-MAY-TZ1-P1-Q11-C",
       "question": "11",
-      "part": "C-I",
-      "marks": 3,
-      "source_pages": "14",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "13",
       "markscheme_pages": "22",
-      "task_summary": "Using an appropriate compound angle identity, show that sin75° = (√2 + √6)/4.",
-      "primary_topic": "geometry.trigonometric_identities",
-      "secondary_topics": [],
+      "task_summary": "Use a compound angle identity to show that sin 75° = (√2 + √6)/4, then use the sine rule to find QR = 5(√3 - 1) cm.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
       "method_family": "trigonometric_reasoning",
       "method_tags": [
         "compound_angle_identity",
         "exact_trigonometric_values",
-        "algebraic_simplification"
+        "algebraic_simplification",
+        "sine_rule",
+        "rationalize_denominator"
       ],
       "method_path": [
-        "Express sin75° as sin(30°+45°)",
-        "Apply sin(A+B) = sinA cosB + cosA sinB",
-        "Substitute exact values: sin30°=1/2, cos45°=√2/2, cos30°=√3/2, sin45°=√2/2",
-        "Simplify to (√2 + √6)/4"
+        "(i) Express sin 75° as sin(30° + 45°)",
+        "(i) Apply sin(A + B) = sin A cos B + cos A sin B",
+        "(i) Substitute the exact values and simplify to (√2 + √6)/4",
+        "(ii) Let x = QR and apply the sine rule: 5/sin 75° = x/sin 45°",
+        "(ii) Substitute the exact values to obtain x = 20/(√2(√2 + √6)) = 20/(2(1 + √3))",
+        "(ii) Rationalize the denominator and simplify to x = 5(√3 - 1) cm"
       ],
       "accepted_alternatives": [],
       "evidence": [
         {
           "markscheme_pages": "22",
-          "basis": "attempt to use the identity for sin(30°+45°) (M1); sin(30°+45°) = sin30°cos45°+cos30°sin45°; = (1/2)(√2/2)+(√3/2)(√2/2) A1A1; = (√2+√6)/4 AG"
-        }
-      ],
-      "confidence": {
-        "segmentation": "high",
-        "topic": "high",
-        "method": "high"
-      },
-      "review_flags": []
-    },
-    {
-      "id": "2025-MAY-TZ1-P1-Q11-C-II",
-      "question": "11",
-      "part": "C-II",
-      "marks": 4,
-      "source_pages": "14",
-      "markscheme_pages": "22",
-      "task_summary": "Find QR in the form p(√q - 1) cm, where p,q ∈ ℚ.",
-      "primary_topic": "geometry.trigonometry",
-      "secondary_topics": [],
-      "method_family": "trigonometric_reasoning",
-      "method_tags": [
-        "sine_rule",
-        "exact_trigonometric_values",
-        "rationalize_denominator",
-        "algebraic_simplification"
-      ],
-      "method_path": [
-        "Let x = QR",
-        "Apply sine rule: x/sin75° = 5/sin45°",
-        "Substitute sin75° = (√2+√6)/4, sin45° = √2/2",
-        "Solve for x: x = 5 sin75° / sin45° = 20/(√2+√6) or equivalent",
-        "Rationalize denominator by multiplying numerator and denominator by (√6-√2)",
-        "Simplify to x = 5(√3 - 1) cm"
-      ],
-      "accepted_alternatives": [
-        "Use x = 20/(√2+√6) and rationalize to 5(√3-1)"
-      ],
-      "evidence": [
+          "basis": "(i) M1 for using the identity for sin(30°+45°), A1A1 for the two exact terms, and AG for (√2+√6)/4."
+        },
         {
           "markscheme_pages": "22",
-          "basis": "attempt to use the sine rule with the angles 75°,45° (M1); x/sin75° = 5/sin45°; x = 20/(√2+√6) or equivalent A1; attempt to rationalise a denominator of the form a/(b+√c) by multiplying numerator and denominator by (b-√c) or equivalent (M1); x = 5(√3-1) (cm) (p=5, q=3) A1"
+          "basis": "(ii) M1 for the sine rule 5/sin75° = x/sin45°; A1 for x = 20/(√2(√2+√6)) or equivalent; M1 for rationalizing; A1 for x = 5(√3-1) cm."
         }
       ],
       "confidence": {
@@ -156,7 +125,9 @@
         "topic": "high",
         "method": "high"
       },
-      "review_flags": []
+      "review_flags": [
+        "shared_marks"
+      ]
     }
   ]
 }

@@ -10,7 +10,7 @@
       "source_pages": "8",
       "markscheme_pages": "13",
       "task_summary": "Find a and b such that lines L1 and L2 are perpendicular and intersect at a unique point.",
-      "primary_topic": "geometry.vectors",
+      "primary_topic": "geometry.vectors_3d",
       "secondary_topics": [],
       "method_family": "vector_reasoning",
       "method_tags": [

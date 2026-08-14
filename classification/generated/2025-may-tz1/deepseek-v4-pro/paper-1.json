@@ -217,7 +217,7 @@
       "task_summary": "Find P(A ∩ B) given P(A') = 3/4 and P(B|A) = 2/3.",
       "primary_topic": "statistics.probability",
       "secondary_topics": [],
-      "method_family": "formula_application",
+      "method_family": "probability_and_distributions",
       "method_tags": [
         "complement_rule",
         "conditional_probability_formula",
@@ -252,7 +252,7 @@
       "task_summary": "Show that events A and B are independent.",
       "primary_topic": "statistics.probability",
       "secondary_topics": [],
-      "method_family": "formula_application",
+      "method_family": "probability_and_distributions",
       "method_tags": [
         "union_formula",
         "independence_check",
@@ -287,7 +287,7 @@
       "marks": 5,
       "source_pages": "7",
       "markscheme_pages": "12",
-      "task_summary": "Show that the area of picture frame F_n is 20*(9/4)^(n-1) cm^2, and hence find the mean area of the ten picture frames in the form p*(9^a/4^10) cm^2.",
+      "task_summary": "Show that the area of picture frame F_n is 20(9/4)^(n-1) cm², then find the mean area of the ten frames in the form p((9/4)^a - 1) cm².",
       "primary_topic": "number_algebra.geometric_sequences",
       "secondary_topics": [],
       "method_family": "sequences_and_recurrences",
@@ -301,10 +301,10 @@
       "method_path": [
         "Recognise that widths and heights form geometric sequences with common ratio 3/2",
         "Deduce that areas form a geometric sequence with first term 20 and common ratio 9/4",
-        "Derive nth term formula: area of F_n = 20*(9/4)^(n-1)",
-        "Sum the first 10 terms using S_n = u_1*(1 - r^n)/(1 - r)",
-        "Divide sum by 10 to obtain mean area",
-        "Simplify to required form p*(9^a/4^10) with p=8/5, a=10"
+        "Derive the nth term: area of F_n = 20(9/4)^(n-1)",
+        "Use the geometric-series formula to obtain S_10 = 16((9/4)^10 - 1)",
+        "Divide by 10 and simplify the mean to (8/5)((9/4)^10 - 1)",
+        "Identify p = 8/5 and a = 10"
       ],
       "accepted_alternatives": [
         "Use product of width and height sequences: area = (4*(3/2)^(n-1))*(5*(3/2)^(n-1)) = 20*(9/4)^(n-1)"
@@ -312,7 +312,7 @@
       "evidence": [
         {
           "markscheme_pages": "12",
-          "basis": "M1 for using two consecutive terms to find common ratio or recognising geometric sequences; A1 for areas form geometric sequence with first term 20 and common ratio 45/20; AG for area formula; (M1) for attempt to find sum using formula; (A1) for correct sum expression; A1 for mean area simplified to 8/5*(9^10/4^10) with p=8/5, a=10."
+          "basis": "M1 for finding or recognizing the common ratio; A1 and AG for the area sequence and nth-term formula; M1 and A1 for summing ten terms; A1 for the mean (8/5)((9/4)^10 - 1), so p=8/5 and a=10."
         }
       ],
       "confidence": {
@@ -320,7 +320,9 @@
         "topic": "high",
         "method": "high"
       },
-      "review_flags": []
+      "review_flags": [
+        "shared_marks"
+      ]
     },
     {
       "id": "2025-MAY-TZ1-P1-Q05-B",
@@ -367,7 +369,7 @@
       "source_pages": "8",
       "markscheme_pages": "13",
       "task_summary": "Find a and b such that lines L1 and L2 are perpendicular and intersect at a unique point.",
-      "primary_topic": "geometry.vectors",
+      "primary_topic": "geometry.vectors_3d",
       "secondary_topics": [],
       "method_family": "vector_reasoning",
       "method_tags": [
@@ -499,7 +501,7 @@
       "source_pages": "10",
       "markscheme_pages": "15",
       "task_summary": "Show that 1 + log_2 n ≥ log_2 (n + 1) for n ∈ ℤ⁺.",
-      "primary_topic": "number_algebra.inequalities",
+      "primary_topic": "functions.logarithmic_functions",
       "secondary_topics": [
         "functions.logarithmic_functions"
       ],
@@ -628,7 +630,7 @@
       "question": "10",
       "part": "A",
       "marks": 4,
-      "source_pages": "12",
+      "source_pages": "11",
       "markscheme_pages": "18",
       "task_summary": "Write f(x) = 5(x+1)(x+3) in the form a(x-h)^2 + k.",
       "primary_topic": "functions.equations",
@@ -670,7 +672,7 @@
       "question": "10",
       "part": "B",
       "marks": 4,
-      "source_pages": "12",
+      "source_pages": "11",
       "markscheme_pages": "19",
       "task_summary": "Sketch the graph of y = f(x), showing intercepts and vertex.",
       "primary_topic": "functions.curve_sketching",
@@ -708,7 +710,7 @@
       "question": "10",
       "part": "C",
       "marks": 4,
-      "source_pages": "12",
+      "source_pages": "11",
       "markscheme_pages": "19",
       "task_summary": "Solve the inequality f(x) ≤ 40.",
       "primary_topic": "number_algebra.inequalities",
@@ -746,10 +748,10 @@
       "question": "10",
       "part": "D",
       "marks": 3,
-      "source_pages": "12",
+      "source_pages": "11",
       "markscheme_pages": "20",
       "task_summary": "Write (f ∘ g)(x) and solve (f ∘ g)(x) ≤ 40.",
-      "primary_topic": "functions.equations",
+      "primary_topic": "functions.logarithmic_functions",
       "secondary_topics": [
         "functions.logarithmic_functions"
       ],
@@ -787,10 +789,10 @@
       "question": "10",
       "part": "E",
       "marks": 3,
-      "source_pages": "12",
+      "source_pages": "11",
       "markscheme_pages": "20",
       "task_summary": "Find the domain of g ∘ f.",
-      "primary_topic": "functions.equations",
+      "primary_topic": "functions.logarithmic_functions",
       "secondary_topics": [
         "functions.logarithmic_functions"
       ],
@@ -825,7 +827,7 @@
       "question": "11",
       "part": "A",
       "marks": 6,
-      "source_pages": "13",
+      "source_pages": "12",
       "markscheme_pages": "21",
       "task_summary": "Show that the acute angle between planes P1 and P2 is 60°.",
       "primary_topic": "geometry.vectors",
@@ -865,7 +867,7 @@
       "question": "11",
       "part": "B",
       "marks": 4,
-      "source_pages": "13",
+      "source_pages": "12",
       "markscheme_pages": "21",
       "task_summary": "Find the Cartesian equation of plane P3, which is perpendicular to both P1 and P2 and passes through R(5,-5,5).",
       "primary_topic": "geometry.vectors",
@@ -900,73 +902,42 @@
       "review_flags": []
     },
     {
-      "id": "2025-MAY-TZ1-P1-Q11-C-I",
+      "id": "2025-MAY-TZ1-P1-Q11-C",
       "question": "11",
-      "part": "C-I",
-      "marks": 3,
-      "source_pages": "14",
+      "part": "C",
+      "marks": 7,
+      "source_pages": "13",
       "markscheme_pages": "22",
-      "task_summary": "Using an appropriate compound angle identity, show that sin75° = (√2 + √6)/4.",
-      "primary_topic": "geometry.trigonometric_identities",
-      "secondary_topics": [],
+      "task_summary": "Use a compound angle identity to show that sin 75° = (√2 + √6)/4, then use the sine rule to find QR = 5(√3 - 1) cm.",
+      "primary_topic": "geometry.trigonometry",
+      "secondary_topics": [
+        "geometry.trigonometric_identities"
+      ],
       "method_family": "trigonometric_reasoning",
       "method_tags": [
         "compound_angle_identity",
         "exact_trigonometric_values",
-        "algebraic_simplification"
+        "algebraic_simplification",
+        "sine_rule",
+        "rationalize_denominator"
       ],
       "method_path": [
-        "Express sin75° as sin(30°+45°)",
-        "Apply sin(A+B) = sinA cosB + cosA sinB",
-        "Substitute exact values: sin30°=1/2, cos45°=√2/2, cos30°=√3/2, sin45°=√2/2",
-        "Simplify to (√2 + √6)/4"
+        "(i) Express sin 75° as sin(30° + 45°)",
+        "(i) Apply sin(A + B) = sin A cos B + cos A sin B",
+        "(i) Substitute the exact values and simplify to (√2 + √6)/4",
+        "(ii) Let x = QR and apply the sine rule: 5/sin 75° = x/sin 45°",
+        "(ii) Substitute the exact values to obtain x = 20/(√2(√2 + √6)) = 20/(2(1 + √3))",
+        "(ii) Rationalize the denominator and simplify to x = 5(√3 - 1) cm"
       ],
       "accepted_alternatives": [],
       "evidence": [
         {
           "markscheme_pages": "22",
-          "basis": "attempt to use the identity for sin(30°+45°) (M1); sin(30°+45°) = sin30°cos45°+cos30°sin45°; = (1/2)(√2/2)+(√3/2)(√2/2) A1A1; = (√2+√6)/4 AG"
-        }
-      ],
-      "confidence": {
-        "segmentation": "high",
-        "topic": "high",
-        "method": "high"
-      },
-      "review_flags": []
-    },
-    {
-      "id": "2025-MAY-TZ1-P1-Q11-C-II",
-      "question": "11",
-      "part": "C-II",
-      "marks": 4,
-      "source_pages": "14",
-      "markscheme_pages": "22",
-      "task_summary": "Find QR in the form p(√q - 1) cm, where p,q ∈ ℚ.",
-      "primary_topic": "geometry.trigonometry",
-      "secondary_topics": [],
-      "method_family": "trigonometric_reasoning",
-      "method_tags": [
-        "sine_rule",
-        "exact_trigonometric_values",
-        "rationalize_denominator",
-        "algebraic_simplification"
-      ],
-      "method_path": [
-        "Let x = QR",
-        "Apply sine rule: x/sin75° = 5/sin45°",
-        "Substitute sin75° = (√2+√6)/4, sin45° = √2/2",
-        "Solve for x: x = 5 sin75° / sin45° = 20/(√2+√6) or equivalent",
-        "Rationalize denominator by multiplying numerator and denominator by (√6-√2)",
-        "Simplify to x = 5(√3 - 1) cm"
-      ],
-      "accepted_alternatives": [
-        "Use x = 20/(√2+√6) and rationalize to 5(√3-1)"
-      ],
-      "evidence": [
+          "basis": "(i) M1 for using the identity for sin(30°+45°), A1A1 for the two exact terms, and AG for (√2+√6)/4."
+        },
         {
           "markscheme_pages": "22",
-          "basis": "attempt to use the sine rule with the angles 75°,45° (M1); x/sin75° = 5/sin45°; x = 20/(√2+√6) or equivalent A1; attempt to rationalise a denominator of the form a/(b+√c) by multiplying numerator and denominator by (b-√c) or equivalent (M1); x = 5(√3-1) (cm) (p=5, q=3) A1"
+          "basis": "(ii) M1 for the sine rule 5/sin75° = x/sin45°; A1 for x = 20/(√2(√2+√6)) or equivalent; M1 for rationalizing; A1 for x = 5(√3-1) cm."
         }
       ],
       "confidence": {
@@ -974,14 +945,16 @@
         "topic": "high",
         "method": "high"
       },
-      "review_flags": []
+      "review_flags": [
+        "shared_marks"
+      ]
     },
     {
       "id": "2025-MAY-TZ1-P1-Q12-A",
       "question": "12",
       "part": "A",
       "marks": 4,
-      "source_pages": "15",
+      "source_pages": "14",
       "markscheme_pages": "23",
       "task_summary": "Show that ∫ cos^n x dx = cos^{n-1} x sin x + (n-1)∫ cos^{n-2} x dx - (n-1)∫ cos^n x dx for n>1 using integration by parts on cos^{n-1} x cos x.",
       "primary_topic": "calculus.integration_applications",
@@ -1019,12 +992,12 @@
       "question": "12",
       "part": "B",
       "marks": 2,
-      "source_pages": "15",
+      "source_pages": "14",
       "markscheme_pages": "23",
       "task_summary": "Hence show that ∫ f_n(x) dx = (1/n) cos^{n-1} x sin x + ((n-1)/n) ∫ f_{n-2}(x) dx for n>1.",
       "primary_topic": "calculus.integration_applications",
       "secondary_topics": [],
-      "method_family": "integration",
+      "method_family": "algebraic_transformation",
       "method_tags": [
         "algebraic_manipulation",
         "rearrangement"
@@ -1054,7 +1027,7 @@
       "question": "12",
       "part": "C",
       "marks": 4,
-      "source_pages": "15",
+      "source_pages": "14",
       "markscheme_pages": "24",
       "task_summary": "Find an expression for ∫ cos^4 x dx in the form p cos^3 x sin x + q cos x sin x + r x + c with p, q, r ∈ ℚ^+.",
       "primary_topic": "calculus.integration_applications",
@@ -1092,7 +1065,7 @@
       "question": "12",
       "part": "D",
       "marks": 4,
-      "source_pages": "15",
+      "source_pages": "14",
       "markscheme_pages": "24",
       "task_summary": "Find the volume of the solid formed by rotating region R (enclosed by y = cos^2 x and x-axis from -π/2 to π/2) by 2π around the x-axis.",
       "primary_topic": "calculus.integration_applications",
@@ -1130,7 +1103,7 @@
       "question": "12",
       "part": "E-I",
       "marks": 3,
-      "source_pages": "15",
+      "source_pages": "14",
       "markscheme_pages": "25",
       "task_summary": "Find the Maclaurin series of f_n(x) up to the term in x^2.",
       "primary_topic": "calculus.series",
@@ -1167,7 +1140,7 @@
       "question": "12",
       "part": "E-II",
       "marks": 2,
-      "source_pages": "15",
+      "source_pages": "14",
       "markscheme_pages": "25",
       "task_summary": "Find lim_{x→0} (f_n(x) - 1)/x^2 in terms of n.",
       "primary_topic": "calculus.limits",

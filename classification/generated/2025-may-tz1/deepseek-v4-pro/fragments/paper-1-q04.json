@@ -12,7 +12,7 @@
       "task_summary": "Find P(A ∩ B) given P(A') = 3/4 and P(B|A) = 2/3.",
       "primary_topic": "statistics.probability",
       "secondary_topics": [],
-      "method_family": "formula_application",
+      "method_family": "probability_and_distributions",
       "method_tags": [
         "complement_rule",
         "conditional_probability_formula",
@@ -47,7 +47,7 @@
       "task_summary": "Show that events A and B are independent.",
       "primary_topic": "statistics.probability",
       "secondary_topics": [],
-      "method_family": "formula_application",
+      "method_family": "probability_and_distributions",
       "method_tags": [
         "union_formula",
         "independence_check",
