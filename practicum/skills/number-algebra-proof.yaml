@@ -1,0 +1,355 @@
+version: 0.1
+practicum: A7
+title: "Доказательство: индукция, прямое, от противного"
+source_topic: number_algebra.mathematical_induction
+also_covers:
+  - topic: number_algebra.proof
+    share: 1.0
+    what: >
+      Все 13 блоков темы proof, 48 баллов: прямые доказательства,
+      представление целых через параметр и доказательства от противного.
+      Отдельным практикумом они не тянут, а к индукции примыкают вплотную:
+      шаг индукции сам является прямым доказательством, и приём 6
+      целиком построен на приёме 2.
+corpus:
+  blocks: 28
+  marks: 160
+  sessions: May 2021 — November 2025
+  papers: {1: 106, 2: 6, 3: 48}
+  gdc_marks: 54
+  note: >
+    Единственная тема архива, где калькулятор не нужен нигде. Формально
+    доля с калькулятором 34%, но 48 из этих 54 баллов — части длинных
+    исследований Paper 3, где GDC работает в соседних пунктах, а само
+    доказательство пишут от руки. Оставшиеся 6 — одно доказательство
+    от противного в Paper 2, где считать тоже нечего.
+
+principle: >
+  Тема про запись, а не про вычисление: ответ напечатан в условии, баллы
+  дают за дорогу и за то, как она оформлена. Приёмы 1–3 — доказательства
+  без индукции. Приём 4 задаёт рамку, одинаковую для всех остальных
+  и стоящую два балла из семи сама по себе. Приёмы 5–9 отличаются друг
+  от друга ровно одним: что делают с гипотезой — прибавляют слагаемое,
+  вычитают кратное, дифференцируют, подставляют в рекуррентность,
+  продолжают неравенство.
+
+skills:
+  - id: direct_proof
+    name: Прямое доказательство
+    rung: 1
+    direction: prove
+    trigger: >
+      «Show that A = B», обе части выписаны в условии. Ничего не спрашивают,
+      просят соединить два выражения.
+    chain:
+      - Выбрать сторону, где больше действий, и начать с неё
+      - Разворачивать её, ни разу не пользуясь доказываемым равенством
+      - Довести цепочку до второй стороны и закончить строкой «= RHS»
+    traps:
+      - >
+        Пишут A = B и преобразуют обе половины — то есть начинают с того,
+        что требуется доказать
+      - >
+        Обрывают на предпоследнем шаге: markscheme «do not award final A1
+        unless all previous working is correct» снимает балл за любую
+        ошибку выше по цепочке
+    calculator:
+      mode: forbidden
+      note: >
+        11 из 13 баллов приёма — Paper 1. Проверить тождество подстановкой
+        числа полезно перед доказательством, но доказательством не является.
+    prereq: []
+    raw_tags: [algebraic_expansion, factor_difference_of_squares, verify_equality,
+               algebraic_simplification, expand_squares, simplify_to_constant,
+               apply_pythagorean_identity, conclude_equality, expand_binomial_square,
+               combine_rational_expressions, factor_perfect_square_trinomial,
+               substitution, algebraic_equality]
+    blocks: [2021-MAY-TZ2-P1-Q01, 2022-NOV-COMMON-P1-Q03-A,
+             2021-NOV-COMMON-P3-Q01-E, 2023-MAY-TZ1-P3-Q02-D-I]
+
+  - id: integer_representation
+    name: Представление целых
+    rung: 2
+    direction: prove
+    trigger: >
+      В условии «consecutive», «odd», «even», «divisible by». Утверждение
+      про какое-нибудь целое число, а не про конкретное.
+    chain:
+      - "Дать целому буквенную запись: 2m, 2m+1, n−1/n/n+1, 3m+r"
+      - Раскрыть скобки и собрать в виде «кратное d плюс остаток»
+      - Словами объяснить, что первая часть делится, а остаток нет
+    traps:
+      - >
+        Одна буква на два независимых числа: «a = 2m+1 и b = 2m+1»
+        доказывает только случай a = b. В markscheme за разные буквы
+        стоит отдельный A1
+      - >
+        Три подряд идущих берут как n, n+1, n+2 вместо симметричных
+        n−1, n, n+1 — лишний шаг и лишний шанс ошибиться
+      - Останавливаются на формуле, не написав вывод про делимость
+    calculator:
+      mode: forbidden
+      note: 9 из 12 баллов — Paper 1; остальные три в Paper 3, тоже вручную.
+    prereq: [direct_proof]
+    raw_tags: [algebraic_simplification, divisibility_proof, sum_of_squares,
+               modular_reasoning, parity_argument, perfect_square_factorization,
+               algebraic_substitution, expansion, integer_product, parity_condition,
+               integer_condition]
+    blocks: [2022-MAY-TZ2-P1-Q02-A, 2022-MAY-TZ2-P1-Q02-B, 2022-MAY-TZ1-P3-Q01-C,
+             2025-MAY-TZ3-P3-Q02-H-I, 2025-MAY-TZ3-P3-Q02-H-II]
+
+  - id: contradiction
+    name: Доказательство от противного
+    rung: 3
+    direction: prove
+    trigger: >
+      «Prove that there is no», «never», «cannot», «has no integer roots».
+      Отрицание проверить легче, чем утверждение.
+    chain:
+      - Записать предположение противного явно, словами и формулой
+      - Выкладками довести до заведомо ложного утверждения
+      - Назвать источник противоречия
+      - Заключить, что предположение неверно
+    traps:
+      - >
+        Начинают сразу с выкладок: M1 ставят за запись предположения,
+        а не за намерение
+      - >
+        Останавливаются на формуле без слова «противоречие» — последний R1
+        теряется в трёх заданиях из четырёх
+    contradiction_sources:
+      - {what: чётность, example: "2k² + 2k = 4q + 5, слева чётное, справа нечётное"}
+      - {what: делимость, example: "4(m²+m+n²+n) + 2 не делится на 4"}
+      - {what: знак или граница, example: "(2x−1)² < 0; значение меньше минимума"}
+    calculator:
+      mode: checks
+      note: >
+        Единственный вопрос темы в Paper 2 — как раз доказательство
+        от противного (May 2023 TZ1 Q9), и калькулятор в нём не участвует.
+        Полезен он только для поиска контрпримера в заданиях «disprove».
+    prereq: [integer_representation]
+    raw_tags: [proof_by_contradiction, parity_representation, divisibility_reasoning,
+               assumption, contradiction, assume_negation, parity_analysis,
+               contradiction_detection, quadratic_inequality, partial_fractions,
+               optimization, differentiation]
+    blocks: [2022-MAY-TZ1-P1-Q08, 2022-MAY-TZ2-P1-Q09-9, 2023-MAY-TZ1-P2-Q09,
+             2025-MAY-TZ2-P1-Q09]
+
+  - id: induction_skeleton
+    name: Скелет индукции
+    rung: 4
+    direction: prove
+    cross_cutting: true
+    trigger: "«Prove by induction» — дальше форма одна и та же всегда."
+    chain:
+      - "База: проверить утверждение там, где оно начинается"
+      - "Гипотеза: выписать целиком «предположим, верно при n = k, то есть …»"
+      - "Шаг: «рассмотрим n = k+1» и выкладка"
+      - "Вывод: верно при n₀; из P(k) следует P(k+1); значит для всех n"
+    traps:
+      - >
+        «Пусть n = k» вместо полной гипотезы: markscheme прямо пишет
+        «M1 not awarded for mere let n = k»
+      - >
+        База не там, где начинается утверждение: «Award R0 for not starting
+        at n = 2», если формула осмысленна только с n = 2
+      - >
+        Рассчитывают получить заключительный R1 за одну фразу. Он с порогом:
+        «only award R1 if 4 of the previous 6 marks have been awarded»
+    exam_note: >
+      Порог стоит только на последнем R1; база и гипотеза порогов не имеют.
+      Поэтому, если шаг не доводится, всё равно надо написать базу, гипотезу
+      и «рассмотрим n = k+1» — это A1 + M1 + M1, три балла из семи
+      за знание шаблона.
+    calculator:
+      mode: forbidden
+      note: Форма записи, вычислений нет вовсе.
+    prereq: [direct_proof]
+    raw_tags: [mathematical_induction, base_case, base_case_verification,
+               base_case_n0, inductive_hypothesis, inductive_hypothesis_statement,
+               induction_hypothesis, inductive_step, inductive_step_formulation,
+               induction_step, inductive_conclusion, induction_conclusion, conclusion]
+    blocks: [2023-MAY-TZ2-P1-Q07, 2023-NOV-TZ1-P1-Q06, 2024-MAY-TZ1-P1-Q07,
+             2025-MAY-TZ1-P1-Q08-B]
+
+  - id: induction_sum
+    name: Индукция для суммы
+    rung: 5
+    direction: prove
+    trigger: "В утверждении стоит Σ от r = 1 до n."
+    chain:
+      - "Отделить последнее слагаемое: Σ до k+1 = Σ до k + a_{k+1}"
+      - Вместо суммы подставить гипотезу S(k)
+      - Привести к общему знаменателю и узнать S(k+1)
+    traps:
+      - >
+        Алгебра с факториалами: не видят, что (k+2)! = (k+2)(k+1)!,
+        и не могут сложить дроби
+      - Не выписывают S(k+1) заранее и не знают, к чему сворачивать
+    calculator:
+      mode: checks
+      note: >
+        41 балл, самый крупный вид в теме. GDC полезен до доказательства:
+        если формула не сходится при n = 3, доказывать нечего.
+    prereq: [induction_skeleton]
+    raw_tags: [summation_splitting, summation_decomposition, sum_splitting,
+               hypothesis_substitution, factorial_manipulation, common_denominator,
+               combinatorial_identity, arctan_addition_formula, arctan_addition,
+               argument_of_product, algebraic_manipulation, factorization]
+    blocks: [2023-MAY-TZ2-P1-Q07, 2024-MAY-TZ1-P1-Q07, 2022-MAY-TZ1-P3-Q01-F,
+             2021-MAY-TZ2-P1-Q12-D, 2022-NOV-COMMON-P1-Q12-C]
+
+  - id: induction_divisibility
+    name: Индукция для делимости
+    rung: 6
+    direction: prove
+    trigger: "«divisible by d for all n» — равенства в утверждении нет."
+    chain:
+      - "Записать гипотезу самому: E(k) = ds, s ∈ ℤ"
+      - Посчитать E(k+1) и увидеть в нём E(k)
+      - Вычесть подходящее кратное гипотезы, чтобы одно слагаемое исчезло
+      - Вынести d за скобку и сказать, что в скобке целое
+    traps:
+      - >
+        Гипотезу пишут без буквы s, и воспользоваться ею потом невозможно
+      - >
+        Берут множитель наугад. Разность бывает кратна d при каждом целом k
+        и с неверным множителем, но записать её как d·(целое) нельзя,
+        и A1 за вынесение d не ставится
+    calculator:
+      mode: checks
+      note: Оба блока — Paper 1. GDC годится только на проверку базы.
+    prereq: [induction_skeleton, integer_representation]
+    raw_tags: [divisibility, algebraic_manipulation, factorization,
+               base_case_verification, inductive_conclusion]
+    blocks: [2023-NOV-TZ1-P1-Q06, 2023-NOV-TZ2-P1-Q06]
+
+  - id: induction_derivative
+    name: Индукция для n-й производной
+    rung: 7
+    direction: prove
+    trigger: "В утверждении f^(n)(x) или dⁿ/dxⁿ, формула дана."
+    chain:
+      - Продифференцировать гипотезу по правилу произведения или цепному
+      - Привести результат к виду, где вместо k стоит k+1
+    traps:
+      - >
+        Базу проверяют на самой функции, а не на первой производной
+      - >
+        Не доводят алгебру: 2k + k(k−1) надо узнать как k(k+1),
+        иначе последние A1 не ставятся
+      - >
+        Факториальные свёртки вида (2k−1)!/(k−1)! делают на глаз;
+        это отдельные два-три A1
+    calculator:
+      mode: checks
+      note: >
+        36 баллов, второй по величине вид. GDC умеет брать производные,
+        но 24 из 36 баллов — Paper 1, и проверка производной
+        доказательством всё равно не становится.
+    prereq: [induction_skeleton]
+    raw_tags: [differentiation, product_rule, chain_rule,
+               differentiate_induction_hypothesis, differentiate_nth_derivative,
+               factorial_manipulation, algebraic_simplification]
+    blocks: [2021-NOV-COMMON-P1-Q11-A, 2024-MAY-TZ2-P1-Q12-A, 2021-MAY-TZ1-P1-Q12-B,
+             2025-NOV-TZ3-P3-Q01-F, 2022-NOV-COMMON-P3-Q01-D-II]
+
+  - id: induction_recursion
+    name: Индукция для рекурсии
+    rung: 8
+    direction: prove
+    trigger: >
+      Утверждение про u_n, f^n или I_n, где следующий член выражен
+      через предыдущий.
+    chain:
+      - Применить рекуррентность к гипотезе
+      - "Для композиций выбрать сторону: f(f^k) обычно короче, чем f^k(f)"
+      - Свернуть результат к формуле при k+1
+    traps:
+      - >
+        В интегральных рекурсиях забывают, что предел подстановки даёт ноль,
+        и тащат его дальше
+      - >
+        Берут f^k(f(x)) и подставляют mx+c внутрь громоздкой формулы,
+        хотя внешняя f линейна и первый путь вдвое короче
+    calculator:
+      mode: checks
+      note: >
+        Оба блока — Paper 3, части длинных исследований. Калькулятор нужен
+        в соседних пунктах, здесь — нет.
+    prereq: [induction_skeleton]
+    raw_tags: [integration_by_parts, induction_step, algebraic_simplification,
+               geometric_series_recognition]
+    blocks: [2025-MAY-TZ3-P3-Q01-C, 2023-MAY-TZ1-P3-Q01-F]
+
+  - id: induction_inequality
+    name: Индукция для неравенства
+    rung: 9
+    direction: prove
+    trigger: "«Prove that n > …» или «n! > 2ⁿ for all n ≥ 4» — гипотеза сама неравенство."
+    chain:
+      - Прибавить или домножить обе части гипотезы
+      - Подключить результат предыдущего пункта как второе звено цепочки
+      - "Свернуть цепочку: a > b ≥ c даёт a > c"
+    traps:
+      - >
+        Теряют строгость при склейке: сочетание > и ≥ надо проверять глазами
+      - >
+        Игнорируют пункт (a). Слово «hence» значит, что он обязателен;
+        без него переход не выводится
+    calculator:
+      mode: forbidden
+      note: Единственный блок приёма — Paper 1, 5 баллов.
+    prereq: [induction_skeleton, direct_proof]
+    raw_tags: [inequality_manipulation, inductive_step, logarithm_properties]
+    blocks: [2025-MAY-TZ1-P1-Q08-B]
+
+# Что проверка практикума принципиально не ловит.
+verification_limits:
+  - what: словесная часть доказательства
+    why: >
+      Два-три балла из семи в каждом задании темы стоят за фразы: «предположим
+      противное», «это противоречие», «значит, верно для всех n». Ноутбук их
+      не прочитает. Поэтому в каждом решении приведена формулировка markscheme
+      дословно — сверяться с ней приходится самому, и в ноутбуке об этом
+      сказано прямо.
+  - what: полнота рассуждения при представлении целых
+    why: >
+      verify_residue проверяет остаток, а не то, что независимым числам даны
+      разные буквы. Запись 2(2m+1)² даёт остаток 2 по модулю 4 ровно так же,
+      как честная (2m+1)² + (2n+1)²: для частного случая a = b утверждение
+      верно, неполно здесь рассуждение. Поведение зафиксировано отдельной
+      проверкой в verify_a7.py, чтобы не выглядело недосмотром.
+
+# Расхождения с разметкой корпуса. В classification/ ничего не менялось.
+corpus_issues:
+  - block: 2021-MAY-TZ1-P1-Q12-B
+    what: >
+      В method_path формула n-й производной записана как
+      ((−1)^(n−1)/4)·((2n−3)!/(n−2)!)·(1+x)^(−(2n−1)/2). Константа 4 неверна:
+      на её месте должно стоять 2^(2n−2). Формула совпадает с истинной
+      производной только при n = 2 — то есть ровно в базовом случае,
+      который процитирован в evidence, поэтому ошибка и осталась незамеченной.
+    check: >
+      f(x) = √(1+x). Истинные производные: f'' = −1/(4(1+x)^{3/2}),
+      f''' = 3/(8(1+x)^{5/2}), f'''' = −15/(16(1+x)^{7/2}).
+      Запись из корпуса даёт при n = 3 значение 3/2 вместо 3/8,
+      при n = 4 — 15 вместо 15/16. С 2^(2n−2) совпадает при всех n.
+    also: >
+      Там же приведено «тождество» (2k−1)!/(k−1)! = 2(2k−3)!/(k−2)!.
+      Отношение левой части к правой равно 2k−1, то есть равенства нет.
+    impact: >
+      На практикум не влияет: приём induction_derivative отрабатывается
+      на блоке 2021-NOV-COMMON-P1-Q11-A с формулой (x²+2nx+n(n−1))e^x,
+      которая проверена sympy при n = 1…5.
+
+ladder:
+  - direct_proof
+  - integer_representation
+  - contradiction
+  - induction_skeleton
+  - induction_sum
+  - induction_divisibility
+  - induction_derivative
+  - induction_recursion
+  - induction_inequality

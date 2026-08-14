@@ -10,6 +10,7 @@
 """
 
 import hashlib
+import itertools
 import math
 
 import sympy as sp
@@ -237,6 +238,194 @@ def verify_identity(label, got, want, var=x,
         return False
     print(f"{OK} {label}: тождество выполняется (проверено в {checked} точках)")
     return True
+
+
+def _agrees(got, want, var, samples, tol=1e-9):
+    """Совпадают ли два выражения при целых var из samples.
+
+    Возвращает (ок, пояснение). Сначала символьно: expand, потом simplify —
+    именно в этом порядке, потому что m·m^k само по себе до m^(k+1)
+    не сворачивается, а после expand разность уходит в ноль.
+
+    Численная проверка нужна для факториалов и биномов, где simplify
+    до нуля доходит не всегда. Свободные символы, кроме var (в задачах
+    про n-ю производную это x), заполняются числами.
+    """
+    d = sp.sympify(got) - sp.sympify(want)
+    try:
+        if sp.simplify(sp.expand(d)) == 0:
+            return True, None
+    except (TypeError, ValueError, AttributeError):
+        pass
+
+    free = sorted(d.free_symbols - {var}, key=str)
+    fill = (0.7, 1.3, 2.1, 0.4, 1.9)
+    checked = 0
+    for i, s in enumerate(samples):
+        sub = {var: sp.Integer(s)}
+        sub.update({f: sp.Float(fill[(i + j) % len(fill)]) for j, f in enumerate(free)})
+        try:
+            val = complex(d.subs(sub).evalf())
+            scale = abs(complex(sp.sympify(want).subs(sub).evalf()))
+        except (TypeError, ValueError):
+            continue
+        if not (math.isfinite(val.real) and math.isfinite(val.imag)
+                and math.isfinite(scale)):
+            continue
+        checked += 1
+        if abs(val) > tol * max(1.0, scale):
+            return False, f"при {var} = {s} расхождение {abs(val):.3g}"
+    if checked < 3:
+        return False, "проверить не удалось: слишком много особых точек"
+    return True, f"проверено в {checked} точках"
+
+
+def verify_induction(label, got, formula, var=k, n0=1, base_lhs=None,
+                     samples=(1, 2, 3, 4, 5, 6, 7)):
+    """База и переход индукции разом.
+
+    formula  — доказываемая правая часть как выражение от var.
+    got      — то, что получилось в шаге после подстановки гипотезы;
+               должно совпасть с formula при var → var + 1.
+    base_lhs — левая часть при var = n0. Без неё база не проверяется,
+               а в markscheme это отдельный балл R1, и терять его жаль.
+
+    Прятать ответ здесь не от кого: в задачах «prove that» он напечатан
+    в условии. Проверяется ровно то, за что дают баллы, — что ваш переход
+    действительно приводит к утверждению для k + 1.
+    """
+    if _blank(label, got):
+        return False
+    formula = sp.sympify(formula)
+    ok = True
+
+    if base_lhs is not None:
+        if base_lhs is Ellipsis:
+            print(f"⬜ {label}, база: не заполнена")
+            ok = False
+        else:
+            diff = sp.simplify(sp.expand(sp.sympify(base_lhs) - formula.subs(var, n0)))
+            if diff == 0:
+                print(f"{OK} {label}, база: при {var} = {n0} стороны равны")
+            else:
+                print(f"{NO} {label}, база: при {var} = {n0} стороны расходятся на {diff}")
+                ok = False
+
+    good, note = _agrees(got, formula.subs(var, var + 1), var, samples)
+    tail = f" ({note})" if note else ""
+    if good:
+        print(f"{OK} {label}, переход: получено утверждение для {var} + 1{tail}")
+    else:
+        print(f"{NO} {label}, переход: это не утверждение для {var} + 1 — {note}")
+    return ok and good
+
+
+def verify_divisibility(label, expr, d, mult, var=k, n0=1, samples=(1, 2, 3, 4, 5)):
+    """Индукция для делимости: expr(n) кратно d при всех n ≥ n0.
+
+    mult — множитель, с которым гипотеза входит в шаг. Проверяется, что
+    expr(k+1) − mult·expr(k) делится на d **как выражение**, то есть после
+    деления на d остаются целые коэффициенты.
+
+    Требование про коэффициенты не придирка. Разность бывает кратна d при
+    каждом целом k и без этого — но тогда её нельзя записать в виде d·(целое)
+    одной строкой, и доказательства не получается. Markscheme даёт A1 именно
+    за вынесение d за скобку.
+    """
+    if _blank(label, expr, mult):
+        return False
+    expr, d = sp.sympify(expr), sp.sympify(d)
+    ok = True
+
+    base = sp.simplify(expr.subs(var, n0))
+    if sp.simplify(base / d).is_integer:
+        print(f"{OK} {label}, база: при {var} = {n0} получается {base} = {d}·{base / d}")
+    else:
+        print(f"{NO} {label}, база: при {var} = {n0} получается {base}, а оно не кратно {d}")
+        ok = False
+
+    rest = sp.expand(expr.subs(var, var + 1) - sp.sympify(mult) * expr)
+    quot = sp.expand(rest / d)
+    bad = [c for c in quot.as_coefficients_dict().values() if not sp.sympify(c).is_Integer]
+    if bad:
+        print(f"{NO} {label}, шаг: остаток {rest} на {d} нацело не делится "
+              f"(после деления остаются дроби {bad})")
+        return False
+    for s in samples:
+        if not sp.sympify(quot.subs(var, s)).is_integer:
+            print(f"{NO} {label}, шаг: при {var} = {s} частное {quot.subs(var, s)} не целое")
+            return False
+    print(f"{OK} {label}, шаг: остаток равен {d}·({quot})")
+    return ok
+
+
+def verify_rewrite(label, left, right, original, var=x, factor=1):
+    """Равенство left = right получено из original = 0 переносами и делением.
+
+    В доказательстве от противного исходное уравнение приводят к виду, где
+    у сторон разная чётность. Проверяется, что по дороге ничего не потерялось:
+    factor·(left − right) обязано совпасть с original. factor нужен там, где
+    равенство делили — деление на 2 возвращается умножением на 2.
+
+    Отдельная функция, а не выражение прямо в ячейке: пока задание не решено,
+    в left и right лежат многоточия, и вычитать их нельзя. Ноутбук обязан
+    проходиться сверху вниз с пустыми ответами.
+    """
+    if _blank(label, left, right):
+        return False
+    return verify_identity(
+        label, sp.sympify(factor) * (sp.sympify(left) - sp.sympify(right)),
+        original, var=var)
+
+
+def verify_residue(label, expr, mod, want, samples=(-3, -2, -1, 0, 1, 2, 3, 4, 5),
+                   limit=400):
+    """Остаток expr при делении на mod одинаков и равен want при всех целых символах.
+
+    Этим проверяется почти вся некомбинаторная часть темы: «делится на 3»
+    (остаток 0), «никогда не делится на 3» (остаток 2), «чётно» (mod 2, остаток 0).
+    В markscheme за такой вывод стоит R1, и формулируется он теми же словами.
+
+    Перебираются все свободные символы выражения, поэтому запись через
+    два целых, как (2m+1)² + (2n+1)², проверяется без дополнительных усилий.
+    """
+    if _blank(label, expr, want):
+        return False
+    expr, mod = sp.sympify(expr), sp.sympify(mod)
+    free = sorted(expr.free_symbols, key=str)
+    grids = (itertools.islice(itertools.product(samples, repeat=len(free)), limit)
+             if free else [()])
+    checked = 0
+    for combo in grids:
+        val = sp.simplify(expr.subs(dict(zip(free, map(sp.Integer, combo)))))
+        if not val.is_integer:
+            print(f"{NO} {label}: при {dict(zip(map(str, free), combo))} "
+                  f"получается {val}, а это не целое")
+            return False
+        got = int(val) % int(mod)
+        if got != int(want) % int(mod):
+            print(f"{NO} {label}: при {dict(zip(map(str, free), combo))} остаток "
+                  f"от деления на {mod} равен {got}, а не {want}")
+            return False
+        checked += 1
+    print(f"{OK} {label}: остаток от деления на {mod} всегда {int(want) % int(mod)} "
+          f"(проверено наборов: {checked})")
+    return True
+
+
+def check_order(label, seq, want_digest, n=None):
+    """Ответ — порядок шагов доказательства. В отличие от check_set порядок важен."""
+    if _blank(label, seq):
+        return False
+    items = [str(s).strip().lower() for s in seq]
+    if n is not None and len(items) != n:
+        print(f"{NO} {label}: шагов должно быть {n}, а получено {len(items)}")
+        return False
+    if digest('|'.join(items)) == want_digest:
+        print(f"{OK} {label}: {' → '.join(items)}")
+        return True
+    print(f"{NO} {label}: {' → '.join(items)} — порядок не тот")
+    return False
 
 
 def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
