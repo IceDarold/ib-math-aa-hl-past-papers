@@ -64,8 +64,18 @@ def _blank(label, *values):
     Ноутбук должен проходиться сверху вниз и с пустыми заданиями — иначе
     его нельзя ни запустить целиком, ни залить туда, где ячейки исполняются
     автоматически.
+
+    Внутрь списков смотрим рекурсивно: там, где ответ это набор, в ячейке
+    стоит `[...]`, и снаружи такой список от заполненного не отличается.
     """
-    if any(v is Ellipsis for v in values):
+    def has_gap(v):
+        if v is Ellipsis:
+            return True
+        if isinstance(v, (list, tuple, set, frozenset)):
+            return any(has_gap(i) for i in v)
+        return False
+
+    if any(has_gap(v) for v in values):
         print(f"⬜ {label}: ответ не заполнен")
         return True
     return False
@@ -185,6 +195,55 @@ def check_complex_set(label, values, want_digest, sf=6):
         print(f"{OK} {label}: {{{', '.join(str(v) for v in values)}}}")
         return True
     print(f"{NO} {label}: {{{', '.join(str(v) for v in values)}}} — не сходится")
+    return False
+
+
+# Точки, в которых сверяются разложения, и заполнение для прочих букв.
+# Значения входят в хеш: меняя их, вы обесцениваете все записанные эталоны.
+_SERIES_SAMPLES = (0.31, 0.72, 1.37, 2.13, 3.41)
+_SERIES_FILL = (0.7, 1.3, 2.1, 0.4, 1.9)
+
+
+def _series_canon(expr, var, sf=6, tol=1e-12):
+    """Канонический вид разложения: значения в нескольких точках.
+
+    Сравнивать записи бессмысленно. Ученик напишет 5*x/2, sympy — 2.5*x,
+    а srepr у Rational(5,2) и Float(2.5) разный; сворачивать (1+x)**4 обратно
+    в многочлен simplify тоже не станет. Значения же совпадают при любой
+    верной записи, а разные многочлены в пяти точках не совпадают никогда.
+    """
+    e = sp.sympify(expr)
+    free = sorted(e.free_symbols - {var}, key=str)
+    out = []
+    for i, s in enumerate(_SERIES_SAMPLES):
+        sub = {var: sp.Float(s)}
+        sub.update({f: sp.Float(_SERIES_FILL[(i + j) % len(_SERIES_FILL)])
+                    for j, f in enumerate(free)})
+        z = complex(sp.N(e.subs(sub)))
+        re_ = 0.0 if abs(z.real) < tol else z.real
+        im_ = 0.0 if abs(z.imag) < tol else z.imag
+        out.append(f"{sig(re_, sf)}|{sig(im_, sf)}")
+    return ';'.join(out)
+
+
+def check_series(label, got, want_digest, var=x, sf=6):
+    """Ответ — многочлен или отрезок ряда от var.
+
+    Засчитывается любая эквивалентная запись: 5*x/2 и 2.5*x, порядок слагаемых,
+    вынесенный за скобку множитель. Если в ответе есть другие буквы (p, q, a),
+    называть их надо так же, как в условии: по ним проверка тоже подставляет
+    значения.
+
+    Чего проверка не делает: не требует раскрытых скобок. Ответ (1+x)**4
+    численно равен своему разложению, и отличить их по значениям нельзя.
+    """
+    if _blank(label, got):
+        return False
+    canon = _series_canon(got, var, sf)
+    if digest(canon) == want_digest:
+        print(f"{OK} {label}: {sp.expand(sp.sympify(got))}")
+        return True
+    print(f"{NO} {label}: {sp.expand(sp.sympify(got))} — не сходится")
     return False
 
 
