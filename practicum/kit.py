@@ -30,6 +30,7 @@ from sympy import (                                                  # noqa: E40
     Rational, Integer, Float, S, Symbol, symbols, sympify,
     re, im, arg, conjugate, Add, Mul, Pow,
     simplify, trigsimp, expand, expand_trig, factor, cancel, together, apart,
+    div, quo, rem, Poly, degree, discriminant, real_roots, fraction,
     solve, solveset, nsolve, Eq, Ne,
     diff, integrate, limit, series, dsolve, Derivative, Integral, Function,
     factorial, binomial, Sum, Product, Matrix, lambdify, nsimplify,
@@ -485,6 +486,223 @@ def check_order(label, seq, want_digest, n=None):
         return True
     print(f"{NO} {label}: {' → '.join(items)} — порядок не тот")
     return False
+
+
+# --- многочлены -------------------------------------------------------------
+#
+# Здесь проверки устроены не так, как в A3. Там ответ сверялся по значениям
+# и нераскрытая скобка проходила, потому что «раскрыть» — просьба к записи,
+# а не к числу. В теме многочленов ровно наоборот: «представьте в виде
+# произведения линейных множителей» — это и есть задача, и ответ, равный
+# исходному многочлену, но записанный одной строкой, неверен.
+#
+# Поэтому verify_factored и check_apart смотрят на то, что написано
+# в ячейке, а не только на значение: сначала разбирают структуру записи,
+# потом сверяют равенство.
+
+
+def _poly_degree(expr, var):
+    """Степень многочлена; None, если это не многочлен от var."""
+    try:
+        return sp.degree(sp.Poly(sp.expand(sp.sympify(expr)), var))
+    except (sp.PolynomialError, sp.GeneratorsNeeded, TypeError, ValueError):
+        return None
+
+
+def verify_factored(label, got, original, var=x, max_deg=1, n=None):
+    """Разложение многочлена на множители: и равенство, и форма записи.
+
+    Эталон не хранится: original — это тот же многочлен, что напечатан
+    в условии, прятать его незачем. Проверяется два условия.
+
+    Первое — структурное. Разбирается именно записанное произведение,
+    без факторизации: sp.factor_list разложил бы и раскрытый многочлен,
+    и проверка стала бы бессмысленной. Каждый множитель обязан иметь
+    степень не выше max_deg (по умолчанию 1 — «product of linear factors»),
+    кратные множители считаются столько раз, какова кратность.
+
+    Второе — равенство: произведение должно раскрываться в original.
+    """
+    if _blank(label, got):
+        return False
+    e = sp.sympify(got)
+    orig = sp.sympify(original)
+
+    args = sp.Mul.make_args(e)
+    if len(args) == 1 and not args[0].is_Pow:
+        print(f"{NO} {label}: это не произведение — многочлен записан одной строкой")
+        return False
+
+    facs = []
+    for arg in args:
+        if var not in arg.free_symbols:
+            continue                                   # числовой множитель
+        base, exp = arg.as_base_exp()
+        if not (exp.is_Integer and exp > 0):
+            print(f"{NO} {label}: множитель {arg} — не многочлен")
+            return False
+        d = _poly_degree(base, var)
+        if d is None:
+            print(f"{NO} {label}: множитель {base} — не многочлен от {var}")
+            return False
+        if d > max_deg:
+            print(f"{NO} {label}: множитель {base} имеет степень {d}, "
+                  f"а нужны множители степени не выше {max_deg} — "
+                  f"разложение не доведено до конца")
+            return False
+        facs.extend([base] * int(exp))
+
+    if not facs:
+        print(f"{NO} {label}: множителей с {var} не нашлось")
+        return False
+    if n is not None and len(facs) != n:
+        print(f"{NO} {label}: множителей должно быть {n} (кратные считаются "
+              f"по разу за каждую степень), а получилось {len(facs)}")
+        return False
+    if sp.expand(e - orig) != 0:
+        print(f"{NO} {label}: произведение раскрывается в {sp.expand(e)}, "
+              f"а исходный многочлен {sp.expand(orig)}")
+        return False
+    print(f"{OK} {label}: {e}")
+    return True
+
+
+def verify_division(label, quotient, remainder, dividend, divisor, var=x):
+    """Деление с остатком: dividend = divisor·quotient + remainder.
+
+    Эталона нет — восстанавливается делимое. Отдельно проверяется условие,
+    без которого равенство ничего не значит: степень остатка должна быть
+    строго меньше степени делителя, иначе делить можно дальше.
+    """
+    if _blank(label, quotient, remainder):
+        return False
+    quo, rem = sp.sympify(quotient), sp.sympify(remainder)
+    num, den = sp.sympify(dividend), sp.sympify(divisor)
+
+    resid = sp.expand(num - (den * quo + rem))
+    if sp.simplify(resid) != 0:
+        print(f"{NO} {label}: делимое не восстанавливается, невязка = {resid}")
+        return False
+
+    d_den = _poly_degree(den, var)
+    d_rem = -1 if sp.simplify(rem) == 0 else _poly_degree(rem, var)
+    if d_den is None or d_rem is None:
+        print(f"{NO} {label}: делитель и остаток должны быть многочленами от {var}")
+        return False
+    if d_rem >= d_den:
+        print(f"{NO} {label}: остаток степени {d_rem} не ниже делителя "
+              f"(степень {d_den}) — делить можно дальше")
+        return False
+    print(f"{OK} {label}: {sp.expand(num)} = ({den})·({quo}) + ({rem})")
+    return True
+
+
+def verify_divisible(label, poly, divisor, subs=None, var=x):
+    """Многочлен делится на divisor нацело.
+
+    Найденные значения букв подставляются в poly, и считается настоящий
+    остаток. Эталон не хранится вовсе: проверяется то самое условие,
+    которое стоит в задаче, а не совпадение с записанным ответом.
+    """
+    subs = dict(subs or {})
+    if _blank(label, list(subs.values())):
+        return False
+    p = sp.expand(sp.sympify(poly).subs(subs))
+    d = sp.sympify(divisor)
+    quo, rem = sp.div(p, d, var)
+    if sp.simplify(rem) != 0:
+        print(f"{NO} {label}: остаток от деления равен {sp.expand(rem)}, "
+              f"а должен быть нулём")
+        return False
+    print(f"{OK} {label}: {p} делится на {sp.expand(d)} нацело, частное {quo}")
+    return True
+
+
+def check_apart(label, got, original, var=x):
+    """Разложение на простейшие дроби: и равенство, и форма записи.
+
+    Как и с множителями, равенства мало: исходная дробь равна сама себе.
+    Поэтому каждое слагаемое обязано быть простейшей дробью — числитель
+    без var, знаменатель степень одного неприводимого множителя.
+    Знаменатель (x+1)(2x+1) проверку не пройдёт: он не разложен.
+    """
+    if _blank(label, got):
+        return False
+    e = sp.sympify(got)
+    orig = sp.sympify(original)
+
+    for term in sp.Add.make_args(e):
+        num, den = sp.fraction(sp.together(term))
+        if var not in den.free_symbols:
+            print(f"{NO} {label}: слагаемое {term} — не дробь с {var} в знаменателе")
+            return False
+        if var in num.free_symbols:
+            print(f"{NO} {label}: у слагаемого {term} числитель зависит от {var}; "
+                  f"простейшая дробь так не выглядит")
+            return False
+        try:
+            _, pieces = sp.factor_list(den, var)
+        except (sp.PolynomialError, sp.GeneratorsNeeded):
+            print(f"{NO} {label}: знаменатель {den} — не многочлен от {var}")
+            return False
+        if len(pieces) != 1:
+            print(f"{NO} {label}: знаменатель {den} сам раскладывается на множители — "
+                  f"дробь не доведена до простейшей")
+            return False
+        d = _poly_degree(pieces[0][0], var)
+        if d is None or d > 1:
+            print(f"{NO} {label}: знаменатель {den} не является степенью "
+                  f"линейного множителя")
+            return False
+
+    if sp.simplify(sp.cancel(sp.together(e - orig))) != 0:
+        print(f"{NO} {label}: сумма дробей не равна исходному выражению")
+        return False
+    print(f"{OK} {label}: {e}")
+    return True
+
+
+def verify_root_transform(label, coeffs, original, transform, var=x, tol=1e-6):
+    """Корни нового многочлена — это transform от корней исходного.
+
+    Ровно то, о чём спрашивает задача «составьте уравнение с корнями 1/α³»,
+    и ровно то, что проверяется: эталонных коэффициентов нет, оба набора
+    корней считаются численно и сравниваются как мультимножества.
+
+    coeffs — коэффициенты нового многочлена по убыванию степени. Список,
+    а не готовое выражение: иначе незаполненный ответ уронил бы ячейку
+    ещё до входа в проверку.
+    """
+    if _blank(label, coeffs):
+        return False
+    cs = [sp.sympify(c) for c in coeffs]
+    new = sum(c * var**(len(cs) - 1 - i) for i, c in enumerate(cs))
+    if sp.expand(new) == 0:
+        print(f"{NO} {label}: многочлен получился нулевым")
+        return False
+
+    want = []
+    for r in sp.Poly(sp.expand(sp.sympify(original)), var).nroots(n=20):
+        try:
+            want.append(complex(sp.N(transform(r))))
+        except (ZeroDivisionError, TypeError, ValueError):
+            print(f"{NO} {label}: преобразование не определено для корня {r}")
+            return False
+    got = [complex(v) for v in sp.Poly(sp.expand(new), var).nroots(n=20)]
+
+    if len(got) != len(want):
+        print(f"{NO} {label}: корней должно быть {len(want)}, а у многочлена {len(got)}")
+        return False
+
+    free = list(want)
+    for g in got:
+        near = min(range(len(free)), key=lambda i: abs(free[i] - g), default=None)
+        if near is None or abs(free[near] - g) > tol * max(1.0, abs(g)):
+            print(f"{NO} {label}: корень {g:.6g} не совпадает ни с одним нужным")
+            return False
+        free.pop(near)
+    print(f"{OK} {label}: {sp.expand(new)} = 0 — корни те, что нужно")
+    return True
 
 
 def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
