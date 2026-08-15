@@ -6,8 +6,9 @@ classification/work/
 classification/generated/*/deepseek-v4-pro/raw/
 classification/api/data/
 
-# Собранное из ноутбуков: Kaggle-версии и PDF для чтения с телефона.
-# И то и другое воспроизводится из practicum/ одной командой.
+# Собранное из ноутбуков: Kaggle-версии. PDF для чтения с телефона
+# лежат в practicum/pdf/ и версионируются — их забирают готовыми.
+# Воспроизводится из practicum/ одной командой.
 /build/
 
 # Python

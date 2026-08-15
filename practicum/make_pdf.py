@@ -697,7 +697,7 @@ def main():
                     help=f'размер страницы в мм, ШxВ (по умолчанию {DEFAULT_PAGE})')
     ap.add_argument('--font', type=float, default=DEFAULT_FONT,
                     help=f'кегль в пунктах (по умолчанию {DEFAULT_FONT})')
-    ap.add_argument('--out', default=os.path.join(ROOT, 'build/pdf'),
+    ap.add_argument('--out', default=os.path.join(ROOT, 'practicum/pdf'),
                     help='куда класть PDF')
     a = ap.parse_args()
 
