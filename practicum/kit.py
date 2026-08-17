@@ -32,6 +32,8 @@ from sympy import (                                                  # noqa: E40
     simplify, trigsimp, expand, expand_trig, factor, cancel, together, apart,
     div, quo, rem, Poly, degree, discriminant, real_roots, fraction,
     solve, solveset, nsolve, Eq, Ne,
+    Interval, Union, Intersection, Complement, FiniteSet, And, Or, Not,
+    maximum, minimum,
     diff, integrate, limit, series, dsolve, Derivative, Integral, Function,
     factorial, binomial, Sum, Product, Matrix, lambdify, nsimplify,
 )
@@ -705,6 +707,253 @@ def verify_root_transform(label, coeffs, original, transform, var=x, tol=1e-6):
     return True
 
 
+# --- неравенства ------------------------------------------------------------
+#
+# Третий раз тема требует своего понятия равенства ответов. В A3 сверялись
+# значения, в A4 — форма записи. Здесь ответ — **множество**, и сверять надо
+# множества: у неравенства нет «ответа» в виде числа, а есть граница, и
+# ровно на границе стоят баллы. Строгое или нестрогое, выколота ли точка,
+# где обращается в ноль знаменатель, — это и есть содержание темы.
+#
+# Проверок две, и различаются они не темой, а тем, откуда берётся истина.
+# verify_solution_set решает неравенство сам и сравнивает множества точно.
+# verify_param_set не решает ничего: он берёт ваше множество и проверяет
+# в точках, что свойство выполняется ровно там, где вы обещали.
+
+
+def _as_set(value, var):
+    """Ответ в любой записи → множество sympy.
+
+    Принимаются и Interval(-5, 1), и (x >= -5) & (x <= 1), и Union(...),
+    и S.Reals. Запись ответа — дело вкуса, содержание одно.
+    """
+    v = sp.sympify(value)
+    if isinstance(v, sp.Set):
+        return v
+    if isinstance(v, (sp.core.relational.Relational, sp.logic.boolalg.Boolean)):
+        try:
+            return v.as_set()
+        except (NotImplementedError, ValueError, TypeError):
+            return None
+    return None
+
+
+def _show_set(s, var):
+    """Множество словами экзамена: −5 ≤ x ≤ 1 вместо Interval(-5, 1)."""
+    try:
+        return str(s.as_relational(var))
+    except (NotImplementedError, AttributeError, TypeError):
+        return str(s)
+
+
+def _pieces(s):
+    """Множество → список (начало, конец, открыт слева, открыт справа).
+
+    Точка представляется вырожденным отрезком. None означает, что множество
+    устроено сложнее объединения промежутков и разбирать его мы не беремся.
+    """
+    parts = s.args if isinstance(s, sp.Union) else (s,)
+    out = []
+    for p in parts:
+        if p is sp.S.EmptySet:
+            continue
+        if isinstance(p, sp.Interval):
+            out.append((p.start, p.end, bool(p.left_open), bool(p.right_open)))
+        elif isinstance(p, sp.FiniteSet):
+            out.extend((v, v, False, False) for v in p.args)
+        else:
+            return None
+    return sorted(out, key=lambda t: (float(sp.N(t[0])), float(sp.N(t[1]))))
+
+
+def verify_solution_set(label, got, ineq, var=x, domain=None):
+    """Множество решений неравенства. Эталона нет: sympy решает его сам.
+
+    ineq — то самое неравенство, что напечатано в условии, прятать его
+    незачем. domain сужает область (n ∈ ℤ⁺, d > 0): в архиве почти всегда
+    есть такое условие, и оно меняет ответ.
+
+    Сравнение точное, вместе с концами. Ответ −5 < x < 1 против −5 ≤ x ≤ 1
+    не проходит: в markscheme это разные баллы.
+    """
+    if _blank(label, got):
+        return False
+    domain = sp.S.Reals if domain is None else domain
+    mine = _as_set(got, var)
+    if mine is None:
+        print(f"{NO} {label}: ответ должен быть множеством или неравенством — "
+              f"Interval(-5, 1), (x >= -5) & (x <= 1), Union(...)")
+        return False
+
+    cond = sp.sympify(ineq)
+    try:
+        truth = sp.Intersection(cond.as_set(), domain)
+    except (NotImplementedError, ValueError, TypeError):
+        truth = sp.solveset(cond, var, domain)
+    if isinstance(truth, sp.ConditionSet):
+        print(f"{NO} {label}: sympy не смог решить это неравенство сам — "
+              f"проверка неприменима")
+        return False
+
+    # Сужать ответ областью нельзя: «d < 0 или d > 9, но d ∈ ℝ⁺, поэтому
+    # d > 9» — это и есть последний балл задачи, и потерянное ограничение
+    # должно быть видно как лишний кусок ответа.
+    if mine == truth:
+        print(f"{OK} {label}: {_show_set(truth, var)}")
+        return True
+
+    extra = sp.Complement(mine, truth)
+    missing = sp.Complement(truth, mine)
+    if extra is not sp.S.EmptySet:
+        print(f"{NO} {label}: лишнее — {_show_set(extra, var)}")
+    if missing is not sp.S.EmptySet:
+        print(f"{NO} {label}: потеряно — {_show_set(missing, var)}")
+    if isinstance(extra, sp.FiniteSet) or isinstance(missing, sp.FiniteSet):
+        print("   расхождение только в отдельных точках: посмотрите, "
+              "строгое неравенство или нет и не обращается ли там в ноль "
+              "знаменатель")
+    return False
+
+
+def _interior(a, b):
+    """Три точки строго внутри промежутка (a, b); бесконечность обрезается."""
+    if a == b:
+        return []
+    lo = a if a.is_finite else (b - 10 if b.is_finite else sp.Integer(-10))
+    hi = b if b.is_finite else (a + 10 if a.is_finite else sp.Integer(10))
+    return [lo + (hi - lo) * f for f in (sp.Rational(1, 4), sp.Rational(1, 2),
+                                         sp.Rational(3, 4))]
+
+
+def verify_param_set(label, got, holds, var=k, window=(-30, 30),
+                     eps=sp.Rational(1, 1000), tol=0):
+    """Множество значений буквы, при которых выполняется свойство holds.
+
+    Здесь проверка ничего не решает и ничего не хранит. Она берёт ваше
+    множество и спрашивает у самого условия: внутри — выполняется ли,
+    снаружи — не выполняется ли. Точки берутся внутри каждого промежутка,
+    в каждой дырке, на каждой границе и по обе стороны от неё.
+
+    holds(value) возвращает True, False или None. None означает «в этой
+    точке численно судить нельзя» (касание, вырождение) — такая точка
+    пропускается, и число пропусков печатается.
+
+    tol > 0 нужен там, где границы найдены калькулятором и записаны с тремя
+    значащими цифрами: точки ближе tol к границе не проверяются, потому что
+    там ваш округлённый ответ и точная истина расходятся законно.
+    """
+    if _blank(label, got):
+        return False
+    mine = _as_set(got, var)
+    if mine is None:
+        print(f"{NO} {label}: ответ должен быть множеством или неравенством")
+        return False
+
+    lo, hi = sp.sympify(window[0]), sp.sympify(window[1])
+    box = sp.Interval(lo, hi)
+    pts = []
+    for part in (sp.Intersection(box, mine), sp.Complement(box, mine)):
+        for a, b, _, _ in _pieces(part) or []:
+            pts.extend(_interior(a, b))
+    bounds = []
+    for a, b, _, _ in _pieces(mine) or []:
+        for pt in (a, b):
+            if pt.is_finite:
+                bounds.append(pt)
+                pts.extend([pt, pt - eps, pt + eps])
+
+    # Регулярная сетка поверх всего. Без неё дефект в одной точке остаётся
+    # незамеченным: ответ «m > 0» вместо «m > 0, m ≠ 1» отличается от верного
+    # ровно в m = 1, а туда не попадает ни одна проба, привязанная
+    # к промежуткам чужого ответа.
+    span = hi - lo
+    step = sp.Max(1, sp.ceiling(span / 80))
+    node = sp.ceiling(lo / step) * step
+    while node <= hi:
+        pts.append(node)
+        node += step
+
+    checked = skipped = 0
+    for v in pts:
+        if not (lo - 1 <= v <= hi + 1):
+            continue
+        if tol and any(abs(float(v - c)) <= float(tol) for c in bounds):
+            skipped += 1
+            continue
+        want = bool(mine.contains(v))
+        try:
+            fact = holds(v)
+        except (TypeError, ValueError, ZeroDivisionError, ArithmeticError,
+                sp.PolynomialError, sp.GeneratorsNeeded):
+            skipped += 1
+            continue
+        if fact is None:
+            skipped += 1
+            continue
+        checked += 1
+        if bool(fact) != want:
+            if want:
+                print(f"{NO} {label}: при {var} = {v} условие не выполняется, "
+                      f"а ваше множество эту точку содержит")
+            else:
+                print(f"{NO} {label}: при {var} = {v} условие выполняется, "
+                      f"а в ваше множество эта точка не входит")
+            return False
+    if checked < 4:
+        print(f"{NO} {label}: проверить не удалось — годных точек нашлось "
+              f"всего {checked}")
+        return False
+    tail = f", пропущено {skipped}" if skipped else ""
+    print(f"{OK} {label}: {_show_set(mine, var)} — проверено в {checked} "
+          f"точках{tail}")
+    return True
+
+
+def verify_nonneg_form(label, got, expr, var=None):
+    """Выражение переписано в явно неотрицательном виде.
+
+    В доказательствах неравенств балл M1 стоит за «attempt to express as
+    a square»: доказательство состоит в том, что запись становится
+    очевидно неотрицательной. Поэтому проверяется и равенство исходному
+    выражению, и вид записи — сумма квадратов, модулей и неотрицательных
+    чисел, без слагаемых со знаком минус.
+
+    Это та же логика, что у verify_factored в A4: там просили произведение,
+    здесь просят квадрат, и в обоих случаях требование относится к записи.
+    """
+    if _blank(label, got):
+        return False
+    e = sp.sympify(got)
+    target = sp.sympify(expr)
+
+    for term in sp.Add.make_args(e):
+        coeff, rest = term.as_coeff_Mul()
+        if coeff.is_negative:
+            print(f"{NO} {label}: слагаемое {term} входит со знаком минус — "
+                  f"по такой записи неотрицательность не видна")
+            return False
+        if rest.is_number:
+            if rest.is_negative:
+                print(f"{NO} {label}: слагаемое {term} отрицательно")
+                return False
+            continue
+        if isinstance(rest, sp.Abs):
+            continue
+        base, power = rest.as_base_exp()
+        if not (power.is_Integer and power > 0 and power % 2 == 0):
+            print(f"{NO} {label}: слагаемое {term} — не квадрат и не модуль; "
+                  f"неотрицательность из такой записи не следует")
+            return False
+
+    diff = sp.simplify(sp.expand(e - target))
+    if diff != 0:
+        print(f"{NO} {label}: запись неотрицательна, но исходному выражению "
+              f"не равна: разность {diff}")
+        return False
+    print(f"{OK} {label}: {e} — неотрицательно по виду и равно исходному")
+    return True
+
+
 def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
     """Корни уравнения expr = 0 на отрезке domain = (a, b).
 
@@ -753,6 +1002,16 @@ def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
         return False
     print(f"{OK} {label}: {{{', '.join(str(r) for r in given)}}}")
     return True
+
+
+def count_roots(f, a, b, samples=4000):
+    """Сколько корней у функции f на [a, b] — численно, сканированием.
+
+    Нужно там, где вопрос звучит как «сколько решений» и ответом является
+    множество значений параметра: считать корни приходится в каждой
+    пробной точке, и делать это должен не solve, а быстрый скан.
+    """
+    return len(_scan_roots(f, float(a), float(b), samples))
 
 
 def _scan_roots(f, a, b, samples=4000):

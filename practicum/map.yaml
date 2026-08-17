@@ -125,6 +125,29 @@ sections:
       - id: A8
         title: Неравенства
         subtopics: [number_algebra.inequalities, functions.inequalities]
+        status: ready
+        notebook: practicum/number_algebra/practicum-a8-inequalities.ipynb
+        kaggle: ib-math-praktikum-a8-inequalities
+        skills: practicum/skills/number-algebra-inequalities.yaml
+        note: >
+          Две темы взяты целиком: number_algebra.inequalities (82 балла)
+          и functions.inequalities (5 баллов). Вторая отдельно не живёт —
+          все три её блока про множество значений параметра, то есть
+          про то же самое.
+
+          Самая рассыпанная тема архива: 26 блоков из 31 — отдельные
+          пункты внутри чужих вопросов, чаще всего последние. Целым
+          вопросом неравенство бывает дважды за пять лет.
+
+          Двенадцать баллов (три блока) неравенствами не являются вовсе:
+          две системы линейных уравнений и алгебраическое «show that».
+          Это те же блоки, из-за которых в C5 предложено завести
+          number_algebra.systems_of_equations; разбор — в corpus_issues
+          карточки.
+
+          Проверки здесь третьего типа. В A3 сверялись значения, в A4 —
+          форма записи, тут — множества: у неравенства нет ответа-числа,
+          и все баллы стоят на границе множества решений.
 
   B:
     title: Functions
