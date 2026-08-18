@@ -34,7 +34,7 @@ The first manual topic-and-method classification covers the complete November 20
 
 - [Карта практикумов](practicum/map.yaml) и проверка `python practicum/check_map.py`
 - [Карточки приёмов](practicum/skills/) — нормализованный слой над `method_tags`
-- Собранные практикумы: [E7 — дифференциальные уравнения](practicum/calculus/practicum-e7-differential-equations.ipynb), [C3 — тригонометрические уравнения](practicum/geometry/practicum-c3-trigonometric-equations.ipynb)
+- Собранные практикумы: десять из тридцати шести, помечены `status: ready` в карте; PDF для чтения с телефона — в [practicum/pdf/](practicum/pdf/)
 
 ## Question Atlas
 

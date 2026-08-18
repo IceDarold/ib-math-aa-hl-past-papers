@@ -954,6 +954,238 @@ def verify_nonneg_form(label, got, expr, var=None):
     return True
 
 
+# --- уравнения --------------------------------------------------------------
+#
+# Четвёртый раз тема требует своего понятия равенства ответов. A3 сверял
+# значения, A4 — форму записи, A8 — множества. Здесь ответом бывает **само
+# уравнение**: «show that the x-coordinates satisfy x² − 2dx + 9d = 0» — это
+# два балла, и получены они до того, как решение началось. Два уравнения
+# равны, если одно получается из другого переносом слагаемых и умножением
+# на ненулевое число, — и только так: домножение на выражение с буквой
+# меняет множество корней и равенством не является.
+#
+# Вторая особенность темы в том, что решение не сохраняет равносильность.
+# Возведение в квадрат и умножение на знаменатель корни добавляют, деление
+# на выражение с переменной — теряет. Поэтому verify_root_set смотрит на
+# список корней с двух сторон: каждый ли подставляется в исходное уравнение
+# (лишние) и все ли найдены (потерянные). Разница между этими двумя
+# ошибками и есть содержание темы, поэтому и сообщения у них разные.
+
+
+def verify_equation(label, got, want, var=x):
+    """Ответ — само уравнение.
+
+    Принимается любая запись, отличающаяся переносом слагаемых и множителем-
+    числом: 2x² − 2(m+1)x + 4 = 0 и x² − (m+1)x + 2 = 0 — одно уравнение.
+    Домножение на выражение с буквой не принимается: при её нуле уравнение
+    вырождается, и корни у записей уже разные.
+
+    Пишите ответ как Eq(левая, правая) или просто выражением, которое
+    приравнивается к нулю.
+    """
+    if _blank(label, got):
+        return False
+
+    def flat(e):
+        e = sp.sympify(e)
+        # Eq(x² + 1, x² + 1) sympy сворачивает в True ещё до нас: обе части
+        # совпали дословно, и уравнения не осталось.
+        if isinstance(e, sp.logic.boolalg.BooleanAtom):
+            return sp.Integer(0) if bool(e) else sp.Integer(1)
+        return sp.sympify(e.lhs - e.rhs) if isinstance(e, sp.Eq) else e
+
+    g, w = flat(got), flat(want)
+    if sp.simplify(g) == 0:
+        print(f"{NO} {label}: получилось 0 = 0 — уравнение потеряно целиком")
+        return False
+    ratio = sp.simplify(sp.cancel(g / w))
+    if ratio == 0 or ratio.has(sp.nan, sp.zoo):
+        print(f"{NO} {label}: это не то уравнение")
+        return False
+    if ratio.free_symbols:
+        den = sp.denom(sp.together(ratio))
+        if var in ratio.free_symbols and not den.has(var):
+            print(f"{NO} {label}: домножено на {ratio} — выражение "
+                  f"с переменной. Оно добавляет уравнению свои корни")
+        elif var not in ratio.free_symbols:
+            print(f"{NO} {label}: домножено на {ratio} — выражение с буквой. "
+                  f"При его нуле уравнение вырождается, так что множество "
+                  f"корней меняется и уравнения не равны")
+        else:
+            print(f"{NO} {label}: не сводится к нужному уравнению переносом "
+                  f"слагаемых — отношение левых частей равно {ratio}")
+        return False
+    tail = "" if ratio == 1 else f" (эквивалентная форма, множитель {ratio})"
+    print(f"{OK} {label}: {sp.Eq(sp.expand(w), 0)}{tail}")
+    return True
+
+
+def _as_domain(domain, var):
+    """Область из условия → множество sympy.
+
+    Принимаются Interval(...), x > 4, (0, oo) как пара границ и None.
+    """
+    if domain is None:
+        return sp.S.Reals
+    if isinstance(domain, tuple):
+        return sp.Interval(sp.sympify(domain[0]), sp.sympify(domain[1]))
+    got = _as_set(domain, var)
+    return sp.S.Reals if got is None else got
+
+
+def _satisfies(expr, var, value, tol=1e-9):
+    """Обращает ли value уравнение expr = 0 в верное равенство.
+
+    Возвращает True, False или None — последнее означает, что в этой точке
+    уравнение не определено (ноль в знаменателе, логарифм неположительного).
+    """
+    sub = expr.subs(var, value)
+    if sub.has(sp.zoo, sp.nan, sp.oo, -sp.oo):
+        return None
+    exact = sp.simplify(sub)
+    if exact == 0:
+        return True
+    if exact.has(sp.zoo, sp.nan):
+        return None
+    try:
+        num = complex(sp.N(exact, 30))
+    except (TypeError, ValueError):
+        return False
+    if math.isnan(num.real) or math.isinf(num.real):
+        return None
+    # Комплексное значение означает, что подстановка вывела за область
+    # определения: логарифм отрицательного, корень из отрицательного.
+    if abs(num.imag) > tol:
+        return None
+    return abs(num) < tol
+
+
+def verify_root_set(label, got, eq, var=x, domain=None):
+    """Полный список корней уравнения eq — с обеих сторон.
+
+    Эталон не хранится. Каждый ваш корень подставляется в **исходное**
+    уравнение: так ловятся лишние, которые появились при возведении
+    в квадрат или умножении на знаменатель. Затем уравнение решается
+    самой sympy: так ловятся потерянные.
+
+    domain — область из условия (x > 4, s > 0). Она часть уравнения,
+    а не украшение: в архиве корень чаще всего отбрасывают именно
+    по области, и за это стоит отдельный балл.
+    """
+    if _blank(label, got):
+        return False
+    expr = sp.sympify(eq)
+    expr = expr.lhs - expr.rhs if isinstance(expr, sp.Eq) else expr
+    region = _as_domain(domain, var)
+    given = list(got.args) if isinstance(got, sp.FiniteSet) else list(got)
+    given = [sp.sympify(r) for r in given]
+
+    if len(set(map(sp.srepr, [sp.nsimplify(r) if r.is_number else r
+                              for r in given]))) != len(given):
+        print(f"{NO} {label}: один и тот же корень указан дважды")
+        return False
+
+    for r in given:
+        if r.is_real is False or region.contains(r) == sp.false:
+            print(f"{NO} {label}: {r} в область условия не входит — "
+                  f"этот корень отбрасывают, а не записывают")
+            return False
+        ok = _satisfies(expr, var, r)
+        if ok is None:
+            print(f"{NO} {label}: при {var} = {r} уравнение не определено — "
+                  f"ноль в знаменателе или логарифм неположительного")
+            return False
+        if not ok:
+            print(f"{NO} {label}: {r} исходное уравнение в верное равенство "
+                  f"не обращает. Такой корень появляется, когда обе части "
+                  f"возводят в квадрат или умножают на знаменатель")
+            return False
+
+    truth = sp.solveset(expr, var, region)
+    if truth is sp.S.EmptySet:
+        truth = sp.FiniteSet()
+    elif not isinstance(truth, sp.FiniteSet):
+        cand = sp.solve(expr, var, dict=False)
+        cand = cand if isinstance(cand, list) else [cand]
+        good = []
+        for c in cand:
+            c = sp.sympify(c)
+            if c.free_symbols or c.is_real is False:
+                continue
+            if region.contains(c) == sp.true and _satisfies(expr, var, c):
+                good.append(c)
+        if not good and not given:
+            print(f"{NO} {label}: sympy не смог решить это уравнение сам — "
+                  f"проверка неприменима")
+            return False
+        truth = sp.FiniteSet(*good)
+
+    def same(one, other):
+        """Совпадают ли корни. Десятичная запись считается совпадением:
+        различать √17 и 4.1231056 — дело формулировки «exact value»,
+        а не полноты набора."""
+        if sp.simplify(one - other) == 0:
+            return True
+        try:
+            return abs(complex(sp.N(one - other, 30))) < 1e-9
+        except (TypeError, ValueError):
+            return False
+
+    missing = [r for r in truth.args if not any(same(r, g) for g in given)]
+    if missing:
+        shown = ', '.join(str(m) for m in sorted(missing, key=lambda v: sp.N(v)))
+        print(f"{NO} {label}: корни верны, но найдено не всё — потеряно "
+              f"{shown}. Так теряют корень, когда делят обе части "
+              f"на выражение с переменной")
+        return False
+    print(f"{OK} {label}: {{{', '.join(str(r) for r in given)}}}")
+    return True
+
+
+def verify_vertex_form(label, got, expr, var=x):
+    """Квадратный трёхчлен, записанный в виде a(x − h)² + k.
+
+    Требование относится к записи, как verify_factored в A4: ответ должен
+    быть суммой одного полного квадрата и числа, а в квадрате должен стоять
+    именно (x − h), а не (2x − 1) и не (√5·x + 1). Равенство исходному
+    выражению проверяется отдельно.
+    """
+    if _blank(label, got):
+        return False
+    e = sp.sympify(got)
+    target = sp.sympify(expr)
+
+    square = None
+    for term in sp.Add.make_args(e):
+        if not term.has(var):
+            continue
+        coeff, rest = term.as_coeff_Mul()
+        base, power = rest.as_base_exp()
+        if power != 2 or sp.degree(sp.Poly(base, var)) != 1:
+            print(f"{NO} {label}: слагаемое {term} — не полный квадрат "
+                  f"вида a(x − h)²")
+            return False
+        if sp.Poly(base, var).all_coeffs()[0] != 1:
+            print(f"{NO} {label}: в квадрате стоит {base}, а нужно (x − h) "
+                  f"с единичным коэффициентом при {var}")
+            return False
+        if square is not None:
+            print(f"{NO} {label}: в записи больше одного слагаемого с {var}")
+            return False
+        square = term
+    if square is None:
+        print(f"{NO} {label}: в записи нет квадрата — это не форма a(x − h)² + k")
+        return False
+
+    diff = sp.simplify(sp.expand(e - target))
+    if diff != 0:
+        print(f"{NO} {label}: форма верная, но исходному выражению запись "
+              f"не равна: разность {diff}")
+        return False
+    print(f"{OK} {label}: {e}")
+    return True
+
+
 def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
     """Корни уравнения expr = 0 на отрезке domain = (a, b).
 
