@@ -1186,6 +1186,189 @@ def verify_vertex_form(label, got, expr, var=x):
     return True
 
 
+# --- треугольник ------------------------------------------------------------
+#
+# Пятый раз серии нужен свой ответ на вопрос «когда два ответа одинаковы».
+# A3 сверял значения, A4 — форму записи, A8 — множества, B1 — уравнения.
+# Здесь ответ это **конфигурация**: длина стороны или величина угла сами
+# по себе ничего не значат, значение имеет треугольник, частью которого
+# они являются.
+#
+# Отсюда устройство проверки. solve_triangle достраивает треугольник
+# из данных условия — и в неоднозначном случае (две стороны и угол против
+# меньшей) достраивает **два**. verify_triangle не хранит эталона: он
+# смотрит, согласуются ли ваши части с данными, и говорит, если данные
+# допускают ещё один треугольник, а выбран не он.
+
+# Стороны a, b, c лежат против углов A, B, C — как во всех формулах IB.
+_SIDES, _ANGLES = ('a', 'b', 'c'), ('A', 'B', 'C')
+
+
+def _tri_complete(sides, angles, deg):
+    """Собирает решение в словарь, переводя углы обратно в градусы."""
+    k = 180 / math.pi if deg else 1
+    out = {}
+    for name, value in zip(_SIDES, sides):
+        out[name] = value
+    for name, value in zip(_ANGLES, angles):
+        out[name] = value * k
+    return out
+
+
+def solve_triangle(a=None, b=None, c=None, A=None, B=None, C=None, deg=True):
+    """Достраивает треугольник по трём известным частям.
+
+    Возвращает список решений: обычно одно, в неоднозначном случае два,
+    при несовместных данных — пустой список. Углы по умолчанию
+    в градусах; deg=False переключает на радианы.
+
+    Функция нужна не только проверке. Ею удобно смотреть, сколько
+    треугольников допускает условие, — а это и есть главный вопрос темы
+    в вопросах вида «find the smallest possible perimeter».
+    """
+    k = math.pi / 180 if deg else 1
+    sides = [None if v is None else float(v) for v in (a, b, c)]
+    angles = [None if v is None else float(v) * k for v in (A, B, C)]
+    if any(v is not None and v <= 0 for v in sides + angles):
+        return []
+    if sum(v is not None for v in angles) == 3 and \
+            abs(sum(angles) - math.pi) > 1e-9:
+        return []
+    known_s = [i for i, v in enumerate(sides) if v is not None]
+    known_a = [i for i, v in enumerate(angles) if v is not None]
+    if len(known_s) + len(known_a) < 3 or not known_s:
+        return []
+
+    # Три угла задают форму, но не размер: треугольник не определён.
+    if len(known_s) == 0:
+        return []
+
+    def by_cosine(i):
+        """Угол i по трём сторонам."""
+        p, q, r = sides[i], sides[(i + 1) % 3], sides[(i + 2) % 3]
+        cos = (q * q + r * r - p * p) / (2 * q * r)
+        return math.acos(max(-1.0, min(1.0, cos)))
+
+    def finish_sss():
+        if not all(sides):
+            return []
+        p, q, r = sorted(sides)
+        if p + q <= r + 1e-12:
+            return []
+        return [_tri_complete(sides, [by_cosine(i) for i in range(3)], deg)]
+
+    if len(known_s) == 3:
+        return finish_sss()
+
+    if len(known_s) == 2:
+        missing = ({0, 1, 2} - set(known_s)).pop()
+        if angles[missing] is not None:            # SAS: угол между сторонами
+            q, r = sides[(missing + 1) % 3], sides[(missing + 2) % 3]
+            sides[missing] = math.sqrt(q * q + r * r
+                                       - 2 * q * r * math.cos(angles[missing]))
+            return finish_sss()
+        # SSA: угол лежит против одной из известных сторон
+        i = known_a[0]
+        j = [t for t in known_s if t != i]
+        if i not in known_s or not j:
+            return []
+        j = j[0]
+        ratio = sides[j] * math.sin(angles[i]) / sides[i]
+        if ratio > 1 + 1e-12:
+            return []
+        ratio = max(-1.0, min(1.0, ratio))
+        out = []
+        for angle_j in {math.asin(ratio), math.pi - math.asin(ratio)}:
+            rest = math.pi - angles[i] - angle_j
+            if rest <= 1e-9:
+                continue
+            new_a = list(angles)
+            new_a[j] = angle_j
+            new_a[({0, 1, 2} - {i, j}).pop()] = rest
+            new_s = list(sides)
+            miss = ({0, 1, 2} - set(known_s)).pop()
+            new_s[miss] = sides[i] * math.sin(rest if miss not in (i, j)
+                                              else new_a[miss]) / math.sin(angles[i])
+            out.append(_tri_complete(new_s, new_a, deg))
+        out.sort(key=lambda t: t[_ANGLES[j]])
+        return out
+
+    # Одна сторона и два угла: третий угол из суммы, стороны по синусам.
+    third = ({0, 1, 2} - set(known_a)).pop()
+    angles[third] = math.pi - sum(angles[i] for i in known_a)
+    if angles[third] <= 1e-9:
+        return []
+    i = known_s[0]
+    for j in range(3):
+        if sides[j] is None:
+            sides[j] = sides[i] * math.sin(angles[j]) / math.sin(angles[i])
+    return [_tri_complete(sides, angles, deg)]
+
+
+def verify_triangle(label, got, tol=5e-3, deg=True, **known):
+    """Найденные части треугольника проверяются достраиванием, а не эталоном.
+
+    got — словарь того, что вы нашли: {'c': 8.24, 'B': 41.2}; known — то,
+    что дано в условии. Треугольник строится из данных, и ваши части
+    сверяются с ним.
+
+    Если данные допускают два треугольника, проверка об этом скажет:
+    выбор между ними — часть задачи, и его делает условие, а не алгебра.
+    """
+    if _blank(label, *got.values(), *known.values()):
+        return False
+    got = {key: float(value) for key, value in got.items()}
+    solutions = solve_triangle(deg=deg, **known)
+    if not solutions:
+        print(f"{NO} {label}: по этим данным треугольника не существует — "
+              f"проверьте условие")
+        return False
+
+    def fits(sol):
+        return all(abs(sol[key] - value) <= tol * max(1.0, abs(sol[key]))
+                   for key, value in got.items() if key in sol)
+
+    matched = [sol for sol in solutions if fits(sol)]
+    if not matched:
+        best = min(solutions,
+                   key=lambda sol: max(abs(sol[key] - value)
+                                       for key, value in got.items()))
+        bad = max(got, key=lambda key: abs(best[key] - got[key]))
+        print(f"{NO} {label}: {bad} = {got[bad]:g} с данными не согласуется — "
+              f"треугольник с такими частями не замыкается")
+        return False
+    shown = ', '.join(f"{key} = {value:g}" for key, value in got.items())
+    if len(solutions) > 1:
+        print(f"{OK} {label}: {shown} — но данные допускают "
+              f"{len(solutions)} треугольника, и ваш ответ отвечает одному "
+              f"из них. Условие выбирает, какой именно")
+    else:
+        print(f"{OK} {label}: {shown}")
+    return True
+
+
+def verify_exact(label, got, want):
+    """Точный ответ: «give your answer in the form p√q», «find the exact value».
+
+    Принимается любая эквивалентная точная запись (3√14/5 и √126/5 — одно
+    и то же число), но десятичная дробь не принимается, даже если совпадает
+    во всех печатаемых знаках: «exact» — требование к записи, и markscheme
+    за 4.12 вместо √17 балла не ставит.
+    """
+    if _blank(label, got):
+        return False
+    e = sp.sympify(got)
+    if e.atoms(sp.Float):
+        print(f"{NO} {label}: {e} — это десятичная запись, а вопрос просит "
+              f"точное значение: оставьте корень или дробь")
+        return False
+    if sp.simplify(e - sp.sympify(want)) != 0:
+        print(f"{NO} {label}: {e} — не сходится")
+        return False
+    print(f"{OK} {label}: {e}")
+    return True
+
+
 def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
     """Корни уравнения expr = 0 на отрезке domain = (a, b).
 
