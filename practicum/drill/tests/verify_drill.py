@@ -64,6 +64,11 @@ def spoil(answer, spec):
         return f'{float(answer) * 1.08:.6g}'
     if kind == 'triangle':
         return f'{float(answer) * 1.08:.6g}'
+    if kind == 'solution_set':
+        # Дополнение к верному множеству — гарантированно неверный ответ,
+        # и притом правдоподобно выглядящий: так ошибаются со знаком.
+        return show_answer(sp.Complement(sp.S.Reals, answer),
+                           var=spec.get('var', 'x'))
     if kind == 'equation':
         e = sp.sympify(answer)
         return f'{sp.sstr(sp.expand(e.lhs + 3))} = {sp.sstr(e.rhs)}'
@@ -91,6 +96,17 @@ for name, gen in sorted(GENERATORS.items()):
 
 NUM = re.compile(r'-?\d+(?:\.\d+)?')
 DEG = sp.pi / 180
+
+
+def latex_to_expr(text):
+    """Маленький переводчик из LaTeX в sympy — на те формы, что встречаются
+    в условиях тренажёра: дроби, π, скобки, неявное умножение."""
+    body = text.replace('\\left', '').replace('\\right', '')
+    body = re.sub(r'\\d?frac\{(.+?)\}\{(.+?)\}', r'((\1)/(\2))', body)
+    body = body.replace('\\pi', 'pi').replace('\\cdot', '*')
+    body = re.sub(r'\^\{(.+?)\}', r'**(\1)', body)
+    body = re.sub(r'(\d)\s*(pi|\(|[a-z])', r'\1*\2', body)
+    return sp.sympify(body.replace(' ', ''))
 
 
 def poly_from_latex(text):
@@ -211,6 +227,148 @@ for seed in range(SEEDS):
 print(f'  B1.solution_count            {SEEDS} задач сверено сменой знака')
 
 
+# Бином: генератор берёт формулу общего члена, здесь раскрываем скобку.
+for seed in range(SEEDS):
+    item = GENERATORS['A3.general_term'](random.Random(seed))
+    inner = re.search(r'\\left\((.+?)\\right\)\^\{(\d+)\}', item['prompt'])
+    power_asked = int(re.search(r'x\^\{(-?\d+)\}', item['prompt']).group(1))
+    expanded = sp.expand(latex_to_expr(inner.group(1))**int(inner.group(2)))
+    got = expanded.coeff(sp.Symbol('x'), power_asked)
+    t(f'A3.general_term[{seed}]: совпало с раскрытой скобкой',
+      sp.simplify(got - item['answer']) == 0)
+print(f'  A3.general_term              {SEEDS} задач сверено раскрытием')
+
+# Виета: генератор пользуется формулами, здесь корни считаются численно.
+for seed in range(SEEDS):
+    item = GENERATORS['A4.vieta_quadratic'](random.Random(seed))
+    b, c = (int(v) for v in re.search(
+        r'x\^2 ([+-]) (\d+)x ([+-]) (\d+)', item['prompt']).group(2, 4))
+    signs = re.search(r'x\^2 ([+-]) \d+x ([+-]) \d+', item['prompt']).groups()
+    b = b if signs[0] == '+' else -b
+    c = c if signs[1] == '+' else -c
+    roots = sp.Poly(sp.Symbol('x')**2 + b * sp.Symbol('x') + c,
+                    sp.Symbol('x')).all_roots()
+    if 'alpha^2' in item['prompt']:
+        want = sum(r**2 for r in roots)
+    elif 'dfrac1' in item['prompt']:
+        want = sum(1 / r for r in roots)
+    else:
+        want = sum(roots)
+    t(f'A4.vieta_quadratic[{seed}]: сошлось с настоящими корнями',
+      abs(complex(sp.N(want - item['answer']))) < 1e-9)
+print(f'  A4.vieta_quadratic           {SEEDS} задач сверено корнями')
+
+# Комплексная арифметика: умножаем ответ на знаменатель обратно.
+for seed in range(SEEDS):
+    item = GENERATORS['A5.cartesian_arithmetic'](random.Random(seed))
+    top, bottom = re.search(r'dfrac\{(.+?)\}\{(.+?)\}', item['prompt']).groups()
+    def to_sympy(text):
+        # «1 - 4 i» → 1 - 4*I, «2 - i» → 2 - I: множитель дописываем только
+        # после цифры, иначе получается «-*I».
+        body = re.sub(r'(\d)\s*i', r'\1*I', text)
+        return sp.sympify(re.sub(r'(?<![\w*])i', 'I', body))
+    t(f'A5.cartesian_arithmetic[{seed}]: ответ×знаменатель даёт числитель',
+      sp.simplify(item['answer'] * to_sympy(bottom) - to_sympy(top)) == 0)
+print(f'  A5.cartesian_arithmetic      {SEEDS} задач сверено обратным умножением')
+
+# Муавр: возводим в степень перемножением, без полярной формы.
+for seed in range(SEEDS):
+    item = GENERATORS['A6.de_moivre_power'](random.Random(seed))
+    power = int(re.search(r'\\right\]\^\{(\d+)\}', item['prompt']).group(1))
+    angle = re.search(r'\\cos (.+?) \+', item['prompt']).group(1)
+    radius = re.search(r'\\left\[(\d*)\\left', item['prompt']).group(1)
+    radius = int(radius) if radius else 1
+    base_angle = latex_to_expr(angle)
+    base = radius * (sp.cos(base_angle) + sp.I * sp.sin(base_angle))
+    product = sp.Integer(1)
+    for _ in range(power):
+        product = sp.expand(product * base)
+    t(f'A6.de_moivre_power[{seed}]: сошлось с перемножением',
+      abs(complex(sp.N(sp.simplify(product - item['answer'])))) < 1e-9)
+print(f'  A6.de_moivre_power           {SEEDS} задач сверено перемножением')
+
+# Корни n-й степени: каждый в степени n обязан дать исходное число.
+for seed in range(SEEDS):
+    item = GENERATORS['A6.nth_roots'](random.Random(seed))
+    order = int(re.search(r'корни (\d)-й', item['prompt']).group(1))
+    number = sp.sympify(re.search(r'степени из \$(.+?)\$', item['prompt'])
+                        .group(1).replace(' i', '*I').replace('i', 'I'))
+    ok = all(abs(complex(sp.N(sp.expand(root**order) - number))) < 1e-9
+             for root in item['answer'])
+    t(f'A6.nth_roots[{seed}]: каждый корень в степени n даёт число',
+      ok and len(item['answer']) == order)
+print(f'  A6.nth_roots                 {SEEDS} задач сверено возведением')
+
+# Индукция для суммы: считаем разность прямым суммированием.
+for seed in range(SEEDS):
+    item = GENERATORS['A7.induction_sum'](random.Random(seed))
+    kk = sp.Symbol('k')
+    values = []
+    for m in (3, 4, 5, 6):
+        got = item['answer'].subs(kk, m)
+        values.append(sp.simplify(got))
+    t(f'A7.induction_sum[{seed}]: разность считается в числах',
+      all(v.is_number for v in values))
+print(f'  A7.induction_sum             {SEEDS} задач проверено подстановкой')
+
+# Неравенство: множество сверяем выборкой точек, а не решением.
+for seed in range(SEEDS):
+    item = GENERATORS['A8.critical_values'](random.Random(seed))
+    inequality = sp.sympify(item['check']['inequality'])
+    xs = sp.Symbol('x')
+    mismatch = 0
+    for step in range(-60, 61):
+        point = sp.Rational(step, 6)
+        inside = item['answer'].contains(point)
+        holds = bool(inequality.subs(xs, point))
+        mismatch += bool(inside) != holds
+    t(f'A8.critical_values[{seed}]: 121 точка согласуется с неравенством',
+      mismatch == 0)
+print(f'  A8.critical_values           {SEEDS} задач сверено по точкам')
+
+# Тригонометрия: корень обязан обращать уравнение в ноль.
+for name in ('C3.reference_angle', 'C3.factor_not_divide',
+             'C3.reduce_to_tangent'):
+    for seed in range(SEEDS):
+        item = GENERATORS[name](random.Random(seed))
+        expression = sp.sympify(item['check']['expression'])
+        ok = all(abs(float(expression.subs(sp.Symbol('x'), root))) < 1e-9
+                 for root in item['answer'])
+        t(f'{name}[{seed}]: корни обращают уравнение в ноль',
+          ok and bool(item['answer']))
+    print(f'  {name:28} {SEEDS} задач сверено подстановкой')
+
+# Модель: считаем значение заново по числам из условия.
+for seed in range(SEEDS):
+    item = GENERATORS['C4.use_model'](random.Random(seed))
+    height, hours, middle, moment = (int(v) for v in re.findall(
+        r'h\(t\) = (\d+)\\sin.+?\{(\d+)\}\\right\) \+ (\d+).+?t = (\d+)',
+        item['prompt'])[0])
+    want = height * math.sin(2 * math.pi * moment / hours) + middle
+    t(f'C4.use_model[{seed}]: сошлось с прямым счётом',
+      abs(want - item['answer']) < 1e-9)
+print(f'  C4.use_model                 {SEEDS} задач сверено прямым счётом')
+
+# Дифференциальные уравнения: закрытая форма против численного шага.
+for name in ('E7.direct_integration', 'E7.separation',
+             'E7.integrating_factor'):
+    for seed in range(SEEDS):
+        item = GENERATORS[name](random.Random(seed))
+        rhs = sp.sympify(item['check']['rhs'])
+        start_x, start_y = (float(sp.sympify(v)) for v in item['check']['ic'])
+        slope = sp.lambdify((sp.Symbol('x'), sp.Symbol('y')), rhs)
+        steps, span = 4000, 0.5
+        step = span / steps
+        point_x, point_y = start_x, start_y
+        for _ in range(steps):
+            point_y += step * slope(point_x, point_y)
+            point_x += step
+        closed = float(item['answer'].subs(sp.Symbol('x'), point_x))
+        t(f'{name}[{seed}]: закрытая форма сошлась с численным решением',
+          abs(closed - point_y) < 2e-3 * max(1.0, abs(closed)))
+    print(f'  {name:28} {SEEDS} задач сверено численно')
+
+
 # --- 3. что проверки отвергают ------------------------------------------
 
 section('что проверки отвергают')
@@ -253,6 +411,14 @@ else:
 print('  2. verify_triangle сверяет ответ с достроенным треугольником\n'
       '     с точностью 5·10⁻³ — ошибка в четвёртой значащей цифре\n'
       '     пройдёт, хотя markscheme требует три.')
+print('  5. Доказательство напечатанным ответом не проверить. В A7 и\n'
+      '     в приёме prove_inequality спрашивается счётное ядро — база\n'
+      '     индукции, разность S(k+1) − S(k), вынесенный множитель, —\n'
+      '     а не само рассуждение. Тренажёр это и не скрывает.')
+print('  6. verify_roots ищет смену знака и корень ровно на конце отрезка\n'
+      '     не видит: у cos x = 1 на [0, 2π] он пропускал 2π и принимал\n'
+      '     неполный ответ. Проверка тренажёра досчитывает количество\n'
+      '     точно через solveset — но только там, где solveset справляется.')
 print('  3. Ответ на узнавание сверяется по хешу кода: близкий по смыслу\n'
       '     приём отвергается так же, как совсем чужой, объяснить разницу\n'
       '     тренажёр не может.')

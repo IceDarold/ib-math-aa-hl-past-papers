@@ -99,8 +99,10 @@ kinds = {engine.choose(bank, {}, GENERATORS, mode='recognition', rng=rng)[1]
 t('в режиме узнавания только узнавание', kinds == {'recognition'})
 
 skills_with_compute = {s['id'] for s, _ in engine.candidates(bank, 'compute', GENERATORS)}
-t('счёт есть у всех приёмов B1 и C1',
-  len(skills_with_compute) == len(GENERATORS))
+t('задача на счёт есть у каждого приёма банка',
+  skills_with_compute == {s['id'] for s in bank['skills']})
+t('лишних генераторов, не привязанных к приёму, нет',
+  set(GENERATORS) <= {s['id'] for s in bank['skills']})
 
 print('\n=== настройки сессии ===')
 picked = {engine.choose(bank, {}, GENERATORS, mode='mixed', rng=rng,
@@ -112,8 +114,9 @@ only_c1 = engine.candidates(bank, 'mixed', GENERATORS, practicums=('C1',))
 t('в отобранной теме все её приёмы', len(only_c1) == 8)
 
 try:
+    # B2 в карте есть, но практикум ещё не собран, и в банке его нет.
     engine.choose(bank, {}, GENERATORS, mode='compute', rng=rng,
-                  practicums=('A3',))
+                  practicums=('B2',))
     t('пустой набор — это ошибка, а не молчаливая подмена', False)
 except LookupError:
     t('пустой набор — это ошибка, а не молчаливая подмена', True)

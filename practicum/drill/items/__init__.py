@@ -1,15 +1,15 @@
 """Реестр генераторов задач на счёт.
 
-Ключ — идентификатор приёма из банка (`C1.cosine_rule`). Практикум без
-своего модуля просто не попадает в режим счёта: тренажёр по нему работает
-на узнавание, и это видно в статистике как непокрытый приём.
+Ключ — идентификатор приёма из банка (`C1.cosine_rule`). Один модуль на
+практикум; приём без генератора работает только на узнавание, и это видно
+в статистике и на экране настроек.
 """
 from __future__ import annotations
 
-from . import b1, c1
+from . import a3, a4, a5, a6, a7, a8, b1, c1, c3, c4, e7
 
 GENERATORS = {}
-GENERATORS.update(c1.GENERATORS)
-GENERATORS.update(b1.GENERATORS)
+for module in (a3, a4, a5, a6, a7, a8, b1, c1, c3, c4, e7):
+    GENERATORS.update(module.GENERATORS)
 
 __all__ = ['GENERATORS']

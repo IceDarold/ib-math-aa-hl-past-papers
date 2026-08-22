@@ -391,7 +391,6 @@ export function DrillView() {
                 <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Темы</h3>
                 <div className="flex gap-2 font-mono text-[10px]">
                   <button type="button" className="cursor-pointer border-0 bg-transparent text-muted hover:text-ink" onClick={() => setSettings((current) => ({ ...current, practicums: [] }))}>все</button>
-                  <button type="button" className="cursor-pointer border-0 bg-transparent text-muted hover:text-ink" onClick={() => setSettings((current) => ({ ...current, practicums: setup.filter((entry) => entry.compute > 0).map((entry) => entry.id) }))}>только со счётом</button>
                 </div>
               </div>
               {bySection.map((section) => (
@@ -420,11 +419,9 @@ export function DrillView() {
                   </div>
                 </div>
               ))}
-              {settings.mode === 'compute' && (
-                <p className="text-[11px] text-faint">
-                  Задачи на счёт написаны пока для B1 и C1. Остальные темы доступны в узнавании.
-                </p>
-              )}
+              <p className="text-[11px] text-faint">
+                Число на плитке — сколько заданий доступно в выбранном режиме.
+              </p>
             </section>
 
             <section className="grid grid-cols-2 gap-4 max-[560px]:grid-cols-1">

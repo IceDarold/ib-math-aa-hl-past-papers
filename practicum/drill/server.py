@@ -107,7 +107,7 @@ class Drill:
             'skill_name': skill['name'],
             'trigger': skill['trigger'],
             'practicum': skill['practicum'],
-            'answer': show_answer(answer),
+            'answer': show_answer(answer, var=spec.get('var', 'x')),
         }
 
     def setup(self):
