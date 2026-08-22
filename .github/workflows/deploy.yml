@@ -49,10 +49,26 @@ jobs:
           printf '%s\n' "$DEPLOY_KEY" > "$RUNNER_TEMP/math-deploy/key"
           cp .github/known_hosts "$RUNNER_TEMP/math-deploy/known_hosts"
 
+      - name: Build the htpasswd file
+        env:
+          BASIC_AUTH_USER: ${{ secrets.MATH_BASIC_AUTH_USER }}
+          BASIC_AUTH_PASSWORD: ${{ secrets.MATH_BASIC_AUTH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$BASIC_AUTH_USER"
+          test -n "$BASIC_AUTH_PASSWORD"
+          umask 077
+          hash=$(printf '%s' "$BASIC_AUTH_PASSWORD" | openssl passwd -apr1 -stdin)
+          printf '%s:%s\n' "$BASIC_AUTH_USER" "$hash" \
+            > "$RUNNER_TEMP/math-deploy/htpasswd"
+
       - name: Deploy production release
         env:
           DEPLOY_HOST: 130.17.12.5
           DEPLOY_USER: mathdeploy
           DEPLOY_KEY_PATH: ${{ runner.temp }}/math-deploy/key
           DEPLOY_KNOWN_HOSTS: ${{ runner.temp }}/math-deploy/known_hosts
+          HTPASSWD_FILE: ${{ runner.temp }}/math-deploy/htpasswd
+          BASIC_AUTH_USER: ${{ secrets.MATH_BASIC_AUTH_USER }}
+          BASIC_AUTH_PASSWORD: ${{ secrets.MATH_BASIC_AUTH_PASSWORD }}
         run: classification/web/deploy/deploy.sh

@@ -10,6 +10,9 @@ required_variables=(
   GITHUB_SHA
   GITHUB_RUN_ID
   GITHUB_RUN_ATTEMPT
+  HTPASSWD_FILE
+  BASIC_AUTH_USER
+  BASIC_AUTH_PASSWORD
 )
 
 for variable in "${required_variables[@]}"; do
@@ -35,6 +38,7 @@ archive="$repository_root/AA_HL"
 practicum="$repository_root/practicum"
 api_source="$repository_root/classification/api"
 api_database="$api_source/data/questions.sqlite"
+drill_source="$repository_root/practicum/drill"
 remote_root=/var/www/math.archik.tech
 release_id="${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 release="$remote_root/releases/$release_id"
@@ -43,6 +47,11 @@ remote="${DEPLOY_USER}@${DEPLOY_HOST}"
 
 if [[ ! -f "$web_dist/index.html" || ! -d "$archive" || ! -d "$practicum" || ! -f "$api_database" ]]; then
   printf 'Build output, archive, practicum, or API index is missing.\n' >&2
+  exit 66
+fi
+
+if [[ ! -f "$drill_source/bank.json" || ! -f "$HTPASSWD_FILE" ]]; then
+  printf 'Drill bank or the htpasswd file is missing.\n' >&2
   exit 66
 fi
 
@@ -92,11 +101,16 @@ rsync -rlptz --delete --exclude='/AA_HL/' -e "$rsync_ssh" \
 rsync -rlptzc --delete -e "$rsync_ssh" \
   "$archive/" "$remote:$release/AA_HL/"
 
-rsync -rlptzc --delete --include='*/' --include='*.ipynb' --exclude='*' -e "$rsync_ssh" \
+rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
+  --include='*/' --include='*.ipynb' --include='kit.py' --include='drill/***' \
+  --exclude='*' -e "$rsync_ssh" \
   "$practicum/" "$remote:$release/practicum/"
 
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' -e "$rsync_ssh" \
   "$api_source/" "$remote:$release/api/"
+
+rsync -rlptz --chmod=F644 -e "$rsync_ssh" \
+  "$HTPASSWD_FILE" "$remote:$remote_root/htpasswd"
 
 ssh "${ssh_args[@]}" "$remote" bash -s -- "$release" "$current" "$release_id" "$remote_root" <<'REMOTE'
 set -euo pipefail
@@ -126,6 +140,8 @@ test -d "$release/assets"
 test -d "$release/AA_HL"
 test -f "$release/practicum/calculus/practicum-e7-differential-equations.ipynb"
 test -f "$release/api/data/questions.sqlite"
+test -f "$release/practicum/drill/bank.json"
+test -f "$release/practicum/kit.py"
 
 install -d -m 755 "$api_runtime"
 if [[ ! -x "$api_venv/bin/python" ]]; then
@@ -161,6 +177,51 @@ for _ in {1..30}; do
 done
 curl --fail --silent --show-error http://127.0.0.1:8041/health >/dev/null
 
+drill_runtime="$remote_root/drill-runtime"
+drill_venv="$drill_runtime/venv"
+drill_pid="$drill_runtime/drill.pid"
+drill_log="$drill_runtime/drill.log"
+drill_data="$remote_root/drill-data"
+
+install -d -m 755 "$drill_runtime" "$drill_data"
+if [[ ! -x "$drill_venv/bin/python" ]]; then
+  printf 'Creating drill virtual environment.\n'
+  python3 -m venv "$drill_venv"
+fi
+printf 'Installing drill dependencies.\n'
+"$drill_venv/bin/pip" install --disable-pip-version-check --quiet \
+  -r "$release/practicum/drill/requirements.txt"
+
+if [[ -f "$drill_pid" ]]; then
+  old_drill=$(cat "$drill_pid" || true)
+  if [[ "$old_drill" =~ ^[0-9]+$ ]] && kill -0 "$old_drill" 2>/dev/null; then
+    kill "$old_drill"
+    for _ in {1..20}; do
+      kill -0 "$old_drill" 2>/dev/null || break
+      sleep 0.1
+    done
+  fi
+fi
+
+nohup env DRILL_DB="$drill_data/drill.sqlite" \
+  "$drill_venv/bin/python" "$release/practicum/drill/server.py" \
+  --host 127.0.0.1 --port 8042 \
+  >> "$drill_log" 2>&1 &
+printf '%s\n' "$!" > "$drill_pid"
+
+printf 'Waiting for drill health check.\n'
+for _ in {1..60}; do
+  if curl --fail --silent http://127.0.0.1:8042/api/drill/health >/dev/null; then
+    break
+  fi
+  sleep 0.2
+done
+if ! curl --fail --silent --show-error http://127.0.0.1:8042/api/drill/health >/dev/null; then
+  printf 'Drill service did not start. Recent log:\n' >&2
+  tail -n 40 "$drill_log" >&2 || true
+  exit 1
+fi
+
 ln -s -- "$release" "$next"
 mv -Tf -- "$next" "$current"
 REMOTE
@@ -184,29 +245,45 @@ fi
 REMOTE
 }
 
-if ! curl --fail --silent --show-error --location \
+auth=(--user "$BASIC_AUTH_USER:$BASIC_AUTH_PASSWORD")
+
+if ! curl --fail --silent --show-error --location "${auth[@]}" \
   --retry 5 --retry-delay 2 --max-time 20 \
   https://math.archik.tech/ | grep -q 'Question Atlas'; then
   rollback
   exit 1
 fi
 
-if ! curl --fail --silent --show-error --head \
+if ! curl --fail --silent --show-error --head "${auth[@]}" \
   --retry 5 --retry-delay 2 --max-time 20 \
   'https://math.archik.tech/AA_HL/2022/May/TZ2/Paper%201/question-paper.pdf' >/dev/null; then
   rollback
   exit 1
 fi
 
-if ! curl --fail --silent --show-error --max-time 20 \
+if ! curl --fail --silent --show-error "${auth[@]}" --max-time 20 \
   'https://math.archik.tech/api/health' | grep -q '"ok":true'; then
   rollback
   exit 1
 fi
 
-if ! curl --fail --silent --show-error --head \
+if ! curl --fail --silent --show-error --head "${auth[@]}" \
   --retry 5 --retry-delay 2 --max-time 20 \
   'https://math.archik.tech/practicum/calculus/practicum-e7-differential-equations.ipynb' >/dev/null; then
+  rollback
+  exit 1
+fi
+
+if ! curl --fail --silent --show-error "${auth[@]}" --max-time 20 \
+  'https://math.archik.tech/api/drill/health' | grep -q '"ok": true'; then
+  rollback
+  exit 1
+fi
+
+if curl --fail --silent --head --max-time 20 \
+  'https://math.archik.tech/AA_HL/2022/May/TZ2/Paper%201/question-paper.pdf' \
+  >/dev/null; then
+  printf 'Archive is reachable without a password.\n' >&2
   rollback
   exit 1
 fi

@@ -1,0 +1,7847 @@
+{
+ "version": 1,
+ "practicums": [
+  {
+   "id": "A3",
+   "title": "Биномиальная теорема",
+   "section": "A",
+   "notebook": "practicum/number_algebra/practicum-a3-binomial.ipynb",
+   "marks": 109,
+   "blocks": 24
+  },
+  {
+   "id": "A4",
+   "title": "Многочлены: Виета, деление, кратность корней",
+   "section": "A",
+   "notebook": "practicum/number_algebra/practicum-a4-polynomials.ipynb",
+   "marks": 145,
+   "blocks": 50
+  },
+  {
+   "id": "A5",
+   "title": "Комплексные числа: формы и арифметика",
+   "section": "A",
+   "notebook": "practicum/number_algebra/practicum-a5-complex-forms.ipynb",
+   "marks": 144,
+   "blocks": 42
+  },
+  {
+   "id": "A6",
+   "title": "Муавр, корни из единицы, геометрия на плоскости",
+   "section": "A",
+   "notebook": "practicum/number_algebra/practicum-a6-de-moivre.ipynb",
+   "marks": 112,
+   "blocks": 33
+  },
+  {
+   "id": "A7",
+   "title": "Доказательство: индукция, прямое, от противного",
+   "section": "A",
+   "notebook": "practicum/number_algebra/practicum-a7-proof.ipynb",
+   "marks": 160,
+   "blocks": 28
+  },
+  {
+   "id": "A8",
+   "title": "Неравенства",
+   "section": "A",
+   "notebook": "practicum/number_algebra/practicum-a8-inequalities.ipynb",
+   "marks": 87,
+   "blocks": 31
+  },
+  {
+   "id": "B1",
+   "title": "Уравнения: квадратные, дробные, с параметром",
+   "section": "B",
+   "notebook": "practicum/functions/practicum-b1-equations.ipynb",
+   "marks": 222,
+   "blocks": 73
+  },
+  {
+   "id": "C1",
+   "title": "Треугольник: синусы, косинусы, площадь",
+   "section": "C",
+   "notebook": "practicum/geometry/practicum-c1-triangle.ipynb",
+   "marks": 116,
+   "blocks": 39
+  },
+  {
+   "id": "C3",
+   "title": "Тригонометрические тождества и уравнения",
+   "section": "C",
+   "notebook": "practicum/geometry/practicum-c3-trigonometric-equations.ipynb",
+   "marks": 162,
+   "blocks": 43
+  },
+  {
+   "id": "C4",
+   "title": "Синусоидальные модели: амплитуда, период, сдвиг",
+   "section": "C",
+   "notebook": "practicum/functions/practicum-c4-sinusoidal-models.ipynb",
+   "marks": 83,
+   "blocks": 34
+  },
+  {
+   "id": "E7",
+   "title": "Дифференциальные уравнения первого порядка",
+   "section": "E",
+   "notebook": "practicum/calculus/practicum-e7-differential-equations.ipynb",
+   "marks": 254,
+   "blocks": 64
+  }
+ ],
+ "skills": [
+  {
+   "id": "A3.full_expansion",
+   "practicum": "A3",
+   "name": "Раскрыть целиком",
+   "rung": 1,
+   "trigger": "«Expand and simplify», показатель не больше 5.",
+   "calculator": "checks",
+   "practicum_marks": 109
+  },
+  {
+   "id": "A3.general_term",
+   "practicum": "A3",
+   "name": "Общий член",
+   "rung": 2,
+   "trigger": "«The coefficient of x^k», «the term in x^k», «the constant term», «the term independent of x». Показатель большой, раскрывать нельзя.",
+   "calculator": "partial",
+   "practicum_marks": 109
+  },
+  {
+   "id": "A3.equate_coefficients",
+   "practicum": "A3",
+   "name": "Приравнять коэффициенты",
+   "rung": 3,
+   "trigger": "Разложение выписано в условии, в скобке буквы. Два известных коэффициента — два уравнения.",
+   "calculator": "partial",
+   "practicum_marks": 109
+  },
+  {
+   "id": "A3.coefficients_as_sequence",
+   "practicum": "A3",
+   "name": "Коэффициенты как последовательность",
+   "rung": 4,
+   "trigger": "«Arithmetic mean», «form a geometric sequence», «are in arithmetic progression» — про сами коэффициенты разложения.",
+   "calculator": "checks",
+   "practicum_marks": 109
+  },
+  {
+   "id": "A3.fractional_index",
+   "practicum": "A3",
+   "name": "Дробный и отрицательный показатель",
+   "rung": 5,
+   "trigger": "Показатель не целый положительный: (1+x)^{1/2}, (1−x)^{-1}, 1/√(1−x²), 1/(2−qx). Просят «first n terms in ascending powers».",
+   "calculator": "forbidden",
+   "practicum_marks": 109
+  },
+  {
+   "id": "A3.product_and_approximation",
+   "practicum": "A3",
+   "name": "Произведение рядов и приближение",
+   "rung": 6,
+   "trigger": "«Up to and including the term in x²» для произведения или дроби; «use your expansion to approximate».",
+   "calculator": "forbidden",
+   "practicum_marks": 109
+  },
+  {
+   "id": "A3.binomial_with_i",
+   "practicum": "A3",
+   "name": "Бином и комплексные числа",
+   "rung": 7,
+   "trigger": "(cos θ + i sin θ)^n, (1+i)^n, либо чётная комбинация вида (1+z)^4 + (1−z)^4.",
+   "calculator": "forbidden",
+   "practicum_marks": 109
+  },
+  {
+   "id": "A4.factor_remainder",
+   "practicum": "A4",
+   "name": "Множитель и остаток",
+   "rung": 1,
+   "trigger": "«Show that (x−a) is a factor», «the remainder is R when divided by (x−b)», «(x−1) is a factor and f(3) = −2».",
+   "calculator": "checks",
+   "practicum_marks": 145
+  },
+  {
+   "id": "A4.polynomial_division",
+   "practicum": "A4",
+   "name": "Деление с остатком",
+   "rung": 2,
+   "trigger": "«Express in the form Q(x) + R/d(x)», «show that (2x²−5x−3)/(x−1) = 2x−3−6/(x−1)», «express as a product of linear factors».",
+   "calculator": "checks",
+   "practicum_marks": 145
+  },
+  {
+   "id": "A4.repeated_root",
+   "practicum": "A4",
+   "name": "Кратный корень",
+   "rung": 3,
+   "trigger": "«Divisible by (x+1)²», «has a repeated root», «the graph touches the x-axis at x = a».",
+   "calculator": "checks",
+   "practicum_marks": 145
+  },
+  {
+   "id": "A4.vieta_quadratic",
+   "practicum": "A4",
+   "name": "Виета для квадратного",
+   "rung": 4,
+   "trigger": "«The roots are α and β», спрашивают α²+β², произведение решений, сумму — но не сами корни.",
+   "calculator": "checks",
+   "practicum_marks": 145
+  },
+  {
+   "id": "A4.vieta_higher",
+   "practicum": "A4",
+   "name": "Виета для кубического и выше",
+   "rung": 5,
+   "trigger": "«Write down the sum of the roots», связь между корнями задана («корни α, β и α+β»), многочлен пятой степени с буквами.",
+   "calculator": "forbidden",
+   "practicum_marks": 145
+  },
+  {
+   "id": "A4.conjugate_roots",
+   "practicum": "A4",
+   "name": "Комплексные корни парами",
+   "rung": 6,
+   "trigger": "Коэффициенты действительны, один корень мнимый или задан множитель вида (z − 3i); «explain why the equation has at least one real root».",
+   "calculator": "forbidden",
+   "practicum_marks": 145
+  },
+  {
+   "id": "A4.symmetric_sums",
+   "practicum": "A4",
+   "name": "Симметричные суммы и вещественность",
+   "rung": 7,
+   "trigger": "«Show that p² − 2q = α²+β²+γ²», «deduce that the roots cannot all be real», «state a condition in terms of p and q».",
+   "calculator": "partial",
+   "practicum_marks": 145
+  },
+  {
+   "id": "A4.root_transformation",
+   "practicum": "A4",
+   "name": "Уравнение с новыми корнями",
+   "rung": 8,
+   "trigger": "«Find m and n such that the roots of x²+mx+n=0 are 1/α³ and 1/β³», «find p, q, r such that 1/z₁ … satisfy pw⁴+qw²+r=0».",
+   "calculator": "forbidden",
+   "practicum_marks": 145
+  },
+  {
+   "id": "A4.partial_fractions",
+   "practicum": "A4",
+   "name": "Простейшие дроби",
+   "rung": 9,
+   "trigger": "«Express in partial fractions», «write in the form A/(x+1) + B/(2x+1)». Почти всегда пункт (a) длинного вопроса по интегрированию.",
+   "calculator": "checks",
+   "practicum_marks": 145
+  },
+  {
+   "id": "A5.cartesian_arithmetic",
+   "practicum": "A5",
+   "name": "Арифметика и сопряжённое",
+   "rung": 1,
+   "trigger": "В выражении есть дробь с i в знаменателе, либо в условии стоит слово rationalise. Также любое произведение, которое просят «выразить через».",
+   "calculator": "checks",
+   "practicum_marks": 144
+  },
+  {
+   "id": "A5.equate_parts",
+   "practicum": "A5",
+   "name": "Приравнять действительные и мнимые части",
+   "rung": 2,
+   "trigger": "Комплексное уравнение, в котором неизвестные объявлены действительными. Слова «where p, q ∈ ℝ» в условии — прямое указание на приём.",
+   "calculator": "forbidden",
+   "practicum_marks": 144
+  },
+  {
+   "id": "A5.modulus_argument",
+   "practicum": "A5",
+   "name": "Модуль, аргумент и четверть",
+   "rung": 3,
+   "trigger": "«Find |z| and arg z», либо ответ требуется в полярной форме.",
+   "calculator": "speeds_up",
+   "practicum_marks": 144
+  },
+  {
+   "id": "A5.form_conversion",
+   "practicum": "A5",
+   "name": "Перевод между тремя формами",
+   "rung": 4,
+   "trigger": "«In the form re^{iθ}», «in Cartesian form», «in the form r(cos θ + i sin θ)».",
+   "calculator": "speeds_up",
+   "practicum_marks": 144
+  },
+  {
+   "id": "A5.product_properties",
+   "practicum": "A5",
+   "name": "Свойства модуля и аргумента произведения",
+   "rung": 5,
+   "trigger": "Спрашивают |z₁z₂| или arg(z₁z₂), либо дано условие «z₁z₂ действительно» или «чисто мнимое».",
+   "calculator": "speeds_up",
+   "practicum_marks": 144
+  },
+  {
+   "id": "A5.conjugate_roots",
+   "practicum": "A5",
+   "name": "Сопряжённые корни многочлена",
+   "rung": 6,
+   "trigger": "Многочлен с действительными коэффициентами, и дан один комплексный корень. Слова «real coefficients» в условии обязательны — без них теорема неверна.",
+   "calculator": "checks",
+   "practicum_marks": 144
+  },
+  {
+   "id": "A6.de_moivre_power",
+   "practicum": "A6",
+   "name": "Возведение в степень",
+   "rung": 1,
+   "trigger": "z^n при большом n; «show that (…)^8 = −256».",
+   "calculator": "checks",
+   "practicum_marks": 112
+  },
+  {
+   "id": "A6.nth_roots",
+   "practicum": "A6",
+   "name": "Корни n-й степени",
+   "rung": 2,
+   "trigger": "«Find the square roots», уравнение вида z^n = c.",
+   "calculator": "partial",
+   "practicum_marks": 112
+  },
+  {
+   "id": "A6.roots_of_unity",
+   "practicum": "A6",
+   "name": "Корни из единицы",
+   "rung": 3,
+   "trigger": "z^n = 1, обозначение ω, правильный n-угольник, вершины P₀ … P_{n−1}.",
+   "calculator": "forbidden",
+   "practicum_marks": 112
+  },
+  {
+   "id": "A6.periodicity_condition",
+   "practicum": "A6",
+   "name": "Условие на аргумент",
+   "rung": 4,
+   "trigger": "«Наименьшее n, при котором z^n действительно / чисто мнимо / равно −i». Модуль в таких вопросах роли не играет вовсе.",
+   "calculator": "speeds_up",
+   "practicum_marks": 112
+  },
+  {
+   "id": "A6.rotation_geometry",
+   "practicum": "A6",
+   "name": "Умножение как движение плоскости",
+   "rung": 5,
+   "trigger": "«Опишите преобразование», поворот точки, равносторонний треугольник или другая фигура на плоскости Аргана.",
+   "calculator": "checks",
+   "practicum_marks": 112
+  },
+  {
+   "id": "A6.trig_via_de_moivre",
+   "practicum": "A6",
+   "name": "Тригонометрические тождества через Муавра",
+   "rung": 6,
+   "trigger": "«Show that sin 5θ ≡ …» — тождество, где кратный угол выражают через степени одинарного. Также выражения вида (1 ± i tan θ)^n.",
+   "calculator": "forbidden",
+   "practicum_marks": 112
+  },
+  {
+   "id": "A7.direct_proof",
+   "practicum": "A7",
+   "name": "Прямое доказательство",
+   "rung": 1,
+   "trigger": "«Show that A = B», обе части выписаны в условии. Ничего не спрашивают, просят соединить два выражения.",
+   "calculator": "forbidden",
+   "practicum_marks": 160
+  },
+  {
+   "id": "A7.integer_representation",
+   "practicum": "A7",
+   "name": "Представление целых",
+   "rung": 2,
+   "trigger": "В условии «consecutive», «odd», «even», «divisible by». Утверждение про какое-нибудь целое число, а не про конкретное.",
+   "calculator": "forbidden",
+   "practicum_marks": 160
+  },
+  {
+   "id": "A7.contradiction",
+   "practicum": "A7",
+   "name": "Доказательство от противного",
+   "rung": 3,
+   "trigger": "«Prove that there is no», «never», «cannot», «has no integer roots». Отрицание проверить легче, чем утверждение.",
+   "calculator": "checks",
+   "practicum_marks": 160
+  },
+  {
+   "id": "A7.induction_skeleton",
+   "practicum": "A7",
+   "name": "Скелет индукции",
+   "rung": 4,
+   "trigger": "«Prove by induction» — дальше форма одна и та же всегда.",
+   "calculator": "forbidden",
+   "practicum_marks": 160
+  },
+  {
+   "id": "A7.induction_sum",
+   "practicum": "A7",
+   "name": "Индукция для суммы",
+   "rung": 5,
+   "trigger": "В утверждении стоит Σ от r = 1 до n.",
+   "calculator": "checks",
+   "practicum_marks": 160
+  },
+  {
+   "id": "A7.induction_divisibility",
+   "practicum": "A7",
+   "name": "Индукция для делимости",
+   "rung": 6,
+   "trigger": "«divisible by d for all n» — равенства в утверждении нет.",
+   "calculator": "checks",
+   "practicum_marks": 160
+  },
+  {
+   "id": "A7.induction_derivative",
+   "practicum": "A7",
+   "name": "Индукция для n-й производной",
+   "rung": 7,
+   "trigger": "В утверждении f^(n)(x) или dⁿ/dxⁿ, формула дана.",
+   "calculator": "checks",
+   "practicum_marks": 160
+  },
+  {
+   "id": "A7.induction_recursion",
+   "practicum": "A7",
+   "name": "Индукция для рекурсии",
+   "rung": 8,
+   "trigger": "Утверждение про u_n, f^n или I_n, где следующий член выражен через предыдущий.",
+   "calculator": "checks",
+   "practicum_marks": 160
+  },
+  {
+   "id": "A7.induction_inequality",
+   "practicum": "A7",
+   "name": "Индукция для неравенства",
+   "rung": 9,
+   "trigger": "«Prove that n > …» или «n! > 2ⁿ for all n ≥ 4» — гипотеза сама неравенство.",
+   "calculator": "forbidden",
+   "practicum_marks": 160
+  },
+  {
+   "id": "A8.critical_values",
+   "practicum": "A8",
+   "name": "Критические значения и знак",
+   "rung": 1,
+   "trigger": "«Solve f(x) ≤ c» для многочлена, «find the range of possible values of d given d² − 9d > 0».",
+   "calculator": "checks",
+   "practicum_marks": 87
+  },
+  {
+   "id": "A8.rational_inequality",
+   "practicum": "A8",
+   "name": "Дробно-рациональное неравенство",
+   "rung": 2,
+   "trigger": "«Solve f(x) > x», где f — дробь; в записи есть знаменатель с переменной.",
+   "calculator": "helps",
+   "practicum_marks": 87
+  },
+  {
+   "id": "A8.absolute_value",
+   "practicum": "A8",
+   "name": "Неравенство с модулем",
+   "rung": 3,
+   "trigger": "Модуль в условии, «sketch |f(x)|», «solve f(|x|) > 0», «hence solve» после эскиза.",
+   "calculator": "helps",
+   "practicum_marks": 87
+  },
+  {
+   "id": "A8.gdc_intervals",
+   "practicum": "A8",
+   "name": "Численно, по точкам пересечения",
+   "rung": 4,
+   "trigger": "Paper 2, в неравенстве функции разных типов (показательная и дробь), «give your answer to 3 s.f.», «find the maximum number of…».",
+   "calculator": "required",
+   "practicum_marks": 87
+  },
+  {
+   "id": "A8.discriminant_condition",
+   "practicum": "A8",
+   "name": "Дискриминант как условие на букву",
+   "rung": 5,
+   "trigger": "«Two distinct real roots», «no real roots», «the graph touches the x-axis», «the line is tangent», «two distinct points of intersection».",
+   "calculator": "checks",
+   "practicum_marks": 87
+  },
+  {
+   "id": "A8.root_signs",
+   "practicum": "A8",
+   "name": "Знаки корней через Виета",
+   "rung": 6,
+   "trigger": "«One positive and one negative root», «both roots are positive», «the roots are both positive or both negative».",
+   "calculator": "checks",
+   "practicum_marks": 87
+  },
+  {
+   "id": "A8.solution_count",
+   "practicum": "A8",
+   "name": "Число решений как множество параметров",
+   "rung": 7,
+   "trigger": "«For all x ∈ ℝ», «exactly two intersection points», «no intersection points», «there exists at least one line normal to».",
+   "calculator": "helps",
+   "practicum_marks": 87
+  },
+  {
+   "id": "A8.prove_inequality",
+   "practicum": "A8",
+   "name": "Доказать неравенство",
+   "rung": 8,
+   "trigger": "«Show that … ≥ …», «prove by contradiction that», «hence deduce that x > ln x», «use the AM–GM inequality to prove».",
+   "calculator": "none",
+   "practicum_marks": 87
+  },
+  {
+   "id": "B1.zero_of_function",
+   "practicum": "B1",
+   "name": "Нуль функции и пересечения с осями",
+   "rung": 1,
+   "trigger": "«Find the zero of f», «write down the coordinates where the graph crosses the axes», «find the x-intercepts».",
+   "calculator": "checks",
+   "practicum_marks": 222
+  },
+  {
+   "id": "B1.quadratic_toolkit",
+   "practicum": "B1",
+   "name": "Квадратный трёхчлен: четыре записи одного",
+   "rung": 2,
+   "trigger": "«Write in the form a(x−h)²+k», «vertex», «axis of symmetry», «find b and c given the roots».",
+   "calculator": false,
+   "practicum_marks": 222
+  },
+  {
+   "id": "B1.equation_from_situation",
+   "practicum": "B1",
+   "name": "Построить уравнение по условию",
+   "rung": 3,
+   "trigger": "«Show that …», «hence show that a = 8/(b−4)+4», «show that the x-coordinates satisfy …». Уравнения в условии нет, есть ситуация.",
+   "calculator": false,
+   "practicum_marks": 222
+  },
+  {
+   "id": "B1.extraneous_roots",
+   "practicum": "B1",
+   "name": "Лишние и потерянные корни",
+   "rung": 4,
+   "trigger": "В уравнении есть дробь, корень или логарифм; в условии стоит область (x > 4, s > 0, q ≠ 0) или требование целых решений.",
+   "calculator": false,
+   "practicum_marks": 222
+  },
+  {
+   "id": "B1.exp_log_equation",
+   "practicum": "B1",
+   "name": "Замена и законы логарифмов",
+   "rung": 5,
+   "trigger": "В уравнении рядом стоят a^{2x} и a^x; или несколько логарифмов, возможно с разными базами.",
+   "calculator": false,
+   "practicum_marks": 222
+  },
+  {
+   "id": "B1.curve_meets_line",
+   "practicum": "B1",
+   "name": "Пересечение графиков",
+   "rung": 6,
+   "trigger": "«The line and the curve meet», «the graphs intersect», «find the points of intersection», «solve f(x) = g(x)».",
+   "calculator": "helps",
+   "practicum_marks": 222
+  },
+  {
+   "id": "B1.gdc_solve",
+   "practicum": "B1",
+   "name": "Численное решение в модели",
+   "rung": 7,
+   "trigger": "Paper 2, некрасивые числа, «3 significant figures», «find the first time when», разность двух моделей.",
+   "calculator": "required",
+   "practicum_marks": 222
+  },
+  {
+   "id": "B1.discriminant_condition",
+   "practicum": "B1",
+   "name": "Дискриминант как условие на букву",
+   "rung": 8,
+   "trigger": "«Tangent to the curve», «exactly one solution», «two distinct real roots», «at least one real solution», «find the range of f».",
+   "calculator": "checks",
+   "practicum_marks": 222
+  },
+  {
+   "id": "B1.solution_count",
+   "practicum": "B1",
+   "name": "Сколько решений",
+   "rung": 9,
+   "trigger": "«How many solutions», «exactly two x-axis intercepts», «four solutions», «state the conditions on n and k».",
+   "calculator": "helps",
+   "practicum_marks": 222
+  },
+  {
+   "id": "C1.right_triangle",
+   "practicum": "C1",
+   "name": "Прямоугольный треугольник",
+   "rung": 1,
+   "trigger": "Прямой угол в чертеже; тело вращения или пирамида; «find the angle between the edge and the base».",
+   "calculator": "helps",
+   "practicum_marks": 116
+  },
+  {
+   "id": "C1.elevation_and_bearing",
+   "practicum": "C1",
+   "name": "От описания к чертежу",
+   "rung": 2,
+   "trigger": "«Bearing of D from J is 034°», «angle of elevation», «500 km directly east» — чертежа нет, есть слова.",
+   "calculator": "helps",
+   "practicum_marks": 116
+  },
+  {
+   "id": "C1.cosine_rule",
+   "practicum": "C1",
+   "name": "Теорема косинусов",
+   "rung": 3,
+   "trigger": "Три стороны (ищут угол) или две стороны и угол между ними (ищут третью сторону).",
+   "calculator": "helps",
+   "practicum_marks": 116
+  },
+  {
+   "id": "C1.sine_rule",
+   "practicum": "C1",
+   "name": "Теорема синусов",
+   "rung": 4,
+   "trigger": "Известна сторона вместе с противолежащим ей углом; «find the distance», «show that d = …».",
+   "calculator": "helps",
+   "practicum_marks": 116
+  },
+  {
+   "id": "C1.ambiguous_case",
+   "practicum": "C1",
+   "name": "Неоднозначный случай",
+   "rung": 5,
+   "trigger": "Две стороны и угол против меньшей из них; слова «smallest possible», «all possible values», «the two possible».",
+   "calculator": "checks",
+   "practicum_marks": 116
+  },
+  {
+   "id": "C1.triangle_area",
+   "practicum": "C1",
+   "name": "Площадь треугольника",
+   "rung": 6,
+   "trigger": "«Find the area», площадь дана и ищут сторону, треугольник на координатной плоскости или на диаграмме Аргана.",
+   "calculator": false,
+   "practicum_marks": 116
+  },
+  {
+   "id": "C1.exact_values",
+   "practicum": "C1",
+   "name": "Точные значения",
+   "rung": 7,
+   "trigger": "Paper 1; «find the exact value», «in the form p√q», «where p, q ∈ ℤ⁺».",
+   "calculator": false,
+   "practicum_marks": 116
+  },
+  {
+   "id": "C1.triangle_as_model",
+   "practicum": "C1",
+   "name": "Треугольник с буквой",
+   "rung": 8,
+   "trigger": "«Show that …» с параметром, площадь как функция, «find the maximum area», разность арктангенсов.",
+   "calculator": "required",
+   "practicum_marks": 116
+  },
+  {
+   "id": "C3.reference_angle",
+   "practicum": "C3",
+   "name": "Опорный угол и все корни в области",
+   "rung": 1,
+   "trigger": "Одна тригонометрическая функция, аргумент равен самому x.",
+   "calculator": "replaces",
+   "practicum_marks": 162
+  },
+  {
+   "id": "C3.compound_argument",
+   "practicum": "C3",
+   "name": "Составной аргумент",
+   "rung": 2,
+   "trigger": "Под функцией стоит не x, а ax + b — например 2x − 5°, x/2 + π/3, 2θ.",
+   "calculator": "replaces",
+   "practicum_marks": 162
+  },
+  {
+   "id": "C3.angle_sum",
+   "practicum": "C3",
+   "name": "Формулы сложения углов",
+   "rung": 3,
+   "trigger": "Аргумент есть сумма или разность двух углов, каждый из которых интересен отдельно. Практический признак: просят точное значение угла, которого нет на единичной окружности (75°, 15°, π/12), либо сложить два арктангенса.",
+   "calculator": "forbidden",
+   "practicum_marks": 162
+  },
+  {
+   "id": "C3.pythagorean_reduction",
+   "practicum": "C3",
+   "name": "Пифагорово тождество и квадратное уравнение",
+   "rung": 3,
+   "trigger": "В уравнении есть квадрат одной функции и первая степень другой.",
+   "calculator": "replaces",
+   "practicum_marks": 162
+  },
+  {
+   "id": "C3.double_angle_reduction",
+   "practicum": "C3",
+   "name": "Двойной угол и квадратное уравнение",
+   "rung": 4,
+   "trigger": "В одном уравнении встречаются и 2x, и x.",
+   "calculator": "replaces",
+   "practicum_marks": 162
+  },
+  {
+   "id": "C3.factor_not_divide",
+   "practicum": "C3",
+   "name": "Разложение на множители вместо деления",
+   "rung": 5,
+   "trigger": "Обе части содержат общий множитель, или уравнение сводится к A·B = 0.",
+   "calculator": "replaces",
+   "practicum_marks": 162
+  },
+  {
+   "id": "C3.reduce_to_tangent",
+   "practicum": "C3",
+   "name": "Сведение к тангенсу",
+   "rung": 6,
+   "trigger": "sin и cos входят в одинаковой степени, и уравнение однородно по ним.",
+   "calculator": "replaces",
+   "practicum_marks": 162
+  },
+  {
+   "id": "C3.root_selection",
+   "practicum": "C3",
+   "name": "Отбор корней и посторонние решения",
+   "rung": 7,
+   "trigger": "В условии есть оговорка вида θ ≠ π/4, дробь, корень, обратная функция, либо просят «наименьшее положительное». Признак: решать придётся больше, чем найти корни.",
+   "calculator": "speeds_up",
+   "practicum_marks": 162
+  },
+  {
+   "id": "C3.numeric_gdc",
+   "practicum": "C3",
+   "name": "Численное решение",
+   "rung": 8,
+   "trigger": "Коэффициенты не дают точных значений на единичной окружности, задача из Paper 2, ответ просят с точностью до трёх значащих цифр.",
+   "calculator": "required",
+   "practicum_marks": 162
+  },
+  {
+   "id": "C4.period_from_coefficient",
+   "practicum": "C4",
+   "name": "Период и коэффициент b",
+   "rung": 1,
+   "trigger": "В условии есть слово «период», либо описано, через сколько повторяется событие: «между соседними приливами 12 часов», «оборот занимает 20 минут», «график пересекает ось в точках 0, 2m, 4m».",
+   "calculator": "speeds_up",
+   "practicum_marks": 83
+  },
+  {
+   "id": "C4.amplitude_and_midline",
+   "practicum": "C4",
+   "name": "Амплитуда и средняя линия",
+   "rung": 2,
+   "trigger": "Даны наибольшее и наименьшее значения величины.",
+   "calculator": "speeds_up",
+   "practicum_marks": 83
+  },
+  {
+   "id": "C4.amplitude_sign",
+   "practicum": "C4",
+   "name": "Знак амплитуды",
+   "rung": 3,
+   "trigger": "Сказано, где начинается движение: «груз отпускают из нижней точки», «кабинка стартует внизу», «локальный минимум в (0, −8)». Формула при этом без сдвига, вида a·cos(bt) + d.",
+   "calculator": "checks",
+   "practicum_marks": 83
+  },
+  {
+   "id": "C4.phase_shift",
+   "practicum": "C4",
+   "name": "Фазовый сдвиг",
+   "rung": 4,
+   "trigger": "Известен момент, в который случился максимум или минимум: «первый прилив в 04:30», «локальный максимум в (16, 2)». Либо просят сдвинуть готовую модель во времени.",
+   "calculator": "checks",
+   "practicum_marks": 83
+  },
+  {
+   "id": "C4.build_model",
+   "practicum": "C4",
+   "name": "Сборка модели целиком",
+   "rung": 5,
+   "trigger": "Дано словесное описание ситуации и вид формулы, спрашивают все параметры сразу. Обычно 5–7 баллов — самый дорогой пункт темы.",
+   "calculator": "checks",
+   "practicum_marks": 83
+  },
+  {
+   "id": "C4.use_model",
+   "practicum": "C4",
+   "name": "Чтение готовой модели",
+   "rung": 6,
+   "trigger": "Модель уже собрана, спрашивают значение в момент времени, момент по значению или число событий за интервал.",
+   "calculator": "required",
+   "practicum_marks": 83
+  },
+  {
+   "id": "C4.threshold_interval",
+   "practicum": "C4",
+   "name": "Порог и суммарное время",
+   "rung": 7,
+   "trigger": "«Сколько времени уровень выше 5 метров», «какую долю суток», то есть спрашивают не момент, а длительность.",
+   "calculator": "required",
+   "practicum_marks": 83
+  },
+  {
+   "id": "C4.bounds_argument",
+   "practicum": "C4",
+   "name": "Оценка через ±1",
+   "rung": 8,
+   "trigger": "Просят доказать неравенство при всех значениях переменной, а не найти точку: «покажите, что A всегда выше B», «известно, что g(x) ≥ 7 при всех x». Почти всегда Paper 1.",
+   "calculator": "forbidden",
+   "practicum_marks": 83
+  },
+  {
+   "id": "E7.direct_integration",
+   "practicum": "E7",
+   "name": "Прямое интегрирование",
+   "rung": 1,
+   "trigger": "В правой части нет y — только x или только константа.",
+   "calculator": "speeds_up",
+   "practicum_marks": 254
+  },
+  {
+   "id": "E7.separation",
+   "practicum": "E7",
+   "name": "Разделение переменных",
+   "rung": 2,
+   "trigger": "Правая часть разбивается в произведение f(x)·g(y) — в том числе когда это видно только после вынесения множителя.",
+   "calculator": "checks",
+   "practicum_marks": 254
+  },
+  {
+   "id": "E7.separation_partial_fractions",
+   "practicum": "E7",
+   "name": "Разделение с дробно-рациональным разложением",
+   "rung": 3,
+   "trigger": "После разделения слева стоит дробь, знаменатель которой раскладывается на линейные множители. Типовой источник — логистическая модель P(N − P).",
+   "calculator": "checks",
+   "practicum_marks": 254
+  },
+  {
+   "id": "E7.homogeneous_substitution",
+   "practicum": "E7",
+   "name": "Однородное уравнение, подстановка y = vx",
+   "rung": 4,
+   "trigger": "Правая часть зависит только от отношения y/x — числитель и знаменатель одной степени однородности.",
+   "calculator": "forbidden",
+   "practicum_marks": 254
+  },
+  {
+   "id": "E7.integrating_factor",
+   "practicum": "E7",
+   "name": "Интегрирующий множитель",
+   "rung": 5,
+   "trigger": "Уравнение линейно по y: приводится к dy/dx + P(x)·y = Q(x). Разделение переменных здесь не проходит, потому что Q(x) мешает собрать y в одной части.",
+   "calculator": "checks",
+   "practicum_marks": 254
+  },
+  {
+   "id": "E7.euler_method",
+   "practicum": "E7",
+   "name": "Метод Эйлера",
+   "rung": 6,
+   "trigger": "В условии дан шаг h и требуется приближённое значение. Аналитическое решение при этом может не существовать в замкнутой форме.",
+   "calculator": "required",
+   "practicum_marks": 254
+  },
+  {
+   "id": "E7.euler_error_sign",
+   "practicum": "E7",
+   "name": "Знак ошибки Эйлера через вогнутость",
+   "rung": 7,
+   "trigger": "Спрашивают, приближение занижено или завышено, либо почему оно плохое. Приём почти всегда идёт следующим пунктом после самого метода Эйлера.",
+   "calculator": "speeds_up",
+   "practicum_marks": 254
+  }
+ ],
+ "items": [
+  {
+   "key": "recog:A3:1",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.general_term",
+   "prompt": "Find the coefficient of $x^{12}$ in the expansion of $\\left(2x^2 - \\frac{1}{x}\\right)^9$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "term",
+   "answer_digest": "599f7703547e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:2",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.fractional_index",
+   "prompt": "Expand $(1-3x)^{-2}$ up to and including the term in $x^3$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "frac",
+   "answer_digest": "2fd26213d6e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:3",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.full_expansion",
+   "prompt": "Expand and simplify $(2+x)^5$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "expand",
+   "answer_digest": "d78de925a878",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:4",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.equate_coefficients",
+   "prompt": "In the expansion of $(1+cx)^m$ the first three terms are $1+20x+150x^2$. Find $c$ and $m$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "equate",
+   "answer_digest": "bb273c8b6346",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:5",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.binomial_with_i",
+   "prompt": "Expand $(\\cos\\theta+i\\sin\\theta)^4$ and hence show that $\\cos 4\\theta = 8\\cos^4\\theta-8\\cos^2\\theta+1$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "complex",
+   "answer_digest": "ea4b35e8f832",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:6",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.general_term",
+   "prompt": "Find the term independent of $x$ in $\\left(x^2+\\frac{3}{x}\\right)^{12}$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "term",
+   "answer_digest": "599f7703547e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:7",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.coefficients_as_sequence",
+   "prompt": "The coefficients of $x^2$, $x^3$, $x^4$ in $(1+x)^n$ form an arithmetic sequence. Find $n$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "seq",
+   "answer_digest": "4f5260d71c7e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:8",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.fractional_index",
+   "prompt": "Find the first three terms of $\\frac{1}{\\sqrt{4+x}}$ in ascending powers of $x$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "frac",
+   "answer_digest": "2fd26213d6e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:9",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.product_and_approximation",
+   "prompt": "Use your expansion with $x = 0.02$ to estimate $\\sqrt[3]{1.06}$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "approx",
+   "answer_digest": "3fc7c96a56b6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:10",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.full_expansion",
+   "prompt": "Write down the expansion of $(a+b)^3$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "expand",
+   "answer_digest": "d78de925a878",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:11",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.equate_coefficients",
+   "prompt": "In the expansion of $(1+ax)^n$ the coefficients of $x$ and $x^2$ are 15 and 90. Find $a$ and $n$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "equate",
+   "answer_digest": "bb273c8b6346",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:12",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.general_term",
+   "prompt": "Find the constant term in the expansion of $\\left(3x - \\frac{2}{x^2}\\right)^{15}$",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "term",
+   "answer_digest": "599f7703547e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:13",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.coefficients_as_sequence",
+   "prompt": "The second, third and fifth coefficients of $(1+y)^n$ are in geometric progression",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "seq",
+   "answer_digest": "4f5260d71c7e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:14",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.binomial_with_i",
+   "prompt": "By expanding $(1+i)^{10}$, find its real part",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "complex",
+   "answer_digest": "ea4b35e8f832",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A3:15",
+   "kind": "recognition",
+   "practicum": "A3",
+   "skill": "A3.fractional_index",
+   "prompt": "State the values of $x$ for which the expansion of $(1+4x)^{-1/3}$ is valid",
+   "options": [
+    {
+     "code": "expand",
+     "name": "раскрыть целиком"
+    },
+    {
+     "code": "term",
+     "name": "один член разложения"
+    },
+    {
+     "code": "equate",
+     "name": "приравнять коэффициенты"
+    },
+    {
+     "code": "seq",
+     "name": "коэффициенты как последовательность"
+    },
+    {
+     "code": "frac",
+     "name": "нецелый показатель"
+    },
+    {
+     "code": "approx",
+     "name": "произведение и приближение"
+    },
+    {
+     "code": "complex",
+     "name": "бином с i"
+    }
+   ],
+   "answer": "frac",
+   "answer_digest": "2fd26213d6e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:1",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.factor_remainder",
+   "prompt": "Покажите, что $(x-2)$ — множитель $x^3-3x^2+4x-4$.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "factor",
+   "answer_digest": "41a093100bbb",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:2",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.vieta_quadratic",
+   "prompt": "Уравнение $3x^2+7x-2=0$ имеет корни $\\alpha,\\beta$. Найдите $\\alpha^2+\\beta^2$.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "vieta2",
+   "answer_digest": "a40c1a3b397d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:3",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.partial_fractions",
+   "prompt": "Запишите $\\dfrac{5}{(x-1)(x+4)}$ в виде суммы двух дробей.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "apart",
+   "answer_digest": "1d40973eccd8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:4",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.repeated_root",
+   "prompt": "При каких $a$ многочлен $x^3+ax+2$ имеет кратный корень?",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "mult",
+   "answer_digest": "c0c75a8e79ad",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:5",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.symmetric_sums",
+   "prompt": "Корни $x^3+px^2+qx+r$ действительны. Что можно сказать о $p^2$ и $3q$?",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "sym",
+   "answer_digest": "0599b22abfb1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:6",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.root_transformation",
+   "prompt": "Уравнение с корнями $\\alpha+1$ и $\\beta+1$, где $\\alpha,\\beta$ — корни данного.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "transform",
+   "answer_digest": "aa214ea38326",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:7",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.polynomial_division",
+   "prompt": "Запишите $\\dfrac{x^3+1}{x-2}$ в виде $Q(x)+\\dfrac{R}{x-2}$.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "div",
+   "answer_digest": "cd35a2426062",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:8",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.conjugate_roots",
+   "prompt": "Многочлен с действительными коэффициентами имеет корень $2-5i$. Что ещё известно?",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "conj",
+   "answer_digest": "d1a73570aa07",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:9",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.vieta_higher",
+   "prompt": "Запишите сумму корней уравнения $4x^5-3x^4+x-7=0$.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "vieta3",
+   "answer_digest": "6223d7789180",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:10",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.factor_remainder",
+   "prompt": "Остаток от деления $f(x)$ на $(x-3)$ равен 5. Найдите $f(3)$.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "factor",
+   "answer_digest": "41a093100bbb",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:11",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.partial_fractions",
+   "prompt": "Разложите $\\dfrac{2x+1}{x^2(x-3)}$ на простейшие дроби.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "apart",
+   "answer_digest": "1d40973eccd8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:12",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.symmetric_sums",
+   "prompt": "Для $x^4+px^3+qx^2+\\dots$ выразите $\\sum\\alpha_i^2$ через $p$ и $q$.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "sym",
+   "answer_digest": "0599b22abfb1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:13",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.repeated_root",
+   "prompt": "График $y=P(x)$ касается оси $x$ в точке $x=4$. Что это даёт?",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "mult",
+   "answer_digest": "c0c75a8e79ad",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:14",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.vieta_quadratic",
+   "prompt": "Найдите произведение решений уравнения $2x^2=5x-1$.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "vieta2",
+   "answer_digest": "a40c1a3b397d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A4:15",
+   "kind": "recognition",
+   "practicum": "A4",
+   "skill": "A4.conjugate_roots",
+   "prompt": "Уравнение $z^3-1=0$ имеет корень $z=1$. Найдите остальные.",
+   "options": [
+    {
+     "code": "factor",
+     "name": "множитель и остаток"
+    },
+    {
+     "code": "div",
+     "name": "деление с остатком"
+    },
+    {
+     "code": "mult",
+     "name": "кратный корень"
+    },
+    {
+     "code": "vieta2",
+     "name": "Виета, квадратное"
+    },
+    {
+     "code": "vieta3",
+     "name": "Виета, степень выше двух"
+    },
+    {
+     "code": "conj",
+     "name": "комплексные корни парами"
+    },
+    {
+     "code": "sym",
+     "name": "симметричные суммы"
+    },
+    {
+     "code": "transform",
+     "name": "уравнение с новыми корнями"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    }
+   ],
+   "answer": "conj",
+   "answer_digest": "d1a73570aa07",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:1",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.form_conversion",
+   "prompt": "«Выразите $3 - 3i$ в виде $re^{i\\theta}$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "form",
+   "answer_digest": "07397d633f25",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:2",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.form_conversion",
+   "prompt": "«Запишите $2e^{i\\pi/3}$ в декартовой форме»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "form",
+   "answer_digest": "07397d633f25",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:3",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.modulus_argument",
+   "prompt": "«Найдите $|u|$ и $\\arg u$ для $u = -1 + \\sqrt3 i$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "modarg",
+   "answer_digest": "cbf396d2cbbb",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:4",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.cartesian_arithmetic",
+   "prompt": "«Покажите, что $\\dfrac{4i}{1 + i\\sqrt3} = \\sqrt3 + i$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "cart",
+   "answer_digest": "1c42ddc0285b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:5",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.modulus_argument",
+   "prompt": "«Найдите $\\arg w$, где $w = \\sqrt3 + i$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "modarg",
+   "answer_digest": "cbf396d2cbbb",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:6",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.equate_parts",
+   "prompt": "«$z = 5 + qi$ удовлетворяет $z^2 + iz = -p + 25i$. Найдите $p$ и $q$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "parts",
+   "answer_digest": "d887db09649d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:7",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.equate_parts",
+   "prompt": "«Решите $z^2 = 2\\bar z$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "parts",
+   "answer_digest": "d887db09649d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:8",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.product_properties",
+   "prompt": "«Найдите $\\arg(z_1z_2)$ через $k$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "prop",
+   "answer_digest": "e835d0bf51a4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:9",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.product_properties",
+   "prompt": "«Известно, что $zw$ действительно. Найдите наименьшее $k$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "prop",
+   "answer_digest": "e835d0bf51a4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:10",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.equate_parts",
+   "prompt": "«$w = (a+bi)^2$, найдите $a^2$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "parts",
+   "answer_digest": "d887db09649d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:11",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.conjugate_roots",
+   "prompt": "«$-1+\\sqrt3 i$ — корень кубического. Найдите остальные»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "roots",
+   "answer_digest": "a4e3c20a3277",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:12",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.conjugate_roots",
+   "prompt": "«Корни квартики $a+bi$ и $b+ai$. Найдите $a$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "roots",
+   "answer_digest": "a4e3c20a3277",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:13",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.cartesian_arithmetic",
+   "prompt": "«Упростите $\\dfrac{1}{2+3i}$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "cart",
+   "answer_digest": "1c42ddc0285b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:14",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.conjugate_roots",
+   "prompt": "«Найдите $p$, если сумма корней равна 12»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "roots",
+   "answer_digest": "a4e3c20a3277",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A5:15",
+   "kind": "recognition",
+   "practicum": "A5",
+   "skill": "A5.product_properties",
+   "prompt": "«Покажите, что $\\lvert z_1z_2\\rvert = \\lvert z_1\\rvert\\lvert z_2\\rvert$»",
+   "options": [
+    {
+     "code": "cart",
+     "name": "арифметика, убрать i из знаменателя"
+    },
+    {
+     "code": "parts",
+     "name": "приравнять части"
+    },
+    {
+     "code": "modarg",
+     "name": "модуль и аргумент"
+    },
+    {
+     "code": "form",
+     "name": "перевод формы записи"
+    },
+    {
+     "code": "prop",
+     "name": "свойства произведения"
+    },
+    {
+     "code": "roots",
+     "name": "сопряжённые корни"
+    }
+   ],
+   "answer": "prop",
+   "answer_digest": "e835d0bf51a4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:1",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.de_moivre_power",
+   "prompt": "«Покажите, что $(1+i\\sqrt3)^8 + (1-i\\sqrt3)^8 = -256$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "power",
+   "answer_digest": "07d715edb696",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:2",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.periodicity_condition",
+   "prompt": "«Наименьшее $n$, при котором $u^n$ действительно»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "period",
+   "answer_digest": "514cb13f6034",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:3",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.periodicity_condition",
+   "prompt": "«Наименьшее $n$, при котором $z^n = -i$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "period",
+   "answer_digest": "514cb13f6034",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:4",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.rotation_geometry",
+   "prompt": "«Опишите преобразование, переводящее $z$ в $z^{10}$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "rot",
+   "answer_digest": "7ec879c8c860",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:5",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.nth_roots",
+   "prompt": "«Найдите оба квадратных корня из $\\sqrt3 + i$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "root",
+   "answer_digest": "4813494d137e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:6",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.nth_roots",
+   "prompt": "«Решите $z^2 = -1 - \\sqrt3 i$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "root",
+   "answer_digest": "4813494d137e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:7",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.nth_roots",
+   "prompt": "«Найдите три кубических корня из $z_2/z_1$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "root",
+   "answer_digest": "4813494d137e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:8",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.roots_of_unity",
+   "prompt": "«Запишите два других корня уравнения $z^3 = -8$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "unity",
+   "answer_digest": "a5790b06f63b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:9",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.rotation_geometry",
+   "prompt": "«Поверните $U$, $V$, $W$ на $\\pi/4$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "rot",
+   "answer_digest": "7ec879c8c860",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:10",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.roots_of_unity",
+   "prompt": "«Найдите наименьшее $n$, при котором все шесть точек решают $z^n = a$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "unity",
+   "answer_digest": "a5790b06f63b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:11",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.trig_via_de_moivre",
+   "prompt": "«Покажите, что $\\sin 5\\theta \\equiv 16\\sin^5\\theta - \\ldots$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "ident",
+   "answer_digest": "e77c4b3f8105",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:12",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.rotation_geometry",
+   "prompt": "«$OZ_1Z_2$ равносторонний. Выразите $z_1$ через $z_2$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "geom",
+   "answer_digest": "b23bdd6952cd",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:13",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.trig_via_de_moivre",
+   "prompt": "«Покажите, что $(1 + i\\tan\\theta)^4 + (1 - i\\tan\\theta)^4 = \\dfrac{2\\cos 4\\theta}{\\cos^4\\theta}$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "ident",
+   "answer_digest": "e77c4b3f8105",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:14",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.roots_of_unity",
+   "prompt": "«Докажите, что $1 + \\omega + \\omega^2 = 0$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "unity",
+   "answer_digest": "a5790b06f63b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A6:15",
+   "kind": "recognition",
+   "practicum": "A6",
+   "skill": "A6.de_moivre_power",
+   "prompt": "«Вычислите $\\left(2e^{i\\pi/6}\\right)^{12}$»",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень по Муавру"
+    },
+    {
+     "code": "root",
+     "name": "корень n-й степени"
+    },
+    {
+     "code": "unity",
+     "name": "корни из единицы"
+    },
+    {
+     "code": "period",
+     "name": "наименьшее n по аргументу"
+    },
+    {
+     "code": "rot",
+     "name": "поворот"
+    },
+    {
+     "code": "ident",
+     "name": "тождество через Муавра"
+    },
+    {
+     "code": "geom",
+     "name": "фигура на плоскости Аргана"
+    }
+   ],
+   "answer": "power",
+   "answer_digest": "07d715edb696",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:1",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.integer_representation",
+   "prompt": "Prove that the sum of three consecutive integers is divisible by 3",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "repr",
+   "answer_digest": "a5fdb30d22d6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:2",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.induction_sum",
+   "prompt": "Prove by induction that $\\sum_{r=1}^{n} r\\cdot r! = (n+1)! - 1$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "sum",
+   "answer_digest": "09f5ffef2830",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:3",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.direct_proof",
+   "prompt": "Show that $(a+b)^2 - (a-b)^2 = 4ab$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "direct",
+   "answer_digest": "d15690f08a57",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:4",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.induction_divisibility",
+   "prompt": "Prove that $7^n - 4^n$ is divisible by 3 for all $n \\in \\mathbb{Z}^+$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "div",
+   "answer_digest": "cd35a2426062",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:5",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.contradiction",
+   "prompt": "Prove that $\\sqrt{2}$ is irrational",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "contra",
+   "answer_digest": "2270e73a86e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:6",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.induction_derivative",
+   "prompt": "Prove by induction that $\\frac{d^n}{dx^n}(xe^x) = (x+n)e^x$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "deriv",
+   "answer_digest": "6e480ccdb5cf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:7",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.contradiction",
+   "prompt": "Prove that $x^3 + x + 1 = 0$ has no rational root",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "contra",
+   "answer_digest": "2270e73a86e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:8",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.induction_recursion",
+   "prompt": "$u_{n+1} = 3u_n + 1$, $u_1 = 1$. Prove that $u_n = \\frac{3^n - 1}{2}$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "rec",
+   "answer_digest": "cb41b38387d6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:9",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.induction_inequality",
+   "prompt": "Prove that $n! > 2^n$ for all $n \\ge 4$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "ineq",
+   "answer_digest": "50b8d2c39735",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:10",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.integer_representation",
+   "prompt": "Show that the sum of the squares of two consecutive integers is odd",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "repr",
+   "answer_digest": "a5fdb30d22d6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:11",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.contradiction",
+   "prompt": "Prove that if $n^2$ is even then $n$ is even",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "contra",
+   "answer_digest": "2270e73a86e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:12",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.induction_sum",
+   "prompt": "Prove by induction that $\\sum_{r=1}^{n} \\frac{1}{r(r+1)} = \\frac{n}{n+1}$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "sum",
+   "answer_digest": "09f5ffef2830",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:13",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.direct_proof",
+   "prompt": "Show that $\\cos^3\\theta = \\frac{3\\cos\\theta + \\cos 3\\theta}{4}$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "direct",
+   "answer_digest": "d15690f08a57",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:14",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.induction_recursion",
+   "prompt": "$f(x) = \\frac{x}{1+x}$. Prove that $f^{n}(x) = \\frac{x}{1+nx}$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "rec",
+   "answer_digest": "cb41b38387d6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A7:15",
+   "kind": "recognition",
+   "practicum": "A7",
+   "skill": "A7.induction_inequality",
+   "prompt": "Prove that $2^n > n^2$ for all $n \\ge 5$",
+   "options": [
+    {
+     "code": "direct",
+     "name": "прямое доказательство"
+    },
+    {
+     "code": "repr",
+     "name": "представление целого"
+    },
+    {
+     "code": "contra",
+     "name": "от противного"
+    },
+    {
+     "code": "sum",
+     "name": "индукция для суммы"
+    },
+    {
+     "code": "div",
+     "name": "индукция для делимости"
+    },
+    {
+     "code": "deriv",
+     "name": "индукция для производной"
+    },
+    {
+     "code": "rec",
+     "name": "индукция для рекурренты"
+    },
+    {
+     "code": "ineq",
+     "name": "индукция для неравенства"
+    }
+   ],
+   "answer": "ineq",
+   "answer_digest": "50b8d2c39735",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:1",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.critical_values",
+   "prompt": "Решите $x^2 - 4x - 5 \\le 0$.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "crit",
+   "answer_digest": "d5963d22f572",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:2",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.discriminant_condition",
+   "prompt": "При каких $k$ уравнение $x^2 + kx + 9 = 0$ имеет два различных действительных корня?",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "disc",
+   "answer_digest": "6bf99799d0ef",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:3",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.rational_inequality",
+   "prompt": "Решите $\\dfrac{x-1}{x+2} \\ge 0$.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "rat",
+   "answer_digest": "9950cec246ec",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:4",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.prove_inequality",
+   "prompt": "Докажите, что $a^2 + b^2 \\ge 2ab$.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "prove",
+   "answer_digest": "52dabec35605",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:5",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.absolute_value",
+   "prompt": "Решите $|2x - 3| < 5$.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "abs",
+   "answer_digest": "78da4a596a88",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:6",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.root_signs",
+   "prompt": "При каких $m$ оба корня уравнения $x^2 - mx + 4 = 0$ положительны?",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "vieta",
+   "answer_digest": "27fa6cd7943d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:7",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.gdc_intervals",
+   "prompt": "Решите $2^x \\ge x + 3$ (Paper 2).",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "gdc",
+   "answer_digest": "909242c6c948",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:8",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.discriminant_condition",
+   "prompt": "При каких $c$ прямая $y = x + c$ не пересекает параболу $y = x^2$?",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "disc",
+   "answer_digest": "6bf99799d0ef",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:9",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.solution_count",
+   "prompt": "Найдите все $a$, при которых уравнение $|x^2-4| = a$ имеет ровно три решения.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "count",
+   "answer_digest": "6c35493a2b93",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:10",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.critical_values",
+   "prompt": "Решите $x^3 > x$.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "crit",
+   "answer_digest": "d5963d22f572",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:11",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.prove_inequality",
+   "prompt": "Покажите, что $\\dfrac{x+y}{2} \\ge \\sqrt{xy}$ при $x,y>0$.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "prove",
+   "answer_digest": "52dabec35605",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:12",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.rational_inequality",
+   "prompt": "Решите $\\dfrac{x^2-1}{x-3} < 0$.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "rat",
+   "answer_digest": "9950cec246ec",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:13",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.discriminant_condition",
+   "prompt": "При каких $k$ выражение $kx^2 + 2x + k$ положительно при всех $x$?",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "disc",
+   "answer_digest": "6bf99799d0ef",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:14",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.gdc_intervals",
+   "prompt": "Найдите наибольшее целое $n$, при котором $\\dfrac{n(n+1)}{2} < 100$.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "gdc",
+   "answer_digest": "909242c6c948",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A8:15",
+   "kind": "recognition",
+   "practicum": "A8",
+   "skill": "A8.absolute_value",
+   "prompt": "По графику $f$ решите $f(|x|) > 0$.",
+   "options": [
+    {
+     "code": "crit",
+     "name": "критические значения и знак"
+    },
+    {
+     "code": "rat",
+     "name": "дробно-рациональное"
+    },
+    {
+     "code": "abs",
+     "name": "модуль"
+    },
+    {
+     "code": "gdc",
+     "name": "численно по GDC"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "vieta",
+     "name": "знаки корней"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    },
+    {
+     "code": "prove",
+     "name": "доказать неравенство"
+    }
+   ],
+   "answer": "abs",
+   "answer_digest": "78da4a596a88",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:1",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.zero_of_function",
+   "prompt": "Найдите координаты точек пересечения графика $y = \\dfrac{x-5}{x+1}$ с осями.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "zero",
+   "answer_digest": "f9194e73f9e9",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:2",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.quadratic_toolkit",
+   "prompt": "Запишите $x^2-6x+11$ в виде $(x-h)^2+k$.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "quad",
+   "answer_digest": "2522fb7024fe",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:3",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.exp_log_equation",
+   "prompt": "Решите $\\log_2 x + \\log_2(x-2) = 3$.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "explog",
+   "answer_digest": "68b85b74f8bc",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:4",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.discriminant_condition",
+   "prompt": "При каких $c$ прямая $y = 2x+c$ касается параболы $y = x^2$?",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "disc",
+   "answer_digest": "6bf99799d0ef",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:5",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.extraneous_roots",
+   "prompt": "Решите $\\sqrt{x+7} = x+1$.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "extra",
+   "answer_digest": "c8dee78f8c7b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:6",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.curve_meets_line",
+   "prompt": "Найдите точки пересечения $y = x^2$ и $y = 3x-2$.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "meet",
+   "answer_digest": "8ccb033c0e48",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:7",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.solution_count",
+   "prompt": "Сколько решений у уравнения $|x^2-4| = 3$?",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "count",
+   "answer_digest": "6c35493a2b93",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:8",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.equation_from_situation",
+   "prompt": "Площадь прямоугольника со сторонами $x$ и $x+3$ равна его периметру. Составьте уравнение.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "form",
+   "answer_digest": "07397d633f25",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:9",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.gdc_solve",
+   "prompt": "Решите $e^{\\sin t} = 2t$ при $0 \\le t \\le 3$ (Paper 2).",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "gdc",
+   "answer_digest": "909242c6c948",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:10",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.quadratic_toolkit",
+   "prompt": "Найдите ось симметрии графика $y = 2x^2-12x+7$.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "quad",
+   "answer_digest": "2522fb7024fe",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:11",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.extraneous_roots",
+   "prompt": "Решите $\\dfrac{1}{x-1} + \\dfrac{1}{x+1} = 1$.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "extra",
+   "answer_digest": "c8dee78f8c7b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:12",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.discriminant_condition",
+   "prompt": "При каких $k$ уравнение $kx^2+4x+k=0$ не имеет действительных корней?",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "disc",
+   "answer_digest": "6bf99799d0ef",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:13",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.exp_log_equation",
+   "prompt": "Решите $4^x - 5\\cdot2^x + 4 = 0$.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "explog",
+   "answer_digest": "68b85b74f8bc",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:14",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.solution_count",
+   "prompt": "При каких $a$ уравнение $x^3-3x+a=0$ имеет ровно три решения?",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "count",
+   "answer_digest": "6c35493a2b93",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B1:15",
+   "kind": "recognition",
+   "practicum": "B1",
+   "skill": "B1.curve_meets_line",
+   "prompt": "Покажите, что $y = mx$ и $x^2+y^2 = 9$ пересекаются при $x^2(1+m^2) = 9$.",
+   "options": [
+    {
+     "code": "zero",
+     "name": "нуль функции"
+    },
+    {
+     "code": "quad",
+     "name": "квадратный трёхчлен"
+    },
+    {
+     "code": "form",
+     "name": "построить уравнение"
+    },
+    {
+     "code": "extra",
+     "name": "лишние и потерянные корни"
+    },
+    {
+     "code": "explog",
+     "name": "замена и логарифмы"
+    },
+    {
+     "code": "meet",
+     "name": "пересечение графиков"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    },
+    {
+     "code": "disc",
+     "name": "дискриминант как условие"
+    },
+    {
+     "code": "count",
+     "name": "число решений"
+    }
+   ],
+   "answer": "meet",
+   "answer_digest": "8ccb033c0e48",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:1",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.cosine_rule",
+   "prompt": "В треугольнике $a = 5$, $b = 7$, $C = 40^\\circ$. Найдите $c$.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "cos",
+   "answer_digest": "9be28bbe03fa",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:2",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.triangle_area",
+   "prompt": "Найдите площадь треугольника со сторонами 6 и 9 и углом $50^\\circ$ между ними.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "area",
+   "answer_digest": "4a91ee5f0106",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:3",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.right_triangle",
+   "prompt": "Лестница длиной 4 м стоит под углом $70^\\circ$ к земле. На какой высоте её верх?",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "right",
+   "answer_digest": "27042f4e6eca",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:4",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.ambiguous_case",
+   "prompt": "В треугольнике $a = 8$, $b = 11$, $A = 32^\\circ$. Найдите все возможные $B$.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "ambig",
+   "answer_digest": "37089d9447de",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:5",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.sine_rule",
+   "prompt": "В треугольнике $A = 40^\\circ$, $B = 65^\\circ$, $a = 12$. Найдите $b$.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "sin",
+   "answer_digest": "cccc68c7928e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:6",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.exact_values",
+   "prompt": "Дано $\\cos\\theta = \\frac13$. Найдите точное значение $\\sin\\theta$, если $\\theta$ — угол треугольника.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "exact",
+   "answer_digest": "fa79d4746c21",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:7",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.elevation_and_bearing",
+   "prompt": "Корабль идёт по направлению $120^\\circ$ 30 км, потом по $210^\\circ$ ещё 40 км. Как далеко он от старта?",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "view",
+   "answer_digest": "2bcb43cbc8f6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:8",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.triangle_as_model",
+   "prompt": "Площадь треугольника со сторонами $x$ и $x+2$ и углом $30^\\circ$ между ними равна 6. Найдите $x$.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "model",
+   "answer_digest": "9372c470eead",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:9",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.cosine_rule",
+   "prompt": "В треугольнике $a = 4$, $b = 6$, $c = 9$. Найдите наибольший угол.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "cos",
+   "answer_digest": "9be28bbe03fa",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:10",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.triangle_area",
+   "prompt": "Диагонали ромба равны 10 и 24. Найдите его площадь.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "area",
+   "answer_digest": "4a91ee5f0106",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:11",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.right_triangle",
+   "prompt": "Угол между диагональю куба с ребром 1 и его основанием.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "right",
+   "answer_digest": "27042f4e6eca",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:12",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.sine_rule",
+   "prompt": "В треугольнике $B = 50^\\circ$, $C = 70^\\circ$, $c = 15$. Найдите $a$.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "sin",
+   "answer_digest": "cccc68c7928e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:13",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.exact_values",
+   "prompt": "Найдите точное значение площади треугольника со сторонами 4, 4 и углом $60^\\circ$.",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "exact",
+   "answer_digest": "fa79d4746c21",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:14",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.ambiguous_case",
+   "prompt": "В треугольнике $a = 9$, $b = 12$, $A = 35^\\circ$. Сколько таких треугольников?",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "ambig",
+   "answer_digest": "37089d9447de",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C1:15",
+   "kind": "recognition",
+   "practicum": "C1",
+   "skill": "C1.triangle_as_model",
+   "prompt": "Площадь треугольника с $AB = x$, $AC = 10 - x$ и углом $60^\\circ$ между ними — при каком $x$ она наибольшая?",
+   "options": [
+    {
+     "code": "right",
+     "name": "прямоугольный треугольник"
+    },
+    {
+     "code": "view",
+     "name": "от описания к чертежу"
+    },
+    {
+     "code": "cos",
+     "name": "теорема косинусов"
+    },
+    {
+     "code": "sin",
+     "name": "теорема синусов"
+    },
+    {
+     "code": "ambig",
+     "name": "неоднозначный случай"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "exact",
+     "name": "точные значения"
+    },
+    {
+     "code": "model",
+     "name": "треугольник с буквой"
+    }
+   ],
+   "answer": "model",
+   "answer_digest": "9372c470eead",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:1",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.reference_angle",
+   "prompt": "$\\cos x = -1$ на $[0, 4\\pi]$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "base",
+   "answer_digest": "cae662172fd4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:2",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.compound_argument",
+   "prompt": "$\\tan(2x - 5^\\circ) = 1$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "arg",
+   "answer_digest": "b25f03dedd69",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:3",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.pythagorean_reduction",
+   "prompt": "$2\\cos^2 x + 5\\sin x = 4$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "pyth",
+   "answer_digest": "a23e94d1d29b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:4",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.double_angle_reduction",
+   "prompt": "$\\cos 2x = \\sin x$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "dbl",
+   "answer_digest": "208d44cad2d2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:5",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.factor_not_divide",
+   "prompt": "$\\cos x = \\sin 2x$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "fact",
+   "answer_digest": "1e7dc6d6c165",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:6",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.reduce_to_tangent",
+   "prompt": "$\\cos^2 x - 3\\sin^2 x = 0$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "tan",
+   "answer_digest": "0e5123df1126",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:7",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.root_selection",
+   "prompt": "$\\dfrac{2\\sin^2 2\\theta - 5\\sin 2\\theta - 3}{\\sin 2\\theta - 1} = 0,\\ \\theta \\ne \\dfrac{\\pi}{4}$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "select",
+   "answer_digest": "b1a36d25d963",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:8",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.numeric_gdc",
+   "prompt": "$\\theta = 2\\sin\\theta$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "gdc",
+   "answer_digest": "909242c6c948",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:9",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.compound_argument",
+   "prompt": "$\\cos\\!\\left(\\dfrac{x}{2} + \\dfrac{\\pi}{3}\\right) = \\dfrac{1}{\\sqrt{2}}$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "arg",
+   "answer_digest": "b25f03dedd69",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:10",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.double_angle_reduction",
+   "prompt": "$2\\cos 2\\theta - 5\\cos\\theta + 2 = 0$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "dbl",
+   "answer_digest": "208d44cad2d2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:11",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.root_selection",
+   "prompt": "$\\arccos x + \\arccos 3x = \\dfrac{3\\pi}{2}$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "select",
+   "answer_digest": "b1a36d25d963",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:12",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.factor_not_divide",
+   "prompt": "$\\sin 2x + \\cos 2x - 1 + \\cos x - \\sin x = 0$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "fact",
+   "answer_digest": "1e7dc6d6c165",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:13",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.angle_sum",
+   "prompt": "найти точное значение $\\sin 75^\\circ$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "sum",
+   "answer_digest": "09f5ffef2830",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:14",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.pythagorean_reduction",
+   "prompt": "дано $\\operatorname{cosec}\\theta = \\frac32$ на $[\\frac{\\pi}{2}, \\frac{3\\pi}{2}]$, найти $\\cot\\theta$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "pyth",
+   "answer_digest": "a23e94d1d29b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C3:15",
+   "kind": "recognition",
+   "practicum": "C3",
+   "skill": "C3.angle_sum",
+   "prompt": "найти точное значение $\\arctan\\frac12 + \\arctan\\frac13$",
+   "options": [
+    {
+     "code": "base",
+     "name": "опорный угол"
+    },
+    {
+     "code": "sum",
+     "name": "сложение углов"
+    },
+    {
+     "code": "arg",
+     "name": "составной аргумент"
+    },
+    {
+     "code": "pyth",
+     "name": "пифагорово тождество"
+    },
+    {
+     "code": "dbl",
+     "name": "двойной угол"
+    },
+    {
+     "code": "fact",
+     "name": "вынести, не делить"
+    },
+    {
+     "code": "tan",
+     "name": "свести к тангенсу"
+    },
+    {
+     "code": "select",
+     "name": "отбор корней"
+    },
+    {
+     "code": "gdc",
+     "name": "численно"
+    }
+   ],
+   "answer": "sum",
+   "answer_digest": "09f5ffef2830",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:1",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.period_from_coefficient",
+   "prompt": "«Найдите период функции $H(t) = a\\cos(7.8t) + b$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "per",
+   "answer_digest": "b427c3dec904",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:2",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.period_from_coefficient",
+   "prompt": "«Запишите период $f(x) = a\\tan(2x) + b$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "per",
+   "answer_digest": "b427c3dec904",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:3",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.amplitude_and_midline",
+   "prompt": "«Наименьшая высота 2.2 м, наибольшая 6.8 м. Найдите $a$ и $d$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "amp",
+   "answer_digest": "46855b390631",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:4",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.period_from_coefficient",
+   "prompt": "«Соседние приливы разделены 12 часами. Покажите, что $b = \\pi/6$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "per",
+   "answer_digest": "b427c3dec904",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:5",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.amplitude_sign",
+   "prompt": "«Груз отпускают из нижней точки. Найдите $a$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "sign",
+   "answer_digest": "0b6f395ca14a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:6",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.phase_shift",
+   "prompt": "«Первый прилив в 04:30. Найдите наименьшее $c$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "phase",
+   "answer_digest": "02195b8e9896",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:7",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.build_model",
+   "prompt": "«Диаметр 110 м, оборот 20 минут, старт внизу. Найдите $a$, $b$, $c$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "build",
+   "answer_digest": "44575cf5b285",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:8",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.build_model",
+   "prompt": "«График проходит через $(\\pi/12, 5)$ и $(\\pi/3, 7)$. Найдите $a$ и $b$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "build",
+   "answer_digest": "44575cf5b285",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:9",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.use_model",
+   "prompt": "«Найдите высоту воды в 12:00»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "use",
+   "answer_digest": "a3b142af6e97",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:10",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.use_model",
+   "prompt": "«Сколько раз за первые 5 секунд груз был в высшей точке»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "use",
+   "answer_digest": "a3b142af6e97",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:11",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.threshold_interval",
+   "prompt": "«Сколько всего часов за сутки уровень выше 5 метров»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "thresh",
+   "answer_digest": "8e3d3e0e3ecd",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:12",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.phase_shift",
+   "prompt": "«В соседней гавани приливы на 50 минут раньше. Найдите $c$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "phase",
+   "answer_digest": "02195b8e9896",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:13",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.bounds_argument",
+   "prompt": "«Докажите, что при $t > 6$ растение A всегда выше растения B»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "bound",
+   "answer_digest": "5e1cf42878df",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:14",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.bounds_argument",
+   "prompt": "«Известно, что $g(x) \\ge 7$ при всех $x$. Найдите наименьшее $r$»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "bound",
+   "answer_digest": "5e1cf42878df",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C4:15",
+   "kind": "recognition",
+   "practicum": "C4",
+   "skill": "C4.amplitude_sign",
+   "prompt": "«Кабинка стартует в верхней точке. Каким будет знак $a$?»",
+   "options": [
+    {
+     "code": "per",
+     "name": "период и коэффициент"
+    },
+    {
+     "code": "amp",
+     "name": "амплитуда и средняя линия"
+    },
+    {
+     "code": "sign",
+     "name": "знак амплитуды"
+    },
+    {
+     "code": "phase",
+     "name": "фазовый сдвиг"
+    },
+    {
+     "code": "build",
+     "name": "собрать модель"
+    },
+    {
+     "code": "use",
+     "name": "воспользоваться моделью"
+    },
+    {
+     "code": "thresh",
+     "name": "порог и неравенство"
+    },
+    {
+     "code": "bound",
+     "name": "оценка через ±1"
+    }
+   ],
+   "answer": "sign",
+   "answer_digest": "0b6f395ca14a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:1",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.direct_integration",
+   "prompt": "$\\dfrac{dy}{dx} = \\cos\\!\\left(x - \\dfrac{\\pi}{4}\\right)$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "int",
+   "answer_digest": "6da88c34ba12",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:2",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.separation",
+   "prompt": "$\\dfrac{dy}{dx} = \\dfrac{4 - y}{10}$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "sep",
+   "answer_digest": "c19588ee9c72",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:3",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.integrating_factor",
+   "prompt": "$\\dfrac{dy}{dx} - y = x$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "if",
+   "answer_digest": "935f68319d4f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:4",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.homogeneous_substitution",
+   "prompt": "$\\dfrac{dy}{dx} = \\dfrac{y^2 - 2x^2}{xy}$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "hom",
+   "answer_digest": "75239d03c9a8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:5",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.separation_partial_fractions",
+   "prompt": "$\\dfrac{dP}{dt} = \\dfrac{kP(N - P)}{N}$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "pf",
+   "answer_digest": "5ec291abdd1e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:6",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.separation",
+   "prompt": "$\\dfrac{dy}{dx} = y^2\\cos^2 x$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "sep",
+   "answer_digest": "c19588ee9c72",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:7",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.integrating_factor",
+   "prompt": "$\\dfrac{dy}{dx} + y = x^2 - 5$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "if",
+   "answer_digest": "935f68319d4f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:8",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.homogeneous_substitution",
+   "prompt": "$\\dfrac{dy}{dx} = \\dfrac{y - x}{y + x}$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "hom",
+   "answer_digest": "75239d03c9a8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:9",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.direct_integration",
+   "prompt": "$\\dfrac{dP}{dt} = 104000\\,e^{-0{,}0145t}$, найти $P(4)$ при известном $P(0)$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "int",
+   "answer_digest": "6da88c34ba12",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:10",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.euler_method",
+   "prompt": "$\\dfrac{dy}{dx} = \\dfrac{x + 2}{x + y}$, оценить $y(2)$ при шаге $0{,}25$ из точки $(1, 0)$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "eu",
+   "answer_digest": "4d0282941aaf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:11",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.separation_partial_fractions",
+   "prompt": "$x\\dfrac{dv}{dx} = v^2 - v - 2$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "pf",
+   "answer_digest": "5ec291abdd1e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E7:12",
+   "kind": "recognition",
+   "practicum": "E7",
+   "skill": "E7.separation",
+   "prompt": "$\\dfrac{dy}{dx} = -\\dfrac{x}{y}$",
+   "options": [
+    {
+     "code": "int",
+     "name": "прямое интегрирование"
+    },
+    {
+     "code": "sep",
+     "name": "разделение переменных"
+    },
+    {
+     "code": "pf",
+     "name": "разделение и простейшие дроби"
+    },
+    {
+     "code": "hom",
+     "name": "однородное, y = vx"
+    },
+    {
+     "code": "if",
+     "name": "интегрирующий множитель"
+    },
+    {
+     "code": "eu",
+     "name": "метод Эйлера"
+    }
+   ],
+   "answer": "sep",
+   "answer_digest": "c19588ee9c72",
+   "budget_ms": 8000
+  }
+ ],
+ "uncovered_skills": [
+  "A7.induction_skeleton",
+  "E7.euler_error_sign"
+ ]
+}

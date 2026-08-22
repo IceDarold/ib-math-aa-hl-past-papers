@@ -1,0 +1,125 @@
+# Коды тренажёра распознавания → приёмы из карточек.
+#
+# В каждом практикуме тренажёр просит назвать приём коротким кодом. Коды
+# писались под ноутбук и с идентификаторами приёмов не совпадают: они
+# короче, а иногда и группируют два приёма в один. Здесь связь записана
+# явно — позиционно её брать нельзя, в C3 порядок кодов в легенде другой,
+# чем в лестнице.
+#
+# name — короткая подпись для кнопки в тренажёре. Там, где в ноутбуке
+# подписи нет (A3, A7 — ранний формат), она написана здесь по карточке.
+#
+# Проверяется build_bank.py: каждый код из легенды должен быть здесь,
+# каждый приём — существовать в лестнице своего практикума. Ступени,
+# на которые не показывает ни один код, печатаются как непокрытые.
+
+A3:
+  expand:  {skill: full_expansion,            name: раскрыть целиком}
+  term:    {skill: general_term,              name: один член разложения}
+  equate:  {skill: equate_coefficients,       name: приравнять коэффициенты}
+  seq:     {skill: coefficients_as_sequence,  name: коэффициенты как последовательность}
+  frac:    {skill: fractional_index,          name: нецелый показатель}
+  approx:  {skill: product_and_approximation, name: произведение и приближение}
+  complex: {skill: binomial_with_i,           name: бином с i}
+
+A4:
+  factor:    {skill: factor_remainder,     name: множитель и остаток}
+  div:       {skill: polynomial_division,  name: деление с остатком}
+  mult:      {skill: repeated_root,        name: кратный корень}
+  vieta2:    {skill: vieta_quadratic,      name: "Виета, квадратное"}
+  vieta3:    {skill: vieta_higher,         name: "Виета, степень выше двух"}
+  conj:      {skill: conjugate_roots,      name: комплексные корни парами}
+  sym:       {skill: symmetric_sums,       name: симметричные суммы}
+  transform: {skill: root_transformation,  name: уравнение с новыми корнями}
+  apart:     {skill: partial_fractions,    name: простейшие дроби}
+
+A5:
+  cart:   {skill: cartesian_arithmetic, name: "арифметика, убрать i из знаменателя"}
+  parts:  {skill: equate_parts,         name: приравнять части}
+  modarg: {skill: modulus_argument,     name: модуль и аргумент}
+  form:   {skill: form_conversion,      name: перевод формы записи}
+  prop:   {skill: product_properties,   name: свойства произведения}
+  roots:  {skill: conjugate_roots,      name: сопряжённые корни}
+
+A6:
+  power:  {skill: de_moivre_power,        name: степень по Муавру}
+  root:   {skill: nth_roots,              name: корень n-й степени}
+  unity:  {skill: roots_of_unity,         name: корни из единицы}
+  period: {skill: periodicity_condition,  name: наименьшее n по аргументу}
+  rot:    {skill: rotation_geometry,      name: поворот}
+  ident:  {skill: trig_via_de_moivre,     name: тождество через Муавра}
+  # geom и rot — один приём карточки: и поворот, и фигура на плоскости
+  # Аргана решаются умножением на комплексное число.
+  geom:   {skill: rotation_geometry,      name: фигура на плоскости Аргана}
+
+A7:
+  direct: {skill: direct_proof,           name: прямое доказательство}
+  repr:   {skill: integer_representation, name: представление целого}
+  contra: {skill: contradiction,          name: от противного}
+  sum:    {skill: induction_sum,          name: индукция для суммы}
+  div:    {skill: induction_divisibility, name: индукция для делимости}
+  deriv:  {skill: induction_derivative,   name: индукция для производной}
+  rec:    {skill: induction_recursion,    name: индукция для рекурренты}
+  ineq:   {skill: induction_inequality,   name: индукция для неравенства}
+
+A8:
+  crit:  {skill: critical_values,         name: критические значения и знак}
+  rat:   {skill: rational_inequality,     name: дробно-рациональное}
+  abs:   {skill: absolute_value,          name: модуль}
+  gdc:   {skill: gdc_intervals,           name: численно по GDC}
+  disc:  {skill: discriminant_condition,  name: дискриминант как условие}
+  vieta: {skill: root_signs,              name: знаки корней}
+  count: {skill: solution_count,          name: число решений}
+  prove: {skill: prove_inequality,        name: доказать неравенство}
+
+B1:
+  zero:   {skill: zero_of_function,        name: нуль функции}
+  quad:   {skill: quadratic_toolkit,       name: квадратный трёхчлен}
+  form:   {skill: equation_from_situation, name: построить уравнение}
+  extra:  {skill: extraneous_roots,        name: лишние и потерянные корни}
+  explog: {skill: exp_log_equation,        name: замена и логарифмы}
+  meet:   {skill: curve_meets_line,        name: пересечение графиков}
+  gdc:    {skill: gdc_solve,               name: численно}
+  disc:   {skill: discriminant_condition,  name: дискриминант как условие}
+  count:  {skill: solution_count,          name: число решений}
+
+C1:
+  right: {skill: right_triangle,         name: прямоугольный треугольник}
+  view:  {skill: elevation_and_bearing,  name: от описания к чертежу}
+  cos:   {skill: cosine_rule,            name: теорема косинусов}
+  sin:   {skill: sine_rule,              name: теорема синусов}
+  ambig: {skill: ambiguous_case,         name: неоднозначный случай}
+  area:  {skill: triangle_area,          name: площадь}
+  exact: {skill: exact_values,           name: точные значения}
+  model: {skill: triangle_as_model,      name: треугольник с буквой}
+
+# Порядок кодов в легенде C3 не совпадает с лестницей: sum — это сложение
+# углов, arg — составной аргумент, а в лестнице они идут наоборот.
+C3:
+  base:   {skill: reference_angle,           name: опорный угол}
+  sum:    {skill: angle_sum,                 name: сложение углов}
+  arg:    {skill: compound_argument,         name: составной аргумент}
+  pyth:   {skill: pythagorean_reduction,     name: пифагорово тождество}
+  dbl:    {skill: double_angle_reduction,    name: двойной угол}
+  fact:   {skill: factor_not_divide,         name: "вынести, не делить"}
+  tan:    {skill: reduce_to_tangent,         name: свести к тангенсу}
+  select: {skill: root_selection,            name: отбор корней}
+  gdc:    {skill: numeric_gdc,               name: численно}
+
+C4:
+  per:    {skill: period_from_coefficient, name: период и коэффициент}
+  amp:    {skill: amplitude_and_midline,   name: амплитуда и средняя линия}
+  sign:   {skill: amplitude_sign,          name: знак амплитуды}
+  phase:  {skill: phase_shift,             name: фазовый сдвиг}
+  build:  {skill: build_model,             name: собрать модель}
+  use:    {skill: use_model,               name: воспользоваться моделью}
+  thresh: {skill: threshold_interval,      name: порог и неравенство}
+  bound:  {skill: bounds_argument,         name: оценка через ±1}
+
+E7:
+  int: {skill: direct_integration,           name: прямое интегрирование}
+  sep: {skill: separation,                   name: разделение переменных}
+  pf:  {skill: separation_partial_fractions, name: разделение и простейшие дроби}
+  hom: {skill: homogeneous_substitution,     name: "однородное, y = vx"}
+  if:  {skill: integrating_factor,           name: интегрирующий множитель}
+  eu:  {skill: euler_method,                 name: метод Эйлера}

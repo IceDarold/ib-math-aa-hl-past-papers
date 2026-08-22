@@ -15,3 +15,6 @@ classification/api/data/
 __pycache__/
 *.pyc
 /.venv-practicum/
+
+# Журнал повторений: он один и есть на сервере, локально его не версионируем.
+/practicum/drill/drill.sqlite
