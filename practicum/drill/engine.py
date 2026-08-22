@@ -56,10 +56,12 @@ def weight(skill, state, share, now):
     return base * (1.0 + min(overdue, 30.0)) * (1.0 + error_rate)
 
 
-def candidates(bank, mode, generators):
+def candidates(bank, mode, generators, practicums=None):
     """Приёмы, по которым в выбранном режиме есть чем спросить."""
     out = []
     for skill in bank['skills']:
+        if practicums and skill['practicum'] not in practicums:
+            continue
         has_recog = bool(bank['items_by_skill'].get(skill['id']))
         has_compute = skill['id'] in generators
         if mode == 'recognition' and has_recog:
@@ -71,20 +73,45 @@ def candidates(bank, mode, generators):
     return out
 
 
-def choose(bank, states, generators, mode='mixed', rng=None, avoid=()):
-    """Возвращает (приём, вид задания). Вид «both» решается броском."""
+def choose(bank, states, generators, mode='mixed', rng=None, avoid=(),
+           practicums=None, only_due=False, order='schedule'):
+    """Возвращает (приём, вид задания). Вид «both» решается броском.
+
+    order:
+      schedule — по весу: доля баллов, просрочка, доля ошибок;
+      ladder   — сплошным проходом от простого к сложному, реже виденное
+                 вперёд: так закрывают пробелы, а не повторяют;
+      random   — поровну, без всякого расписания.
+    """
     rng = rng or random.Random()
     now = time.time()
-    pool = candidates(bank, mode, generators)
+    pool = candidates(bank, mode, generators, practicums)
     if not pool:
         raise LookupError(f'в режиме {mode!r} нет ни одного приёма')
+
+    if only_due:
+        due_now = [(s, k) for s, k in pool
+                   if states.get(s['id']) is None
+                   or states[s['id']]['due'] <= now]
+        # Если просроченного не осталось — это не ошибка, а хороший день:
+        # берём весь набор, чтобы сессия всё равно состоялась.
+        pool = due_now or pool
 
     fresh = [(s, k) for s, k in pool if s['id'] not in avoid]
     pool = fresh or pool
 
-    weights = [weight(skill, states.get(skill['id']), bank['share'], now)
-               for skill, _ in pool]
-    skill, kind = rng.choices(pool, weights=weights, k=1)[0]
+    if order == 'ladder':
+        def position(entry):
+            skill = entry[0]
+            state = states.get(skill['id'])
+            return (state['seen'] if state else 0, skill['rung'], skill['id'])
+        skill, kind = min(pool, key=position)
+    elif order == 'random':
+        skill, kind = rng.choice(pool)
+    else:
+        weights = [weight(skill, states.get(skill['id']), bank['share'], now)
+                   for skill, _ in pool]
+        skill, kind = rng.choices(pool, weights=weights, k=1)[0]
 
     if kind == 'both':
         has_recog = bool(bank['items_by_skill'].get(skill['id']))

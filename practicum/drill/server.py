@@ -50,7 +50,8 @@ class Drill:
     def connection(self):
         return store.connect(self.db_path)
 
-    def next_item(self, mode, avoid=()):
+    def next_item(self, mode, avoid=(), practicums=None, only_due=False,
+                  order='schedule'):
         with self.lock:
             db = self.connection()
             try:
@@ -58,7 +59,9 @@ class Drill:
             finally:
                 db.close()
         skill, kind = engine.choose(self.bank, states, GENERATORS, mode=mode,
-                                    rng=self.rng, avoid=avoid)
+                                    rng=self.rng, avoid=avoid,
+                                    practicums=practicums, only_due=only_due,
+                                    order=order)
         shown, _, _ = engine.build_item(self.bank, GENERATORS, skill, kind,
                                         rng=self.rng)
         shown['skill_name'] = skill['name']
@@ -105,6 +108,33 @@ class Drill:
             'trigger': skill['trigger'],
             'practicum': skill['practicum'],
             'answer': show_answer(answer),
+        }
+
+    def setup(self):
+        """Из чего собирается сессия: темы, сколько в каждой чего есть."""
+        recognition, compute = {}, {}
+        for item in self.bank['items']:
+            recognition[item['practicum']] = recognition.get(
+                item['practicum'], 0) + 1
+        for skill_id in GENERATORS:
+            practicum = self.bank['skills_by_id'][skill_id]['practicum']
+            compute[practicum] = compute.get(practicum, 0) + 1
+
+        skills = {}
+        for skill in self.bank['skills']:
+            skills[skill['practicum']] = skills.get(skill['practicum'], 0) + 1
+
+        return {
+            'practicums': [{
+                'id': entry['id'],
+                'title': entry['title'],
+                'section': entry['section'],
+                'marks': entry['marks'],
+                'skills': skills.get(entry['id'], 0),
+                'recognition': recognition.get(entry['id'], 0),
+                'compute': compute.get(entry['id'], 0),
+                'share': round(self.bank['share'].get(entry['id'], 0), 4),
+            } for entry in self.bank['practicums']],
         }
 
     def stats(self):
@@ -177,12 +207,20 @@ class Handler(BaseHTTPRequestHandler):
                             'items': len(self.drill.bank['items']),
                             'generators': len(GENERATORS)})
             return
+        if route == f'{PREFIX}/setup':
+            self.send_json(self.drill.setup())
+            return
         if route == f'{PREFIX}/next':
             mode = (query.get('mode') or ['mixed'])[0]
             avoid = (query.get('avoid') or [''])[0].split(',')
+            chosen = (query.get('practicums') or [''])[0].split(',')
+            order = (query.get('order') or ['schedule'])[0]
+            only_due = (query.get('only_due') or ['0'])[0] in ('1', 'true')
             try:
                 self.send_json(self.drill.next_item(
-                    mode, avoid=tuple(a for a in avoid if a)))
+                    mode, avoid=tuple(a for a in avoid if a),
+                    practicums=tuple(p for p in chosen if p) or None,
+                    only_due=only_due, order=order))
             except LookupError as exc:
                 self.send_json({'error': str(exc)}, 400)
             return

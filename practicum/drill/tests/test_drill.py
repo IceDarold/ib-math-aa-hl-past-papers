@@ -102,6 +102,55 @@ skills_with_compute = {s['id'] for s, _ in engine.candidates(bank, 'compute', GE
 t('счёт есть у всех приёмов B1 и C1',
   len(skills_with_compute) == len(GENERATORS))
 
+print('\n=== настройки сессии ===')
+picked = {engine.choose(bank, {}, GENERATORS, mode='mixed', rng=rng,
+                        practicums=('C1', 'B1'))[0]['practicum']
+          for _ in range(40)}
+t('отбор тем оставляет только выбранные', picked == {'C1', 'B1'})
+
+only_c1 = engine.candidates(bank, 'mixed', GENERATORS, practicums=('C1',))
+t('в отобранной теме все её приёмы', len(only_c1) == 8)
+
+try:
+    engine.choose(bank, {}, GENERATORS, mode='compute', rng=rng,
+                  practicums=('A3',))
+    t('пустой набор — это ошибка, а не молчаливая подмена', False)
+except LookupError:
+    t('пустой набор — это ошибка, а не молчаливая подмена', True)
+
+now = time.time()
+states = {s['id']: {'due': now + 7 * 86400, 'seen': 2, 'wrong': 0, 'box': 2}
+          for s in bank['skills']}
+states['C1.cosine_rule']['due'] = now - 86400
+skill, _ = engine.choose(bank, states, GENERATORS, mode='mixed', rng=rng,
+                         only_due=True)
+t('«только просроченное» берёт единственный просроченный приём',
+  skill['id'] == 'C1.cosine_rule')
+
+everything_fresh = {s['id']: {'due': now + 7 * 86400, 'seen': 2, 'wrong': 0,
+                              'box': 2} for s in bank['skills']}
+picked = engine.choose(bank, everything_fresh, GENERATORS, mode='mixed',
+                       rng=rng, only_due=True)[0]
+t('когда просрочено ничего, сессия всё равно собирается', bool(picked))
+
+# Сплошной проход: сначала то, что видели реже, при равенстве — ниже по лестнице.
+seen_once = {s['id']: {'due': now, 'seen': 1, 'wrong': 0, 'box': 1}
+             for s in bank['skills']}
+del seen_once['C1.exact_values']
+ladder = engine.choose(bank, seen_once, GENERATORS, mode='mixed', rng=rng,
+                       practicums=('C1',), order='ladder')[0]
+t('сплошь: невиданный приём идёт первым', ladder['id'] == 'C1.exact_values')
+
+rungs = [engine.choose(bank, seen_once, GENERATORS, mode='mixed', rng=rng,
+                       practicums=('C1',), order='ladder',
+                       avoid=('C1.exact_values',))[0]['rung']
+         for _ in range(5)]
+t('сплошь: дальше идёт нижняя ступень лестницы', set(rungs) == {1})
+
+uniform = {engine.choose(bank, {}, GENERATORS, mode='mixed', rng=rng,
+                         order='random')[0]['practicum'] for _ in range(80)}
+t('наугад достаёт и редкие темы', len(uniform) >= 8)
+
 print('\n=== задание собирается заново по зерну ===')
 skill = bank['skills_by_id']['C1.cosine_rule']
 shown, spec, answer = engine.build_item(bank, GENERATORS, skill, 'compute',
