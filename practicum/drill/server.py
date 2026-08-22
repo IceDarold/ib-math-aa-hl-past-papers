@@ -106,6 +106,10 @@ class Drill:
             'skill': skill_id,
             'skill_name': skill['name'],
             'trigger': skill['trigger'],
+            'chain': skill.get('chain', []),
+            # Ловушки — разбор того, где срезаются; при верном ответе они
+            # только отвлекают, поэтому уходят лишь вместе с ошибкой.
+            'traps': [] if ok else skill.get('traps', []),
             'practicum': skill['practicum'],
             'answer': show_answer(answer, var=spec.get('var', 'x')),
         }

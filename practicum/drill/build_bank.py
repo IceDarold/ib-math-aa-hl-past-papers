@@ -43,6 +43,11 @@ CODE_IN_HEAD = re.compile(r'`(\w+)`')
 SPLIT_ITEMS = re.compile(r'^(?:\d+\.\s|\|\s*\d+\s*\|)', re.M)
 
 
+def flatten(text):
+    """Многострочное поле карточки в одну строку: в вёрстке переносы свои."""
+    return re.sub(r'\s+', ' ', str(text)).strip()
+
+
 def ready_practicums():
     """Практикумы со статусом ready из карты, в порядке карты."""
     with open(os.path.join(PRACTICUM, 'map.yaml')) as fh:
@@ -154,7 +159,12 @@ def build():
                 'practicum': pid,
                 'name': skill['name'],
                 'rung': skill.get('rung', rung),
-                'trigger': re.sub(r'\s+', ' ', skill['trigger']).strip(),
+                'trigger': flatten(skill['trigger']),
+                # Ход и ловушки показываются после попытки: ход всегда,
+                # ловушки при ошибке. В карточке они и написаны как разбор,
+                # который стоит прочесть, а не как справка.
+                'chain': [flatten(step) for step in skill.get('chain', [])],
+                'traps': [flatten(trap) for trap in skill.get('traps', [])],
                 'calculator': skill['calculator']['mode'],
                 'practicum_marks': corpus.get('marks'),
             })

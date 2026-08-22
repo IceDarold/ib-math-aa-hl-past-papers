@@ -189,6 +189,43 @@ with tempfile.TemporaryDirectory() as tmp:
       totals['avg_first_ms'] == 3000 and totals['avg_ms'] == 12000)
     db.close()
 
+print('\n=== разбор после попытки ===')
+for skill in bank['skills']:
+    if not skill.get('chain') or not skill.get('traps'):
+        t(f'у приёма {skill["id"]} есть и ход, и ловушки', False)
+        break
+else:
+    t('у каждого приёма банка есть ход и ловушки', True)
+t('поля карточки лежат одной строкой, без переносов',
+  all('\n' not in step for skill in bank['skills'] for step in skill['chain']))
+
+from drill.server import Drill  # noqa: E402
+
+with tempfile.TemporaryDirectory() as tmp:
+    drill = Drill(os.path.join(tmp, 'verdict.sqlite'))
+    served = drill.next_item('compute', practicums=('C1',))
+    _, spec, answer = engine.rebuild_check(bank, GENERATORS, served['item'])
+    from drill.check import show_answer  # noqa: E402
+    good = drill.answer({'item': served['item'], 'mode': 'compute', 'ms': 5000,
+                         'first_ms': 1200,
+                         'answer': show_answer(answer,
+                                               var=spec.get('var', 'x'))})
+    t('при верном ответе ход показывается', bool(good['chain']))
+    t('при верном ответе ловушки не показываются', good['traps'] == [])
+    t('название приёма и признак узнавания приходят отдельными полями',
+      bool(good['skill_name']) and bool(good['trigger'])
+      and good['skill_name'] != good['trigger'])
+
+    served = drill.next_item('compute', practicums=('C1',))
+    wrong = drill.answer({'item': served['item'], 'mode': 'compute', 'ms': 5000,
+                          'first_ms': 1200, 'answer': '0'})
+    t('при ошибке ход тоже показывается — с ним и сравнивают',
+      bool(wrong['chain']))
+    t('при ошибке добавляются ловушки', bool(wrong['traps']))
+    t('при ошибке показывается эталон', bool(wrong['answer']))
+    t('задание странице по-прежнему приходит без эталона',
+      'answer' not in served and 'chain' not in served)
+
 print('\n=== чем это отличается от проверок в ноутбуке ===')
 # В практикуме ответ пишут в клетку и проверка знает, какое задание решают.
 # Здесь задание выбирает планировщик, поэтому проверка восстанавливается

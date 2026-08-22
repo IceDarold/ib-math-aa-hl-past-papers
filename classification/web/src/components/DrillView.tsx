@@ -29,6 +29,8 @@ interface Verdict {
   skill: string
   skill_name: string
   trigger: string
+  chain: string[]
+  traps: string[]
   practicum: string
   answer: string
 }
@@ -81,6 +83,8 @@ interface Done {
 }
 
 const API = '/api/drill'
+/** Подпись части разбора: одна и та же во всех строках, чтобы их не путали. */
+const LABEL = 'font-mono text-[10px] uppercase tracking-wide text-faint max-[560px]:pt-1.5'
 const SETTINGS_KEY = 'question-atlas:drill-setup'
 
 const MODES: { id: Mode; label: string; hint: string }[] = [
@@ -561,13 +565,53 @@ export function DrillView() {
                     </form>}
 
                 {verdict && (
-                  <div className="flex flex-col gap-2 border-t border-line pt-3">
+                  <div className="flex flex-col gap-3 border-t border-line pt-3">
                     <MathText className="text-sm text-ink">{verdict.message}</MathText>
-                    {!verdict.ok && <p className="font-mono text-xs text-muted">верно: {verdict.answer}</p>}
-                    <p className="text-xs text-muted">
-                      <span className="text-ink">{verdict.skill_name}</span>
-                      {verdict.trigger ? ` — ${verdict.trigger}` : ''}
-                    </p>
+
+                    <dl className="grid grid-cols-[8rem_1fr] items-baseline gap-x-3 gap-y-2.5 border-t border-line pt-3 max-[560px]:grid-cols-1 max-[560px]:gap-y-1">
+                      {!verdict.ok && <>
+                        <dt className={LABEL}>верный ответ</dt>
+                        <dd className="font-mono text-sm text-ink">{verdict.answer}</dd>
+                      </>}
+
+                      <dt className={LABEL}>приём</dt>
+                      <dd className="text-sm text-ink">
+                        {verdict.skill_name}
+                        <span className="ml-2 font-mono text-[10px] text-faint">{verdict.practicum}</span>
+                      </dd>
+
+                      <dt className={LABEL}>узнаётся по</dt>
+                      <dd className="text-xs leading-relaxed text-muted">{verdict.trigger}</dd>
+
+                      {verdict.chain.length > 0 && <>
+                        <dt className={LABEL}>ход</dt>
+                        <dd>
+                          <ol className="flex flex-col gap-0.5 text-xs leading-relaxed text-muted">
+                            {verdict.chain.map((step, index) => (
+                              <li key={step} className="flex gap-2">
+                                <span className="font-mono text-[10px] text-faint">{index + 1}</span>
+                                <span>{step}</span>
+                              </li>
+                            ))}
+                          </ol>
+                        </dd>
+                      </>}
+
+                      {verdict.traps.length > 0 && <>
+                        <dt className={LABEL}>где срезаются</dt>
+                        <dd>
+                          <ul className="flex flex-col gap-1 text-xs leading-relaxed text-muted">
+                            {verdict.traps.map((trap) => (
+                              <li key={trap} className="flex gap-2">
+                                <span className="text-faint">·</span>
+                                <span>{trap}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </dd>
+                      </>}
+                    </dl>
+
                     <div className="flex items-center gap-3 pt-1">
                       <button
                         type="button"
