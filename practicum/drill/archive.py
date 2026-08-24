@@ -74,6 +74,47 @@ def render(folder, which, spec, extra=0, dpi=DPI):
     return images
 
 
+INSTRUCTIONS_HEADING = 'Instructions to Examiners'
+INSTRUCTIONS_END = ('Section A', 'Section B')
+INSTRUCTIONS_LIMIT = 8
+
+
+@functools.lru_cache(maxsize=64)
+def instructions(folder):
+    """«Instructions to Examiners» из начала схемы оценивания, текстом.
+
+    Это официальные правила разметки: что означают M, A, R и AG, когда
+    A-балл зависит от предыдущего M, нужно ли повторять напечатанную
+    строку в «show that». Они есть в каждой схеме и различаются по
+    бумагам только разделом про калькулятор — поэтому берутся из той же
+    бумаги, что и вопрос, а не из общего файла.
+
+    Картинками отдавать незачем: это сплошная проза без чертежей, и
+    текстом она стоит в пять раз дешевле.
+    """
+    path = os.path.join(ROOT, folder, MARKSCHEME_PDF)
+    if not os.path.isfile(path):
+        return ''
+    with pymupdf.open(path) as document:
+        start = next((n for n in range(min(INSTRUCTIONS_LIMIT,
+                                           document.page_count))
+                      if INSTRUCTIONS_HEADING in document[n].get_text()), None)
+        if start is None:
+            return ''
+        out = []
+        for number in range(start, document.page_count):
+            text = document[number].get_text()
+            if number > start and any(mark in text
+                                      for mark in INSTRUCTIONS_END):
+                break
+            out.append(text)
+    body = '\n'.join(out)
+    # В колонтитулах повторяется код бумаги — модели он ни к чему.
+    body = re.sub(r'^\s*[–-]\s*\d+\s*[–-]\s*\S+\s*$', '', body,
+                  flags=re.M)
+    return re.sub(r'\n{3,}', '\n\n', body).strip()
+
+
 def block_pages(block, with_markscheme=True):
     """Картинки для одного блока архива: билет и схема оценивания."""
     out = {'question': render(block['dir'], 'question',

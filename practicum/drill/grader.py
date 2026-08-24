@@ -74,6 +74,7 @@ Rules you must follow:
 - Transcribe the work first, before judging anything. If the handwriting is unclear, say so in the transcription rather than guessing and then criticising.
 - A correct answer reached by an invalid method is not correct. Name the invalid step.
 - Judge presentation only against the rubric you are given. Do not invent additional style requirements, and do not penalise ordinary abbreviations, crossings-out or untidy handwriting.
+- The official Instructions to Examiners come from the front of this markscheme and are authoritative. Where the rubric asks for more than they require, follow them and mark the rubric item as met.
 - Mark codes: M1 method, A1 accuracy, R1 reasoning, AG answer given in the question.
 - Write every word of your feedback in English. The candidate is practising exam register, so your phrasing is part of the teaching.
 - In "fix" fields give the exact sentence the candidate should have written, not a description of what is missing.
@@ -101,8 +102,8 @@ def _image_part(data, kind='png'):
 
 
 def build_messages(*, work_images, question_text=None, question_images=(),
-                   markscheme_images=(), reference=None, marks=None,
-                   calculator=None, rubric_items=(), skill=None):
+                   markscheme_images=(), instructions=None, reference=None,
+                   marks=None, calculator=None, rubric_items=(), skill=None):
     """Собирает запрос: сначала задача и эталон разметки, потом работа."""
     content = []
     head = ['You are marking one question.']
@@ -131,9 +132,16 @@ def build_messages(*, work_images, question_text=None, question_images=(),
                                 'this, and use its mark codes and wording.'})
         content += [_image_part(png) for png in markscheme_images]
 
+    if instructions:
+        content.append({'type': 'text', 'text':
+                        'OFFICIAL INSTRUCTIONS TO EXAMINERS — printed at the '
+                        'front of this very markscheme. These are the rules '
+                        'you mark by, and they outrank the rubric below '
+                        'wherever the two disagree:\n\n' + instructions})
     content.append({'type': 'text', 'text':
                     'PRESENTATION RUBRIC — judge presentation only against '
-                    'these items:\n'
+                    'these items, and drop any item the official '
+                    'instructions above contradict:\n'
                     + json.dumps(list(rubric_items), ensure_ascii=False,
                                  indent=1)})
     content.append({'type': 'text',

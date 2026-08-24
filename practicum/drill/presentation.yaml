@@ -41,8 +41,10 @@ common:
     code: A1
   - id: equality_notation
     requirement: >
-      The equals sign is used only between equal quantities; separate steps
-      are on separate lines rather than chained with one long chain of "=".
+      The equals sign is used only between quantities that really are equal,
+      so that no line states something false. Extra correct working is not a
+      fault: the Instructions to Examiners say that once a correct answer is
+      seen, further working is ignored.
     fix: "Break the chain: write each equation on its own line."
     code: A1
 
@@ -62,9 +64,11 @@ by_question_type:
         code: AG
       - id: ag_final_form
         requirement: >
-          The last line is exactly the printed form, not an equivalent the
-          reader has to convert.
-        fix: "Finish on the printed form itself, then write \"as required\"."
+          The working reaches the printed result, in that form or in one the
+          reader can see is the same. Note that the Instructions to Examiners
+          say the response does not need to restate the printed line unless a
+          Note in the markscheme demands it, so do not require a restatement.
+        fix: "Carry the working through until the printed result is reached."
         code: AG
 
 # Правила по практикумам.

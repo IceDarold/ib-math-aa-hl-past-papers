@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.dirname(PRACTICUM))
 sys.path.insert(0, PRACTICUM)
 
 import sympy as sp  # noqa: E402
+import yaml  # noqa: E402
 
 from drill import engine, store  # noqa: E402
 from drill.check import BadInput, evaluate, parse_many, parse_one  # noqa: E402
@@ -304,10 +305,31 @@ t('в каждом пункте есть готовая фраза, а не пе
 t('рубрика написана по-английски: её читает и модель, и ученик',
   all(not re.search('[а-яА-Я]', item['fix']) for item in a7))
 
+print('\n=== официальные инструкции экзаменатору ===')
+folder = blocks[next(iter(blocks))]['dir']
+rules = archive.instructions(folder)
+t('инструкции извлекаются из самой схемы оценивания', len(rules) > 4000)
+t('в них определены коды баллов',
+  all(mark in rules for mark in ('M ', 'A ', 'R ', 'AG')))
+t('в них есть правило про повторение AG-строки',
+  'does not need to restate' in rules)
+t('в них есть зависимость A-балла от M-балла',
+  'M0 followed by A1' in rules)
+t('раздел кончается до самой схемы, а не тянется до конца файла',
+  'Section A' not in rules and len(rules) < 30_000)
+
+t('рубрика больше не требует повторять напечатанную строку',
+  'does not need to restate' in next(
+      item['requirement'] for group in
+      yaml.safe_load(open(os.path.join(DRILL, 'presentation.yaml')))
+      ['by_question_type'].values() for item in group['items']
+      if item['id'] == 'ag_final_form'))
+
 print('\n=== запрос на разбор ===')
 message = grader.build_messages(
     work_images=[b'\x89PNG-fake'], question_images=[b'\x89PNG-q'],
-    markscheme_images=[b'\x89PNG-m'], reference='May 2022 TZ2, Paper 1, Q3(b)',
+    markscheme_images=[b'\x89PNG-m'], instructions=rules,
+    reference='May 2022 TZ2, Paper 1, Q3(b)',
     marks=6, calculator='no', rubric_items=a7, skill='Индукция для суммы')
 parts = message[1]['content']
 kinds = [part['type'] for part in parts]
@@ -326,6 +348,13 @@ t('системная роль требует разделять математ�
   and 'MATHEMATICS' in message[0]['content'])
 t('модель обязана сначала прочесть, а потом судить',
   'Transcribe the work first' in message[0]['content'])
+texts = [part.get('text', '') for part in parts]
+t('официальные инструкции идут раньше рубрики',
+  next(i for i, x in enumerate(texts) if 'OFFICIAL INSTRUCTIONS' in x)
+  < next(i for i, x in enumerate(texts) if 'PRESENTATION RUBRIC' in x))
+t('инструкции объявлены старше рубрики — они и есть источник правил',
+  'authoritative' in message[0]['content']
+  and 'outrank the rubric' in ' '.join(texts))
 
 print('\n=== журнал письменных работ ===')
 with tempfile.TemporaryDirectory() as tmp:

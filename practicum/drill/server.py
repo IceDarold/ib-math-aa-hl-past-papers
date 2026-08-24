@@ -225,6 +225,7 @@ class Drill:
         block_id = payload.get('block')
         block = (self.bank.get('archive', {}) or {}).get(block_id or '')
         pages, reference, skill_name, practicum, skill_id = {}, None, None, None, None
+        rules = None
         if block:
             skill_id = block['skill']
             practicum = skill_id.split('.')[0]
@@ -234,12 +235,14 @@ class Drill:
                 pages = archive.block_pages(block)
             except LookupError:
                 pages = {}
+            rules = archive.instructions(block['dir'])
 
         verdict = grader.grade(
             work_images=images,
             question_text=payload.get('question_text') or None,
             question_images=pages.get('question', ()),
             markscheme_images=pages.get('markscheme', ()),
+            instructions=rules,
             reference=reference,
             marks=(block or {}).get('marks'),
             calculator=(block or {}).get('calculator'),
