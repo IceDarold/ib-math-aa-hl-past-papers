@@ -244,6 +244,7 @@ export function DrillView() {
   const [photos, setPhotos] = useState<string[]>([])
   const [writeUp, setWriteUp] = useState<WriteUp | null>(null)
   const [gradingMs, setGradingMs] = useState(0)
+  const [dragging, setDragging] = useState(false)
   const [written, setWritten] = useState<WrittenRow[]>([])
   const [opened, setOpened] = useState<WrittenRecord | null>(null)
 
@@ -393,17 +394,37 @@ export function DrillView() {
     }
   }, [busy, item, settings.mode, verdict])
 
-  const addPhotos = async (files: FileList | null) => {
-    if (!files?.length) return
+  const addPhotos = useCallback(async (files: FileList | File[] | null) => {
+    const chosen = Array.from(files ?? []).filter(
+      (file) => file.type.startsWith('image/') || isPdf(file))
+    if (!chosen.length) return
     setError(null)
     try {
-      const added = await Promise.all([...files].slice(0, MAX_PHOTOS)
+      const added = await Promise.all(chosen.slice(0, MAX_PHOTOS)
         .map((file) => (isPdf(file) ? readAsIs(file) : shrink(file))))
       setPhotos((current) => [...current, ...added].slice(0, MAX_PHOTOS))
     } catch (failure) {
       setError(failure instanceof Error ? failure.message : 'снимок не прочитался')
     }
-  }
+  }, [])
+
+  const acceptsWork = screen === 'running' && item?.kind === 'written'
+    && !writeUp && !busy
+
+  useEffect(() => {
+    // Снимок экрана и сфотографированный лист чаще всего уже в буфере:
+    // проще вставить, чем искать файл в диалоге.
+    if (!acceptsWork) return
+    const onPaste = (event: ClipboardEvent) => {
+      const files = event.clipboardData?.files
+      if (files?.length) {
+        event.preventDefault()
+        void addPhotos(files)
+      }
+    }
+    window.addEventListener('paste', onPaste)
+    return () => window.removeEventListener('paste', onPaste)
+  }, [acceptsWork, addPhotos])
 
   const submitWork = useCallback(async () => {
     if (!item || item.kind !== 'written' || busy || writeUp || !photos.length) return
@@ -797,8 +818,8 @@ export function DrillView() {
                       ))}
                     </div>
                     <p className="text-[11px] text-faint">
-                      Solve it on paper, in English, then photograph the page or upload
-                      a scanned PDF. Only your question is marked — ignore anything else
+                      Solve it on paper, in English, then photograph the page, paste it
+                      from the clipboard or drop in a scanned PDF. Only your question is marked — ignore anything else
                       printed above or below it.
                     </p>
                   </div>
@@ -808,7 +829,16 @@ export function DrillView() {
                 </>}
 
                 {item.kind === 'written' ? (
-                  !writeUp && <div className="flex flex-col gap-3 border-t border-line pt-3">
+                  !writeUp && <div
+                    className={`flex flex-col gap-3 border-t pt-3 ${dragging ? 'border-line-strong bg-surface' : 'border-line'}`}
+                    onDragOver={(event) => { event.preventDefault(); setDragging(true) }}
+                    onDragLeave={() => setDragging(false)}
+                    onDrop={(event) => {
+                      event.preventDefault()
+                      setDragging(false)
+                      void addPhotos(event.dataTransfer.files)
+                    }}
+                  >
                     <input
                       ref={fileRef}
                       type="file"
@@ -818,6 +848,11 @@ export function DrillView() {
                       className="text-xs text-muted file:mr-2 file:cursor-pointer file:border file:border-line file:bg-canvas file:px-2 file:py-1 file:font-mono file:text-[11px] file:text-ink hover:file:bg-surface"
                       onChange={(event) => void addPhotos(event.target.files)}
                     />
+                    <p className="text-[11px] text-faint">
+                      {dragging
+                        ? 'Отпустите — файлы добавятся к работе'
+                        : 'Можно перетащить файлы сюда или вставить из буфера: Ctrl+V'}
+                    </p>
                     {photos.length > 0 && (
                       <div className="flex flex-wrap gap-2">
                         {photos.map((photo, index) => (
