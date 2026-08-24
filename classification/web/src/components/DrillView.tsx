@@ -6,7 +6,7 @@ import { WriteUpVerdict, type Verdict as WriteUp } from './WriteUpVerdict'
 
 type Mode = 'mixed' | 'recognition' | 'compute' | 'written'
 type Order = 'schedule' | 'ladder' | 'random'
-type Screen = 'setup' | 'running' | 'done'
+type Screen = 'setup' | 'running' | 'done' | 'history'
 
 interface Option { code: string; name: string }
 
@@ -63,6 +63,24 @@ interface SkillStat {
   box: number | null
   due_in_days: number | null
   has_compute: boolean
+}
+
+interface WrittenRow {
+  id: number
+  ts: number
+  reference: string
+  practicum: string
+  skill: string
+  available: number | null
+  earned: number | null
+  math: string
+  model: string
+  pages: number
+}
+
+interface WrittenRecord extends WrittenRow {
+  verdict: WriteUp & { error?: string }
+  files: { index: number; name: string; url: string }[]
 }
 
 interface Stats {
@@ -181,6 +199,12 @@ function saveSettings(settings: Settings) {
   }
 }
 
+function when(ts: number) {
+  return new Date(ts * 1000).toLocaleString('ru-RU', {
+    day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit',
+  })
+}
+
 function seconds(ms: number) {
   return `${(ms / 1000).toFixed(1)} с`
 }
@@ -220,6 +244,8 @@ export function DrillView() {
   const [photos, setPhotos] = useState<string[]>([])
   const [writeUp, setWriteUp] = useState<WriteUp | null>(null)
   const [gradingMs, setGradingMs] = useState(0)
+  const [written, setWritten] = useState<WrittenRow[]>([])
+  const [opened, setOpened] = useState<WrittenRecord | null>(null)
 
   const shownAt = useRef(0)
   const firstKeyAt = useRef(0)
@@ -236,6 +262,21 @@ export function DrillView() {
       const response = await fetch(`${API}/stats`)
       if (response.ok) setStats(await response.json())
     } catch { /* статистика не критична */ }
+    try {
+      const response = await fetch(`${API}/written`)
+      if (response.ok) setWritten((await response.json()).history ?? [])
+    } catch { /* список работ не критичен */ }
+  }, [])
+
+  const openWritten = useCallback(async (id: number) => {
+    setError(null)
+    try {
+      const response = await fetch(`${API}/written?id=${id}`)
+      if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
+      setOpened(await response.json())
+    } catch (failure) {
+      setError(failure instanceof Error ? failure.message : 'не отвечает')
+    }
   }, [])
 
   useEffect(() => {
@@ -627,8 +668,85 @@ export function DrillView() {
                   ? `${chosen.length} тем, ${chosenSkills} приёмов${settings.length ? `, ${settings.length} заданий` : ''}`
                   : 'в этом режиме выбранные темы пусты'}
               </span>
+              {written.length > 0 && (
+                <button
+                  type="button"
+                  className="ml-auto cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted underline hover:text-ink"
+                  onClick={() => { setOpened(null); setScreen('history') }}
+                >
+                  мои работы ({written.length})
+                </button>
+              )}
             </div>
           </>
+        )}
+
+        {screen === 'history' && (
+          <section className="flex flex-col gap-4">
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <h2 className="text-lg text-ink">Мои работы</h2>
+              <button
+                type="button"
+                className="cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted underline hover:text-ink"
+                onClick={() => (opened ? setOpened(null) : setScreen('setup'))}
+              >
+                {opened ? 'к списку' : 'к настройкам'}
+              </button>
+            </div>
+
+            {!opened && (
+              <ul className="flex flex-col">
+                {written.map((row) => (
+                  <li key={row.id}>
+                    <button
+                      type="button"
+                      className="flex w-full flex-wrap items-baseline gap-x-3 gap-y-0.5 border-b border-line px-1 py-2 text-left hover:bg-surface"
+                      onClick={() => void openWritten(row.id)}
+                    >
+                      <span className="w-24 shrink-0 font-mono text-[10px] text-faint">{when(row.ts)}</span>
+                      <span className="font-mono text-[11px] text-ink">
+                        {row.earned ?? '—'}/{row.available ?? '—'}
+                      </span>
+                      <span className="text-sm text-ink">{row.reference}</span>
+                      <span className="text-[11px] text-muted">{row.math || 'не проверена'}</span>
+                      <span className="ml-auto font-mono text-[10px] text-faint">
+                        {row.pages} {row.pages === 1 ? 'страница' : 'страниц'}
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {opened && (
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-wrap items-baseline gap-x-3 text-sm text-ink">
+                  <span className="font-mono text-[10px] text-faint">{when(opened.ts)}</span>
+                  <span>{opened.reference}</span>
+                  <span className="font-mono text-[11px] text-muted">{opened.skill}</span>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {opened.files.map((file) => (
+                    file.name.endsWith('.pdf')
+                      ? <a key={file.url} href={file.url} target="_blank" rel="noreferrer"
+                           className="grid h-28 w-20 place-items-center border border-line bg-surface font-mono text-[10px] text-muted hover:bg-canvas">
+                          PDF
+                        </a>
+                      : <a key={file.url} href={file.url} target="_blank" rel="noreferrer">
+                          <img src={file.url} alt={file.name} className="h-28 w-auto border border-line object-cover" />
+                        </a>
+                  ))}
+                </div>
+
+                {opened.verdict?.error
+                  ? <p className="border border-line bg-surface p-3 text-sm text-ink">
+                      Работа сохранена, но разбор не состоялся: {opened.verdict.error}
+                    </p>
+                  : <WriteUpVerdict verdict={opened.verdict} />}
+              </div>
+            )}
+          </section>
         )}
 
         {screen === 'running' && (
@@ -897,7 +1015,7 @@ export function DrillView() {
           </section>
         )}
 
-        {stats && screen !== 'running' && (
+        {stats && screen !== 'running' && screen !== 'history' && (
           <section className="flex flex-col gap-3 border-t border-line pt-4">
             <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1 font-mono text-[11px] text-muted">
               <span>всего попыток {stats.totals.attempts}</span>

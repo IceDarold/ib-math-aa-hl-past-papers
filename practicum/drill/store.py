@@ -158,9 +158,28 @@ def record_written(db, *, block, practicum, skill, reference, verdict,
 
 
 def written_history(db, limit=50):
-    return [dict(row) for row in db.execute(
+    rows = [dict(row) for row in db.execute(
         'SELECT id, ts, block, practicum, skill, reference, available, '
-        'earned, math, model FROM written ORDER BY id DESC LIMIT ?', (limit,))]
+        'earned, math, model, photos FROM written ORDER BY id DESC LIMIT ?',
+        (limit,))]
+    for row in rows:
+        row['pages'] = len(json.loads(row.pop('photos') or '[]'))
+    return rows
+
+
+def written_one(db, row_id):
+    """Одна работа со всем, что о ней сохранено."""
+    row = db.execute('SELECT * FROM written WHERE id = ?',
+                     (row_id,)).fetchone()
+    if row is None:
+        raise LookupError('такой работы нет')
+    record = dict(row)
+    record['photos'] = json.loads(record.get('photos') or '[]')
+    try:
+        record['verdict'] = json.loads(record.get('verdict') or '{}')
+    except json.JSONDecodeError:
+        record['verdict'] = {}
+    return record
 
 
 def written_totals(db):

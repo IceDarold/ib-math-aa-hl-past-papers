@@ -191,14 +191,44 @@ class Drill:
                                   row['reference']))
         return {'questions': out}
 
-    def written(self):
+    def written(self, row_id=None):
         with self.lock:
             db = self.connection()
             try:
-                return {'history': store.written_history(db),
-                        'totals': store.written_totals(db)}
+                if row_id is None:
+                    return {'history': store.written_history(db),
+                            'totals': store.written_totals(db)}
+                record = store.written_one(db, int(row_id))
             finally:
                 db.close()
+        record['files'] = [
+            {'index': index, 'name': os.path.basename(name),
+             'url': f'{PREFIX}/file?id={record["id"]}&n={index}'}
+            for index, name in enumerate(record.pop('photos', []))]
+        return record
+
+    def written_file(self, row_id, index):
+        """Отдаёт сохранённый снимок или скан работы."""
+        with self.lock:
+            db = self.connection()
+            try:
+                record = store.written_one(db, int(row_id))
+            finally:
+                db.close()
+        names = record.get('photos') or []
+        if not 0 <= int(index) < len(names):
+            raise LookupError('такой страницы нет')
+        root = os.path.realpath(self.photo_dir())
+        path = os.path.realpath(os.path.join(root, names[int(index)]))
+        # Имя пришло из базы, но проверяем всё равно: за пределы каталога
+        # снимков отдавать нечего.
+        if not path.startswith(root + os.sep) or not os.path.isfile(path):
+            raise LookupError('файла нет')
+        kind = {'.pdf': 'application/pdf', '.jpg': 'image/jpeg',
+                '.jpeg': 'image/jpeg'}.get(os.path.splitext(path)[1].lower(),
+                                           'image/png')
+        with open(path, 'rb') as handle:
+            return handle.read(), kind
 
     def grade(self, payload):
         """Разбирает сфотографированную работу против подлинной схемы."""
@@ -254,19 +284,8 @@ class Drill:
                 pages = {}
             rules = archive.instructions(block['dir'])
 
-        verdict = grader.grade(
-            work_images=images,
-            question_text=payload.get('question_text') or None,
-            question_images=pages.get('question', ()),
-            markscheme_images=pages.get('markscheme', ()),
-            instructions=rules,
-            reference=reference,
-            marks=(block or {}).get('marks'),
-            calculator=(block or {}).get('calculator'),
-            skill=skill_name,
-            rubric_items=grader.rubric(practicum),
-            model=payload.get('model'))
-
+        # Снимки сохраняем до проверки, а не после: если модель не ответит,
+        # работа всё равно должна остаться. Раньше она просто пропадала.
         folder = os.path.join(self.photo_dir(),
                               f'{int(time.time())}-{uuid.uuid4().hex[:6]}')
         os.makedirs(folder, exist_ok=True)
@@ -276,6 +295,33 @@ class Drill:
             with open(name, 'wb') as fh:
                 fh.write(data)
             saved.append(os.path.relpath(name, self.photo_dir()))
+
+        try:
+            verdict = grader.grade(
+                    work_images=images,
+                question_text=payload.get('question_text') or None,
+                question_images=pages.get('question', ()),
+                markscheme_images=pages.get('markscheme', ()),
+                instructions=rules,
+                reference=reference,
+                marks=(block or {}).get('marks'),
+                calculator=(block or {}).get('calculator'),
+                skill=skill_name,
+                rubric_items=grader.rubric(practicum),
+                model=payload.get('model'))
+        except grader.GraderError as exc:
+            # Работа сохранена, разбор не состоялся — так и записываем,
+            # чтобы её было видно в списке и можно было отправить снова.
+            with self.lock:
+                db = self.connection()
+                try:
+                    store.record_written(
+                        db, block=block_id or '', practicum=practicum or '',
+                        skill=skill_id or '', reference=reference or '',
+                        verdict={'error': str(exc)}, photos=saved)
+                finally:
+                    db.close()
+            raise
 
         with self.lock:
             db = self.connection()
@@ -411,7 +457,26 @@ class Handler(BaseHTTPRequestHandler):
                 skill=(query.get('skill') or [None])[0]))
             return
         if route == f'{PREFIX}/written':
-            self.send_json(self.drill.written())
+            try:
+                self.send_json(self.drill.written(
+                    (query.get('id') or [None])[0]))
+            except (LookupError, ValueError) as exc:
+                self.send_json({'error': str(exc)}, 404)
+            return
+        if route == f'{PREFIX}/file':
+            try:
+                body, kind = self.drill.written_file(
+                    (query.get('id') or [''])[0],
+                    (query.get('n') or ['0'])[0])
+            except (LookupError, ValueError) as exc:
+                self.send_json({'error': str(exc)}, 404)
+                return
+            self.send_response(200)
+            self.send_header('Content-Type', kind)
+            self.send_header('Content-Length', str(len(body)))
+            self.send_header('Cache-Control', 'private, max-age=3600')
+            self.end_headers()
+            self.wfile.write(body)
             return
 
         self.send_json({'error': 'нет такой ручки'}, 404)

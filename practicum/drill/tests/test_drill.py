@@ -343,6 +343,63 @@ if drifted:
       archive.parse_pages(drifted['source_pages']) == [5]
       and archive.block_page_numbers(drifted, 'question') == [6])
 
+print('\n=== сохранённые работы ===')
+from drill.server import Drill as DrillService  # noqa: E402
+
+with tempfile.TemporaryDirectory() as tmp:
+    service = DrillService(os.path.join(tmp, 'kept.sqlite'))
+    shots = os.path.join(service.photo_dir(), 'demo')
+    os.makedirs(shots, exist_ok=True)
+    with open(os.path.join(shots, 'page-1.jpg'), 'wb') as handle:
+        handle.write(b'\xff\xd8snapshot')
+    connection = service.connection()
+    try:
+        store.record_written(
+            connection, block='2022-MAY-TZ1-P1-Q08', practicum='A7',
+            skill='A7.contradiction',
+            reference='May 2022 TZ1, Paper 1, Q8',
+            photos=['demo/page-1.jpg'],
+            verdict={'marks': {'available': 6, 'earned': 4},
+                     'mathematics': {'verdict': 'partially correct'},
+                     'model': 'gpt-5.6-sol'})
+    finally:
+        connection.close()
+
+    listing = service.written()['history']
+    t('работа попадает в список', len(listing) == 1)
+    t('в списке видно, за что и сколько',
+      listing[0]['reference'] == 'May 2022 TZ1, Paper 1, Q8'
+      and listing[0]['earned'] == 4 and listing[0]['pages'] == 1)
+
+    record = service.written(listing[0]['id'])
+    t('работа открывается целиком, с вердиктом',
+      record['verdict']['mathematics']['verdict'] == 'partially correct')
+    t('к работе приложены её страницы',
+      len(record['files']) == 1 and record['files'][0]['url'].endswith('n=0'))
+
+    body, kind = service.written_file(record['id'], 0)
+    t('страница отдаётся с верным типом',
+      body == b'\xff\xd8snapshot' and kind == 'image/jpeg')
+    try:
+        service.written_file(record['id'], 7)
+        t('несуществующая страница не отдаётся', False)
+    except LookupError:
+        t('несуществующая страница не отдаётся', True)
+
+    connection = service.connection()
+    try:
+        store.record_written(
+            connection, block='X', practicum='A7', skill='A7.contradiction',
+            reference='May 2023 TZ1, Paper 2, Q9', photos=['demo/page-1.jpg'],
+            verdict={'error': 'модель не ответила'})
+    finally:
+        connection.close()
+    unmarked = service.written()['history'][0]
+    t('непроверенная работа тоже сохраняется и видна',
+      unmarked['earned'] is None and unmarked['available'] is None)
+    t('видно, почему разбор не состоялся',
+      service.written(unmarked['id'])['verdict']['error'] == 'модель не ответила')
+
 print('\n=== работа присылается и сканом ===')
 scan = pymupdf.open()
 for number in range(3):
