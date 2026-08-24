@@ -14,6 +14,8 @@ export interface Verdict {
   reference: string | null
   skill_name: string | null
   model: string
+  usage?: { prompt_tokens?: number; completion_tokens?: number }
+  elapsedMs?: number
 }
 
 const LABEL = 'font-mono text-[10px] uppercase tracking-wide text-faint max-[560px]:pt-1.5'
@@ -110,7 +112,16 @@ export function WriteUpVerdict({ verdict, markschemeUrl }: { verdict: Verdict; m
             open the official markscheme
           </a>
         )}
-        <span className="font-mono text-faint">marked by {verdict.model}</span>
+        <span className="font-mono text-faint">
+          marked by {verdict.model}
+          {verdict.elapsedMs ? ` · ${(verdict.elapsedMs / 1000).toFixed(1)} s` : ''}
+          {verdict.usage?.prompt_tokens
+            ? ` · ${verdict.usage.prompt_tokens.toLocaleString('ru-RU')} in`
+            : ''}
+          {verdict.usage?.completion_tokens
+            ? ` + ${verdict.usage.completion_tokens.toLocaleString('ru-RU')} out`
+            : ''}
+        </span>
       </div>
     </div>
   )

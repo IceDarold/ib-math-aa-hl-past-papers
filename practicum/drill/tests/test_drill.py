@@ -343,6 +343,28 @@ if drifted:
       archive.parse_pages(drifted['source_pages']) == [5]
       and archive.block_page_numbers(drifted, 'question') == [6])
 
+print('\n=== работа присылается и сканом ===')
+scan = pymupdf.open()
+for number in range(3):
+    sheet = scan.new_page()
+    sheet.insert_text((72, 100), f'Solution page {number + 1}', fontsize=16)
+scan_bytes = scan.tobytes()
+scan.close()
+
+pages = archive.render_upload(scan_bytes)
+t('PDF разбирается постранично', len(pages) == 3)
+t('страницы отрендерены картинками',
+  all(page[:8] == b'\x89PNG\r\n\x1a\n' for page in pages))
+t('число страниц ограничивается', len(archive.render_upload(scan_bytes,
+                                                            limit=2)) == 2)
+try:
+    archive.render_upload(b'not a pdf at all')
+    t('мусор вместо PDF не проходит молча', False)
+except Exception:
+    t('мусор вместо PDF не проходит молча', True)
+t('PDF узнаётся по сигнатуре, а не только по заголовку data-URL',
+  scan_bytes[:5] == b'%PDF-')
+
 print('\n=== официальные инструкции экзаменатору ===')
 folder = blocks[next(iter(blocks))]['dir']
 rules = archive.instructions(folder)

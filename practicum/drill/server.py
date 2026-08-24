@@ -205,17 +205,39 @@ class Drill:
         photos = payload.get('photos') or []
         if not photos:
             raise ValueError('нет ни одного снимка работы')
-        images, kinds = [], []
+        images, kinds, keep = [], [], []
         for item in photos[:grader.MAX_PHOTOS]:
             text = str(item)
-            head = re.match(r'^data:image/(\w+);base64,', text)
-            kinds.append('jpg' if head and head.group(1) in ('jpeg', 'jpg')
-                         else 'png')
+            head = re.match(r'^data:(image/(\w+)|application/pdf);base64,',
+                            text)
             try:
-                images.append(base64.b64decode(re.sub(
-                    r'^data:image/\w+;base64,', '', text), validate=True))
+                data = base64.b64decode(
+                    re.sub(r'^data:[\w/+.-]+;base64,', '', text),
+                    validate=True)
             except Exception:  # noqa: BLE001
-                raise ValueError('снимок не разобрался')
+                raise ValueError('файл не разобрался')
+
+            is_pdf = (head and head.group(1) == 'application/pdf') or \
+                data[:5] == b'%PDF-'
+            if is_pdf:
+                # Сканы приходят одним PDF на несколько страниц: разбираем
+                # его здесь и складываем страницы к остальным снимкам.
+                try:
+                    pages = archive.render_upload(
+                        data, limit=grader.MAX_PHOTOS - len(images))
+                except Exception as exc:  # noqa: BLE001
+                    raise ValueError(f'PDF не открылся: {exc}')
+                images += pages
+                kinds += ['png'] * len(pages)
+                keep.append(('pdf', data))
+            else:
+                images.append(data)
+                kinds.append('jpg' if head and head.group(2) in ('jpeg', 'jpg')
+                             else 'png')
+                keep.append((kinds[-1], data))
+            if len(images) >= grader.MAX_PHOTOS:
+                break
+        images = images[:grader.MAX_PHOTOS]
 
         block_id = payload.get('block')
         block = (self.bank.get('archive', {}) or {}).get(block_id or '')
@@ -249,8 +271,8 @@ class Drill:
                               f'{int(time.time())}-{uuid.uuid4().hex[:6]}')
         os.makedirs(folder, exist_ok=True)
         saved = []
-        for number, data in enumerate(images, start=1):
-            name = os.path.join(folder, f'page-{number}.{kinds[number - 1]}')
+        for number, (kind, data) in enumerate(keep, start=1):
+            name = os.path.join(folder, f'page-{number}.{kind}')
             with open(name, 'wb') as fh:
                 fh.write(data)
             saved.append(os.path.relpath(name, self.photo_dir()))

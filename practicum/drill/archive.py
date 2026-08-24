@@ -192,6 +192,21 @@ def _search_order(hint, total):
     return [n for n in order if 1 <= n <= total]
 
 
+def render_upload(data, limit=6, dpi=DPI):
+    """Присланный PDF — в картинки по страницам.
+
+    Тетрадный лист приходит и снимком, и сканом: телефоны складывают
+    несколько страниц в один PDF. Разбирать его на стороне страницы значило
+    бы тащить в браузер pdf.js, тогда как PyMuPDF здесь уже есть и уже
+    рендерит страницы архива.
+    """
+    with pymupdf.open(stream=data, filetype='pdf') as document:
+        if not document.page_count:
+            raise LookupError('в PDF нет страниц')
+        return [document[number].get_pixmap(dpi=dpi).tobytes('png')
+                for number in range(min(limit, document.page_count))]
+
+
 def block_pages(block, with_markscheme=True):
     """Картинки для одного блока архива: билет и схема оценивания."""
     out = {'question': [page_image(block, 'question', index)

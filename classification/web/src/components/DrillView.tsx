@@ -106,6 +106,20 @@ const MODES: { id: Mode; label: string; hint: string }[] = [
 const MAX_EDGE = 1600
 const MAX_PHOTOS = 6
 
+function isPdf(file: File) {
+  return file.type === 'application/pdf' || /\.pdf$/i.test(file.name)
+}
+
+/** PDF уходит как есть: постранично его разберёт сервер, где уже есть PyMuPDF. */
+function readAsIs(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onerror = () => reject(new Error('файл не прочитался'))
+    reader.onload = () => resolve(String(reader.result))
+    reader.readAsDataURL(file)
+  })
+}
+
 /** Снимок с телефона весит мегабайты, модели нужно куда меньше. */
 function shrink(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -205,6 +219,7 @@ export function DrillView() {
   const [done, setDone] = useState<Done[]>([])
   const [photos, setPhotos] = useState<string[]>([])
   const [writeUp, setWriteUp] = useState<WriteUp | null>(null)
+  const [gradingMs, setGradingMs] = useState(0)
 
   const shownAt = useRef(0)
   const firstKeyAt = useRef(0)
@@ -341,7 +356,8 @@ export function DrillView() {
     if (!files?.length) return
     setError(null)
     try {
-      const added = await Promise.all([...files].slice(0, MAX_PHOTOS).map(shrink))
+      const added = await Promise.all([...files].slice(0, MAX_PHOTOS)
+        .map((file) => (isPdf(file) ? readAsIs(file) : shrink(file))))
       setPhotos((current) => [...current, ...added].slice(0, MAX_PHOTOS))
     } catch (failure) {
       setError(failure instanceof Error ? failure.message : 'снимок не прочитался')
@@ -352,6 +368,8 @@ export function DrillView() {
     if (!item || item.kind !== 'written' || busy || writeUp || !photos.length) return
     setBusy(true)
     const ms = Math.round(performance.now() - shownAt.current)
+    const sentAt = performance.now()
+    setGradingMs(0)
     try {
       const response = await fetch(`${API}/grade`, {
         method: 'POST',
@@ -361,6 +379,7 @@ export function DrillView() {
       const payload = await response.json()
       if (!response.ok) throw new Error(payload.error ?? `сервер ответил ${response.status}`)
       const result = payload as WriteUp
+      result.elapsedMs = Math.round(performance.now() - sentAt)
       setWriteUp(result)
       recent.current = [...recent.current, item.skill].slice(-6)
       if (item.block) recentBlocks.current = [...recentBlocks.current, item.block].slice(-20)
@@ -382,6 +401,16 @@ export function DrillView() {
       setBusy(false)
     }
   }, [busy, item, photos, writeUp])
+
+  useEffect(() => {
+    // Разбор идёт десятки секунд: без счётчика непонятно, работает он
+    // или страница повисла.
+    if (!busy || item?.kind !== 'written' || writeUp) return
+    const started = performance.now()
+    const timer = window.setInterval(
+      () => setGradingMs(performance.now() - started), 100)
+    return () => window.clearInterval(timer)
+  }, [busy, item, writeUp])
 
   const markFirstKey = useCallback(() => {
     if (!firstKeyAt.current) firstKeyAt.current = performance.now()
@@ -650,8 +679,9 @@ export function DrillView() {
                       ))}
                     </div>
                     <p className="text-[11px] text-faint">
-                      Solve it on paper, in English, then photograph the page. Only your
-                      question is marked — ignore anything else printed above or below it.
+                      Solve it on paper, in English, then photograph the page or upload
+                      a scanned PDF. Only your question is marked — ignore anything else
+                      printed above or below it.
                     </p>
                   </div>
                 ) : <>
@@ -664,7 +694,7 @@ export function DrillView() {
                     <input
                       ref={fileRef}
                       type="file"
-                      accept="image/*"
+                      accept="image/*,application/pdf"
                       capture="environment"
                       multiple
                       className="text-xs text-muted file:mr-2 file:cursor-pointer file:border file:border-line file:bg-canvas file:px-2 file:py-1 file:font-mono file:text-[11px] file:text-ink hover:file:bg-surface"
@@ -673,7 +703,11 @@ export function DrillView() {
                     {photos.length > 0 && (
                       <div className="flex flex-wrap gap-2">
                         {photos.map((photo, index) => (
-                          <img key={photo.slice(-32)} src={photo} alt={`page ${index + 1}`} className="h-24 w-auto border border-line object-cover" />
+                          photo.startsWith('data:application/pdf')
+                            ? <span key={photo.slice(-32)} className="grid h-24 w-20 place-items-center border border-line bg-surface font-mono text-[10px] text-muted">
+                                PDF
+                              </span>
+                            : <img key={photo.slice(-32)} src={photo} alt={`page ${index + 1}`} className="h-24 w-auto border border-line object-cover" />
                         ))}
                       </div>
                     )}
@@ -686,7 +720,11 @@ export function DrillView() {
                       >
                         {busy ? 'marking…' : 'mark my work'}
                       </button>
-                      {busy && <span className="font-mono text-[11px] text-muted">reading your page and the markscheme, ~30 s</span>}
+                      {busy && (
+                        <span className="font-mono text-[11px] text-muted">
+                          reading your page and the markscheme · {(gradingMs / 1000).toFixed(1)} s
+                        </span>
+                      )}
                       {!busy && photos.length > 0 && (
                         <button type="button" className="cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted hover:text-ink" onClick={() => { setPhotos([]); if (fileRef.current) fileRef.current.value = '' }}>
                           clear
