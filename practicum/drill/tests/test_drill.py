@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import os
 import random
+import re
 import sys
 import tempfile
 import time
@@ -225,6 +226,94 @@ with tempfile.TemporaryDirectory() as tmp:
     t('при ошибке показывается эталон', bool(wrong['answer']))
     t('задание странице по-прежнему приходит без эталона',
       'answer' not in served and 'chain' not in served)
+
+print('\n=== архив: страницы подлинника ===')
+from drill import archive, grader  # noqa: E402
+
+t('номера страниц: одна', archive.parse_pages('3') == [3])
+t('номера страниц: диапазон', archive.parse_pages('3-5') == [3, 4, 5])
+t('номера страниц: перечисление', archive.parse_pages('2, 7') == [2, 7])
+t('номера страниц: пусто', archive.parse_pages(None) == [])
+
+blocks = bank.get('archive', {})
+t('блоки архива привязаны к приёмам', len(blocks) > 300)
+t('у каждого блока есть каталог бумаги и страницы',
+  all(b.get('dir') and b.get('source_pages') and b.get('markscheme_pages')
+      for b in blocks.values()))
+missing = [bid for bid, b in blocks.items()
+           if not os.path.isfile(os.path.join(
+               os.path.dirname(PRACTICUM), b['dir'], 'question-paper.pdf'))]
+t('PDF найдены для всех блоков — разметка архива неоднородна, и все её '
+  'три формы учтены', not missing)
+
+sample = dict(session='May 2022', zone='TZ2', paper=1, question=3, part='b',
+              dir='x')
+t('ссылка на источник читается словами экзамена',
+  archive.reference(sample) == 'May 2022 TZ2, Paper 1, Q3(b)')
+t('часть, повторяющая номер вопроса, не печатается',
+  archive.reference(dict(sample, part='3')) == 'May 2022 TZ2, Paper 1, Q3')
+t('составная часть печатается по кускам',
+  archive.reference(dict(sample, part='c-ii'))
+  == 'May 2022 TZ2, Paper 1, Q3(c)(ii)')
+
+print('\n=== рубрики оформления ===')
+common = grader.rubric()
+a7 = grader.rubric('A7')
+t('общие пункты есть у любого вопроса', len(common) >= 5)
+t('у практикума пунктов больше, чем общих', len(a7) > len(common))
+ids = {item['id'] for item in a7}
+t('индукция требует названного предположения',
+  'induction_hypothesis' in ids)
+t('индукция требует заключительной фразы', 'induction_conclusion' in ids)
+t('заключительная фраза стоит балла рассуждения',
+  next(i for i in a7 if i['id'] == 'induction_conclusion')['code'] == 'R1')
+t('в каждом пункте есть готовая фраза, а не пересказ претензии',
+  all(item.get('fix') for item in a7))
+t('рубрика написана по-английски: её читает и модель, и ученик',
+  all(not re.search('[а-яА-Я]', item['fix']) for item in a7))
+
+print('\n=== запрос на разбор ===')
+message = grader.build_messages(
+    work_images=[b'\x89PNG-fake'], question_images=[b'\x89PNG-q'],
+    markscheme_images=[b'\x89PNG-m'], reference='May 2022 TZ2, Paper 1, Q3(b)',
+    marks=6, calculator='no', rubric_items=a7, skill='Индукция для суммы')
+parts = message[1]['content']
+kinds = [part['type'] for part in parts]
+t('в запросе три картинки: билет, схема, работа',
+  kinds.count('image_url') == 3)
+t('работа идёт последней — после условия и схемы',
+  kinds[-1] == 'image_url'
+  and 'HANDWRITTEN' in parts[-2]['text'])
+t('схема оценивания названа своим именем',
+  any('MARKSCHEME' in p.get('text', '') for p in parts))
+t('баллы и калькулятор попадают в запрос',
+  'worth 6 marks' in parts[0]['text']
+  and 'No calculator' in parts[0]['text'])
+t('системная роль требует разделять математику и оформление',
+  'PRESENTATION' in message[0]['content']
+  and 'MATHEMATICS' in message[0]['content'])
+t('модель обязана сначала прочесть, а потом судить',
+  'Transcribe the work first' in message[0]['content'])
+
+print('\n=== журнал письменных работ ===')
+with tempfile.TemporaryDirectory() as tmp:
+    db = store.connect(os.path.join(tmp, 'written.sqlite'))
+    store.record_written(
+        db, block='2021-MAY-TZ2-P1-Q12-D', practicum='A7',
+        skill='A7.induction_sum', reference='May 2021 TZ2, Paper 1, Q12(d)',
+        photos=['page-1.jpg'],
+        verdict={'marks': {'available': 9, 'earned': 3},
+                 'mathematics': {'verdict': 'partially correct'},
+                 'model': 'gpt-5.6-sol'})
+    totals = store.written_totals(db)
+    t('письменные работы считаются отдельно от ящиков Лейтнера',
+      totals == {'attempts': 1, 'marks_available': 9, 'marks_earned': 3})
+    t('в журнале остаётся ссылка на бумагу',
+      store.written_history(db)[0]['reference']
+      == 'May 2021 TZ2, Paper 1, Q12(d)')
+    t('разбор моделью не трогает расписание повторения',
+      store.states(db) == {})
+    db.close()
 
 print('\n=== чем это отличается от проверок в ноутбуке ===')
 # В практикуме ответ пишут в клетку и проверка знает, какое задание решают.

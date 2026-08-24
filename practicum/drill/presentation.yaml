@@ -1,0 +1,219 @@
+# Рубрики оформления для режима разбора письменной работы.
+#
+# На экзамене баллы теряют не только за математику. M1 не ставят, если ход
+# не виден; R1 не ставят, если вывод не написан словами; AG не ставят, если
+# пришли не к напечатанной форме. Индукция — крайний случай: безупречная
+# алгебра без заключительной фразы теряет балл.
+#
+# Формулировки здесь по-английски намеренно: они уходят в промпт и в разбор,
+# а разбор должен быть на языке экзамена. Поле fix — это готовая фраза,
+# которую следовало написать, а не пересказ претензии.
+#
+# code — какой балл теряется, если пункт не выполнен: M1 метод,
+# A1 точность, R1 рассуждение, AG ответ дан в условии.
+
+version: 1
+
+# Проверяется в любой работе.
+common:
+  - id: working_shown
+    requirement: >
+      Key steps are visible on the page. An answer that appears without
+      working cannot earn method marks, even when it is correct.
+    fix: "Show the substitution and the line before the answer, not only the result."
+    code: M1
+  - id: final_answer_stated
+    requirement: >
+      The final answer is written out separately and is easy to find,
+      not left buried at the end of a line of algebra.
+    fix: "End with a clear final line, e.g. \"Therefore x = 3 or x = -1.\""
+    code: A1
+  - id: variables_defined
+    requirement: >
+      Every letter the candidate introduces is defined before it is used.
+    fix: "Write \"Let x be the width of the rectangle, in cm.\" before using x."
+    code: A1
+  - id: accuracy
+    requirement: >
+      Answers that are not exact are given to three significant figures, and
+      rounding happens only at the final step.
+    fix: "Keep full accuracy in intermediate lines; round once, at the end, to 3 s.f."
+    code: A1
+  - id: equality_notation
+    requirement: >
+      The equals sign is used only between equal quantities; separate steps
+      are on separate lines rather than chained with one long chain of "=".
+    fix: "Break the chain: write each equation on its own line."
+    code: A1
+
+# Правила, зависящие от того, что за вопрос.
+by_question_type:
+  show_that:
+    when: >
+      The question prints the result to be obtained ("show that", "prove
+      that", "hence show").
+    items:
+      - id: ag_direction
+        requirement: >
+          The work starts from what is given and arrives at the printed
+          result. It does not start from the printed result and work
+          backwards, and it does not assume what is to be proved.
+        fix: "Start from the left-hand side and transform it until it becomes the right-hand side."
+        code: AG
+      - id: ag_final_form
+        requirement: >
+          The last line is exactly the printed form, not an equivalent the
+          reader has to convert.
+        fix: "Finish on the printed form itself, then write \"as required\"."
+        code: AG
+
+# Правила по практикумам.
+by_practicum:
+  A7:
+    - id: induction_base
+      requirement: >
+        The base case is stated and actually evaluated: both sides are
+        computed for the first value of n and seen to be equal.
+      fix: "Write \"When n = 1: LHS = 1, RHS = 1(1+1)/2 = 1, so LHS = RHS.\""
+      code: A1
+    - id: induction_hypothesis
+      requirement: >
+        The inductive hypothesis is stated explicitly as an assumption,
+        naming k and its range.
+      fix: "Write \"Assume the statement is true for n = k, where k is a positive integer.\""
+      code: M1
+    - id: induction_uses_hypothesis
+      requirement: >
+        The inductive step begins from the assumed case and the moment the
+        assumption is used is visible on the page.
+      fix: "Write \"Using the assumption, replace the sum to k by k(k+1)/2\" at the point you use it."
+      code: M1
+    - id: induction_target_form
+      requirement: >
+        The step is carried through to the statement with k+1 substituted,
+        in the same form as the original statement.
+      fix: "Finish the step at (k+1)(k+2)/2, the original formula with k+1 in place of n."
+      code: A1
+    - id: induction_conclusion
+      requirement: >
+        A closing sentence names the principle of induction and the range of
+        n for which the statement now holds. This sentence is a mark on its
+        own and is the most commonly lost mark in the whole topic.
+      fix: >
+        Write "Since the statement is true for n = 1, and true for n = k+1
+        whenever it is true for n = k, it is true for all n in Z+ by the
+        principle of mathematical induction."
+      code: R1
+
+  C3:
+    - id: interval_stated
+      requirement: >
+        The interval the question asks about is written down before the
+        roots are selected.
+      fix: "Write \"for 0 <= x <= 2pi\" next to your general solution before choosing roots."
+      code: M1
+    - id: all_series
+      requirement: >
+        Both families of solutions are shown, not only the value the
+        calculator or the inverse function returns.
+      fix: "After sin x = 1/2, write both x = pi/6 and x = pi - pi/6."
+      code: A1
+    - id: rejection_justified
+      requirement: >
+        Any root that is discarded is discarded with a stated reason.
+      fix: "Write \"x = 3pi/2 is rejected since it lies outside 0 <= x <= pi.\""
+      code: R1
+
+  A8:
+    - id: critical_values
+      requirement: >
+        Critical values are found first and the sign of the expression
+        between them is examined — by a sign table, a sketch or a number line.
+      fix: "Draw a number line marked with the critical values and label the sign of the expression on each part."
+      code: M1
+    - id: interval_form
+      requirement: >
+        The answer is written as an inequality or interval, with the correct
+        strictness at each endpoint.
+      fix: "Write \"x < -3 or x > 1\", and check whether each endpoint is included."
+      code: A1
+
+  C1:
+    - id: diagram
+      requirement: >
+        A labelled diagram is drawn when the question describes a
+        configuration in words, with the known sides and angles marked on it.
+      fix: "Draw the triangle and mark on it every length and angle the question gives."
+      code: M1
+    - id: rule_named
+      requirement: >
+        It is clear from the page which rule is being applied and to which
+        triangle.
+      fix: "Write \"By the cosine rule in triangle ABC:\" before the substitution."
+      code: M1
+
+  C4:
+    - id: units_and_variables
+      requirement: >
+        The meaning and units of each variable in the model are stated.
+      fix: "Write \"h(t) is the depth in metres and t is the time in hours after midnight.\""
+      code: A1
+    - id: domain_stated
+      requirement: >
+        Any restriction on the domain that the situation imposes is written
+        down.
+      fix: "Write \"for 0 <= t <= 24\" when the model covers one day."
+      code: A1
+
+  E7:
+    - id: constant_of_integration
+      requirement: >
+        The constant of integration appears at the moment of integrating and
+        is then determined from the initial condition.
+      fix: "Write \"+ c\" as you integrate, then substitute the initial condition to find c."
+      code: M1
+    - id: explicit_form
+      requirement: >
+        The answer is given as y in terms of x unless the question accepts an
+        implicit relation.
+      fix: "Rearrange to y = ... before writing the final answer."
+      code: A1
+
+  A5:
+    - id: argument_range
+      requirement: >
+        The argument is given in the range the question requires, and the
+        quadrant is justified rather than taken from the calculator.
+      fix: "Write \"z lies in the second quadrant, so arg z = pi - arctan(...)\"."
+      code: R1
+
+  A6:
+    - id: all_roots
+      requirement: >
+        When roots of a complex number are asked for, all n of them are given.
+      fix: "State that there are n roots and list every one of them."
+      code: A1
+
+  A4:
+    - id: division_layout
+      requirement: >
+        Polynomial division or comparison of coefficients is laid out so the
+        reader can follow it line by line.
+      fix: "Set the division out in full, or write \"comparing coefficients of x^2:\" before each equation."
+      code: M1
+
+  A3:
+    - id: general_term
+      requirement: >
+        The general term is written down before any particular term is
+        extracted from it.
+      fix: "Write the general term as C(n, r) a^(n-r) b^r before choosing r."
+      code: M1
+
+  B1:
+    - id: extraneous_checked
+      requirement: >
+        When both sides were squared or multiplied by an expression, each
+        candidate root is checked in the original equation.
+      fix: "Write \"Check x = -1 in the original equation:\" and show the check."
+      code: R1

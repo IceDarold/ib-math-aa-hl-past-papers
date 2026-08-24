@@ -19,19 +19,22 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
 import random
+import re
 import sys
 import threading
 import time
+import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 
-from drill import engine, store  # noqa: E402
+from drill import archive, engine, grader, store  # noqa: E402
 from drill.check import evaluate, show_answer  # noqa: E402
 from drill.items import GENERATORS  # noqa: E402
 
@@ -141,6 +144,118 @@ class Drill:
             } for entry in self.bank['practicums']],
         }
 
+    def photo_dir(self):
+        """Куда складывать снимки: рядом с журналом, вне каталога релиза."""
+        base = os.path.dirname(os.path.abspath(
+            self.db_path or store.DEFAULT_DB))
+        path = os.path.join(base, 'photos')
+        os.makedirs(path, exist_ok=True)
+        return path
+
+    def questions(self, practicum=None, skill=None):
+        """Настоящие вопросы архива, привязанные к приёмам."""
+        out = []
+        for block_id, block in self.bank.get('archive', {}).items():
+            if practicum and not block['skill'].startswith(f'{practicum}.'):
+                continue
+            if skill and block['skill'] != skill:
+                continue
+            out.append({
+                'block': block_id,
+                'reference': archive.reference(block),
+                'skill': block['skill'],
+                'skill_name': self.bank['skills_by_id'][block['skill']]['name'],
+                'practicum': block['skill'].split('.')[0],
+                'marks': block.get('marks'),
+                'calculator': block.get('calculator'),
+                'paper': block.get('paper'),
+                'session': block.get('session'),
+                # Прямые ссылки на подлинник: страницы отдаёт тот же сайт.
+                'question_url': (f"/{block['dir']}/question-paper.pdf"
+                                 f"#page={_first_page(block.get('source_pages'))}"),
+                'markscheme_url': (f"/{block['dir']}/markscheme.pdf"
+                                   f"#page={_first_page(block.get('markscheme_pages'))}"),
+            })
+        out.sort(key=lambda row: (row['practicum'], row['skill'],
+                                  row['reference']))
+        return {'questions': out}
+
+    def written(self):
+        with self.lock:
+            db = self.connection()
+            try:
+                return {'history': store.written_history(db),
+                        'totals': store.written_totals(db)}
+            finally:
+                db.close()
+
+    def grade(self, payload):
+        """Разбирает сфотографированную работу против подлинной схемы."""
+        photos = payload.get('photos') or []
+        if not photos:
+            raise ValueError('нет ни одного снимка работы')
+        images, kinds = [], []
+        for item in photos[:grader.MAX_PHOTOS]:
+            text = str(item)
+            head = re.match(r'^data:image/(\w+);base64,', text)
+            kinds.append('jpg' if head and head.group(1) in ('jpeg', 'jpg')
+                         else 'png')
+            try:
+                images.append(base64.b64decode(re.sub(
+                    r'^data:image/\w+;base64,', '', text), validate=True))
+            except Exception:  # noqa: BLE001
+                raise ValueError('снимок не разобрался')
+
+        block_id = payload.get('block')
+        block = (self.bank.get('archive', {}) or {}).get(block_id or '')
+        pages, reference, skill_name, practicum, skill_id = {}, None, None, None, None
+        if block:
+            skill_id = block['skill']
+            practicum = skill_id.split('.')[0]
+            skill_name = self.bank['skills_by_id'][skill_id]['name']
+            reference = archive.reference(block)
+            try:
+                pages = archive.block_pages(block)
+            except LookupError:
+                pages = {}
+
+        verdict = grader.grade(
+            work_images=images,
+            question_text=payload.get('question_text') or None,
+            question_images=pages.get('question', ()),
+            markscheme_images=pages.get('markscheme', ()),
+            reference=reference,
+            marks=(block or {}).get('marks'),
+            calculator=(block or {}).get('calculator'),
+            skill=skill_name,
+            rubric_items=grader.rubric(practicum),
+            model=payload.get('model'))
+
+        folder = os.path.join(self.photo_dir(),
+                              f'{int(time.time())}-{uuid.uuid4().hex[:6]}')
+        os.makedirs(folder, exist_ok=True)
+        saved = []
+        for number, data in enumerate(images, start=1):
+            name = os.path.join(folder, f'page-{number}.{kinds[number - 1]}')
+            with open(name, 'wb') as fh:
+                fh.write(data)
+            saved.append(os.path.relpath(name, self.photo_dir()))
+
+        with self.lock:
+            db = self.connection()
+            try:
+                store.record_written(
+                    db, block=block_id or '', practicum=practicum or '',
+                    skill=skill_id or '', reference=reference or '',
+                    verdict=verdict, photos=saved)
+            finally:
+                db.close()
+
+        verdict['reference'] = reference
+        verdict['skill_name'] = skill_name
+        verdict['graded_by_model'] = True
+        return verdict
+
     def stats(self):
         with self.lock:
             db = self.connection()
@@ -174,6 +289,11 @@ class Drill:
             'recent': recent,
             'uncovered': self.bank.get('uncovered_skills', []),
         }
+
+
+def _first_page(spec):
+    pages = archive.parse_pages(spec)
+    return pages[0] if pages else 1
 
 
 def engine_digest(value):
@@ -231,22 +351,45 @@ class Handler(BaseHTTPRequestHandler):
         if route == f'{PREFIX}/stats':
             self.send_json(self.drill.stats())
             return
+        if route == f'{PREFIX}/questions':
+            self.send_json(self.drill.questions(
+                practicum=(query.get('practicum') or [None])[0],
+                skill=(query.get('skill') or [None])[0]))
+            return
+        if route == f'{PREFIX}/written':
+            self.send_json(self.drill.written())
+            return
 
         self.send_json({'error': 'нет такой ручки'}, 404)
 
     def do_POST(self):
-        if urlparse(self.path).path != f'{PREFIX}/answer':
+        route = urlparse(self.path).path
+        if route not in (f'{PREFIX}/answer', f'{PREFIX}/grade'):
             self.send_json({'error': 'нет такой ручки'}, 404)
             return
+        grading = route.endswith('/grade')
         length = int(self.headers.get('Content-Length') or 0)
-        if length > 64_000:
-            self.send_json({'error': 'слишком длинный ответ'}, 413)
+        # Снимки тетрадного листа занимают мегабайты, ответ в поле — байты.
+        if length > (24_000_000 if grading else 64_000):
+            self.send_json({'error': 'запрос слишком велик'}, 413)
             return
         try:
             payload = json.loads(self.rfile.read(length) or b'{}')
         except json.JSONDecodeError:
             self.send_json({'error': 'не разобрал запрос'}, 400)
             return
+
+        if grading:
+            try:
+                self.send_json(self.drill.grade(payload))
+            except ValueError as exc:
+                self.send_json({'error': str(exc)}, 400)
+            except grader.GraderError as exc:
+                self.send_json({'error': str(exc)}, 502)
+            except Exception as exc:  # noqa: BLE001
+                self.send_json({'error': f'разбор не сработал: {exc}'}, 500)
+            return
+
         try:
             self.send_json(self.drill.answer(payload))
         except LookupError:

@@ -1,5 +1,4323 @@
 {
- "version": 1,
+ "version": 2,
+ "archive": {
+  "2025-MAY-TZ1-P1-Q02-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "A3.full_expansion"
+  },
+  "2022-MAY-TZ2-P1-Q05-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A3.full_expansion"
+  },
+  "2021-MAY-TZ2-P2-Q09-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "A3.full_expansion"
+  },
+  "2021-MAY-TZ2-P1-Q03": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "A3.general_term"
+  },
+  "2021-MAY-TZ1-P2-Q05": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "A3.general_term"
+  },
+  "2022-MAY-TZ1-P1-Q06": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "6",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "A3.general_term"
+  },
+  "2022-NOV-COMMON-P2-Q05": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "5",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "11–12",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "A3.general_term"
+  },
+  "2025-MAY-TZ3-P2-Q07": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "7",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "A3.general_term"
+  },
+  "2023-NOV-TZ1-P1-Q05": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "A3.equate_coefficients"
+  },
+  "2023-NOV-TZ2-P1-Q05": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "A3.equate_coefficients"
+  },
+  "2023-MAY-TZ1-P2-Q05": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "A3.equate_coefficients"
+  },
+  "2025-MAY-TZ2-P1-Q11-C": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A3.equate_coefficients"
+  },
+  "2022-MAY-TZ2-P1-Q05-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A3.coefficients_as_sequence"
+  },
+  "2023-MAY-TZ2-P2-Q04": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "A3.coefficients_as_sequence"
+  },
+  "2025-MAY-TZ2-P1-Q11-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A3.fractional_index"
+  },
+  "2025-NOV-TZ1-P1-Q10-A-I": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "A-I",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A3.fractional_index"
+  },
+  "2025-NOV-TZ1-P1-Q10-B-I": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "B-I",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A3.fractional_index"
+  },
+  "2021-NOV-COMMON-P1-Q09-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "9",
+   "part": "A",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "A3.fractional_index"
+  },
+  "2021-NOV-COMMON-P1-Q09-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "9",
+   "part": "B",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "A3.fractional_index"
+  },
+  "2025-MAY-TZ2-P1-Q11-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A3.product_and_approximation"
+  },
+  "2025-MAY-TZ2-P1-Q11-D": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "D",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "26-27",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A3.product_and_approximation"
+  },
+  "2023-NOV-TZ1-P1-Q12-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "A3.binomial_with_i"
+  },
+  "2023-NOV-TZ2-P1-Q12-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "A3.binomial_with_i"
+  },
+  "2025-NOV-TZ3-P1-Q11-D": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "D",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "A3.binomial_with_i"
+  },
+  "2024-MAY-TZ1-P1-Q11-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "a",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "27-29",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A4.factor_remainder"
+  },
+  "2025-MAY-TZ3-P2-Q02": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "2",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "A4.factor_remainder"
+  },
+  "2022-NOV-COMMON-P1-Q11-B-I": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "11",
+   "part": "B-I",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "22-24",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "A4.factor_remainder"
+  },
+  "2022-NOV-COMMON-P1-Q11-B-II": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "11",
+   "part": "B-II",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "A4.factor_remainder"
+  },
+  "2025-NOV-TZ3-P2-Q06": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "6",
+   "part": "",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12-13",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "A4.factor_remainder"
+  },
+  "2021-NOV-COMMON-P1-Q06-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "6",
+   "part": "(a)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "A4.polynomial_division"
+  },
+  "2024-MAY-TZ1-P1-Q11-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "b",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "27-29",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A4.polynomial_division"
+  },
+  "2022-NOV-COMMON-P1-Q11-B-III": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "11",
+   "part": "B-III",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "A4.polynomial_division"
+  },
+  "2022-MAY-TZ2-P3-Q02-H-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "H-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.polynomial_division"
+  },
+  "2022-MAY-TZ2-P3-Q02-H-III": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "H-III",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.polynomial_division"
+  },
+  "2025-MAY-TZ2-P1-Q07": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "14-15",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A4.repeated_root"
+  },
+  "2022-MAY-TZ1-P2-Q08-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "a",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "A4.vieta_quadratic"
+  },
+  "2022-MAY-TZ2-P1-Q12-D": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "D",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "31",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A4.vieta_quadratic"
+  },
+  "2024-MAY-TZ1-P1-Q10-F": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "f",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "22-26",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A4.vieta_quadratic"
+  },
+  "2024-MAY-TZ2-P1-Q07-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "7",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "A4.vieta_higher"
+  },
+  "2021-MAY-TZ2-P1-Q07": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "A4.vieta_higher"
+  },
+  "2024-MAY-TZ2-P1-Q07-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "7",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "A4.vieta_higher"
+  },
+  "2022-MAY-TZ2-P3-Q02-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.vieta_higher"
+  },
+  "2025-NOV-TZ1-P3-Q01-E-II": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "E-II",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "11-12",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "A4.vieta_higher"
+  },
+  "2023-MAY-TZ1-P1-Q07": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "13-15",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "A4.conjugate_roots"
+  },
+  "2024-MAY-TZ2-P1-Q07-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "7",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "A4.conjugate_roots"
+  },
+  "2022-MAY-TZ2-P3-Q02-E-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "E-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.conjugate_roots"
+  },
+  "2021-MAY-TZ2-P3-Q02-G-I": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "g(i)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "A4.conjugate_roots"
+  },
+  "2022-MAY-TZ2-P3-Q02-B-I": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "B-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "16-17",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.symmetric_sums"
+  },
+  "2022-MAY-TZ2-P3-Q02-B-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "B-II",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.symmetric_sums"
+  },
+  "2022-MAY-TZ2-P3-Q02-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.symmetric_sums"
+  },
+  "2022-MAY-TZ2-P3-Q02-D": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.symmetric_sums"
+  },
+  "2022-MAY-TZ2-P3-Q02-E-I": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "E-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.symmetric_sums"
+  },
+  "2022-MAY-TZ2-P3-Q02-F-I": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "F-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.symmetric_sums"
+  },
+  "2022-MAY-TZ2-P3-Q02-F-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "F-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.symmetric_sums"
+  },
+  "2022-MAY-TZ2-P3-Q02-G": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "G",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.symmetric_sums"
+  },
+  "2022-MAY-TZ2-P3-Q02-H-I": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "H-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "A4.symmetric_sums"
+  },
+  "2021-NOV-COMMON-P2-Q06-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "6",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "A4.root_transformation"
+  },
+  "2021-NOV-COMMON-P2-Q06-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "6",
+   "part": "B",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "A4.root_transformation"
+  },
+  "2025-MAY-TZ2-P1-Q12-D": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "D",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "30",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A4.root_transformation"
+  },
+  "2021-MAY-TZ1-P2-Q12-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "A4.partial_fractions"
+  },
+  "2025-NOV-TZ3-P2-Q12-C": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "A4.partial_fractions"
+  },
+  "2024-MAY-TZ1-P1-Q11-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "c",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "27-29",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A4.partial_fractions"
+  },
+  "2024-MAY-TZ1-P1-Q11-D": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "d",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "27-29",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A4.partial_fractions"
+  },
+  "2025-NOV-TZ1-P1-Q11-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A5.cartesian_arithmetic"
+  },
+  "2021-MAY-TZ2-P2-Q08": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "8",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "A5.cartesian_arithmetic"
+  },
+  "2021-NOV-COMMON-P1-Q12-E": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "12",
+   "part": "E",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "35–38",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "A5.cartesian_arithmetic"
+  },
+  "2022-MAY-TZ1-P1-Q09-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "a",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "A5.cartesian_arithmetic"
+  },
+  "2023-NOV-TZ1-P1-Q07": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "A5.equate_parts"
+  },
+  "2023-NOV-TZ2-P1-Q07": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "A5.equate_parts"
+  },
+  "2023-MAY-TZ2-P1-Q11-D": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "D",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "A5.equate_parts"
+  },
+  "2025-NOV-TZ1-P1-Q11-D": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "D",
+   "marks": 8,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "26-27",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A5.equate_parts"
+  },
+  "2024-MAY-TZ1-P1-Q12-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "a",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14-16",
+   "markscheme_pages": "30-33",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A5.equate_parts"
+  },
+  "2023-MAY-TZ2-P1-Q11-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "A5.modulus_argument"
+  },
+  "2025-NOV-TZ1-P1-Q11-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A5.modulus_argument"
+  },
+  "2024-MAY-TZ2-P2-Q08-A-I": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "8",
+   "part": "A-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "A5.modulus_argument"
+  },
+  "2024-MAY-TZ2-P2-Q08-A-II": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "8",
+   "part": "A-II",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "A5.modulus_argument"
+  },
+  "2021-NOV-COMMON-P1-Q12-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "12",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "30",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "A5.modulus_argument"
+  },
+  "2025-MAY-TZ3-P1-Q08-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "8",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A5.form_conversion"
+  },
+  "2025-NOV-TZ3-P1-Q11-A-I": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "A-I",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "A5.form_conversion"
+  },
+  "2025-MAY-TZ1-P1-Q07-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "7",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "A5.form_conversion"
+  },
+  "2025-MAY-TZ1-P2-Q08-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "A5.form_conversion"
+  },
+  "2021-NOV-COMMON-P3-Q01-C-I": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "c(i)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/November/Common/Paper 3",
+   "skill": "A5.form_conversion"
+  },
+  "2021-MAY-TZ1-P2-Q08-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "A5.product_properties"
+  },
+  "2021-MAY-TZ1-P2-Q08-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "A5.product_properties"
+  },
+  "2021-MAY-TZ1-P2-Q08-C": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "C",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "A5.product_properties"
+  },
+  "2022-MAY-TZ1-P1-Q09-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "b",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "A5.product_properties"
+  },
+  "2022-MAY-TZ2-P1-Q12-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "29",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A5.product_properties"
+  },
+  "2022-NOV-COMMON-P1-Q12-B-I-AND-B-II": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "12",
+   "part": "(b)(i) and (b)(ii)",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "26-27",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "A5.product_properties"
+  },
+  "2021-MAY-TZ1-P1-Q07": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "7",
+   "part": "—",
+   "marks": 8,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "A5.conjugate_roots"
+  },
+  "2022-NOV-COMMON-P1-Q05-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "5",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "A5.conjugate_roots"
+  },
+  "2022-NOV-COMMON-P1-Q05-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "5",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "A5.conjugate_roots"
+  },
+  "2023-MAY-TZ2-P1-Q11-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "C",
+   "marks": 9,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25-26",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "A5.conjugate_roots"
+  },
+  "2025-MAY-TZ3-P1-Q12-D": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "12",
+   "part": "D",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A5.conjugate_roots"
+  },
+  "2022-MAY-TZ1-P3-Q02-A-I": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "(a)(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A5.conjugate_roots"
+  },
+  "2025-NOV-TZ3-P1-Q11-A-II": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "A-II",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "A6.de_moivre_power"
+  },
+  "2024-MAY-TZ1-P1-Q12-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "b",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14-16",
+   "markscheme_pages": "30-33",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A6.de_moivre_power"
+  },
+  "2024-MAY-TZ1-P1-Q12-F": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "f",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14-16",
+   "markscheme_pages": "30-33",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A6.de_moivre_power"
+  },
+  "2025-NOV-TZ1-P1-Q11-C": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A6.nth_roots"
+  },
+  "2025-MAY-TZ2-P1-Q12-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A6.nth_roots"
+  },
+  "2025-MAY-TZ3-P1-Q08-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "8",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A6.nth_roots"
+  },
+  "2025-MAY-TZ2-P1-Q12-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A6.nth_roots"
+  },
+  "2021-MAY-TZ2-P3-Q02-A-I": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "a(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "A6.roots_of_unity"
+  },
+  "2021-MAY-TZ2-P3-Q02-A-II": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "a(ii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "A6.roots_of_unity"
+  },
+  "2021-MAY-TZ2-P3-Q02-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "c",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "A6.roots_of_unity"
+  },
+  "2021-MAY-TZ2-P3-Q02-G-II": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "g(ii)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "22-23",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "A6.roots_of_unity"
+  },
+  "2024-MAY-TZ1-P1-Q12-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "c",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14-16",
+   "markscheme_pages": "30-33",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A6.roots_of_unity"
+  },
+  "2024-MAY-TZ1-P1-Q12-G": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "g",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14-16",
+   "markscheme_pages": "30-33",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A6.roots_of_unity"
+  },
+  "2023-MAY-TZ2-P1-Q11-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "A6.periodicity_condition"
+  },
+  "2023-MAY-TZ1-P2-Q06-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "A6.periodicity_condition"
+  },
+  "2023-MAY-TZ1-P2-Q06-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "A6.rotation_geometry"
+  },
+  "2024-MAY-TZ1-P1-Q12-E": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "E",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14-16",
+   "markscheme_pages": "30-33",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A6.rotation_geometry"
+  },
+  "2022-MAY-TZ2-P1-Q12-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "C",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "29-30",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A6.rotation_geometry"
+  },
+  "2025-MAY-TZ2-P1-Q12-E": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "E",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "30-31",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A6.rotation_geometry"
+  },
+  "2021-NOV-COMMON-P1-Q12-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "12",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "29",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "A6.rotation_geometry"
+  },
+  "2023-NOV-TZ2-P1-Q12-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "B",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "A6.trig_via_de_moivre"
+  },
+  "2025-NOV-TZ1-P1-Q08-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A6.trig_via_de_moivre"
+  },
+  "2025-NOV-TZ3-P1-Q11-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "A6.trig_via_de_moivre"
+  },
+  "2025-NOV-TZ1-P1-Q11-E": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "E",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A6.trig_via_de_moivre"
+  },
+  "2021-MAY-TZ2-P1-Q01": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "A7.direct_proof"
+  },
+  "2022-NOV-COMMON-P1-Q03-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "3",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "A7.direct_proof"
+  },
+  "2021-NOV-COMMON-P3-Q01-E": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "e",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/November/Common/Paper 3",
+   "skill": "A7.direct_proof"
+  },
+  "2023-MAY-TZ1-P3-Q02-D-I": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "d(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "A7.direct_proof"
+  },
+  "2022-MAY-TZ2-P1-Q02-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "2",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A7.integer_representation"
+  },
+  "2022-MAY-TZ2-P1-Q02-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "2",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A7.integer_representation"
+  },
+  "2022-MAY-TZ1-P3-Q01-C": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(c)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "11-12",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A7.integer_representation"
+  },
+  "2025-MAY-TZ3-P3-Q02-H-I": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "H-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "A7.integer_representation"
+  },
+  "2025-MAY-TZ3-P3-Q02-H-II": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "H-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "A7.integer_representation"
+  },
+  "2022-MAY-TZ1-P1-Q08": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "A7.contradiction"
+  },
+  "2022-MAY-TZ2-P1-Q09-9": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "9",
+   "part": "9",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "18–20",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A7.contradiction"
+  },
+  "2023-MAY-TZ1-P2-Q09": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "A7.contradiction"
+  },
+  "2025-MAY-TZ2-P1-Q09": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "9",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19-21",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A7.contradiction"
+  },
+  "2023-MAY-TZ2-P1-Q07": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "A7.induction_skeleton"
+  },
+  "2023-NOV-TZ1-P1-Q06": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "6",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "A7.induction_skeleton"
+  },
+  "2024-MAY-TZ1-P1-Q07": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A7.induction_skeleton"
+  },
+  "2025-MAY-TZ1-P1-Q08-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "A7.induction_skeleton"
+  },
+  "2022-MAY-TZ1-P3-Q01-F": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(f)",
+   "marks": 8,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A7.induction_sum"
+  },
+  "2021-MAY-TZ2-P1-Q12-D": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "D",
+   "marks": 9,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "28-29",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "A7.induction_sum"
+  },
+  "2022-NOV-COMMON-P1-Q12-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "12",
+   "part": "(c)",
+   "marks": 10,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "28-29",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "A7.induction_sum"
+  },
+  "2023-NOV-TZ2-P1-Q06": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "6",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "A7.induction_divisibility"
+  },
+  "2021-NOV-COMMON-P1-Q11-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "11",
+   "part": "A",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "A7.induction_derivative"
+  },
+  "2024-MAY-TZ2-P1-Q12-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 8,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "A7.induction_derivative"
+  },
+  "2021-MAY-TZ1-P1-Q12-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "B",
+   "marks": 9,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "22-24",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "A7.induction_derivative"
+  },
+  "2025-NOV-TZ3-P3-Q01-F": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "F",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "A7.induction_derivative"
+  },
+  "2022-NOV-COMMON-P3-Q01-D-II": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "d(ii)",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "A7.induction_derivative"
+  },
+  "2025-MAY-TZ3-P3-Q01-C": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "C",
+   "marks": 8,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9-10",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "A7.induction_recursion"
+  },
+  "2023-MAY-TZ1-P3-Q01-F": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "F",
+   "marks": 8,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "A7.induction_recursion"
+  },
+  "2025-MAY-TZ1-P1-Q10-C": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "A8.critical_values"
+  },
+  "2023-NOV-TZ1-P1-Q10-B-III": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "(b)(iii)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "A8.critical_values"
+  },
+  "2023-NOV-TZ2-P2-Q11-F": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "F",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "A8.rational_inequality"
+  },
+  "2023-NOV-TZ1-P2-Q11-F": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "F",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "A8.rational_inequality"
+  },
+  "2022-MAY-TZ2-P1-Q03-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "(c)",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "4-5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A8.absolute_value"
+  },
+  "2022-MAY-TZ2-P1-Q03-D": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "(d)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4-5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A8.absolute_value"
+  },
+  "2022-MAY-TZ1-P2-Q06-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "b",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "A8.gdc_intervals"
+  },
+  "2025-MAY-TZ1-P2-Q10-D": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "d",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "A8.gdc_intervals"
+  },
+  "2021-NOV-COMMON-P1-Q07-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "7",
+   "part": "a",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "A8.discriminant_condition"
+  },
+  "2025-NOV-TZ3-P1-Q09-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "9",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "A8.discriminant_condition"
+  },
+  "2023-NOV-TZ1-P1-Q10-B-II": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "(b)(ii)",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "A8.discriminant_condition"
+  },
+  "2024-MAY-TZ2-P3-Q02-D": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "A8.discriminant_condition"
+  },
+  "2025-MAY-TZ2-P1-Q05-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "A",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A8.discriminant_condition"
+  },
+  "2022-MAY-TZ1-P2-Q08-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "b",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "A8.root_signs"
+  },
+  "2025-MAY-TZ2-P1-Q05-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "A8.root_signs"
+  },
+  "2021-MAY-TZ2-P2-Q04-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "A8.solution_count"
+  },
+  "2025-NOV-TZ1-P3-Q01-B-II": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "B-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "A8.solution_count"
+  },
+  "2025-NOV-TZ1-P3-Q01-C-I": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "C-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "A8.solution_count"
+  },
+  "2025-NOV-TZ1-P3-Q01-C-II": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "C-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "A8.solution_count"
+  },
+  "2023-MAY-TZ2-P3-Q01-F-I": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "F-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A8.solution_count"
+  },
+  "2023-MAY-TZ2-P3-Q01-F-II": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "F-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A8.solution_count"
+  },
+  "2021-MAY-TZ2-P1-Q11-E": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(e)",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "A8.prove_inequality"
+  },
+  "2025-NOV-TZ3-P2-Q09": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "9",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "A8.prove_inequality"
+  },
+  "2023-MAY-TZ1-P3-Q02-D-II": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "d(ii)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "A8.prove_inequality"
+  },
+  "2025-MAY-TZ3-P3-Q02-F": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "F",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "A8.prove_inequality"
+  },
+  "2025-MAY-TZ1-P1-Q08-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "A8.prove_inequality"
+  },
+  "2023-MAY-TZ2-P3-Q01-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "C",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A8.prove_inequality"
+  },
+  "2023-MAY-TZ1-P1-Q01-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "(a)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "B1.zero_of_function"
+  },
+  "2023-MAY-TZ2-P1-Q02-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "2",
+   "part": "b",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "B1.zero_of_function"
+  },
+  "2021-NOV-COMMON-P2-Q10-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "10",
+   "part": "(a)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "B1.zero_of_function"
+  },
+  "2023-NOV-TZ2-P2-Q11-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "B1.zero_of_function"
+  },
+  "2025-MAY-TZ1-P1-Q10-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "B1.quadratic_toolkit"
+  },
+  "2025-NOV-TZ1-P1-Q04-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "B1.quadratic_toolkit"
+  },
+  "2025-NOV-TZ1-P1-Q04-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "12-13",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "B1.quadratic_toolkit"
+  },
+  "2024-MAY-TZ1-P1-Q10-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "c",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "22-26",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "B1.quadratic_toolkit"
+  },
+  "2024-MAY-TZ1-P1-Q10-D": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "d",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "22-26",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "B1.quadratic_toolkit"
+  },
+  "2021-NOV-COMMON-P1-Q07-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "7",
+   "part": "b",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "B1.quadratic_toolkit"
+  },
+  "2025-NOV-TZ1-P1-Q03-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "B1.quadratic_toolkit"
+  },
+  "2024-MAY-TZ2-P3-Q02-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "B1.quadratic_toolkit"
+  },
+  "2021-MAY-TZ1-P3-Q02-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "a",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "B1.equation_from_situation"
+  },
+  "2021-MAY-TZ1-P3-Q02-F": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "f",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "22-23",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "B1.equation_from_situation"
+  },
+  "2025-MAY-TZ3-P1-Q04-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "4",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "B1.equation_from_situation"
+  },
+  "2025-NOV-TZ1-P3-Q01-E-I": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "E-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "B1.equation_from_situation"
+  },
+  "2023-NOV-TZ1-P1-Q10-B-I": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "(b)(i)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "B1.equation_from_situation"
+  },
+  "2021-MAY-TZ1-P3-Q02-G-I": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "g(i)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "B1.extraneous_roots"
+  },
+  "2021-MAY-TZ2-P1-Q04-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "4",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "B1.extraneous_roots"
+  },
+  "2023-MAY-TZ2-P1-Q10-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "a",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "B1.extraneous_roots"
+  },
+  "2025-MAY-TZ2-P2-Q12-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "B1.extraneous_roots"
+  },
+  "2024-MAY-TZ2-P1-Q02": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "2",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "B1.exp_log_equation"
+  },
+  "2021-NOV-COMMON-P1-Q03": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "3",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "B1.exp_log_equation"
+  },
+  "2023-MAY-TZ1-P1-Q04": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "B1.exp_log_equation"
+  },
+  "2023-NOV-TZ2-P1-Q10-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 9,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "B1.exp_log_equation"
+  },
+  "2023-NOV-TZ2-P3-Q02-C": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "(c)",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B1.curve_meets_line"
+  },
+  "2022-MAY-TZ2-P3-Q01-G": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(g)",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "B1.curve_meets_line"
+  },
+  "2024-MAY-TZ1-P3-Q02-H": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "h",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "12-16",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "B1.curve_meets_line"
+  },
+  "2022-MAY-TZ2-P3-Q01-F-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(f)(ii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "B1.curve_meets_line"
+  },
+  "2021-MAY-TZ1-P2-Q10-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "B1.gdc_solve"
+  },
+  "2024-MAY-TZ2-P2-Q11-G": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "G",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "B1.gdc_solve"
+  },
+  "2022-MAY-TZ1-P2-Q04-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "B1.gdc_solve"
+  },
+  "2024-MAY-TZ2-P2-Q01-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "B1.gdc_solve"
+  },
+  "2025-NOV-TZ1-P2-Q10-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "B1.gdc_solve"
+  },
+  "2024-MAY-TZ1-P3-Q02-D": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "d",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "12-16",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "B1.gdc_solve"
+  },
+  "2025-MAY-TZ3-P1-Q04-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "4",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "B1.discriminant_condition"
+  },
+  "2024-MAY-TZ2-P1-Q05-B-II": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "B-II",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "13-14",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "B1.discriminant_condition"
+  },
+  "2023-NOV-TZ1-P2-Q11-E": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "E",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "B1.discriminant_condition"
+  },
+  "2024-MAY-TZ2-P1-Q05-B-III": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "B-III",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "B1.discriminant_condition"
+  },
+  "2023-NOV-TZ2-P3-Q01-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B1.solution_count"
+  },
+  "2023-NOV-TZ2-P3-Q01-B-I": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "B-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B1.solution_count"
+  },
+  "2023-NOV-TZ2-P3-Q01-C-I": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "C-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B1.solution_count"
+  },
+  "2023-NOV-TZ2-P3-Q01-H": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "H",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "13-14",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B1.solution_count"
+  },
+  "2021-MAY-TZ2-P3-Q01-H": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "H",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "B1.solution_count"
+  },
+  "2023-MAY-TZ1-P1-Q08-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "B1.solution_count"
+  },
+  "2024-MAY-TZ1-P2-Q02-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "C1.right_triangle"
+  },
+  "2025-MAY-TZ2-P2-Q02-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "C1.right_triangle"
+  },
+  "2025-MAY-TZ2-P2-Q02-C": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "C1.right_triangle"
+  },
+  "2023-MAY-TZ1-P1-Q11-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "C1.right_triangle"
+  },
+  "2023-MAY-TZ1-P2-Q01-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "C1.elevation_and_bearing"
+  },
+  "2025-MAY-TZ2-P3-Q02-A-II": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "A-II",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "C1.elevation_and_bearing"
+  },
+  "2023-MAY-TZ2-P2-Q02": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8–9",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "C1.elevation_and_bearing"
+  },
+  "2025-MAY-TZ3-P2-Q01-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "C1.cosine_rule"
+  },
+  "2022-NOV-COMMON-P2-Q09-A-I-III": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "9",
+   "part": "(a)(i)-(iii)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "C1.cosine_rule"
+  },
+  "2021-MAY-TZ2-P1-Q06": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "6",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "13-14",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C1.cosine_rule"
+  },
+  "2023-MAY-TZ1-P2-Q01-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "C1.sine_rule"
+  },
+  "2025-MAY-TZ3-P2-Q01-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "C1.sine_rule"
+  },
+  "2024-MAY-TZ2-P2-Q11-E": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "E",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "C1.sine_rule"
+  },
+  "2021-NOV-COMMON-P2-Q02": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "2",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C1.ambiguous_case"
+  },
+  "2023-NOV-TZ1-P1-Q04": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "9–10",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "C1.triangle_area"
+  },
+  "2024-MAY-TZ1-P1-Q12-D": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "d",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14-16",
+   "markscheme_pages": "30-33",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "C1.triangle_area"
+  },
+  "2022-NOV-COMMON-P1-Q03-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "3",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "C1.triangle_area"
+  },
+  "2024-MAY-TZ2-P1-Q03-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "C1.triangle_area"
+  },
+  "2025-MAY-TZ2-P1-Q03-C": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "C",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "C1.triangle_area"
+  },
+  "2021-MAY-TZ1-P3-Q02-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "b",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "C1.triangle_area"
+  },
+  "2023-NOV-TZ2-P1-Q04": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "4",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "9-10",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "C1.exact_values"
+  },
+  "2025-MAY-TZ2-P1-Q03-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "C1.exact_values"
+  },
+  "2025-MAY-TZ2-P1-Q03-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "C1.exact_values"
+  },
+  "2022-NOV-COMMON-P2-Q09-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "9",
+   "part": "(b)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "C1.triangle_as_model"
+  },
+  "2025-MAY-TZ3-P2-Q09-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "9",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "C1.triangle_as_model"
+  },
+  "2021-MAY-TZ1-P2-Q09-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "a",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "C1.triangle_as_model"
+  },
+  "2023-MAY-TZ2-P1-Q10-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "b",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "C1.triangle_as_model"
+  },
+  "2021-MAY-TZ2-P1-Q10-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C3.reference_angle"
+  },
+  "2022-MAY-TZ2-P2-Q05-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C3.reference_angle"
+  },
+  "2023-MAY-TZ2-P2-Q05-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "C3.reference_angle"
+  },
+  "2022-MAY-TZ1-P1-Q03-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "C3.compound_argument"
+  },
+  "2022-MAY-TZ2-P1-Q04": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "4",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "C3.compound_argument"
+  },
+  "2024-MAY-TZ2-P1-Q01": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "4-5",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "C3.compound_argument"
+  },
+  "2021-NOV-COMMON-P1-Q06-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "6",
+   "part": "(b)",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "16–17",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "C3.compound_argument"
+  },
+  "2025-MAY-TZ1-P1-Q11-C": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "C",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "C3.angle_sum"
+  },
+  "2021-MAY-TZ2-P1-Q12-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "25-26",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C3.angle_sum"
+  },
+  "2021-MAY-TZ2-P1-Q12-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "26-27",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C3.angle_sum"
+  },
+  "2021-MAY-TZ2-P1-Q02": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "2",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C3.pythagorean_reduction"
+  },
+  "2023-MAY-TZ2-P1-Q08-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "c",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "C3.pythagorean_reduction"
+  },
+  "2023-NOV-TZ1-P1-Q12-C": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "C",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "26–28",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "C3.pythagorean_reduction"
+  },
+  "2023-MAY-TZ1-P1-Q03": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "C3.double_angle_reduction"
+  },
+  "2025-MAY-TZ3-P1-Q03": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "3",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "C3.double_angle_reduction"
+  },
+  "2025-NOV-TZ3-P2-Q01-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "C3.double_angle_reduction"
+  },
+  "2021-MAY-TZ1-P1-Q05-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "B",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "C3.factor_not_divide"
+  },
+  "2024-MAY-TZ1-P1-Q04-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "C3.factor_not_divide"
+  },
+  "2022-NOV-COMMON-P1-Q10-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "18-19",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "C3.reduce_to_tangent"
+  },
+  "2023-MAY-TZ2-P1-Q08-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "a",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "C3.reduce_to_tangent"
+  },
+  "2025-MAY-TZ2-P1-Q08-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "B",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "C3.root_selection"
+  },
+  "2022-NOV-COMMON-P1-Q10-D": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "10",
+   "part": "D",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "C3.root_selection"
+  },
+  "2021-NOV-COMMON-P2-Q04-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "4",
+   "part": "b",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C3.numeric_gdc"
+  },
+  "2023-MAY-TZ2-P2-Q10-D": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "C3.numeric_gdc"
+  },
+  "2025-MAY-TZ1-P2-Q05-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "C3.numeric_gdc"
+  },
+  "2023-MAY-TZ2-P2-Q10-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "C4.period_from_coefficient"
+  },
+  "2025-MAY-TZ1-P2-Q02-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "C4.period_from_coefficient"
+  },
+  "2021-NOV-COMMON-P2-Q09-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "9",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C4.period_from_coefficient"
+  },
+  "2023-MAY-TZ1-P1-Q05-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "(a)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "C4.period_from_coefficient"
+  },
+  "2025-NOV-TZ1-P2-Q04-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "B",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C4.period_from_coefficient"
+  },
+  "2021-NOV-COMMON-P2-Q09-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "9",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C4.amplitude_and_midline"
+  },
+  "2021-NOV-COMMON-P2-Q09-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "9",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C4.amplitude_and_midline"
+  },
+  "2023-MAY-TZ2-P2-Q10-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "C4.amplitude_and_midline"
+  },
+  "2021-MAY-TZ1-P2-Q03": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "C4.amplitude_sign"
+  },
+  "2025-NOV-TZ1-P2-Q04-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C4.amplitude_sign"
+  },
+  "2021-NOV-COMMON-P2-Q09-D": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "9",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C4.phase_shift"
+  },
+  "2021-NOV-COMMON-P2-Q09-G": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "9",
+   "part": "G",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C4.phase_shift"
+  },
+  "2025-NOV-TZ1-P2-Q04-C": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C4.phase_shift"
+  },
+  "2024-MAY-TZ1-P2-Q10-D": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "D",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "20-22",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "C4.build_model"
+  },
+  "2025-MAY-TZ1-P2-Q02-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "C4.build_model"
+  },
+  "2021-NOV-COMMON-P2-Q09-E": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "9",
+   "part": "E",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C4.use_model"
+  },
+  "2023-MAY-TZ2-P2-Q10-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "C4.use_model"
+  },
+  "2022-MAY-TZ2-P2-Q10-A-I-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "(a)(i)(ii)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C4.use_model"
+  },
+  "2022-MAY-TZ2-P2-Q10-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "(b)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C4.use_model"
+  },
+  "2024-MAY-TZ1-P2-Q10-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "20-22",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "C4.use_model"
+  },
+  "2021-NOV-COMMON-P2-Q09-F": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "9",
+   "part": "F",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C4.threshold_interval"
+  },
+  "2024-MAY-TZ1-P2-Q10-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "20-22",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "C4.threshold_interval"
+  },
+  "2022-MAY-TZ1-P1-Q05-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "12-13",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "C4.bounds_argument"
+  },
+  "2022-MAY-TZ2-P2-Q10-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "(c)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C4.bounds_argument"
+  },
+  "2021-NOV-COMMON-P1-Q01": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "1",
+   "part": "",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "E7.direct_integration"
+  },
+  "2025-MAY-TZ1-P2-Q03": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "E7.direct_integration"
+  },
+  "2021-MAY-TZ2-P1-Q11-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(a)",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "21–22",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "E7.separation"
+  },
+  "2021-NOV-COMMON-P3-Q02-A-I": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "A-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/November/Common/Paper 3",
+   "skill": "E7.separation"
+  },
+  "2023-NOV-TZ1-P2-Q09-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "B",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "19–20",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "E7.separation"
+  },
+  "2023-NOV-TZ2-P2-Q09-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "B",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "13-14",
+   "markscheme_pages": "18-20",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "E7.separation"
+  },
+  "2023-NOV-TZ1-P3-Q02-A-III": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "A-III",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E7.separation"
+  },
+  "2025-NOV-TZ1-P1-Q07-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "7",
+   "part": "A",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E7.separation"
+  },
+  "2021-MAY-TZ1-P2-Q12-C": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 8,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "21, 22",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E7.separation_partial_fractions"
+  },
+  "2022-MAY-TZ2-P2-Q12-E": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "E",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "31-33",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E7.separation_partial_fractions"
+  },
+  "2022-MAY-TZ1-P2-Q12-C-I-II-III": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "C (i)(ii)(iii)",
+   "marks": 12,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "30–32",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "E7.separation_partial_fractions"
+  },
+  "2023-MAY-TZ1-P2-Q12-D-I-II": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "(d)(i)-(ii)",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "30–31",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "E7.separation_partial_fractions"
+  },
+  "2022-MAY-TZ1-P2-Q12-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "29",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "E7.homogeneous_substitution"
+  },
+  "2022-NOV-COMMON-P1-Q09-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "9",
+   "part": "A",
+   "marks": 8,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "E7.homogeneous_substitution"
+  },
+  "2023-MAY-TZ2-P2-Q12-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 8,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24-25",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "E7.homogeneous_substitution"
+  },
+  "2023-NOV-TZ1-P3-Q02-E-II": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "E-II",
+   "marks": 9,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E7.homogeneous_substitution"
+  },
+  "2023-NOV-TZ2-P3-Q02-E-II": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "(e)(ii)",
+   "marks": 9,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E7.homogeneous_substitution"
+  },
+  "2025-MAY-TZ1-P1-Q09": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "",
+   "marks": 8,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "16-17",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "E7.homogeneous_substitution"
+  },
+  "2025-MAY-TZ2-P3-Q01-F": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "F",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "E7.homogeneous_substitution"
+  },
+  "2021-NOV-COMMON-P1-Q08": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "8",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "E7.integrating_factor"
+  },
+  "2021-NOV-COMMON-P3-Q02-A-III": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "A-III",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/November/Common/Paper 3",
+   "skill": "E7.integrating_factor"
+  },
+  "2024-MAY-TZ1-P2-Q07": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "E7.integrating_factor"
+  },
+  "2024-MAY-TZ2-P2-Q12-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "(c)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E7.integrating_factor"
+  },
+  "2024-MAY-TZ2-P2-Q12-D": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "(d)",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E7.integrating_factor"
+  },
+  "2025-MAY-TZ3-P2-Q12-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "E7.integrating_factor"
+  },
+  "2022-MAY-TZ1-P2-Q12-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "29",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "E7.euler_method"
+  },
+  "2023-MAY-TZ1-P2-Q12-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "(a)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "E7.euler_method"
+  },
+  "2023-MAY-TZ2-P2-Q12-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "E7.euler_method"
+  },
+  "2023-NOV-TZ1-P2-Q09-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "E7.euler_method"
+  },
+  "2023-NOV-TZ2-P2-Q09-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "E7.euler_method"
+  },
+  "2024-MAY-TZ2-P2-Q12-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "(a)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E7.euler_method"
+  },
+  "2025-MAY-TZ1-P2-Q09-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "E7.euler_method"
+  },
+  "2023-MAY-TZ1-P2-Q12-E": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "(e)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "31",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "E7.euler_error_sign"
+  },
+  "2023-MAY-TZ2-P2-Q12-D": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "E7.euler_error_sign"
+  },
+  "2023-NOV-TZ1-P2-Q09-C": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "C",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "E7.euler_error_sign"
+  },
+  "2023-NOV-TZ2-P2-Q09-C": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "C",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "E7.euler_error_sign"
+  },
+  "2024-MAY-TZ2-P2-Q12-E-I-II-III": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "(e)(i)(ii)(iii)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E7.euler_error_sign"
+  },
+  "2025-MAY-TZ1-P2-Q09-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "E7.euler_error_sign"
+  }
+ },
  "practicums": [
   {
    "id": "A3",
@@ -106,7 +4424,12 @@
     "Знак второго слагаемого теряется, и вместо (−1)^r в ответе плюсы"
    ],
    "calculator": "checks",
-   "practicum_marks": 109
+   "practicum_marks": 109,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q02-B",
+    "2022-MAY-TZ2-P1-Q05-A",
+    "2021-MAY-TZ2-P2-Q09-A"
+   ]
   },
   {
    "id": "A3.general_term",
@@ -126,7 +4449,14 @@
     "Дробное r округляют. Если r = 5/3, такого члена нет, и это часто и есть ответ («только при n, кратных 4»)"
    ],
    "calculator": "partial",
-   "practicum_marks": 109
+   "practicum_marks": 109,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q03",
+    "2021-MAY-TZ1-P2-Q05",
+    "2022-MAY-TZ1-P1-Q06",
+    "2022-NOV-COMMON-P2-Q05",
+    "2025-MAY-TZ3-P2-Q07"
+   ]
   },
   {
    "id": "A3.equate_coefficients",
@@ -145,7 +4475,13 @@
     "Путают, какая буква входит в квадрате. В (ax³+b)^8 степень x приносит только ax³, и для x^6 этот множитель взят дважды: a², а не a^6"
    ],
    "calculator": "partial",
-   "practicum_marks": 109
+   "practicum_marks": 109,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q05",
+    "2023-NOV-TZ2-P1-Q05",
+    "2023-MAY-TZ1-P2-Q05",
+    "2025-MAY-TZ2-P1-Q11-C"
+   ]
   },
   {
    "id": "A3.coefficients_as_sequence",
@@ -163,7 +4499,11 @@
     "Берут три подряд идущих коэффициента, хотя в условии пропуск: x^7, x^6 и x^4, а не x^7, x^6, x^5"
    ],
    "calculator": "checks",
-   "practicum_marks": 109
+   "practicum_marks": 109,
+   "blocks": [
+    "2022-MAY-TZ2-P1-Q05-B",
+    "2023-MAY-TZ2-P2-Q04"
+   ]
   },
   {
    "id": "A3.fractional_index",
@@ -184,7 +4524,14 @@
     "Не пишут область сходимости. В ноябре 2021 за строку «|x| < 1» стоял отдельный A1"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 109
+   "practicum_marks": 109,
+   "blocks": [
+    "2025-MAY-TZ2-P1-Q11-A",
+    "2025-NOV-TZ1-P1-Q10-A-I",
+    "2025-NOV-TZ1-P1-Q10-B-I",
+    "2021-NOV-COMMON-P1-Q09-A",
+    "2021-NOV-COMMON-P1-Q09-B"
+   ]
   },
   {
    "id": "A3.product_and_approximation",
@@ -204,7 +4551,11 @@
     "Не различают «менее точно» и «неприменимо». Если найденный x вышел за область сходимости, о точности говорить уже нельзя"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 109
+   "practicum_marks": 109,
+   "blocks": [
+    "2025-MAY-TZ2-P1-Q11-B",
+    "2025-MAY-TZ2-P1-Q11-D"
+   ]
   },
   {
    "id": "A3.binomial_with_i",
@@ -223,7 +4574,12 @@
     "Выбор корня в конце не обоснован. Из tan²(π/8) = 3 ∓ 2√2 надо ещё сказать, почему берётся меньший — за это стоит R1"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 109
+   "practicum_marks": 109,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q12-A",
+    "2023-NOV-TZ2-P1-Q12-A",
+    "2025-NOV-TZ3-P1-Q11-D"
+   ]
   },
   {
    "id": "A4.factor_remainder",
@@ -242,7 +4598,14 @@
     "Не пишут фразу-вывод «следовательно, (x+1) — множитель». Счёт виден, ответ на заданный вопрос — нет"
    ],
    "calculator": "checks",
-   "practicum_marks": 145
+   "practicum_marks": 145,
+   "blocks": [
+    "2024-MAY-TZ1-P1-Q11-A",
+    "2025-MAY-TZ3-P2-Q02",
+    "2022-NOV-COMMON-P1-Q11-B-I",
+    "2022-NOV-COMMON-P1-Q11-B-II",
+    "2025-NOV-TZ3-P2-Q06"
+   ]
   },
   {
    "id": "A4.polynomial_division",
@@ -261,7 +4624,14 @@
     "Кандидаты в целые корни — делители свободного члена, делённые на делители старшего. Про знаменатель забывают"
    ],
    "calculator": "checks",
-   "practicum_marks": 145
+   "practicum_marks": 145,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q06-A",
+    "2024-MAY-TZ1-P1-Q11-B",
+    "2022-NOV-COMMON-P1-Q11-B-III",
+    "2022-MAY-TZ2-P3-Q02-H-II",
+    "2022-MAY-TZ2-P3-Q02-H-III"
+   ]
   },
   {
    "id": "A4.repeated_root",
@@ -279,7 +4649,12 @@
     "Дифференцируют многочлен с буквой в коэффициенте и теряют её: производная 3px² от px³, а не 3x²"
    ],
    "calculator": "checks",
-   "practicum_marks": 145
+   "practicum_marks": 145,
+   "blocks": [
+    "2025-MAY-TZ2-P1-Q07",
+    "2024-MAY-TZ1-P1-Q11-B",
+    "2022-NOV-COMMON-P1-Q11-B-III"
+   ]
   },
   {
    "id": "A4.vieta_quadratic",
@@ -299,7 +4674,13 @@
     "Система на буквы оказалась квадратной — решений два, и второй отбрасывается только проверкой условия (действительность корней, k > 0, n ∈ ℤ⁺)"
    ],
    "calculator": "checks",
-   "practicum_marks": 145
+   "practicum_marks": 145,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q08-A",
+    "2025-NOV-TZ3-P2-Q06",
+    "2022-MAY-TZ2-P1-Q12-D",
+    "2024-MAY-TZ1-P1-Q10-F"
+   ]
   },
   {
    "id": "A4.vieta_higher",
@@ -317,7 +4698,14 @@
     "Знак произведения зависит от чётности степени: для кубического это −a₀/a₃, для квартики +a₀/a₄"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 145
+   "practicum_marks": 145,
+   "blocks": [
+    "2024-MAY-TZ2-P1-Q07-A",
+    "2021-MAY-TZ2-P1-Q07",
+    "2024-MAY-TZ2-P1-Q07-C",
+    "2022-MAY-TZ2-P3-Q02-A",
+    "2025-NOV-TZ1-P3-Q01-E-II"
+   ]
   },
   {
    "id": "A4.conjugate_roots",
@@ -335,7 +4723,13 @@
     "Не называют корни явно. Markscheme мая 2023 снимает два балла именно за отсутствие фразы «3i и −3i — корни»"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 145
+   "practicum_marks": 145,
+   "blocks": [
+    "2023-MAY-TZ1-P1-Q07",
+    "2024-MAY-TZ2-P1-Q07-B",
+    "2022-MAY-TZ2-P3-Q02-E-II",
+    "2021-MAY-TZ2-P3-Q02-G-I"
+   ]
   },
   {
    "id": "A4.symmetric_sums",
@@ -355,7 +4749,18 @@
     "В пункте «что отсюда следует», когда критерий молчит, пишут «все корни действительны». Верный ответ — «ничего сказать нельзя»"
    ],
    "calculator": "partial",
-   "practicum_marks": 145
+   "practicum_marks": 145,
+   "blocks": [
+    "2022-MAY-TZ2-P3-Q02-B-I",
+    "2022-MAY-TZ2-P3-Q02-B-II",
+    "2022-MAY-TZ2-P3-Q02-C",
+    "2022-MAY-TZ2-P3-Q02-D",
+    "2022-MAY-TZ2-P3-Q02-E-I",
+    "2022-MAY-TZ2-P3-Q02-F-I",
+    "2022-MAY-TZ2-P3-Q02-F-II",
+    "2022-MAY-TZ2-P3-Q02-G",
+    "2022-MAY-TZ2-P3-Q02-H-I"
+   ]
   },
   {
    "id": "A4.root_transformation",
@@ -374,7 +4779,12 @@
     "Для α³+β³ забывают тождество (α+β)³ − 3αβ(α+β) и пытаются возводить в куб порознь"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 145
+   "practicum_marks": 145,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q06-A",
+    "2021-NOV-COMMON-P2-Q06-B",
+    "2025-MAY-TZ2-P1-Q12-D"
+   ]
   },
   {
    "id": "A4.partial_fractions",
@@ -393,7 +4803,13 @@
     "Не выделяют целую часть у неправильной дроби и раскладывают то, что раскладывать нельзя"
    ],
    "calculator": "checks",
-   "practicum_marks": 145
+   "practicum_marks": 145,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q12-A",
+    "2025-NOV-TZ3-P2-Q12-C",
+    "2024-MAY-TZ1-P1-Q11-C",
+    "2024-MAY-TZ1-P1-Q11-D"
+   ]
   },
   {
    "id": "A5.cartesian_arithmetic",
@@ -411,7 +4827,13 @@
     "Сопряжённое берут к числителю вместо знаменателя"
    ],
    "calculator": "checks",
-   "practicum_marks": 144
+   "practicum_marks": 144,
+   "blocks": [
+    "2025-NOV-TZ1-P1-Q11-A",
+    "2021-MAY-TZ2-P2-Q08",
+    "2021-NOV-COMMON-P1-Q12-E",
+    "2022-MAY-TZ1-P1-Q09-A"
+   ]
   },
   {
    "id": "A5.equate_parts",
@@ -431,7 +4853,14 @@
     "Забывают, что модуль даёт третье уравнение бесплатно (a² + b² = |z|²), и решают нелинейную систему вместо линейной"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 144
+   "practicum_marks": 144,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q07",
+    "2023-NOV-TZ2-P1-Q07",
+    "2023-MAY-TZ2-P1-Q11-D",
+    "2025-NOV-TZ1-P1-Q11-D",
+    "2024-MAY-TZ1-P1-Q12-A"
+   ]
   },
   {
    "id": "A5.modulus_argument",
@@ -450,7 +4879,14 @@
     "Аргумент не приведён к требуемому промежутку (−π, π]"
    ],
    "calculator": "speeds_up",
-   "practicum_marks": 144
+   "practicum_marks": 144,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q11-A",
+    "2025-NOV-TZ1-P1-Q11-B",
+    "2024-MAY-TZ2-P2-Q08-A-I",
+    "2024-MAY-TZ2-P2-Q08-A-II",
+    "2021-NOV-COMMON-P1-Q12-C"
+   ]
   },
   {
    "id": "A5.form_conversion",
@@ -468,7 +4904,14 @@
     "Правило выбора формы забыто: складывают в декартовой, умножают в полярной"
    ],
    "calculator": "speeds_up",
-   "practicum_marks": 144
+   "practicum_marks": 144,
+   "blocks": [
+    "2025-MAY-TZ3-P1-Q08-A",
+    "2025-NOV-TZ3-P1-Q11-A-I",
+    "2025-MAY-TZ1-P1-Q07-B",
+    "2025-MAY-TZ1-P2-Q08-B",
+    "2021-NOV-COMMON-P3-Q01-C-I"
+   ]
   },
   {
    "id": "A5.product_properties",
@@ -488,7 +4931,15 @@
     "Ноль как значение аргумента тоже подходит под «кратно π»"
    ],
    "calculator": "speeds_up",
-   "practicum_marks": 144
+   "practicum_marks": 144,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q08-A",
+    "2021-MAY-TZ1-P2-Q08-B",
+    "2021-MAY-TZ1-P2-Q08-C",
+    "2022-MAY-TZ1-P1-Q09-B",
+    "2022-MAY-TZ2-P1-Q12-A",
+    "2022-NOV-COMMON-P1-Q12-B-I-AND-B-II"
+   ]
   },
   {
    "id": "A5.conjugate_roots",
@@ -508,7 +4959,15 @@
     "У многочлена нечётной степени забывают, что один корень обязан быть действительным"
    ],
    "calculator": "checks",
-   "practicum_marks": 144
+   "practicum_marks": 144,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q07",
+    "2022-NOV-COMMON-P1-Q05-A",
+    "2022-NOV-COMMON-P1-Q05-B",
+    "2023-MAY-TZ2-P1-Q11-C",
+    "2025-MAY-TZ3-P1-Q12-D",
+    "2022-MAY-TZ1-P3-Q02-A-I"
+   ]
   },
   {
    "id": "A6.de_moivre_power",
@@ -527,7 +4986,12 @@
     "Аргумент не приведён к требуемому промежутку"
    ],
    "calculator": "checks",
-   "practicum_marks": 112
+   "practicum_marks": 112,
+   "blocks": [
+    "2025-NOV-TZ3-P1-Q11-A-II",
+    "2024-MAY-TZ1-P1-Q12-B",
+    "2024-MAY-TZ1-P1-Q12-F"
+   ]
   },
   {
    "id": "A6.nth_roots",
@@ -547,7 +5011,13 @@
     "Аргумент делят на n до того, как учли периодичность 2π — тогда остальные корни не появляются"
    ],
    "calculator": "partial",
-   "practicum_marks": 112
+   "practicum_marks": 112,
+   "blocks": [
+    "2025-NOV-TZ1-P1-Q11-C",
+    "2025-MAY-TZ2-P1-Q12-A",
+    "2025-MAY-TZ3-P1-Q08-B",
+    "2025-MAY-TZ2-P1-Q12-B"
+   ]
   },
   {
    "id": "A6.roots_of_unity",
@@ -566,7 +5036,15 @@
     "Забывают исключить ω = 1 при делении на (z − 1)"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 112
+   "practicum_marks": 112,
+   "blocks": [
+    "2021-MAY-TZ2-P3-Q02-A-I",
+    "2021-MAY-TZ2-P3-Q02-A-II",
+    "2021-MAY-TZ2-P3-Q02-C",
+    "2021-MAY-TZ2-P3-Q02-G-II",
+    "2024-MAY-TZ1-P1-Q12-C",
+    "2024-MAY-TZ1-P1-Q12-G"
+   ]
   },
   {
    "id": "A6.periodicity_condition",
@@ -585,7 +5063,12 @@
     "Путают «действительно» с «равно −i»: в первом случае годится любое кратное π, во втором — одно значение по модулю 2π, и n получается больше"
    ],
    "calculator": "speeds_up",
-   "practicum_marks": 112
+   "practicum_marks": 112,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q11-B",
+    "2023-MAY-TZ1-P2-Q06-A",
+    "2021-MAY-TZ1-P2-Q08-C"
+   ]
   },
   {
    "id": "A6.rotation_geometry",
@@ -604,7 +5087,14 @@
     "Забывают, что при |z| = 1 растяжения нет и преобразование чистый поворот"
    ],
    "calculator": "checks",
-   "practicum_marks": 112
+   "practicum_marks": 112,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q06-B",
+    "2024-MAY-TZ1-P1-Q12-E",
+    "2022-MAY-TZ2-P1-Q12-C",
+    "2025-MAY-TZ2-P1-Q12-E",
+    "2021-NOV-COMMON-P1-Q12-B"
+   ]
   },
   {
    "id": "A6.trig_via_de_moivre",
@@ -624,7 +5114,13 @@
     "Знаки степеней мнимой единицы перепутаны"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 112
+   "practicum_marks": 112,
+   "blocks": [
+    "2023-NOV-TZ2-P1-Q12-B",
+    "2025-NOV-TZ1-P1-Q08-A",
+    "2025-NOV-TZ3-P1-Q11-B",
+    "2025-NOV-TZ1-P1-Q11-E"
+   ]
   },
   {
    "id": "A7.direct_proof",
@@ -642,7 +5138,13 @@
     "Обрывают на предпоследнем шаге: markscheme «do not award final A1 unless all previous working is correct» снимает балл за любую ошибку выше по цепочке"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 160
+   "practicum_marks": 160,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q01",
+    "2022-NOV-COMMON-P1-Q03-A",
+    "2021-NOV-COMMON-P3-Q01-E",
+    "2023-MAY-TZ1-P3-Q02-D-I"
+   ]
   },
   {
    "id": "A7.integer_representation",
@@ -661,7 +5163,14 @@
     "Останавливаются на формуле, не написав вывод про делимость"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 160
+   "practicum_marks": 160,
+   "blocks": [
+    "2022-MAY-TZ2-P1-Q02-A",
+    "2022-MAY-TZ2-P1-Q02-B",
+    "2022-MAY-TZ1-P3-Q01-C",
+    "2025-MAY-TZ3-P3-Q02-H-I",
+    "2025-MAY-TZ3-P3-Q02-H-II"
+   ]
   },
   {
    "id": "A7.contradiction",
@@ -680,7 +5189,13 @@
     "Останавливаются на формуле без слова «противоречие» — последний R1 теряется в трёх заданиях из четырёх"
    ],
    "calculator": "checks",
-   "practicum_marks": 160
+   "practicum_marks": 160,
+   "blocks": [
+    "2022-MAY-TZ1-P1-Q08",
+    "2022-MAY-TZ2-P1-Q09-9",
+    "2023-MAY-TZ1-P2-Q09",
+    "2025-MAY-TZ2-P1-Q09"
+   ]
   },
   {
    "id": "A7.induction_skeleton",
@@ -700,7 +5215,13 @@
     "Рассчитывают получить заключительный R1 за одну фразу. Он с порогом: «only award R1 if 4 of the previous 6 marks have been awarded»"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 160
+   "practicum_marks": 160,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q07",
+    "2023-NOV-TZ1-P1-Q06",
+    "2024-MAY-TZ1-P1-Q07",
+    "2025-MAY-TZ1-P1-Q08-B"
+   ]
   },
   {
    "id": "A7.induction_sum",
@@ -718,7 +5239,14 @@
     "Не выписывают S(k+1) заранее и не знают, к чему сворачивать"
    ],
    "calculator": "checks",
-   "practicum_marks": 160
+   "practicum_marks": 160,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q07",
+    "2024-MAY-TZ1-P1-Q07",
+    "2022-MAY-TZ1-P3-Q01-F",
+    "2021-MAY-TZ2-P1-Q12-D",
+    "2022-NOV-COMMON-P1-Q12-C"
+   ]
   },
   {
    "id": "A7.induction_divisibility",
@@ -737,7 +5265,11 @@
     "Берут множитель наугад. Разность бывает кратна d при каждом целом k и с неверным множителем, но записать её как d·(целое) нельзя, и A1 за вынесение d не ставится"
    ],
    "calculator": "checks",
-   "practicum_marks": 160
+   "practicum_marks": 160,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q06",
+    "2023-NOV-TZ2-P1-Q06"
+   ]
   },
   {
    "id": "A7.induction_derivative",
@@ -755,7 +5287,14 @@
     "Факториальные свёртки вида (2k−1)!/(k−1)! делают на глаз; это отдельные два-три A1"
    ],
    "calculator": "checks",
-   "practicum_marks": 160
+   "practicum_marks": 160,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q11-A",
+    "2024-MAY-TZ2-P1-Q12-A",
+    "2021-MAY-TZ1-P1-Q12-B",
+    "2025-NOV-TZ3-P3-Q01-F",
+    "2022-NOV-COMMON-P3-Q01-D-II"
+   ]
   },
   {
    "id": "A7.induction_recursion",
@@ -773,7 +5312,11 @@
     "Берут f^k(f(x)) и подставляют mx+c внутрь громоздкой формулы, хотя внешняя f линейна и первый путь вдвое короче"
    ],
    "calculator": "checks",
-   "practicum_marks": 160
+   "practicum_marks": 160,
+   "blocks": [
+    "2025-MAY-TZ3-P3-Q01-C",
+    "2023-MAY-TZ1-P3-Q01-F"
+   ]
   },
   {
    "id": "A7.induction_inequality",
@@ -791,7 +5334,10 @@
     "Игнорируют пункт (a). Слово «hence» значит, что он обязателен; без него переход не выводится"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 160
+   "practicum_marks": 160,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q08-B"
+   ]
   },
   {
    "id": "A8.critical_values",
@@ -813,7 +5359,11 @@
     "Выбрана не та сторона. Проверяется за секунду подстановкой одной точки — например нуля"
    ],
    "calculator": "checks",
-   "practicum_marks": 87
+   "practicum_marks": 87,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q10-C",
+    "2023-NOV-TZ1-P1-Q10-B-III"
+   ]
   },
   {
    "id": "A8.rational_inequality",
@@ -833,7 +5383,11 @@
     "Найдены границы, но не предъявлены все куски ответа. Разметка даёт по A1 за каждый промежуток, а не за критические значения"
    ],
    "calculator": "helps",
-   "practicum_marks": 87
+   "practicum_marks": 87,
+   "blocks": [
+    "2023-NOV-TZ2-P2-Q11-F",
+    "2023-NOV-TZ1-P2-Q11-F"
+   ]
   },
   {
    "id": "A8.absolute_value",
@@ -852,7 +5406,11 @@
     "Забывают, что для |A| < b при b ≤ 0 решений нет вовсе"
    ],
    "calculator": "helps",
-   "practicum_marks": 87
+   "practicum_marks": 87,
+   "blocks": [
+    "2022-MAY-TZ2-P1-Q03-C",
+    "2022-MAY-TZ2-P1-Q03-D"
+   ]
   },
   {
    "id": "A8.gdc_intervals",
@@ -874,7 +5432,11 @@
     "Подстановка округлённого конца в исходное неравенство даёт ложь. Это не ошибка, а следствие округления: проверять надо чуть внутри"
    ],
    "calculator": "required",
-   "practicum_marks": 87
+   "practicum_marks": 87,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q06-B",
+    "2025-MAY-TZ1-P2-Q10-D"
+   ]
   },
   {
    "id": "A8.discriminant_condition",
@@ -896,7 +5458,14 @@
     "В вопросах «show that … = 5» баллы стоят за вывод. Написать ответ, который и так напечатан, — ноль"
    ],
    "calculator": "checks",
-   "practicum_marks": 87
+   "practicum_marks": 87,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q07-A",
+    "2025-NOV-TZ3-P1-Q09-A",
+    "2023-NOV-TZ1-P1-Q10-B-II",
+    "2024-MAY-TZ2-P3-Q02-D",
+    "2025-MAY-TZ2-P1-Q05-A"
+   ]
   },
   {
    "id": "A8.root_signs",
@@ -917,7 +5486,11 @@
     "Значение a = 0 не исключено. Там уравнение перестаёт быть квадратным и корень остаётся один"
    ],
    "calculator": "checks",
-   "practicum_marks": 87
+   "practicum_marks": 87,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q08-B",
+    "2025-MAY-TZ2-P1-Q05-B"
+   ]
   },
   {
    "id": "A8.solution_count",
@@ -938,7 +5511,15 @@
     "«При всех x» решают подстановкой одного удобного x. Нужен максимум или дискриминант, а не проба"
    ],
    "calculator": "helps",
-   "practicum_marks": 87
+   "practicum_marks": 87,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q04-B",
+    "2025-NOV-TZ1-P3-Q01-B-II",
+    "2025-NOV-TZ1-P3-Q01-C-I",
+    "2025-NOV-TZ1-P3-Q01-C-II",
+    "2023-MAY-TZ2-P3-Q01-F-I",
+    "2023-MAY-TZ2-P3-Q01-F-II"
+   ]
   },
   {
    "id": "A8.prove_inequality",
@@ -961,7 +5542,15 @@
     "В AM–GM доказано только «≤», а спрашивают равенство. Нужен набор, на котором граница достигается"
    ],
    "calculator": "none",
-   "practicum_marks": 87
+   "practicum_marks": 87,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q11-E",
+    "2025-NOV-TZ3-P2-Q09",
+    "2023-MAY-TZ1-P3-Q02-D-II",
+    "2025-MAY-TZ3-P3-Q02-F",
+    "2025-MAY-TZ1-P1-Q08-A",
+    "2023-MAY-TZ2-P3-Q01-C"
+   ]
   },
   {
    "id": "B1.zero_of_function",
@@ -982,7 +5571,13 @@
     "Перепутаны оси: f(0) вместо решения f(x) = 0"
    ],
    "calculator": "checks",
-   "practicum_marks": 222
+   "practicum_marks": 222,
+   "blocks": [
+    "2023-MAY-TZ1-P1-Q01-A",
+    "2023-MAY-TZ2-P1-Q02-B",
+    "2021-NOV-COMMON-P2-Q10-A",
+    "2023-NOV-TZ2-P2-Q11-B"
+   ]
   },
   {
    "id": "B1.quadratic_toolkit",
@@ -1003,7 +5598,17 @@
     "Забыто, что ось симметрии это полусумма корней, — и второй корень ищут заново вместо одной строки"
    ],
    "calculator": false,
-   "practicum_marks": 222
+   "practicum_marks": 222,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q10-A",
+    "2025-NOV-TZ1-P1-Q04-A",
+    "2025-NOV-TZ1-P1-Q04-B",
+    "2024-MAY-TZ1-P1-Q10-C",
+    "2024-MAY-TZ1-P1-Q10-D",
+    "2021-NOV-COMMON-P1-Q07-B",
+    "2025-NOV-TZ1-P1-Q03-A",
+    "2024-MAY-TZ2-P3-Q02-B"
+   ]
   },
   {
    "id": "B1.equation_from_situation",
@@ -1023,7 +5628,14 @@
     "Приведение к нужному виду само бывает неравносильным: домножение на (b−4) разрешает случай b = 4, которого в записи не было"
    ],
    "calculator": false,
-   "practicum_marks": 222
+   "practicum_marks": 222,
+   "blocks": [
+    "2021-MAY-TZ1-P3-Q02-A",
+    "2021-MAY-TZ1-P3-Q02-F",
+    "2025-MAY-TZ3-P1-Q04-A",
+    "2025-NOV-TZ1-P3-Q01-E-I",
+    "2023-NOV-TZ1-P1-Q10-B-I"
+   ]
   },
   {
    "id": "B1.extraneous_roots",
@@ -1044,7 +5656,13 @@
     "Отброшенный корень бывает законен сам по себе: при q = 0 вершина действительно лежит на прямой, его исключает фраза условия, а не алгебра"
    ],
    "calculator": false,
-   "practicum_marks": 222
+   "practicum_marks": 222,
+   "blocks": [
+    "2021-MAY-TZ1-P3-Q02-G-I",
+    "2021-MAY-TZ2-P1-Q04-A",
+    "2023-MAY-TZ2-P1-Q10-A",
+    "2025-MAY-TZ2-P2-Q12-B"
+   ]
   },
   {
    "id": "B1.exp_log_equation",
@@ -1065,7 +5683,13 @@
     "«Снятие логарифмов» неравносильно: аргументы обязаны быть положительными, и корни надо подставить обратно"
    ],
    "calculator": false,
-   "practicum_marks": 222
+   "practicum_marks": 222,
+   "blocks": [
+    "2024-MAY-TZ2-P1-Q02",
+    "2021-NOV-COMMON-P1-Q03",
+    "2023-MAY-TZ1-P1-Q04",
+    "2023-NOV-TZ2-P1-Q10-B"
+   ]
   },
   {
    "id": "B1.curve_meets_line",
@@ -1086,7 +5710,14 @@
     "Деление на (a+b) вместо разложения на множители: законно только потому, что a и b положительны"
    ],
    "calculator": "helps",
-   "practicum_marks": 222
+   "practicum_marks": 222,
+   "blocks": [
+    "2025-MAY-TZ3-P1-Q04-A",
+    "2023-NOV-TZ2-P3-Q02-C",
+    "2022-MAY-TZ2-P3-Q01-G",
+    "2024-MAY-TZ1-P3-Q02-H",
+    "2022-MAY-TZ2-P3-Q01-F-II"
+   ]
   },
   {
    "id": "B1.gdc_solve",
@@ -1107,7 +5738,15 @@
     "Голый ответ без выписанного уравнения и эскиза — ноль за метод"
    ],
    "calculator": "required",
-   "practicum_marks": 222
+   "practicum_marks": 222,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q10-A",
+    "2024-MAY-TZ2-P2-Q11-G",
+    "2022-MAY-TZ1-P2-Q04-A",
+    "2024-MAY-TZ2-P2-Q01-A",
+    "2025-NOV-TZ1-P2-Q10-B",
+    "2024-MAY-TZ1-P3-Q02-D"
+   ]
   },
   {
    "id": "B1.discriminant_condition",
@@ -1128,7 +5767,14 @@
     "Найдено одно значение из двух: за m = −1 ± 2√2 стоит A1A1"
    ],
    "calculator": "checks",
-   "practicum_marks": 222
+   "practicum_marks": 222,
+   "blocks": [
+    "2025-MAY-TZ3-P1-Q04-B",
+    "2023-MAY-TZ1-P1-Q04",
+    "2024-MAY-TZ2-P1-Q05-B-II",
+    "2023-NOV-TZ1-P2-Q11-E",
+    "2024-MAY-TZ2-P1-Q05-B-III"
+   ]
   },
   {
    "id": "B1.solution_count",
@@ -1148,7 +5794,15 @@
     "Считают корни вместо картинки: вопрос про число решений почти всегда решается эскизом, а не формулами"
    ],
    "calculator": "helps",
-   "practicum_marks": 222
+   "practicum_marks": 222,
+   "blocks": [
+    "2023-NOV-TZ2-P3-Q01-A",
+    "2023-NOV-TZ2-P3-Q01-B-I",
+    "2023-NOV-TZ2-P3-Q01-C-I",
+    "2023-NOV-TZ2-P3-Q01-H",
+    "2021-MAY-TZ2-P3-Q01-H",
+    "2023-MAY-TZ1-P1-Q08-B"
+   ]
   },
   {
    "id": "C1.right_triangle",
@@ -1168,7 +5822,13 @@
     "Горизонтальный катет отмерен до основания тела, а не до его оси"
    ],
    "calculator": "helps",
-   "practicum_marks": 116
+   "practicum_marks": 116,
+   "blocks": [
+    "2024-MAY-TZ1-P2-Q02-A",
+    "2025-MAY-TZ2-P2-Q02-B",
+    "2025-MAY-TZ2-P2-Q02-C",
+    "2023-MAY-TZ1-P1-Q11-A"
+   ]
   },
   {
    "id": "C1.elevation_and_bearing",
@@ -1188,7 +5848,12 @@
     "Забыто, что углы возвышения из одной точки в разные стороны вместе с углом между лучами дают развёрнутый угол"
    ],
    "calculator": "helps",
-   "practicum_marks": 116
+   "practicum_marks": 116,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q01-A",
+    "2025-MAY-TZ2-P3-Q02-A-II",
+    "2023-MAY-TZ2-P2-Q02"
+   ]
   },
   {
    "id": "C1.cosine_rule",
@@ -1208,7 +5873,13 @@
     "Угол известен, но лежит не между сторонами: тогда формула даёт квадратное уравнение, и корней бывает два"
    ],
    "calculator": "helps",
-   "practicum_marks": 116
+   "practicum_marks": 116,
+   "blocks": [
+    "2025-MAY-TZ3-P2-Q01-A",
+    "2023-MAY-TZ2-P2-Q02",
+    "2022-NOV-COMMON-P2-Q09-A-I-III",
+    "2021-MAY-TZ2-P1-Q06"
+   ]
   },
   {
    "id": "C1.sine_rule",
@@ -1228,7 +5899,12 @@
     "Третий угол не найден, и пропорция составляется из двух неизвестных"
    ],
    "calculator": "helps",
-   "practicum_marks": 116
+   "practicum_marks": 116,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q01-B",
+    "2025-MAY-TZ3-P2-Q01-B",
+    "2024-MAY-TZ2-P2-Q11-E"
+   ]
   },
   {
    "id": "C1.ambiguous_case",
@@ -1248,7 +5924,10 @@
     "Забыто, что при a ≥ b или A ≥ 90° треугольник всё-таки один"
    ],
    "calculator": "checks",
-   "practicum_marks": 116
+   "practicum_marks": 116,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q02"
+   ]
   },
   {
    "id": "C1.triangle_area",
@@ -1268,7 +5947,15 @@
     "В прямоугольном треугольнике за катет принята гипотенуза"
    ],
    "calculator": false,
-   "practicum_marks": 116
+   "practicum_marks": 116,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q04",
+    "2024-MAY-TZ1-P1-Q12-D",
+    "2022-NOV-COMMON-P1-Q03-B",
+    "2024-MAY-TZ2-P1-Q03-B",
+    "2025-MAY-TZ2-P1-Q03-C",
+    "2021-MAY-TZ1-P3-Q02-B"
+   ]
   },
   {
    "id": "C1.exact_values",
@@ -1288,7 +5975,13 @@
     "q не сокращено: 5√175 равно 25√7, но записано неверно"
    ],
    "calculator": false,
-   "practicum_marks": 116
+   "practicum_marks": 116,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q06",
+    "2023-NOV-TZ2-P1-Q04",
+    "2025-MAY-TZ2-P1-Q03-A",
+    "2025-MAY-TZ2-P1-Q03-B"
+   ]
   },
   {
    "id": "C1.triangle_as_model",
@@ -1308,7 +6001,13 @@
     "Разность арктангенсов заменена суммой: зависит от того, по одну ли сторону лежат оба треугольника"
    ],
    "calculator": "required",
-   "practicum_marks": 116
+   "practicum_marks": 116,
+   "blocks": [
+    "2022-NOV-COMMON-P2-Q09-B",
+    "2025-MAY-TZ3-P2-Q09-A",
+    "2021-MAY-TZ1-P2-Q09-A",
+    "2023-MAY-TZ2-P1-Q10-B"
+   ]
   },
   {
    "id": "C3.reference_angle",
@@ -1328,7 +6027,12 @@
     "Синус и косинус дают по два корня на оборот, тангенс — один; их путают"
    ],
    "calculator": "replaces",
-   "practicum_marks": 162
+   "practicum_marks": 162,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q10-A",
+    "2022-MAY-TZ2-P2-Q05-A",
+    "2023-MAY-TZ2-P2-Q05-B"
+   ]
   },
   {
    "id": "C3.compound_argument",
@@ -1348,7 +6052,13 @@
     "«Наименьшее положительное значение» ищут среди первых корней, не проверив, что они отрицательны"
    ],
    "calculator": "replaces",
-   "practicum_marks": 162
+   "practicum_marks": 162,
+   "blocks": [
+    "2022-MAY-TZ1-P1-Q03-B",
+    "2022-MAY-TZ2-P1-Q04",
+    "2024-MAY-TZ2-P1-Q01",
+    "2021-NOV-COMMON-P1-Q06-B"
+   ]
   },
   {
    "id": "C3.angle_sum",
@@ -1368,7 +6078,12 @@
     "Угол разложен на нетабличные слагаемые, и точные значения не подставляются"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 162
+   "practicum_marks": 162,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q11-C",
+    "2021-MAY-TZ2-P1-Q12-B",
+    "2021-MAY-TZ2-P1-Q12-C"
+   ]
   },
   {
    "id": "C3.pythagorean_reduction",
@@ -1388,7 +6103,12 @@
     "Заменяют не ту функцию, и квадрат остаётся у обеих"
    ],
    "calculator": "replaces",
-   "practicum_marks": 162
+   "practicum_marks": 162,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q02",
+    "2023-MAY-TZ2-P1-Q08-C",
+    "2023-NOV-TZ1-P1-Q12-C"
+   ]
   },
   {
    "id": "C3.double_angle_reduction",
@@ -1408,7 +6128,12 @@
     "sin 2x раскрывают там, где нужно было оставить как множитель"
    ],
    "calculator": "replaces",
-   "practicum_marks": 162
+   "practicum_marks": 162,
+   "blocks": [
+    "2023-MAY-TZ1-P1-Q03",
+    "2025-MAY-TZ3-P1-Q03",
+    "2025-NOV-TZ3-P2-Q01-B"
+   ]
   },
   {
    "id": "C3.factor_not_divide",
@@ -1427,7 +6152,12 @@
     "Забывают, что после разложения решать надо оба множителя"
    ],
    "calculator": "replaces",
-   "practicum_marks": 162
+   "practicum_marks": 162,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q05-B",
+    "2024-MAY-TZ1-P1-Q04-A",
+    "2023-MAY-TZ2-P2-Q05-B"
+   ]
   },
   {
    "id": "C3.reduce_to_tangent",
@@ -1446,7 +6176,12 @@
     "Из tan²x = k извлекают только положительный корень, теряя вторую серию"
    ],
    "calculator": "replaces",
-   "practicum_marks": 162
+   "practicum_marks": 162,
+   "blocks": [
+    "2022-NOV-COMMON-P1-Q10-A",
+    "2022-MAY-TZ1-P1-Q03-B",
+    "2023-MAY-TZ2-P1-Q08-A"
+   ]
   },
   {
    "id": "C3.root_selection",
@@ -1467,7 +6202,13 @@
     "Знаменатель обратился в ноль вместе с числителем, а корень оставлен"
    ],
    "calculator": "speeds_up",
-   "practicum_marks": 162
+   "practicum_marks": 162,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q06-B",
+    "2025-MAY-TZ2-P1-Q08-B",
+    "2022-MAY-TZ2-P1-Q04",
+    "2022-NOV-COMMON-P1-Q10-D"
+   ]
   },
   {
    "id": "C3.numeric_gdc",
@@ -1486,7 +6227,12 @@
     "Калькулятор в градусах, а область в радианах"
    ],
    "calculator": "required",
-   "practicum_marks": 162
+   "practicum_marks": 162,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q04-B",
+    "2023-MAY-TZ2-P2-Q10-D",
+    "2025-MAY-TZ1-P2-Q05-B"
+   ]
   },
   {
    "id": "C4.period_from_coefficient",
@@ -1505,7 +6251,14 @@
     "Период найден верно, но не переведён в b: в ответ идёт T вместо 2π/T"
    ],
    "calculator": "speeds_up",
-   "practicum_marks": 83
+   "practicum_marks": 83,
+   "blocks": [
+    "2023-MAY-TZ2-P2-Q10-A",
+    "2025-MAY-TZ1-P2-Q02-A",
+    "2021-NOV-COMMON-P2-Q09-A",
+    "2023-MAY-TZ1-P1-Q05-A",
+    "2025-NOV-TZ1-P2-Q04-B"
+   ]
   },
   {
    "id": "C4.amplitude_and_midline",
@@ -1523,7 +6276,12 @@
     "Формулы перепутаны местами: сумма ушла в амплитуду, разность в среднюю линию. Ловится проверкой d + a = max за секунду"
    ],
    "calculator": "speeds_up",
-   "practicum_marks": 83
+   "practicum_marks": 83,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q09-B",
+    "2021-NOV-COMMON-P2-Q09-C",
+    "2023-MAY-TZ2-P2-Q10-B"
+   ]
   },
   {
    "id": "C4.amplitude_sign",
@@ -1541,7 +6299,12 @@
     "Минус перед амплитудой перепутан со сдвигом c. Оба выражают «начинаем не с максимума», но одновременно их не применяют"
    ],
    "calculator": "checks",
-   "practicum_marks": 83
+   "practicum_marks": 83,
+   "blocks": [
+    "2023-MAY-TZ2-P2-Q10-B",
+    "2021-MAY-TZ1-P2-Q03",
+    "2025-NOV-TZ1-P2-Q04-A"
+   ]
   },
   {
    "id": "C4.phase_shift",
@@ -1561,7 +6324,12 @@
     "Знак: «на 50 минут раньше» — это вычесть, а не прибавить"
    ],
    "calculator": "checks",
-   "practicum_marks": 83
+   "practicum_marks": 83,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q09-D",
+    "2021-NOV-COMMON-P2-Q09-G",
+    "2025-NOV-TZ1-P2-Q04-C"
+   ]
   },
   {
    "id": "C4.build_model",
@@ -1582,7 +6350,13 @@
     "Средняя линия отсчитана от нуля, а не от нижнего положения объекта (у колеса обозрения центр на высоте «низ плюс радиус»)"
    ],
    "calculator": "checks",
-   "practicum_marks": 83
+   "practicum_marks": 83,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q03",
+    "2024-MAY-TZ1-P2-Q10-D",
+    "2025-MAY-TZ1-P2-Q02-B",
+    "2025-NOV-TZ1-P2-Q04-A"
+   ]
   },
   {
    "id": "C4.use_model",
@@ -1601,7 +6375,14 @@
     "Взят первый корень уравнения вместо того, который просят"
    ],
    "calculator": "required",
-   "practicum_marks": 83
+   "practicum_marks": 83,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q09-E",
+    "2023-MAY-TZ2-P2-Q10-C",
+    "2022-MAY-TZ2-P2-Q10-A-I-II",
+    "2022-MAY-TZ2-P2-Q10-B",
+    "2024-MAY-TZ1-P2-Q10-A"
+   ]
   },
   {
    "id": "C4.threshold_interval",
@@ -1619,7 +6400,11 @@
     "Промежутки перепутаны местами — взят отлив вместо прилива; без графика это не видно"
    ],
    "calculator": "required",
-   "practicum_marks": 83
+   "practicum_marks": 83,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q09-F",
+    "2024-MAY-TZ1-P2-Q10-B"
+   ]
   },
   {
    "id": "C4.bounds_argument",
@@ -1637,7 +6422,11 @@
     "Оценка сделана, но не сказано, что она достигается или строгая — markscheme требует явного R1"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 83
+   "practicum_marks": 83,
+   "blocks": [
+    "2022-MAY-TZ1-P1-Q05-B",
+    "2022-MAY-TZ2-P2-Q10-C"
+   ]
   },
   {
    "id": "E7.direct_integration",
@@ -1655,7 +6444,11 @@
     "Начальное условие подставляют до интегрирования"
    ],
    "calculator": "speeds_up",
-   "practicum_marks": 254
+   "practicum_marks": 254,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q01",
+    "2025-MAY-TZ1-P2-Q03"
+   ]
   },
   {
    "id": "E7.separation",
@@ -1675,7 +6468,15 @@
     "Ответ оставляют неявным, когда в условии сказано «в форме y = f(x)»"
    ],
    "calculator": "checks",
-   "practicum_marks": 254
+   "practicum_marks": 254,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q11-A",
+    "2021-NOV-COMMON-P3-Q02-A-I",
+    "2023-NOV-TZ1-P2-Q09-B",
+    "2023-NOV-TZ2-P2-Q09-B",
+    "2023-NOV-TZ1-P3-Q02-A-III",
+    "2025-NOV-TZ1-P1-Q07-A"
+   ]
   },
   {
    "id": "E7.separation_partial_fractions",
@@ -1695,7 +6496,13 @@
     "Разность логарифмов не сворачивают, и потенцирование становится невозможным"
    ],
    "calculator": "checks",
-   "practicum_marks": 254
+   "practicum_marks": 254,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q12-C",
+    "2022-MAY-TZ2-P2-Q12-E",
+    "2022-MAY-TZ1-P2-Q12-C-I-II-III",
+    "2023-MAY-TZ1-P2-Q12-D-I-II"
+   ]
   },
   {
    "id": "E7.homogeneous_substitution",
@@ -1715,7 +6522,16 @@
     "Забывают обратную подстановку и оставляют ответ через v"
    ],
    "calculator": "forbidden",
-   "practicum_marks": 254
+   "practicum_marks": 254,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q12-B",
+    "2022-NOV-COMMON-P1-Q09-A",
+    "2023-MAY-TZ2-P2-Q12-B",
+    "2023-NOV-TZ1-P3-Q02-E-II",
+    "2023-NOV-TZ2-P3-Q02-E-II",
+    "2025-MAY-TZ1-P1-Q09",
+    "2025-MAY-TZ2-P3-Q01-F"
+   ]
   },
   {
    "id": "E7.integrating_factor",
@@ -1736,7 +6552,15 @@
     "Не опознают, что левая часть уже является производной произведения"
    ],
    "calculator": "checks",
-   "practicum_marks": 254
+   "practicum_marks": 254,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q08",
+    "2021-NOV-COMMON-P3-Q02-A-III",
+    "2024-MAY-TZ1-P2-Q07",
+    "2024-MAY-TZ2-P2-Q12-C",
+    "2024-MAY-TZ2-P2-Q12-D",
+    "2025-MAY-TZ3-P2-Q12-B"
+   ]
   },
   {
    "id": "E7.euler_method",
@@ -1756,7 +6580,16 @@
     "Округление до заданного числа десятичных знаков вместо значащих цифр"
    ],
    "calculator": "required",
-   "practicum_marks": 254
+   "practicum_marks": 254,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q12-A",
+    "2023-MAY-TZ1-P2-Q12-A",
+    "2023-MAY-TZ2-P2-Q12-A",
+    "2023-NOV-TZ1-P2-Q09-A",
+    "2023-NOV-TZ2-P2-Q09-A",
+    "2024-MAY-TZ2-P2-Q12-A",
+    "2025-MAY-TZ1-P2-Q09-A"
+   ]
   },
   {
    "id": "E7.euler_error_sign",
@@ -1775,7 +6608,15 @@
     "Путают причину «занижено» с причиной «неточно»"
    ],
    "calculator": "speeds_up",
-   "practicum_marks": 254
+   "practicum_marks": 254,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q12-E",
+    "2023-MAY-TZ2-P2-Q12-D",
+    "2023-NOV-TZ1-P2-Q09-C",
+    "2023-NOV-TZ2-P2-Q09-C",
+    "2024-MAY-TZ2-P2-Q12-E-I-II-III",
+    "2025-MAY-TZ1-P2-Q09-B"
+   ]
   }
  ],
  "items": [

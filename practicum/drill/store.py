@@ -10,6 +10,7 @@
 """
 from __future__ import annotations
 
+import json
 import os
 import sqlite3
 import time
@@ -34,6 +35,22 @@ CREATE TABLE IF NOT EXISTS attempts (
     budget_ms   INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS attempts_skill ON attempts (skill, ts);
+
+CREATE TABLE IF NOT EXISTS written (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    ts          REAL    NOT NULL,
+    block       TEXT    NOT NULL DEFAULT '',
+    practicum   TEXT    NOT NULL DEFAULT '',
+    skill       TEXT    NOT NULL DEFAULT '',
+    reference   TEXT    NOT NULL DEFAULT '',
+    available   INTEGER,
+    earned      INTEGER,
+    math        TEXT    NOT NULL DEFAULT '',
+    photos      TEXT    NOT NULL DEFAULT '',
+    verdict     TEXT    NOT NULL DEFAULT '',
+    model       TEXT    NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS written_skill ON written (skill, ts);
 
 CREATE TABLE IF NOT EXISTS skill_state (
     skill    TEXT PRIMARY KEY,
@@ -116,3 +133,40 @@ def totals(db):
         'today': today['n'] or 0,
         'today_correct': today['ok'] or 0,
     }
+
+
+def record_written(db, *, block, practicum, skill, reference, verdict,
+                   photos):
+    """Записывает разбор письменной работы.
+
+    Отдельная таблица и отдельный счёт: здесь измеряется качество записи,
+    а не скорость узнавания, и в ящики Лейтнера это не идёт. Смешать их
+    значило бы испортить расписание повторения чужой метрикой.
+    """
+    marks = verdict.get('marks') or {}
+    db.execute(
+        'INSERT INTO written (ts, block, practicum, skill, reference, '
+        'available, earned, math, photos, verdict, model) '
+        'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        (time.time(), block or '', practicum or '', skill or '',
+         reference or '', marks.get('available'), marks.get('earned'),
+         (verdict.get('mathematics') or {}).get('verdict', ''),
+         json.dumps(photos, ensure_ascii=False),
+         json.dumps(verdict, ensure_ascii=False),
+         verdict.get('model', '')))
+    db.commit()
+
+
+def written_history(db, limit=50):
+    return [dict(row) for row in db.execute(
+        'SELECT id, ts, block, practicum, skill, reference, available, '
+        'earned, math, model FROM written ORDER BY id DESC LIMIT ?', (limit,))]
+
+
+def written_totals(db):
+    row = db.execute(
+        'SELECT COUNT(*) AS n, SUM(available) AS available, SUM(earned) AS '
+        'earned FROM written').fetchone()
+    return {'attempts': row['n'] or 0,
+            'marks_available': row['available'] or 0,
+            'marks_earned': row['earned'] or 0}

@@ -7,6 +7,7 @@ import { StatusBar } from './components/StatusBar'
 import { TopBar } from './components/TopBar'
 import { PracticumHub } from './components/PracticumHub'
 import { DrillView } from './components/DrillView'
+import { ExamView } from './components/ExamView'
 import { fetchFacets, fetchQuestion, fetchQuestions, type AtlasFacets } from './lib/api'
 import { useI18n } from './i18n'
 import type { Filters, FilterSetKey, Question } from './types'
@@ -33,9 +34,10 @@ const initialFilters: Filters = {
 
 export default function App() {
   const { t } = useI18n()
-  const [mode, setMode] = useState<'atlas' | 'practicums' | 'drill'>(() => {
+  const [mode, setMode] = useState<'atlas' | 'practicums' | 'drill' | 'exam'>(() => {
     if (window.location.hash.startsWith('#practicums')) return 'practicums'
     if (window.location.hash.startsWith('#drill')) return 'drill'
+    if (window.location.hash.startsWith('#exam')) return 'exam'
     return 'atlas'
   })
   const [filters, setFilters] = useState<Filters>(initialFilters)
@@ -179,6 +181,8 @@ export default function App() {
       if (!window.location.hash.startsWith('#practicums')) window.history.replaceState(null, '', '#practicums')
     } else if (mode === 'drill') {
       if (!window.location.hash.startsWith('#drill')) window.history.replaceState(null, '', '#drill')
+    } else if (mode === 'exam') {
+      if (!window.location.hash.startsWith('#exam')) window.history.replaceState(null, '', '#exam')
     } else if (window.location.hash !== '#atlas') {
       window.history.replaceState(null, '', '#atlas')
     }
@@ -236,7 +240,7 @@ export default function App() {
         onModeChange={setMode}
       />
 
-      {mode === 'drill' ? <DrillView /> : mode === 'practicums' ? <PracticumHub onOpenAtlas={openPracticumQuestions} /> : <div className="relative flex min-h-0 flex-1 overflow-hidden">
+      {mode === 'exam' ? <ExamView /> : mode === 'drill' ? <DrillView /> : mode === 'practicums' ? <PracticumHub onOpenAtlas={openPracticumQuestions} /> : <div className="relative flex min-h-0 flex-1 overflow-hidden">
         <AnimatePresence initial={false}>
           {compactLayout && (filtersOpen || inspectorOpen) && (
             <motion.button

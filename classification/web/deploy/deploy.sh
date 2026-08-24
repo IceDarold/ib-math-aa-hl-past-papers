@@ -13,6 +13,7 @@ required_variables=(
   HTPASSWD_FILE
   BASIC_AUTH_USER
   BASIC_AUTH_PASSWORD
+  GRADER_KEY_FILE
 )
 
 for variable in "${required_variables[@]}"; do
@@ -68,6 +69,9 @@ printf -v rsync_ssh 'ssh -i %q -o UserKnownHostsFile=%q -o StrictHostKeyChecking
 
 previous=$(ssh "${ssh_args[@]}" "$remote" readlink -f -- "$current" || true)
 
+ssh "${ssh_args[@]}" "$remote" install -d -m 755 \
+  /var/www/math.archik.tech/drill-runtime /var/www/math.archik.tech/drill-data
+
 ssh "${ssh_args[@]}" "$remote" bash -s -- "$release" "$previous" <<'REMOTE'
 set -euo pipefail
 
@@ -111,6 +115,12 @@ rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' -e "$rsync_ssh
 
 rsync -rlptz --chmod=F644 -e "$rsync_ssh" \
   "$HTPASSWD_FILE" "$remote:$remote_root/htpasswd"
+
+# Ключ проверяющей модели: вне релизов, только владельцу. В командную
+# строку службы он не попадает — служба читает его из файла, иначе он был
+# бы виден в ps любому на машине.
+rsync -rlptz --chmod=F600 -e "$rsync_ssh" \
+  "$GRADER_KEY_FILE" "$remote:$remote_root/drill-runtime/openai.env"
 
 ssh "${ssh_args[@]}" "$remote" bash -s -- "$release" "$current" "$release_id" "$remote_root" <<'REMOTE'
 set -euo pipefail
@@ -204,6 +214,7 @@ if [[ -f "$drill_pid" ]]; then
 fi
 
 nohup env DRILL_DB="$drill_data/drill.sqlite" \
+  DRILL_GRADER_KEY_FILE="$drill_runtime/openai.env" \
   "$drill_venv/bin/python" "$release/practicum/drill/server.py" \
   --host 127.0.0.1 --port 8042 \
   >> "$drill_log" 2>&1 &
