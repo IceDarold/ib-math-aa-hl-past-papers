@@ -54,7 +54,7 @@ class Drill:
         return store.connect(self.db_path)
 
     def next_item(self, mode, avoid=(), practicums=None, only_due=False,
-                  order='schedule', avoid_blocks=()):
+                  order='schedule', avoid_blocks=(), papers=None, marks=None):
         with self.lock:
             db = self.connection()
             try:
@@ -64,9 +64,10 @@ class Drill:
         skill, kind = engine.choose(self.bank, states, GENERATORS, mode=mode,
                                     rng=self.rng, avoid=avoid,
                                     practicums=practicums, only_due=only_due,
-                                    order=order)
+                                    order=order, papers=papers, marks=marks)
         shown, _, _ = engine.build_item(self.bank, GENERATORS, skill, kind,
-                                        rng=self.rng, avoid_blocks=avoid_blocks)
+                                        rng=self.rng, avoid_blocks=avoid_blocks,
+                                        papers=papers, marks=marks)
         shown['skill_name'] = skill['name']
         shown['trigger'] = skill['trigger']
         shown['practicum_title'] = next(
@@ -134,7 +135,14 @@ class Drill:
             practicum = block['skill'].split('.')[0]
             written[practicum] = written.get(practicum, 0) + 1
 
+        written_blocks = [{
+            'practicum': block['skill'].split('.')[0],
+            'paper': block.get('paper'),
+            'marks': block.get('marks'),
+        } for block in (self.bank.get('archive') or {}).values()]
+
         return {
+            'written_blocks': written_blocks,
             'practicums': [{
                 'id': entry['id'],
                 'title': entry['title'],
@@ -423,12 +431,19 @@ class Handler(BaseHTTPRequestHandler):
             skipped = (query.get('avoid_blocks') or [''])[0].split(',')
             order = (query.get('order') or ['schedule'])[0]
             only_due = (query.get('only_due') or ['0'])[0] in ('1', 'true')
+            papers = tuple(int(p) for p in
+                           (query.get('papers') or [''])[0].split(',') if p)
+            low = (query.get('marks_min') or [''])[0]
+            high = (query.get('marks_max') or [''])[0]
+            marks = ((int(low or 0), int(high) if high else None)
+                     if low or high else None)
             try:
                 self.send_json(self.drill.next_item(
                     mode, avoid=tuple(a for a in avoid if a),
                     practicums=tuple(p for p in chosen if p) or None,
                     only_due=only_due, order=order,
-                    avoid_blocks=tuple(b for b in skipped if b)))
+                    avoid_blocks=tuple(b for b in skipped if b),
+                    papers=papers or None, marks=marks))
             except LookupError as exc:
                 self.send_json({'error': str(exc)}, 400)
             return

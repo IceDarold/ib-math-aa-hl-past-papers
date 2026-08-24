@@ -343,6 +343,43 @@ if drifted:
       archive.parse_pages(drifted['source_pages']) == [5]
       and archive.block_page_numbers(drifted, 'question') == [6])
 
+print('\n=== отбор вопросов: бумага и цена ===')
+whole = engine.candidates(bank, 'written', GENERATORS)
+only_first = engine.candidates(bank, 'written', GENERATORS, papers=(1,))
+t('отбор по бумаге сужает набор',
+  0 < len(only_first) < len(whole))
+t('в отборе по Paper 1 других бумаг нет',
+  all(bank['archive'][block]['paper'] == 1
+      for skill, _ in only_first
+      for block in engine.matching_blocks(bank, skill, papers=(1,))))
+
+cheap = engine.candidates(bank, 'written', GENERATORS, marks=(1, 3))
+dear = engine.candidates(bank, 'written', GENERATORS, marks=(7, None))
+t('дешёвых вопросов больше, чем дорогих', len(cheap) > len(dear))
+t('в дорогом отборе нет вопросов дешевле семи баллов',
+  all((bank['archive'][block]['marks'] or 0) >= 7
+      for skill, _ in dear
+      for block in engine.matching_blocks(bank, skill, marks=(7, None))))
+
+both = engine.candidates(bank, 'written', GENERATORS, papers=(1,),
+                         marks=(7, None))
+t('отборы складываются', 0 < len(both) <= min(len(only_first), len(dear)))
+
+picked = engine.choose(bank, {}, GENERATORS, mode='written', rng=rng,
+                       papers=(3,))[0]
+chosen_block = engine.build_item(bank, GENERATORS, picked, 'written',
+                                 rng=rng, papers=(3,))[0]
+t('выданное задание подчиняется отбору',
+  bank['archive'][chosen_block['block']]['paper'] == 3)
+
+empty = [s for s in bank['skills'] if s['practicum'] == 'A3']
+try:
+    engine.build_item(bank, GENERATORS, empty[0], 'written', rng=rng,
+                      papers=(2,), marks=(99, None))
+    t('пустой отбор — ошибка, а не случайный вопрос', False)
+except LookupError:
+    t('пустой отбор — ошибка, а не случайный вопрос', True)
+
 print('\n=== сохранённые работы ===')
 from drill.server import Drill as DrillService  # noqa: E402
 

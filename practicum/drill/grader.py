@@ -79,7 +79,7 @@ Rules you must follow:
 - Mark codes: M1 method, A1 accuracy, R1 reasoning, AG answer given in the question.
 - Write every word of your feedback in English. The candidate is practising exam register, so your phrasing is part of the teaching.
 - In "fix" fields give the exact sentence the candidate should have written, not a description of what is missing.
-- Write every mathematical expression in LaTeX between dollar signs, in "model_write_up", in the "fix" fields and in the lines you quote: $n = k + 1$, $\\frac{k(k+1)}{2}$, $\\sum_{r=1}^{n} r$. A whole displayed line may use $$...$$. Keep one step per line and keep the line breaks — the page renders this, and plain ASCII like k(k+1)/2 renders badly.
+- Write every mathematical expression in LaTeX between dollar signs, in "model_write_up", in "one_thing", in the "fix" fields and in the lines you quote: $n = k + 1$, $\\frac{k(k+1)}{2}$, $\\sum_{r=1}^{n} r$. A whole displayed line may use $$...$$. Keep one step per line and keep the line breaks — the page renders this, and plain ASCII like k(k+1)/2 renders badly.
 - Do not put LaTeX in "transcription": that field must show the page as written, symbol for symbol.
 
 Reply with strict JSON only, in this shape:

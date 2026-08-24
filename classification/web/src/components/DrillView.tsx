@@ -41,6 +41,12 @@ interface Verdict {
   answer: string
 }
 
+interface WrittenBlock {
+  practicum: string
+  paper: number | null
+  marks: number | null
+}
+
 interface SetupPracticum {
   id: string
   title: string
@@ -88,9 +94,13 @@ interface Stats {
   totals: { attempts: number; correct: number; avg_ms: number; avg_first_ms: number; today: number; today_correct: number }
 }
 
+type MarksBand = 'any' | 'easy' | 'mid' | 'hard'
+
 interface Settings {
   mode: Mode
   practicums: string[]
+  papers: number[]
+  marks: MarksBand
   length: number
   order: Order
   onlyDue: boolean
@@ -172,9 +182,24 @@ const LENGTHS = [10, 20, 40, 0]
 // Разбор письменной работы — минуты на задание, десяток тут был бы вечером.
 const WRITTEN_LENGTHS = [1, 3, 5, 0]
 
+const MARKS: { id: MarksBand; label: string; range: [number, number | null] | null; hint: string }[] = [
+  { id: 'any', label: 'любые', range: null, hint: 'Как выпадет' },
+  { id: 'easy', label: '1–3', range: [1, 3], hint: 'Короткие: один ход и ответ' },
+  { id: 'mid', label: '4–6', range: [4, 6], hint: 'Обычный вопрос на несколько пунктов' },
+  { id: 'hard', label: '7+', range: [7, null], hint: 'Длинные, с разбором на полстраницы' },
+]
+
+const PAPERS: { id: number; hint: string }[] = [
+  { id: 1, hint: 'Без калькулятора' },
+  { id: 2, hint: 'С калькулятором' },
+  { id: 3, hint: 'Длинные исследования' },
+]
+
 const DEFAULTS: Settings = {
   mode: 'mixed',
   practicums: [],
+  papers: [],
+  marks: 'any',
   length: 20,
   order: 'schedule',
   onlyDue: false,
@@ -233,6 +258,7 @@ export function DrillView() {
   const [screen, setScreen] = useState<Screen>('setup')
   const [settings, setSettings] = useState<Settings>(loadSettings)
   const [setup, setSetup] = useState<SetupPracticum[] | null>(null)
+  const [blocks, setBlocks] = useState<WrittenBlock[]>([])
   const [stats, setStats] = useState<Stats | null>(null)
   const [item, setItem] = useState<Item | null>(null)
   const [verdict, setVerdict] = useState<Verdict | null>(null)
@@ -285,8 +311,10 @@ export function DrillView() {
       try {
         const response = await fetch(`${API}/setup`)
         if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
-        const payload = await response.json() as { practicums: SetupPracticum[] }
+        const payload = await response.json() as {
+          practicums: SetupPracticum[]; written_blocks?: WrittenBlock[] }
         setSetup(payload.practicums)
+        setBlocks(payload.written_blocks ?? [])
       } catch (failure) {
         setError(failure instanceof Error ? failure.message : 'не отвечает')
       }
@@ -299,6 +327,21 @@ export function DrillView() {
     const picked = settings.practicums.length ? settings.practicums : setup.map((entry) => entry.id)
     return setup.filter((entry) => picked.includes(entry.id) && available(entry, settings.mode) > 0)
   }, [settings.mode, settings.practicums, setup])
+
+  /** Сколько настоящих вопросов проходит через выбранные темы, бумагу и цену. */
+  const matchingWritten = useMemo(() => {
+    const picked = new Set(chosen.map((entry) => entry.id))
+    const band = MARKS.find((entry) => entry.id === settings.marks)?.range
+    return blocks.filter((block) => {
+      if (!picked.has(block.practicum)) return false
+      if (settings.papers.length && !settings.papers.includes(block.paper ?? 0)) return false
+      if (band) {
+        const price = block.marks ?? 0
+        if (price < band[0] || (band[1] !== null && price > band[1])) return false
+      }
+      return true
+    }).length
+  }, [blocks, chosen, settings.marks, settings.papers])
 
   const chosenSkills = useMemo(
     () => chosen.reduce((sum, entry) => sum + (settings.mode === 'compute'
@@ -324,6 +367,14 @@ export function DrillView() {
         avoid_blocks: recentBlocks.current.slice(-8).join(','),
         practicums: chosen.map((entry) => entry.id).join(','),
       })
+      if (settings.mode === 'written') {
+        if (settings.papers.length) params.set('papers', settings.papers.join(','))
+        const band = MARKS.find((entry) => entry.id === settings.marks)?.range
+        if (band) {
+          params.set('marks_min', String(band[0]))
+          if (band[1]) params.set('marks_max', String(band[1]))
+        }
+      }
       const response = await fetch(`${API}/next?${params.toString()}`)
       if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
       setItem(await response.json())
@@ -337,7 +388,7 @@ export function DrillView() {
     } finally {
       setBusy(false)
     }
-  }, [chosen, settings.mode, settings.onlyDue, settings.order])
+  }, [chosen, settings.mode, settings.onlyDue, settings.order, settings.papers, settings.marks])
 
   const start = useCallback(() => {
     setDone([])
@@ -622,6 +673,62 @@ export function DrillView() {
               </p>
             </section>
 
+            {settings.mode === 'written' && (
+              <section className="grid grid-cols-2 gap-4 max-[560px]:grid-cols-1">
+                <div className="flex flex-col gap-2">
+                  <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Бумага</h3>
+                  <div className="flex border border-line">
+                    {PAPERS.map((paper) => {
+                      const on = !settings.papers.length || settings.papers.includes(paper.id)
+                      return (
+                        <button
+                          key={paper.id}
+                          type="button"
+                          title={paper.hint}
+                          aria-pressed={on}
+                          className={`h-7 flex-1 cursor-pointer border-0 border-l border-line px-2 font-mono text-[10px] first:border-l-0 ${on ? 'bg-ink text-canvas' : 'bg-canvas text-muted hover:bg-surface'}`}
+                          onClick={() => setSettings((current) => {
+                            const all = PAPERS.map((entry) => entry.id)
+                            const base = current.papers.length ? current.papers : all
+                            const next = base.includes(paper.id)
+                              ? base.filter((entry) => entry !== paper.id)
+                              : [...base, paper.id]
+                            return { ...current, papers: next.length === all.length ? [] : next }
+                          })}
+                        >
+                          Paper {paper.id}
+                        </button>
+                      )
+                    })}
+                  </div>
+                  <p className="text-[11px] leading-snug text-faint">
+                    Paper 1 без калькулятора, Paper 2 с ним, Paper 3 — длинные исследования.
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Цена вопроса</h3>
+                  <div className="flex border border-line">
+                    {MARKS.map((band) => (
+                      <button
+                        key={band.id}
+                        type="button"
+                        title={band.hint}
+                        aria-pressed={settings.marks === band.id}
+                        className={`h-7 flex-1 cursor-pointer border-0 border-l border-line px-2 font-mono text-[10px] first:border-l-0 ${settings.marks === band.id ? 'bg-ink text-canvas' : 'bg-canvas text-muted hover:bg-surface'}`}
+                        onClick={() => setSettings((current) => ({ ...current, marks: band.id }))}
+                      >
+                        {band.label}
+                      </button>
+                    ))}
+                  </div>
+                  <p className="text-[11px] leading-snug text-faint">
+                    {MARKS.find((band) => band.id === settings.marks)?.hint}
+                  </p>
+                </div>
+              </section>
+            )}
+
             <section className="grid grid-cols-2 gap-4 max-[560px]:grid-cols-1">
               <div className="flex flex-col gap-2">
                 <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Длина</h3>
@@ -678,16 +785,20 @@ export function DrillView() {
             <div className="flex flex-wrap items-center gap-4 border-t border-line pt-4">
               <button
                 type="button"
-                disabled={chosenSkills === 0}
+                disabled={settings.mode === 'written' ? matchingWritten === 0 : chosenSkills === 0}
                 className="h-9 cursor-pointer border border-line-strong bg-ink px-5 font-mono text-[11px] text-canvas hover:opacity-90 disabled:cursor-default disabled:opacity-40"
                 onClick={start}
               >
                 начать
               </button>
               <span className="font-mono text-[11px] text-muted">
-                {chosenSkills > 0
-                  ? `${chosen.length} тем, ${chosenSkills} приёмов${settings.length ? `, ${settings.length} заданий` : ''}`
-                  : 'в этом режиме выбранные темы пусты'}
+                {settings.mode === 'written'
+                  ? (matchingWritten > 0
+                      ? `${matchingWritten} вопросов подходит${settings.length ? `, в сессии ${settings.length}` : ''}`
+                      : 'под этот отбор вопросов нет — снимите ограничение по бумаге или цене')
+                  : chosenSkills > 0
+                    ? `${chosen.length} тем, ${chosenSkills} приёмов${settings.length ? `, ${settings.length} заданий` : ''}`
+                    : 'в этом режиме выбранные темы пусты'}
               </span>
               {written.length > 0 && (
                 <button

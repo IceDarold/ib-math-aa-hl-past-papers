@@ -59,7 +59,31 @@ def weight(skill, state, share, now):
     return base * (1.0 + min(overdue, 30.0)) * (1.0 + error_rate)
 
 
-def candidates(bank, mode, generators, practicums=None):
+def matching_blocks(bank, skill, papers=None, marks=None, avoid=()):
+    """Вопросы архива этого приёма, подходящие под отбор.
+
+    papers — какие бумаги брать: Paper 1 без калькулятора, Paper 2 с ним,
+    Paper 3 это длинные исследования. marks — вилка по цене вопроса: два
+    балла и девять баллов требуют разного времени и разного нерва.
+    """
+    out = []
+    for block_id in skill.get('blocks') or ():
+        block = bank.get('archive', {}).get(block_id)
+        if block is None or block_id in avoid:
+            continue
+        if papers and block.get('paper') not in papers:
+            continue
+        if marks:
+            low, high = marks
+            price = block.get('marks') or 0
+            if not (low <= price <= (high or 99)):
+                continue
+        out.append(block_id)
+    return out
+
+
+def candidates(bank, mode, generators, practicums=None, papers=None,
+               marks=None):
     """Приёмы, по которым в выбранном режиме есть чем спросить."""
     out = []
     for skill in bank['skills']:
@@ -67,7 +91,7 @@ def candidates(bank, mode, generators, practicums=None):
             continue
         has_recog = bool(bank['items_by_skill'].get(skill['id']))
         has_compute = skill['id'] in generators
-        has_written = bool(skill.get('blocks'))
+        has_written = bool(matching_blocks(bank, skill, papers, marks))
         if mode == 'recognition' and has_recog:
             out.append((skill, 'recognition'))
         elif mode == 'compute' and has_compute:
@@ -83,7 +107,8 @@ def candidates(bank, mode, generators, practicums=None):
 
 
 def choose(bank, states, generators, mode='mixed', rng=None, avoid=(),
-           practicums=None, only_due=False, order='schedule'):
+           practicums=None, only_due=False, order='schedule', papers=None,
+           marks=None):
     """Возвращает (приём, вид задания). Вид «both» решается броском.
 
     order:
@@ -94,7 +119,7 @@ def choose(bank, states, generators, mode='mixed', rng=None, avoid=(),
     """
     rng = rng or random.Random()
     now = time.time()
-    pool = candidates(bank, mode, generators, practicums)
+    pool = candidates(bank, mode, generators, practicums, papers, marks)
     if not pool:
         raise LookupError(f'в режиме {mode!r} нет ни одного приёма')
 
@@ -134,7 +159,7 @@ def choose(bank, states, generators, mode='mixed', rng=None, avoid=(),
 
 
 def build_item(bank, generators, skill, kind, rng=None, seed=None,
-               avoid_blocks=()):
+               avoid_blocks=(), papers=None, marks=None):
     """Собирает задание: (что показать, чем проверять, эталон).
 
     Эталон и описание проверки странице не отдаются — они остаются здесь
@@ -159,8 +184,11 @@ def build_item(bank, generators, skill, kind, rng=None, seed=None,
     if kind == 'written':
         # Настоящий вопрос архива: показываем страницу билета картинкой,
         # проверять его будет разбор, а не sympy.
-        blocks = [b for b in skill['blocks'] if b not in avoid_blocks]
-        block_id = rng.choice(blocks or skill['blocks'])
+        fresh = matching_blocks(bank, skill, papers, marks, avoid_blocks)
+        blocks = fresh or matching_blocks(bank, skill, papers, marks)
+        if not blocks:
+            raise LookupError('под этот отбор вопросов нет')
+        block_id = rng.choice(blocks)
         block = bank['archive'][block_id]
         marks = block.get('marks') or 6
         shown = {

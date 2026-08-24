@@ -80,7 +80,7 @@ export function WriteUpVerdict({ verdict, markschemeUrl }: { verdict: Verdict; m
         </>}
 
         <dt className={LABEL}>one thing</dt>
-        <dd className="text-sm text-ink">{verdict.one_thing}</dd>
+        <dd className="text-sm text-ink"><MathText>{verdict.one_thing ?? ''}</MathText></dd>
 
         <dt className={LABEL}>model write-up</dt>
         <dd className="border border-line bg-surface p-3 text-xs leading-relaxed text-ink">
@@ -101,9 +101,15 @@ export function WriteUpVerdict({ verdict, markschemeUrl }: { verdict: Verdict; m
             {showTranscription ? 'hide' : 'show'} the transcription
           </button>
           {showTranscription && (
-            <pre className="whitespace-pre-wrap border border-line p-2 text-[11px] leading-relaxed text-muted">
-              {verdict.transcription}
-            </pre>
+            // Транскрипция приходит без разметки — она обязана показывать
+            // лист как написано. Формулы в ней ищет сам MathText, по прозе.
+            <div className="border border-line p-2 text-[11px] leading-relaxed text-muted">
+              {(verdict.transcription ?? '').split('\n').map((line, index) => (
+                line.trim()
+                  ? <MathText key={`${index}-${line.slice(0, 24)}`} className="block">{line}</MathText>
+                  : <span key={`${index}-gap`} className="block h-2" />
+              ))}
+            </div>
           )}
           {!verdict.legible && (
             <span className="text-[11px] text-ink">Some of the page was hard to read — check the transcription before trusting the marking.</span>
