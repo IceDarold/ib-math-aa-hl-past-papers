@@ -23,7 +23,7 @@ import os
 import random
 import time
 
-from drill.archive import parse_pages
+from drill.archive import block_page_numbers
 from drill.archive import reference as archive_reference
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -172,7 +172,9 @@ def build_item(bank, generators, skill, kind, rng=None, seed=None,
             'reference': archive_reference(block),
             'marks': marks,
             'calculator': block.get('calculator'),
-            'pages': len(parse_pages(block.get('source_pages'))) + 1,
+            # Не «сколько указано в корпусе плюс одна», а сколько страниц
+            # вопрос занимает на самом деле: подсказка корпуса шумит.
+            'pages': len(block_page_numbers(block, 'question')),
             # На экзамене примерно минута на балл; на бумаге пишут медленнее,
             # чем набирают, поэтому запас щедрее.
             'budget_ms': marks * 90_000,

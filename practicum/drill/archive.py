@@ -115,17 +115,113 @@ def instructions(folder):
     return re.sub(r'\n{3,}', '\n\n', body).strip()
 
 
+QUESTION_START = re.compile(r'^\s*(\d{1,2})\.\s', re.M)
+SEARCH_RADIUS = 2
+NEARLY_BLANK = 260
+
+
+@functools.lru_cache(maxsize=256)
+def _page_numbers(path, number):
+    """Номера вопросов, начинающихся на странице."""
+    with pymupdf.open(path) as document:
+        if not 1 <= number <= document.page_count:
+            return (), 0
+        text = document[number - 1].get_text()
+    return (tuple(int(n) for n in QUESTION_START.findall(text)),
+            len(re.sub(r'\s+', '', text)))
+
+
+# Разметка одного вопроса умещается в пару страниц; сам вопрос бывает
+# длиннее. Потолок нужен, чтобы длинное исследование Paper 3 не утащило
+# в запрос десяток страниц по 2,6 тысячи токенов каждая.
+PAGE_LIMIT = {'question': 4, 'markscheme': 2}
+
+
+def locate(folder, question, hint, which='question', span=1):
+    """Страницы билета, на которых действительно стоит этот вопрос.
+
+    Номера страниц в корпусе шумят на единицу — и непостоянно, даже внутри
+    одной бумаги, — поэтому подсказка из корпуса берётся как ориентир, а
+    страница ищется по самому вопросу: по строке, начинающейся с «N.».
+
+    Следующая страница добавляется только если вопрос на неё продолжается,
+    то есть на ней не начинается вопрос с большим номером и она не пуста.
+    Раньше она добавлялась всегда, и в 92% случаев это была чужая страница.
+
+    То же самое годится и для схемы оценивания: там подсказка промахивается
+    реже, но промахивается — в 35 блоках из 332 нужная страница на единицу
+    раньше.
+    """
+    path = os.path.join(ROOT, folder,
+                        QUESTION_PDF if which == 'question' else MARKSCHEME_PDF)
+    if not os.path.isfile(path):
+        raise LookupError(f'нет файла: {folder}/{which}')
+    with pymupdf.open(path) as document:
+        total = document.page_count
+
+    hints = parse_pages(hint) or [1]
+    start = None
+    for candidate in _search_order(hints[0], total):
+        numbers, _ = _page_numbers(path, candidate)
+        if question in numbers:
+            start = candidate
+            break
+    if start is None:
+        # Номер не стоит нигде рядом: длинное исследование Paper 3, где он
+        # напечатан лишь на первой странице, или разметка вопроса, начатая
+        # на предыдущей странице. Верим корпусу и берём запас.
+        limit = PAGE_LIMIT.get(which, 3)
+        return [n for n in range(hints[0], hints[-1] + span + 1)
+                if 1 <= n <= total][:limit]
+
+    limit = PAGE_LIMIT.get(which, 3)
+    pages = [start]
+    while len(pages) < limit and pages[-1] + 1 <= total:
+        numbers, size = _page_numbers(path, pages[-1] + 1)
+        if any(n > question for n in numbers) or size < NEARLY_BLANK:
+            break
+        pages.append(pages[-1] + 1)
+    return pages
+
+
+def _search_order(hint, total):
+    """Подсказка корпуса, затем ближайшие страницы вокруг неё."""
+    order = [hint]
+    for step in range(1, SEARCH_RADIUS + 1):
+        order += [hint + step, hint - step]
+    return [n for n in order if 1 <= n <= total]
+
+
 def block_pages(block, with_markscheme=True):
     """Картинки для одного блока архива: билет и схема оценивания."""
-    out = {'question': render(block['dir'], 'question',
-                              block.get('source_pages'), extra=1)}
+    out = {'question': [page_image(block, 'question', index)
+                        for index in range(len(block_page_numbers(
+                            block, 'question')))]}
     if with_markscheme:
         try:
-            out['markscheme'] = render(block['dir'], 'markscheme',
-                                       block.get('markscheme_pages'), extra=1)
+            out['markscheme'] = [
+                page_image(block, 'markscheme', index)
+                for index in range(len(block_page_numbers(block,
+                                                          'markscheme')))]
         except LookupError:
             out['markscheme'] = []
     return out
+
+
+def block_page_numbers(block, which='question'):
+    """Какие страницы файла относятся к этому блоку."""
+    hint = (block.get('source_pages') if which == 'question'
+            else block.get('markscheme_pages'))
+    return locate(block['dir'], int(block['question']), hint, which)
+
+
+def page_image(block, which='question', index=0):
+    """Одна страница блока картинкой."""
+    numbers = block_page_numbers(block, which)
+    if not 0 <= index < len(numbers):
+        raise LookupError('такой страницы нет')
+    name = QUESTION_PDF if which == 'question' else MARKSCHEME_PDF
+    return _render(os.path.join(ROOT, block['dir'], name), numbers[index], DPI)
 
 
 def reference(block):

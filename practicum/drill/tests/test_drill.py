@@ -305,6 +305,44 @@ t('в каждом пункте есть готовая фраза, а не пе
 t('рубрика написана по-английски: её читает и модель, и ученик',
   all(not re.search('[а-яА-Я]', item['fix']) for item in a7))
 
+print('\n=== страница вопроса ищется по самому вопросу ===')
+import pymupdf  # noqa: E402
+START = re.compile(r'^\s*(\d{1,2})\.\s', re.M)
+
+
+def numbers_on(folder, name, page):
+    with pymupdf.open(os.path.join(os.path.dirname(PRACTICUM), folder,
+                                   name)) as document:
+        if not 1 <= page <= document.page_count:
+            return []
+        return [int(n) for n in START.findall(document[page - 1].get_text())]
+
+
+sample = list(blocks.items())[:60]
+found = sum(1 for _, b in sample
+            if int(b['question']) in numbers_on(
+                b['dir'], 'question-paper.pdf',
+                archive.block_page_numbers(b, 'question')[0]))
+t(f'первая страница содержит сам вопрос ({found} из {len(sample)})',
+  found >= len(sample) - 6)   # длинные исследования Paper 3 номера не повторяют
+
+single = sum(1 for b in blocks.values()
+             if len(archive.block_page_numbers(b, 'question')) == 1)
+t('короткий вопрос показывается одной страницей, а не двумя',
+  single > len(blocks) // 2)
+t('у вопроса не больше четырёх страниц, у схемы не больше двух',
+  all(len(archive.block_page_numbers(b, 'question')) <= 4
+      and len(archive.block_page_numbers(b, 'markscheme')) <= 2
+      for b in blocks.values()))
+
+# Тот самый случай, с которого нашлось расхождение: корпус говорит 5,
+# а третий вопрос напечатан на шестой странице файла.
+drifted = blocks.get('2021-MAY-TZ2-P1-Q03')
+if drifted:
+    t('подсказка корпуса промахивалась на страницу — теперь исправляется',
+      archive.parse_pages(drifted['source_pages']) == [5]
+      and archive.block_page_numbers(drifted, 'question') == [6])
+
 print('\n=== официальные инструкции экзаменатору ===')
 folder = blocks[next(iter(blocks))]['dir']
 rules = archive.instructions(folder)

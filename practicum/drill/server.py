@@ -161,12 +161,7 @@ class Drill:
         block = (self.bank.get('archive') or {}).get(block_id or '')
         if block is None:
             raise LookupError('такого вопроса нет')
-        spec = (block.get('source_pages') if kind == 'question'
-                else block.get('markscheme_pages'))
-        images = archive.render(block['dir'], kind, spec, extra=1)
-        if not 0 <= index < len(images):
-            raise LookupError('такой страницы нет')
-        return images[index]
+        return archive.page_image(block, kind, index)
 
     def questions(self, practicum=None, skill=None):
         """Настоящие вопросы архива, привязанные к приёмам."""
