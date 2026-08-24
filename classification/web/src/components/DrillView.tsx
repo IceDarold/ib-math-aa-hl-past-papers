@@ -2,8 +2,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 import { practicumSections } from '../data/practicums'
 import { MathText } from './MathText'
+import { WriteUpVerdict, type Verdict as WriteUp } from './WriteUpVerdict'
 
-type Mode = 'mixed' | 'recognition' | 'compute'
+type Mode = 'mixed' | 'recognition' | 'compute' | 'written'
 type Order = 'schedule' | 'ladder' | 'random'
 type Screen = 'setup' | 'running' | 'done'
 
@@ -11,7 +12,12 @@ interface Option { code: string; name: string }
 
 interface Item {
   item: string
-  kind: 'recognition' | 'compute'
+  kind: 'recognition' | 'compute' | 'written'
+  block?: string
+  reference?: string
+  marks?: number
+  calculator?: string
+  pages?: number
   skill: string
   skill_name: string
   trigger: string
@@ -43,6 +49,7 @@ interface SetupPracticum {
   skills: number
   recognition: number
   compute: number
+  written: number
   share: number
 }
 
@@ -80,6 +87,8 @@ interface Done {
   ok: boolean
   ms: number
   firstMs: number
+  earned?: number
+  available?: number
 }
 
 const API = '/api/drill'
@@ -91,7 +100,35 @@ const MODES: { id: Mode; label: string; hint: string }[] = [
   { id: 'mixed', label: 'вперемешку', hint: 'И назвать приём, и решить — вразнобой' },
   { id: 'recognition', label: 'узнавание', hint: 'Только назвать приём. Считать не нужно' },
   { id: 'compute', label: 'счёт', hint: 'Только решить и ввести ответ' },
+  { id: 'written', label: 'разбор', hint: 'Настоящий вопрос архива: решаешь на бумаге и прикрепляешь фото' },
 ]
+
+const MAX_EDGE = 1600
+const MAX_PHOTOS = 6
+
+/** Снимок с телефона весит мегабайты, модели нужно куда меньше. */
+function shrink(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onerror = () => reject(new Error('файл не прочитался'))
+    reader.onload = () => {
+      const picture = new Image()
+      picture.onerror = () => reject(new Error('это не изображение'))
+      picture.onload = () => {
+        const scale = Math.min(1, MAX_EDGE / Math.max(picture.width, picture.height))
+        const canvas = document.createElement('canvas')
+        canvas.width = Math.round(picture.width * scale)
+        canvas.height = Math.round(picture.height * scale)
+        const context = canvas.getContext('2d')
+        if (!context) { reject(new Error('canvas недоступен')); return }
+        context.drawImage(picture, 0, 0, canvas.width, canvas.height)
+        resolve(canvas.toDataURL('image/jpeg', 0.85))
+      }
+      picture.src = String(reader.result)
+    }
+    reader.readAsDataURL(file)
+  })
+}
 
 const ORDERS: { id: Order; label: string; hint: string }[] = [
   { id: 'schedule', label: 'по расписанию', hint: 'Что весит больше на экзамене, что просрочено и где ошибки' },
@@ -100,6 +137,8 @@ const ORDERS: { id: Order; label: string; hint: string }[] = [
 ]
 
 const LENGTHS = [10, 20, 40, 0]
+// Разбор письменной работы — минуты на задание, десяток тут был бы вечером.
+const WRITTEN_LENGTHS = [1, 3, 5, 0]
 
 const DEFAULTS: Settings = {
   mode: 'mixed',
@@ -141,6 +180,7 @@ function minutes(ms: number) {
 function available(practicum: SetupPracticum, mode: Mode) {
   if (mode === 'recognition') return practicum.recognition
   if (mode === 'compute') return practicum.compute
+  if (mode === 'written') return practicum.written
   return practicum.recognition + practicum.compute
 }
 
@@ -163,12 +203,16 @@ export function DrillView() {
   const [busy, setBusy] = useState(false)
   const [elapsed, setElapsed] = useState(0)
   const [done, setDone] = useState<Done[]>([])
+  const [photos, setPhotos] = useState<string[]>([])
+  const [writeUp, setWriteUp] = useState<WriteUp | null>(null)
 
   const shownAt = useRef(0)
   const firstKeyAt = useRef(0)
   const startedAt = useRef(0)
   const inputRef = useRef<HTMLInputElement>(null)
   const recent = useRef<string[]>([])
+  const recentBlocks = useRef<string[]>([])
+  const fileRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => { saveSettings(settings) }, [settings])
 
@@ -200,21 +244,27 @@ export function DrillView() {
   }, [settings.mode, settings.practicums, setup])
 
   const chosenSkills = useMemo(
-    () => chosen.reduce((sum, entry) => sum + (settings.mode === 'compute' ? entry.compute : entry.skills), 0),
+    () => chosen.reduce((sum, entry) => sum + (settings.mode === 'compute'
+      ? entry.compute
+      : settings.mode === 'written' ? entry.written : entry.skills), 0),
     [chosen, settings.mode],
   )
 
   const nextItem = useCallback(async () => {
     setBusy(true)
     setVerdict(null)
+    setWriteUp(null)
+    setPhotos([])
     setAnswer('')
     setError(null)
+    if (fileRef.current) fileRef.current.value = ''
     try {
       const params = new URLSearchParams({
         mode: settings.mode,
         order: settings.order,
         only_due: settings.onlyDue ? '1' : '0',
         avoid: recent.current.slice(-3).join(','),
+        avoid_blocks: recentBlocks.current.slice(-8).join(','),
         practicums: chosen.map((entry) => entry.id).join(','),
       })
       const response = await fetch(`${API}/next?${params.toString()}`)
@@ -235,6 +285,7 @@ export function DrillView() {
   const start = useCallback(() => {
     setDone([])
     recent.current = []
+    recentBlocks.current = []
     startedAt.current = performance.now()
     setScreen('running')
     void nextItem()
@@ -248,10 +299,10 @@ export function DrillView() {
   }, [loadStats])
 
   useEffect(() => {
-    if (screen !== 'running' || !item || verdict) return
+    if (screen !== 'running' || !item || verdict || writeUp) return
     const timer = window.setInterval(() => setElapsed(performance.now() - shownAt.current), 100)
     return () => window.clearInterval(timer)
-  }, [item, screen, verdict])
+  }, [item, screen, verdict, writeUp])
 
   const submit = useCallback(async (raw: string) => {
     if (!item || busy || verdict) return
@@ -286,6 +337,52 @@ export function DrillView() {
     }
   }, [busy, item, settings.mode, verdict])
 
+  const addPhotos = async (files: FileList | null) => {
+    if (!files?.length) return
+    setError(null)
+    try {
+      const added = await Promise.all([...files].slice(0, MAX_PHOTOS).map(shrink))
+      setPhotos((current) => [...current, ...added].slice(0, MAX_PHOTOS))
+    } catch (failure) {
+      setError(failure instanceof Error ? failure.message : 'снимок не прочитался')
+    }
+  }
+
+  const submitWork = useCallback(async () => {
+    if (!item || item.kind !== 'written' || busy || writeUp || !photos.length) return
+    setBusy(true)
+    const ms = Math.round(performance.now() - shownAt.current)
+    try {
+      const response = await fetch(`${API}/grade`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ block: item.block, photos }),
+      })
+      const payload = await response.json()
+      if (!response.ok) throw new Error(payload.error ?? `сервер ответил ${response.status}`)
+      const result = payload as WriteUp
+      setWriteUp(result)
+      recent.current = [...recent.current, item.skill].slice(-6)
+      if (item.block) recentBlocks.current = [...recentBlocks.current, item.block].slice(-20)
+      setDone((current) => [...current, {
+        skill: item.skill,
+        skillName: result.skill_name ?? item.skill_name,
+        practicum: item.practicum,
+        kind: 'written',
+        ok: (result.marks?.available ?? 0) > 0
+          && result.marks.earned === result.marks.available,
+        ms,
+        firstMs: ms,
+        earned: result.marks?.earned ?? 0,
+        available: result.marks?.available ?? item.marks ?? 0,
+      }])
+    } catch (failure) {
+      setError(failure instanceof Error ? failure.message : 'не отвечает')
+    } finally {
+      setBusy(false)
+    }
+  }, [busy, item, photos, writeUp])
+
   const markFirstKey = useCallback(() => {
     if (!firstKeyAt.current) firstKeyAt.current = performance.now()
   }, [])
@@ -298,10 +395,11 @@ export function DrillView() {
   useEffect(() => {
     if (screen !== 'running') return
     const onKey = (event: KeyboardEvent) => {
-      if (verdict) {
+      if (verdict || writeUp) {
         if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); advance() }
         return
       }
+      if (item?.kind === 'written') return
       if (!item || item.kind !== 'recognition' || !item.options) return
       const index = Number.parseInt(event.key, 10)
       const option = Number.isInteger(index) ? item.options[index - 1] : undefined
@@ -309,7 +407,7 @@ export function DrillView() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [advance, item, markFirstKey, screen, submit, verdict])
+  }, [advance, item, markFirstKey, screen, submit, verdict, writeUp])
 
   const toggle = (id: string) => {
     setSettings((current) => {
@@ -342,10 +440,14 @@ export function DrillView() {
       if (!entry.ok) row.wrong += 1
       misses.set(entry.skill, row)
     }
+    const marked = done.filter((entry) => entry.available !== undefined)
     return {
       correct,
       total,
       spent,
+      marksEarned: marked.reduce((sum, entry) => sum + (entry.earned ?? 0), 0),
+      marksAvailable: marked.reduce((sum, entry) => sum + (entry.available ?? 0), 0),
+      written: marked.length,
       avgFirst: recognition.length
         ? recognition.reduce((sum, entry) => sum + entry.firstMs, 0) / recognition.length
         : 0,
@@ -425,6 +527,7 @@ export function DrillView() {
               ))}
               <p className="text-[11px] text-faint">
                 Число на плитке — сколько заданий доступно в выбранном режиме.
+                {settings.mode === 'written' && ' В разборе это настоящие вопросы архива: нужны бумага и камера, и одно задание занимает минуты, а не секунды.'}
               </p>
             </section>
 
@@ -432,7 +535,7 @@ export function DrillView() {
               <div className="flex flex-col gap-2">
                 <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Длина</h3>
                 <div className="flex border border-line">
-                  {LENGTHS.map((length) => (
+                  {(settings.mode === 'written' ? WRITTEN_LENGTHS : LENGTHS).map((length) => (
                     <button
                       key={length}
                       type="button"
@@ -527,10 +630,76 @@ export function DrillView() {
                   <span>{item.kind === 'recognition' ? 'назвать приём' : 'решить и ввести ответ'}</span>
                 </div>
 
-                <MathText className="text-[15px] leading-relaxed text-ink">{item.prompt}</MathText>
-                {item.note && <MathText className="text-xs text-muted">{item.note}</MathText>}
+                {item.kind === 'written' ? (
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <span className="text-sm text-ink">{item.reference}</span>
+                      <span className="font-mono text-[11px] text-muted">
+                        {item.marks} marks · {item.calculator === 'yes' ? 'GDC' : 'no GDC'}
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      {Array.from({ length: item.pages ?? 1 }, (_, page) => (
+                        <img
+                          key={page}
+                          src={`${API}/page?block=${encodeURIComponent(item.block ?? '')}&kind=question&n=${page}`}
+                          alt={`question page ${page + 1}`}
+                          loading="lazy"
+                          className="w-full border border-line bg-canvas"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-[11px] text-faint">
+                      Solve it on paper, in English, then photograph the page. Only your
+                      question is marked — ignore anything else printed above or below it.
+                    </p>
+                  </div>
+                ) : <>
+                  <MathText className="text-[15px] leading-relaxed text-ink">{item.prompt}</MathText>
+                  {item.note && <MathText className="text-xs text-muted">{item.note}</MathText>}
+                </>}
 
-                {item.kind === 'recognition' && item.options
+                {item.kind === 'written' ? (
+                  !writeUp && <div className="flex flex-col gap-3 border-t border-line pt-3">
+                    <input
+                      ref={fileRef}
+                      type="file"
+                      accept="image/*"
+                      capture="environment"
+                      multiple
+                      className="text-xs text-muted file:mr-2 file:cursor-pointer file:border file:border-line file:bg-canvas file:px-2 file:py-1 file:font-mono file:text-[11px] file:text-ink hover:file:bg-surface"
+                      onChange={(event) => void addPhotos(event.target.files)}
+                    />
+                    {photos.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {photos.map((photo, index) => (
+                          <img key={photo.slice(-32)} src={photo} alt={`page ${index + 1}`} className="h-24 w-auto border border-line object-cover" />
+                        ))}
+                      </div>
+                    )}
+                    <div className="flex flex-wrap items-center gap-3">
+                      <button
+                        type="button"
+                        disabled={!photos.length || busy}
+                        className="h-9 cursor-pointer border border-line-strong bg-ink px-5 font-mono text-[11px] text-canvas hover:opacity-90 disabled:cursor-default disabled:opacity-40"
+                        onClick={() => void submitWork()}
+                      >
+                        {busy ? 'marking…' : 'mark my work'}
+                      </button>
+                      {busy && <span className="font-mono text-[11px] text-muted">reading your page and the markscheme, ~30 s</span>}
+                      {!busy && photos.length > 0 && (
+                        <button type="button" className="cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted hover:text-ink" onClick={() => { setPhotos([]); if (fileRef.current) fileRef.current.value = '' }}>
+                          clear
+                        </button>
+                      )}
+                      {!busy && !photos.length && (
+                        <button type="button" className="cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted hover:text-ink" onClick={advance}>
+                          пропустить
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                ) : item.kind === 'recognition' && item.options
                   ? <div className="grid grid-cols-2 gap-1.5 max-[560px]:grid-cols-1">
                       {item.options.map((option, index) => (
                         <button
@@ -563,6 +732,22 @@ export function DrillView() {
                         ответить
                       </button>
                     </form>}
+
+                {writeUp && (
+                  <div className="flex flex-col gap-4 border-t border-line pt-3">
+                    <WriteUpVerdict verdict={writeUp} />
+                    <div className="flex items-center gap-3">
+                      <button
+                        type="button"
+                        className="h-8 cursor-pointer border border-line-strong bg-canvas px-3 font-mono text-[11px] text-ink hover:bg-surface"
+                        onClick={advance}
+                      >
+                        {settings.length > 0 && done.length >= settings.length ? 'итог' : 'дальше'}
+                      </button>
+                      <span className="font-mono text-[10px] text-faint">Enter или пробел</span>
+                    </div>
+                  </div>
+                )}
 
                 {verdict && (
                   <div className="flex flex-col gap-3 border-t border-line pt-3">
@@ -633,7 +818,9 @@ export function DrillView() {
           <section className="flex flex-col gap-5">
             <div className="flex flex-col gap-1">
               <h2 className="text-lg text-ink">
-                {summary.total ? `${summary.correct} из ${summary.total}` : 'Ни одного задания'}
+                {summary.written
+                  ? `${summary.marksEarned} из ${summary.marksAvailable} баллов`
+                  : summary.total ? `${summary.correct} из ${summary.total}` : 'Ни одного задания'}
               </h2>
               {summary.total > 0 && (
                 <p className="font-mono text-[11px] text-muted">

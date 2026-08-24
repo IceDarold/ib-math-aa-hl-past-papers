@@ -256,6 +256,38 @@ t('составная часть печатается по кускам',
   archive.reference(dict(sample, part='c-ii'))
   == 'May 2022 TZ2, Paper 1, Q3(c)(ii)')
 
+print('\n=== разбор как режим тренажёра ===')
+written_pool = engine.candidates(bank, 'written', GENERATORS)
+t('настоящий вопрос есть у каждого приёма',
+  {skill['id'] for skill, _ in written_pool}
+  == {skill['id'] for skill in bank['skills']})
+t('в режиме разбора выдаётся только разбор',
+  {kind for _, kind in written_pool} == {'written'})
+t('разбор не подмешивается в перемешку — он занимает минуты',
+  all(kind != 'written'
+      for _, kind in engine.candidates(bank, 'mixed', GENERATORS)))
+
+written_skill = bank['skills_by_id']['A7.induction_sum']
+shown_written, spec_written, answer_written = engine.build_item(
+    bank, GENERATORS, written_skill, 'written', rng=random.Random(2))
+t('задание разбора — ключ с блоком архива',
+  shown_written['item'].startswith('written:')
+  and shown_written['block'] in bank['archive'])
+t('в задании есть ссылка на бумагу и цена в баллах',
+  bool(shown_written['reference']) and shown_written['marks'] > 0)
+t('бюджет времени считается от баллов, а не от вида задания',
+  shown_written['budget_ms'] == shown_written['marks'] * 90_000)
+t('машинной проверки у разбора нет — судит модель',
+  spec_written == {'kind': 'graded'} and answer_written is None)
+
+seen_blocks = set()
+for _ in range(12):
+    item = engine.build_item(bank, GENERATORS, written_skill, 'written',
+                             rng=random.Random(_), avoid_blocks=seen_blocks)[0]
+    seen_blocks.add(item['block'])
+t('недавние вопросы не повторяются, пока есть другие',
+  len(seen_blocks) == len(written_skill['blocks']))
+
 print('\n=== рубрики оформления ===')
 common = grader.rubric()
 a7 = grader.rubric('A7')

@@ -4,7 +4,7 @@ import { useI18n } from '../i18n'
 import { MenuIcon, PanelLeftIcon, SearchIcon } from './Icons'
 
 interface TopBarProps {
-  mode: 'atlas' | 'practicums' | 'drill' | 'exam'
+  mode: 'atlas' | 'practicums' | 'drill'
   query: string
   resultCount: number
   resultMarks: number
@@ -16,7 +16,7 @@ interface TopBarProps {
   onQueryChange: (query: string) => void
   onOpenFilters: () => void
   onToggleSidebar: () => void
-  onModeChange: (mode: 'atlas' | 'practicums' | 'drill' | 'exam') => void
+  onModeChange: (mode: 'atlas' | 'practicums' | 'drill') => void
 }
 
 export function TopBar({
@@ -75,7 +75,6 @@ export function TopBar({
         <button className={`h-7 cursor-pointer border-0 px-2 font-mono text-[10px] ${mode === 'atlas' ? 'bg-ink text-canvas' : 'bg-canvas text-muted hover:bg-surface'}`} type="button" aria-pressed={mode === 'atlas'} onClick={() => onModeChange('atlas')}>{t('top.atlas')}</button>
         <button className={`h-7 cursor-pointer border-0 border-l border-line px-2 font-mono text-[10px] ${mode === 'practicums' ? 'bg-ink text-canvas' : 'bg-canvas text-muted hover:bg-surface'}`} type="button" aria-pressed={mode === 'practicums'} onClick={() => onModeChange('practicums')}>{t('top.practicums')}</button>
         <button className={`h-7 cursor-pointer border-0 border-l border-line px-2 font-mono text-[10px] ${mode === 'drill' ? 'bg-ink text-canvas' : 'bg-canvas text-muted hover:bg-surface'}`} type="button" aria-pressed={mode === 'drill'} onClick={() => onModeChange('drill')}>{t('top.drill')}</button>
-        <button className={`h-7 cursor-pointer border-0 border-l border-line px-2 font-mono text-[10px] ${mode === 'exam' ? 'bg-ink text-canvas' : 'bg-canvas text-muted hover:bg-surface'}`} type="button" aria-pressed={mode === 'exam'} onClick={() => onModeChange('exam')}>{t('top.exam')}</button>
       </nav>
 
       <div className="whitespace-nowrap max-[960px]:hidden">

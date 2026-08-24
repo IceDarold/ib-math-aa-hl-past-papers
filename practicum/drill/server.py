@@ -54,7 +54,7 @@ class Drill:
         return store.connect(self.db_path)
 
     def next_item(self, mode, avoid=(), practicums=None, only_due=False,
-                  order='schedule'):
+                  order='schedule', avoid_blocks=()):
         with self.lock:
             db = self.connection()
             try:
@@ -66,7 +66,7 @@ class Drill:
                                     practicums=practicums, only_due=only_due,
                                     order=order)
         shown, _, _ = engine.build_item(self.bank, GENERATORS, skill, kind,
-                                        rng=self.rng)
+                                        rng=self.rng, avoid_blocks=avoid_blocks)
         shown['skill_name'] = skill['name']
         shown['trigger'] = skill['trigger']
         shown['practicum_title'] = next(
@@ -127,9 +127,12 @@ class Drill:
             practicum = self.bank['skills_by_id'][skill_id]['practicum']
             compute[practicum] = compute.get(practicum, 0) + 1
 
-        skills = {}
+        skills, written = {}, {}
         for skill in self.bank['skills']:
             skills[skill['practicum']] = skills.get(skill['practicum'], 0) + 1
+        for block in (self.bank.get('archive') or {}).values():
+            practicum = block['skill'].split('.')[0]
+            written[practicum] = written.get(practicum, 0) + 1
 
         return {
             'practicums': [{
@@ -140,6 +143,7 @@ class Drill:
                 'skills': skills.get(entry['id'], 0),
                 'recognition': recognition.get(entry['id'], 0),
                 'compute': compute.get(entry['id'], 0),
+                'written': written.get(entry['id'], 0),
                 'share': round(self.bank['share'].get(entry['id'], 0), 4),
             } for entry in self.bank['practicums']],
         }
@@ -151,6 +155,18 @@ class Drill:
         path = os.path.join(base, 'photos')
         os.makedirs(path, exist_ok=True)
         return path
+
+    def page(self, block_id, kind='question', index=0):
+        """Страница подлинника картинкой: билет или схема оценивания."""
+        block = (self.bank.get('archive') or {}).get(block_id or '')
+        if block is None:
+            raise LookupError('такого вопроса нет')
+        spec = (block.get('source_pages') if kind == 'question'
+                else block.get('markscheme_pages'))
+        images = archive.render(block['dir'], kind, spec, extra=1)
+        if not 0 <= index < len(images):
+            raise LookupError('такой страницы нет')
+        return images[index]
 
     def questions(self, practicum=None, skill=None):
         """Настоящие вопросы архива, привязанные к приёмам."""
@@ -338,18 +354,36 @@ class Handler(BaseHTTPRequestHandler):
             mode = (query.get('mode') or ['mixed'])[0]
             avoid = (query.get('avoid') or [''])[0].split(',')
             chosen = (query.get('practicums') or [''])[0].split(',')
+            skipped = (query.get('avoid_blocks') or [''])[0].split(',')
             order = (query.get('order') or ['schedule'])[0]
             only_due = (query.get('only_due') or ['0'])[0] in ('1', 'true')
             try:
                 self.send_json(self.drill.next_item(
                     mode, avoid=tuple(a for a in avoid if a),
                     practicums=tuple(p for p in chosen if p) or None,
-                    only_due=only_due, order=order))
+                    only_due=only_due, order=order,
+                    avoid_blocks=tuple(b for b in skipped if b)))
             except LookupError as exc:
                 self.send_json({'error': str(exc)}, 400)
             return
         if route == f'{PREFIX}/stats':
             self.send_json(self.drill.stats())
+            return
+        if route == f'{PREFIX}/page':
+            try:
+                png = self.drill.page(
+                    (query.get('block') or [''])[0],
+                    (query.get('kind') or ['question'])[0],
+                    int((query.get('n') or ['0'])[0]))
+            except (LookupError, ValueError) as exc:
+                self.send_json({'error': str(exc)}, 404)
+                return
+            self.send_response(200)
+            self.send_header('Content-Type', 'image/png')
+            self.send_header('Content-Length', str(len(png)))
+            self.send_header('Cache-Control', 'private, max-age=3600')
+            self.end_headers()
+            self.wfile.write(png)
             return
         if route == f'{PREFIX}/questions':
             self.send_json(self.drill.questions(

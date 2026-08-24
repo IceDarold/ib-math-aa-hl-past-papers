@@ -23,6 +23,9 @@ import os
 import random
 import time
 
+from drill.archive import parse_pages
+from drill.archive import reference as archive_reference
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 BANK_PATH = os.path.join(HERE, 'bank.json')
 
@@ -64,11 +67,17 @@ def candidates(bank, mode, generators, practicums=None):
             continue
         has_recog = bool(bank['items_by_skill'].get(skill['id']))
         has_compute = skill['id'] in generators
+        has_written = bool(skill.get('blocks'))
         if mode == 'recognition' and has_recog:
             out.append((skill, 'recognition'))
         elif mode == 'compute' and has_compute:
             out.append((skill, 'compute'))
+        elif mode == 'written' and has_written:
+            out.append((skill, 'written'))
         elif mode == 'mixed' and (has_recog or has_compute):
+            # Разбор письменной работы в перемешку не идёт намеренно:
+            # он занимает минуты и требует бумаги, а перемешка устроена
+            # для коротких заданий подряд.
             out.append((skill, 'both'))
     return out
 
@@ -124,7 +133,8 @@ def choose(bank, states, generators, mode='mixed', rng=None, avoid=(),
     return skill, kind
 
 
-def build_item(bank, generators, skill, kind, rng=None, seed=None):
+def build_item(bank, generators, skill, kind, rng=None, seed=None,
+               avoid_blocks=()):
     """Собирает задание: (что показать, чем проверять, эталон).
 
     Эталон и описание проверки странице не отдаются — они остаются здесь
@@ -145,6 +155,29 @@ def build_item(bank, generators, skill, kind, rng=None, seed=None):
         }
         return shown, {'kind': 'digest', 'digest': item['answer_digest']}, \
             item['answer']
+
+    if kind == 'written':
+        # Настоящий вопрос архива: показываем страницу билета картинкой,
+        # проверять его будет разбор, а не sympy.
+        blocks = [b for b in skill['blocks'] if b not in avoid_blocks]
+        block_id = rng.choice(blocks or skill['blocks'])
+        block = bank['archive'][block_id]
+        marks = block.get('marks') or 6
+        shown = {
+            'item': f'written:{block_id}',
+            'kind': 'written',
+            'skill': skill['id'],
+            'practicum': skill['practicum'],
+            'block': block_id,
+            'reference': archive_reference(block),
+            'marks': marks,
+            'calculator': block.get('calculator'),
+            'pages': len(parse_pages(block.get('source_pages'))) + 1,
+            # На экзамене примерно минута на балл; на бумаге пишут медленнее,
+            # чем набирают, поэтому запас щедрее.
+            'budget_ms': marks * 90_000,
+        }
+        return shown, {'kind': 'graded'}, None
 
     seed = rng.randrange(2**31) if seed is None else seed
     built = generators[skill['id']](random.Random(seed))
