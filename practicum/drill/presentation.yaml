@@ -35,21 +35,62 @@ common:
     code: A1
   - id: accuracy
     requirement: >
-      Answers that are not exact are given to three significant figures, and
-      rounding happens only at the final step.
-    fix: "Keep full accuracy in intermediate lines; round once, at the end, to 3 s.f."
+      Unless the question states otherwise, a final numerical answer is given
+      exactly or correct to three significant figures. Using a correct 3 s.f.
+      value in a later part is explicitly allowed, so do not treat that as
+      premature rounding; only a value rounded so early that the final answer
+      is wrong is a fault.
+    fix: "Give the final answer exactly, or to three significant figures."
     code: A1
   - id: equality_notation
     requirement: >
-      The equals sign is used only between quantities that really are equal,
-      so that no line states something false. Extra correct working is not a
-      fault: the Instructions to Examiners say that once a correct answer is
-      seen, further working is ignored.
-    fix: "Break the chain: write each equation on its own line."
+      Within the working that leads to the answer, the equals sign joins only
+      quantities that really are equal, so no line on the way states something
+      false. Working that comes after a correct final answer is not judged at
+      all: the Instructions to Examiners say it is ignored even when it is
+      wrong.
+    fix: "Break the chain: write each step of the working on its own line."
+    code: A1
+
+  - id: simplified_final_answer
+    requirement: >
+      The final answer is simplified in the way the instructions require:
+      arithmetic completed, and any value that leads to an integer written as
+      one — sqrt(25/4) as 5/2, 10/5 as 2. Fractions need not be in lowest
+      terms (10/4 may stand), expressions need not be factorized nor expanded,
+      and intermediate values need not be simplified at all.
+    fix: "Finish the arithmetic in the last line: write sqrt(25/4) as 5/2."
+    code: A1
+  - id: calculator_notation
+    requirement: >
+      The final answer is written in mathematical notation, not in the form a
+      calculator displays. Calculator notation is accepted in the working but
+      never in a final answer.
+    fix: "Write the final answer as 2.5 x 10^-3, not as 2.5E-3."
+    code: A1
+  - id: one_answer_per_question
+    requirement: >
+      Only one answer is offered. Where a candidate leaves two different
+      answers, only the first is marked, and work crossed out is not marked at
+      all — so a better second attempt is lost unless the first is crossed out
+      clearly.
+    fix: "Cross out the attempt you have abandoned, and leave exactly one final answer."
     code: A1
 
 # Правила, зависящие от того, что за вопрос.
 by_question_type:
+  hence:
+    when: >
+      The question uses the command term "Hence" without "or otherwise".
+    items:
+      - id: hence_uses_previous
+        requirement: >
+          The previous part is actually used. When the command term is
+          "Hence", the instructions do not permit an alternative method: a
+          fresh, unrelated solution earns nothing even when it is correct.
+        fix: "Write \"Hence, using the result from part (a),\" and carry that result into this part."
+        code: M1
+
   show_that:
     when: >
       The question prints the result to be obtained ("show that", "prove
@@ -61,7 +102,10 @@ by_question_type:
           result. It does not start from the printed result and work
           backwards, and it does not assume what is to be proved.
         fix: "Start from the left-hand side and transform it until it becomes the right-hand side."
-        code: AG
+        # AG означает «ответ дан в условии, баллов за него не начисляют», —
+        # потерять «AG-балл» нельзя. В вопросах «show that» платят M и R,
+        # и теряется здесь именно R: рассуждение идёт не в ту сторону.
+        code: R1
       - id: ag_final_form
         requirement: >
           The working reaches the printed result, in that form or in one the
@@ -69,7 +113,7 @@ by_question_type:
           say the response does not need to restate the printed line unless a
           Note in the markscheme demands it, so do not require a restatement.
         fix: "Carry the working through until the printed result is reached."
-        code: AG
+        code: M1
 
 # Правила по практикумам.
 by_practicum:

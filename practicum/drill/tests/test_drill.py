@@ -325,6 +325,31 @@ t('рубрика больше не требует повторять напеч
       ['by_question_type'].values() for item in group['items']
       if item['id'] == 'ag_final_form'))
 
+print('\n=== рубрика сверена с инструкциями ===')
+rubric_file = yaml.safe_load(open(os.path.join(DRILL, 'presentation.yaml')))
+every = (rubric_file['common']
+         + [i for g in rubric_file['by_question_type'].values()
+            for i in g['items']]
+         + [i for v in rubric_file['by_practicum'].values() for i in v])
+t('ни один пункт не обещает потерю AG-балла — AG это не балл, '
+  'а пометка «ответ дан в условии»',
+  all(item['code'] != 'AG' for item in every))
+t('коды пунктов — только те, что определены в инструкциях',
+  {item['code'] for item in every} <= {'M1', 'A1', 'R1'})
+
+ids = {item['id'] for item in every}
+for needed, why in (
+        ('simplified_final_answer', 'упрощение окончательного ответа — §8'),
+        ('calculator_notation', 'запись калькулятора в ответе — §7'),
+        ('one_answer_per_question', 'зачёркнутое и второй ответ — §10'),
+        ('hence_uses_previous', '«Hence» запрещает другой метод — §6')):
+    t(f'закрыт пробел: {why}', needed in ids)
+
+accuracy = next(i for i in every if i['id'] == 'accuracy')
+t('точность больше не требует округлять только в самом конце — '
+  'IB разрешает брать 3 з.ц. в следующий пункт',
+  'explicitly allowed' in ' '.join(accuracy['requirement'].split()))
+
 print('\n=== запрос на разбор ===')
 message = grader.build_messages(
     work_images=[b'\x89PNG-fake'], question_images=[b'\x89PNG-q'],
