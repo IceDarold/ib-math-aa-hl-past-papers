@@ -79,6 +79,8 @@ Rules you must follow:
 - Mark codes: M1 method, A1 accuracy, R1 reasoning, AG answer given in the question.
 - Write every word of your feedback in English. The candidate is practising exam register, so your phrasing is part of the teaching.
 - In "fix" fields give the exact sentence the candidate should have written, not a description of what is missing.
+- Write every mathematical expression in LaTeX between dollar signs, in "model_write_up", in the "fix" fields and in the lines you quote: $n = k + 1$, $\\frac{k(k+1)}{2}$, $\\sum_{r=1}^{n} r$. A whole displayed line may use $$...$$. Keep one step per line and keep the line breaks — the page renders this, and plain ASCII like k(k+1)/2 renders badly.
+- Do not put LaTeX in "transcription": that field must show the page as written, symbol for symbol.
 
 Reply with strict JSON only, in this shape:
 {
@@ -90,7 +92,7 @@ Reply with strict JSON only, in this shape:
   },
   "presentation": [{"id": "<rubric id>", "met": true|false, "code": "M1|A1|R1|AG", "comment": "<one sentence>", "fix": "<exact sentence to write>"}],
   "marks": {"available": <int or null>, "earned": <int>, "lost": [{"code": "M1|A1|R1|AG", "why": "<one sentence>"}]},
-  "model_write_up": "<the candidate's own solution rewritten as a markscheme-quality write-up, in English>",
+  "model_write_up": "<the candidate's own solution rewritten as a markscheme-quality write-up, in English, with all mathematics in LaTeX between dollar signs and one step per line>",
   "one_thing": "<the single most valuable change for next time, one sentence>"
 }"""
 

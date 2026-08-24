@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { MathText } from './MathText'
 
 export interface Verdict {
   transcription: string
@@ -42,8 +43,8 @@ export function WriteUpVerdict({ verdict, markschemeUrl }: { verdict: Verdict; m
           <span className="text-sm text-ink">{verdict.mathematics?.verdict}</span>
           {verdict.mathematics?.errors?.map((item) => (
             <div key={item.line + item.problem} className="border-l-2 border-line pl-2 text-xs leading-relaxed text-muted">
-              <span className="font-mono text-[11px] text-ink">{item.line}</span>
-              <span className="block">{item.problem}</span>
+              <span className="block font-mono text-[11px] text-ink"><MathText>{item.line}</MathText></span>
+              <span className="block"><MathText>{item.problem}</MathText></span>
               <span className="block text-faint">{item.consequence}</span>
             </div>
           ))}
@@ -58,8 +59,8 @@ export function WriteUpVerdict({ verdict, markschemeUrl }: { verdict: Verdict; m
               </span>
               <span className={item.met ? 'text-faint' : 'text-muted'}>
                 {item.met ? <s>{item.comment}</s> : <>
-                  {item.comment}
-                  <span className="mt-0.5 block text-ink">→ {item.fix}</span>
+                  <MathText>{item.comment}</MathText>
+                  <span className="mt-0.5 block text-ink">→ <MathText>{item.fix}</MathText></span>
                 </>}
               </span>
             </div>
@@ -82,8 +83,12 @@ export function WriteUpVerdict({ verdict, markschemeUrl }: { verdict: Verdict; m
         <dd className="text-sm text-ink">{verdict.one_thing}</dd>
 
         <dt className={LABEL}>model write-up</dt>
-        <dd className="whitespace-pre-wrap border border-line bg-surface p-3 text-xs leading-relaxed text-ink">
-          {verdict.model_write_up}
+        <dd className="border border-line bg-surface p-3 text-xs leading-relaxed text-ink">
+          {(verdict.model_write_up ?? '').split('\n').map((line, index) => (
+            line.trim()
+              ? <MathText key={`${index}-${line.slice(0, 24)}`} className="block">{line}</MathText>
+              : <span key={`${index}-gap`} className="block h-2" />
+          ))}
         </dd>
 
         <dt className={LABEL}>what it read</dt>

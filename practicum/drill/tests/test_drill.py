@@ -433,6 +433,10 @@ t('системная роль требует разделять математ�
   and 'MATHEMATICS' in message[0]['content'])
 t('модель обязана сначала прочесть, а потом судить',
   'Transcribe the work first' in message[0]['content'])
+t('образец записи требуется формулами, а не символами подряд',
+  'LaTeX between dollar signs' in message[0]['content'])
+t('транскрипция остаётся как на бумаге, без разметки',
+  'Do not put LaTeX in "transcription"' in message[0]['content'])
 texts = [part.get('text', '') for part in parts]
 t('официальные инструкции идут раньше рубрики',
   next(i for i, x in enumerate(texts) if 'OFFICIAL INSTRUCTIONS' in x)
