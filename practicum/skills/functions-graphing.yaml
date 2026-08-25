@@ -1,0 +1,612 @@
+version: 0.1
+practicum: B3
+title: "Transformations of graphs"
+language: en
+source_topic: functions.graphing (all of it)
+corpus:
+  blocks: 37
+  marks: 107
+  sessions: May 2021 — November 2025
+  papers: {1: 64, 2: 13, 3: 30}
+  gdc_marks: 43
+  note: >
+    The whole of functions.graphing, and nothing else. The neighbouring
+    topics are already spoken for and both are large: functions.equations
+    went to B1 and B2, and functions.curve_sketching with
+    functions.asymptotes make 147 marks between them, which is B4's
+    whole practicum. So B3 keeps every block it has, and the sketches
+    here are sketches of curves you are expected to know — a parabola,
+    arccos, a logarithm, a rectangular hyperbola — rather than
+    investigations of a function you have never met. That distinction
+    is the seam between B3 and B4.
+
+    Two of the 107 marks are one question counted twice: the whole
+    November 2023 session sits in the corpus as two zones and the papers
+    are the same paper. Here it doubles 2023-NOV-*-P2-Q02-B. B2
+    established the duplication for the whole session; this is a second
+    topic where it shows up.
+
+    Paper 1 carries 64 of the marks, and that is not an accident of
+    printing. Sketching without a calculator is what this topic is for:
+    the examiner wants the intercepts, the asymptotes and the turning
+    points found by hand and then drawn. 43 marks carry a calculator,
+    and unusually for this series most of them earn it — the family
+    explorations of rung 9 are GDC work by design, and the coordinates
+    in May 2023 TZ1 Paper 2 are read off a screen. This is the first
+    practicum in six where the calculator share is honest.
+
+principle: >
+  A graph is the one answer in the syllabus that cannot be written down
+  as a number, and the exam has two ways of asking for it.
+
+  It asks you to NAME what moves the graph — "describe a sequence of
+  transformations that maps y = sin x onto ..." — and then the answer is
+  a recipe, and the marks are for the recipe running correctly. Order is
+  a mark of its own: horizontal transformations composed the other way
+  round give a different curve, and the markscheme says so in as many
+  words, awarding A1A0 for the right pair in the wrong order.
+
+  Or it asks you to DRAW, and then the answer is a list of features. No
+  sketch is marked on its beauty. Read the instructions in the archive
+  and they are always the same: "stating the values of any axes
+  intercepts", "clearly indicating any asymptotes", "showing the
+  coordinates of any points where f'(x) = 0". Those phrases are the
+  mark scheme. The curve between them is one A1 for shape.
+
+  Hence the ladder, and it goes by what you are given.
+
+  Rungs 1-4: a graph is given, and something moves it. Read values off
+  it; apply a stretch and a translation to it; name the sequence that
+  produced it; find the parameters of that sequence. These four are the
+  rigid transformations, and they move points without bending anything.
+
+  Rungs 5-6: a graph is given, and something folds it. Symmetry — odd,
+  even, and reflection in y = x — then the two transformations that act
+  on the value rather than on the position: |f(x)|, f(|x|) and 1/f(x).
+  These bend. They create corners where there were none, and every one
+  of those corners sits at a zero of f.
+
+  Rungs 7-9: no graph is given, and you draw it. From a formula you know,
+  with its intercepts and turning points; from a formula with asymptotes,
+  where the asymptotes come first and the curve follows; and across a
+  whole family of formulas, where the calculator does the drawing and
+  your job is to see the pattern.
+
+  The three parts are one idea seen three times: a graph is its list of
+  features. Rungs 1-4 move the list, rungs 5-6 rewrite it, rungs 7-9
+  compute it from nothing.
+
+skills:
+  - id: read_graph
+    name: Read a value off a graph
+    rung: 1
+    trigger: >
+      "Write down the value of f(2)", "write down the coordinates of B",
+      "find (f o f)(2)" with a diagram beside it. A printed curve and a
+      number wanted from it — no algebra offered and none needed.
+    chain:
+      - Find the x you were given on the horizontal axis
+      - Go up or down to the curve, then across to the value
+      - For a composite, do it twice — the first answer is the second input
+      - When the point is a labelled feature, quote it rather than measure it
+    traps:
+      - >
+        The two readings of a composite are done in the wrong order, or
+        the intermediate value is read as an x when it is a y
+      - >
+        A value is estimated from the grid when the question has already
+        printed it as a labelled point
+      - >
+        The gradient of a tangent printed on the diagram is used as the
+        function value, or the other way round
+    calculator:
+      mode: no
+      note: >
+        Three of the four blocks are Paper 1. The Paper 3 pair asks for
+        the coordinates of a point of inflexion already found in an
+        earlier part — arithmetic, not machinery.
+    prereq: []
+    raw_tags: [read_graph, evaluate_function_value, function_value,
+               function_composition, evaluate_composite_function,
+               function_evaluation, coordinate_identification, slope,
+               line_equation, substitution]
+    blocks: [2021-MAY-TZ1-P1-Q01-A, 2025-MAY-TZ3-P1-Q02-A,
+             2024-MAY-TZ1-P3-Q02-F-I, 2024-MAY-TZ1-P3-Q02-C]
+
+  - id: apply_transform
+    name: Apply a translation or a stretch to a given graph
+    rung: 2
+    trigger: >
+      "Let g(x) = (1/2)f(x) + 1. On the axes above, sketch the graph of
+      g", "the graph of y = f(x) is transformed to the graph of
+      y = f(kx)". You are handed the picture and told the formula.
+    chain:
+      - Decide for each transformation whether it moves x or moves y
+      - Transform the key points one at a time — ends, turning points, intercepts
+      - a f(x) + b acts on the second coordinate; f(x/s) + h acts on the first
+      - Join them with the same shape you started with
+    traps:
+      - >
+        The whole curve is redrawn by eye instead of moving the labelled
+        points, and the maximum lands at the wrong height
+      - >
+        A vertical stretch is applied to the x-coordinate as well
+      - >
+        f(kx) is called a stretch by k. It is a stretch by 1/k, and this
+        is the single most reliable lost mark in the topic
+    calculator:
+      mode: no
+      note: >
+        A GDC cannot help: in both blocks the original graph is a picture,
+        not a formula, so there is nothing to type in.
+    prereq: [read_graph]
+    raw_tags: [vertical_stretch, vertical_translation, graph_transformation,
+               sketch_function, identify_key_points, geometric_transformation,
+               horizontal_stretch]
+    blocks: [2021-MAY-TZ1-P1-Q01-B, 2022-NOV-COMMON-P3-Q02-E-I]
+
+  - id: name_transform
+    name: Name the sequence of transformations
+    rung: 3
+    trigger: >
+      "Describe a sequence of transformations that maps the graph of
+      y = arctan x onto ...", "describe these two transformations". Two
+      formulas are printed and the words between them are the answer.
+    chain:
+      - Write the target so that the source is visible inside it
+      - Peel the transformations off from the inside out
+      - Name each one in full — direction and factor, not just "shift"
+      - Say the order, and check it by composing them in that order
+    traps:
+      - >
+        The horizontal pair is given in the wrong order. arctan(2x+1) is a
+        stretch then a shift of 1/2, or a shift of 1 then the stretch —
+        a shift of 1/2 then the stretch is neither
+      - >
+        The translation is named in the wrong direction, because f(x-h)
+        moves the graph h to the right and reads as if it should go left
+      - >
+        The word "move" is used. The markscheme names it explicitly as
+        not accepted; translate, shift, dilate and stretch are
+    calculator:
+      mode: no
+      note: >
+        Every block is Paper 1. The answer is a sentence, and the working
+        that earns it is algebra on the printed formula.
+    prereq: [apply_transform]
+    raw_tags: [horizontal_stretch, horizontal_translation, vertical_translation,
+               vertical_stretch, identify_transformation, describe_transformations,
+               geometric_transformation, algebraic_simplification,
+               trigonometric_identity]
+    blocks: [2021-MAY-TZ2-P1-Q12-A, 2022-MAY-TZ1-P1-Q05-A,
+             2025-NOV-TZ1-P1-Q08-B]
+
+  - id: match_transform
+    name: Find the parameters of the transformation
+    rung: 4
+    trigger: >
+      "The graph of g is obtained from the graph of f by a horizontal
+      stretch with scale factor k, followed by a vertical translation of
+      c units. Find k and c." The sequence is named for you; the numbers
+      are not.
+    chain:
+      - Write the transformation with its letters, applied to f
+      - Set that equal to g and compare the parts that must agree
+      - For a rational target, rewrite it as a constant plus a fraction first
+      - Read the asymptotes off the rewritten form — they are the translations
+    traps:
+      - >
+        The exponent is matched and the linear term is forgotten, so k
+        comes out right and c does not
+      - >
+        (2x+6)/(x-4) is attacked as it stands. Divided out it is
+        2 + 14/(x-4), and then every transformation is visible at once
+      - >
+        The vertical stretch and the vertical translation are given in
+        the wrong order — the markscheme requires stretch before shift
+    calculator:
+      mode: checks
+      note: >
+        The November 2023 pair is printed in a Paper 2, and a GDC will
+        confirm the two graphs coincide. Finding k and c is algebra
+        either way.
+    prereq: [name_transform]
+    raw_tags: [function_transformation, horizontal_stretch, vertical_translation,
+               coefficient_matching, function_composition, rewrite_rational_function,
+               identify_asymptotes, describe_transformations]
+    blocks: [2023-NOV-TZ1-P2-Q02-B, 2023-NOV-TZ2-P2-Q02-B,
+             2025-NOV-TZ3-P1-Q03-B]
+
+  - id: use_symmetry
+    name: Use the symmetry of the graph
+    rung: 5
+    trigger: >
+      "Show that f is an odd function", "given that f is odd, sketch
+      y = f(x)", "using the line of symmetry y = x, write down the
+      coordinates". Half the picture is given and the rest is free.
+    chain:
+      - For parity, write f(-x) out in full before simplifying anything
+      - Finish on f(-x) = -f(x) or f(-x) = f(x), and then say which it is
+      - On a graph, odd means a half-turn about the origin, even a mirror in Oy
+      - Symmetry in y = x swaps the coordinates of every labelled point
+    traps:
+      - >
+        The conclusion is left out. The last mark is an R1 for the
+        sentence "therefore f is odd", not for the algebra above it
+      - >
+        (-x)^2 is written as -x^2 somewhere in the middle
+      - >
+        The half-turn is drawn as a mirror in the y-axis, which is what
+        an even function does
+      - >
+        Reflecting in y = x, only one of the two coordinates is swapped
+    calculator:
+      mode: checks
+      note: >
+        A GDC will show a graph is symmetric and will never prove it. The
+        two "show that" blocks are worth two marks each and both of them
+        are algebra.
+    prereq: [read_graph]
+    raw_tags: [substitute_negative_x, simplify_exponential_expression,
+               verify_function_parity, identify_odd_function, odd_function,
+               odd_function_symmetry, rotation_about_origin, symmetry,
+               coordinate_reflection, algebraic_manipulation, substitute_variable]
+    blocks: [2022-MAY-TZ1-P2-Q06-A, 2022-MAY-TZ2-P1-Q06-A,
+             2024-MAY-TZ1-P1-Q09-B, 2024-MAY-TZ1-P2-Q11-C]
+
+  - id: fold_graph
+    name: Fold the graph — |f(x)|, f(|x|) and 1/f(x)
+    rung: 6
+    trigger: >
+      "Sketch y = |f(x)|", "sketch the graph of y = f(|x|)", "sketch
+      y = 15/f(x), clearly indicating any asymptotes and intercepts".
+      The new graph is defined from the old one point by point.
+    chain:
+      - "|f(x)| — reflect what is below the axis upwards, keep the rest"
+      - f(|x|) — throw away x < 0 and mirror the right half into its place
+      - 1/f(x) — zeros become asymptotes, asymptotes become zeros, and 1 and -1 stay put
+      - Mark every corner. |f| has one at each zero of f, f(|x|) has one at x = 0
+      - For 1/f, follow the turning points — a maximum of f is a minimum of 1/f where f > 0
+    traps:
+      - >
+        Cusps are drawn as smooth turns. The markscheme asks for "sharp
+        points (cusps) at the x-intercepts" by name
+      - >
+        For |f| the oblique asymptote is left un-reflected. If y = 5x+5
+        is an asymptote of a branch that gets flipped, y = -5x-5 is the
+        asymptote of the flipped branch
+      - >
+        For f(|x|) the LEFT half is kept and mirrored. It is the right
+        half that survives
+      - >
+        For 1/f a vertical asymptote of f is drawn again in the new
+        graph. There the new graph goes to zero instead
+    calculator:
+      mode: no
+      note: >
+        All six blocks are Paper 1 and all six start from a printed
+        picture. This is the purest by-hand rung of the practicum.
+    prereq: [use_symmetry]
+    raw_tags: [absolute_value, absolute_value_transformation, reflection,
+               reflection_in_x_axis, reflect_graph, graph_sketching, cusps,
+               sketching, sketch_transformation, asymptote_identification,
+               reciprocal_transformation, intercept_calculation,
+               identify_intercepts, symmetry]
+    blocks: [2022-NOV-COMMON-P1-Q10-C, 2023-MAY-TZ1-P1-Q08-A,
+             2024-MAY-TZ1-P1-Q09-A, 2025-MAY-TZ3-P1-Q06-A,
+             2025-NOV-TZ3-P1-Q05-A, 2025-MAY-TZ3-P1-Q06-B]
+
+  - id: sketch_standard
+    name: Sketch a curve you already know
+    rung: 7
+    trigger: >
+      "Sketch the graph of y = arccos x, indicating the y-intercept and
+      the coordinates of the end points", "sketch y = f1(x), stating the
+      values of any axes intercepts and the coordinates of any local
+      maximum or minimum points". A formula, no picture, and a list of
+      things to label.
+    chain:
+      - Name the shape before drawing anything — parabola, sine, log, inverse trig
+      - Find the intercepts by solving f = 0 and evaluating f(0)
+      - Find the turning points, and give both coordinates of each
+      - Mark the ends of the domain — a restricted domain has endpoints, and they are marks
+      - Draw the shape through the points you have found, not around them
+    traps:
+      - >
+        Only the x-coordinate of a maximum is given. The markscheme wants
+        the coordinates, and half a point earns nothing
+      - >
+        The domain is ignored and the curve runs off both sides. On
+        0 <= x <= 6m the picture stops at 6m, and stopping is a mark
+      - >
+        For a sine with a stretch, the period is computed from the
+        amplitude coefficient, or the stretch factor is inverted
+      - >
+        Two curves asked for on the same axes are drawn without saying
+        which is which, or without their relative position being right
+    calculator:
+      mode: checks
+      note: >
+        Half these blocks are Paper 1, where the sketch is done by hand
+        from the algebra. In the Paper 2 and Paper 3 blocks the GDC draws
+        the curve and the marks are for copying it with its labels.
+    prereq: [apply_transform]
+    raw_tags: [sketch_graph, find_intercepts, find_vertex, state_coordinates,
+               identify_intercepts, identify_endpoints, sketch_parabola,
+               solve_quadratic_equation, find_x_intercept, identify_vertex,
+               identify_domain_endpoints, calculate_period, identify_amplitude,
+               identify_domain, locate_intercepts, locate_extrema, sketch_curve,
+               local_extrema, sketch_logarithmic_function, sketch_linear_function,
+               indicate_intercept, label_graph, compare_relative_positions,
+               compare_shapes, state_domain_range, indicate_asymptote,
+               indicate_intercepts]
+    blocks: [2021-MAY-TZ2-P3-Q01-A, 2021-NOV-COMMON-P1-Q10-B,
+             2025-MAY-TZ2-P1-Q08-A, 2023-MAY-TZ1-P1-Q05-B,
+             2023-MAY-TZ2-P3-Q01-A, 2025-NOV-TZ3-P3-Q01-A,
+             2023-MAY-TZ1-P2-Q02-B, 2021-MAY-TZ2-P2-Q12-F]
+
+  - id: sketch_asymptotic
+    name: Sketch a curve that has asymptotes
+    rung: 8
+    trigger: >
+      "Sketch the graph of y = f(x). On your sketch, indicate the values
+      of any axis intercepts and label any asymptotes with their
+      equations." A rational function, or a hyperbola, and the word
+      asymptote in the instruction.
+    chain:
+      - Vertical asymptotes first — set the denominator to zero
+      - Horizontal or oblique next — divide out, or take the limit
+      - Then the intercepts, from the numerator and from f(0)
+      - Decide which side of each asymptote the curve runs, one branch at a time
+      - The range follows from the horizontal asymptote — it is the value never taken
+    traps:
+      - >
+        The asymptotes are drawn but not labelled with their equations.
+        The instruction says "with their equations", and that is the A1
+      - >
+        A branch is drawn crossing its vertical asymptote
+      - >
+        The range is given as all reals. For (4x+2)/(x-2) it is y != 4,
+        and the 4 is exactly the horizontal asymptote
+      - >
+        For x^2 - y^2 = 1 only the right branch is drawn, or the
+        asymptotes y = x and y = -x are omitted as "not part of the curve"
+    calculator:
+      mode: no
+      note: >
+        Both blocks are Paper 1. Asymptotes are found by algebra, and a
+        GDC plot is famous for drawing a vertical line where there is
+        only an asymptote.
+    prereq: [sketch_standard]
+    raw_tags: [sketch_graph, identify_asymptotes, identify_intercepts,
+               find_asymptotes, sketch_hyperbola, determine_range,
+               rational_function, substitution, completing_the_square]
+    blocks: [2021-NOV-COMMON-P3-Q01-F, 2024-MAY-TZ1-P1-Q10-A,
+             2024-MAY-TZ1-P1-Q10-B, 2024-MAY-TZ1-P1-Q10-E]
+
+  - id: explore_family
+    name: Explore a family of graphs with the GDC
+    rung: 9
+    trigger: >
+      "Use your graphic display calculator to explore the graph of
+      y = fn(x) for the odd values n = 3 and n = 5", "by investigating
+      graphs, write down the number of intersection points", "write down
+      the number of solutions to f(x) = g(x) for m > 0". A letter in the
+      formula and a count for an answer.
+    chain:
+      - Plot two or three members of the family, not one
+      - Split the letter's range at the values where the picture changes
+      - Count what is asked — maxima, minima, inflexions with zero gradient, intersections
+      - Say what stays the same across the family; that is usually the point of the question
+    traps:
+      - >
+        One value of n is tried and the answer generalised from it
+      - >
+        A point where f'' = 0 is called a point of inflexion without
+        checking that the concavity changes. For x^n(2-x)^n with n even,
+        f'' vanishes at the ends and they are minima, not inflexions
+      - >
+        The window is left on the default and a whole branch is off screen
+      - >
+        The counting is done for the wrong interval of the parameter,
+        because the boundary case was put on the wrong side
+    calculator:
+      mode: yes
+      note: >
+        The one rung where the calculator is the method rather than the
+        packaging. All three blocks are worth their calculator: two are
+        Paper 3 investigations built around exploring, and the third asks
+        for a count of intersections with a line of variable gradient.
+    prereq: [sketch_standard]
+    raw_tags: [gdc_explore, count_local_maxima, count_local_minima,
+               count_inflexion_points, investigate_graphs, count_intersections,
+               numerical_gdc, graphical_interpretation, intersection_count,
+               positive_slope, rational_function]
+    blocks: [2021-MAY-TZ2-P3-Q01-B, 2023-MAY-TZ2-P3-Q01-D,
+             2024-MAY-TZ2-P1-Q05-B-I]
+
+leftovers: []
+
+leads_to:
+  - practicum: B4
+    why: >
+      Rung 8 finds asymptotes by dividing out and reading the limit, and
+      stops there. B4 does the same for a function nobody has drawn for
+      you, with the second derivative and the concavity, and calls it
+      curve sketching. The two topics together are 254 marks; the seam
+      is whether the shape is one you are expected to recognise.
+  - practicum: B2
+    why: >
+      Rung 7 sketches y = g^-1(x) with its asymptote and its intercepts.
+      Finding g^-1 and its domain is B2's rung 7 and 8; here the formula
+      is quoted and only the picture is asked for. Symmetry in y = x on
+      rung 5 is the same fact from the other side.
+  - practicum: C3
+    why: >
+      Rung 3 needs sin 3t = 3 sin t - 4 sin^3 t before the transformations
+      are visible, and rung 6 folds cos^2 x - 3 sin^2 x, which is
+      2 cos 2x - 1. The identity is the first half of the question; B3
+      quotes it and transforms the result.
+  - practicum: E1
+    why: >
+      Rung 9 counts points of inflexion with zero gradient, and rung 7
+      wants the coordinates of turning points. Both are stated as
+      readings off a calculator here. E1 differentiates.
+  - practicum: A8
+    why: >
+      "Find the values of k such that (g(x))^2 = k has exactly two
+      solutions" is answered by looking at the folded graph and slicing
+      it with a horizontal line. The answer is a union of a point and a
+      half-open interval, and writing that down is A8's work.
+
+verification_limits:
+  - what: >
+      verify_sketch never looks at the curve between the features.
+    why: >
+      It computes intercepts, asymptotes, turning points, cusps and
+      endpoints from the function and compares lists. Concavity,
+      monotonicity and "correct asymptotic behaviour" leave no trace in
+      a list of points.
+    impact: >
+      Two different functions with the same feature list get the same
+      verdict, and the test measures exactly that. In the exam the shape
+      is a mark of its own — which is why every sketch task in the
+      notebook prints the true curve beside your answer.
+  - what: >
+      Coordinates are compared to three significant figures.
+    why: >
+      Rung 7 and rung 9 read points off a calculator, and the exam
+      accepts them at 3 s.f. The tolerance is therefore 5e-3 relative —
+      half a unit in the third digit.
+    impact: >
+      An answer wrong in the fourth digit passes. Deliberate, and
+      measured in test_kit_graph.py: 1.089 passes against 1.08866,
+      and 1.1 does not.
+  - what: >
+      verify_transform does not require the shortest description.
+    why: >
+      It runs the steps and compares the result. A shift of 1 right
+      followed by a shift of 1 left is a correct, useless pair of steps.
+    impact: >
+      Matches the markscheme, which does not penalise correct extra
+      working. What it does penalise — the right horizontal pair in the
+      wrong order — is caught, because a different order really does
+      produce a different function.
+  - what: >
+      verify_transform cannot tell which letter names a constant.
+    why: >
+      It fills free symbols with numbers, and it does give different
+      symbols different numbers — so a target written with q and an
+      answer written with p is rejected. But nothing checks that the
+      letter means what the question says it means.
+    impact: >
+      Narrower than the same limit in B2's check_series, and measured
+      alongside it in test_kit_graph.py.
+  - what: >
+      Nothing checks that a sketch is drawn on the printed axes.
+    why: >
+      Four blocks of rung 2 and rung 6 give you a grid and the marks are
+      partly for using it — right scale, right window, curve stopping at
+      the edge of the domain.
+    impact: >
+      The notebook asks for the feature list instead and says so. The
+      grid work stays on paper, which is where it belongs.
+
+corpus_issues:
+  - block: 2025-NOV-TZ1-P1-Q08-B
+    what: >
+      The target function is recorded as (8 sin^3 t + 6 sin t)/(6 sin t).
+      The paper prints y = 6 sin(t + pi/6) - 8 sin^3(t + pi/6).
+    check: >
+      The page was rendered as an image and read directly. The recorded
+      fraction cancels to 1 + (4/3) sin^2 t, which has period pi and is
+      not a sine wave at all — no sequence of stretches and translations
+      takes sin t to it. The paper's expression is 2 sin(3t + pi/2) by
+      the identity proved in part (a), and the recorded ANSWER — vertical
+      stretch 2, horizontal stretch 1/3, translation pi/6 left — is
+      correct for it.
+    impact: >
+      Task 6 uses the paper's function. This is the unusual case of a
+      right answer recorded against a wrong question, and it was caught
+      by trying to verify the answer rather than by reading the question.
+  - block: 2025-MAY-TZ3-P1-Q06-A
+    what: >
+      The coordinates of the two labelled points are garbled. The corpus
+      records a local maximum at A(-1/2, 5/2) and a local minimum at
+      B(0, -15/2); the paper prints A(-1, -5/2) and B(0, 15/2).
+    check: >
+      Rendered and read. The corpus version is internally impossible: it
+      puts the maximum at x = -1/2, which is where the paper's vertical
+      asymptote is. The paper's numbers determine the function exactly —
+      f(x) = 5x + 5 + 5/(4x+2) has its oblique asymptote y = 5x+5, its
+      vertical asymptote x = -1/2, and f'(x) = 0 at x = -1 and x = 0
+      with the printed values.
+    impact: >
+      Tasks 13 and 14 are built on that formula, which is what makes
+      them checkable at all — the paper gives a picture, and the picture
+      had to be turned back into a function.
+  - block: 2025-MAY-TZ3-P1-Q06-B
+    what: >
+      The recorded method says the vertical asymptote x = -1/2 remains
+      an asymptote of y = 15/f(x). It does not.
+    check: >
+      Where f goes to infinity, 15/f goes to zero. f has no real zeros
+      (4x^2 + 6x + 3 has a negative discriminant), so 15/f has no
+      vertical asymptote anywhere. The markscheme asks for three things
+      and none of them is a vertical asymptote — axes intercepts, local
+      extrema, and asymptotic behaviour to y = 0.
+    impact: >
+      Task 14 asks for the markscheme's three. The wrong claim is worth
+      recording because it is the mistake the rung invites: the
+      reciprocal exchanges zeros and asymptotes, and the exchange is
+      easy to leave half done.
+  - block: 2021-NOV-COMMON-P1-Q10-B
+    what: >
+      The recorded endpoint of the domain is (3, -5). With
+      v(t) = 4 + 4t - 3t^2 the value at t = 3 is 4 + 12 - 27 = -11.
+    check: >
+      Arithmetic, and the rest of the recorded method is right — the
+      t-intercept at t = 2, the vertex near t = 2/3.
+    impact: >
+      Task 16 uses -11. The block is a four-mark sketch and the endpoint
+      is one of the points the curve has to pass through.
+  - block: 2022-NOV-COMMON-P1-Q10-C
+    what: >
+      The function is recorded as f(x) = cos2x - 3 sin2x. The paper has
+      f(x) = cos^2 x - 3 sin^2 x — the superscripts were flattened away,
+      and the result reads as a different, plausible function.
+    check: >
+      The markscheme settles it in its own working: it reduces the
+      equation to cos 2x = 1/2 and gives the roots pi/6 and 5pi/6.
+      cos^2 x - 3 sin^2 x is 2 cos 2x - 1, whose zeros are exactly those.
+      The recorded cos 2x - sqrt(3) sin 2x would give pi/12 and 7pi/12.
+      The rest of the recorded method — the smooth maximum at (pi/2, 3),
+      the cusps at the roots — is right for the paper's function.
+    impact: >
+      Task 11 uses cos^2 x - 3 sin^2 x. Same species as the five errors
+      B2 found: everything the extraction loses is a bar, a radical or
+      an exponent, and here it is an exponent.
+  - block: 2023-NOV-TZ2-P2-Q02-B
+    what: >
+      The November 2023 session is in the corpus twice, as
+      2023-november-tz1 and as 2023-november-tz2, and the papers are the
+      same paper. B2 established this for the whole session; this is the
+      second topic where the duplicate lands.
+    check: >
+      Established in B2 by comparing the papers page by page. Here the
+      two blocks have identical task summaries, identical method paths
+      and identical marks.
+    impact: >
+      Two of the 107 marks are counted twice. Both ids are listed so
+      that they resolve, and the question is used once, as task 7.
+
+ladder:
+  - read_graph
+  - apply_transform
+  - name_transform
+  - match_transform
+  - use_symmetry
+  - fold_graph
+  - sketch_standard
+  - sketch_asymptotic
+  - explore_family
