@@ -55,6 +55,29 @@ x, y, v, t, u, C, A, B, k, N = sp.symbols('x y v t u C A B k N')
 
 OK, NO = "✅", "❌"
 
+# Язык сообщений проверок. Ноутбуки IB пишутся и по-русски, и по-английски;
+# практикум на английском не должен печатать «не сходится» посреди работы,
+# которую сдают на английском. Значение по умолчанию русское, поэтому
+# ничего из уже написанного не меняется: язык переключает сам ноутбук.
+_LANG = 'ru'
+
+
+def language(code=None):
+    """Язык сообщений: 'ru' (по умолчанию) или 'en'. Без аргумента — текущий."""
+    global _LANG
+    if code is None:
+        return _LANG
+    if code not in ('ru', 'en'):
+        raise ValueError("language: 'ru' or 'en'")
+    _LANG = code
+    return _LANG
+
+
+def _t(ru, en):
+    """Один и тот же кусок сообщения на двух языках."""
+    return en if _LANG == 'en' else ru
+
+
 
 def digest(value):
     """Короткий хеш ответа. Используется при составлении заданий."""
@@ -79,7 +102,7 @@ def _blank(label, *values):
         return False
 
     if any(has_gap(v) for v in values):
-        print(f"⬜ {label}: ответ не заполнен")
+        print(f"⬜ {label}: " + _t("ответ не заполнен", "no answer yet"))
         return True
     return False
 
@@ -100,13 +123,16 @@ def verify_ode(label, y_expr, rhs, ic=None, var=x, dep=y):
     y_expr, rhs = sp.sympify(y_expr), sp.sympify(rhs)
     resid = sp.simplify(sp.diff(y_expr, var) - rhs.subs(dep, y_expr))
     if resid != 0:
-        print(f"{NO} {label}: не удовлетворяет уравнению, невязка = {resid}")
+        print(f"{NO} {label}: " + _t(f"не удовлетворяет уравнению, невязка = {resid}",
+                              f"does not satisfy the equation, residual = {resid}"))
         return False
     if ic is not None:
         x0, y0 = ic
         got = sp.simplify(y_expr.subs(var, sp.sympify(x0)))
         if sp.simplify(got - sp.sympify(y0)) != 0:
-            print(f"{NO} {label}: уравнение решено, но y({x0}) = {got}, а нужно {y0}")
+            print(f"{NO} {label}: " + _t(
+                f"уравнение решено, но y({x0}) = {got}, а нужно {y0}",
+                f"the equation is solved, but y({x0}) = {got} instead of {y0}"))
             return False
     print(f"{OK} {label}")
     return True
@@ -124,9 +150,12 @@ def verify_implicit(label, got, want, var=x, dep=y):
     g, w = flat(got), flat(want)
     ratio = sp.simplify(sp.cancel(g / w))
     if ratio == 0 or ratio.free_symbols & {var, dep}:
-        print(f"{NO} {label}: не сводится к верному ответу домножением на константу")
+        print(f"{NO} {label}: " + _t(
+            "не сводится к верному ответу домножением на константу",
+            "is not the correct answer up to a constant factor"))
         return False
-    tail = "" if ratio == 1 else f" (эквивалентная форма, множитель {ratio})"
+    tail = "" if ratio == 1 else _t(f" (эквивалентная форма, множитель {ratio})",
+                                    f" (equivalent form, factor {ratio})")
     print(f"{OK} {label}{tail}")
     return True
 
@@ -139,7 +168,9 @@ def check_num(label, value, sf, want_digest):
     if digest(got) == want_digest:
         print(f"{OK} {label}: {got}")
         return True
-    print(f"{NO} {label}: {got} — не сходится (проверь округление до {sf} знач. цифр)")
+    print(f"{NO} {label}: {got} — " + _t(
+        f"не сходится (проверь округление до {sf} знач. цифр)",
+        f"no match (check the rounding to {sf} s.f.)"))
     return False
 
 
@@ -151,7 +182,7 @@ def check_expr(label, got, want_digest):
     if digest(sp.srepr(sp.simplify(got))) == want_digest:
         print(f"{OK} {label}: {got}")
         return True
-    print(f"{NO} {label}: {got} — не сходится")
+    print(f"{NO} {label}: {got} — " + _t("не сходится", "no match"))
     return False
 
 
@@ -182,7 +213,7 @@ def check_complex(label, got, want_digest, sf=6):
     if digest(_complex_canon(got, sf)) == want_digest:
         print(f"{OK} {label}: {got}")
         return True
-    print(f"{NO} {label}: {got} — не сходится")
+    print(f"{NO} {label}: {got} — " + _t("не сходится", "no match"))
     return False
 
 
@@ -197,7 +228,7 @@ def check_complex_set(label, values, want_digest, sf=6):
     if digest(canon) == want_digest:
         print(f"{OK} {label}: {{{', '.join(str(v) for v in values)}}}")
         return True
-    print(f"{NO} {label}: {{{', '.join(str(v) for v in values)}}} — не сходится")
+    print(f"{NO} {label}: {{{', '.join(str(v) for v in values)}}} — " + _t("не сходится", "no match"))
     return False
 
 
@@ -246,7 +277,7 @@ def check_series(label, got, want_digest, var=x, sf=6):
     if digest(canon) == want_digest:
         print(f"{OK} {label}: {sp.expand(sp.sympify(got))}")
         return True
-    print(f"{NO} {label}: {sp.expand(sp.sympify(got))} — не сходится")
+    print(f"{NO} {label}: {sp.expand(sp.sympify(got))} — " + _t("не сходится", "no match"))
     return False
 
 
@@ -259,7 +290,7 @@ def check_set(label, values, want_digest):
     if digest(canon) == want_digest:
         print(f"{OK} {label}: {{{', '.join(str(i) for i in items)}}}")
         return True
-    print(f"{NO} {label}: {{{', '.join(str(i) for i in items)}}} — не сходится")
+    print(f"{NO} {label}: {{{', '.join(str(i) for i in items)}}} — " + _t("не сходится", "no match"))
     return False
 
 
@@ -280,7 +311,7 @@ def verify_identity(label, got, want, var=x,
         return False
     diff = sp.simplify(sp.expand_trig(sp.sympify(got) - sp.sympify(want)))
     if diff == 0:
-        print(f"{OK} {label}: тождество выполняется")
+        print(f"{OK} {label}: " + _t("тождество выполняется", "identity holds"))
         return True
 
     checked = 0
@@ -293,12 +324,17 @@ def verify_identity(label, got, want, var=x,
             continue
         checked += 1
         if abs(val) > tol:
-            print(f"{NO} {label}: при {var} = {s:g} стороны расходятся на {abs(val):.3g}")
+            print(f"{NO} {label}: " + _t(
+                f"при {var} = {s:g} стороны расходятся на {abs(val):.3g}",
+                f"at {var} = {s:g} the two sides differ by {abs(val):.3g}"))
             return False
     if checked < 3:
-        print(f"{NO} {label}: проверить не удалось — слишком много особых точек")
+        print(f"{NO} {label}: " + _t("проверить не удалось — слишком много особых точек",
+                               "cannot be checked — too many singular points"))
         return False
-    print(f"{OK} {label}: тождество выполняется (проверено в {checked} точках)")
+    print(f"{OK} {label}: " + _t(
+        f"тождество выполняется (проверено в {checked} точках)",
+        f"identity holds (checked at {checked} points)"))
     return True
 
 
@@ -336,10 +372,13 @@ def _agrees(got, want, var, samples, tol=1e-9):
             continue
         checked += 1
         if abs(val) > tol * max(1.0, scale):
-            return False, f"при {var} = {s} расхождение {abs(val):.3g}"
+            return False, _t(f"при {var} = {s} расхождение {abs(val):.3g}",
+                             f"at {var} = {s} the gap is {abs(val):.3g}")
     if checked < 3:
-        return False, "проверить не удалось: слишком много особых точек"
-    return True, f"проверено в {checked} точках"
+        return False, _t("проверить не удалось: слишком много особых точек",
+                         "cannot be checked: too many singular points")
+    return True, _t(f"проверено в {checked} точках",
+                    f"checked at {checked} points")
 
 
 def verify_induction(label, got, formula, var=k, n0=1, base_lhs=None,
@@ -363,22 +402,30 @@ def verify_induction(label, got, formula, var=k, n0=1, base_lhs=None,
 
     if base_lhs is not None:
         if base_lhs is Ellipsis:
-            print(f"⬜ {label}, база: не заполнена")
+            print(f"⬜ {label}, " + _t("база: не заполнена", "base case: not filled in"))
             ok = False
         else:
             diff = sp.simplify(sp.expand(sp.sympify(base_lhs) - formula.subs(var, n0)))
             if diff == 0:
-                print(f"{OK} {label}, база: при {var} = {n0} стороны равны")
+                print(f"{OK} {label}, " + _t(
+                    f"база: при {var} = {n0} стороны равны",
+                    f"base case: at {var} = {n0} the two sides are equal"))
             else:
-                print(f"{NO} {label}, база: при {var} = {n0} стороны расходятся на {diff}")
+                print(f"{NO} {label}, " + _t(
+                    f"база: при {var} = {n0} стороны расходятся на {diff}",
+                    f"base case: at {var} = {n0} the two sides differ by {diff}"))
                 ok = False
 
     good, note = _agrees(got, formula.subs(var, var + 1), var, samples)
     tail = f" ({note})" if note else ""
     if good:
-        print(f"{OK} {label}, переход: получено утверждение для {var} + 1{tail}")
+        print(f"{OK} {label}, " + _t(
+            f"переход: получено утверждение для {var} + 1{tail}",
+            f"step: this is the statement for {var} + 1{tail}"))
     else:
-        print(f"{NO} {label}, переход: это не утверждение для {var} + 1 — {note}")
+        print(f"{NO} {label}, " + _t(
+            f"переход: это не утверждение для {var} + 1 — {note}",
+            f"step: this is not the statement for {var} + 1 — {note}"))
     return ok and good
 
 
@@ -401,23 +448,34 @@ def verify_divisibility(label, expr, d, mult, var=k, n0=1, samples=(1, 2, 3, 4, 
 
     base = sp.simplify(expr.subs(var, n0))
     if sp.simplify(base / d).is_integer:
-        print(f"{OK} {label}, база: при {var} = {n0} получается {base} = {d}·{base / d}")
+        print(f"{OK} {label}, " + _t(
+            f"база: при {var} = {n0} получается {base} = {d}·{base / d}",
+            f"base case: at {var} = {n0} this gives {base} = {d}·{base / d}"))
     else:
-        print(f"{NO} {label}, база: при {var} = {n0} получается {base}, а оно не кратно {d}")
+        print(f"{NO} {label}, " + _t(
+            f"база: при {var} = {n0} получается {base}, а оно не кратно {d}",
+            f"base case: at {var} = {n0} this gives {base}, not a multiple of {d}"))
         ok = False
 
     rest = sp.expand(expr.subs(var, var + 1) - sp.sympify(mult) * expr)
     quot = sp.expand(rest / d)
     bad = [c for c in quot.as_coefficients_dict().values() if not sp.sympify(c).is_Integer]
     if bad:
-        print(f"{NO} {label}, шаг: остаток {rest} на {d} нацело не делится "
-              f"(после деления остаются дроби {bad})")
+        print(f"{NO} {label}, " + _t(
+            f"шаг: остаток {rest} на {d} нацело не делится "
+            f"(после деления остаются дроби {bad})",
+            f"step: the remainder {rest} is not divisible by {d} "
+            f"(the division leaves the fractions {bad})"))
         return False
     for s in samples:
         if not sp.sympify(quot.subs(var, s)).is_integer:
-            print(f"{NO} {label}, шаг: при {var} = {s} частное {quot.subs(var, s)} не целое")
+            print(f"{NO} {label}, " + _t(
+                f"шаг: при {var} = {s} частное {quot.subs(var, s)} не целое",
+                f"step: at {var} = {s} the quotient {quot.subs(var, s)} "
+                f"is not an integer"))
             return False
-    print(f"{OK} {label}, шаг: остаток равен {d}·({quot})")
+    print(f"{OK} {label}, " + _t(f"шаг: остаток равен {d}·({quot})",
+                                  f"step: the remainder equals {d}·({quot})"))
     return ok
 
 
@@ -461,17 +519,26 @@ def verify_residue(label, expr, mod, want, samples=(-3, -2, -1, 0, 1, 2, 3, 4, 5
     for combo in grids:
         val = sp.simplify(expr.subs(dict(zip(free, map(sp.Integer, combo)))))
         if not val.is_integer:
-            print(f"{NO} {label}: при {dict(zip(map(str, free), combo))} "
-                  f"получается {val}, а это не целое")
+            print(f"{NO} {label}: " + _t(
+                f"при {dict(zip(map(str, free), combo))} получается {val}, "
+                f"а это не целое",
+                f"at {dict(zip(map(str, free), combo))} this gives {val}, "
+                f"which is not an integer"))
             return False
         got = int(val) % int(mod)
         if got != int(want) % int(mod):
-            print(f"{NO} {label}: при {dict(zip(map(str, free), combo))} остаток "
-                  f"от деления на {mod} равен {got}, а не {want}")
+            print(f"{NO} {label}: " + _t(
+                f"при {dict(zip(map(str, free), combo))} остаток от деления "
+                f"на {mod} равен {got}, а не {want}",
+                f"at {dict(zip(map(str, free), combo))} the remainder mod "
+                f"{mod} is {got}, not {want}"))
             return False
         checked += 1
-    print(f"{OK} {label}: остаток от деления на {mod} всегда {int(want) % int(mod)} "
-          f"(проверено наборов: {checked})")
+    print(f"{OK} {label}: " + _t(
+        f"остаток от деления на {mod} всегда {int(want) % int(mod)} "
+        f"(проверено наборов: {checked})",
+        f"the remainder mod {mod} is always {int(want) % int(mod)} "
+        f"({checked} sets checked)"))
     return True
 
 
@@ -481,12 +548,14 @@ def check_order(label, seq, want_digest, n=None):
         return False
     items = [str(s).strip().lower() for s in seq]
     if n is not None and len(items) != n:
-        print(f"{NO} {label}: шагов должно быть {n}, а получено {len(items)}")
+        print(f"{NO} {label}: " + _t(
+            f"шагов должно быть {n}, а получено {len(items)}",
+            f"there should be {n} steps, not {len(items)}"))
         return False
     if digest('|'.join(items)) == want_digest:
         print(f"{OK} {label}: {' → '.join(items)}")
         return True
-    print(f"{NO} {label}: {' → '.join(items)} — порядок не тот")
+    print(f"{NO} {label}: {' → '.join(items)} — " + _t("порядок не тот", "wrong order"))
     return False
 
 
@@ -511,6 +580,23 @@ def _poly_degree(expr, var):
         return None
 
 
+def _nroots(expr, var):
+    """Численные корни многочлена; None, если найти их не удалось.
+
+    Точность приходится понижать: у кратного корня в нуле mpmath при n=20
+    до сходимости не доходит и бросает NoConvergence. Ронять на этом ячейку
+    нельзя — проверка обязана печатать вердикт, а не исключение.
+    """
+    for precision in (20, 15, 10):
+        try:
+            return sp.Poly(expr, var).nroots(n=precision)
+        except (sp.PolynomialError, sp.GeneratorsNeeded, TypeError, ValueError):
+            return None
+        except Exception:                                            # noqa: BLE001
+            continue                        # mpmath.NoConvergence и родня
+    return None
+
+
 def verify_factored(label, got, original, var=x, max_deg=1, n=None):
     """Разложение многочлена на множители: и равенство, и форма записи.
 
@@ -532,7 +618,9 @@ def verify_factored(label, got, original, var=x, max_deg=1, n=None):
 
     args = sp.Mul.make_args(e)
     if len(args) == 1 and not args[0].is_Pow:
-        print(f"{NO} {label}: это не произведение — многочлен записан одной строкой")
+        print(f"{NO} {label}: " + _t(
+            "это не произведение — многочлен записан одной строкой",
+            "this is not a product — the polynomial is written as one expression"))
         return False
 
     facs = []
@@ -541,29 +629,42 @@ def verify_factored(label, got, original, var=x, max_deg=1, n=None):
             continue                                   # числовой множитель
         base, exp = arg.as_base_exp()
         if not (exp.is_Integer and exp > 0):
-            print(f"{NO} {label}: множитель {arg} — не многочлен")
+            print(f"{NO} {label}: " + _t(f"множитель {arg} — не многочлен",
+                                   f"the factor {arg} is not a polynomial"))
             return False
         d = _poly_degree(base, var)
         if d is None:
-            print(f"{NO} {label}: множитель {base} — не многочлен от {var}")
+            print(f"{NO} {label}: " + _t(
+                f"множитель {base} — не многочлен от {var}",
+                f"the factor {base} is not a polynomial in {var}"))
             return False
         if d > max_deg:
-            print(f"{NO} {label}: множитель {base} имеет степень {d}, "
-                  f"а нужны множители степени не выше {max_deg} — "
-                  f"разложение не доведено до конца")
+            print(f"{NO} {label}: " + _t(
+                f"множитель {base} имеет степень {d}, а нужны множители "
+                f"степени не выше {max_deg} — разложение не доведено до конца",
+                f"the factor {base} has degree {d}, but factors of degree "
+                f"at most {max_deg} are wanted — the factorisation is "
+                f"not finished"))
             return False
         facs.extend([base] * int(exp))
 
     if not facs:
-        print(f"{NO} {label}: множителей с {var} не нашлось")
+        print(f"{NO} {label}: " + _t(f"множителей с {var} не нашлось",
+                               f"no factor contains {var}"))
         return False
     if n is not None and len(facs) != n:
-        print(f"{NO} {label}: множителей должно быть {n} (кратные считаются "
-              f"по разу за каждую степень), а получилось {len(facs)}")
+        print(f"{NO} {label}: " + _t(
+            f"множителей должно быть {n} (кратные считаются по разу "
+            f"за каждую степень), а получилось {len(facs)}",
+            f"there should be {n} factors (a repeated factor counts once "
+            f"per power), not {len(facs)}"))
         return False
     if sp.expand(e - orig) != 0:
-        print(f"{NO} {label}: произведение раскрывается в {sp.expand(e)}, "
-              f"а исходный многочлен {sp.expand(orig)}")
+        print(f"{NO} {label}: " + _t(
+            f"произведение раскрывается в {sp.expand(e)}, а исходный "
+            f"многочлен {sp.expand(orig)}",
+            f"the product expands to {sp.expand(e)}, but the original "
+            f"polynomial is {sp.expand(orig)}"))
         return False
     print(f"{OK} {label}: {e}")
     return True
@@ -583,17 +684,24 @@ def verify_division(label, quotient, remainder, dividend, divisor, var=x):
 
     resid = sp.expand(num - (den * quo + rem))
     if sp.simplify(resid) != 0:
-        print(f"{NO} {label}: делимое не восстанавливается, невязка = {resid}")
+        print(f"{NO} {label}: " + _t(
+            f"делимое не восстанавливается, невязка = {resid}",
+            f"the dividend is not recovered, residual = {resid}"))
         return False
 
     d_den = _poly_degree(den, var)
     d_rem = -1 if sp.simplify(rem) == 0 else _poly_degree(rem, var)
     if d_den is None or d_rem is None:
-        print(f"{NO} {label}: делитель и остаток должны быть многочленами от {var}")
+        print(f"{NO} {label}: " + _t(
+            f"делитель и остаток должны быть многочленами от {var}",
+            f"the divisor and the remainder must be polynomials in {var}"))
         return False
     if d_rem >= d_den:
-        print(f"{NO} {label}: остаток степени {d_rem} не ниже делителя "
-              f"(степень {d_den}) — делить можно дальше")
+        print(f"{NO} {label}: " + _t(
+            f"остаток степени {d_rem} не ниже делителя (степень {d_den}) — "
+            f"делить можно дальше",
+            f"the remainder has degree {d_rem}, not below the divisor "
+            f"(degree {d_den}) — the division can go further"))
         return False
     print(f"{OK} {label}: {sp.expand(num)} = ({den})·({quo}) + ({rem})")
     return True
@@ -613,10 +721,13 @@ def verify_divisible(label, poly, divisor, subs=None, var=x):
     d = sp.sympify(divisor)
     quo, rem = sp.div(p, d, var)
     if sp.simplify(rem) != 0:
-        print(f"{NO} {label}: остаток от деления равен {sp.expand(rem)}, "
-              f"а должен быть нулём")
+        print(f"{NO} {label}: " + _t(
+            f"остаток от деления равен {sp.expand(rem)}, а должен быть нулём",
+            f"the remainder is {sp.expand(rem)}, but it must be zero"))
         return False
-    print(f"{OK} {label}: {p} делится на {sp.expand(d)} нацело, частное {quo}")
+    print(f"{OK} {label}: " + _t(
+        f"{p} делится на {sp.expand(d)} нацело, частное {quo}",
+        f"{p} is divisible by {sp.expand(d)}, quotient {quo}"))
     return True
 
 
@@ -636,29 +747,43 @@ def check_apart(label, got, original, var=x):
     for term in sp.Add.make_args(e):
         num, den = sp.fraction(sp.together(term))
         if var not in den.free_symbols:
-            print(f"{NO} {label}: слагаемое {term} — не дробь с {var} в знаменателе")
+            print(f"{NO} {label}: " + _t(
+                f"слагаемое {term} — не дробь с {var} в знаменателе",
+                f"the term {term} is not a fraction with {var} "
+                f"in the denominator"))
             return False
         if var in num.free_symbols:
-            print(f"{NO} {label}: у слагаемого {term} числитель зависит от {var}; "
-                  f"простейшая дробь так не выглядит")
+            print(f"{NO} {label}: " + _t(
+                f"у слагаемого {term} числитель зависит от {var}; простейшая "
+                f"дробь так не выглядит",
+                f"the numerator of {term} depends on {var}; a partial "
+                f"fraction does not look like that"))
             return False
         try:
             _, pieces = sp.factor_list(den, var)
         except (sp.PolynomialError, sp.GeneratorsNeeded):
-            print(f"{NO} {label}: знаменатель {den} — не многочлен от {var}")
+            print(f"{NO} {label}: " + _t(
+                f"знаменатель {den} — не многочлен от {var}",
+                f"the denominator {den} is not a polynomial in {var}"))
             return False
         if len(pieces) != 1:
-            print(f"{NO} {label}: знаменатель {den} сам раскладывается на множители — "
-                  f"дробь не доведена до простейшей")
+            print(f"{NO} {label}: " + _t(
+                f"знаменатель {den} сам раскладывается на множители — дробь "
+                f"не доведена до простейшей",
+                f"the denominator {den} factorises further — the fraction "
+                f"is not yet a partial one"))
             return False
         d = _poly_degree(pieces[0][0], var)
         if d is None or d > 1:
-            print(f"{NO} {label}: знаменатель {den} не является степенью "
-                  f"линейного множителя")
+            print(f"{NO} {label}: " + _t(
+                f"знаменатель {den} не является степенью линейного множителя",
+                f"the denominator {den} is not a power of a linear factor"))
             return False
 
     if sp.simplify(sp.cancel(sp.together(e - orig))) != 0:
-        print(f"{NO} {label}: сумма дробей не равна исходному выражению")
+        print(f"{NO} {label}: " + _t(
+            "сумма дробей не равна исходному выражению",
+            "the sum of the fractions is not equal to the original expression"))
         return False
     print(f"{OK} {label}: {e}")
     return True
@@ -680,30 +805,48 @@ def verify_root_transform(label, coeffs, original, transform, var=x, tol=1e-6):
     cs = [sp.sympify(c) for c in coeffs]
     new = sum(c * var**(len(cs) - 1 - i) for i, c in enumerate(cs))
     if sp.expand(new) == 0:
-        print(f"{NO} {label}: многочлен получился нулевым")
+        print(f"{NO} {label}: " + _t("многочлен получился нулевым",
+                               "the polynomial came out as zero"))
         return False
 
     want = []
-    for r in sp.Poly(sp.expand(sp.sympify(original)), var).nroots(n=20):
+    roots_orig = _nroots(sp.expand(sp.sympify(original)), var)
+    roots_new = _nroots(sp.expand(new), var)
+    if roots_orig is None or roots_new is None:
+        print(f"{NO} {label}: " + _t(
+            "корни этого многочлена численно найти не удалось — "
+            "проверка неприменима",
+            "the roots of this polynomial could not be found numerically — "
+            "the check does not apply"))
+        return False
+    for r in roots_orig:
         try:
             want.append(complex(sp.N(transform(r))))
         except (ZeroDivisionError, TypeError, ValueError):
-            print(f"{NO} {label}: преобразование не определено для корня {r}")
+            print(f"{NO} {label}: " + _t(
+                f"преобразование не определено для корня {r}",
+                f"the transformation is undefined at the root {r}"))
             return False
-    got = [complex(v) for v in sp.Poly(sp.expand(new), var).nroots(n=20)]
+    got = [complex(v) for v in roots_new]
 
     if len(got) != len(want):
-        print(f"{NO} {label}: корней должно быть {len(want)}, а у многочлена {len(got)}")
+        print(f"{NO} {label}: " + _t(
+            f"корней должно быть {len(want)}, а у многочлена {len(got)}",
+            f"there should be {len(want)} roots, but the polynomial "
+            f"has {len(got)}"))
         return False
 
     free = list(want)
     for g in got:
         near = min(range(len(free)), key=lambda i: abs(free[i] - g), default=None)
         if near is None or abs(free[near] - g) > tol * max(1.0, abs(g)):
-            print(f"{NO} {label}: корень {g:.6g} не совпадает ни с одним нужным")
+            print(f"{NO} {label}: " + _t(
+                f"корень {g:.6g} не совпадает ни с одним нужным",
+                f"the root {g:.6g} matches none of the required ones"))
             return False
         free.pop(near)
-    print(f"{OK} {label}: {sp.expand(new)} = 0 — корни те, что нужно")
+    print(f"{OK} {label}: {sp.expand(new)} = 0 — " + _t(
+        "корни те, что нужно", "the roots are the required ones"))
     return True
 
 
@@ -781,8 +924,11 @@ def verify_solution_set(label, got, ineq, var=x, domain=None):
     domain = sp.S.Reals if domain is None else domain
     mine = _as_set(got, var)
     if mine is None:
-        print(f"{NO} {label}: ответ должен быть множеством или неравенством — "
-              f"Interval(-5, 1), (x >= -5) & (x <= 1), Union(...)")
+        print(f"{NO} {label}: " + _t(
+            "ответ должен быть множеством или неравенством — "
+            "Interval(-5, 1), (x >= -5) & (x <= 1), Union(...)",
+            "the answer must be a set or an inequality — "
+            "Interval(-5, 1), (x >= -5) & (x <= 1), Union(...)"))
         return False
 
     cond = sp.sympify(ineq)
@@ -791,8 +937,10 @@ def verify_solution_set(label, got, ineq, var=x, domain=None):
     except (NotImplementedError, ValueError, TypeError):
         truth = sp.solveset(cond, var, domain)
     if isinstance(truth, sp.ConditionSet):
-        print(f"{NO} {label}: sympy не смог решить это неравенство сам — "
-              f"проверка неприменима")
+        print(f"{NO} {label}: " + _t(
+            "sympy не смог решить это неравенство сам — проверка неприменима",
+            "sympy could not solve this inequality itself — "
+            "the check does not apply"))
         return False
 
     # Сужать ответ областью нельзя: «d < 0 или d > 9, но d ∈ ℝ⁺, поэтому
@@ -805,13 +953,15 @@ def verify_solution_set(label, got, ineq, var=x, domain=None):
     extra = sp.Complement(mine, truth)
     missing = sp.Complement(truth, mine)
     if extra is not sp.S.EmptySet:
-        print(f"{NO} {label}: лишнее — {_show_set(extra, var)}")
+        print(f"{NO} {label}: " + _t("лишнее", "extra") + f" — {_show_set(extra, var)}")
     if missing is not sp.S.EmptySet:
-        print(f"{NO} {label}: потеряно — {_show_set(missing, var)}")
+        print(f"{NO} {label}: " + _t("потеряно", "missing") + f" — {_show_set(missing, var)}")
     if isinstance(extra, sp.FiniteSet) or isinstance(missing, sp.FiniteSet):
-        print("   расхождение только в отдельных точках: посмотрите, "
-              "строгое неравенство или нет и не обращается ли там в ноль "
-              "знаменатель")
+        print("   " + _t(
+            "расхождение только в отдельных точках: посмотрите, строгое "
+            "неравенство или нет и не обращается ли там в ноль знаменатель",
+            "the difference is in isolated points only: check whether the "
+            "inequality is strict and whether the denominator vanishes there"))
     return False
 
 
@@ -846,7 +996,8 @@ def verify_param_set(label, got, holds, var=k, window=(-30, 30),
         return False
     mine = _as_set(got, var)
     if mine is None:
-        print(f"{NO} {label}: ответ должен быть множеством или неравенством")
+        print(f"{NO} {label}: " + _t("ответ должен быть множеством или неравенством",
+                               "the answer must be a set or an inequality"))
         return False
 
     lo, hi = sp.sympify(window[0]), sp.sympify(window[1])
@@ -893,19 +1044,27 @@ def verify_param_set(label, got, holds, var=k, window=(-30, 30),
         checked += 1
         if bool(fact) != want:
             if want:
-                print(f"{NO} {label}: при {var} = {v} условие не выполняется, "
-                      f"а ваше множество эту точку содержит")
+                print(f"{NO} {label}: " + _t(
+                    f"при {var} = {v} условие не выполняется, а ваше "
+                    f"множество эту точку содержит",
+                    f"at {var} = {v} the condition fails, but your set "
+                    f"contains that point"))
             else:
-                print(f"{NO} {label}: при {var} = {v} условие выполняется, "
-                      f"а в ваше множество эта точка не входит")
+                print(f"{NO} {label}: " + _t(
+                    f"при {var} = {v} условие выполняется, а в ваше "
+                    f"множество эта точка не входит",
+                    f"at {var} = {v} the condition holds, but your set "
+                    f"leaves that point out"))
             return False
     if checked < 4:
-        print(f"{NO} {label}: проверить не удалось — годных точек нашлось "
-              f"всего {checked}")
+        print(f"{NO} {label}: " + _t(
+            f"проверить не удалось — годных точек нашлось всего {checked}",
+            f"cannot be checked — only {checked} usable points were found"))
         return False
-    tail = f", пропущено {skipped}" if skipped else ""
-    print(f"{OK} {label}: {_show_set(mine, var)} — проверено в {checked} "
-          f"точках{tail}")
+    tail = _t(f", пропущено {skipped}", f", {skipped} skipped") if skipped else ""
+    print(f"{OK} {label}: {_show_set(mine, var)} — " + _t(
+        f"проверено в {checked} точках{tail}",
+        f"checked at {checked} points{tail}"))
     return True
 
 
@@ -929,28 +1088,40 @@ def verify_nonneg_form(label, got, expr, var=None):
     for term in sp.Add.make_args(e):
         coeff, rest = term.as_coeff_Mul()
         if coeff.is_negative:
-            print(f"{NO} {label}: слагаемое {term} входит со знаком минус — "
-                  f"по такой записи неотрицательность не видна")
+            print(f"{NO} {label}: " + _t(
+                f"слагаемое {term} входит со знаком минус — по такой записи "
+                f"неотрицательность не видна",
+                f"the term {term} carries a minus sign — this form does "
+                f"not show that the expression is non-negative"))
             return False
         if rest.is_number:
             if rest.is_negative:
-                print(f"{NO} {label}: слагаемое {term} отрицательно")
+                print(f"{NO} {label}: " + _t(f"слагаемое {term} отрицательно",
+                                       f"the term {term} is negative"))
                 return False
             continue
         if isinstance(rest, sp.Abs):
             continue
         base, power = rest.as_base_exp()
         if not (power.is_Integer and power > 0 and power % 2 == 0):
-            print(f"{NO} {label}: слагаемое {term} — не квадрат и не модуль; "
-                  f"неотрицательность из такой записи не следует")
+            print(f"{NO} {label}: " + _t(
+                f"слагаемое {term} — не квадрат и не модуль; "
+                f"неотрицательность из такой записи не следует",
+                f"the term {term} is neither a square nor an absolute "
+                f"value; this form does not make it non-negative"))
             return False
 
     diff = sp.simplify(sp.expand(e - target))
     if diff != 0:
-        print(f"{NO} {label}: запись неотрицательна, но исходному выражению "
-              f"не равна: разность {diff}")
+        print(f"{NO} {label}: " + _t(
+            f"запись неотрицательна, но исходному выражению не равна: "
+            f"разность {diff}",
+            f"the form is non-negative, but it is not equal to the "
+            f"original expression: the difference is {diff}"))
         return False
-    print(f"{OK} {label}: {e} — неотрицательно по виду и равно исходному")
+    print(f"{OK} {label}: {e} — " + _t(
+        "неотрицательно по виду и равно исходному",
+        "non-negative by its form and equal to the original"))
     return True
 
 
@@ -996,26 +1167,38 @@ def verify_equation(label, got, want, var=x):
 
     g, w = flat(got), flat(want)
     if sp.simplify(g) == 0:
-        print(f"{NO} {label}: получилось 0 = 0 — уравнение потеряно целиком")
+        print(f"{NO} {label}: " + _t("получилось 0 = 0 — уравнение потеряно целиком",
+                               "this is 0 = 0 — the whole equation is gone"))
         return False
     ratio = sp.simplify(sp.cancel(g / w))
     if ratio == 0 or ratio.has(sp.nan, sp.zoo):
-        print(f"{NO} {label}: это не то уравнение")
+        print(f"{NO} {label}: " + _t("это не то уравнение", "this is not the equation"))
         return False
     if ratio.free_symbols:
         den = sp.denom(sp.together(ratio))
         if var in ratio.free_symbols and not den.has(var):
-            print(f"{NO} {label}: домножено на {ratio} — выражение "
-                  f"с переменной. Оно добавляет уравнению свои корни")
+            print(f"{NO} {label}: " + _t(
+                f"домножено на {ratio} — выражение с переменной. "
+                f"Оно добавляет уравнению свои корни",
+                f"multiplied by {ratio} — an expression in the variable. "
+                f"It adds its own roots to the equation"))
         elif var not in ratio.free_symbols:
-            print(f"{NO} {label}: домножено на {ratio} — выражение с буквой. "
-                  f"При его нуле уравнение вырождается, так что множество "
-                  f"корней меняется и уравнения не равны")
+            print(f"{NO} {label}: " + _t(
+                f"домножено на {ratio} — выражение с буквой. При его нуле "
+                f"уравнение вырождается, так что множество корней "
+                f"меняется и уравнения не равны",
+                f"multiplied by {ratio} — an expression in a parameter. "
+                f"Where it vanishes the equation degenerates, so the root "
+                f"set changes and the two equations are not the same"))
         else:
-            print(f"{NO} {label}: не сводится к нужному уравнению переносом "
-                  f"слагаемых — отношение левых частей равно {ratio}")
+            print(f"{NO} {label}: " + _t(
+                f"не сводится к нужному уравнению переносом слагаемых — "
+                f"отношение левых частей равно {ratio}",
+                f"rearranging terms does not give the required equation — "
+                f"the ratio of the two sides is {ratio}"))
         return False
-    tail = "" if ratio == 1 else f" (эквивалентная форма, множитель {ratio})"
+    tail = "" if ratio == 1 else _t(f" (эквивалентная форма, множитель {ratio})",
+                                    f" (equivalent form, factor {ratio})")
     print(f"{OK} {label}: {sp.Eq(sp.expand(w), 0)}{tail}")
     return True
 
@@ -1082,23 +1265,34 @@ def verify_root_set(label, got, eq, var=x, domain=None):
 
     if len(set(map(sp.srepr, [sp.nsimplify(r) if r.is_number else r
                               for r in given]))) != len(given):
-        print(f"{NO} {label}: один и тот же корень указан дважды")
+        print(f"{NO} {label}: " + _t("один и тот же корень указан дважды",
+                               "the same root is listed twice"))
         return False
 
     for r in given:
         if r.is_real is False or region.contains(r) == sp.false:
-            print(f"{NO} {label}: {r} в область условия не входит — "
-                  f"этот корень отбрасывают, а не записывают")
+            print(f"{NO} {label}: " + _t(
+                f"{r} в область условия не входит — этот корень "
+                f"отбрасывают, а не записывают",
+                f"{r} is outside the domain given in the question — "
+                f"that root is rejected, not written down"))
             return False
         ok = _satisfies(expr, var, r)
         if ok is None:
-            print(f"{NO} {label}: при {var} = {r} уравнение не определено — "
-                  f"ноль в знаменателе или логарифм неположительного")
+            print(f"{NO} {label}: " + _t(
+                f"при {var} = {r} уравнение не определено — ноль "
+                f"в знаменателе или логарифм неположительного",
+                f"at {var} = {r} the equation is undefined — a zero "
+                f"denominator, or the logarithm of a non-positive number"))
             return False
         if not ok:
-            print(f"{NO} {label}: {r} исходное уравнение в верное равенство "
-                  f"не обращает. Такой корень появляется, когда обе части "
-                  f"возводят в квадрат или умножают на знаменатель")
+            print(f"{NO} {label}: " + _t(
+                f"{r} исходное уравнение в верное равенство не обращает. "
+                f"Такой корень появляется, когда обе части возводят "
+                f"в квадрат или умножают на знаменатель",
+                f"{r} does not satisfy the original equation. A root like "
+                f"this appears when both sides are squared or multiplied "
+                f"by a denominator"))
             return False
 
     truth = sp.solveset(expr, var, region)
@@ -1115,8 +1309,11 @@ def verify_root_set(label, got, eq, var=x, domain=None):
             if region.contains(c) == sp.true and _satisfies(expr, var, c):
                 good.append(c)
         if not good and not given:
-            print(f"{NO} {label}: sympy не смог решить это уравнение сам — "
-                  f"проверка неприменима")
+            print(f"{NO} {label}: " + _t(
+                "sympy не смог решить это уравнение сам — проверка "
+                "неприменима",
+                "sympy could not solve this equation itself — the check "
+                "does not apply"))
             return False
         truth = sp.FiniteSet(*good)
 
@@ -1134,9 +1331,12 @@ def verify_root_set(label, got, eq, var=x, domain=None):
     missing = [r for r in truth.args if not any(same(r, g) for g in given)]
     if missing:
         shown = ', '.join(str(m) for m in sorted(missing, key=lambda v: sp.N(v)))
-        print(f"{NO} {label}: корни верны, но найдено не всё — потеряно "
-              f"{shown}. Так теряют корень, когда делят обе части "
-              f"на выражение с переменной")
+        print(f"{NO} {label}: " + _t(
+            f"корни верны, но найдено не всё — потеряно {shown}. Так теряют "
+            f"корень, когда делят обе части на выражение с переменной",
+            f"the roots you list are correct, but not all of them are "
+            f"there — {shown} is missing. A root is lost like this when "
+            f"both sides are divided by an expression in the variable"))
         return False
     print(f"{OK} {label}: {{{', '.join(str(r) for r in given)}}}")
     return True
@@ -1162,28 +1362,193 @@ def verify_vertex_form(label, got, expr, var=x):
         coeff, rest = term.as_coeff_Mul()
         base, power = rest.as_base_exp()
         if power != 2 or sp.degree(sp.Poly(base, var)) != 1:
-            print(f"{NO} {label}: слагаемое {term} — не полный квадрат "
-                  f"вида a(x − h)²")
+            print(f"{NO} {label}: " + _t(
+                f"слагаемое {term} — не полный квадрат вида a(x − h)²",
+                f"the term {term} is not a complete square a(x − h)²"))
             return False
         if sp.Poly(base, var).all_coeffs()[0] != 1:
-            print(f"{NO} {label}: в квадрате стоит {base}, а нужно (x − h) "
-                  f"с единичным коэффициентом при {var}")
+            print(f"{NO} {label}: " + _t(
+                f"в квадрате стоит {base}, а нужно (x − h) с единичным "
+                f"коэффициентом при {var}",
+                f"the square contains {base}, but it must be (x − h) with "
+                f"coefficient 1 on {var}"))
             return False
         if square is not None:
-            print(f"{NO} {label}: в записи больше одного слагаемого с {var}")
+            print(f"{NO} {label}: " + _t(
+                f"в записи больше одного слагаемого с {var}",
+                f"there is more than one term containing {var}"))
             return False
         square = term
     if square is None:
-        print(f"{NO} {label}: в записи нет квадрата — это не форма a(x − h)² + k")
+        print(f"{NO} {label}: " + _t(
+            "в записи нет квадрата — это не форма a(x − h)² + k",
+            "there is no square here — this is not the form a(x − h)² + k"))
         return False
 
     diff = sp.simplify(sp.expand(e - target))
     if diff != 0:
-        print(f"{NO} {label}: форма верная, но исходному выражению запись "
-              f"не равна: разность {diff}")
+        print(f"{NO} {label}: " + _t(
+            f"форма верная, но исходному выражению запись не равна: "
+            f"разность {diff}",
+            f"the form is right, but it is not equal to the original "
+            f"expression: the difference is {diff}"))
         return False
     print(f"{OK} {label}: {e}")
     return True
+
+
+# --- композиция и обратные функции ------------------------------------------
+#
+# Шестой раз серии нужен свой ответ на вопрос «когда два ответа одинаковы».
+# A3 сверял значения, A4 — форму записи, A8 — множества, B1 — уравнения,
+# C1 — конфигурацию. Здесь ответ это **функция**, и верна она тогда, когда
+# отменяет исходную: got(f(t)) = t на области из условия. Эталона нет вовсе,
+# ровно как в verify_ode, где ответ подставляли в само уравнение.
+#
+# Проверять приходится численно, и это не лень. Символьно ветвь корня
+# не различить: sqrt(t**2) sympy до t не доводит, потому что без указания
+# знака это |t|. А знак здесь и есть содержание темы — за выбор ветви
+# в markscheme стоит отдельный R1.
+#
+# Направление выбрано одно и намеренно. got(f(t)) = t ловит неверную ветвь:
+# у f(x) = sqrt(x^2 - 1) ответ -sqrt(x^2 + 1) проходит проверку
+# f(got(s)) = s (там всё уходит под квадрат), а got(f(t)) = t даёт -t.
+# Обратное направление такой ошибки не видит вовсе.
+
+
+def _domain_points(region, count=9):
+    """Точки внутри множества region; бесконечные концы обрезаются.
+
+    Концы включаются, когда они принадлежат множеству: у обратной функции
+    значение на конце области — отдельный балл, и проверять его надо.
+    """
+    parts = region.args if isinstance(region, sp.Union) else (region,)
+    pts = []
+    for part in parts:
+        if isinstance(part, sp.FiniteSet):
+            pts.extend(part.args)
+            continue
+        if not isinstance(part, sp.Interval):
+            continue
+        lo, hi = part.start, part.end
+        lo = lo if lo.is_finite else (hi - 10 if hi.is_finite else sp.Integer(-10))
+        hi = hi if hi.is_finite else (lo + 10 if lo.is_finite else sp.Integer(10))
+        if lo == hi:
+            pts.append(lo)
+            continue
+        for i in range(count):
+            pts.append(lo + (hi - lo) * sp.Rational(i + 1, count + 1))
+        for end, is_open in ((part.start, part.left_open), (part.end, part.right_open)):
+            if end.is_finite and not is_open:
+                pts.append(end)
+    return pts
+
+
+def verify_inverse(label, got, f, var=x, domain=None, count=9, tol=1e-7):
+    """got — обратная к f. Эталон не хранится: проверяется, что got(f(t)) = t.
+
+    domain — область f из условия. Она не украшение: у f(x) = sqrt(x^2 - 1)
+    на [1, 2] обратная это +sqrt(x^2 + 1), а на [-2, -1] — минус, и различает
+    их только область.
+
+    Сначала пробуем символически, потом по точкам области. Численно —
+    потому что sympy не упрощает sqrt(t**2) до t, не зная знака t,
+    а знак здесь и есть содержание задачи.
+
+    Чего проверка не делает: не проверяет, что вы верно назвали область
+    самой обратной. Это отдельный ответ, и рядом стоит check_domain.
+    """
+    if _blank(label, got):
+        return False
+    e, fun = sp.sympify(got), sp.sympify(f)
+    region = _as_domain(domain, var)
+
+    back = e.subs(var, fun)
+    try:
+        if sp.simplify(back - var) == 0:
+            print(f"{OK} {label}: " + _t(
+                f"{e} — подстановка f внутрь даёт {var} тождественно",
+                f"{e} — substituting f into it gives {var} identically"))
+            return True
+    except (TypeError, ValueError, AttributeError):
+        pass
+
+    checked = 0
+    for t in _domain_points(region, count):
+        try:
+            inner = complex(sp.N(fun.subs(var, t), 25))
+            outer = complex(sp.N(e.subs(var, sp.nsimplify(inner.real)
+                                        if abs(inner.imag) < tol else inner), 25))
+            want = complex(sp.N(t, 25))
+        except (TypeError, ValueError, ZeroDivisionError):
+            continue
+        if not all(math.isfinite(v) for v in (inner.real, inner.imag,
+                                              outer.real, outer.imag)):
+            continue
+        if abs(inner.imag) > tol or abs(outer.imag) > tol:
+            continue
+        checked += 1
+        if abs(outer - want) > tol * max(1.0, abs(want)):
+            # Подсказка про ветвь уместна только там, где ветвь есть.
+            # Если знак сошёлся, а величина нет, дело в алгебре, и звать
+            # ученика проверять знак корня значит сбивать его с дороги.
+            flip = abs(outer + want) <= tol * max(1.0, abs(want))
+            hint = _t(
+                " Знак противоположный — это не та ветвь корня, "
+                "а выбирает её область из условия." if flip else "",
+                " The sign is the opposite one: this is the wrong branch "
+                "of the root, and the domain in the question is what "
+                "chooses it." if flip else "")
+            print(f"{NO} {label}: " + _t(
+                f"при {var} = {sp.nsimplify(t)} исходная функция даёт "
+                f"{inner.real:.6g}, а ваша обратная возвращает "
+                f"{outer.real:.6g} вместо {want.real:.6g}.{hint}",
+                f"at {var} = {sp.nsimplify(t)} the original function gives "
+                f"{inner.real:.6g}, and your inverse sends that back to "
+                f"{outer.real:.6g} instead of {want.real:.6g}.{hint}"))
+            return False
+    if checked < 4:
+        print(f"{NO} {label}: " + _t(
+            f"проверить не удалось — годных точек области нашлось "
+            f"всего {checked}",
+            f"cannot be checked — only {checked} usable points of the "
+            f"domain were found"))
+        return False
+    print(f"{OK} {label}: {e} — " + _t(
+        f"отменяет исходную функцию, проверено в {checked} точках области",
+        f"undoes the original function, checked at {checked} points "
+        f"of the domain"))
+    return True
+
+
+def check_domain(label, got, want_digest, var=x):
+    """Ответ — область определения или множество значений.
+
+    Запись не важна: Interval(-3, 5), (x >= -3) & (x <= 5) и
+    Union(Interval(0, 1), Interval(2, 3)) сверяются одинаково. А вот концы
+    важны: [0, sqrt(3)] и (0, sqrt(3)) — разные ответы, и в markscheme
+    это разные баллы. Поэтому check_set здесь не годится: он про наборы
+    отдельных значений, а тут промежутки.
+    """
+    if _blank(label, got):
+        return False
+    s = _as_set(got, var)
+    if s is None:
+        print(f"{NO} {label}: " + _t(
+            "ответ должен быть множеством или неравенством — "
+            "Interval(0, 2), (x > 0) & (x <= 2), Interval.Lopen(0, 2)",
+            "the answer must be a set or an inequality — "
+            "Interval(0, 2), (x > 0) & (x <= 2), Interval.Lopen(0, 2)"))
+        return False
+    if digest(sp.srepr(s)) == want_digest:
+        print(f"{OK} {label}: {_show_set(s, var)}")
+        return True
+    print(f"{NO} {label}: {_show_set(s, var)} — " + _t(
+        "не сходится. Посмотрите на концы: включён конец или выколот — "
+        "это отдельный балл",
+        "no match. Look at the endpoints: whether an endpoint is included "
+        "or excluded is a mark of its own"))
+    return False
 
 
 # --- треугольник ------------------------------------------------------------
@@ -1320,8 +1685,9 @@ def verify_triangle(label, got, tol=5e-3, deg=True, **known):
     got = {key: float(value) for key, value in got.items()}
     solutions = solve_triangle(deg=deg, **known)
     if not solutions:
-        print(f"{NO} {label}: по этим данным треугольника не существует — "
-              f"проверьте условие")
+        print(f"{NO} {label}: " + _t(
+            "по этим данным треугольника не существует — проверьте условие",
+            "no triangle exists with this data — check the question"))
         return False
 
     def fits(sol):
@@ -1334,14 +1700,19 @@ def verify_triangle(label, got, tol=5e-3, deg=True, **known):
                    key=lambda sol: max(abs(sol[key] - value)
                                        for key, value in got.items()))
         bad = max(got, key=lambda key: abs(best[key] - got[key]))
-        print(f"{NO} {label}: {bad} = {got[bad]:g} с данными не согласуется — "
-              f"треугольник с такими частями не замыкается")
+        print(f"{NO} {label}: " + _t(
+            f"{bad} = {got[bad]:g} с данными не согласуется — треугольник "
+            f"с такими частями не замыкается",
+            f"{bad} = {got[bad]:g} is inconsistent with the data — "
+            f"a triangle with these parts does not close"))
         return False
     shown = ', '.join(f"{key} = {value:g}" for key, value in got.items())
     if len(solutions) > 1:
-        print(f"{OK} {label}: {shown} — но данные допускают "
-              f"{len(solutions)} треугольника, и ваш ответ отвечает одному "
-              f"из них. Условие выбирает, какой именно")
+        print(f"{OK} {label}: {shown} — " + _t(
+            f"но данные допускают {len(solutions)} треугольника, и ваш "
+            f"ответ отвечает одному из них. Условие выбирает, какой именно",
+            f"but the data admits {len(solutions)} triangles and your "
+            f"answer fits one of them. The question decides which"))
     else:
         print(f"{OK} {label}: {shown}")
     return True
@@ -1359,11 +1730,14 @@ def verify_exact(label, got, want):
         return False
     e = sp.sympify(got)
     if e.atoms(sp.Float):
-        print(f"{NO} {label}: {e} — это десятичная запись, а вопрос просит "
-              f"точное значение: оставьте корень или дробь")
+        print(f"{NO} {label}: {e} — " + _t(
+            "это десятичная запись, а вопрос просит точное значение: "
+            "оставьте корень или дробь",
+            "this is a decimal, and the question asks for the exact "
+            "value: keep the surd or the fraction"))
         return False
     if sp.simplify(e - sp.sympify(want)) != 0:
-        print(f"{NO} {label}: {e} — не сходится")
+        print(f"{NO} {label}: {e} — " + _t("не сходится", "no match"))
         return False
     print(f"{OK} {label}: {e}")
     return True
@@ -1391,13 +1765,15 @@ def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
     bad = []
     for r in given:
         if not (float(a) - tol <= float(r) <= float(b) + tol):
-            bad.append((r, 'вне области'))
+            bad.append((r, _t('вне области', 'outside the interval')))
             continue
         try:
             if abs(f(float(r))) > 1e-6:
-                bad.append((r, 'не обращает уравнение в ноль'))
+                bad.append((r, _t('не обращает уравнение в ноль',
+                                  'does not satisfy the equation')))
         except (ValueError, ZeroDivisionError, OverflowError):
-            bad.append((r, 'уравнение в этой точке не определено'))
+            bad.append((r, _t('уравнение в этой точке не определено',
+                              'the equation is undefined there')))
     if bad:
         for r, why in bad:
             print(f"{NO} {label}: {r} — {why}")
@@ -1408,12 +1784,18 @@ def verify_roots(label, roots, expr, domain, var=x, deg=False, tol=1e-9):
     if extra > 0:
         miss = [c for c in found
                 if all(abs(c - float(r)) > 1e-4 for r in given)]
-        hint = f", первый пропущенный около {miss[0]:.4f}" if miss else ""
-        print(f"{NO} {label}: корни верны, но найдено не всё — "
-              f"на отрезке их {len(found)}, а у вас {len(given)}{hint}")
+        hint = _t(f", первый пропущенный около {miss[0]:.4f}",
+                  f", the first one missing is near {miss[0]:.4f}") if miss else ""
+        print(f"{NO} {label}: " + _t(
+            f"корни верны, но найдено не всё — на отрезке их {len(found)}, "
+            f"а у вас {len(given)}{hint}",
+            f"the roots you list are correct, but not all of them are "
+            f"there — the interval holds {len(found)}, you list "
+            f"{len(given)}{hint}"))
         return False
     if len(set(map(str, given))) != len(given):
-        print(f"{NO} {label}: один и тот же корень указан дважды")
+        print(f"{NO} {label}: " + _t("один и тот же корень указан дважды",
+                               "the same root is listed twice"))
         return False
     print(f"{OK} {label}: {{{', '.join(str(r) for r in given)}}}")
     return True
@@ -1492,7 +1874,8 @@ def euler(f, x0, y0, h, n):
 def trigger_check(answers, key):
     """Тренажёр распознавания приёма: answers — {номер: код приёма}."""
     if not any(str(v).strip() for v in answers.values()):
-        print("⬜ тренажёр: ответы не заполнены")
+        print("⬜ " + _t("тренажёр: ответы не заполнены",
+                         "trainer: no answers yet"))
         return False
     wrong = []
     for i, want in key.items():
@@ -1500,8 +1883,12 @@ def trigger_check(answers, key):
         if digest(got) != want:
             wrong.append(i)
     if not wrong:
-        print(f"{OK} все {len(key)} распознаны")
+        print(f"{OK} " + _t(f"все {len(key)} распознаны",
+                      f"all {len(key)} identified"))
         return True
-    print(f"{NO} перепроверь пункты: {', '.join(map(str, wrong))} "
-          f"(верно {len(key) - len(wrong)} из {len(key)})")
+    print(f"{NO} " + _t(
+        f"перепроверь пункты: {', '.join(map(str, wrong))} "
+        f"(верно {len(key) - len(wrong)} из {len(key)})",
+        f"look again at: {', '.join(map(str, wrong))} "
+        f"({len(key) - len(wrong)} of {len(key)} correct)"))
     return False
