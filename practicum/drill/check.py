@@ -300,6 +300,11 @@ def show_answer(value, sf=3, var='x'):
     if isinstance(value, sp.Set):
         return show_set(value, var)
     expr = sp.sympify(value)
+    if expr.has(sp.gamma):
+        # sympy сводит факториал к гамма-функции, и (k+1)! превращается
+        # в gamma(k+2). Проверке это безразлично, а ученику показывать
+        # так нельзя: в школьной программе гамма-функции нет.
+        expr = expr.rewrite(sp.factorial)
     if isinstance(expr, sp.Eq):
         return f'{sp.sstr(expr.lhs)} = {sp.sstr(expr.rhs)}'
     if expr.atoms(sp.Float):

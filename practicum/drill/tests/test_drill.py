@@ -358,6 +358,12 @@ with tempfile.TemporaryDirectory() as tmp:
       card['recognition'][0]['answer'] == 'ambig')
     t('к приёму приложена задача на счёт с ответом',
       card['compute'] and card['compute']['answer'])
+
+    # Карта показывает эталон открытым, и он должен быть читаемым:
+    # sympy сводит (k+1)! к gamma(k+2), а гамма-функции в программе нет.
+    factorial_card = atlas.skill_card('A7.induction_sum', seed=0)
+    t('факториал показывается факториалом, а не гамма-функцией',
+      'gamma' not in factorial_card['compute']['answer'])
     t('одно и то же зерно даёт ту же задачу',
       atlas.skill_card('C1.ambiguous_case', seed=7)['compute']['prompt']
       == card['compute']['prompt'])
