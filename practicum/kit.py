@@ -2159,6 +2159,361 @@ def verify_sketch(label, got, f, var=x, domain=None, tol=5e-3):
     return True
 
 
+# --- асимптоты и множество значений ------------------------------------------
+#
+# Восьмой раз серии нужно своё понятие равенства ответов. A3 сверял значения,
+# A4 — форму записи, A8 — множества, B1 — уравнения, C1 — конфигурацию,
+# B2 — функцию по тому, что она отменяет, B3 — картинку по списку особенностей.
+#
+# Здесь ответ это **прямая**, и она верна не тогда, когда совпала с эталоном,
+# а тогда, когда кривая к ней действительно приближается. Поэтому
+# verify_asymptotes не сравнивает записи: он берёт вашу прямую и считает
+# предел. Вертикальная — односторонний предел бесконечен; горизонтальная —
+# предел на бесконечности равен вашему числу; наклонная — предел разности
+# f(x) − (mx + b) равен нулю. Это ровно определение асимптоты, и ничего,
+# кроме определения, здесь не нужно.
+#
+# Отсюда и требование записать ответ уравнением. «x = 3» это прямая, «3» это
+# число, и markscheme говорит об этом прямым текстом: must be written as an
+# equation with y =. Проверка принимает любую запись, которая задаёт прямую,
+# и отвергает ту, которая задаёт число.
+#
+# verify_range устроен как verify_param_set: он ничего не решает за вас, он
+# берёт ваше множество и спрашивает у самой функции, достигается ли значение.
+# Внутри — должно достигаться, снаружи — не должно, и отдельно проверяется
+# каждый конец: именно там стоит разница между ≤ и <, а вместе с ней балл.
+
+_ASYMPTOTE_KINDS = ('vertical', 'horizontal', 'oblique')
+
+def _kind_name(kind):
+    """Название вида асимптоты на языке сообщений."""
+    if kind == 'vertical':
+        return _t("вертикальная", "vertical")
+    if kind == 'horizontal':
+        return _t("горизонтальная", "horizontal")
+    return _t("наклонная", "oblique")
+
+
+def _as_line(item, var, dep):
+    """Ответ-прямая → (вид, значение) или None.
+
+    Принимаются Eq(x, 3), Eq(2*x + 6, 0), Eq(y, 2), Eq(y, x/2 + 13/4) и любая
+    равносильная запись. Голое число не принимается: это не прямая.
+    """
+    try:
+        e = sp.sympify(item)
+    except (TypeError, ValueError, sp.SympifyError):
+        return None
+    if isinstance(e, sp.Eq):
+        expr = e.lhs - e.rhs
+    elif isinstance(e, sp.core.relational.Relational):
+        return None
+    else:
+        return None
+
+    free = expr.free_symbols
+    if dep in free:
+        try:
+            sols = sp.solve(sp.Eq(expr, 0), dep)
+        except (NotImplementedError, TypeError, ValueError):
+            return None
+        if len(sols) != 1:
+            return None
+        line = sp.expand(sols[0])
+        if dep in line.free_symbols or not (line.free_symbols <= {var}):
+            return None
+        slope = sp.simplify(sp.diff(line, var))
+        if slope.free_symbols or not slope.is_number:
+            return None
+        if sp.simplify(line - (slope * var + line.subs(var, 0))) != 0:
+            return None          # не прямая: x^2, 1/x и прочее
+        return ('horizontal' if slope == 0 else 'oblique', sp.simplify(line))
+
+    if var in free:
+        try:
+            sols = sp.solve(sp.Eq(expr, 0), var)
+        except (NotImplementedError, TypeError, ValueError):
+            return None
+        if len(sols) != 1:
+            return None
+        value = sp.simplify(sols[0])
+        return None if value.free_symbols else ('vertical', value)
+    return None
+
+
+def _show_line(kind, value, var, dep):
+    return (f"{var} = {value}" if kind == 'vertical' else f"{dep} = {value}")
+
+
+def _asymptote_truth(fun, var, region):
+    """Все асимптоты функции, посчитанные по определению."""
+    found = {k: [] for k in _ASYMPTOTE_KINDS}
+
+    try:
+        sing = sp.singularities(fun, var)
+        if not isinstance(sing, sp.FiniteSet):
+            sing = sing.intersect(region.closure)
+        candidates = list(sing.args) if isinstance(sing, sp.FiniteSet) else []
+    except (NotImplementedError, TypeError, ValueError, AttributeError):
+        candidates = []
+    lo, hi = _bounds(region)
+    for end in (lo, hi):
+        if end not in (sp.oo, -sp.oo) and end not in candidates:
+            candidates.append(end)
+    for c in candidates:
+        if c.free_symbols or c not in region.closure:
+            continue
+        for side in ('+', '-'):
+            try:
+                lim = sp.limit(fun, var, c, side)
+            except (NotImplementedError, ValueError, TypeError):
+                continue
+            if lim in (sp.oo, -sp.oo, sp.zoo):
+                found['vertical'].append(sp.simplify(c))
+                break
+
+    for end in (hi, lo):
+        if end not in (sp.oo, -sp.oo):
+            continue
+        try:
+            lim = sp.limit(fun, var, end)
+        except (NotImplementedError, ValueError, TypeError):
+            continue
+        if lim.is_finite:
+            value = sp.simplify(lim)
+            if all(sp.simplify(value - h) != 0 for h in found['horizontal']):
+                found['horizontal'].append(value)
+            continue
+        try:
+            m = sp.limit(fun / var, var, end)
+            if not (m.is_finite and m != 0):
+                continue
+            b = sp.limit(fun - m * var, var, end)
+        except (NotImplementedError, ValueError, TypeError):
+            continue
+        if b.is_finite:
+            line = sp.simplify(m * var + b)
+            if all(sp.simplify(line - o) != 0 for o in found['oblique']):
+                found['oblique'].append(line)
+    return found
+
+
+def _approaches(fun, var, kind, value, region):
+    """Проверяет по определению, что кривая приближается к этой прямой."""
+    if kind == 'vertical':
+        if value not in region.closure:
+            return False
+        for side in ('+', '-'):
+            try:
+                lim = sp.limit(fun, var, value, side)
+            except (NotImplementedError, ValueError, TypeError):
+                continue
+            if lim in (sp.oo, -sp.oo, sp.zoo):
+                return True
+        return False
+    lo, hi = _bounds(region)
+    for end in (hi, lo):
+        if end not in (sp.oo, -sp.oo):
+            continue
+        try:
+            gap = sp.limit(fun - value, var, end)
+        except (NotImplementedError, ValueError, TypeError):
+            continue
+        if gap == 0:
+            return True
+    return False
+
+
+def verify_asymptotes(label, got, f, var=x, dep=y, kinds=_ASYMPTOTE_KINDS,
+                      domain=None):
+    """Асимптоты графика. Эталона нет: каждая прямая проверяется пределом.
+
+    got — уравнение прямой или список уравнений: Eq(x, 3), Eq(y, 2),
+    Eq(y, x/2 + Rational(13, 4)). Принимается любая равносильная запись,
+    включая Eq(2*x + 6, 0). Не принимается число: асимптота это прямая,
+    и markscheme пишет «must be written as an equation with y =».
+
+    kinds сужает вопрос: kinds=('vertical',) для «state the equation of the
+    vertical asymptote». Тогда прямые других видов считаются лишними,
+    а недостающие других видов не требуются.
+
+    Проверка идёт по определению, а не по списку. Вертикальная прямая x = c
+    верна, если односторонний предел в c бесконечен; горизонтальная y = h —
+    если предел на бесконечности равен h; наклонная y = mx + b — если предел
+    разности f(x) − (mx + b) равен нулю. Полнота проверяется отдельно:
+    пропущенная асимптота и лишняя — разные ошибки и разные баллы.
+    """
+    if _blank(label, got):
+        return False
+    if not isinstance(got, (list, tuple, set)):
+        got = [got]
+    bad = [k for k in kinds if k not in _ASYMPTOTE_KINDS]
+    if bad:
+        raise ValueError(f"verify_asymptotes: unknown kind {bad[0]}")
+
+    fun = sp.sympify(f)
+    region = _as_domain(domain, var)
+
+    claimed = {k: [] for k in _ASYMPTOTE_KINDS}
+    for item in got:
+        line = _as_line(item, var, dep)
+        if line is None:
+            print(f"{NO} {label}: " + _t(
+                f"{item} — это не уравнение прямой. Асимптота записывается "
+                f"уравнением: Eq({var}, 3), Eq({dep}, 2), "
+                f"Eq({dep}, {var}/2 + Rational(13, 4))",
+                f"{item} is not the equation of a line. An asymptote is "
+                f"written as an equation: Eq({var}, 3), Eq({dep}, 2), "
+                f"Eq({dep}, {var}/2 + Rational(13, 4))"))
+            return False
+        kind, value = line
+        if kind not in kinds:
+            asked = ', '.join(_kind_name(k) for k in kinds)
+            print(f"{NO} {label}: {_show_line(kind, value, var, dep)} — " + _t(
+                f"{_kind_name(kind)} прямая, а спрашивают только: {asked}",
+                f"a {_kind_name(kind)} line, but the question asks "
+                f"only for: {asked}"))
+            return False
+        if not _approaches(fun, var, kind, value, region):
+            print(f"{NO} {label}: " + _t(
+                f"к прямой {_show_line(kind, value, var, dep)} график "
+                f"не приближается",
+                f"the graph does not approach the line "
+                f"{_show_line(kind, value, var, dep)}"))
+            return False
+        claimed[kind].append(value)
+
+    truth = _asymptote_truth(fun, var, region)
+    for kind in kinds:
+        for value in truth[kind]:
+            if all(sp.simplify(value - c) != 0 for c in claimed[kind]):
+                print(f"{NO} {label}: " + _t(
+                    f"пропущена {_kind_name(kind)} асимптота "
+                    f"{_show_line(kind, value, var, dep)}",
+                    f"a {_kind_name(kind)} asymptote is missing: "
+                    f"{_show_line(kind, value, var, dep)}"))
+                return False
+
+    shown = ', '.join(_show_line(k, v, var, dep)
+                      for k in _ASYMPTOTE_KINDS for v in claimed[k])
+    print(f"{OK} {label}: {shown}")
+    return True
+
+
+def _show_value(value):
+    """Точное значение, а рядом десятичное, если по точному не видно, где оно."""
+    if value.is_Integer:
+        return str(value)
+    return f"{value} ({float(value):.6g})"
+
+
+def _attained(fun, var, region, value, window=60):
+    """Достигается ли значение: True, False или None, если судить нельзя."""
+    eq = sp.simplify(fun - value)
+    try:
+        sols = sp.solveset(sp.Eq(eq, 0), var, region)
+    except (NotImplementedError, TypeError, ValueError):
+        sols = sp.ConditionSet(var, sp.Eq(eq, 0), region)
+    if not isinstance(sols, sp.ConditionSet):
+        if sols is sp.S.EmptySet:
+            return False
+        return not sols.is_empty if sols.is_empty is not None else True
+
+    lo, hi = _bounds(region)
+    lo_f = -float(window) if lo == -sp.oo else float(lo)
+    hi_f = float(window) if hi == sp.oo else float(hi)
+    try:
+        g = sp.lambdify(var, eq, 'math')
+    except (TypeError, ValueError):
+        return None
+    return True if _scan_roots(g, lo_f, hi_f, 8000) else None
+
+
+def verify_range(label, got, f, var=x, domain=None, dep=y,
+                 eps=sp.Rational(1, 1000)):
+    """Множество значений функции. Проверка ничего не решает за вас.
+
+    Она берёт ваше множество и спрашивает у самой f: внутри — достигается ли
+    значение, снаружи — не достигается ли. Отдельно проверяется каждый
+    конец, потому что там стоит разница между ≤ и <: у −3/2 < y ≤ 2 двойка
+    достигается при x = 0, а −3/2 это горизонтальная асимптота, и её
+    не достигает никто.
+
+    got — множество или неравенство: Interval(-5, oo), (y >= -5),
+    Union(Interval(-oo, 1), Interval(2, oo)).
+    """
+    if _blank(label, got):
+        return False
+    mine = _as_set(got, dep)
+    if mine is None:
+        mine = _as_set(got, var)
+    if mine is None:
+        print(f"{NO} {label}: " + _t(
+            "ответ должен быть множеством или неравенством — "
+            "Interval(-5, oo), (y >= -5), Union(...)",
+            "the answer must be a set or an inequality — "
+            "Interval(-5, oo), (y >= -5), Union(...)"))
+        return False
+
+    fun = sp.sympify(f)
+    region = _as_domain(domain, var)
+    outside = sp.Complement(sp.S.Reals, mine)
+
+    tests = []
+    for source, want in ((mine, True), (outside, False)):
+        pieces = _pieces(source)
+        if pieces is None:
+            print(f"{NO} {label}: " + _t(
+                "такое множество проверка разобрать не умеет",
+                "the check cannot take this set apart"))
+            return False
+        for a, b, _, _ in pieces:
+            tests.extend((p, want) for p in _interior(a, b))
+            # Каждая граница проверяется трижды: сама точка и по шагу eps
+            # в обе стороны. Без соседей ошибка в границе проходит: если
+            # истинный ответ y >= -5, а написано y >= -4, то внутренние
+            # точки промежутка (-oo, -4) берутся далеко слева и о полоске
+            # между -5 и -4 ничего не говорят.
+            for end in (a, b):
+                if not end.is_finite:
+                    continue
+                tests.append((end, end in mine))
+                for near in (end - eps, end + eps):
+                    tests.append((near, near in mine))
+
+    skipped = 0
+    seen = []
+    for value, want in tests:
+        if any(sp.simplify(value - other) == 0 for other in seen):
+            continue
+        seen.append(value)
+        verdict = _attained(fun, var, region, value)
+        if verdict is None:
+            skipped += 1
+            continue
+        if verdict == want:
+            continue
+        if want:
+            print(f"{NO} {label}: " + _t(
+                f"{dep} = {_show_value(value)} входит в ваш ответ, "
+                f"но уравнение f({var}) = {value} решений не имеет",
+                f"{dep} = {_show_value(value)} is in your range, but the "
+                f"equation f({var}) = {value} has no solution"))
+        else:
+            print(f"{NO} {label}: " + _t(
+                f"значение {dep} = {_show_value(value)} функция принимает, "
+                f"а в вашем множестве его нет",
+                f"the function does take the value {dep} = {_show_value(value)}, "
+                f"and your set leaves it out"))
+        return False
+
+    tail = ''
+    if skipped:
+        tail = _t(f"; {skipped} точек пропущено — численно не решить",
+                  f"; {skipped} points skipped — numerically undecidable")
+    print(f"{OK} {label}: {_show_set(mine, dep)}{tail}")
+    return True
+
 # --- треугольник ------------------------------------------------------------
 #
 # Пятый раз серии нужен свой ответ на вопрос «когда два ответа одинаковы».

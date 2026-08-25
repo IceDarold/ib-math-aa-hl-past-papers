@@ -232,6 +232,35 @@ def calls():
     yield lambda: check_domain('t', Interval(0, 2), digest(sp.srepr(Interval(0, 2))))
     yield lambda: check_domain('t', Interval(0, 3), digest(sp.srepr(Interval(0, 2))))
     yield lambda: check_domain('t', 5, digest(sp.srepr(Interval(0, 2))))
+    yield lambda: verify_asymptotes('t', [Eq(x, -3), Eq(y, x/2 - sp.Rational(17, 2))],
+                                    (x**2 - 14*x + 24)/(2*x + 6))
+    yield lambda: verify_asymptotes('t', Eq(2*x + 6, 0),
+                                    (x**2 - 14*x + 24)/(2*x + 6),
+                                    kinds=('vertical',))
+    yield lambda: verify_asymptotes('t', [Eq(x, -3)],
+                                    (x**2 - 14*x + 24)/(2*x + 6))
+    yield lambda: verify_asymptotes('t', [-3], (x**2 - 14*x + 24)/(2*x + 6),
+                                    kinds=('vertical',))
+    yield lambda: verify_asymptotes('t', [Eq(x, 3)],
+                                    (x**2 - 14*x + 24)/(2*x + 6),
+                                    kinds=('vertical',))
+    yield lambda: verify_asymptotes('t', [Eq(y, -2)], (2*x + 4)/(3 - x),
+                                    kinds=('vertical',))
+    yield lambda: verify_asymptotes('t', [Eq(y, x**2)],
+                                    (x**2 - 14*x + 24)/(2*x + 6))
+    yield lambda: verify_asymptotes('t', ..., (2*x + 4)/(3 - x))
+    yield lambda: verify_asymptotes('t', [Eq(x, 3), Eq(y, -2)],
+                                    (2*x + 4)/(3 - x))
+    yield lambda: verify_range('t', (y >= -5), 6*x**2 - 12*x + 1)
+    yield lambda: verify_range('t', (y >= -4), 6*x**2 - 12*x + 1)
+    yield lambda: verify_range('t', (y >= -6), 6*x**2 - 12*x + 1)
+    yield lambda: verify_range('t', 5, 6*x**2 - 12*x + 1)
+    yield lambda: verify_range('t', ..., 6*x**2 - 12*x + 1)
+    yield lambda: verify_range('t', Interval.Lopen(sp.Rational(-3, 2), 2),
+                               -(3*x - 2)/(2*x + 1), domain=Interval(0, oo))
+    yield lambda: verify_range('t', Interval(sp.Rational(-3, 2), 2),
+                               -(3*x - 2)/(2*x + 1), domain=Interval(0, oo))
+    yield lambda: verify_range('t', Interval(-1, 1), sin(x) + sin(pi*x)/1000)
     yield lambda: trigger_check({1: 'a'}, {1: digest('a')})
     yield lambda: trigger_check({1: 'b'}, {1: digest('a')})
     yield lambda: trigger_check({1: ''}, {1: digest('a')})
