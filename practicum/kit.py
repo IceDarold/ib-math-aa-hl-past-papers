@@ -26,6 +26,7 @@ from sympy import (                                                  # noqa: E40
     asin, acos, atan, acot,
     sinh, cosh, tanh, asinh, acosh, atanh,
     sqrt, cbrt, root, exp, log, Abs, sign, floor, ceiling,
+    Piecewise, Min, Max,
     pi, E, I, oo, zoo, nan,
     Rational, Integer, Float, S, Symbol, symbols, sympify,
     re, im, arg, conjugate, Add, Mul, Pow,
@@ -1888,9 +1889,14 @@ def _sketch_facts(fun, var, region):
 
     poles = []
     try:
+        # singularities для тригонометрии возвращает бесконечное семейство
+        # (ImageSet), и пересечение с областью — единственный способ
+        # получить из него список точек.
         sing = sp.singularities(fun, var)
-        if isinstance(sing, sp.FiniteSet):
-            for c in sing.args:
+        if not isinstance(sing, sp.FiniteSet):
+            sing = sing.intersect(region.closure)
+        candidates = sing.args if isinstance(sing, sp.FiniteSet) else ()
+        for c in candidates:
                 cv = _num(c)
                 if cv is None or c not in region.closure:
                     continue
@@ -1954,13 +1960,27 @@ def _sketch_facts(fun, var, region):
             facts['minima'].append((tx, ty))
         else:
             facts['cusps'].append((tx, ty))
+        # Ноль, до которого график только дотрагивается, сменой знака
+        # не ловится: у |f| в корне излом, а у чётного корня касание.
+        # Такая точка — и вершина, и пересечение с осью сразу.
+        if abs(ty) < 1e-9 and all(abs(tx - r) > 1e-6
+                                  for r in facts['x_intercepts']):
+            facts['x_intercepts'].append(tx)
+    facts['x_intercepts'].sort()
 
     for end in (lo, hi):
         if end in (sp.oo, -sp.oo) or end not in region:
             continue
         val = _num(fun.subs(var, end))
-        if val is not None:
-            facts['endpoints'].append((float(end), val))
+        if val is None:
+            continue
+        facts['endpoints'].append((float(end), val))
+        # Ноль ровно на конце отрезка скан не ловит: смены знака там нет,
+        # а точного нуля в числах с плавающей точкой обычно тоже.
+        if abs(val) < 1e-9 and all(abs(float(end) - r) > 1e-6
+                                   for r in facts['x_intercepts']):
+            facts['x_intercepts'].append(float(end))
+    facts['x_intercepts'].sort()
     return facts
 
 
@@ -2094,8 +2114,12 @@ def verify_sketch(label, got, f, var=x, domain=None, tol=5e-3):
             hit = next((w for w in left if _close(px, w[0], tol)), None)
             if hit is None:
                 # Точка поворота, названная не тем видом: это отдельная
-                # ошибка и отдельное объяснение.
-                for other in ('maxima', 'minima', 'cusps', 'endpoints'):
+                # ошибка и отдельное объяснение. Сверяются только вершины
+                # между собой: пересечение с осью и излом бывают одной
+                # и той же точкой, и это не ошибка.
+                for other in (('maxima', 'minima', 'cusps', 'endpoints')
+                              if key in ('maxima', 'minima', 'cusps',
+                                         'endpoints') else ()):
                     if other == key:
                         continue
                     if any(_close(px, w[0], tol) for w in facts[other]):
