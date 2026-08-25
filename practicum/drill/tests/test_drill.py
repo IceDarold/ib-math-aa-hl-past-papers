@@ -343,6 +343,45 @@ if drifted:
       archive.parse_pages(drifted['source_pages']) == [5]
       and archive.block_page_numbers(drifted, 'question') == [6])
 
+print('\n=== карта приёмов ===')
+from drill.server import Drill as DrillService  # noqa: E402
+
+with tempfile.TemporaryDirectory() as tmp:
+    atlas = DrillService(os.path.join(tmp, 'map.sqlite'))
+    card = atlas.skill_card('C1.ambiguous_case', seed=7)
+    t('карточка знает суть приёма',
+      card['name'] and card['trigger'] and card['chain'] and card['traps'])
+    t('в карточке есть ступень и роль калькулятора',
+      card['rung'] == 5 and card['calculator'])
+    t('к приёму приложены условия на узнавание', card['recognition'])
+    t('у условия показан верный код, а не хеш',
+      card['recognition'][0]['answer'] == 'ambig')
+    t('к приёму приложена задача на счёт с ответом',
+      card['compute'] and card['compute']['answer'])
+    t('одно и то же зерно даёт ту же задачу',
+      atlas.skill_card('C1.ambiguous_case', seed=7)['compute']['prompt']
+      == card['compute']['prompt'])
+    t('к приёму приложены вопросы архива со ссылкой на бумагу',
+      card['archive'] and card['archive'][0]['question_url'].endswith(
+          tuple(f'#page={n}' for n in range(1, 40))))
+    t('пока попыток не было, так и написано', card['state'] is None)
+
+    every = [atlas.skill_card(skill['id']) for skill in bank['skills']]
+    t('карточка открывается у каждого приёма банка', len(every) == 86)
+    t('у каждого приёма есть и ход, и ловушки',
+      all(one['chain'] and one['traps'] for one in every))
+    t('у каждого приёма есть хотя бы один вопрос архива',
+      all(one['archive'] for one in every))
+    without_recognition = [one['id'] for one in every if not one['recognition']]
+    t('без условий на узнавание — только те два приёма, что известны',
+      set(without_recognition) == {'A7.induction_skeleton',
+                                   'E7.euler_error_sign'})
+    try:
+        atlas.skill_card('нет такого')
+        t('несуществующий приём — ошибка', False)
+    except LookupError:
+        t('несуществующий приём — ошибка', True)
+
 print('\n=== отбор вопросов: бумага и цена ===')
 whole = engine.candidates(bank, 'written', GENERATORS)
 only_first = engine.candidates(bank, 'written', GENERATORS, papers=(1,))
@@ -381,8 +420,6 @@ except LookupError:
     t('пустой отбор — ошибка, а не случайный вопрос', True)
 
 print('\n=== сохранённые работы ===')
-from drill.server import Drill as DrillService  # noqa: E402
-
 with tempfile.TemporaryDirectory() as tmp:
     service = DrillService(os.path.join(tmp, 'kept.sqlite'))
     shots = os.path.join(service.photo_dir(), 'demo')

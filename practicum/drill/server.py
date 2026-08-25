@@ -35,6 +35,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 
 from drill import archive, engine, grader, store  # noqa: E402
+from drill.archive import reference as archive_reference  # noqa: E402
 from drill.check import evaluate, show_answer  # noqa: E402
 from drill.items import GENERATORS  # noqa: E402
 
@@ -170,6 +171,73 @@ class Drill:
         if block is None:
             raise LookupError('такого вопроса нет')
         return archive.page_image(block, kind, index)
+
+    def skill_card(self, skill_id, seed=None):
+        """Всё, что известно о приёме: суть, ловушки и примеры заданий."""
+        skill = self.bank['skills_by_id'].get(skill_id or '')
+        if skill is None:
+            raise LookupError('такого приёма нет')
+
+        examples = []
+        for item in self.bank['items_by_skill'].get(skill_id, [])[:3]:
+            examples.append({'prompt': item['prompt'],
+                             'answer': item['answer'],
+                             'options': item['options']})
+
+        compute = None
+        if skill_id in GENERATORS:
+            built = GENERATORS[skill_id](random.Random(
+                int(seed) if seed else self.rng.randrange(2**31)))
+            compute = {'prompt': built['prompt'],
+                       'note': built.get('note'),
+                       'answer': show_answer(
+                           built['answer'],
+                           var=built['check'].get('var', 'x'))}
+
+        archive = []
+        for block_id in skill.get('blocks') or ():
+            block = (self.bank.get('archive') or {}).get(block_id)
+            if block is None:
+                continue
+            archive.append({
+                'block': block_id,
+                'reference': archive_reference(block),
+                'marks': block.get('marks'),
+                'paper': block.get('paper'),
+                'calculator': block.get('calculator'),
+                'question_url': (f"/{block['dir']}/question-paper.pdf"
+                                 f"#page={_first_page(block.get('source_pages'))}"),
+            })
+        archive.sort(key=lambda row: (row['paper'] or 0, row['marks'] or 0))
+
+        with self.lock:
+            db = self.connection()
+            try:
+                state = store.states(db).get(skill_id)
+            finally:
+                db.close()
+
+        return {
+            'id': skill_id,
+            'practicum': skill['practicum'],
+            'practicum_title': next(
+                (p['title'] for p in self.bank['practicums']
+                 if p['id'] == skill['practicum']), ''),
+            'name': skill['name'],
+            'rung': skill['rung'],
+            'calculator': skill['calculator'],
+            'trigger': skill['trigger'],
+            'chain': skill.get('chain', []),
+            'traps': skill.get('traps', []),
+            'recognition': examples,
+            'compute': compute,
+            'archive': archive,
+            'state': ({'seen': state['seen'], 'wrong': state['wrong'],
+                       'box': state['box'],
+                       'due_in_days': round((state['due'] - time.time())
+                                            / 86400.0, 1)}
+                      if state else None),
+        }
 
     def questions(self, practicum=None, skill=None):
         """Настоящие вопросы архива, привязанные к приёмам."""
@@ -465,6 +533,14 @@ class Handler(BaseHTTPRequestHandler):
             self.send_header('Cache-Control', 'private, max-age=3600')
             self.end_headers()
             self.wfile.write(png)
+            return
+        if route == f'{PREFIX}/skill':
+            try:
+                self.send_json(self.drill.skill_card(
+                    (query.get('id') or [''])[0],
+                    (query.get('seed') or [None])[0]))
+            except LookupError as exc:
+                self.send_json({'error': str(exc)}, 404)
             return
         if route == f'{PREFIX}/questions':
             self.send_json(self.drill.questions(

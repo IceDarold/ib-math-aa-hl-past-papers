@@ -6,7 +6,7 @@ import { WriteUpVerdict, type Verdict as WriteUp } from './WriteUpVerdict'
 
 type Mode = 'mixed' | 'recognition' | 'compute' | 'written'
 type Order = 'schedule' | 'ladder' | 'random'
-type Screen = 'setup' | 'running' | 'done' | 'history'
+type Screen = 'setup' | 'running' | 'done' | 'history' | 'map'
 
 interface Option { code: string; name: string }
 
@@ -87,6 +87,31 @@ interface WrittenRow {
 interface WrittenRecord extends WrittenRow {
   verdict: WriteUp & { error?: string }
   files: { index: number; name: string; url: string }[]
+}
+
+interface SkillCard {
+  id: string
+  practicum: string
+  practicum_title: string
+  name: string
+  rung: number
+  calculator: string
+  trigger: string
+  chain: string[]
+  traps: string[]
+  recognition: { prompt: string; answer: string; options: { code: string; name: string }[] }[]
+  compute: { prompt: string; note?: string; answer: string } | null
+  archive: { block: string; reference: string; marks: number | null; paper: number | null; calculator: string | null; question_url: string }[]
+  state: { seen: number; wrong: number; box: number; due_in_days: number } | null
+}
+
+const CALCULATOR: Record<string, string> = {
+  required: 'нужен',
+  replaces: 'заменяет ручной ход',
+  speeds_up: 'ускоряет',
+  helps: 'помогает',
+  checks: 'только проверка',
+  forbidden: 'не поможет',
 }
 
 interface Stats {
@@ -273,6 +298,7 @@ export function DrillView() {
   const [dragging, setDragging] = useState(false)
   const [written, setWritten] = useState<WrittenRow[]>([])
   const [opened, setOpened] = useState<WrittenRecord | null>(null)
+  const [card, setCard] = useState<SkillCard | null>(null)
 
   const shownAt = useRef(0)
   const firstKeyAt = useRef(0)
@@ -293,6 +319,18 @@ export function DrillView() {
       const response = await fetch(`${API}/written`)
       if (response.ok) setWritten((await response.json()).history ?? [])
     } catch { /* список работ не критичен */ }
+  }, [])
+
+  const openSkill = useCallback(async (id: string, fresh = false) => {
+    setError(null)
+    try {
+      const seed = fresh ? `&seed=${Math.floor(Math.random() * 2 ** 31)}` : ''
+      const response = await fetch(`${API}/skill?id=${encodeURIComponent(id)}${seed}`)
+      if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
+      setCard(await response.json())
+    } catch (failure) {
+      setError(failure instanceof Error ? failure.message : 'не отвечает')
+    }
   }, [])
 
   const openWritten = useCallback(async (id: number) => {
@@ -800,10 +838,17 @@ export function DrillView() {
                     ? `${chosen.length} тем, ${chosenSkills} приёмов${settings.length ? `, ${settings.length} заданий` : ''}`
                     : 'в этом режиме выбранные темы пусты'}
               </span>
+              <button
+                type="button"
+                className="ml-auto cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted underline hover:text-ink"
+                onClick={() => { setCard(null); setScreen('map') }}
+              >
+                карта приёмов{stats ? ` (${stats.skills.length})` : ''}
+              </button>
               {written.length > 0 && (
                 <button
                   type="button"
-                  className="ml-auto cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted underline hover:text-ink"
+                  className="cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted underline hover:text-ink"
                   onClick={() => { setOpened(null); setScreen('history') }}
                 >
                   мои работы ({written.length})
@@ -811,6 +856,150 @@ export function DrillView() {
               )}
             </div>
           </>
+        )}
+
+        {screen === 'map' && (
+          <section className="flex flex-col gap-4">
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <h2 className="text-lg text-ink">Карта приёмов</h2>
+              <button
+                type="button"
+                className="cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted underline hover:text-ink"
+                onClick={() => (card ? setCard(null) : setScreen('setup'))}
+              >
+                {card ? 'ко всем приёмам' : 'к настройкам'}
+              </button>
+            </div>
+
+            {!card && stats && (
+              <div className="flex flex-col gap-3">
+                <p className="text-sm text-muted">
+                  Все {stats.skills.length} приёмов, из которых собраны практикумы.
+                  Нажмите на любой, чтобы увидеть, по какому признаку его узнают,
+                  как он выполняется и на каких вопросах архива он стоит.
+                </p>
+                {[...new Set(stats.skills.map((entry) => entry.practicum))].map((practicum) => (
+                  <div key={practicum} className="flex flex-col gap-1">
+                    <span className="font-mono text-[10px] text-faint">{practicum}</span>
+                    <div className="flex flex-col">
+                      {stats.skills.filter((entry) => entry.practicum === practicum).map((entry) => (
+                        <button
+                          key={entry.id}
+                          type="button"
+                          className="flex flex-wrap items-baseline gap-x-3 border-b border-line px-1 py-1.5 text-left hover:bg-surface"
+                          onClick={() => void openSkill(entry.id)}
+                        >
+                          <span className="w-5 shrink-0 font-mono text-[10px] text-faint">{entry.rung}</span>
+                          <span className="text-sm text-ink">{entry.name}</span>
+                          <span className="ml-auto font-mono text-[10px] text-faint">
+                            {entry.seen ? `${entry.seen} показов${entry.wrong ? `, ${entry.wrong} мимо` : ''}` : 'ни разу'}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {card && (
+              <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col gap-4">
+                <div className="flex flex-col gap-1 border-b border-line pb-3">
+                  <div className="flex flex-wrap items-baseline gap-x-3">
+                    <h3 className="text-base text-ink">{card.name}</h3>
+                    <span className="font-mono text-[10px] text-faint">
+                      {card.practicum} · ступень {card.rung} · калькулятор {CALCULATOR[card.calculator] ?? card.calculator}
+                    </span>
+                  </div>
+                  <span className="text-[11px] text-muted">{card.practicum_title}</span>
+                </div>
+
+                <dl className="grid grid-cols-[8rem_1fr] items-baseline gap-x-3 gap-y-3 max-[560px]:grid-cols-1 max-[560px]:gap-y-1">
+                  <dt className="font-mono text-[10px] tracking-wide text-faint uppercase">узнаётся по</dt>
+                  <dd className="text-sm leading-relaxed text-ink"><MathText>{card.trigger}</MathText></dd>
+
+                  <dt className="font-mono text-[10px] tracking-wide text-faint uppercase">ход</dt>
+                  <dd>
+                    <ol className="flex flex-col gap-0.5 text-xs leading-relaxed text-muted">
+                      {card.chain.map((step, index) => (
+                        <li key={step} className="flex gap-2">
+                          <span className="font-mono text-[10px] text-faint">{index + 1}</span>
+                          <MathText>{step}</MathText>
+                        </li>
+                      ))}
+                    </ol>
+                  </dd>
+
+                  <dt className="font-mono text-[10px] tracking-wide text-faint uppercase">где срезаются</dt>
+                  <dd>
+                    <ul className="flex flex-col gap-1 text-xs leading-relaxed text-muted">
+                      {card.traps.map((trap) => (
+                        <li key={trap} className="flex gap-2">
+                          <span className="text-faint">·</span>
+                          <MathText>{trap}</MathText>
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
+
+                  {card.recognition.length > 0 && <>
+                    <dt className="font-mono text-[10px] tracking-wide text-faint uppercase">узнать приём</dt>
+                    <dd className="flex flex-col gap-2">
+                      {card.recognition.map((example) => (
+                        <div key={example.prompt} className="border-l-2 border-line pl-2 text-xs leading-relaxed">
+                          <MathText className="block text-ink">{example.prompt}</MathText>
+                          <span className="font-mono text-[10px] text-muted">ответ: {example.answer}</span>
+                        </div>
+                      ))}
+                    </dd>
+                  </>}
+
+                  {card.compute && <>
+                    <dt className="font-mono text-[10px] tracking-wide text-faint uppercase">решить</dt>
+                    <dd className="flex flex-col gap-1 border-l-2 border-line pl-2 text-xs leading-relaxed">
+                      <MathText className="block text-ink">{card.compute.prompt}</MathText>
+                      {card.compute.note && <MathText className="block text-faint">{card.compute.note}</MathText>}
+                      <span className="font-mono text-[10px] text-muted">ответ: {card.compute.answer}</span>
+                      <button
+                        type="button"
+                        className="w-fit cursor-pointer border-0 bg-transparent p-0 font-mono text-[10px] text-muted underline hover:text-ink"
+                        onClick={() => void openSkill(card.id, true)}
+                      >
+                        другое задание
+                      </button>
+                    </dd>
+                  </>}
+
+                  {card.archive.length > 0 && <>
+                    <dt className="font-mono text-[10px] tracking-wide text-faint uppercase">в архиве</dt>
+                    <dd className="flex flex-col gap-0.5 text-xs">
+                      {card.archive.map((row) => (
+                        <a
+                          key={row.block}
+                          href={row.question_url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex flex-wrap items-baseline gap-x-2 text-muted hover:text-ink"
+                        >
+                          <span className="text-ink">{row.reference}</span>
+                          <span className="font-mono text-[10px] text-faint">
+                            {row.marks} баллов · {row.calculator === 'yes' ? 'GDC' : 'без GDC'}
+                          </span>
+                        </a>
+                      ))}
+                    </dd>
+                  </>}
+
+                  <dt className="font-mono text-[10px] tracking-wide text-faint uppercase">у тебя</dt>
+                  <dd className="font-mono text-[11px] text-muted">
+                    {card.state
+                      ? `показов ${card.state.seen}, мимо ${card.state.wrong}, ящик ${card.state.box}, срок ${card.state.due_in_days <= 0 ? 'подошёл' : `через ${card.state.due_in_days} дн.`}`
+                      : 'ни одной попытки'}
+                  </dd>
+                </dl>
+              </motion.div>
+            )}
+          </section>
         )}
 
         {screen === 'history' && (
@@ -1161,7 +1350,7 @@ export function DrillView() {
           </section>
         )}
 
-        {stats && screen !== 'running' && screen !== 'history' && (
+        {stats && screen !== 'running' && screen !== 'history' && screen !== 'map' && (
           <section className="flex flex-col gap-3 border-t border-line pt-4">
             <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1 font-mono text-[11px] text-muted">
               <span>всего попыток {stats.totals.attempts}</span>
