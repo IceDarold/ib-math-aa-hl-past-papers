@@ -130,9 +130,11 @@ def trainer_cell(notebook_path):
     """Последняя markdown-ячейка с тренажёром распознавания."""
     with open(notebook_path) as fh:
         nb = json.load(fh)
+    # B2 написан по-английски, и заголовок тренажёра там Trainer.
     cells = [''.join(c['source']) for c in nb['cells']
              if c['cell_type'] == 'markdown'
-             and 'Тренажёр' in ''.join(c['source'])]
+             and ('Тренажёр' in ''.join(c['source'])
+                  or 'Trainer' in ''.join(c['source']))]
     if not cells:
         raise SystemExit(f'{notebook_path}: тренажёр не найден')
     return cells[-1]

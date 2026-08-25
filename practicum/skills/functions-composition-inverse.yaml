@@ -1,0 +1,572 @@
+version: 0.1
+practicum: B2
+title: "Composition and inverse functions"
+language: en
+source_topic: functions.inverse_functions (all of it) + functions.equations (0.229)
+corpus:
+  blocks: 40
+  marks: 113
+  sessions: May 2021 — May 2025
+  papers: {1: 63, 2: 28, 3: 22}
+  gdc_marks: 50
+  note: >
+    The practicum is built from two topics. All of functions.inverse_functions
+    is here, and with it the 27 blocks of functions.equations that ask about
+    composing, evaluating and parity — the share B1 left behind.
+
+    Five of the 113 marks are one question counted twice. The whole November
+    2023 session sits in the corpus as two zones, TZ1 and TZ2, and the papers
+    are the same paper. Earlier practicums recorded this for Paper 3 only;
+    it holds for Paper 1 and Paper 2 as well. Here it doubles
+    2023-NOV-*-P1-Q01-A and -B. Details in corpus_issues.
+
+    On paper 44% of the marks carry a calculator. Real GDC work is one mark
+    of it, f^-1(2) = 1.32 in May 2025 TZ1 Paper 2. The rest of the
+    "calculator" marks are Paper 2 and Paper 3 questions that ask for an
+    exact inverse, a proof of parity, or a pattern in f^n — nothing a
+    machine helps with. That is the fifth practicum in a row where the
+    calculator share of a topic is an artefact of which paper the question
+    was printed in.
+
+principle: >
+  Composition chains two functions; the inverse is the chain run backwards.
+  Both ideas are one line of algebra, and the exam does not pay for the
+  algebra. It pays at exactly two places.
+
+  The first is order. (f o g)(x) means g first, and the mark is M1 for
+  substituting the right function into the right place. Half the composite
+  questions in the corpus are set up so that the two orders give different
+  answers, and one of them is the distractor.
+
+  The second is domain. An inverse exists only where the function is
+  one-to-one, so the question first asks for the largest a that keeps it
+  so; then the domain and the range swap, so the domain of f^-1 has to be
+  read off the range of f; and if the algebra ends in a square root, one
+  branch is right and the other is a different function. That last step is
+  an R1 — a reason, not a formula — and it is the mark most often lost.
+
+  Hence the ladder. Rungs 1-3 work forwards: evaluate a composite, write
+  one down, then set it equal to something and solve. Rung 4 is the
+  smallest composite of all, f(-x), and rung 5 composes f with itself
+  until a pattern appears. Rungs 6-9 run backwards: the defining property
+  of an inverse, then the swap that produces its formula, then the domain
+  it lives on, then the choice of branch.
+
+  The loop closes at the end. f is its own inverse exactly when f o f is
+  the identity, and exactly when the graph is symmetric in y = x — which
+  is what the m = -1 case of the Paper 3 investigation is showing.
+
+skills:
+  - id: evaluate_composite
+    name: Evaluate a composite at a point
+    rung: 1
+    trigger: >
+      "Find (f o g)(a)", "find h(4), where h(x) = f(g(x))", "write down
+      the value of f(g(0))". A number is wanted, not an expression.
+    chain:
+      - Read the order — the function written next to the bracket goes first
+      - Evaluate the inner function at the given number
+      - Feed that number, not that expression, into the outer function
+      - Keep it exact unless the paper asks for 3 s.f.
+    traps:
+      - >
+        The order is read backwards. (f o g)(4) with g(4) = 4 hides the
+        error; the corpus questions are chosen so that it does not
+      - >
+        The inner value is substituted into the inner function again,
+        which is g(g(4))
+      - >
+        The chain rule question that follows is answered with f'(g(0))
+        alone, forgetting the factor g'(0)
+    calculator:
+      mode: checks
+      note: >
+        In Paper 2 the numbers come from a graph or from a table, and the
+        GDC only stores them. Nothing here needs a solver.
+    prereq: []
+    raw_tags: [function_composition, function_evaluation, evaluate_function,
+               substitute_value, substitution, evaluate_polynomial,
+               function_definition, algebraic_simplification]
+    blocks: [2021-NOV-COMMON-P1-Q05-C, 2022-NOV-COMMON-P2-Q11-D-I,
+             2025-MAY-TZ2-P1-Q01-A, 2025-MAY-TZ1-P3-Q01-B,
+             2021-MAY-TZ2-P2-Q11-C, 2023-MAY-TZ1-P3-Q02-A]
+
+  - id: build_composite
+    name: Build the composite expression
+    rung: 2
+    trigger: >
+      "Write down an expression for (g o f)(x)", "show that
+      (f o g)(x) = 4x^2", "find an expression for f(g(x)) in terms of x".
+    chain:
+      - Substitute the whole inner expression for the variable of the outer
+      - Bracket it before expanding — (x-3)^2 is not x^2-3^2
+      - Expand and collect only as far as the requested form
+      - For a "show that", finish on the printed line, not near it
+    traps:
+      - >
+        The two functions are composed in the order they are named in the
+        sentence rather than the order the bracket demands
+      - >
+        The inner expression is substituted without brackets, and the
+        square or the minus sign is lost
+      - >
+        A "show that" is answered by verifying one value instead of
+        transforming the expression
+    calculator:
+      mode: no
+      note: >
+        Every block of this technique is Paper 1 or a Paper 3 "show that".
+        A GDC cannot produce an algebraic identity.
+    prereq: [evaluate_composite]
+    raw_tags: [composite_function, compose_functions, substitution,
+               binomial_expansion, expansion, polynomial_expansion,
+               simplify_expression, substitute_definition, expand_binomial,
+               collect_terms, recognize_hyperbolic_form]
+    blocks: [2023-NOV-TZ1-P1-Q01-A, 2023-NOV-TZ2-P1-Q01-A,
+             2025-MAY-TZ2-P1-Q10-C, 2021-NOV-COMMON-P3-Q01-B]
+
+  - id: composite_equation
+    name: The composite is given a value, and that is an equation
+    rung: 3
+    trigger: >
+      "Given that (g o f)(2) = 10, find the possible values of k",
+      "(h o g)(a) = pi/4, find a", "given (g o f)(x) = 4x^2-14x+15,
+      find f(x)".
+    chain:
+      - Build the composite first, then set it equal to the given value
+      - Solve the equation that appears — usually quadratic
+      - If f itself is unknown, compare coefficients rather than guess
+      - Keep every root, then test each against the domain in the question
+      - Answer in the form asked for, including surd form
+    traps:
+      - >
+        Only the positive square root is kept when the question says
+        "the possible values" and expects both
+      - >
+        A root outside the stated domain (x > 3, a > 0) is reported
+        alongside the valid one
+      - >
+        Coefficients are compared in the wrong order, so a and the constant
+        are swapped and only one of the two functions f is found
+    calculator:
+      mode: no
+      note: >
+        All four blocks are Paper 1. The answers are exact — k = ±3,
+        a = 1 + (3/2)sqrt(2) — and a decimal from the GDC earns nothing.
+    prereq: [build_composite]
+    raw_tags: [substitution, square_root, plus_minus, solve_quadratic,
+               equate_coefficients, solve_linear, function_composition,
+               evaluate_composite_function, set_up_rational_equation,
+               solve_trigonometric_equation, express_in_surd_form]
+    blocks: [2023-NOV-TZ1-P1-Q01-B, 2023-NOV-TZ2-P1-Q01-B,
+             2022-MAY-TZ2-P1-Q11-C, 2023-MAY-TZ2-P1-Q05]
+
+  - id: parity_test
+    name: "Substitute -x: the smallest composite"
+    rung: 4
+    trigger: >
+      "Show that f is an even function", "show that f_n is even",
+      "state, with a reason, whether f is odd or even".
+    chain:
+      - Write f(-x) in full, brackets and all
+      - Simplify using (-x)^2 = x^2 and (-x)^3 = -x^3
+      - Land exactly on f(x) for even, on -f(x) for odd
+      - Say the word — "therefore f is even" — the R1 is the sentence
+    traps:
+      - >
+        The work stops at f(-x) = f(x) without the concluding statement,
+        and the R1 is not awarded
+      - >
+        A sketch is offered instead of algebra when the question says
+        "show that"; a sketch is accepted only if the symmetry is marked
+      - >
+        Inside a sum, only the first term is checked; the claim is about
+        every term
+    calculator:
+      mode: no
+      note: >
+        A graph on the GDC can suggest the symmetry but does not prove it.
+        Both blocks are proof marks.
+    prereq: [build_composite]
+    raw_tags: [substitute_neg_x, substitute_negative_x, simplify_rational,
+               confirm_parity, simplify_expression, conclude_even_function]
+    blocks: [2021-MAY-TZ2-P2-Q12-A, 2025-MAY-TZ1-P2-Q12-A]
+
+  - id: iterate_function
+    name: Compose f with itself, then generalise
+    rung: 5
+    trigger: >
+      "f^2(x) means f(f(x))", "find an expression for f^n(x)",
+      "describe what happens to f^n(x) as n grows".
+    chain:
+      - Compute f^2 and f^3 in full, without simplifying away the pattern
+      - Separate the coefficient of x from the constant — they behave differently
+      - Recognise the constant as a geometric sum and close it
+      - Split the answer by cases on the coefficient — m = 1, |m| < 1, m = -1
+      - Read the limit, or the two-cycle, from the closed form
+    traps:
+      - >
+        f^2 is read as (f(x))^2 — the square of the value, not the second
+        composite
+      - >
+        The closed form c(1-m^n)/(1-m) is quoted for m = 1 as well, where
+        it is 0/0 and the true answer is x + nc
+      - >
+        For m = -1 only odd n is checked, and the even case, where f^n is
+        the identity, is missed
+    calculator:
+      mode: checks
+      note: >
+        Numerical iteration on the GDC is a good way to see the fixed point
+        c/(1-m) before proving it, but the marks are for the algebra.
+    prereq: [build_composite]
+    raw_tags: [function_composition, algebraic_simplification,
+               pattern_recognition, generalization, substitution,
+               simplification, parity_reasoning]
+    blocks: [2025-MAY-TZ3-P3-Q01-A-I, 2025-MAY-TZ3-P3-Q01-A-II,
+             2025-MAY-TZ3-P3-Q01-B-I, 2025-MAY-TZ3-P3-Q01-B-II,
+             2025-MAY-TZ3-P3-Q01-B-III, 2025-MAY-TZ3-P3-Q01-E-I,
+             2025-MAY-TZ3-P3-Q01-E-II]
+
+  - id: inverse_property
+    name: "f^-1(a) = b means f(b) = a"
+    rung: 6
+    trigger: >
+      "Find f^-1(8)", "solve f^-1(2x-7) = -3", "the graph of f^-1 is the
+      reflection of f in y = x", "given g(x) = g^-1(x), find a".
+    chain:
+      - Do not find the inverse — turn the statement around
+      - f^-1(a) = b is the same sentence as f(b) = a; solve that instead
+      - For a point, swap the coordinates and read off the reflection
+      - For self-inverse, either equate f to f^-1 or set f(f(x)) = x
+    traps:
+      - >
+        The whole inverse function is derived when one equation would do,
+        and the algebra runs out of time
+      - >
+        f^-1(x) is read as 1/f(x)
+      - >
+        In f^-1(2x-7) = -3 the inner bracket is set equal to -3 instead of
+        to f(-3)
+    calculator:
+      mode: checks
+      note: >
+        This is where the one honest GDC mark of the practicum lives —
+        f^-1(2) = 1.32 is solved as f(x) = 2 on the machine. Everything
+        else on this rung is exact.
+    prereq: [evaluate_composite]
+    raw_tags: [inverse_function, inverse_function_property, inverse_functions,
+               reflection_property, solve_linear_equation,
+               solve_exponential_equation, express_as_fraction,
+               solve_fx_equals_constant, inverse_function_evaluation,
+               equate_function_and_inverse, compare_coefficients,
+               solve_parameter, rational_function]
+    blocks: [2025-MAY-TZ3-P1-Q02-C, 2025-MAY-TZ2-P1-Q10-A,
+             2025-MAY-TZ1-P2-Q06-B, 2025-MAY-TZ1-P3-Q02-D-II,
+             2021-NOV-COMMON-P1-Q02-D]
+
+  - id: inverse_by_swap
+    name: Swap, then make y the subject
+    rung: 7
+    trigger: >
+      "Find an expression for f^-1(x)", "find g^-1(x)", "hence find the
+      inverse function".
+    chain:
+      - Write y = f(x), then interchange x and y
+      - Clear the fraction or the logarithm or the exponent
+      - Collect every y on one side and factorise
+      - Divide, and rename the result f^-1(x)
+      - Check by composing back — f^-1(f(t)) has to give t
+    traps:
+      - >
+        x and y are never actually swapped, so the answer is f rewritten
+        rather than f^-1
+      - >
+        Terms in y are collected on both sides and the factorisation is
+        skipped, leaving y on the right as well
+      - >
+        The answer is left as "x = ..." instead of "f^-1(x) = ..."
+    calculator:
+      mode: no
+      note: >
+        Two of the four blocks are printed in Paper 2 and still ask for an
+        exact expression. The GDC contributes nothing to any of them.
+    prereq: [inverse_property]
+    raw_tags: [interchange_variables, swap_variables, swap_x_and_y,
+               solve_for_inverse, solve_for_y, find_inverse_function,
+               state_inverse, cross_multiply, collect_like_terms, factor,
+               algebraic_manipulation, describe_transformations]
+    blocks: [2023-MAY-TZ1-P1-Q01-C, 2025-MAY-TZ2-P1-Q10-B,
+             2022-MAY-TZ1-P2-Q10-B, 2025-MAY-TZ1-P2-Q12-D]
+
+  - id: inverse_domain
+    name: Where the inverse exists, and on what domain
+    rung: 8
+    trigger: >
+      "Find the largest value of a for which f^-1 exists", "state the
+      domain of f^-1", "write down the range of f^-1".
+    chain:
+      - An inverse exists exactly where the function is one-to-one
+      - Find where f turns — a stationary point, or the peak of a wave
+      - Cut the domain at the turn and take the largest piece that starts
+        at the given endpoint
+      - To state the domain of f^-1, work out the range of f
+      - Range of f^-1 is the domain of f, unchanged
+    traps:
+      - >
+        The largest interval anywhere is given instead of the largest
+        interval starting where the question starts it
+      - >
+        The domain of f^-1 is copied from the domain of f — the two swap,
+        they do not agree
+      - >
+        An endpoint is included that the original excluded, or the other
+        way round; a strict inequality is not decoration
+    calculator:
+      mode: checks
+      note: >
+        A graph shows the turning point instantly and settles which branch
+        is one-to-one. The values wanted are exact — k - pi, [0, sqrt(3)] —
+        so the sketch informs the answer without being it.
+    prereq: [inverse_by_swap]
+    raw_tags: [state_domain, domain_range, determine_domain, domain_from_range,
+               determine_domain_from_range, state_domain_restriction,
+               monotonicity_analysis, horizontal_line_test, one_to_one_check,
+               monotonic_decreasing, derivative_analysis,
+               trigonometric_transformation]
+    blocks: [2022-NOV-COMMON-P1-Q08-A, 2022-NOV-COMMON-P1-Q08-B,
+             2022-NOV-COMMON-P1-Q08-C, 2025-MAY-TZ3-P1-Q02-B,
+             2021-MAY-TZ2-P2-Q12-E]
+
+  - id: inverse_branch
+    name: "Choosing the branch: the R1 at the end of the root"
+    rung: 9
+    trigger: >
+      A square root appears in the middle of an inverse, and the question
+      adds "justifying your answer", "justify your choice", or gives a
+      domain such as x > 3 that the plus-minus has to be tested against.
+    chain:
+      - Solve as far as y^2 = something and stop
+      - Write both branches down before choosing
+      - Recall that the range of f^-1 is the domain of f
+      - Keep the branch whose values lie in that domain, reject the other
+      - Say why in one sentence — that sentence is the R1
+    traps:
+      - >
+        The positive root is taken silently, and the R1 is lost even though
+        the final expression is right
+      - >
+        The branch is chosen by the domain of f^-1 rather than by its
+        range; those are different sets and only one decides
+      - >
+        The check is done as f(f^-1(x)) = x, which both branches pass,
+        instead of f^-1(f(t)) = t, which only the right one passes
+    calculator:
+      mode: no
+      note: >
+        Both blocks are exact-answer questions. A numerical check on the
+        GDC is worth doing privately — substitute one value from the
+        domain of f and see which branch returns it.
+    prereq: [inverse_domain]
+    raw_tags: [select_branch_by_domain, select_positive_root, complete_square,
+               solve_rational, apply_sine, plus_minus, interchange_variables,
+               solve_for_inverse, determine_domain_from_range]
+    blocks: [2022-MAY-TZ2-P1-Q11-B, 2021-MAY-TZ2-P2-Q12-D]
+
+leftovers:
+  - what: The range of a reflected function
+    marks: 3
+    blocks: [2025-MAY-TZ2-P1-Q01-C]
+    why: >
+      g(x) = -f(x) on x >= 0, and the question asks for the range. The
+      technique is a transformation of a graph, which belongs to B3, and
+      reading a range off an asymptote, which belongs to B4. It appears in
+      this practicum once and only as a prerequisite — the domain of an
+      inverse is the range of the original, so a student who cannot read
+      a range cannot answer rung 8.
+
+leads_to:
+  - practicum: B3
+    why: >
+      Rung 7 ends with "describe the transformations that map the graph of
+      g to the graph of g^-1". Naming a translation and a stretch in the
+      right order is B3's work; here it is quoted as a known fact.
+  - practicum: B4
+    why: >
+      Rung 8 asks for the range of f, and the honest way to find it is the
+      asymptotes and the turning points. B2 reads ranges off a picture,
+      B4 computes them.
+  - practicum: A7
+    why: >
+      Part (c) of the Paper 3 investigation asks for a proof by induction
+      that f^n(x) = m^n x + c(1-m^n)/(1-m). The pattern is found on rung 5
+      and proved in A7 — the practicum states the formula and stops.
+  - practicum: A2
+    why: >
+      The constant in f^n is 1 + m + ... + m^(n-1), a geometric sum, and
+      its limit c/(1-m) for |m| < 1 is a geometric series. The closed form
+      is quoted here.
+  - practicum: E3
+    why: >
+      (f o g)'(0) = f'(g(0)) g'(0) is the chain rule wearing composition
+      notation. B2 stops at (f o g)(0); E3 differentiates it.
+
+verification_limits:
+  - what: >
+      verify_inverse knows nothing about the domain of the inverse itself.
+    why: >
+      It substitutes f inside the given expression and asks for the
+      identity back on the domain of f. That test says the formula undoes
+      f; it cannot say where the formula is allowed to be used.
+    impact: >
+      A right formula paired with a wrong stated domain passes
+      verify_inverse and is caught only by the check_domain next to it.
+      Measured in test_kit_inv.py.
+  - what: >
+      check_domain compares sets, so any notation passes.
+    why: >
+      The answer is digested as a set of real numbers. "[-pi/2, pi/2)",
+      "-pi/2 <= x < pi/2" and "[-1.5708, 1.5708)" are the same set.
+    impact: >
+      Deliberate — the markscheme accepts all three. What it does not
+      forgive is an endpoint, and that is exactly what the comparison is
+      strict about.
+  - what: >
+      verify_identity accepts an answer that is right for the wrong reason.
+    why: >
+      It compares two expressions, not two arguments. A parity proof that
+      never writes f(-x) but happens to end on f(x) still passes.
+    impact: >
+      On rung 4 the mark is an R1 for the sentence. The notebook says so
+      in the solution; the check cannot.
+  - what: >
+      check_series does not see what a letter is called.
+    why: >
+      It substitutes numbers for every symbol other than the variable,
+      taking them in alphabetical order. With one extra letter, any name
+      gets the same numbers.
+    impact: >
+      In task 2 the answer (x-3)^2 + p^2 passes against a question that
+      names the constant k. The examiner would not accept it. Measured
+      in verify_b2.py (limit 4).
+  - what: >
+      Nothing verifies the order of a composition directly.
+    why: >
+      (f o g)(x) and (g o f)(x) are two different expressions, and a
+      student who builds the wrong one is checked against the wrong answer
+      and told it is wrong — with no hint about which mistake it was.
+    impact: >
+      The recognition trainer carries the load instead: reading the order
+      out of the notation is one of its items.
+
+corpus_issues:
+  - block: 2023-NOV-TZ2-P1-Q01-A
+    what: >
+      The whole November 2023 session is in the corpus twice, as
+      2023-november-tz1 and as 2023-november-tz2. Earlier practicums
+      recorded the duplication for Paper 3 only. It holds for every paper
+      of that session.
+    check: >
+      Compared page by page. The Paper 1 question papers are textually
+      identical once the paper code is removed (8823-7106 against
+      8823-7111). Paper 2 agrees letter for letter and digit for digit;
+      the only difference is that the two extractions disagree about the
+      brackets of the vector columns, which one drops and the other
+      emits as private-use glyphs. Neither zone has a Paper 3 of its
+      own — that file exists once, under Common.
+    impact: >
+      In B2 this doubles 2023-NOV-*-P1-Q01-A and -B, five marks of the
+      113. Both copies are listed in the card so that the block ids
+      resolve, and the question is used once in the notebook, as task 2
+      and task 5.
+  - block: 2022-MAY-TZ2-P1-Q11-B
+    what: >
+      The recorded inverse, (1 + sqrt(x^2+4x))/x, is not the inverse of
+      the given function. The paper prints
+      g^-1(x) = 1 + sqrt(4x^2+x)/x — a different expression, with the
+      root over 4x^2+x and only the root divided by x.
+    check: >
+      The page was rendered as an image and read directly. g(x) =
+      1/(x^2-2x-3) on x > 3, so g^-1 must map 1/5 back to 4. The paper's
+      formula gives 4; the corpus formula gives 1.664 at x = 4 where the
+      truth is 3.0616. verify_inverse rejects the corpus form on its own,
+      without being told the right answer.
+    impact: >
+      Task 19 of the notebook uses the paper's formula. The corpus form
+      is kept in the solution as a worked counter-example, because it is
+      exactly the answer a student produces when the fraction bar is read
+      one character too far.
+  - block: 2022-MAY-TZ1-P2-Q10-B
+    what: >
+      The recorded answer, f^-1(x) = 2/x^2 + 1, is neither the inverse nor
+      close to it, and the recorded function is wrong too.
+    check: >
+      The paper has f(x) = sqrt(x^2-1) on 1 <= x <= 2. Then
+      f^-1(x) = sqrt(x^2+1), the domain of f^-1 is [0, sqrt(3)] and its
+      range is [1, 2]. Part (c) of the same question settles it beyond
+      the image: it prints the volume of revolution about the y-axis as
+      pi(h^3/3 + h), and integrating (f^-1)^2 = x^2+1 is what produces
+      exactly that.
+    impact: >
+      Task 17 is set from the paper. This is also the question that fixes
+      the direction of verify_inverse — on this f, the wrong branch
+      -sqrt(x^2+1) passes f(g(x)) = x and fails g(f(x)) = x.
+  - block: 2021-MAY-TZ2-P2-Q12-A
+    what: >
+      The function is recorded upside down, as
+      f(x) = arcsin((1-x^2)/(1+x^2)); the paper has
+      f(x) = arcsin((x^2-1)/(x^2+1)).
+    check: >
+      With the corpus version the paper's own later results are false —
+      the horizontal asymptote would be y = -pi/2 rather than y = pi/2,
+      and f would be increasing, not decreasing, for x < 0. With the
+      paper's version both come out as printed, and the markscheme
+      answer g^-1(x) = sqrt((1+sin x)/(1-sin x)) on -pi/2 <= x < pi/2
+      follows.
+    impact: >
+      Tasks 8 and 20 use the paper's function. Parity is unaffected —
+      both versions are even — but the inverse is not.
+  - block: 2021-NOV-COMMON-P1-Q02-D
+    what: >
+      The function is recorded with its denominator reversed. The corpus
+      has g(x) = (ax+4)/(x-3); the paper prints g(x) = (ax+4)/(3-x).
+      With the corpus version the recorded answer is wrong as well.
+    check: >
+      A Mobius map is self-inverse when its trace vanishes. For the
+      paper's (ax+4)/(-x+3) that is a+3 = 0, so a = -3, which is the
+      markscheme answer; for the corpus's (ax+4)/(x-3) it is a-3 = 0,
+      so a = 3. sympy confirms both by solving g(g(x)) = x. The
+      markscheme's own working settles which is printed: its METHOD 2
+      line has the constant 5, and 5 = 9 - 4 comes from 3(3-x) - 4,
+      a denominator of 3-x.
+    impact: >
+      Task 13 is set from the paper. It is the only corpus error of the
+      four whose recorded ANSWER is also wrong, and it was found by
+      deriving a rather than trusting it.
+  - block: 2021-MAY-TZ2-P2-Q11-C
+    what: >
+      All five corpus errors in this topic are one species — a radical
+      sign or a fraction bar lost when the PDF was flattened into text.
+    check: >
+      Each was found the same way: render the region of the page as an
+      image and read it. Every one of the four wrong formulas above is a
+      root or a bar over a fraction, and this block, which survived intact,
+      is the shape they get wrong — k e^(x/2)/(1+e^x) with the answer
+      8 sqrt(170)/(17 sqrt(pi)).
+    impact: >
+      Practical rule for this topic — every formula containing a radical
+      or a fraction bar was re-read from the PDF before use, and every
+      answer was re-derived rather than copied. That
+      is where the extraction fails, and inverse functions are made of
+      exactly that shape.
+
+ladder:
+  - evaluate_composite
+  - build_composite
+  - composite_equation
+  - parity_test
+  - iterate_function
+  - inverse_property
+  - inverse_by_swap
+  - inverse_domain
+  - inverse_branch

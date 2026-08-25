@@ -2835,6 +2835,513 @@
    "dir": "AA_HL/2023/May/TZ1/Paper 1",
    "skill": "B1.solution_count"
   },
+  "2021-NOV-COMMON-P1-Q05-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "5",
+   "part": "c",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "B2.evaluate_composite"
+  },
+  "2022-NOV-COMMON-P2-Q11-D-I": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "11",
+   "part": "d(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "B2.evaluate_composite"
+  },
+  "2025-MAY-TZ2-P1-Q01-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "B2.evaluate_composite"
+  },
+  "2025-MAY-TZ1-P3-Q01-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "B",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "B2.evaluate_composite"
+  },
+  "2021-MAY-TZ2-P2-Q11-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "C",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B2.evaluate_composite"
+  },
+  "2023-MAY-TZ1-P3-Q02-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "B2.evaluate_composite"
+  },
+  "2023-NOV-TZ1-P1-Q01-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "B2.build_composite"
+  },
+  "2023-NOV-TZ2-P1-Q01-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "B2.build_composite"
+  },
+  "2025-MAY-TZ2-P1-Q10-C": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "B2.build_composite"
+  },
+  "2021-NOV-COMMON-P3-Q01-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "b",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/November/Common/Paper 3",
+   "skill": "B2.build_composite"
+  },
+  "2023-NOV-TZ1-P1-Q01-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "B2.composite_equation"
+  },
+  "2023-NOV-TZ2-P1-Q01-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "B2.composite_equation"
+  },
+  "2022-MAY-TZ2-P1-Q11-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "C",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "B2.composite_equation"
+  },
+  "2023-MAY-TZ2-P1-Q05": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "B2.composite_equation"
+  },
+  "2021-MAY-TZ2-P2-Q12-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B2.parity_test"
+  },
+  "2025-MAY-TZ1-P2-Q12-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "17",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "B2.parity_test"
+  },
+  "2025-MAY-TZ3-P3-Q01-A-I": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "A-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "B2.iterate_function"
+  },
+  "2025-MAY-TZ3-P3-Q01-A-II": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "A-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "B2.iterate_function"
+  },
+  "2025-MAY-TZ3-P3-Q01-B-I": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "B-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "B2.iterate_function"
+  },
+  "2025-MAY-TZ3-P3-Q01-B-II": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "B-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "B2.iterate_function"
+  },
+  "2025-MAY-TZ3-P3-Q01-B-III": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "B-III",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "B2.iterate_function"
+  },
+  "2025-MAY-TZ3-P3-Q01-E-I": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "E-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "B2.iterate_function"
+  },
+  "2025-MAY-TZ3-P3-Q01-E-II": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "E-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "B2.iterate_function"
+  },
+  "2025-MAY-TZ3-P1-Q02-C": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "2",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "B2.inverse_property"
+  },
+  "2025-MAY-TZ2-P1-Q10-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "B2.inverse_property"
+  },
+  "2025-MAY-TZ1-P2-Q06-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "B",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "B2.inverse_property"
+  },
+  "2025-MAY-TZ1-P3-Q02-D-II": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "D-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "B2.inverse_property"
+  },
+  "2021-NOV-COMMON-P1-Q02-D": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "2",
+   "part": "(d)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "11-12",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "B2.inverse_property"
+  },
+  "2023-MAY-TZ1-P1-Q01-C": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "(c)",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "B2.inverse_by_swap"
+  },
+  "2025-MAY-TZ2-P1-Q10-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "B2.inverse_by_swap"
+  },
+  "2022-MAY-TZ1-P2-Q10-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "B",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "B2.inverse_by_swap"
+  },
+  "2025-MAY-TZ1-P2-Q12-D": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "D",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "17",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "B2.inverse_by_swap"
+  },
+  "2022-NOV-COMMON-P1-Q08-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "8",
+   "part": "a",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "B2.inverse_domain"
+  },
+  "2022-NOV-COMMON-P1-Q08-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "8",
+   "part": "b",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "B2.inverse_domain"
+  },
+  "2022-NOV-COMMON-P1-Q08-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "8",
+   "part": "c",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "B2.inverse_domain"
+  },
+  "2025-MAY-TZ3-P1-Q02-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "2",
+   "part": "B",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "B2.inverse_domain"
+  },
+  "2021-MAY-TZ2-P2-Q12-E": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "E",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B2.inverse_domain"
+  },
+  "2022-MAY-TZ2-P1-Q11-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "26-27",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "B2.inverse_branch"
+  },
+  "2021-MAY-TZ2-P2-Q12-D": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "D",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B2.inverse_branch"
+  },
   "2024-MAY-TZ1-P2-Q02-A": {
    "session": "May 2024",
    "zone": "TZ1",
@@ -4376,6 +4883,14 @@
    "blocks": 73
   },
   {
+   "id": "B2",
+   "title": "Композиция и обратные функции",
+   "section": "B",
+   "notebook": "practicum/functions/practicum-b2-composition-inverse.ipynb",
+   "marks": 113,
+   "blocks": 40
+  },
+  {
    "id": "C1",
    "title": "Треугольник: синусы, косинусы, площадь",
    "section": "C",
@@ -5802,6 +6317,248 @@
     "2023-NOV-TZ2-P3-Q01-H",
     "2021-MAY-TZ2-P3-Q01-H",
     "2023-MAY-TZ1-P1-Q08-B"
+   ]
+  },
+  {
+   "id": "B2.evaluate_composite",
+   "practicum": "B2",
+   "name": "Evaluate a composite at a point",
+   "rung": 1,
+   "trigger": "\"Find (f o g)(a)\", \"find h(4), where h(x) = f(g(x))\", \"write down the value of f(g(0))\". A number is wanted, not an expression.",
+   "chain": [
+    "Read the order — the function written next to the bracket goes first",
+    "Evaluate the inner function at the given number",
+    "Feed that number, not that expression, into the outer function",
+    "Keep it exact unless the paper asks for 3 s.f."
+   ],
+   "traps": [
+    "The order is read backwards. (f o g)(4) with g(4) = 4 hides the error; the corpus questions are chosen so that it does not",
+    "The inner value is substituted into the inner function again, which is g(g(4))",
+    "The chain rule question that follows is answered with f'(g(0)) alone, forgetting the factor g'(0)"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 113,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q05-C",
+    "2022-NOV-COMMON-P2-Q11-D-I",
+    "2025-MAY-TZ2-P1-Q01-A",
+    "2025-MAY-TZ1-P3-Q01-B",
+    "2021-MAY-TZ2-P2-Q11-C",
+    "2023-MAY-TZ1-P3-Q02-A"
+   ]
+  },
+  {
+   "id": "B2.build_composite",
+   "practicum": "B2",
+   "name": "Build the composite expression",
+   "rung": 2,
+   "trigger": "\"Write down an expression for (g o f)(x)\", \"show that (f o g)(x) = 4x^2\", \"find an expression for f(g(x)) in terms of x\".",
+   "chain": [
+    "Substitute the whole inner expression for the variable of the outer",
+    "Bracket it before expanding — (x-3)^2 is not x^2-3^2",
+    "Expand and collect only as far as the requested form",
+    "For a \"show that\", finish on the printed line, not near it"
+   ],
+   "traps": [
+    "The two functions are composed in the order they are named in the sentence rather than the order the bracket demands",
+    "The inner expression is substituted without brackets, and the square or the minus sign is lost",
+    "A \"show that\" is answered by verifying one value instead of transforming the expression"
+   ],
+   "calculator": false,
+   "practicum_marks": 113,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q01-A",
+    "2023-NOV-TZ2-P1-Q01-A",
+    "2025-MAY-TZ2-P1-Q10-C",
+    "2021-NOV-COMMON-P3-Q01-B"
+   ]
+  },
+  {
+   "id": "B2.composite_equation",
+   "practicum": "B2",
+   "name": "The composite is given a value, and that is an equation",
+   "rung": 3,
+   "trigger": "\"Given that (g o f)(2) = 10, find the possible values of k\", \"(h o g)(a) = pi/4, find a\", \"given (g o f)(x) = 4x^2-14x+15, find f(x)\".",
+   "chain": [
+    "Build the composite first, then set it equal to the given value",
+    "Solve the equation that appears — usually quadratic",
+    "If f itself is unknown, compare coefficients rather than guess",
+    "Keep every root, then test each against the domain in the question",
+    "Answer in the form asked for, including surd form"
+   ],
+   "traps": [
+    "Only the positive square root is kept when the question says \"the possible values\" and expects both",
+    "A root outside the stated domain (x > 3, a > 0) is reported alongside the valid one",
+    "Coefficients are compared in the wrong order, so a and the constant are swapped and only one of the two functions f is found"
+   ],
+   "calculator": false,
+   "practicum_marks": 113,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q01-B",
+    "2023-NOV-TZ2-P1-Q01-B",
+    "2022-MAY-TZ2-P1-Q11-C",
+    "2023-MAY-TZ2-P1-Q05"
+   ]
+  },
+  {
+   "id": "B2.parity_test",
+   "practicum": "B2",
+   "name": "Substitute -x: the smallest composite",
+   "rung": 4,
+   "trigger": "\"Show that f is an even function\", \"show that f_n is even\", \"state, with a reason, whether f is odd or even\".",
+   "chain": [
+    "Write f(-x) in full, brackets and all",
+    "Simplify using (-x)^2 = x^2 and (-x)^3 = -x^3",
+    "Land exactly on f(x) for even, on -f(x) for odd",
+    "Say the word — \"therefore f is even\" — the R1 is the sentence"
+   ],
+   "traps": [
+    "The work stops at f(-x) = f(x) without the concluding statement, and the R1 is not awarded",
+    "A sketch is offered instead of algebra when the question says \"show that\"; a sketch is accepted only if the symmetry is marked",
+    "Inside a sum, only the first term is checked; the claim is about every term"
+   ],
+   "calculator": false,
+   "practicum_marks": 113,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q12-A",
+    "2025-MAY-TZ1-P2-Q12-A"
+   ]
+  },
+  {
+   "id": "B2.iterate_function",
+   "practicum": "B2",
+   "name": "Compose f with itself, then generalise",
+   "rung": 5,
+   "trigger": "\"f^2(x) means f(f(x))\", \"find an expression for f^n(x)\", \"describe what happens to f^n(x) as n grows\".",
+   "chain": [
+    "Compute f^2 and f^3 in full, without simplifying away the pattern",
+    "Separate the coefficient of x from the constant — they behave differently",
+    "Recognise the constant as a geometric sum and close it",
+    "Split the answer by cases on the coefficient — m = 1, |m| < 1, m = -1",
+    "Read the limit, or the two-cycle, from the closed form"
+   ],
+   "traps": [
+    "f^2 is read as (f(x))^2 — the square of the value, not the second composite",
+    "The closed form c(1-m^n)/(1-m) is quoted for m = 1 as well, where it is 0/0 and the true answer is x + nc",
+    "For m = -1 only odd n is checked, and the even case, where f^n is the identity, is missed"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 113,
+   "blocks": [
+    "2025-MAY-TZ3-P3-Q01-A-I",
+    "2025-MAY-TZ3-P3-Q01-A-II",
+    "2025-MAY-TZ3-P3-Q01-B-I",
+    "2025-MAY-TZ3-P3-Q01-B-II",
+    "2025-MAY-TZ3-P3-Q01-B-III",
+    "2025-MAY-TZ3-P3-Q01-E-I",
+    "2025-MAY-TZ3-P3-Q01-E-II"
+   ]
+  },
+  {
+   "id": "B2.inverse_property",
+   "practicum": "B2",
+   "name": "f^-1(a) = b means f(b) = a",
+   "rung": 6,
+   "trigger": "\"Find f^-1(8)\", \"solve f^-1(2x-7) = -3\", \"the graph of f^-1 is the reflection of f in y = x\", \"given g(x) = g^-1(x), find a\".",
+   "chain": [
+    "Do not find the inverse — turn the statement around",
+    "f^-1(a) = b is the same sentence as f(b) = a; solve that instead",
+    "For a point, swap the coordinates and read off the reflection",
+    "For self-inverse, either equate f to f^-1 or set f(f(x)) = x"
+   ],
+   "traps": [
+    "The whole inverse function is derived when one equation would do, and the algebra runs out of time",
+    "f^-1(x) is read as 1/f(x)",
+    "In f^-1(2x-7) = -3 the inner bracket is set equal to -3 instead of to f(-3)"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 113,
+   "blocks": [
+    "2025-MAY-TZ3-P1-Q02-C",
+    "2025-MAY-TZ2-P1-Q10-A",
+    "2025-MAY-TZ1-P2-Q06-B",
+    "2025-MAY-TZ1-P3-Q02-D-II",
+    "2021-NOV-COMMON-P1-Q02-D"
+   ]
+  },
+  {
+   "id": "B2.inverse_by_swap",
+   "practicum": "B2",
+   "name": "Swap, then make y the subject",
+   "rung": 7,
+   "trigger": "\"Find an expression for f^-1(x)\", \"find g^-1(x)\", \"hence find the inverse function\".",
+   "chain": [
+    "Write y = f(x), then interchange x and y",
+    "Clear the fraction or the logarithm or the exponent",
+    "Collect every y on one side and factorise",
+    "Divide, and rename the result f^-1(x)",
+    "Check by composing back — f^-1(f(t)) has to give t"
+   ],
+   "traps": [
+    "x and y are never actually swapped, so the answer is f rewritten rather than f^-1",
+    "Terms in y are collected on both sides and the factorisation is skipped, leaving y on the right as well",
+    "The answer is left as \"x = ...\" instead of \"f^-1(x) = ...\""
+   ],
+   "calculator": false,
+   "practicum_marks": 113,
+   "blocks": [
+    "2023-MAY-TZ1-P1-Q01-C",
+    "2025-MAY-TZ2-P1-Q10-B",
+    "2022-MAY-TZ1-P2-Q10-B",
+    "2025-MAY-TZ1-P2-Q12-D"
+   ]
+  },
+  {
+   "id": "B2.inverse_domain",
+   "practicum": "B2",
+   "name": "Where the inverse exists, and on what domain",
+   "rung": 8,
+   "trigger": "\"Find the largest value of a for which f^-1 exists\", \"state the domain of f^-1\", \"write down the range of f^-1\".",
+   "chain": [
+    "An inverse exists exactly where the function is one-to-one",
+    "Find where f turns — a stationary point, or the peak of a wave",
+    "Cut the domain at the turn and take the largest piece that starts at the given endpoint",
+    "To state the domain of f^-1, work out the range of f",
+    "Range of f^-1 is the domain of f, unchanged"
+   ],
+   "traps": [
+    "The largest interval anywhere is given instead of the largest interval starting where the question starts it",
+    "The domain of f^-1 is copied from the domain of f — the two swap, they do not agree",
+    "An endpoint is included that the original excluded, or the other way round; a strict inequality is not decoration"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 113,
+   "blocks": [
+    "2022-NOV-COMMON-P1-Q08-A",
+    "2022-NOV-COMMON-P1-Q08-B",
+    "2022-NOV-COMMON-P1-Q08-C",
+    "2025-MAY-TZ3-P1-Q02-B",
+    "2021-MAY-TZ2-P2-Q12-E"
+   ]
+  },
+  {
+   "id": "B2.inverse_branch",
+   "practicum": "B2",
+   "name": "Choosing the branch: the R1 at the end of the root",
+   "rung": 9,
+   "trigger": "A square root appears in the middle of an inverse, and the question adds \"justifying your answer\", \"justify your choice\", or gives a domain such as x > 3 that the plus-minus has to be tested against.",
+   "chain": [
+    "Solve as far as y^2 = something and stop",
+    "Write both branches down before choosing",
+    "Recall that the range of f^-1 is the domain of f",
+    "Keep the branch whose values lie in that domain, reject the other",
+    "Say why in one sentence — that sentence is the R1"
+   ],
+   "traps": [
+    "The positive root is taken silently, and the R1 is lost even though the final expression is right",
+    "The branch is chosen by the domain of f^-1 rather than by its range; those are different sets and only one decides",
+    "The check is done as f(f^-1(x)) = x, which both branches pass, instead of f^-1(f(t)) = t, which only the right one passes"
+   ],
+   "calculator": false,
+   "practicum_marks": 113,
+   "blocks": [
+    "2022-MAY-TZ2-P1-Q11-B",
+    "2021-MAY-TZ2-P2-Q12-D"
    ]
   },
   {
@@ -11118,6 +11875,726 @@
    ],
    "answer": "meet",
    "answer_digest": "8ccb033c0e48",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:1",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.build_composite",
+   "prompt": "Given $f(x) = 2x+1$ and $g(x) = x^2$, write down $(g \\circ f)(x)$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "build",
+   "answer_digest": "44575cf5b285",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:2",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.inverse_by_swap",
+   "prompt": "$f(x) = 3x-5$. Find $f^{-1}(x)$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "swap",
+   "answer_digest": "da47c2f450a4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:3",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.inverse_property",
+   "prompt": "Given $f(x) = x^3+x$, find $f^{-1}(10)$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "prop",
+   "answer_digest": "e835d0bf51a4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:4",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.evaluate_composite",
+   "prompt": "$h(x) = x^2-4x$ and $k(x) = \\sqrt{x}$. Find $(k \\circ h)(6)$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "comp",
+   "answer_digest": "f562267f2b6d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:5",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.parity_test",
+   "prompt": "Show that $f(x) = x^4-3x^2+1$ is an even function.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "even",
+   "answer_digest": "ec38063c881f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:6",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.inverse_domain",
+   "prompt": "$f(x) = \\ln(x-2)$, $x>2$, has range $\\mathbb{R}$. State the domain of $f^{-1}$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "dom",
+   "answer_digest": "7e6e9877fff0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:7",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.iterate_function",
+   "prompt": "$f(x) = mx+c$. Find $f(f(x))$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "iter",
+   "answer_digest": "82439cbebbb0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:8",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.composite_equation",
+   "prompt": "$(f \\circ g)(x) = x^2+6x+7$ and $g(x) = x+3$. Find $f(x)$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "ceq",
+   "answer_digest": "2eb8951883c1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:9",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.inverse_branch",
+   "prompt": "$g(y) = y^2-6y$ for $y \\le 3$. Find $g^{-1}$, justifying your choice of sign.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "branch",
+   "answer_digest": "f38c764c8aa0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:10",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.inverse_domain",
+   "prompt": "$f(x) = x^2-6x+5$, $0 \\le x \\le a$. Find the largest $a$ for which $f^{-1}$ exists.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "dom",
+   "answer_digest": "7e6e9877fff0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:11",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.inverse_by_swap",
+   "prompt": "$f(x) = \\dfrac{x+2}{x-1}$, $x \\ne 1$. Find $f^{-1}(x)$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "swap",
+   "answer_digest": "da47c2f450a4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:12",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.iterate_function",
+   "prompt": "$f(x) = \\dfrac1x$, $x \\ne 0$. Find $f^{3}(x)$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "iter",
+   "answer_digest": "82439cbebbb0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:13",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.composite_equation",
+   "prompt": "$f(x) = x-1$ and $g(x) = x^2+a$, and $(g \\circ f)(3) = 7$. Find $a$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "ceq",
+   "answer_digest": "2eb8951883c1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:14",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.parity_test",
+   "prompt": "Show that $f(x) = \\dfrac{x}{x^2+1}$ is an odd function.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "even",
+   "answer_digest": "ec38063c881f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B2:15",
+   "kind": "recognition",
+   "practicum": "B2",
+   "skill": "B2.inverse_property",
+   "prompt": "The graph of $f$ passes through $(2,7)$. Write down a point on the graph of $f^{-1}$.",
+   "options": [
+    {
+     "code": "comp",
+     "name": "вычислить композицию"
+    },
+    {
+     "code": "build",
+     "name": "записать композицию"
+    },
+    {
+     "code": "ceq",
+     "name": "композиция как уравнение"
+    },
+    {
+     "code": "even",
+     "name": "подставить −x"
+    },
+    {
+     "code": "iter",
+     "name": "составить f с самой собой"
+    },
+    {
+     "code": "prop",
+     "name": "свойство обратной"
+    },
+    {
+     "code": "swap",
+     "name": "заменить x и y"
+    },
+    {
+     "code": "dom",
+     "name": "существование и область"
+    },
+    {
+     "code": "branch",
+     "name": "выбор ветви"
+    }
+   ],
+   "answer": "prop",
+   "answer_digest": "e835d0bf51a4",
    "budget_ms": 8000
   },
   {

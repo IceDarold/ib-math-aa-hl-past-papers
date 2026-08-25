@@ -83,6 +83,17 @@ B1:
   disc:   {skill: discriminant_condition,  name: дискриминант как условие}
   count:  {skill: solution_count,          name: число решений}
 
+B2:
+  comp:   {skill: evaluate_composite, name: вычислить композицию}
+  build:  {skill: build_composite,    name: записать композицию}
+  ceq:    {skill: composite_equation, name: композиция как уравнение}
+  even:   {skill: parity_test,        name: подставить −x}
+  iter:   {skill: iterate_function,   name: составить f с самой собой}
+  prop:   {skill: inverse_property,   name: свойство обратной}
+  swap:   {skill: inverse_by_swap,    name: заменить x и y}
+  dom:    {skill: inverse_domain,     name: существование и область}
+  branch: {skill: inverse_branch,     name: выбор ветви}
+
 C1:
   right: {skill: right_triangle,         name: прямоугольный треугольник}
   view:  {skill: elevation_and_bearing,  name: от описания к чертежу}

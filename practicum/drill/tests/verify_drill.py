@@ -64,6 +64,12 @@ def spoil(answer, spec):
         return f'{float(answer) * 1.08:.6g}'
     if kind == 'triangle':
         return f'{float(answer) * 1.08:.6g}'
+    if kind == 'domain':
+        # Сдвинутый на единицу промежуток: концы уезжают оба, и это ровно
+        # та ошибка, за которую в markscheme снимают балл.
+        left, right = answer.start, answer.end
+        return show_answer(sp.Interval(left + 1, right + 1),
+                           var=spec.get('var', 'x'))
     if kind == 'solution_set':
         # Дополнение к верному множеству — гарантированно неверный ответ,
         # и притом правдоподобно выглядящий: так ошибаются со знаком.
@@ -225,6 +231,44 @@ for seed in range(SEEDS):
     t(f'solution_count[{seed}]: смен знака столько же, сколько корней',
       signs == item['answer'])
 print(f'  B1.solution_count            {SEEDS} задач сверено сменой знака')
+
+# Обратная функция: дробь читается из условия со знаками, композиция
+# собирается заново, и подстановка обязана вернуть x.
+FRAC = re.compile(r'dfrac\{(\d+)x ([+-]) (\d+)\}\{(\d+)x ([+-]) (\d+)\}')
+for seed in range(SEEDS):
+    item = GENERATORS['B2.inverse_by_swap'](random.Random(seed))
+    a, s1, b, c, s2, d = FRAC.search(item['prompt']).groups()
+    xs = sp.Symbol('x')
+    f = ((int(a) * xs + int(f'{s1}{b}'))
+         / (int(c) * xs + int(f'{s2}{d}')))
+    back = sp.simplify(sp.sympify(item['answer']).subs(xs, f) - xs)
+    t(f'inverse_by_swap[{seed}]: f внутри ответа даёт x', back == 0)
+print(f'  B2.inverse_by_swap           {SEEDS} задач сверено подстановкой')
+
+# Область обратной: множество значений исходной, посчитанное перебором.
+QUAD = re.compile(r'x\^2(?: ([+-]) (\d+))?\$, где \$0 \\le x \\le (\d+)')
+for seed in range(SEEDS):
+    item = GENERATORS['B2.inverse_domain'](random.Random(seed))
+    sign, const, top = QUAD.search(item['prompt']).groups()
+    shift = int(f'{sign}{const}') if const else 0
+    values = [(int(top) * i / 400)**2 + shift for i in range(401)]
+    want = item['answer']
+    t(f'inverse_domain[{seed}]: концы сошлись с перебором',
+      abs(min(values) - float(want.start)) < 1e-9
+      and abs(max(values) - float(want.end)) < 1e-9)
+print(f'  B2.inverse_domain            {SEEDS} задач сверено перебором значений')
+
+# Ветвь корня: вторая ветвь обязана быть отвергнута на своей же области.
+BRANCH = re.compile(r'\(x - (\d+)\)\^2')
+flipped = 0
+for seed in range(SEEDS):
+    item = GENERATORS['B2.inverse_branch'](random.Random(seed))
+    h = int(BRANCH.search(item['prompt']).group(1))
+    wrong = 2 * h - sp.sympify(item['answer'])
+    ok, _ = evaluate(item['check'], show_answer(wrong))
+    flipped += not ok
+    t(f'inverse_branch[{seed}]: вторая ветвь отвергнута', not ok)
+print(f'  B2.inverse_branch            {flipped}/{SEEDS} неверных ветвей отвергнуто')
 
 
 # Бином: генератор берёт формулу общего члена, здесь раскрываем скобку.

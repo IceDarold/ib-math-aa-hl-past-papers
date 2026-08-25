@@ -6,7 +6,8 @@
 в решениях: списывают чаще всего именно оттуда.
 
 Единственное разрешённое `sp.` — строка версии в ячейке настройки: там `sp`
-нужен как запасной выход к остальной sympy.
+нужен как запасной выход к остальной sympy. Строка эта печатается на языке
+ноутбука, поэтому в списке разрешённых её русский и английский варианты.
 
 Запуск:  python practicum/tests/check_notation.py
 """
@@ -20,7 +21,8 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 
-ALLOWED = ("print('готово; sympy', sp.__version__)",)
+ALLOWED = ("print('готово; sympy', sp.__version__)",
+           "print('ready; sympy', sp.__version__)")
 
 # P как имя pi: в E7 та же буква стоит в формулах за численность популяции,
 # поэтому ищем её только в коде, а не в тексте

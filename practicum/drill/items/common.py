@@ -128,6 +128,20 @@ def apart_check(original, var='x'):
             'var': var}
 
 
+def inverse_check(f, var='x', domain=None):
+    """Ответ — обратная функция: эталона нет, f подставляется внутрь ответа."""
+    spec = {'kind': 'inverse', 'f': sp.srepr(sp.sympify(f)), 'var': var}
+    if domain is not None:
+        spec['domain'] = sp.srepr(domain)
+    return spec
+
+
+def domain_check(region, var='x'):
+    """Ответ — область определения или множество значений: сверяется как множество."""
+    return {'kind': 'domain', 'var': var,
+            'digest': kit.digest(sp.srepr(kit._as_set(region, sp.Symbol(var))))}
+
+
 def poly_latex(terms, var='x'):
     """LaTeX многочлена по списку (коэффициент, степень), от старшей к младшей.
 

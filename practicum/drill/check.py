@@ -271,6 +271,19 @@ def evaluate(spec, raw):
                             sp.sympify(spec['original']),
                             var=sp.Symbol(spec.get('var', 'x')))
 
+        if kind == 'inverse':
+            var = sp.Symbol(spec.get('var', 'x'))
+            return _capture(kit.verify_inverse, 'Ответ', parse_one(raw),
+                            sp.sympify(spec['f']), var=var,
+                            domain=(sp.sympify(spec['domain'])
+                                    if spec.get('domain') else None))
+
+        if kind == 'domain':
+            var = sp.Symbol(spec.get('var', 'x'))
+            return _capture(kit.check_domain, 'Ответ',
+                            parse_solution_set(raw, var), spec['digest'],
+                            var=var)
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0
