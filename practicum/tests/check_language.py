@@ -180,6 +180,55 @@ def calls():
     yield lambda: verify_inverse('t', sqrt(x - 100), sqrt(x**2 - 1),
                                 domain=Interval(1, 2))
     yield lambda: verify_inverse('t', ..., sqrt(x**2 - 1), domain=Interval(1, 2))
+    yield lambda: verify_transform('t', [('shift_y', 3)], x**2, x**2 + 3)
+    yield lambda: verify_transform('t', [('stretch_x', sp.Rational(1, 2)),
+                                         ('shift_x', -sp.Rational(1, 2))],
+                                   atan(x), atan(2 * x + 1))
+    yield lambda: verify_transform('t', [('shift_x', -sp.Rational(1, 2)),
+                                         ('stretch_x', sp.Rational(1, 2))],
+                                   atan(x), atan(2 * x + 1))
+    yield lambda: verify_transform('t', [('stretch_x', 2),
+                                         ('shift_x', -sp.Rational(1, 2))],
+                                   atan(x), atan(2 * x + 1))
+    yield lambda: verify_transform('t', [('shift_x', -3)], x**2, (x - 3)**2)
+    yield lambda: verify_transform('t', [('shift_y', -3)], x**2, x**2 + 3)
+    yield lambda: verify_transform('t', [('stretch_y', 5)], x**2, x**3)
+    yield lambda: verify_transform('t', [('rotate', 90)], x**2, -x**2)
+    yield lambda: verify_transform('t', 5, x**2, -x**2)
+    yield lambda: verify_transform('t', ..., x**2, -x**2)
+    yield lambda: verify_sketch('t', {'x_intercepts': [-1, 1],
+                                      'y_intercept': -1,
+                                      'minima': [(0, -1)]}, x**2 - 1,
+                                domain=Interval(-2, 2))
+    yield lambda: verify_sketch('t', {'x_intercepts': [-1]}, x**2 - 1,
+                                domain=Interval(-2, 2))
+    yield lambda: verify_sketch('t', {'x_intercepts': [-1, 0, 1]}, x**2 - 1,
+                                domain=Interval(-2, 2))
+    yield lambda: verify_sketch('t', {'maxima': [(0, -1)]}, x**2 - 1,
+                                domain=Interval(-2, 2))
+    yield lambda: verify_sketch('t', {'minima': [(0, 5)]}, x**2 - 1,
+                                domain=Interval(-2, 2))
+    yield lambda: verify_sketch('t', {'y_intercept': 5}, x**2 - 1,
+                                domain=Interval(-2, 2))
+    yield lambda: verify_sketch('t', {'y_intercept': 5}, 1 / x,
+                                domain=Interval.open(0, 2))
+    yield lambda: verify_sketch('t', {'y_intercept': 'x'}, x**2 - 1)
+    yield lambda: verify_sketch('t', {'cusps': [(0, 0)]}, Abs(x),
+                                domain=Interval(-2, 2))
+    yield lambda: verify_sketch('t', {'minima': [(0, 0)]}, Abs(x),
+                                domain=Interval(-2, 2))
+    yield lambda: verify_sketch('t', {'vertical_asymptotes': [0],
+                                      'horizontal_asymptotes': [0]}, 1 / x)
+    yield lambda: verify_sketch('t', {'oblique_asymptotes': [x]},
+                                x + 1 / x)
+    yield lambda: verify_sketch('t', {'oblique_asymptotes': [x + 1]},
+                                x + 1 / x)
+    yield lambda: verify_sketch('t', {'oblique_asymptotes': []},
+                                x + 1 / x)
+    yield lambda: verify_sketch('t', {'x_intercepts': ['q']}, x**2 - 1)
+    yield lambda: verify_sketch('t', {'inflexions': [0]}, x**2 - 1)
+    yield lambda: verify_sketch('t', [1, 2], x**2 - 1)
+    yield lambda: verify_sketch('t', {'minima': ...}, x**2 - 1)
     yield lambda: check_domain('t', Interval(0, 2), digest(sp.srepr(Interval(0, 2))))
     yield lambda: check_domain('t', Interval(0, 3), digest(sp.srepr(Interval(0, 2))))
     yield lambda: check_domain('t', 5, digest(sp.srepr(Interval(0, 2))))

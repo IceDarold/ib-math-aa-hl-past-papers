@@ -91,12 +91,16 @@ def _blank(label, *values):
     его нельзя ни запустить целиком, ни залить туда, где ячейки исполняются
     автоматически.
 
-    Внутрь списков смотрим рекурсивно: там, где ответ это набор, в ячейке
-    стоит `[...]`, и снаружи такой список от заполненного не отличается.
+    Внутрь списков и словарей смотрим рекурсивно: там, где ответ это набор,
+    в ячейке стоит `[...]`, а там, где ответ это описание эскиза, — словарь
+    с многоточиями внутри; снаружи ни то, ни другое от заполненного
+    не отличается.
     """
     def has_gap(v):
         if v is Ellipsis:
             return True
+        if isinstance(v, dict):
+            return any(has_gap(i) for i in v.values())
         if isinstance(v, (list, tuple, set, frozenset)):
             return any(has_gap(i) for i in v)
         return False
@@ -1549,6 +1553,586 @@ def check_domain(label, got, want_digest, var=x):
         "no match. Look at the endpoints: whether an endpoint is included "
         "or excluded is a mark of its own"))
     return False
+
+
+# --- преобразования графиков ------------------------------------------------
+#
+# Седьмой раз серии нужен свой ответ на вопрос «когда два ответа одинаковы».
+# A3 сверял значения, A4 — форму записи, A8 — множества, B1 — уравнения,
+# C1 — конфигурацию, B2 — функцию по тому, что она отменяет. Здесь ответом
+# служит **картинка**. Проверить её можно двумя способами, потому что и
+# спрашивают её в архиве двумя способами.
+#
+# «Describe a sequence of transformations» — ответ это **рецепт**, и верен он
+# тогда, когда, выполненный над исходным графиком, даёт целевой.
+# verify_transform не сравнивает ваше описание с эталонным описанием:
+# он берёт ваши шаги и применяет их по очереди к исходной функции. Поэтому
+# любой верный порядок проходит, а неверный — нет, и это не придирка:
+# в markscheme за перепутанный порядок горизонтальных преобразований
+# стоит A1A0.
+#
+# «Sketch the graph» — ответ это **список особенностей**: пересечения с осями,
+# асимптоты, точки поворота, изломы, концы. Именно за них и платят баллы:
+# «indicating any asymptotes», «clearly showing the coordinates of any points
+# where f'(x) = 0». verify_sketch считает их из самой функции и сверяет
+# с вашим списком в обе стороны — лишнее и пропущенное это разные ошибки.
+
+_TRANSFORMS = ('shift_x', 'shift_y', 'stretch_x', 'stretch_y',
+               'reflect_in_x_axis', 'reflect_in_y_axis')
+
+_TRANSFORM_ALIAS = {
+    'reflect_x': 'reflect_in_x_axis', 'reflect_y': 'reflect_in_y_axis',
+    'reflect_in_the_x_axis': 'reflect_in_x_axis',
+    'reflect_in_the_y_axis': 'reflect_in_y_axis',
+    'translate_x': 'shift_x', 'translate_y': 'shift_y',
+    'shift_right': 'shift_x', 'shift_up': 'shift_y',
+    'stretch_horizontal': 'stretch_x', 'stretch_vertical': 'stretch_y',
+}
+
+
+def _as_step(step):
+    """Один шаг преобразования → (имя, величина) или None.
+
+    Принимается ('shift_x', 3), ['stretch_y', 2] и голая строка
+    'reflect_in_x_axis' для отражений, у которых величины нет.
+    """
+    if isinstance(step, str):
+        name, value = step, None
+    elif isinstance(step, (tuple, list)) and len(step) == 2:
+        name, value = step[0], step[1]
+    elif isinstance(step, (tuple, list)) and len(step) == 1:
+        name, value = step[0], None
+    else:
+        return None
+    name = _TRANSFORM_ALIAS.get(str(name).strip().lower().replace(' ', '_'),
+                                str(name).strip().lower().replace(' ', '_'))
+    if name not in _TRANSFORMS:
+        return None
+    if name.startswith('reflect'):
+        return name, None
+    if value is None:
+        return None
+    try:
+        return name, sp.sympify(value)
+    except (TypeError, ValueError, sp.SympifyError):
+        return None
+
+
+def _apply_steps(expr, steps, var):
+    """Применяет шаги по очереди к графику y = expr.
+
+    Подстановка идёт в уже накопленное выражение, а не в исходное: именно
+    так преобразования и складываются. Растяжение по горизонтали в k раз
+    заменяет x на x/k — это то место, где путают k и 1/k.
+    """
+    cur = sp.sympify(expr)
+    for name, value in steps:
+        if name == 'shift_x':
+            cur = cur.subs(var, var - value)
+        elif name == 'shift_y':
+            cur = cur + value
+        elif name == 'stretch_x':
+            cur = cur.subs(var, var / value)
+        elif name == 'stretch_y':
+            cur = value * cur
+        elif name == 'reflect_in_x_axis':
+            cur = -cur
+        else:
+            cur = cur.subs(var, -var)
+    return cur
+
+
+def _show_steps(steps, var=None):
+    """Человеческая запись списка шагов — для сообщений проверки."""
+    words = {'shift_x': _t('сдвиг по x на', 'translation in x by'),
+             'shift_y': _t('сдвиг по y на', 'translation in y by'),
+             'stretch_x': _t('растяжение по x в', 'horizontal stretch factor'),
+             'stretch_y': _t('растяжение по y в', 'vertical stretch factor'),
+             'reflect_in_x_axis': _t('отражение в оси x', 'reflection in the x-axis'),
+             'reflect_in_y_axis': _t('отражение в оси y', 'reflection in the y-axis')}
+    out = []
+    for name, value in steps:
+        out.append(words[name] if value is None else f"{words[name]} {value}")
+    return ' → '.join(out)
+
+
+def verify_transform(label, got, source, target, var=x,
+                     samples=(1, 2, 3, 4, 5, 6, 7, 8)):
+    """got — последовательность преобразований, переводящая source в target.
+
+    Эталонного описания нет вовсе. Ваши шаги применяются к source по очереди,
+    и результат сверяется с target. Отсюда два следствия, оба верные:
+    любой порядок, который действительно приводит к цели, засчитывается,
+    а порядок, который не приводит, — нет.
+
+    Шаги записываются так:
+
+        ('shift_x', h)    сдвиг на h вправо (h < 0 — влево)
+        ('shift_y', k)    сдвиг на k вверх
+        ('stretch_x', s)  растяжение по горизонтали в s раз
+        ('stretch_y', s)  растяжение по вертикали в s раз
+        'reflect_in_x_axis'
+        'reflect_in_y_axis'
+
+    Чего проверка не делает: не требует кратчайшего описания. Пять шагов,
+    приводящих к цели, пройдут так же, как три. В markscheme за лишние
+    верные шаги тоже не снимают.
+    """
+    if _blank(label, got):
+        return False
+    if isinstance(got, (str, tuple)) and _as_step(got) is not None:
+        got = [got]                      # один шаг можно писать без списка
+    if not isinstance(got, (list, tuple)) or not len(got):
+        print(f"{NO} {label}: " + _t(
+            "ответ — список шагов, например "
+            "[('stretch_x', Rational(1, 2)), ('shift_y', pi/4)]",
+            "the answer is a list of steps, for example "
+            "[('stretch_x', Rational(1, 2)), ('shift_y', pi/4)]"))
+        return False
+
+    steps = []
+    for raw in got:
+        step = _as_step(raw)
+        if step is None:
+            print(f"{NO} {label}: " + _t(
+                f"шаг {raw!r} не разобран. Известны: {', '.join(_TRANSFORMS)}",
+                f"cannot read the step {raw!r}. "
+                f"The known ones are: {', '.join(_TRANSFORMS)}"))
+            return False
+        steps.append(step)
+
+    src, dst = sp.sympify(source), sp.sympify(target)
+    ok, note = _agrees(_apply_steps(src, steps, var), dst, var, samples)
+    if ok:
+        print(f"{OK} {label}: {_show_steps(steps)} — " + _t(
+            f"переводит {src} в {dst}", f"maps {src} onto {dst}"))
+        return True
+
+    # Тот же набор шагов в другом порядке. Это самая частая ошибка темы
+    # и единственная, за которую markscheme снимает ровно один балл.
+    if 1 < len(steps) <= 5:
+        for order in itertools.permutations(steps):
+            if list(order) == steps:
+                continue
+            if _agrees(_apply_steps(src, list(order), var), dst, var, samples)[0]:
+                print(f"{NO} {label}: " + _t(
+                    "шаги названы верно, но не в том порядке — в этом "
+                    "порядке они дают другой график. Сдвиг до растяжения "
+                    "и после него это разные вещи.",
+                    "the right transformations, but not in this order — "
+                    "in this order they give a different graph. A translation "
+                    "before a stretch and after it are not the same thing."))
+                return False
+
+    # Растяжение перепутано со своей обратной величиной: f(kx) — это
+    # растяжение в 1/k раз, и наоборот.
+    for i, (name, value) in enumerate(steps):
+        if not name.startswith('stretch') or value == 0:
+            continue
+        swapped = list(steps)
+        swapped[i] = (name, 1 / value)
+        if _agrees(_apply_steps(src, swapped, var), dst, var, samples)[0]:
+            axis = 'x' if name.endswith('x') else 'y'
+            print(f"{NO} {label}: " + _t(
+                f"растяжение по {axis} взято обратным: подошло бы "
+                f"{1 / value}, а не {value}. Замена x на x/s — это "
+                f"растяжение в s раз, а f(kx) растягивает в 1/k."
+                if axis == 'x' else
+                f"растяжение по {axis} взято обратным: подошло бы "
+                f"{1 / value}, а не {value}.",
+                f"the {axis}-stretch is the reciprocal of the right one: "
+                f"{1 / value} would fit, not {value}. Replacing x by x/s "
+                f"stretches by s, so f(kx) is a stretch by 1/k."
+                if axis == 'x' else
+                f"the {axis}-stretch is the reciprocal of the right one: "
+                f"{1 / value} would fit, not {value}."))
+            return False
+
+    # Сдвиг в другую сторону: f(x − h) двигает график вправо, а не влево.
+    for i, (name, value) in enumerate(steps):
+        if not name.startswith('shift'):
+            continue
+        flipped = list(steps)
+        flipped[i] = (name, -value)
+        if _agrees(_apply_steps(src, flipped, var), dst, var, samples)[0]:
+            axis = 'x' if name.endswith('x') else 'y'
+            print(f"{NO} {label}: " + _t(
+                f"сдвиг по {axis} в другую сторону: подошло бы {-value}. "
+                f"f(x − h) двигает график на h вправо."
+                if axis == 'x' else
+                f"сдвиг по {axis} в другую сторону: подошло бы {-value}.",
+                f"the {axis}-translation goes the other way: {-value} would "
+                f"fit. f(x − h) moves the graph h to the right."
+                if axis == 'x' else
+                f"the {axis}-translation goes the other way: "
+                f"{-value} would fit."))
+            return False
+
+    tail = f" ({note})" if note else ""
+    print(f"{NO} {label}: " + _t(
+        f"эти шаги дают {sp.simplify(_apply_steps(src, steps, var))}, "
+        f"а нужен {dst}{tail}",
+        f"these steps give {sp.simplify(_apply_steps(src, steps, var))}, "
+        f"and the target is {dst}{tail}"))
+    return False
+
+
+_SKETCH_KEYS = ('x_intercepts', 'y_intercept', 'maxima', 'minima', 'cusps',
+                'vertical_asymptotes', 'horizontal_asymptotes',
+                'oblique_asymptotes', 'endpoints')
+
+
+def _bounds(region):
+    """Концы промежутка; для неограниченных возвращает ±oo."""
+    if isinstance(region, sp.Interval):
+        return region.start, region.end
+    return -sp.oo, sp.oo
+
+
+def _num(value):
+    """Число с плавающей точкой или None, если не выходит."""
+    try:
+        out = complex(sp.N(sp.sympify(value), 25))
+    except (TypeError, ValueError, AttributeError, sp.SympifyError):
+        return None
+    if abs(out.imag) > 1e-9 or not math.isfinite(out.real):
+        return None
+    return out.real
+
+
+def _sketch_extrema(fun, var, lo, hi, poles, samples=4000):
+    """Точки поворота и изломы — численно, сканированием.
+
+    Численно, потому что тема живёт на модулях: у |f| производная содержит
+    sign(...), и solveset с ней не справляется. Скан работает одинаково
+    для модуля, обратной величины и кусочно заданной функции.
+
+    Возвращает список (x, y, вид), где вид — 'max', 'min', 'cusp_max'
+    или 'cusp_min'.
+    """
+    try:
+        g = sp.lambdify(var, fun, 'math')
+    except (TypeError, ValueError):
+        return []
+
+    def value(t):
+        try:
+            out = g(t)
+        except (ValueError, ZeroDivisionError, OverflowError, TypeError):
+            return None
+        return out if isinstance(out, float) and math.isfinite(out) else (
+            float(out) if isinstance(out, int) else None)
+
+    lo_f = -12.0 if lo == -sp.oo else float(lo)
+    hi_f = 12.0 if hi == sp.oo else float(hi)
+    if not hi_f > lo_f:
+        return []
+    step = (hi_f - lo_f) / samples
+    gap = 20 * step
+    pts = []
+    for i in range(samples + 1):
+        t = lo_f + i * step
+        if any(abs(t - p) < gap for p in poles):
+            pts.append((t, None))
+            continue
+        pts.append((t, value(t)))
+
+    found = []
+    for (t0, v0), (t1, v1), (t2, v2) in zip(pts, pts[1:], pts[2:]):
+        if None in (v0, v1, v2):
+            continue
+        rising, falling = v1 - v0, v2 - v1
+        if rising > 0 >= falling:
+            kind = 'max'
+        elif rising < 0 <= falling:
+            kind = 'min'
+        else:
+            continue
+        # Уточняем тернарным поиском: на гладкой вершине он сходится
+        # к самой точке, на изломе — тоже, потому что излом это максимум
+        # или минимум ничуть не меньше гладкого.
+        a, b = t0, t2
+        for _ in range(80):
+            m1, m2 = a + (b - a) / 3, b - (b - a) / 3
+            f1, f2 = value(m1), value(m2)
+            if f1 is None or f2 is None:
+                break
+            better = f1 > f2 if kind == 'max' else f1 < f2
+            if better:
+                b = m2
+            else:
+                a = m1
+        tx = (a + b) / 2
+        ty = value(tx)
+        if ty is None:
+            continue
+        # Излом или гладкая вершина: у гладкой односторонние наклоны
+        # стремятся к нулю, у излома — нет.
+        h = max(1e-6, (hi_f - lo_f) * 1e-6)
+        left, right = value(tx - h), value(tx + h)
+        cusp = False
+        if left is not None and right is not None:
+            slopes = (abs(ty - left) / h, abs(right - ty) / h)
+            cusp = min(slopes) > 1e-3
+        if found and abs(found[-1][0] - tx) < 10 * step:
+            continue
+        found.append((tx, ty, ('cusp_' + kind) if cusp else kind))
+    return found
+
+
+def _sketch_facts(fun, var, region):
+    """Что у функции есть на самом деле: словарь тех же ключей, что и ответ."""
+    lo, hi = _bounds(region)
+    facts = {k: [] for k in _SKETCH_KEYS}
+    facts['y_intercept'] = None
+
+    poles = []
+    try:
+        sing = sp.singularities(fun, var)
+        if isinstance(sing, sp.FiniteSet):
+            for c in sing.args:
+                cv = _num(c)
+                if cv is None or c not in region.closure:
+                    continue
+                for side in ('+', '-'):
+                    try:
+                        lim = sp.limit(fun, var, c, side)
+                    except (NotImplementedError, ValueError, TypeError):
+                        continue
+                    if lim in (sp.oo, -sp.oo, sp.zoo):
+                        poles.append(cv)
+                        facts['vertical_asymptotes'].append(cv)
+                        break
+    except (NotImplementedError, TypeError, ValueError, AttributeError):
+        pass
+
+    for end, sign in ((hi, 1), (lo, -1)):
+        if end not in (sp.oo, -sp.oo):
+            continue
+        direction = sp.oo if sign > 0 else -sp.oo
+        try:
+            lim = sp.limit(fun, var, direction)
+        except (NotImplementedError, ValueError, TypeError):
+            continue
+        if lim.is_finite:
+            val = _num(lim)
+            if val is not None and val not in facts['horizontal_asymptotes']:
+                facts['horizontal_asymptotes'].append(val)
+            continue
+        try:
+            m = sp.limit(fun / var, var, direction)
+            if not (m.is_finite and m != 0):
+                continue
+            b = sp.limit(fun - m * var, var, direction)
+        except (NotImplementedError, ValueError, TypeError):
+            continue
+        if b.is_finite:
+            line = sp.simplify(m * var + b)
+            if all(sp.simplify(line - other) != 0
+                   for other in facts['oblique_asymptotes']):
+                facts['oblique_asymptotes'].append(line)
+
+    lo_f = -12.0 if lo == -sp.oo else float(lo)
+    hi_f = 12.0 if hi == sp.oo else float(hi)
+    try:
+        g = sp.lambdify(var, fun, 'math')
+        roots = [r for r in _scan_roots(g, lo_f, hi_f, 8000)
+                 if all(abs(r - p) > 1e-6 for p in poles)]
+    except (TypeError, ValueError):
+        roots = []
+    facts['x_intercepts'] = roots
+
+    if 0 in region:
+        val = _num(fun.subs(var, 0))
+        if val is not None:
+            facts['y_intercept'] = val
+
+    for tx, ty, kind in _sketch_extrema(fun, var, lo, hi, poles):
+        if kind == 'max':
+            facts['maxima'].append((tx, ty))
+        elif kind == 'min':
+            facts['minima'].append((tx, ty))
+        else:
+            facts['cusps'].append((tx, ty))
+
+    for end in (lo, hi):
+        if end in (sp.oo, -sp.oo) or end not in region:
+            continue
+        val = _num(fun.subs(var, end))
+        if val is not None:
+            facts['endpoints'].append((float(end), val))
+    return facts
+
+
+def _close(a, b, tol):
+    return abs(a - b) <= max(1e-7, tol * max(1.0, abs(b)))
+
+
+def _tidy(value):
+    """Число для сообщения: почти-ноль печатаем нулём, а не 1.8e-15."""
+    return f"{0.0 if abs(value) < 1e-9 else value:.6g}"
+
+
+def _as_pair(value):
+    """Точка (x, y) из ответа; одно число тоже принимается как x."""
+    if isinstance(value, (tuple, list)) and len(value) == 2:
+        px, py = _num(value[0]), _num(value[1])
+        return None if px is None or py is None else (px, py)
+    px = _num(value)
+    return None if px is None else (px, None)
+
+
+def verify_sketch(label, got, f, var=x, domain=None, tol=5e-3):
+    """Эскиз проверяется по списку особенностей, а не по картинке.
+
+    got — словарь; проверяются только те ключи, которые в нём есть:
+
+        'x_intercepts'          [x, ...]
+        'y_intercept'           y
+        'maxima', 'minima'      [(x, y), ...] — гладкие точки поворота
+        'cusps'                 [(x, y), ...] — изломы
+        'vertical_asymptotes'   [x, ...]
+        'horizontal_asymptotes' [y, ...]
+        'oblique_asymptotes'    [выражение от var, ...]
+        'endpoints'             [(x, y), ...]
+
+    Эталон не хранится: всё считается из самой f. Поэтому ошибки бывают
+    двух разных видов, и проверка их различает — названо лишнее и
+    пропущено нужное. В markscheme это тоже разные баллы.
+
+    Совпадение числовое, с точностью до трёх значащих цифр: координаты,
+    снятые с калькулятора, экзамен принимает именно так. Отсюда и допуск
+    5e-3 по относительной величине — ровно половина единицы третьего
+    разряда. Ответ, ошибочный в четвёртой цифре, проверку пройдёт.
+
+    Чего проверка не делает: не смотрит на форму кривой между
+    особенностями. Выпуклость, монотонность и «asymptotic behaviour»
+    остаются на вашей совести и на рисунке.
+    """
+    if _blank(label, got):
+        return False
+    if not isinstance(got, dict):
+        print(f"{NO} {label}: " + _t(
+            f"ответ — словарь; ключи: {', '.join(_SKETCH_KEYS)}",
+            f"the answer is a dict; the keys are: {', '.join(_SKETCH_KEYS)}"))
+        return False
+    unknown = [k for k in got if k not in _SKETCH_KEYS]
+    if unknown:
+        print(f"{NO} {label}: " + _t(
+            f"неизвестные ключи: {', '.join(unknown)}. "
+            f"Известны: {', '.join(_SKETCH_KEYS)}",
+            f"unknown keys: {', '.join(unknown)}. "
+            f"The known ones are: {', '.join(_SKETCH_KEYS)}"))
+        return False
+
+    fun = sp.sympify(f)
+    region = _as_domain(domain, var)
+    facts = _sketch_facts(fun, var, region)
+    turning = {'maxima': _t('максимум', 'maximum'),
+               'minima': _t('минимум', 'minimum'),
+               'cusps': _t('излом', 'cusp'),
+               'endpoints': _t('конец', 'endpoint')}
+
+    for key, claimed in got.items():
+        if key == 'y_intercept':
+            want = facts['y_intercept']
+            mine = _num(claimed)
+            if mine is None:
+                print(f"{NO} {label}: " + _t(
+                    "пересечение с осью y — это число",
+                    "the y-intercept is a number"))
+                return False
+            if want is None:
+                print(f"{NO} {label}: " + _t(
+                    "ось y эта функция не пересекает: нуля нет в области",
+                    "this function has no y-intercept: 0 is not in the domain"))
+                return False
+            if not _close(mine, want, tol):
+                print(f"{NO} {label}: " + _t(
+                    f"на оси y функция равна {_tidy(want)}, а не {_tidy(mine)}",
+                    f"on the y-axis the function is {_tidy(want)}, not {_tidy(mine)}"))
+                return False
+            continue
+
+        if not isinstance(claimed, (list, tuple, set)):
+            claimed = [claimed]
+        if key == 'oblique_asymptotes':
+            want_lines = list(facts['oblique_asymptotes'])
+            for item in claimed:
+                try:
+                    line = sp.sympify(item)
+                except (TypeError, ValueError, sp.SympifyError):
+                    line = None
+                hit = next((w for w in want_lines
+                            if line is not None
+                            and sp.simplify(line - w) == 0), None)
+                if hit is None:
+                    print(f"{NO} {label}: " + _t(
+                        f"наклонной асимптоты y = {item} у этой функции нет",
+                        f"this function has no oblique asymptote y = {item}"))
+                    return False
+                want_lines.remove(hit)
+            if want_lines:
+                print(f"{NO} {label}: " + _t(
+                    f"пропущена наклонная асимптота y = {want_lines[0]}",
+                    f"an oblique asymptote is missing: y = {want_lines[0]}"))
+                return False
+            continue
+
+        want_pts = [(v, None) for v in facts[key]] if key in (
+            'x_intercepts', 'vertical_asymptotes', 'horizontal_asymptotes'
+        ) else list(facts[key])
+        left = list(want_pts)
+        for item in claimed:
+            pair = _as_pair(item)
+            if pair is None:
+                print(f"{NO} {label}: " + _t(
+                    f"в {key} не разобрано значение {item!r}",
+                    f"cannot read the value {item!r} in {key}"))
+                return False
+            px, py = pair
+            hit = next((w for w in left if _close(px, w[0], tol)), None)
+            if hit is None:
+                # Точка поворота, названная не тем видом: это отдельная
+                # ошибка и отдельное объяснение.
+                for other in ('maxima', 'minima', 'cusps', 'endpoints'):
+                    if other == key:
+                        continue
+                    if any(_close(px, w[0], tol) for w in facts[other]):
+                        print(f"{NO} {label}: " + _t(
+                            f"при {var} = {_tidy(px)} у графика "
+                            f"{turning.get(other, other)}, а не "
+                            f"{turning.get(key, key)}",
+                            f"at {var} = {_tidy(px)} the graph has a "
+                            f"{turning.get(other, other)}, not a "
+                            f"{turning.get(key, key)}"))
+                        return False
+                print(f"{NO} {label}: " + _t(
+                    f"лишнее в {key}: при {var} = {_tidy(px)} этого нет",
+                    f"extra in {key}: there is nothing at {var} = {_tidy(px)}"))
+                return False
+            if py is not None and hit[1] is not None and not _close(py, hit[1], tol):
+                print(f"{NO} {label}: " + _t(
+                    f"при {var} = {_tidy(hit[0])} значение {_tidy(hit[1])}, "
+                    f"а не {_tidy(py)}",
+                    f"at {var} = {_tidy(hit[0])} the value is {_tidy(hit[1])}, "
+                    f"not {_tidy(py)}"))
+                return False
+            left.remove(hit)
+        if left:
+            miss = left[0]
+            place = (f"{var} = {_tidy(miss[0])}" if miss[1] is None
+                     else f"({_tidy(miss[0])}, {_tidy(miss[1])})")
+            print(f"{NO} {label}: " + _t(
+                f"в {key} пропущено: {place}",
+                f"missing from {key}: {place}"))
+            return False
+
+    counted = ', '.join(f"{k}: {len(got[k]) if isinstance(got[k], (list, tuple, set)) else 1}"
+                        for k in _SKETCH_KEYS if k in got)
+    print(f"{OK} {label}: " + _t(f"все особенности на месте ({counted})",
+                                 f"every feature checks out ({counted})"))
+    return True
 
 
 # --- треугольник ------------------------------------------------------------
