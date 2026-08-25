@@ -94,6 +94,17 @@ B2:
   dom:    {skill: inverse_domain,     name: существование и область}
   branch: {skill: inverse_branch,     name: выбор ветви}
 
+B3:
+  read:   {skill: read_graph,        name: прочитать значение с графика}
+  apply:  {skill: apply_transform,   name: применить сдвиг или растяжение}
+  name:   {skill: name_transform,    name: назвать последовательность}
+  match:  {skill: match_transform,   name: найти параметры}
+  sym:    {skill: use_symmetry,      name: воспользоваться симметрией}
+  fold:   {skill: fold_graph,        name: сложить график}
+  sketch: {skill: sketch_standard,   name: нарисовать знакомую кривую}
+  asym:   {skill: sketch_asymptotic, name: нарисовать с асимптотами}
+  family: {skill: explore_family,    name: исследовать семейство}
+
 C1:
   right: {skill: right_triangle,         name: прямоугольный треугольник}
   view:  {skill: elevation_and_bearing,  name: от описания к чертежу}

@@ -30,6 +30,7 @@ sys.path.insert(0, os.path.dirname(PRACTICUM))
 sys.path.insert(0, PRACTICUM)
 
 import sympy as sp  # noqa: E402
+import kit  # noqa: E402
 
 from drill import engine  # noqa: E402
 from drill.check import evaluate, show_answer  # noqa: E402
@@ -67,8 +68,17 @@ def spoil(answer, spec):
     if kind == 'domain':
         # Сдвинутый на единицу промежуток: концы уезжают оба, и это ровно
         # та ошибка, за которую в markscheme снимают балл.
-        left, right = answer.start, answer.end
-        return show_answer(sp.Interval(left + 1, right + 1),
+        if isinstance(answer, sp.Interval):
+            left, right = answer.start, answer.end
+            return show_answer(sp.Interval(left + 1, right + 1),
+                               var=spec.get('var', 'x'))
+        # Область бывает и не промежутком: у дробно-линейной функции это
+        # вся прямая без одного значения. Там портим само выколотое
+        # значение — сдвигаем его на единицу.
+        gap = sp.Complement(sp.S.Reals, answer)
+        moved = sp.FiniteSet(*[v + 1 for v in gap]) if isinstance(
+            gap, sp.FiniteSet) else sp.Interval(0, 1)
+        return show_answer(sp.Complement(sp.S.Reals, moved),
                            var=spec.get('var', 'x'))
     if kind == 'solution_set':
         # Дополнение к верному множеству — гарантированно неверный ответ,
@@ -269,6 +279,66 @@ for seed in range(SEEDS):
     flipped += not ok
     t(f'inverse_branch[{seed}]: вторая ветвь отвергнута', not ok)
 print(f'  B2.inverse_branch            {flipped}/{SEEDS} неверных ветвей отвергнуто')
+
+
+# B3. Величина сдвига после сжатия: вынести множитель за скобку и
+# сравнить с тем, что напечатано, — двумя разными путями.
+SINE = re.compile(r'\\sin\((\d+)x - (\d+)\)')
+for seed in range(SEEDS):
+    item = GENERATORS['B3.name_transform'](random.Random(seed))
+    scale, drop = (int(v) for v in SINE.search(item['prompt']).groups())
+    xs = sp.Symbol('x')
+    moved = sp.sin(scale * (xs - sp.sympify(item['answer'])))
+    t(f'name_transform[{seed}]: сдвиг воспроизводит напечатанную функцию',
+      sp.simplify(moved - sp.sin(scale * xs - drop)) == 0)
+    t(f'name_transform[{seed}]: до сжатия сдвиг был бы другим',
+      sp.simplify(sp.sin(scale * xs - drop)
+                  - sp.sin(scale * xs - scale * sp.sympify(item['answer'])))
+      == 0 and sp.sympify(item['answer']) != drop)
+print(f'  B3.name_transform            {SEEDS} задач сверено выносом множителя')
+
+# Коэффициент растяжения: делим дробь уголком и смотрим на остаток.
+RAT = re.compile(r'\\dfrac\{(\d+)x ([+-]) (\d+)\}\{x ([+-]) (\d+)\}')
+for seed in range(SEEDS):
+    item = GENERATORS['B3.match_transform'](random.Random(seed))
+    lead, s1, top, s2, bottom = RAT.search(item['prompt']).groups()
+    xs = sp.Symbol('x')
+    frac = ((int(lead) * xs + int(f'{s1}{top}'))
+            / (xs + int(f'{s2}{bottom}')))
+    rest = sp.simplify(frac - int(lead))
+    t(f'match_transform[{seed}]: остаток равен ответу, делённому на (x − h)',
+      sp.simplify(rest * (xs + int(f'{s2}{bottom}'))
+                  - sp.sympify(item['answer'])) == 0)
+print(f'  B3.match_transform           {SEEDS} задач сверено делением уголком')
+
+# Число изломов: считаем нули |f| со сменой знака напрямую по функции.
+PROD = re.compile(r'\$f\(x\) = (.+?)\$\.')
+for seed in range(SEEDS):
+    item = GENERATORS['B3.fold_graph'](random.Random(seed))
+    body = PROD.search(item['prompt']).group(1)
+    xs = sp.Symbol('x')
+    # Неявное умножение LaTeX: между скобками и после степени нужен знак.
+    plain = body.replace('^2', '**2').replace(')(', ')*(').replace('2(', '2*(')
+    poly = sp.sympify(plain, locals={'x': xs})
+    corners = 0
+    for root, multiplicity in sp.roots(sp.Poly(poly, xs)).items():
+        if root.is_real and multiplicity % 2 == 1:
+            corners += 1
+    t(f'fold_graph[{seed}]: изломы — это корни нечётной кратности',
+      corners == int(item['answer']))
+print(f'  B3.fold_graph                {SEEDS} задач сверено кратностью корней')
+
+# Число решений кубического уравнения: сверяем со сканированием.
+CUBIC = re.compile(r'x\^3 - 3x(?: ([+-]) (\d+))? = 0')
+for seed in range(SEEDS):
+    item = GENERATORS['B3.explore_family'](random.Random(seed))
+    sign, const = CUBIC.search(item['prompt']).groups()
+    shift = int(f'{sign}{const}') if const else 0
+    xs = sp.Symbol('x')
+    scanned = kit.count_roots(sp.lambdify(xs, xs**3 - 3 * xs + shift), -6, 6, 12000)
+    t(f'explore_family[{seed}]: скан даёт то же число корней',
+      scanned == int(item['answer']))
+print(f'  B3.explore_family            {SEEDS} задач сверено сканированием')
 
 
 # Бином: генератор берёт формулу общего члена, здесь раскрываем скобку.

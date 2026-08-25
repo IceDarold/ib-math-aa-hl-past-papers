@@ -3342,6 +3342,487 @@
    "dir": "AA_HL/2021/May/TZ2/Paper 2",
    "skill": "B2.inverse_branch"
   },
+  "2021-MAY-TZ1-P1-Q01-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "a",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "B3.read_graph"
+  },
+  "2025-MAY-TZ3-P1-Q02-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "2",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "B3.read_graph"
+  },
+  "2024-MAY-TZ1-P3-Q02-F-I": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "f-i",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "12-16",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "B3.read_graph"
+  },
+  "2024-MAY-TZ1-P3-Q02-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "c",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "12-16",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "B3.read_graph"
+  },
+  "2021-MAY-TZ1-P1-Q01-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "b",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "B3.apply_transform"
+  },
+  "2022-NOV-COMMON-P3-Q02-E-I": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "e(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "B3.apply_transform"
+  },
+  "2021-MAY-TZ2-P1-Q12-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "B3.name_transform"
+  },
+  "2022-MAY-TZ1-P1-Q05-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "B3.name_transform"
+  },
+  "2025-NOV-TZ1-P1-Q08-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "B3.name_transform"
+  },
+  "2023-NOV-TZ1-P2-Q02-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "B3.match_transform"
+  },
+  "2023-NOV-TZ2-P2-Q02-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "B3.match_transform"
+  },
+  "2025-NOV-TZ3-P1-Q03-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "3",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "B3.match_transform"
+  },
+  "2022-MAY-TZ1-P2-Q06-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "B3.use_symmetry"
+  },
+  "2022-MAY-TZ2-P1-Q06-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "6",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "B3.use_symmetry"
+  },
+  "2024-MAY-TZ1-P1-Q09-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "b",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "10-11",
+   "markscheme_pages": "20-21",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "B3.use_symmetry"
+  },
+  "2024-MAY-TZ1-P2-Q11-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "(c)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "B3.use_symmetry"
+  },
+  "2022-NOV-COMMON-P1-Q10-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "10",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "B3.fold_graph"
+  },
+  "2023-MAY-TZ1-P1-Q08-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11-12",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "B3.fold_graph"
+  },
+  "2024-MAY-TZ1-P1-Q09-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "a",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "10-11",
+   "markscheme_pages": "20-21",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "B3.fold_graph"
+  },
+  "2025-MAY-TZ3-P1-Q06-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "6",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "9-10",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "B3.fold_graph"
+  },
+  "2025-NOV-TZ3-P1-Q05-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "5",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "7-8",
+   "markscheme_pages": "12-13",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "B3.fold_graph"
+  },
+  "2025-MAY-TZ3-P1-Q06-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "6",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "B3.fold_graph"
+  },
+  "2021-MAY-TZ2-P3-Q01-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "B3.sketch_standard"
+  },
+  "2021-NOV-COMMON-P1-Q10-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "10",
+   "part": "(b)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "B3.sketch_standard"
+  },
+  "2025-MAY-TZ2-P1-Q08-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "B3.sketch_standard"
+  },
+  "2023-MAY-TZ1-P1-Q05-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "(b)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "B3.sketch_standard"
+  },
+  "2023-MAY-TZ2-P3-Q01-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "B3.sketch_standard"
+  },
+  "2025-NOV-TZ3-P3-Q01-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "B3.sketch_standard"
+  },
+  "2023-MAY-TZ1-P2-Q02-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "B3.sketch_standard"
+  },
+  "2021-MAY-TZ2-P2-Q12-F": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "F",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B3.sketch_standard"
+  },
+  "2021-NOV-COMMON-P3-Q01-F": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "f",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/November/Common/Paper 3",
+   "skill": "B3.sketch_asymptotic"
+  },
+  "2024-MAY-TZ1-P1-Q10-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "a",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "22-26",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "B3.sketch_asymptotic"
+  },
+  "2024-MAY-TZ1-P1-Q10-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "b",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "22-26",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "B3.sketch_asymptotic"
+  },
+  "2024-MAY-TZ1-P1-Q10-E": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "e",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "22-26",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "B3.sketch_asymptotic"
+  },
+  "2021-MAY-TZ2-P3-Q01-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "B",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "B3.explore_family"
+  },
+  "2023-MAY-TZ2-P3-Q01-D": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "D",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "B3.explore_family"
+  },
+  "2024-MAY-TZ2-P1-Q05-B-I": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "B-I",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "B3.explore_family"
+  },
   "2024-MAY-TZ1-P2-Q02-A": {
    "session": "May 2024",
    "zone": "TZ1",
@@ -4889,6 +5370,14 @@
    "notebook": "practicum/functions/practicum-b2-composition-inverse.ipynb",
    "marks": 113,
    "blocks": 40
+  },
+  {
+   "id": "B3",
+   "title": "Преобразования графиков",
+   "section": "B",
+   "notebook": "practicum/functions/practicum-b3-transformations.ipynb",
+   "marks": 107,
+   "blocks": 37
   },
   {
    "id": "C1",
@@ -6559,6 +7048,249 @@
    "blocks": [
     "2022-MAY-TZ2-P1-Q11-B",
     "2021-MAY-TZ2-P2-Q12-D"
+   ]
+  },
+  {
+   "id": "B3.read_graph",
+   "practicum": "B3",
+   "name": "Read a value off a graph",
+   "rung": 1,
+   "trigger": "\"Write down the value of f(2)\", \"write down the coordinates of B\", \"find (f o f)(2)\" with a diagram beside it. A printed curve and a number wanted from it — no algebra offered and none needed.",
+   "chain": [
+    "Find the x you were given on the horizontal axis",
+    "Go up or down to the curve, then across to the value",
+    "For a composite, do it twice — the first answer is the second input",
+    "When the point is a labelled feature, quote it rather than measure it"
+   ],
+   "traps": [
+    "The two readings of a composite are done in the wrong order, or the intermediate value is read as an x when it is a y",
+    "A value is estimated from the grid when the question has already printed it as a labelled point",
+    "The gradient of a tangent printed on the diagram is used as the function value, or the other way round"
+   ],
+   "calculator": false,
+   "practicum_marks": 107,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q01-A",
+    "2025-MAY-TZ3-P1-Q02-A",
+    "2024-MAY-TZ1-P3-Q02-F-I",
+    "2024-MAY-TZ1-P3-Q02-C"
+   ]
+  },
+  {
+   "id": "B3.apply_transform",
+   "practicum": "B3",
+   "name": "Apply a translation or a stretch to a given graph",
+   "rung": 2,
+   "trigger": "\"Let g(x) = (1/2)f(x) + 1. On the axes above, sketch the graph of g\", \"the graph of y = f(x) is transformed to the graph of y = f(kx)\". You are handed the picture and told the formula.",
+   "chain": [
+    "Decide for each transformation whether it moves x or moves y",
+    "Transform the key points one at a time — ends, turning points, intercepts",
+    "a f(x) + b acts on the second coordinate; f(x/s) + h acts on the first",
+    "Join them with the same shape you started with"
+   ],
+   "traps": [
+    "The whole curve is redrawn by eye instead of moving the labelled points, and the maximum lands at the wrong height",
+    "A vertical stretch is applied to the x-coordinate as well",
+    "f(kx) is called a stretch by k. It is a stretch by 1/k, and this is the single most reliable lost mark in the topic"
+   ],
+   "calculator": false,
+   "practicum_marks": 107,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q01-B",
+    "2022-NOV-COMMON-P3-Q02-E-I"
+   ]
+  },
+  {
+   "id": "B3.name_transform",
+   "practicum": "B3",
+   "name": "Name the sequence of transformations",
+   "rung": 3,
+   "trigger": "\"Describe a sequence of transformations that maps the graph of y = arctan x onto ...\", \"describe these two transformations\". Two formulas are printed and the words between them are the answer.",
+   "chain": [
+    "Write the target so that the source is visible inside it",
+    "Peel the transformations off from the inside out",
+    "Name each one in full — direction and factor, not just \"shift\"",
+    "Say the order, and check it by composing them in that order"
+   ],
+   "traps": [
+    "The horizontal pair is given in the wrong order. arctan(2x+1) is a stretch then a shift of 1/2, or a shift of 1 then the stretch — a shift of 1/2 then the stretch is neither",
+    "The translation is named in the wrong direction, because f(x-h) moves the graph h to the right and reads as if it should go left",
+    "The word \"move\" is used. The markscheme names it explicitly as not accepted; translate, shift, dilate and stretch are"
+   ],
+   "calculator": false,
+   "practicum_marks": 107,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q12-A",
+    "2022-MAY-TZ1-P1-Q05-A",
+    "2025-NOV-TZ1-P1-Q08-B"
+   ]
+  },
+  {
+   "id": "B3.match_transform",
+   "practicum": "B3",
+   "name": "Find the parameters of the transformation",
+   "rung": 4,
+   "trigger": "\"The graph of g is obtained from the graph of f by a horizontal stretch with scale factor k, followed by a vertical translation of c units. Find k and c.\" The sequence is named for you; the numbers are not.",
+   "chain": [
+    "Write the transformation with its letters, applied to f",
+    "Set that equal to g and compare the parts that must agree",
+    "For a rational target, rewrite it as a constant plus a fraction first",
+    "Read the asymptotes off the rewritten form — they are the translations"
+   ],
+   "traps": [
+    "The exponent is matched and the linear term is forgotten, so k comes out right and c does not",
+    "(2x+6)/(x-4) is attacked as it stands. Divided out it is 2 + 14/(x-4), and then every transformation is visible at once",
+    "The vertical stretch and the vertical translation are given in the wrong order — the markscheme requires stretch before shift"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 107,
+   "blocks": [
+    "2023-NOV-TZ1-P2-Q02-B",
+    "2023-NOV-TZ2-P2-Q02-B",
+    "2025-NOV-TZ3-P1-Q03-B"
+   ]
+  },
+  {
+   "id": "B3.use_symmetry",
+   "practicum": "B3",
+   "name": "Use the symmetry of the graph",
+   "rung": 5,
+   "trigger": "\"Show that f is an odd function\", \"given that f is odd, sketch y = f(x)\", \"using the line of symmetry y = x, write down the coordinates\". Half the picture is given and the rest is free.",
+   "chain": [
+    "For parity, write f(-x) out in full before simplifying anything",
+    "Finish on f(-x) = -f(x) or f(-x) = f(x), and then say which it is",
+    "On a graph, odd means a half-turn about the origin, even a mirror in Oy",
+    "Symmetry in y = x swaps the coordinates of every labelled point"
+   ],
+   "traps": [
+    "The conclusion is left out. The last mark is an R1 for the sentence \"therefore f is odd\", not for the algebra above it",
+    "(-x)^2 is written as -x^2 somewhere in the middle",
+    "The half-turn is drawn as a mirror in the y-axis, which is what an even function does",
+    "Reflecting in y = x, only one of the two coordinates is swapped"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 107,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q06-A",
+    "2022-MAY-TZ2-P1-Q06-A",
+    "2024-MAY-TZ1-P1-Q09-B",
+    "2024-MAY-TZ1-P2-Q11-C"
+   ]
+  },
+  {
+   "id": "B3.fold_graph",
+   "practicum": "B3",
+   "name": "Fold the graph — |f(x)|, f(|x|) and 1/f(x)",
+   "rung": 6,
+   "trigger": "\"Sketch y = |f(x)|\", \"sketch the graph of y = f(|x|)\", \"sketch y = 15/f(x), clearly indicating any asymptotes and intercepts\". The new graph is defined from the old one point by point.",
+   "chain": [
+    "|f(x)| — reflect what is below the axis upwards, keep the rest",
+    "f(|x|) — throw away x < 0 and mirror the right half into its place",
+    "1/f(x) — zeros become asymptotes, asymptotes become zeros, and 1 and -1 stay put",
+    "Mark every corner. |f| has one at each zero of f, f(|x|) has one at x = 0",
+    "For 1/f, follow the turning points — a maximum of f is a minimum of 1/f where f > 0"
+   ],
+   "traps": [
+    "Cusps are drawn as smooth turns. The markscheme asks for \"sharp points (cusps) at the x-intercepts\" by name",
+    "For |f| the oblique asymptote is left un-reflected. If y = 5x+5 is an asymptote of a branch that gets flipped, y = -5x-5 is the asymptote of the flipped branch",
+    "For f(|x|) the LEFT half is kept and mirrored. It is the right half that survives",
+    "For 1/f a vertical asymptote of f is drawn again in the new graph. There the new graph goes to zero instead"
+   ],
+   "calculator": false,
+   "practicum_marks": 107,
+   "blocks": [
+    "2022-NOV-COMMON-P1-Q10-C",
+    "2023-MAY-TZ1-P1-Q08-A",
+    "2024-MAY-TZ1-P1-Q09-A",
+    "2025-MAY-TZ3-P1-Q06-A",
+    "2025-NOV-TZ3-P1-Q05-A",
+    "2025-MAY-TZ3-P1-Q06-B"
+   ]
+  },
+  {
+   "id": "B3.sketch_standard",
+   "practicum": "B3",
+   "name": "Sketch a curve you already know",
+   "rung": 7,
+   "trigger": "\"Sketch the graph of y = arccos x, indicating the y-intercept and the coordinates of the end points\", \"sketch y = f1(x), stating the values of any axes intercepts and the coordinates of any local maximum or minimum points\". A formula, no picture, and a list of things to label.",
+   "chain": [
+    "Name the shape before drawing anything — parabola, sine, log, inverse trig",
+    "Find the intercepts by solving f = 0 and evaluating f(0)",
+    "Find the turning points, and give both coordinates of each",
+    "Mark the ends of the domain — a restricted domain has endpoints, and they are marks",
+    "Draw the shape through the points you have found, not around them"
+   ],
+   "traps": [
+    "Only the x-coordinate of a maximum is given. The markscheme wants the coordinates, and half a point earns nothing",
+    "The domain is ignored and the curve runs off both sides. On 0 <= x <= 6m the picture stops at 6m, and stopping is a mark",
+    "For a sine with a stretch, the period is computed from the amplitude coefficient, or the stretch factor is inverted",
+    "Two curves asked for on the same axes are drawn without saying which is which, or without their relative position being right"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 107,
+   "blocks": [
+    "2021-MAY-TZ2-P3-Q01-A",
+    "2021-NOV-COMMON-P1-Q10-B",
+    "2025-MAY-TZ2-P1-Q08-A",
+    "2023-MAY-TZ1-P1-Q05-B",
+    "2023-MAY-TZ2-P3-Q01-A",
+    "2025-NOV-TZ3-P3-Q01-A",
+    "2023-MAY-TZ1-P2-Q02-B",
+    "2021-MAY-TZ2-P2-Q12-F"
+   ]
+  },
+  {
+   "id": "B3.sketch_asymptotic",
+   "practicum": "B3",
+   "name": "Sketch a curve that has asymptotes",
+   "rung": 8,
+   "trigger": "\"Sketch the graph of y = f(x). On your sketch, indicate the values of any axis intercepts and label any asymptotes with their equations.\" A rational function, or a hyperbola, and the word asymptote in the instruction.",
+   "chain": [
+    "Vertical asymptotes first — set the denominator to zero",
+    "Horizontal or oblique next — divide out, or take the limit",
+    "Then the intercepts, from the numerator and from f(0)",
+    "Decide which side of each asymptote the curve runs, one branch at a time",
+    "The range follows from the horizontal asymptote — it is the value never taken"
+   ],
+   "traps": [
+    "The asymptotes are drawn but not labelled with their equations. The instruction says \"with their equations\", and that is the A1",
+    "A branch is drawn crossing its vertical asymptote",
+    "The range is given as all reals. For (4x+2)/(x-2) it is y != 4, and the 4 is exactly the horizontal asymptote",
+    "For x^2 - y^2 = 1 only the right branch is drawn, or the asymptotes y = x and y = -x are omitted as \"not part of the curve\""
+   ],
+   "calculator": false,
+   "practicum_marks": 107,
+   "blocks": [
+    "2021-NOV-COMMON-P3-Q01-F",
+    "2024-MAY-TZ1-P1-Q10-A",
+    "2024-MAY-TZ1-P1-Q10-B",
+    "2024-MAY-TZ1-P1-Q10-E"
+   ]
+  },
+  {
+   "id": "B3.explore_family",
+   "practicum": "B3",
+   "name": "Explore a family of graphs with the GDC",
+   "rung": 9,
+   "trigger": "\"Use your graphic display calculator to explore the graph of y = fn(x) for the odd values n = 3 and n = 5\", \"by investigating graphs, write down the number of intersection points\", \"write down the number of solutions to f(x) = g(x) for m > 0\". A letter in the formula and a count for an answer.",
+   "chain": [
+    "Plot two or three members of the family, not one",
+    "Split the letter's range at the values where the picture changes",
+    "Count what is asked — maxima, minima, inflexions with zero gradient, intersections",
+    "Say what stays the same across the family; that is usually the point of the question"
+   ],
+   "traps": [
+    "One value of n is tried and the answer generalised from it",
+    "A point where f'' = 0 is called a point of inflexion without checking that the concavity changes. For x^n(2-x)^n with n even, f'' vanishes at the ends and they are minima, not inflexions",
+    "The window is left on the default and a whole branch is off screen",
+    "The counting is done for the wrong interval of the parameter, because the boundary case was put on the wrong side"
+   ],
+   "calculator": true,
+   "practicum_marks": 107,
+   "blocks": [
+    "2021-MAY-TZ2-P3-Q01-B",
+    "2023-MAY-TZ2-P3-Q01-D",
+    "2024-MAY-TZ2-P1-Q05-B-I"
    ]
   },
   {
@@ -12595,6 +13327,726 @@
    ],
    "answer": "prop",
    "answer_digest": "e835d0bf51a4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:1",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.name_transform",
+   "prompt": "Describe a sequence of transformations mapping $y=e^{x}$ onto $y=3e^{x-2}$.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "name",
+   "answer_digest": "82a3537ff0db",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:2",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.fold_graph",
+   "prompt": "Given the graph of $f$, sketch $y=\\lvert f(x)\\rvert$.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "fold",
+   "answer_digest": "255541b1d8c6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:3",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.sketch_standard",
+   "prompt": "Sketch $y=2\\cos 3x$ for $0\\le x\\le 2\\pi$, labelling the maxima.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "sketch",
+   "answer_digest": "f416b363c6c5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:4",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.read_graph",
+   "prompt": "From the diagram, write down the value of $f(-1)$.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "read",
+   "answer_digest": "3316348dbadf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:5",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.explore_family",
+   "prompt": "Use your GDC to explore $y=x^{n}-nx$ for $n=2,3,4$ and count the turning points.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "family",
+   "answer_digest": "d34a569ab7aa",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:6",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.match_transform",
+   "prompt": "$g(x)=af(x)+b$ maps the graph of $f$ onto the printed graph. Find $a$ and $b$.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "match",
+   "answer_digest": "4945a70fa7f9",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:7",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.use_symmetry",
+   "prompt": "Show that $f(x)=x^{3}\\cos x$ is an odd function.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "sym",
+   "answer_digest": "0599b22abfb1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:8",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.sketch_asymptotic",
+   "prompt": "Sketch $y=\\dfrac{3x-1}{x+4}$, labelling the asymptotes with their equations.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "asym",
+   "answer_digest": "ced2eea28f29",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:9",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.apply_transform",
+   "prompt": "On the axes above, sketch $y=f(2x)-1$.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "apply",
+   "answer_digest": "97a5e41b45dd",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:10",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.fold_graph",
+   "prompt": "Sketch $y=\\dfrac{1}{f(x)}$ given the graph of $f$.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "fold",
+   "answer_digest": "255541b1d8c6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:11",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.name_transform",
+   "prompt": "Describe the transformation taking $y=\\ln x$ to $y=\\ln(5x)$.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "name",
+   "answer_digest": "82a3537ff0db",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:12",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.sketch_standard",
+   "prompt": "Sketch $y=\\arctan x$, stating the equations of its asymptotes.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "sketch",
+   "answer_digest": "f416b363c6c5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:13",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.use_symmetry",
+   "prompt": "The curve is symmetric in $y=x$ and passes through $(2,7)$. Write down another point on it.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "sym",
+   "answer_digest": "0599b22abfb1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:14",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.explore_family",
+   "prompt": "For which values of $c$ does $y=x^{3}-3x+c$ meet the $x$-axis three times?",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "family",
+   "answer_digest": "d34a569ab7aa",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B3:15",
+   "kind": "recognition",
+   "practicum": "B3",
+   "skill": "B3.sketch_asymptotic",
+   "prompt": "From the graph, write down the coordinates of the local minimum.",
+   "options": [
+    {
+     "code": "read",
+     "name": "прочитать значение с графика"
+    },
+    {
+     "code": "apply",
+     "name": "применить сдвиг или растяжение"
+    },
+    {
+     "code": "name",
+     "name": "назвать последовательность"
+    },
+    {
+     "code": "match",
+     "name": "найти параметры"
+    },
+    {
+     "code": "sym",
+     "name": "воспользоваться симметрией"
+    },
+    {
+     "code": "fold",
+     "name": "сложить график"
+    },
+    {
+     "code": "sketch",
+     "name": "нарисовать знакомую кривую"
+    },
+    {
+     "code": "asym",
+     "name": "нарисовать с асимптотами"
+    },
+    {
+     "code": "family",
+     "name": "исследовать семейство"
+    }
+   ],
+   "answer": "asym",
+   "answer_digest": "ced2eea28f29",
    "budget_ms": 8000
   },
   {
