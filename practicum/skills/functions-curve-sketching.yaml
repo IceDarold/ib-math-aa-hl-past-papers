@@ -1,0 +1,724 @@
+version: 0.1
+practicum: B4
+title: "Curve sketching and asymptotes"
+language: en
+source_topic: functions.curve_sketching + functions.asymptotes (both of them entire)
+corpus:
+  blocks: 62
+  marks: 147
+  sessions: May 2021 — November 2025
+  papers: {1: 39, 2: 60, 3: 48}
+  gdc_marks: 108
+  note: >
+    Two topics, both taken whole, because neither is big enough alone
+    and together they are one question. curve_sketching is 113 marks
+    and asymptotes is 34, and the archive keeps putting them in the
+    same question: November 2021 Paper 2 Q10 asks for the intercepts,
+    then the vertical asymptote, then the oblique asymptote, then the
+    sketch, in that order, for 11 of its 18 marks. Splitting them would
+    cut a question in half.
+
+    Twenty of the 147 marks are one question counted twice. The
+    November 2023 session sits in the corpus as two zones and the
+    papers are the same paper — B2 established this by comparing them
+    page by page, B3 found two marks of it, and here it lands on eight
+    blocks. Worse, the two copies disagree with each other: the range
+    of f in Paper 2 Q11(e) is recorded only under TZ2, and of the eight
+    parts of the Paper 3 investigation the TZ1 copy records seven and
+    the TZ2 copy records two, with one part in both. So the real
+    material is about 127 marks, still comfortably inside the range.
+
+    73% of the marks carry a calculator, and that is the exact mirror
+    of B3, where Paper 1 held 64 of 107 marks and the calculator share
+    was 40%. The two topics look alike and are printed on opposite
+    papers, and the reason is the whole seam between them. B3 draws
+    curves whose shape you are expected to know, so the examiner can
+    ask for them with no machine on the desk. B4 draws curves nobody
+    has drawn for you — a rational function with an oblique asymptote,
+    e^x - 3x - 4, a solution of a differential equation — and finding
+    the turning point of one of those by hand is a different question
+    from drawing it.
+
+principle: >
+  Every question in this topic is answered by the same list, and the
+  list is short: where the curve meets the axes, where it turns, and
+  what it runs alongside far away. Intercepts, extrema, asymptotes.
+  Everything else on the ladder is a way of getting one of those three
+  when the obvious method fails.
+
+  What makes the topic hard is not the list, it is that the exam asks
+  for it in four different voices and they do not look related.
+
+  "Write down the equation of the horizontal asymptote" wants one line
+  and pays one mark. "Sketch the graph of f for -50 <= x <= 50" wants
+  the same list, drawn. "Find the range of f" wants the same list, read
+  off the vertical axis instead of the horizontal one. "Find the set of
+  values of b for which the curve has exactly three x-axis intercepts"
+  wants the same list, with a letter in it, and asks what happens to
+  the count as the letter moves.
+
+  Hence the ladder, and it goes by where the list comes from.
+
+  Rungs 1-3: the asymptotes on their own. First the two you read off a
+  rational function without doing anything — the denominator's zero and
+  the ratio of the leading coefficients. Then the ones you cannot read
+  off, where the answer is a limit and nothing else: a logarithm's
+  vertical asymptote is the edge of its domain, and arcsin((x^2-1)/
+  (x^2+1)) has a horizontal asymptote at pi/2 that no ratio will give
+  you. Then the oblique asymptote, which is the same limit written as a
+  division: when the numerator's degree is one more than the
+  denominator's, the quotient is the line and the remainder is what
+  vanishes.
+
+  Rung 4: the sketch of a rational curve. The asymptotes first, drawn
+  as dashed lines, then the intercepts, then the branches joining them
+  — and this order is not advice, it is what the markscheme pays for,
+  in separate marks, in that sequence.
+
+  Rung 5: the range. This is the same picture read sideways, and it is
+  where the marks are won and lost on a single symbol: whether an
+  endpoint is attained. A turning point is attained and gets <=; a
+  horizontal asymptote is not and gets <.
+
+  Rungs 6-8: sketches of curves that are not rational. From a formula
+  with a calculator, labelling what you were told to label; from a
+  second derivative, when the question hands you the concavity and
+  wants it visible; and from an implicit equation y^2 = f(x), where the
+  curve is not a function at all and the symmetry does the work.
+
+  Rung 9: the family. A letter in the formula, and a question that asks
+  for a count. The count changes exactly when a turning point crosses
+  the axis, which is why this rung is the last: it needs the whole list
+  and one idea more.
+
+  The one sentence worth carrying into the exam: the marks are for the
+  list, not for the curve. Every sketch instruction in the archive
+  names its own markscheme — "stating the values of any axes
+  intercepts", "clearly indicating any asymptotes", "labelling the
+  coordinates of any local maximum and minimum points". Write that list
+  down before drawing anything.
+
+skills:
+  - id: name_asymptote
+    name: Read the vertical and horizontal asymptotes off a rational function
+    rung: 1
+    trigger: >
+      "Write down the equation of the vertical asymptote", "state the
+      equation of the horizontal asymptote", usually one or two marks
+      and usually the opening part of a longer question. The function is
+      a ratio of polynomials and nothing has to be solved.
+    chain:
+      - Set the denominator to zero — that is every vertical asymptote
+      - Compare the degrees of numerator and denominator
+      - Lower on top means y = 0; equal degrees mean the ratio of the leading coefficients
+      - Higher on top means there is no horizontal asymptote, and rung 3 takes over
+      - Write each answer as an equation, not as a number
+    traps:
+      - >
+        The answer is given as "3" instead of "x = 3". The markscheme
+        says "must be written as an equation with y =" in as many words,
+        and awards A0 for the number
+      - >
+        The ratio of leading coefficients is quoted when the numerator
+        has the higher degree, so a horizontal asymptote is claimed
+        where an oblique one lives
+      - >
+        A factor cancelling between numerator and denominator is missed,
+        so a hole is called an asymptote
+      - >
+        The sign is lost in (2x+4)/(3-x): the leading ratio is 2/(-1),
+        so the asymptote is y = -2 and not y = 2
+    calculator:
+      mode: no
+      note: >
+        Eight of the nine blocks are Paper 1, and the ninth is a Paper 2
+        one-marker. This is the only rung of the practicum that lives on
+        the non-calculator paper, and it is where B4 touches B3.
+    prereq: []
+    raw_tags: [vertical_asymptote, horizontal_asymptote, rational_function,
+               identify_vertical_asymptote, identify_horizontal_asymptote,
+               rational_function_asymptotes, denominator_zero,
+               set_denominator_zero, solve_linear, limit_behavior,
+               leading_coefficient_ratio, find_vertical_asymptote]
+    blocks: [2021-NOV-COMMON-P1-Q02-A-I-II, 2021-NOV-COMMON-P2-Q10-B,
+             2022-MAY-TZ2-P1-Q03-A-I-A-II, 2023-MAY-TZ1-P1-Q01-B,
+             2023-MAY-TZ2-P1-Q02-A, 2023-NOV-TZ1-P2-Q11-A,
+             2023-NOV-TZ2-P2-Q11-A, 2024-MAY-TZ2-P1-Q05-A,
+             2025-MAY-TZ2-P1-Q01-B]
+
+  - id: asymptote_by_limit
+    name: Find an asymptote that cannot be read off
+    rung: 2
+    trigger: >
+      "By considering limits, show that the graph has a horizontal
+      asymptote and state its equation", or a vertical asymptote wanted
+      for something that is not a fraction at all — a logarithm, a
+      square root, an inverse trigonometric function.
+    chain:
+      - Ask which limit the question is about — a finite point, or infinity
+      - For a vertical asymptote, look at the edge of the domain, not at a denominator
+      - For a horizontal one, evaluate the limit as x tends to +oo and to -oo
+      - Simplify the inside first: (x^2-1)/(x^2+1) tends to 1, so arcsin of it tends to arcsin 1
+      - State the answer as an equation of a line
+    traps:
+      - >
+        The two ends are assumed to agree. They need not: e^x has y = 0
+        on the left and nothing on the right, and one-sided is enough
+      - >
+        The vertical asymptote of 2 ln x - ln d is sought by setting
+        something to zero. It is at x = 0 because that is where the
+        domain stops, and the value of d never enters
+      - >
+        The limit is evaluated inside the outer function but the outer
+        function is then forgotten, giving y = 1 instead of y = pi/2
+    calculator:
+      mode: no
+      note: >
+        All three blocks are notionally on calculator papers or Paper 1,
+        but every one is a limit argument that a calculator cannot
+        write. Two of the three are the same November 2023 question in
+        its two copies.
+    prereq: [name_asymptote]
+    raw_tags: [evaluate_limit_infinity, compute_arcsin_value, state_asymptote,
+               logarithmic_asymptote, domain_analysis, limit_at_infinity,
+               asymptotic_behaviour]
+    blocks: [2021-MAY-TZ2-P2-Q12-B, 2023-NOV-TZ1-P1-Q10-A,
+             2023-NOV-TZ2-P1-Q10-A]
+
+  - id: oblique_asymptote
+    name: Find the oblique asymptote
+    rung: 3
+    trigger: >
+      "The graph of f also has an oblique asymptote of the form
+      y = ax + b. Find the value of a and the value of b." Four marks,
+      almost always, and almost always after the vertical asymptote has
+      already been asked for.
+    chain:
+      - Check the degrees — this only happens when the numerator is exactly one higher
+      - Divide, by long division or by writing f = (ax+b) + c/(denominator)
+      - Or equate coefficients of (ax+b)(denominator) + c against the numerator
+      - Or take the limits a = lim f(x)/x and b = lim (f(x) - ax)
+      - The quotient is the asymptote; the remainder is what goes to zero
+    traps:
+      - >
+        The division stops at the leading term, so a is right and b is
+        never found. The markscheme splits its four marks exactly there
+      - >
+        The remainder is included in the answer, giving a curve instead
+        of a line
+      - >
+        Coefficients are equated with a sign slip: for (x^2-x-12)/(2x-15)
+        the x-coefficient equation is 2b - 15a = -1, and dropping the
+        minus gives b = -13/4
+      - >
+        The answer is left as "x/2 + 13/4" rather than "y = x/2 + 13/4".
+        The markscheme note reads: "Do not award the final A1 if the
+        answer is not given as an equation"
+    calculator:
+      mode: yes
+      note: >
+        All five blocks are on calculator papers, and the calculator
+        does nothing here. It cannot divide polynomials on the AA HL
+        machine and it will not produce ax + b; the marks are for the
+        division written out.
+    prereq: [name_asymptote]
+    raw_tags: [oblique_asymptote, polynomial_division, polynomial_long_division,
+               equate_coefficients, equating_coefficients, find_oblique_asymptote,
+               limit_analysis, limit_at_infinity]
+    blocks: [2021-MAY-TZ1-P2-Q11-E, 2021-NOV-COMMON-P2-Q10-C,
+             2023-NOV-TZ1-P2-Q11-C, 2023-NOV-TZ2-P2-Q11-C,
+             2025-MAY-TZ2-P3-Q01-D-II]
+
+  - id: sketch_rational
+    name: Sketch a rational curve
+    rung: 4
+    trigger: >
+      "Sketch the graph of f for -50 <= x <= 50, showing clearly the
+      asymptotes and any intersections with the axes." The single
+      largest cluster of the practicum: 30 marks over eleven blocks.
+    chain:
+      - Draw the asymptotes first, dashed, and label them with their equations
+      - Mark the intercepts — denominator into y = 0, then x = 0 for the y-intercept
+      - Find the turning points, by calculator or by f'(x) = 0
+      - Join the branches, one region between asymptotes at a time
+      - Check each branch leaves towards the asymptote it is supposed to leave towards
+    traps:
+      - >
+        The branches overlap because a vertical asymptote was drawn in
+        the wrong place or left out. May 2021 TZ1 has a note for exactly
+        this: "If vertical asymptotes are absent (or not vertical) and
+        the branches overlap as a consequence, award maximum A0A1A0A1A1"
+      - >
+        A curve with two vertical asymptotes is drawn with two branches.
+        1/(x^2-2x-3) has three
+      - >
+        The turning point is put on the axis of symmetry of the
+        denominator without checking. For 1/(x^2-2x-3) that happens to
+        be right, x = 1; for most functions it is not
+      - >
+        The sketch is drawn correctly and nothing is labelled. Three of
+        the marks in the November 2021 question are for labels
+      - >
+        The given domain is ignored and the curve is drawn on whatever
+        window the calculator opened with
+    calculator:
+      mode: mixed
+      note: >
+        Eleven blocks, five on Paper 1 and six on Papers 2 and 3. On
+        Paper 1 the extrema are found by differentiating; on Paper 2
+        they are read off the screen and quoted to 3 s.f. The picture
+        wanted is the same picture.
+    prereq: [name_asymptote, oblique_asymptote]
+    raw_tags: [sketch_rational_function, asymptotic_behaviour, asymptotic_behavior,
+               branches, curve_branching, intercepts, plot_intercepts,
+               find_intercepts, plot_asymptotes, show_asymptotes,
+               show_asymptotic_behaviour, find_critical_points, local_extrema,
+               sketch_curve, identify_asymptotes, identify_intercepts,
+               find_x_intercepts, sketching, hyperbola, sketch]
+    blocks: [2021-MAY-TZ1-P2-Q11-D, 2021-NOV-COMMON-P1-Q02-C,
+             2021-NOV-COMMON-P2-Q10-D, 2022-MAY-TZ2-P1-Q03-B,
+             2022-MAY-TZ2-P1-Q11-A, 2023-MAY-TZ2-P1-Q02-C,
+             2023-NOV-TZ1-P2-Q11-D, 2023-NOV-TZ2-P2-Q11-D,
+             2025-MAY-TZ2-P3-Q01-A-I, 2025-MAY-TZ2-P3-Q01-A-II,
+             2025-NOV-TZ1-P3-Q01-D-I]
+
+  - id: find_range
+    name: Find the range
+    rung: 5
+    trigger: >
+      "Determine the range of g", "find the range of f", and the
+      quadratic version, "write down the axis of symmetry and find the
+      coordinates of the minimum point".
+    chain:
+      - Sketch first, or at least list the turning points and the horizontal asymptote
+      - For a quadratic, complete the square — the vertex is the whole answer
+      - For a rational function, set y = f(x) and solve for x
+      - The values of y that give a real x are the range; a quadratic in x gives a discriminant condition
+      - Decide each endpoint separately — attained gives <=, approached gives <
+    traps:
+      - >
+        A horizontal asymptote is included in the range. The curve never
+        reaches it, and the inequality must be strict there
+      - >
+        A turning point is excluded from the range. The curve does reach
+        it, and the inequality must not be strict there. The markscheme
+        for November 2023 Q11(e) awards A1A0 for strict inequalities in
+        both places
+      - >
+        The range of a rational function is written as a single interval
+        when the graph has a gap between the two branches
+      - >
+        The restriction on the domain is forgotten: -(3x-2)/(2x+1) for
+        x >= 0 has range -3/2 < y <= 2, and over all x it is different
+      - >
+        The answer is given in x. The range is a set of y values
+    calculator:
+      mode: mixed
+      note: >
+        Two Paper 2 blocks and two Paper 1. The calculator gives the
+        turning point to 3 s.f., which is enough to write the answer
+        but not enough to write the exact form (5 +- sqrt 13)/6 that
+        the discriminant gives.
+    prereq: [sketch_rational]
+    raw_tags: [state_range, range_rational_function, quadratic_discriminant,
+               solve_quadratic_inequality, find_vertex, complete_square,
+               completing_the_square, quadratic_minimum, axis_of_symmetry,
+               evaluate_extrema, asymptotic_analysis, substitution]
+    blocks: [2021-MAY-TZ2-P2-Q04-A, 2023-MAY-TZ2-P2-Q08-A,
+             2023-NOV-TZ2-P2-Q11-E, 2025-NOV-TZ3-P1-Q09-B]
+
+  - id: sketch_labelled
+    name: Sketch a curve from its formula, labelling what was asked for
+    rung: 6
+    trigger: >
+      "Sketch the graph of f for -4 <= x <= 3", with a list attached:
+      the roots, the y-intercept, the local minimum, the endpoints. The
+      largest rung of the practicum at 36 marks, and the one that most
+      often appears as an opening part worth three or four marks.
+    chain:
+      - Read the instruction and write down the list of things to label
+      - Find each item — roots, y-intercept, turning points, endpoints of the given domain
+      - Note the behaviour at the ends: an asymptote, or a value to plot
+      - Draw, plot the listed points, and write the coordinates beside them
+      - Check the drawn shape against the number of turning points you found
+    traps:
+      - >
+        The endpoints of the given domain are not marked. They are a
+        mark of their own in May 2022 TZ1 Q10(a) and in both copies of
+        November 2023 Q2(a)
+      - >
+        A cubic is drawn with two turning points because cubics have
+        two. (x-1)(x^2-2x+5) has none: its derivative 3x^2-6x+7 has a
+        negative discriminant, and the curve rises through a
+        non-stationary point of inflexion
+      - >
+        A double root is drawn as a crossing. x^3+4x^2+5x+2 is
+        (x+1)^2(x+2) and touches the axis at x = -1, where it has its
+        local minimum
+      - >
+        Coordinates are found and then not written on the diagram. The
+        markscheme awards its marks for the labels
+      - >
+        A calculator answer is copied to two significant figures
+    calculator:
+      mode: yes
+      note: >
+        Nine of the twelve blocks are on calculator papers, and here
+        the calculator earns its place: the local maximum of x e^(-x)
+        is at (1, 0.368) and the roots of e^x - 3x - 4 are -1.24 and
+        2.42. None of those is worth finding by hand for a sketch.
+    prereq: []
+    raw_tags: [curve_sketching, sketch_graph, function_sketching, sketch_cubic,
+               cubic_sketch, sketch_parabola, sketch_quadratic_relation,
+               label_y_intercept, label_local_maximum, label_local_minimum,
+               identify_endpoints, domain_endpoints, endpoint_evaluation,
+               root_finding, root_approximation, intercept_finding,
+               intercept_identification, turning_point_finding,
+               turning_point_identification, turning_points, vertex,
+               inflection_point, find_stationary_point, differentiate_product,
+               identify_asymptotic_behavior, tangent_sketch, normal_line,
+               parallel_lines, particular_solution, domain_restriction,
+               plot_critical_points, x_intercept]
+    blocks: [2021-MAY-TZ1-P3-Q01-A-I, 2021-MAY-TZ1-P3-Q01-A-II,
+             2022-MAY-TZ1-P2-Q10-A, 2022-MAY-TZ1-P3-Q02-C,
+             2022-MAY-TZ1-P3-Q02-H-I, 2022-NOV-COMMON-P1-Q11-B-IV,
+             2023-MAY-TZ1-P3-Q01-A, 2023-NOV-TZ1-P2-Q02-A,
+             2023-NOV-TZ2-P2-Q02-A, 2025-MAY-TZ1-P1-Q10-B,
+             2025-MAY-TZ3-P2-Q12-C, 2025-NOV-TZ1-P3-Q01-D-II]
+
+  - id: sketch_curvature
+    name: Sketch using the second derivative
+    rung: 7
+    trigger: >
+      "Sketch the curve of y = f(x) for 0 <= x <= pi, taking into
+      consideration the relative values of the second derivative found
+      in part (b)." The word "relative" is the whole question.
+    chain:
+      - Collect the stationary points and their second derivative values from the earlier part
+      - Negative means a maximum, positive a minimum — that fixes the up and down
+      - Compare the magnitudes: the larger |f''| is, the more sharply the curve bends
+      - Draw the sharper turn sharp and the flatter turn flat
+      - Check the drawing against the domain's endpoints
+    traps:
+      - >
+        The sign of f'' is used and the size ignored, which answers the
+        previous part and not this one. For e^(cos 2x) the maxima have
+        f'' = -4e and the minimum has f'' = 4/e — the maxima are about
+        seven times as sharp, and the sketch has to show it
+      - >
+        A stationary point at the edge of the drawing domain is treated
+        as an endpoint. For e^(cos 2x) on [0, pi] both ends are genuine
+        maxima of a function defined further out
+      - >
+        Concavity is confused with increasing and decreasing
+    calculator:
+      mode: no
+      note: >
+        Both blocks are Paper 1, and both are the same November 2023
+        question in its two copies. The second derivative is handed to
+        you by the previous part; nothing here is computed.
+    prereq: [sketch_labelled]
+    raw_tags: [sketch_curve, curvature_analysis, show_curvature, plot_maxima,
+               plot_minimum, plot_critical_points, interpret_stationary_points]
+    blocks: [2023-NOV-TZ1-P1-Q11-C, 2023-NOV-TZ2-P1-Q11-C]
+
+  - id: sketch_implicit
+    name: Sketch a curve that is not a function
+    rung: 8
+    trigger: >
+      "On the same set of axes, sketch the curves y^2 = 16 - 8x and
+      y^2 = 4 + 4x", "sketch y^2 = x^3 for x >= 0, indicating any points
+      of intersection with the coordinate axes". Always Paper 3, always
+      the opening of an investigation.
+    chain:
+      - y^2 = something means the x-axis is a line of symmetry — draw the top half and reflect
+      - Find where the right-hand side is zero: that is where the two halves meet
+      - Find where it is negative: that is where there is no curve at all, and it fixes the domain
+      - Decide how the halves meet — with a vertical tangent, or in a cusp
+      - Plot the y-intercepts, both of them, and label each curve
+    traps:
+      - >
+        The two halves are drawn as one continuous curve through the
+        x-axis. The markscheme deducts for graphs that "merge or cross
+        or are discontinuous at the x-axis"
+      - >
+        The cusp is missed. y^2 = x^3 meets the axis at a sharp point
+        because both branches arrive with zero gradient; y^2 = x^3 + 1
+        arrives at x = -1 with infinite gradient, and that difference is
+        the mark in part (b)(ii)
+      - >
+        The domain is not restricted, so the curve is drawn where
+        x^3 + b is negative
+      - >
+        Only one y-intercept is given. There are two, at +-sqrt(b)
+      - >
+        The sideways parabolas are drawn opening the same way. y^2 = 16 - 8x
+        opens to the left and y^2 = 4 + 4x opens to the right
+    calculator:
+      mode: yes
+      note: >
+        All six blocks are Paper 3 and every one is on a calculator
+        paper, but a calculator plots functions and these are not
+        functions. Plotting the two halves separately is the way to use
+        it, and the symmetry is faster.
+    prereq: [sketch_labelled]
+    raw_tags: [sketch_curve, identify_symmetry, identify_cusp, identify_intercepts,
+               compare_curves, identify_distinguishing_features,
+               identify_common_features, generalize_from_parameter,
+               determine_parabola_orientation, sketch_quadratic_relation,
+               parabola, find_x_intercepts, find_intercepts, curve_sketching]
+    blocks: [2022-MAY-TZ2-P3-Q01-A-I, 2022-MAY-TZ2-P3-Q01-A-II,
+             2022-MAY-TZ2-P3-Q01-B-II, 2022-MAY-TZ2-P3-Q01-C,
+             2023-NOV-TZ1-P3-Q02-B, 2023-NOV-TZ2-P3-Q02-B]
+
+  - id: count_roots
+    name: Count the x-axis intercepts of a family
+    rung: 9
+    trigger: >
+      "By systematically varying the value of b, find the two values of
+      b such that the curve has exactly two x-axis intercepts", "write
+      down the set of values of b such that the curve has exactly
+      three". A letter in the formula and a count in the question.
+    chain:
+      - Find the stationary points of the general curve — they do not move when the constant does
+      - Evaluate the curve at each of them; those are the two heights that matter
+      - A cubic has three intercepts when the two heights straddle the axis
+      - Exactly two when one of the heights is zero — that is where the double root is
+      - One when both heights are on the same side, or when there are no stationary points at all
+    traps:
+      - >
+        The boundary case is put in the wrong list. For y = x^3+3x^2+b
+        the values b = -4 and b = 0 give exactly two intercepts, and
+        they belong to neither of the open intervals on either side
+      - >
+        The two heights are compared to each other rather than to zero
+      - >
+        The sign of the leading coefficient is forgotten, so the maximum
+        and the minimum swap places
+      - >
+        The condition 4a^3 b + 27b^2 < 0 is expanded instead of
+        factorised. As b(4a^3 + 27b) < 0 it says precisely that the two
+        heights have opposite signs, which is the whole proof
+      - >
+        A calculator picture of one member is used to answer for the
+        family
+    calculator:
+      mode: yes
+      note: >
+        All ten blocks are Paper 3, all on a calculator, and the
+        question says "by systematically varying the value of b" — the
+        exploration is the method, not a shortcut. The proof in part (h)
+        is then written by hand.
+    prereq: [sketch_labelled, find_range]
+    raw_tags: [vary_parameter, find_stationary_points, evaluate_function,
+               determine_intercept_conditions, interpret_stationary_points,
+               relate_stationary_points_to_intercepts, apply_cubic_end_behavior,
+               factor_expression, sign_analysis, state_relative_position,
+               determine_sign, state_position]
+    blocks: [2023-NOV-TZ1-P3-Q01-A, 2023-NOV-TZ1-P3-Q01-B-I,
+             2023-NOV-TZ1-P3-Q01-B-II, 2023-NOV-TZ1-P3-Q01-C-I,
+             2023-NOV-TZ1-P3-Q01-C-II, 2023-NOV-TZ1-P3-Q01-C-III,
+             2023-NOV-TZ1-P3-Q01-D, 2023-NOV-TZ1-P3-Q01-H,
+             2023-NOV-TZ2-P3-Q01-D, 2023-NOV-TZ2-P3-Q01-F-II]
+
+leftovers: []
+
+leads_to:
+  - practicum: B3
+    why: >
+      B3's rung 8 also sketches with asymptotes, and stops where this
+      one starts: there the curve is a rectangular hyperbola or an
+      arctangent whose shape you already know, here it is a rational
+      function whose turning points nobody has told you about. The two
+      topics are 254 marks together and the seam is exactly that.
+  - practicum: E8
+    why: >
+      Every sketch on rungs 6 and 7 needs stationary points, and this
+      practicum quotes them or reads them off a screen. E8 is where
+      they are found and classified, with the first and second
+      derivative tests and the meaning of f'' = 0.
+  - practicum: A8
+    why: >
+      Rung 5 ends in an inequality — a discriminant condition, a union
+      of two intervals, an endpoint that is included or not. Writing
+      that set down correctly is A8's whole subject, and the marks are
+      in the same place: on the boundary.
+  - practicum: A4
+    why: >
+      Rung 3 is polynomial division, and rung 9 is the discriminant of
+      a cubic in disguise: 4a^3 b + 27b^2 < 0 is the condition for
+      x^3 + ax^2 + b to have three distinct real roots. A4 does the
+      division and the root conditions from the algebra side.
+  - practicum: E1
+    why: >
+      Rung 2 is a limit and nothing else, and rung 3's third method is
+      lim f(x)/x followed by lim (f(x) - ax). E1 is where those limits
+      are computed rather than quoted.
+  - practicum: E7
+    why: >
+      One of the sketches on rung 6 is the particular solution of a
+      differential equation, drawn after the solving is done. E7 solves
+      it; here the answer is a curve and the marks are for its local
+      maximum and minimum.
+
+verification_limits:
+  - what: >
+      verify_asymptotes cannot see how the asymptote was found.
+    why: >
+      It takes the line and computes the limit. Long division, equating
+      coefficients and lim (f(x) - ax) all arrive at the same line and
+      all pass identically.
+    impact: >
+      This matches the markscheme, which prints four methods for the
+      November 2021 oblique asymptote and marks them alike. What it
+      does not match is the M1 for the division itself: a student who
+      guesses the line correctly gets the same verdict as one who
+      derives it, and in the exam would get two marks of four.
+  - what: >
+      verify_asymptotes accepts a one-sided asymptote.
+    why: >
+      A horizontal asymptote is a limit at one end or the other, and
+      e^x has y = 0 only on the left. Requiring both ends would reject
+      correct answers.
+    impact: >
+      An answer that names y = 0 for a function which has it on both
+      sides is not distinguished from one that has thought about only
+      one side. Measured in test_kit_curve.py.
+  - what: >
+      verify_range skips values it cannot decide.
+    why: >
+      Attainment is decided by solveset, and for a transcendental
+      equation solveset returns a ConditionSet. The fallback scan can
+      prove a value is attained but never that it is not, so an
+      undecided value is skipped rather than guessed.
+    impact: >
+      The number of skips is printed. For every function in this
+      practicum — rational, quadratic, algebraic — nothing is skipped;
+      the limit shows up only on functions the archive does not ask
+      about.
+  - what: >
+      verify_range tests the boundary only at a distance of 1/1000.
+    why: >
+      Sample points come from the interiors of the claimed set and its
+      complement, plus each finite endpoint and its two neighbours at
+      +-eps. An answer whose boundary is wrong by less than eps and
+      whose error region contains no test point would pass.
+    impact: >
+      Deliberate and measured: y >= -4 against the true y >= -5 is
+      caught by the neighbour at -4.001, and eps can be passed in for
+      a finer comb. No archive answer has a boundary that close.
+  - what: >
+      verify_sketch still does not look at the curve between features.
+    why: >
+      B3 established this and B4 inherits it: concavity, monotonicity
+      and "correct asymptotic behaviour" leave no trace in a list of
+      points.
+    impact: >
+      It bites harder here, because rung 7 is entirely about the shape
+      between the features and rung 4's markscheme pays a separate mark
+      for "both branches showing correct asymptotic behaviour". Every
+      sketch task in the notebook prints the true curve beside the
+      answer, and rung 7 is checked through the second derivative
+      instead of the picture.
+
+corpus_issues:
+  - block: 2021-MAY-TZ1-P2-Q11-E
+    what: >
+      The function is recorded as g(x) = (4x^2+3)/(2-3x). The paper has
+      g(x) = (4x^2-1)/(3x+2).
+    check: >
+      The markscheme gives the oblique asymptote as y = 4x/3 - 8/9 and
+      the vertical asymptote as x = -2/3. The recorded function has its
+      vertical asymptote at x = 2/3 and gradient -4/3; the paper's has
+      exactly the printed values, and the stated domain x != -2/3
+      settles the denominator.
+    impact: >
+      Task 6 is built on the paper's function. The recorded one would
+      have made the sign of the gradient the answer to a different
+      question.
+  - block: 2023-MAY-TZ2-P2-Q08-A
+    what: >
+      The function is recorded as g(x) = (2-5x^2)/(3-x^2). The paper has
+      g(x) = (2x-5)/(x^2-3).
+    check: >
+      Substituting y = g(x) and clearing gives yx^2 - 2x + (5 - 3y) = 0,
+      whose discriminant is 12y^2 - 20y + 4 — which is what the
+      markscheme writes — and whose zeros are (5 +- sqrt 13)/6, the
+      printed answer. The recorded function gives the range y <= 2/3 or
+      y > 5 and no sqrt 13 anywhere.
+    impact: >
+      Task 15 uses the paper's function. Same species as the errors B2
+      and B3 found: the fraction bar and the exponent are what the
+      extraction loses.
+  - block: 2025-MAY-TZ2-P3-Q01-A-I
+    what: >
+      The curve is recorded as y = (x^2-16)/(x^2+16). The paper has
+      y = x(x^2-16)/(x^2+16).
+    check: >
+      The corpus's own sibling block records the x-intercepts as
+      (-4,0), (0,0) and (4,0), and the recorded function is never zero
+      at the origin — it is 16/16 there, that is, -1. The markscheme's
+      maximum (-1.94, 1.20) and minimum (1.94, -1.20) belong to the
+      paper's cubic-over-quadratic, and the oblique asymptote asked for
+      in part (d)(ii) exists only for it.
+    impact: >
+      Tasks 12 and 8 use the paper's curve. The recorded one has a
+      horizontal asymptote and no oblique asymptote at all, which would
+      make part (d)(ii) unanswerable.
+  - block: 2023-NOV-TZ2-P2-Q11-A
+    what: >
+      The whole November 2023 session is in the corpus twice, as
+      2023-november-tz1 and as 2023-november-tz2, and the papers are
+      the same paper. In this topic eight blocks are doubled, worth 20
+      of the 147 marks.
+    check: >
+      Established in B2 by comparing the papers page by page and
+      confirmed here: the two Paper 2 question papers differ only in
+      their paper codes, 8823-7107 and 8823-7112, and the text of Q2
+      and Q11 is identical word for word. The November 2023 Paper 3 is
+      a single Common paper and the repository stores it once, yet the
+      classification files it under both zones.
+    impact: >
+      The effective corpus is about 127 marks, not 147. Every doubled
+      question is used once in the notebook and both ids are listed on
+      the rung so that they resolve.
+  - block: 2023-NOV-TZ2-P2-Q11-E
+    what: >
+      The two copies of the November 2023 session disagree about which
+      parts belong to this topic. The range in Paper 2 Q11(e) is
+      recorded only under TZ2; of the eight parts of the Paper 3
+      investigation, TZ1 records seven and TZ2 records two.
+    check: >
+      Read off the corpus directly: 2023-NOV-TZ1-P2-Q11 has parts A, C
+      and D and no E, while 2023-NOV-TZ2-P2-Q11 has A, C, D and E. The
+      Paper 3 question has parts A, B-I, B-II, C-I, C-II, C-III, D and
+      H under TZ1, and D and F-II under TZ2. Both copies are of the same
+      paper, so the union is the truth and neither copy alone is.
+    impact: >
+      Rung 5 would have lost four marks and rung 9 one, had only the
+      TZ1 copy been read. The union is what the ladder uses.
+  - block: 2025-NOV-TZ3-P1-Q09-B
+    what: >
+      The function is not recorded, and the printed text flattens to
+      "f(x) = 1 2 13 2 x kx". It is f(x) = x^2/2 + kx + 13.
+    check: >
+      The markscheme computes the discriminant as k^2 - 26, which needs
+      a leading coefficient of 1/2: b^2 - 4ac = k^2 - 4(1/2)(13). It
+      then gives the axis of symmetry as x = -5 for k = 5, and
+      -k/(2a) = -5 only when a = 1/2.
+    impact: >
+      Task 13 uses x^2/2 + 5x + 13, whose minimum is at (-5, 1/2). With
+      a leading coefficient of 1 the discriminant would be 4k^2 - 52
+      and the question's "greatest possible value of k is 5" would be
+      false.
+
+ladder:
+  - name_asymptote
+  - asymptote_by_limit
+  - oblique_asymptote
+  - sketch_rational
+  - find_range
+  - sketch_labelled
+  - sketch_curvature
+  - sketch_implicit
+  - count_roots
