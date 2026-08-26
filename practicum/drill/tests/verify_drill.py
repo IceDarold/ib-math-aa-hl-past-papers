@@ -17,6 +17,8 @@
 """
 from __future__ import annotations
 
+import contextlib
+import io
 import math
 import os
 import random
@@ -44,6 +46,13 @@ def t(name, ok):
     res.append((name, ok))
     if not ok:
         print(f'❌ {name}')
+
+
+def quiet(fn, *args, **kwargs):
+    """Вызвать проверку kit, не печатая её вердикт."""
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        return fn(*args, **kwargs)
 
 
 def section(title):
@@ -339,6 +348,82 @@ for seed in range(SEEDS):
     t(f'explore_family[{seed}]: скан даёт то же число корней',
       scanned == int(item['answer']))
 print(f'  B3.explore_family            {SEEDS} задач сверено сканированием')
+
+# B4. Горизонтальная асимптота: генератор берёт отношение старших
+# коэффициентов, здесь считаем предел самой дроби.
+FRAC = re.compile(r'\\dfrac\{(.+?)\}\{(.+?)\}')
+
+
+def latex_linear(text, var):
+    """«-3x + 4», «x - 6», «2x» → выражение sympy."""
+    return sp.sympify(text.replace('x', f'*{var.name}')
+                      .replace('-*', '-1*').replace('+*', '+1*')
+                      .lstrip('*') if text.startswith('x')
+                      else text.replace('x', f'*{var.name}'),
+                      locals={var.name: var})
+
+
+for seed in range(SEEDS):
+    item = GENERATORS['B4.name_asymptote'](random.Random(seed))
+    top, bottom = FRAC.search(item['prompt']).groups()
+    xs = sp.Symbol('x')
+    frac = latex_linear(top, xs) / latex_linear(bottom, xs)
+    t(f'name_asymptote[{seed}]: предел на бесконечности равен ответу',
+      sp.limit(frac, xs, sp.oo) == sp.sympify(item['answer']))
+    t(f'name_asymptote[{seed}]: и слева тот же',
+      sp.limit(frac, xs, -sp.oo) == sp.sympify(item['answer']))
+print(f'  B4.name_asymptote            {SEEDS} задач сверено пределом')
+
+# Свободный член наклонной асимптоты: генератор приравнивает коэффициенты,
+# здесь берём предел разности f(x) − mx.
+QUAD = re.compile(r'\\dfrac\{(\d+)x\^2 ([+-]) (\d+)x - 6\}\{(.+?)\}')
+for seed in range(SEEDS):
+    item = GENERATORS['B4.oblique_asymptote'](random.Random(seed))
+    lead, sign, mid, bottom = QUAD.search(item['prompt']).groups()
+    xs = sp.Symbol('x')
+    frac = ((int(lead) * xs**2 + int(f'{sign}{mid}') * xs - 6)
+            / latex_linear(bottom, xs))
+    slope = sp.limit(frac / xs, xs, sp.oo)
+    const = sp.simplify(sp.limit(frac - slope * xs, xs, sp.oo))
+    t(f'oblique_asymptote[{seed}]: предел разности даёт ответ',
+      const == sp.sympify(item['answer']))
+    # cancel сводит разность к «константа / линейное»: без него sympy
+    # раскладывает несокращённую сумму в ряд и вязнет на некоторых семенах.
+    t(f'oblique_asymptote[{seed}]: и разность с найденной прямой стремится к нулю',
+      sp.limit(sp.cancel(frac - slope * xs - const), xs, sp.oo) == 0)
+print(f'  B4.oblique_asymptote         {SEEDS} задач сверено пределом разности')
+
+# Множество значений: генератор собирает промежуток из f(0) и асимптоты,
+# здесь спрашиваем у самой функции, достигается ли каждое значение.
+RANGE = re.compile(r'\\dfrac\{(.+?)\}\{x \+ (\d+)\}')
+for seed in range(SEEDS):
+    item = GENERATORS['B4.find_range'](random.Random(seed))
+    top, shift = RANGE.search(item['prompt']).groups()
+    xs = sp.Symbol('x')
+    f = latex_linear(top, xs) / (xs + int(shift))
+    closed = sp.Interval(item['answer'].start, item['answer'].end)
+    t(f'find_range[{seed}]: каждое значение внутри достигается, снаружи нет',
+      quiet(kit.verify_range, '  ', item['answer'], f, var=xs,
+            domain=sp.Interval(0, sp.oo)))
+    t(f'find_range[{seed}]: закрытый конец у асимптоты был бы неверен',
+      not quiet(kit.verify_range, '  ', closed, f, var=xs,
+                domain=sp.Interval(0, sp.oo)))
+print(f'  B4.find_range                {SEEDS} задач сверено достижимостью')
+
+# Число пересечений с осью: генератор смотрит на знаки высот,
+# здесь просто считаем различные вещественные корни.
+CUBIC_A = re.compile(r'y = x\^3 ([+-]) (\d+)x\^2 ([+-]) ([\d/]+)')
+for seed in range(SEEDS):
+    item = GENERATORS['B4.count_roots'](random.Random(seed))
+    s1, a_txt, s2, b_txt = CUBIC_A.search(item['prompt']).groups()
+    xs = sp.Symbol('x')
+    cubic = (xs**3 + int(f'{s1}{a_txt}') * xs**2
+             + sp.sympify(f'{s2}{b_txt}'))
+    distinct = len(set(sp.Poly(cubic, xs).real_roots()))
+    t(f'count_roots[{seed}]: различных вещественных корней столько же',
+      distinct == int(item['answer']))
+print(f'  B4.count_roots               {SEEDS} задач сверено корнями многочлена')
+
 
 
 # Бином: генератор берёт формулу общего члена, здесь раскрываем скобку.

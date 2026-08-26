@@ -3823,6 +3823,812 @@
    "dir": "AA_HL/2024/May/TZ2/Paper 1",
    "skill": "B3.explore_family"
   },
+  "2021-NOV-COMMON-P1-Q02-A-I-II": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "2",
+   "part": "(a)(i)(ii)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "B4.name_asymptote"
+  },
+  "2021-NOV-COMMON-P2-Q10-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "10",
+   "part": "(b)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "B4.name_asymptote"
+  },
+  "2022-MAY-TZ2-P1-Q03-A-I-A-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "(a)(i), (a)(ii)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "B4.name_asymptote"
+  },
+  "2023-MAY-TZ1-P1-Q01-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "(b)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "B4.name_asymptote"
+  },
+  "2023-MAY-TZ2-P1-Q02-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "2",
+   "part": "a",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "B4.name_asymptote"
+  },
+  "2023-NOV-TZ1-P2-Q11-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "B4.name_asymptote"
+  },
+  "2023-NOV-TZ2-P2-Q11-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "B4.name_asymptote"
+  },
+  "2024-MAY-TZ2-P1-Q05-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "B4.name_asymptote"
+  },
+  "2025-MAY-TZ2-P1-Q01-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "B",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "B4.name_asymptote"
+  },
+  "2021-MAY-TZ2-P2-Q12-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B4.asymptote_by_limit"
+  },
+  "2023-NOV-TZ1-P1-Q10-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "(a)",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "B4.asymptote_by_limit"
+  },
+  "2023-NOV-TZ2-P1-Q10-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "B4.asymptote_by_limit"
+  },
+  "2021-MAY-TZ1-P2-Q11-E": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "e",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "B4.oblique_asymptote"
+  },
+  "2021-NOV-COMMON-P2-Q10-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "10",
+   "part": "(c)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23-26",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "B4.oblique_asymptote"
+  },
+  "2023-NOV-TZ1-P2-Q11-C": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "C",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "24-25",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "B4.oblique_asymptote"
+  },
+  "2023-NOV-TZ2-P2-Q11-C": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "C",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24–25",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "B4.oblique_asymptote"
+  },
+  "2025-MAY-TZ2-P3-Q01-D-II": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "D-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "B4.oblique_asymptote"
+  },
+  "2021-MAY-TZ1-P2-Q11-D": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "d",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "B4.sketch_rational"
+  },
+  "2021-NOV-COMMON-P1-Q02-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "2",
+   "part": "(c)",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "B4.sketch_rational"
+  },
+  "2021-NOV-COMMON-P2-Q10-D": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "10",
+   "part": "(d)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "B4.sketch_rational"
+  },
+  "2022-MAY-TZ2-P1-Q03-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "(b)",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "10-11",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "B4.sketch_rational"
+  },
+  "2022-MAY-TZ2-P1-Q11-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "A",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25-26",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "B4.sketch_rational"
+  },
+  "2023-MAY-TZ2-P1-Q02-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "2",
+   "part": "c",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "B4.sketch_rational"
+  },
+  "2023-NOV-TZ1-P2-Q11-D": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "B4.sketch_rational"
+  },
+  "2023-NOV-TZ2-P2-Q11-D": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "B4.sketch_rational"
+  },
+  "2025-MAY-TZ2-P3-Q01-A-I": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "A-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "B4.sketch_rational"
+  },
+  "2025-MAY-TZ2-P3-Q01-A-II": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "A-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "B4.sketch_rational"
+  },
+  "2025-NOV-TZ1-P3-Q01-D-I": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "D-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "B4.sketch_rational"
+  },
+  "2021-MAY-TZ2-P2-Q04-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B4.find_range"
+  },
+  "2023-MAY-TZ2-P2-Q08-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "8",
+   "part": "a",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "B4.find_range"
+  },
+  "2023-NOV-TZ2-P2-Q11-E": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "E",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "B4.find_range"
+  },
+  "2025-NOV-TZ3-P1-Q09-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "9",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "B4.find_range"
+  },
+  "2021-MAY-TZ1-P3-Q01-A-I": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "a(i)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "B4.sketch_labelled"
+  },
+  "2021-MAY-TZ1-P3-Q01-A-II": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "a(ii)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "B4.sketch_labelled"
+  },
+  "2022-MAY-TZ1-P2-Q10-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "B4.sketch_labelled"
+  },
+  "2022-MAY-TZ1-P3-Q02-C": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "(c)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "B4.sketch_labelled"
+  },
+  "2022-MAY-TZ1-P3-Q02-H-I": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "(h)(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "B4.sketch_labelled"
+  },
+  "2022-NOV-COMMON-P1-Q11-B-IV": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "11",
+   "part": "B-IV",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "B4.sketch_labelled"
+  },
+  "2023-MAY-TZ1-P3-Q01-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "B4.sketch_labelled"
+  },
+  "2023-NOV-TZ1-P2-Q02-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "B4.sketch_labelled"
+  },
+  "2023-NOV-TZ2-P2-Q02-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5-6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "B4.sketch_labelled"
+  },
+  "2025-MAY-TZ1-P1-Q10-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "B4.sketch_labelled"
+  },
+  "2025-MAY-TZ3-P2-Q12-C": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "B4.sketch_labelled"
+  },
+  "2025-NOV-TZ1-P3-Q01-D-II": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "D-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "B4.sketch_labelled"
+  },
+  "2023-NOV-TZ1-P1-Q11-C": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "B4.sketch_curvature"
+  },
+  "2023-NOV-TZ2-P1-Q11-C": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(c)",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "B4.sketch_curvature"
+  },
+  "2022-MAY-TZ2-P3-Q01-A-I": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(a)(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "B4.sketch_implicit"
+  },
+  "2022-MAY-TZ2-P3-Q01-A-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(a)(ii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "B4.sketch_implicit"
+  },
+  "2022-MAY-TZ2-P3-Q01-B-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(b)(ii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "B4.sketch_implicit"
+  },
+  "2022-MAY-TZ2-P3-Q01-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(c)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "B4.sketch_implicit"
+  },
+  "2023-NOV-TZ1-P3-Q02-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.sketch_implicit"
+  },
+  "2023-NOV-TZ2-P3-Q02-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "(b)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.sketch_implicit"
+  },
+  "2023-NOV-TZ1-P3-Q01-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
+  "2023-NOV-TZ1-P3-Q01-B-I": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "B-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
+  "2023-NOV-TZ1-P3-Q01-B-II": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "B-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
+  "2023-NOV-TZ1-P3-Q01-C-I": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "C-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
+  "2023-NOV-TZ1-P3-Q01-C-II": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "C-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
+  "2023-NOV-TZ1-P3-Q01-C-III": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "C-III",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
+  "2023-NOV-TZ1-P3-Q01-D": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "D",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
+  "2023-NOV-TZ1-P3-Q01-H": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "H",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "13–14",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
+  "2023-NOV-TZ2-P3-Q01-D": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "D",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
+  "2023-NOV-TZ2-P3-Q01-F-II": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "F-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "B4.count_roots"
+  },
   "2024-MAY-TZ1-P2-Q02-A": {
    "session": "May 2024",
    "zone": "TZ1",
@@ -5378,6 +6184,14 @@
    "notebook": "practicum/functions/practicum-b3-transformations.ipynb",
    "marks": 107,
    "blocks": 37
+  },
+  {
+   "id": "B4",
+   "title": "Исследование функции, асимптоты, эскиз",
+   "section": "B",
+   "notebook": "practicum/functions/practicum-b4-curve-sketching.ipynb",
+   "marks": 147,
+   "blocks": 62
   },
   {
    "id": "C1",
@@ -7291,6 +8105,287 @@
     "2021-MAY-TZ2-P3-Q01-B",
     "2023-MAY-TZ2-P3-Q01-D",
     "2024-MAY-TZ2-P1-Q05-B-I"
+   ]
+  },
+  {
+   "id": "B4.name_asymptote",
+   "practicum": "B4",
+   "name": "Read the vertical and horizontal asymptotes off a rational function",
+   "rung": 1,
+   "trigger": "\"Write down the equation of the vertical asymptote\", \"state the equation of the horizontal asymptote\", usually one or two marks and usually the opening part of a longer question. The function is a ratio of polynomials and nothing has to be solved.",
+   "chain": [
+    "Set the denominator to zero — that is every vertical asymptote",
+    "Compare the degrees of numerator and denominator",
+    "Lower on top means y = 0; equal degrees mean the ratio of the leading coefficients",
+    "Higher on top means there is no horizontal asymptote, and rung 3 takes over",
+    "Write each answer as an equation, not as a number"
+   ],
+   "traps": [
+    "The answer is given as \"3\" instead of \"x = 3\". The markscheme says \"must be written as an equation with y =\" in as many words, and awards A0 for the number",
+    "The ratio of leading coefficients is quoted when the numerator has the higher degree, so a horizontal asymptote is claimed where an oblique one lives",
+    "A factor cancelling between numerator and denominator is missed, so a hole is called an asymptote",
+    "The sign is lost in (2x+4)/(3-x): the leading ratio is 2/(-1), so the asymptote is y = -2 and not y = 2"
+   ],
+   "calculator": false,
+   "practicum_marks": 147,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q02-A-I-II",
+    "2021-NOV-COMMON-P2-Q10-B",
+    "2022-MAY-TZ2-P1-Q03-A-I-A-II",
+    "2023-MAY-TZ1-P1-Q01-B",
+    "2023-MAY-TZ2-P1-Q02-A",
+    "2023-NOV-TZ1-P2-Q11-A",
+    "2023-NOV-TZ2-P2-Q11-A",
+    "2024-MAY-TZ2-P1-Q05-A",
+    "2025-MAY-TZ2-P1-Q01-B"
+   ]
+  },
+  {
+   "id": "B4.asymptote_by_limit",
+   "practicum": "B4",
+   "name": "Find an asymptote that cannot be read off",
+   "rung": 2,
+   "trigger": "\"By considering limits, show that the graph has a horizontal asymptote and state its equation\", or a vertical asymptote wanted for something that is not a fraction at all — a logarithm, a square root, an inverse trigonometric function.",
+   "chain": [
+    "Ask which limit the question is about — a finite point, or infinity",
+    "For a vertical asymptote, look at the edge of the domain, not at a denominator",
+    "For a horizontal one, evaluate the limit as x tends to +oo and to -oo",
+    "{'Simplify the inside first': '(x^2-1)/(x^2+1) tends to 1, so arcsin of it tends to arcsin 1'}",
+    "State the answer as an equation of a line"
+   ],
+   "traps": [
+    "The two ends are assumed to agree. They need not: e^x has y = 0 on the left and nothing on the right, and one-sided is enough",
+    "The vertical asymptote of 2 ln x - ln d is sought by setting something to zero. It is at x = 0 because that is where the domain stops, and the value of d never enters",
+    "The limit is evaluated inside the outer function but the outer function is then forgotten, giving y = 1 instead of y = pi/2"
+   ],
+   "calculator": false,
+   "practicum_marks": 147,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q12-B",
+    "2023-NOV-TZ1-P1-Q10-A",
+    "2023-NOV-TZ2-P1-Q10-A"
+   ]
+  },
+  {
+   "id": "B4.oblique_asymptote",
+   "practicum": "B4",
+   "name": "Find the oblique asymptote",
+   "rung": 3,
+   "trigger": "\"The graph of f also has an oblique asymptote of the form y = ax + b. Find the value of a and the value of b.\" Four marks, almost always, and almost always after the vertical asymptote has already been asked for.",
+   "chain": [
+    "Check the degrees — this only happens when the numerator is exactly one higher",
+    "Divide, by long division or by writing f = (ax+b) + c/(denominator)",
+    "Or equate coefficients of (ax+b)(denominator) + c against the numerator",
+    "Or take the limits a = lim f(x)/x and b = lim (f(x) - ax)",
+    "The quotient is the asymptote; the remainder is what goes to zero"
+   ],
+   "traps": [
+    "The division stops at the leading term, so a is right and b is never found. The markscheme splits its four marks exactly there",
+    "The remainder is included in the answer, giving a curve instead of a line",
+    "Coefficients are equated with a sign slip: for (x^2-x-12)/(2x-15) the x-coefficient equation is 2b - 15a = -1, and dropping the minus gives b = -13/4",
+    "The answer is left as \"x/2 + 13/4\" rather than \"y = x/2 + 13/4\". The markscheme note reads: \"Do not award the final A1 if the answer is not given as an equation\""
+   ],
+   "calculator": true,
+   "practicum_marks": 147,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q11-E",
+    "2021-NOV-COMMON-P2-Q10-C",
+    "2023-NOV-TZ1-P2-Q11-C",
+    "2023-NOV-TZ2-P2-Q11-C",
+    "2025-MAY-TZ2-P3-Q01-D-II"
+   ]
+  },
+  {
+   "id": "B4.sketch_rational",
+   "practicum": "B4",
+   "name": "Sketch a rational curve",
+   "rung": 4,
+   "trigger": "\"Sketch the graph of f for -50 <= x <= 50, showing clearly the asymptotes and any intersections with the axes.\" The single largest cluster of the practicum: 30 marks over eleven blocks.",
+   "chain": [
+    "Draw the asymptotes first, dashed, and label them with their equations",
+    "Mark the intercepts — denominator into y = 0, then x = 0 for the y-intercept",
+    "Find the turning points, by calculator or by f'(x) = 0",
+    "Join the branches, one region between asymptotes at a time",
+    "Check each branch leaves towards the asymptote it is supposed to leave towards"
+   ],
+   "traps": [
+    "The branches overlap because a vertical asymptote was drawn in the wrong place or left out. May 2021 TZ1 has a note for exactly this: \"If vertical asymptotes are absent (or not vertical) and the branches overlap as a consequence, award maximum A0A1A0A1A1\"",
+    "A curve with two vertical asymptotes is drawn with two branches. 1/(x^2-2x-3) has three",
+    "The turning point is put on the axis of symmetry of the denominator without checking. For 1/(x^2-2x-3) that happens to be right, x = 1; for most functions it is not",
+    "The sketch is drawn correctly and nothing is labelled. Three of the marks in the November 2021 question are for labels",
+    "The given domain is ignored and the curve is drawn on whatever window the calculator opened with"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 147,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q11-D",
+    "2021-NOV-COMMON-P1-Q02-C",
+    "2021-NOV-COMMON-P2-Q10-D",
+    "2022-MAY-TZ2-P1-Q03-B",
+    "2022-MAY-TZ2-P1-Q11-A",
+    "2023-MAY-TZ2-P1-Q02-C",
+    "2023-NOV-TZ1-P2-Q11-D",
+    "2023-NOV-TZ2-P2-Q11-D",
+    "2025-MAY-TZ2-P3-Q01-A-I",
+    "2025-MAY-TZ2-P3-Q01-A-II",
+    "2025-NOV-TZ1-P3-Q01-D-I"
+   ]
+  },
+  {
+   "id": "B4.find_range",
+   "practicum": "B4",
+   "name": "Find the range",
+   "rung": 5,
+   "trigger": "\"Determine the range of g\", \"find the range of f\", and the quadratic version, \"write down the axis of symmetry and find the coordinates of the minimum point\".",
+   "chain": [
+    "Sketch first, or at least list the turning points and the horizontal asymptote",
+    "For a quadratic, complete the square — the vertex is the whole answer",
+    "For a rational function, set y = f(x) and solve for x",
+    "The values of y that give a real x are the range; a quadratic in x gives a discriminant condition",
+    "Decide each endpoint separately — attained gives <=, approached gives <"
+   ],
+   "traps": [
+    "A horizontal asymptote is included in the range. The curve never reaches it, and the inequality must be strict there",
+    "A turning point is excluded from the range. The curve does reach it, and the inequality must not be strict there. The markscheme for November 2023 Q11(e) awards A1A0 for strict inequalities in both places",
+    "The range of a rational function is written as a single interval when the graph has a gap between the two branches",
+    "The restriction on the domain is forgotten: -(3x-2)/(2x+1) for x >= 0 has range -3/2 < y <= 2, and over all x it is different",
+    "The answer is given in x. The range is a set of y values"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 147,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q04-A",
+    "2023-MAY-TZ2-P2-Q08-A",
+    "2023-NOV-TZ2-P2-Q11-E",
+    "2025-NOV-TZ3-P1-Q09-B"
+   ]
+  },
+  {
+   "id": "B4.sketch_labelled",
+   "practicum": "B4",
+   "name": "Sketch a curve from its formula, labelling what was asked for",
+   "rung": 6,
+   "trigger": "\"Sketch the graph of f for -4 <= x <= 3\", with a list attached: the roots, the y-intercept, the local minimum, the endpoints. The largest rung of the practicum at 36 marks, and the one that most often appears as an opening part worth three or four marks.",
+   "chain": [
+    "Read the instruction and write down the list of things to label",
+    "Find each item — roots, y-intercept, turning points, endpoints of the given domain",
+    "{'Note the behaviour at the ends': 'an asymptote, or a value to plot'}",
+    "Draw, plot the listed points, and write the coordinates beside them",
+    "Check the drawn shape against the number of turning points you found"
+   ],
+   "traps": [
+    "The endpoints of the given domain are not marked. They are a mark of their own in May 2022 TZ1 Q10(a) and in both copies of November 2023 Q2(a)",
+    "A cubic is drawn with two turning points because cubics have two. (x-1)(x^2-2x+5) has none: its derivative 3x^2-6x+7 has a negative discriminant, and the curve rises through a non-stationary point of inflexion",
+    "A double root is drawn as a crossing. x^3+4x^2+5x+2 is (x+1)^2(x+2) and touches the axis at x = -1, where it has its local minimum",
+    "Coordinates are found and then not written on the diagram. The markscheme awards its marks for the labels",
+    "A calculator answer is copied to two significant figures"
+   ],
+   "calculator": true,
+   "practicum_marks": 147,
+   "blocks": [
+    "2021-MAY-TZ1-P3-Q01-A-I",
+    "2021-MAY-TZ1-P3-Q01-A-II",
+    "2022-MAY-TZ1-P2-Q10-A",
+    "2022-MAY-TZ1-P3-Q02-C",
+    "2022-MAY-TZ1-P3-Q02-H-I",
+    "2022-NOV-COMMON-P1-Q11-B-IV",
+    "2023-MAY-TZ1-P3-Q01-A",
+    "2023-NOV-TZ1-P2-Q02-A",
+    "2023-NOV-TZ2-P2-Q02-A",
+    "2025-MAY-TZ1-P1-Q10-B",
+    "2025-MAY-TZ3-P2-Q12-C",
+    "2025-NOV-TZ1-P3-Q01-D-II"
+   ]
+  },
+  {
+   "id": "B4.sketch_curvature",
+   "practicum": "B4",
+   "name": "Sketch using the second derivative",
+   "rung": 7,
+   "trigger": "\"Sketch the curve of y = f(x) for 0 <= x <= pi, taking into consideration the relative values of the second derivative found in part (b).\" The word \"relative\" is the whole question.",
+   "chain": [
+    "Collect the stationary points and their second derivative values from the earlier part",
+    "Negative means a maximum, positive a minimum — that fixes the up and down",
+    "{'Compare the magnitudes': \"the larger |f''| is, the more sharply the curve bends\"}",
+    "Draw the sharper turn sharp and the flatter turn flat",
+    "Check the drawing against the domain's endpoints"
+   ],
+   "traps": [
+    "The sign of f'' is used and the size ignored, which answers the previous part and not this one. For e^(cos 2x) the maxima have f'' = -4e and the minimum has f'' = 4/e — the maxima are about seven times as sharp, and the sketch has to show it",
+    "A stationary point at the edge of the drawing domain is treated as an endpoint. For e^(cos 2x) on [0, pi] both ends are genuine maxima of a function defined further out",
+    "Concavity is confused with increasing and decreasing"
+   ],
+   "calculator": false,
+   "practicum_marks": 147,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q11-C",
+    "2023-NOV-TZ2-P1-Q11-C"
+   ]
+  },
+  {
+   "id": "B4.sketch_implicit",
+   "practicum": "B4",
+   "name": "Sketch a curve that is not a function",
+   "rung": 8,
+   "trigger": "\"On the same set of axes, sketch the curves y^2 = 16 - 8x and y^2 = 4 + 4x\", \"sketch y^2 = x^3 for x >= 0, indicating any points of intersection with the coordinate axes\". Always Paper 3, always the opening of an investigation.",
+   "chain": [
+    "y^2 = something means the x-axis is a line of symmetry — draw the top half and reflect",
+    "{'Find where the right-hand side is zero': 'that is where the two halves meet'}",
+    "{'Find where it is negative': 'that is where there is no curve at all, and it fixes the domain'}",
+    "Decide how the halves meet — with a vertical tangent, or in a cusp",
+    "Plot the y-intercepts, both of them, and label each curve"
+   ],
+   "traps": [
+    "The two halves are drawn as one continuous curve through the x-axis. The markscheme deducts for graphs that \"merge or cross or are discontinuous at the x-axis\"",
+    "The cusp is missed. y^2 = x^3 meets the axis at a sharp point because both branches arrive with zero gradient; y^2 = x^3 + 1 arrives at x = -1 with infinite gradient, and that difference is the mark in part (b)(ii)",
+    "The domain is not restricted, so the curve is drawn where x^3 + b is negative",
+    "Only one y-intercept is given. There are two, at +-sqrt(b)",
+    "The sideways parabolas are drawn opening the same way. y^2 = 16 - 8x opens to the left and y^2 = 4 + 4x opens to the right"
+   ],
+   "calculator": true,
+   "practicum_marks": 147,
+   "blocks": [
+    "2022-MAY-TZ2-P3-Q01-A-I",
+    "2022-MAY-TZ2-P3-Q01-A-II",
+    "2022-MAY-TZ2-P3-Q01-B-II",
+    "2022-MAY-TZ2-P3-Q01-C",
+    "2023-NOV-TZ1-P3-Q02-B",
+    "2023-NOV-TZ2-P3-Q02-B"
+   ]
+  },
+  {
+   "id": "B4.count_roots",
+   "practicum": "B4",
+   "name": "Count the x-axis intercepts of a family",
+   "rung": 9,
+   "trigger": "\"By systematically varying the value of b, find the two values of b such that the curve has exactly two x-axis intercepts\", \"write down the set of values of b such that the curve has exactly three\". A letter in the formula and a count in the question.",
+   "chain": [
+    "Find the stationary points of the general curve — they do not move when the constant does",
+    "Evaluate the curve at each of them; those are the two heights that matter",
+    "A cubic has three intercepts when the two heights straddle the axis",
+    "Exactly two when one of the heights is zero — that is where the double root is",
+    "One when both heights are on the same side, or when there are no stationary points at all"
+   ],
+   "traps": [
+    "The boundary case is put in the wrong list. For y = x^3+3x^2+b the values b = -4 and b = 0 give exactly two intercepts, and they belong to neither of the open intervals on either side",
+    "The two heights are compared to each other rather than to zero",
+    "The sign of the leading coefficient is forgotten, so the maximum and the minimum swap places",
+    "The condition 4a^3 b + 27b^2 < 0 is expanded instead of factorised. As b(4a^3 + 27b) < 0 it says precisely that the two heights have opposite signs, which is the whole proof",
+    "A calculator picture of one member is used to answer for the family"
+   ],
+   "calculator": true,
+   "practicum_marks": 147,
+   "blocks": [
+    "2023-NOV-TZ1-P3-Q01-A",
+    "2023-NOV-TZ1-P3-Q01-B-I",
+    "2023-NOV-TZ1-P3-Q01-B-II",
+    "2023-NOV-TZ1-P3-Q01-C-I",
+    "2023-NOV-TZ1-P3-Q01-C-II",
+    "2023-NOV-TZ1-P3-Q01-C-III",
+    "2023-NOV-TZ1-P3-Q01-D",
+    "2023-NOV-TZ1-P3-Q01-H",
+    "2023-NOV-TZ2-P3-Q01-D",
+    "2023-NOV-TZ2-P3-Q01-F-II"
    ]
   },
   {
@@ -14047,6 +15142,726 @@
    ],
    "answer": "asym",
    "answer_digest": "ced2eea28f29",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:1",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.oblique_asymptote",
+   "prompt": "$f(x)=\\dfrac{x^{2}+1}{x-4}$ has an asymptote $y=ax+b$. Find $a$ and $b$.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "oblique",
+   "answer_digest": "7d898b76f21b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:2",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.find_range",
+   "prompt": "Determine the range of $g(x)=\\dfrac{x}{x^{2}+4}$.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "range",
+   "answer_digest": "2269c0be009b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:3",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.sketch_implicit",
+   "prompt": "Sketch $y^{2}=9-3x$, labelling the $x$-intercept.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "implicit",
+   "answer_digest": "3a8f7b6c00a3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:4",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.name_asymptote",
+   "prompt": "Write down the equation of the horizontal asymptote of $\\dfrac{5x-1}{2x+7}$.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "asym",
+   "answer_digest": "ced2eea28f29",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:5",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.count_roots",
+   "prompt": "Find the values of $k$ for which $y=x^{3}-12x+k$ meets the $x$-axis exactly once.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "count",
+   "answer_digest": "6c35493a2b93",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:6",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.sketch_curvature",
+   "prompt": "Sketch $y=f(x)$ using the relative values of $f''$ found in part (b).",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "bend",
+   "answer_digest": "36e110819a31",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:7",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.sketch_rational",
+   "prompt": "Sketch $y=\\dfrac{2}{x^{2}-9}$, showing all asymptotes and intercepts.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "rational",
+   "answer_digest": "fda503e47e82",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:8",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.sketch_labelled",
+   "prompt": "Sketch $y=x^{2}e^{-x}$ for $0\\le x\\le 5$, stating the local maximum.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "sketch",
+   "answer_digest": "f416b363c6c5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:9",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.asymptote_by_limit",
+   "prompt": "By considering $\\lim_{x\\to\\infty}$, find the horizontal asymptote of $\\arctan(x^{2})$.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "limit",
+   "answer_digest": "55ea09e5715d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:10",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.find_range",
+   "prompt": "Find the range of $f(x)=4-3\\cos x$ for $0\\le x\\le\\pi$.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "range",
+   "answer_digest": "2269c0be009b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:11",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.name_asymptote",
+   "prompt": "State the equation of the vertical asymptote of $y=\\ln(x-3)$.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "asym",
+   "answer_digest": "ced2eea28f29",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:12",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.sketch_implicit",
+   "prompt": "Sketch $y^{2}=x^{3}-x$ for $x\\ge 1$, indicating where it meets the axis.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "implicit",
+   "answer_digest": "3a8f7b6c00a3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:13",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.sketch_labelled",
+   "prompt": "Sketch $y=\\sin x-\\tfrac{x}{2}$ for $-2\\pi\\le x\\le 2\\pi$, marking the endpoints.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "sketch",
+   "answer_digest": "f416b363c6c5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:14",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.count_roots",
+   "prompt": "For which $c$ does $y=x^{3}+cx$ have two stationary points?",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "count",
+   "answer_digest": "6c35493a2b93",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B4:15",
+   "kind": "recognition",
+   "practicum": "B4",
+   "skill": "B4.sketch_rational",
+   "prompt": "Sketch $y=\\dfrac{3x+1}{x-2}$, giving the equations of the asymptotes.",
+   "options": [
+    {
+     "code": "asym",
+     "name": "прочитать асимптоту"
+    },
+    {
+     "code": "limit",
+     "name": "асимптота через предел"
+    },
+    {
+     "code": "oblique",
+     "name": "наклонная асимптота"
+    },
+    {
+     "code": "rational",
+     "name": "эскиз дроби"
+    },
+    {
+     "code": "range",
+     "name": "множество значений"
+    },
+    {
+     "code": "sketch",
+     "name": "эскиз с подписями"
+    },
+    {
+     "code": "bend",
+     "name": "форма по второй производной"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая y² = f(x)"
+    },
+    {
+     "code": "count",
+     "name": "счёт пересечений"
+    }
+   ],
+   "answer": "rational",
+   "answer_digest": "fda503e47e82",
    "budget_ms": 8000
   },
   {

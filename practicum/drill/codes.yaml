@@ -128,6 +128,17 @@ C3:
   select: {skill: root_selection,            name: отбор корней}
   gdc:    {skill: numeric_gdc,               name: численно}
 
+B4:
+  asym:     {skill: name_asymptote,     name: прочитать асимптоту}
+  limit:    {skill: asymptote_by_limit, name: асимптота через предел}
+  oblique:  {skill: oblique_asymptote,  name: наклонная асимптота}
+  rational: {skill: sketch_rational,    name: эскиз дроби}
+  range:    {skill: find_range,         name: множество значений}
+  sketch:   {skill: sketch_labelled,    name: эскиз с подписями}
+  bend:     {skill: sketch_curvature,   name: форма по второй производной}
+  implicit: {skill: sketch_implicit,    name: "кривая y² = f(x)"}
+  count:    {skill: count_roots,        name: счёт пересечений}
+
 C4:
   per:    {skill: period_from_coefficient, name: период и коэффициент}
   amp:    {skill: amplitude_and_midline,   name: амплитуда и средняя линия}
