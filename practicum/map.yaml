@@ -308,6 +308,8 @@ sections:
         notebook: practicum/functions/practicum-b4-curve-sketching.ipynb
         kaggle: ib-math-praktikum-b4-curve-sketching
         skills: practicum/skills/functions-curve-sketching.yaml
+        archive: practicum/functions/archive-b4-curve-sketching.ipynb
+        kaggle_archive: ib-math-archive-b4-curve-sketching
         note: >
           Обе темы взяты целиком: 147 баллов, 62 блока. По отдельности ни
           одна не дотягивает до нижней границы — 113 и 34, — а вместе они
@@ -341,6 +343,18 @@ sections:
           она не по совпадению с эталоном, а по пределу. Рядом стоит
           множество значений, где ≤ и < это разные баллы, и проверка
           спрашивает у самой функции, достигается ли конец.
+
+          Пробный формат рядом с практикумом: архивный ноутбук
+          (archive, kaggle_archive). Практикум учит — лестница, теория,
+          три уровня, тренажёр, задание на время; архив даёт набивать
+          руку. В нём вся тема подряд, разложенная по тем же девяти
+          приёмам: 54 вопроса и 127 баллов — то есть ровно корпус за
+          вычетом ноябрьского дубля. Проверки те же, разбор в конце.
+          Собирается generators/build_archive_b4.py, проверяется
+          tests/check_archive_b4.py: тот прогоняет ноутбук дважды —
+          пустым (должен пройти сверху вниз и напечатать ⬜) и с
+          эталонными ответами из markschemes (каждая проверка должна
+          сказать ✅).
       - id: B5
         title: Показательные и логарифмические модели
         subtopics: [functions.logarithmic_functions, functions.exponential_models,
