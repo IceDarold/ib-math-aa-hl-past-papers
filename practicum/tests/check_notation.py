@@ -44,7 +44,8 @@ def code_fragments(cell):
 
 
 def main():
-    notebooks = sorted(glob.glob(os.path.join(ROOT, 'practicum/*/practicum-*.ipynb')))
+    notebooks = sorted(glob.glob(os.path.join(ROOT, 'practicum/*/practicum-*.ipynb'))
+                       + glob.glob(os.path.join(ROOT, 'practicum/*/archive-*.ipynb')))
     if not notebooks:
         sys.exit('ноутбуков не найдено')
 

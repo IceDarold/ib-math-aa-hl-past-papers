@@ -9,6 +9,7 @@
 `notebook` и `kaggle`, и публиковать можно по идентификатору, не помня путей.
 
     python practicum/make_kaggle.py C3 --push        # один практикум
+    python practicum/make_kaggle.py B4:archive       # архивный ноутбук темы
     python practicum/make_kaggle.py --all --push     # все со status: ready
     python practicum/make_kaggle.py C3               # только собрать, не заливать
 
@@ -119,9 +120,26 @@ def push(out_dir):
     return r.returncode == 0 and 'successfully pushed' in r.stdout
 
 
+def as_archive(entry):
+    """Архивный ноутбук практикума: та же тема, другая бумага.
+
+    B4:archive — это весь корпус темы подряд, по приёмам, без теории.
+    В map.yaml он лежит рядом с практикумом, в полях archive и
+    kaggle_archive, потому что тема одна и разъезжаться им незачем.
+    """
+    if not (entry.get('archive') and entry.get('kaggle_archive')):
+        sys.exit(f"{entry['id']}: в map.yaml нет полей archive/kaggle_archive")
+    copy = dict(entry)
+    copy['id'] = entry['id'] + ':archive'
+    copy['notebook'] = entry['archive']
+    copy['kaggle'] = entry['kaggle_archive']
+    return copy
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('practicum', nargs='?', help='идентификатор, например C3')
+    ap.add_argument('practicum', nargs='?',
+                    help='идентификатор, например C3 или B4:archive')
     ap.add_argument('--all', action='store_true', help='все практикумы со status: ready')
     ap.add_argument('--push', action='store_true', help='залить на Kaggle после сборки')
     ap.add_argument('--user', default=DEFAULT_USER)
@@ -134,9 +152,12 @@ def main():
     if a.all:
         targets = [p for p in cmap.values() if p.get('status') == 'ready']
     elif a.practicum:
-        if a.practicum not in cmap:
-            sys.exit(f'нет практикума {a.practicum} в map.yaml')
-        targets = [cmap[a.practicum]]
+        name, _, kind = a.practicum.partition(':')
+        if name not in cmap:
+            sys.exit(f'нет практикума {name} в map.yaml')
+        if kind and kind != 'archive':
+            sys.exit(f'непонятный вид ноутбука: {kind}')
+        targets = [as_archive(cmap[name]) if kind else cmap[name]]
     else:
         sys.exit('укажите практикум или --all')
 

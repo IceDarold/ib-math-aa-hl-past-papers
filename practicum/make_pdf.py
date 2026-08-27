@@ -6,6 +6,7 @@
 делается узкой (по умолчанию 90×160 мм), и текст занимает экран целиком.
 
     python practicum/make_pdf.py A4              # один практикум
+    python practicum/make_pdf.py B4:archive      # архивный ноутбук темы
     python practicum/make_pdf.py --all           # все со status: ready
     python practicum/make_pdf.py A4 --tasks      # без раздела решений
     python practicum/make_pdf.py A4 --page 76x135 --font 12   # крупнее шрифт
@@ -709,11 +710,21 @@ def main():
             ap.error('укажите идентификаторы или --all')
         chosen = []
         for i in a.ids:
-            entry = cmap.get(i.upper())
+            name, _, kind = i.partition(':')
+            entry = cmap.get(name.upper())
             if entry is None:
-                sys.exit(f'нет такого практикума: {i}')
-            if not entry.get('notebook'):
-                sys.exit(f'{i}: ноутбук ещё не собран')
+                sys.exit(f'нет такого практикума: {name}')
+            if kind and kind != 'archive':
+                sys.exit(f'непонятный вид ноутбука: {kind}')
+            if kind:
+                # архивный ноутбук темы: те же поля, другой файл
+                if not entry.get('archive'):
+                    sys.exit(f'{name}: архивный ноутбук ещё не собран')
+                entry = dict(entry, id=f'{name.upper()}:archive',
+                             notebook=entry['archive'],
+                             title=entry['title'] + ' — архив задач')
+            elif not entry.get('notebook'):
+                sys.exit(f'{name}: ноутбук ещё не собран')
             chosen.append(entry)
 
     if not re.fullmatch(r'\d+(\.\d+)?x\d+(\.\d+)?', a.page.lower()):
