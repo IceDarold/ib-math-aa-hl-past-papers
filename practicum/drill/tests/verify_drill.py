@@ -548,6 +548,92 @@ for seed in range(SEEDS):
       abs(want - item['answer']) < 1e-9)
 print(f'  C4.use_model                 {SEEDS} задач сверено прямым счётом')
 
+# B5, логарифмы: значение считается заново через ln из условия, а не
+# через закон логарифма, которым его собирал генератор.
+for seed in range(SEEDS):
+    item = GENERATORS['B5.log_laws'](random.Random(seed))
+    number = int(re.search(r'Выразите \$\\log_\{10\}(\d+)\$',
+                           item['prompt']).group(1))
+    want = math.log10(number)
+    got = float(item['answer'].subs({sp.Symbol('p'): sp.log(2, 10),
+                                     sp.Symbol('q'): sp.log(3, 10)}))
+    t(f'B5.log_laws[{seed}]: ответ через p и q сошёлся с log10 числа',
+      abs(want - got) < 1e-12)
+print(f'  B5.log_laws                  {SEEDS} задач сверено через log10')
+
+# Уравнение с логарифмами: корень обязан обращать обе части в равенство,
+# и второй корень квадратного уравнения обязан лежать вне области.
+LOGEQ = re.compile(r'\\log_\{(\d+)\}\((x(?: [-+] \d+)?)\) \+ '
+                   r'\\log_\{\d+\}\(x - (\d+)\) = (\d+)')
+for seed in range(SEEDS):
+    item = GENERATORS['B5.log_equation'](random.Random(seed))
+    base, first, shift, right = LOGEQ.search(item['prompt']).groups()
+    base, shift, right = int(base), int(shift), int(right)
+    offset = 0 if first == 'x' else int(first.split()[-1]) * (
+        1 if '+' in first else -1)
+    root = float(item['answer'][0])
+    t(f'B5.log_equation[{seed}]: корень обращает уравнение в равенство',
+      abs(math.log(root + offset, base)
+          + math.log(root - shift, base) - right) < 1e-9)
+    # Сумма корней квадратного (x + offset)(x - shift) = base**right
+    # равна shift - offset, значит второй корень считается без генератора.
+    other = (shift - offset) - root
+    t(f'B5.log_equation[{seed}]: второй корень область отбрасывает',
+      other <= shift)
+print(f'  B5.log_equation              {SEEDS} задач сверено подстановкой')
+
+# Проценты: множитель за период возводится в степень напрямую по числам
+# из условия, без формулы генератора.
+depreciated = 0
+for seed in range(SEEDS):
+    item = GENERATORS['B5.percentage_model'](random.Random(seed))
+    hit = re.search(r'куплена за \$(\d+)\$ и дешевеет на \$(\d+)', item['prompt'])
+    if not hit:
+        continue
+    price, percent = (int(v) for v in hit.groups())
+    years = int(re.search(r'через \$(\d+)\$ лет', item['prompt']).group(1))
+    want = price * (1 - percent / 100) ** years
+    t(f'B5.percentage_model[{seed}]: сошлось с прямым возведением в степень',
+      abs(want - float(item['answer'])) < 1e-9 * want)
+    depreciated += 1
+print(f'  B5.percentage_model          {depreciated} задач сверено прямым счётом')
+
+# Подгонка модели: модель обязана пройти через обе точки условия, и обе
+# берутся из текста, а не из спецификации проверки.
+for seed in range(SEEDS):
+    item = GENERATORS['B5.fit_model'](random.Random(seed))
+    start = int(re.search(r'она равна \$(\d+)\$', item['prompt']).group(1))
+    span = int(re.search(r'за \$(\d+)\$ лет', item['prompt']).group(1))
+    percent = int(re.search(r'на \$(\d+)\\%\$', item['prompt']).group(1))
+    grows = 'выросло' in item['prompt']
+    later = start * (1 + percent / 100 * (1 if grows else -1))
+    model = sp.lambdify(sp.Symbol('t'), item['answer'])
+    t(f'B5.fit_model[{seed}]: модель проходит через обе точки условия',
+      abs(model(0) - start) < 1e-9 * start
+      and abs(model(span) - later) < 1e-9 * later)
+print(f'  B5.fit_model                 {SEEDS} задач сверено по двум точкам')
+
+# Логистическая модель: то же самое, плюс проверка, что она подходит
+# к потолку снизу, а не убегает от него.
+for seed in range(SEEDS):
+    item = GENERATORS['B5.logistic_model'](random.Random(seed))
+    if item['check']['kind'] != 'model':
+        continue
+    limit = int(re.search(r'\\dfrac\{(\d+)\}', item['prompt']).group(1))
+    start, span, later = (int(v) for v in re.search(
+        r'она равна \$(\d+)\$, при \$t = (\d+)\$ — \$(\d+)\$',
+        item['prompt']).groups())
+    model = sp.lambdify(sp.Symbol('t'), item['answer'])
+    t(f'B5.logistic_model[{seed}]: проходит через обе точки условия',
+      abs(model(0) - start) < 1e-9 * start
+      and abs(model(span) - later) < 1e-9 * later)
+    # Потолок: модель обязана расти к нему и не переходить его. Проверяем
+    # в двух местах, потому что далеко за пределом float уже равен L ровно.
+    t(f'B5.logistic_model[{seed}]: растёт к потолку и не переходит его',
+      later < model(span * 3) < limit
+      and abs(model(span * 30) - limit) < limit * 1e-6)
+print(f'  B5.logistic_model            задачи сверены по двум точкам и потолку')
+
 # Дифференциальные уравнения: закрытая форма против численного шага.
 for name in ('E7.direct_integration', 'E7.separation',
              'E7.integrating_factor'):

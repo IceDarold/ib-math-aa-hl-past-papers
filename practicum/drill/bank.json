@@ -4629,6 +4629,370 @@
    "dir": "AA_HL/2023/November/Common/Paper 3",
    "skill": "B4.count_roots"
   },
+  "2024-MAY-TZ1-P1-Q02-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "a",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "B5.log_laws"
+  },
+  "2025-MAY-TZ3-P1-Q01-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "1",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "B5.log_laws"
+  },
+  "2024-MAY-TZ1-P1-Q02-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "b",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "B5.change_of_base"
+  },
+  "2025-MAY-TZ3-P1-Q01-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "1",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "B5.change_of_base"
+  },
+  "2025-NOV-TZ3-P1-Q04": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "4",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "B5.change_of_base"
+  },
+  "2025-NOV-TZ1-P1-Q02-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "B5.log_equation"
+  },
+  "2024-MAY-TZ2-P2-Q03-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "B5.log_equation"
+  },
+  "2021-MAY-TZ2-P1-Q11-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(c)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "23–24",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "B5.exponent_laws"
+  },
+  "2021-MAY-TZ2-P1-Q11-D": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(d)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "B5.exponent_laws"
+  },
+  "2025-MAY-TZ1-P1-Q07-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "7",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "B5.exponent_laws"
+  },
+  "2021-MAY-TZ2-P2-Q05-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "(b)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B5.take_logs"
+  },
+  "2021-MAY-TZ2-P2-Q05-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "(c)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B5.take_logs"
+  },
+  "2025-MAY-TZ2-P2-Q04-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "10-11",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "B5.take_logs"
+  },
+  "2022-NOV-COMMON-P2-Q04": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "4",
+   "part": "",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "B5.fit_model"
+  },
+  "2021-MAY-TZ2-P2-Q05-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "(a)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "B5.fit_model"
+  },
+  "2025-NOV-TZ1-P3-Q02-A-III": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "A-III",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "B5.fit_model"
+  },
+  "2025-MAY-TZ1-P1-Q02-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "B5.percentage_model"
+  },
+  "2025-MAY-TZ1-P1-Q02-C": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "B5.percentage_model"
+  },
+  "2025-MAY-TZ2-P2-Q04-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "B5.percentage_model"
+  },
+  "2025-NOV-TZ1-P1-Q05-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "B5.percentage_model"
+  },
+  "2025-NOV-TZ1-P3-Q02-A-II": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "A-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "B5.logistic_model"
+  },
+  "2025-NOV-TZ1-P3-Q02-A-IV": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "A-IV",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "B5.logistic_model"
+  },
+  "2025-NOV-TZ1-P3-Q02-A-I": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "A-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "B5.logistic_model"
+  },
+  "2025-MAY-TZ1-P1-Q10-D": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "D",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "B5.log_as_function"
+  },
+  "2025-MAY-TZ1-P1-Q10-E": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "E",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "B5.log_as_function"
+  },
+  "2023-MAY-TZ1-P3-Q02-I": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "i",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "B5.log_as_function"
+  },
+  "2024-MAY-TZ2-P2-Q03-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "B5.log_as_function"
+  },
+  "2024-MAY-TZ2-P2-Q03-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "B5.log_as_function"
+  },
   "2024-MAY-TZ1-P2-Q02-A": {
    "session": "May 2024",
    "zone": "TZ1",
@@ -6192,6 +6556,14 @@
    "notebook": "practicum/functions/practicum-b4-curve-sketching.ipynb",
    "marks": 147,
    "blocks": 62
+  },
+  {
+   "id": "B5",
+   "title": "Показательные и логарифмические модели",
+   "section": "B",
+   "notebook": "practicum/functions/practicum-b5-exponential-log-models.ipynb",
+   "marks": 85,
+   "blocks": 37
   },
   {
    "id": "C1",
@@ -8386,6 +8758,244 @@
     "2023-NOV-TZ1-P3-Q01-H",
     "2023-NOV-TZ2-P3-Q01-D",
     "2023-NOV-TZ2-P3-Q01-F-II"
+   ]
+  },
+  {
+   "id": "B5.log_laws",
+   "practicum": "B5",
+   "name": "Три закона логарифма",
+   "rung": 1,
+   "trigger": "В строке несколько логарифмов одного основания, или логарифм произведения, частного, степени. Практический признак: ответ просят «в терминах p и q», где p и q — логарифмы простых чисел.",
+   "chain": [
+    "Разложить аргумент на множители, показывая нужные простые числа",
+    "Свернуть или развернуть по log ab = log a + log b и log aⁿ = n log a",
+    "Отдельно вспомнить, что 1 = log_b b, а не единица под логарифмом",
+    "Собрать ответ через данные буквы, не возвращаясь к числам"
+   ],
+   "traps": [
+    "log(a + b) раскладывают как log a + log b — закона с такой левой частью нет",
+    "Свободное слагаемое 1 оставляют как есть: чтобы соединить его с логарифмами, его надо записать как log_b b",
+    "Степень выносят перед логарифмом вместе с коэффициентом, который там уже стоял",
+    "Ответ выражают числом, хотя спрашивали через p и q"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 85,
+   "blocks": [
+    "2024-MAY-TZ1-P1-Q02-A",
+    "2025-MAY-TZ3-P1-Q01-A",
+    "2025-MAY-TZ1-P1-Q08-A"
+   ]
+  },
+  {
+   "id": "B5.change_of_base",
+   "practicum": "B5",
+   "name": "Смена основания",
+   "rung": 2,
+   "trigger": "В одном равенстве логарифмы разных оснований — log₈ и log₄, log₁₀ и log₁₀₀₀, log₁₀ и log₃. Пока основания разные, ни один закон приёма 1 не применим.",
+   "chain": [
+    "Выбрать одно основание, к которому сводится всё, — обычно наименьшее",
+    "Переписать каждый логарифм: log_a b = log_c b / log_c a",
+    "Заметить, что основания часто степени одного числа (8 = 2³, 4 = 2², 1000 = 10³)",
+    "Свернуть получившееся по законам приёма 1"
+   ],
+   "traps": [
+    "Дробь переворачивают — в знаменателе оказывается логарифм аргумента",
+    "Основание меняют не везде: одно слагаемое остаётся в старом основании, и уравнение перестаёт сворачиваться",
+    "Числовое основание считают на калькуляторе и теряют точную форму: 1/9 превращается в 0.111"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 85,
+   "blocks": [
+    "2024-MAY-TZ1-P1-Q02-B",
+    "2025-MAY-TZ3-P1-Q01-B",
+    "2025-NOV-TZ3-P1-Q04"
+   ]
+  },
+  {
+   "id": "B5.log_equation",
+   "practicum": "B5",
+   "name": "Уравнение с неизвестным под логарифмом",
+   "rung": 3,
+   "trigger": "Слева и справа логарифмы, внутри которых стоит x. Отдельная примета — свободное число рядом с логарифмом: его придётся превратить в логарифм.",
+   "chain": [
+    "Привести все логарифмы к одному основанию (приём 2)",
+    "Свернуть каждую сторону в один логарифм (приём 1)",
+    "Снять логарифмы, приравняв аргументы, или возвести основание в степень",
+    "Решить получившееся алгебраическое уравнение",
+    "Отбросить корни, при которых хоть один аргумент неположителен"
+   ],
+   "traps": [
+    "Проверка области не сделана, и посторонний корень остаётся в ответе",
+    "Логарифмы снимают по частям: из log A − log B = log C выводят A − B = C",
+    "Свободную единицу переносят, но не переводят в log_b b, и она пропадает",
+    "Ответ дают в виде √x, а спрашивали x"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 85,
+   "blocks": [
+    "2025-NOV-TZ1-P1-Q02-B",
+    "2025-NOV-TZ3-P1-Q04",
+    "2024-MAY-TZ2-P2-Q03-C"
+   ]
+  },
+  {
+   "id": "B5.exponent_laws",
+   "practicum": "B5",
+   "name": "Законы показателей и данное соотношение",
+   "rung": 4,
+   "trigger": "Степени одного основания перемножаются или делятся; или в условии дано готовое равенство вида e^T = 1 + v₀, которое надо куда-то подставить; или просят записать число в виде e^a.",
+   "chain": [
+    "Разделить показатель на части: e^{−(T−k)} = e^{−T}·e^{k}",
+    "Заменить кусок по данному в условии соотношению",
+    "Сократить и собрать ответ",
+    "Любое положительное число записывается как e^{ln числа} — это не трюк, а определение логарифма"
+   ],
+   "traps": [
+    "Минус перед скобкой в показателе раскрывают только у первого слагаемого",
+    "e^{−T} заменяют на 1 + v₀ вместо 1/(1 + v₀)",
+    "«Deduce a similar expression» решают заново, хотя достаточно заменить k на −k"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 85,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q11-C",
+    "2021-MAY-TZ2-P1-Q11-D",
+    "2025-MAY-TZ1-P1-Q07-A"
+   ]
+  },
+  {
+   "id": "B5.take_logs",
+   "practicum": "B5",
+   "name": "Логарифм обеих частей",
+   "rung": 5,
+   "trigger": "Неизвестное стоит в показателе: 50 = 100e^{−5730k}, 1.00694ⁿ > 1.1, 75 = 100e^{−kt}. Ни один алгебраический ход его оттуда не достанет.",
+   "chain": [
+    "Оставить в одной части чистую степень, поделив на множитель перед ней",
+    "Взять логарифм обеих частей — натуральный, если основание e",
+    "Снести показатель вниз по log aⁿ = n log a",
+    "Выразить неизвестное и только в конце округлить"
+   ],
+   "traps": [
+    "Логарифм берут до деления на 100, и ln(100e^{−kt}) раскрывают неверно",
+    "ln(1/2) записывают как ln 2 без минуса",
+    "Округляют k, а потом им пользуются: три значащих цифры в k дают ошибку в сотнях лет в ответе",
+    "«Первый месяц, когда превысит» — это следующее целое, а не округление"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 85,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q05-B",
+    "2021-MAY-TZ2-P2-Q05-C",
+    "2025-MAY-TZ2-P2-Q04-B"
+   ]
+  },
+  {
+   "id": "B5.fit_model",
+   "practicum": "B5",
+   "name": "Подгонка модели: две постоянные, два условия",
+   "rung": 6,
+   "trigger": "Дана форма модели с буквами — A₀e^{−kt}, 15000e^{kt} — и два факта о ней: значение в начале и значение в какой-то момент. Спрашивают третье значение.",
+   "chain": [
+    "Назначить точку отсчёта времени и записать, какому t отвечает каждый факт",
+    "Подставить первый факт — обычно он даёт множитель перед степенью",
+    "Подставить второй и найти k приёмом 5",
+    "Подставить искомый t в готовую модель"
+   ],
+   "traps": [
+    "Отсчёт времени сдвинут: 2041 год при t = 0 в 2014-м это t = 27, а не t = 19",
+    "«Уменьшилось на 11%» превращают в множитель 0.11 вместо 0.89",
+    "k округляют до подстановки в модель",
+    "Знак k теряют, и убывающая модель начинает расти"
+   ],
+   "calculator": "required",
+   "practicum_marks": 85,
+   "blocks": [
+    "2022-NOV-COMMON-P2-Q04",
+    "2021-MAY-TZ2-P2-Q05-A",
+    "2025-NOV-TZ1-P3-Q02-A-III"
+   ]
+  },
+  {
+   "id": "B5.percentage_model",
+   "practicum": "B5",
+   "name": "Проценты как степень",
+   "rung": 7,
+   "trigger": "В условии проценты со словом «за период»: «depreciates at 15% per annum», «compounded quarterly», «inflation 0.8% per month». Модель не написана — её надо составить самому.",
+   "chain": [
+    "Перевести процент в множитель за один период: рост 1 + r, спад 1 − r",
+    "Пересчитать период, если начисление чаще года: 4% годовых поквартально это множитель 1 + 0.04/4 за квартал",
+    "Возвести множитель в число периодов",
+    "Два процесса сразу делятся, а не вычитаются: реальный рост это (1 + i)/(1 + j), а не 1 + i − j"
+   ],
+   "traps": [
+    "Номинальную годовую ставку берут за период целиком: 1.04 вместо 1.01",
+    "Инфляцию вычитают из процента вклада, и ответ отличается на месяцы",
+    "«Nearest dinar» и «two decimal places» — разные требования, и оба стоят балла",
+    "Число периодов путают с числом лет при поквартальном или помесячном начислении"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 85,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q02-A",
+    "2025-MAY-TZ1-P1-Q02-C",
+    "2025-MAY-TZ2-P2-Q04-A",
+    "2025-MAY-TZ2-P2-Q04-B",
+    "2025-NOV-TZ1-P1-Q05-B"
+   ]
+  },
+  {
+   "id": "B5.logistic_model",
+   "practicum": "B5",
+   "name": "Логистическая модель и её потолок",
+   "rung": 8,
+   "trigger": "В условии названо предельное значение — «stable size of 200», «carrying capacity» — и дана дробь вида L/(1 + Ce^{−kt}).",
+   "chain": [
+    "Прочитать L прямо из условия и сказать, какое допущение этим делается",
+    "Подставить t = 0: e⁰ = 1, и C находится одним уравнением",
+    "Подставить вторую точку и найти k приёмом 5",
+    "Предсказать нужное значение и округлить до целого, если считают особей"
+   ],
+   "traps": [
+    "e⁰ забывают, и уравнение на C решается неверно",
+    "L считают начальным значением, а не пределом",
+    "Ответ дают дробным, хотя считают животных",
+    "Знак в показателе теряют: при k > 0 модель обязана расти к L, а не от него"
+   ],
+   "calculator": "required",
+   "practicum_marks": 85,
+   "blocks": [
+    "2025-NOV-TZ1-P3-Q02-A-II",
+    "2025-NOV-TZ1-P3-Q02-A-III",
+    "2025-NOV-TZ1-P3-Q02-A-IV",
+    "2025-NOV-TZ1-P3-Q02-A-I"
+   ]
+  },
+  {
+   "id": "B5.log_as_function",
+   "practicum": "B5",
+   "name": "Логарифм как функция: композиция, область, шкала",
+   "rung": 9,
+   "trigger": "ln x стоит внутри другой функции или снаружи неё; или уравнение дано в виде ln(g(x)) = …; или величина измеряется логарифмической шкалой (децибелы).",
+   "chain": [
+    "Подставить одну функцию в другую, не упрощая раньше времени",
+    "Решить внешнее неравенство относительно ln x, и только потом снять логарифм",
+    "Для области композиции g∘f потребовать, чтобы f(x) попадала в область g",
+    "Для равенства ln(g) = h возвести e в обе части: g = e^h"
+   ],
+   "traps": [
+    "Область композиции берут как область f, забыв про требование ln",
+    "При снятии логарифма из −5 ≤ ln x ≤ 1 получают −e⁵ ≤ x ≤ e",
+    "В шкале с 10 log₁₀ множитель 10 применяют дважды или ни разу",
+    "«Twice the intensity» превращают в «twice the loudness»"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 85,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q10-D",
+    "2025-MAY-TZ1-P1-Q10-E",
+    "2023-MAY-TZ1-P3-Q02-I",
+    "2024-MAY-TZ2-P2-Q03-A",
+    "2024-MAY-TZ2-P2-Q03-B"
    ]
   },
   {
@@ -15862,6 +16472,582 @@
    ],
    "answer": "rational",
    "answer_digest": "fda503e47e82",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:1",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.log_laws",
+   "prompt": "Let $\\log_{10}2=p$. Find $\\log_{10}50$ in terms of $p$.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "laws",
+   "answer_digest": "8954b4ce200e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:2",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.change_of_base",
+   "prompt": "Solve $\\log_9 x+\\log_3 x=6$.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "base",
+   "answer_digest": "cae662172fd4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:3",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.log_equation",
+   "prompt": "Solve $\\log_5(x+3)+\\log_5(x-1)=1$.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "logeq",
+   "answer_digest": "eedf039eb95b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:4",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.exponent_laws",
+   "prompt": "Given $e^{2a}=7$, write $e^{-6a}$ as a fraction.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "powers",
+   "answer_digest": "0e25d57dbe55",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:5",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.take_logs",
+   "prompt": "Solve $3^{\\,x+1}=200$, giving your answer to three significant figures.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "takelogs",
+   "answer_digest": "5aca8050e55a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:6",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.fit_model",
+   "prompt": "A culture has $500$ bacteria at noon and $1200$ at 3 pm and grows as $N=N_0e^{kt}$. Estimate the count at 6 pm.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "fit",
+   "answer_digest": "da4270e3735a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:7",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.percentage_model",
+   "prompt": "A machine bought for $\\$8000$ loses $12\\%$ of its value each year. Find its value after seven years.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "percent",
+   "answer_digest": "fd86717aca41",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:8",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.logistic_model",
+   "prompt": "A fish population cannot exceed $5000$; it was $400$ when counting began and $900$ after two years. Predict year five.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "logistic",
+   "answer_digest": "03a311656c69",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:9",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.log_as_function",
+   "prompt": "Find the domain of $h(x)=\\ln(x^2-4)$.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "function",
+   "answer_digest": "78f9ac018e55",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:10",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.take_logs",
+   "prompt": "The half-life of a substance is $12$ hours. Find the time for $90\\%$ of it to decay.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "takelogs",
+   "answer_digest": "5aca8050e55a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:11",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.change_of_base",
+   "prompt": "Solve $\\log_4 x=\\log_{16}(x+6)$.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "base",
+   "answer_digest": "cae662172fd4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:B5:12",
+   "kind": "recognition",
+   "practicum": "B5",
+   "skill": "B5.fit_model",
+   "prompt": "A town of $20\\,000$ shrinks by $3\\%$ per year for eight years, then is modelled as $Pe^{kt}$ from that point. Find $k$.",
+   "options": [
+    {
+     "code": "laws",
+     "name": "три закона логарифма"
+    },
+    {
+     "code": "base",
+     "name": "смена основания"
+    },
+    {
+     "code": "logeq",
+     "name": "уравнение под логарифмом"
+    },
+    {
+     "code": "powers",
+     "name": "законы показателей"
+    },
+    {
+     "code": "takelogs",
+     "name": "логарифм обеих частей"
+    },
+    {
+     "code": "fit",
+     "name": "подгонка модели"
+    },
+    {
+     "code": "percent",
+     "name": "проценты как степень"
+    },
+    {
+     "code": "logistic",
+     "name": "логистическая модель"
+    },
+    {
+     "code": "function",
+     "name": "логарифм как функция"
+    }
+   ],
+   "answer": "fit",
+   "answer_digest": "da4270e3735a",
    "budget_ms": 8000
   },
   {

@@ -136,6 +136,25 @@ def inverse_check(f, var='x', domain=None):
     return spec
 
 
+def model_check(data, var='t', sf=6):
+    """Ответ — модель: подставляются данные условия, эталона нет вовсе.
+
+    Шесть значащих цифр, а не три: данные в условии точны, и трёх хватило
+    бы, чтобы принять модель, промахнувшуюся на 150 из 15000.
+    """
+    return {'kind': 'model', 'var': var, 'sf': sf,
+            'data': [[sp.srepr(sp.sympify(point)),
+                      None if value is None else sp.srepr(sp.sympify(value))]
+                     for point, value in data]}
+
+
+def in_terms_of_check(want, subs):
+    """Ответ выражают через данные буквы: чужих в нём быть не должно."""
+    return {'kind': 'in_terms_of', 'want': sp.srepr(sp.sympify(want)),
+            'subs': {str(name): sp.srepr(sp.sympify(value))
+                     for name, value in subs.items()}}
+
+
 def domain_check(region, var='x'):
     """Ответ — область определения или множество значений: сверяется как множество."""
     return {'kind': 'domain', 'var': var,

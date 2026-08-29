@@ -65,7 +65,7 @@ t('и объясняется через незамкнутый треуголь�
 
 print('\n=== планировщик ===')
 bank = engine.load_bank()
-t('банк собран из готовых практикумов', len(bank['practicums']) == 14)
+t('банк собран из готовых практикумов', len(bank['practicums']) == 15)
 t('доли баллов в сумме дают единицу',
   abs(sum(bank['share'].values()) - 1.0) < 1e-9)
 t('практикум с большим числом баллов весит больше',
@@ -116,9 +116,9 @@ only_c1 = engine.candidates(bank, 'mixed', GENERATORS, practicums=('C1',))
 t('в отобранной теме все её приёмы', len(only_c1) == 8)
 
 try:
-    # B5 в карте есть, но практикум ещё не собран, и в банке его нет.
+    # D1 в карте есть, но практикум ещё не собран, и в банке его нет.
     engine.choose(bank, {}, GENERATORS, mode='compute', rng=rng,
-                  practicums=('B5',))
+                  practicums=('D1',))
     t('пустой набор — это ошибка, а не молчаливая подмена', False)
 except LookupError:
     t('пустой набор — это ошибка, а не молчаливая подмена', True)
@@ -373,7 +373,7 @@ with tempfile.TemporaryDirectory() as tmp:
     t('пока попыток не было, так и написано', card['state'] is None)
 
     every = [atlas.skill_card(skill['id']) for skill in bank['skills']]
-    t('карточка открывается у каждого приёма банка', len(every) == 113)
+    t('карточка открывается у каждого приёма банка', len(every) == 122)
     t('у каждого приёма есть и ход, и ловушки',
       all(one['chain'] and one['traps'] for one in every))
     t('у каждого приёма есть хотя бы один вопрос архива',

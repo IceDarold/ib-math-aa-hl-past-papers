@@ -139,6 +139,17 @@ B4:
   implicit: {skill: sketch_implicit,    name: "кривая y² = f(x)"}
   count:    {skill: count_roots,        name: счёт пересечений}
 
+B5:
+  laws:     {skill: log_laws,          name: три закона логарифма}
+  base:     {skill: change_of_base,    name: смена основания}
+  logeq:    {skill: log_equation,      name: уравнение под логарифмом}
+  powers:   {skill: exponent_laws,     name: законы показателей}
+  takelogs: {skill: take_logs,         name: логарифм обеих частей}
+  fit:      {skill: fit_model,         name: подгонка модели}
+  percent:  {skill: percentage_model,  name: проценты как степень}
+  logistic: {skill: logistic_model,    name: логистическая модель}
+  function: {skill: log_as_function,   name: логарифм как функция}
+
 C4:
   per:    {skill: period_from_coefficient, name: период и коэффициент}
   amp:    {skill: amplitude_and_midline,   name: амплитуда и средняя линия}

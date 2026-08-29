@@ -539,8 +539,10 @@ for $25\%$ of the carbon-14 to decay.
 place.
 
 Part (c) is the first appearance of `verify_model`. It stores nothing:
-it puts $t=0$ and $t=5730$ back into whatever you wrote and asks whether
-$100$ and $50$ come out.
+it puts $t=0$, $t=5730$ and $t=11460$ back into whatever you wrote and
+asks whether $100$, $50$ and $25$ come out. Only the numbers the question
+states go in — a prediction is checked by the question that asks for it,
+not by the model's own definition.
 
 *May 2021 TZ2 Paper 2 Q5 — 7 marks, calculator allowed.*
 """)
@@ -743,7 +745,7 @@ q9d = ...        # the population at t = 10
 
 verify_exact('9a', q9a, 4)
 check_num('9b', q9b, 3, 'D_93')
-verify_model('9c', q9c, [(0, 40), (5, 70), (10, 107.397)])
+verify_model('9c', q9c, [(0, 40), (5, 70)])
 check_num('9d', q9d, 3, 'D_94')
 """.replace("'D_93'", repr(D_93)).replace("'D_94'", repr(D_94)))
 
@@ -939,7 +941,7 @@ verify_model('by graph', model, [(0, 100), (5730, 50)])
 
 md(r"""
 ---
-## Recognition trainer
+## Trainer: name the technique in five seconds
 
 Twelve openings. For each one, name the technique — **do not solve
 anything.** This is the cheapest half-hour in the whole practicum: on

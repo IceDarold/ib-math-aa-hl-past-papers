@@ -284,6 +284,20 @@ def evaluate(spec, raw):
                             parse_solution_set(raw, var), spec['digest'],
                             var=var)
 
+        if kind == 'model':
+            data = [(sp.sympify(point),
+                     None if value is None else sp.sympify(value))
+                    for point, value in spec['data']]
+            return _capture(kit.verify_model, 'Ответ', parse_one(raw), data,
+                            var=sp.Symbol(spec.get('var', 't')),
+                            sf=spec.get('sf', 6))
+
+        if kind == 'in_terms_of':
+            subs = {sp.Symbol(name): sp.sympify(value)
+                    for name, value in spec['subs'].items()}
+            return _capture(kit.verify_in_terms_of, 'Ответ', parse_one(raw),
+                            sp.sympify(spec['want']), subs)
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0
