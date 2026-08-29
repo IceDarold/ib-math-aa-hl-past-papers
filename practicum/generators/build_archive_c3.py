@@ -167,10 +167,10 @@ trigonometric hat, three have no trigonometry in them at all, one November
 two zonal copies of one paper, and three identities are obtained by raising
 a complex number to a power — those live in *Practicum A6*.
 
-**This is the least calculator-dependent topic in the archive.** Twenty-six
-of the thirty-five questions are Paper 1, and section 9 — the whole of the
-GDC work — is ten marks. If a question here has an ugly answer, you have
-almost certainly gone wrong.
+**This is the least calculator-dependent topic in the archive.** Twenty-four
+of the thirty-five questions are Paper 1, eight are Paper 2 and three are
+Paper 3 — and section 9, the whole of the GDC work, is ten marks. If a
+question here has an ugly answer, you have almost certainly gone wrong.
 
 **How to work.** Read the question, answer in the cell below it, run the
 cell. The check is not a comparison with a stored answer — it goes back to
