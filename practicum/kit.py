@@ -2834,6 +2834,102 @@ def euler(f, x0, y0, h, n):
     return pts
 
 
+def verify_model(label, got, data, var=t, sf=3, tol=None):
+    """Ответ — сама модель: выражение с подставленными постоянными.
+
+    Девятое понятие равенства ответов в серии. Модель верна не тогда, когда
+    её постоянные совпали с эталонными, а тогда, когда она воспроизводит те
+    данные, из которых её строили. Поэтому эталона здесь нет вовсе: каждая
+    пара (вход, выход) из условия подставляется в вашу модель, и требуется
+    совпадение до sf значащих цифр.
+
+    data — список пар (t, значение). Значение None означает «здесь ничего
+    не проверяем» и такую пару пропускает.
+
+    Ловит ровно то, на чём в этой теме теряют баллы: постоянные найдены
+    верно, но отсчёт времени сдвинут (t = 27, а не t = 19), или k взято
+    положительным при убывании.
+    """
+    if _blank(label, got, *[p for pair in data for p in pair]):
+        return False
+    expr = sp.sympify(got)
+    free = expr.free_symbols - {var}
+    if free:
+        print(f"{NO} {label}: " + _t(
+            f"в модели остались неизвестные постоянные: "
+            f"{', '.join(sorted(map(str, free)))}",
+            f"the model still has unknown constants in it: "
+            f"{', '.join(sorted(map(str, free)))}"))
+        return False
+    bad = []
+    for point, want in data:
+        if want is None:
+            continue
+        try:
+            value = complex(expr.subs(var, sp.sympify(point)).evalf())
+        except (TypeError, ValueError):
+            bad.append((point, _t('модель здесь не вычисляется',
+                                  'the model does not evaluate there')))
+            continue
+        if abs(value.imag) > 1e-9:
+            bad.append((point, _t('модель здесь не действительна',
+                                  'the model is not real there')))
+            continue
+        got_v, want_v = value.real, float(sp.sympify(want))
+        span = tol if tol is not None else abs(want_v) * 10.0 ** (1 - sf) + 1e-9
+        if abs(got_v - want_v) > span:
+            bad.append((point, _t(
+                f'модель даёт {sig(got_v, sf)}, а по условию {sig(want_v, sf)}',
+                f'the model gives {sig(got_v, sf)}, the question says '
+                f'{sig(want_v, sf)}')))
+    if bad:
+        for point, why in bad:
+            print(f"{NO} {label}: " + _t(f"при {var} = {point} ", f"at {var} = {point} ")
+                  + why)
+        return False
+    print(f"{OK} {label}: {expr}")
+    return True
+
+
+def verify_in_terms_of(label, got, want, subs, tol=1e-9):
+    """Ответ «в терминах p и q»: выражение через данные буквы.
+
+    Проверяется двумя условиями сразу. Во-первых, в ответе не должно быть
+    ничего, кроме разрешённых букв: log 24 переписанное само через себя —
+    не ответ, а вопрос. Во-вторых, после подстановки истинных значений букв
+    ответ обязан численно совпасть с тем, что просили выразить.
+
+    subs — словарь {буква: её истинное значение}.
+    """
+    if _blank(label, got):
+        return False
+    expr = sp.sympify(got)
+    allowed = {sp.sympify(s) for s in subs}
+    extra = expr.free_symbols - allowed
+    if extra:
+        print(f"{NO} {label}: " + _t(
+            f"ответ должен быть выражен только через "
+            f"{', '.join(sorted(map(str, allowed)))}, а здесь ещё "
+            f"{', '.join(sorted(map(str, extra)))}",
+            f"the answer must be written using only "
+            f"{', '.join(sorted(map(str, allowed)))}, but it also has "
+            f"{', '.join(sorted(map(str, extra)))} in it"))
+        return False
+    if not expr.has(*allowed):
+        print(f"{NO} {label}: " + _t(
+            "в ответе нет ни одной из данных букв: вопрос просит выразить "
+            "через них, а не переписать сам себя",
+            "the answer uses none of the given letters: the question asks "
+            "for the value in terms of them, not for a rewrite of itself"))
+        return False
+    value = expr.subs({sp.sympify(s): sp.sympify(v) for s, v in subs.items()})
+    if abs(complex(sp.sympify(value - sp.sympify(want)).evalf())) > tol:
+        print(f"{NO} {label}: {expr} — " + _t("не сходится", "no match"))
+        return False
+    print(f"{OK} {label}: {expr}")
+    return True
+
+
 def trigger_check(answers, key):
     """Тренажёр распознавания приёма: answers — {номер: код приёма}."""
     if not any(str(v).strip() for v in answers.values()):
