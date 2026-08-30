@@ -150,6 +150,17 @@ B5:
   logistic: {skill: logistic_model,    name: логистическая модель}
   function: {skill: log_as_function,   name: логарифм как функция}
 
+E1:
+  substitute: {skill: substitute,      name: подстановка и сокращение}
+  infinity:   {skill: at_infinity,     name: старшая степень на бесконечности}
+  lhopital:   {skill: lhopital,        name: правило Лопиталя, один раз}
+  again:      {skill: lhopital_again,  name: правило Лопиталя, несколько раз}
+  series:     {skill: maclaurin,       name: ряд Маклорена вместо правила}
+  finite:     {skill: make_finite,     name: постоянная под конечный предел}
+  parameter:  {skill: parameter,       name: предел по параметру}
+  symbolic:   {skill: symbolic,        name: правило с буквой внутри}
+  context:    {skill: interpret,       name: что предел значит}
+
 C4:
   per:    {skill: period_from_coefficient, name: период и коэффициент}
   amp:    {skill: amplitude_and_midline,   name: амплитуда и средняя линия}

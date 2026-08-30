@@ -38,6 +38,8 @@ from drill import engine  # noqa: E402
 from drill.check import evaluate, show_answer  # noqa: E402
 from drill.items import GENERATORS  # noqa: E402
 
+x_sym = sp.Symbol('x')
+
 SEEDS = 15
 res = []
 
@@ -66,6 +68,9 @@ def spoil(answer, spec):
     kind = spec['kind']
     if kind == 'count':
         return str(int(spec['value']) + 1)
+    if kind == 'indeterminate':
+        # Форма названа не та: 0/0 там, где на самом деле oo/oo, и наоборот.
+        return 'oo/oo' if str(answer).strip() == '0/0' else '0/0'
     if isinstance(answer, (list, tuple)):
         if len(answer) > 1:
             return show_answer(list(answer)[:-1])       # потерянный корень
@@ -633,6 +638,96 @@ for seed in range(SEEDS):
       later < model(span * 3) < limit
       and abs(model(span * 30) - limit) < limit * 1e-6)
 print(f'  B5.logistic_model            задачи сверены по двум точкам и потолку')
+
+# Пределы: эталон сверяется тем же способом, каким его выводят на бумаге —
+# символьным пределом sympy, а не подстановкой чисел. Проверка в тренажёре
+# подходит к точке лестницей, так что два пути здесь независимы.
+LIMIT_VARS = {'E1.interpret': 't'}
+for name in ('E1.substitute', 'E1.at_infinity', 'E1.lhopital_again',
+             'E1.maclaurin', 'E1.interpret'):
+    for seed in range(SEEDS):
+        item = GENERATORS[name](random.Random(seed))
+        spec = item['check']
+        expr = sp.sympify(spec['expr'])
+        var = sp.Symbol(LIMIT_VARS.get(name, 'x'))
+        got = sp.limit(expr, var, sp.sympify(spec['point']))
+        t(f'{name}[{seed}]: символьный предел сошёлся с эталоном',
+          sp.simplify(got - sp.sympify(item['answer'])) == 0)
+    print(f'  {name:28} {SEEDS} задач сверено sympy.limit')
+
+# Предел по параметру берётся не через sympy.limit: при отрицательном m
+# степень m^n уходит в комплексную ветвь, хотя n здесь целое. Вывод идёт
+# так, как его делают с геометрической последовательностью: f(n) = L + K·mⁿ,
+# и три первых значения дают и знаменатель, и предел, ничего не зная
+# о генераторе.
+n_sym = sp.Symbol('n')
+for seed in range(SEEDS):
+    item = GENERATORS['E1.parameter'](random.Random(seed))
+    expr = sp.sympify(item['check']['expr'])
+    f1, f2, f3 = (sp.nsimplify(expr.subs(n_sym, k)) for k in (1, 2, 3))
+    t(f'E1.parameter[{seed}]: последовательность не вырождена', f2 != f1)
+    ratio = sp.simplify((f3 - f2) / (f2 - f1))
+    t(f'E1.parameter[{seed}]: знаменатель по модулю меньше единицы',
+      abs(ratio) < 1)
+    limit = sp.simplify(f1 + (f2 - f1) / (1 - ratio))
+    t(f'E1.parameter[{seed}]: экстраполяция по трём членам дала эталон',
+      sp.simplify(limit - sp.sympify(item['answer'])) == 0)
+print(f'  E1.parameter                 {SEEDS} задач сверено экстраполяцией')
+
+# Правило Лопиталя: часть задач приёма спрашивает не число, а форму.
+# Там сверяется, что оба предела действительно нулевые.
+numbers = forms = 0
+for seed in range(SEEDS):
+    item = GENERATORS['E1.lhopital'](random.Random(seed))
+    spec = item['check']
+    if spec['kind'] == 'indeterminate':
+        forms += 1
+        top = sp.limit(sp.sympify(spec['num']), sp.Symbol('x'), 0)
+        bottom = sp.limit(sp.sympify(spec['den']), sp.Symbol('x'), 0)
+        t(f'E1.lhopital[{seed}]: форма и правда 0/0',
+          top == 0 and bottom == 0 and item['answer'] == '0/0')
+    else:
+        numbers += 1
+        got = sp.limit(sp.sympify(spec['expr']), sp.Symbol('x'), 0)
+        t(f'E1.lhopital[{seed}]: символьный предел сошёлся с эталоном',
+          sp.simplify(got - sp.sympify(item['answer'])) == 0)
+print(f'  E1.lhopital                  {numbers} на число, {forms} на форму')
+
+# Ответ через параметр: предел берётся при каждом значении n порознь.
+for seed in range(SEEDS):
+    item = GENERATORS['E1.symbolic'](random.Random(seed))
+    spec = item['check']
+    expr = sp.sympify(spec['expr'])
+    point = sp.sympify(spec['point'])
+    for value in (1, 2, 5, 9):
+        got = sp.limit(expr.subs(sp.Symbol('n'), value), sp.Symbol('x'), point)
+        want = sp.sympify(item['answer']).subs(sp.Symbol('n'), value)
+        t(f'E1.symbolic[{seed}]: при n = {value} предел равен эталону',
+          sp.simplify(got - want) == 0)
+print(f'  E1.symbolic                  {SEEDS} задач сверено при четырёх n')
+
+# Постоянная под конечный предел: при найденном c предел обязан быть конечным,
+# а при соседнем — уйти в бесконечность.
+for seed in range(SEEDS):
+    item = GENERATORS['E1.make_finite'](random.Random(seed))
+    number = re.search(r'sqrt\{(\d+) \+ x\}', item['prompt'])
+    if number:
+        top = sp.sqrt(int(number.group(1)) + x_sym) - sp.Symbol('c')
+        bottom = x_sym
+    else:
+        angle = int(re.search(r'\\cos (\d+)x', item['prompt']).group(1))
+        top = sp.cos(angle * x_sym) - sp.Symbol('c')
+        bottom = x_sym**2
+    good = sp.limit((top / bottom).subs(sp.Symbol('c'), item['answer']),
+                    x_sym, 0)
+    worse = sp.limit((top / bottom).subs(sp.Symbol('c'),
+                                         sp.sympify(item['answer']) + 1),
+                     x_sym, 0)
+    t(f'E1.make_finite[{seed}]: при найденном c предел конечен',
+      good.is_finite is not False and good not in (sp.oo, -sp.oo))
+    t(f'E1.make_finite[{seed}]: при соседнем c предел бесконечен',
+      worse in (sp.oo, -sp.oo, sp.zoo) or not worse.is_finite)
+print(f'  E1.make_finite               {SEEDS} задач сверено с обеих сторон')
 
 # Дифференциальные уравнения: закрытая форма против численного шага.
 for name in ('E7.direct_integration', 'E7.separation',

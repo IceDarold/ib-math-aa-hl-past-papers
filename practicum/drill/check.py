@@ -298,6 +298,27 @@ def evaluate(spec, raw):
             return _capture(kit.verify_in_terms_of, 'Ответ', parse_one(raw),
                             sp.sympify(spec['want']), subs)
 
+        if kind == 'limit':
+            params = {sp.Symbol(name): [sp.sympify(v) for v in values]
+                      for name, values in (spec.get('params') or {}).items()}
+            return _capture(kit.verify_limit, 'Ответ', parse_one(raw),
+                            sp.sympify(spec['expr']),
+                            var=sp.Symbol(spec.get('var', 'x')),
+                            point=sp.sympify(spec['point']),
+                            side=spec.get('side'),
+                            params=params or None,
+                            tol=spec.get('tol', 1e-6))
+
+        if kind == 'indeterminate':
+            params = {sp.Symbol(name): [sp.sympify(v) for v in values]
+                      for name, values in (spec.get('params') or {}).items()}
+            return _capture(kit.verify_indeterminate, 'Ответ', raw.strip(),
+                            sp.sympify(spec['num']), sp.sympify(spec['den']),
+                            var=sp.Symbol(spec.get('var', 'x')),
+                            point=sp.sympify(spec['point']),
+                            side=spec.get('side'),
+                            params=params or None)
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0

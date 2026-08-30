@@ -155,6 +155,35 @@ def in_terms_of_check(want, subs):
                      for name, value in subs.items()}}
 
 
+def limit_check(expr, var='x', point=0, side=None, params=None, tol=1e-6):
+    """Ответ — предел: эталона нет, проверка подходит к точке лестницей.
+
+    point записывается строкой, чтобы в банк ушли и oo, и pi/2.
+    params — {буква: список значений}, когда ответ выражен через параметр.
+    """
+    spec = {'kind': 'limit', 'expr': sp.srepr(sp.sympify(expr)), 'var': var,
+            'point': sp.srepr(sp.sympify(point)), 'tol': tol}
+    if side is not None:
+        spec['side'] = side
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec
+
+
+def indeterminate_check(num, den, var='x', point=0, side=None, params=None):
+    """Ответ — сама неопределённость: '0/0' или 'oo/oo', проверяется порознь."""
+    spec = {'kind': 'indeterminate', 'num': sp.srepr(sp.sympify(num)),
+            'den': sp.srepr(sp.sympify(den)), 'var': var,
+            'point': sp.srepr(sp.sympify(point))}
+    if side is not None:
+        spec['side'] = side
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec
+
+
 def domain_check(region, var='x'):
     """Ответ — область определения или множество значений: сверяется как множество."""
     return {'kind': 'domain', 'var': var,

@@ -2935,6 +2935,241 @@ def verify_in_terms_of(label, got, want, subs, tol=1e-9):
     return True
 
 
+_LADDER = (1, 2, 3, 4, 5, 6, 7, 8)
+_PREC = 60
+
+
+def _param_runs(params):
+    """{n: (2, 3, 7)} -> [{n: 2}, {n: 3}, {n: 7}]. Списки идут параллельно."""
+    if not params:
+        return [{}]
+    names = list(params)
+    columns = [tuple(params[name]) for name in names]
+    width = len(columns[0])
+    if any(len(col) != width for col in columns):
+        raise ValueError(_t('params: списки значений должны быть одной длины',
+                            'params: the value lists must all be the same length'))
+    return [{names[i]: columns[i][j] for i in range(len(names))}
+            for j in range(width)]
+
+
+def _approach(point, side):
+    """Лестницы точек, подходящих к point, по сторонам: {сторона: [(имя, точка)]}.
+
+    Каждая лестница идёт от грубой ступени к тонкой, и решает всегда самая
+    тонкая: сходимость видна на ней, а не в среднем по лестнице.
+    """
+    if point in (sp.oo, -sp.oo):
+        sign = 1 if point == sp.oo else -1
+        return {str(point): [(f'{sign * 10**j}', sp.Integer(sign * 10**j))
+                             for j in _LADDER]}
+    base = sp.sympify(point)
+    sides = ('+', '-') if side is None else (side,)
+    out = {}
+    for s in sides:
+        step = 1 if s == '+' else -1
+        out[s] = [(f'{base} {"+" if step > 0 else "-"} 1e-{j}',
+                   base + sp.Rational(step, 10**j)) for j in _LADDER]
+    return out
+
+
+def _sample(expr, var, place):
+    """Значение expr в точке place с запасом разрядов. None — не вычислилось."""
+    try:
+        # evalf(subs=...) считает численно и не раскрывает точную подстановку:
+        # (1/2)**10**8 при обычном subs — целое на тридцать миллионов цифр,
+        # и лестница на бесконечности зависает на первой же ступени.
+        value = expr.evalf(_PREC, subs={var: place})
+    except (TypeError, ValueError, ZeroDivisionError, NotImplementedError,
+            AttributeError, OverflowError):
+        return None
+    if value.has(sp.zoo, sp.nan) or not value.is_number:
+        return None
+    try:
+        cvalue = complex(value)
+    except (TypeError, ValueError):
+        return None
+    if cvalue != cvalue or abs(cvalue.imag) > 1e-12 * max(1.0, abs(cvalue.real)):
+        return None
+    return cvalue.real
+
+
+def _walk(expr, var, point, side):
+    """Значения по каждой стороне: {сторона: [(имя, значение)]}, грубые впереди."""
+    out = {}
+    for name, rungs in _approach(point, side).items():
+        seen = [(place_name, _sample(expr, var, place))
+                for place_name, place in rungs]
+        out[name] = [(place_name, value) for place_name, value in seen
+                     if value is not None]
+    return out
+
+
+def verify_limit(label, got, expr, var=x, point=0, side=None, params=None,
+                 tol=1e-6):
+    """Ответ — предел: проверяется приближением, а не сверкой с числом.
+
+    Десятое понятие равенства ответов в серии. У предела нет значения,
+    которое можно взять и сравнить: он определён тем, к чему выражение
+    подходит. Поэтому проверка и подходит — подставляет в само выражение
+    из условия точки, приближающиеся к point, и требует, чтобы названное
+    число оказалось тем, к чему эти значения сходятся. Эталона не хранится
+    вовсе: ошибиться вместе с проверкой нельзя, потому что сверять не с чем.
+
+    Двусторонняя по умолчанию, и обе стороны обязаны сойтись в одно.
+    side='+' или '-' — когда выражение живёт только с одной стороны.
+    point принимает oo и -oo.
+
+    params={n: (2, 3, 7)} — когда ответ выражен через параметр: прогон идёт
+    при каждом его значении, и предел обязан сойтись при всех.
+
+    Считает всегда самая тонкая ступень лестницы, а не средняя: у медленной
+    дроби вроде (3x-1)/(2x+1) на x = 10^5 ошибка ещё 10^-5, и по ней ответ
+    не отличить от соседнего.
+
+    Ловит две вещи, на которых теряют баллы. Первая: подстановку вместо
+    предела — ответ, в котором осталась переменная, отвергается сразу.
+    Вторая: остановку на полпути — после одного применения правила Лопиталя
+    форма нередко всё ещё 0/0, и число, снятое с этой строки, не сходится.
+    """
+    if _blank(label, got):
+        return False
+    claim = sp.sympify(got)
+    expr = sp.sympify(expr)
+    if claim.has(var):
+        print(f"{NO} {label}: " + _t(
+            f"в ответе осталась {var}: предел — число (или выражение через "
+            f"параметры), а не выражение от {var}",
+            f"the answer still has {var} in it: a limit is a number (or an "
+            f"expression in the parameters), not an expression in {var}"))
+        return False
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    for run in runs:
+        here = expr.subs(run) if run else expr
+        want = claim.subs(run) if run else claim
+        where = ('' if not run else ' ' + _t('при ', 'at ')
+                 + ', '.join(f'{name} = {value}' for name, value in run.items()))
+        free = want.free_symbols
+        if free:
+            print(f"{NO} {label}: " + _t(
+                f"в ответе остались неизвестные: "
+                f"{', '.join(sorted(map(str, free)))}",
+                f"the answer still has unknowns in it: "
+                f"{', '.join(sorted(map(str, free)))}"))
+            return False
+        for name, seen in _walk(here, var, point, side).items():
+            if len(seen) < 3:
+                print(f"{NO} {label}: " + _t(
+                    f"выражение не удаётся вычислить рядом с {var} = {point}",
+                    f"the expression cannot be evaluated near {var} = {point}")
+                    + where)
+                return False
+            place, value = seen[-1]
+            if want in (sp.oo, -sp.oo):
+                sign = 1 if want == sp.oo else -1
+                if sign * value < 1e6 or sign * value < abs(seen[0][1]):
+                    print(f"{NO} {label}: " + _t(
+                        f"значения не уходят в {want}: при {place} выражение "
+                        f"равно {sig(value, 6)}",
+                        f"the values do not run off to {want}: at {place} the "
+                        f"expression is {sig(value, 6)}") + where)
+                    return False
+                continue
+            target = float(want)
+            span = tol * max(1.0, abs(target))
+            error, coarse = abs(value - target), abs(seen[0][1] - target)
+            if error > span or error > coarse + span:
+                print(f"{NO} {label}: " + _t(
+                    f"при {place} выражение равно {sig(value, 6)}, а не "
+                    f"{sig(target, 6)}: значения сходятся не туда",
+                    f"at {place} the expression is {sig(value, 6)}, not "
+                    f"{sig(target, 6)}: the values are not settling there")
+                    + where)
+                return False
+    print(f"{OK} {label}: {claim}")
+    return True
+
+
+_FORMS = {'0/0': '0/0',
+          'oo/oo': 'oo/oo', 'inf/inf': 'oo/oo', '∞/∞': 'oo/oo'}
+
+
+def _tendency(expr, var, point, side, run):
+    """Куда идёт выражение: 'zero', 'infinite', 'finite'. None — не видно."""
+    expr = sp.sympify(expr).subs(run) if run else sp.sympify(expr)
+    verdicts = set()
+    for _, seen in _walk(expr, var, point, side).items():
+        if len(seen) < 3:
+            return None
+        first, last = abs(seen[0][1]), abs(seen[-1][1])
+        if last < 1e-6 and last <= first:
+            verdicts.add('zero')
+        elif last > 1e5 and last >= first:
+            verdicts.add('infinite')
+        else:
+            verdicts.add('finite')
+    return verdicts.pop() if len(verdicts) == 1 else None
+
+
+def verify_indeterminate(label, got, num, den, var=x, point=0, side=None,
+                         params=None):
+    """Ответ — сама неопределённость: '0/0' или 'oo/oo'.
+
+    «Show that the limit is in indeterminate form» стоит в архиве отдельным
+    баллом, и балл этот за проверку, а не за вычисление: без неё правило
+    Лопиталя неприменимо, а второе его применение без повторной проверки —
+    стандартная потеря баллов. Поэтому числитель и знаменатель проходят
+    лестницу порознь, и названная форма обязана совпасть с тем, что видно.
+    """
+    if _blank(label, got):
+        return False
+    claim = _FORMS.get(str(got).strip().replace(' ', '').lower())
+    if claim is None:
+        print(f"{NO} {label}: " + _t(
+            f"форма записывается строкой '0/0' или 'oo/oo', а не {got!r}",
+            f"the form is written as the string '0/0' or 'oo/oo', not {got!r}"))
+        return False
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    word = {'zero': '0', 'infinite': 'oo',
+            'finite': _t('конечному числу', 'a finite number')}
+    for run in runs:
+        where = ('' if not run else ' ' + _t('при ', 'at ')
+                 + ', '.join(f'{name} = {value}' for name, value in run.items()))
+        top = _tendency(num, var, point, side, run)
+        bottom = _tendency(den, var, point, side, run)
+        if top is None or bottom is None:
+            print(f"{NO} {label}: " + _t(
+                f"не удаётся проследить поведение рядом с {var} = {point}",
+                f"cannot follow the behaviour near {var} = {point}") + where)
+            return False
+        actual = {('zero', 'zero'): '0/0',
+                  ('infinite', 'infinite'): 'oo/oo'}.get((top, bottom))
+        if actual is None:
+            print(f"{NO} {label}: " + _t(
+                f"неопределённости нет: числитель идёт к {word[top]}, "
+                f"знаменатель к {word[bottom]}",
+                f"there is no indeterminate form here: the numerator goes to "
+                f"{word[top]} and the denominator to {word[bottom]}") + where)
+            return False
+        if actual != claim:
+            print(f"{NO} {label}: " + _t(
+                f"форма на самом деле {actual}: числитель идёт к {word[top]}, "
+                f"знаменатель к {word[bottom]}",
+                f"the form is actually {actual}: the numerator goes to "
+                f"{word[top]} and the denominator to {word[bottom]}") + where)
+            return False
+    print(f"{OK} {label}: {claim}")
+    return True
+
+
 def trigger_check(answers, key):
     """Тренажёр распознавания приёма: answers — {номер: код приёма}."""
     if not any(str(v).strip() for v in answers.values()):

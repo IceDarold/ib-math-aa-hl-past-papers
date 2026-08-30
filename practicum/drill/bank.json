@@ -5981,6 +5981,266 @@
    "dir": "AA_HL/2022/May/TZ2/Paper 2",
    "skill": "C4.bounds_argument"
   },
+  "2024-MAY-TZ1-P1-Q11-F-I-II": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "f-i-ii",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "27-29",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "E1.substitute"
+  },
+  "2025-MAY-TZ3-P2-Q10-C": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "10",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "E1.at_infinity"
+  },
+  "2021-MAY-TZ1-P1-Q08": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "E1.lhopital"
+  },
+  "2023-MAY-TZ1-P3-Q01-C-I": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "C-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E1.lhopital"
+  },
+  "2025-MAY-TZ2-P2-Q11-C": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E1.lhopital"
+  },
+  "2024-MAY-TZ2-P1-Q08": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "E1.lhopital_again"
+  },
+  "2025-MAY-TZ3-P1-Q09": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "9",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "13-15",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "E1.lhopital_again"
+  },
+  "2022-MAY-TZ2-P2-Q07-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "16-17",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E1.lhopital_again"
+  },
+  "2021-NOV-COMMON-P1-Q11-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "11",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "26-27",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "E1.maclaurin"
+  },
+  "2022-MAY-TZ1-P1-Q12-E": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "E",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "35-36",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "E1.maclaurin"
+  },
+  "2025-MAY-TZ1-P1-Q12-E-II": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "E-II",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "E1.maclaurin"
+  },
+  "2022-MAY-TZ2-P2-Q07-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E1.make_finite"
+  },
+  "2023-NOV-TZ1-P1-Q09-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "B",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "E1.make_finite"
+  },
+  "2025-MAY-TZ3-P3-Q01-D": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "D",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "E1.parameter"
+  },
+  "2022-NOV-COMMON-P2-Q07-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "7",
+   "part": "b",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "E1.parameter"
+  },
+  "2023-NOV-TZ1-P3-Q02-F": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "F",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E1.parameter"
+  },
+  "2022-NOV-COMMON-P3-Q01-G-I": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "g(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E1.symbolic"
+  },
+  "2022-NOV-COMMON-P3-Q01-G-II": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "g(ii)",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E1.symbolic"
+  },
+  "2025-NOV-TZ3-P3-Q01-G": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "G",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E1.symbolic"
+  },
+  "2025-MAY-TZ1-P3-Q02-B-III": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "B-III",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E1.interpret"
+  },
   "2021-NOV-COMMON-P1-Q01": {
    "session": "November 2021",
    "zone": "Common",
@@ -6588,6 +6848,14 @@
    "notebook": "practicum/functions/practicum-c4-sinusoidal-models.ipynb",
    "marks": 83,
    "blocks": 34
+  },
+  {
+   "id": "E1",
+   "title": "Пределы, неопределённости, правило Лопиталя",
+   "section": "E",
+   "notebook": "practicum/calculus/practicum-e1-limits.ipynb",
+   "marks": 81,
+   "blocks": 22
   },
   {
    "id": "E7",
@@ -9620,6 +9888,232 @@
    "blocks": [
     "2022-MAY-TZ1-P1-Q05-B",
     "2022-MAY-TZ2-P2-Q10-C"
+   ]
+  },
+  {
+   "id": "E1.substitute",
+   "practicum": "E1",
+   "name": "Подстановка и сокращение",
+   "rung": 1,
+   "trigger": "Точка внутри области определения — тогда предел и есть значение. Или подстановка дала 0/0, но числитель и знаменатель раскладываются на множители: в архиве разложение обычно уже стоит в предыдущем пункте.",
+   "chain": [
+    "Подставить точку",
+    "Если вышло число — это и есть предел, работа окончена",
+    "Если вышло 0/0 — разложить числитель и знаменатель на множители",
+    "Сократить общий множитель, оговорив, что x ≠ a",
+    "Подставить снова"
+   ],
+   "traps": [
+    "Правило Лопиталя применяют не глядя: на определённой форме оно даёт неверное число, а не просто лишнюю работу",
+    "Забывают оговорку x ≠ a: сокращённая функция не равна исходной в самой точке, и именно поэтому предел есть, а значения нет",
+    "Множитель сокращают один раз, хотя он стоит в квадрате",
+    "Тянутся за правилом там, где хватает деления многочленов, — на вопросе в один балл это вся отпущенная минута"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 81,
+   "blocks": [
+    "2024-MAY-TZ1-P1-Q11-F-I-II"
+   ]
+  },
+  {
+   "id": "E1.at_infinity",
+   "practicum": "E1",
+   "name": "Старшая степень на бесконечности",
+   "rung": 2,
+   "trigger": "x → ∞ или x → −∞, и в выражении только степени и корни — ни экспоненты, ни логарифма. Корень считается степенью: √(t² + 0.2) ведёт себя как t.",
+   "chain": [
+    "Найти наибольшую степень переменной во всём выражении",
+    "Поделить на неё числитель и знаменатель",
+    "Применить 1/xᵏ → 0",
+    "{'Прочитать ответ': 'отношение старших коэффициентов, ноль или бесконечность'}"
+   ],
+   "traps": [
+    "Экспоненту считают степенью: eˣ обгоняет любой xᵏ, и деление на степень ничего не даёт",
+    "Под корнем берут t² + 0.2 как t², не заметив, что порядок это не меняет, а вот множитель перед корнем — меняет",
+    "Знак теряют при x → −∞, где √(x²) = −x, а не x"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 81,
+   "blocks": [
+    "2024-MAY-TZ1-P1-Q11-F-I-II",
+    "2025-MAY-TZ3-P2-Q10-C"
+   ]
+  },
+  {
+   "id": "E1.lhopital",
+   "practicum": "E1",
+   "name": "Правило Лопиталя, один раз",
+   "rung": 3,
+   "trigger": "Подстановка дала 0/0 или ∞/∞, и сокращать нечего. Часто сказано прямо: «use l'Hôpital's rule».",
+   "chain": [
+    "Подставить точку и назвать форму вслух — это лицензия, и она оценивается",
+    "Продифференцировать числитель и знаменатель по отдельности",
+    "Подставить снова",
+    "Записать lim на каждой строке"
+   ],
+   "traps": [
+    "Дифференцируют по правилу частного вместо раздельного дифференцирования",
+    "Произведение вида ∞·0 подают в правило как есть: сначала его надо переписать дробью, положив умирающий множитель в знаменатель вверх ногами",
+    "Знак lim не пишут: май 2021 режет пятибалльный вопрос до четырёх, май 2024 снимает последний A1",
+    "Лицензию не проверяют вовсе, и правило применяют к определённой форме"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 81,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q08",
+    "2023-MAY-TZ1-P3-Q01-C-I",
+    "2025-MAY-TZ2-P2-Q11-C"
+   ]
+  },
+  {
+   "id": "E1.lhopital_again",
+   "practicum": "E1",
+   "name": "Правило Лопиталя, несколько раз",
+   "rung": 4,
+   "trigger": "Знаменатель — высокая степень x: x², x³, x⁴. Каждое применение снижает степень на единицу, так что число раундов видно до начала работы.",
+   "chain": [
+    "Применить правило один раз",
+    "Подставить снова и назвать форму заново",
+    "Если опять 0/0 — новая лицензия, повторить",
+    "Как только форма стала определённой, остановиться и прочитать ответ"
+   ],
+   "traps": [
+    "Применяют лишний раз: после того как знаменатель перестал обнуляться, ещё один раунд даёт неверное число. Схема оценивания мая 2024 снимает M1 именно за третью попытку",
+    "Форму заново не проверяют, и второе применение остаётся необоснованным",
+    "Ошибка в производной второго порядка: sec⁴x tan x и sin 2x — те два места, где теряют этот вопрос"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 81,
+   "blocks": [
+    "2024-MAY-TZ2-P1-Q08",
+    "2025-MAY-TZ3-P1-Q09",
+    "2022-MAY-TZ2-P2-Q07-B"
+   ]
+  },
+  {
+   "id": "E1.maclaurin",
+   "practicum": "E1",
+   "name": "Ряд Маклорена вместо правила",
+   "rung": 5,
+   "trigger": "Выражение собрано из eˣ, sin, cos, ln около нуля, и знаменатель — степень x. Прямая примета: предыдущий пункт вопроса просил найти ряд.",
+   "chain": [
+    "Заменить каждый множитель отрезком его ряда",
+    "{'Вынести степень наружу, если она есть': 'x⁹ = (x³)³'}",
+    "Сократить на степень знаменателя",
+    "Прочитать свободный член — это и есть предел"
+   ],
+   "traps": [
+    "Ряд обрывают слишком рано: чтобы поделить на x³, нужны члены до x³ включительно, а нулевой коэффициент при x² легко принять за конец",
+    "Степень не выносят и честно раскрывают куб — вместо трёх строк выходит страница",
+    "В (1 − x²/2)ⁿ берут только первый член биномиального разложения",
+    "Ответ записывают без n там, где вопрос просил «in terms of n»"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 81,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q11-C",
+    "2022-MAY-TZ1-P1-Q12-E",
+    "2025-MAY-TZ1-P1-Q12-E-II"
+   ]
+  },
+  {
+   "id": "E1.make_finite",
+   "practicum": "E1",
+   "name": "Постоянная, при которой предел существует",
+   "rung": 6,
+   "trigger": "В выражении стоит буква, и сказано «a finite limit only exists for…» или дано само значение предела. Спрашивают букву, а не предел.",
+   "chain": [
+    "Заметить, что знаменатель идёт в ноль",
+    "{'Отсюда': 'конечный предел возможен только при нулевом числителе'}",
+    "Приравнять предел числителя нулю и решить относительно буквы",
+    "Если дано значение предела, вычислить предел через букву и приравнять"
+   ],
+   "traps": [
+    "Рассуждение ведут в обратную сторону: подставляют готовое k и показывают, что вышло 0/0. Схема оценивания мая 2022 даёт за это M1A0",
+    "Отрицательный корень не отбрасывают там, где условие говорит k > 0",
+    "arctan 1 оставляют как arctan 1 вместо π/4"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 81,
+   "blocks": [
+    "2022-MAY-TZ2-P2-Q07-A",
+    "2023-NOV-TZ1-P1-Q09-B",
+    "2025-MAY-TZ2-P2-Q11-C"
+   ]
+  },
+  {
+   "id": "E1.parameter",
+   "practicum": "E1",
+   "name": "Предел по параметру",
+   "rung": 7,
+   "trigger": "Стрелка стоит не под x: n → ∞, α → π/2, b → ∞. Всё, что не под стрелкой, остаётся на месте, и ответ — выражение через оставшиеся буквы.",
+   "chain": [
+    "Найти в выражении единственную часть, которая движется",
+    "{'Понять, куда она идёт': 'mⁿ → 0 при |m| < 1, 1/n → 0, 1/tan α → 0'}",
+    "Подставить этот предел, оставив всё прочее без изменений",
+    "Собрать ответ через буквы, которые не двигались"
+   ],
+   "traps": [
+    "Переменную путают с параметром и берут предел по x, которого никто не просил",
+    "tan α → ∞ подставляют прямо: нужно поделить на tan α и работать с 1/tan α, которое идёт в ноль",
+    "Ответ округляют: ноябрь 2022 принимает π/4 и 45°, но не 0.785",
+    "|m| < 1 не используют, и mⁿ остаётся в ответе"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 81,
+   "blocks": [
+    "2025-MAY-TZ3-P3-Q01-D",
+    "2022-NOV-COMMON-P2-Q07-B",
+    "2023-NOV-TZ1-P3-Q02-F"
+   ]
+  },
+  {
+   "id": "E1.symbolic",
+   "practicum": "E1",
+   "name": "Правило с буквой внутри выражения",
+   "rung": 8,
+   "trigger": "Предел берётся по x, но в самом выражении сидит параметр: x^{n+2}, S_n(x), cos^n x. Ответ выйдет формулой от параметра, а не числом.",
+   "chain": [
+    "Проверить форму — она обязана быть 0/0 при любом значении параметра",
+    "Дифференцировать по x, ведя параметр как постоянную",
+    "Подставить точку, не забывая, что n^0 = 1 и 1^n = 1",
+    "{'Свернуть ответ, вынеся общий множитель': 'n(n+1)(n+2) − n(n+1)² = n(n+1)'}"
+   ],
+   "traps": [
+    "Дифференцируют по n вместо x: параметр здесь постоянная",
+    "Форму называют для одного n и считают вопрос закрытым: обоснование обязано работать при любом n, и схема оценивания ноября 2022 требует упрощения числителя до n − (n+1) + 1",
+    "Ответ оставляют числом там, где спрашивали формулу от n",
+    "Правило применяют лишний раз: после второго раунда знаменатель уже 2"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 81,
+   "blocks": [
+    "2022-NOV-COMMON-P3-Q01-G-I",
+    "2022-NOV-COMMON-P3-Q01-G-II",
+    "2025-NOV-TZ3-P3-Q01-G"
+   ]
+  },
+  {
+   "id": "E1.interpret",
+   "practicum": "E1",
+   "name": "Что предел значит",
+   "rung": 9,
+   "trigger": "«State a reason why», «explain briefly the significance». Ответ — фраза о моделируемой вещи, а не о выражении.",
+   "chain": [
+    "Назвать значение предела",
+    "Сказать, что происходит с самим предметом модели",
+    "Если предел не достигается — объяснить, что мешает"
+   ],
+   "traps": [
+    "Говорят про алгебру: «знаменатель растёт неограниченно» балла не даёт",
+    "Предел выдают за достижимое значение: 8.14 м/с — граница формулы, а не скорость бегуньи",
+    "Пункт пропускают целиком, хотя это самые дешёвые баллы темы"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 81,
+   "blocks": [
+    "2025-MAY-TZ3-P2-Q10-C",
+    "2025-MAY-TZ1-P3-Q02-B-III"
    ]
   },
   {
@@ -19088,6 +19582,582 @@
    ],
    "answer": "sign",
    "answer_digest": "0b6f395ca14a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:1",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.substitute",
+   "prompt": "$\\displaystyle\\lim_{x\\to3}\\frac{x^2-9}{x-3}$",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "substitute",
+   "answer_digest": "75519932722f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:2",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.at_infinity",
+   "prompt": "$\\displaystyle\\lim_{x\\to\\infty}\\frac{5x^2-x}{2x^2+7}$",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "infinity",
+   "answer_digest": "d79987051a25",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:3",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.interpret",
+   "prompt": "A population is modelled by $P(t)=\\frac{800}{1+9e^{-0.4t}}$. State $\\lim_{t\\to\\infty}P(t)$ and explain what it says about the population.",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "context",
+   "answer_digest": "ea7792a26f40",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:4",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.lhopital",
+   "prompt": "$\\displaystyle\\lim_{x\\to0}\\frac{e^{2x}-1}{\\sin 5x}$",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "lhopital",
+   "answer_digest": "ff4c5d09f6a9",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:5",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.lhopital_again",
+   "prompt": "$\\displaystyle\\lim_{x\\to0}\\frac{\\sin x-x\\cos x}{x^3}$",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "again",
+   "answer_digest": "b4c9e14061c2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:6",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.maclaurin",
+   "prompt": "$\\displaystyle\\lim_{x\\to0}\\frac{\\ln(1+x)-x+\\frac{x^2}{2}}{x^3}$, given the series for $\\ln(1+x)$",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "series",
+   "answer_digest": "9cda38ea3a2b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:7",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.make_finite",
+   "prompt": "$\\displaystyle\\lim_{x\\to0}\\frac{\\sqrt{4+x}-a}{x}$ is finite. Find $a$.",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "finite",
+   "answer_digest": "d4f568b800c6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:8",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.parameter",
+   "prompt": "$\\displaystyle\\lim_{n\\to\\infty}\\bigl(m^{n}a+b\\bigr)$, where $|m|<1$ and $a$, $b$ are fixed",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "parameter",
+   "answer_digest": "6390361dfdff",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:9",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.substitute",
+   "prompt": "$\\displaystyle\\lim_{x\\to\\frac\\pi4}\\frac{\\sin x}{1+\\cos x}$",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "substitute",
+   "answer_digest": "75519932722f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:10",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.lhopital",
+   "prompt": "$\\displaystyle\\lim_{x\\to\\infty}x\\ln\\!\\left(1+\\frac1x\\right)$",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "lhopital",
+   "answer_digest": "ff4c5d09f6a9",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:11",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.at_infinity",
+   "prompt": "$\\displaystyle\\lim_{x\\to-\\infty}\\frac{3x^3+x}{x^3-4x^2}$",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "infinity",
+   "answer_digest": "d79987051a25",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E1:12",
+   "kind": "recognition",
+   "practicum": "E1",
+   "skill": "E1.symbolic",
+   "prompt": "$\\displaystyle\\lim_{x\\to1}\\frac{x^{n}-1}{x-1}$, where $n\\in\\mathbb{Z}^{+}$",
+   "options": [
+    {
+     "code": "substitute",
+     "name": "подстановка и сокращение"
+    },
+    {
+     "code": "infinity",
+     "name": "старшая степень на бесконечности"
+    },
+    {
+     "code": "lhopital",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "again",
+     "name": "правило Лопиталя"
+    },
+    {
+     "code": "series",
+     "name": "ряд Маклорена вместо правила"
+    },
+    {
+     "code": "finite",
+     "name": "постоянная под конечный предел"
+    },
+    {
+     "code": "parameter",
+     "name": "предел по параметру"
+    },
+    {
+     "code": "symbolic",
+     "name": "правило с буквой внутри"
+    },
+    {
+     "code": "context",
+     "name": "что предел значит"
+    }
+   ],
+   "answer": "symbolic",
+   "answer_digest": "21e2db94d100",
    "budget_ms": 8000
   },
   {
