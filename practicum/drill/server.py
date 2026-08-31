@@ -472,7 +472,8 @@ class Drill:
             'uncovered': self.bank.get('uncovered_skills', []),
         }
 
-    def open_evening(self, minutes):
+    def open_evening(self, minutes, practicums=None, papers=None,
+                     only_due=False):
         """Собирает вечерний набор и запоминает его.
 
         Набор живёт на сервере: задания берут в семь, а работу присылают
@@ -483,7 +484,10 @@ class Drill:
             try:
                 states = store.states(db)
                 questions, marks = evening.assemble(
-                    self.bank, states, minutes, self.rng)
+                    self.bank, states, minutes, self.rng,
+                    practicums=practicums, papers=papers, only_due=only_due,
+                    avoid_blocks=store.recent_blocks(
+                        db, evening.RECENT_EVENINGS))
                 set_id = evening.new_id(self.rng)
                 store.open_evening(db, id=set_id, minutes=int(minutes),
                                    marks=marks, questions=questions)
@@ -861,8 +865,14 @@ class Handler(BaseHTTPRequestHandler):
 
         if route == f'{PREFIX}/evening/open':
             try:
+                papers = [int(value) for value in
+                          (payload.get('papers') or []) if str(value).isdigit()]
                 self.send_json(self.drill.open_evening(
-                    int(payload.get('minutes') or 40)))
+                    int(payload.get('minutes') or 40),
+                    practicums=[str(value) for value
+                                in (payload.get('practicums') or [])],
+                    papers=papers,
+                    only_due=bool(payload.get('only_due'))))
             except (LookupError, ValueError) as exc:
                 self.send_json({'error': str(exc)}, 400)
             except Exception as exc:  # noqa: BLE001

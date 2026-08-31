@@ -4,6 +4,61 @@ import { WriteUpVerdict, type Verdict } from './WriteUpVerdict'
 
 const API = '/api/drill'
 const MINUTES = [20, 40, 60]
+const PAPERS: { id: number; hint: string }[] = [
+  { id: 1, hint: 'без калькулятора' },
+  { id: 2, hint: 'с калькулятором' },
+  { id: 3, hint: 'длинные исследования' },
+]
+const STORE = 'drill.evening.settings'
+
+export interface EveningTheme {
+  id: string
+  title: string
+  written: number
+  skills: number
+  started: number
+}
+
+interface Choice {
+  minutes: number
+  practicums: string[]
+  papers: number[]
+  onlyDue: boolean
+}
+
+/** Что выбрано в прошлый раз. Собирать отбор каждый вечер заново незачем. */
+function loadChoice(themes: EveningTheme[]): Choice {
+  const started = themes.filter((theme) => theme.started > 0).map((t) => t.id)
+  // По умолчанию — темы, которые уже начинали. Вопрос на бумаге по приёму,
+  // которого ещё не разбирали, это не проверка, а потерянные полчаса.
+  const fallback: Choice = {
+    minutes: 40,
+    practicums: started.length ? started : themes.map((theme) => theme.id),
+    papers: [],
+    onlyDue: false,
+  }
+  try {
+    const saved = window.localStorage.getItem(STORE)
+    if (!saved) return fallback
+    const parsed = JSON.parse(saved) as Partial<Choice>
+    const known = new Set(themes.map((theme) => theme.id))
+    const picked = (parsed.practicums ?? []).filter((id) => known.has(id))
+    return {
+      minutes: Number(parsed.minutes) || fallback.minutes,
+      practicums: picked.length ? picked : fallback.practicums,
+      papers: (parsed.papers ?? []).filter((id) => [1, 2, 3].includes(id)),
+      onlyDue: Boolean(parsed.onlyDue),
+    }
+  } catch {
+    return fallback
+  }
+}
+
+function saveChoice(choice: Choice) {
+  try {
+    window.localStorage.setItem(STORE, JSON.stringify(choice))
+  } catch { /* приватное окно — переживём */ }
+}
 
 export interface EveningQuestion {
   n: number
@@ -70,20 +125,35 @@ function when(ts: number) {
     { day: 'numeric', month: 'long' })
 }
 
-export function EveningView({ evening, onOpen, onChange, onClose, busy, setBusy }: {
+export function EveningView({ evening, themes, onOpen, onChange, onClose, busy, setBusy }: {
   evening: Evening | null
-  onOpen: (minutes: number) => Promise<void>
+  themes: EveningTheme[]
+  onOpen: (choice: { minutes: number; practicums: string[]; papers: number[]; only_due: boolean }) => Promise<void>
   onChange: (evening: Evening) => void
   onClose: () => void
   busy: boolean
   setBusy: (busy: boolean) => void
 }) {
-  const [minutes, setMinutes] = useState(40)
+  const [choice, setChoice] = useState<Choice>(() => loadChoice(themes))
   const [error, setError] = useState<string | null>(null)
   const [guessed, setGuessed] = useState(false)
   const [gradingMs, setGradingMs] = useState(0)
   const [opened, setOpened] = useState<number | null>(null)
   const picker = useRef<HTMLInputElement>(null)
+
+  useEffect(() => { saveChoice(choice) }, [choice])
+
+  const collect = useCallback(() => onOpen({
+    minutes: choice.minutes,
+    // Выбраны все темы — не передаём ничего: пусть отбора и не будет.
+    practicums: choice.practicums.length === themes.length ? [] : choice.practicums,
+    papers: choice.papers,
+    only_due: choice.onlyDue,
+  }), [choice, onOpen, themes.length])
+
+  const toggle = useCallback(<T,>(list: T[], value: T) => (
+    list.includes(value) ? list.filter((item) => item !== value) : [...list, value]
+  ), [])
 
   // Разбор восьми заданий идёт минуту-полторы. Без часов это выглядит
   // зависшим, и работу присылают второй раз.
@@ -160,32 +230,136 @@ export function EveningView({ evening, onOpen, onChange, onClose, busy, setBusy 
             сканом, разбор приходит на всё сразу.
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          {MINUTES.map((value) => (
-            <button
-              key={value}
-              type="button"
-              className={`cursor-pointer border px-3 py-1.5 font-mono text-[11px] ${
-                minutes === value ? 'border-ink bg-ink text-canvas'
-                  : 'border-line bg-canvas text-muted hover:border-line-strong'}`}
-              onClick={() => setMinutes(value)}
-            >
-              {value} минут
-            </button>
-          ))}
+        <section className="flex flex-col gap-2">
+          <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Сколько</h3>
+          <div className="flex flex-wrap items-center gap-2">
+            {MINUTES.map((value) => (
+              <button
+                key={value}
+                type="button"
+                aria-pressed={choice.minutes === value}
+                className={`cursor-pointer border px-3 py-1.5 font-mono text-[11px] ${
+                  choice.minutes === value ? 'border-ink bg-ink text-canvas'
+                    : 'border-line bg-canvas text-muted hover:border-line-strong'}`}
+                onClick={() => setChoice((c) => ({ ...c, minutes: value }))}
+              >
+                {value} минут
+              </button>
+            ))}
+            <span className="font-mono text-[10px] text-faint">
+              примерно минута на балл
+            </span>
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-2">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Темы</h3>
+            <div className="flex gap-3 font-mono text-[10px] text-muted">
+              <button type="button" className="cursor-pointer border-0 bg-transparent underline hover:text-ink"
+                onClick={() => setChoice((c) => ({ ...c, practicums: themes.map((t) => t.id) }))}>
+                все
+              </button>
+              <button type="button" className="cursor-pointer border-0 bg-transparent underline hover:text-ink"
+                onClick={() => setChoice((c) => {
+                  const started = themes.filter((t) => t.started > 0).map((t) => t.id)
+                  return { ...c, practicums: started.length ? started : themes.map((t) => t.id) }
+                })}>
+                начатые
+              </button>
+            </div>
+          </div>
+          <div className="grid grid-cols-4 gap-1.5 max-[720px]:grid-cols-2">
+            {themes.map((theme) => {
+              const on = choice.practicums.includes(theme.id)
+              return (
+                <button
+                  key={theme.id}
+                  type="button"
+                  aria-pressed={on}
+                  disabled={!theme.written}
+                  title={theme.title}
+                  className={`flex cursor-pointer flex-col gap-0.5 border p-2 text-left disabled:cursor-default disabled:opacity-30 ${
+                    on ? 'border-line-strong bg-surface'
+                      : 'border-dashed border-line bg-canvas opacity-45 hover:opacity-70'}`}
+                  onClick={() => setChoice((c) => ({
+                    ...c, practicums: toggle(c.practicums, theme.id),
+                  }))}
+                >
+                  <span className="flex items-baseline gap-1.5">
+                    <span className="font-mono text-[11px] text-ink">{theme.id}</span>
+                    <span className="truncate text-[11px] text-muted">{theme.title}</span>
+                  </span>
+                  <span className="font-mono text-[10px] text-faint">
+                    {theme.written} вопросов · {theme.started
+                      ? `начато ${theme.started} из ${theme.skills}`
+                      : 'не начинали'}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+          <p className="text-[11px] text-faint">
+            По умолчанию — темы, которые уже начинали. Вопрос на бумаге по приёму,
+            которого ещё не разбирали, это не проверка, а потерянные полчаса.
+          </p>
+        </section>
+
+        <section className="flex flex-col gap-2">
+          <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Бумага</h3>
+          <div className="flex flex-wrap items-center gap-2">
+            {PAPERS.map((paper) => {
+              const on = choice.papers.includes(paper.id)
+              return (
+                <button
+                  key={paper.id}
+                  type="button"
+                  aria-pressed={on}
+                  className={`cursor-pointer border px-3 py-1.5 font-mono text-[11px] ${
+                    on ? 'border-ink bg-ink text-canvas'
+                      : 'border-line bg-canvas text-muted hover:border-line-strong'}`}
+                  onClick={() => setChoice((c) => ({ ...c, papers: toggle(c.papers, paper.id) }))}
+                >
+                  P{paper.id} · {paper.hint}
+                </button>
+              )
+            })}
+            {choice.papers.length > 0 && (
+              <button type="button"
+                className="cursor-pointer border-0 bg-transparent font-mono text-[10px] text-muted underline hover:text-ink"
+                onClick={() => setChoice((c) => ({ ...c, papers: [] }))}>
+                любая
+              </button>
+            )}
+          </div>
+        </section>
+
+        <label className="flex w-fit cursor-pointer items-center gap-2 text-sm text-muted">
+          <input
+            type="checkbox"
+            checked={choice.onlyDue}
+            onChange={(event) => setChoice((c) => ({ ...c, onlyDue: event.target.checked }))}
+          />
+          только то, чему подошёл срок
+        </label>
+
+        <div className="flex flex-wrap items-center gap-3 border-t border-line pt-4">
           <button
             type="button"
-            disabled={busy}
-            className="ml-2 cursor-pointer border border-ink bg-canvas px-4 py-1.5 text-sm text-ink hover:bg-surface disabled:cursor-default disabled:opacity-50"
-            onClick={() => void onOpen(minutes)}
+            disabled={busy || !choice.practicums.length}
+            className="cursor-pointer border border-ink bg-canvas px-4 py-1.5 text-sm text-ink hover:bg-surface disabled:cursor-default disabled:opacity-50"
+            onClick={() => void collect()}
           >
             {busy ? 'собираю…' : 'собрать вечер'}
           </button>
+          <span className="font-mono text-[10px] text-faint">
+            {choice.practicums.length
+              ? `${choice.practicums.length} тем · ${themes
+                  .filter((theme) => choice.practicums.includes(theme.id))
+                  .reduce((sum, theme) => sum + theme.written, 0)} вопросов под отбором`
+              : 'выберите хотя бы одну тему'}
+          </span>
         </div>
-        <p className="text-[11px] text-faint">
-          На экзамене примерно минута на балл, так что сорок минут — это сорок
-          баллов. Сколько это вопросов, решает набор.
-        </p>
       </section>
     )
   }
@@ -381,7 +555,7 @@ export function EveningView({ evening, onOpen, onChange, onClose, busy, setBusy 
               type="button"
               disabled={busy}
               className="cursor-pointer border border-ink bg-canvas px-4 py-1.5 text-sm text-ink hover:bg-surface disabled:cursor-default disabled:opacity-50"
-              onClick={() => { setOpened(null); void onOpen(minutes) }}
+              onClick={() => { setOpened(null); void collect() }}
             >
               {busy ? 'собираю…' : 'собрать новый вечер'}
             </button>
@@ -390,9 +564,9 @@ export function EveningView({ evening, onOpen, onChange, onClose, busy, setBusy 
                 key={value}
                 type="button"
                 className={`cursor-pointer border px-3 py-1.5 font-mono text-[11px] ${
-                  minutes === value ? 'border-ink bg-ink text-canvas'
+                  choice.minutes === value ? 'border-ink bg-ink text-canvas'
                     : 'border-line bg-canvas text-muted hover:border-line-strong'}`}
-                onClick={() => setMinutes(value)}
+                onClick={() => setChoice((c) => ({ ...c, minutes: value }))}
               >
                 {value} минут
               </button>

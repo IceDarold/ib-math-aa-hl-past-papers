@@ -78,6 +78,60 @@ hits = sum(target in {q['skill'] for q in
            for seed in range(30))
 t('и попадает почти в каждый вечер', hits >= 24)
 
+print('\n=== отборы ===')
+picked, _ = evening.assemble(bank, {}, 40, random.Random(3),
+                             practicums=['E1', 'B1'])
+t('темы ограничивают набор',
+  {q['practicum'] for q in picked} <= {'E1', 'B1'})
+t('внутри выбранных тем вечер всё равно набирается',
+  len(picked) >= 4)
+only_one = evening.assemble(bank, {}, 40, random.Random(3),
+                            papers=[1])[0]
+t('бумага ограничивает набор',
+  {q['paper'] for q in only_one} == {1})
+t('Paper 1 — это вечер без калькулятора',
+  all(q['calculator'] != 'yes' for q in only_one))
+both = evening.assemble(bank, {}, 40, random.Random(3),
+                        practicums=['C4'], papers=[2])[0]
+t('темы и бумаги действуют вместе',
+  {q['practicum'] for q in both} == {'C4'} and {q['paper'] for q in both} == {2})
+try:
+    evening.assemble(bank, {}, 40, random.Random(3), practicums=['нет такой'])
+    t('пустой отбор объясняет себя, а не молчит', False)
+except LookupError as exc:
+    t('пустой отбор объясняет себя, а не молчит', 'отбор' in str(exc))
+
+# «Только просроченное»: всё свежее, кроме одной темы.
+now = time.time()
+ripe = 'C1'
+states = {s['id']: {'last_ts': now, 'due': now + 7 * memory.DAY,
+                    'stability': 200.0, 'difficulty': 3.0,
+                    'seen': 3, 'wrong': 0} for s in bank['skills']}
+for skill in bank['skills']:
+    if skill['practicum'] == ripe:
+        states[skill['id']]['due'] = now - memory.DAY
+due_only = evening.assemble(bank, states, 30, random.Random(3),
+                            only_due=True)[0]
+t('«только просроченное» берёт лишь то, чему подошёл срок',
+  {q['practicum'] for q in due_only} == {ripe})
+fresh_all = {s['id']: {'last_ts': now, 'due': now + 7 * memory.DAY,
+                       'stability': 200.0, 'difficulty': 3.0,
+                       'seen': 3, 'wrong': 0} for s in bank['skills']}
+t('когда просрочено ничего, вечер всё равно собирается',
+  len(evening.assemble(bank, fresh_all, 30, random.Random(3),
+                       only_due=True)[0]) >= 3)
+
+used = {q['block'] for q in picked}
+again = evening.assemble(bank, {}, 40, random.Random(8),
+                         avoid_blocks=used)[0]
+t('вопросы недавних вечеров не повторяются',
+  not ({q['block'] for q in again} & used))
+narrow = evening.assemble(bank, {}, 40, random.Random(8),
+                          practicums=['E1'], papers=[1],
+                          avoid_blocks=set(bank['archive']))[0]
+t('но лучше повтор билета, чем вечер из двух задач',
+  len(narrow) >= 3)
+
 print('\n=== лист заданий ===')
 pdf = archive.build_sheet(questions, bank, minutes=40, set_id='abc12xyz',
                           when='2026-08-31')
@@ -125,6 +179,9 @@ with tempfile.TemporaryDirectory() as tmp:
     t('разобранный вечер помечается', store.evening(db, 'zzz')['state'] == 'graded')
     t('вечера перечисляются свежими вперёд',
       [row['id'] for row in store.evenings(db)] == ['zzz'])
+    t('вопросы прошлых вечеров помнятся',
+      store.recent_blocks(db) == {q['block'] for q in questions})
+    t('глубина памяти ограничена', store.recent_blocks(db, 0) == set())
     try:
         store.evening(db, 'нет такого')
         t('чужой набор не находится', False)

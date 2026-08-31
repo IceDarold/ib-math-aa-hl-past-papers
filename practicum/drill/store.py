@@ -261,6 +261,25 @@ def evenings(db, limit=20):
         'SELECT * FROM evening ORDER BY ts DESC LIMIT ?', (limit,))]
 
 
+def recent_blocks(db, limit=6):
+    """Вопросы, уже выданные в последних вечерах.
+
+    Приём после ответа проседает почти до нуля веса, но у приёма бывает по
+    десятку вопросов, и один и тот же билет дважды за неделю — случайность,
+    которую дешевле запретить, чем объяснять.
+    """
+    seen = set()
+    for row in db.execute('SELECT questions FROM evening '
+                          'ORDER BY ts DESC LIMIT ?', (limit,)):
+        try:
+            for question in json.loads(row['questions'] or '[]'):
+                if question.get('block'):
+                    seen.add(question['block'])
+        except json.JSONDecodeError:
+            continue
+    return seen
+
+
 def save_pages(db, set_id, pages):
     """Страницы присланной работы: путь и к какому вопросу отнесены."""
     db.execute('UPDATE evening SET pages = ?, scanned_at = ? WHERE id = ?',

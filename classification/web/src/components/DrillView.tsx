@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { practicumSections } from '../data/practicums'
 import { MathText } from './MathText'
 import { WriteUpVerdict, type Verdict as WriteUp } from './WriteUpVerdict'
-import { EveningView, type Evening } from './EveningView'
+import { EveningView, type Evening, type EveningTheme } from './EveningView'
 
 type Mode = 'mixed' | 'recognition' | 'compute' | 'written'
 type Order = 'schedule' | 'ladder' | 'random'
@@ -397,14 +397,36 @@ export function DrillView() {
     } catch { /* список работ не критичен */ }
   }, [])
 
-  const openEvening = useCallback(async (minutes: number) => {
+  /** Темы для вечера: вопросов на бумаге и сколько приёмов уже начинали. */
+  const eveningThemes = useMemo<EveningTheme[]>(() => {
+    if (!setup) return []
+    const started = new Map<string, number>()
+    for (const skill of strength?.skills ?? []) {
+      if (skill.score !== null) {
+        started.set(skill.practicum, (started.get(skill.practicum) ?? 0) + 1)
+      }
+    }
+    return setup
+      .filter((entry) => entry.written > 0)
+      .map((entry) => ({
+        id: entry.id,
+        title: entry.title,
+        written: entry.written,
+        skills: entry.skills,
+        started: started.get(entry.id) ?? 0,
+      }))
+  }, [setup, strength])
+
+  const openEvening = useCallback(async (choice: {
+    minutes: number; practicums: string[]; papers: number[]; only_due: boolean
+  }) => {
     setError(null)
     setBusy(true)
     try {
       const response = await fetch(`${API}/evening/open`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ minutes }),
+        body: JSON.stringify(choice),
       })
       const payload = await response.json()
       if (!response.ok) throw new Error(payload.error ?? 'набор не собрался')
@@ -977,6 +999,7 @@ export function DrillView() {
         {screen === 'evening' && (
           <EveningView
             evening={evening}
+            themes={eveningThemes}
             busy={busy}
             setBusy={setBusy}
             onOpen={openEvening}
