@@ -438,6 +438,20 @@ export function DrillView() {
     }
   }, [])
 
+  const dropEvening = useCallback(async (id: string) => {
+    setError(null)
+    setBusy(true)
+    try {
+      await fetch(`${API}/evening/drop`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id }),
+      })
+      setEvening(null)
+    } catch { /* черновик всё равно перезапишется при следующей сборке */ }
+    finally { setBusy(false) }
+  }, [])
+
   const openSkill = useCallback(async (id: string, fresh = false) => {
     setError(null)
     try {
@@ -779,14 +793,18 @@ export function DrillView() {
               <span className="flex flex-col gap-0.5">
                 <span className="text-sm text-ink">
                   {!evening ? 'Вечер: одна кнопка, лист на бумагу'
-                    : evening.state === 'graded' ? 'Вечер разобран' : 'Продолжить вечер'}
+                    : evening.state === 'graded' ? 'Вечер разобран'
+                      : evening.state === 'draft' ? 'Черновик вечера — не начат'
+                        : 'Продолжить вечер'}
                 </span>
                 <span className="text-[11px] text-muted">
                   {!evening
                     ? 'Настоящие вопросы архива листом, решаешь на бумаге, присылаешь одним сканом'
                     : evening.state === 'graded'
                       ? `${evening.results.reduce((sum, row) => sum + (row.earned ?? 0), 0)} из ${evening.results.reduce((sum, row) => sum + (row.skipped || row.error ? 0 : (row.available ?? 0)), 0)} баллов, ${evening.questions.length} заданий`
-                      : `${evening.questions.length} заданий, ${evening.marks} баллов${evening.pages.length ? ' · работа прислана' : ' · лист собран'}`}
+                      : `${evening.questions.length} заданий, ${evening.marks} баллов${
+                          evening.state === 'draft' ? ' · ждёт старта'
+                            : evening.pages.length ? ' · работа прислана' : ' · лист собран'}`}
                 </span>
               </span>
               <span className="font-mono text-[11px] text-faint">→</span>
@@ -1004,6 +1022,7 @@ export function DrillView() {
             setBusy={setBusy}
             onOpen={openEvening}
             onChange={setEvening}
+            onDrop={dropEvening}
             onClose={() => { setScreen('setup'); void loadStats() }}
           />
         )}

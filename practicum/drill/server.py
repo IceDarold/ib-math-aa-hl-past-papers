@@ -504,6 +504,25 @@ class Drill:
             finally:
                 db.close()
 
+    def start_evening(self, set_id):
+        """Черновик становится вечером: с этой минуты он считается."""
+        with self.lock:
+            db = self.connection()
+            try:
+                store.start_evening(db, set_id)
+                return store.evening(db, set_id)
+            finally:
+                db.close()
+
+    def drop_evening(self, set_id):
+        """Выбрасывает черновик — «назад» с экрана собранного набора."""
+        with self.lock:
+            db = self.connection()
+            try:
+                return {'dropped': store.drop_evening(db, set_id)}
+            finally:
+                db.close()
+
     def sheet(self, set_id):
         """Лист заданий одним PDF."""
         record = self.evening(set_id)
@@ -516,6 +535,8 @@ class Drill:
         """Принимает работу за весь вечер и раскладывает её по заданиям."""
         set_id = str(payload.get('id') or '')
         record = self.evening(set_id)
+        if record['state'] == 'draft':
+            raise ValueError('этот вечер ещё не начат')
         photos = payload.get('photos') or []
         if not photos:
             raise ValueError('нет ни одной страницы работы')
@@ -844,7 +865,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         route = urlparse(self.path).path
         allowed = (f'{PREFIX}/answer', f'{PREFIX}/grade',
-                   f'{PREFIX}/evening/open', f'{PREFIX}/evening/scan',
+                   f'{PREFIX}/evening/open', f'{PREFIX}/evening/start',
+                   f'{PREFIX}/evening/drop', f'{PREFIX}/evening/scan',
                    f'{PREFIX}/evening/grade')
         if route not in allowed:
             self.send_json({'error': 'нет такой ручки'}, 404)
@@ -877,6 +899,22 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_json({'error': str(exc)}, 400)
             except Exception as exc:  # noqa: BLE001
                 self.send_json({'error': f'набор не собрался: {exc}'}, 500)
+            return
+
+        if route == f'{PREFIX}/evening/start':
+            try:
+                self.send_json(self.drill.start_evening(
+                    str(payload.get('id') or '')))
+            except LookupError as exc:
+                self.send_json({'error': str(exc)}, 404)
+            return
+
+        if route == f'{PREFIX}/evening/drop':
+            try:
+                self.send_json(self.drill.drop_evening(
+                    str(payload.get('id') or '')))
+            except LookupError as exc:
+                self.send_json({'error': str(exc)}, 404)
             return
 
         if route == f'{PREFIX}/evening/scan':

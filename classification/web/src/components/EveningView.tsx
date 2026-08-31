@@ -101,8 +101,9 @@ export interface Evening {
   ts: number
   minutes: number
   marks: number
-  state: 'open' | 'graded'
+  state: 'draft' | 'open' | 'graded'
   scanned_at: number | null
+  started_at: number | null
   questions: EveningQuestion[]
   pages: EveningPage[]
   results: EveningResult[]
@@ -120,16 +121,22 @@ function readFile(file: File) {
   })
 }
 
+function clock(ts: number) {
+  return new Date(ts * 1000).toLocaleTimeString('ru-RU',
+    { hour: '2-digit', minute: '2-digit' })
+}
+
 function when(ts: number) {
   return new Date(ts * 1000).toLocaleDateString('ru-RU',
     { day: 'numeric', month: 'long' })
 }
 
-export function EveningView({ evening, themes, onOpen, onChange, onClose, busy, setBusy }: {
+export function EveningView({ evening, themes, onOpen, onChange, onDrop, onClose, busy, setBusy }: {
   evening: Evening | null
   themes: EveningTheme[]
   onOpen: (choice: { minutes: number; practicums: string[]; papers: number[]; only_due: boolean }) => Promise<void>
   onChange: (evening: Evening) => void
+  onDrop: (id: string) => Promise<void>
   onClose: () => void
   busy: boolean
   setBusy: (busy: boolean) => void
@@ -194,6 +201,26 @@ export function EveningView({ evening, themes, onOpen, onChange, onClose, busy, 
         ? { ...page, question } : page)),
     })
   }, [evening, onChange])
+
+  const start = useCallback(async () => {
+    if (!evening) return
+    setError(null)
+    setBusy(true)
+    try {
+      const response = await fetch(`${API}/evening/start`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: evening.id }),
+      })
+      const payload = await response.json()
+      if (!response.ok) throw new Error(payload.error ?? 'вечер не начался')
+      onChange(payload)
+    } catch (problem) {
+      setError(problem instanceof Error ? problem.message : 'не начался')
+    } finally {
+      setBusy(false)
+    }
+  }, [evening, onChange, setBusy])
 
   const grade = useCallback(async () => {
     if (!evening) return
@@ -375,7 +402,10 @@ export function EveningView({ evening, themes, onOpen, onChange, onClose, busy, 
         <div className="flex flex-wrap items-baseline gap-x-3">
           <h2 className="text-lg text-ink">Вечер</h2>
           <span className="font-mono text-[11px] text-faint">
-            {when(evening.ts)} · {evening.questions.length} заданий · {total} баллов
+            {evening.state === 'draft' ? 'черновик' : when(evening.ts)}
+            {' · '}{evening.questions.length} заданий · {total} баллов
+            {evening.state === 'open' && evening.started_at
+              && ` · начат в ${clock(evening.started_at)}`}
             {evening.state === 'graded' && scored > 0 && ` · набрано ${earned} из ${scored}`}
           </span>
         </div>
@@ -406,40 +436,65 @@ export function EveningView({ evening, themes, onOpen, onChange, onClose, busy, 
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
-            <a
-              href={`${API}/evening/sheet?id=${evening.id}`}
-              target="_blank"
-              rel="noreferrer"
-              className="border border-ink bg-canvas px-4 py-1.5 text-sm text-ink no-underline hover:bg-surface"
-            >
-              открыть лист заданий
-            </a>
-            <input
-              ref={picker}
-              type="file"
-              accept="image/*,application/pdf"
-              multiple
-              className="hidden"
-              onChange={(event) => void send(event.target.files)}
-            />
-            <button
-              type="button"
-              disabled={busy}
-              className="cursor-pointer border border-line bg-canvas px-4 py-1.5 text-sm text-muted hover:border-line-strong disabled:cursor-default disabled:opacity-50"
-              onClick={() => picker.current?.click()}
-            >
-              {busy && !evening.pages.length ? 'принимаю…' : 'прислать работу'}
-            </button>
-            <span className="font-mono text-[10px] text-faint">
-              один скан или пачка фото · набор {evening.id}
-            </span>
-          </div>
+          {evening.state === 'draft' ? (
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                disabled={busy}
+                className="cursor-pointer border border-ink bg-ink px-5 py-1.5 text-sm text-canvas hover:bg-ink/90 disabled:cursor-default disabled:opacity-50"
+                onClick={() => void start()}
+              >
+                {busy ? 'начинаю…' : 'старт'}
+              </button>
+              <button
+                type="button"
+                disabled={busy}
+                className="cursor-pointer border border-line bg-canvas px-4 py-1.5 text-sm text-muted hover:border-line-strong disabled:cursor-default disabled:opacity-50"
+                onClick={() => void onDrop(evening.id)}
+              >
+                назад к отбору
+              </button>
+              <span className="max-w-[26rem] font-mono text-[10px] text-faint">
+                Пока это черновик: его можно пересобрать, и в счёт он не идёт.
+                Со «старта» вечер начинается — и лист, и приём работы.
+              </span>
+            </div>
+          ) : (
+            <div className="flex flex-wrap items-center gap-2">
+              <a
+                href={`${API}/evening/sheet?id=${evening.id}`}
+                target="_blank"
+                rel="noreferrer"
+                className="border border-ink bg-canvas px-4 py-1.5 text-sm text-ink no-underline hover:bg-surface"
+              >
+                открыть лист заданий
+              </a>
+              <input
+                ref={picker}
+                type="file"
+                accept="image/*,application/pdf"
+                multiple
+                className="hidden"
+                onChange={(event) => void send(event.target.files)}
+              />
+              <button
+                type="button"
+                disabled={busy}
+                className="cursor-pointer border border-line bg-canvas px-4 py-1.5 text-sm text-muted hover:border-line-strong disabled:cursor-default disabled:opacity-50"
+                onClick={() => picker.current?.click()}
+              >
+                {busy && !evening.pages.length ? 'принимаю…' : 'прислать работу'}
+              </button>
+              <span className="font-mono text-[10px] text-faint">
+                один скан или пачка фото · набор {evening.id}
+              </span>
+            </div>
+          )}
         </div>
       )}
 
       {/* --- подтверждение раскладки ------------------------------------ */}
-      {evening.state !== 'graded' && evening.pages.length > 0 && (
+      {evening.state === 'open' && evening.pages.length > 0 && (
         <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
           className="flex flex-col gap-3 border-t border-line pt-4">
           <div className="flex flex-col gap-1">

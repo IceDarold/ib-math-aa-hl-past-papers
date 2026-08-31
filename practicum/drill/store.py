@@ -66,8 +66,9 @@ CREATE TABLE IF NOT EXISTS evening (
     minutes    INTEGER NOT NULL,
     marks      INTEGER NOT NULL,
     questions  TEXT    NOT NULL,
-    state      TEXT    NOT NULL DEFAULT 'open',
+    state      TEXT    NOT NULL DEFAULT 'draft',
     scanned_at REAL,
+    started_at REAL,
     pages      TEXT    NOT NULL DEFAULT '',
     results    TEXT    NOT NULL DEFAULT ''
 );
@@ -87,6 +88,7 @@ CREATE TABLE IF NOT EXISTS skill_state (
 
 # Столбцы, которых нет в базах, заведённых до карты приёмов.
 ADDED = (('stability', 'REAL'), ('difficulty', 'REAL'))
+EVENING_ADDED = (('started_at', 'REAL'),)
 
 DAY = memory.DAY
 
@@ -99,6 +101,10 @@ def connect(path=None):
     for name, kind in ADDED:
         if name not in have:
             db.execute(f'ALTER TABLE skill_state ADD COLUMN {name} {kind}')
+    seen = {row['name'] for row in db.execute('PRAGMA table_info(evening)')}
+    for name, kind in EVENING_ADDED:
+        if name not in seen:
+            db.execute(f'ALTER TABLE evening ADD COLUMN {name} {kind}')
     db.commit()
     return db
 
@@ -224,18 +230,42 @@ def totals(db):
 
 
 def open_evening(db, *, id, minutes, marks, questions):
-    """Заводит вечерний набор.
+    """Заводит вечерний набор черновиком.
 
     Набор живёт на сервере, а не в браузере: задания берут в семь вечера,
     а работу присылают в десять и с другого устройства. Пока это лежало
     в localStorage, такой вечер был невозможен.
+
+    Черновик ещё не вечер: его можно посмотреть и пересобрать. Учитывается
+    он только со `start_evening` — иначе брошенный набор занимал бы собой
+    и список «продолжить», и память о недавних вопросах.
     """
+    db.execute("DELETE FROM evening WHERE state = 'draft'")
     db.execute(
-        'INSERT INTO evening (id, ts, minutes, marks, questions) '
-        'VALUES (?, ?, ?, ?, ?)',
+        "INSERT INTO evening (id, ts, minutes, marks, questions, state) "
+        "VALUES (?, ?, ?, ?, ?, 'draft')",
         (id, time.time(), int(minutes), int(marks),
          json.dumps(questions, ensure_ascii=False)))
     db.commit()
+
+
+def start_evening(db, set_id):
+    """Черновик становится вечером. С этой минуты он считается."""
+    changed = db.execute(
+        "UPDATE evening SET state = 'open', started_at = ? "
+        "WHERE id = ? AND state = 'draft'",
+        (time.time(), set_id)).rowcount
+    db.commit()
+    if not changed and evening(db, set_id)['state'] == 'draft':
+        raise LookupError('набор не удалось начать')
+
+
+def drop_evening(db, set_id):
+    """Выбрасывает черновик. Начатый вечер не трогаем."""
+    dropped = db.execute("DELETE FROM evening WHERE id = ? AND state = 'draft'",
+                         (set_id,)).rowcount
+    db.commit()
+    return bool(dropped)
 
 
 def _evening_row(row):
@@ -269,8 +299,9 @@ def recent_blocks(db, limit=6):
     которую дешевле запретить, чем объяснять.
     """
     seen = set()
-    for row in db.execute('SELECT questions FROM evening '
-                          'ORDER BY ts DESC LIMIT ?', (limit,)):
+    for row in db.execute("SELECT questions FROM evening "
+                          "WHERE state != 'draft' "
+                          "ORDER BY ts DESC LIMIT ?", (limit,)):
         try:
             for question in json.loads(row['questions'] or '[]'):
                 if question.get('block'):

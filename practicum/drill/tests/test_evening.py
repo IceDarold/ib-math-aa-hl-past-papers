@@ -169,19 +169,40 @@ with tempfile.TemporaryDirectory() as tmp:
                        questions=questions)
     record = store.evening(db, 'zzz')
     t('набор сохраняется и читается обратно',
-      record['state'] == 'open' and len(record['questions']) == len(questions))
+      len(record['questions']) == len(questions))
+    t('набор заводится черновиком', record['state'] == 'draft')
     t('пока страниц нет, их список пуст', record['pages'] == [])
+    t('черновик в память о недавних вопросах не идёт',
+      store.recent_blocks(db) == set())
+
+    store.open_evening(db, id='www', minutes=40, marks=marks,
+                       questions=questions)
+    t('новый черновик выбрасывает прошлый',
+      [row['id'] for row in store.evenings(db)] == ['www'])
+    t('черновик выбрасывается по «назад»', store.drop_evening(db, 'www'))
+    t('после этого наборов не остаётся', store.evenings(db) == [])
+
+    store.open_evening(db, id='zzz', minutes=40, marks=marks,
+                       questions=questions)
+    store.start_evening(db, 'zzz')
+    t('старт делает набор вечером', store.evening(db, 'zzz')['state'] == 'open')
+    t('время старта записано', store.evening(db, 'zzz')['started_at'])
+    t('после старта вопросы помнятся',
+      store.recent_blocks(db) == {q['block'] for q in questions})
+    t('глубина памяти ограничена', store.recent_blocks(db, 0) == set())
+    t('начатый вечер не выбрасывается', store.drop_evening(db, 'zzz') is False)
+
     store.save_pages(db, 'zzz', [{'index': 0, 'file': 'p.png', 'question': 1}])
     t('страницы сохраняются вместе с раскладкой',
       store.evening(db, 'zzz')['pages'][0]['question'] == 1)
     t('время скана записывается', store.evening(db, 'zzz')['scanned_at'])
     store.finish_evening(db, 'zzz', [{'n': 1, 'earned': 3}])
-    t('разобранный вечер помечается', store.evening(db, 'zzz')['state'] == 'graded')
+    t('разобранный вечер помечается',
+      store.evening(db, 'zzz')['state'] == 'graded')
     t('вечера перечисляются свежими вперёд',
       [row['id'] for row in store.evenings(db)] == ['zzz'])
-    t('вопросы прошлых вечеров помнятся',
+    t('разобранный вечер тоже помнится',
       store.recent_blocks(db) == {q['block'] for q in questions})
-    t('глубина памяти ограничена', store.recent_blocks(db, 0) == set())
     try:
         store.evening(db, 'нет такого')
         t('чужой набор не находится', False)
@@ -225,7 +246,28 @@ with tempfile.TemporaryDirectory() as tmp:
         count = len(opened['questions'])
         t('ручка отдаёт собранный набор с ключом',
           len(opened['id']) == 8 and count >= 3)
-        t('набор сразу открыт', opened['state'] == 'open')
+        t('набор приходит черновиком, а не начатым вечером',
+          opened['state'] == 'draft')
+
+        # Черновик — ещё не вечер: работу он не принимает, а пересборка
+        # его выбрасывает, чтобы брошенные наборы не копились.
+        try:
+            drill.scan({'id': opened['id'], 'photos': [blank_png('1')]})
+            t('черновик не принимает работу', False)
+        except ValueError as exc:
+            t('черновик не принимает работу', 'не начат' in str(exc))
+        again = drill.open_evening(30)
+        t('пересборка выбрасывает прошлый черновик',
+          drill.evening()['sets'][0]['id'] == again['id']
+          and len(drill.evening()['sets']) == 1)
+        t('черновик выбрасывается по «назад»',
+          drill.drop_evening(again['id'])['dropped'] is True
+          and not drill.evening()['sets'])
+
+        opened = drill.open_evening(30)
+        count = len(opened['questions'])
+        opened = drill.start_evening(opened['id'])
+        t('старт открывает вечер', opened['state'] == 'open')
 
         sheet = drill.sheet(opened['id'])
         t('лист собирается по ключу набора', sheet[:5] == b'%PDF-')
@@ -271,7 +313,7 @@ with tempfile.TemporaryDirectory() as tmp:
         db.close()
 
         # Пропущенное задание: страниц по нему не прислали.
-        second = drill.open_evening(30)
+        second = drill.start_evening(drill.open_evening(30)['id'])
         drill.scan({'id': second['id'], 'photos': [blank_png('1')]})
         done = drill.grade_evening({'id': second['id'],
                                     'assignment': [1]})
@@ -286,7 +328,7 @@ with tempfile.TemporaryDirectory() as tmp:
         db.close()
 
         # Поправка раскладки руками должна пережить повторный разбор.
-        third = drill.open_evening(30)
+        third = drill.start_evening(drill.open_evening(30)['id'])
         drill.scan({'id': third['id'], 'photos': [blank_png('1'), blank_png('2')]})
         fixed = drill.grade_evening({'id': third['id'], 'assignment': [2, 2]})
         t('исправленная раскладка применяется',
@@ -310,7 +352,7 @@ with tempfile.TemporaryDirectory() as tmp:
     try:
         drill = service.Drill(db_path=os.path.join(tmp, 'fallback.sqlite'))
         drill.rng = random.Random(9)
-        opened = drill.open_evening(30)
+        opened = drill.start_evening(drill.open_evening(30)['id'])
         scanned = drill.scan({'id': opened['id'],
                               'photos': [blank_png('1')] * 4})
         t('без раскладки страницы всё равно приняты',
