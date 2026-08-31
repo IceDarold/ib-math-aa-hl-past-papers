@@ -66,9 +66,33 @@ interface SkillStat {
   rung: number
   seen: number
   wrong: number
-  box: number | null
+  score: number | null
+  stability: number | null
+  retrievability: number | null
+  difficulty: number | null
+  days_since: number | null
   due_in_days: number | null
   has_compute: boolean
+}
+
+interface StrengthSkill extends SkillStat {
+  marks: number
+}
+
+interface StrengthPracticum {
+  id: string
+  title: string
+  skills: number
+  started: number
+  marks: number
+  score: number | null
+  due: number
+}
+
+interface Strength {
+  skills: StrengthSkill[]
+  practicums: StrengthPracticum[]
+  horizon: number
 }
 
 interface WrittenRow {
@@ -102,7 +126,15 @@ interface SkillCard {
   recognition: { prompt: string; answer: string; options: { code: string; name: string }[] }[]
   compute: { prompt: string; note?: string; answer: string } | null
   archive: { block: string; reference: string; marks: number | null; paper: number | null; calculator: string | null; question_url: string }[]
-  state: { seen: number; wrong: number; box: number; due_in_days: number } | null
+  state: {
+    seen: number
+    wrong: number
+    score: number | null
+    stability: number | null
+    difficulty: number | null
+    days_since: number | null
+    due_in_days: number | null
+  } | null
 }
 
 const CALCULATOR: Record<string, string> = {
@@ -272,11 +304,34 @@ function available(practicum: SetupPracticum, mode: Mode) {
   return practicum.recognition + practicum.compute
 }
 
-function tileTone(skill: SkillStat) {
-  if (!skill.seen) return 'bg-surface text-faint'
-  if (skill.wrong / skill.seen > 0.4) return 'bg-ink text-canvas'
-  if (skill.due_in_days !== null && skill.due_in_days < 0) return 'bg-primary-soft text-ink'
-  return 'bg-canvas text-muted'
+/** Ступень лестницы силы: один тон, светлота падает с ростом счёта. */
+const HEAT = [
+  'bg-heat-0 text-ink', 'bg-heat-1 text-ink', 'bg-heat-2 text-ink',
+  'bg-heat-3 text-ink', 'bg-heat-4 text-ink', 'bg-heat-5 text-ink',
+  'bg-heat-6 text-canvas',
+]
+
+const HEAT_EDGES = [15, 30, 45, 60, 75, 90]
+
+function heatTone(score: number | null) {
+  // «Ни разу» — не ноль: не начинали и забыли это разные болезни, и
+  // отличаются они не оттенком, а пунктиром и точкой вместо числа.
+  if (score === null) return 'border-dashed border-line-strong bg-surface text-faint'
+  let step = 0
+  while (step < HEAT_EDGES.length && score >= (HEAT_EDGES[step] as number)) step += 1
+  return `border-solid border-line ${HEAT[step]}`
+}
+
+/** Строка под картой: что за квадратом, на который навели. */
+function heatRead(skill: StrengthSkill | null, horizon: number) {
+  if (!skill) return `Наведите на квадрат. Счёт — свежесть, помноженная на глубину; сто означает приём, который держится ${Math.round(horizon)} дней.`
+  if (skill.score === null) {
+    return `${skill.practicum} · ${skill.name} — ни одной попытки${skill.marks ? `, за приёмом ${skill.marks} баллов архива` : ''}.`
+  }
+  const due = skill.due_in_days === null ? ''
+    : skill.due_in_days <= 0 ? ', срок подошёл'
+    : `, повторить через ${Math.round(skill.due_in_days)} дн.`
+  return `${skill.practicum} · ${skill.name} — ${skill.score}, держится ${skill.stability} дн., последний раз ${skill.days_since === 0 ? 'сегодня' : `${skill.days_since} дн. назад`}${due}. Показов ${skill.seen}, мимо ${skill.wrong}.`
 }
 
 export function DrillView() {
@@ -285,6 +340,9 @@ export function DrillView() {
   const [setup, setSetup] = useState<SetupPracticum[] | null>(null)
   const [blocks, setBlocks] = useState<WrittenBlock[]>([])
   const [stats, setStats] = useState<Stats | null>(null)
+  const [strength, setStrength] = useState<Strength | null>(null)
+  const [hovered, setHovered] = useState<StrengthSkill | null>(null)
+  const [asList, setAsList] = useState(false)
   const [item, setItem] = useState<Item | null>(null)
   const [verdict, setVerdict] = useState<Verdict | null>(null)
   const [answer, setAnswer] = useState('')
@@ -315,6 +373,10 @@ export function DrillView() {
       const response = await fetch(`${API}/stats`)
       if (response.ok) setStats(await response.json())
     } catch { /* статистика не критична */ }
+    try {
+      const response = await fetch(`${API}/strength`)
+      if (response.ok) setStrength(await response.json())
+    } catch { /* карта не критична */ }
     try {
       const response = await fetch(`${API}/written`)
       if (response.ok) setWritten((await response.json()).history ?? [])
@@ -871,34 +933,117 @@ export function DrillView() {
               </button>
             </div>
 
-            {!card && stats && (
-              <div className="flex flex-col gap-3">
-                <p className="text-sm text-muted">
-                  Все {stats.skills.length} приёмов, из которых собраны практикумы.
-                  Нажмите на любой, чтобы увидеть, по какому признаку его узнают,
-                  как он выполняется и на каких вопросах архива он стоит.
-                </p>
-                {[...new Set(stats.skills.map((entry) => entry.practicum))].map((practicum) => (
-                  <div key={practicum} className="flex flex-col gap-1">
-                    <span className="font-mono text-[10px] text-faint">{practicum}</span>
-                    <div className="flex flex-col">
-                      {stats.skills.filter((entry) => entry.practicum === practicum).map((entry) => (
-                        <button
-                          key={entry.id}
-                          type="button"
-                          className="flex flex-wrap items-baseline gap-x-3 border-b border-line px-1 py-1.5 text-left hover:bg-surface"
-                          onClick={() => void openSkill(entry.id)}
-                        >
-                          <span className="w-5 shrink-0 font-mono text-[10px] text-faint">{entry.rung}</span>
-                          <span className="text-sm text-ink">{entry.name}</span>
-                          <span className="ml-auto font-mono text-[10px] text-faint">
-                            {entry.seen ? `${entry.seen} показов${entry.wrong ? `, ${entry.wrong} мимо` : ''}` : 'ни разу'}
-                          </span>
-                        </button>
-                      ))}
-                    </div>
+            {!card && strength && (
+              <div className="flex flex-col gap-4" onMouseLeave={() => setHovered(null)}>
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <p className="max-w-[46rem] text-sm text-muted">
+                    Все {strength.skills.length} приёмов. Число — насколько приём отточен:
+                    свежесть, помноженная на глубину. Каждое повторение поднимает его,
+                    простой опускает. Нажмите на квадрат, чтобы открыть карточку приёма.
+                  </p>
+                  <button
+                    type="button"
+                    className="cursor-pointer border-0 bg-transparent font-mono text-[11px] text-muted underline hover:text-ink"
+                    onClick={() => setAsList((current) => !current)}
+                  >
+                    {asList ? 'картой' : 'списком'}
+                  </button>
+                </div>
+
+                {!asList && <>
+                  <div className="flex flex-col gap-1">
+                    {strength.practicums.map((practicum) => (
+                      <div key={practicum.id} className="flex items-center gap-2">
+                        <span className="w-7 shrink-0 font-mono text-[10px] text-faint">{practicum.id}</span>
+                        <span className="w-7 shrink-0 text-right font-mono text-[11px] tabular-nums text-ink">
+                          {practicum.score ?? '·'}
+                        </span>
+                        <div className="flex gap-0.5">
+                          {strength.skills.filter((skill) => skill.practicum === practicum.id).map((skill) => (
+                            <button
+                              key={skill.id}
+                              type="button"
+                              title={heatRead(skill, strength.horizon)}
+                              onMouseEnter={() => setHovered(skill)}
+                              onFocus={() => setHovered(skill)}
+                              onClick={() => void openSkill(skill.id)}
+                              className={`relative h-7 w-7 cursor-pointer border font-mono text-[10px] tabular-nums hover:outline hover:outline-2 hover:outline-offset-[-2px] hover:outline-ink ${heatTone(skill.score)}`}
+                            >
+                              {skill.score ?? '·'}
+                              {skill.due_in_days !== null && skill.due_in_days <= 0 && (
+                                <span className="pointer-events-none absolute inset-y-0 left-0 w-[3px] bg-primary" />
+                              )}
+                            </button>
+                          ))}
+                        </div>
+                        <span className="ml-auto shrink-0 font-mono text-[10px] text-faint">
+                          {practicum.started}/{practicum.skills} · {practicum.marks} б.
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+
+                  <p className="min-h-[2.5em] border-t border-line pt-2 text-[11px] text-muted">
+                    {heatRead(hovered, strength.horizon)}
+                  </p>
+
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[10px] text-faint">
+                    <span className="flex items-center gap-1">
+                      слабее
+                      {HEAT.map((tone, index) => (
+                        <span key={index} className={`inline-block h-3 w-3 border border-line ${tone}`} />
+                      ))}
+                      сильнее
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <span className="inline-block h-3 w-3 border border-dashed border-line-strong bg-surface" />
+                      ни разу не показывали
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <span className="relative inline-block h-3 w-3 border border-line bg-heat-2">
+                        <span className="absolute inset-y-0 left-0 w-[2px] bg-primary" />
+                      </span>
+                      срок повторить подошёл
+                    </span>
+                  </div>
+                </>}
+
+                {asList && (
+                  <table className="w-full border-collapse text-left">
+                    <thead>
+                      <tr className="border-b border-line font-mono text-[10px] tracking-wide text-faint uppercase">
+                        <th className="py-1 pr-3 font-normal">приём</th>
+                        <th className="py-1 pr-3 text-right font-normal">счёт</th>
+                        <th className="py-1 pr-3 text-right font-normal">держится</th>
+                        <th className="py-1 pr-3 text-right font-normal">повторить</th>
+                        <th className="py-1 text-right font-normal">показов</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {strength.skills.map((skill) => (
+                        <tr
+                          key={skill.id}
+                          tabIndex={0}
+                          className="cursor-pointer border-b border-line hover:bg-surface"
+                          onClick={() => void openSkill(skill.id)}
+                        >
+                          <td className="py-1.5 pr-3">
+                            <span className="font-mono text-[10px] text-faint">{skill.practicum}</span>{' '}
+                            <span className="text-sm text-ink">{skill.name}</span>
+                          </td>
+                          <td className="py-1.5 pr-3 text-right font-mono text-[11px] tabular-nums text-ink">{skill.score ?? '—'}</td>
+                          <td className="py-1.5 pr-3 text-right font-mono text-[11px] tabular-nums text-muted">{skill.stability === null ? '—' : `${skill.stability} дн.`}</td>
+                          <td className="py-1.5 pr-3 text-right font-mono text-[11px] tabular-nums text-muted">
+                            {skill.due_in_days === null ? '—' : skill.due_in_days <= 0 ? 'пора' : `${Math.round(skill.due_in_days)} дн.`}
+                          </td>
+                          <td className="py-1.5 text-right font-mono text-[11px] tabular-nums text-muted">
+                            {skill.seen}{skill.wrong ? ` / ${skill.wrong} мимо` : ''}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
               </div>
             )}
 
@@ -993,7 +1138,7 @@ export function DrillView() {
                   <dt className="font-mono text-[10px] tracking-wide text-faint uppercase">у тебя</dt>
                   <dd className="font-mono text-[11px] text-muted">
                     {card.state
-                      ? `показов ${card.state.seen}, мимо ${card.state.wrong}, ящик ${card.state.box}, срок ${card.state.due_in_days <= 0 ? 'подошёл' : `через ${card.state.due_in_days} дн.`}`
+                      ? `сила ${card.state.score}, держится ${card.state.stability} дн., последний раз ${card.state.days_since === 0 ? 'сегодня' : `${card.state.days_since} дн. назад`}, срок ${(card.state.due_in_days ?? 0) <= 0 ? 'подошёл' : `через ${Math.round(card.state.due_in_days ?? 0)} дн.`}; показов ${card.state.seen}, мимо ${card.state.wrong}`
                       : 'ни одной попытки'}
                   </dd>
                 </dl>
@@ -1358,26 +1503,30 @@ export function DrillView() {
               <span>сегодня {stats.totals.today_correct}/{stats.totals.today}</span>
               {stats.totals.avg_first_ms > 0 && <span>до первого нажатия {seconds(stats.totals.avg_first_ms)}</span>}
             </div>
-            <div className="flex flex-col gap-2">
-              {[...new Set(stats.skills.map((skill) => skill.practicum))].map((practicum) => (
-                <div key={practicum} className="flex items-center gap-2">
-                  <span className="w-7 shrink-0 font-mono text-[10px] text-faint">{practicum}</span>
-                  <div className="flex flex-wrap gap-1">
-                    {stats.skills.filter((skill) => skill.practicum === practicum).map((skill) => (
+            <div className="flex flex-col gap-0.5">
+              {(strength?.practicums ?? []).map((practicum) => (
+                <div key={practicum.id} className="flex items-center gap-2">
+                  <span className="w-7 shrink-0 font-mono text-[10px] text-faint">{practicum.id}</span>
+                  <div className="flex gap-0.5">
+                    {(strength?.skills ?? []).filter((skill) => skill.practicum === practicum.id).map((skill) => (
                       <span
                         key={skill.id}
-                        title={`${skill.name} — показов ${skill.seen}, ошибок ${skill.wrong}${skill.has_compute ? '' : ', только узнавание'}`}
-                        className={`border border-line px-1.5 py-0.5 font-mono text-[10px] ${tileTone(skill)}`}
+                        title={heatRead(skill, strength?.horizon ?? 120)}
+                        className={`relative inline-block h-4 w-4 border ${heatTone(skill.score)}`}
                       >
-                        {skill.seen || '·'}
+                        {skill.due_in_days !== null && skill.due_in_days <= 0 && (
+                          <span className="pointer-events-none absolute inset-y-0 left-0 w-[2px] bg-primary" />
+                        )}
                       </span>
                     ))}
                   </div>
+                  <span className="ml-auto shrink-0 font-mono text-[10px] text-faint">{practicum.score ?? '·'}</span>
                 </div>
               ))}
             </div>
             <p className="text-[11px] text-faint">
-              Тёмная плитка — приём, где ошибок больше двух из пяти. Светлая с заливкой — подошёл срок повторить. Точка — ни одной попытки.
+              Насыщенность — сила приёма, красная полоска снизу — подошёл срок повторить,
+              пунктир — ни разу не показывали. Числа и разбор — на карте приёмов.
             </p>
           </section>
         )}

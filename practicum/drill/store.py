@@ -6,7 +6,13 @@
 
 Время меряется на странице и приходит готовым: сколько прошло до первого
 нажатия и сколько до отправки. Разделять их важно — первое показывает,
-узнан ли приём, второе — насколько быстро считается.
+узнан ли приём, второе — насколько быстро считается. Второе к тому же
+решает оценку попытки: см. `memory.grade`.
+
+Состояние приёма — стойкость и трудность, а не номер ящика. Ящики
+отвечали только на вопрос «показывать сегодня или нет»; карта приёмов
+требует знать, насколько приём отточен, а это непрерывная величина.
+Правила её движения живут в `memory.py`, здесь только хранение.
 """
 from __future__ import annotations
 
@@ -14,6 +20,8 @@ import json
 import os
 import sqlite3
 import time
+
+from drill import memory
 
 DEFAULT_DB = os.environ.get(
     'DRILL_DB', os.path.join(os.path.dirname(os.path.abspath(__file__)),
@@ -53,31 +61,42 @@ CREATE TABLE IF NOT EXISTS written (
 CREATE INDEX IF NOT EXISTS written_skill ON written (skill, ts);
 
 CREATE TABLE IF NOT EXISTS skill_state (
-    skill    TEXT PRIMARY KEY,
-    box      INTEGER NOT NULL DEFAULT 0,
-    due      REAL    NOT NULL DEFAULT 0,
-    seen     INTEGER NOT NULL DEFAULT 0,
-    wrong    INTEGER NOT NULL DEFAULT 0,
-    last_ok  REAL,
-    last_ts  REAL
+    skill      TEXT PRIMARY KEY,
+    due        REAL    NOT NULL DEFAULT 0,
+    seen       INTEGER NOT NULL DEFAULT 0,
+    wrong      INTEGER NOT NULL DEFAULT 0,
+    last_ok    REAL,
+    last_ts    REAL,
+    stability  REAL,
+    difficulty REAL
 );
 """
 
-# Ящики Лейтнера: интервал до следующего показа, в днях.
-BOXES = (0.0, 1.0, 3.0, 7.0, 21.0)
-DAY = 86400.0
+# Столбцы, которых нет в базах, заведённых до карты приёмов.
+ADDED = (('stability', 'REAL'), ('difficulty', 'REAL'))
+
+DAY = memory.DAY
 
 
 def connect(path=None):
     db = sqlite3.connect(path or DEFAULT_DB, timeout=10)
     db.row_factory = sqlite3.Row
     db.executescript(SCHEMA)
+    have = {row['name'] for row in db.execute('PRAGMA table_info(skill_state)')}
+    for name, kind in ADDED:
+        if name not in have:
+            db.execute(f'ALTER TABLE skill_state ADD COLUMN {name} {kind}')
+    db.commit()
     return db
 
 
 def record(db, *, mode, kind, practicum, skill, item, answer, ok, ms,
            first_ms, budget_ms):
-    """Записывает попытку и двигает приём по ящикам."""
+    """Записывает попытку и двигает стойкость приёма.
+
+    Возвращает оценку попытки — её показывают в разборе, чтобы было
+    видно, почему верный, но медленный ответ продвинул меньше.
+    """
     now = time.time()
     db.execute(
         'INSERT INTO attempts (ts, mode, kind, practicum, skill, item, '
@@ -88,29 +107,85 @@ def record(db, *, mode, kind, practicum, skill, item, answer, ok, ms,
 
     row = db.execute('SELECT * FROM skill_state WHERE skill = ?',
                      (skill,)).fetchone()
-    box = row['box'] if row else 0
     seen = (row['seen'] if row else 0) + 1
     wrong = (row['wrong'] if row else 0) + (0 if ok else 1)
     last_ok = (now if ok else (row['last_ok'] if row else None))
-    # Верный ответ поднимает на ящик вверх, неверный возвращает в начало:
-    # приём, который не сработал, нужен завтра, а не через три недели.
-    box = min(box + 1, len(BOXES) - 1) if ok else 0
-    due = now + BOXES[box] * DAY
-
-    db.execute(
-        'INSERT INTO skill_state (skill, box, due, seen, wrong, last_ok, '
-        'last_ts) VALUES (?, ?, ?, ?, ?, ?, ?) '
-        'ON CONFLICT(skill) DO UPDATE SET box = excluded.box, '
-        'due = excluded.due, seen = excluded.seen, wrong = excluded.wrong, '
-        'last_ok = excluded.last_ok, last_ts = excluded.last_ts',
-        (skill, box, due, seen, wrong, last_ok, now))
+    stability, difficulty, mark = memory.advance(
+        row['stability'] if row else None,
+        row['difficulty'] if row else None,
+        row['last_ts'] if row else None,
+        now, ok=ok, ms=ms, budget_ms=budget_ms, kind=kind)
+    _save_state(db, skill, stability, difficulty, seen, wrong, last_ok, now)
     db.commit()
+    return mark
+
+
+def _save_state(db, skill, stability, difficulty, seen, wrong, last_ok, now):
+    """Срок берётся из самой стойкости: приём возвращается тогда, когда
+    просядет до девяноста процентов. Таблицы интервалов больше нет, и
+    потолка в двадцать один день тоже."""
+    db.execute(
+        'INSERT INTO skill_state (skill, due, seen, wrong, last_ok, '
+        'last_ts, stability, difficulty) VALUES (?, ?, ?, ?, ?, ?, ?, ?) '
+        'ON CONFLICT(skill) DO UPDATE SET due = excluded.due, '
+        'seen = excluded.seen, wrong = excluded.wrong, '
+        'last_ok = excluded.last_ok, last_ts = excluded.last_ts, '
+        'stability = excluded.stability, difficulty = excluded.difficulty',
+        (skill, memory.due_at(now, stability), seen, wrong, last_ok, now,
+         stability, difficulty))
 
 
 def states(db):
     """Состояние всех приёмов, которые хоть раз показывались."""
     return {row['skill']: dict(row)
             for row in db.execute('SELECT * FROM skill_state')}
+
+
+def strength(db, bank, now=None):
+    """Карта приёмов: по числу на каждый квадрат.
+
+    Счёт практикума — среднее по его приёмам, взвешенное баллами архива,
+    которые за приёмами стоят: приём, на котором висит сорок баллов
+    экзамена, тянет строку сильнее, чем приём на четыре. Приёмы, которых
+    ни разу не показывали, в среднее не идут вовсе — иначе новая тема
+    выглядела бы забытой, хотя её не начинали.
+    """
+    now = time.time() if now is None else now
+    known = states(db)
+    archive = bank.get('archive') or {}
+    rows, by_practicum = [], {}
+    for skill in bank['skills']:
+        marks = sum((archive.get(block) or {}).get('marks') or 0
+                    for block in (skill.get('blocks') or ()))
+        state = known.get(skill['id'])
+        row = {'id': skill['id'], 'practicum': skill['practicum'],
+               'name': skill['name'], 'rung': skill['rung'], 'marks': marks,
+               'seen': state['seen'] if state else 0,
+               'wrong': state['wrong'] if state else 0}
+        row.update(memory.snapshot(state, now))
+        rows.append(row)
+        by_practicum.setdefault(skill['practicum'], []).append(row)
+
+    summary = []
+    for practicum in bank['practicums']:
+        group = by_practicum.get(practicum['id']) or []
+        scored = [r for r in group if r['score'] is not None]
+        weight = sum(r['marks'] for r in scored)
+        summary.append({
+            'id': practicum['id'],
+            'title': practicum.get('title') or practicum['id'],
+            'skills': len(group),
+            'started': len(scored),
+            'marks': sum(r['marks'] for r in group),
+            'score': (round(sum(r['score'] * r['marks'] for r in scored)
+                            / weight) if weight else
+                      (round(sum(r['score'] for r in scored) / len(scored))
+                       if scored else None)),
+            'due': sum(1 for r in group
+                       if r['due_in_days'] is not None and r['due_in_days'] <= 0),
+        })
+    return {'skills': rows, 'practicums': summary,
+            'horizon': memory.HORIZON}
 
 
 def recent(db, limit=200):
@@ -139,9 +214,14 @@ def record_written(db, *, block, practicum, skill, reference, verdict,
                    photos):
     """Записывает разбор письменной работы.
 
-    Отдельная таблица и отдельный счёт: здесь измеряется качество записи,
-    а не скорость узнавания, и в ящики Лейтнера это не идёт. Смешать их
-    значило бы испортить расписание повторения чужой метрикой.
+    Отдельная таблица и отдельный счёт: здесь измеряется ещё и качество
+    записи, а оно к силе приёма отношения не имеет, и смешивать их в
+    одной строке нельзя.
+
+    А вот на стойкость приёма работа влияет, и сильнее всего остального:
+    это единственное свидетельство, снятое в условиях экзамена. Оценка
+    берётся из доли набранных баллов, а не из секундомера — на бумаге
+    он мерил бы скорость письма.
     """
     marks = verdict.get('marks') or {}
     db.execute(
@@ -154,7 +234,22 @@ def record_written(db, *, block, practicum, skill, reference, verdict,
          json.dumps(photos, ensure_ascii=False),
          json.dumps(verdict, ensure_ascii=False),
          verdict.get('model', '')))
+    mark = memory.grade_written(marks.get('earned'), marks.get('available'))
+    if skill and mark:
+        now = time.time()
+        row = db.execute('SELECT * FROM skill_state WHERE skill = ?',
+                         (skill,)).fetchone()
+        stability, difficulty = memory.step(
+            row['stability'] if row else None,
+            row['difficulty'] if row else None,
+            row['last_ts'] if row else None, now, mark, 'written')
+        _save_state(db, skill, stability, difficulty,
+                    (row['seen'] if row else 0) + 1,
+                    (row['wrong'] if row else 0) + (mark == 'again'),
+                    now if mark != 'again' else (row['last_ok'] if row else None),
+                    now)
     db.commit()
+    return mark
 
 
 def written_history(db, limit=50):

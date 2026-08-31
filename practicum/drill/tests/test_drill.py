@@ -76,16 +76,25 @@ skill = bank['skills'][0]
 t('приём без единой попытки идёт вперёд всего',
   engine.weight(skill, None, bank['share'], now) == engine.COLD_START)
 
-fresh = {'due': now + 86400, 'seen': 3, 'wrong': 0}
-overdue = {'due': now - 5 * 86400, 'seen': 3, 'wrong': 0}
-t('просроченный приём весит больше свежего',
-  engine.weight(skill, overdue, bank['share'], now)
+fresh = {'last_ts': now, 'stability': 7.0, 'difficulty': 5.5,
+         'seen': 3, 'wrong': 0}
+slumped = {'last_ts': now - 30 * 86400, 'stability': 7.0, 'difficulty': 5.5,
+           'seen': 3, 'wrong': 0}
+t('просевший приём весит больше свежего',
+  engine.weight(skill, slumped, bank['share'], now)
   > engine.weight(skill, fresh, bank['share'], now))
 
-sloppy = {'due': now - 5 * 86400, 'seen': 4, 'wrong': 3}
-t('приём с ошибками весит больше такого же без ошибок',
-  engine.weight(skill, sloppy, bank['share'], now)
-  > engine.weight(skill, overdue, bank['share'], now))
+shallow = {'last_ts': now - 30 * 86400, 'stability': 2.0, 'difficulty': 5.5,
+           'seen': 3, 'wrong': 0}
+t('после одного простоя слабее держится тот, у кого меньше стойкость',
+  engine.weight(skill, shallow, bank['share'], now)
+  > engine.weight(skill, slumped, bank['share'], now))
+
+hard = {'last_ts': now - 30 * 86400, 'stability': 7.0, 'difficulty': 9.0,
+        'seen': 4, 'wrong': 3}
+t('трудный приём весит больше такого же лёгкого',
+  engine.weight(skill, hard, bank['share'], now)
+  > engine.weight(skill, slumped, bank['share'], now))
 
 rng = random.Random(1)
 picks = [engine.choose(bank, {}, GENERATORS, mode='mixed', rng=rng)[0]['practicum']
@@ -124,7 +133,8 @@ except LookupError:
     t('пустой набор — это ошибка, а не молчаливая подмена', True)
 
 now = time.time()
-states = {s['id']: {'due': now + 7 * 86400, 'seen': 2, 'wrong': 0, 'box': 2}
+states = {s['id']: {'due': now + 7 * 86400, 'seen': 2, 'wrong': 0,
+                    'last_ts': now, 'stability': 7.0, 'difficulty': 5.5}
           for s in bank['skills']}
 states['C1.cosine_rule']['due'] = now - 86400
 skill, _ = engine.choose(bank, states, GENERATORS, mode='mixed', rng=rng,
@@ -133,13 +143,15 @@ t('«только просроченное» берёт единственный
   skill['id'] == 'C1.cosine_rule')
 
 everything_fresh = {s['id']: {'due': now + 7 * 86400, 'seen': 2, 'wrong': 0,
-                              'box': 2} for s in bank['skills']}
+                              'last_ts': now, 'stability': 7.0,
+                              'difficulty': 5.5} for s in bank['skills']}
 picked = engine.choose(bank, everything_fresh, GENERATORS, mode='mixed',
                        rng=rng, only_due=True)[0]
 t('когда просрочено ничего, сессия всё равно собирается', bool(picked))
 
 # Сплошной проход: сначала то, что видели реже, при равенстве — ниже по лестнице.
-seen_once = {s['id']: {'due': now, 'seen': 1, 'wrong': 0, 'box': 1}
+seen_once = {s['id']: {'due': now, 'seen': 1, 'wrong': 0,
+                       'last_ts': now, 'stability': 2.3, 'difficulty': 5.5}
              for s in bank['skills']}
 del seen_once['C1.exact_values']
 ladder = engine.choose(bank, seen_once, GENERATORS, mode='mixed', rng=rng,
@@ -174,16 +186,21 @@ with tempfile.TemporaryDirectory() as tmp:
     common = dict(mode='mixed', kind='compute', practicum='C1',
                   skill='C1.cosine_rule', item='compute:C1.cosine_rule:1',
                   answer='8.24', ms=12000, first_ms=3000, budget_ms=75000)
-    store.record(db, ok=True, **common)
+    mark = store.record(db, ok=True, **common)
     state = store.states(db)['C1.cosine_rule']
-    t('верный ответ поднимает на ящик вверх', state['box'] == 1)
+    t('верный ответ заводит стойкость', state['stability'] > 0)
+    t('оценка возвращается вызывающему', mark in ('good', 'easy'))
+    first = state['stability']
     store.record(db, ok=True, **common)
-    t('второй верный — ещё на ящик', store.states(db)['C1.cosine_rule']['box'] == 2)
+    t('второй верный поднимает стойкость',
+      store.states(db)['C1.cosine_rule']['stability'] > first)
+    grown = store.states(db)['C1.cosine_rule']['stability']
     store.record(db, ok=False, **common)
     state = store.states(db)['C1.cosine_rule']
-    t('ошибка возвращает в самое начало', state['box'] == 0)
-    t('срок повторения — сразу, а не через три недели',
-      state['due'] - time.time() < 1.0)
+    t('ошибка роняет стойкость', state['stability'] < grown)
+    t('но не в самый низ', state['stability'] >= store.memory.MIN_STABILITY)
+    t('срок повторения — скоро, а не через три недели',
+      state['due'] - time.time() < 2 * 86400)
     t('ошибки посчитаны', state['wrong'] == 1 and state['seen'] == 3)
     totals = store.totals(db)
     t('итоги считаются', totals['attempts'] == 3 and totals['correct'] == 2)
@@ -593,13 +610,32 @@ with tempfile.TemporaryDirectory() as tmp:
                  'mathematics': {'verdict': 'partially correct'},
                  'model': 'gpt-5.6-sol'})
     totals = store.written_totals(db)
-    t('письменные работы считаются отдельно от ящиков Лейтнера',
+    t('письменные работы считаются своим счётом, в баллах',
       totals == {'attempts': 1, 'marks_available': 9, 'marks_earned': 3})
     t('в журнале остаётся ссылка на бумагу',
       store.written_history(db)[0]['reference']
       == 'May 2021 TZ2, Paper 1, Q12(d)')
-    t('разбор моделью не трогает расписание повторения',
-      store.states(db) == {})
+    # Работа на бумаге — единственное свидетельство, снятое в условиях
+    # экзамена, и на силу приёма она влияет. Оценку даёт доля баллов, а
+    # не секундомер: на бумаге он мерил бы скорость письма. Оформление
+    # в неё не входит вовсе — им заведует отдельный счёт выше.
+    written = store.states(db)['A7.induction_sum']
+    t('разбор работы двигает силу приёма', written['stability'] > 0)
+    t('три балла из девяти считаются промахом', written['wrong'] == 1)
+    t('слабая работа роняет приём в самый низ',
+      written['stability'] <= store.memory.FIRST_STABILITY['again'])
+
+    good = store.connect(os.path.join(tmp, 'written-good.sqlite'))
+    store.record_written(
+        good, block='2021-MAY-TZ2-P1-Q12-D', practicum='A7',
+        skill='A7.induction_sum', reference='May 2021 TZ2, Paper 1, Q12(d)',
+        photos=['page-1.jpg'],
+        verdict={'marks': {'available': 9, 'earned': 9},
+                 'mathematics': {'verdict': 'correct'}, 'model': 'gpt-5.6-sol'})
+    t('полная работа поднимает выше слабой',
+      store.states(good)['A7.induction_sum']['stability']
+      > written['stability'])
+    good.close()
     db.close()
 
 print('\n=== чем это отличается от проверок в ноутбуке ===')

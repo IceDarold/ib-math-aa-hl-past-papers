@@ -34,7 +34,7 @@ from urllib.parse import parse_qs, urlparse
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 
-from drill import archive, engine, grader, store  # noqa: E402
+from drill import archive, engine, grader, memory, store  # noqa: E402
 from drill.archive import reference as archive_reference  # noqa: E402
 from drill.check import evaluate, show_answer  # noqa: E402
 from drill.items import GENERATORS  # noqa: E402
@@ -95,15 +95,17 @@ class Drill:
         with self.lock:
             db = self.connection()
             try:
-                store.record(
+                mark = store.record(
                     db, mode=str(payload.get('mode', 'mixed')),
                     kind=meta['kind'], practicum=skill['practicum'],
                     skill=skill_id, item=item_key, answer=raw, ok=bool(ok),
                     ms=int(payload.get('ms', 0)),
                     first_ms=int(payload.get('first_ms', 0)),
                     budget_ms=int(meta.get('budget_ms', 0)))
+                state = store.states(db).get(skill_id)
             finally:
                 db.close()
+        strength = memory.snapshot(state, time.time())
 
         return {
             'ok': bool(ok),
@@ -117,6 +119,10 @@ class Drill:
             'traps': [] if ok else skill.get('traps', []),
             'practicum': skill['practicum'],
             'answer': show_answer(answer, var=spec.get('var', 'x')),
+            # Оценка и новая сила приёма: видно, что верный, но медленный
+            # ответ продвинул меньше, чем верный и быстрый.
+            'mark': mark,
+            'strength': strength,
         }
 
     def setup(self):
@@ -232,10 +238,8 @@ class Drill:
             'recognition': examples,
             'compute': compute,
             'archive': archive,
-            'state': ({'seen': state['seen'], 'wrong': state['wrong'],
-                       'box': state['box'],
-                       'due_in_days': round((state['due'] - time.time())
-                                            / 86400.0, 1)}
+            'state': (dict({'seen': state['seen'], 'wrong': state['wrong']},
+                            **memory.snapshot(state, time.time()))
                       if state else None),
         }
 
@@ -427,18 +431,17 @@ class Drill:
         skills = []
         for skill in self.bank['skills']:
             state = states.get(skill['id'])
-            skills.append({
+            row = {
                 'id': skill['id'],
                 'practicum': skill['practicum'],
                 'name': skill['name'],
                 'rung': skill['rung'],
                 'seen': state['seen'] if state else 0,
                 'wrong': state['wrong'] if state else 0,
-                'box': state['box'] if state else None,
-                'due_in_days': (round((state['due'] - now) / 86400.0, 2)
-                                if state else None),
                 'has_compute': skill['id'] in GENERATORS,
-            })
+            }
+            row.update(memory.snapshot(state, now))
+            skills.append(row)
         return {
             'skills': skills,
             'practicums': self.bank['practicums'],
@@ -447,6 +450,15 @@ class Drill:
             'recent': recent,
             'uncovered': self.bank.get('uncovered_skills', []),
         }
+
+    def strength(self):
+        """Карта приёмов: число на каждый квадрат и счёт по практикумам."""
+        with self.lock:
+            db = self.connection()
+            try:
+                return store.strength(db, self.bank)
+            finally:
+                db.close()
 
 
 def _first_page(spec):
@@ -514,6 +526,9 @@ class Handler(BaseHTTPRequestHandler):
                     papers=papers or None, marks=marks))
             except LookupError as exc:
                 self.send_json({'error': str(exc)}, 400)
+            return
+        if route == f'{PREFIX}/strength':
+            self.send_json(self.drill.strength())
             return
         if route == f'{PREFIX}/stats':
             self.send_json(self.drill.stats())

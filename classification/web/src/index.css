@@ -16,6 +16,16 @@
   --color-info-soft: oklch(0.96 0.025 225);
   --color-verified: oklch(0.47 0.14 150);
   --color-verified-soft: oklch(0.96 0.025 150);
+  /* Лестница силы приёма: один тон, светлота падает монотонно.
+     Ступени проверены — все в гамуте, надпись внутри квадрата держит
+     не меньше 4.5:1 (на шести светлых чернилами, на самой тёмной белым). */
+  --color-heat-0: oklch(0.960 0.018 150);
+  --color-heat-1: oklch(0.930 0.038 150);
+  --color-heat-2: oklch(0.885 0.062 150);
+  --color-heat-3: oklch(0.815 0.090 150);
+  --color-heat-4: oklch(0.720 0.112 150);
+  --color-heat-5: oklch(0.600 0.125 150);
+  --color-heat-6: oklch(0.470 0.115 150);
   --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --shadow-overlay: 0 14px 42px oklch(0.20 0.015 18 / 0.16);

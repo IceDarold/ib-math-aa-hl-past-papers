@@ -5,12 +5,15 @@
 
 Вес приёма складывается из трёх вещей:
 
-  вес = доля баллов практикума × просрочка × (1 + доля ошибок)
+  вес = доля баллов практикума × просадка × трудность
 
 Доля баллов взята из карточек — практикум на 222 балла экзамена весит
-больше, чем практикум на 83, и повторение это учитывает. Просрочка растёт
-по ящикам Лейтнера. Приём, который ни разу не показывали, идёт вперёд
-всего остального: пробел хуже, чем подзабытое.
+больше, чем практикум на 83, и повторение это учитывает. Просадка — это
+`1 − R`, сколько от приёма утекло с последнего раза; она же заменила
+просрочку по ящикам, и отдельного разбора «срок подошёл или нет» больше
+не нужно: у свежего приёма просадка около нуля сама. Приём, который ни
+разу не показывали, идёт вперёд всего остального: пробел хуже, чем
+подзабытое.
 
 Темы перемешиваются намеренно. Подряд по одной теме учить приятнее, но
 именно это даёт ложное чувство усвоенного: на экзамене задача приходит
@@ -23,6 +26,7 @@ import os
 import random
 import time
 
+from drill import memory
 from drill.archive import block_page_numbers
 from drill.archive import reference as archive_reference
 
@@ -30,7 +34,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BANK_PATH = os.path.join(HERE, 'bank.json')
 
 COLD_START = 1000.0     # приём без единой попытки
-NOT_DUE = 0.05          # ещё не подошёл срок, но в перемешку попасть может
+FLOOR = 0.01            # свежий приём в перемешку всё же попадает
+MIDDLE = 5.5            # трудность приёма, взятого с первого раза
 
 
 def load_bank(path=BANK_PATH):
@@ -49,14 +54,13 @@ def load_bank(path=BANK_PATH):
 
 def weight(skill, state, share, now):
     """Насколько этот приём просится следующим."""
-    if state is None:
+    if state is None or state.get('last_ts') is None:
         return COLD_START
     base = 100.0 * share.get(skill['practicum'], 0.0)
-    overdue = (now - state['due']) / 86400.0
-    if overdue < 0:
-        return base * NOT_DUE
-    error_rate = state['wrong'] / max(state['seen'], 1)
-    return base * (1.0 + min(overdue, 30.0)) * (1.0 + error_rate)
+    days = max(now - state['last_ts'], 0.0) / memory.DAY
+    slump = 1.0 - memory.retrievability(state.get('stability'), days)
+    hardness = (state.get('difficulty') or MIDDLE) / MIDDLE
+    return base * max(slump, FLOOR) * hardness
 
 
 def matching_blocks(bank, skill, papers=None, marks=None, avoid=()):
