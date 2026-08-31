@@ -27,6 +27,7 @@ import re
 import sys
 import threading
 import time
+from concurrent import futures
 import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
@@ -34,10 +35,16 @@ from urllib.parse import parse_qs, urlparse
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 
-from drill import archive, engine, grader, memory, store  # noqa: E402
+from drill import archive, engine, evening, grader, memory  # noqa: E402
+from drill import store  # noqa: E402
 from drill.archive import reference as archive_reference  # noqa: E402
 from drill.check import evaluate, show_answer  # noqa: E402
 from drill.items import GENERATORS  # noqa: E402
+
+# Скан вечера — до двух десятков страниц; проверка одного вопроса берёт
+# из них только свои.
+MAX_SHEET_PAGES = 24
+EVENING_WORKERS = 4
 
 PREFIX = '/api/drill'
 
@@ -310,13 +317,15 @@ class Drill:
         with open(path, 'rb') as handle:
             return handle.read(), kind
 
-    def grade(self, payload):
-        """Разбирает сфотографированную работу против подлинной схемы."""
-        photos = payload.get('photos') or []
-        if not photos:
-            raise ValueError('нет ни одного снимка работы')
+    def uploads(self, photos, limit=grader.MAX_PHOTOS):
+        """Присланные файлы → страницы картинками и что сохранить на диск.
+
+        Снимок приходит картинкой, скан — одним PDF на несколько страниц.
+        Разбирать это на стороне браузера значило бы тащить туда pdf.js,
+        тогда как PyMuPDF здесь уже есть.
+        """
         images, kinds, keep = [], [], []
-        for item in photos[:grader.MAX_PHOTOS]:
+        for item in photos[:limit]:
             text = str(item)
             head = re.match(r'^data:(image/(\w+)|application/pdf);base64,',
                             text)
@@ -330,24 +339,44 @@ class Drill:
             is_pdf = (head and head.group(1) == 'application/pdf') or \
                 data[:5] == b'%PDF-'
             if is_pdf:
-                # Сканы приходят одним PDF на несколько страниц: разбираем
-                # его здесь и складываем страницы к остальным снимкам.
                 try:
-                    pages = archive.render_upload(
-                        data, limit=grader.MAX_PHOTOS - len(images))
+                    pages = archive.render_upload(data,
+                                                  limit=limit - len(images))
                 except Exception as exc:  # noqa: BLE001
                     raise ValueError(f'PDF не открылся: {exc}')
                 images += pages
                 kinds += ['png'] * len(pages)
-                keep.append(('pdf', data))
+                # Страницы PDF сохраняются по одной, а не файлом целиком:
+                # вечер раскладывает их по заданиям поимённо.
+                keep += [('png', page) for page in pages]
             else:
                 images.append(data)
                 kinds.append('jpg' if head and head.group(2) in ('jpeg', 'jpg')
                              else 'png')
                 keep.append((kinds[-1], data))
-            if len(images) >= grader.MAX_PHOTOS:
+            if len(images) >= limit:
                 break
-        images = images[:grader.MAX_PHOTOS]
+        return images[:limit], keep[:limit]
+
+    def store_pages(self, keep, folder=None):
+        """Кладёт страницы на диск и отдаёт пути относительно каталога."""
+        folder = folder or os.path.join(
+            self.photo_dir(), f'{int(time.time())}-{uuid.uuid4().hex[:6]}')
+        os.makedirs(folder, exist_ok=True)
+        saved = []
+        for number, (kind, data) in enumerate(keep, start=1):
+            name = os.path.join(folder, f'page-{number}.{kind}')
+            with open(name, 'wb') as fh:
+                fh.write(data)
+            saved.append(os.path.relpath(name, self.photo_dir()))
+        return saved
+
+    def grade(self, payload):
+        """Разбирает сфотографированную работу против подлинной схемы."""
+        photos = payload.get('photos') or []
+        if not photos:
+            raise ValueError('нет ни одного снимка работы')
+        images, keep = self.uploads(photos)
 
         block_id = payload.get('block')
         block = (self.bank.get('archive', {}) or {}).get(block_id or '')
@@ -366,15 +395,7 @@ class Drill:
 
         # Снимки сохраняем до проверки, а не после: если модель не ответит,
         # работа всё равно должна остаться. Раньше она просто пропадала.
-        folder = os.path.join(self.photo_dir(),
-                              f'{int(time.time())}-{uuid.uuid4().hex[:6]}')
-        os.makedirs(folder, exist_ok=True)
-        saved = []
-        for number, (kind, data) in enumerate(keep, start=1):
-            name = os.path.join(folder, f'page-{number}.{kind}')
-            with open(name, 'wb') as fh:
-                fh.write(data)
-            saved.append(os.path.relpath(name, self.photo_dir()))
+        saved = self.store_pages(keep)
 
         try:
             verdict = grader.grade(
@@ -450,6 +471,199 @@ class Drill:
             'recent': recent,
             'uncovered': self.bank.get('uncovered_skills', []),
         }
+
+    def open_evening(self, minutes):
+        """Собирает вечерний набор и запоминает его.
+
+        Набор живёт на сервере: задания берут в семь, а работу присылают
+        в десять и с другого устройства.
+        """
+        with self.lock:
+            db = self.connection()
+            try:
+                states = store.states(db)
+                questions, marks = evening.assemble(
+                    self.bank, states, minutes, self.rng)
+                set_id = evening.new_id(self.rng)
+                store.open_evening(db, id=set_id, minutes=int(minutes),
+                                   marks=marks, questions=questions)
+                return store.evening(db, set_id)
+            finally:
+                db.close()
+
+    def evening(self, set_id=None, limit=20):
+        with self.lock:
+            db = self.connection()
+            try:
+                return (store.evening(db, set_id) if set_id
+                        else {'sets': store.evenings(db, limit)})
+            finally:
+                db.close()
+
+    def sheet(self, set_id):
+        """Лист заданий одним PDF."""
+        record = self.evening(set_id)
+        return archive.build_sheet(
+            record['questions'], self.bank, minutes=record['minutes'],
+            set_id=set_id,
+            when=time.strftime('%Y-%m-%d', time.localtime(record['ts'])))
+
+    def scan(self, payload):
+        """Принимает работу за весь вечер и раскладывает её по заданиям."""
+        set_id = str(payload.get('id') or '')
+        record = self.evening(set_id)
+        photos = payload.get('photos') or []
+        if not photos:
+            raise ValueError('нет ни одной страницы работы')
+        count = len(record['questions'])
+        images, keep = self.uploads(photos, limit=MAX_SHEET_PAGES)
+        saved = self.store_pages(keep)
+
+        # Раскладку предлагает дешёвый проход по номеру в углу. Не вышло —
+        # раскладываем поровну по порядку: подтверждать всё равно глазами,
+        # и поправить одно нажатие, а пустой экран пришлось бы заполнять
+        # целиком руками.
+        try:
+            numbers = grader.assign_pages(
+                [archive.shrink(png) for png in images], count)
+            guessed = False
+        except grader.GraderError:
+            numbers = evening.split_by_question(images, count)
+            guessed = True
+
+        pages = [{'index': index, 'file': path,
+                  'question': numbers[index] if index < len(numbers) else 1}
+                 for index, path in enumerate(saved)]
+        with self.lock:
+            db = self.connection()
+            try:
+                store.save_pages(db, set_id, pages)
+            finally:
+                db.close()
+        return {'id': set_id, 'pages': pages, 'guessed': guessed,
+                'questions': record['questions']}
+
+    def scan_page(self, set_id, index):
+        """Одна страница присланной работы — для ленты подтверждения."""
+        record = self.evening(set_id)
+        pages = record.get('pages') or []
+        if not 0 <= index < len(pages):
+            raise LookupError('такой страницы нет')
+        path = os.path.abspath(os.path.join(self.photo_dir(),
+                                            pages[index]['file']))
+        root = os.path.abspath(self.photo_dir())
+        if not path.startswith(root + os.sep) or not os.path.isfile(path):
+            raise LookupError('такой страницы нет')
+        with open(path, 'rb') as handle:
+            return handle.read(), ('image/jpeg' if path.endswith('.jpg')
+                                   else 'image/png')
+
+    def grade_evening(self, payload):
+        """Разбирает весь вечер: каждый вопрос против своей схемы.
+
+        Вопросы идут параллельно — они друг от друга не зависят, а ждать
+        шесть проверок подряд значило бы сидеть перед экраном пять минут
+        ровно после того, как встал из-за стола.
+        """
+        set_id = str(payload.get('id') or '')
+        record = self.evening(set_id)
+        pages = record.get('pages') or []
+        if not pages:
+            raise ValueError('работа за этот вечер ещё не прислана')
+
+        told = payload.get('assignment') or []
+        count = len(record['questions'])
+        for index, page in enumerate(pages):
+            if index < len(told):
+                try:
+                    number = int(told[index])
+                except (TypeError, ValueError):
+                    continue
+                if 1 <= number <= count:
+                    page['question'] = number
+        with self.lock:
+            db = self.connection()
+            try:
+                store.save_pages(db, set_id, pages)
+            finally:
+                db.close()
+
+        groups = evening.group_pages(pages)
+        jobs = [(question, groups.get(question['n']) or [])
+                for question in record['questions']]
+        results = [None] * len(jobs)
+        with futures.ThreadPoolExecutor(max_workers=EVENING_WORKERS) as pool:
+            running = {pool.submit(self._grade_one, question, group): index
+                       for index, (question, group) in enumerate(jobs)}
+            for done in futures.as_completed(running):
+                results[running[done]] = done.result()
+
+        with self.lock:
+            db = self.connection()
+            try:
+                store.finish_evening(db, set_id, results)
+                return store.evening(db, set_id)
+            finally:
+                db.close()
+
+    def _grade_one(self, question, group):
+        """Один вопрос вечера. Ошибка не роняет остальные."""
+        head = {'n': question['n'], 'block': question['block'],
+                'skill': question['skill'], 'skill_name': question['skill_name'],
+                'practicum': question['practicum'],
+                'reference': question['reference'],
+                'available': question['marks'], 'pages': len(group)}
+        if not group:
+            # Пустое задание — не ошибка разбора, а решение не решать. В
+            # журнал оно не идёт: сила приёма не должна падать за то, что
+            # до вопроса не дошли руки.
+            return dict(head, skipped=True, earned=None,
+                        message='страниц по этому заданию не прислано')
+        block = self.bank['archive'][question['block']]
+        images = []
+        for page in group:
+            path = os.path.join(self.photo_dir(), page['file'])
+            if os.path.isfile(path):
+                with open(path, 'rb') as handle:
+                    images.append(handle.read())
+        try:
+            pages = archive.block_pages(block)
+        except LookupError:
+            pages = {}
+        try:
+            verdict = grader.grade(
+                work_images=images[:grader.MAX_PHOTOS],
+                question_images=pages.get('question', ()),
+                markscheme_images=pages.get('markscheme', ()),
+                instructions=archive.instructions(block['dir']),
+                reference=question['reference'], marks=question['marks'],
+                calculator=block.get('calculator'),
+                skill=question['skill_name'],
+                rubric_items=grader.rubric(question['practicum']))
+        except grader.GraderError as exc:
+            return dict(head, error=str(exc), earned=None)
+
+        with self.lock:
+            db = self.connection()
+            try:
+                row_id, mark = store.record_written(
+                    db, block=question['block'], practicum=question['practicum'],
+                    skill=question['skill'], reference=question['reference'],
+                    verdict=verdict,
+                    photos=[page['file'] for page in group])
+                strength = memory.snapshot(
+                    store.states(db).get(question['skill']), time.time())
+            finally:
+                db.close()
+        marks = verdict.get('marks') or {}
+        verdict['reference'] = question['reference']
+        verdict['skill_name'] = question['skill_name']
+        # Вердикт уходит целиком: экран вечера показывает его тем же
+        # разбором, что и одиночную работу, и второго его вида не заводится.
+        return dict(head, written=row_id, mark=mark,
+                    earned=marks.get('earned'),
+                    available=marks.get('available') or question['marks'],
+                    verdict=verdict, strength=strength)
 
     def strength(self):
         """Карта приёмов: число на каждый квадрат и счёт по практикумам."""
@@ -527,6 +741,42 @@ class Handler(BaseHTTPRequestHandler):
             except LookupError as exc:
                 self.send_json({'error': str(exc)}, 400)
             return
+        if route == f'{PREFIX}/evening':
+            set_id = (query.get('id') or [''])[0]
+            try:
+                self.send_json(self.drill.evening(set_id or None))
+            except LookupError as exc:
+                self.send_json({'error': str(exc)}, 404)
+            return
+        if route == f'{PREFIX}/evening/sheet':
+            try:
+                body = self.drill.sheet((query.get('id') or [''])[0])
+            except LookupError as exc:
+                self.send_json({'error': str(exc)}, 404)
+                return
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/pdf')
+            self.send_header('Content-Disposition',
+                             'inline; filename="evening.pdf"')
+            self.send_header('Content-Length', str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+        if route == f'{PREFIX}/evening/page':
+            try:
+                body, kind = self.drill.scan_page(
+                    (query.get('id') or [''])[0],
+                    int((query.get('n') or ['0'])[0]))
+            except (LookupError, ValueError) as exc:
+                self.send_json({'error': str(exc)}, 404)
+                return
+            self.send_response(200)
+            self.send_header('Content-Type', kind)
+            self.send_header('Content-Length', str(len(body)))
+            self.send_header('Cache-Control', 'private, max-age=600')
+            self.end_headers()
+            self.wfile.write(body)
+            return
         if route == f'{PREFIX}/strength':
             self.send_json(self.drill.strength())
             return
@@ -589,19 +839,52 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         route = urlparse(self.path).path
-        if route not in (f'{PREFIX}/answer', f'{PREFIX}/grade'):
+        allowed = (f'{PREFIX}/answer', f'{PREFIX}/grade',
+                   f'{PREFIX}/evening/open', f'{PREFIX}/evening/scan',
+                   f'{PREFIX}/evening/grade')
+        if route not in allowed:
             self.send_json({'error': 'нет такой ручки'}, 404)
             return
         grading = route.endswith('/grade')
+        # Скан за весь вечер — это до двух десятков страниц, вдвое больше
+        # одной работы; ответ в поле — байты.
+        heavy = grading or route.endswith('/scan')
         length = int(self.headers.get('Content-Length') or 0)
-        # Снимки тетрадного листа занимают мегабайты, ответ в поле — байты.
-        if length > (24_000_000 if grading else 64_000):
+        if length > (64_000_000 if heavy else 64_000):
             self.send_json({'error': 'запрос слишком велик'}, 413)
             return
         try:
             payload = json.loads(self.rfile.read(length) or b'{}')
         except json.JSONDecodeError:
             self.send_json({'error': 'не разобрал запрос'}, 400)
+            return
+
+        if route == f'{PREFIX}/evening/open':
+            try:
+                self.send_json(self.drill.open_evening(
+                    int(payload.get('minutes') or 40)))
+            except (LookupError, ValueError) as exc:
+                self.send_json({'error': str(exc)}, 400)
+            except Exception as exc:  # noqa: BLE001
+                self.send_json({'error': f'набор не собрался: {exc}'}, 500)
+            return
+
+        if route == f'{PREFIX}/evening/scan':
+            try:
+                self.send_json(self.drill.scan(payload))
+            except (LookupError, ValueError) as exc:
+                self.send_json({'error': str(exc)}, 400)
+            except Exception as exc:  # noqa: BLE001
+                self.send_json({'error': f'страницы не приняты: {exc}'}, 500)
+            return
+
+        if route == f'{PREFIX}/evening/grade':
+            try:
+                self.send_json(self.drill.grade_evening(payload))
+            except (LookupError, ValueError) as exc:
+                self.send_json({'error': str(exc)}, 400)
+            except Exception as exc:  # noqa: BLE001
+                self.send_json({'error': f'разбор не сработал: {exc}'}, 500)
             return
 
         if grading:

@@ -185,3 +185,69 @@ def grade(**kwargs):
     verdict['model'] = payload.get('model', model)
     verdict['usage'] = payload.get('usage', {})
     return verdict
+
+
+SPLIT_MODEL = os.environ.get('DRILL_SPLIT_MODEL', MODEL)
+SPLIT_TIMEOUT = 120
+
+SPLIT_SYSTEM = """You sort scanned pages of handwritten mathematics homework.
+
+The student solved several questions on paper and scanned everything in one
+go. Each page should carry the question number, written by hand in the
+top-right corner. Your only job is to say which question each page belongs to.
+
+Read the corner first. If a page has no number, continue the previous page:
+work runs on. Never drop a page and never invent a question number outside
+the given range.
+
+Reply with JSON only: {"pages": [{"page": 1, "question": 2, "sure": true}]}
+"page" is the 1-based position in the order given. "sure" is false when you
+had to guess from the flow rather than read a number."""
+
+
+def assign_pages(pages, count, model=None):
+    """К какому заданию относится каждая страница присланной работы.
+
+    Возвращает список номеров по одному на страницу. Дешёвый проход: от
+    модели требуется прочесть цифру в углу, а не понять математику, и
+    картинки идут уменьшенными. Раскладку всё равно подтверждают глазами,
+    поэтому ошибка здесь стоит одного нажатия, а не балла.
+    """
+    if not pages:
+        return []
+    content = [{'type': 'text', 'text':
+                f'There are {count} questions, numbered 1 to {count}, and '
+                f'{len(pages)} pages below, in the order they were scanned.'}]
+    for number, png in enumerate(pages, start=1):
+        content.append({'type': 'text', 'text': f'PAGE {number}:'})
+        content.append(_image_part(png))
+
+    body = {'model': model or SPLIT_MODEL,
+            'messages': [{'role': 'system', 'content': SPLIT_SYSTEM},
+                         {'role': 'user', 'content': content}],
+            'response_format': {'type': 'json_object'}}
+    request = urllib.request.Request(
+        API_URL, method='POST', data=json.dumps(body).encode(),
+        headers={'Authorization': f'Bearer {api_key()}',
+                 'Content-Type': 'application/json'})
+    try:
+        with urllib.request.urlopen(request, timeout=SPLIT_TIMEOUT) as response:
+            payload = json.load(response)
+        answer = json.loads(payload['choices'][0]['message']['content'])
+    except (urllib.error.URLError, KeyError, IndexError, ValueError) as exc:
+        raise GraderError(f'раскладка страниц не удалась: {exc}') from exc
+
+    seen = {}
+    for row in answer.get('pages') or ():
+        try:
+            page, question = int(row['page']), int(row['question'])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if 1 <= page <= len(pages) and 1 <= question <= count:
+            seen[page] = question
+    # Пропущенную страницу тянем за предыдущей: работа обычно продолжается.
+    out, last = [], 1
+    for page in range(1, len(pages) + 1):
+        last = seen.get(page, last)
+        out.append(last)
+    return out

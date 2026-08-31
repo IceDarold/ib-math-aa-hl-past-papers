@@ -60,6 +60,19 @@ CREATE TABLE IF NOT EXISTS written (
 );
 CREATE INDEX IF NOT EXISTS written_skill ON written (skill, ts);
 
+CREATE TABLE IF NOT EXISTS evening (
+    id         TEXT    PRIMARY KEY,
+    ts         REAL    NOT NULL,
+    minutes    INTEGER NOT NULL,
+    marks      INTEGER NOT NULL,
+    questions  TEXT    NOT NULL,
+    state      TEXT    NOT NULL DEFAULT 'open',
+    scanned_at REAL,
+    pages      TEXT    NOT NULL DEFAULT '',
+    results    TEXT    NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS evening_ts ON evening (ts);
+
 CREATE TABLE IF NOT EXISTS skill_state (
     skill      TEXT PRIMARY KEY,
     due        REAL    NOT NULL DEFAULT 0,
@@ -210,6 +223,58 @@ def totals(db):
     }
 
 
+def open_evening(db, *, id, minutes, marks, questions):
+    """Заводит вечерний набор.
+
+    Набор живёт на сервере, а не в браузере: задания берут в семь вечера,
+    а работу присылают в десять и с другого устройства. Пока это лежало
+    в localStorage, такой вечер был невозможен.
+    """
+    db.execute(
+        'INSERT INTO evening (id, ts, minutes, marks, questions) '
+        'VALUES (?, ?, ?, ?, ?)',
+        (id, time.time(), int(minutes), int(marks),
+         json.dumps(questions, ensure_ascii=False)))
+    db.commit()
+
+
+def _evening_row(row):
+    record = dict(row)
+    for field in ('questions', 'pages', 'results'):
+        try:
+            record[field] = json.loads(record.get(field) or '[]')
+        except json.JSONDecodeError:
+            record[field] = []
+    return record
+
+
+def evening(db, set_id):
+    row = db.execute('SELECT * FROM evening WHERE id = ?',
+                     (set_id,)).fetchone()
+    if row is None:
+        raise LookupError('такого набора нет')
+    return _evening_row(row)
+
+
+def evenings(db, limit=20):
+    return [_evening_row(row) for row in db.execute(
+        'SELECT * FROM evening ORDER BY ts DESC LIMIT ?', (limit,))]
+
+
+def save_pages(db, set_id, pages):
+    """Страницы присланной работы: путь и к какому вопросу отнесены."""
+    db.execute('UPDATE evening SET pages = ?, scanned_at = ? WHERE id = ?',
+               (json.dumps(pages, ensure_ascii=False), time.time(), set_id))
+    db.commit()
+
+
+def finish_evening(db, set_id, results):
+    db.execute("UPDATE evening SET results = ?, state = 'graded' "
+               'WHERE id = ?',
+               (json.dumps(results, ensure_ascii=False), set_id))
+    db.commit()
+
+
 def record_written(db, *, block, practicum, skill, reference, verdict,
                    photos):
     """Записывает разбор письменной работы.
@@ -224,7 +289,7 @@ def record_written(db, *, block, practicum, skill, reference, verdict,
     он мерил бы скорость письма.
     """
     marks = verdict.get('marks') or {}
-    db.execute(
+    cursor = db.execute(
         'INSERT INTO written (ts, block, practicum, skill, reference, '
         'available, earned, math, photos, verdict, model) '
         'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
@@ -249,7 +314,7 @@ def record_written(db, *, block, practicum, skill, reference, verdict,
                     now if mark != 'again' else (row['last_ok'] if row else None),
                     now)
     db.commit()
-    return mark
+    return cursor.lastrowid, mark
 
 
 def written_history(db, limit=50):

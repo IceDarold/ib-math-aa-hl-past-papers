@@ -13,6 +13,7 @@ from __future__ import annotations
 import functools
 import os
 import re
+import time
 
 import pymupdf
 
@@ -250,3 +251,186 @@ def reference(block):
     tail = f"({part.replace('-', ')(')})" if part else ''
     return (f"{block['session']} {block['zone']}, Paper {block['paper']}, "
             f"Q{block['question']}{tail}")
+
+
+SHEET_FONTS = ('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+               '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf',
+               '/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf')
+
+WORDS = {
+    'ru': {
+        'title': 'Вечер',
+        'minutes': 'минут',
+        'marks': 'баллов',
+        'rule': 'В правом верхнем углу каждой страницы работы напиши номер '
+                'задания — по нему страницы разложатся сами.',
+        'head': ('№', 'вопрос', 'баллы', 'бумага', 'калькулятор'),
+        'calc': {'yes': 'можно', 'no': 'нельзя'},
+        'set': 'набор',
+    },
+    'en': {
+        'title': 'Evening',
+        'minutes': 'minutes',
+        'marks': 'marks',
+        'rule': 'Write the question number in the top-right corner of every '
+                'page of your work, and the pages will sort themselves.',
+        'head': ('#', 'question', 'marks', 'paper', 'calculator'),
+        'calc': {'yes': 'allowed', 'no': 'not allowed'},
+        'set': 'set',
+    },
+}
+
+
+def _sheet_font():
+    """Файл шрифта с кириллицей, если он в системе есть.
+
+    Базовые четырнадцать шрифтов PDF кириллицы не знают, поэтому без файла
+    лист собирается по-английски: лучше читаемая латиница, чем каша.
+    """
+    for path in SHEET_FONTS:
+        if os.path.isfile(path):
+            with open(path, 'rb') as handle:
+                head = handle.read(4)
+            if head[:4] in (b'\x00\x01\x00\x00', b'true', b'ttcf', b'OTTO'):
+                return path
+    return None
+
+
+def build_sheet(questions, bank, minutes=None, set_id=None, when=None):
+    """Лист заданий одним PDF: обложка со списком и страницы билетов.
+
+    Страницы берутся из самих бумаг архива, а не рендерятся в картинки:
+    так лист остаётся текстовым, печатается в исходном качестве и весит
+    килобайты вместо мегабайт.
+    """
+    font = _sheet_font()
+    words = WORDS['ru' if font else 'en']
+    sheet = pymupdf.open()
+    page = sheet.new_page(width=595, height=842)
+    name = 'sheet'
+    if font:
+        page.insert_font(fontname=name, fontfile=font)
+    else:
+        name = 'helv'
+
+    total = sum(q.get('marks') or 0 for q in questions)
+    head = f"{words['title']}"
+    if minutes:
+        head += f" · {minutes} {words['minutes']}"
+    head += f" · {total} {words['marks']}"
+
+    y = 92
+    page.insert_text((56, y), head, fontname=name, fontsize=19)
+    y += 22
+    tail = when or time.strftime('%Y-%m-%d')
+    if set_id:
+        tail += f" · {words['set']} {set_id}"
+    page.insert_text((56, y), tail, fontname=name, fontsize=9.5)
+
+    y += 40
+    for text, x in zip(words['head'], (56, 86, 330, 396, 462)):
+        page.insert_text((x, y), text, fontname=name, fontsize=9)
+    y += 6
+    page.draw_line(pymupdf.Point(56, y), pymupdf.Point(539, y),
+                   width=0.6, color=(0.72, 0.72, 0.72))
+
+    y += 18
+    for question in questions:
+        calculator = words['calc'].get(question.get('calculator'), '—')
+        cells = ((str(question['n']), 56),
+                 (question.get('reference') or question['block'], 86),
+                 (str(question.get('marks') or ''), 330),
+                 (f"P{question.get('paper')}" if question.get('paper')
+                  else '—', 396),
+                 (calculator, 462))
+        for text, x in cells:
+            page.insert_text((x, y), text, fontname=name, fontsize=10)
+        y += 19
+
+    y += 16
+    page.draw_line(pymupdf.Point(56, y), pymupdf.Point(539, y),
+                   width=0.6, color=(0.72, 0.72, 0.72))
+    y += 22
+    for line in _wrap(words['rule'], 74):
+        page.insert_text((56, y), line, fontname=name, fontsize=10.5)
+        y += 15
+
+    for question in questions:
+        block = bank['archive'][question['block']]
+        _append_question(sheet, block, question['n'],
+                         part=_asked_part(question.get('reference')),
+                         marks=question.get('marks'))
+    out = sheet.tobytes(deflate=True, garbage=3)
+    sheet.close()
+    return out
+
+
+def _asked_part(reference):
+    """«May 2022 TZ2, Paper 1, Q12(c)» → «Q12(c)»."""
+    tail = (reference or '').rsplit(',', 1)[-1].strip()
+    return tail if tail.startswith('Q') else ''
+
+
+def _wrap(text, width):
+    lines, line = [], ''
+    for word in text.split():
+        if len(line) + len(word) + 1 > width:
+            lines.append(line)
+            line = word
+        else:
+            line = f'{line} {word}'.strip()
+    if line:
+        lines.append(line)
+    return lines
+
+
+def _append_question(sheet, block, number, part=None, marks=None):
+    """Подшивает страницы одного вопроса и метит их номером.
+
+    Номер стоит на самой странице билета: с него и списывают в угол
+    рабочего листа, и ошибиться труднее. Рядом — какая часть вопроса
+    нужна: на странице их обычно несколько, а спрашивается одна.
+    """
+    path = os.path.join(ROOT, block['dir'], QUESTION_PDF)
+    numbers = block_page_numbers(block, 'question')
+    if not os.path.isfile(path) or not numbers:
+        raise LookupError(f"нет страниц для {block.get('id') or block['dir']}")
+    with pymupdf.open(path) as source:
+        for page_number in numbers[:MAX_PAGES]:
+            if not 1 <= page_number <= source.page_count:
+                continue
+            at = sheet.page_count
+            sheet.insert_pdf(source, from_page=page_number - 1,
+                             to_page=page_number - 1)
+            stamped = sheet[at]
+            box = stamped.rect
+            # Ниже колонтитула: наверху страницы стоят номер листа и код
+            # бумаги, и метка на них налезала.
+            centre = pymupdf.Point(box.x1 - 42, box.y0 + 86)
+            stamped.draw_circle(centre, 17, color=(0.8, 0.1, 0.1), width=1.2)
+            stamped.insert_text(
+                pymupdf.Point(centre.x - 5 * len(str(number)), centre.y + 6),
+                str(number), fontname='helv', fontsize=17,
+                color=(0.8, 0.1, 0.1))
+            label = ' '.join(str(bit) for bit in (part, f'[{marks}]'
+                                                  if marks else None) if bit)
+            if label:
+                stamped.insert_text(
+                    pymupdf.Point(centre.x - 4 * len(label), centre.y + 30),
+                    label, fontname='helv', fontsize=8,
+                    color=(0.8, 0.1, 0.1))
+
+
+def shrink(png, max_side=1100):
+    """Уменьшенная копия страницы для дешёвого прохода.
+
+    Раскладке страниц по заданиям нужна цифра в углу, а не математика.
+    Гнать туда полный разворот в 150 dpi — платить за то, что не читают.
+    """
+    try:
+        pix = pymupdf.Pixmap(png)
+        while max(pix.width, pix.height) > max_side:
+            pix.shrink(1)          # каждый шаг делит сторону пополам
+        return pix.tobytes('png')
+    except Exception:  # noqa: BLE001
+        return png                 # уменьшить не вышло — шлём как есть

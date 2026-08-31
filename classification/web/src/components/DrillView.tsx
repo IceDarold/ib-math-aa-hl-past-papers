@@ -3,10 +3,11 @@ import { motion } from 'motion/react'
 import { practicumSections } from '../data/practicums'
 import { MathText } from './MathText'
 import { WriteUpVerdict, type Verdict as WriteUp } from './WriteUpVerdict'
+import { EveningView, type Evening } from './EveningView'
 
 type Mode = 'mixed' | 'recognition' | 'compute' | 'written'
 type Order = 'schedule' | 'ladder' | 'random'
-type Screen = 'setup' | 'running' | 'done' | 'history' | 'map'
+type Screen = 'setup' | 'running' | 'done' | 'history' | 'map' | 'evening'
 
 interface Option { code: string; name: string }
 
@@ -343,6 +344,7 @@ export function DrillView() {
   const [strength, setStrength] = useState<Strength | null>(null)
   const [hovered, setHovered] = useState<StrengthSkill | null>(null)
   const [asList, setAsList] = useState(false)
+  const [evening, setEvening] = useState<Evening | null>(null)
   const [item, setItem] = useState<Item | null>(null)
   const [verdict, setVerdict] = useState<Verdict | null>(null)
   const [answer, setAnswer] = useState('')
@@ -378,9 +380,40 @@ export function DrillView() {
       if (response.ok) setStrength(await response.json())
     } catch { /* карта не критична */ }
     try {
+      // Незаконченный вечер поднимается сам: задания брали в семь, работу
+      // присылают в десять, и искать набор руками не нужно.
+      const response = await fetch(`${API}/evening`)
+      if (response.ok) {
+        // Берём свежий вечер в любом состоянии, а не только незаконченный:
+        // разобранный тоже нужно уметь открыть обратно — иначе результаты
+        // исчезают из вида, стоит перезагрузить страницу.
+        const sets: Evening[] = (await response.json()).sets ?? []
+        setEvening(sets[0] ?? null)
+      }
+    } catch { /* вечер не критичен */ }
+    try {
       const response = await fetch(`${API}/written`)
       if (response.ok) setWritten((await response.json()).history ?? [])
     } catch { /* список работ не критичен */ }
+  }, [])
+
+  const openEvening = useCallback(async (minutes: number) => {
+    setError(null)
+    setBusy(true)
+    try {
+      const response = await fetch(`${API}/evening/open`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ minutes }),
+      })
+      const payload = await response.json()
+      if (!response.ok) throw new Error(payload.error ?? 'набор не собрался')
+      setEvening(payload)
+    } catch (problem) {
+      setError(problem instanceof Error ? problem.message : 'не собралось')
+    } finally {
+      setBusy(false)
+    }
   }, [])
 
   const openSkill = useCallback(async (id: string, fresh = false) => {
@@ -716,6 +749,27 @@ export function DrillView() {
               </p>
             </div>
 
+            <button
+              type="button"
+              className="flex cursor-pointer items-center justify-between gap-3 border border-line-strong bg-surface p-3 text-left hover:bg-surface-strong"
+              onClick={() => setScreen('evening')}
+            >
+              <span className="flex flex-col gap-0.5">
+                <span className="text-sm text-ink">
+                  {!evening ? 'Вечер: одна кнопка, лист на бумагу'
+                    : evening.state === 'graded' ? 'Вечер разобран' : 'Продолжить вечер'}
+                </span>
+                <span className="text-[11px] text-muted">
+                  {!evening
+                    ? 'Настоящие вопросы архива листом, решаешь на бумаге, присылаешь одним сканом'
+                    : evening.state === 'graded'
+                      ? `${evening.results.reduce((sum, row) => sum + (row.earned ?? 0), 0)} из ${evening.results.reduce((sum, row) => sum + (row.skipped || row.error ? 0 : (row.available ?? 0)), 0)} баллов, ${evening.questions.length} заданий`
+                      : `${evening.questions.length} заданий, ${evening.marks} баллов${evening.pages.length ? ' · работа прислана' : ' · лист собран'}`}
+                </span>
+              </span>
+              <span className="font-mono text-[11px] text-faint">→</span>
+            </button>
+
             <section className="flex flex-col gap-2">
               <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Режим</h3>
               <div className="grid grid-cols-3 gap-1.5 max-[560px]:grid-cols-1">
@@ -918,6 +972,17 @@ export function DrillView() {
               )}
             </div>
           </>
+        )}
+
+        {screen === 'evening' && (
+          <EveningView
+            evening={evening}
+            busy={busy}
+            setBusy={setBusy}
+            onOpen={openEvening}
+            onChange={setEvening}
+            onClose={() => { setScreen('setup'); void loadStats() }}
+          />
         )}
 
         {screen === 'map' && (
@@ -1495,7 +1560,8 @@ export function DrillView() {
           </section>
         )}
 
-        {stats && screen !== 'running' && screen !== 'history' && screen !== 'map' && (
+        {stats && screen !== 'running' && screen !== 'history' && screen !== 'map'
+          && screen !== 'evening' && (
           <section className="flex flex-col gap-3 border-t border-line pt-4">
             <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1 font-mono text-[11px] text-muted">
               <span>всего попыток {stats.totals.attempts}</span>
