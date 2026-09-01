@@ -749,6 +749,122 @@ for name in ('E7.direct_integration', 'E7.separation',
     print(f'  {name:28} {SEEDS} задач сверено численно')
 
 
+# --- E2: ряды выводятся заново, другим механизмом ------------------------
+# sp.series здесь не используется совсем: коэффициенты считаются
+# производными в нуле, а там, где вопрос предполагает другой маршрут, —
+# перемножением и подстановкой отрезков, написанных руками.
+
+def taylor(f, order, var=x_sym):
+    """Ряд по определению: f^(n)(0)/n!, без sp.series."""
+    out = sp.Integer(0)
+    term = sp.sympify(f)
+    for power in range(order + 1):
+        out += term.subs(var, 0) * var**power / sp.factorial(power)
+        term = sp.diff(term, var)
+    return sp.expand(out)
+
+
+for name in ('E2.from_derivatives', 'E2.substitution', 'E2.binomial_series',
+             'E2.product_of_series', 'E2.composition', 'E2.term_by_term'):
+    for seed in range(SEEDS):
+        item = GENERATORS[name](random.Random(seed))
+        spec = item['check']
+        f = sp.sympify(spec['f'])
+        if 'order' in spec:
+            want = taylor(f, spec['order'])
+            got = sp.expand(sp.sympify(item['answer']))
+            # У ответа могут быть члены выше заказанного — обрезаем оба.
+            keep = lambda e: sum(e.coeff(x_sym, p) * x_sym**p
+                                 for p in range(spec['order'] + 1))
+            t(f'{name}[{seed}]: производные в нуле дали тот же ряд',
+              sp.simplify(keep(want) - keep(got)) == 0)
+        else:
+            deep = taylor(f, 24)
+            powers = [p for p in range(25) if deep.coeff(x_sym, p) != 0]
+            wanted = powers[:spec['terms']]
+            got = sp.expand(sp.sympify(item['answer']))
+            t(f'{name}[{seed}]: первые {spec["terms"]} ненулевых члена сошлись',
+              all(sp.simplify(got.coeff(x_sym, p) - deep.coeff(x_sym, p)) == 0
+                  for p in wanted))
+    print(f'  {name:28} {SEEDS} рядов пересчитано по определению')
+
+# Соотношение из условия from_derivatives — утверждение о самой функции,
+# и его надо проверить отдельно: ученик будет считать по нему, а не по f.
+for seed in range(SEEDS):
+    item = GENERATORS['E2.from_derivatives'](random.Random(seed))
+    f = sp.sympify(item['check']['f'])
+    coeffs = [int(v) for v in re.findall(r"= (\d+)f'\(x\) - (\d+)f\(x\)",
+                                         item['prompt'])[0]]
+    first, second = coeffs
+    t(f'E2.from_derivatives[{seed}]: соотношение и правда выполняется',
+      sp.simplify(sp.diff(f, x_sym, 2) - first*sp.diff(f, x_sym)
+                  + second*f) == 0)
+    t(f'E2.from_derivatives[{seed}]: f(0) = 1 и f\'(0) названы верно',
+      f.subs(x_sym, 0) == 1
+      and str(sp.diff(f, x_sym).subs(x_sym, 0)) in item['prompt'])
+print(f'  {"E2.from_derivatives":28} соотношение проверено на {SEEDS} зёрнах')
+
+# from_ode: ряд собирается из уравнения неявным дифференцированием —
+# ровно тем маршрутом, который просят от ученика, и без dsolve.
+for seed in range(SEEDS):
+    item = GENERATORS['E2.from_ode'](random.Random(seed))
+    spec = item['check']
+    rhs = sp.sympify(spec['rhs'])
+    dep = sp.Symbol(spec['dep'])
+    Y = sp.Function('Y')
+    expr = rhs.subs(dep, Y(x_sym))
+    values = {Y(0): sp.sympify(spec['ic'])}
+    built = values[Y(0)]
+    current = expr
+    for power in range(1, spec['order'] + 1):
+        at_zero = current
+        for depth in range(spec['order'], 0, -1):
+            at_zero = at_zero.subs(sp.Derivative(Y(x_sym), (x_sym, depth)),
+                                   values.get(depth, 0))
+        at_zero = at_zero.subs(Y(x_sym), values[Y(0)]).subs(x_sym, 0)
+        values[power] = sp.simplify(at_zero)
+        built += values[power] * x_sym**power / sp.factorial(power)
+        current = sp.diff(current, x_sym)
+        for depth in range(spec['order'], 0, -1):
+            current = current.subs(sp.Derivative(Y(x_sym), (x_sym, depth)),
+                                   sp.diff(expr, x_sym, depth - 1))
+    t(f'E2.from_ode[{seed}]: ряд из уравнения сошёлся с эталоном',
+      sp.simplify(sp.expand(built) - sp.expand(sp.sympify(item['answer'])))
+      == 0)
+print(f'  {"E2.from_ode":28} {SEEDS} рядов собрано из уравнения')
+
+# use_series: подстановка и интегрирование считаются заново от условия.
+for seed in range(SEEDS):
+    item = GENERATORS['E2.use_series'](random.Random(seed))
+    inner = re.search(r'\\int_\{0\}\^\{(1|\\frac\{1\}\{\d+\})\}',
+                      item['prompt']).group(1)
+    top = (sp.Integer(1) if inner == '1'
+           else sp.Rational(1, int(re.search(r'\{(\d+)\}\s*$',
+                                             inner).group(1))))
+    power = int(re.search(r'x\^\{(\d)\}', item['prompt']).group(1))
+    head = (lambda u: u - u**3 / 6) if '\\sin' in item['prompt'] \
+        else (lambda u: u - u**3 / 3)
+    again = sp.integrate(sp.expand(head(x_sym**power)), (x_sym, 0, top))
+    t(f'E2.use_series[{seed}]: интеграл отрезка пересчитан от условия',
+      sp.simplify(again - sp.sympify(item['answer'])) == 0)
+print(f'  {"E2.use_series":28} {SEEDS} интегралов пересчитано')
+
+# error_bound: минимальность перебирается в лоб, без формулы генератора.
+for seed in range(SEEDS):
+    item = GENERATORS['E2.error_bound'](random.Random(seed))
+    root = int(re.search(r'\\sqrt\{(\d+)\}', item['prompt']).group(1))
+    power = int(re.search(r'10\^\{-(\d+)\}', item['prompt']).group(1))
+    point = 1 / math.sqrt(root)
+    limit = 10.0**(-power)
+    size = lambda idx: point**(2*idx - 1) / (2*idx - 1)
+    want = int(item['answer'])
+    t(f'E2.error_bound[{seed}]: член {want + 1} меньше границы',
+      size(want + 1) < limit)
+    t(f'E2.error_bound[{seed}]: а член {want} — нет',
+      want == 1 or size(want) >= limit)
+print(f'  {"E2.error_bound":28} минимальность проверена перебором')
+
+
 # --- 3. что проверки отвергают ------------------------------------------
 
 section('что проверки отвергают')

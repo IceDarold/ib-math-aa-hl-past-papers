@@ -70,6 +70,19 @@ def main():
             for field in REQUIRED:
                 if not s.get(field):
                     problems.append(f'{name}, приём {s.get("id")}: пустое поле {field}')
+            # Двоеточие внутри фразы списка YAML не роняет, а молча делает
+            # из строки отображение: «Проверить свободный член: он равен…»
+            # разбирается в {'Проверить свободный член': 'он равен…'}.
+            # Громкий случай ловится разбором выше, тихий — только здесь.
+            for field in ('chain', 'traps'):
+                for item in (s.get(field) or []):
+                    if not isinstance(item, str):
+                        head = (list(item)[0] if isinstance(item, dict)
+                                else str(item))[:40]
+                        problems.append(
+                            f'{name}, приём {s.get("id")}: пункт {field} '
+                            f'разобрался не в строку — «{head}…»: '
+                            f'двоеточие внутри фразы, возьмите её в кавычки')
             for bid in (s.get('blocks') or []):
                 if bid not in known:
                     problems.append(f'{name}, приём {s.get("id")}: блока {bid} нет в корпусе')
@@ -94,7 +107,7 @@ def main():
     links = 0
     for sec in cmap['sections'].values():
         for p in sec['practicums']:
-            for field in ('skills', 'notebook'):
+            for field in ('skills', 'notebook', 'archive'):
                 if field in p:
                     links += 1
                     if not os.path.exists(os.path.join(ROOT, p[field])):

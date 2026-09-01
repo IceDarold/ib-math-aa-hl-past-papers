@@ -171,6 +171,17 @@ C4:
   thresh: {skill: threshold_interval,      name: порог и неравенство}
   bound:  {skill: bounds_argument,         name: оценка через ±1}
 
+E2:
+  def:      {skill: from_derivatives,   name: по определению}
+  sub:      {skill: substitution,       name: подстановка в известный ряд}
+  binom:    {skill: binomial_series,    name: биномиальный ряд}
+  mult:     {skill: product_of_series,  name: произведение рядов}
+  comp:     {skill: composition,        name: ряд внутри ряда}
+  termwise: {skill: term_by_term,       name: почленно}
+  ode:      {skill: from_ode,           name: из уравнения}
+  approx:   {skill: use_series,         name: ряд вместо функции}
+  error:    {skill: error_bound,        name: оценка ошибки}
+
 E7:
   int: {skill: direct_integration,           name: прямое интегрирование}
   sep: {skill: separation,                   name: разделение переменных}

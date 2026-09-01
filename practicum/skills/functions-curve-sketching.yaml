@@ -158,7 +158,7 @@ skills:
       - Ask which limit the question is about — a finite point, or infinity
       - For a vertical asymptote, look at the edge of the domain, not at a denominator
       - For a horizontal one, evaluate the limit as x tends to +oo and to -oo
-      - Simplify the inside first: (x^2-1)/(x^2+1) tends to 1, so arcsin of it tends to arcsin 1
+      - "Simplify the inside first: (x^2-1)/(x^2+1) tends to 1, so arcsin of it tends to arcsin 1"
       - State the answer as an equation of a line
     traps:
       - >
@@ -338,7 +338,7 @@ skills:
     chain:
       - Read the instruction and write down the list of things to label
       - Find each item — roots, y-intercept, turning points, endpoints of the given domain
-      - Note the behaviour at the ends: an asymptote, or a value to plot
+      - "Note the behaviour at the ends: an asymptote, or a value to plot"
       - Draw, plot the listed points, and write the coordinates beside them
       - Check the drawn shape against the number of turning points you found
     traps:
@@ -396,7 +396,7 @@ skills:
     chain:
       - Collect the stationary points and their second derivative values from the earlier part
       - Negative means a maximum, positive a minimum — that fixes the up and down
-      - Compare the magnitudes: the larger |f''| is, the more sharply the curve bends
+      - "Compare the magnitudes: the larger |f''| is, the more sharply the curve bends"
       - Draw the sharper turn sharp and the flatter turn flat
       - Check the drawing against the domain's endpoints
     traps:
@@ -432,8 +432,8 @@ skills:
       the opening of an investigation.
     chain:
       - y^2 = something means the x-axis is a line of symmetry — draw the top half and reflect
-      - Find where the right-hand side is zero: that is where the two halves meet
-      - Find where it is negative: that is where there is no curve at all, and it fixes the domain
+      - "Find where the right-hand side is zero: that is where the two halves meet"
+      - "Find where it is negative: that is where there is no curve at all, and it fixes the domain"
       - Decide how the halves meet — with a vertical tangent, or in a cusp
       - Plot the y-intercepts, both of them, and label each curve
     traps:

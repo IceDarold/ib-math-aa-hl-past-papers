@@ -6241,6 +6241,344 @@
    "dir": "AA_HL/2025/May/TZ1/Paper 3",
    "skill": "E1.interpret"
   },
+  "2021-NOV-COMMON-P1-Q11-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "E2.from_derivatives"
+  },
+  "2024-MAY-TZ2-P1-Q12-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "29",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "E2.from_derivatives"
+  },
+  "2025-MAY-TZ1-P1-Q12-E-I": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "E-I",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "E2.from_derivatives"
+  },
+  "2022-MAY-TZ1-P1-Q12-D": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "D",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "35",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "E2.from_derivatives"
+  },
+  "2024-MAY-TZ1-P1-Q08-A-I": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "(a)(i)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "18-19",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "E2.substitution"
+  },
+  "2023-NOV-TZ1-P1-Q11-D": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "D",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "E2.substitution"
+  },
+  "2025-NOV-TZ1-P1-Q05-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "A",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "14-15",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E2.binomial_series"
+  },
+  "2022-MAY-TZ1-P1-Q12-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "32",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "E2.product_of_series"
+  },
+  "2021-MAY-TZ1-P1-Q12-C": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "C",
+   "marks": 8,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "24-26",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "E2.product_of_series"
+  },
+  "2024-MAY-TZ2-P1-Q12-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "30",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "E2.product_of_series"
+  },
+  "2024-MAY-TZ1-P1-Q08-A-II": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "(a)(ii)",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "18-19",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "E2.product_of_series"
+  },
+  "2024-MAY-TZ1-P1-Q08-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "(b)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "18-19",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "E2.product_of_series"
+  },
+  "2021-MAY-TZ2-P2-Q09-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "E2.composition"
+  },
+  "2025-NOV-TZ3-P3-Q02-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E2.term_by_term"
+  },
+  "2024-MAY-TZ1-P3-Q01-C-I": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "c-i",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "E2.term_by_term"
+  },
+  "2025-MAY-TZ1-P2-Q12-C": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "17",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "E2.term_by_term"
+  },
+  "2023-MAY-TZ1-P2-Q12-C-I-II": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "(c)(i)-(ii)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "29",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "E2.from_ode"
+  },
+  "2022-MAY-TZ1-P1-Q12-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "33",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "E2.use_series"
+  },
+  "2024-MAY-TZ2-P1-Q12-E": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "E",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "31",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "E2.use_series"
+  },
+  "2025-NOV-TZ3-P3-Q02-C": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E2.use_series"
+  },
+  "2025-NOV-TZ3-P3-Q02-G": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "G",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E2.use_series"
+  },
+  "2021-MAY-TZ1-P3-Q02-E-I": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "e(i)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E2.use_series"
+  },
+  "2021-MAY-TZ2-P2-Q09-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "E2.use_series"
+  },
+  "2025-NOV-TZ3-P3-Q02-D": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E2.error_bound"
+  },
+  "2025-NOV-TZ3-P3-Q02-H": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "H",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E2.error_bound"
+  },
+  "2025-NOV-TZ3-P3-Q02-I": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "I",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "16-17",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E2.error_bound"
+  },
   "2021-NOV-COMMON-P1-Q01": {
    "session": "November 2021",
    "zone": "Common",
@@ -6856,6 +7194,14 @@
    "notebook": "practicum/calculus/practicum-e1-limits.ipynb",
    "marks": 81,
    "blocks": 22
+  },
+  {
+   "id": "E2",
+   "title": "Ряды Маклорена",
+   "section": "E",
+   "notebook": "practicum/calculus/practicum-e2-maclaurin.ipynb",
+   "marks": 105,
+   "blocks": 27
   },
   {
    "id": "E7",
@@ -8021,7 +8367,7 @@
     "Ось x — это уравнение f(x) = 0",
     "Для дроби приравнять нулю числитель",
     "Проверить, что знаменатель в этой точке не ноль",
-    "{'Ответить в той форме, о которой спрашивают': 'число или координаты'}"
+    "Ответить в той форме, о которой спрашивают: число или координаты"
    ],
    "traps": [
     "Спрашивают coordinates, а записывают одно число. Пара и число — разные ответы, и балл ставят за пару",
@@ -8790,7 +9136,7 @@
     "Ask which limit the question is about — a finite point, or infinity",
     "For a vertical asymptote, look at the edge of the domain, not at a denominator",
     "For a horizontal one, evaluate the limit as x tends to +oo and to -oo",
-    "{'Simplify the inside first': '(x^2-1)/(x^2+1) tends to 1, so arcsin of it tends to arcsin 1'}",
+    "Simplify the inside first: (x^2-1)/(x^2+1) tends to 1, so arcsin of it tends to arcsin 1",
     "State the answer as an equation of a line"
    ],
    "traps": [
@@ -8909,7 +9255,7 @@
    "chain": [
     "Read the instruction and write down the list of things to label",
     "Find each item — roots, y-intercept, turning points, endpoints of the given domain",
-    "{'Note the behaviour at the ends': 'an asymptote, or a value to plot'}",
+    "Note the behaviour at the ends: an asymptote, or a value to plot",
     "Draw, plot the listed points, and write the coordinates beside them",
     "Check the drawn shape against the number of turning points you found"
    ],
@@ -8946,7 +9292,7 @@
    "chain": [
     "Collect the stationary points and their second derivative values from the earlier part",
     "Negative means a maximum, positive a minimum — that fixes the up and down",
-    "{'Compare the magnitudes': \"the larger |f''| is, the more sharply the curve bends\"}",
+    "Compare the magnitudes: the larger |f''| is, the more sharply the curve bends",
     "Draw the sharper turn sharp and the flatter turn flat",
     "Check the drawing against the domain's endpoints"
    ],
@@ -8970,8 +9316,8 @@
    "trigger": "\"On the same set of axes, sketch the curves y^2 = 16 - 8x and y^2 = 4 + 4x\", \"sketch y^2 = x^3 for x >= 0, indicating any points of intersection with the coordinate axes\". Always Paper 3, always the opening of an investigation.",
    "chain": [
     "y^2 = something means the x-axis is a line of symmetry — draw the top half and reflect",
-    "{'Find where the right-hand side is zero': 'that is where the two halves meet'}",
-    "{'Find where it is negative': 'that is where there is no curve at all, and it fixes the domain'}",
+    "Find where the right-hand side is zero: that is where the two halves meet",
+    "Find where it is negative: that is where there is no curve at all, and it fixes the domain",
     "Decide how the halves meet — with a vertical tangent, or in a cusp",
     "Plot the y-intercepts, both of them, and label each curve"
    ],
@@ -9327,7 +9673,7 @@
     "Проверить, что известный угол лежит между известными сторонами",
     "Подставить в a² = b² + c² − 2bc·cos A",
     "Для угла — та же формула, решённая относительно косинуса",
-    "{'Сверить правдоподобие': 'против большей стороны больший угол'}"
+    "Сверить правдоподобие: против большей стороны больший угол"
    ],
    "traps": [
     "Перепутано соглашение: сторона a лежит против угла A, и путаница здесь дороже любой арифметической ошибки",
@@ -9925,7 +10271,7 @@
     "Найти наибольшую степень переменной во всём выражении",
     "Поделить на неё числитель и знаменатель",
     "Применить 1/xᵏ → 0",
-    "{'Прочитать ответ': 'отношение старших коэффициентов, ноль или бесконечность'}"
+    "Прочитать ответ: отношение старших коэффициентов, ноль или бесконечность"
    ],
    "traps": [
     "Экспоненту считают степенью: eˣ обгоняет любой xᵏ, и деление на степень ничего не даёт",
@@ -9998,7 +10344,7 @@
    "trigger": "Выражение собрано из eˣ, sin, cos, ln около нуля, и знаменатель — степень x. Прямая примета: предыдущий пункт вопроса просил найти ряд.",
    "chain": [
     "Заменить каждый множитель отрезком его ряда",
-    "{'Вынести степень наружу, если она есть': 'x⁹ = (x³)³'}",
+    "Вынести степень наружу, если она есть: x⁹ = (x³)³",
     "Сократить на степень знаменателя",
     "Прочитать свободный член — это и есть предел"
    ],
@@ -10024,7 +10370,7 @@
    "trigger": "В выражении стоит буква, и сказано «a finite limit only exists for…» или дано само значение предела. Спрашивают букву, а не предел.",
    "chain": [
     "Заметить, что знаменатель идёт в ноль",
-    "{'Отсюда': 'конечный предел возможен только при нулевом числителе'}",
+    "Отсюда: конечный предел возможен только при нулевом числителе",
     "Приравнять предел числителя нулю и решить относительно буквы",
     "Если дано значение предела, вычислить предел через букву и приравнять"
    ],
@@ -10049,7 +10395,7 @@
    "trigger": "Стрелка стоит не под x: n → ∞, α → π/2, b → ∞. Всё, что не под стрелкой, остаётся на месте, и ответ — выражение через оставшиеся буквы.",
    "chain": [
     "Найти в выражении единственную часть, которая движется",
-    "{'Понять, куда она идёт': 'mⁿ → 0 при |m| < 1, 1/n → 0, 1/tan α → 0'}",
+    "Понять, куда она идёт: mⁿ → 0 при |m| < 1, 1/n → 0, 1/tan α → 0",
     "Подставить этот предел, оставив всё прочее без изменений",
     "Собрать ответ через буквы, которые не двигались"
    ],
@@ -10077,7 +10423,7 @@
     "Проверить форму — она обязана быть 0/0 при любом значении параметра",
     "Дифференцировать по x, ведя параметр как постоянную",
     "Подставить точку, не забывая, что n^0 = 1 и 1^n = 1",
-    "{'Свернуть ответ, вынеся общий множитель': 'n(n+1)(n+2) − n(n+1)² = n(n+1)'}"
+    "Свернуть ответ, вынеся общий множитель: n(n+1)(n+2) − n(n+1)² = n(n+1)"
    ],
    "traps": [
     "Дифференцируют по n вместо x: параметр здесь постоянная",
@@ -10114,6 +10460,243 @@
    "blocks": [
     "2025-MAY-TZ3-P2-Q10-C",
     "2025-MAY-TZ1-P3-Q02-B-III"
+   ]
+  },
+  {
+   "id": "E2.from_derivatives",
+   "practicum": "E2",
+   "name": "Ряд по определению",
+   "rung": 1,
+   "trigger": "Известного ряда для этой функции нет, и подвести её под известный не выходит. Прямая примета: предыдущий пункт вопроса просил найти n-ю производную, доказать формулу для неё индукцией или показать соотношение вида f″ = 2(f′ − f). Всё это заготовки под подстановку в формулу Маклорена, и «hence» их обязывает использовать.",
+   "chain": [
+    "Написать формулу f(x) = Σ f⁽ⁿ⁾(0)·xⁿ/n!",
+    "Найти производные — или взять готовую формулу из предыдущего пункта",
+    "Подставить x = 0 в каждую",
+    "Поделить на n! и собрать многочлен"
+   ],
+   "traps": [
+    "Забывают поделить на n!: f‴(0) = 9 даёт член 3x³/2, а не 9x³",
+    "Формулу n-й производной берут при n, начинающемся не с той единицы: в мае 2021 она верна лишь при n ≥ 2, и первые два члена надо считать отдельно",
+    "Соотношение f⁽⁴⁾ = 2(f‴ − f″) применяют к функциям, а не к числам: в него подставляют x = 0 и получают числовую рекурсию, дальше считать нечего",
+    "«Hence» игнорируют и считают четвёртую производную руками — пять минут вместо тридцати секунд, и обычно со знаком не туда"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 105,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q11-B",
+    "2024-MAY-TZ2-P1-Q12-B",
+    "2025-MAY-TZ1-P1-Q12-E-I",
+    "2022-MAY-TZ1-P1-Q12-D"
+   ]
+  },
+  {
+   "id": "E2.substitution",
+   "practicum": "E2",
+   "name": "Подстановка в известный ряд",
+   "rung": 2,
+   "trigger": "Функция получается из стандартной заменой аргумента: sin(x²), cos 2x, e^(−3x), ln(1 + 4x). Пять рядов, которые нужно знать наизусть, — eˣ, sin x, cos x, ln(1 + x), arctan x — стоят в справочнике, и первый ход темы всегда один: узнать в написанном один из них.",
+   "chain": [
+    "Узнать стандартный ряд под маской",
+    "Подставить новый аргумент вместо x целиком, вместе со степенью",
+    "Пересчитать, до какого члена нужно разложение исходного ряда",
+    "Собрать и упорядочить по возрастанию степеней"
+   ],
+   "traps": [
+    "Возводят в степень не всё: у sin(x²) член −x⁶/6, а не −x³/6 — (x²)³ = x⁶",
+    "Берут столько же членов, сколько в исходном ряду: у cos 2x до x⁴ нужны три члена ряда косинуса, а у sin(x²) до x⁶ — только два",
+    "Знак множителя теряют: у cos 2x член 2x⁴/3, потому что (2x)⁴/24 = 16x⁴/24",
+    "Ряд обрывают на «первых двух членах» вместо «первых двух ненулевых»: у чётной функции каждый второй член нулевой, и счёт сбивается сразу"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 105,
+   "blocks": [
+    "2024-MAY-TZ1-P1-Q08-A-I",
+    "2023-NOV-TZ1-P1-Q11-D"
+   ]
+  },
+  {
+   "id": "E2.binomial_series",
+   "practicum": "E2",
+   "name": "Биномиальный ряд с нецелым показателем",
+   "rung": 3,
+   "trigger": "Скобка в степени, которая не является целым неотрицательным числом: (1 + t)⁻¹, (1 − x)⁻⁴, (1 − ax)^(−1/2), √(1 + x). Разложение бесконечно, и вопрос всегда обрывает его на заказанном члене.",
+   "chain": [
+    "Привести к виду (1 + u)^p — единица впереди обязательна",
+    "Выписать p, p(p−1)/2!, p(p−1)(p−2)/3! — три коэффициента обычно и нужны",
+    "Подставить u вместе с его знаком и множителем",
+    "Если требуют, назвать область сходимости |u| < 1"
+   ],
+   "traps": [
+    "Знак внутри скобки теряют: у (1 − x)⁻⁴ все коэффициенты выходят положительными именно потому, что минусы сокращаются попарно",
+    "Из скобки не выносят: (2 − x)^(1/2) раскладывать нельзя, пока это не √2·(1 − x/2)^(1/2)",
+    "Область сходимости пишут по одной скобке из двух: у произведения (1 − 2x)^(−1/2)(1 − 4x)^(−1/2) сходятся обе, и решает |x| < 1/4",
+    "Формулу для целого показателя тянут на дробный: (2n−1)!/(n−1)! в мае 2024 не сокращается до знакомого биномиального коэффициента"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 105,
+   "blocks": [
+    "2025-NOV-TZ1-P1-Q05-A",
+    "2024-MAY-TZ2-P1-Q12-B"
+   ]
+  },
+  {
+   "id": "E2.product_of_series",
+   "practicum": "E2",
+   "name": "Произведение рядов",
+   "rung": 4,
+   "trigger": "Функция — произведение двух, у каждой из которых ряд известен: eˣ sin x, √(1 + x)·e^(mx), (1 − 2x)^(−1/2)(1 − 4x)^(−1/2), sin²(x²). Самый частый приём темы: 21 балл из 99.",
+   "chain": [
+    "Разложить каждый множитель, взяв запас по степеням",
+    "Перемножить, отбрасывая всё выше заказанной степени сразу",
+    "Собрать подобные",
+    "Проверить свободный член: он равен произведению свободных членов"
+   ],
+   "traps": [
+    "Берут одинаковое число членов у обоих множителей: у eˣ sin x до x³ нужны три члена экспоненты и два синуса, потому что синус начинается с x и съедает одну степень",
+    "Перемножают целиком и тонут в лишних степенях — отбрасывать надо по ходу, а не в конце",
+    "У квадрата берут квадраты членов: sin²(x²) ≠ x⁴ − x¹²/36, средний член 2·x²·(−x⁶/6) никуда не девается",
+    "Забывают, что произведение может понизить нужную глубину: у 4x·sin(x²)cos(x²) множитель x впереди сдвигает всё на степень"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 105,
+   "blocks": [
+    "2022-MAY-TZ1-P1-Q12-A",
+    "2021-MAY-TZ1-P1-Q12-C",
+    "2024-MAY-TZ2-P1-Q12-C",
+    "2024-MAY-TZ1-P1-Q08-A-II",
+    "2024-MAY-TZ1-P1-Q08-B"
+   ]
+  },
+  {
+   "id": "E2.composition",
+   "practicum": "E2",
+   "name": "Ряд внутри ряда",
+   "rung": 5,
+   "trigger": "Внутрь стандартной функции подставлена не степень, а целое выражение, которое само надо разложить: e^(cos 2x − 1), sec x = (1 + (cos x − 1))⁻¹. Отличие от приёма 2 в том, что внутренняя часть — ряд, а не одночлен, и возводить в степень приходится многочлен.",
+   "chain": [
+    "Разложить внутреннюю функцию и отнять то, что делает её малой в нуле",
+    "Убедиться, что внутреннее выражение обращается в нуле в ноль — иначе внешний ряд не сходится к тому, что нужно",
+    "Подставить его как u во внешний ряд",
+    "Возвести в квадрат и в куб только то, что даёт нужные степени",
+    "Собрать подобные и, если надо, домножить на вынесенный множитель"
+   ],
+   "traps": [
+    "Подставляют cos 2x вместо cos 2x − 1: e^u раскладывается около u = 0, а cos 2x в нуле равен единице, не нулю. Именно поэтому вопрос ноября 2023 и разбит на три пункта",
+    "Вынесенный множитель теряют на последнем шаге: e^(cos 2x) = e·e^(cos 2x − 1), и вся e должна остаться в ответе",
+    "У u² берут только первый член: (−2x² + 2x⁴/3)² даёт 4x⁴, и без него коэффициент при x⁴ выходит неверным",
+    "sec x раскладывают через производные — четыре производные секанса против трёх строк с биномом"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 105,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q09-B",
+    "2023-NOV-TZ1-P1-Q11-D"
+   ]
+  },
+  {
+   "id": "E2.term_by_term",
+   "practicum": "E2",
+   "name": "Дифференцирование и интегрирование ряда",
+   "rung": 6,
+   "trigger": "Ряд для нужной функции неизвестен, но известен ряд для её производной или первообразной. Приметы: «use integration to show», «by differentiating both sides», и — самая незаметная — геометрическая прогрессия в условии, потому что её сумма 1/(1 − r) и есть ряд.",
+   "chain": [
+    "Записать известный ряд (чаще всего геометрический)",
+    "Продифференцировать или проинтегрировать обе части почленно",
+    "Постоянную интегрирования найти подстановкой x = 0",
+    "Сверить область сходимости: она не меняется"
+   ],
+   "traps": [
+    "Постоянную интегрирования не находят: arctan x = x − x³/3 + … + C, и C = 0 только после подстановки нуля. Балл стоит отдельно",
+    "Дифференцируют левую часть и забывают, что справа тоже функция от r: d/dr [a/(1 − r)] = a/(1 − r)², и квадрат появляется именно отсюда",
+    "Геометрическую прогрессию не узнают в сумме Σ(−2x²)ʳ и считают члены руками",
+    "Условие |r| < 1 не выписывают, а от него зависит и ответ на следующий пункт: наибольшее K это 1/√2, а не бесконечность"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 105,
+   "blocks": [
+    "2025-NOV-TZ3-P3-Q02-B",
+    "2024-MAY-TZ1-P3-Q01-C-I",
+    "2025-MAY-TZ1-P2-Q12-C"
+   ]
+  },
+  {
+   "id": "E2.from_ode",
+   "practicum": "E2",
+   "name": "Ряд из дифференциального уравнения",
+   "rung": 7,
+   "trigger": "Функция задана не формулой, а уравнением с начальным условием, и спрашивают её ряд. Формулы для y нет вовсе — но производные в нуле уравнение выдаёт по одной, и больше ничего не нужно.",
+   "chain": [
+    "Подставить x = 0 и начальное условие в само уравнение — это y′(0)",
+    "Продифференцировать уравнение неявно, по всей правой части",
+    "Подставить x = 0 и уже найденные значения — это y″(0)",
+    "Повторить столько раз, сколько членов просят",
+    "Собрать Σ y⁽ⁿ⁾(0)·xⁿ/n!"
+   ],
+   "traps": [
+    "Правую часть дифференцируют как функцию одного x, забыв, что y тоже зависит от x: в (x²y − y)/(x² + 1) член y′ обязан появиться",
+    "Подставляют x = 0 до дифференцирования — тогда уравнение превращается в число и производных больше не даёт",
+    "Делят на n! не для всех членов: y‴(0) = 9 даёт 3x³/2",
+    "Приближение считают по ряду там, где следующий пункт просит точное решение, и не замечают, что шесть значащих цифр они не совпадают"
+   ],
+   "calculator": "required",
+   "practicum_marks": 105,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q12-C-I-II"
+   ]
+  },
+  {
+   "id": "E2.use_series",
+   "practicum": "E2",
+   "name": "Ряд вместо функции",
+   "rung": 8,
+   "trigger": "Ряд уже получен — обычно в предыдущем пункте, и «hence» это говорит прямо. Дальше с многочленом делают то, что с функцией не выходило: берут предел, подставляют число, интегрируют.",
+   "chain": [
+    "Заменить функцию отрезком её ряда",
+    "Сделать с многочленом то, что просят: сократить, подставить, проинтегрировать почленно",
+    "Если ответ число — довести арифметику до заказанной точности",
+    "Назвать, при каком x приближение вообще законно"
+   ],
+   "traps": [
+    "Подставляют в исходную функцию вместо ряда — приближения не получается вовсе, а получается то же самое число",
+    "Интегрируют функцию, а не ряд: ∫₀¹ e^(x²)sin(x²)dx первообразной не имеет, и вся суть пункта в том, чтобы этого не пробовать",
+    "Область сходимости не проверяют: приближение при x = 1/10 законно, при x = 1/2 — уже нет",
+    "Ответ дают в другой форме, чем просят: «в виде c/d, где c, d целые» — это 837/500, а не 1.674"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 105,
+   "blocks": [
+    "2022-MAY-TZ1-P1-Q12-B",
+    "2024-MAY-TZ2-P1-Q12-E",
+    "2025-NOV-TZ3-P3-Q02-C",
+    "2025-NOV-TZ3-P3-Q02-G",
+    "2021-MAY-TZ1-P3-Q02-E-I",
+    "2021-MAY-TZ2-P2-Q09-C"
+   ]
+  },
+  {
+   "id": "E2.error_bound",
+   "practicum": "E2",
+   "name": "Насколько приближение верно",
+   "rung": 9,
+   "trigger": "В условии стоит слово «error» или граница вида 0.0001, 1×10⁻⁶. Единственное место архива, где спрашивают не значение приближения, а его качество. Работает, когда ряд знакочередующийся и члены убывают по модулю: тогда ошибка не превосходит первого отброшенного члена.",
+   "chain": [
+    "Убедиться, что ряд знакочередующийся и члены убывают",
+    "Написать первый отброшенный член как формулу от номера",
+    "Приравнять его к границе и решить — обычно перебором по номеру",
+    "Перевести номер члена в число членов: ошибка от n членов оценивается членом n + 1"
+   ],
+   "traps": [
+    "Ошибка на единицу: границу примеряют к n-му члену вместо (n+1)-го. Это главная и почти единственная потеря приёма",
+    "Номер члена выдают за число членов: n = 15 в степени x^n значит восьмой ненулевой член, а нужных членов семь",
+    "Границу применяют к ряду, который не знакочередуется, — теорема тогда ничего не говорит, и это надо оговорить",
+    "При проверке теоремы сравнивают приближение с приближением: настоящую ошибку даёт точное значение из предыдущего пункта, а не ещё один отрезок ряда"
+   ],
+   "calculator": "required",
+   "practicum_marks": 105,
+   "blocks": [
+    "2025-NOV-TZ3-P3-Q02-D",
+    "2025-NOV-TZ3-P3-Q02-H",
+    "2025-NOV-TZ3-P3-Q02-I"
    ]
   },
   {
@@ -20158,6 +20741,582 @@
    ],
    "answer": "symbolic",
    "answer_digest": "21e2db94d100",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:1",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.product_of_series",
+   "prompt": "Find the Maclaurin series for $\\mathrm{e}^x\\sin x$ up to the $x^3$ term.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "mult",
+   "answer_digest": "c0c75a8e79ad",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:2",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.substitution",
+   "prompt": "Find the first two non-zero terms in the Maclaurin series of $\\sin(x^2)$.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "sub",
+   "answer_digest": "ddc6e2b224d0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:3",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.binomial_series",
+   "prompt": "The first four terms of the expansion of $(1-x)^{-4}$ are $1+ax+bx^2+20x^3$. Find $b$.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "binom",
+   "answer_digest": "e9eb605657c6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:4",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.from_derivatives",
+   "prompt": "Given that $\\frac{\\mathrm{d}^n}{\\mathrm{d}x^n}(x^2\\mathrm{e}^x)=[x^2+2nx+n(n-1)]\\mathrm{e}^x$, determine the Maclaurin series of $x^2\\mathrm{e}^x$ up to $x^4$.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "def",
+   "answer_digest": "cb8379ac2098",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:5",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.composition",
+   "prompt": "Hence, find the Maclaurin series for $\\mathrm{e}^{\\cos 2x-1}$ up to the term in $x^4$.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "comp",
+   "answer_digest": "f562267f2b6d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:6",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.term_by_term",
+   "prompt": "Hence, use integration to show that $\\arctan x=x-\\frac{x^3}{3}+\\frac{x^5}{5}-\\dots$",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "termwise",
+   "answer_digest": "139cdf56b77a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:7",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.from_ode",
+   "prompt": "Given that $\\frac{\\mathrm{d}^3y}{\\mathrm{d}x^3}=9$ when $x=0$, find the first four terms of the Maclaurin series for $y$.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "ode",
+   "answer_digest": "87e5ad485acb",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:8",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.use_series",
+   "prompt": "Hence, find an approximate value for $\\int_0^1\\mathrm{e}^{x^2}\\sin(x^2)\\,\\mathrm{d}x$.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "approx",
+   "answer_digest": "3fc7c96a56b6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:9",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.error_bound",
+   "prompt": "Determine how many non-zero terms would need to be used, such that the error is less than $0.0001$.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "error",
+   "answer_digest": "ca00fccfb408",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:10",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.substitution",
+   "prompt": "Find the Maclaurin series for $\\cos 2x$, up to and including the term in $x^4$.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "sub",
+   "answer_digest": "ddc6e2b224d0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:11",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.term_by_term",
+   "prompt": "By differentiating both sides of $a+ar+ar^2+\\dots=\\frac{a}{1-r}$ with respect to $r$, find $\\sum_{n=1}^{\\infty}nar^{\\,n-1}$.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "termwise",
+   "answer_digest": "139cdf56b77a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E2:12",
+   "kind": "recognition",
+   "practicum": "E2",
+   "skill": "E2.from_derivatives",
+   "prompt": "It has been shown that $g''(x)=2(g'(x)-g(x))$. Using this, find the Maclaurin series for $g(x)=\\mathrm{e}^x\\cos x$ up to the $x^4$ term.",
+   "options": [
+    {
+     "code": "def",
+     "name": "по определению"
+    },
+    {
+     "code": "sub",
+     "name": "подстановка в известный ряд"
+    },
+    {
+     "code": "binom",
+     "name": "биномиальный ряд"
+    },
+    {
+     "code": "mult",
+     "name": "произведение рядов"
+    },
+    {
+     "code": "comp",
+     "name": "ряд внутри ряда"
+    },
+    {
+     "code": "termwise",
+     "name": "почленно"
+    },
+    {
+     "code": "ode",
+     "name": "из уравнения"
+    },
+    {
+     "code": "approx",
+     "name": "ряд вместо функции"
+    },
+    {
+     "code": "error",
+     "name": "оценка ошибки"
+    }
+   ],
+   "answer": "def",
+   "answer_digest": "cb8379ac2098",
    "budget_ms": 8000
   },
   {

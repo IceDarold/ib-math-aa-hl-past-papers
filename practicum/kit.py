@@ -319,10 +319,16 @@ def verify_identity(label, got, want, var=x,
         print(f"{OK} {label}: " + _t("тождество выполняется", "identity holds"))
         return True
 
+    # Прочие буквы (a в ответе a/(1 - r)^2) заполняются числами, иначе разность
+    # не сводится к числу и проверка молча говорит «слишком много особых точек»,
+    # то есть отвечает «не знаю» на каждый ответ с параметром.
+    spare = sorted(diff.free_symbols - {var}, key=str)
     checked = 0
-    for s in samples:
+    for i, s in enumerate(samples):
+        fill = {f: sp.Float(_SERIES_FILL[(i + j) % len(_SERIES_FILL)])
+                for j, f in enumerate(spare)}
         try:
-            val = complex(diff.subs(var, sp.Float(s)).evalf())
+            val = complex(diff.subs({var: sp.Float(s), **fill}).evalf())
         except (TypeError, ValueError):
             continue
         if not (math.isfinite(val.real) and math.isfinite(val.imag)):
@@ -3167,6 +3173,288 @@ def verify_indeterminate(label, got, num, den, var=x, point=0, side=None,
                 f"{word[top]} and the denominator to {word[bottom]}") + where)
             return False
     print(f"{OK} {label}: {claim}")
+    return True
+
+
+# --- ряды Маклорена ----------------------------------------------------------
+
+_TAIL_SAMPLES = (0.017, -0.023, 0.031, -0.041)
+_SERIES_DEPTH = 40
+
+
+def _plural(count):
+    """Номер русской формы существительного: 0 — «член», 1 — «члена», 2 — «членов».
+
+    Сами слова живут внутри `_t`, иначе check_language видит кириллицу
+    в литерале и справедливо ругается: строка вне `_t` рано или поздно
+    напечатается посреди английского ноутбука.
+    """
+    tail = count % 10
+    if count % 100 in (11, 12, 13, 14):
+        return 2
+    return {1: 0, 2: 1, 3: 1, 4: 1}.get(tail, 2)
+
+
+def _poly_terms(expr, var):
+    """[(степень, коэффициент)] по возрастанию. None — это не многочлен."""
+    e = sp.expand(sp.sympify(expr))
+    try:
+        poly = sp.Poly(e, var)
+    except (sp.PolynomialError, sp.GeneratorsNeeded):
+        return None
+    if not e.free_symbols or var not in e.free_symbols:
+        # Постоянная — тоже многочлен, нулевой степени.
+        return [(0, e)] if e != 0 else []
+    out = [(int(power[0]), coeff) for power, coeff in
+           zip(poly.monoms(), poly.coeffs()) if coeff != 0]
+    return sorted(out)
+
+
+def _first_terms(f, var, count, run):
+    """Степени первых count ненулевых членов ряда f. None — не разложилось.
+
+    Считается по самой функции из условия: «первые два ненулевых члена» —
+    требование к f, а не к ответу, и глубина, на которую надо разложить,
+    известна только ей. У sin(x²) это x² и x⁶, у 4x·sin(x²)cos(x²) — x³
+    и x⁷; фиксированной глубины, годной для всех, не существует.
+    """
+    here = sp.sympify(f).subs(run) if run else sp.sympify(f)
+    depth = 4
+    while depth <= _SERIES_DEPTH:
+        try:
+            head = sp.expand(sp.series(here, var, 0, depth).removeO())
+        except (ValueError, TypeError, NotImplementedError,
+                sp.PoleError, ZeroDivisionError):
+            return None
+        powers = [power for power, coeff in (_poly_terms(head, var) or [])
+                  if sp.simplify(coeff) != 0]
+        if len(powers) >= count:
+            return powers[:count]
+        depth *= 2
+    return None
+
+
+def _tail_order(f, got, var, need, run):
+    """Наименьшая степень, на которой ответ расходится с f. None — сходится.
+
+    Разность f − P должна обнуляться до need включительно. Сначала честное
+    разложение; если в остатке что-то осталось, оно ещё раз проверяется
+    численно — simplify не всегда доводит верный ответ до нуля, а значения
+    в нескольких точках доводят.
+    """
+    here = sp.sympify(f).subs(run) if run else sp.sympify(f)
+    claim = sp.sympify(got).subs(run) if run else sp.sympify(got)
+    try:
+        tail = sp.expand(sp.series(here - claim, var, 0, need + 1).removeO())
+    except (ValueError, TypeError, NotImplementedError,
+            sp.PoleError, ZeroDivisionError):
+        return 'unreadable'
+    for power, coeff in (_poly_terms(tail, var) or []):
+        if power > need:
+            continue
+        if sp.simplify(coeff) == 0:
+            continue
+        rest = coeff.free_symbols
+        if rest:
+            continue                      # с буквой внутри решает прогон по params
+        if all(abs(complex((coeff * var**power).evalf(
+                _PREC, subs={var: place}))) < 1e-40 for place in _TAIL_SAMPLES):
+            continue
+        return power
+    return None
+
+
+def verify_maclaurin(label, got, f, order=None, terms=None, var=x, params=None):
+    """Ответ — отрезок ряда Маклорена: проверяется прилеганием, не сверкой.
+
+    Одиннадцатое понятие равенства ответов в серии. Ряд Маклорена — это не
+    какой-то многочлен, который надо угадать, а единственный многочлен
+    данной степени, прилегающий к функции в нуле теснее всех остальных:
+    разность f − P обязана обнулиться до заказанной степени включительно.
+    Отсюда и проверка. Она берёт функцию из условия, вычитает написанное
+    и смотрит, с какой степени начинается остаток. Эталона не хранится:
+    сверять не с чем, потому что верный ответ определён самой f.
+
+    order=k — «up to and including the term in x^k»: разность обязана быть
+    o(x^k). terms=k — «the first k non-zero terms»: глубина берётся из самой
+    f, потому что у sin(x²) это x² и x⁶, а у 4x·sin(x²)cos(x²) — x³ и x⁷,
+    и одной глубины на всех не существует.
+
+    params={n: (2, 5, 8)} — когда в ответе стоит буква: прогон идёт при
+    каждом её значении.
+
+    Чего проверка не делает: не отвергает лишние верные члены сверх
+    заказанных — ни при order, ни при terms. Схема оценивания их тоже
+    не отвергает и говорит это прямым текстом: «condone presence of any
+    additional terms once the first two correct terms are seen».
+    """
+    if _blank(label, got):
+        return False
+    if (order is None) == (terms is None):
+        raise ValueError(_t('нужно ровно одно из order и terms',
+                            'give exactly one of order and terms'))
+    claim = sp.sympify(got)
+    shape = _poly_terms(claim, var)
+    if shape is None:
+        print(f"{NO} {label}: " + _t(
+            f"ответ должен быть многочленом от {var}: ряд обрывают, а не "
+            f"оставляют функцию как есть",
+            f"the answer has to be a polynomial in {var}: a series is cut "
+            f"short, not left as the function itself"))
+        return False
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    for run in runs:
+        where = ('' if not run else ' ' + _t('при ', 'at ')
+                 + ', '.join(f'{name} = {value}' for name, value in run.items()))
+        need = order
+        if terms is not None:
+            powers = _first_terms(f, var, terms, run)
+            if powers is None:
+                print(f"{NO} {label}: " + _t(
+                    "не удаётся разложить функцию из условия",
+                    "the function from the question cannot be expanded")
+                    + where)
+                return False
+            need = powers[-1]
+            here = [power for power, coeff in shape
+                    if sp.simplify(coeff.subs(run) if run else coeff) != 0]
+            # Лишние верные члены не отвергаются: схема оценивания мая 2024
+            # пишет об этом прямо — «condone presence of any additional terms
+            # once the first two correct terms are seen». Недостача ловится
+            # и без счёта, остатком, но сказать про неё счётом понятнее.
+            if len(here) < terms:
+                print(f"{NO} {label}: " + _t(
+                    f"в ответе {len(here)} "
+                    + ('ненулевой член', 'ненулевых члена',
+                       'ненулевых членов')[_plural(len(here))]
+                    + f", а просят {terms}",
+                    f"the answer has {len(here)} non-zero "
+                    f"term{'' if len(here) == 1 else 's'} and the "
+                    f"question asks for {terms}") + where)
+                return False
+        bad = _tail_order(f, claim, var, need, run)
+        if bad == 'unreadable':
+            print(f"{NO} {label}: " + _t(
+                "не удаётся разложить функцию из условия",
+                "the function from the question cannot be expanded") + where)
+            return False
+        if bad is not None:
+            power = _t(f'свободный член', 'constant term') if bad == 0 else (
+                _t(f'член с {var}^{bad}', f'the {var}^{bad} term')
+                if bad > 1 else _t(f'член с {var}', f'the {var} term'))
+            print(f"{NO} {label}: " + _t(
+                f"{power} расходится с функцией; всё, что ниже, сходится",
+                f"{power} does not agree with the function; everything "
+                f"below it does") + where)
+            return False
+    print(f"{OK} {label}: {sp.expand(claim)}")
+    return True
+
+
+def verify_series_solution(label, got, rhs, ic, order, var=x, dep=y):
+    """Ответ — начало ряда Маклорена для решения уравнения dy/dvar = rhs.
+
+    Функции здесь нет вовсе: она задана уравнением и начальным условием,
+    и формулы для неё может не существовать в замкнутом виде. Поэтому
+    и проверять приходится не прилеганием к функции, а самим уравнением.
+
+    Многочлен P — начало ряда решения до x^order включительно тогда и только
+    тогда, когда P(0) равно начальному условию и невязка P′ − rhs(P)
+    обнуляется до x^(order−1). Оценка тугая: ошибись P в члене x^k, и
+    невязка сломается ровно на x^(k−1).
+
+    Эталона нет: и уравнение, и начальное условие стоят в самом вопросе.
+    """
+    if _blank(label, got):
+        return False
+    claim = sp.sympify(got)
+    if _poly_terms(claim, var) is None:
+        print(f"{NO} {label}: " + _t(
+            f"ответ должен быть многочленом от {var}",
+            f"the answer has to be a polynomial in {var}"))
+        return False
+    start = sp.simplify(claim.subs(var, 0))
+    if sp.simplify(start - sp.sympify(ic)) != 0:
+        print(f"{NO} {label}: " + _t(
+            f"свободный член равен {start}, а начальное условие — {ic}",
+            f"the constant term is {start}, but the initial condition is {ic}"))
+        return False
+    bad = _tail_order(sp.sympify(rhs).subs(dep, claim), sp.diff(claim, var),
+                      var, order - 1, {})
+    if bad == 'unreadable':
+        print(f"{NO} {label}: " + _t("не удаётся разложить невязку",
+                                     "the residual cannot be expanded"))
+        return False
+    if bad is not None:
+        power = bad + 1
+        print(f"{NO} {label}: " + _t(
+            f"уравнению удовлетворяет не всё: первым расходится член "
+            f"с {var}^{power}",
+            f"the equation is not satisfied all the way: the first term that "
+            f"goes wrong is the {var}^{power} one"))
+        return False
+    print(f"{OK} {label}: {sp.expand(claim)}")
+    return True
+
+
+def verify_terms(label, got, term, bound, var=k, strict=True):
+    """Ответ — сколько членов ряда нужно взять, чтобы ошибка влезла в bound.
+
+    У знакочередующегося ряда с убывающими по модулю членами ошибка от
+    обрыва не превосходит первого отброшенного члена. Поэтому «сколько
+    членов» — это наименьшее n, при котором |term(n+1)| укладывается
+    в границу, и проверка спрашивает ровно это: границу обязано выполнять
+    n, и обязано нарушать n − 1. Эталона нет, term и bound стоят в условии.
+
+    Ошибка здесь всегда одна и та же — на единицу: границу примеряют
+    к n-му члену вместо (n+1)-го. Проверка её называет, не называя ответа.
+    """
+    if _blank(label, got):
+        return False
+    claim = sp.sympify(got)
+    if not claim.is_Integer or claim < 1:
+        print(f"{NO} {label}: " + _t(
+            "число членов — целое положительное",
+            "a number of terms is a positive whole number"))
+        return False
+    term = sp.sympify(term)
+    spare = term.free_symbols - {sp.sympify(var)}
+    if spare:
+        print(f"{NO} {label}: " + _t(
+            f"в формуле члена остались буквы, кроме номера: "
+            f"{', '.join(sorted(map(str, spare)))} — укажите var",
+            f"the term formula still has letters other than the index in "
+            f"it: {', '.join(sorted(map(str, spare)))} — pass var"))
+        return False
+    limit = abs(complex(sp.sympify(bound).evalf(_PREC)))
+    count = int(claim)
+
+    def fits(n):
+        """Укладывается ли в границу ошибка от n членов, то есть член n+1."""
+        size = abs(complex(term.subs(var, n + 1).evalf(_PREC)))
+        return size < limit if strict else size <= limit
+
+    if not fits(count):
+        print(f"{NO} {label}: " + _t(
+            f"{count} членов не хватает: первый отброшенный член ещё больше "
+            f"границы — это и есть оценка ошибки",
+            f"{count} terms are not enough: the first term left out is still "
+            f"bigger than the bound, and that term is the error estimate"))
+        return False
+    if count > 1 and fits(count - 1):
+        print(f"{NO} {label}: " + _t(
+            f"{count} членов больше, чем нужно: граница выполняется и на "
+            f"меньшем числе. Проверьте, к какому члену её примеряете — "
+            f"ошибка от n членов оценивается членом номер n + 1",
+            f"{count} terms is more than needed: the bound already holds "
+            f"with fewer. Check which term you are testing — the error from "
+            f"n terms is bounded by term number n + 1"))
+        return False
+    print(f"{OK} {label}: {count}")
     return True
 
 

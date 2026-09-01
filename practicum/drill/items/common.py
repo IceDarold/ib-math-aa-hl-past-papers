@@ -171,6 +171,37 @@ def limit_check(expr, var='x', point=0, side=None, params=None, tol=1e-6):
     return spec
 
 
+def maclaurin_check(f, order=None, terms=None, var='x', params=None):
+    """Ответ — отрезок ряда Маклорена: эталона нет, проверка вычитает его из f.
+
+    order — «до члена с x^k включительно», terms — «первые k ненулевых
+    членов». Ровно одно из двух, как и в kit.
+    """
+    spec = {'kind': 'maclaurin', 'f': sp.srepr(sp.sympify(f)), 'var': var}
+    if order is not None:
+        spec['order'] = int(order)
+    if terms is not None:
+        spec['terms'] = int(terms)
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec
+
+
+def series_solution_check(rhs, ic, order, var='x', dep='y'):
+    """Ответ — начало ряда решения уравнения: подставляется в само уравнение."""
+    return {'kind': 'series_solution', 'rhs': sp.srepr(sp.sympify(rhs)),
+            'ic': sp.srepr(sp.sympify(ic)), 'order': int(order),
+            'var': var, 'dep': dep}
+
+
+def terms_check(term, bound, var='k', strict=True):
+    """Ответ — сколько членов ряда нужно взять: границу примеряют к n и n+1."""
+    return {'kind': 'terms', 'term': sp.srepr(sp.sympify(term)),
+            'bound': sp.srepr(sp.sympify(bound)), 'var': var,
+            'strict': bool(strict)}
+
+
 def indeterminate_check(num, den, var='x', point=0, side=None, params=None):
     """Ответ — сама неопределённость: '0/0' или 'oo/oo', проверяется порознь."""
     spec = {'kind': 'indeterminate', 'num': sp.srepr(sp.sympify(num)),

@@ -319,6 +319,29 @@ def evaluate(spec, raw):
                             side=spec.get('side'),
                             params=params or None)
 
+        if kind == 'maclaurin':
+            params = {sp.Symbol(name): [sp.sympify(v) for v in values]
+                      for name, values in (spec.get('params') or {}).items()}
+            return _capture(kit.verify_maclaurin, 'Ответ', parse_one(raw),
+                            sp.sympify(spec['f']),
+                            order=spec.get('order'), terms=spec.get('terms'),
+                            var=sp.Symbol(spec.get('var', 'x')),
+                            params=params or None)
+
+        if kind == 'series_solution':
+            return _capture(kit.verify_series_solution, 'Ответ',
+                            parse_one(raw), sp.sympify(spec['rhs']),
+                            sp.sympify(spec['ic']), spec['order'],
+                            var=sp.Symbol(spec.get('var', 'x')),
+                            dep=sp.Symbol(spec.get('dep', 'y')))
+
+        if kind == 'terms':
+            return _capture(kit.verify_terms, 'Ответ', parse_one(raw),
+                            sp.sympify(spec['term']),
+                            sp.sympify(spec['bound']),
+                            var=sp.Symbol(spec.get('var', 'k')),
+                            strict=spec.get('strict', True))
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0
