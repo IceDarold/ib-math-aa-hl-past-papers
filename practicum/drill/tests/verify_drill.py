@@ -922,6 +922,117 @@ print('  4. Время меряет страница и присылает го�
       '     прислать что угодно — но обманывать здесь некого.')
 
 
+
+# --- E3: производные пересчитываются численно, из определения ------------
+# sp.diff здесь не участвует: наклон берётся пятиточечной конечной
+# разностью по значениям самой функции. Если проверка и генератор
+# ошибутся одинаково, поймать это может только настоящая секущая.
+
+def _one_slope(fn, point, order, step):
+    if order == 1:
+        return (fn(point - 2*step) - 8*fn(point - step)
+                + 8*fn(point + step) - fn(point + 2*step)) / (12*step)
+    return (-fn(point - 2*step) + 16*fn(point - step) - 30*fn(point)
+            + 16*fn(point + step) - fn(point + 2*step)) / (12*step**2)
+
+
+def _slope(expr, var, point, order=1, step=1e-3):
+    """Наклон конечной разностью — или None, если точке нельзя верить.
+
+    Рядом с полюсом дроби (3x² − 1)/… пятиточечная разность врёт в третьем
+    знаке: производная там порядка 10⁴, а следующие — порядка 10⁹, и
+    ошибка усечения перестаёт быть малой. Признак этого виден без всякой
+    теории: два разных шага дают разные ответы. Такая точка не отвергает
+    эталон, она выбывает.
+    """
+    fn = sp.lambdify(var, expr, 'math')
+    coarse = _one_slope(fn, point, order, step)
+    fine = _one_slope(fn, point, order, step / 4)
+    if not (math.isfinite(coarse) and math.isfinite(fine)):
+        return None
+    if abs(coarse - fine) > 1e-6 * max(1.0, abs(fine)):
+        return None
+    return fine
+
+
+E3_POINTS = (0.23, -0.31, 0.57, 0.79)
+
+for name in ('E3.power_rule', 'E3.standard_derivatives', 'E3.chain_rule',
+             'E3.product_rule', 'E3.quotient_rule', 'E3.higher_derivatives',
+             'E3.with_parameter'):
+    for seed in range(SEEDS):
+        item = GENERATORS[name](random.Random(seed))
+        spec = item['check']
+        var = sp.Symbol(spec.get('var', 'x'))
+        order = spec.get('order', 1)
+        fill = {}
+        for letter, values in (spec.get('params') or {}).items():
+            fill[sp.Symbol(letter)] = sp.sympify(values[0])
+        f = sp.sympify(spec['f']).subs(fill)
+        claim = sp.sympify(item['answer']).subs(fill)
+        got = sp.lambdify(var, claim, 'math')
+        ok, checked = True, 0
+        for point in E3_POINTS:
+            try:
+                want = _slope(f, var, point, order)
+                here = got(point)
+            except (ValueError, ZeroDivisionError, OverflowError):
+                continue
+            if want is None or not math.isfinite(here):
+                continue
+            checked += 1
+            if abs(here - want) > 1e-5 * max(1.0, abs(want)):
+                ok = False
+        t(f'{name}[{seed}]: эталон совпал с настоящей секущей',
+          ok and checked >= 2)
+    print(f'  {name:28} {SEEDS} производных взято конечной разностью')
+
+# to_printed_form — не производная, а сумма двух произведений; она
+# пересчитывается из тех же секущих, по определению.
+for seed in range(SEEDS):
+    item = GENERATORS['E3.to_printed_form'](random.Random(seed))
+    shift = int(re.findall(r'\\frac\{1\}\{\\left\((\d+) - x', item['prompt'])[0])
+    f, g = 1/(shift - x_sym)**2, x_sym**2
+    claim = sp.lambdify(x_sym, sp.sympify(item['answer']), 'math')
+    fv = sp.lambdify(x_sym, f, 'math')
+    gv = sp.lambdify(x_sym, g, 'math')
+    ok = all(abs(claim(pt) - (fv(pt)*_slope(g, x_sym, pt)
+                              + gv(pt)*_slope(f, x_sym, pt)))
+             < 1e-5 for pt in E3_POINTS
+             if _slope(f, x_sym, pt) is not None)
+    t(f'E3.to_printed_form[{seed}]: одна дробь равна сумме двух', ok)
+print(f'  {"E3.to_printed_form":28} {SEEDS} сумм пересчитано из секущих')
+
+# read_derivative — корни или промежуток знака; и то, и другое
+# проверяется сканированием самой производной, а не решением уравнения.
+for seed in range(SEEDS):
+    item = GENERATORS['E3.read_derivative'](random.Random(seed))
+    spec = item['check']
+    if spec['kind'] == 'roots':
+        prime = sp.sympify(spec['equation'])
+        fn = sp.lambdify(x_sym, prime, 'math')
+        grid = [-40 + 0.01*i for i in range(8001)]
+        found = sum(1 for i in range(len(grid) - 1)
+                    if fn(grid[i]) * fn(grid[i + 1]) < 0)
+        t(f'E3.read_derivative[{seed}]: корней столько же, сколько в ответе',
+          found == len(item['answer']))
+        t(f'E3.read_derivative[{seed}]: и каждый обращает f\' в ноль',
+          all(abs(fn(float(v))) < 1e-9 for v in item['answer']))
+    else:
+        prime = sp.sympify(spec['inequality']).lhs
+        fn = sp.lambdify(x_sym, prime, 'math')
+        inside = item['answer']
+        ok = True
+        for i in range(-400, 401):
+            pt = i / 10
+            claims = inside.contains(sp.Float(pt))
+            if bool(claims) != (fn(pt) < 0):
+                ok = False
+        t(f'E3.read_derivative[{seed}]: множество совпало с проверкой знака',
+          ok)
+print(f'  {"E3.read_derivative":28} {SEEDS} ответов сверено сканированием')
+
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')

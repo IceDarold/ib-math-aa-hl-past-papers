@@ -3458,6 +3458,307 @@ def verify_terms(label, got, term, bound, var=k, strict=True):
     return True
 
 
+# --- производная: ответ проверяется дифференцированием, а не сверкой -------
+#
+# Двенадцатое понятие равенства ответов в серии, и самое простое из всех:
+# производная у функции ровно одна, и получить её умеет сам sympy. Эталона
+# поэтому не хранится нигде — проверка берёт f из условия и дифференцирует.
+#
+# Интереснее другое. Когда ответ неверен, «не сходится» — почти бесполезное
+# сообщение: в этой теме промахов немного и все они именные. Забыт множитель
+# внутренней функции. Произведение продифференцировано как u′v′. В частном
+# перепутан знак числителя. Степень не понижена. Проверка строит каждый из
+# этих промахов из самой f — по тому же правилу, применённому не так, как
+# оно устроено, — и, если написанное совпало с одним из них, называет его.
+# Списка неверных ответов при этом тоже нет: они выводятся, а не хранятся.
+
+_DERIV_SAMPLES = (0.37, -0.53, 0.91, -1.27, 1.63, 2.41)
+
+
+def _same_function(claim, want, var, run=None, tol=1e-8):
+    """Совпадают ли два выражения как функции: сначала символьно, потом в точках."""
+    try:
+        diff_expr = sp.sympify(claim) - sp.sympify(want)
+    except (TypeError, ValueError, sp.SympifyError):
+        return False
+    if run:
+        diff_expr = diff_expr.subs(run)
+    try:
+        if sp.simplify(diff_expr) == 0:
+            return True
+    except (TypeError, ValueError, AttributeError, NotImplementedError):
+        pass
+    free = sorted(diff_expr.free_symbols - {var}, key=str)
+    checked = 0
+    for i, point in enumerate(_DERIV_SAMPLES):
+        sub = {var: sp.Float(point)}
+        sub.update({f: sp.Float(_SERIES_FILL[(i + j) % len(_SERIES_FILL)])
+                    for j, f in enumerate(free)})
+        try:
+            here = complex(sp.sympify(want).subs(sub).evalf(_PREC))
+            there = complex(sp.sympify(claim).subs(sub).evalf(_PREC))
+            gap = complex(diff_expr.subs(sub).evalf(_PREC))
+        except (TypeError, ValueError, ZeroDivisionError):
+            continue
+        scale = abs(here)
+        if not (math.isfinite(gap.real) and math.isfinite(gap.imag)
+                and math.isfinite(scale)):
+            continue
+        # Точки вне области функции пропускаются: у sqrt(1 + x) при x < −1
+        # обе записи комплексны и ветвь корня у них разная, хотя на своей
+        # области это одна и та же функция. Вопрос ставится на области,
+        # и проверять надо там же.
+        if abs(here.imag) > 1e-9 or abs(there.imag) > 1e-9:
+            continue
+        checked += 1
+        if abs(gap) > tol * max(1.0, scale):
+            return False
+    return checked >= 2
+
+
+def _no_chain(g, var):
+    """Внешняя производная без множителя-внутренней: sin(2x) -> cos(2x)."""
+    if g.is_Function and len(g.args) == 1:
+        inside = g.args[0]
+        if inside != var and inside.has(var):
+            z = sp.Dummy('z')
+            return sp.diff(g.func(z), z).subs(z, inside)
+    if g.is_Pow:
+        base, power = g.args
+        if base != var and base.has(var) and not power.has(var):
+            return power * base ** (power - 1)
+    return None
+
+
+def _slips(f, var, order):
+    """Типовые промахи, собранные из самой f, а не из списка.
+
+    Каждый промах — это правило, применённое не так, как оно устроено.
+    Вернётся список (что случилось, выражение); сравнение с написанным
+    делает вызывающий.
+    """
+    out = []
+    f = sp.sympify(f)
+    if order == 1:
+        out.append((_t('функция не продифференцирована',
+                       'nothing has been differentiated'), f))
+    else:
+        out.append((_t(f'это производная порядка {order - 1}, а не {order}',
+                       f'this is the derivative of order {order - 1}, '
+                       f'not {order}'), sp.diff(f, var, order - 1)))
+        out.append((_t(f'это производная порядка {order + 1}',
+                       f'this is the derivative of order {order + 1}'),
+                    sp.diff(f, var, order + 1)))
+    # Промахи последнего шага дифференцирования: до него всё могло быть верно.
+    g = sp.diff(f, var, order - 1) if order > 1 else f
+    outer = _no_chain(g, var)
+    if outer is not None:
+        out.append((_t('потерян множитель — производная внутренней функции',
+                       'the chain factor is missing: the inside function has '
+                       'to be differentiated too'), outer))
+    num, den = sp.fraction(sp.together(g))
+    if den.has(var):
+        dn, dd = sp.diff(num, var), sp.diff(den, var)
+        out.append((_t('в частном перепутан знак числителя',
+                       'the sign in the quotient rule numerator is the wrong '
+                       'way round'), (num * dd - dn * den) / den ** 2))
+        out.append((_t('знаменатель не возведён в квадрат',
+                       'the denominator has not been squared'),
+                    (dn * den - num * dd) / den))
+        out.append((_t('частное продифференцировано почленно',
+                       'the quotient has been differentiated top over bottom'),
+                    dn / dd))
+    else:
+        parts = [p for p in sp.Mul.make_args(g) if p.has(var)]
+        if len(parts) == 2:
+            u, v = parts
+            const = g / (u * v)
+            out.append((_t('произведение продифференцировано как u′v′',
+                           'the product has been differentiated as u′v′'),
+                        const * sp.diff(u, var) * sp.diff(v, var)))
+            out.append((_t('в произведении потеряно одно из двух слагаемых',
+                           'one of the two terms of the product rule is '
+                           'missing'), const * sp.diff(u, var) * v))
+            out.append((_t('в произведении потеряно одно из двух слагаемых',
+                           'one of the two terms of the product rule is '
+                           'missing'), const * u * sp.diff(v, var)))
+    if g.is_Pow and g.args[0] == var and not g.args[1].has(var):
+        out.append((_t('показатель не понижен на единицу',
+                       'the power has not been dropped by one'),
+                    g.args[1] * var ** g.args[1]))
+    return out
+
+
+def verify_derivative(label, got, f, var=x, order=1, params=None):
+    """Ответ — производная: проверка дифференцирует f сама.
+
+    Двенадцатое понятие равенства ответов в серии. Эталона здесь нет,
+    потому что он не нужен: производная у функции одна, и вычисляется
+    она из условия. Засчитывается любая эквивалентная запись — свёрнутая,
+    развёрнутая, с вынесенным множителем: сравниваются функции, а не строки.
+
+    order=2 — вторая производная, order=3 — третья.
+    params={n: (2, 3, 7)} — когда в функции стоит буква и ответ зависит
+    от неё: прогон идёт при каждом значении.
+
+    Когда ответ неверен, проверка не ограничивается словом «неверно».
+    Она строит из самой f горстку типовых промахов — цепное правило без
+    внутреннего множителя, произведение как u′v′, частное с перевёрнутым
+    знаком, непонижённый показатель — и, если написанное совпало с одним
+    из них, называет его. Ни верного ответа, ни неверных проверка при
+    этом не хранит: и те, и другие выводятся из условия.
+    """
+    if _blank(label, got):
+        return False
+    claim = sp.sympify(got)
+    f = sp.sympify(f)
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    want = sp.diff(f, var, order)
+    for run in runs:
+        where = ('' if not run else ' ' + _t('при ', 'at ')
+                 + ', '.join(f'{name} = {value}' for name, value in run.items()))
+        if _same_function(claim, want, var, run):
+            continue
+        for why, slip in _slips(f, var, order):
+            if _same_function(claim, slip, var, run):
+                print(f"{NO} {label}: {why}" + where)
+                return False
+        print(f"{NO} {label}: " + _t(
+            "не совпадает с производной функции из условия",
+            "this is not the derivative of the function in the question")
+            + where)
+        return False
+    print(f"{OK} {label}: {claim}")
+    return True
+
+
+def verify_stationary(label, got, f, var=x, domain=None, order=1, tol=5e-3):
+    """Ответ — точки, где производная равна нулю: обе координаты и все точки.
+
+    Эталона нет: у каждой пары (a, b) проверяется, что f′(a) = 0 и что
+    b = f(a), а полнота набора — независимым сканированием производной
+    по отрезку из условия. Это ловит обе потери баллов приёма: найдена
+    точка, но не найдена вторая координата, и найдены не все точки.
+
+    domain = (a, b) — отрезок из условия; без него берётся то, что даёт
+    сканирование на [−10, 10]. order=2 — точки перегиба: там обращается
+    в ноль вторая производная, а координата по-прежнему берётся у самой f.
+    """
+    if _blank(label, got):
+        return False
+    f = sp.sympify(f)
+    lo, hi = ((-10, 10) if domain is None
+              else (float(sp.sympify(domain[0])), float(sp.sympify(domain[1]))))
+    prime = sp.diff(f, var, order)
+    try:
+        fp = sp.lambdify(var, prime, 'math')
+        fv = sp.lambdify(var, f, 'math')
+    except (TypeError, ValueError, NameError):
+        print(f"{NO} {label}: " + _t("функцию из условия не удаётся вычислить",
+                                     "the question's function cannot be evaluated"))
+        return False
+    given = []
+    for item in got:
+        try:
+            a, b = item
+        except (TypeError, ValueError):
+            print(f"{NO} {label}: " + _t(
+                "каждая точка записывается парой координат, например (0, E)",
+                "each point is written as a pair of coordinates, e.g. (0, E)"))
+            return False
+        given.append((sp.sympify(a), sp.sympify(b)))
+    for a, b in given:
+        av = float(a.evalf(_PREC))
+        if not lo - tol <= av <= hi + tol:
+            print(f"{NO} {label}: {a} — " + _t("вне области из условия",
+                                               "outside the interval given"))
+            return False
+        if abs(fp(av)) > 1e-6 * max(1.0, abs(av)):
+            print(f"{NO} {label}: " + _t(
+                f"при {var} = {a} производная не равна нулю",
+                f"the derivative is not zero at {var} = {a}")
+                + ('' if order == 1 else _t(f" (порядка {order})",
+                                            f" (of order {order})")))
+            return False
+        if abs(float(b.evalf(_PREC)) - fv(av)) > tol:
+            print(f"{NO} {label}: " + _t(
+                f"первая координата верна, вторая нет: при {var} = {a} "
+                f"функция принимает другое значение",
+                f"the first coordinate is right and the second is not: the "
+                f"function takes a different value at {var} = {a}"))
+            return False
+    found = _scan_roots(fp, lo, hi)
+    # Сканирование ищет смены знака и потому не видит концов отрезка,
+    # а у cos²x − 3sin²x на [0, π] две из трёх точек нулевого наклона
+    # стоят ровно на концах. Без этого «найдено не всё» молчало бы
+    # именно там, где вопрос ставится закрытым отрезком.
+    for edge in (lo, hi):
+        try:
+            flat = abs(fp(edge)) < 1e-9 * max(1.0, abs(edge))
+        except (ValueError, ZeroDivisionError, OverflowError):
+            flat = False
+        if flat and all(abs(edge - c) > 1e-3 for c in found):
+            found.append(edge)
+    found.sort()
+    if len(found) > len(given):
+        miss = [c for c in found
+                if all(abs(c - float(a.evalf(_PREC))) > 1e-3 for a, _ in given)]
+        hint = _t(f", первая пропущенная около {miss[0]:.4f}",
+                  f", the first one missing is near {miss[0]:.4f}") if miss else ""
+        print(f"{NO} {label}: " + _t(
+            f"точки верны, но найдено не всё — на отрезке их {len(found)}, "
+            f"а у вас {len(given)}{hint}",
+            f"the points you list are right, but not all of them are there — "
+            f"the interval holds {len(found)}, you list {len(given)}{hint}"))
+        return False
+    print(f"{OK} {label}: "
+          + ', '.join(f"({a}, {b})" for a, b in given))
+    return True
+
+
+def verify_constants(label, got, unknowns, conditions):
+    """Ответ — постоянные, найденные из условий на кривую.
+
+    Подставлять здесь не во что: буквы стоят внутри самой функции, и
+    единственное, что делает их верными, — это условия из вопроса
+    (асимптота там-то, кривая проходит через такую-то точку, производная
+    в ней равна нулю). Проверка подставляет написанные числа в каждое
+    из этих условий и называет то, которое не выполнилось.
+
+    conditions — список пар (что это за условие, выражение или Eq),
+    каждое из которых обязано обратиться в ноль.
+    """
+    if _blank(label, got):
+        return False
+    values = [sp.sympify(v) for v in got]
+    names = [sp.sympify(u) for u in unknowns]
+    if len(values) != len(names):
+        print(f"{NO} {label}: " + _t(
+            f"постоянных {len(names)}, а значений {len(values)}",
+            f"there are {len(names)} constants and {len(values)} values"))
+        return False
+    run = dict(zip(names, values))
+    for what, condition in conditions:
+        residual = (condition.lhs - condition.rhs
+                    if isinstance(condition, sp.Equality) else sp.sympify(condition))
+        try:
+            left = sp.simplify(residual.subs(run))
+            ok = (left == 0) or abs(complex(left.evalf(_PREC))) < 1e-9
+        except (TypeError, ValueError, ZeroDivisionError):
+            ok = False
+        if not ok:
+            print(f"{NO} {label}: " + _t(f"не выполнено условие «{what}»",
+                                         f"the condition «{what}» fails"))
+            return False
+    print(f"{OK} {label}: "
+          + ', '.join(f"{n} = {v}" for n, v in zip(names, values)))
+    return True
+
+
 def trigger_check(answers, key):
     """Тренажёр распознавания приёма: answers — {номер: код приёма}."""
     if not any(str(v).strip() for v in answers.values()):

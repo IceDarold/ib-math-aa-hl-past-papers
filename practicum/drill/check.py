@@ -342,6 +342,23 @@ def evaluate(spec, raw):
                             var=sp.Symbol(spec.get('var', 'k')),
                             strict=spec.get('strict', True))
 
+        if kind == 'derivative':
+            params = {sp.Symbol(name): [sp.sympify(v) for v in values]
+                      for name, values in (spec.get('params') or {}).items()}
+            return _capture(kit.verify_derivative, 'Ответ', parse_one(raw),
+                            sp.sympify(spec['f']),
+                            var=sp.Symbol(spec.get('var', 'x')),
+                            order=spec.get('order', 1),
+                            params=params or None)
+
+        if kind == 'constants':
+            unknowns = [sp.Symbol(name) for name in spec['unknowns']]
+            conditions = [(what, sp.sympify(cond))
+                          for what, cond in spec['conditions']]
+            values = parse_many(raw) if len(unknowns) > 1 else [parse_one(raw)]
+            return _capture(kit.verify_constants, 'Ответ', values,
+                            unknowns, conditions)
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0

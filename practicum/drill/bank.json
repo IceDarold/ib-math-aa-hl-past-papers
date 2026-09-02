@@ -6579,6 +6579,721 @@
    "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
    "skill": "E2.error_bound"
   },
+  "2021-MAY-TZ1-P1-Q04-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "E3.power_rule"
+  },
+  "2021-MAY-TZ1-P3-Q01-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "b",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E3.power_rule"
+  },
+  "2025-MAY-TZ1-P3-Q01-C-I": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "C-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.power_rule"
+  },
+  "2022-NOV-COMMON-P3-Q01-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "c",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8-9",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E3.power_rule"
+  },
+  "2022-NOV-COMMON-P3-Q01-D-I": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "d(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E3.power_rule"
+  },
+  "2025-NOV-TZ3-P1-Q08-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "8",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "E3.standard_derivatives"
+  },
+  "2023-MAY-TZ1-P1-Q11-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "E3.standard_derivatives"
+  },
+  "2021-NOV-COMMON-P3-Q01-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/November/Common/Paper 3",
+   "skill": "E3.standard_derivatives"
+  },
+  "2022-NOV-COMMON-P1-Q01": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "1",
+   "part": "",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "E3.chain_rule"
+  },
+  "2024-MAY-TZ2-P3-Q01-A-I": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "A-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "E3.chain_rule"
+  },
+  "2022-NOV-COMMON-P3-Q02-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "c",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E3.chain_rule"
+  },
+  "2024-MAY-TZ2-P2-Q12-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "(b)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E3.chain_rule"
+  },
+  "2025-NOV-TZ1-P3-Q02-B-III": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "B-III",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "E3.chain_rule"
+  },
+  "2025-NOV-TZ3-P3-Q01-E": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "E",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E3.chain_rule"
+  },
+  "2022-NOV-COMMON-P2-Q11-D-II": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "11",
+   "part": "d(ii)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "E3.chain_rule"
+  },
+  "2022-NOV-COMMON-P2-Q11-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "11",
+   "part": "a",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "E3.product_rule"
+  },
+  "2021-MAY-TZ2-P3-Q01-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "10-11",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "E3.product_rule"
+  },
+  "2022-MAY-TZ1-P3-Q02-D-I": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "(d)(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "E3.product_rule"
+  },
+  "2023-MAY-TZ2-P1-Q10-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "c",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "20-21",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "E3.product_rule"
+  },
+  "2021-MAY-TZ1-P2-Q11-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "b",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E3.quotient_rule"
+  },
+  "2025-MAY-TZ3-P2-Q05-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "5",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "E3.quotient_rule"
+  },
+  "2025-MAY-TZ2-P3-Q01-C": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "C",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "E3.quotient_rule"
+  },
+  "2021-MAY-TZ2-P2-Q12-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 9,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "25-26",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "E3.quotient_rule"
+  },
+  "2022-NOV-COMMON-P3-Q01-F": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "f",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11-12",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E3.quotient_rule"
+  },
+  "2024-MAY-TZ2-P3-Q01-A-II": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "A-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "E3.to_printed_form"
+  },
+  "2024-MAY-TZ2-P3-Q01-A-III": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "A-III",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "E3.to_printed_form"
+  },
+  "2024-MAY-TZ2-P3-Q01-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9-10",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "E3.to_printed_form"
+  },
+  "2025-MAY-TZ1-P3-Q02-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.to_printed_form"
+  },
+  "2021-MAY-TZ1-P1-Q12-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "E3.higher_derivatives"
+  },
+  "2022-MAY-TZ1-P1-Q12-C": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "C",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "34",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "E3.higher_derivatives"
+  },
+  "2023-MAY-TZ1-P1-Q11-C": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "C",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "E3.higher_derivatives"
+  },
+  "2024-MAY-TZ1-P3-Q02-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "a",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "12-16",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "E3.higher_derivatives"
+  },
+  "2025-MAY-TZ1-P3-Q02-E-I": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "E-I",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.higher_derivatives"
+  },
+  "2025-MAY-TZ1-P3-Q02-E-II": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "E-II",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "20-22",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.higher_derivatives"
+  },
+  "2022-NOV-COMMON-P3-Q02-E-III": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "e(iii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E3.with_parameter"
+  },
+  "2025-MAY-TZ1-P3-Q02-B-I": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "B-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.with_parameter"
+  },
+  "2025-MAY-TZ1-P3-Q02-B-II": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "B-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.with_parameter"
+  },
+  "2025-MAY-TZ1-P3-Q02-B-IV": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "B-IV",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.with_parameter"
+  },
+  "2025-MAY-TZ1-P3-Q02-C-I": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "C-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.with_parameter"
+  },
+  "2025-MAY-TZ1-P3-Q02-C-II": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "C-II",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.with_parameter"
+  },
+  "2025-MAY-TZ1-P3-Q02-D-I": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "D-I",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "E3.with_parameter"
+  },
+  "2025-MAY-TZ3-P3-Q02-C": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "C",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "E3.with_parameter"
+  },
+  "2024-MAY-TZ1-P3-Q02-E": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "e",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "12-16",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "E3.with_parameter"
+  },
+  "2021-MAY-TZ2-P3-Q01-D": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "E3.read_derivative"
+  },
+  "2021-MAY-TZ2-P3-Q01-F": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "F",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "12-13",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "E3.read_derivative"
+  },
+  "2022-NOV-COMMON-P1-Q10-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "19-20",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "E3.read_derivative"
+  },
+  "2023-NOV-TZ1-P1-Q11-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "A",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "E3.read_derivative"
+  },
+  "2023-MAY-TZ2-P3-Q01-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "B",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "E3.read_derivative"
+  },
+  "2025-MAY-TZ2-P2-Q03-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E3.read_derivative"
+  },
+  "2025-MAY-TZ2-P2-Q03-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E3.read_derivative"
+  },
+  "2025-NOV-TZ1-P1-Q09-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E3.read_derivative"
+  },
+  "2025-NOV-TZ1-P1-Q09-C": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E3.read_derivative"
+  },
+  "2024-MAY-TZ1-P3-Q02-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "b",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "12-16",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "E3.read_derivative"
+  },
+  "2024-MAY-TZ2-P2-Q09": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "",
+   "marks": 8,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E3.read_derivative"
+  },
+  "2025-NOV-TZ3-P3-Q01-D": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "1",
+   "part": "D",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E3.read_derivative"
+  },
   "2021-NOV-COMMON-P1-Q01": {
    "session": "November 2021",
    "zone": "Common",
@@ -7202,6 +7917,14 @@
    "notebook": "practicum/calculus/practicum-e2-maclaurin.ipynb",
    "marks": 105,
    "blocks": 27
+  },
+  {
+   "id": "E3",
+   "title": "Техника дифференцирования",
+   "section": "E",
+   "notebook": "practicum/calculus/practicum-e3-differentiation.ipynb",
+   "marks": 188,
+   "blocks": 55
   },
   {
    "id": "E7",
@@ -10697,6 +11420,269 @@
     "2025-NOV-TZ3-P3-Q02-D",
     "2025-NOV-TZ3-P3-Q02-H",
     "2025-NOV-TZ3-P3-Q02-I"
+   ]
+  },
+  {
+   "id": "E3.power_rule",
+   "practicum": "E3",
+   "name": "Степень и почленно",
+   "rung": 1,
+   "trigger": "Функция записана суммой степеней x — многочленом, конечной суммой с многоточием или рядом. Никаких скобок, дробей и функций от функции в ней нет, и это видно с одного взгляда.",
+   "chain": [
+    "Разбить сумму на слагаемые",
+    "У каждого понизить показатель на единицу и умножить на старый",
+    "Постоянное слагаемое обнулить"
+   ],
+   "traps": [
+    "Показатель понижают, но не выносят: у x⁴ производная 4x³, а не x³",
+    "Постоянную оставляют в ответе: у −3cx + 2 производная −3c, двойка исчезает целиком",
+    "Букву принимают за переменную: в x³ − 3cx + 2 дифференцируют по x, и c ведёт себя как число",
+    "В сумме с многоточием теряют последний член: у 1 + x + … + xⁿ производная кончается на nxⁿ⁻¹, и n там остаётся"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 188,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q04-A",
+    "2021-MAY-TZ1-P3-Q01-B",
+    "2025-MAY-TZ1-P3-Q01-C-I",
+    "2022-NOV-COMMON-P3-Q01-C",
+    "2022-NOV-COMMON-P3-Q01-D-I"
+   ]
+  },
+  {
+   "id": "E3.standard_derivatives",
+   "practicum": "E3",
+   "name": "Таблица производных",
+   "rung": 2,
+   "trigger": "В функции стоит sec, cosec, cot, tan, ln, eˣ или обратная тригонометрическая — то есть то, что не выводится из правила степени и берётся из справочника готовым.",
+   "chain": [
+    "Узнать функцию в записи, включая sec и cosec",
+    "Взять её производную из справочника",
+    "Сохранить постоянные множители и знаки"
+   ],
+   "traps": [
+    "d(sec θ)/dθ = sec θ tan θ, а d(cosec θ)/dθ = −cosec θ cot θ: у второй минус, и он теряется чаще всего",
+    "d(cot θ)/dθ = −cosec²θ, а не −cosec θ: квадрат теряют вместе со знаком",
+    "Постоянное слагаемое внутри дроби (2500 − 1000 tan θ)/3 дифференцируют, забыв делить на 3",
+    "Производную ln x берут как 1/x и там, где аргумент не x"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 188,
+   "blocks": [
+    "2025-NOV-TZ3-P1-Q08-B",
+    "2023-MAY-TZ1-P1-Q11-B",
+    "2021-NOV-COMMON-P3-Q01-A"
+   ]
+  },
+  {
+   "id": "E3.chain_rule",
+   "practicum": "E3",
+   "name": "Цепное правило",
+   "rung": 3,
+   "trigger": "Под знаком функции стоит не x, а выражение: e^(x²+1), √(r²−x²), ln(cot x), sin(sin x). Примета одна и надёжная — чтобы вычислить функцию в точке, приходится сначала вычислить что-то внутри.",
+   "chain": [
+    "Назвать внутреннюю функцию u",
+    "Взять производную внешней по u, оставив u внутри",
+    "Умножить на u′",
+    "При цепи из трёх звеньев повторить, пока внутри не останется x"
+   ],
+   "traps": [
+    "Внутренний множитель теряют целиком: у e^(x²+1) производная 2x·e^(x²+1), а не e^(x²+1)",
+    "Внутрь подставляют не всё: у √(r²−k²x²) внутренняя производная −2k²x, и k² в ней остаётся",
+    "Цепь из трёх звеньев обрывают на втором: у ln(ln200 − ln x) нужны обе производные, и знак минус приходит от внутренней",
+    "Знак результата не проверяют по смыслу: у ½ln(cot x) производная −cosec 2x, отрицательная на всей области"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 188,
+   "blocks": [
+    "2022-NOV-COMMON-P1-Q01",
+    "2024-MAY-TZ2-P3-Q01-A-I",
+    "2022-NOV-COMMON-P3-Q02-C",
+    "2024-MAY-TZ2-P2-Q12-B",
+    "2025-NOV-TZ1-P3-Q02-B-III",
+    "2025-NOV-TZ3-P3-Q01-E",
+    "2022-NOV-COMMON-P2-Q11-D-II"
+   ]
+  },
+  {
+   "id": "E3.product_rule",
+   "practicum": "E3",
+   "name": "Произведение",
+   "rung": 4,
+   "trigger": "Функция записана произведением двух множителей, каждый из которых зависит от x: e^(2x)(3x − 4), xⁿ(a − x)ⁿ, (x + 3)√(9 − x²). Раскрывать скобки при этом либо нельзя, либо дороже.",
+   "chain": [
+    "Назвать множители u и v",
+    "Написать u′v + uv′, не считая пока ни одной производной",
+    "Подставить производные множителей",
+    "Вынести общий множитель — в архиве ответ почти всегда просят свёрнутым"
+   ],
+   "traps": [
+    "Пишут u′v′: два слагаемых превращаются в одно, и балл за метод не ставят вовсе",
+    "Одно из двух слагаемых теряют — чаще то, где дифференцируется второй множитель",
+    "Внутри множителя забывают цепное правило: у (x + 3)√(9 − x²) второй множитель даёт −x/√(9 − x²)",
+    "Общий множитель не выносят, а вопрос просит показать напечатанный вид: n·xⁿ⁻¹(a − 2x)(a − x)ⁿ⁻¹ не получится без вынесения"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 188,
+   "blocks": [
+    "2022-NOV-COMMON-P2-Q11-A",
+    "2021-MAY-TZ2-P3-Q01-C",
+    "2022-MAY-TZ1-P3-Q02-D-I",
+    "2023-MAY-TZ2-P1-Q10-C"
+   ]
+  },
+  {
+   "id": "E3.quotient_rule",
+   "practicum": "E3",
+   "name": "Частное",
+   "rung": 5,
+   "trigger": "Функция записана дробью, у которой x стоит и сверху, и снизу: (3x + 2)/(4x² − 1), (2x + a)³/(x + 5)², x(x² − A)/(x² + A). Если снизу x нет, дробь — это постоянный множитель, и правило не нужно.",
+   "chain": [
+    "Назвать числитель u и знаменатель v",
+    "Написать (u′v − uv′)/v², не считая производных",
+    "Подставить, раскрыть только числитель",
+    "Сократить общий множитель числителя и знаменателя, если он есть"
+   ],
+   "traps": [
+    "Порядок в числителе переставляют: (uv′ − u′v)/v² — это минус верный ответ, и знак теряется целиком",
+    "Знаменатель не возводят в квадрат",
+    "Дробь дифференцируют почленно, u′/v′ — правило превращается в чужое",
+    "Числитель раскрывают и не сворачивают обратно: у (2x + a)³/(x + 5)² схема оценивания принимает и развёрнутый вид, но следующий пункт считать по нему втрое дольше",
+    "Забывают, что √(x²) = |x|, а не x: в мае 2021 TZ2 весь второй пункт стоит на этом различии"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 188,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q11-B",
+    "2025-MAY-TZ3-P2-Q05-A",
+    "2025-MAY-TZ2-P3-Q01-C",
+    "2021-MAY-TZ2-P2-Q12-C",
+    "2022-NOV-COMMON-P3-Q01-F"
+   ]
+  },
+  {
+   "id": "E3.to_printed_form",
+   "practicum": "E3",
+   "name": "Довести до напечатанного вида",
+   "rung": 6,
+   "trigger": "Вопрос начинается со «show that» и печатает ответ целиком. Считать после этого нечего — баллы стоят на пути от своей записи к чужой, и путь этот алгебраический, а не дифференциальный.",
+   "chain": [
+    "Продифференцировать как умеется, не глядя на напечатанное",
+    "Привести к общему знаменателю",
+    "Вынести общий множитель числителя",
+    "Сверить с напечатанным и, если не сошлось, искать ошибку в алгебре, а не в производной"
+   ],
+   "traps": [
+    "Идут с обеих сторон навстречу: схема оценивания за это снимает баллы, «show that» доказывают в одну сторону",
+    "Останавливаются на верном, но не том выражении: 4x/(2 − x)³ и −4x/(x − 2)³ — одно и то же, и второе засчитывают, а вот 2x/(2 − x)² + 2x²/(2 − x)³ ещё не ответ",
+    "Общий знаменатель берут как произведение знаменателей, хотя один делится на другой: (2 − x)² и (2 − x)³ дают (2 − x)³, а не (2 − x)⁵",
+    "Напечатанную строку не переписывают в конце — схема оценивания требует увидеть её"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 188,
+   "blocks": [
+    "2024-MAY-TZ2-P3-Q01-A-II",
+    "2024-MAY-TZ2-P3-Q01-A-III",
+    "2024-MAY-TZ2-P3-Q01-B",
+    "2025-MAY-TZ1-P3-Q02-A"
+   ]
+  },
+  {
+   "id": "E3.higher_derivatives",
+   "practicum": "E3",
+   "name": "Вторая и высшие",
+   "rung": 7,
+   "trigger": "Просят f″, d²y/dx², d²L/dα² — или соотношение между производными разных порядков, вроде g″ = 2(g′ − g). Второй признак: пункт (a) уже нашёл первую производную, и «hence» велит идти дальше.",
+   "chain": [
+    "Первую производную довести до вида, удобного для второго шага",
+    "Продифференцировать её тем же правилом",
+    "Упростить, подставляя обратно то, что известно о самой функции",
+    "Для соотношения между порядками дифференцировать не функцию, а само соотношение"
+   ],
+   "traps": [
+    "Первую производную упрощают до неудобного вида и дифференцируют вдвое дольше: √(1 + x) выгоднее держать как (1 + x)^(1/2)",
+    "У соотношения g″ = 2(g′ − g) дифференцируют левую часть и забывают правую",
+    "Подстановку x² + y² = r² делают в числитель и не делают в знаменатель",
+    "Знак второй производной не проверяют по смыслу: у √(1 + x) график выпуклый вниз, и f″ обязана быть отрицательной"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 188,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q12-A",
+    "2022-MAY-TZ1-P1-Q12-C",
+    "2023-MAY-TZ1-P1-Q11-C",
+    "2024-MAY-TZ1-P3-Q02-A",
+    "2025-MAY-TZ1-P3-Q02-E-I",
+    "2025-MAY-TZ1-P3-Q02-E-II"
+   ]
+  },
+  {
+   "id": "E3.with_parameter",
+   "practicum": "E3",
+   "name": "Буква в функции",
+   "rung": 8,
+   "trigger": "В функции стоит буква — a, k, m, n, A, r, — и ответ просят в её терминах. Правило от этого не меняется ни на йоту; меняется то, что в конце нельзя посчитать и придётся упрощать.",
+   "chain": [
+    "Отделить букву от переменной: по чему дифференцируем",
+    "Применить обычное правило, обращаясь с буквой как с числом",
+    "Упростить до вида, в котором букву видно",
+    "Проверить ответ на частном значении буквы"
+   ],
+   "traps": [
+    "Букву дифференцируют вместе с переменной: у √(r² − k²x²) производная −k²x/√(r² − k²x²), и k² там от цепного правила, а не от дифференцирования k",
+    "Знак модуля теряют: kmax = 2|a|, а не 2a — при a = −2 ответ тот же, что при a = 2, и весь последний пункт про это",
+    "Общий множитель с буквой сокращают вместе с частью, где буквы нет: в 12a|a|(2ax + b) сокращается a, но |a| остаётся",
+    "Отвечают числом, когда просят выражение: «в терминах m» значит, что m обязана остаться в ответе"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 188,
+   "blocks": [
+    "2022-NOV-COMMON-P3-Q02-E-III",
+    "2025-MAY-TZ1-P3-Q02-B-I",
+    "2025-MAY-TZ1-P3-Q02-B-II",
+    "2025-MAY-TZ1-P3-Q02-B-IV",
+    "2025-MAY-TZ1-P3-Q02-C-I",
+    "2025-MAY-TZ1-P3-Q02-C-II",
+    "2025-MAY-TZ1-P3-Q02-D-I",
+    "2025-MAY-TZ3-P3-Q02-C",
+    "2024-MAY-TZ1-P3-Q02-E"
+   ]
+  },
+  {
+   "id": "E3.read_derivative",
+   "practicum": "E3",
+   "name": "Прочесть производную",
+   "rung": 9,
+   "trigger": "Производная уже есть — своя из предыдущего пункта или чужая, напечатанная в условии, — и спрашивают о ней самой: где ноль, какого знака, что говорит вторая. Слова-приметы: «points where the gradient is zero», «values of x for which f is decreasing», «concave-up», «points of inflexion», «horizontal tangents».",
+   "chain": [
+    "Решить f′(x) = 0 — и не забыть область из условия",
+    "Для координат подставить каждый корень обратно в саму f",
+    "Для знака f′ смотреть промежутки между корнями",
+    "Для выпуклости и перегиба то же самое с f″"
+   ],
+   "traps": [
+    "Отвечают одной координатой, когда просят точки: «coordinates» значит пару, и второй балл стоит на подстановке в f",
+    "Область из условия сужают до одного оборота: у e^(cos 2x) на −π/4 ≤ x ≤ 5π/4 три точки, а не две",
+    "«Decreasing» решают как f′ = 0 вместо f′ < 0 — критические значения найдены, а промежутки не выписаны",
+    "Перегиб объявляют по f″ = 0, не проверив смену знака",
+    "Схема оценивания мая 2025 TZ2 принимает и x ≤ −1.74, и x < −1.74: строгость на концах здесь балла не стоит, а вот пропущенный второй промежуток стоит",
+    "«a и b» в ответе путают местами: условие говорит a < b"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 188,
+   "blocks": [
+    "2021-MAY-TZ2-P3-Q01-D",
+    "2021-MAY-TZ2-P3-Q01-F",
+    "2022-NOV-COMMON-P1-Q10-B",
+    "2023-NOV-TZ1-P1-Q11-A",
+    "2023-MAY-TZ2-P3-Q01-B",
+    "2025-MAY-TZ2-P2-Q03-A",
+    "2025-MAY-TZ2-P2-Q03-B",
+    "2025-NOV-TZ1-P1-Q09-A",
+    "2025-NOV-TZ1-P1-Q09-C",
+    "2024-MAY-TZ1-P3-Q02-B",
+    "2024-MAY-TZ2-P2-Q09",
+    "2025-NOV-TZ3-P3-Q01-D"
    ]
   },
   {
@@ -21317,6 +22303,582 @@
    ],
    "answer": "def",
    "answer_digest": "cb8379ac2098",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:1",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.quotient_rule",
+   "prompt": "Find an expression for $f'(x)$ where $f(x)=\\dfrac{3x+2}{4x^{2}-1}$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "quotient",
+   "answer_digest": "d861ee362e38",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:2",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.chain_rule",
+   "prompt": "Find $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$ for $y=\\sqrt{r^{2}-x^{2}}$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "chain",
+   "answer_digest": "9414886b1ebf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:3",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.product_rule",
+   "prompt": "Find $f'(x)$ for $f(x)=\\mathrm{e}^{2x}(3x-4)$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "product",
+   "answer_digest": "a8792157cb4f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:4",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.read_derivative",
+   "prompt": "Find the values of $x$ for which the graph of $f$ is concave-up, given $f'(x)=4+2x-3\\mathrm{e}^{x}$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "read",
+   "answer_digest": "3316348dbadf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:5",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.higher_derivatives",
+   "prompt": "Find $\\dfrac{\\mathrm{d}^{2}y}{\\mathrm{d}x^{2}}$ for $y=x^{4}-3x^{3}+3x$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "higher",
+   "answer_digest": "e5ff8d2b6809",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:6",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.standard_derivatives",
+   "prompt": "Find $\\dfrac{\\mathrm{d}T}{\\mathrm{d}\\theta}$ for $T=500\\sec\\theta+\\frac{2500-1000\\tan\\theta}{3}$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "table",
+   "answer_digest": "0d4fc4a78d37",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:7",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.power_rule",
+   "prompt": "Write down an expression for $f'(x)$ where $f(x)=x^{3}-3cx+2$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "power",
+   "answer_digest": "07d715edb696",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:8",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.to_printed_form",
+   "prompt": "Show that $f(x)g'(x)+g(x)f'(x)=\\dfrac{4x}{(2-x)^{3}}$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "form",
+   "answer_digest": "07397d633f25",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:9",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.with_parameter",
+   "prompt": "Determine an expression for $k_{\\max}$ in terms of $a$ only.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "letter",
+   "answer_digest": "f80105efab6d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:10",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.read_derivative",
+   "prompt": "Find the coordinates of the points on $y=\\mathrm{e}^{\\cos 2x}$ where the gradient is zero.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "read",
+   "answer_digest": "3316348dbadf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:11",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.chain_rule",
+   "prompt": "Show that $S_{3}'(x)=\\cos\\bigl(\\sin(\\sin x)\\bigr)\\cos(\\sin x)\\cos x$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "chain",
+   "answer_digest": "9414886b1ebf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E3:12",
+   "kind": "recognition",
+   "practicum": "E3",
+   "skill": "E3.quotient_rule",
+   "prompt": "Prove that $f'\\!\\left(\\sqrt{A}\\right)$ is independent of $A$, where $f(x)=\\dfrac{x\\left(x^{2}-A\\right)}{x^{2}+A}$.",
+   "options": [
+    {
+     "code": "power",
+     "name": "степень и почленно"
+    },
+    {
+     "code": "table",
+     "name": "таблица производных"
+    },
+    {
+     "code": "chain",
+     "name": "цепное правило"
+    },
+    {
+     "code": "product",
+     "name": "произведение"
+    },
+    {
+     "code": "quotient",
+     "name": "частное"
+    },
+    {
+     "code": "form",
+     "name": "до напечатанного вида"
+    },
+    {
+     "code": "higher",
+     "name": "вторая и высшие"
+    },
+    {
+     "code": "letter",
+     "name": "буква в функции"
+    },
+    {
+     "code": "read",
+     "name": "прочесть производную"
+    }
+   ],
+   "answer": "quotient",
+   "answer_digest": "d861ee362e38",
    "budget_ms": 8000
   },
   {

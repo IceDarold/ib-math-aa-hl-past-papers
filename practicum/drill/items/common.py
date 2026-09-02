@@ -202,6 +202,33 @@ def terms_check(term, bound, var='k', strict=True):
             'strict': bool(strict)}
 
 
+def derivative_check(f, var='x', order=1, params=None):
+    """Ответ — производная: эталона нет, проверка дифференцирует f сама.
+
+    Она же называет именной промах, если написанное совпало с одним из них:
+    потерянный множитель цепного правила, произведение как u′v′,
+    перевёрнутый знак в частном, непонижённый показатель.
+    """
+    spec = {'kind': 'derivative', 'f': sp.srepr(sp.sympify(f)),
+            'var': var, 'order': int(order)}
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec
+
+
+def constants_check(unknowns, conditions):
+    """Ответ — постоянные, найденные из условий на кривую.
+
+    conditions — список пар (что это за условие, выражение или Eq),
+    каждое из которых после подстановки обязано обратиться в ноль.
+    """
+    return {'kind': 'constants',
+            'unknowns': [str(u) for u in unknowns],
+            'conditions': [[what, sp.srepr(sp.sympify(cond))]
+                           for what, cond in conditions]}
+
+
 def indeterminate_check(num, den, var='x', point=0, side=None, params=None):
     """Ответ — сама неопределённость: '0/0' или 'oo/oo', проверяется порознь."""
     spec = {'kind': 'indeterminate', 'num': sp.srepr(sp.sympify(num)),

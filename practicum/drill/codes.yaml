@@ -182,6 +182,17 @@ E2:
   approx:   {skill: use_series,         name: ряд вместо функции}
   error:    {skill: error_bound,        name: оценка ошибки}
 
+E3:
+  power:    {skill: power_rule,           name: степень и почленно}
+  table:    {skill: standard_derivatives, name: таблица производных}
+  chain:    {skill: chain_rule,           name: цепное правило}
+  product:  {skill: product_rule,         name: произведение}
+  quotient: {skill: quotient_rule,        name: частное}
+  form:     {skill: to_printed_form,      name: до напечатанного вида}
+  higher:   {skill: higher_derivatives,   name: вторая и высшие}
+  letter:   {skill: with_parameter,       name: буква в функции}
+  read:     {skill: read_derivative,      name: прочесть производную}
+
 E7:
   int: {skill: direct_integration,           name: прямое интегрирование}
   sep: {skill: separation,                   name: разделение переменных}
