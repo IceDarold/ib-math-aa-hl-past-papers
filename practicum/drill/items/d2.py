@@ -52,6 +52,18 @@ def _balls(count):
     return 'шаров'
 
 
+def _coloured(count, one, many):
+    """«1 белый шар», «2 белых шара», «5 белых шаров».
+
+    Существительное у каждого цвета своё. Общее на двоих («6 красных и
+    1 белых шар») сходится только пока оба числа одной формы, а среди
+    коробок есть и «один».
+    """
+    tail = count % 10, count % 100
+    single = tail[0] == 1 and tail[1] != 11
+    return f'{count} {one if single else many} {_balls(count)}'
+
+
 def event_algebra(rng):
     """Четыре клетки: правило сложения, дополнение, де Морган."""
     both = R(rng.choice([1, 2, 3]), 10)
@@ -139,10 +151,12 @@ def tree(rng):
     space = {'1red': R(1, 2)*R(red1, n1), '1white': R(1, 2)*R(white1, n1),
              '2red': R(1, 2)*R(red2, n2), '2white': R(1, 2)*R(white2, n2)}
     return {
-        'prompt': (f'В первой коробке {red1} красных и {white1} белых '
-                   f'{_balls(white1)}, во второй {red2} красных и {white2} '
-                   f'белых. Коробку выбирают наугад и вынимают один шар. '
-                   f'Найдите вероятность того, что он красный.'),
+        'prompt': (f'В первой коробке {_coloured(red1, "красный", "красных")}'
+                   f' и {_coloured(white1, "белый", "белых")}, во второй '
+                   f'{_coloured(red2, "красный", "красных")} и '
+                   f'{_coloured(white2, "белый", "белых")}. Коробку выбирают '
+                   f'наугад и вынимают один шар. Найдите вероятность того, '
+                   f'что он красный.'),
         'answer': space['1red'] + space['2red'],
         'check': space_check(space, ['1red', '2red']),
         'budget_ms': 90_000,
@@ -250,7 +264,8 @@ def without_replacement(rng):
     scale = sum(space.values())
     space = {k: v/scale for k, v in space.items()}
     return {
-        'prompt': (f'В коробке {good} жёлтых и {bad} красных {_balls(bad)}. '
+        'prompt': (f'В коробке {_coloured(good, "жёлтый", "жёлтых")} и '
+                   f'{_coloured(bad, "красный", "красных")}. '
                    f'Вынимают {take} {_balls(take)} подряд, не возвращая. '
                    f'Найдите вероятность того, что все они жёлтые.'),
         'answer': space[take],
