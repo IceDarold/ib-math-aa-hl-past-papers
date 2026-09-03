@@ -100,7 +100,7 @@ skills:
         The gradient of a tangent printed on the diagram is used as the
         function value, or the other way round
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         Three of the four blocks are Paper 1. The Paper 3 pair asks for
         the coordinates of a point of inflexion already found in an
@@ -135,7 +135,7 @@ skills:
         f(kx) is called a stretch by k. It is a stretch by 1/k, and this
         is the single most reliable lost mark in the topic
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         A GDC cannot help: in both blocks the original graph is a picture,
         not a formula, so there is nothing to type in.
@@ -169,7 +169,7 @@ skills:
         The word "move" is used. The markscheme names it explicitly as
         not accepted; translate, shift, dilate and stretch are
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         Every block is Paper 1. The answer is a sentence, and the working
         that earns it is algebra on the printed formula.
@@ -282,7 +282,7 @@ skills:
         For 1/f a vertical asymptote of f is drawn again in the new
         graph. There the new graph goes to zero instead
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         All six blocks are Paper 1 and all six start from a printed
         picture. This is the purest by-hand rung of the practicum.
@@ -372,7 +372,7 @@ skills:
         For x^2 - y^2 = 1 only the right branch is drawn, or the
         asymptotes y = x and y = -x are omitted as "not part of the curve"
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         Both blocks are Paper 1. Asymptotes are found by algebra, and a
         GDC plot is famous for drawing a vertical line where there is
@@ -411,7 +411,7 @@ skills:
         The counting is done for the wrong interval of the parameter,
         because the boundary case was put on the wrong side
     calculator:
-      mode: yes
+      mode: 'yes'
       note: >
         The one rung where the calculator is the method rather than the
         packaging. All three blocks are worth their calculator: two are

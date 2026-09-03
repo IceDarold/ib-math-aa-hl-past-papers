@@ -129,7 +129,7 @@ skills:
         The sign is lost in (2x+4)/(3-x): the leading ratio is 2/(-1),
         so the asymptote is y = -2 and not y = 2
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         Eight of the nine blocks are Paper 1, and the ninth is a Paper 2
         one-marker. This is the only rung of the practicum that lives on
@@ -172,7 +172,7 @@ skills:
         The limit is evaluated inside the outer function but the outer
         function is then forgotten, giving y = 1 instead of y = pi/2
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         All three blocks are notionally on calculator papers or Paper 1,
         but every one is a limit argument that a calculator cannot
@@ -215,7 +215,7 @@ skills:
         The markscheme note reads: "Do not award the final A1 if the
         answer is not given as an equation"
     calculator:
-      mode: yes
+      mode: 'yes'
       note: >
         All five blocks are on calculator papers, and the calculator
         does nothing here. It cannot divide polynomials on the AA HL
@@ -361,7 +361,7 @@ skills:
       - >
         A calculator answer is copied to two significant figures
     calculator:
-      mode: yes
+      mode: 'yes'
       note: >
         Nine of the twelve blocks are on calculator papers, and here
         the calculator earns its place: the local maximum of x e^(-x)
@@ -412,7 +412,7 @@ skills:
       - >
         Concavity is confused with increasing and decreasing
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         Both blocks are Paper 1, and both are the same November 2023
         question in its two copies. The second derivative is handed to
@@ -455,7 +455,7 @@ skills:
         The sideways parabolas are drawn opening the same way. y^2 = 16 - 8x
         opens to the left and y^2 = 4 + 4x opens to the right
     calculator:
-      mode: yes
+      mode: 'yes'
       note: >
         All six blocks are Paper 3 and every one is on a calculator
         paper, but a calculator plots functions and these are not
@@ -503,7 +503,7 @@ skills:
         A calculator picture of one member is used to answer for the
         family
     calculator:
-      mode: yes
+      mode: 'yes'
       note: >
         All ten blocks are Paper 3, all on a calculator, and the
         question says "by systematically varying the value of b" — the

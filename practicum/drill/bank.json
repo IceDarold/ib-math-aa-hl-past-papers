@@ -9782,7 +9782,7 @@
     "Внутри квадрата оставлен коэффициент: (2x−3)² вместо a(x−h)²",
     "Забыто, что ось симметрии это полусумма корней, — и второй корень ищут заново вместо одной строки"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 222,
    "blocks": [
     "2025-MAY-TZ1-P1-Q10-A",
@@ -9812,7 +9812,7 @@
     "Проверка подстановкой вместо вывода: markscheme прямо ограничивает такое решение половиной баллов",
     "Приведение к нужному виду само бывает неравносильным: домножение на (b−4) разрешает случай b = 4, которого в записи не было"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 222,
    "blocks": [
     "2021-MAY-TZ1-P3-Q02-A",
@@ -9840,7 +9840,7 @@
     "Область условия забыта: −√17 законен как корень x² = 17, но не годится при x > 4",
     "Отброшенный корень бывает законен сам по себе: при q = 0 вершина действительно лежит на прямой, его исключает фраза условия, а не алгебра"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 222,
    "blocks": [
     "2021-MAY-TZ1-P3-Q02-G-I",
@@ -9867,7 +9867,7 @@
     "Смена базы не замечена: 1/(2 log₂ 3) выглядит лишним слагаемым, а это log₃ √2 и вход в решение",
     "«Снятие логарифмов» неравносильно: аргументы обязаны быть положительными, и корни надо подставить обратно"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 222,
    "blocks": [
     "2024-MAY-TZ2-P1-Q02",
@@ -10034,7 +10034,7 @@
     "The inner expression is substituted without brackets, and the square or the minus sign is lost",
     "A \"show that\" is answered by verifying one value instead of transforming the expression"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 113,
    "blocks": [
     "2023-NOV-TZ1-P1-Q01-A",
@@ -10061,7 +10061,7 @@
     "A root outside the stated domain (x > 3, a > 0) is reported alongside the valid one",
     "Coefficients are compared in the wrong order, so a and the constant are swapped and only one of the two functions f is found"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 113,
    "blocks": [
     "2023-NOV-TZ1-P1-Q01-B",
@@ -10087,7 +10087,7 @@
     "A sketch is offered instead of algebra when the question says \"show that\"; a sketch is accepted only if the symmetry is marked",
     "Inside a sum, only the first term is checked; the claim is about every term"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 113,
    "blocks": [
     "2021-MAY-TZ2-P2-Q12-A",
@@ -10169,7 +10169,7 @@
     "Terms in y are collected on both sides and the factorisation is skipped, leaving y on the right as well",
     "The answer is left as \"x = ...\" instead of \"f^-1(x) = ...\""
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 113,
    "blocks": [
     "2023-MAY-TZ1-P1-Q01-C",
@@ -10224,7 +10224,7 @@
     "The branch is chosen by the domain of f^-1 rather than by its range; those are different sets and only one decides",
     "The check is done as f(f^-1(x)) = x, which both branches pass, instead of f^-1(f(t)) = t, which only the right one passes"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 113,
    "blocks": [
     "2022-MAY-TZ2-P1-Q11-B",
@@ -10248,7 +10248,7 @@
     "A value is estimated from the grid when the question has already printed it as a labelled point",
     "The gradient of a tangent printed on the diagram is used as the function value, or the other way round"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 107,
    "blocks": [
     "2021-MAY-TZ1-P1-Q01-A",
@@ -10274,7 +10274,7 @@
     "A vertical stretch is applied to the x-coordinate as well",
     "f(kx) is called a stretch by k. It is a stretch by 1/k, and this is the single most reliable lost mark in the topic"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 107,
    "blocks": [
     "2021-MAY-TZ1-P1-Q01-B",
@@ -10298,7 +10298,7 @@
     "The translation is named in the wrong direction, because f(x-h) moves the graph h to the right and reads as if it should go left",
     "The word \"move\" is used. The markscheme names it explicitly as not accepted; translate, shift, dilate and stretch are"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 107,
    "blocks": [
     "2021-MAY-TZ2-P1-Q12-A",
@@ -10377,7 +10377,7 @@
     "For f(|x|) the LEFT half is kept and mirrored. It is the right half that survives",
     "For 1/f a vertical asymptote of f is drawn again in the new graph. There the new graph goes to zero instead"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 107,
    "blocks": [
     "2022-NOV-COMMON-P1-Q10-C",
@@ -10439,7 +10439,7 @@
     "The range is given as all reals. For (4x+2)/(x-2) it is y != 4, and the 4 is exactly the horizontal asymptote",
     "For x^2 - y^2 = 1 only the right branch is drawn, or the asymptotes y = x and y = -x are omitted as \"not part of the curve\""
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 107,
    "blocks": [
     "2021-NOV-COMMON-P3-Q01-F",
@@ -10466,7 +10466,7 @@
     "The window is left on the default and a whole branch is off screen",
     "The counting is done for the wrong interval of the parameter, because the boundary case was put on the wrong side"
    ],
-   "calculator": true,
+   "calculator": "yes",
    "practicum_marks": 107,
    "blocks": [
     "2021-MAY-TZ2-P3-Q01-B",
@@ -10493,7 +10493,7 @@
     "A factor cancelling between numerator and denominator is missed, so a hole is called an asymptote",
     "The sign is lost in (2x+4)/(3-x): the leading ratio is 2/(-1), so the asymptote is y = -2 and not y = 2"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 147,
    "blocks": [
     "2021-NOV-COMMON-P1-Q02-A-I-II",
@@ -10525,7 +10525,7 @@
     "The vertical asymptote of 2 ln x - ln d is sought by setting something to zero. It is at x = 0 because that is where the domain stops, and the value of d never enters",
     "The limit is evaluated inside the outer function but the outer function is then forgotten, giving y = 1 instead of y = pi/2"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 147,
    "blocks": [
     "2021-MAY-TZ2-P2-Q12-B",
@@ -10552,7 +10552,7 @@
     "Coefficients are equated with a sign slip: for (x^2-x-12)/(2x-15) the x-coefficient equation is 2b - 15a = -1, and dropping the minus gives b = -13/4",
     "The answer is left as \"x/2 + 13/4\" rather than \"y = x/2 + 13/4\". The markscheme note reads: \"Do not award the final A1 if the answer is not given as an equation\""
    ],
-   "calculator": true,
+   "calculator": "yes",
    "practicum_marks": 147,
    "blocks": [
     "2021-MAY-TZ1-P2-Q11-E",
@@ -10647,7 +10647,7 @@
     "Coordinates are found and then not written on the diagram. The markscheme awards its marks for the labels",
     "A calculator answer is copied to two significant figures"
    ],
-   "calculator": true,
+   "calculator": "yes",
    "practicum_marks": 147,
    "blocks": [
     "2021-MAY-TZ1-P3-Q01-A-I",
@@ -10682,7 +10682,7 @@
     "A stationary point at the edge of the drawing domain is treated as an endpoint. For e^(cos 2x) on [0, pi] both ends are genuine maxima of a function defined further out",
     "Concavity is confused with increasing and decreasing"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 147,
    "blocks": [
     "2023-NOV-TZ1-P1-Q11-C",
@@ -10709,7 +10709,7 @@
     "Only one y-intercept is given. There are two, at +-sqrt(b)",
     "The sideways parabolas are drawn opening the same way. y^2 = 16 - 8x opens to the left and y^2 = 4 + 4x opens to the right"
    ],
-   "calculator": true,
+   "calculator": "yes",
    "practicum_marks": 147,
    "blocks": [
     "2022-MAY-TZ2-P3-Q01-A-I",
@@ -10740,7 +10740,7 @@
     "The condition 4a^3 b + 27b^2 < 0 is expanded instead of factorised. As b(4a^3 + 27b) < 0 it says precisely that the two heights have opposite signs, which is the whole proof",
     "A calculator picture of one member is used to answer for the family"
    ],
-   "calculator": true,
+   "calculator": "yes",
    "practicum_marks": 147,
    "blocks": [
     "2023-NOV-TZ1-P3-Q01-A",
@@ -11135,7 +11135,7 @@
     "Формула ½ab·sin C применяется там, где основание уже параллельно оси и всё считается устно",
     "В прямоугольном треугольнике за катет принята гипотенуза"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 116,
    "blocks": [
     "2023-NOV-TZ1-P1-Q04",
@@ -11163,7 +11163,7 @@
     "Оставлена дробь вида 10√2/(√6+√2): без сопряжённого форма из условия не получается",
     "q не сокращено: 5√175 равно 25√7, но записано неверно"
    ],
-   "calculator": false,
+   "calculator": "no",
    "practicum_marks": 116,
    "blocks": [
     "2021-MAY-TZ2-P1-Q06",

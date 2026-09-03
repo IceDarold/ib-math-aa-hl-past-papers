@@ -113,7 +113,7 @@ skills:
         A "show that" is answered by verifying one value instead of
         transforming the expression
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         Every block of this technique is Paper 1 or a Paper 3 "show that".
         A GDC cannot produce an algebraic identity.
@@ -149,7 +149,7 @@ skills:
         Coefficients are compared in the wrong order, so a and the constant
         are swapped and only one of the two functions f is found
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         All four blocks are Paper 1. The answers are exact — k = ±3,
         a = 1 + (3/2)sqrt(2) — and a decimal from the GDC earns nothing.
@@ -183,7 +183,7 @@ skills:
         Inside a sum, only the first term is checked; the claim is about
         every term
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         A graph on the GDC can suggest the symmetry but does not prove it.
         Both blocks are proof marks.
@@ -287,7 +287,7 @@ skills:
       - >
         The answer is left as "x = ..." instead of "f^-1(x) = ..."
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         Two of the four blocks are printed in Paper 2 and still ask for an
         exact expression. The GDC contributes nothing to any of them.
@@ -362,7 +362,7 @@ skills:
         The check is done as f(f^-1(x)) = x, which both branches pass,
         instead of f^-1(f(t)) = t, which only the right one passes
     calculator:
-      mode: no
+      mode: 'no'
       note: >
         Both blocks are exact-answer questions. A numerical check on the
         GDC is worth doing privately — substitute one value from the

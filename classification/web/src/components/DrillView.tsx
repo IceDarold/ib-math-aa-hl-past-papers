@@ -138,13 +138,23 @@ interface SkillCard {
   } | null
 }
 
+// Все тринадцать значений calculator.mode из карточек приёмов, от «нужен»
+// до «бесполезен». Незнакомое печаталось бы английским словом посреди
+// русской строки, поэтому словарь сверяется с карточками в check_skills.py.
 const CALCULATOR: Record<string, string> = {
   required: 'нужен',
+  needed: 'нужен',
   replaces: 'заменяет ручной ход',
   speeds_up: 'ускоряет',
   helps: 'помогает',
+  partial: 'берёт на себя часть хода',
   checks: 'только проверка',
+  yes: 'разрешён',
+  allowed: 'разрешён, но не нужен',
+  mixed: 'где как',
   forbidden: 'не поможет',
+  no: 'не поможет',
+  none: 'бесполезен совсем',
 }
 
 interface Stats {
