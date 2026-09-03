@@ -247,6 +247,11 @@ function findClosingToken(tokens: Token[], openingIndex: number): number {
 }
 
 function isOrdinaryWord(value: string): boolean {
+  // Кириллица в формуле не встречается никогда, а разбор её не видел:
+  // токенайзер режет русские слова на буквы, каждая буква проходила как
+  // символ формулы, и «и совпадают они только когда» между двумя P(...)
+  // уезжало внутрь KaTeX, где пробелы между словами пропадают.
+  if (/[\u0400-\u04FF]/u.test(value)) return true;
   if (!/^[A-Za-z][A-Za-z0-9_']*$/.test(value)) return false;
   if (/^[A-Za-z]'*$/.test(value) || /^[A-Za-z]\d+$/.test(value)) return false;
   if (/^(?:arcsin|arccos|arctan|sin|cos|tan|cosec|csc|sec|cot|ln|log|exp)(?:\d*[a-z]|\d+)$/.test(value)) return false;
