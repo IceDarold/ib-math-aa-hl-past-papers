@@ -369,6 +369,9 @@ export function DrillView() {
   const [writeUp, setWriteUp] = useState<WriteUp | null>(null)
   const [gradingMs, setGradingMs] = useState(0)
   const [dragging, setDragging] = useState(false)
+  // Подсказка к заданию — по нажатию. Открытая сразу, она называет метод
+  // до того, как задание вообще прочитано, и решать становится нечего.
+  const [hint, setHint] = useState(false)
   const [written, setWritten] = useState<WrittenRow[]>([])
   const [opened, setOpened] = useState<WrittenRecord | null>(null)
   const [card, setCard] = useState<SkillCard | null>(null)
@@ -544,6 +547,7 @@ export function DrillView() {
     setWriteUp(null)
     setPhotos([])
     setAnswer('')
+    setHint(false)
     setError(null)
     if (fileRef.current) fileRef.current.value = ''
     try {
@@ -1423,7 +1427,17 @@ export function DrillView() {
                   </div>
                 ) : <>
                   <MathText className="text-[15px] leading-relaxed text-ink">{item.prompt}</MathText>
-                  {item.note && <MathText className="text-xs text-muted">{item.note}</MathText>}
+                  {item.note && (hint || verdict
+                    // После ответа подсказка уже ничего не выдаёт, а объясняет,
+                    // и прятать её за нажатием незачем.
+                    ? <MathText className="text-xs text-muted">{item.note}</MathText>
+                    : <button
+                        type="button"
+                        className="w-fit cursor-pointer border-0 bg-transparent p-0 font-mono text-[11px] text-muted underline hover:text-ink"
+                        onClick={() => setHint(true)}
+                      >
+                        подсказка
+                      </button>)}
                 </>}
 
                 {item.kind === 'written' ? (
