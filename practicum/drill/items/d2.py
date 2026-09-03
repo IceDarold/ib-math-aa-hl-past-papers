@@ -139,10 +139,10 @@ def tree(rng):
     space = {'1red': R(1, 2)*R(red1, n1), '1white': R(1, 2)*R(white1, n1),
              '2red': R(1, 2)*R(red2, n2), '2white': R(1, 2)*R(white2, n2)}
     return {
-        'prompt': (f'В первой коробке {red1} красных и {white1} белых шаров, '
-                   f'во второй {red2} красных и {white2} белых. Коробку '
-                   f'выбирают наугад и вынимают один шар. Найдите '
-                   f'вероятность того, что он красный.'),
+        'prompt': (f'В первой коробке {red1} красных и {white1} белых '
+                   f'{_balls(white1)}, во второй {red2} красных и {white2} '
+                   f'белых. Коробку выбирают наугад и вынимают один шар. '
+                   f'Найдите вероятность того, что он красный.'),
         'answer': space['1red'] + space['2red'],
         'check': space_check(space, ['1red', '2red']),
         'budget_ms': 90_000,
@@ -250,7 +250,7 @@ def without_replacement(rng):
     scale = sum(space.values())
     space = {k: v/scale for k, v in space.items()}
     return {
-        'prompt': (f'В коробке {good} жёлтых и {bad} красных шаров. '
+        'prompt': (f'В коробке {good} жёлтых и {bad} красных {_balls(bad)}. '
                    f'Вынимают {take} {_balls(take)} подряд, не возвращая. '
                    f'Найдите вероятность того, что все они жёлтые.'),
         'answer': space[take],
