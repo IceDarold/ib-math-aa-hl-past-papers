@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS attempts (
     ok          INTEGER NOT NULL,
     ms          INTEGER NOT NULL,
     first_ms    INTEGER NOT NULL,
-    budget_ms   INTEGER NOT NULL
+    budget_ms   INTEGER NOT NULL,
+    hint        INTEGER NOT NULL DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS attempts_skill ON attempts (skill, ts);
 
@@ -89,6 +90,10 @@ CREATE TABLE IF NOT EXISTS skill_state (
 # Столбцы, которых нет в базах, заведённых до карты приёмов.
 ADDED = (('stability', 'REAL'), ('difficulty', 'REAL'))
 EVENING_ADDED = (('started_at', 'REAL'),)
+# Подсказку начали записывать позже самих попыток. Старые строки — те,
+# про которые неизвестно, брали её или нет; ноль там читается как «не
+# брали», и это ближе к правде: до кнопки подсказка была видна всегда.
+ATTEMPTS_ADDED = (('hint', 'INTEGER NOT NULL DEFAULT 0'),)
 
 DAY = memory.DAY
 
@@ -105,12 +110,16 @@ def connect(path=None):
     for name, kind in EVENING_ADDED:
         if name not in seen:
             db.execute(f'ALTER TABLE evening ADD COLUMN {name} {kind}')
+    tried = {row['name'] for row in db.execute('PRAGMA table_info(attempts)')}
+    for name, kind in ATTEMPTS_ADDED:
+        if name not in tried:
+            db.execute(f'ALTER TABLE attempts ADD COLUMN {name} {kind}')
     db.commit()
     return db
 
 
 def record(db, *, mode, kind, practicum, skill, item, answer, ok, ms,
-           first_ms, budget_ms):
+           first_ms, budget_ms, hint=False):
     """Записывает попытку и двигает стойкость приёма.
 
     Возвращает оценку попытки — её показывают в разборе, чтобы было
@@ -119,10 +128,10 @@ def record(db, *, mode, kind, practicum, skill, item, answer, ok, ms,
     now = time.time()
     db.execute(
         'INSERT INTO attempts (ts, mode, kind, practicum, skill, item, '
-        'answer, ok, ms, first_ms, budget_ms) '
-        'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        'answer, ok, ms, first_ms, budget_ms, hint) '
+        'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
         (now, mode, kind, practicum, skill, item, answer[:200], int(bool(ok)),
-         int(ms), int(first_ms), int(budget_ms)))
+         int(ms), int(first_ms), int(budget_ms), int(bool(hint))))
 
     row = db.execute('SELECT * FROM skill_state WHERE skill = ?',
                      (skill,)).fetchone()
@@ -133,7 +142,7 @@ def record(db, *, mode, kind, practicum, skill, item, answer, ok, ms,
         row['stability'] if row else None,
         row['difficulty'] if row else None,
         row['last_ts'] if row else None,
-        now, ok=ok, ms=ms, budget_ms=budget_ms, kind=kind)
+        now, ok=ok, ms=ms, budget_ms=budget_ms, kind=kind, hint=hint)
     _save_state(db, skill, stability, difficulty, seen, wrong, last_ok, now)
     db.commit()
     return mark

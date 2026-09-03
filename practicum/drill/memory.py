@@ -81,15 +81,22 @@ def score(stability, days):
     return 100.0 * retrievability(stability, days) * maturity(stability)
 
 
-def grade(ok, ms, budget_ms):
-    """Оценка попытки по верности и времени.
+def grade(ok, ms, budget_ms, hint=False):
+    """Оценка попытки по верности, времени и тому, брали ли подсказку.
 
     Время до сих пор писалось в журнал и не использовалось никем.
     Верно-но-втрое-дольше-бюджета — это не то же знание, что верно и в
     срок: на экзамене второе стоит баллов, а первое их стоит.
+
+    Подсказка называет ход, и ответ после неё не свидетельство того, что
+    приём вспомнили: вспоминать было нечего. Выше «трудно» такая попытка
+    не поднимается — в тот же разряд, что верный ответ, не уложившийся в
+    бюджет. Ниже — тоже: считать всё равно пришлось.
     """
     if not ok:
         return 'again'
+    if hint:
+        return 'hard'
     if not budget_ms or budget_ms <= 0:
         return 'good'
     if ms > budget_ms:
@@ -165,9 +172,9 @@ def step(stability, difficulty, last_ts, now, mark, kind='compute'):
 
 
 def advance(stability, difficulty, last_ts, now, *, ok, ms, budget_ms,
-            kind='compute'):
+            kind='compute', hint=False):
     """То же по итогу попытки в тренажёре. Оценку выводит из времени."""
-    mark = grade(ok, ms, budget_ms)
+    mark = grade(ok, ms, budget_ms, hint)
     stability, difficulty = step(stability, difficulty, last_ts, now, mark,
                                  kind)
     return stability, difficulty, mark

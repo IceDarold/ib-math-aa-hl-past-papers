@@ -182,6 +182,7 @@ interface Done {
   practicum: string
   kind: Item['kind']
   ok: boolean
+  hint: boolean
   ms: number
   firstMs: number
   earned?: number
@@ -642,7 +643,7 @@ export function DrillView() {
       const response = await fetch(`${API}/answer`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ item: item.item, answer: value, mode: settings.mode, ms, first_ms: firstMs }),
+        body: JSON.stringify({ item: item.item, answer: value, mode: settings.mode, ms, first_ms: firstMs, hint }),
       })
       if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
       const result: Verdict = await response.json()
@@ -654,6 +655,7 @@ export function DrillView() {
         practicum: item.practicum,
         kind: item.kind,
         ok: result.ok,
+        hint,
         ms,
         firstMs,
       }])
@@ -662,7 +664,9 @@ export function DrillView() {
     } finally {
       setBusy(false)
     }
-  }, [busy, item, settings.mode, verdict])
+    // hint здесь не для красоты: без него замыкание submit помнит ту
+    // подсказку, что была на момент показа задания, то есть всегда «нет».
+  }, [busy, hint, item, settings.mode, verdict])
 
   const addPhotos = useCallback(async (files: FileList | File[] | null) => {
     const chosen = Array.from(files ?? []).filter(
@@ -722,6 +726,8 @@ export function DrillView() {
         kind: 'written',
         ok: (result.marks?.available ?? 0) > 0
           && result.marks.earned === result.marks.available,
+        // У разбора подсказки нет: там настоящий вопрос архива.
+        hint: false,
         ms,
         firstMs: ms,
         earned: result.marks?.earned ?? 0,
@@ -808,6 +814,7 @@ export function DrillView() {
       correct,
       total,
       spent,
+      hinted: done.filter((entry) => entry.hint).length,
       marksEarned: marked.reduce((sum, entry) => sum + (entry.earned ?? 0), 0),
       marksAvailable: marked.reduce((sum, entry) => sum + (entry.available ?? 0), 0),
       written: marked.length,
@@ -1568,7 +1575,7 @@ export function DrillView() {
                         className="h-8 cursor-pointer border border-line-strong bg-canvas px-3 font-mono text-[11px] text-ink hover:bg-surface"
                         onClick={advance}
                       >
-                        {settings.length > 0 && done.length >= settings.length ? 'итог' : 'дальше'}
+                        {sessionLength > 0 && done.length >= sessionLength ? 'итог' : 'дальше'}
                       </button>
                       <span className="font-mono text-[10px] text-faint">Enter или пробел</span>
                     </div>
@@ -1578,6 +1585,12 @@ export function DrillView() {
                 {verdict && (
                   <div className="flex flex-col gap-3 border-t border-line pt-3">
                     <MathText className="text-sm text-ink">{verdict.message}</MathText>
+                    {hint && verdict.ok && (
+                      <p className="font-mono text-[10px] text-faint">
+                        подсказка взята — попытка идёт как трудная, и срок
+                        повторения сдвинется меньше обычного
+                      </p>
+                    )}
 
                     <dl className="grid grid-cols-[8rem_1fr] items-baseline gap-x-3 gap-y-2.5 border-t border-line pt-3 max-[560px]:grid-cols-1 max-[560px]:gap-y-1">
                       {!verdict.ok && <>
@@ -1629,7 +1642,7 @@ export function DrillView() {
                         className="h-8 cursor-pointer border border-line-strong bg-canvas px-3 font-mono text-[11px] text-ink hover:bg-surface"
                         onClick={advance}
                       >
-                        {settings.length > 0 && done.length >= settings.length ? 'итог' : 'дальше'}
+                        {sessionLength > 0 && done.length >= sessionLength ? 'итог' : 'дальше'}
                       </button>
                       <span className="font-mono text-[10px] text-faint">Enter или пробел</span>
                     </div>
@@ -1652,6 +1665,7 @@ export function DrillView() {
                 <p className="font-mono text-[11px] text-muted">
                   {minutes(summary.spent)} всего, {seconds(summary.spent / summary.total)} на задание
                   {summary.avgFirst > 0 ? `, ${seconds(summary.avgFirst)} до первого нажатия в узнавании` : ''}
+                  {summary.hinted > 0 ? `, с подсказкой ${summary.hinted}` : ''}
                 </p>
               )}
             </div>

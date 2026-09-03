@@ -126,7 +126,8 @@ class Drill:
                     skill=skill_id, item=item_key, answer=raw, ok=bool(ok),
                     ms=int(payload.get('ms', 0)),
                     first_ms=int(payload.get('first_ms', 0)),
-                    budget_ms=int(meta.get('budget_ms', 0)))
+                    budget_ms=int(meta.get('budget_ms', 0)),
+                    hint=bool(payload.get('hint')))
                 state = store.states(db).get(skill_id)
             finally:
                 db.close()
@@ -147,6 +148,7 @@ class Drill:
             # Оценка и новая сила приёма: видно, что верный, но медленный
             # ответ продвинул меньше, чем верный и быстрый.
             'mark': mark,
+            'hint': bool(payload.get('hint')),
             'strength': strength,
         }
 

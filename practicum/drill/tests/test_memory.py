@@ -75,6 +75,23 @@ t('верно, но дольше бюджета — hard',
 t('без бюджета оценка не выдумывается',
   memory.grade(True, 99_000, 0) == 'good')
 
+print('\n=== подсказка ===')
+t('верно с подсказкой — не выше, чем hard',
+  memory.grade(True, 1_000, 10_000, hint=True) == 'hard')
+t('подсказка не спасает неверный ответ',
+  memory.grade(False, 1_000, 10_000, hint=True) == 'again')
+t('без подсказки та же попытка была бы easy',
+  memory.grade(True, 1_000, 10_000) == 'easy')
+t('подсказка не вытягивает вверх медленный ответ',
+  memory.grade(True, 99_000, 10_000, hint=True) == 'hard')
+first_hint = memory.advance(None, None, None, 0.0, ok=True, ms=1_000,
+                            budget_ms=10_000, hint=True)
+first_clean = memory.advance(None, None, None, 0.0, ok=True, ms=1_000,
+                             budget_ms=10_000)
+t('первая встреча с подсказкой начинает приём ниже',
+  first_hint[0] < first_clean[0])
+t('и оценку возвращает ту, что записали', first_hint[2] == 'hard')
+
 print('\n=== разбор письменной работы ===')
 t('почти всё взято — easy', memory.grade_written(9, 9) == 'easy')
 t('больше семи десятых — good', memory.grade_written(6, 8) == 'good')

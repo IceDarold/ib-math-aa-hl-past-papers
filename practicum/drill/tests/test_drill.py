@@ -8,6 +8,7 @@ from __future__ import annotations
 import os
 import random
 import re
+import sqlite3
 import sys
 import tempfile
 import time
@@ -674,6 +675,48 @@ t('ключ задания сам себя описывает',
   shown['item'].startswith('compute:C1.cosine_rule:'))
 recog = [i for i in bank['items'] if i['practicum'] == 'C1'][0]
 t('у узнавания ключ тоже полный', recog['key'].startswith('recog:C1:'))
+
+print('\n=== подсказка в журнале ===')
+# Подсказка называет ход, и ответ после неё не свидетельство того, что
+# приём вспомнили. Журнал обязан это помнить — иначе сила приёма растёт
+# так же, как от ответа своими силами.
+hinted = store.connect(':memory:')
+shared = dict(mode='compute', kind='compute', practicum='D2', item='x',
+              answer='1', ok=True, ms=1_000, first_ms=100, budget_ms=90_000)
+clean_mark = store.record(hinted, skill='D2.bayes', **shared)
+hint_mark = store.record(hinted, skill='D2.tree', hint=True, **shared)
+t('быстрый ответ своими силами — easy', clean_mark == 'easy')
+t('тот же ответ с подсказкой — hard', hint_mark == 'hard')
+t('подсказка поднимает приём меньше',
+  store.states(hinted)['D2.tree']['stability']
+  < store.states(hinted)['D2.bayes']['stability'])
+t('в журнале записано, у какой попытки была подсказка',
+  [row['hint'] for row in hinted.execute(
+      'SELECT hint FROM attempts ORDER BY id')] == [0, 1])
+hinted.close()
+
+# Журнал заведён до кнопки подсказки, и колонки в нём нет.
+old_path = os.path.join(tempfile.mkdtemp(), 'old.sqlite')
+old_db = sqlite3.connect(old_path)
+old_db.executescript(
+    'CREATE TABLE attempts (id INTEGER PRIMARY KEY AUTOINCREMENT, '
+    'ts REAL NOT NULL, mode TEXT NOT NULL, kind TEXT NOT NULL, '
+    'practicum TEXT NOT NULL, skill TEXT NOT NULL, item TEXT NOT NULL, '
+    'answer TEXT NOT NULL, ok INTEGER NOT NULL, ms INTEGER NOT NULL, '
+    'first_ms INTEGER NOT NULL, budget_ms INTEGER NOT NULL);')
+old_db.execute('INSERT INTO attempts (ts, mode, kind, practicum, skill, item, '
+               'answer, ok, ms, first_ms, budget_ms) '
+               "VALUES (1, 'compute', 'compute', 'D2', 'D2.tree', 'x', '1', "
+               '1, 10, 10, 10)')
+old_db.commit()
+old_db.close()
+migrated = store.connect(old_path)
+t('старый журнал доживает до новой колонки',
+  'hint' in {row['name'] for row
+             in migrated.execute('PRAGMA table_info(attempts)')})
+t('у старых попыток подсказка читается как «не брали»',
+  migrated.execute('SELECT hint FROM attempts').fetchone()['hint'] == 0)
+migrated.close()
 
 print('\n=== цена задания ===')
 # У сгенерированной задачи своей цены нет: её не печатал экзамен. Показывается
