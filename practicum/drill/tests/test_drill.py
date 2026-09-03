@@ -675,6 +675,26 @@ t('ключ задания сам себя описывает',
 recog = [i for i in bank['items'] if i['practicum'] == 'C1'][0]
 t('у узнавания ключ тоже полный', recog['key'].startswith('recog:C1:'))
 
+print('\n=== цена задания ===')
+# У сгенерированной задачи своей цены нет: её не печатал экзамен. Показывается
+# цена вопросов архива, из которых вырос приём.
+from drill.server import Drill  # noqa: E402
+
+drill = Drill(':memory:')
+t('цена приёма — от самого дешёвого вопроса до самого дорогого',
+  drill.archive_price(bank['skills_by_id']['B3.name_transform']) == [2, 4])
+t('приём без единого вопроса архива цены не получает',
+  drill.archive_price({'blocks': []}) is None
+  and drill.archive_price({}) is None)
+priced = [drill.archive_price(s) for s in bank['skills']]
+t('цена есть у каждого приёма банка', all(p for p in priced))
+t('цена — пара, и меньшее не больше большего',
+  all(len(p) == 2 and p[0] <= p[1] for p in priced))
+shown_price = drill.next_item('compute', skills=('D2.bayes',))
+t('цена доезжает до страницы вместе с заданием',
+  shown_price['archive_marks'] == drill.archive_price(
+      bank['skills_by_id']['D2.bayes']))
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad)}  '
       f'({len(res) - len(bad)}/{len(res)})')

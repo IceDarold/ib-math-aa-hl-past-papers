@@ -80,10 +80,26 @@ class Drill:
                                         papers=papers, marks=marks)
         shown['skill_name'] = skill['name']
         shown['trigger'] = skill['trigger']
+        shown['archive_marks'] = self.archive_price(skill)
         shown['practicum_title'] = next(
             (p['title'] for p in self.bank['practicums']
              if p['id'] == shown['practicum']), '')
         return shown
+
+    def archive_price(self, skill):
+        """Во сколько баллов оценены вопросы архива за этим приёмом.
+
+        У сгенерированной задачи своей цены нет и быть не может: её не
+        печатал экзамен. Зато известна цена вопросов, из которых приём
+        вырос, — по ней и видно, тянет задание на два балла или на семь.
+        Возвращается (сколько минимум, сколько максимум).
+        """
+        prices = sorted(
+            price for block in (skill.get('blocks') or ())
+            for price in [(self.bank.get('archive', {}).get(block) or {})
+                          .get('marks')]
+            if price)
+        return [prices[0], prices[-1]] if prices else None
 
     def answer(self, payload):
         item_key = str(payload.get('item', ''))

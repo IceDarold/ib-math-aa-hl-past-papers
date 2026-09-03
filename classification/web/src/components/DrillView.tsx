@@ -27,6 +27,7 @@ interface Item {
   prompt: string
   note?: string
   options?: Option[]
+  archive_marks?: [number, number] | null
   budget_ms: number
 }
 
@@ -299,6 +300,22 @@ function when(ts: number) {
   return new Date(ts * 1000).toLocaleString('ru-RU', {
     day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit',
   })
+}
+
+/** «1 балл», «3 балла», «5 баллов». */
+function marksWord(count: number) {
+  const last = count % 10
+  const two = count % 100
+  if (last === 1 && two !== 11) return 'балл'
+  if (last >= 2 && last <= 4 && (two < 12 || two > 14)) return 'балла'
+  return 'баллов'
+}
+
+/** Цена вопросов архива за приёмом: «3 балла» или «2–5 баллов». */
+function price([low, high]: [number, number]) {
+  return low === high
+    ? `${low} ${marksWord(low)}`
+    : `${low}–${high} ${marksWord(high)}`
 }
 
 function seconds(ms: number) {
@@ -1284,7 +1301,7 @@ export function DrillView() {
                         >
                           <span className="text-ink">{row.reference}</span>
                           <span className="font-mono text-[10px] text-faint">
-                            {row.marks} баллов · {row.calculator === 'yes' ? 'GDC' : 'без GDC'}
+                            {row.marks} {marksWord(row.marks ?? 0)} · {row.calculator === 'yes' ? 'GDC' : 'без GDC'}
                           </span>
                         </a>
                       ))}
@@ -1398,6 +1415,12 @@ export function DrillView() {
                 <div className="flex items-center gap-2 font-mono text-[10px] text-faint">
                   <span className="border border-line px-1.5 py-0.5">{item.practicum}</span>
                   <span>{item.kind === 'recognition' ? 'назвать приём' : 'решить и ввести ответ'}</span>
+                  {/* Своей цены у сгенерированной задачи нет — её не печатал
+                      экзамен. Показывается цена вопросов архива, из которых
+                      вырос приём: по ней видно, два это балла или семь. */}
+                  {item.kind !== 'written' && item.archive_marks && (
+                    <span>· в архиве {price(item.archive_marks)}</span>
+                  )}
                 </div>
 
                 {item.kind === 'written' ? (
