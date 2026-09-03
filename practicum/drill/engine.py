@@ -87,11 +87,18 @@ def matching_blocks(bank, skill, papers=None, marks=None, avoid=()):
 
 
 def candidates(bank, mode, generators, practicums=None, papers=None,
-               marks=None):
-    """Приёмы, по которым в выбранном режиме есть чем спросить."""
+               marks=None, skills=None):
+    """Приёмы, по которым в выбранном режиме есть чем спросить.
+
+    skills — сузить набор до перечисленных приёмов. Это отбор поверх
+    практикумов, а не вместо них: карточка приёма просит тренировать
+    один-единственный приём, и тогда весь остальной банк ни при чём.
+    """
     out = []
     for skill in bank['skills']:
         if practicums and skill['practicum'] not in practicums:
+            continue
+        if skills and skill['id'] not in skills:
             continue
         has_recog = bool(bank['items_by_skill'].get(skill['id']))
         has_compute = skill['id'] in generators
@@ -112,7 +119,7 @@ def candidates(bank, mode, generators, practicums=None, papers=None,
 
 def choose(bank, states, generators, mode='mixed', rng=None, avoid=(),
            practicums=None, only_due=False, order='schedule', papers=None,
-           marks=None):
+           marks=None, skills=None):
     """Возвращает (приём, вид задания). Вид «both» решается броском.
 
     order:
@@ -123,8 +130,12 @@ def choose(bank, states, generators, mode='mixed', rng=None, avoid=(),
     """
     rng = rng or random.Random()
     now = time.time()
-    pool = candidates(bank, mode, generators, practicums, papers, marks)
+    pool = candidates(bank, mode, generators, practicums, papers, marks,
+                      skills)
     if not pool:
+        if skills:
+            raise LookupError(
+                f'приёму {", ".join(skills)} в режиме {mode!r} нечего дать')
         raise LookupError(f'в режиме {mode!r} нет ни одного приёма')
 
     if only_due:

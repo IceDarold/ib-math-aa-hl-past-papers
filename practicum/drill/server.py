@@ -62,7 +62,8 @@ class Drill:
         return store.connect(self.db_path)
 
     def next_item(self, mode, avoid=(), practicums=None, only_due=False,
-                  order='schedule', avoid_blocks=(), papers=None, marks=None):
+                  order='schedule', avoid_blocks=(), papers=None, marks=None,
+                  skills=None):
         with self.lock:
             db = self.connection()
             try:
@@ -72,7 +73,8 @@ class Drill:
         skill, kind = engine.choose(self.bank, states, GENERATORS, mode=mode,
                                     rng=self.rng, avoid=avoid,
                                     practicums=practicums, only_due=only_due,
-                                    order=order, papers=papers, marks=marks)
+                                    order=order, papers=papers, marks=marks,
+                                    skills=skills)
         shown, _, _ = engine.build_item(self.bank, GENERATORS, skill, kind,
                                         rng=self.rng, avoid_blocks=avoid_blocks,
                                         papers=papers, marks=marks)
@@ -748,6 +750,7 @@ class Handler(BaseHTTPRequestHandler):
             avoid = (query.get('avoid') or [''])[0].split(',')
             chosen = (query.get('practicums') or [''])[0].split(',')
             skipped = (query.get('avoid_blocks') or [''])[0].split(',')
+            only = (query.get('skills') or [''])[0].split(',')
             order = (query.get('order') or ['schedule'])[0]
             only_due = (query.get('only_due') or ['0'])[0] in ('1', 'true')
             papers = tuple(int(p) for p in
@@ -762,7 +765,8 @@ class Handler(BaseHTTPRequestHandler):
                     practicums=tuple(p for p in chosen if p) or None,
                     only_due=only_due, order=order,
                     avoid_blocks=tuple(b for b in skipped if b),
-                    papers=papers or None, marks=marks))
+                    papers=papers or None, marks=marks,
+                    skills=tuple(o for o in only if o) or None))
             except LookupError as exc:
                 self.send_json({'error': str(exc)}, 400)
             return

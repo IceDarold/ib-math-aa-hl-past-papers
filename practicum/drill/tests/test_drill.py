@@ -132,6 +132,34 @@ try:
 except LookupError:
     t('пустой набор — это ошибка, а не молчаливая подмена', True)
 
+# Тренировка одного приёма с карточки: отбор идёт по приёму, а не по теме.
+one = 'D2.bayes'
+picked = {engine.choose(bank, {}, GENERATORS, mode='compute', rng=rng,
+                        skills=(one,))[0]['id']
+          for _ in range(30)}
+t('отбор по приёму оставляет только его', picked == {one})
+
+pair = ('D2.bayes', 'C1.cosine_rule')
+picked = {engine.choose(bank, {}, GENERATORS, mode='mixed', rng=rng,
+                        skills=pair)[0]['id']
+          for _ in range(40)}
+t('приёмов можно назвать несколько', picked == set(pair))
+
+t('отбор по приёму сужает и внутри выбранной темы',
+  len(engine.candidates(bank, 'compute', GENERATORS, practicums=('D2',),
+                        skills=(one,))) == 1)
+t('приём чужой темы под её отбор не проходит',
+  engine.candidates(bank, 'compute', GENERATORS, practicums=('C1',),
+                    skills=(one,)) == [])
+
+try:
+    engine.choose(bank, {}, GENERATORS, mode='compute', rng=rng,
+                  skills=('нет.такого',))
+    t('несуществующий приём — ошибка, а не чужая задача', False)
+except LookupError as exc:
+    t('несуществующий приём — ошибка, а не чужая задача',
+      'нет.такого' in str(exc))
+
 now = time.time()
 states = {s['id']: {'due': now + 7 * 86400, 'seen': 2, 'wrong': 0,
                     'last_ts': now, 'stability': 7.0, 'difficulty': 5.5}

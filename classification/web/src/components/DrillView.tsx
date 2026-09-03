@@ -239,6 +239,9 @@ const ORDERS: { id: Order; label: string; hint: string }[] = [
 const LENGTHS = [10, 20, 40, 0]
 // Разбор письменной работы — минуты на задание, десяток тут был бы вечером.
 const WRITTEN_LENGTHS = [1, 3, 5, 0]
+// Тренировка одного приёма с карточки. Длина из настроек тут ни при чём:
+// её выбирали для смеси, а очередь по одному приёму держат короткой.
+const FOCUS_LENGTH = 10
 
 const MARKS: { id: MarksBand; label: string; range: [number, number | null] | null; hint: string }[] = [
   { id: 'any', label: 'любые', range: null, hint: 'Как выпадет' },
@@ -359,6 +362,8 @@ export function DrillView() {
   const [written, setWritten] = useState<WrittenRow[]>([])
   const [opened, setOpened] = useState<WrittenRecord | null>(null)
   const [card, setCard] = useState<SkillCard | null>(null)
+  // Приём, который тренируют с карточки; null — обычная сессия.
+  const [training, setTraining] = useState<{ id: string; name: string } | null>(null)
 
   const shownAt = useRef(0)
   const firstKeyAt = useRef(0)
@@ -366,6 +371,10 @@ export function DrillView() {
   const inputRef = useRef<HTMLInputElement>(null)
   const recent = useRef<string[]>([])
   const recentBlocks = useRef<string[]>([])
+  // Тот же приём, что и в training, но там, откуда его прочитает запрос:
+  // сессия начинается тем же нажатием, а state дойдёт только к следующему
+  // кадру.
+  const focus = useRef<{ id: string; name: string } | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => { saveSettings(settings) }, [settings])
@@ -528,15 +537,20 @@ export function DrillView() {
     setError(null)
     if (fileRef.current) fileRef.current.value = ''
     try {
+      // Один приём тренируют счётом: задача собирается заново по зерну, и
+      // десяток подряд не повторится. Узнаваний на приём в банке два-три,
+      // и подряд они превратились бы в заучивание ответа.
+      const only = focus.current
       const params = new URLSearchParams({
-        mode: settings.mode,
-        order: settings.order,
-        only_due: settings.onlyDue ? '1' : '0',
-        avoid: recent.current.slice(-3).join(','),
+        mode: only ? 'compute' : settings.mode,
+        order: only ? 'random' : settings.order,
+        only_due: !only && settings.onlyDue ? '1' : '0',
+        avoid: only ? '' : recent.current.slice(-3).join(','),
         avoid_blocks: recentBlocks.current.slice(-8).join(','),
-        practicums: chosen.map((entry) => entry.id).join(','),
+        practicums: only ? '' : chosen.map((entry) => entry.id).join(','),
       })
-      if (settings.mode === 'written') {
+      if (only) params.set('skills', only.id)
+      if (!only && settings.mode === 'written') {
         if (settings.papers.length) params.set('papers', settings.papers.join(','))
         const band = MARKS.find((entry) => entry.id === settings.marks)?.range
         if (band) {
@@ -559,7 +573,10 @@ export function DrillView() {
     }
   }, [chosen, settings.mode, settings.onlyDue, settings.order, settings.papers, settings.marks])
 
-  const start = useCallback(() => {
+  /** Начинает сессию. target — приём, если тренируют его одного. */
+  const begin = useCallback((target: { id: string; name: string } | null) => {
+    focus.current = target
+    setTraining(target)
     setDone([])
     recent.current = []
     recentBlocks.current = []
@@ -567,6 +584,8 @@ export function DrillView() {
     setScreen('running')
     void nextItem()
   }, [nextItem])
+
+  const start = useCallback(() => begin(null), [begin])
 
   const finish = useCallback(() => {
     setScreen('done')
@@ -698,10 +717,12 @@ export function DrillView() {
     if (!firstKeyAt.current) firstKeyAt.current = performance.now()
   }, [])
 
+  const sessionLength = training ? FOCUS_LENGTH : settings.length
+
   const advance = useCallback(() => {
-    if (settings.length > 0 && done.length >= settings.length) finish()
+    if (sessionLength > 0 && done.length >= sessionLength) finish()
     else void nextItem()
-  }, [done.length, finish, nextItem, settings.length])
+  }, [done.length, finish, nextItem, sessionLength])
 
   useEffect(() => {
     if (screen !== 'running') return
@@ -1156,14 +1177,28 @@ export function DrillView() {
 
             {card && (
               <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col gap-4">
-                <div className="flex flex-col gap-1 border-b border-line pb-3">
-                  <div className="flex flex-wrap items-baseline gap-x-3">
-                    <h3 className="text-base text-ink">{card.name}</h3>
+                <div className="flex flex-wrap items-start justify-between gap-3 border-b border-line pb-3">
+                  <div className="flex flex-col gap-1">
+                    <div className="flex flex-wrap items-baseline gap-x-3">
+                      <h3 className="text-base text-ink">{card.name}</h3>
+                      <span className="font-mono text-[10px] text-faint">
+                        {card.practicum} · ступень {card.rung} · калькулятор {CALCULATOR[card.calculator] ?? card.calculator}
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-muted">{card.practicum_title}</span>
+                  </div>
+                  <div className="flex shrink-0 flex-col items-end gap-1">
+                    <button
+                      type="button"
+                      className="h-9 cursor-pointer border border-line-strong bg-ink px-4 font-mono text-[11px] text-canvas hover:opacity-90"
+                      onClick={() => begin({ id: card.id, name: card.name })}
+                    >
+                      тренировать приём
+                    </button>
                     <span className="font-mono text-[10px] text-faint">
-                      {card.practicum} · ступень {card.rung} · калькулятор {CALCULATOR[card.calculator] ?? card.calculator}
+                      {FOCUS_LENGTH} заданий подряд, только на него
                     </span>
                   </div>
-                  <span className="text-[11px] text-muted">{card.practicum_title}</span>
                 </div>
 
                 <dl className="grid grid-cols-[8rem_1fr] items-baseline gap-x-3 gap-y-3 max-[560px]:grid-cols-1 max-[560px]:gap-y-1">
@@ -1327,7 +1362,8 @@ export function DrillView() {
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3 font-mono text-[11px] text-muted">
                 <button type="button" className="cursor-pointer border border-line bg-canvas px-2 py-1 text-[10px] hover:bg-surface" onClick={finish}>закончить</button>
-                <span>{done.length}{settings.length ? ` / ${settings.length}` : ''}</span>
+                <span>{done.length}{sessionLength ? ` / ${sessionLength}` : ''}</span>
+                {training && <span className="text-ink">приём: {training.name}</span>}
               </div>
               {settings.showTimer && (
                 <span className={`font-mono text-[11px] ${item && elapsed > item.budget_ms ? 'text-ink' : 'text-muted'}`}>
@@ -1596,7 +1632,7 @@ export function DrillView() {
             )}
 
             <div className="flex flex-wrap gap-3">
-              <button type="button" className="h-9 cursor-pointer border border-line-strong bg-ink px-5 font-mono text-[11px] text-canvas hover:opacity-90" onClick={start}>ещё раз</button>
+              <button type="button" className="h-9 cursor-pointer border border-line-strong bg-ink px-5 font-mono text-[11px] text-canvas hover:opacity-90" onClick={() => begin(training)}>ещё раз</button>
               <button type="button" className="h-9 cursor-pointer border border-line bg-canvas px-4 font-mono text-[11px] text-muted hover:bg-surface" onClick={() => setScreen('setup')}>настройки</button>
             </div>
           </section>
