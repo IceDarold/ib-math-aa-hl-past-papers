@@ -325,6 +325,58 @@ def calls():
     yield lambda: verify_constants('t', [1, 2], [A], [('A is one', A - 1)])
     yield lambda: verify_constants('t', [1], [A], [('A is one', Eq(A, 1))])
     yield lambda: verify_constants('t', ..., [A], [('A is one', A - 1)])
+
+    # D2: пространство восстанавливается из условий, и каждый именной
+    # промах должен называться по-английски — сообщения тут длиннее всего
+    # в kit, и русское слово посреди них заметили бы только глазами
+    E1_, E2_ = events('A B')
+    flat = [(P(E1_), sp.Rational(3, 10)), (P(E2_), sp.Rational(4, 10)),
+            (P(E1_ & E2_), sp.Rational(1, 10))]
+    cond = [(P(E1_), sp.Rational(1, 2)), (P(E2_), sp.Rational(1, 3)),
+            (P(E1_, given=E2_), sp.Rational(1, 4))]
+    yield lambda: verify_event('t', sp.Rational(3, 5), flat, P(E1_ | E2_))
+    yield lambda: verify_event('t', sp.Rational(7, 10), flat, P(E1_ | E2_))
+    yield lambda: verify_event('t', sp.Rational(3, 2), flat, P(E1_ | E2_))
+    yield lambda: verify_event('t', sp.Rational(1, 7), flat, P(E1_ | E2_))
+    yield lambda: verify_event('t', sp.Rational(2, 5), flat, P(E1_ & E2_))
+    yield lambda: verify_event('t', sp.Rational(1, 6), cond,
+                               P(E1_, given=E2_))
+    yield lambda: verify_event('t', sp.Rational(1, 12), cond,
+                               P(E1_, given=E2_))
+    yield lambda: verify_event('t', sp.Rational(1, 5), flat, P(E1_ & E2_),
+                               extreme='min')
+    yield lambda: verify_event('t', sp.Rational(1, 5),
+                               [(P(E1_), sp.Rational(3, 10)),
+                                (P(E1_), sp.Rational(4, 10))], P(E2_))
+    yield lambda: verify_event('t', sp.Rational(1, 5),
+                               [(P(E1_), sp.Rational(3, 10))], P(E2_))
+    yield lambda: verify_event('t', ..., flat, P(E1_ | E2_))
+    box = {'r': sp.Rational(9, 14), 'w': sp.Rational(5, 14)}
+    yield lambda: verify_probability('t', sp.Rational(9, 14), box, ['r'])
+    yield lambda: verify_probability('t', sp.Rational(5, 7), box, ['r'])
+    yield lambda: verify_probability('t', sp.Rational(1, 2),
+                                     {'r': sp.Rational(1, 3)}, ['r'])
+    yield lambda: verify_probability('t', sp.Rational(1, 2), box, ['r'],
+                                     given=['q'])
+    yield lambda: verify_probability('t', sp.Rational(9, 14), box, ['r'],
+                                     given=['r', 'w'])
+    yield lambda: verify_probability('t', ..., box, ['r'])
+    yield lambda: verify_independence('t', [sp.Rational(1, 6),
+                                            sp.Rational(1, 6)], cond,
+                                      E1_, E2_)
+    yield lambda: verify_independence('t', [1, sp.Rational(1, 6)], cond,
+                                      E1_, E2_)
+    yield lambda: verify_independence('t', [sp.Rational(1, 6), 1], cond,
+                                      E1_, E2_)
+    yield lambda: verify_independence('t', [sp.Rational(1, 6)], cond,
+                                      E1_, E2_)
+    yield lambda: verify_independence('t', [sp.Rational(1, 6)],
+                                      [(P(E1_), sp.Rational(3, 10)),
+                                       (P(E1_), sp.Rational(4, 10))],
+                                      E1_, E2_)
+    yield lambda: verify_independence('t', [..., ...], cond, E1_, E2_)
+    yield lambda: verify_constants('t', [2], [A], [('A is one', A - 1)],
+                                   domain=sp.Interval(0, 1))
     yield lambda: trigger_check({1: 'a'}, {1: digest('a')})
     yield lambda: trigger_check({1: 'b'}, {1: digest('a')})
     yield lambda: trigger_check({1: ''}, {1: digest('a')})

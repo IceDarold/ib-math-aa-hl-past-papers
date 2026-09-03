@@ -229,6 +229,32 @@ def constants_check(unknowns, conditions):
                            for what, cond in conditions]}
 
 
+def space_check(space, find, given=None):
+    """Вероятность считается по выписанному пространству, а не по эталону.
+
+    space — словарь «имя исхода → вес», find и given — списки имён.
+    Событие в конечном пространстве это набор его исходов, поэтому
+    никакого языка предикатов заводить не нужно: имена сериализуются
+    как есть и уезжают на страницу вместе с заданием. Эталона среди них
+    нет — ответ проверка выводит сама, складывая веса.
+    """
+    spec = {'kind': 'space',
+            'space': [[name, sp.srepr(sp.sympify(w))]
+                      for name, w in space.items()],
+            'find': list(find)}
+    if given is not None:
+        spec['given'] = list(given)
+    return spec
+
+
+def independence_check(space, a, b):
+    """Ответ — два числа: P(A)·P(B) и P(A∩B). Вердикт следует из них."""
+    return {'kind': 'independence',
+            'space': [[name, sp.srepr(sp.sympify(w))]
+                      for name, w in space.items()],
+            'a': list(a), 'b': list(b)}
+
+
 def indeterminate_check(num, den, var='x', point=0, side=None, params=None):
     """Ответ — сама неопределённость: '0/0' или 'oo/oo', проверяется порознь."""
     spec = {'kind': 'indeterminate', 'num': sp.srepr(sp.sympify(num)),

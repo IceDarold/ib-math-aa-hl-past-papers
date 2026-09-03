@@ -65,7 +65,7 @@ t('и объясняется через незамкнутый треуголь�
 
 print('\n=== планировщик ===')
 bank = engine.load_bank()
-t('банк собран из готовых практикумов', len(bank['practicums']) == 18)
+t('банк собран из готовых практикумов', len(bank['practicums']) == 19)
 t('доли баллов в сумме дают единицу',
   abs(sum(bank['share'].values()) - 1.0) < 1e-9)
 t('практикум с большим числом баллов весит больше',
@@ -390,7 +390,7 @@ with tempfile.TemporaryDirectory() as tmp:
     t('пока попыток не было, так и написано', card['state'] is None)
 
     every = [atlas.skill_card(skill['id']) for skill in bank['skills']]
-    t('карточка открывается у каждого приёма банка', len(every) == 149)
+    t('карточка открывается у каждого приёма банка', len(every) == 159)
     t('у каждого приёма есть и ход, и ловушки',
       all(one['chain'] and one['traps'] for one in every))
     t('у каждого приёма есть хотя бы один вопрос архива',

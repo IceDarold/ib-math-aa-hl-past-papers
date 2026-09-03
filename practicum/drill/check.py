@@ -359,6 +359,33 @@ def evaluate(spec, raw):
             return _capture(kit.verify_constants, 'Ответ', values,
                             unknowns, conditions)
 
+        if kind == 'space':
+            space = {name: sp.sympify(w) for name, w in spec['space']}
+            given = spec.get('given')
+            return _capture(kit.verify_probability, 'Ответ', parse_one(raw),
+                            space, set(spec['find']),
+                            given=set(given) if given else None)
+
+        if kind == 'independence':
+            space = {name: sp.sympify(w) for name, w in spec['space']}
+            first, second = set(spec['a']), set(spec['b'])
+            whole = sum(space.values())
+            product = (sum(space[n] for n in first)
+                       * sum(space[n] for n in second) / whole**2)
+            joint = sum(space[n] for n in first & second) / whole
+            values = parse_many(raw)
+            if len(values) != 2:
+                return False, (f'{kit.NO} нужны два числа: произведение '
+                               f'P(A)·P(B) и вероятность P(A∩B)')
+            if sp.simplify(values[0] - product) != 0:
+                return False, (f'{kit.NO} первое число — не произведение '
+                               f'P(A)·P(B)')
+            if sp.simplify(values[1] - joint) != 0:
+                return False, (f'{kit.NO} второе число — не вероятность '
+                               f'пересечения P(A∩B)')
+            verdict = 'независимы' if product == joint else 'зависимы'
+            return True, f'{kit.OK} числа верны, и они говорят: {verdict}'
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0

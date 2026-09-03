@@ -1033,6 +1033,95 @@ for seed in range(SEEDS):
 print(f'  {"E3.read_derivative":28} {SEEDS} ответов сверено сканированием')
 
 
+# --- D2: вероятности пересчитываются частотой, а не алгеброй --------------
+#
+# Проверка задания устроена так же, как та, что стоит в ноутбуке: она
+# складывает веса выписанных исходов. Если тест сложит их ещё раз, он
+# подтвердит только собственную арифметику. Поэтому здесь вероятность
+# берётся долей в длинной серии — разыгрывается само пространство задания,
+# и частота сверяется с ответом. Это определение вероятности, а не другой
+# способ её посчитать.
+print('\n=== D2: доля в длинной серии ===')
+
+DRAWS = 60_000
+
+
+def _share(space, find, given=None, seed=1):
+    """Доля исходов из find среди попавших в given, розыгрышем по весам."""
+    rng = random.Random(seed)
+    names = list(space)
+    weights = [float(space[n]) for n in names]
+    hit = base = 0
+    for _ in range(DRAWS):
+        name = rng.choices(names, weights)[0]
+        if given is not None and name not in given:
+            continue
+        base += 1
+        if name in find:
+            hit += 1
+    return (hit / base if base else float('nan')), base
+
+
+def _agrees(value, share, base, sigmas=5):
+    value = float(value)
+    if base == 0:
+        return False
+    err = math.sqrt(max(value * (1 - value), 1e-12) / base)
+    return abs(value - share) <= sigmas * err + 1e-9
+
+
+for name in ('D2.event_algebra', 'D2.conditional', 'D2.tree',
+             'D2.first_success', 'D2.total_probability', 'D2.bayes',
+             'D2.without_replacement', 'D2.counting_space'):
+    checked = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[name](random.Random(seed))
+        spec = item['check']
+        space = {n: sp.sympify(w) for n, w in spec['space']}
+        t(f'{name}[{seed}]: веса исходов дают единицу',
+          sp.simplify(sum(space.values()) - 1) == 0)
+        find = set(spec['find'])
+        given = set(spec['given']) if spec.get('given') else None
+        share, base = _share(space, find, given, seed=seed + 1)
+        t(f'{name}[{seed}]: ответ совпал с долей в {DRAWS} розыгрышах',
+          _agrees(item['answer'], share, base))
+        checked += 1
+    print(f'  {name:28} {checked} ответов сверено частотой')
+
+for seed in range(SEEDS):
+    item = GENERATORS['D2.independence'](random.Random(seed))
+    spec = item['check']
+    space = {n: sp.sympify(w) for n, w in spec['space']}
+    first, second = set(spec['a']), set(spec['b'])
+    share_a, base = _share(space, first, seed=seed + 40)
+    share_b, _ = _share(space, second, seed=seed + 80)
+    share_both, _ = _share(space, first & second, seed=seed + 120)
+    product, joint = item['answer']
+    t(f'D2.independence[{seed}]: первое число — произведение долей',
+      _agrees(product, share_a * share_b, base, sigmas=8))
+    t(f'D2.independence[{seed}]: второе — доля пересечения',
+      _agrees(joint, share_both, base))
+    t(f'D2.independence[{seed}]: вердикт следует из этих двух',
+      (sp.simplify(product - joint) == 0)
+      == (abs(share_a * share_b - share_both) < 0.02))
+print(f'  {"D2.independence":28} {SEEDS} пар сверено частотой')
+
+for seed in range(SEEDS):
+    item = GENERATORS['D2.unknown_probability'](random.Random(seed))
+    k = sp.Rational(item['answer'])
+    half = '\\frac{k}{2}' in item['prompt']
+    rng = random.Random(seed + 200)
+    miss = sum(1 for _ in range(DRAWS)
+               if not (rng.random() < float(k))
+               and not (rng.random() < float(k / 2 if half else k)))
+    want = float((1 - k) * (1 - (k / 2 if half else k)))
+    t(f'D2.unknown_probability[{seed}]: k даёт обещанную долю промахов',
+      _agrees(want, miss / DRAWS, DRAWS))
+    t(f'D2.unknown_probability[{seed}]: k — вероятность, а второй корень нет',
+      0 <= k <= 1)
+print(f'  {"D2.unknown_probability":28} {SEEDS} значений k сверено частотой')
+
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')

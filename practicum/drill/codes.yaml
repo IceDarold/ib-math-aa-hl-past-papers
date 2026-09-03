@@ -150,6 +150,18 @@ B5:
   logistic: {skill: logistic_model,    name: логистическая модель}
   function: {skill: log_as_function,   name: логарифм как функция}
 
+D2:
+  venn:      {skill: event_algebra,        name: четыре клетки}
+  given:     {skill: conditional,          name: условная вероятность}
+  indep:     {skill: independence,         name: независимость}
+  tree:      {skill: tree,                 name: дерево}
+  first:     {skill: first_success,        name: первый успех}
+  total:     {skill: total_probability,    name: полная вероятность}
+  bayes:     {skill: bayes,                name: Байес}
+  noreplace: {skill: without_replacement,  name: без возвращения}
+  count:     {skill: counting_space,       name: перебор исходов}
+  letter:    {skill: unknown_probability,  name: буква внутри вероятности}
+
 E1:
   substitute: {skill: substitute,      name: подстановка и сокращение}
   infinity:   {skill: at_infinity,     name: старшая степень на бесконечности}

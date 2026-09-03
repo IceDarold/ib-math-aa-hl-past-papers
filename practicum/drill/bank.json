@@ -5981,6 +5981,656 @@
    "dir": "AA_HL/2022/May/TZ2/Paper 2",
    "skill": "C4.bounds_argument"
   },
+  "2023-NOV-TZ1-P1-Q02-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "D2.event_algebra"
+  },
+  "2023-NOV-TZ1-P1-Q02-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "D2.event_algebra"
+  },
+  "2021-MAY-TZ2-P2-Q03-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D2.event_algebra"
+  },
+  "2021-MAY-TZ2-P2-Q03-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D2.event_algebra"
+  },
+  "2025-MAY-TZ2-P1-Q04-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "4",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "D2.event_algebra"
+  },
+  "2022-NOV-COMMON-P1-Q06-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "6",
+   "part": "a",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "D2.event_algebra"
+  },
+  "2022-NOV-COMMON-P1-Q06-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "6",
+   "part": "b",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "D2.event_algebra"
+  },
+  "2022-NOV-COMMON-P1-Q06-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "6",
+   "part": "c",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "D2.event_algebra"
+  },
+  "2025-NOV-TZ3-P1-Q02-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "2",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "D2.conditional"
+  },
+  "2025-NOV-TZ3-P1-Q02-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "2",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "D2.conditional"
+  },
+  "2025-MAY-TZ1-P1-Q04-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "D2.conditional"
+  },
+  "2023-MAY-TZ2-P1-Q03": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "3",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "D2.conditional"
+  },
+  "2022-MAY-TZ1-P2-Q05-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "b",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D2.conditional"
+  },
+  "2025-MAY-TZ2-P1-Q04-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "4",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "10-11",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "D2.conditional"
+  },
+  "2021-MAY-TZ2-P2-Q03-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D2.conditional"
+  },
+  "2025-MAY-TZ1-P1-Q04-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "D2.independence"
+  },
+  "2021-MAY-TZ2-P2-Q03-D": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D2.independence"
+  },
+  "2021-NOV-COMMON-P1-Q04-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "4",
+   "part": "(b)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "D2.independence"
+  },
+  "2022-MAY-TZ1-P2-Q05-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "a",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D2.independence"
+  },
+  "2022-MAY-TZ2-P2-Q03": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "D2.independence"
+  },
+  "2023-MAY-TZ1-P2-Q07-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D2.tree"
+  },
+  "2021-NOV-COMMON-P1-Q04-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "4",
+   "part": "(a)",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "D2.tree"
+  },
+  "2022-NOV-COMMON-P2-Q10-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "10",
+   "part": "b",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "D2.tree"
+  },
+  "2024-MAY-TZ2-P1-Q04-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "4",
+   "part": "a",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "D2.tree"
+  },
+  "2024-MAY-TZ1-P2-Q06-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "c",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D2.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-A-I": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "a-i",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D2.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-A-II": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "a-ii",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D2.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-E": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "E",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D2.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-F": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "F",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D2.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-G-I": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(g)(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D2.first_success"
+  },
+  "2022-MAY-TZ2-P1-Q10-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "C",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "D2.first_success"
+  },
+  "2022-MAY-TZ1-P2-Q11-C-I": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "C-I",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D2.total_probability"
+  },
+  "2025-MAY-TZ3-P2-Q11-C-I": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "C-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D2.total_probability"
+  },
+  "2025-NOV-TZ1-P2-Q07-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "D2.total_probability"
+  },
+  "2022-MAY-TZ1-P2-Q11-C-II": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "C-II",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D2.bayes"
+  },
+  "2024-MAY-TZ2-P1-Q06-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "6",
+   "part": "b",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "D2.bayes"
+  },
+  "2025-MAY-TZ3-P2-Q11-C-II": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "C-II",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D2.bayes"
+  },
+  "2025-NOV-TZ1-P2-Q07-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "D2.bayes"
+  },
+  "2022-NOV-COMMON-P2-Q10-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "10",
+   "part": "c",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "D2.bayes"
+  },
+  "2023-MAY-TZ2-P2-Q11-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "D2.without_replacement"
+  },
+  "2023-MAY-TZ2-P2-Q11-D": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "D2.without_replacement"
+  },
+  "2023-MAY-TZ2-P2-Q11-E": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "E",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "D2.without_replacement"
+  },
+  "2024-MAY-TZ2-P3-Q02-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "C",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "D2.counting_space"
+  },
+  "2024-MAY-TZ2-P3-Q02-F": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "F",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "18-20",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "D2.counting_space"
+  },
+  "2022-MAY-TZ2-P1-Q10-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "D2.counting_space"
+  },
+  "2022-MAY-TZ2-P1-Q10-D": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "D",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "D2.counting_space"
+  },
+  "2022-MAY-TZ2-P1-Q10-E": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "E",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "D2.counting_space"
+  },
+  "2024-MAY-TZ2-P1-Q04-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "4",
+   "part": "b",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "D2.unknown_probability"
+  },
+  "2023-MAY-TZ1-P2-Q07-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "15–16",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D2.unknown_probability"
+  },
+  "2025-MAY-TZ3-P2-Q11-D": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D2.unknown_probability"
+  },
   "2024-MAY-TZ1-P1-Q11-F-I-II": {
    "session": "May 2024",
    "zone": "TZ1",
@@ -7901,6 +8551,14 @@
    "notebook": "practicum/functions/practicum-c4-sinusoidal-models.ipynb",
    "marks": 83,
    "blocks": 34
+  },
+  {
+   "id": "D2",
+   "title": "Вероятность: события, условная, независимость, деревья",
+   "section": "D",
+   "notebook": "practicum/statistics/practicum-d2-probability.ipynb",
+   "marks": 156,
+   "blocks": 50
   },
   {
    "id": "E1",
@@ -10957,6 +11615,275 @@
    "blocks": [
     "2022-MAY-TZ1-P1-Q05-B",
     "2022-MAY-TZ2-P2-Q10-C"
+   ]
+  },
+  {
+   "id": "D2.event_algebra",
+   "practicum": "D2",
+   "name": "Алгебра событий и дополнение",
+   "rung": 1,
+   "trigger": "В условии перечислены вероятности комбинаций двух событий — P(A), P(B), P(A∩B), P(A∪B), P(A∩B′) — и спрашивают ещё одну. Никакого процесса, никаких этапов: всё происходит один раз.",
+   "chain": [
+    "Нарисовать четыре клетки диаграммы Венна для A и B",
+    "Расставить по ним то, что дано, помня, что сумма четырёх равна единице",
+    "Прочесть с диаграммы то, о чём спрашивают"
+   ],
+   "traps": [
+    "В P(A∪B) = P(A) + P(B) − P(A∩B) забывают вычесть пересечение: оно попадает в сумму дважды",
+    "P(A′∩B′) считают как 1 − P(A) − P(B): по де Моргану это 1 − P(A∪B), а не 1 − P(A) − P(B)",
+    "Ответ 0,2 в правильной клетке диаграммы без подписи схема оценивания не засчитывает: ноябрь 2023, «just seeing an unlabeled 0.2 in the correct region earns M1A0»",
+    "P(A∩B) считают как P(A)·P(B) там, где независимость не обещана"
+   ],
+   "calculator": "none",
+   "practicum_marks": 156,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q02-A",
+    "2023-NOV-TZ1-P1-Q02-B",
+    "2021-MAY-TZ2-P2-Q03-A",
+    "2021-MAY-TZ2-P2-Q03-B",
+    "2025-MAY-TZ2-P1-Q04-A",
+    "2022-NOV-COMMON-P1-Q06-A",
+    "2022-NOV-COMMON-P1-Q06-B",
+    "2022-NOV-COMMON-P1-Q06-C"
+   ]
+  },
+  {
+   "id": "D2.conditional",
+   "practicum": "D2",
+   "name": "Условная вероятность",
+   "rung": 2,
+   "trigger": "В условии или в вопросе стоит слово «given that», «дано, что», или вертикальная черта. Часть пространства отрезана, и всё считается внутри оставшегося.",
+   "chain": [
+    "Записать P(A|B) = P(A∩B) / P(B) и решить, что здесь A, а что B",
+    "Недостающее из двух найти алгеброй событий",
+    "Разделить — и проверить, что делили на вероятность условия"
+   ],
+   "traps": [
+    "P(A|B) и P(B|A) меняют местами: это разные числа, и совпадают они только когда P(A) = P(B)",
+    "Делят на P(A) вместо P(B): знаменатель — вероятность того, что дано, а не того, что ищут",
+    "Останавливаются на P(A∩B) и сдают его как ответ: делить ещё не стали",
+    "P(A|B′) считают как 1 − P(A|B). Это неверно: дополнение берут у события, а не у условия"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 156,
+   "blocks": [
+    "2025-NOV-TZ3-P1-Q02-A",
+    "2025-NOV-TZ3-P1-Q02-B",
+    "2025-MAY-TZ1-P1-Q04-A",
+    "2023-MAY-TZ2-P1-Q03",
+    "2022-MAY-TZ1-P2-Q05-B",
+    "2025-MAY-TZ2-P1-Q04-B",
+    "2021-MAY-TZ2-P2-Q03-C"
+   ]
+  },
+  {
+   "id": "D2.independence",
+   "practicum": "D2",
+   "name": "Независимость как уравнение",
+   "rung": 3,
+   "trigger": "Слово «independent» стоит либо в вопросе («determine whether»), либо в условии («A and B are independent»). В первом случае это вычисление и вывод, во втором — лишнее уравнение, которого без этого слова не было бы.",
+   "chain": [
+    "Написать P(A∩B) = P(A)·P(B) — это определение, а не свойство",
+    "Если независимость спрашивают, посчитать обе стороны и сравнить",
+    "Если независимость дана, подставить её и решить получившееся уравнение как обычное"
+   ],
+   "traps": [
+    "Вывод пишут без чисел. Схема оценивания: «Both conclusion and reasoning are required. Do not split the A2» — за один вывод ноль",
+    "Независимость путают с несовместностью: несовместные события как раз зависимы, если у обоих вероятность не ноль",
+    "Из P(A)·P(B) = P(A∩B) получают квадратное уравнение и берут оба корня: майский 2022 TZ2 даёт P(B) = 0,2 и 17/15, и второй отбрасывают за то, что он больше единицы",
+    "Проверяют P(A|B) = P(A) и, получив неравенство, объявляют события несовместными вместо зависимых"
+   ],
+   "calculator": "checks",
+   "practicum_marks": 156,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q04-B",
+    "2021-MAY-TZ2-P2-Q03-D",
+    "2021-NOV-COMMON-P1-Q04-B",
+    "2022-MAY-TZ1-P2-Q05-A",
+    "2022-MAY-TZ2-P2-Q03"
+   ]
+  },
+  {
+   "id": "D2.tree",
+   "practicum": "D2",
+   "name": "Дерево: вдоль ветви умножаем, между ветвями складываем",
+   "rung": 4,
+   "trigger": "В задаче есть этапы: сначала выбирают коробку, потом шар; сначала сезон, потом гнездование. Дерево либо нарисовано в билете, либо напрашивается само.",
+   "chain": [
+    "Первый уровень — вероятности исходов первого этапа, в сумме единица",
+    "Второй уровень — условные вероятности при каждом исходе первого, в сумме единица на каждом узле",
+    "Вероятность пути — произведение вдоль него; вероятность события — сумма по путям"
+   ],
+   "traps": [
+    "Ветви второго уровня подписывают безусловными вероятностями: на них стоит P(второе | первое), и это разные числа",
+    "Дополнение ветви пишут как p′ или как q. Схема оценивания мая 2023: «award A0 for G′ branch labelled q unless explicitly defined as 1 − p»",
+    "Складывают там, где надо умножать: «и» вдоль ветви — произведение",
+    "Пропускают путь: «ровно один из четверых» — это четыре пути, а не один"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 156,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q07-A",
+    "2021-NOV-COMMON-P1-Q04-A",
+    "2022-NOV-COMMON-P2-Q10-B",
+    "2024-MAY-TZ2-P1-Q04-A"
+   ]
+  },
+  {
+   "id": "D2.first_success",
+   "practicum": "D2",
+   "name": "Повторные испытания и первый успех",
+   "rung": 5,
+   "trigger": "Одно и то же испытание повторяется, испытания независимы, и вопрос про то, когда впервые или сколько раз всего. «First day that it rains», «first boost occurs on the third action».",
+   "chain": [
+    "Решить, спрашивают про номер первого успеха или про их число",
+    "Первый успех на n-м — это (n−1) неудача подряд и успех, то есть p(1−p)^(n−1)",
+    "{'«Хотя бы один» считать через дополнение': '1 − (1−p)^n'}"
+   ],
+   "traps": [
+    "«Первый дождь на десятый день» считают как 0,8¹⁰·0,2 или как 0,2: девять сухих дней и один дождливый — это 0,8⁹·0,2",
+    "«Хотя бы один» пересчитывают по слагаемым вместо дополнения и теряют член",
+    "Показатель сдвигают на единицу: (1−p)^n вместо (1−p)^(n−1)",
+    "Условие «максимум пять бросков» забывают, и суммируют по всем n"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 156,
+   "blocks": [
+    "2024-MAY-TZ1-P2-Q06-C",
+    "2024-MAY-TZ1-P3-Q01-A-I",
+    "2024-MAY-TZ1-P3-Q01-A-II",
+    "2024-MAY-TZ1-P3-Q01-E",
+    "2024-MAY-TZ1-P3-Q01-F",
+    "2024-MAY-TZ1-P3-Q01-G-I",
+    "2022-MAY-TZ2-P1-Q10-C"
+   ]
+  },
+  {
+   "id": "D2.total_probability",
+   "practicum": "D2",
+   "name": "Полная вероятность",
+   "rung": 6,
+   "trigger": "Совокупность разбита на части — два станка, три сотрудника, два сорта яблок, — и спрашивают вероятность по всей совокупности. Ключевое слово «randomly selected» без указания части.",
+   "chain": [
+    "Проверить, что части покрывают всё и не пересекаются",
+    "Для каждой части взять её долю и условную вероятность внутри неё",
+    "Сложить произведения"
+   ],
+   "traps": [
+    "Условные вероятности складывают без весов частей: 0,08 + 0,06 + 0,11 вместо 0,55·0,08 + 0,25·0,06 + 0,2·0,11",
+    "Доли частей не проверяют на единицу, и одна часть теряется",
+    "Внутри части берут не ту вероятность: у нормально распределённых весов своя μ и σ на каждой части"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 156,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q11-C-I",
+    "2025-MAY-TZ3-P2-Q11-C-I",
+    "2025-NOV-TZ1-P2-Q07-A"
+   ]
+  },
+  {
+   "id": "D2.bayes",
+   "practicum": "D2",
+   "name": "Байес: вверх по дереву",
+   "rung": 7,
+   "trigger": "Известно следствие, спрашивают причину. «Given that the muffin weighs less than 61 g, find the probability that it is chocolate»: дерево идёт от сорта к весу, а вопрос — от веса к сорту.",
+   "chain": [
+    "Числитель — вероятность одного пути: доля причины на условную вероятность следствия при ней",
+    "Знаменатель — полная вероятность следствия, то есть приём 6",
+    "Разделить"
+   ],
+   "traps": [
+    "Числитель и знаменатель меняют местами — тот же промах, что и в приёме 2, но здесь его труднее заметить",
+    "В знаменателе пишут долю причины вместо полной вероятности следствия",
+    "Схема оценивания требует показать условную вероятность в контексте: «not just P(A|B)» — голая формула балла не даёт",
+    "Округляют промежуточное значение до трёх цифр и получают 0,723 вместо 0,722; markscheme это принимает, но не всегда"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 156,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q11-C-II",
+    "2024-MAY-TZ2-P1-Q06-B",
+    "2025-MAY-TZ3-P2-Q11-C-II",
+    "2025-NOV-TZ1-P2-Q07-B",
+    "2022-NOV-COMMON-P2-Q10-C"
+   ]
+  },
+  {
+   "id": "D2.without_replacement",
+   "practicum": "D2",
+   "name": "Без возвращения",
+   "rung": 8,
+   "trigger": "Слова «without replacement», или из коробки вынимают подряд и не кладут обратно. Признак того, что знаменатель на каждом шаге уменьшается.",
+   "chain": [
+    "Первый множитель — доля нужных среди всех",
+    "На каждом следующем шаге уменьшить и числитель, и знаменатель",
+    "Сократить и, если в условии буква, привести к уравнению"
+   ],
+   "traps": [
+    "Знаменатель не уменьшают: получается вынимание с возвращением, и ответ выходит больше настоящего",
+    "Уменьшают знаменатель, но не числитель: жёлтых после вынутого жёлтого стало y − 1, а не y",
+    "Получив квадратное уравнение на число шаров, берут дробный корень",
+    "Порядок считают там, где он не важен, и наоборот"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 156,
+   "blocks": [
+    "2023-MAY-TZ2-P2-Q11-A",
+    "2023-MAY-TZ2-P2-Q11-D",
+    "2023-MAY-TZ2-P2-Q11-E"
+   ]
+  },
+  {
+   "id": "D2.counting_space",
+   "practicum": "D2",
+   "name": "Перебор равновозможных исходов",
+   "rung": 9,
+   "trigger": "Исходы равновозможны и их можно пересчитать: три броска кости дают 216 троек, две кости дают 16 пар. Вероятность становится дробью «сколько подходит / сколько всего».",
+   "chain": [
+    "Назвать пространство и его размер, и убедиться, что исходы равновозможны",
+    "Записать условие на исход формулой (дискриминант, сумма)",
+    "Пересчитать подходящие — по случаям, а не подряд"
+   ],
+   "traps": [
+    "Считают наборы, а не упорядоченные тройки: (1,2,3) и (3,2,1) — разные исходы, и оба в 216",
+    "Пропускают случай при переборе: у ac = 2 восемь функций, а не четыре",
+    "Дискриминант приравнивают к нулю там, где нужно строгое неравенство, и наоборот",
+    "Складывают вероятности вместо счёта исходов, когда исходы уже равновозможны"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 156,
+   "blocks": [
+    "2024-MAY-TZ2-P3-Q02-C",
+    "2024-MAY-TZ2-P3-Q02-F",
+    "2022-MAY-TZ2-P1-Q10-B",
+    "2022-MAY-TZ2-P1-Q10-D",
+    "2022-MAY-TZ2-P1-Q10-E"
+   ]
+  },
+  {
+   "id": "D2.unknown_probability",
+   "practicum": "D2",
+   "name": "Буква внутри вероятности",
+   "rung": 10,
+   "trigger": "В пространстве стоит буква — доля k, вероятность p, процент x, — и дана вероятность какого-то события. Ответ находят не подстановкой, а решением уравнения.",
+   "chain": [
+    "Выразить данную вероятность через букву по устройству пространства",
+    "Приравнять к данному числу и решить",
+    "Отбраковать корни вне [0, 1] и назвать причину вслух"
+   ],
+   "traps": [
+    "Отбрасывают лишний корень молча. Схема оценивания мая 2024 TZ2 даёт R1 именно за фразу «8/3 > 1»",
+    "Уравнение составляют по неверной ветви: «не гнездится ни в один сезон» — это (1−k)(1−k/2), а не 1 − k·k/2",
+    "Оценку доли ищут из числителя вместо условной вероятности: 18 из 150 положительных — это P(G′|+), а не P(G′)",
+    "Проценты и доли смешивают: x = 7,38 значит 7,38%, то есть 0,0738"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 156,
+   "blocks": [
+    "2024-MAY-TZ2-P1-Q04-B",
+    "2023-MAY-TZ1-P2-Q07-B",
+    "2025-MAY-TZ3-P2-Q11-D"
    ]
   },
   {
@@ -21151,6 +22078,630 @@
    ],
    "answer": "sign",
    "answer_digest": "0b6f395ca14a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:1",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.event_algebra",
+   "prompt": "$P(A)=0.65$, $P(B)=0.75$, $P(A\\cap B)=0.6$. Find $P(A'\\cap B')$.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "venn",
+   "answer_digest": "29901ef03112",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:2",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.conditional",
+   "prompt": "$P(A)=\\tfrac12$, $P(B)=\\tfrac13$, $P(A\\mid B)=\\tfrac14$. Find $P(A\\mid B')$.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "given",
+   "answer_digest": "5b729e0f6197",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:3",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.bayes",
+   "prompt": "Given that a randomly selected muffin weighs less than 61 g, find the probability that it is chocolate.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "bayes",
+   "answer_digest": "110f945a922b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:4",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.independence",
+   "prompt": "$P(A\\cap B')=0.16$ and $P(A'\\cap B)=0.36$; given $P(A\\cap B)=x$, find $x$.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "indep",
+   "answer_digest": "1e76c19f7fab",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:5",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.counting_space",
+   "prompt": "Show that the probability of a randomly generated quadratic having only one $x$-intercept is $\\tfrac5{216}$.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "count",
+   "answer_digest": "6c35493a2b93",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:6",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.tree",
+   "prompt": "A box is chosen at random and a ball is drawn. Find the probability that the ball is red.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "tree",
+   "answer_digest": "dc9c5edb8b2d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:7",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.unknown_probability",
+   "prompt": "It is known that the probability of not nesting in either season is $\\tfrac59$. Show that $9k^{2}-27k+8=0$.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "letter",
+   "answer_digest": "f80105efab6d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:8",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.without_replacement",
+   "prompt": "Find an expression for $P(YYY)$ in terms of $y$, where the box holds 10 red and $y$ yellow.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "noreplace",
+   "answer_digest": "a3c6e6ae1c64",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:9",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.total_probability",
+   "prompt": "Find the probability that a randomly selected survey was entered inaccurately.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "total",
+   "answer_digest": "11239872d178",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:10",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.first_success",
+   "prompt": "Find the probability that the first day that it rains in May is on the 10th day.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "first",
+   "answer_digest": "a7937b64b8ca",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:11",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.conditional",
+   "prompt": "An employee is selected at random from the group who work more than 40 hours. Find the probability that they work less than 55 hours.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "given",
+   "answer_digest": "5b729e0f6197",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D2:12",
+   "kind": "recognition",
+   "practicum": "D2",
+   "skill": "D2.independence",
+   "prompt": "Determine whether events $A$ and $R$ are independent.",
+   "options": [
+    {
+     "code": "venn",
+     "name": "четыре клетки"
+    },
+    {
+     "code": "given",
+     "name": "условная вероятность"
+    },
+    {
+     "code": "indep",
+     "name": "независимость"
+    },
+    {
+     "code": "tree",
+     "name": "дерево"
+    },
+    {
+     "code": "first",
+     "name": "первый успех"
+    },
+    {
+     "code": "total",
+     "name": "полная вероятность"
+    },
+    {
+     "code": "bayes",
+     "name": "Байес"
+    },
+    {
+     "code": "noreplace",
+     "name": "без возвращения"
+    },
+    {
+     "code": "count",
+     "name": "перебор исходов"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри вероятности"
+    }
+   ],
+   "answer": "indep",
+   "answer_digest": "1e76c19f7fab",
    "budget_ms": 8000
   },
   {
