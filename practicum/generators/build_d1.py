@@ -327,7 +327,7 @@ it is worth thinking about what it actually removes.*
 """)
 
 code(r"""
-# шестизначное число из разных цифр — это набор шести разных цифр по местам
+# a six-digit number with distinct digits is six different digits in places
 q2a = ...
 q2b = ...
 
@@ -355,7 +355,7 @@ distinguishable from one another; the four extra members are not.*
 code(r"""
 MEMBERS = range(10)
 
-# комитет: три названные должности, затем четверо просто членов
+# a committee: three named posts, then four ordinary members
 def committees():
     for officers in permutations(MEMBERS, 3):
         rest = [m for m in MEMBERS if m not in officers]
@@ -470,9 +470,9 @@ Malik chooses four books, all from the same continent.
 """)
 
 code(r"""
-BOOKS = tuple('A' * 6 + 'E' * 5 + 'F' * 4)      # у книги свой континент
+BOOKS = tuple('A' * 6 + 'E' * 5 + 'F' * 4)      # each book carries its continent
 
-# книги каждого континента стоят на полке одним куском
+# the books of each continent stand on the shelf in one run
 def in_one_run(shelf):
     line = ''.join(shelf)
     return all(c * line.count(c) in line for c in 'AEF')
@@ -481,11 +481,11 @@ q4a = ...
 q4b = ...
 q4c = ...
 
-# 15! книг перебрать нельзя; перебираются первые четыре места, остальные
-# одиннадцать книг дают множитель 11!
+# 15! arrangements will not fit; the first four places are enumerated and
+# the remaining eleven books contribute a factor of 11!
 verify_count('4a', q4a, permutations(range(15), 4), each=factorial(11))
-# а здесь перебирается узор полки — какой континент на каком месте, —
-# и каждый узор отвечает за 6!·5!·4! расстановок самих книг
+# here the shelf pattern is enumerated — which continent stands where —
+# and each pattern stands for 6!*5!*4! arrangements of the books themselves
 verify_count('4b', q4b, multiset_permutations(list(BOOKS)), keep=in_one_run,
              each=factorial(6) * factorial(5) * factorial(4))
 verify_count('4c', q4c, combinations(BOOKS, 4),
@@ -545,7 +545,7 @@ SEATS = range(10)
 q6a = ...
 q6b = ...
 
-# seat[i] — номер места, на которое сел человек i
+# seat[i] is the seat that person i takes
 verify_count('6a', q6a, permutations(SEATS, 5),
              keep=lambda seat: max(seat) - min(seat) == 4)
 verify_count('6b', q6b, permutations(SEATS, 5),
@@ -574,19 +574,19 @@ difficulty is counting the boundaries.*
 
 code(r"""
 AMBER, BROWNIE = 0, 1
-PENS = range(6)                 # загон номер p стоит в ряду p // 2, столбце p % 2
+PENS = range(6)                 # pen p sits in row p // 2, column p % 2
 
-# соседние по стороне загоны в сетке три на два
+# pens sharing a side in the three-by-two grid
 def share_a_boundary(one, other):
     return abs(one // 2 - other // 2) + abs(one % 2 - other % 2) == 1
 
 q7a = ...
 q7b = ...
 
-# (a) загон вмещает всех: овца выбирает загон, загон не занимается
+# (a) a pen holds every sheep: each sheep picks a pen, and pens do not fill up
 verify_count('7a', q7a, product(PENS, repeat=5),
              keep=lambda pen: pen[AMBER] != pen[BROWNIE])
-# (b) по одной овце в загон
+# (b) one sheep to a pen
 verify_count('7b', q7b, permutations(PENS, 5),
              keep=lambda pen: not share_a_boundary(pen[AMBER], pen[BROWNIE]))
 """)
@@ -696,7 +696,7 @@ halves of the two routes gives a number that is not 75.*
 
 code(r"""
 TEAM = range(9)
-GIRLS = {0, 1, 2}               # шестеро мальчиков — 3..8
+GIRLS = {0, 1, 2}               # the six boys are 3..8
 
 def girls_in(line):
     return [i for i, member in enumerate(line) if member in GIRLS]
@@ -734,16 +734,16 @@ other on the page and not next to each other in the problem.*
 
 code(r"""
 ALVIN, BOBBY, CATALINA, DANIELA = 0, 1, 2, 3
-DESKS = range(10)               # 0–4 передний ряд, 5–9 задний, слева направо
+DESKS = range(10)               # 0-4 front row, 5-9 back row, left to right
 
-# соседние парты одного ряда
+# neighbouring desks in the same row
 def side_by_side(one, other):
     return one // 5 == other // 5 and abs(one - other) == 1
 
 q9a = ...
 q9b = ...
 
-# ограничение касается только названных детей; остальные дают множитель
+# the restriction touches only the named children; the rest give a factor
 verify_count('9a', q9a, permutations(DESKS, 2),
              keep=lambda desk: side_by_side(desk[ALVIN], desk[BOBBY]),
              each=factorial(8))
@@ -795,8 +795,8 @@ three teams could have been produced twice.*
 code(r"""
 CLASS = range(15)
 
-# разбиения класса на три пятёрки; команды не названы, и те же три
-# пятёрки, выписанные в другом порядке, — то же самое разбиение
+# splits of the class into three fives; the teams have no names, so the
+# same three fives written in another order are the same split
 def team_splits():
     seen = set()
     for first in combinations(CLASS, 5):
@@ -810,7 +810,7 @@ def team_splits():
 
 q11 = ...
 
-verify_count('11', q11, team_splits())          # перебор идёт секунду-две
+verify_count('11', q11, team_splits())          # the enumeration takes a second or two
 """)
 
 md(r"""
@@ -836,18 +836,18 @@ the equation; only one of them satisfies the question.*
 """)
 
 code(r"""
-# сколько способов отобрать троих из size — и, если apart, так чтобы
-# двое названных студентов попали в разные группы
+# how many ways to pick three out of size — and, if apart, so that the two
+# named students land in different groups
 def assignments(size, apart=False):
     groups = combinations(range(size), 3)
     if apart:
         groups = (g for g in groups if len({0, 1} & set(g)) == 1)
     return sum(1 for _ in groups)
 
-# условие пункта (b), прочитанное дословно
+# the condition of part (b), read literally
 def halved(size):
     if not sympify(size).is_integer or size < 4:
-        return None                          # студентов бывает целое число
+        return None                          # a number of students is a whole number
     size = int(size)
     return size - 3 >= 3 and 2 * assignments(size, apart=True) == assignments(size)
 
@@ -922,13 +922,13 @@ Determine the number of students that were originally in the class.
 """)
 
 code(r"""
-# сыграно ли в классе из size человек ровно 513 партий
+# whether a class of size students played exactly 513 games
 def games(size):
     if not sympify(size).is_integer or size < 3:
         return None
     size = int(size)
-    everyone = sum(2 for _ in combinations(range(size), 2))   # каждый с каждым дважды
-    missed = 2 * (size - 1) - 7                               # партии Стивена, не сыгранные
+    everyone = sum(2 for _ in combinations(range(size), 2))   # everyone plays everyone twice
+    missed = 2 * (size - 1) - 7                               # Stephen's games that were not played
     return everyone - missed == 513
 
 qt = {...}
