@@ -15,6 +15,18 @@ import math
 
 import sympy as sp
 
+# Перебор пишется в ноутбуке комбинаторики так же часто, как sin в
+# тригонометрии, и по той же причине идёт в общие имена: permutations,
+# а не itertools.permutations. Пользуется ими проверка, а не студент —
+# перебор ей и заменяет эталон.
+from itertools import (                                              # noqa: E402
+    permutations, combinations, combinations_with_replacement, product,
+)
+# Перестановки набора с повторами itertools не умеет: permutations считает
+# одинаковые буквы разными и выдаёт 15! кортежей там, где различных узоров
+# 630630. Эта — умеет.
+from sympy.utilities.iterables import multiset_permutations          # noqa: E402
+
 # Имена, которыми записывают ответ. Задача практикума — математика, а не синтаксис
 # sympy, поэтому в ячейке пишут sin(x), pi/6, sqrt(5), а не sp.sin(x), sp.pi/6.
 #
@@ -4255,6 +4267,189 @@ def verify_probability(label, got, space, find, given=None, total=1):
     slips[_t("это вероятность противоположного события",
              "that is the probability of the opposite event")] = 1 - want
     return _report_probability(label, got, want, slips)
+
+
+# ------------------------------------------------------------------- счёт
+#
+# Четырнадцатое понятие равенства ответов, и второе подряд, где ответ —
+# просто число. У вероятности это было число между нулём и единицей, и
+# проверялось оно устройством пространства. У счёта это целое число, и
+# проверяется оно тем же самым, доведённым до конца: **объекты
+# пересчитываются**.
+#
+# Эталона снова нет. Ноутбук передаёт проверке не ответ, а описание того,
+# что считают: как выглядит объект и что значит «подходит». Проверка
+# перебирает и считает сама. Совпало — значит, одно и то же число получено
+# двумя разными путями: формулой у студента и перебором у проверки, а
+# формулу перебор не знает.
+#
+# Перебор влезает не всегда: 15! — это 1,3·10¹², и столько объектов не
+# переберёт никакой ноутбук. Тогда перечисляются не все объекты, а те, о
+# ком идёт речь: в вопросе про десятерых детей за десятью партами
+# ограничение касается четверых, и перебираются 5040 способов посадить
+# этих четверых, а остальные шестеро дают множитель 6!. Ход тот же, каким
+# считает экзаменуемый, но стоит он в проверке, а не в ответе, и на ответ
+# не намекает — `each` в подписи не виден.
+
+# Множитель 2! разобран отдельной парой сообщений ниже — про порядок
+# внутри пары, — поэтому здесь двойка лишняя: до неё бы не дошло.
+_COUNT_FACTORS = tuple(range(3, 11))
+
+
+def _as_count(value):
+    """Ответ-счёт как целое число, или None, если это не целое число."""
+    try:
+        number = sp.nsimplify(sp.sympify(value))
+    except (sp.SympifyError, TypeError, AttributeError):
+        return None
+    if getattr(number, 'free_symbols', set()):
+        return None
+    if not number.is_number or not number.is_real:
+        return None
+    return int(number) if sp.Integer(int(number)) == number else None
+
+
+def _count_slips(total, matched, each):
+    """Типовые промахи, собранные из самого перебора, а не из списка.
+
+    Каждый — то же множество, посчитанное не так, как просили: без
+    ограничения, ровно наоборот, без множителя за неупомянутых.
+    """
+    want = matched * each
+    slips = {}
+    if matched != total:
+        slips[_t("ограничение из условия не учтено: это все объекты подряд",
+                 "the restriction is missing: that is every object there is")] \
+            = total * each
+        slips[_t("посчитано ровно то, что условие запрещает",
+                 "that is the count of exactly what the question forbids")] \
+            = (total - matched) * each
+    if each != 1:
+        slips[_t("остальные ещё не расставлены: не хватает множителя",
+                 "the others have not been arranged yet: a factor is missing")] \
+            = matched
+    slips[_t("каждый набор посчитан дважды: порядок внутри пары "
+             "здесь не различают",
+             "every selection is counted twice: the order inside the pair "
+             "does not count here")] = want * 2
+    if want % 2 == 0:
+        slips[_t("порядок внутри пары не посчитан: её можно поставить "
+                 "двумя способами",
+                 "the order inside the pair is missing: it can go two ways")] \
+            = want // 2
+    for size in _COUNT_FACTORS:
+        step = sp.factorial(size)
+        if want % step == 0:
+            slips[_t(f"ответ меньше верного в {size}! раз: где-то потерян "
+                     f"порядок внутри {size} объектов",
+                     f"the answer is {size}! times too small: the order "
+                     f"inside {size} objects has been dropped")] \
+                = want // step
+        slips[_t(f"ответ больше верного в {size}! раз: где-то посчитан "
+                 f"порядок, которого в вопросе нет",
+                 f"the answer is {size}! times too large: an order the "
+                 f"question does not ask for has been counted")] \
+            = want * step
+    return slips
+
+
+def verify_count(label, got, objects, keep=None, each=1):
+    """Ответ — сколько объектов, и он проверяется их пересчётом.
+
+    `objects` — то, что перебирают: любой итератор объектов или просто
+    их число, когда перебирать нечего. `keep` — что значит «подходит»:
+    предикат на объекте. `each` — сколько штук стоит за одним
+    перечисленным объектом; он нужен там, где перебирать всё физически
+    нельзя, и перечисляют только то, чего касается ограничение.
+
+    Эталон здесь не хранится и не может: проверка складывает единицы,
+    а не сверяет число с записанным.
+    """
+    if _blank(label, got):
+        return False
+    answer = _as_count(got)
+    if answer is None:
+        print(f"{NO} {label}: " + _t(
+            "сколько-нибудь штук — это целое число",
+            "a number of things is a whole number"))
+        return False
+    if answer < 0:
+        print(f"{NO} {label}: " + _t("объектов не бывает меньше нуля",
+                                     "there is no negative number of things"))
+        return False
+
+    if isinstance(objects, (int, sp.Integer)):
+        if keep is not None:
+            raise ValueError(_t(
+                'verify_count: фильтру нужен перебор, а не готовое число',
+                'verify_count: keep needs objects to enumerate, not a number'))
+        total = matched = int(objects)
+    else:
+        total = matched = 0
+        for item in objects:
+            total += 1
+            if keep is None or keep(item):
+                matched += 1
+    if total == 0:
+        print(f"{NO} {label}: " + _t("перебирать нечего: объектов ноль",
+                                     "nothing to enumerate: no objects at all"))
+        return False
+
+    want = matched * each
+    if answer == want:
+        print(f"{OK} {label}")
+        return True
+    for what, value in _count_slips(total, matched, each).items():
+        if value == answer:
+            print(f"{NO} {label}: {what}")
+            return False
+    print(f"{NO} {label}: " + _t(
+        "столько объектов не насчитывается: перебор даёт другое число",
+        "the enumeration does not come to that many"))
+    return False
+
+
+def verify_count_law(label, got, var, count, sizes):
+    """Ответ — выражение от n, и оно проверяется пересчётом при малых n.
+
+    Экзамен просит «write down an expression for the number of ways», и
+    сверять такое с записанным ⁿC₃ значило бы сверять запись. Проверка
+    вместо этого берёт маленькие n, пересчитывает объекты перебором и
+    смотрит, то же ли число даёт выражение. Любая верная форма проходит:
+    ⁿC₃, n!/(3!(n−3)!) и n(n−1)(n−2)/6 — одно и то же выражение.
+
+    Сообщение называет то n, на котором разошлось, и сколько объектов
+    там на самом деле. Это подсказка, но подсказка про n = 5, а спросили
+    про общее n — как и в verify_roots, где сообщение говорит, около
+    какой точки пропажа, но не называет самого корня.
+    """
+    if _blank(label, got):
+        return False
+    try:
+        expr = sp.sympify(got)
+    except (sp.SympifyError, TypeError):
+        print(f"{NO} {label}: " + _t("ответ не разобран как выражение",
+                                     "the answer is not an expression"))
+        return False
+    extra = expr.free_symbols - {var}
+    if extra:
+        names = ', '.join(sorted(str(s) for s in extra))
+        print(f"{NO} {label}: " + _t(
+            f"в ответе осталась лишняя буква: {names}",
+            f"the answer still carries an extra letter: {names}"))
+        return False
+    for size in sizes:
+        real = int(count(size))
+        mine = sp.simplify(expr.subs(var, size))
+        if not mine.is_number or sp.simplify(mine - real) != 0:
+            print(f"{NO} {label}: " + _t(
+                f"при {var} = {size} объектов {real}, "
+                f"а выражение даёт {mine}",
+                f"at {var} = {size} there are {real} objects, "
+                f"but the expression gives {mine}"))
+            return False
+    print(f"{OK} {label}")
+    return True
 
 
 def trigger_check(answers, key):

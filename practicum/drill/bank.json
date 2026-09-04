@@ -5981,6 +5981,370 @@
    "dir": "AA_HL/2022/May/TZ2/Paper 2",
    "skill": "C4.bounds_argument"
   },
+  "2022-NOV-COMMON-P1-Q11-A-I": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "11",
+   "part": "A-I",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "D1.product_rule"
+  },
+  "2024-MAY-TZ2-P3-Q02-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "D1.product_rule"
+  },
+  "2021-MAY-TZ1-P1-Q09-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "D1.product_rule"
+  },
+  "2022-NOV-COMMON-P1-Q11-A-II": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "11",
+   "part": "A-II",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "D1.permutation"
+  },
+  "2025-NOV-TZ3-P2-Q08-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "8",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "D1.permutation"
+  },
+  "2022-MAY-TZ2-P2-Q09-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "D1.permutation"
+  },
+  "2025-NOV-TZ1-P2-Q02": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "D1.permutation"
+  },
+  "2022-MAY-TZ2-P2-Q09-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "D1.combination"
+  },
+  "2024-MAY-TZ2-P1-Q09-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "9",
+   "part": "a",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "D1.combination"
+  },
+  "2025-MAY-TZ2-P2-Q11-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "D1.combination"
+  },
+  "2021-MAY-TZ2-P2-Q07-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D1.block"
+  },
+  "2022-MAY-TZ1-P2-Q09-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D1.block"
+  },
+  "2023-NOV-TZ1-P2-Q07-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "D1.block"
+  },
+  "2024-MAY-TZ1-P2-Q09-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "a",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D1.block"
+  },
+  "2025-NOV-TZ3-P2-Q08-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "8",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "D1.block"
+  },
+  "2023-MAY-TZ1-P2-Q11-E": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "E",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D1.block"
+  },
+  "2021-MAY-TZ1-P1-Q09-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "D1.complement"
+  },
+  "2021-MAY-TZ2-P2-Q07-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D1.complement"
+  },
+  "2024-MAY-TZ1-P2-Q09-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "b",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18-19",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D1.complement"
+  },
+  "2023-NOV-TZ1-P2-Q07-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "D1.complement"
+  },
+  "2022-MAY-TZ1-P2-Q09-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D1.cases"
+  },
+  "2023-MAY-TZ2-P2-Q09": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "D1.cases"
+  },
+  "2025-NOV-TZ3-P2-Q08-C": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "8",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "D1.cases"
+  },
+  "2024-MAY-TZ2-P3-Q02-E-I": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "E-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "D1.cases"
+  },
+  "2024-MAY-TZ2-P3-Q02-E-II": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "E-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "D1.cases"
+  },
+  "2024-MAY-TZ2-P1-Q09-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "9",
+   "part": "b",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "19-20",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "D1.unknown_n"
+  },
+  "2023-MAY-TZ1-P2-Q11-F": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "F",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D1.unknown_n"
+  },
+  "2025-MAY-TZ3-P2-Q08": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "8",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D1.unknown_n"
+  },
   "2023-NOV-TZ1-P1-Q02-A": {
    "session": "November 2023",
    "zone": "TZ1",
@@ -8551,6 +8915,14 @@
    "notebook": "practicum/functions/practicum-c4-sinusoidal-models.ipynb",
    "marks": 83,
    "blocks": 34
+  },
+  {
+   "id": "D1",
+   "title": "Комбинаторика: размещения, блоки, дополнение",
+   "section": "D",
+   "notebook": "practicum/statistics/practicum-d1-combinatorics.ipynb",
+   "marks": 89,
+   "blocks": 30
   },
   {
    "id": "D2",
@@ -11615,6 +11987,192 @@
    "blocks": [
     "2022-MAY-TZ1-P1-Q05-B",
     "2022-MAY-TZ2-P2-Q10-C"
+   ]
+  },
+  {
+   "id": "D1.product_rule",
+   "practicum": "D1",
+   "name": "Правило произведения",
+   "rung": 1,
+   "trigger": "Объект собирают по шагам, и на каждом шаге выбор не зависит от того, что выбрано раньше: три броска кости, три позиции кода, пять овец по загонам, где загон вмещает всех. Признак — слова «each», «in turn», «repetition allowed» или просто то, что выбранное не убывает.",
+   "chain": [
+    "Разбить объект на шаги и назвать, что выбирают на каждом",
+    "Посчитать, сколько вариантов на каждом шаге",
+    "Перемножить"
+   ],
+   "traps": [
+    "Складывают вместо умножения: сложение — для случаев, которые друг друга исключают, умножение — для шагов, которые идут подряд",
+    "Пишут n! там, где повторы разрешены: 5³ = 125, а не 5·4·3 = 60. Ноябрь 2022 задаёт оба вопроса подряд именно поэтому",
+    "Ограничение вешают не на тот шаг: у пяти овец в шести загонах первая имеет 6 вариантов, а вторая 5 только потому, что её считают второй; посчитать её первой и оставить 6 — потерять балл",
+    "«Explain why there are 216» — это балл за слова 6×6×6, а не за число 216: оно напечатано в условии"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 89,
+   "blocks": [
+    "2022-NOV-COMMON-P1-Q11-A-I",
+    "2024-MAY-TZ2-P3-Q02-A",
+    "2021-MAY-TZ1-P1-Q09-A"
+   ]
+  },
+  {
+   "id": "D1.permutation",
+   "practicum": "D1",
+   "name": "Размещения: порядок важен, повторов нет",
+   "rung": 2,
+   "trigger": "Объекты расставляют или выстраивают, каждый занимает своё место и второй раз не берётся: расположить в ряд, занять три должности, составить число из разных цифр. Слова «arrange», «in a line», «distinct», «in order».",
+   "chain": [
+    "Решить, все объекты расставляют или только часть: n! или nPr",
+    "Занятую позицию — ту, где ограничение, — заполнить первой",
+    "Остальные позиции заполнить оставшимися объектами"
+   ],
+   "traps": [
+    "Ограниченную позицию оставляют напоследок: шестизначное число из разных цифр — это 9 × ⁹P₅ = 136080, потому что первая цифра не ноль. Схема оценивания мая 2022 TZ2 прямо называет два неверных ответа: ¹⁰P₆ = 151200 и ⁹P₆ = 60480, и оба дают M1A0",
+    "nPr путают с nCr: размещения больше сочетаний ровно в r! раз, и в ответе это видно",
+    "15! не считают, а оставляют как есть — и это верно: схема принимает и 15!, и 1,31 × 10¹²",
+    "Забывают, что «выбрать председателя, зама и казначея» — это размещения, а «выбрать ещё четверых» — сочетания, и в одном вопросе бывает и то, и другое"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 89,
+   "blocks": [
+    "2022-NOV-COMMON-P1-Q11-A-II",
+    "2025-NOV-TZ3-P2-Q08-A",
+    "2022-MAY-TZ2-P2-Q09-A",
+    "2025-NOV-TZ1-P2-Q02"
+   ]
+  },
+  {
+   "id": "D1.combination",
+   "practicum": "D1",
+   "name": "Сочетания: порядок не считают",
+   "rung": 3,
+   "trigger": "Отбирают группу, и внутри неё никто ничем не отличается от другого: комитет, команда, набор книг, подмножество. Слово «select», «choose», «selection», или прямая оговорка «order is not important». Второй признак, менее заметный: порядок внутри группы задан условием однозначно — цифры по возрастанию расставляются единственным способом, и значит, считать его не надо.",
+   "chain": [
+    "Убедиться, что порядок внутри группы ничего не меняет",
+    "Записать nCr — размещения, поделённые на r! внутренних порядков",
+    "Если групп несколько и они неразличимы, поделить ещё на число их перестановок"
+   ],
+   "traps": [
+    "Пишут nPr вместо nCr: ответ больше верного ровно в r! раз",
+    "«Цифры по возрастанию» считают как размещения. Каждое неупорядоченное подмножество даёт ровно одно возрастающее число, и схема оценивания мая 2022 TZ2 ставит отдельный A1 именно за эту фразу — ⁹C₆ × 1",
+    "Три равные команды из пятнадцати: ¹⁵C₅ · ¹⁰C₅ · ⁵C₅ = 756756 считает команды различимыми. Их надо поделить на 3!, и в схеме мая 2025 TZ2 деление на 3! — отдельный A1 из трёх",
+    "Обратная ошибка: делят на k! там, где группы как раз различаются — «первая группа» и «вторая группа» в условии названы, и переставлять их нельзя"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 89,
+   "blocks": [
+    "2022-MAY-TZ2-P2-Q09-B",
+    "2024-MAY-TZ2-P1-Q09-A",
+    "2025-MAY-TZ2-P2-Q11-A"
+   ]
+  },
+  {
+   "id": "D1.block",
+   "practicum": "D1",
+   "name": "Вместе: склеить в один объект",
+   "rung": 4,
+   "trigger": "В условии сказано, что несколько объектов стоят рядом: «next to each other», «immediately after», «grouped together», «consecutively». Ограничение положительное — что-то обязано быть вместе, а не наоборот.",
+   "chain": [
+    "Склеить то, что стоит вместе, в один объект",
+    "Расставить получившиеся объекты как обычно",
+    "Умножить на число порядков внутри склейки",
+    "Если склеек несколько, умножить и на порядок самих склеек"
+   ],
+   "traps": [
+    "Забывают умножить на порядок внутри блока: три девочки рядом — это 7! × 3!, и в схеме ноября 2023 множитель 3! стоит отдельным A1",
+    "Забывают порядок самих блоков: книги трёх континентов — это 6! × 5! × 4! × 3!, и последний множитель — тот самый, который теряют. Схема ноября 2025 TZ3 даёт за него отдельный M1: «recognise that the three groups can be placed in any order»",
+    "«Пятеро подряд в ряду из десяти мест» — это 6 × 5! = 720, где 6 это число положений блока, а не 6!. Числа совпадают, и схема мая 2022 TZ1 пишет «accept 6!»: верный ответ приходит и по неверной причине",
+    "«Jack finishes immediately after Andrea» — блок с одним внутренним порядком, а не с двумя: умножать на 2! здесь нечего",
+    "Соседство считают по всей фигуре, когда условие говорит «в том же ряду»: у двух рядов по пять мест соседних пар восемь, а не девять — пара через границу рядов не соседняя"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 89,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q07-A",
+    "2022-MAY-TZ1-P2-Q09-A",
+    "2023-NOV-TZ1-P2-Q07-A",
+    "2024-MAY-TZ1-P2-Q09-A",
+    "2025-NOV-TZ3-P2-Q08-B",
+    "2023-MAY-TZ1-P2-Q11-E"
+   ]
+  },
+  {
+   "id": "D1.complement",
+   "practicum": "D1",
+   "name": "Через запрещённое: посчитать всё и вычесть",
+   "rung": 5,
+   "trigger": "Ограничение отрицательное: «must not», «not next to each other», «at least», «no girl adjacent». Прямой счёт разваливается на много случаев, а запрещённое считается одним ходом — потому что «не вместе» это дополнение к «вместе», а приём 4 «вместе» уже умеет.",
+   "chain": [
+    "Посчитать всё без ограничения",
+    "Посчитать ровно то, что условие запрещает, — обычно склейкой",
+    "Вычесть"
+   ],
+   "traps": [
+    "Вычитают из неправильного целого: у мая 2024 TZ1 вычитать надо не из 10!, а из ответа пункта (a) — Алвин и Бобби всё ещё обязаны сидеть рядом",
+    "«Хотя бы две девочки» считают как 3C2 × 6C3 и складывают с чем-нибудь: правильных путей два — сложить два случая (ровно 2 и ровно 3) или вычесть два случая (ни одной и ровно одну) из всех. Оба дают 75, промежуточные смеси не дают ничего",
+    "Запрещённое считают, забыв про порядок внутри пары: у мая 2021 TZ1 это 2 × 7 × 4!, и двойка здесь за то, что Амбер и Брауни можно поменять местами",
+    "Симметрия — тот же приём в вырожденном виде: «Джек где-то после Андреа» это ровно половина всех порядков, 8!/2, потому что каждому порядку отвечает ровно один зеркальный. Считать по позициям 7 + 6 + … + 1 тоже можно, но это в семь раз дольше"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 89,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q09-B",
+    "2021-MAY-TZ2-P2-Q07-B",
+    "2024-MAY-TZ1-P2-Q09-B",
+    "2023-NOV-TZ1-P2-Q07-B"
+   ]
+  },
+  {
+   "id": "D1.cases",
+   "practicum": "D1",
+   "name": "Разбор случаев и правило сложения",
+   "rung": 6,
+   "trigger": "Ни прямой счёт, ни дополнение одним выражением не берутся: ответ зависит от того, где именно стоит объект или сколько их какого сорта. Признак — ограничение, которое ведёт себя по-разному в разных положениях: Питер с краю и Питер не с краю, четыре книги из Азии и четыре из Европы, остаток числа при делении на три.",
+   "chain": [
+    "Найти признак, по которому объекты распадаются",
+    "Проверить, что случаи не пересекаются и покрывают всё",
+    "Посчитать каждый случай отдельно приёмами 1–5",
+    "Сложить"
+   ],
+   "traps": [
+    "Случаи пересекаются, и общая часть считается дважды. Проверка одна: может ли один объект попасть в два случая сразу",
+    "Случаи не покрывают всё: «четыре книги с одного континента» — это ⁶C₄ + ⁵C₄ + ⁴C₄, и четвёрка из Африки ровно одна, но она есть. Схема ноября 2025 TZ3 ставит M1 за само понимание, что случаев три",
+    "Забывают, что положение объекта меняет число вариантов у остальных: у мая 2022 TZ1 Питер с краю запрещает одно место, Питер не с краю — два, отсюда 2 × ⁸P₄ и 8 × ⁷P₄",
+    "Перебор подменяют формулой там, где условие нельзя записать формулой: у майского исследования 2024 года «ac = 2, два различных корня» — это восемь троек, и схема принимает их выписанными списком"
+   ],
+   "calculator": "partial",
+   "practicum_marks": 89,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q09-B",
+    "2023-MAY-TZ2-P2-Q09",
+    "2025-NOV-TZ3-P2-Q08-C",
+    "2024-MAY-TZ2-P3-Q02-E-I",
+    "2024-MAY-TZ2-P3-Q02-E-II"
+   ]
+  },
+  {
+   "id": "D1.unknown_n",
+   "practicum": "D1",
+   "name": "Буква внутри счёта",
+   "rung": 7,
+   "trigger": "Число объектов не дано, а спрашивается: «write down an expression for the number of ways», «determine the value of n», «find the greatest n such that». Считать приходится тем же, чем и всегда, но с буквой, и итог приравнивают к данному числу.",
+   "chain": [
+    "Записать счёт выражением от n — теми же приёмами 1–6",
+    "Приравнять к данному числу или поставить под неравенство",
+    "Убрать факториалы сокращением, а не раскрытием",
+    "Решить и отбросить корни, которые условию задачи не годятся"
+   ],
+   "traps": [
+    "Раскрывают факториалы вместо того, чтобы сократить: ⁿC₃ и ⁿ⁻²C₂ отличаются множителем, и уравнение сводится к квадратному за две строчки. Схема мая 2024 TZ2 ставит M1 за «valid attempt to eliminate all factorials»",
+    "Оставляют оба корня. n² − 13n + 36 = 0 даёт 9 и 4, но при n = 4 во второй группе остаётся один студент, а условие требует не меньше трёх. Схема прямо пишет: «Do not award the final A1 if additional values of n are given»",
+    "Неравенство решают и округляют не в ту сторону: 6/(n(n−1)) > 0,05 даёт n < 11,47, и наибольшее целое — 11, а не 12. Проверка двух соседних значений стоит A1",
+    "Забывают, что n здесь целое и положительное, и сдают дробный корень"
+   ],
+   "calculator": "partial",
+   "practicum_marks": 89,
+   "blocks": [
+    "2024-MAY-TZ2-P1-Q09-B",
+    "2023-MAY-TZ1-P2-Q11-F",
+    "2025-MAY-TZ3-P2-Q08"
    ]
   },
   {
@@ -22078,6 +22636,486 @@
    ],
    "answer": "sign",
    "answer_digest": "0b6f395ca14a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:1",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.product_rule",
+   "prompt": "A three-digit code is made from the values 1 to 5, each of which may be repeated. How many codes are there?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "product",
+   "answer_digest": "a8792157cb4f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:2",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.permutation",
+   "prompt": "Six-digit numbers are made from distinct digits and cannot start with 0. How many are there?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "perm",
+   "answer_digest": "017a80b680ac",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:3",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.combination",
+   "prompt": "Three integers are chosen from thirty; order is not important. How many selections are there altogether?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "comb",
+   "answer_digest": "ef4e3f507983",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:4",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.block",
+   "prompt": "Fifteen books are shelved so that the books from each continent stand together. How many arrangements?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "block",
+   "answer_digest": "496aca80e4d8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:5",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.complement",
+   "prompt": "Alvin and Bobby sit next to each other; Catalina and Daniela must not. How many seatings?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "minus",
+   "answer_digest": "129fa7713adb",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:6",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.cases",
+   "prompt": "Three integers are chosen from thirty. How many of those selections have a sum divisible by 3?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "cases",
+   "answer_digest": "352b84777d8d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:7",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.unknown_n",
+   "prompt": "The number of ways is halved when two students are separated. Find the number of students.",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "letter",
+   "answer_digest": "f80105efab6d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:8",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.block",
+   "prompt": "Jack finishes in the position immediately after Andrea. How many finishing orders?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "block",
+   "answer_digest": "496aca80e4d8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:9",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.complement",
+   "prompt": "Amber and Brownie must not be placed in pens which share a boundary. How many placements?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "minus",
+   "answer_digest": "129fa7713adb",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:10",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.combination",
+   "prompt": "Fifteen students form three equal teams with no names. How many ways?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "comb",
+   "answer_digest": "ef4e3f507983",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:11",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.cases",
+   "prompt": "Four books are chosen, all from the same continent. How many choices?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "cases",
+   "answer_digest": "352b84777d8d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D1:12",
+   "kind": "recognition",
+   "practicum": "D1",
+   "skill": "D1.permutation",
+   "prompt": "A chairperson, a vice-chairperson and a treasurer are chosen from ten members. How many ways?",
+   "options": [
+    {
+     "code": "product",
+     "name": "правило произведения"
+    },
+    {
+     "code": "perm",
+     "name": "размещения"
+    },
+    {
+     "code": "comb",
+     "name": "сочетания"
+    },
+    {
+     "code": "block",
+     "name": "блок: вместе"
+    },
+    {
+     "code": "minus",
+     "name": "через запрещённое"
+    },
+    {
+     "code": "cases",
+     "name": "разбор случаев"
+    },
+    {
+     "code": "letter",
+     "name": "буква внутри счёта"
+    }
+   ],
+   "answer": "perm",
+   "answer_digest": "017a80b680ac",
    "budget_ms": 8000
   },
   {

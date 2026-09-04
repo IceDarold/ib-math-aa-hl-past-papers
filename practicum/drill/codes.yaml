@@ -150,6 +150,15 @@ B5:
   logistic: {skill: logistic_model,    name: логистическая модель}
   function: {skill: log_as_function,   name: логарифм как функция}
 
+D1:
+  product: {skill: product_rule, name: правило произведения}
+  perm:    {skill: permutation,  name: размещения}
+  comb:    {skill: combination,  name: сочетания}
+  block:   {skill: block,        name: "блок: вместе"}
+  minus:   {skill: complement,   name: через запрещённое}
+  cases:   {skill: cases,        name: разбор случаев}
+  letter:  {skill: unknown_n,    name: буква внутри счёта}
+
 D2:
   venn:      {skill: event_algebra,        name: четыре клетки}
   given:     {skill: conditional,          name: условная вероятность}

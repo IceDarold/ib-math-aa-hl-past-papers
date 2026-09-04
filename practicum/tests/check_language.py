@@ -31,6 +31,15 @@ from kit import *                                                    # noqa: F40
 # перекрывает модуль регулярных выражений — про это сказано в самом kit.py.
 # Поэтому настоящий re импортируется после звёздочки и под своим именем.
 import re as _re                                                     # noqa: E402
+import itertools                                                     # noqa: E402
+
+# Для verify_count_law нужны своя буква и свой пересчёт: N уже занято
+# символом задачи, а перебор в проверке должен быть настоящим.
+N_ = sp.Symbol('n')
+
+
+def _triples(size):
+    return sum(1 for _ in itertools.combinations(range(size), 3))
 
 CYR = _re.compile('[А-Яа-яЁё]')
 KIT = os.path.join(ROOT, 'practicum', 'kit.py')
@@ -377,6 +386,25 @@ def calls():
     yield lambda: verify_independence('t', [..., ...], cond, E1_, E2_)
     yield lambda: verify_constants('t', [2], [A], [('A is one', A - 1)],
                                    domain=sp.Interval(0, 1))
+    yield lambda: verify_count('t', 125, itertools.product(range(5), repeat=3))
+    yield lambda: verify_count('t', 7776, itertools.product(range(6), repeat=5),
+                               keep=lambda p: p[0] != p[1])
+    yield lambda: verify_count('t', 1296, itertools.product(range(6), repeat=5),
+                               keep=lambda p: p[0] != p[1])
+    yield lambda: verify_count('t', 60, itertools.permutations(range(5)))
+    yield lambda: verify_count('t', 240, itertools.permutations(range(5)))
+    yield lambda: verify_count('t', 20, itertools.permutations(range(5), 2),
+                               each=6)
+    yield lambda: verify_count('t', 999, itertools.permutations(range(5)))
+    yield lambda: verify_count('t', sp.Rational(3, 2), 10)
+    yield lambda: verify_count('t', -1, 10)
+    yield lambda: verify_count('t', 1, [])
+    yield lambda: verify_count('t', ..., 10)
+    yield lambda: verify_count_law('t', sp.binomial(N_, 3), N_, _triples,
+                                   (5, 6, 7))
+    yield lambda: verify_count_law('t', N_**2, N_, _triples, (5, 6, 7))
+    yield lambda: verify_count_law('t', N_ * A, N_, _triples, (5, 6))
+    yield lambda: verify_count_law('t', ..., N_, _triples, (5, 6))
     yield lambda: trigger_check({1: 'a'}, {1: digest('a')})
     yield lambda: trigger_check({1: 'b'}, {1: digest('a')})
     yield lambda: trigger_check({1: ''}, {1: digest('a')})

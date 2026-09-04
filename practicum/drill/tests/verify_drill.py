@@ -1122,6 +1122,111 @@ for seed in range(SEEDS):
 print(f'  {"D2.unknown_probability":28} {SEEDS} значений k сверено частотой')
 
 
+# --- D1: генератор считает формулой, тест — перебором ---------------------
+# Обратно к verify_d1.py, где ноутбук перебирает, а тест берёт формулы.
+# Здесь формулы в генераторе, поэтому независимый путь — пересчитать
+# объекты руками. Числа берутся из текста условия, как и всюду в этом
+# разделе: если генератор ошибётся в формуле, перебор даст другое.
+from itertools import combinations as _comb           # noqa: E402
+from itertools import permutations as _perm           # noqa: E402
+from itertools import product as _prod                # noqa: E402
+
+D1_NUM = re.compile(r'\$(\d+)\$')
+
+
+def _d1_numbers(prompt):
+    return [int(v) for v in D1_NUM.findall(prompt)]
+
+
+def _d1_count(prompt):
+    """Сколько объектов на самом деле — перебором по условию."""
+    n = _d1_numbers(prompt)
+
+    if 'Код состоит из' in prompt:
+        places, values = n[0], n[1]
+        apart = 'не должны совпадать' in prompt
+        return sum(1 for code in _prod(range(values), repeat=places)
+                   if not apart or code[0] != code[1])
+
+    if 'расставить в ряд' in prompt and 'различных' in prompt:
+        return sum(1 for _ in _perm(range(n[0])))
+
+    if 'ставят в ряд на полку' in prompt:
+        return sum(1 for _ in _perm(range(n[0]), n[1]))
+
+    if '-значных чисел' in prompt:
+        digits = n[0]
+        return sum(1 for number in _perm(range(digits + 1), digits)
+                   if number[0] != 0)
+
+    if 'выбирают' in prompt and 'в команду' in prompt:
+        return sum(1 for _ in _comb(range(n[0]), n[1]))
+
+    if 'делят на' in prompt:
+        total, groups, size = n[0], n[1], n[2]
+        seen = set()
+        def split(pool, made):
+            if not pool:
+                seen.add(frozenset(made))
+                return
+            head = pool[0]
+            for rest in _comb(pool[1:], size - 1):
+                team = (head,) + rest
+                left = tuple(p for p in pool if p not in team)
+                split(left, made + [team])
+        split(tuple(range(total)), [])
+        return len(seen)
+
+    if 'поссорились' in prompt:
+        return sum(1 for line in _perm(range(n[0]))
+                   if abs(line.index(0) - line.index(1)) != 1)
+
+    if 'должны стоять рядом' in prompt:
+        total, glued = n[0], n[1]
+        together = set(range(glued))
+        return sum(1 for line in _perm(range(total))
+                   if max(line.index(g) for g in together)
+                   - min(line.index(g) for g in together) == glued - 1)
+
+    if 'занять места подряд' in prompt:
+        seats, total = n[0], n[1]
+        return sum(1 for seat in _perm(range(seats), total)
+                   if max(seat) - min(seat) == total - 1)
+
+    if 'финишируют' in prompt:
+        return sum(1 for line in _perm(range(n[0]))
+                   if line.index(0) < line.index(1))
+
+    if 'В группе' in prompt:
+        boys, girls, take, least = n
+        who = range(boys + girls)
+        return sum(1 for pick in _comb(who, take)
+                   if sum(1 for p in pick if p >= boys) >= least)
+
+    raise AssertionError(f'условие D1 не разобрано: {prompt}')
+
+
+section('D1: перебор сходится с формулой генератора')
+for gen_name in ('D1.product_rule', 'D1.permutation', 'D1.combination',
+                 'D1.block', 'D1.complement', 'D1.cases'):
+    matched = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[gen_name](random.Random(seed))
+        matched += _d1_count(item['prompt']) == item['answer']
+    t(f'{gen_name}: перебор сошёлся на всех {SEEDS} зёрнах', matched == SEEDS)
+    print(f'  {gen_name:28} {SEEDS} задач пересчитано перебором')
+
+for seed in range(SEEDS):
+    item = GENERATORS['D1.unknown_n'](random.Random(seed))
+    take, given = _d1_numbers(item['prompt'])
+    fits = [size for size in range(take, 60)
+            if sum(1 for _ in _comb(range(size), take)) == given]
+    t(f'D1.unknown_n[{seed}]: ответ — единственное n, дающее это число',
+      fits == [item['answer']])
+print(f'  {"D1.unknown_n":28} {SEEDS} уравнений решено перебором')
+
+
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')
