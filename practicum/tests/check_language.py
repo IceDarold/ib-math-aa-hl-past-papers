@@ -41,6 +41,52 @@ N_ = sp.Symbol('n')
 def _triples(size):
     return sum(1 for _ in itertools.combinations(range(size), 3))
 
+
+def _blank_figure():
+    """verify_law при незаполненном ответе внутри самой фигуры."""
+    _ANSWER[0] = Ellipsis
+    try:
+        return verify_law('t', 2 * sp.pi, sp.Symbol('theta'), _from_answer,
+                          (1.0,), measure='perimeter')
+    finally:
+        _ANSWER[0] = 2
+
+
+# Границы для проверок фигуры: сектор радиуса 4 с углом 5/2 и сегмент
+# радиуса 2 с углом 2. Строятся один раз — вызовов с ними два десятка.
+_THETA = sp.Rational(5, 2)
+_sector = (seg((0, 0), (4, 0)), arc((0, 0), 4, 0, _THETA),
+           seg((4 * sp.cos(_THETA), 4 * sp.sin(_THETA)), (0, 0)))
+_segment = (arc((0, 0), 2, 0, 2),
+            seg((2 * sp.cos(2), 2 * sp.sin(2)), (2, 0)))
+
+# verify_law строит фигуру заново при каждом значении буквы. TH — буква,
+# _grow — сегмент радиуса 2 при этом угле, _stretch — отрезок из начала
+# координат, длина которого зависит сразу от двух букв: одну из них
+# закрепляет at.
+TH = sp.Symbol('theta')
+MM = sp.Symbol('m')
+
+
+def _grow(angle):
+    return (arc((0, 0), 2, 0, angle),
+            seg((2 * sp.cos(angle), 2 * sp.sin(angle)), (2, 0)))
+
+
+def _stretch(length):
+    return (seg((0, 0), (length, 2 * length)),)
+
+
+def _from_answer(angle):
+    """Фигура, построенная из ответа: он приходит извне и бывает пуст."""
+    return undrawn(_ANSWER[0]) or (arc((0, 0), _ANSWER[0], 0, angle),
+                                   seg((_ANSWER[0] * sp.cos(angle),
+                                        _ANSWER[0] * sp.sin(angle)), (0, 0)),
+                                   seg((0, 0), (_ANSWER[0], 0)))
+
+
+_ANSWER = [2]
+
 CYR = _re.compile('[А-Яа-яЁё]')
 KIT = os.path.join(ROOT, 'practicum', 'kit.py')
 n = sp.Symbol('n')
@@ -405,6 +451,44 @@ def calls():
     yield lambda: verify_count_law('t', N_**2, N_, _triples, (5, 6, 7))
     yield lambda: verify_count_law('t', N_ * A, N_, _triples, (5, 6))
     yield lambda: verify_count_law('t', ..., N_, _triples, (5, 6))
+    yield lambda: verify_area('t', 20, *_sector)
+    yield lambda: verify_area('t', 8 * sp.sin(sp.Rational(5, 2)), *_sector)
+    yield lambda: verify_area('t', 20 * 180 / sp.pi, *_sector)
+    yield lambda: verify_area('t', 40, *_sector)
+    yield lambda: verify_area('t', 999, *_sector)
+    yield lambda: verify_area('t', 4, *_segment)
+    yield lambda: verify_area('t', 2 * sp.sin(2), *_segment)
+    yield lambda: verify_area('t', 4 * sp.pi - 2 * (2 - sp.sin(2)), *_segment)
+    yield lambda: verify_area('t', 3, arc((0, 0), 2, 0, 2))
+    yield lambda: verify_area('t', A, *_sector)
+    yield lambda: verify_area('t', ..., *_sector)
+    yield lambda: verify_area('t', 1, seg((0, 0), (1, 0)), seg((1, 0), (0, 0)))
+    yield lambda: verify_perimeter('t', 18, *_sector)
+    yield lambda: verify_perimeter('t', 10, *_sector)
+    yield lambda: verify_perimeter('t', 8, *_sector)
+    yield lambda: verify_perimeter('t', 18 * 180 / sp.pi, *_sector)
+    yield lambda: verify_length('t', 5, seg((0, 0), (3, 4)))
+    yield lambda: verify_length('t', 5 * 1.9, arc((0, 0), 5, 1.9, 2 * sp.pi))
+    yield lambda: verify_length('t', 10, arc((0, 0), 5, 0, 1.9))
+    yield lambda: verify_length('t', 5, seg((0, 0), (1, 0)), seg((5, 5), (6, 5)))
+    yield lambda: verify_volume('t', 4 * sp.pi, *cone(radius=2, height=3))
+    yield lambda: verify_volume('t', 12 * sp.pi, *cone(radius=2, height=3))
+    yield lambda: verify_volume('t', 3, *cone(radius=2, height=3))
+    yield lambda: verify_volume('t', 14.51, *cone(radius=2, slant=4), exact=True)
+    yield lambda: verify_volume('t', 1, arc((0, 0), 1, 0, 2 * sp.pi))
+    yield lambda: verify_volume('t', 4 * sp.pi, *cone(radius=2, slant=...))
+    yield lambda: verify_law('t', 2 * TH - 2 * sp.sin(TH), TH, _grow,
+                             (0.7, 1.9))
+    yield lambda: verify_law('t', 2 * TH, TH, _grow, (0.7, 1.9))
+    yield lambda: verify_law('t', TH * A, TH, _grow, (0.7, 1.9))
+    yield lambda: verify_law('t', ..., TH, _grow, (0.7, 1.9))
+    yield lambda: verify_law('t', MM * sp.sqrt(5), MM, lambda v: _stretch(v),
+                             (1, 3), measure='length', at={A: 1})
+    yield lambda: verify_law('t', MM * A, MM, lambda v: _stretch(v),
+                             (1, 3), measure='length', at={A: 1})
+    yield lambda: verify_law('t', 2 * sp.pi, TH, _from_answer, (1.0, 2.0),
+                             measure='perimeter')
+    yield lambda: _blank_figure()
     yield lambda: trigger_check({1: 'a'}, {1: digest('a')})
     yield lambda: trigger_check({1: 'b'}, {1: digest('a')})
     yield lambda: trigger_check({1: ''}, {1: digest('a')})

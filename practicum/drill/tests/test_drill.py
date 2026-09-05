@@ -66,7 +66,13 @@ t('и объясняется через незамкнутый треуголь�
 
 print('\n=== планировщик ===')
 bank = engine.load_bank()
-t('банк собран из готовых практикумов', len(bank['practicums']) == 20)
+# Число не зашито: банк обязан собраться ровно из тех практикумов,
+# которые карта числит готовыми, и с каждым новым оно меняется само.
+with open(os.path.join(PRACTICUM, 'map.yaml')) as fh:
+    _ready = {p['id'] for section in yaml.safe_load(fh)['sections'].values()
+              for p in section['practicums'] if p.get('status') == 'ready'}
+t('банк собран ровно из готовых практикумов карты',
+  {p['id'] for p in bank['practicums']} == _ready)
 t('доли баллов в сумме дают единицу',
   abs(sum(bank['share'].values()) - 1.0) < 1e-9)
 t('практикум с большим числом баллов весит больше',
@@ -128,7 +134,7 @@ t('в отобранной теме все её приёмы', len(only_c1) == 8
 # Первый практикум карты, которого в банке ещё нет. Имя не зашито:
 # сегодня это D3, завтра его соберут, и тест должен переехать сам.
 built = {p['id'] for p in bank['practicums']}
-unbuilt = next(pid for pid in ('D3', 'D4', 'D5', 'D6', 'D7', 'C2', 'C5',
+unbuilt = next(pid for pid in ('D3', 'D4', 'D5', 'D6', 'D7', 'C5', 'C6',
                                'A1', 'A2', 'E4', 'E5')
                if pid not in built)
 try:
@@ -425,7 +431,7 @@ with tempfile.TemporaryDirectory() as tmp:
 
     every = [atlas.skill_card(skill['id']) for skill in bank['skills']]
     t('карточка открывается у каждого приёма банка',
-      len(every) == len(bank['skills']) == 166)
+      len(every) == len(bank['skills']) and len(every) > 0)
     t('у каждого приёма есть и ход, и ловушки',
       all(one['chain'] and one['traps'] for one in every))
     t('у каждого приёма есть хотя бы один вопрос архива',

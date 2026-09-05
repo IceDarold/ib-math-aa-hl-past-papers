@@ -1227,6 +1227,186 @@ print(f'  {"D1.unknown_n":28} {SEEDS} уравнений решено переб
 
 
 
+# --- C2: генератор считает формулой, тест меряет фигуру --------------------
+# Обратно к verify_c2.py, где ноутбук меряет, а тест берёт формулы. Здесь
+# формулы в генераторе, поэтому независимый путь — построить фигуру по
+# тексту условия и измерить её контурным интегралом. Числа берутся из
+# условия: если генератор ошибётся в формуле, мера даст другое.
+C2_NUM = re.compile(r'\$(-?\d+(?:\.\d+)?)')
+
+
+def _c2_numbers(prompt):
+    return [float(v) for v in C2_NUM.findall(prompt)]
+
+
+def _c2_point(radius, angle, centre=(0, 0)):
+    return (centre[0] + radius * math.cos(angle),
+            centre[1] + radius * math.sin(angle))
+
+
+def _c2_sector(radius, start, end):
+    return (kit.seg((0, 0), _c2_point(radius, start)),
+            kit.arc((0, 0), radius, start, end),
+            kit.seg(_c2_point(radius, end), (0, 0)))
+
+
+def _c2_segment(radius, start, end):
+    return (kit.arc((0, 0), radius, start, end),
+            kit.seg(_c2_point(radius, end), _c2_point(radius, start)))
+
+
+TAU = 2 * math.pi
+
+
+def _c2_measured(prompt, answer):
+    """Сходится ли ответ с мерой фигуры, построенной по условию."""
+    n = _c2_numbers(prompt)
+
+    if 'имеет длину' in prompt:                     # дуга дана, ищут угол
+        radius, arc_len = n
+        return quiet(kit.verify_length, 'x', arc_len,
+                     kit.arc((0, 0), radius, 0, answer))
+    if 'Дуга длиной' in prompt:                     # дуга и угол, ищут радиус
+        arc_len, angle = n
+        return quiet(kit.verify_length, 'x', arc_len,
+                     kit.arc((0, 0), answer, 0, angle))
+    if 'Найдите длину дуги' in prompt:
+        radius, angle = n
+        if '^\\circ' in prompt:
+            angle = angle * math.pi / 180
+        return quiet(kit.verify_length, 'x', answer,
+                     kit.arc((0, 0), radius, 0, angle))
+
+    if 'На какой угол' in prompt:                   # за период проходят круг
+        period = n[0]
+        return quiet(kit.verify_area, 'x', math.pi,
+                     *_c2_sector(1, 0, answer * period))
+    if 'За сколько секунд' in prompt:
+        period, angle = n
+        return quiet(kit.verify_length, 'x', angle,
+                     kit.arc((0, 0), 1, 0, TAU * answer / period))
+    if 'Какой путь пройдёт' in prompt:
+        radius, period, seconds = n
+        return quiet(kit.verify_length, 'x', answer,
+                     kit.arc((0, 0), radius, 0, TAU * seconds / period))
+
+    if 'Найдите периметр сектора' in prompt:
+        radius, angle = n
+        return quiet(kit.verify_perimeter, 'x', answer,
+                     *_c2_sector(radius, 0, angle))
+    if 'Периметр сектора радиуса' in prompt:        # периметр дан, ищут угол
+        radius, perimeter = n
+        return quiet(kit.verify_perimeter, 'x', perimeter,
+                     *_c2_sector(radius, 0, answer))
+    # «Периметр сектора равен ... Найдите радиус» встречается дважды:
+    # у sector_perimeter вторым числом идёт угол, у unknown_from_conditions
+    # — площадь. Различает их только упоминание угла.
+    if 'Периметр сектора равен' in prompt and 'а угол в центре' in prompt:
+        perimeter, angle = n
+        return quiet(kit.verify_perimeter, 'x', perimeter,
+                     *_c2_sector(answer, 0, angle))
+
+    if 'Найдите площадь сектора' in prompt:
+        radius, angle = n
+        if '^\\circ' in prompt:
+            angle = angle * math.pi / 180
+        return quiet(kit.verify_area, 'x', answer,
+                     *_c2_sector(radius, 0, angle))
+    if 'большего из двух секторов' in prompt:
+        radius, angle = n
+        return quiet(kit.verify_area, 'x', answer,
+                     *_c2_sector(radius, angle, TAU))
+
+    if 'Найдите длину хорды' in prompt:
+        radius, angle = n
+        return quiet(kit.verify_length, 'x', answer,
+                     kit.seg(_c2_point(radius, 0), _c2_point(radius, angle)))
+    if 'Хорда длиной' in prompt:                    # хорда дана, ищут угол
+        chord, radius = n
+        return quiet(kit.verify_length, 'x', chord,
+                     kit.seg(_c2_point(radius, 0), _c2_point(radius, answer)))
+    if 'Расстояние от центра' in prompt:            # до середины хорды
+        radius, distance = n
+        middle = ((_c2_point(radius, -answer / 2)[0]
+                   + _c2_point(radius, answer / 2)[0]) / 2, 0)
+        return quiet(kit.verify_length, 'x', distance,
+                     kit.seg((0, 0), middle))
+
+    if 'меньшего из двух сегментов' in prompt:
+        radius, angle = n
+        return quiet(kit.verify_area, 'x', answer,
+                     *_c2_segment(radius, 0, angle))
+    if 'большего из двух сегментов' in prompt:
+        radius, angle = n
+        return quiet(kit.verify_area, 'x', answer,
+                     *_c2_segment(radius, angle, TAU))
+
+    if 'части кольца' in prompt:
+        inner, outer, angle = n
+        ring = (kit.seg((inner, 0), (outer, 0)),
+                kit.arc((0, 0), outer, 0, angle),
+                kit.seg(_c2_point(outer, angle), _c2_point(inner, angle)),
+                kit.arc((0, 0), inner, angle, 0))
+        return quiet(kit.verify_area, 'x', answer, *ring)
+    if 'вписан правильный' in prompt:
+        radius, sides = n
+        step = TAU / int(sides)
+        petals = [piece for k in range(int(sides))
+                  for piece in _c2_segment(radius, k * step, (k + 1) * step)]
+        return quiet(kit.verify_area, 'x', answer, *petals)
+    if 'Из квадрата со стороной' in prompt:
+        side = n[0]
+        rest = (kit.seg((side, 0), (side, side)),
+                kit.seg((side, side), (0, side)),
+                kit.arc((0, 0), side, math.pi / 2, 0))
+        return quiet(kit.verify_area, 'x', answer, *rest)
+
+    if 'а его площадь' in prompt:                   # периметр и площадь вместе
+        perimeter, area, edge = n[0], n[1], n[2]
+        angle = perimeter / answer - 2
+        # Второй корень квадратного уравнения тоже даёт сектор нужной
+        # площади, поэтому одной меры мало: условие про угол проверяется
+        # отдельно, иначе тест принял бы отброшенный корень.
+        chosen = (angle > edge) if 'больше' in prompt else (angle < edge)
+        return chosen and quiet(kit.verify_area, 'x', area,
+                                *_c2_sector(answer, 0, angle))
+    if 'площади относятся как' in prompt:           # трансцендентное уравнение
+        first, second = re.search(r'\$(\d+):(\d+)\$', prompt).groups()
+        factor = 1 + int(first) / int(second)
+        root = float(sp.nsolve(x_sym - factor * sp.sin(x_sym), x_sym, 2.0))
+        return abs(root - answer) < 1e-6
+
+    if 'свёрнут в конус' in prompt:
+        slant, angle = n
+        return quiet(kit.verify_length, 'x', slant * angle,
+                     kit.arc((0, 0), answer, 0, TAU))
+    if 'Найдите объём' in prompt:
+        radius, height = n
+        return quiet(kit.verify_volume, 'x', answer,
+                     *kit.cone(radius=radius, height=height))
+    if 'полной поверхности' in prompt:
+        radius, slant = n
+        flat = ((kit.arc((0, 0), radius, 0, TAU),)
+                + _c2_sector(slant, 0, TAU * radius / slant))
+        return quiet(kit.verify_area, 'x', answer, *flat)
+    if 'Найдите образующую' in prompt:
+        radius, height = n
+        return quiet(kit.verify_length, 'x', answer,
+                     kit.seg((0, 0), (height, radius)))
+
+    raise AssertionError(f'условие C2 не разобрано: {prompt}')
+
+
+section('C2: измерение фигуры сходится с формулой генератора')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('C2.')):
+    matched = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[gen_name](random.Random(seed))
+        matched += bool(_c2_measured(item['prompt'], item['answer']))
+    t(f'{gen_name}: мера сошлась на всех {SEEDS} зёрнах', matched == SEEDS)
+    print(f'  {gen_name:28} {SEEDS} задач измерено заново')
+
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')

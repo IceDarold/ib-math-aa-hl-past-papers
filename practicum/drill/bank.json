@@ -5344,6 +5344,448 @@
    "dir": "AA_HL/2023/May/TZ2/Paper 1",
    "skill": "C1.triangle_as_model"
   },
+  "2023-MAY-TZ2-P1-Q01-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "C2.radian_arc"
+  },
+  "2023-MAY-TZ1-P2-Q10-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "C2.radian_arc"
+  },
+  "2025-NOV-TZ1-P2-Q01-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C2.radian_arc"
+  },
+  "2025-MAY-TZ2-P3-Q02-B-II": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "B-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "C2.radian_arc"
+  },
+  "2025-MAY-TZ2-P3-Q02-D": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "C2.radian_arc"
+  },
+  "2025-MAY-TZ3-P2-Q04": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "4",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "C2.radian_arc"
+  },
+  "2024-MAY-TZ2-P2-Q11-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "B",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "C2.angular_rate"
+  },
+  "2024-MAY-TZ2-P2-Q11-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "C",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "C2.angular_rate"
+  },
+  "2024-MAY-TZ2-P2-Q11-D": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "C2.angular_rate"
+  },
+  "2023-MAY-TZ2-P1-Q01-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "C2.sector_perimeter"
+  },
+  "2024-MAY-TZ1-P1-Q03-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "a",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "C2.sector_perimeter"
+  },
+  "2025-NOV-TZ3-P2-Q03-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "3",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "C2.sector_perimeter"
+  },
+  "2023-NOV-TZ1-P2-Q03-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C2.sector_perimeter"
+  },
+  "2023-MAY-TZ2-P1-Q01-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "C",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "C2.sector_area"
+  },
+  "2022-MAY-TZ2-P2-Q01-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C2.sector_area"
+  },
+  "2025-MAY-TZ1-P2-Q01-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "C2.sector_area"
+  },
+  "2025-NOV-TZ3-P2-Q03-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "C2.sector_area"
+  },
+  "2023-NOV-TZ1-P2-Q03-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7-8",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C2.sector_area"
+  },
+  "2022-MAY-TZ2-P2-Q01-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C2.chord_half_angle"
+  },
+  "2024-MAY-TZ2-P2-Q11-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "C2.chord_half_angle"
+  },
+  "2023-MAY-TZ1-P2-Q10-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "B",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "13-14",
+   "markscheme_pages": "20-22",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "C2.chord_half_angle"
+  },
+  "2021-NOV-COMMON-P2-Q04-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "4",
+   "part": "a",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C2.segment_area"
+  },
+  "2022-MAY-TZ1-P2-Q02-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "C2.segment_area"
+  },
+  "2025-NOV-TZ1-P2-Q01-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C2.segment_area"
+  },
+  "2025-MAY-TZ2-P2-Q06": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "6",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "13-14",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "C2.segment_area"
+  },
+  "2022-MAY-TZ1-P2-Q02-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "C2.composite_region"
+  },
+  "2024-MAY-TZ1-P1-Q03-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "b",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "C2.unknown_from_conditions"
+  },
+  "2025-MAY-TZ1-P2-Q01-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "C2.cone_from_circle"
+  },
+  "2021-MAY-TZ2-P1-Q10-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C2.cone_from_circle"
+  },
+  "2021-MAY-TZ2-P1-Q10-D": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "D",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C2.cone_from_circle"
+  },
+  "2024-MAY-TZ1-P2-Q02-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "C2.cone_from_circle"
+  },
+  "2022-NOV-COMMON-P1-Q02-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "2",
+   "part": "b",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "C2.cone_from_circle"
+  },
+  "2022-NOV-COMMON-P3-Q02-B-I": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "b(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "C2.cone_from_circle"
+  },
+  "2022-NOV-COMMON-P3-Q02-B-II": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "b(ii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "C2.cone_from_circle"
+  },
   "2021-MAY-TZ2-P1-Q10-A": {
    "session": "May 2021",
    "zone": "TZ2",
@@ -8901,6 +9343,14 @@
    "blocks": 39
   },
   {
+   "id": "C2",
+   "title": "Радианная мера, сектор, объёмные тела",
+   "section": "C",
+   "notebook": "practicum/geometry/practicum-c2-circular-measure.ipynb",
+   "marks": 127,
+   "blocks": 40
+  },
+  {
    "id": "C3",
    "title": "Тригонометрические тождества и уравнения",
    "section": "C",
@@ -11568,6 +12018,247 @@
     "2025-MAY-TZ3-P2-Q09-A",
     "2021-MAY-TZ1-P2-Q09-A",
     "2023-MAY-TZ2-P1-Q10-B"
+   ]
+  },
+  {
+   "id": "C2.radian_arc",
+   "practicum": "C2",
+   "name": "Радианная мера и длина дуги",
+   "rung": 1,
+   "trigger": "В условии стоит угол в радианах или длина дуги; спрашивают одно из трёх — s, r, θ, — а два других даны. Признак радиан — само число: угол 2.08 или 5.2 градусами быть не может, а «210°» просит перевода.",
+   "chain": [
+    "Выписать, что из трёх дано, и что ищут",
+    "Градусы, если они есть, перевести умножением на π/180",
+    "Подставить в s = rθ и решить относительно неизвестного",
+    "Проверить, что найденный угол лежит там, где велит условие"
+   ],
+   "traps": [
+    "Градусы подставлены в s = rθ. Ошибка не видна в ответе: длина выходит числом того же порядка, просто в 57 раз больше",
+    "Дуга спутана с хордой: по прямой между концами короче, чем по окружности, и в задаче про пятиугольник это разные числа",
+    "Взята меньшая дуга там, где спрашивают большую. Большая считается как r(2π − θ), а не как r·θ"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 127,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q01-B",
+    "2023-MAY-TZ1-P2-Q10-A",
+    "2025-NOV-TZ1-P2-Q01-A",
+    "2025-MAY-TZ2-P3-Q02-B-II",
+    "2025-MAY-TZ2-P3-Q02-D",
+    "2025-MAY-TZ3-P2-Q04"
+   ]
+  },
+  {
+   "id": "C2.angular_rate",
+   "practicum": "C2",
+   "name": "Угол, растущий во времени",
+   "rung": 2,
+   "trigger": "Что-то вращается: «one revolution every 16 seconds», «rotates at a constant rate». Спрашивают время, за которое пройден угол, или угол, пройденный к моменту t.",
+   "chain": [
+    "Полный оборот это 2π, и за период T он проходится целиком",
+    "Скорость вращения ω = 2π/T радиан в секунду",
+    "Угол к моменту t это α = ωt",
+    "Обратно: время на угол α это α/ω"
+   ],
+   "traps": [
+    "Взят угол, а не время: в ответе радианы там, где просят секунды",
+    "Половинный угол не удвоен. Дуга AB видна из центра под углом 2θ, где θ найден из прямоугольного треугольника",
+    "Оборот посчитан как 360 при том, что дальше всё в радианах"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 127,
+   "blocks": [
+    "2024-MAY-TZ2-P2-Q11-B",
+    "2024-MAY-TZ2-P2-Q11-C",
+    "2024-MAY-TZ2-P2-Q11-D"
+   ]
+  },
+  {
+   "id": "C2.sector_perimeter",
+   "practicum": "C2",
+   "name": "Периметр сектора",
+   "rung": 3,
+   "trigger": "Слово perimeter при фигуре, у которой есть дуга. Или обратно: периметр дан числом, и из него ищут r или θ.",
+   "chain": [
+    "Обойти границу пальцем и назвать каждый кусок",
+    "Дуга даёт rθ, каждый прямой кусок — свою длину",
+    "Сложить всё, что обошли, и ничего больше",
+    "Если периметр дан, полученное равенство и есть уравнение"
+   ],
+   "traps": [
+    "Посчитана одна дуга. Сектор ограничен дугой и двумя радиусами, и P = rθ + 2r — это два разных слагаемых, а не одно",
+    "У кольцевой фигуры забыты прямые перемычки между окружностями: в букве «C» их две, и весят они 2(10 − r)",
+    "Периметр спутан с длиной окружности: 2πr это вся окружность, а сектору достаётся её часть"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 127,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q01-A",
+    "2024-MAY-TZ1-P1-Q03-A",
+    "2025-NOV-TZ3-P2-Q03-A",
+    "2023-NOV-TZ1-P2-Q03-B"
+   ]
+  },
+  {
+   "id": "C2.sector_area",
+   "practicum": "C2",
+   "name": "Площадь сектора",
+   "rung": 4,
+   "trigger": "Спрашивают площадь части круга, ограниченной двумя радиусами. Слово shaded и чертёж, на котором закрашен «кусок пирога».",
+   "chain": [
+    "Убедиться, что угол в радианах",
+    "Решить, о каком секторе речь: о том, что при угле θ, или о большем",
+    "Для большего взять 2π − θ",
+    "Подставить в A = ½r²θ"
+   ],
+   "traps": [
+    "Закрашен больший сектор, а подставлен угол меньшего. Разница видна на чертеже и не видна в формуле",
+    "Угол в градусах. Площадь выходит примерно в 57 раз больше, и схема оценивания за это снимает всё после первого балла",
+    "Взята ½r²sin θ — это площадь треугольника, а не сектора"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 127,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q01-C",
+    "2022-MAY-TZ2-P2-Q01-B",
+    "2025-MAY-TZ1-P2-Q01-A",
+    "2025-NOV-TZ3-P2-Q03-B",
+    "2023-NOV-TZ1-P2-Q03-A"
+   ]
+  },
+  {
+   "id": "C2.chord_half_angle",
+   "practicum": "C2",
+   "name": "Хорда и половинный угол",
+   "rung": 5,
+   "trigger": "В фигуре есть хорда: ширина жёлоба, отрезок пути внутри круга, сторона вписанного многоугольника. Или дано расстояние от центра до хорды.",
+   "chain": [
+    "Опустить из центра перпендикуляр на хорду",
+    "Он делит и хорду, и угол пополам",
+    "Из прямоугольного треугольника: половина хорды это r sin(θ/2), расстояние до неё r cos(θ/2)",
+    "Обратно, по расстоянию d: половина угла это arccos(d/r)"
+   ],
+   "traps": [
+    "Ответом дана половина хорды. AB = 2·AM, и удвоение — отдельный балл схемы",
+    "Найден половинный угол, а в следующую формулу подставлен как целый: сектор и сегмент считаются по θ, а не по θ/2",
+    "Теорема косинусов применена к углу в градусах при том, что остальная задача идёт в радианах"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 127,
+   "blocks": [
+    "2022-MAY-TZ2-P2-Q01-A",
+    "2024-MAY-TZ2-P2-Q11-A",
+    "2023-MAY-TZ1-P2-Q10-B"
+   ]
+  },
+  {
+   "id": "C2.segment_area",
+   "practicum": "C2",
+   "name": "Площадь сегмента",
+   "rung": 6,
+   "trigger": "Закрашена часть круга между хордой и дугой. Слово segment, или чертёж, на котором прямая сторона одна, а не две.",
+   "chain": [
+    "Достроить два радиуса к концам хорды",
+    "Сектор это ½r²θ, треугольник на тех же радиусах — ½r²sin θ",
+    "Сегмент это их разность: ½r²(θ − sin θ)",
+    "Проверить знаком: сегмент меньше сектора, и всегда положителен"
+   ],
+   "traps": [
+    "Вычтен не тот треугольник: площадь считают по двум радиусам и углу между ними, а не по хорде и высоте",
+    "Ответом дан сектор. Схема оценивания различает три числа — сектор, треугольник и их разность, — и балл стоит за разность",
+    "sin θ посчитан в градусном режиме, а θ подставлен в радианах. В одной формуле два режима сразу — самая тихая ошибка темы"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 127,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q04-A",
+    "2022-MAY-TZ1-P2-Q02-A",
+    "2025-NOV-TZ1-P2-Q01-B",
+    "2025-MAY-TZ2-P2-Q06"
+   ]
+  },
+  {
+   "id": "C2.composite_region",
+   "practicum": "C2",
+   "name": "Составная область",
+   "rung": 7,
+   "trigger": "Закрашена фигура, которой нет отдельного имени: логотип, жёлоб, буква «C», область между многоугольником и окружностью. Признак — на чертеже больше одной прямой стороны.",
+   "chain": [
+    "Разрезать фигуру на части, у которых мера известна",
+    "Выписать каждую часть отдельной строкой со своим знаком",
+    "Сложить и вычесть",
+    "Проверить порядок величины по чертежу: доля круга видна на глаз"
+   ],
+   "traps": [
+    "Из прямоугольника вычтен один сегмент вместо двух, или наоборот: в логотипе их два, в жёлобе один",
+    "Одинаковых частей несколько, а посчитана одна. У пятиугольника сегментов пять, и множитель 5 — отдельный балл",
+    "Кольцевая фигура посчитана как разность окружностей вместо разности секторов: угол одинаков у обеих, и его нельзя терять"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 127,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q02-B",
+    "2023-NOV-TZ1-P2-Q03-A",
+    "2023-MAY-TZ1-P2-Q10-B",
+    "2025-NOV-TZ1-P2-Q01-B"
+   ]
+  },
+  {
+   "id": "C2.unknown_from_conditions",
+   "practicum": "C2",
+   "name": "Две связи вместо двух чисел",
+   "rung": 8,
+   "trigger": "В условии не дано ни r, ни θ, зато даны две величины, которые от них зависят: периметр и площадь, площадь и отношение, периметр и длина окружности. Или «show that» с уравнением в ответе.",
+   "chain": [
+    "Выписать обе связи формулами приёмов 1–7",
+    "Исключить одну букву подстановкой",
+    "Решить получившееся уравнение",
+    "Отбросить корень, который условие запрещает"
+   ],
+   "traps": [
+    "Второй корень оставлен в ответе. Схема оценивания снимает последний A1 за любое лишнее значение, даже если верное стоит рядом",
+    "Условие отбора взято из алгебры вместо задачи: r < 10 сказано в билете, а не следует из уравнения",
+    "Уравнение получилось трансцендентным (θ − sin θ = c), и его пытаются решить алгебраически. Такое решают графиком"
+   ],
+   "calculator": "partial",
+   "practicum_marks": 127,
+   "blocks": [
+    "2024-MAY-TZ1-P1-Q03-A",
+    "2024-MAY-TZ1-P1-Q03-B",
+    "2025-NOV-TZ3-P2-Q03-A",
+    "2025-NOV-TZ3-P2-Q03-B",
+    "2025-MAY-TZ2-P2-Q06",
+    "2023-NOV-TZ1-P2-Q03-B",
+    "2022-MAY-TZ1-P2-Q02-B"
+   ]
+  },
+  {
+   "id": "C2.cone_from_circle",
+   "practicum": "C2",
+   "name": "Круг выходит из плоскости",
+   "rung": 9,
+   "trigger": "Конус: сектор сворачивают в боковую поверхность, или даны две величины из трёх (радиус, высота, образующая), или спрашивают объём и площадь поверхности.",
+   "chain": [
+    "Дуга сектора становится окружностью основания: rθ = 2πR",
+    "Радиус, высота и образующая связаны Пифагором: l² = R² + h²",
+    "Объём это ⅓πR²h",
+    "Полная поверхность это πR² + πRl, боковая — πRl"
+   ],
+   "traps": [
+    "В полной поверхности забыто основание: πrl это только боковая часть, а total surface area включает круг",
+    "Радиус сектора взят за радиус конуса. Радиус сектора становится образующей, а радиус основания получается из длины дуги",
+    "Множитель ⅓ потерян: πR²h — это цилиндр той же высоты"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 127,
+   "blocks": [
+    "2025-MAY-TZ1-P2-Q01-B",
+    "2021-MAY-TZ2-P1-Q10-C",
+    "2021-MAY-TZ2-P1-Q10-D",
+    "2024-MAY-TZ1-P2-Q02-B",
+    "2022-NOV-COMMON-P1-Q02-B",
+    "2022-NOV-COMMON-P3-Q02-B-I",
+    "2022-NOV-COMMON-P3-Q02-B-II"
    ]
   },
   {
@@ -21256,6 +21947,582 @@
    ],
    "answer": "model",
    "answer_digest": "9372c470eead",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:1",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.radian_arc",
+   "prompt": "A sector of a circle of radius $4$ cm has an arc of length $10$ cm. Find the angle at the centre.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "arc",
+   "answer_digest": "404fcfb394d2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:2",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.sector_perimeter",
+   "prompt": "Find the perimeter of a sector of radius $4$ cm whose arc is $10$ cm long.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "perimeter",
+   "answer_digest": "6dc449e2bfbd",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:3",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.sector_area",
+   "prompt": "A circle has radius $5$ m and $A\\hat{O}B=1.9$. Find the area of the larger of the two sectors.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "sector",
+   "answer_digest": "9d5d7fcf3aa3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:4",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.chord_half_angle",
+   "prompt": "A circle has radius $5$ m and $A\\hat{O}B=1.9$. Find the length of the chord $[AB]$.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "chord",
+   "answer_digest": "25735baaa5b4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:5",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.segment_area",
+   "prompt": "Find the area of the region between a chord $[AB]$ and its arc, given $r=2$ and $A\\hat{O}B=\\theta$.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "segment",
+   "answer_digest": "03e71c6d7dc6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:6",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.composite_region",
+   "prompt": "Find the area of a logo made by removing two equal segments from a $5$ cm by $4$ cm rectangle.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "region",
+   "answer_digest": "c697d2981bf4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:7",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.angular_rate",
+   "prompt": "A sprinkler makes one revolution every $16$ seconds. Find the angle it turns through in one second.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "rate",
+   "answer_digest": "c549779d79e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:8",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.cone_from_circle",
+   "prompt": "A paper sector of radius $19.5$ cm is rolled up until its straight edges meet. Find the radius of the base.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "cone",
+   "answer_digest": "cff179e7721e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:9",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.unknown_from_conditions",
+   "prompt": "The perimeter of a sector is $10$ cm and its area is $6.25$ cm$^2$. Find $r$ and $\\theta$.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "unknown",
+   "answer_digest": "b23a6a8439c0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:10",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.sector_area",
+   "prompt": "Convert $210^\\circ$ into radians and find the area of the sector of radius $19.5$ cm.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "sector",
+   "answer_digest": "9d5d7fcf3aa3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:11",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.cone_from_circle",
+   "prompt": "Find the volume of a right cone with base radius $2$ and slant height $4$.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "cone",
+   "answer_digest": "cff179e7721e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C2:12",
+   "kind": "recognition",
+   "practicum": "C2",
+   "skill": "C2.radian_arc",
+   "prompt": "The Earth is a sphere of radius $6000$ km, and the shortest distance from $M$ to $N$ across its surface is $6000$ km. Find the angle $M\\hat{O}N$.",
+   "options": [
+    {
+     "code": "arc",
+     "name": "радианы и длина дуги"
+    },
+    {
+     "code": "rate",
+     "name": "угол против времени"
+    },
+    {
+     "code": "perimeter",
+     "name": "периметр сектора"
+    },
+    {
+     "code": "sector",
+     "name": "площадь сектора"
+    },
+    {
+     "code": "chord",
+     "name": "хорда и половинный угол"
+    },
+    {
+     "code": "segment",
+     "name": "площадь сегмента"
+    },
+    {
+     "code": "region",
+     "name": "составная область"
+    },
+    {
+     "code": "unknown",
+     "name": "две связи вместо чисел"
+    },
+    {
+     "code": "cone",
+     "name": "конус из сектора"
+    }
+   ],
+   "answer": "arc",
+   "answer_digest": "404fcfb394d2",
    "budget_ms": 8000
   },
   {

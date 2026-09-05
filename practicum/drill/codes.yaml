@@ -117,6 +117,17 @@ C1:
 
 # Порядок кодов в легенде C3 не совпадает с лестницей: sum — это сложение
 # углов, arg — составной аргумент, а в лестнице они идут наоборот.
+C2:
+  arc:       {skill: radian_arc,              name: радианы и длина дуги}
+  rate:      {skill: angular_rate,            name: угол против времени}
+  perimeter: {skill: sector_perimeter,        name: периметр сектора}
+  sector:    {skill: sector_area,             name: площадь сектора}
+  chord:     {skill: chord_half_angle,        name: хорда и половинный угол}
+  segment:   {skill: segment_area,            name: площадь сегмента}
+  region:    {skill: composite_region,        name: составная область}
+  unknown:   {skill: unknown_from_conditions, name: две связи вместо чисел}
+  cone:      {skill: cone_from_circle,        name: конус из сектора}
+
 C3:
   base:   {skill: reference_angle,           name: опорный угол}
   sum:    {skill: angle_sum,                 name: сложение углов}
