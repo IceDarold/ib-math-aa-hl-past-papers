@@ -44,9 +44,12 @@ drill_source="$repository_root/practicum/aahl"
 # должен нести ровно ту версию ядра, на которой его проверяли, иначе
 # откат назад откатит только половину.
 drill_core="$repository_root/vendor/drill-core"
-# Предметы, которые живут не в этом репозитории: у физики банк — это
-# лицензионный материал IB, и в git он не кладётся. Такой предмет лежит
-# на самой машине и подключается, если он там есть.
+# Физика — тоже подмодуль: её банк это лицензионный материал IB, и
+# репозиторий поэтому приватный, но версия предмета обязана ехать вместе
+# с релизом наравне с ядром.
+physics_subject="$repository_root/vendor/ib-physics"
+# Дорога для предмета, которого в git нет вовсе: положить его каталог
+# сюда на самой машине, и выкатка его подберёт.
 extra_subjects_root="/var/www/math.archik.tech/subjects"
 remote_root=/var/www/math.archik.tech
 release_id="${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
@@ -66,6 +69,11 @@ fi
 
 if [[ ! -f "$drill_core/drill/server.py" ]]; then
   printf 'Drill core is missing. Did the checkout include submodules?\n' >&2
+  exit 66
+fi
+
+if [[ ! -f "$physics_subject/bank/2025/bank.json" ]]; then
+  printf 'Physics bank is missing. Did the checkout include submodules?\n' >&2
   exit 66
 fi
 
@@ -127,6 +135,12 @@ rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
   --exclude='.venv/' --exclude='tests/' -e "$rsync_ssh" \
   "$drill_core/" "$remote:$release/vendor/drill-core/"
 
+# У физики нужен предмет и банк; собранные практикумы и исходники разбора
+# архива службе ни к чему.
+rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
+  --exclude='.git/' --exclude='tests/' --exclude='site/' -e "$rsync_ssh" \
+  "$physics_subject/" "$remote:$release/vendor/ib-physics/"
+
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' -e "$rsync_ssh" \
   "$api_source/" "$remote:$release/api/"
 
@@ -169,6 +183,7 @@ test -f "$release/practicum/calculus/practicum-e7-differential-equations.ipynb"
 test -f "$release/api/data/questions.sqlite"
 test -f "$release/practicum/aahl/bank.json"
 test -f "$release/vendor/drill-core/drill/server.py"
+test -f "$release/vendor/ib-physics/bank/2025/bank.json"
 test -f "$release/practicum/kit.py"
 
 install -d -m 755 "$api_runtime"
@@ -232,14 +247,15 @@ if [[ -f "$drill_pid" ]]; then
   fi
 fi
 
-# Предметы: математика всегда, из самого релиза; остальные — если они
+# Предметы: математика и физика из самого релиза, остальные — если они
 # заведены на машине. Первый в списке отвечает на запросы, где предмет
 # не назвали, и это математика: так работали все прежние ссылки.
 drill_subjects="math:$release/practicum/aahl/subject.py"
+drill_subjects="$drill_subjects,physics:$release/vendor/ib-physics/subject.py"
 for candidate in "$remote_root"/subjects/*/subject.py; do
   [[ -f "$candidate" ]] || continue
   name=$(basename "$(dirname "$candidate")")
-  [[ "$name" == "math" ]] && continue
+  [[ "$name" == "math" || "$name" == "physics" ]] && continue
   drill_subjects="$drill_subjects,$name:$candidate"
 done
 printf 'Drill subjects: %s\n' "$drill_subjects"
