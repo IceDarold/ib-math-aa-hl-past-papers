@@ -13,6 +13,17 @@
 # каждый приём — существовать в лестнице своего практикума. Ступени,
 # на которые не показывает ни один код, печатаются как непокрытые.
 
+A1:
+  term:         {skill: nth_term,                  name: какой это по счёту член}
+  sum:          {skill: series_sum,                name: сложить первые n}
+  two:          {skill: two_conditions,            name: два факта на u₁ и d}
+  back:         {skill: sum_to_term,               name: от суммы обратно к членам}
+  difference:   {skill: constant_difference,       name: постоянная разность как условие}
+  coefficients: {skill: condition_on_coefficients, name: величины без номеров}
+  peak:         {skill: extremum_of_sum,           name: наибольшая сумма}
+  integer:      {skill: integer_condition,         name: номер обязан быть целым}
+  log:          {skill: log_terms,                 name: члены-логарифмы}
+
 A3:
   expand:  {skill: full_expansion,            name: раскрыть целиком}
   term:    {skill: general_term,              name: один член разложения}

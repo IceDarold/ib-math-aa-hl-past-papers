@@ -21,10 +21,40 @@ sections:
     practicums:
       - id: A1
         title: Арифметические прогрессии и суммы
-        subtopics: [{topic: number_algebra.sequences, share: 0.6}]
+        subtopics: [{topic: number_algebra.sequences, share: 0.8}]
+        status: ready
+        notebook: practicum/number_algebra/practicum-a1-arithmetic-sequences.ipynb
+        kaggle: ib-math-praktikum-a1-arithmetic-sequences
+        archive: practicum/number_algebra/archive-a1-arithmetic-sequences.ipynb
+        kaggle_archive: ib-math-archive-a1-arithmetic-sequences
+        skills: practicum/skills/number-algebra-sequences.yaml
+        note: >
+          Тема number_algebra.sequences взята не целиком: в ней лежат обе
+          прогрессии сразу. Разрез между A1 и A2 идёт по вопросу, а не по
+          теме — у майской 2023 TZ1 бумаги пункты (a)–(c) арифметические,
+          (d)–(e) геометрические, и это один вопрос 10. Доля 0.8 посчитана
+          по баллам: 135 из 169.
+
+          169 баллов по корпусу, 135 рабочих. Вычтено четырнадцать блоков:
+          десять геометрических уходят в A2 (22 балла), ноябрьский дубль
+          2023 года стоит 7, и два блока не по теме вовсе — факториал
+          в исследовании про площади и коробка из листа картона.
+
+          Девять приёмов идут по тому, что в задаче неизвестно: сначала
+          член и сумма при известной прогрессии, потом сама прогрессия
+          при известных члене и сумме, потом постоянная разность как
+          условие на букву, и напоследок три случая, где номер обязан
+          быть целым, сумма — наибольшей, а члены оказываются
+          логарифмами.
+
+          Проверке передают не ответ и не формулу, а правило: первый член
+          и шаг. Член она находит сложением, сумму — сложением первых n
+          членов, и ни u₁+(n−1)d, ни n/2(2u₁+(n−1)d) внутри неё нет.
+          Отсюда и обратный ход: «ваш седьмой член равен шести?» —
+          так проверяется «найдите первый член и разность».
       - id: A2
         title: Геометрические прогрессии и бесконечные суммы
-        subtopics: [{topic: number_algebra.sequences, share: 0.4}, number_algebra.geometric_sequences]
+        subtopics: [{topic: number_algebra.sequences, share: 0.2}, number_algebra.geometric_sequences]
       - id: A3
         title: Биномиальная теорема
         subtopics: [number_algebra.binomial_theorem]

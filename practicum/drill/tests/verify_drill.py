@@ -1407,6 +1407,133 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('C2.')):
     print(f'  {gen_name:28} {SEEDS} задач измерено заново')
 
 
+# --- A1: генератор считает формулами, тест ходит по прогрессии ----------
+# Генераторы A1 написаны через u₁ + (n − 1)d и n/2 (2u₁ + (n − 1)d).
+# Здесь ни одной из этих формул нет: член находится сложением шага,
+# сумма — сложением членов, наибольшая сумма — перебором. Ровно так же
+# устроены проверки ноутбука, и поэтому совпадение здесь означает
+# согласие формулы со сложением, а не Python с самим собой.
+#
+# Числа вынимаются отдельными выражениями, а не общим numbers(): к этому
+# месту файла имя уже занято другим.
+
+_A1_TERM = re.compile(r'\$(-?\d*)k\s*([+-])\s*(\d+)\$')
+_A1_PLAIN = re.compile(r'-?\d+(?:\.\d+)?')
+_A1_RULE = re.compile(r'u_n = (-?\d+) ([+-]) (\d+)n')
+_A1_SUMS = re.compile(r'S_n = (\d*)n\^2 ([+-]) (\d+)n')
+_A1_LOG = re.compile(r'\$(-?\d+) \+ \\ln (\d+)\$')
+
+
+def _a1_plain(prompt):
+    """Числа условия без тех, что спрятаны в командах LaTeX."""
+    return [float(v) for v in _A1_PLAIN.findall(re.sub(r'\\[a-z]+', ' ',
+                                                       prompt))]
+
+
+def _a1_walked(name, prompt, answer):
+    """Сходится ли ответ с прогрессией, пройденной шагами."""
+    if name == 'A1.nth_term':
+        if 'Найдите первый член' in prompt:
+            free, sign, slope = _A1_RULE.search(prompt).groups()
+            rule = lambda i: int(free) + (1 if sign == '+' else -1) * int(slope) * i
+            return quiet(kit.verify_term, 'x', answer,
+                         kit.progression(rule(1), rule(2) - rule(1)), 1)
+        first, step, last = _a1_plain(prompt)
+        if 'Каким по счёту' in prompt:
+            return quiet(kit.verify_term, 'x', last,
+                         kit.progression(first, step), answer)
+        return quiet(kit.verify_term, 'x', answer,
+                     kit.progression(first, step), last)
+
+    if name == 'A1.series_sum':
+        count, first, step = _a1_plain(prompt)
+        return quiet(kit.verify_total, 'x', answer,
+                     kit.progression(first, step), count)
+
+    if name == 'A1.two_conditions':
+        one, first_value, two, second_value = _a1_plain(prompt)
+        gap = sp.Symbol('gap')
+        if 'общую разность' in prompt:
+            # ответ — шаг; первый член восстанавливается тем же ходом
+            start = sp.solve(kit.term(kit.progression(gap, answer), int(one))
+                             - first_value, gap)[0]
+            seq = kit.progression(start, answer)
+        else:
+            step = sp.solve(kit.term(kit.progression(answer, gap), int(one))
+                            - first_value, gap)[0]
+            seq = kit.progression(answer, step)
+        return (quiet(kit.verify_term, 'x', first_value, seq, one)
+                and quiet(kit.verify_term, 'x', second_value, seq, two))
+
+    if name == 'A1.sum_to_term':
+        lead, sign, linear = _A1_SUMS.search(prompt).groups()
+        lead = int(lead) if lead else 1
+        linear = (1 if sign == '+' else -1) * int(linear)
+        rule = lambda i: lead * i ** 2 + linear * i
+        seq = kit.progression(rule(1), rule(2) - 2 * rule(1))
+        index = 1 if 'первый член' in prompt else int(_a1_plain(prompt)[-1])
+        return quiet(kit.verify_term, 'x', answer, seq, index)
+
+    if name == 'A1.constant_difference':
+        made = []
+        for slope, sign, shift in _A1_TERM.findall(prompt):
+            slope = int(slope) if slope not in ('', '-') else int(slope + '1')
+            made.append(slope * answer
+                        + (1 if sign == '+' else -1) * int(shift))
+        return len(made) == 3 and quiet(kit.verify_arithmetic, 'x', made)
+
+    if name == 'A1.condition_on_coefficients':
+        slope = int(_a1_plain(prompt)[0])
+        if 'свободный член' in prompt:
+            triple = [slope, -sp.Rational(answer) / slope, answer]
+        else:
+            triple = [slope, slope + answer, slope + 2 * answer]
+        # корень линейной функции обязан оказаться средним членом:
+        # m·r + c = 0 — это и есть определение корня
+        return (quiet(kit.verify_arithmetic, 'x', triple)
+                and sp.simplify(slope * triple[1] + triple[2]) == 0)
+
+    if name == 'A1.extremum_of_sum':
+        first, step = _a1_plain(prompt)[:2]
+        seq = kit.progression(first, step)
+        if 'наибольшее значение' in prompt:
+            return quiet(kit.verify_peak, 'x', answer, seq)
+        best = max(kit.total(seq, i) for i in range(1, 60))
+        return quiet(kit.verify_peak, 'x', best, seq, at=answer)
+
+    if name == 'A1.integer_condition':
+        divisor = int(_a1_plain(prompt)[-1])
+        ones = kit.progression(1, 1)
+        smaller = [i for i in range(2, int(answer))
+                   if kit.total(ones, i) % divisor == 0]
+        return (not smaller
+                and kit.total(ones, int(answer)) % divisor == 0)
+
+    if name == 'A1.log_terms':
+        pairs = _A1_LOG.findall(prompt)          # (число, аргумент логарифма)
+        base = int(pairs[1][1])
+        shown = [int(pairs[0][0]) + 2 * sp.log(base),
+                 int(pairs[1][0]) + sp.log(base),
+                 int(pairs[2][0])]
+        if 'общую разность' in prompt:
+            return quiet(kit.verify_step, 'x', answer, shown)
+        count = int(re.search(r'первых \$(\d+)\$ членов', prompt).group(1))
+        seq = kit.progression(shown[0], shown[1] - shown[0])
+        return quiet(kit.verify_total, 'x', answer, seq, count)
+
+    raise AssertionError(f'условие A1 не разобрано: {prompt}')
+
+
+section('A1: прогрессия, пройденная шагами, сходится с формулой генератора')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('A1.')):
+    matched = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[gen_name](random.Random(seed))
+        matched += bool(_a1_walked(gen_name, item['prompt'], item['answer']))
+    t(f'{gen_name}: сложение сошлось на всех {SEEDS} зёрнах', matched == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач пройдено шагами')
+
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')

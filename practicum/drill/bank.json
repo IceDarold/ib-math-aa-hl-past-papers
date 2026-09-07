@@ -1,6 +1,617 @@
 {
  "version": 2,
  "archive": {
+  "2022-MAY-TZ2-P1-Q01-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "2",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A1.nth_term"
+  },
+  "2022-MAY-TZ2-P1-Q01-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "2",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A1.nth_term"
+  },
+  "2022-MAY-TZ2-P1-Q01-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "1",
+   "part": "C",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "2",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "A1.nth_term"
+  },
+  "2021-MAY-TZ2-P2-Q02-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "A1.nth_term"
+  },
+  "2025-NOV-TZ1-P1-Q01-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A1.nth_term"
+  },
+  "2022-NOV-COMMON-P3-Q01-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "a",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "A1.series_sum"
+  },
+  "2022-NOV-COMMON-P3-Q01-B-I": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "b(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "A1.series_sum"
+  },
+  "2022-NOV-COMMON-P3-Q01-D-III": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "d(iii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "A1.series_sum"
+  },
+  "2022-MAY-TZ1-P3-Q01-A-I": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(a)(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A1.series_sum"
+  },
+  "2022-MAY-TZ1-P3-Q01-A-II": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(a)(ii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A1.series_sum"
+  },
+  "2022-MAY-TZ1-P3-Q01-B-I": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(b)(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A1.series_sum"
+  },
+  "2022-MAY-TZ1-P3-Q01-B-II": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(b)(ii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A1.series_sum"
+  },
+  "2022-MAY-TZ1-P3-Q01-B-III": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(b)(iii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A1.series_sum"
+  },
+  "2022-MAY-TZ1-P3-Q01-D": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(d)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A1.series_sum"
+  },
+  "2025-MAY-TZ1-P2-Q10-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "a",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "A1.series_sum"
+  },
+  "2025-MAY-TZ1-P2-Q10-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "b",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "A1.series_sum"
+  },
+  "2025-MAY-TZ1-P2-Q10-C": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "c",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "19-20",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "A1.series_sum"
+  },
+  "2025-NOV-TZ1-P1-Q01-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "A1.series_sum"
+  },
+  "2021-MAY-TZ1-P1-Q02": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "A1.two_conditions"
+  },
+  "2025-NOV-TZ3-P1-Q01": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "1",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "A1.two_conditions"
+  },
+  "2023-NOV-TZ1-P1-Q03-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "A",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "A1.two_conditions"
+  },
+  "2023-MAY-TZ1-P1-Q10-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "A1.sum_to_term"
+  },
+  "2023-MAY-TZ1-P1-Q10-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "A1.sum_to_term"
+  },
+  "2023-MAY-TZ1-P1-Q10-C": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "A1.sum_to_term"
+  },
+  "2023-NOV-TZ1-P1-Q03-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "A1.sum_to_term"
+  },
+  "2025-MAY-TZ3-P1-Q10-A-I": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "a-i",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A1.constant_difference"
+  },
+  "2025-MAY-TZ3-P1-Q10-A-II": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "a-ii",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A1.constant_difference"
+  },
+  "2024-MAY-TZ2-P1-Q10-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "15/17",
+   "markscheme_pages": "21/31",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "A1.constant_difference"
+  },
+  "2024-MAY-TZ2-P1-Q10-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "C",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "15/17",
+   "markscheme_pages": "22/31",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "A1.constant_difference"
+  },
+  "2024-MAY-TZ2-P1-Q10-D": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "D",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "15/17",
+   "markscheme_pages": "23/31",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "A1.constant_difference"
+  },
+  "2023-MAY-TZ2-P1-Q12-D": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "D",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "29",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "A1.constant_difference"
+  },
+  "2023-MAY-TZ2-P3-Q02-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.condition_on_coefficients"
+  },
+  "2023-MAY-TZ2-P3-Q02-B-II": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "b(ii)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.condition_on_coefficients"
+  },
+  "2023-MAY-TZ2-P3-Q02-B-III": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "b(iii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.condition_on_coefficients"
+  },
+  "2023-MAY-TZ2-P3-Q02-E-I": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "e(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.condition_on_coefficients"
+  },
+  "2023-MAY-TZ2-P3-Q02-E-II": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "e(ii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.condition_on_coefficients"
+  },
+  "2023-MAY-TZ2-P3-Q02-E-III": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "e(iii)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "21-22",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.condition_on_coefficients"
+  },
+  "2023-MAY-TZ2-P3-Q02-F": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "f",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "23-25",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.condition_on_coefficients"
+  },
+  "2023-MAY-TZ2-P3-Q02-G-I": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "g(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.condition_on_coefficients"
+  },
+  "2023-MAY-TZ2-P3-Q02-G-II": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "g(ii)",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "27-32",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.condition_on_coefficients"
+  },
+  "2021-MAY-TZ2-P2-Q02-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "A1.extremum_of_sum"
+  },
+  "2025-MAY-TZ2-P2-Q07-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "A1.extremum_of_sum"
+  },
+  "2022-MAY-TZ1-P3-Q01-E": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(e)",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "14-16",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "A1.integer_condition"
+  },
+  "2025-MAY-TZ1-P2-Q10-E": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "e",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "A1.integer_condition"
+  },
+  "2023-MAY-TZ2-P3-Q02-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "c",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "A1.integer_condition"
+  },
+  "2022-MAY-TZ1-P1-Q10-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 12,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "21-24",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "A1.log_terms"
+  },
+  "2024-MAY-TZ2-P1-Q10-E": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "E",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "15/17",
+   "markscheme_pages": "23–24/31",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "A1.log_terms"
+  },
   "2025-MAY-TZ1-P1-Q02-B": {
    "session": "May 2025",
    "zone": "TZ1",
@@ -9247,6 +9858,14 @@
  },
  "practicums": [
   {
+   "id": "A1",
+   "title": "Арифметические прогрессии и суммы",
+   "section": "A",
+   "notebook": "practicum/number_algebra/practicum-a1-arithmetic-sequences.ipynb",
+   "marks": 169,
+   "blocks": 61
+  },
+  {
    "id": "A3",
    "title": "Биномиальная теорема",
    "section": "A",
@@ -9416,6 +10035,259 @@
   }
  ],
  "skills": [
+  {
+   "id": "A1.nth_term",
+   "practicum": "A1",
+   "name": "Какой это по счёту член",
+   "rung": 1,
+   "trigger": "Даны первый член и разность (или формула u_n прямо в условии), спрашивают член по номеру или номер по члену. Признак — линейная формула вида u_n = 15 − 3n: коэффициент при n и есть d, свободный член это u₀, а не u₁.",
+   "chain": [
+    "Выписать u₁ и d; из формулы u_n = an + b это d = a и u₁ = a + b",
+    "Между u₁ и u_n ровно n − 1 шагов",
+    "Подставить в u_n = u₁ + (n − 1)d",
+    "Обратно: приравнять u_n к данному числу и решить линейное уравнение"
+   ],
+   "traps": [
+    "Шаг сделан n раз вместо n − 1. Первый член тоже член, и до него шагов ноль",
+    "Для u_n = 15 − 3n первым членом назван 15. Это u₀; u₁ = 12",
+    "Разность взята как u₁ − u₂ вместо u₂ − u₁, и знак получился противоположный"
+   ],
+   "calculator": "replaces",
+   "practicum_marks": 169,
+   "blocks": [
+    "2022-MAY-TZ2-P1-Q01-A",
+    "2022-MAY-TZ2-P1-Q01-B",
+    "2022-MAY-TZ2-P1-Q01-C",
+    "2021-MAY-TZ2-P2-Q02-A",
+    "2025-NOV-TZ1-P1-Q01-A"
+   ]
+  },
+  {
+   "id": "A1.series_sum",
+   "practicum": "A1",
+   "name": "Сложить первые n",
+   "rung": 2,
+   "trigger": "Слово sum, знак Σ, или задача, в которой что-то накапливается рядами: карты в пирамиде, точки в треугольном числе. Признак — величина растёт не на одно и то же, а на нарастающее.",
+   "chain": [
+    "Убедиться, что складываемое само по себе арифметическое",
+    "Выписать u₁ и d этого складываемого",
+    "S_n = n/2 (u₁ + u_n) — короче, когда u_n известен",
+    "S_n = n/2 (2u₁ + (n − 1)d) — короче, когда известна d",
+    "Если сумма дана, полученное равенство и есть уравнение на n"
+   ],
+   "traps": [
+    "S_n спутана с u_n. Треугольное число P₃(n) = n(n+1)/2 — это сумма 1 + 2 + … + n, а не n-й член",
+    "Множитель n/2 потерян или взят как n: сумма выходит вдвое больше",
+    "Слагаемых на одно больше или меньше. От 1 до n их n, а не n − 1",
+    "Диаграмму пересчитали неверно: t₄ = 26 получается из t₃ = 15 добавлением одиннадцати карт, а не десяти"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 169,
+   "blocks": [
+    "2022-NOV-COMMON-P3-Q01-A",
+    "2022-NOV-COMMON-P3-Q01-B-I",
+    "2022-NOV-COMMON-P3-Q01-D-III",
+    "2022-MAY-TZ1-P3-Q01-A-I",
+    "2022-MAY-TZ1-P3-Q01-A-II",
+    "2022-MAY-TZ1-P3-Q01-B-I",
+    "2022-MAY-TZ1-P3-Q01-B-II",
+    "2022-MAY-TZ1-P3-Q01-B-III",
+    "2022-MAY-TZ1-P3-Q01-D",
+    "2025-MAY-TZ1-P2-Q10-A",
+    "2025-MAY-TZ1-P2-Q10-B",
+    "2025-MAY-TZ1-P2-Q10-C",
+    "2025-NOV-TZ1-P1-Q01-B"
+   ]
+  },
+  {
+   "id": "A1.two_conditions",
+   "practicum": "A1",
+   "name": "Два условия на u₁ и d",
+   "rung": 3,
+   "trigger": "В условии два факта о последовательности и ни одного из чисел u₁, d прямо не названо. «u₈ = S₈ = 8», «седьмой член равен шести, а шестой и двенадцатый в сумме двадцать четыре».",
+   "chain": [
+    "Записать каждый факт через u₁ и d, ничего не вычисляя",
+    "Получить систему из двух линейных уравнений",
+    "Решить её подстановкой или вычитанием",
+    "Подставить обратно и убедиться, что оба факта выполнены"
+   ],
+   "traps": [
+    "Один факт использован дважды, второй — ни разу: система выходит вырожденной, и u₁ с d по ней не находятся",
+    "S₈ записана как u₈: сумма первых восьми и восьмой член здесь оба равны восьми, и это два разных уравнения",
+    "При вычитании уравнений потерян знак; проверка подстановкой ловит это за десять секунд, и её стоит делать всегда"
+   ],
+   "calculator": "none",
+   "practicum_marks": 169,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q02",
+    "2025-NOV-TZ3-P1-Q01",
+    "2023-NOV-TZ1-P1-Q03-A"
+   ]
+  },
+  {
+   "id": "A1.sum_to_term",
+   "practicum": "A1",
+   "name": "От суммы обратно к членам",
+   "rung": 4,
+   "trigger": "Задана формула суммы, а спрашивают члены: «S_n = n² + 4n, найдите u₆». Отличительный признак — в условии стоит S, а в вопросе u.",
+   "chain": [
+    "u₁ = S₁: сумма одного члена и есть этот член",
+    "u_n = S_n − S_{n−1}: всё, что добавилось на n-м шаге",
+    "Отсюда d = u₂ − u₁, а дальше обычная формула члена",
+    "Проверка: подставить найденное u_n обратно в S_n"
+   ],
+   "traps": [
+    "u_n посчитан как S_n / n. Это среднее членов, а не член",
+    "Взято S_{n+1} − S_n вместо S_n − S_{n−1}: номер сдвинут на единицу",
+    "Формулу S_n приняли за u_n и стали искать разность её значений дважды"
+   ],
+   "calculator": "none",
+   "practicum_marks": 169,
+   "blocks": [
+    "2023-MAY-TZ1-P1-Q10-A",
+    "2023-MAY-TZ1-P1-Q10-B",
+    "2023-MAY-TZ1-P1-Q10-C",
+    "2023-NOV-TZ1-P1-Q03-B"
+   ]
+  },
+  {
+   "id": "A1.constant_difference",
+   "practicum": "A1",
+   "name": "Постоянная разность как условие",
+   "rung": 5,
+   "trigger": "Последовательность задана с буквой внутри («k − 5, 3 − 2k, 5k + 3»), и сказано, что она арифметическая. Или наоборот: дано правило u_n и просят показать, что она арифметическая.",
+   "chain": [
+    "Условие всегда одно: u₂ − u₁ = u₃ − u₂",
+    "Найти букву: раскрыть это равенство и решить уравнение",
+    "Показать: вычислить u_{n+1} − u_n в общем виде",
+    "Разность обязана не содержать n — тогда она постоянна",
+    "Та же мысль иначе — средний член есть среднее соседних"
+   ],
+   "traps": [
+    "Проверены только три конкретных члена там, где просят показать для всех n. Схема оценивания это отдельно оговаривает: «award M0 for consideration of special cases»",
+    "Разность посчитана, но не сказано вслух, что она постоянна. Это отдельный балл R1",
+    "Найденное k подставлено не туда: u₃ = 5k + 3, а не 3 − 2k"
+   ],
+   "calculator": "none",
+   "practicum_marks": 169,
+   "blocks": [
+    "2025-MAY-TZ3-P1-Q10-A-I",
+    "2025-MAY-TZ3-P1-Q10-A-II",
+    "2024-MAY-TZ2-P1-Q10-A",
+    "2024-MAY-TZ2-P1-Q10-C",
+    "2024-MAY-TZ2-P1-Q10-D",
+    "2023-MAY-TZ2-P1-Q12-D"
+   ]
+  },
+  {
+   "id": "A1.condition_on_coefficients",
+   "practicum": "A1",
+   "name": "Величины без номеров, поставленные в прогрессию",
+   "rung": 6,
+   "trigger": "Арифметическую последовательность образуют не члены u₁, u₂, u₃, а именованные величины: коэффициент, корень, свободный член. Признак — у последовательности нет индексов вовсе, и длина её всегда три или пять.",
+   "chain": [
+    "Выразить всё через коэффициенты; корень линейной это r = −c/m",
+    "Для квадратичной сумма корней = −b/a, произведение = c/a (Виета)",
+    "Написать условие постоянной разности между соседними величинами",
+    "Получить уравнение на коэффициенты и решить его",
+    "Отбросить значения, при которых функция вырождается"
+   ],
+   "traps": [
+    "Порядок величин переставлен. m, r, c — именно в этом порядке; m, c, r даёт другое уравнение и другой ответ",
+    "Забыто ограничение, которое приносит знаменатель: c = −m²/(m+2) существует не при всех m, и m ≠ −2 — отдельный балл",
+    "Из b(2a + 1) = 0 взят один корень из двух. Оба случая, b = 0 и a = −½, разбираются дальше по отдельности",
+    "Ответ записан десятичной дробью там, где просят exact values"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 169,
+   "blocks": [
+    "2023-MAY-TZ2-P3-Q02-A",
+    "2023-MAY-TZ2-P3-Q02-B-II",
+    "2023-MAY-TZ2-P3-Q02-B-III",
+    "2023-MAY-TZ2-P3-Q02-E-I",
+    "2023-MAY-TZ2-P3-Q02-E-II",
+    "2023-MAY-TZ2-P3-Q02-E-III",
+    "2023-MAY-TZ2-P3-Q02-F",
+    "2023-MAY-TZ2-P3-Q02-G-I",
+    "2023-MAY-TZ2-P3-Q02-G-II"
+   ]
+  },
+  {
+   "id": "A1.extremum_of_sum",
+   "practicum": "A1",
+   "name": "Наибольшая сумма",
+   "rung": 7,
+   "trigger": "Слова maximum, greatest value рядом с S_n. Разность при этом обязательно отрицательная: у растущей последовательности наибольшей суммы нет.",
+   "chain": [
+    "Убедиться, что d < 0 — иначе вопрос бессмыслен",
+    "Сумма перестаёт расти там, где члены становятся отрицательными",
+    "Решить u_n ≥ 0 и взять наибольшее целое n",
+    "Подставить это n в формулу суммы"
+   ],
+   "traps": [
+    "Найден номер, а записан он вместо суммы. Спрашивают значение S_n, а не n",
+    "Взято дробное n из графика. Вершина параболы стоит в 13.158, а сумм с дробным номером не бывает; схема оценивания снимает балл именно за (13.1582, 547.119)",
+    "Член, равный нулю, посчитан «лишним». Если u₂₅ = 0, то S₂₄ = S₂₅, и оба ответа верны"
+   ],
+   "calculator": "helps",
+   "practicum_marks": 169,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q02-B",
+    "2025-MAY-TZ2-P2-Q07-B"
+   ]
+  },
+  {
+   "id": "A1.integer_condition",
+   "practicum": "A1",
+   "name": "Номер обязан быть целым",
+   "rung": 8,
+   "trigger": "Слова smallest, minimum, least рядом с требованием делимости или совпадения: «сколько карт нужно, чтобы не осталось лишних», «наименьшее число, треугольное и пятиугольное одновременно».",
+   "chain": [
+    "Написать нужное равенство или делимость через n",
+    "Понять, что решать его в целых числах алгебра не умеет",
+    "Составить таблицу значений и читать её глазами",
+    "Взять наименьшее n, при котором условие выполнено"
+   ],
+   "traps": [
+    "Решено уравнение вместо условия делимости. t_n = 52 и «t_n делится на 52» — разные задачи, и первая даёт не тот ответ",
+    "Ответом названо не то, что спрашивают: тринадцать рядов, а не пять пачек",
+    "Взят отрицательный корень квадратного уравнения. Номер члена не бывает отрицательным, и n = −27 в ответ не идёт",
+    "Перечислено слишком мало значений. Первое совпадение треугольных и пятиугольных чисел — 210, на двадцатом и двенадцатом местах"
+   ],
+   "calculator": "required",
+   "practicum_marks": 169,
+   "blocks": [
+    "2022-MAY-TZ1-P3-Q01-E",
+    "2025-MAY-TZ1-P2-Q10-E",
+    "2023-MAY-TZ2-P3-Q02-C"
+   ]
+  },
+  {
+   "id": "A1.log_terms",
+   "practicum": "A1",
+   "name": "Члены-логарифмы",
+   "rung": 9,
+   "trigger": "Члены записаны логарифмами: ln x + p ln x + ⅓ ln x + …, или 9 + ln 9, 5 + ln 3, 1 + ln 1. Признак — буква стоит внутри логарифма, и вынести её оттуда нельзя.",
+   "chain": [
+    "Привести все логарифмы к одному основанию и одному аргументу",
+    "ln 9 = 2 ln 3, ln 1 = 0 — после этого члены сравнимы",
+    "Общая разность выходит кратной ln 3 (или ln x) — это и есть d",
+    "Дальше обычная сумма; ln x сокращается и остаётся уравнение на n",
+    "Отбросить отрицательный корень"
+   ],
+   "traps": [
+    "ln x сокращён слишком рано, вместе с числовой частью. В сумме −90 − 25 ln 3 обе части нужны",
+    "ln(1/x³) прочитано как 3 ln x. Знак минус здесь весь ответ: это −3 ln x",
+    "Из n² − 7n − 18 = 0 взят корень n = −2. Номер члена положителен, и ответ n = 9",
+    "Разность посчитана как отношение. Отношение делает последовательность геометрической, а здесь она арифметическая"
+   ],
+   "calculator": "forbidden",
+   "practicum_marks": 169,
+   "blocks": [
+    "2022-MAY-TZ1-P1-Q10-B",
+    "2024-MAY-TZ2-P1-Q10-E"
+   ]
+  },
   {
    "id": "A3.full_expansion",
    "practicum": "A3",
@@ -14053,6 +14925,582 @@
   }
  ],
  "items": [
+  {
+   "key": "recog:A1:1",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.nth_term",
+   "prompt": "An arithmetic sequence has $u_1=7$ and $d=4$. Find the 20th term.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "term",
+   "answer_digest": "599f7703547e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:2",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.series_sum",
+   "prompt": "Find $1+2+3+\\dots+100$.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "sum",
+   "answer_digest": "09f5ffef2830",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:3",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.two_conditions",
+   "prompt": "An arithmetic sequence has $u_4=11$ and $u_9=26$. Find $u_1$ and $d$.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "two",
+   "answer_digest": "3fc4ccfe7458",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:4",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.sum_to_term",
+   "prompt": "The sum of the first $n$ terms is $S_n=3n^2-2n$. Find $u_5$.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "back",
+   "answer_digest": "3c482346f375",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:5",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.constant_difference",
+   "prompt": "The sequence $k+1$, $2k$, $7k-6$ is arithmetic. Find $k$.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "difference",
+   "answer_digest": "69ea741e98fd",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:6",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.condition_on_coefficients",
+   "prompt": "$L(x)=mx+c$ has root $r$, and $m$, $r$, $c$ are in arithmetic sequence. Find $c$ in terms of $m$.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "coefficients",
+   "answer_digest": "7dbbfe42465d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:7",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.extremum_of_sum",
+   "prompt": "An arithmetic sequence has $u_1=80$ and $d=-6.32$. Find the greatest value of $S_n$.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "peak",
+   "answer_digest": "9ee9e606474e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:8",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.integer_condition",
+   "prompt": "Find the smallest $n$ for which $\\tfrac12n(3n+1)$ is a multiple of $52$.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "integer",
+   "answer_digest": "2dba2454d800",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:9",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.log_terms",
+   "prompt": "The first three terms are $\\ln x$, $\\tfrac23\\ln x$, $\\tfrac13\\ln x$. Find the common difference.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "log",
+   "answer_digest": "836ff184e7b4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:10",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.two_conditions",
+   "prompt": "The 8th term of an arithmetic sequence equals the sum of its first eight terms, and both are 8. Find $u_1$.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "two",
+   "answer_digest": "3fc4ccfe7458",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:11",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.series_sum",
+   "prompt": "A pyramid of cards has 2 cards in the top row and 3 more in each row below. How many cards in six rows?",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "sum",
+   "answer_digest": "09f5ffef2830",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A1:12",
+   "kind": "recognition",
+   "practicum": "A1",
+   "skill": "A1.constant_difference",
+   "prompt": "Show that the areas $R_n=4n\\pi$ form an arithmetic sequence.",
+   "options": [
+    {
+     "code": "term",
+     "name": "какой это по счёту член"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "two",
+     "name": "два факта на u₁ и d"
+    },
+    {
+     "code": "back",
+     "name": "от суммы обратно к членам"
+    },
+    {
+     "code": "difference",
+     "name": "постоянная разность как условие"
+    },
+    {
+     "code": "coefficients",
+     "name": "величины без номеров"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшая сумма"
+    },
+    {
+     "code": "integer",
+     "name": "номер обязан быть целым"
+    },
+    {
+     "code": "log",
+     "name": "члены-логарифмы"
+    }
+   ],
+   "answer": "difference",
+   "answer_digest": "69ea741e98fd",
+   "budget_ms": 8000
+  },
   {
    "key": "recog:A3:1",
    "kind": "recognition",
