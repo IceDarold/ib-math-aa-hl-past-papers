@@ -118,6 +118,12 @@ if [[ -n "$previous" && -d "$previous" ]]; then
 else
   install -d -m 755 "$release"
 fi
+
+# rsync создаёт только последний каталог пути, а vendor/ в релизе ещё нет:
+# ни в пустом, ни в жёстко слинкованном с прошлым, где подмодулей не было
+# вовсе. Заводим его здесь, а не флагом --mkpath, чтобы не зависеть от
+# версии rsync на обеих сторонах.
+install -d -m 755 "$release/vendor"
 REMOTE
 
 rsync -rlptz --delete --exclude='/AA_HL/' -e "$rsync_ssh" \
