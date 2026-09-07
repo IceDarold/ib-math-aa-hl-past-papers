@@ -1,3 +1,6 @@
 [submodule "vendor/drill-core"]
 	path = vendor/drill-core
 	url = https://github.com/IceDarold/drill-core.git
+[submodule "vendor/ib-physics"]
+	path = vendor/ib-physics
+	url = https://github.com/IceDarold/ib-physics.git
