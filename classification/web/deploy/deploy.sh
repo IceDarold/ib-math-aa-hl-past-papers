@@ -126,7 +126,11 @@ fi
 install -d -m 755 "$release/vendor"
 REMOTE
 
-rsync -rlptz --delete --exclude='/AA_HL/' -e "$rsync_ssh" \
+# --delete здесь сносит из релиза всё, чего нет в сборке страницы, и
+# каталоги, которые приезжают следующими, он тоже снёс бы. Архив исключён
+# по этой причине давно; vendor/ — по той же, только его вдобавок некому
+# создать заново: rsync заводит лишь последний каталог пути.
+rsync -rlptz --delete --exclude='/AA_HL/' --exclude='/vendor/' -e "$rsync_ssh" \
   "$web_dist/" "$remote:$release/"
 
 rsync -rlptzc --delete -e "$rsync_ssh" \
