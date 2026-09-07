@@ -13,7 +13,7 @@
 и генератора, но если оба ошибаются одинаково, поймать это может только
 отдельный вывод.
 
-Запуск:  python practicum/drill/tests/verify_drill.py
+Запуск:  python practicum/aahl/tests/verify_drill.py
 """
 from __future__ import annotations
 
@@ -35,8 +35,8 @@ import sympy as sp  # noqa: E402
 import kit  # noqa: E402
 
 from drill import engine  # noqa: E402
-from drill.check import evaluate, show_answer  # noqa: E402
-from drill.items import GENERATORS  # noqa: E402
+from aahl.check import evaluate, show_answer  # noqa: E402
+from aahl.items import GENERATORS  # noqa: E402
 
 x_sym = sp.Symbol('x')
 

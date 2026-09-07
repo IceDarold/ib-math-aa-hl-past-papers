@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 import { WriteUpVerdict, type Verdict } from './WriteUpVerdict'
 
-const API = '/api/drill'
+import * as drillApi from '../drillApi'
+
 const MINUTES = [20, 40, 60]
 const PAPERS: { id: number; hint: string }[] = [
   { id: 1, hint: 'без калькулятора' },
@@ -131,7 +132,8 @@ function when(ts: number) {
     { day: 'numeric', month: 'long' })
 }
 
-export function EveningView({ evening, themes, onOpen, onChange, onDrop, onClose, busy, setBusy }: {
+export function EveningView({ subject, evening, themes, onOpen, onChange, onDrop, onClose, busy, setBusy }: {
+  subject: string
   evening: Evening | null
   themes: EveningTheme[]
   onOpen: (choice: { minutes: number; practicums: string[]; papers: number[]; only_due: boolean }) => Promise<void>
@@ -177,10 +179,10 @@ export function EveningView({ evening, themes, onOpen, onChange, onDrop, onClose
     setBusy(true)
     try {
       const photos = await Promise.all(Array.from(files).map(readFile))
-      const response = await fetch(`${API}/evening/scan`, {
+      const response = await fetch(drillApi.url('/evening/scan', subject), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: evening.id, photos }),
+        body: drillApi.payload(subject, { id: evening.id, photos }),
       })
       const payload = await response.json()
       if (!response.ok) throw new Error(payload.error ?? 'страницы не приняты')
@@ -207,10 +209,10 @@ export function EveningView({ evening, themes, onOpen, onChange, onDrop, onClose
     setError(null)
     setBusy(true)
     try {
-      const response = await fetch(`${API}/evening/start`, {
+      const response = await fetch(drillApi.url('/evening/start', subject), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: evening.id }),
+        body: drillApi.payload(subject, { id: evening.id }),
       })
       const payload = await response.json()
       if (!response.ok) throw new Error(payload.error ?? 'вечер не начался')
@@ -227,10 +229,10 @@ export function EveningView({ evening, themes, onOpen, onChange, onDrop, onClose
     setError(null)
     setBusy(true)
     try {
-      const response = await fetch(`${API}/evening/grade`, {
+      const response = await fetch(drillApi.url('/evening/grade', subject), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+        body: drillApi.payload(subject, {
           id: evening.id,
           assignment: evening.pages.map((page) => page.question),
         }),
@@ -462,7 +464,7 @@ export function EveningView({ evening, themes, onOpen, onChange, onDrop, onClose
           ) : (
             <div className="flex flex-wrap items-center gap-2">
               <a
-                href={`${API}/evening/sheet?id=${evening.id}`}
+                href={drillApi.url(`/evening/sheet?id=${evening.id}`, subject)}
                 target="_blank"
                 rel="noreferrer"
                 className="border border-ink bg-canvas px-4 py-1.5 text-sm text-ink no-underline hover:bg-surface"
@@ -509,7 +511,7 @@ export function EveningView({ evening, themes, onOpen, onChange, onDrop, onClose
             {evening.pages.map((page) => (
               <div key={page.index} className="flex w-28 flex-col gap-1">
                 <img
-                  src={`${API}/evening/page?id=${evening.id}&n=${page.index}`}
+                  src={drillApi.url(`/evening/page?id=${evening.id}&n=${page.index}`, subject)}
                   alt={`страница ${page.index + 1}`}
                   className="h-32 w-28 border border-line object-cover object-top"
                 />

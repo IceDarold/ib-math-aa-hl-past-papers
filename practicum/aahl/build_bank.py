@@ -14,7 +14,7 @@
 машине сервер не должен зависеть ни от генераторов, ни от sympy при старте,
 а расхождение банка с практикумом видно в диффе.
 
-Запуск:  python practicum/drill/build_bank.py
+Запуск:  python practicum/aahl/build_bank.py
 """
 from __future__ import annotations
 

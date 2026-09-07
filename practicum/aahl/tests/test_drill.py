@@ -22,9 +22,13 @@ sys.path.insert(0, PRACTICUM)
 import sympy as sp  # noqa: E402
 import yaml  # noqa: E402
 
-from drill import engine, store  # noqa: E402
-from drill.check import BadInput, evaluate, parse_many, parse_one  # noqa: E402
-from drill.items import GENERATORS  # noqa: E402
+from drill import engine, paper, store, subject as subjects  # noqa: E402
+from aahl.check import BadInput, evaluate, parse_many, parse_one  # noqa: E402
+from aahl.items import GENERATORS  # noqa: E402
+
+# Предмет грузится тем же способом, каким его грузит служба: если контракт
+# разъедется, здесь это и вылезет.
+SUBJECT = subjects.load('math', os.path.join(DRILL, 'subject.py'))
 
 res = []
 
@@ -65,7 +69,7 @@ t('сторона из другого треугольника отвергае�
 t('и объясняется через незамкнутый треугольник', 'замыкается' in message)
 
 print('\n=== планировщик ===')
-bank = engine.load_bank()
+bank = SUBJECT.bank
 # Число не зашито: банк обязан собраться ровно из тех практикумов,
 # которые карта числит готовыми, и с каждым новым оно меняется само.
 with open(os.path.join(PRACTICUM, 'map.yaml')) as fh:
@@ -210,7 +214,7 @@ t('наугад достаёт и редкие темы', len(uniform) >= 8)
 
 print('\n=== задание собирается заново по зерну ===')
 skill = bank['skills_by_id']['C1.cosine_rule']
-shown, spec, answer = engine.build_item(bank, GENERATORS, skill, 'compute',
+shown, spec, answer = engine.build_item(SUBJECT, skill, 'compute',
                                         rng=random.Random(5))
 again_meta, again_spec, again_answer = engine.rebuild_check(
     bank, GENERATORS, shown['item'])
@@ -223,26 +227,27 @@ t('странице эталон не уходит',
 print('\n=== журнал ===')
 with tempfile.TemporaryDirectory() as tmp:
     db = store.connect(os.path.join(tmp, 'test.sqlite'))
-    common = dict(mode='mixed', kind='compute', practicum='C1',
+    common = dict(subject='math', mode='mixed', kind='compute',
+                  practicum='C1',
                   skill='C1.cosine_rule', item='compute:C1.cosine_rule:1',
                   answer='8.24', ms=12000, first_ms=3000, budget_ms=75000)
     mark = store.record(db, ok=True, **common)
-    state = store.states(db)['C1.cosine_rule']
+    state = store.states(db, 'math')['C1.cosine_rule']
     t('верный ответ заводит стойкость', state['stability'] > 0)
     t('оценка возвращается вызывающему', mark in ('good', 'easy'))
     first = state['stability']
     store.record(db, ok=True, **common)
     t('второй верный поднимает стойкость',
-      store.states(db)['C1.cosine_rule']['stability'] > first)
-    grown = store.states(db)['C1.cosine_rule']['stability']
+      store.states(db, 'math')['C1.cosine_rule']['stability'] > first)
+    grown = store.states(db, 'math')['C1.cosine_rule']['stability']
     store.record(db, ok=False, **common)
-    state = store.states(db)['C1.cosine_rule']
+    state = store.states(db, 'math')['C1.cosine_rule']
     t('ошибка роняет стойкость', state['stability'] < grown)
     t('но не в самый низ', state['stability'] >= store.memory.MIN_STABILITY)
     t('срок повторения — скоро, а не через три недели',
       state['due'] - time.time() < 2 * 86400)
     t('ошибки посчитаны', state['wrong'] == 1 and state['seen'] == 3)
-    totals = store.totals(db)
+    totals = store.totals(db, 'math')
     t('итоги считаются', totals['attempts'] == 3 and totals['correct'] == 2)
     t('время до первого нажатия хранится отдельно от времени ответа',
       totals['avg_first_ms'] == 3000 and totals['avg_ms'] == 12000)
@@ -261,10 +266,10 @@ t('поля карточки лежат одной строкой, без пер
 from drill.server import Drill  # noqa: E402
 
 with tempfile.TemporaryDirectory() as tmp:
-    drill = Drill(os.path.join(tmp, 'verdict.sqlite'))
+    drill = Drill(SUBJECT, os.path.join(tmp, 'verdict.sqlite'))
     served = drill.next_item('compute', practicums=('C1',))
     _, spec, answer = engine.rebuild_check(bank, GENERATORS, served['item'])
-    from drill.check import show_answer  # noqa: E402
+    from aahl.check import show_answer  # noqa: E402
     good = drill.answer({'item': served['item'], 'mode': 'compute', 'ms': 5000,
                          'first_ms': 1200,
                          'answer': show_answer(answer,
@@ -286,12 +291,13 @@ with tempfile.TemporaryDirectory() as tmp:
       'answer' not in served and 'chain' not in served)
 
 print('\n=== архив: страницы подлинника ===')
-from drill import archive, grader  # noqa: E402
+from aahl import archive  # noqa: E402
+from drill import grader  # noqa: E402
 
-t('номера страниц: одна', archive.parse_pages('3') == [3])
-t('номера страниц: диапазон', archive.parse_pages('3-5') == [3, 4, 5])
-t('номера страниц: перечисление', archive.parse_pages('2, 7') == [2, 7])
-t('номера страниц: пусто', archive.parse_pages(None) == [])
+t('номера страниц: одна', paper.parse_pages('3') == [3])
+t('номера страниц: диапазон', paper.parse_pages('3-5') == [3, 4, 5])
+t('номера страниц: перечисление', paper.parse_pages('2, 7') == [2, 7])
+t('номера страниц: пусто', paper.parse_pages(None) == [])
 
 blocks = bank.get('archive', {})
 t('блоки архива привязаны к приёмам', len(blocks) > 300)
@@ -327,7 +333,7 @@ t('разбор не подмешивается в перемешку — он �
 
 written_skill = bank['skills_by_id']['A7.induction_sum']
 shown_written, spec_written, answer_written = engine.build_item(
-    bank, GENERATORS, written_skill, 'written', rng=random.Random(2))
+    SUBJECT, written_skill, 'written', rng=random.Random(2))
 t('задание разбора — ключ с блоком архива',
   shown_written['item'].startswith('written:')
   and shown_written['block'] in bank['archive'])
@@ -340,15 +346,15 @@ t('машинной проверки у разбора нет — судит м�
 
 seen_blocks = set()
 for _ in range(12):
-    item = engine.build_item(bank, GENERATORS, written_skill, 'written',
+    item = engine.build_item(SUBJECT, written_skill, 'written',
                              rng=random.Random(_), avoid_blocks=seen_blocks)[0]
     seen_blocks.add(item['block'])
 t('недавние вопросы не повторяются, пока есть другие',
   len(seen_blocks) == len(written_skill['blocks']))
 
 print('\n=== рубрики оформления ===')
-common = grader.rubric()
-a7 = grader.rubric('A7')
+common = SUBJECT.rubric()
+a7 = SUBJECT.rubric('A7')
 t('общие пункты есть у любого вопроса', len(common) >= 5)
 t('у практикума пунктов больше, чем общих', len(a7) > len(common))
 ids = {item['id'] for item in a7}
@@ -397,14 +403,14 @@ t('у вопроса не больше четырёх страниц, у схе�
 drifted = blocks.get('2021-MAY-TZ2-P1-Q03')
 if drifted:
     t('подсказка корпуса промахивалась на страницу — теперь исправляется',
-      archive.parse_pages(drifted['source_pages']) == [5]
+      paper.parse_pages(drifted['source_pages']) == [5]
       and archive.block_page_numbers(drifted, 'question') == [6])
 
 print('\n=== карта приёмов ===')
 from drill.server import Drill as DrillService  # noqa: E402
 
 with tempfile.TemporaryDirectory() as tmp:
-    atlas = DrillService(os.path.join(tmp, 'map.sqlite'))
+    atlas = DrillService(SUBJECT, os.path.join(tmp, 'map.sqlite'))
     card = atlas.skill_card('C1.ambiguous_case', seed=7)
     t('карточка знает суть приёма',
       card['name'] and card['trigger'] and card['chain'] and card['traps'])
@@ -470,14 +476,14 @@ t('отборы складываются', 0 < len(both) <= min(len(only_first),
 
 picked = engine.choose(bank, {}, GENERATORS, mode='written', rng=rng,
                        papers=(3,))[0]
-chosen_block = engine.build_item(bank, GENERATORS, picked, 'written',
+chosen_block = engine.build_item(SUBJECT, picked, 'written',
                                  rng=rng, papers=(3,))[0]
 t('выданное задание подчиняется отбору',
   bank['archive'][chosen_block['block']]['paper'] == 3)
 
 empty = [s for s in bank['skills'] if s['practicum'] == 'A3']
 try:
-    engine.build_item(bank, GENERATORS, empty[0], 'written', rng=rng,
+    engine.build_item(SUBJECT, empty[0], 'written', rng=rng,
                       papers=(2,), marks=(99, None))
     t('пустой отбор — ошибка, а не случайный вопрос', False)
 except LookupError:
@@ -485,7 +491,7 @@ except LookupError:
 
 print('\n=== сохранённые работы ===')
 with tempfile.TemporaryDirectory() as tmp:
-    service = DrillService(os.path.join(tmp, 'kept.sqlite'))
+    service = DrillService(SUBJECT, os.path.join(tmp, 'kept.sqlite'))
     shots = os.path.join(service.photo_dir(), 'demo')
     os.makedirs(shots, exist_ok=True)
     with open(os.path.join(shots, 'page-1.jpg'), 'wb') as handle:
@@ -493,7 +499,8 @@ with tempfile.TemporaryDirectory() as tmp:
     connection = service.connection()
     try:
         store.record_written(
-            connection, block='2022-MAY-TZ1-P1-Q08', practicum='A7',
+            connection, subject='math',
+            block='2022-MAY-TZ1-P1-Q08', practicum='A7',
             skill='A7.contradiction',
             reference='May 2022 TZ1, Paper 1, Q8',
             photos=['demo/page-1.jpg'],
@@ -527,7 +534,8 @@ with tempfile.TemporaryDirectory() as tmp:
     connection = service.connection()
     try:
         store.record_written(
-            connection, block='X', practicum='A7', skill='A7.contradiction',
+            connection, subject='math',
+            block='X', practicum='A7', skill='A7.contradiction',
             reference='May 2023 TZ1, Paper 2, Q9', photos=['demo/page-1.jpg'],
             verdict={'error': 'модель не ответила'})
     finally:
@@ -546,14 +554,14 @@ for number in range(3):
 scan_bytes = scan.tobytes()
 scan.close()
 
-pages = archive.render_upload(scan_bytes)
+pages = paper.render_upload(scan_bytes)
 t('PDF разбирается постранично', len(pages) == 3)
 t('страницы отрендерены картинками',
   all(page[:8] == b'\x89PNG\r\n\x1a\n' for page in pages))
-t('число страниц ограничивается', len(archive.render_upload(scan_bytes,
+t('число страниц ограничивается', len(paper.render_upload(scan_bytes,
                                                             limit=2)) == 2)
 try:
-    archive.render_upload(b'not a pdf at all')
+    paper.render_upload(b'not a pdf at all')
     t('мусор вместо PDF не проходит молча', False)
 except Exception:
     t('мусор вместо PDF не проходит молча', True)
@@ -644,23 +652,23 @@ print('\n=== журнал письменных работ ===')
 with tempfile.TemporaryDirectory() as tmp:
     db = store.connect(os.path.join(tmp, 'written.sqlite'))
     store.record_written(
-        db, block='2021-MAY-TZ2-P1-Q12-D', practicum='A7',
+        db, subject='math', block='2021-MAY-TZ2-P1-Q12-D', practicum='A7',
         skill='A7.induction_sum', reference='May 2021 TZ2, Paper 1, Q12(d)',
         photos=['page-1.jpg'],
         verdict={'marks': {'available': 9, 'earned': 3},
                  'mathematics': {'verdict': 'partially correct'},
                  'model': 'gpt-5.6-sol'})
-    totals = store.written_totals(db)
+    totals = store.written_totals(db, 'math')
     t('письменные работы считаются своим счётом, в баллах',
       totals == {'attempts': 1, 'marks_available': 9, 'marks_earned': 3})
     t('в журнале остаётся ссылка на бумагу',
-      store.written_history(db)[0]['reference']
+      store.written_history(db, 'math')[0]['reference']
       == 'May 2021 TZ2, Paper 1, Q12(d)')
     # Работа на бумаге — единственное свидетельство, снятое в условиях
     # экзамена, и на силу приёма она влияет. Оценку даёт доля баллов, а
     # не секундомер: на бумаге он мерил бы скорость письма. Оформление
     # в неё не входит вовсе — им заведует отдельный счёт выше.
-    written = store.states(db)['A7.induction_sum']
+    written = store.states(db, 'math')['A7.induction_sum']
     t('разбор работы двигает силу приёма', written['stability'] > 0)
     t('три балла из девяти считаются промахом', written['wrong'] == 1)
     t('слабая работа роняет приём в самый низ',
@@ -668,13 +676,13 @@ with tempfile.TemporaryDirectory() as tmp:
 
     good = store.connect(os.path.join(tmp, 'written-good.sqlite'))
     store.record_written(
-        good, block='2021-MAY-TZ2-P1-Q12-D', practicum='A7',
+        good, subject='math', block='2021-MAY-TZ2-P1-Q12-D', practicum='A7',
         skill='A7.induction_sum', reference='May 2021 TZ2, Paper 1, Q12(d)',
         photos=['page-1.jpg'],
         verdict={'marks': {'available': 9, 'earned': 9},
                  'mathematics': {'verdict': 'correct'}, 'model': 'gpt-5.6-sol'})
     t('полная работа поднимает выше слабой',
-      store.states(good)['A7.induction_sum']['stability']
+      store.states(good, 'math')['A7.induction_sum']['stability']
       > written['stability'])
     good.close()
     db.close()
@@ -693,15 +701,16 @@ print('\n=== подсказка в журнале ===')
 # приём вспомнили. Журнал обязан это помнить — иначе сила приёма растёт
 # так же, как от ответа своими силами.
 hinted = store.connect(':memory:')
-shared = dict(mode='compute', kind='compute', practicum='D2', item='x',
+shared = dict(subject='math', mode='compute', kind='compute',
+              practicum='D2', item='x',
               answer='1', ok=True, ms=1_000, first_ms=100, budget_ms=90_000)
 clean_mark = store.record(hinted, skill='D2.bayes', **shared)
 hint_mark = store.record(hinted, skill='D2.tree', hint=True, **shared)
 t('быстрый ответ своими силами — easy', clean_mark == 'easy')
 t('тот же ответ с подсказкой — hard', hint_mark == 'hard')
 t('подсказка поднимает приём меньше',
-  store.states(hinted)['D2.tree']['stability']
-  < store.states(hinted)['D2.bayes']['stability'])
+  store.states(hinted, 'math')['D2.tree']['stability']
+  < store.states(hinted, 'math')['D2.bayes']['stability'])
 t('в журнале записано, у какой попытки была подсказка',
   [row['hint'] for row in hinted.execute(
       'SELECT hint FROM attempts ORDER BY id')] == [0, 1])
@@ -735,7 +744,7 @@ print('\n=== цена задания ===')
 # цена вопросов архива, из которых вырос приём.
 from drill.server import Drill  # noqa: E402
 
-drill = Drill(':memory:')
+drill = Drill(SUBJECT, ':memory:')
 t('цена приёма — от самого дешёвого вопроса до самого дорогого',
   drill.archive_price(bank['skills_by_id']['B3.name_transform']) == [2, 4])
 t('приём без единого вопроса архива цены не получает',

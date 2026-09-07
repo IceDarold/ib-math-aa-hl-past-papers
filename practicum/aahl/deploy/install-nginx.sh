@@ -6,7 +6,7 @@
 # Нужен после правки classification/web/deploy/math.archik.tech.conf:
 # сам деплой конфигурацию не трогает, только выкладывает файлы и службы.
 #
-#   sudo practicum/drill/deploy/install-nginx.sh
+#   sudo practicum/aahl/deploy/install-nginx.sh
 #
 # Конфигурация кладётся в оба места. /etc/archik-sites — постоянное:
 # оттуда restore-archik-sites возвращает её в hiddify после обновлений,

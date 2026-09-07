@@ -39,7 +39,15 @@ archive="$repository_root/AA_HL"
 practicum="$repository_root/practicum"
 api_source="$repository_root/classification/api"
 api_database="$api_source/data/questions.sqlite"
-drill_source="$repository_root/practicum/drill"
+drill_source="$repository_root/practicum/aahl"
+# Ядро тренажёра — отдельный репозиторий, подключённый подмодулем: релиз
+# должен нести ровно ту версию ядра, на которой его проверяли, иначе
+# откат назад откатит только половину.
+drill_core="$repository_root/vendor/drill-core"
+# Предметы, которые живут не в этом репозитории: у физики банк — это
+# лицензионный материал IB, и в git он не кладётся. Такой предмет лежит
+# на самой машине и подключается, если он там есть.
+extra_subjects_root="/var/www/math.archik.tech/subjects"
 remote_root=/var/www/math.archik.tech
 release_id="${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 release="$remote_root/releases/$release_id"
@@ -53,6 +61,11 @@ fi
 
 if [[ ! -f "$drill_source/bank.json" || ! -f "$HTPASSWD_FILE" ]]; then
   printf 'Drill bank or the htpasswd file is missing.\n' >&2
+  exit 66
+fi
+
+if [[ ! -f "$drill_core/drill/server.py" ]]; then
+  printf 'Drill core is missing. Did the checkout include submodules?\n' >&2
   exit 66
 fi
 
@@ -106,9 +119,13 @@ rsync -rlptzc --delete -e "$rsync_ssh" \
   "$archive/" "$remote:$release/AA_HL/"
 
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
-  --include='*/' --include='*.ipynb' --include='kit.py' --include='drill/***' \
+  --include='*/' --include='*.ipynb' --include='kit.py' --include='aahl/***' \
   --exclude='*' -e "$rsync_ssh" \
   "$practicum/" "$remote:$release/practicum/"
+
+rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
+  --exclude='.venv/' --exclude='tests/' -e "$rsync_ssh" \
+  "$drill_core/" "$remote:$release/vendor/drill-core/"
 
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' -e "$rsync_ssh" \
   "$api_source/" "$remote:$release/api/"
@@ -150,7 +167,8 @@ test -d "$release/assets"
 test -d "$release/AA_HL"
 test -f "$release/practicum/calculus/practicum-e7-differential-equations.ipynb"
 test -f "$release/api/data/questions.sqlite"
-test -f "$release/practicum/drill/bank.json"
+test -f "$release/practicum/aahl/bank.json"
+test -f "$release/vendor/drill-core/drill/server.py"
 test -f "$release/practicum/kit.py"
 
 install -d -m 755 "$api_runtime"
@@ -200,7 +218,8 @@ if [[ ! -x "$drill_venv/bin/python" ]]; then
 fi
 printf 'Installing drill dependencies.\n'
 "$drill_venv/bin/pip" install --disable-pip-version-check --quiet \
-  -r "$release/practicum/drill/requirements.txt"
+  -r "$release/vendor/drill-core/requirements.txt" \
+  -r "$release/practicum/aahl/requirements.txt"
 
 if [[ -f "$drill_pid" ]]; then
   old_drill=$(cat "$drill_pid" || true)
@@ -213,9 +232,23 @@ if [[ -f "$drill_pid" ]]; then
   fi
 fi
 
+# Предметы: математика всегда, из самого релиза; остальные — если они
+# заведены на машине. Первый в списке отвечает на запросы, где предмет
+# не назвали, и это математика: так работали все прежние ссылки.
+drill_subjects="math:$release/practicum/aahl/subject.py"
+for candidate in "$remote_root"/subjects/*/subject.py; do
+  [[ -f "$candidate" ]] || continue
+  name=$(basename "$(dirname "$candidate")")
+  [[ "$name" == "math" ]] && continue
+  drill_subjects="$drill_subjects,$name:$candidate"
+done
+printf 'Drill subjects: %s\n' "$drill_subjects"
+
 nohup env DRILL_DB="$drill_data/drill.sqlite" \
   DRILL_GRADER_KEY_FILE="$drill_runtime/openai.env" \
-  "$drill_venv/bin/python" "$release/practicum/drill/server.py" \
+  DRILL_SUBJECTS="$drill_subjects" \
+  PYTHONPATH="$release/vendor/drill-core:$release/practicum" \
+  "$drill_venv/bin/python" -m drill.server \
   --host 127.0.0.1 --port 8042 \
   >> "$drill_log" 2>&1 &
 printf '%s\n' "$!" > "$drill_pid"

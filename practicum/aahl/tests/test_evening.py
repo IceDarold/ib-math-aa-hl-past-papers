@@ -16,8 +16,13 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(HERE)))
 
 import pymupdf  # noqa: E402
 
-from drill import archive, engine, evening, grader, memory, store  # noqa: E402
-from drill import server as service  # noqa: E402
+from aahl import archive  # noqa: E402
+from drill import engine, evening, grader, memory, paper, store  # noqa: E402
+from drill import server as service, subject as subjects  # noqa: E402
+
+SUBJECT = subjects.load(
+    'math', os.path.join(os.path.dirname(os.path.dirname(HERE)),
+                         'aahl', 'subject.py'))
 
 passed = failed = 0
 
@@ -31,10 +36,10 @@ def t(name, ok):
         failed += 1
 
 
-bank = engine.load_bank()
+bank = SUBJECT.bank
 
 print('=== сборка набора ===')
-questions, marks = evening.assemble(bank, {}, 40, random.Random(3))
+questions, marks = evening.assemble(SUBJECT, {}, 40, random.Random(3))
 t('вечер набирается примерно на заказанное время',
   40 <= marks <= 40 + evening.OVERSHOOT)
 t('вопросов получается немного, а не десятки', 4 <= len(questions) <= 10)
@@ -49,13 +54,13 @@ t('нумерация идёт подряд с единицы',
 t('минуты считаются обратно из баллов',
   evening.minutes_for(questions) == marks)
 
-short, short_marks = evening.assemble(bank, {}, 10, random.Random(5))
+short, short_marks = evening.assemble(SUBJECT, {}, 10, random.Random(5))
 t('короткий вечер тоже собирается', 10 <= short_marks <= 10 + evening.OVERSHOOT)
-long_set, long_marks = evening.assemble(bank, {}, 90, random.Random(5))
+long_set, long_marks = evening.assemble(SUBJECT, {}, 90, random.Random(5))
 t('длинный вечер упирается в потолок по числу задач',
   len(long_set) <= evening.MAX_QUESTIONS)
 t('вечер просят не короче нижней границы',
-  evening.assemble(bank, {}, 1, random.Random(5))[1] >= evening.MIN_MINUTES)
+  evening.assemble(SUBJECT, {}, 1, random.Random(5))[1] >= evening.MIN_MINUTES)
 
 print('\n=== приёмы берутся по расписанию ===')
 # Все приёмы отвечены только что и держатся долго, кроме одного: он мелкий
@@ -74,29 +79,29 @@ weights = sorted(engine.weight(s, states[s['id']], bank['share'], now)
 t('просевший приём весит больше всех остальных',
   engine.weight(skill, states[target], bank['share'], now) == weights[-1])
 hits = sum(target in {q['skill'] for q in
-                      evening.assemble(bank, states, 40, random.Random(seed))[0]}
+                      evening.assemble(SUBJECT, states, 40, random.Random(seed))[0]}
            for seed in range(30))
 t('и попадает почти в каждый вечер', hits >= 24)
 
 print('\n=== отборы ===')
-picked, _ = evening.assemble(bank, {}, 40, random.Random(3),
+picked, _ = evening.assemble(SUBJECT, {}, 40, random.Random(3),
                              practicums=['E1', 'B1'])
 t('темы ограничивают набор',
   {q['practicum'] for q in picked} <= {'E1', 'B1'})
 t('внутри выбранных тем вечер всё равно набирается',
   len(picked) >= 4)
-only_one = evening.assemble(bank, {}, 40, random.Random(3),
+only_one = evening.assemble(SUBJECT, {}, 40, random.Random(3),
                             papers=[1])[0]
 t('бумага ограничивает набор',
   {q['paper'] for q in only_one} == {1})
 t('Paper 1 — это вечер без калькулятора',
   all(q['calculator'] != 'yes' for q in only_one))
-both = evening.assemble(bank, {}, 40, random.Random(3),
+both = evening.assemble(SUBJECT, {}, 40, random.Random(3),
                         practicums=['C4'], papers=[2])[0]
 t('темы и бумаги действуют вместе',
   {q['practicum'] for q in both} == {'C4'} and {q['paper'] for q in both} == {2})
 try:
-    evening.assemble(bank, {}, 40, random.Random(3), practicums=['нет такой'])
+    evening.assemble(SUBJECT, {}, 40, random.Random(3), practicums=['нет такой'])
     t('пустой отбор объясняет себя, а не молчит', False)
 except LookupError as exc:
     t('пустой отбор объясняет себя, а не молчит', 'отбор' in str(exc))
@@ -110,7 +115,7 @@ states = {s['id']: {'last_ts': now, 'due': now + 7 * memory.DAY,
 for skill in bank['skills']:
     if skill['practicum'] == ripe:
         states[skill['id']]['due'] = now - memory.DAY
-due_only = evening.assemble(bank, states, 30, random.Random(3),
+due_only = evening.assemble(SUBJECT, states, 30, random.Random(3),
                             only_due=True)[0]
 t('«только просроченное» берёт лишь то, чему подошёл срок',
   {q['practicum'] for q in due_only} == {ripe})
@@ -118,22 +123,22 @@ fresh_all = {s['id']: {'last_ts': now, 'due': now + 7 * memory.DAY,
                        'stability': 200.0, 'difficulty': 3.0,
                        'seen': 3, 'wrong': 0} for s in bank['skills']}
 t('когда просрочено ничего, вечер всё равно собирается',
-  len(evening.assemble(bank, fresh_all, 30, random.Random(3),
+  len(evening.assemble(SUBJECT, fresh_all, 30, random.Random(3),
                        only_due=True)[0]) >= 3)
 
 used = {q['block'] for q in picked}
-again = evening.assemble(bank, {}, 40, random.Random(8),
+again = evening.assemble(SUBJECT, {}, 40, random.Random(8),
                          avoid_blocks=used)[0]
 t('вопросы недавних вечеров не повторяются',
   not ({q['block'] for q in again} & used))
-narrow = evening.assemble(bank, {}, 40, random.Random(8),
+narrow = evening.assemble(SUBJECT, {}, 40, random.Random(8),
                           practicums=['E1'], papers=[1],
                           avoid_blocks=set(bank['archive']))[0]
 t('но лучше повтор билета, чем вечер из двух задач',
   len(narrow) >= 3)
 
 print('\n=== лист заданий ===')
-pdf = archive.build_sheet(questions, bank, minutes=40, set_id='abc12xyz',
+pdf = paper.build_sheet(questions, SUBJECT, minutes=40, set_id='abc12xyz',
                           when='2026-08-31')
 t('лист — настоящий PDF', pdf[:5] == b'%PDF-')
 with pymupdf.open(stream=pdf, filetype='pdf') as sheet:
@@ -165,7 +170,7 @@ t('страницы группируются по заданиям',
 print('\n=== журнал вечеров ===')
 with tempfile.TemporaryDirectory() as tmp:
     db = store.connect(os.path.join(tmp, 'evening.sqlite'))
-    store.open_evening(db, id='zzz', minutes=40, marks=marks,
+    store.open_evening(db, subject='math', id='zzz', minutes=40, marks=marks,
                        questions=questions)
     record = store.evening(db, 'zzz')
     t('набор сохраняется и читается обратно',
@@ -173,23 +178,23 @@ with tempfile.TemporaryDirectory() as tmp:
     t('набор заводится черновиком', record['state'] == 'draft')
     t('пока страниц нет, их список пуст', record['pages'] == [])
     t('черновик в память о недавних вопросах не идёт',
-      store.recent_blocks(db) == set())
+      store.recent_blocks(db, 'math') == set())
 
-    store.open_evening(db, id='www', minutes=40, marks=marks,
+    store.open_evening(db, subject='math', id='www', minutes=40, marks=marks,
                        questions=questions)
     t('новый черновик выбрасывает прошлый',
-      [row['id'] for row in store.evenings(db)] == ['www'])
+      [row['id'] for row in store.evenings(db, 'math')] == ['www'])
     t('черновик выбрасывается по «назад»', store.drop_evening(db, 'www'))
-    t('после этого наборов не остаётся', store.evenings(db) == [])
+    t('после этого наборов не остаётся', store.evenings(db, 'math') == [])
 
-    store.open_evening(db, id='zzz', minutes=40, marks=marks,
+    store.open_evening(db, subject='math', id='zzz', minutes=40, marks=marks,
                        questions=questions)
     store.start_evening(db, 'zzz')
     t('старт делает набор вечером', store.evening(db, 'zzz')['state'] == 'open')
     t('время старта записано', store.evening(db, 'zzz')['started_at'])
     t('после старта вопросы помнятся',
-      store.recent_blocks(db) == {q['block'] for q in questions})
-    t('глубина памяти ограничена', store.recent_blocks(db, 0) == set())
+      store.recent_blocks(db, 'math') == {q['block'] for q in questions})
+    t('глубина памяти ограничена', store.recent_blocks(db, 'math', 0) == set())
     t('начатый вечер не выбрасывается', store.drop_evening(db, 'zzz') is False)
 
     store.save_pages(db, 'zzz', [{'index': 0, 'file': 'p.png', 'question': 1}])
@@ -200,9 +205,9 @@ with tempfile.TemporaryDirectory() as tmp:
     t('разобранный вечер помечается',
       store.evening(db, 'zzz')['state'] == 'graded')
     t('вечера перечисляются свежими вперёд',
-      [row['id'] for row in store.evenings(db)] == ['zzz'])
+      [row['id'] for row in store.evenings(db, 'math')] == ['zzz'])
     t('разобранный вечер тоже помнится',
-      store.recent_blocks(db) == {q['block'] for q in questions})
+      store.recent_blocks(db, 'math') == {q['block'] for q in questions})
     try:
         store.evening(db, 'нет такого')
         t('чужой набор не находится', False)
@@ -240,7 +245,7 @@ with tempfile.TemporaryDirectory() as tmp:
     real_grade, real_assign = grader.grade, grader.assign_pages
     grader.grade, grader.assign_pages = fake_grade, fake_assign
     try:
-        drill = service.Drill(db_path=os.path.join(tmp, 'run.sqlite'))
+        drill = service.Drill(SUBJECT, db_path=os.path.join(tmp, 'run.sqlite'))
         drill.rng = random.Random(4)
         opened = drill.open_evening(30)
         count = len(opened['questions'])
@@ -300,13 +305,13 @@ with tempfile.TemporaryDirectory() as tmp:
               for row in results))
 
         db = store.connect(drill.db_path)
-        moved = store.states(db)
+        moved = store.states(db, 'math')
         t('каждое задание вечера двинуло свой приём',
           all(row['skill'] in moved for row in results))
         t('сила приёма выросла',
           all(moved[row['skill']]['stability'] > 0 for row in results))
         t('работы попали в журнал письменных',
-          store.written_totals(db)['attempts'] == count)
+          store.written_totals(db, 'math')['attempts'] == count)
         t('снимок силы вернулся вместе с вердиктом',
           all((row.get('strength') or {}).get('score') is not None
               for row in results))
@@ -324,7 +329,7 @@ with tempfile.TemporaryDirectory() as tmp:
           all(row['earned'] is None for row in skipped))
         db = store.connect(drill.db_path)
         t('пропущенное задание не роняет силу приёма',
-          all(row['skill'] not in store.states(db) for row in skipped))
+          all(row['skill'] not in store.states(db, 'math') for row in skipped))
         db.close()
 
         # Поправка раскладки руками должна пережить повторный разбор.
@@ -350,7 +355,7 @@ with tempfile.TemporaryDirectory() as tmp:
 
     grader.assign_pages = broken
     try:
-        drill = service.Drill(db_path=os.path.join(tmp, 'fallback.sqlite'))
+        drill = service.Drill(SUBJECT, db_path=os.path.join(tmp, 'fallback.sqlite'))
         drill.rng = random.Random(9)
         opened = drill.start_evening(drill.open_evening(30)['id'])
         scanned = drill.scan({'id': opened['id'],

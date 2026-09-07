@@ -1,0 +1,3 @@
+[submodule "vendor/drill-core"]
+	path = vendor/drill-core
+	url = https://github.com/IceDarold/drill-core.git

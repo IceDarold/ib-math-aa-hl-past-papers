@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'motion/react'
-import { practicumSections } from '../data/practicums'
 import { MathText } from './MathText'
 import { WriteUpVerdict, type Verdict as WriteUp } from './WriteUpVerdict'
+import * as drillApi from '../drillApi'
+import type { SubjectInfo } from '../drillApi'
 import { EveningView, type Evening, type EveningTheme } from './EveningView'
 
 type Mode = 'mixed' | 'recognition' | 'compute' | 'written'
@@ -26,6 +27,7 @@ interface Item {
   practicum_title: string
   prompt: string
   note?: string
+  placeholder?: string
   options?: Option[]
   archive_marks?: [number, number] | null
   budget_ms: number
@@ -189,10 +191,10 @@ interface Done {
   available?: number
 }
 
-const API = '/api/drill'
 /** Подпись части разбора: одна и та же во всех строках, чтобы их не путали. */
 const LABEL = 'font-mono text-[10px] uppercase tracking-wide text-faint max-[560px]:pt-1.5'
 const SETTINGS_KEY = 'question-atlas:drill-setup'
+const SUBJECT_KEY = 'question-atlas:drill-subject'
 
 const MODES: { id: Mode; label: string; hint: string }[] = [
   { id: 'mixed', label: 'вперемешку', hint: 'И назвать приём, и решить — вразнобой' },
@@ -279,9 +281,19 @@ const DEFAULTS: Settings = {
   showTimer: true,
 }
 
-function loadSettings(): Settings {
+/** Настройки у каждого предмета свои: темы в них названы именами тем.
+ *
+ * Ключ старой, беспредметной записи достаётся математике — иначе у того,
+ * кто уже занимался, набор сбросился бы на пустой ровно в тот день, когда
+ * появится физика. */
+function settingsKey(subject: string) {
+  return subject === 'math' ? SETTINGS_KEY : `${SETTINGS_KEY}:${subject}`
+}
+
+function loadSettings(subject: string): Settings {
   try {
-    const stored = JSON.parse(localStorage.getItem(SETTINGS_KEY) ?? 'null') as unknown
+    const stored = JSON.parse(
+      localStorage.getItem(settingsKey(subject)) ?? 'null') as unknown
     if (stored && typeof stored === 'object') return { ...DEFAULTS, ...stored as Partial<Settings> }
   } catch {
     /* настройки — удобство, а не данные */
@@ -289,11 +301,19 @@ function loadSettings(): Settings {
   return DEFAULTS
 }
 
-function saveSettings(settings: Settings) {
+function saveSettings(subject: string, settings: Settings) {
   try {
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings))
+    localStorage.setItem(settingsKey(subject), JSON.stringify(settings))
   } catch {
     /* приватное окно, чистая история — не беда */
+  }
+}
+
+function loadSubject(): string {
+  try {
+    return localStorage.getItem(SUBJECT_KEY) || 'math'
+  } catch {
+    return 'math'
   }
 }
 
@@ -368,7 +388,11 @@ function heatRead(skill: StrengthSkill | null, horizon: number) {
 
 export function DrillView() {
   const [screen, setScreen] = useState<Screen>('setup')
-  const [settings, setSettings] = useState<Settings>(loadSettings)
+  const [subject, setSubject] = useState<string>(loadSubject)
+  const [subjects, setSubjects] = useState<SubjectInfo[]>([])
+  const [hasWritten, setHasWritten] = useState(true)
+  const [sections, setSections] = useState<{ id: string; title: string }[]>([])
+  const [settings, setSettings] = useState<Settings>(() => loadSettings(loadSubject()))
   const [setup, setSetup] = useState<SetupPracticum[] | null>(null)
   const [blocks, setBlocks] = useState<WrittenBlock[]>([])
   const [stats, setStats] = useState<Stats | null>(null)
@@ -408,21 +432,62 @@ export function DrillView() {
   const focus = useRef<{ id: string; name: string } | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
 
-  useEffect(() => { saveSettings(settings) }, [settings])
+  useEffect(() => { saveSettings(subject, settings) }, [subject, settings])
+
+  useEffect(() => {
+    if (!hasWritten && settings.mode === 'written') {
+      setSettings((current) => ({ ...current, mode: 'mixed' }))
+    }
+  }, [hasWritten, settings.mode])
+
+  /** Переключить предмет: занятие начинается заново, чужим оно не бывает. */
+  const switchSubject = useCallback((next: string) => {
+    setSubject((current) => {
+      if (next === current) return current
+      try { localStorage.setItem(SUBJECT_KEY, next) } catch { /* не беда */ }
+      setSettings(loadSettings(next))
+      setScreen('setup')
+      setSetup(null); setBlocks([]); setStats(null); setStrength(null)
+      setEvening(null); setWritten([]); setItem(null); setVerdict(null)
+      setDone([]); setPhotos([]); setWriteUp(null); setCard(null)
+      setHasWritten(true); setSections([])
+      setOpened(null); setTraining(null); setError(null); setAnswer('')
+      return next
+    })
+  }, [])
+
+  // Какие предметы вообще подняты. Спрашивается один раз: список меняется
+  // с выкаткой, а не по ходу занятия.
+  useEffect(() => {
+    void (async () => {
+      try {
+        const list = await drillApi.subjects()
+        setSubjects(list)
+        // Предмет из прошлого захода мог исчезнуть вместе с выкаткой.
+        if (list.length && !list.some((entry) => entry.id === subject)) {
+          const fallback = list.find((entry) => entry.default) ?? list[0]
+          if (fallback) switchSubject(fallback.id)
+        }
+      } catch {
+        /* один предмет — тоже предмет: переключать просто нечего */
+      }
+    })()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const loadStats = useCallback(async () => {
     try {
-      const response = await fetch(`${API}/stats`)
+      const response = await fetch(drillApi.url('/stats', subject))
       if (response.ok) setStats(await response.json())
     } catch { /* статистика не критична */ }
     try {
-      const response = await fetch(`${API}/strength`)
+      const response = await fetch(drillApi.url('/strength', subject))
       if (response.ok) setStrength(await response.json())
     } catch { /* карта не критична */ }
     try {
       // Незаконченный вечер поднимается сам: задания брали в семь, работу
       // присылают в десять, и искать набор руками не нужно.
-      const response = await fetch(`${API}/evening`)
+      const response = await fetch(drillApi.url('/evening', subject))
       if (response.ok) {
         // Берём свежий вечер в любом состоянии, а не только незаконченный:
         // разобранный тоже нужно уметь открыть обратно — иначе результаты
@@ -432,10 +497,10 @@ export function DrillView() {
       }
     } catch { /* вечер не критичен */ }
     try {
-      const response = await fetch(`${API}/written`)
+      const response = await fetch(drillApi.url('/written', subject))
       if (response.ok) setWritten((await response.json()).history ?? [])
     } catch { /* список работ не критичен */ }
-  }, [])
+  }, [subject])
 
   /** Темы для вечера: вопросов на бумаге и сколько приёмов уже начинали. */
   const eveningThemes = useMemo<EveningTheme[]>(() => {
@@ -463,10 +528,10 @@ export function DrillView() {
     setError(null)
     setBusy(true)
     try {
-      const response = await fetch(`${API}/evening/open`, {
+      const response = await fetch(drillApi.url('/evening/open', subject), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(choice),
+        body: drillApi.payload(subject, choice),
       })
       const payload = await response.json()
       if (!response.ok) throw new Error(payload.error ?? 'набор не собрался')
@@ -476,60 +541,68 @@ export function DrillView() {
     } finally {
       setBusy(false)
     }
-  }, [])
+  }, [subject])
 
   const dropEvening = useCallback(async (id: string) => {
     setError(null)
     setBusy(true)
     try {
-      await fetch(`${API}/evening/drop`, {
+      await fetch(drillApi.url('/evening/drop', subject), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id }),
+        body: drillApi.payload(subject, { id }),
       })
       setEvening(null)
     } catch { /* черновик всё равно перезапишется при следующей сборке */ }
     finally { setBusy(false) }
-  }, [])
+  }, [subject])
 
   const openSkill = useCallback(async (id: string, fresh = false) => {
     setError(null)
     try {
       const seed = fresh ? `&seed=${Math.floor(Math.random() * 2 ** 31)}` : ''
-      const response = await fetch(`${API}/skill?id=${encodeURIComponent(id)}${seed}`)
+      const response = await fetch(drillApi.url(`/skill?id=${encodeURIComponent(id)}${seed}`, subject))
       if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
       setCard(await response.json())
     } catch (failure) {
       setError(failure instanceof Error ? failure.message : 'не отвечает')
     }
-  }, [])
+  }, [subject])
 
   const openWritten = useCallback(async (id: number) => {
     setError(null)
     try {
-      const response = await fetch(`${API}/written?id=${id}`)
+      const response = await fetch(drillApi.url(`/written?id=${id}`, subject))
       if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
       setOpened(await response.json())
     } catch (failure) {
       setError(failure instanceof Error ? failure.message : 'не отвечает')
     }
-  }, [])
+  }, [subject])
 
   useEffect(() => {
     void (async () => {
       try {
-        const response = await fetch(`${API}/setup`)
+        const response = await fetch(drillApi.url('/setup', subject))
         if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
         const payload = await response.json() as {
-          practicums: SetupPracticum[]; written_blocks?: WrittenBlock[] }
+          practicums: SetupPracticum[]; written_blocks?: WrittenBlock[]
+          has_written?: boolean; sections?: { id: string; title: string }[] }
         setSetup(payload.practicums)
         setBlocks(payload.written_blocks ?? [])
+        // Разбор на бумаге опирается на подлинник страницами. У физики его
+        // пока нет, и предлагать режим, которого нет, хуже, чем не
+        // предлагать вовсе.
+        setHasWritten(payload.has_written !== false)
+        // Названия разделов приходят от предмета: у физики они свои, и
+        // вшитый в страницу математический список над ними врал.
+        setSections(payload.sections ?? [])
       } catch (failure) {
         setError(failure instanceof Error ? failure.message : 'не отвечает')
       }
     })()
     void loadStats()
-  }, [loadStats])
+  }, [loadStats, subject])
 
   const chosen = useMemo(() => {
     if (!setup) return []
@@ -590,7 +663,7 @@ export function DrillView() {
           if (band[1]) params.set('marks_max', String(band[1]))
         }
       }
-      const response = await fetch(`${API}/next?${params.toString()}`)
+      const response = await fetch(drillApi.url(`/next?${params.toString()}`, subject))
       if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
       setItem(await response.json())
       shownAt.current = performance.now()
@@ -603,7 +676,7 @@ export function DrillView() {
     } finally {
       setBusy(false)
     }
-  }, [chosen, settings.mode, settings.onlyDue, settings.order, settings.papers, settings.marks])
+  }, [chosen, settings.marks, settings.mode, settings.onlyDue, settings.order, settings.papers, subject])
 
   /** Начинает сессию. target — приём, если тренируют его одного. */
   const begin = useCallback((target: { id: string; name: string } | null) => {
@@ -640,10 +713,10 @@ export function DrillView() {
     const ms = Math.round(performance.now() - shownAt.current)
     const firstMs = Math.round((firstKeyAt.current || performance.now()) - shownAt.current)
     try {
-      const response = await fetch(`${API}/answer`, {
+      const response = await fetch(drillApi.url('/answer', subject), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ item: item.item, answer: value, mode: settings.mode, ms, first_ms: firstMs, hint }),
+        body: drillApi.payload(subject, { item: item.item, answer: value, mode: settings.mode, ms, first_ms: firstMs, hint }),
       })
       if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
       const result: Verdict = await response.json()
@@ -666,7 +739,7 @@ export function DrillView() {
     }
     // hint здесь не для красоты: без него замыкание submit помнит ту
     // подсказку, что была на момент показа задания, то есть всегда «нет».
-  }, [busy, hint, item, settings.mode, verdict])
+  }, [busy, hint, item, settings.mode, subject, verdict])
 
   const addPhotos = useCallback(async (files: FileList | File[] | null) => {
     const chosen = Array.from(files ?? []).filter(
@@ -707,10 +780,10 @@ export function DrillView() {
     const sentAt = performance.now()
     setGradingMs(0)
     try {
-      const response = await fetch(`${API}/grade`, {
+      const response = await fetch(drillApi.url('/grade', subject), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ block: item.block, photos }),
+        body: drillApi.payload(subject, { block: item.block, photos }),
       })
       const payload = await response.json()
       if (!response.ok) throw new Error(payload.error ?? `сервер ответил ${response.status}`)
@@ -738,7 +811,7 @@ export function DrillView() {
     } finally {
       setBusy(false)
     }
-  }, [busy, item, photos, writeUp])
+  }, [busy, item, photos, subject, writeUp])
 
   useEffect(() => {
     // Разбор идёт десятки секунд: без счётчика непонятно, работает он
@@ -791,10 +864,10 @@ export function DrillView() {
 
   const bySection = useMemo(() => {
     if (!setup) return []
-    return practicumSections
+    return sections
       .map((section) => ({ ...section, entries: setup.filter((entry) => entry.section === section.id) }))
       .filter((section) => section.entries.length > 0)
-  }, [setup])
+  }, [sections, setup])
 
   // --- итог сессии ------------------------------------------------------
   const summary = useMemo(() => {
@@ -844,7 +917,30 @@ export function DrillView() {
               </p>
             </div>
 
-            <button
+            {/* Предмет — не настройка набора, а то, чем занимаются: у него
+                своя карта приёмов, свой журнал и своё расписание. Поэтому
+                он стоит над набором, а не внутри него. Один предмет
+                переключать не из чего, и строки тогда нет. */}
+            {subjects.length > 1 && (
+              <section className="flex flex-col gap-2">
+                <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Предмет</h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {subjects.map((entry) => (
+                    <button
+                      key={entry.id}
+                      type="button"
+                      aria-pressed={entry.id === subject}
+                      className={`cursor-pointer border px-3 py-1.5 text-sm ${entry.id === subject ? 'border-line-strong bg-surface text-ink' : 'border-line bg-canvas text-muted hover:bg-surface'}`}
+                      onClick={() => switchSubject(entry.id)}
+                    >
+                      {entry.title}
+                    </button>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {hasWritten && <button
               type="button"
               className="flex cursor-pointer items-center justify-between gap-3 border border-line-strong bg-surface p-3 text-left hover:bg-surface-strong"
               onClick={() => setScreen('evening')}
@@ -867,12 +963,12 @@ export function DrillView() {
                 </span>
               </span>
               <span className="font-mono text-[11px] text-faint">→</span>
-            </button>
+            </button>}
 
             <section className="flex flex-col gap-2">
               <h3 className="font-mono text-[10px] tracking-wide text-faint uppercase">Режим</h3>
               <div className="grid grid-cols-3 gap-1.5 max-[560px]:grid-cols-1">
-                {MODES.map((entry) => (
+                {MODES.filter((entry) => entry.id !== 'written' || hasWritten).map((entry) => (
                   <button
                     key={entry.id}
                     type="button"
@@ -1075,6 +1171,7 @@ export function DrillView() {
 
         {screen === 'evening' && (
           <EveningView
+            subject={subject}
             evening={evening}
             themes={eveningThemes}
             busy={busy}
@@ -1442,7 +1539,7 @@ export function DrillView() {
                       {Array.from({ length: item.pages ?? 1 }, (_, page) => (
                         <img
                           key={page}
-                          src={`${API}/page?block=${encodeURIComponent(item.block ?? '')}&kind=question&n=${page}`}
+                          src={drillApi.url(`/page?block=${encodeURIComponent(item.block ?? '')}&kind=question&n=${page}`, subject)}
                           alt={`question page ${page + 1}`}
                           loading="lazy"
                           className="w-full border border-line bg-canvas"
@@ -1552,7 +1649,7 @@ export function DrillView() {
                       <input
                         ref={inputRef}
                         className="h-9 min-w-0 flex-1 border border-line bg-canvas px-2.5 font-mono text-sm text-ink outline-none focus:border-line-strong"
-                        placeholder="например 2sqrt(6) или 1, 4"
+                        placeholder={item.placeholder ?? 'ответ'}
                         value={answer}
                         disabled={Boolean(verdict)}
                         onChange={(event) => { markFirstKey(); setAnswer(event.target.value) }}
