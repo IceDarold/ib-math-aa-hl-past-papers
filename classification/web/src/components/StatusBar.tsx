@@ -6,9 +6,13 @@ interface StatusBarProps {
   sessionCount: number
   verifiedCount: number
   draftCount: number
+  /** Размечал ли вопросы кто-то, кого можно проверять. У физики
+   *  классификация выведена из самой схемы оценивания, и «черновиков ИИ»
+   *  с «проверенными» там не бывает. */
+  reviewed: boolean
 }
 
-export function StatusBar({ sessionCount, verifiedCount, draftCount }: StatusBarProps) {
+export function StatusBar({ sessionCount, verifiedCount, draftCount, reviewed }: StatusBarProps) {
   const { count, t } = useI18n()
   const reduceMotion = useReducedMotion()
   return (
@@ -19,7 +23,9 @@ export function StatusBar({ sessionCount, verifiedCount, draftCount }: StatusBar
           animate={reduceMotion ? undefined : { scale: [1, 1.35, 1], opacity: [0.75, 1, 0.75] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
         />
-        {count('sessions', sessionCount)} | {count('drafts', draftCount)} | {count('verifiedBlocks', verifiedCount)}
+        {[count('sessions', sessionCount),
+          ...(reviewed ? [count('drafts', draftCount), count('verifiedBlocks', verifiedCount)] : []),
+        ].join(' | ')}
       </span>
       <span className="flex items-center gap-1.5 max-[680px]:hidden">
         <kbd className="inline-flex h-5 items-center gap-0.5 rounded-[3px] border border-line border-b-line-strong bg-surface px-1.5 font-mono text-[11px]"><ArrowUpDownIcon className="size-3" />↑↓</kbd> {t('status.select')}

@@ -29,7 +29,7 @@ export function ResultsTable({
   onReset,
   onPageChange,
 }: ResultsTableProps) {
-  const { count, t } = useI18n()
+  const { count, t, label } = useI18n()
   return (
     <main id="results" tabIndex={-1} className="results-panel flex min-h-0 min-w-0 flex-1 flex-col bg-canvas">
       <div className="hidden min-h-10.5 items-center border-b border-line px-3 max-[960px]:flex">
@@ -91,7 +91,14 @@ export function ResultsTable({
                     <td className="results-task h-12 overflow-hidden border-b border-line px-2.5 py-1.5 leading-[1.35]">
                       <MathText>{question.task_summary}</MathText>
                       <small className="mt-0.5 block text-muted max-[680px]:hidden">
-                        {question.session} | {question.review_status === 'ai_draft' ? t('filters.aiDraft') : t('results.verified')} | Q{question.question}{question.part === '-' ? '' : `(${question.part})`} | {t('results.pages')} {question.source_pages}
+                        {[
+                          `${question.session} ${question.zone}`.trim(),
+                          label('status', question.review_status),
+                          `Q${question.question}${question.part && question.part !== '-' ? `(${question.part})` : ''}`,
+                          // Страницы есть только там, где подлинник — PDF.
+                          question.source_pages ? `${t('results.pages')} ${question.source_pages}` : '',
+                          question.form ? label('form', question.form) : '',
+                        ].filter(Boolean).join(' | ')}
                       </small>
                     </td>
                     <td className="results-col-topic h-12 overflow-hidden border-b border-line px-2.5 py-1.5">

@@ -72,7 +72,11 @@ export default defineConfig({
       '/api/drill': process.env.DRILL_PORT
         ? `http://127.0.0.1:${process.env.DRILL_PORT}`
         : 'http://127.0.0.1:8042',
-      '/api': 'http://127.0.0.1:8041',
+      // Атлас тоже можно перебить портом: рядом с боевой службой
+      // поднимается вторая, чтобы проверить, не тронув первую.
+      '/api': process.env.ATLAS_PORT
+        ? `http://127.0.0.1:${process.env.ATLAS_PORT}`
+        : 'http://127.0.0.1:8041',
     },
   },
   preview: {

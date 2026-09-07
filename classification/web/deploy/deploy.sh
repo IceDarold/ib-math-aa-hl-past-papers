@@ -77,6 +77,14 @@ if [[ ! -f "$physics_subject/bank/2025/bank.json" ]]; then
   exit 66
 fi
 
+# Индекс атласа собирается в сборке, а не лежит в репозитории: он выводной
+# и весит три мегабайта двоичного файла, который менялся бы каждой правкой
+# карты приёмов.
+if [[ ! -f "$physics_subject/bank/2025/atlas.sqlite" ]]; then
+  printf 'Physics atlas index is missing. Run build_atlas.py before deploying.\n' >&2
+  exit 66
+fi
+
 ssh_args=(
   -i "$DEPLOY_KEY_PATH"
   -o "UserKnownHostsFile=$DEPLOY_KNOWN_HOSTS"
@@ -194,6 +202,7 @@ test -f "$release/api/data/questions.sqlite"
 test -f "$release/practicum/aahl/bank.json"
 test -f "$release/vendor/drill-core/drill/server.py"
 test -f "$release/vendor/ib-physics/bank/2025/bank.json"
+test -f "$release/vendor/ib-physics/bank/2025/atlas.sqlite"
 test -f "$release/practicum/kit.py"
 
 install -d -m 755 "$api_runtime"
@@ -215,7 +224,15 @@ if [[ -f "$api_pid" ]]; then
   fi
 fi
 
-nohup env QUESTION_ATLAS_DB="$release/api/data/questions.sqlite" \
+# Индексы атласа: математика из своего каталога, физика из подмодуля.
+# Первый в списке отвечает на запросы, где предмет не назвали.
+atlas_dbs="math:$release/api/data/questions.sqlite"
+if [[ -f "$release/vendor/ib-physics/bank/2025/atlas.sqlite" ]]; then
+  atlas_dbs="$atlas_dbs,physics:$release/vendor/ib-physics/bank/2025/atlas.sqlite"
+fi
+printf 'Atlas indexes: %s\n' "$atlas_dbs"
+
+nohup env QUESTION_ATLAS_DBS="$atlas_dbs" \
   "$api_venv/bin/uvicorn" --app-dir "$release/api" app:app --host 127.0.0.1 --port 8041 \
   >> "$api_log" 2>&1 &
 api_process=$!

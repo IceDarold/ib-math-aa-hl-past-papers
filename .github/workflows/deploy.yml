@@ -56,6 +56,9 @@ jobs:
             -r vendor/drill-core/requirements.txt \
             -r practicum/aahl/requirements.txt
 
+      - name: Build the physics atlas index
+        run: python vendor/ib-physics/build_atlas.py
+
       - name: Check the drill
         env:
           PYTHONPATH: vendor/drill-core:practicum

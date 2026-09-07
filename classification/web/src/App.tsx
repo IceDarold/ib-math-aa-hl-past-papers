@@ -7,7 +7,7 @@ import { StatusBar } from './components/StatusBar'
 import { TopBar } from './components/TopBar'
 import { PracticumHub } from './components/PracticumHub'
 import { DrillView } from './components/DrillView'
-import { fetchFacets, fetchQuestion, fetchQuestions, type AtlasFacets } from './lib/api'
+import { fetchFacets, fetchQuestion, fetchQuestions, fetchSubjects, type AtlasFacets, type AtlasSubject } from './lib/api'
 import { useI18n } from './i18n'
 import type { Filters, FilterSetKey, Question } from './types'
 
@@ -20,6 +20,8 @@ function sessionSortKey(session: string) {
   return match ? Number(match[2]) * 100 + (match[1] === 'May' ? 5 : 11) : Number.MAX_SAFE_INTEGER
 }
 
+const SUBJECT_KEY = 'question-atlas:subject'
+
 const initialFilters: Filters = {
   query: '',
   paper: 'all',
@@ -29,6 +31,21 @@ const initialFilters: Filters = {
   status: 'all',
   topics: new Set(),
   methods: new Set(),
+  forms: new Set(),
+}
+
+/** Отборы у предметов не совпадают: темы, приёмы и бумаги названы своими
+ *  именами, и переносить их из математики в физику нечего. */
+function freshFilters(): Filters {
+  return { ...initialFilters, topics: new Set(), methods: new Set(), forms: new Set() }
+}
+
+function storedSubject(): string {
+  try {
+    return localStorage.getItem(SUBJECT_KEY) || 'math'
+  } catch {
+    return 'math'
+  }
 }
 
 export default function App() {
@@ -38,7 +55,9 @@ export default function App() {
     if (window.location.hash.startsWith('#drill')) return 'drill'
     return 'atlas'
   })
-  const [filters, setFilters] = useState<Filters>(initialFilters)
+  const [subject, setSubject] = useState<string>(storedSubject)
+  const [subjects, setSubjects] = useState<AtlasSubject[]>([])
+  const [filters, setFilters] = useState<Filters>(freshFilters)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null)
   const [pageQuestions, setPageQuestions] = useState<Question[]>([])
@@ -63,6 +82,15 @@ export default function App() {
 
   const topicCounts = facets?.topics ?? []
   const methodCounts = facets?.methods ?? []
+  const formCounts = facets?.forms ?? []
+  // Бумаги приходят по частоте, а читаются по порядку: P1, P1A, P1B, P2.
+  const paperCounts = useMemo(
+    () => [...(facets?.papers ?? [])].sort((a, b) => a[0].localeCompare(b[0], undefined, { numeric: true })),
+    [facets])
+  const statusCounts = facets?.statuses ?? []
+  const calculatorCounts = facets?.calculators ?? []
+  // Разметку модели проверяет человек — но только там, где она была.
+  const reviewed = statusCounts.some(([id]) => id === 'ai_draft' || id === 'manual_verified')
   const sessionCounts = useMemo(() => [...(facets?.sessions ?? [])].sort((a, b) => sessionSortKey(a[0]) - sessionSortKey(b[0])), [facets])
   const zoneCounts = useMemo(() => [...(facets?.zones ?? [])].sort((a, b) => a[0].localeCompare(b[0])), [facets])
   const archiveSessionCount = facets?.session_zones ?? 0
@@ -78,15 +106,15 @@ export default function App() {
 
   useEffect(() => {
     const controller = new AbortController()
-    fetchFacets(controller.signal).then(setFacets).catch(() => setFacets(null))
+    fetchFacets(subject, controller.signal).then(setFacets).catch(() => setFacets(null))
     return () => controller.abort()
-  }, [])
+  }, [subject])
 
   useEffect(() => {
     const controller = new AbortController()
     const delay = window.setTimeout(() => {
       setLoading(true)
-      fetchQuestions(filters, page, controller.signal)
+      fetchQuestions(subject, filters, page, controller.signal)
         .then((result) => {
           setPageQuestions(result.items)
           setTotal(result.total)
@@ -106,17 +134,17 @@ export default function App() {
         .finally(() => { if (!controller.signal.aborted) setLoading(false) })
     }, filters.query ? 180 : 0)
     return () => { controller.abort(); window.clearTimeout(delay) }
-  }, [filters, page, selectedId])
+  }, [subject, filters, page, selectedId])
 
   useEffect(() => {
     if (!selectedId) return
     const controller = new AbortController()
-    fetchQuestion(selectedId, controller.signal).then(setSelectedQuestion).catch(() => {
+    fetchQuestion(subject, selectedId, controller.signal).then(setSelectedQuestion).catch(() => {
       setSelectedQuestion(null)
       setInspectorOpen(false)
     })
     return () => controller.abort()
-  }, [selectedId])
+  }, [subject, selectedId])
 
   useEffect(() => {
     const media = window.matchMedia('(max-width: 960px)')
@@ -199,9 +227,43 @@ export default function App() {
   }
 
   const resetFilters = () => {
-    setFilters({ ...initialFilters, topics: new Set(), methods: new Set() })
+    setFilters(freshFilters())
     setPage(1)
   }
+
+  /** Сменить предмет: отборы сбрасываются, потому что чужими они не бывают. */
+  const switchSubject = useCallback((next: string) => {
+    setSubject((current) => {
+      if (next === current) return current
+      try { localStorage.setItem(SUBJECT_KEY, next) } catch { /* не беда */ }
+      setFilters(freshFilters())
+      setFacets(null)
+      setPage(1)
+      setSelectedId(null)
+      setSelectedQuestion(null)
+      setInspectorOpen(false)
+      return next
+    })
+  }, [])
+
+  // Какие предметы подняты. Спрашивается один раз: список меняется с
+  // выкаткой, а не по ходу работы.
+  useEffect(() => {
+    const controller = new AbortController()
+    fetchSubjects(controller.signal)
+      .then((list) => {
+        const ready = list.filter((entry) => entry.ready)
+        setSubjects(ready)
+        // Предмет из прошлого захода мог исчезнуть или остаться без индекса.
+        if (ready.length && !ready.some((entry) => entry.id === subject)) {
+          const fallback = ready.find((entry) => entry.default) ?? ready[0]
+          if (fallback) switchSubject(fallback.id)
+        }
+      })
+      .catch(() => { /* один предмет — переключать нечего */ })
+    return () => controller.abort()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const closeOverlays = () => {
     setFiltersOpen(false)
@@ -209,7 +271,7 @@ export default function App() {
   }
 
   const openPracticumQuestions = (topic: string) => {
-    setFilters({ ...initialFilters, topics: new Set(), methods: new Set(), query: topic })
+    setFilters({ ...freshFilters(), query: topic })
     setPage(1)
     setMode('atlas')
   }
@@ -256,10 +318,17 @@ export default function App() {
           {(compactLayout ? filtersOpen : sidebarVisible) && (
             <FilterPanel
               filters={filters}
+              subject={subject}
+              subjects={subjects}
+              onSubjectChange={switchSubject}
               topicCounts={topicCounts}
               methodCounts={methodCounts}
               sessionCounts={sessionCounts}
               zoneCounts={zoneCounts}
+              paperCounts={paperCounts}
+              statusCounts={statusCounts}
+              calculatorCounts={calculatorCounts}
+              formCounts={formCounts}
               compact={compactLayout}
               width={sidebarWidth}
               onResize={setSidebarWidth}
@@ -295,7 +364,7 @@ export default function App() {
         </AnimatePresence>
       </div>}
 
-      <StatusBar sessionCount={archiveSessionCount} verifiedCount={verifiedCount} draftCount={draftCount} />
+      <StatusBar sessionCount={archiveSessionCount} verifiedCount={verifiedCount} draftCount={draftCount} reviewed={reviewed} />
     </div>
   )
 }

@@ -43,14 +43,17 @@ export function normalizeQuestion(row: RawQuestion): Question {
   const confidenceLevels = JSON.parse(row.confidence || '{}') as Question['confidenceLevels']
   return {
     ...row,
-    paper: Number(row.paper),
     marks: Number(row.marks),
     tags,
     secondaryTopics: splitPipe(row.secondary_topics),
     alternatives: splitPipe(row.accepted_alternatives),
     pathSteps: splitPath(row.method_path),
     topicFamily: row.primary_topic.split('.')[0] ?? row.primary_topic,
-    methodFamily: row.method_family || inferMethodFamily(tags, row.method_path),
+    // Догадка о семействе — правила математики по её же словарю. Там, где
+    // ни меток, ни пути нет вовсе, гадать не по чему: у физики это просто
+    // подвопрос, который карта приёмов не поймала, и так и надо показать.
+    methodFamily: row.method_family
+      || (tags.length || row.method_path ? inferMethodFamily(tags, row.method_path) : ''),
     evidenceItems,
     confidenceLevels,
     reviewFlags: splitPipe(row.review_flags),
@@ -59,11 +62,22 @@ export function normalizeQuestion(row: RawQuestion): Question {
 
 
 export function shortId(row: Question): string {
-  const part = row.part === '-' ? '' : `-${row.part.toUpperCase()}`
+  // У физики код экзамена уже короткий и настоящий — 23M.2.HL.TZ1.17, — и
+  // он же напечатан в самой бумаге. Собирать поверх него свой значило бы
+  // назвать вопрос именем, которого нигде больше нет. Признак — подлинник:
+  // там, где он PDF, короткого кода в бумаге не напечатано.
+  if (!hasPdf(row)) return row.id
   const match = /^(May|November) (\d{4})$/.exec(row.session)
-  const session = match ? `${match[2]!.slice(-2)}${match[1] === 'May' ? 'M' : 'N'}` : row.session
+  if (!match) return row.id
+  const part = row.part && row.part !== '-' ? `-${row.part.toUpperCase()}` : ''
+  const session = `${match[2]!.slice(-2)}${match[1] === 'May' ? 'M' : 'N'}`
   const zone = row.zone === 'Common' ? 'C' : row.zone
   return `${session}-${zone}-P${row.paper}-Q${row.question.padStart(2, '0')}${part}`
+}
+
+/** Есть ли у вопроса подлинник страницами PDF: у физики его нет. */
+export function hasPdf(row: Question): boolean {
+  return Boolean(row.source_root && row.source_pages)
 }
 
 export function pdfUrl(row: Question, filename: 'question-paper.pdf' | 'markscheme.pdf'): string {

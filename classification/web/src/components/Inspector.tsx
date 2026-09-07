@@ -1,6 +1,6 @@
 import type { Question } from '../types'
 import { motion } from 'motion/react'
-import { pdfUrl } from '../lib/questions'
+import { hasPdf, pdfUrl } from '../lib/questions'
 import { useI18n } from '../i18n'
 import { CheckIcon, CloseIcon, FileIcon } from './Icons'
 import { MathText } from './MathText'
@@ -41,7 +41,7 @@ export function Inspector({ question, compact, onClose }: InspectorProps) {
 }
 
 function InspectorContent({ question, onClose }: { question: Question; onClose: () => void }) {
-  const { count, t } = useI18n()
+  const { count, t, label } = useI18n()
   const questionLabel = `Q${question.question}${question.part === '-' ? '' : `(${question.part})`}`
   return (
     <>
@@ -55,7 +55,9 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
             transition={{ type: 'spring', stiffness: 520, damping: 34 }}
           >
             {question.review_status === 'manual_verified' && <CheckIcon className="size-3" />}
-            {question.review_status === 'manual_verified' ? t('inspector.manualVerified') : t('inspector.aiDraft')}
+            {/* Статус называется своим именем: у физики он «из схемы», а не
+                «черновик ИИ» — там ничего не размечала модель. */}
+            {label('status', question.review_status)}
           </motion.span>
           <motion.button
             className="grid size-8 shrink-0 cursor-pointer place-items-center border border-transparent bg-transparent hover:border-line hover:bg-surface"
@@ -83,13 +85,27 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
           <dt className="text-[11px] text-muted">{t('inspector.secondary')}</dt><dd className="m-0 min-w-0"><Tags values={question.secondaryTopics} /></dd>
           <dt className="text-[11px] text-muted">{t('inspector.methodFamily')}</dt><dd className="m-0 min-w-0"><Taxon>{question.methodFamily}</Taxon></dd>
           <dt className="text-[11px] text-muted">{t('inspector.methodTags')}</dt><dd className="m-0 min-w-0"><Tags values={question.tags} /></dd>
-          <dt className="text-[11px] text-muted">{t('inspector.sourcePages')}</dt><dd className="m-0">{question.source_pages}</dd>
-          <dt className="text-[11px] text-muted">{t('inspector.markschemePages')}</dt><dd className="m-0">{question.markscheme_pages}</dd>
+          {hasPdf(question) && <>
+            <dt className="text-[11px] text-muted">{t('inspector.sourcePages')}</dt><dd className="m-0">{question.source_pages}</dd>
+            <dt className="text-[11px] text-muted">{t('inspector.markschemePages')}</dt><dd className="m-0">{question.markscheme_pages}</dd>
+          </>}
+          {question.form && <>
+            <dt className="text-[11px] text-muted">{t('inspector.form')}</dt><dd className="m-0 min-w-0"><Taxon>{question.form}</Taxon></dd>
+          </>}
+          {question.command_term && <>
+            <dt className="text-[11px] text-muted">{t('inspector.commandTerm')}</dt><dd className="m-0 min-w-0">{question.command_term}</dd>
+          </>}
+          {question.marking_points && question.marking_points !== '0' && <>
+            <dt className="text-[11px] text-muted">{t('inspector.markingPoints')}</dt><dd className="m-0">{question.marking_points}</dd>
+          </>}
+          {question.scheme_flags && <>
+            <dt className="text-[11px] text-muted">{t('inspector.schemeFlags')}</dt><dd className="m-0 min-w-0"><Tags values={question.scheme_flags.split(',').map((value) => value.trim()).filter(Boolean)} /></dd>
+          </>}
           <dt className="text-[11px] text-muted">{t('inspector.reviewFlags')}</dt><dd className="m-0 min-w-0"><Tags values={question.reviewFlags} /></dd>
         </dl>
       </Section>
 
-      <Section title={t('inspector.solutionPath')}>
+      {(question.pathSteps.length > 0 || hasPdf(question)) && <Section title={t('inspector.solutionPath')}>
         {question.pathSteps.length > 0 ? (
           <ol className="m-0 list-none p-0">
             {question.pathSteps.map((step, index) => (
@@ -114,13 +130,15 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
             ))}
           </ol>
         ) : <p className="m-0">—</p>}
-      </Section>
+      </Section>}
 
-      <Section title={t('inspector.alternatives')}>
-        {question.alternatives.length > 0
-          ? <AlternativeList values={question.alternatives} />
-          : <p className="m-0 leading-relaxed text-muted">{t('inspector.noAlternative')}</p>}
-      </Section>
+      {(question.alternatives.length > 0 || hasPdf(question)) && (
+        <Section title={t('inspector.alternatives')}>
+          {question.alternatives.length > 0
+            ? <AlternativeList values={question.alternatives} />
+            : <p className="m-0 leading-relaxed text-muted">{t('inspector.noAlternative')}</p>}
+        </Section>
+      )}
 
       {question.review_status === 'ai_draft' && (
         <Section title={t('inspector.evidence')}>
@@ -140,12 +158,30 @@ function InspectorContent({ question, onClose }: { question: Question; onClose: 
         </Section>
       )}
 
-      <Section title={t('inspector.source')}>
-        <div className="grid grid-cols-2 gap-2">
-          <SourceLink href={pdfUrl(question, 'question-paper.pdf')} label={t('inspector.questionPaper')} />
-          <SourceLink href={pdfUrl(question, 'markscheme.pdf')} label={t('inspector.markscheme')} />
-        </div>
-      </Section>
+      {/* Подлинник у предметов лежит по-разному: у математики это развороты
+          PDF по ссылке, у физики он уже разобран и показывается целиком —
+          и условие, и схема оценивания. */}
+      {hasPdf(question) ? (
+        <Section title={t('inspector.source')}>
+          <div className="grid grid-cols-2 gap-2">
+            <SourceLink href={pdfUrl(question, 'question-paper.pdf')} label={t('inspector.questionPaper')} />
+            <SourceLink href={pdfUrl(question, 'markscheme.pdf')} label={t('inspector.markscheme')} />
+          </div>
+        </Section>
+      ) : (
+        <>
+          {question.question_text && (
+            <Section title={t('inspector.questionText')}>
+              <p className="m-0 leading-relaxed whitespace-pre-line"><MathText>{question.question_text}</MathText></p>
+            </Section>
+          )}
+          {question.markscheme && (
+            <Section title={t('inspector.markscheme')}>
+              <pre className="m-0 overflow-x-auto border border-line bg-surface px-2 py-1.5 font-mono text-[11px] leading-relaxed whitespace-pre-wrap">{question.markscheme}</pre>
+            </Section>
+          )}
+        </>
+      )}
     </>
   )
 }

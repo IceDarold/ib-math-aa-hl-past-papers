@@ -6,12 +6,23 @@ import { formatKey } from '../lib/questions'
 import { useI18n } from '../i18n'
 import { CheckIcon, CloseIcon, ResetIcon } from './Icons'
 
+type Count = Array<[string, number]>
+
 interface FilterPanelProps {
   filters: Filters
-  topicCounts: Array<[string, number]>
-  methodCounts: Array<[string, number]>
-  sessionCounts: Array<[string, number]>
-  zoneCounts: Array<[string, number]>
+  subject: string
+  subjects: Array<{ id: string; ready: boolean }>
+  onSubjectChange: (id: string) => void
+  topicCounts: Count
+  methodCounts: Count
+  sessionCounts: Count
+  zoneCounts: Count
+  // Бумаги, статусы, калькулятор и форма ответа приходят от службы: они у
+  // предметов разные, а вшитые кнопки над физикой врали бы.
+  paperCounts: Count
+  statusCounts: Count
+  calculatorCounts: Count
+  formCounts: Count
   compact: boolean
   width: number
   onResize: (width: number) => void
@@ -26,10 +37,17 @@ const activeSegmentClass = 'relative z-1 text-primary-dark'
 
 export function FilterPanel({
   filters,
+  subject,
+  subjects,
+  onSubjectChange,
   topicCounts,
   methodCounts,
   sessionCounts,
   zoneCounts,
+  paperCounts,
+  statusCounts,
+  calculatorCounts,
+  formCounts,
   compact,
   width,
   onResize,
@@ -38,7 +56,7 @@ export function FilterPanel({
   onReset,
   onClose,
 }: FilterPanelProps) {
-  const { t } = useI18n()
+  const { t, label } = useI18n()
   return (
     <motion.aside
       id="filters"
@@ -68,10 +86,20 @@ export function FilterPanel({
         </motion.button>
       </div>
 
+      {subjects.length > 1 && (
+        <SegmentField
+          legend={t('filters.subject')}
+          value={subject}
+          options={subjects.map((entry) => [entry.id, label('subject', entry.id)] as [string, string])}
+          onChange={onSubjectChange}
+        />
+      )}
+
       <SegmentField
         legend={t('filters.paper')}
         value={filters.paper}
-        options={[['all', t('filters.all')], ['1', 'P1'], ['2', 'P2'], ['3', 'P3']]}
+        options={[['all', t('filters.all')],
+                  ...paperCounts.map(([id]) => [id, `P${id}`] as [string, string])]}
         onChange={(value) => onSetSegment('paper', value)}
       />
 
@@ -89,19 +117,26 @@ export function FilterPanel({
         onChange={(value) => onSetSegment('zone', value)}
       />
 
-      <SegmentField
-        legend={t('filters.status')}
-        value={filters.status}
-        options={[["all", t('filters.all')], ["manual_verified", t('filters.manual')], ["ai_draft", t('filters.aiDraft')]]}
-        onChange={(value) => onSetSegment('status', value)}
-      />
+      {/* У предмета с одним статусом или одним ответом про калькулятор
+          выбирать не из чего, и пара кнопок только занимает место. */}
+      {statusCounts.length > 1 && (
+        <SegmentField
+          legend={t('filters.status')}
+          value={filters.status}
+          options={[['all', t('filters.all')],
+                    ...statusCounts.map(([id]) => [id, label('status', id)] as [string, string])]}
+          onChange={(value) => onSetSegment('status', value)}
+        />
+      )}
 
-      <SegmentField
-        legend={t('filters.calculator')}
-        value={filters.calculator}
-        options={[['all', t('filters.any')], ['no', t('filters.no')], ['yes', t('filters.yes')]]}
-        onChange={(value) => onSetSegment('calculator', value)}
-      />
+      {calculatorCounts.length > 1 && (
+        <SegmentField
+          legend={t('filters.calculator')}
+          value={filters.calculator}
+          options={[['all', t('filters.any')], ['no', t('filters.no')], ['yes', t('filters.yes')]]}
+          onChange={(value) => onSetSegment('calculator', value)}
+        />
+      )}
 
       <CheckboxFilter
         label={t('filters.topic')}
@@ -116,6 +151,18 @@ export function FilterPanel({
         selected={filters.methods}
         onToggle={(value) => onToggleSet('methods', value)}
       />
+
+      {/* Форма ответа — ось, которой у математики нет вовсе: чем вопрос
+          вообще проверяется. Буква сверяется с буквой, число с допуском,
+          проза только со схемой оценивания. */}
+      {formCounts.length > 0 && (
+        <CheckboxFilter
+          label={t('filters.form')}
+          counts={formCounts}
+          selected={filters.forms}
+          onToggle={(value) => onToggleSet('forms', value)}
+        />
+      )}
 
       <motion.button
         className="mt-auto flex cursor-pointer items-center gap-1.5 border-0 bg-transparent py-2 text-left text-primary hover:text-primary-dark"

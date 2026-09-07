@@ -23,6 +23,25 @@ const messages = {
     'top.ready': 'готовы',
     'filters.label': 'Фильтры',
     'filters.close': 'Закрыть фильтры',
+    'inspector.questionText': 'Условие',
+    'inspector.form': 'Форма ответа',
+    'inspector.commandTerm': 'Командное слово',
+    'inspector.markingPoints': 'Точек разметки',
+    'inspector.schemeFlags': 'Правила схемы',
+    'filters.subject': 'Предмет',
+    'subject.math': 'Математика',
+    'subject.physics': 'Физика',
+    'filters.form': 'Форма ответа',
+    'form.choose': 'выбор',
+    'form.number': 'число',
+    'form.prose': 'проза',
+    'form.recall': 'наизусть',
+    'form.derive': 'вывод',
+    'form.draw': 'чертёж',
+    'form.other': 'прочее',
+    'status.manual_verified': 'Проверено',
+    'status.ai_draft': 'Черновик ИИ',
+    'status.derived': 'Из схемы',
     'filters.paper': 'Бумага',
     'filters.session': 'Сессия',
     'filters.zone': 'Зона',
@@ -98,6 +117,25 @@ const messages = {
     'top.ready': 'ready',
     'filters.label': 'Filters',
     'filters.close': 'Close filters',
+    'inspector.questionText': 'Question',
+    'inspector.form': 'Answer form',
+    'inspector.commandTerm': 'Command term',
+    'inspector.markingPoints': 'Marking points',
+    'inspector.schemeFlags': 'Scheme rules',
+    'filters.subject': 'Subject',
+    'subject.math': 'Mathematics',
+    'subject.physics': 'Physics',
+    'filters.form': 'Answer form',
+    'form.choose': 'choose',
+    'form.number': 'number',
+    'form.prose': 'prose',
+    'form.recall': 'recall',
+    'form.derive': 'derive',
+    'form.draw': 'draw',
+    'form.other': 'other',
+    'status.manual_verified': 'Verified',
+    'status.ai_draft': 'AI draft',
+    'status.derived': 'From markscheme',
     'filters.paper': 'Paper',
     'filters.session': 'Session',
     'filters.zone': 'Zone',
@@ -180,6 +218,12 @@ interface I18nValue {
   locale: Locale
   setLocale: (locale: Locale) => void
   t: (key: MessageKey) => string
+  /** Название по ключу, собранному на ходу; нет перевода — само имя.
+   *
+   *  Предметы, статусы и формы ответа приходят от службы, и новый может
+   *  появиться раньше, чем его переведут. Показать `derived` лучше, чем
+   *  показать пустоту или уронить сборку. */
+  label: (prefix: string, id: string) => string
   count: (kind: Countable, value: number) => string
 }
 
@@ -204,6 +248,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     locale,
     setLocale,
     t: (key) => messages[locale][key],
+    label: (prefix, id) => {
+      const key = `${prefix}.${id}` as MessageKey
+      return messages[locale][key] ?? id
+    },
     count: (kind, number) => {
       const [one, few, many] = countForms[locale][kind]
       if (locale === 'en') return `${number} ${number === 1 ? one : many}`
