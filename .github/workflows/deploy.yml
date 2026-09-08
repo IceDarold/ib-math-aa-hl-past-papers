@@ -59,6 +59,9 @@ jobs:
       - name: Build the physics atlas index
         run: python vendor/ib-physics/build_atlas.py
 
+      - name: Build the physics practicum pages
+        run: python vendor/ib-physics/build_site.py
+
       - name: Check the drill
         env:
           PYTHONPATH: vendor/drill-core:practicum

@@ -75,6 +75,7 @@ export default function App() {
       ? Math.min(MAX_SIDEBAR_WIDTH, Math.max(MIN_SIDEBAR_WIDTH, stored))
       : DEFAULT_SIDEBAR_WIDTH
   })
+  const [practicumCounts, setPracticumCounts] = useState({ total: 0, ready: 0 })
   const [compactLayout, setCompactLayout] = useState(() => window.matchMedia('(max-width: 960px)').matches)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [inspectorOpen, setInspectorOpen] = useState(false)
@@ -270,11 +271,20 @@ export default function App() {
     setInspectorOpen(false)
   }
 
-  const openPracticumQuestions = (topic: string) => {
-    setFilters({ ...freshFilters(), query: topic })
+  /** Открыть атлас на вопросах практикума.
+   *
+   *  Раньше сюда уходила строка поиска — название темы. У физики темы
+   *  называются P10, и искать по этому нечего: вопросы за практикумом
+   *  стоят его приёмами, по ним и отбираем. */
+  const openPracticumQuestions = useCallback((filter: { query?: string; methods?: string[] }) => {
+    setFilters({
+      ...freshFilters(),
+      query: filter.query ?? '',
+      methods: new Set(filter.methods ?? []),
+    })
     setPage(1)
     setMode('atlas')
-  }
+  }, [])
 
   return (
     <div className="flex h-full flex-col bg-canvas text-ink">
@@ -296,9 +306,11 @@ export default function App() {
         onOpenFilters={() => setFiltersOpen(true)}
         onToggleSidebar={() => setSidebarVisible((visible) => !visible)}
         onModeChange={setMode}
+        practicumCount={practicumCounts.total}
+        practicumReady={practicumCounts.ready}
       />
 
-      {mode === 'drill' ? <DrillView /> : mode === 'practicums' ? <PracticumHub onOpenAtlas={openPracticumQuestions} /> : <div className="relative flex min-h-0 flex-1 overflow-hidden">
+      {mode === 'drill' ? <DrillView /> : mode === 'practicums' ? <PracticumHub subject={subject} onSubjectChange={switchSubject} onOpenAtlas={openPracticumQuestions} onCounts={setPracticumCounts} /> : <div className="relative flex min-h-0 flex-1 overflow-hidden">
         <AnimatePresence initial={false}>
           {compactLayout && (filtersOpen || inspectorOpen) && (
             <motion.button

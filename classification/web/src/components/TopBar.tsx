@@ -5,6 +5,11 @@ import { MenuIcon, PanelLeftIcon, SearchIcon } from './Icons'
 
 interface TopBarProps {
   mode: 'atlas' | 'practicums' | 'drill'
+  // Сколько практикумов и сколько собрано. Считает их страница практикумов,
+  // а не эта строка: раньше здесь стояло «36 | 2» словами, и к двадцати
+  // двум собранным это уже не имело отношения.
+  practicumCount: number
+  practicumReady: number
   query: string
   resultCount: number
   resultMarks: number
@@ -33,6 +38,8 @@ export function TopBar({
   onOpenFilters,
   onToggleSidebar,
   onModeChange,
+  practicumCount,
+  practicumReady,
 }: TopBarProps) {
   const { count, locale, setLocale, t } = useI18n()
   return (
@@ -78,7 +85,7 @@ export function TopBar({
       </nav>
 
       <div className="whitespace-nowrap max-[960px]:hidden">
-        {mode === 'atlas' ? <>{yearRange} <span className="text-faint">| {count('sessions', sessionCount)}</span></> : <span className="text-muted">36 {t('top.practicums').toLowerCase()} | 2 {t('top.ready')}</span>}
+        {mode === 'atlas' ? <>{yearRange} <span className="text-faint">| {count('sessions', sessionCount)}</span></> : <span className="text-muted">{practicumCount} {t('top.practicums').toLowerCase()} | {practicumReady} {t('top.ready')}</span>}
       </div>
 
       {mode === 'atlas' ? <motion.label

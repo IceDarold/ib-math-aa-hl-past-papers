@@ -109,6 +109,73 @@ def show_answer(answer, spec=None):
     return _lazy()[0].show_answer(answer, var=(spec or {}).get('var', 'x'))
 
 
+MAP = os.path.join(os.path.dirname(HERE), 'map.yaml')
+
+# Ноутбук и его PDF лежат под одинаковыми именами; PDF собирается сборкой
+# практикума и рядом с ним же публикуется.
+PDF_DIR = 'practicum/pdf'
+
+
+def _pdf(notebook):
+    """practicum/geometry/practicum-c3-....ipynb → practicum/pdf/practicum-c3-....pdf"""
+    name = os.path.basename(notebook)
+    if not name.endswith('.ipynb'):
+        return None
+    path = f"{PDF_DIR}/{name[:-len('.ipynb')]}.pdf"
+    return path if os.path.isfile(os.path.join(os.path.dirname(HERE),
+                                               '..', path)) else None
+
+
+def practicums():
+    """Чем открыть практикум: ноутбук, PDF, разбор архива, Kaggle.
+
+    Единственный источник — practicum/map.yaml, та же карта, по которой
+    практикумы собираются. Держать этот список ещё и в странице значило
+    отставать: там было записано два готовых практикума при двадцати двух
+    собранных.
+    """
+    import yaml
+    plan = yaml.safe_load(open(MAP))
+    out = {}
+    for section_id, section in plan['sections'].items():
+        for entry in section.get('practicums') or ():
+            # Подтема в карте записана двумя способами: строкой, когда
+            # тема взята целиком, и словарём с долей, когда только часть.
+            subtopics = entry.get('subtopics') or []
+            first = subtopics[0] if subtopics else ''
+            topic = first.get('topic', '') if isinstance(first, dict) else first
+            links = []
+            for label, path in (('Ноутбук', entry.get('notebook')),
+                                ('Разбор архива', entry.get('archive'))):
+                if path:
+                    links.append({'label': label, 'href': '/' + path,
+                                  'kind': 'notebook'})
+                    pdf = _pdf(path)
+                    if pdf:
+                        links.append({'label': label + ', PDF',
+                                      'href': '/' + pdf, 'kind': 'pdf'})
+            for label, slug in (('Kaggle', entry.get('kaggle')),
+                                ('Kaggle, разбор', entry.get('kaggle_archive'))):
+                if slug:
+                    links.append({'label': label, 'kind': 'kaggle',
+                                  'href': f'https://www.kaggle.com/code/{slug}'})
+            out[entry['id']] = {
+                # Название и раздел нужны тем практикумам, которых ещё нет
+                # в банке: их не собрали, но в карте они есть, и прятать их
+                # значит показывать половину карты.
+                'title': entry['title'],
+                'section': section_id,
+                'status': entry.get('status') or 'planned',
+                'links': links,
+                'note': (entry.get('note') or '').strip(),
+                # В атласе у математики размечены не приёмы, а укрупнённые
+                # семейства метода, и отбор по приёму дал бы пусто. Зато
+                # тема корпуса у практикума своя и ищется словом.
+                'atlas': {'query': topic} if topic else {},
+            }
+    return out
+
+
 def rubric(practicum=None):
     from drill import grader
     return grader.rubric(RUBRIC, practicum)

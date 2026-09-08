@@ -127,6 +127,9 @@ else
   install -d -m 755 "$release"
 fi
 
+# Каталог страниц физики заводится здесь по той же причине, что и vendor/.
+install -d -m 755 "$release/physics"
+
 # rsync создаёт только последний каталог пути, а vendor/ в релизе ещё нет:
 # ни в пустом, ни в жёстко слинкованном с прошлым, где подмодулей не было
 # вовсе. Заводим его здесь, а не флагом --mkpath, чтобы не зависеть от
@@ -138,14 +141,15 @@ REMOTE
 # каталоги, которые приезжают следующими, он тоже снёс бы. Архив исключён
 # по этой причине давно; vendor/ — по той же, только его вдобавок некому
 # создать заново: rsync заводит лишь последний каталог пути.
-rsync -rlptz --delete --exclude='/AA_HL/' --exclude='/vendor/' -e "$rsync_ssh" \
+rsync -rlptz --delete --exclude='/AA_HL/' --exclude='/vendor/' --exclude='/physics/' -e "$rsync_ssh" \
   "$web_dist/" "$remote:$release/"
 
 rsync -rlptzc --delete -e "$rsync_ssh" \
   "$archive/" "$remote:$release/AA_HL/"
 
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
-  --include='*/' --include='*.ipynb' --include='kit.py' --include='aahl/***' \
+  --include='*/' --include='*.ipynb' --include='*.pdf' --include='kit.py' \
+  --include='aahl/***' \
   --exclude='*' -e "$rsync_ssh" \
   "$practicum/" "$remote:$release/practicum/"
 
@@ -153,11 +157,17 @@ rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
   --exclude='.venv/' --exclude='tests/' -e "$rsync_ssh" \
   "$drill_core/" "$remote:$release/vendor/drill-core/"
 
-# У физики нужен предмет и банк; собранные практикумы и исходники разбора
-# архива службе ни к чему.
+# У физики нужен предмет и банк. Собранные страницы практикумов едут
+# отдельно: их отдаёт nginx как обычную статику, и лежать они должны там,
+# куда ведут ссылки, — /physics/.
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
   --exclude='.git/' --exclude='tests/' --exclude='site/' -e "$rsync_ssh" \
   "$physics_subject/" "$remote:$release/vendor/ib-physics/"
+
+if [[ -d "$physics_subject/site" ]]; then
+  rsync -rlptzc --delete -e "$rsync_ssh" \
+    "$physics_subject/site/" "$remote:$release/physics/"
+fi
 
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' -e "$rsync_ssh" \
   "$api_source/" "$remote:$release/api/"
