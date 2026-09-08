@@ -217,6 +217,66 @@ def derivative_check(f, var='x', order=1, params=None):
     return spec
 
 
+def _curve_spec(rule, var='x', dep='y'):
+    """Кривая для проверки: условие F(x, y) = 0 в переносимом виде."""
+    rule = sp.sympify(rule)
+    if isinstance(rule, sp.Eq):
+        rule = rule.lhs - rule.rhs
+    return sp.srepr(rule), var, dep
+
+
+def tangent_check(rule, at, normal=False, var='x', dep='y'):
+    """Ответ — касательная (или нормаль): прямая, которой кривая держится.
+
+    Эталона нет: проверка идёт по кривой из условия и сравнивает наклоны.
+    Любая запись прямой проходит — выражение, равенство, точка со скобками.
+    """
+    shape, var, dep = _curve_spec(rule, var, dep)
+    return {'kind': 'normal' if normal else 'tangent', 'rule': shape,
+            'var': var, 'dep': dep, 'at': sp.srepr(sp.sympify(at))}
+
+
+def slope_check(rule, at=None, domain=None, var='x', dep='y'):
+    """Ответ — наклон кривой: сверяется ходьбой по ней, а не эталоном."""
+    shape, var, dep = _curve_spec(rule, var, dep)
+    spec = {'kind': 'slope', 'rule': shape, 'var': var, 'dep': dep}
+    if at is not None:
+        spec['at'] = sp.srepr(sp.sympify(at))
+    if domain is not None:
+        spec['domain'] = [sp.srepr(sp.sympify(v)) for v in domain]
+    return spec
+
+
+def where_check(rule, slope, domain, coordinates=False, var='x', dep='y'):
+    """Ответ — точки кривой с заданным наклоном; полнота набора тоже."""
+    shape, var, dep = _curve_spec(rule, var, dep)
+    return {'kind': 'where', 'rule': shape, 'var': var, 'dep': dep,
+            'slope': sp.srepr(sp.sympify(slope)),
+            'domain': [sp.srepr(sp.sympify(v)) for v in domain],
+            'coordinates': bool(coordinates)}
+
+
+def second_check(rule, at, var='x', dep='y'):
+    """Ответ — вторая производная: три шага по кривой вместо повторного
+    дифференцирования."""
+    shape, var, dep = _curve_spec(rule, var, dep)
+    return {'kind': 'second', 'rule': shape, 'var': var, 'dep': dep,
+            'at': sp.srepr(sp.sympify(at))}
+
+
+def constant_check(rule, letter, at, slope, window, var='x', dep='y'):
+    """Ответ — постоянная внутри кривой, подобранная под наклон.
+
+    rule содержит букву letter; проверка подставляет в неё ответ, строит
+    кривую и меряет наклон в точке. Полнота — просмотром окна window.
+    """
+    shape, var, dep = _curve_spec(rule, var, dep)
+    return {'kind': 'constant', 'rule': shape, 'var': var, 'dep': dep,
+            'letter': str(letter), 'at': sp.srepr(sp.sympify(at)),
+            'slope': sp.srepr(sp.sympify(slope)),
+            'window': [sp.srepr(sp.sympify(v)) for v in window]}
+
+
 def constants_check(unknowns, conditions):
     """Ответ — постоянные, найденные из условий на кривую.
 

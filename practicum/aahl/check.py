@@ -351,6 +351,43 @@ def evaluate(spec, raw):
                             order=spec.get('order', 1),
                             params=params or None)
 
+        if kind in ('tangent', 'normal', 'slope', 'where', 'second',
+                    'constant'):
+            var, dep = sp.Symbol(spec['var']), sp.Symbol(spec['dep'])
+            shape = sp.sympify(spec['rule'])
+            here = kit.curve(shape, var=var, dep=dep)
+            spot = sp.sympify(spec['at']) if spec.get('at') else None
+            domain = ([sp.sympify(v) for v in spec['domain']]
+                      if spec.get('domain') else None)
+
+            if kind in ('tangent', 'normal'):
+                check = kit.verify_tangent if kind == 'tangent' else kit.verify_normal
+                return _capture(check, 'Ответ', parse_one(raw), here, spot)
+
+            if kind == 'slope':
+                return _capture(kit.verify_slope, 'Ответ', parse_one(raw),
+                                here, at=spot, domain=domain)
+
+            if kind == 'second':
+                return _capture(kit.verify_second, 'Ответ', parse_one(raw),
+                                here, spot)
+
+            if kind == 'where':
+                values = parse_many(raw)
+                got = values if len(values) > 1 else values[0]
+                return _capture(kit.verify_where, 'Ответ', got, here,
+                                sp.sympify(spec['slope']), domain,
+                                coordinates=spec.get('coordinates', False))
+
+            letter = sp.Symbol(spec['letter'])
+            build = lambda value: kit.curve(shape.subs(letter, value),
+                                            var=var, dep=dep)
+            values = parse_many(raw)
+            return _capture(kit.verify_constant, 'Ответ',
+                            values if len(values) > 1 else values[0],
+                            build, spot, sp.sympify(spec['slope']),
+                            [sp.sympify(v) for v in spec['window']])
+
         if kind == 'constants':
             unknowns = [sp.Symbol(name) for name in spec['unknowns']]
             conditions = [(what, sp.sympify(cond))

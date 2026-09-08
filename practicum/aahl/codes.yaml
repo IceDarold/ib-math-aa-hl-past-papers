@@ -236,6 +236,16 @@ E3:
   letter:   {skill: with_parameter,       name: буква в функции}
   read:     {skill: read_derivative,      name: прочесть производную}
 
+E4:
+  tangent:   {skill: tangent_line,         name: касательная в точке}
+  normal:    {skill: normal_line,          name: нормаль}
+  point:     {skill: point_from_gradient,  name: наклон дан — найти точку}
+  implicit:  {skill: implicit_derivative,  name: кривая задана уравнением}
+  itangent:  {skill: implicit_tangent,     name: касательная к такой кривой}
+  second:    {skill: second_implicit,      name: продифференцировать соотношение ещё раз}
+  right:     {skill: right_angles,         name: прямой угол как условие}
+  condition: {skill: tangency_condition,   name: касание как условие}
+
 E7:
   int: {skill: direct_integration,           name: прямое интегрирование}
   sep: {skill: separation,                   name: разделение переменных}

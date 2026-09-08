@@ -1534,6 +1534,102 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('A1.')):
     print(f'  {gen_name:32} {SEEDS} задач пройдено шагами')
 
 
+# =============================================================== E4
+# Генераторы E4 считают формулами: sp.diff, точка-наклон, минус обратная
+# величина. Проверки, которые к ним приложены, формул не знают вовсе —
+# они идут по кривой. Поэтому здесь сверка идёт в обе стороны сразу:
+# эталон пересчитывается символьно, а потом тот же эталон прогоняется
+# через настоящую проверку тренажёра, и рядом с ним — испорченный ответ,
+# который она обязана отвергнуть.
+E4_SPOIL = {
+    'E4.tangent_line': lambda claim: claim + 1,
+    'E4.normal_line': lambda claim: claim + 1,
+    'E4.point_from_gradient': lambda claim: claim + 1,
+    'E4.implicit_derivative': lambda claim: -claim,
+    'E4.implicit_tangent': lambda claim: claim + 1,
+    'E4.second_implicit': lambda claim: -claim,
+    'E4.right_angles': lambda claim: -claim,
+    'E4.tangency_condition': lambda claim: claim + 1,
+}
+
+
+def _e4_expected(name, item):
+    """Тот же ответ, посчитанный символьно: sp.diff вместо ходьбы."""
+    spec = item['check']
+    shape = sp.sympify(spec['rule'])
+    y_sym = sp.Symbol(spec.get('dep', 'y'))
+    var = sp.Symbol(spec.get('var', 'x'))
+    fn = sp.Function('f')
+    swapped = shape.subs(y_sym, fn(var))
+    first = sp.solve(sp.Eq(sp.diff(swapped, var), 0),
+                     sp.Derivative(fn(var), var))
+    slope = sp.simplify(first[0].subs(fn(var), y_sym)) if first else None
+
+    if name == 'E4.point_from_gradient':
+        target = sp.sympify(spec['slope'])
+        height = sp.solve(sp.Eq(shape, 0), y_sym)[0]
+        return sp.solve(sp.Eq(sp.diff(height, var), target), var)[0]
+
+    if name == 'E4.tangency_condition':
+        letter = sp.Symbol(spec['letter'])
+        height = sp.solve(sp.Eq(shape, 0), y_sym)[0]
+        at = sp.sympify(spec['at'])
+        return sp.solve(sp.Eq(sp.diff(height, var).subs(var, at),
+                              sp.sympify(spec['slope'])), letter)[0]
+
+    if name == 'E4.implicit_derivative':
+        return slope
+
+    if name == 'E4.second_implicit':
+        at = sp.sympify(spec['at'])
+        height = sp.solve(sp.Eq(shape, 0), y_sym)
+        branch = min(height, key=lambda h: abs(sp.N(h.subs(var, at[0]) - at[1])))
+        return sp.simplify(sp.diff(branch, var, 2).subs(var, at[0]))
+
+    if name == 'E4.right_angles':
+        at = sp.sympify(spec['at'])
+        height = sp.solve(sp.Eq(shape, 0), y_sym)[0]
+        return sp.simplify(sp.diff(height, var).subs(var, at))
+
+    # Касательная, нормаль и касательная к кривой-уравнению: прямая
+    # собирается из наклона и точки заново.
+    at = sp.sympify(spec['at'])
+    if isinstance(at, (tuple, sp.Tuple)):
+        place = {var: at[0], y_sym: at[1]}
+        point = (at[0], at[1])
+    else:
+        height = sp.solve(sp.Eq(shape, 0), y_sym)[0]
+        place = {var: at, y_sym: height.subs(var, at)}
+        point = (at, height.subs(var, at))
+    here = sp.simplify(slope.subs(place))
+    if spec['kind'] == 'normal':
+        here = -1/here
+    return sp.expand(here*(var - point[0]) + point[1])
+
+
+section('E4: эталон генератора пересчитан формулами и прогнан проверкой')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('E4.')):
+    agreed = accepted = rejected = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[gen_name](random.Random(seed))
+        claim = sp.sympify(item['answer'])
+        want = _e4_expected(gen_name, item)
+        if sp.simplify(claim - want) == 0:
+            agreed += 1
+        ok, _ = evaluate(item['check'], str(claim))
+        accepted += bool(ok)
+        spoiled = E4_SPOIL[gen_name](claim)
+        bad, _ = evaluate(item['check'], str(spoiled))
+        rejected += not bad
+    t(f'{gen_name}: формулы дали тот же ответ на всех {SEEDS} зёрнах',
+      agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах',
+      accepted == SEEDS)
+    t(f'{gen_name}: и отвергла испорченный на всех {SEEDS} зёрнах',
+      rejected == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено формулой и проверкой')
+
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')

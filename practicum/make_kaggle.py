@@ -26,6 +26,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import warnings
@@ -112,8 +113,21 @@ def build(entry, user, out_dir, public=False):
     return out_dir
 
 
+def kaggle_cli():
+    """Путь к kaggle: он ставится в тот же venv, что и sympy.
+
+    Голым именем его звать нельзя: venv практикума активируют не всегда,
+    и тогда subprocess не находит команду, хотя python рядом с ней. Ищем
+    сначала возле текущего интерпретатора, потом по PATH.
+    """
+    nearby = os.path.join(os.path.dirname(sys.executable), 'kaggle')
+    if os.path.isfile(nearby) and os.access(nearby, os.X_OK):
+        return nearby
+    return shutil.which('kaggle') or 'kaggle'
+
+
 def push(out_dir):
-    r = subprocess.run(['kaggle', 'kernels', 'push', '-p', out_dir],
+    r = subprocess.run([kaggle_cli(), 'kernels', 'push', '-p', out_dir],
                        capture_output=True, text=True)
     line = (r.stdout + r.stderr).strip().split('\n')[-1]
     print(f"    {line}")

@@ -213,6 +213,26 @@ by_practicum:
       fix: "Write \"for 0 <= t <= 24\" when the model covers one day."
       code: A1
 
+  E4:
+    - id: point_and_gradient
+      requirement: >
+        Both the point of contact and the gradient are written down before
+        the equation of the tangent or normal is formed.
+      fix: "Write \"at x = 4: y = 23 and dy/dx = 30\" before the line itself."
+      code: A1
+    - id: implicit_dy_dx
+      requirement: >
+        Every term that contains y carries a dy/dx when the relation is
+        differentiated, and the dy/dx terms are collected before dividing.
+      fix: "Write \"d/dx(y^2) = 2y dy/dx\" explicitly rather than 2y."
+      code: M1
+    - id: perpendicular_conclusion
+      requirement: >
+        A right angle is concluded in words after the product of gradients
+        is shown to be -1, not left as arithmetic.
+      fix: "Write \"m1 m2 = -1, so the curves intersect at right angles.\""
+      code: R1
+
   E7:
     - id: constant_of_integration
       requirement: >

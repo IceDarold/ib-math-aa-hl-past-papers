@@ -540,6 +540,58 @@ def calls():
     yield lambda: verify_peak('t', 750, _falling, at=26)
     yield lambda: verify_peak('t', 750, progression(1, 2))
     yield lambda: verify_peak('t', ..., _falling)
+
+    # E4: кривая и прямая. Каждая проверка гоняется через успех, промах,
+    # именной промах и незаполненный ответ — ветки сообщений у них разные.
+    _para = curve(Eq(y, x**2))
+    _ring = curve(x**2 + y**2 - 25)
+    _blank_curve = curve(...)
+    yield lambda: verify_tangent('t', 4*x - 4, _para, 2)
+    yield lambda: verify_tangent('t', 4*x - 3, _para, 2)
+    yield lambda: verify_tangent('t', -x/4 + sp.Rational(9, 2), _para, 2)
+    yield lambda: verify_tangent('t', -4*x - 4, _para, 2)
+    yield lambda: verify_tangent('t', x**2, _para, 2)
+    yield lambda: verify_tangent('t', Eq(x, 2), _para, 2)
+    yield lambda: verify_tangent('t', 4*x - 4, _blank_curve, 2)
+    yield lambda: verify_tangent('t', ..., _para, 2)
+    yield lambda: verify_normal('t', -x/4 + sp.Rational(9, 2), _para, 2)
+    yield lambda: verify_normal('t', 4*x - 4, _para, 2)
+    yield lambda: verify_normal('t', ..., _para, 2)
+    yield lambda: verify_slope('t', -x/y, _ring, domain=(-3, 3))
+    yield lambda: verify_slope('t', x/y, _ring, domain=(-3, 3))
+    yield lambda: verify_slope('t', y/x, _ring, domain=(-3, 3))
+    yield lambda: verify_slope('t', 4, _para, at=2)
+    yield lambda: verify_slope('t', A, _para, at=2)
+    yield lambda: verify_slope('t', ..., _para, at=2)
+    yield lambda: verify_slope('t', 4, _blank_curve, at=2)
+    yield lambda: verify_where('t', 2, _para, 4, (-5, 5))
+    yield lambda: verify_where('t', (2, 4), _para, 4, (-5, 5))
+    yield lambda: verify_where('t', 3, _para, 4, (-5, 5))
+    yield lambda: verify_where('t', 2, _para, 4, (3, 5))
+    yield lambda: verify_where('t', [2, 2], _para, 4, (-5, 5))
+    yield lambda: verify_where('t', [0, 2], _ring, 0, (-6, 6))
+    yield lambda: verify_where('t', ..., _para, 4, (-5, 5))
+    yield lambda: verify_on('t', 4, _para, 2)
+    yield lambda: verify_on('t', 5, _para, 2)
+    yield lambda: verify_on('t', ..., _para, 2)
+    yield lambda: verify_second('t', 2, _para, 1)
+    yield lambda: verify_second('t', 3, _para, 1)
+    yield lambda: verify_second('t', 2, _para, 1)
+    yield lambda: verify_second('t', ..., _para, 1)
+    yield lambda: verify_right_angle('t', (4, -sp.Rational(1, 4)), _para,
+                                     curve(Eq(y, 4 - (x - 2)/4)), 2)
+    yield lambda: verify_right_angle('t', (4, 4), _para,
+                                     curve(Eq(y, 4 - (x - 2)/4)), 2)
+    yield lambda: verify_right_angle('t', 4, _para,
+                                     curve(Eq(y, 4 - (x - 2)/4)), 2)
+    yield lambda: verify_right_angle('t', ..., _para,
+                                     curve(Eq(y, 4 - (x - 2)/4)), 2)
+    yield lambda: verify_constant('t', 2, lambda v: curve(Eq(y, v*x**2)), 1,
+                                  4, (0.5, 8))
+    yield lambda: verify_constant('t', 3, lambda v: curve(Eq(y, v*x**2)), 1,
+                                  4, (0.5, 8))
+    yield lambda: verify_constant('t', ..., lambda v: curve(Eq(y, v*x**2)), 1,
+                                  4, (0.5, 8))
     yield lambda: trigger_check({1: 'a'}, {1: digest('a')})
     yield lambda: trigger_check({1: 'b'}, {1: digest('a')})
     yield lambda: trigger_check({1: ''}, {1: digest('a')})

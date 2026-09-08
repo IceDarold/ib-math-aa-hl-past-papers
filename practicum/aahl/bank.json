@@ -9361,6 +9361,435 @@
    "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
    "skill": "E3.read_derivative"
   },
+  "2021-NOV-COMMON-P1-Q05-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "5",
+   "part": "a",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "E4.tangent_line"
+  },
+  "2021-NOV-COMMON-P1-Q05-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "5",
+   "part": "b",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "E4.tangent_line"
+  },
+  "2021-NOV-COMMON-P1-Q05-D": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "5",
+   "part": "d",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "E4.tangent_line"
+  },
+  "2025-MAY-TZ1-P2-Q05-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "E4.tangent_line"
+  },
+  "2022-MAY-TZ1-P3-Q02-D-II": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "(d)(ii)",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "E4.tangent_line"
+  },
+  "2025-NOV-TZ3-P1-Q09-C": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "9",
+   "part": "C",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "E4.normal_line"
+  },
+  "2025-NOV-TZ1-P3-Q01-A-I": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "A-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "E4.normal_line"
+  },
+  "2021-MAY-TZ1-P2-Q10-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "b",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E4.point_from_gradient"
+  },
+  "2021-MAY-TZ2-P1-Q04-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "4",
+   "part": "B",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "E4.point_from_gradient"
+  },
+  "2022-NOV-COMMON-P2-Q11-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "11",
+   "part": "b",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "E4.point_from_gradient"
+  },
+  "2025-MAY-TZ3-P2-Q05-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "5",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "E4.point_from_gradient"
+  },
+  "2021-NOV-COMMON-P2-Q08-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "8",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "17–18",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "E4.implicit_derivative"
+  },
+  "2022-MAY-TZ2-P3-Q01-D-I": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(d)(i)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "E4.implicit_derivative"
+  },
+  "2024-MAY-TZ1-P2-Q11-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "a",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "E4.implicit_derivative"
+  },
+  "2025-MAY-TZ2-P2-Q12-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E4.implicit_derivative"
+  },
+  "2023-MAY-TZ1-P3-Q02-H": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "h",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E4.implicit_derivative"
+  },
+  "2021-NOV-COMMON-P2-Q08-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "8",
+   "part": "B",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18–19",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "E4.implicit_tangent"
+  },
+  "2022-MAY-TZ2-P3-Q01-F-I": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(f)(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "E4.implicit_tangent"
+  },
+  "2024-MAY-TZ1-P2-Q11-B-I-II": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "b(i)-(ii)",
+   "marks": 9,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "E4.implicit_tangent"
+  },
+  "2024-MAY-TZ1-P2-Q11-D": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "(d)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "E4.implicit_tangent"
+  },
+  "2022-MAY-TZ2-P2-Q12-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E4.second_implicit"
+  },
+  "2023-MAY-TZ1-P2-Q12-B-I-II": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "(b)(i)-(ii)",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "E4.second_implicit"
+  },
+  "2025-NOV-TZ3-P2-Q12-B-I": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "12",
+   "part": "B-I",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "E4.second_implicit"
+  },
+  "2025-NOV-TZ3-P2-Q12-B-II": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "12",
+   "part": "B-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "E4.second_implicit"
+  },
+  "2023-MAY-TZ2-P1-Q08-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "b",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "E4.right_angles"
+  },
+  "2023-NOV-TZ1-P3-Q02-D": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "D",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "19-20",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E4.right_angles"
+  },
+  "2023-NOV-TZ2-P3-Q02-D": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "(d)",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "19-20",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E4.right_angles"
+  },
+  "2023-NOV-TZ2-P3-Q02-A-I": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "(a)(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E4.right_angles"
+  },
+  "2021-MAY-TZ1-P1-Q04-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "E4.tangency_condition"
+  },
+  "2021-MAY-TZ1-P1-Q04-C": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "C",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "10-11",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "E4.tangency_condition"
+  },
+  "2022-MAY-TZ1-P1-Q04": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "E4.tangency_condition"
+  },
+  "2022-MAY-TZ1-P3-Q02-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "(b)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4-5",
+   "markscheme_pages": "19-20",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "E4.tangency_condition"
+  },
+  "2023-MAY-TZ2-P3-Q01-E": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "E",
+   "marks": 8,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10-14",
+   "dir": "AA_HL/2023/May/TZ2/Paper 3",
+   "skill": "E4.tangency_condition"
+  },
   "2021-NOV-COMMON-P1-Q01": {
    "session": "November 2021",
    "zone": "Common",
@@ -10024,6 +10453,14 @@
    "notebook": "practicum/calculus/practicum-e3-differentiation.ipynb",
    "marks": 188,
    "blocks": 55
+  },
+  {
+   "id": "E4",
+   "title": "Неявное дифференцирование: касательная и нормаль",
+   "section": "E",
+   "notebook": "practicum/calculus/practicum-e4-tangents.ipynb",
+   "marks": 131,
+   "blocks": 33
   },
   {
    "id": "E7",
@@ -14731,6 +15168,226 @@
     "2024-MAY-TZ1-P3-Q02-B",
     "2024-MAY-TZ2-P2-Q09",
     "2025-NOV-TZ3-P3-Q01-D"
+   ]
+  },
+  {
+   "id": "E4.tangent_line",
+   "practicum": "E4",
+   "name": "Касательная в известной точке",
+   "rung": 1,
+   "trigger": "Точка названа — числом, буквой или словами «в точке, где x = 4», — и спрашивают уравнение касательной либо её наклон. Кривая задана формулой y = f(x), и решать относительно y ничего не нужно.",
+   "chain": [
+    "Найти ординату точки, подставив абсциссу в саму функцию",
+    "Взять производную и подставить в неё ту же абсциссу",
+    "Написать прямую через точку и наклон, y − y₀ = m(x − x₀)"
+   ],
+   "traps": [
+    "Наклон найден, а точка нет: у прямой из ответа верный угол, но проходит она мимо кривой",
+    "Ордината взята с касательной, а не с кривой, когда спрашивают f(4) по данной касательной — это как раз одно и то же, и в ноябре 2021 за это дают отдельный балл",
+    "В составной функции h = f(g) забыт множитель g′: h′(4) — это f′(g(4))·g′(4), а не f′(4)",
+    "Ответ оставлен наклоном, когда спрошено уравнение прямой"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 131,
+   "blocks": [
+    "2021-NOV-COMMON-P1-Q05-A",
+    "2021-NOV-COMMON-P1-Q05-B",
+    "2021-NOV-COMMON-P1-Q05-D",
+    "2025-MAY-TZ1-P2-Q05-A",
+    "2022-MAY-TZ1-P3-Q02-D-II"
+   ]
+  },
+  {
+   "id": "E4.normal_line",
+   "practicum": "E4",
+   "name": "Нормаль",
+   "rung": 2,
+   "trigger": "В вопросе стоит слово normal или «перпендикулярно кривой в точке». Всё остальное — как у касательной, и отличается ровно один шаг.",
+   "chain": [
+    "Найти наклон касательной в точке",
+    "Взять минус обратную величину, а не просто минус",
+    "Написать прямую через ту же точку с этим наклоном"
+   ],
+   "traps": [
+    "Взято −m вместо −1/m: у наклона 2 нормаль идёт с −1/2, а не с −2",
+    "Сдана касательная вместо нормали",
+    "Горизонтальная касательная: нормаль там вертикальна, и уравнения вида y = mx + c у неё нет вовсе",
+    "Обратная величина взята, но знак потерян"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 131,
+   "blocks": [
+    "2025-NOV-TZ3-P1-Q09-C",
+    "2025-NOV-TZ1-P3-Q01-A-I"
+   ]
+  },
+  {
+   "id": "E4.point_from_gradient",
+   "practicum": "E4",
+   "name": "Наклон дан — найти точку",
+   "rung": 3,
+   "trigger": "Известен наклон, а не точка. Сказано это может быть тремя способами: числом («gradient of L is 1/3»), другой прямой («parallel to y = x») или углом («makes an angle of 70° to the horizontal»). Спрашивают, где кривая идёт именно так.",
+   "chain": [
+    "Перевести условие в число: наклон прямой, или tan угла",
+    "Приравнять к нему производную и решить полученное уравнение",
+    "Отобрать корни, попадающие в область из условия",
+    "Подставить их в саму функцию, если спрошены координаты"
+   ],
+   "traps": [
+    "Найден x, а спрошены координаты: вторая координата — отдельный балл",
+    "В ответ попал лишний корень: у ln(x² − 16) с x > 4 корней два, а годится один, и за второй снимают балл",
+    "Угол подставлен вместо тангенса: наклон равен tan 70°, а не 70",
+    "Калькулятор в градусах, когда условие в радианах, и наоборот",
+    "Ответ округлён там, где сказано exact: 2 ln 45 — это точно, 7.61 — нет"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 131,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q10-B",
+    "2021-MAY-TZ2-P1-Q04-B",
+    "2022-NOV-COMMON-P2-Q11-B",
+    "2025-MAY-TZ3-P2-Q05-B"
+   ]
+  },
+  {
+   "id": "E4.implicit_derivative",
+   "practicum": "E4",
+   "name": "Кривая задана уравнением",
+   "rung": 4,
+   "trigger": "В условии равенство, в котором y стоит наравне с x и выразить его нельзя или не хочется — e^(x+y) = x² + y², y² = x³ + x, 4x² + y² − 24x + 4y + 20 = 0. Ответ будет содержать обе буквы.",
+   "chain": [
+    "Дифференцировать обе части по x, помня, что y — функция от x",
+    "У каждого слагаемого с y дописать множитель dy/dx",
+    "Собрать слагаемые с dy/dx в одну сторону",
+    "Выразить dy/dx делением"
+   ],
+   "traps": [
+    "Множитель dy/dx не дописан: производная y² по x — это 2y·dy/dx, а не 2y",
+    "Произведение xy продифференцировано как x·dy/dx, без второго слагаемого y",
+    "Слагаемые с dy/dx собраны, но общий множитель не вынесен, и деление сделано не на то",
+    "Логарифмическое дифференцирование забыто там, где x стоит и в основании, и в показателе: (S/x)^x иначе не берётся"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 131,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q08-A",
+    "2022-MAY-TZ2-P3-Q01-D-I",
+    "2024-MAY-TZ1-P2-Q11-A",
+    "2025-MAY-TZ2-P2-Q12-A",
+    "2023-MAY-TZ1-P3-Q02-H"
+   ]
+  },
+  {
+   "id": "E4.implicit_tangent",
+   "practicum": "E4",
+   "name": "Касательная к кривой, заданной уравнением",
+   "rung": 5,
+   "trigger": "Наклон уже выражен через x и y — своим трудом или напечатан в предыдущем пункте, — и теперь нужна прямая в точке кривой или точка с нужным наклоном. Отличие от приёма 3 одно: чтобы посчитать наклон, нужны обе координаты сразу.",
+   "chain": [
+    "Найти вторую координату точки из уравнения самой кривой",
+    "Подставить обе координаты в выражение для dy/dx",
+    "Написать прямую через точку и наклон",
+    "Для обратного хода — приравнять dy/dx к нужному числу и решать полученное уравнение вместе с уравнением кривой"
+   ],
+   "traps": [
+    "Подставлена только одна координата: выражение с двумя буквами числом от этого не становится",
+    "Горизонтальная касательная искалась приравниванием к нулю всей дроби, а не её числителя",
+    "Найдена одна точка из двух: у e^(x+y) = x² + y² горизонтальных касательных две",
+    "Точка взята с прямой, а не с кривой",
+    "Координаты округлены до трёх цифр в промежуточном шаге, и вторая координата уехала в четвёртой"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 131,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q08-B",
+    "2022-MAY-TZ2-P3-Q01-F-I",
+    "2024-MAY-TZ1-P2-Q11-B-I-II",
+    "2024-MAY-TZ1-P2-Q11-D"
+   ]
+  },
+  {
+   "id": "E4.second_implicit",
+   "practicum": "E4",
+   "name": "Продифференцировать соотношение ещё раз",
+   "rung": 6,
+   "trigger": "Спрошена d²y/dx² или d²P/dt², а y относительно x не выражен — есть только соотношение, связывающее его с производной. Дифференцировать придётся не функцию, а равенство.",
+   "chain": [
+    "Дифференцировать по x обе части уже полученного равенства",
+    "К произведениям применить правило произведения, помня, что и y, и dy/dx — функции от x",
+    "Подставить dy/dx из первого равенства, если ответ должен обойтись без неё",
+    "Подставить числа только в самом конце"
+   ],
+   "traps": [
+    "Производная от dy/dx взята как ноль: это функция, и её производная — d²y/dx²",
+    "В произведении x·dy/dx продифференцирован только один множитель",
+    "Квадрат (dy/dx)² потерян или взят с обратным знаком",
+    "Числа подставлены до дифференцирования, и переменная исчезла раньше времени",
+    "Сдана первая производная вместо второй"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 131,
+   "blocks": [
+    "2022-MAY-TZ2-P2-Q12-B",
+    "2023-MAY-TZ1-P2-Q12-B-I-II",
+    "2025-NOV-TZ3-P2-Q12-B-I",
+    "2025-NOV-TZ3-P2-Q12-B-II"
+   ]
+  },
+  {
+   "id": "E4.right_angles",
+   "practicum": "E4",
+   "name": "Прямой угол как условие",
+   "rung": 7,
+   "trigger": "Речь о двух кривых или двух касательных сразу, и сказано «intersect at right angles», «perpendicular», «orthogonal». Спрашивают не прямую, а то, что произведение наклонов равно −1.",
+   "chain": [
+    "Найти наклон каждой кривой в общей точке — своим дифференцированием",
+    "Подставить в оба общую точку, а не разные",
+    "Перемножить и упростить до −1",
+    "Сказать вслух, что это и означает прямой угол"
+   ],
+   "traps": [
+    "Наклоны найдены, а перемножены не они: подставлена не общая точка",
+    "Показано, что наклоны различны, и на этом остановлено",
+    "Сумма наклонов приравнена к нулю вместо произведения к −1",
+    "У семейства кривых наклон прямой y = mx выражен через m, а нужен через x и y: m = y/x — это отдельный балл и весь ход дальше",
+    "Корень √(ab) сокращён неверно: −a/√(ab) · b/√(ab) = −ab/ab = −1, и промежуточная запись здесь нужна"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 131,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q08-B",
+    "2023-NOV-TZ1-P3-Q02-D",
+    "2023-NOV-TZ2-P3-Q02-D",
+    "2023-NOV-TZ2-P3-Q02-A-I"
+   ]
+  },
+  {
+   "id": "E4.tangency_condition",
+   "practicum": "E4",
+   "name": "Касание как условие",
+   "rung": 8,
+   "trigger": "Касательная в вопросе есть, но её не спрашивают. «Have a common tangent at x = 3», «the tangent is parallel to y = 5e^k x», «show that the line is tangent to the curve», «y = x is a tangent to y = log_a x». Неизвестна постоянная, а касание — уравнение на неё.",
+   "chain": [
+    "Записать первое условие: наклоны равны в этой точке",
+    "Записать второе: значения тоже равны, кривые встречаются",
+    "Решить систему относительно неизвестной постоянной",
+    "Проверить, что найденное значение попадает в область из условия"
+   ],
+   "traps": [
+    "Использовано только одно из двух условий: равенство наклонов без равенства значений даёт параллельность, а не касание",
+    "Касание проверено подстановкой одной точки: у кривой и прямой общая точка бывает и при пересечении",
+    "Двойной корень назван корнем: (x − 4)²(x − 1) = 0 касается в x = 4 именно потому, что корень двойной",
+    "e^k сокращено делением на ноль без оговорки, что оно не ноль",
+    "Ответ округлён там, где спрошено exact: a = e^(1/e), а не 1.44"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 131,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q04-B",
+    "2021-MAY-TZ1-P1-Q04-C",
+    "2022-MAY-TZ1-P1-Q04",
+    "2022-MAY-TZ1-P3-Q02-B",
+    "2023-MAY-TZ2-P3-Q01-E"
    ]
   },
   {
@@ -28183,6 +28840,534 @@
    ],
    "answer": "quotient",
    "answer_digest": "d861ee362e38",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:1",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.implicit_derivative",
+   "prompt": "Show that $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}=\\pm\\dfrac{3x^2+1}{2\\sqrt{x^3+x}}$ for $x>0$ on $y^2=x^3+x$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "implicit",
+   "answer_digest": "3a8f7b6c00a3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:2",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.tangency_condition",
+   "prompt": "The tangent to $y=(2x-1)\\mathrm{e}^{kx}$ at $x=1$ is parallel to $y=5\\mathrm{e}^{k}x$. Find $k$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "condition",
+   "answer_digest": "596d40a4ed24",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:3",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.point_from_gradient",
+   "prompt": "Find the coordinates of the point on $y=\\mathrm{e}^{2x}(3x-4)$ where the tangent is parallel to $y=x$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "point",
+   "answer_digest": "251fecd592e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:4",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.normal_line",
+   "prompt": "Show that the gradient of the line normal to $y=\\tfrac1x$ at $x=t$ is $t^2$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "normal",
+   "answer_digest": "317b32c14369",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:5",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.tangent_line",
+   "prompt": "Find the gradient of the tangent $T_k$ to $y=15\\cos\\bigl(\\tfrac{\\pi x}{50}\\bigr)+15$ at $\\bigl(k,h(k)\\bigr)$, in terms of $k$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "tangent",
+   "answer_digest": "ba01435d2b41",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:6",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.second_implicit",
+   "prompt": "Show that $\\dfrac{\\mathrm{d}^2P}{\\mathrm{d}t^2}=k^2P\\bigl(1-\\tfrac{P}{N}\\bigr) \\bigl(1-\\tfrac{2P}{N}\\bigr)$, given $\\dfrac{\\mathrm{d}P}{\\mathrm{d}t}=kP\\bigl(1-\\tfrac{P}{N}\\bigr)$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "second",
+   "answer_digest": "16367aacb67a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:7",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.right_angles",
+   "prompt": "At $\\mathrm{M}$, show that $y^2=4a^2-4ax$ and $y^2=4b^2+4bx$ intersect at right angles.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "right",
+   "answer_digest": "27042f4e6eca",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:8",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.implicit_tangent",
+   "prompt": "Find the equation of the tangent to $y^2=x^3+2$ at the rational point $\\mathrm{P}(-1,-1)$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "itangent",
+   "answer_digest": "80b62dc0bfc3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:9",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.point_from_gradient",
+   "prompt": "Given that the tangent to $y=\\ln(x^2-16)$ at $\\mathrm{B}$ has gradient $\\tfrac13$, find the $x$-coordinate of $\\mathrm{B}$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "point",
+   "answer_digest": "251fecd592e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:10",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.tangency_condition",
+   "prompt": "Show that the line $y=x-1$ is tangent to $y=(x-1)(x^2-8x+17)$ at $\\mathrm{A}(4,3)$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "condition",
+   "answer_digest": "596d40a4ed24",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:11",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.tangent_line",
+   "prompt": "The line $y=6x-1$ is the tangent to $y=f(x)$ at $x=4$, and $h(x)=f(x^2-3x)$. Find the tangent to $h$ at $x=4$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "tangent",
+   "answer_digest": "ba01435d2b41",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E4:12",
+   "kind": "recognition",
+   "practicum": "E4",
+   "skill": "E4.implicit_derivative",
+   "prompt": "Find, in terms of $S$, the $x$-coordinate of the maximum of $g$, where $\\ln\\bigl(g(x)\\bigr)=x\\ln\\bigl(\\tfrac{S}{x}\\bigr)$.",
+   "options": [
+    {
+     "code": "tangent",
+     "name": "касательная в точке"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль"
+    },
+    {
+     "code": "point",
+     "name": "наклон дан — найти точку"
+    },
+    {
+     "code": "implicit",
+     "name": "кривая задана уравнением"
+    },
+    {
+     "code": "itangent",
+     "name": "касательная к такой кривой"
+    },
+    {
+     "code": "second",
+     "name": "продифференцировать соотношение ещё раз"
+    },
+    {
+     "code": "right",
+     "name": "прямой угол как условие"
+    },
+    {
+     "code": "condition",
+     "name": "касание как условие"
+    }
+   ],
+   "answer": "implicit",
+   "answer_digest": "3a8f7b6c00a3",
    "budget_ms": 8000
   },
   {
