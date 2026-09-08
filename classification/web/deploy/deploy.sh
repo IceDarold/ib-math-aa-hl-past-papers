@@ -149,7 +149,7 @@ rsync -rlptzc --delete -e "$rsync_ssh" \
 
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
   --include='*/' --include='*.ipynb' --include='*.pdf' --include='kit.py' \
-  --include='aahl/***' \
+  --include='aahl/***' --include='map.yaml' \
   --exclude='*' -e "$rsync_ssh" \
   "$practicum/" "$remote:$release/practicum/"
 
@@ -157,13 +157,14 @@ rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
   --exclude='.venv/' --exclude='tests/' -e "$rsync_ssh" \
   "$drill_core/" "$remote:$release/vendor/drill-core/"
 
-# У физики нужен предмет и банк. Собранные страницы практикумов едут
-# отдельно: их отдаёт nginx как обычную статику, и лежать они должны там,
-# куда ведут ссылки, — /physics/.
+# У физики нужен предмет, банк и собранные страницы: по ним предмет и
+# понимает, какие практикумы готовы.
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
-  --exclude='.git/' --exclude='tests/' --exclude='site/' -e "$rsync_ssh" \
+  --exclude='.git/' --exclude='tests/' -e "$rsync_ssh" \
   "$physics_subject/" "$remote:$release/vendor/ib-physics/"
 
+# Те же страницы вторым экземпляром там, куда ведут ссылки: их отдаёт
+# nginx как обычную статику, из корня релиза.
 if [[ -d "$physics_subject/site" ]]; then
   rsync -rlptzc --delete -e "$rsync_ssh" \
     "$physics_subject/site/" "$remote:$release/physics/"
@@ -210,6 +211,8 @@ test -d "$release/AA_HL"
 test -f "$release/practicum/calculus/practicum-e7-differential-equations.ipynb"
 test -f "$release/api/data/questions.sqlite"
 test -f "$release/practicum/aahl/bank.json"
+# Карта практикумов: по ней страница строит список тем и ссылок.
+test -f "$release/practicum/map.yaml"
 test -f "$release/vendor/drill-core/drill/server.py"
 test -f "$release/vendor/ib-physics/bank/2025/bank.json"
 test -f "$release/vendor/ib-physics/bank/2025/atlas.sqlite"
