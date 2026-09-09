@@ -145,6 +145,21 @@ def main():
     else:
         print(f'✅ DrillView.tsx: слов про калькулятор {len(words)}')
 
+    # practicums.ts собирается из карты и карточки приёмов. Раньше он
+    # писался руками и отставал: числа корпуса были от старой версии
+    # карточки, а один приём из девяти в нём отсутствовал.
+    sys.path.insert(0, os.path.join(ROOT, 'practicum'))
+    import build_browser_practicum as browser
+    fresh = browser.render()
+    have = open(browser.TARGET).read()
+    if fresh == have:
+        print('✅ practicums.ts: собран из карты, приёмов '
+              f'{fresh.count("{ id:")}')
+    else:
+        problems.append('practicums.ts отстал от карты и карточки приёмов; '
+                        'пересоберите: '
+                        'python practicum/build_browser_practicum.py')
+
     if problems:
         print('\nнайдено:')
         for p in problems:
