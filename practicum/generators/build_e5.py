@@ -201,14 +201,14 @@ md(r"""
 
 | # | Technique | What the integrand looks like | First move |
 | --- | --- | --- | --- |
-| 1 | Table, plus a constant from a point | $3-\dfrac{5}{\sqrt x}$, $3x^2+5\mathrm{e}^x$ | rewrite every term as a power |
-| 2 | Substitution | $\sec^n x\tan x$, $\dfrac{6x}{1+x^2}$, $\cos\sqrt x$ | spot a function beside its derivative |
-| 3 | Integration by parts | $x(\ln x)^2$, $(x^2-5)\mathrm{e}^x$, $\arccos x$ | pick the factor that simplifies when differentiated |
-| 4 | Partial fractions | $\dfrac{2x-15}{(x+3)(x-4)}$, $\dfrac{1}{1-v^2}$ | factorise the denominator |
-| 5 | The quotient is $f'/f$ | $\dfrac{g'}{g'-g}$ | check whether the top is the bottom differentiated |
-| 6 | Reduction formula | $\cos^n x$ | split off one factor and integrate by parts |
-| 7 | Integrate the series | $\dfrac{1}{1+x^2}$ to $x^7$, $\mathrm{e}^{\cos 2x}$ | expand first, integrate term by term |
-| 8 | The integral is a condition | *the area is $\ln 3$; find $c$* | write the equation, then solve it |
+| 1 | Table, plus a constant from a point | a sum of powers, exponentials and plain trigonometric terms | rewrite every term as a power |
+| 2 | Substitution | a function sitting beside its own derivative | name $u$, and say what $\mathrm{d}x$ becomes |
+| 3 | Integration by parts | a product of two unlike things, or a lone $\ln$ or inverse trigonometric function | pick the factor that simplifies when differentiated |
+| 4 | Partial fractions | one fraction whose denominator factorises | split it before integrating anything |
+| 5 | The quotient is $f'/f$ | a fraction whose top is the bottom differentiated | check that guess before doing anything else |
+| 6 | Reduction formula | a power $n$ that is left as a letter | split off one factor and integrate by parts |
+| 7 | Integrate the series | a function with no elementary antiderivative | expand first, integrate term by term |
+| 8 | The integral is a condition | the value of the integral is *given* | write the equation, then solve it |
 
 **The ladder goes by what is standing between you and the table.**
 
@@ -267,8 +267,8 @@ never condoned, because there is then nothing to substitute into.
 **The one rewrite that unlocks rung 1.** Everything that is not obviously a
 power has to be made into one before the table applies:
 
-$$\frac{5}{\sqrt x}=5x^{-1/2}\ \longrightarrow\ \int 5x^{-1/2}\,\mathrm{d}x
-=\frac{5x^{1/2}}{1/2}=10\sqrt x$$
+$$\sqrt[3]{x^2}=x^{2/3}\ \longrightarrow\ \int x^{2/3}\,\mathrm{d}x
+=\frac{x^{5/3}}{5/3}=\frac{3}{5}x^{5/3}$$
 
 Raise the index by one **and divide by the new index**. The second half is
 where the marks go.
@@ -376,13 +376,17 @@ expression in $u$ is a wrong answer that looks like a right one.
 **How to spot the substitution.** Look for a function sitting next to its own
 derivative, possibly times a constant:
 
-$$\underbrace{\sec^{n-1}x}_{f(u)}\cdot\underbrace{\sec x\tan x}_{u'},\qquad
-\underbrace{\frac{1}{1+x^2}}_{f(u)}\cdot\underbrace{6x}_{u'\text{, times }3},\qquad
-\underbrace{\cos\sqrt x}_{f(u)}\ \text{with}\ u=\sqrt x .$$
+$$\underbrace{\mathrm{e}^{x^3}}_{f(u)}\cdot\underbrace{x^2}_{u'\text{, times }\tfrac13},
+\qquad
+\underbrace{\frac{1}{\ln x}}_{f(u)}\cdot\underbrace{\frac1x}_{u'},
+\qquad
+x\sqrt{x-1}\ \text{with}\ u=x-1 .$$
 
-The third one is the interesting case: there is no derivative in sight, and
-the substitution has to *create* one. It costs you a factor of $2t$, and the
-integral becomes a job for integration by parts.
+The third one is the interesting case: there is no derivative anywhere in
+sight. The substitution has to *make* the integrand fit, and the stray $x$
+becomes $u+1$ — so $x\sqrt{x-1}\,\mathrm{d}x$ turns into
+$(u+1)\sqrt u\,\mathrm{d}u$, which is two powers and nothing else. When a
+substitution leaves an $x$ behind, that $x$ has to be rewritten, not ignored.
 """)
 
 md(r"""
@@ -465,16 +469,16 @@ applications, and the logarithms are gone — but the second application is on
 $\int x\ln x\,\mathrm{d}x$, not on the original, which is where the sign
 errors live.
 
-**An inverse trigonometric function alone.** $\int\arccos x\,\mathrm{d}x$.
-There is no product at all until you write one: $\mathrm{d}v=1\cdot\mathrm{d}x$,
-$u=\arccos x$. Then $v=x$ and
+**A lone function with no product in it.** $\int\ln x\,\mathrm{d}x$. There is
+no product at all until you write one: $\mathrm{d}v=1\cdot\mathrm{d}x$,
+$u=\ln x$. Then $v=x$ and
 
-$$\int\arccos x\,\mathrm{d}x=x\arccos x+\int\frac{x}{\sqrt{1-x^2}}\,\mathrm{d}x
-=x\arccos x-\sqrt{1-x^2}+c,$$
+$$\int\ln x\,\mathrm{d}x=x\ln x-\int x\cdot\frac1x\,\mathrm{d}x=x\ln x-x+c,$$
 
-where the remaining integral is a substitution. Notice that parts turned a
-function with no obvious antiderivative into one that has a very obvious one.
-That is what parts is *for*.
+where the remaining integral collapsed to $\int1\,\mathrm{d}x$. Notice that
+parts turned a function with no obvious antiderivative into one that has a
+very obvious one. That is what parts is *for*, and it is the move to try on
+any lone $\ln$ or lone inverse trigonometric function.
 """)
 
 md(r"""
@@ -580,32 +584,35 @@ md(r"""
 
 A proper rational function splits into pieces the table knows:
 
-$$\frac{2x-15}{(x+3)(x-4)}=\frac{A}{x+3}+\frac{B}{x-4},\qquad
-\frac{1}{(x+1)^2(2x+1)}=\frac{A}{x+1}+\frac{B}{(x+1)^2}+\frac{D}{2x+1}.$$
+$$\frac{5x-4}{(x-1)(x+2)}=\frac{A}{x-1}+\frac{B}{x+2},\qquad
+\frac{1}{(x-3)^2(x+4)}=\frac{A}{x-3}+\frac{B}{(x-3)^2}+\frac{D}{x+4}.$$
 
 **Trap one: a repeated factor needs two fractions, not one.** $(x+1)^2$ gets
 both $\dfrac{A}{x+1}$ and $\dfrac{B}{(x+1)^2}$, and they integrate to
 completely different things —
 
-$$\int\frac{\mathrm{d}x}{x+1}=\ln|x+1|,\qquad
-\int\frac{\mathrm{d}x}{(x+1)^2}=-\frac{1}{x+1}.$$
+$$\int\frac{\mathrm{d}x}{x-3}=\ln|x-3|,\qquad
+\int\frac{\mathrm{d}x}{(x-3)^2}=-\frac{1}{x-3}.$$
 
 A logarithm where a reciprocal belongs is the most expensive single error in
 rung 4.
 
 **Trap two: the inside function still brings a factor.**
 
-$$\int\frac{\mathrm{d}x}{2x+1}=\frac{1}{2}\ln|2x+1|+c.$$
+$$\int\frac{\mathrm{d}x}{3x-2}=\frac{1}{3}\ln|3x-2|+c.$$
 
 That $\tfrac12$ is the substitution rule again, and it is dropped constantly.
 
-**Where the constant hides.** In `2025 TZ2 Paper 3` the printed answer is
+**Where the constant hides.** Mark schemes in this topic often print the
+constant already dressed for the next step. A split like
 
-$$\int\frac{\mathrm{d}v}{1-v^2}=\frac12\ln\left|\frac{1+v}{1-v}\right|+\frac12\ln A .$$
+$$\int\frac{\mathrm{d}y}{y^2-9}=\frac16\ln\left|\frac{y-3}{y+3}\right|+\frac16\ln A$$
 
-$\tfrac12\ln A$ *is* the constant of integration, wearing a costume that makes
-the next step — exponentiating both sides — come out clean. The check does not
-care: it differentiates, and anything constant vanishes whatever it looks like.
+looks as though something extra has appeared, but $\tfrac16\ln A$ *is* the
+constant of integration — written that way so that exponentiating both sides
+comes out clean, with $A$ multiplying instead of $c$ adding. Expect it, and do
+not try to reconcile it with your own $+c$: the check differentiates, and
+anything constant vanishes whatever costume it wears.
 """)
 
 md(r"""
@@ -699,12 +706,13 @@ is renamed $A$. A constant that was *added* is now *multiplying*. Writing
 
 Then the right side has to be simplified before it can be integrated at all:
 
-$$g=x\mathrm{e}^x:\quad \frac{g'}{g'-g}=\frac{(x+1)\mathrm{e}^x}{\mathrm{e}^x}=x+1,$$
+$$g=x^2:\quad \frac{g'}{g'-g}=\frac{2x}{2x-x^2}=\frac{2}{2-x},$$
 
-$$g=\sin x+\cos x:\quad \frac{g'}{g'-g}=\frac{\cos x-\sin x}{-2\sin x}
-=\frac12-\frac12\cot x .$$
+$$g=\mathrm{e}^{3x}:\quad \frac{g'}{g'-g}=\frac{3\mathrm{e}^{3x}}{3\mathrm{e}^{3x}-\mathrm{e}^{3x}}
+=\frac32 .$$
 
-Both are then easy. Finding them is not.
+Both are then easy — the second is a constant, and its integral is a straight
+line. Getting to that point is the work; integrating what is left is not.
 """)
 
 md(r"""
@@ -811,24 +819,27 @@ yet ($\arctan x$, in the question that is *deriving* it). In both cases the
 move is the same: replace the function by the first few terms of its Maclaurin
 series and integrate those.
 
-$$\frac{1}{1+x^2}=1-x^2+x^4-x^6+\ldots
-\ \longrightarrow\ \int\frac{\mathrm{d}x}{1+x^2}
-= x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+c$$
+$$\frac{1}{1-x}=1+x+x^2+x^3+\ldots
+\ \longrightarrow\ \int\frac{\mathrm{d}x}{1-x}
+= x+\frac{x^2}{2}+\frac{x^3}{3}+\frac{x^4}{4}+c$$
 
 Three things to be careful about, and all three are marked.
 
-**Integrate the series, do not hand in the series.** $1-x^2+x^4-x^6$ is the
+**Integrate the series, do not hand in the series.** $1+x+x^2+x^3$ is the
 *integrand*. A surprising number of scripts stop there.
 
-**Divide by the new index.** $x^6\to x^7/7$, not $x^7$.
+**Divide by the new index.** $x^3\to x^4/4$, not $x^4$.
 
 **Stop where you were told to stop.** "Up to and including the term in $x^7$"
 means $x^9$ is wrong, not extra credit. The check enforces this.
 
 And the reason any of it is useful: the left-hand side is often a function you
-know. $\int\frac{\mathrm{d}x}{\sqrt{1-x^2}}=\arcsin x$, so the series you just
-integrated *is* a series for $\arcsin$, and substituting $x=\tfrac12$ turns it
-into a numerical approximation of $\arcsin\tfrac12=\tfrac{\pi}{6}$.
+know. Here $\int\frac{\mathrm{d}x}{1-x}=-\ln(1-x)$, so the series just
+integrated *is* a series for $-\ln(1-x)$, and putting $x=\tfrac12$ into it
+gives a numerical approximation of $\ln 2$. That is the shape of every
+question on this rung: integrate a series, recognise what it converges to,
+substitute a number, get a decimal for a constant you could not otherwise
+reach by hand.
 """)
 
 md(r"""
@@ -902,20 +913,27 @@ Sometimes the value of an integral is what you are *given*. Then the
 antiderivative is a step, and the unknown is somewhere else — a limit, a
 constant inside the integrand, a probability that has to come to 1.
 
-$$\int_0^c\frac{x}{x^2+2}\,\mathrm{d}x=\ln 3
+$$\int_0^c\mathrm{e}^{2x}\,\mathrm{d}x=4
 \quad\Longrightarrow\quad
-\frac12\ln\frac{c^2+2}{2}=\ln 3
-\quad\Longrightarrow\quad c=4 .$$
+\frac{\mathrm{e}^{2c}-1}{2}=4
+\quad\Longrightarrow\quad
+\mathrm{e}^{2c}=9
+\quad\Longrightarrow\quad c=\ln 3 .$$
+
+Note how little of that was integration: one line, and then three lines of
+ordinary algebra. That ratio is typical of the whole rung.
 
 Two habits earn marks here.
 
-**Finish the algebra.** $c^2=16$ is not an answer to "find $c$". Nor is
-"$c=\pm4$" when the diagram shows $c>0$.
+**Finish the algebra.** $\mathrm{e}^{2c}=9$ is not an answer to "find $c$",
+and neither is $2c=\ln 9$. Nor is a $\pm$ pair when the diagram shows which
+sign is wanted.
 
-**Watch the accuracy the question asks for.** *Give your answer correct to six
-significant figures* means $0.713250$, and $0.713$ scores nothing. This is the
-one place in the topic where the calculator does real work: the equation
-$k^2\arccos(k^2)-\sqrt{1-k^4}+\tfrac13=0$ has no closed-form root.
+**Watch the accuracy the question asks for.** *Correct to six significant
+figures* means six of them: an answer rounded to three scores nothing, however
+right it is. This is the one place in the topic where the calculator does real
+work — the equation you end up with usually has no closed-form root, so the
+GDC solves it and the only question left is how many digits you copy down.
 
 **And sometimes there is no antiderivative to find at all.** If $f$ is odd,
 $\int_{-a}^{a}f=0$ and $\int_{-a}^{0}f=-\int_0^{a}f$, whatever $f$ is — even

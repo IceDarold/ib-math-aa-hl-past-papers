@@ -229,7 +229,7 @@ property of how the function is **written**, not of what it is.
 $$\underbrace{x^{4}-3x^{3}+3x}_{\text{a sum: term by term}}\qquad
 \underbrace{\mathrm{e}^{x^{2}+1}}_{\text{something inside: chain}}\qquad
 \underbrace{\mathrm{e}^{2x}(3x-4)}_{\text{two moving factors: product}}\qquad
-\underbrace{\frac{3x+2}{4x^{2}-1}}_{\text{moving over moving: quotient}}$$
+\underbrace{\frac{2x-5}{9x^{2}-4}}_{\text{moving over moving: quotient}}$$
 
 Three things are worth saying before any of the rules.
 
@@ -375,11 +375,13 @@ it.
 archive is wanted in a factorised form, because the *next* part of the
 question sets it to zero:
 
-$$nx^{n-1}(a-x)^{n}+x^{n}\cdot n(a-x)^{n-1}(-1)
-=nx^{n-1}(a-x)^{n-1}\bigl[(a-x)-x\bigr]=nx^{n-1}(a-2x)(a-x)^{n-1}.$$
+$$3x^{2}(b-x)^{2}+x^{3}\cdot 2(b-x)(-1)
+=x^{2}(b-x)\bigl[3(b-x)-2x\bigr]=x^{2}(b-x)(3b-5x).$$
 
-The bracket is $(a-x)-x$ and not $(a-x)+x$ because of the $-1$ from the chain
-rule inside the product rule. That $-1$ is three of the five marks.
+The bracket is $3(b-x)-2x$ and not $3(b-x)+2x$ because of the $-1$ from the
+chain rule inside the product rule. That $-1$ is usually most of the marks:
+it decides where the derivative is zero, and the next part of the question
+is always about exactly that.
 """)
 
 md(r"""
@@ -435,15 +437,16 @@ Two rules from the mark schemes, both worth money.
 **Work in one direction.** Starting from your expression and from the printed
 one and meeting in the middle is not accepted. Start at yours and arrive.
 
-**Arrive all the way.** $\frac{2x}{(2-x)^{2}}+\frac{2x^{2}}{(2-x)^{3}}$ is
-correct and is not the answer. The common denominator is $(2-x)^{3}$ — not
-$(2-x)^{5}$, because the first denominator divides the second — and then
+**Arrive all the way.** $\frac{3x}{(1+x)^{2}}-\frac{3x^{2}}{(1+x)^{3}}$ is
+correct and is not the answer. The common denominator is $(1+x)^{3}$ — not
+$(1+x)^{5}$, because the first denominator divides the second — and then
 
-$$\frac{2x(2-x)+2x^{2}}{(2-x)^{3}}=\frac{4x-2x^{2}+2x^{2}}{(2-x)^{3}}
-=\frac{4x}{(2-x)^{3}} .$$
+$$\frac{3x(1+x)-3x^{2}}{(1+x)^{3}}=\frac{3x+3x^{2}-3x^{2}}{(1+x)^{3}}
+=\frac{3x}{(1+x)^{3}} .$$
 
-The $-2x^{2}$ and the $+2x^{2}$ cancelling is the entire point of that
-question, and it is four marks.
+Two terms cancelling like that is the whole reason such a question is set:
+the printed answer is short precisely because something disappears, and if
+nothing disappeared in your working, you have not finished.
 """)
 
 md(r"""

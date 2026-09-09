@@ -609,10 +609,11 @@ in both** places.
 **Two ways to get there.**
 
 *From the turning points.* Sketch, find the local maximum and the local
-minimum, and read off. For $\dfrac{x^{2}-14x+24}{2x+6}$ they are at
-$y=-10\pm 5\sqrt3$, and because the curve has a vertical asymptote
-between them the range has a **gap**:
-$y\le-10-5\sqrt3$ or $y\ge-10+5\sqrt3$.
+minimum, and read off. When a vertical asymptote sits **between** the two
+turning points, the curve runs off to $\pm\infty$ on either side of it, and
+the range comes out with a **gap**: everything up to the local maximum's
+$y$, then nothing, then everything from the local minimum's $y$ upwards.
+Two inequalities joined by *or*, and neither of them strict.
 
 *From the discriminant.* Put $y=f(x)$ and clear the fraction. For
 $g(x)=\dfrac{2x-5}{x^{2}-3}$,

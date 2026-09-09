@@ -846,7 +846,7 @@ only in the shape of the answer.
 |---|---|---|
 | given | $R=2$, total surface $12\pi$ | $h=20$, $R$ from part (a) |
 | work | $4\pi+2\pi l=12\pi$; $h=\sqrt{16-4}$ | substitute |
-| answer | $\dfrac{8\sqrt3\,\pi}{3}$ | $851$ m$^3$ |
+| answer | exact, of the form $k\sqrt3\,\pi$ | a decimal, three significant figures |
 
 Same formulas, same two lines of work. On Paper 1 a decimal earns nothing;
 on Paper 2 three significant figures are expected. The mathematics does
