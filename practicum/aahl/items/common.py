@@ -277,6 +277,78 @@ def constant_check(rule, letter, at, slope, window, var='x', dep='y'):
             'window': [sp.srepr(sp.sympify(v)) for v in window]}
 
 
+def antiderivative_check(f, var='x', domain=None, params=None, through=None):
+    """Ответ — первообразная: эталона нет, проверка дифференцирует написанное.
+
+    Постоянная свободна в любом костюме; through=(x0, y0) её снимает, когда
+    в условии дана точка графика.
+    """
+    spec = {'kind': 'antiderivative', 'f': sp.srepr(sp.sympify(f)), 'var': var}
+    if domain is not None:
+        spec['domain'] = [sp.srepr(sp.sympify(v)) for v in domain]
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    if through is not None:
+        spec['through'] = [sp.srepr(sp.sympify(v)) for v in through]
+    return spec
+
+
+def integral_check(f, a, b, var='x', params=None, tol=None, value=None):
+    """Ответ — число определённого интеграла: считается сложением, не формулой.
+
+    value задаёт обратный ход: интеграл известен, а ответом служит верхний
+    предел. Тогда написанное подставляется на место b, а сверяется value.
+    """
+    spec = {'kind': 'integral', 'f': sp.srepr(sp.sympify(f)), 'var': var,
+            'a': sp.srepr(sp.sympify(a)), 'b': sp.srepr(sp.sympify(b))}
+    if value is not None:
+        spec['value'] = sp.srepr(sp.sympify(value))
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    if tol is not None:
+        spec['tol'] = float(tol)
+    return spec
+
+
+def accumulated_check(f, lower, upper, var='t', params=None, domain=None):
+    """Ответ — накопленное с начала: G′(s) = f(s) и G(a) = 0."""
+    spec = {'kind': 'accumulated', 'f': sp.srepr(sp.sympify(f)), 'var': var,
+            'lower': sp.srepr(sp.sympify(lower)),
+            'upper': sp.srepr(sp.sympify(upper))}
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    if domain is not None:
+        spec['domain'] = [sp.srepr(sp.sympify(v)) for v in domain]
+    return spec
+
+
+def transformed_check(f, sub, var='x', new='u', domain=None):
+    """Ответ — подынтегральное выражение после замены: g(u(x))·u′(x) = f(x)."""
+    spec = {'kind': 'transformed', 'f': sp.srepr(sp.sympify(f)),
+            'sub': sp.srepr(sp.sympify(sub)), 'var': var, 'new': new}
+    if domain is not None:
+        spec['domain'] = [sp.srepr(sp.sympify(v)) for v in domain]
+    return spec
+
+
+def reduction_check(term, index, of='J', var='x', span=(0.3, 1.2),
+                    values=(2, 3, 4, 5)):
+    """Ответ — формула понижения: численное тождество между интегралами."""
+    return {'kind': 'reduction', 'term': sp.srepr(sp.sympify(term)),
+            'index': str(index), 'of': str(of), 'var': var,
+            'span': [float(v) for v in span],
+            'values': [int(v) for v in values]}
+
+
+def termwise_check(f, upto, var='x'):
+    """Ответ — интеграл ряда: производная сходится с рядом до степени upto − 1."""
+    return {'kind': 'termwise', 'f': sp.srepr(sp.sympify(f)),
+            'upto': int(upto), 'var': var}
+
+
 def constants_check(unknowns, conditions):
     """Ответ — постоянные, найденные из условий на кривую.
 

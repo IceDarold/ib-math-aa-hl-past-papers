@@ -66,13 +66,18 @@ def _clean(raw):
     return text
 
 
-def parse_one(raw):
-    """Одно выражение."""
+def parse_one(raw, extra=None):
+    """Одно выражение.
+
+    extra — имена, которых в sympy нет: у формулы понижения ответ пишется
+    через функцию-заглушку J(m), и без неё запись не разберётся.
+    """
     text = _clean(raw)
     if not text:
         raise BadInput('пусто')
     try:
-        return parse_expr(text, transformations=TRANSFORMS, evaluate=True)
+        return parse_expr(text, local_dict=extra or {},
+                          transformations=TRANSFORMS, evaluate=True)
     except Exception as exc:  # noqa: BLE001 — сообщение уходит на страницу
         raise BadInput(f'не разобрал запись: {exc}') from exc
 
@@ -387,6 +392,64 @@ def evaluate(spec, raw):
                             values if len(values) > 1 else values[0],
                             build, spot, sp.sympify(spec['slope']),
                             [sp.sympify(v) for v in spec['window']])
+
+        if kind in ('antiderivative', 'integral', 'accumulated',
+                    'transformed', 'reduction', 'termwise'):
+            var = sp.Symbol(spec.get('var', 'x'))
+            shape = sp.sympify(spec['f']) if 'f' in spec else None
+            params = {sp.Symbol(name): [sp.sympify(v) for v in values]
+                      for name, values in (spec.get('params') or {}).items()}
+            domain = ([sp.sympify(v) for v in spec['domain']]
+                      if spec.get('domain') else None)
+
+            if kind == 'antiderivative':
+                through = ([sp.sympify(v) for v in spec['through']]
+                           if spec.get('through') else None)
+                return _capture(kit.verify_antiderivative, 'Ответ',
+                                parse_one(raw), shape, var=var, domain=domain,
+                                params=params or None, through=through)
+
+            if kind == 'integral':
+                # Обратный ход: значение интеграла известно, а ответом
+                # служит верхний предел — он и уходит в b.
+                if spec.get('value'):
+                    return _capture(kit.verify_integral, 'Ответ',
+                                    sp.sympify(spec['value']), shape,
+                                    sp.sympify(spec['a']), parse_one(raw),
+                                    var=var, params=params or None,
+                                    tol=spec.get('tol'))
+                return _capture(kit.verify_integral, 'Ответ', parse_one(raw),
+                                shape, sp.sympify(spec['a']),
+                                sp.sympify(spec['b']), var=var,
+                                params=params or None, tol=spec.get('tol'))
+
+            if kind == 'accumulated':
+                return _capture(kit.verify_accumulated, 'Ответ',
+                                parse_one(raw), shape,
+                                sp.sympify(spec['lower']), var=var,
+                                upper=sp.sympify(spec['upper']),
+                                params=params or None, domain=domain)
+
+            if kind == 'transformed':
+                return _capture(kit.verify_transformed, 'Ответ',
+                                parse_one(raw), shape,
+                                sp.sympify(spec['sub']), var=var,
+                                new=sp.Symbol(spec.get('new', 'u')),
+                                domain=domain)
+
+            if kind == 'termwise':
+                return _capture(kit.verify_termwise, 'Ответ', parse_one(raw),
+                                shape, spec['upto'], var=var)
+
+            # reduction: формула записывается через функцию-заглушку J(m),
+            # и разбирать ответ надо с ней в пространстве имён.
+            of = sp.Function(spec.get('of', 'J'))
+            index = sp.Symbol(spec['index'])
+            got = parse_one(raw, extra={spec.get('of', 'J'): of})
+            return _capture(kit.verify_reduction, 'Ответ', got,
+                            sp.sympify(spec['term']), index, of, var=var,
+                            span=tuple(spec['span']),
+                            values=tuple(spec['values']))
 
         if kind == 'constants':
             unknowns = [sp.Symbol(name) for name in spec['unknowns']]

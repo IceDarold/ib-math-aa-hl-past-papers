@@ -9790,6 +9790,513 @@
    "dir": "AA_HL/2023/May/TZ2/Paper 3",
    "skill": "E4.tangency_condition"
   },
+  "2022-MAY-TZ1-P1-Q01": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "E5.antiderivative_and_constant"
+  },
+  "2025-MAY-TZ1-P2-Q11-A-I": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "A-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "E5.antiderivative_and_constant"
+  },
+  "2022-MAY-TZ2-P2-Q02": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E5.antiderivative_and_constant"
+  },
+  "2025-NOV-TZ1-P1-Q09-E": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "E",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E5.antiderivative_and_constant"
+  },
+  "2021-MAY-TZ1-P2-Q12-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E5.antiderivative_and_constant"
+  },
+  "2022-MAY-TZ2-P1-Q07": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "E5.substitution"
+  },
+  "2022-NOV-COMMON-P1-Q04": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "4",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "E5.substitution"
+  },
+  "2023-MAY-TZ2-P1-Q12-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "E5.substitution"
+  },
+  "2023-NOV-TZ1-P1-Q08-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "A",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "14-15",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "E5.by_parts"
+  },
+  "2023-NOV-TZ1-P1-Q08-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "8",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "E5.by_parts"
+  },
+  "2023-NOV-TZ2-P1-Q08-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "A",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "14-15",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "E5.by_parts"
+  },
+  "2023-NOV-TZ2-P1-Q08-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "E5.by_parts"
+  },
+  "2025-MAY-TZ3-P2-Q12-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "E5.by_parts"
+  },
+  "2025-NOV-TZ1-P2-Q11-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "17",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "E5.by_parts"
+  },
+  "2025-NOV-TZ3-P3-Q02-E": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "E",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E5.by_parts"
+  },
+  "2025-MAY-TZ2-P2-Q11-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E5.by_parts"
+  },
+  "2023-MAY-TZ1-P3-Q01-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "B",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E5.by_parts"
+  },
+  "2023-MAY-TZ1-P3-Q01-C-II": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "C-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E5.by_parts"
+  },
+  "2023-MAY-TZ1-P3-Q01-D-I": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "D-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E5.by_parts"
+  },
+  "2023-MAY-TZ1-P3-Q01-D-II": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "D-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E5.by_parts"
+  },
+  "2021-MAY-TZ2-P1-Q09": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "9",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "E5.partial_fractions"
+  },
+  "2021-NOV-COMMON-P2-Q10-E": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "10",
+   "part": "(e)",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "E5.partial_fractions"
+  },
+  "2024-MAY-TZ1-P1-Q11-E": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "e",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "27-29",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "E5.partial_fractions"
+  },
+  "2025-MAY-TZ2-P3-Q01-E": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "E",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "E5.partial_fractions"
+  },
+  "2024-MAY-TZ2-P3-Q01-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11-12",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "E5.logarithmic_integration"
+  },
+  "2024-MAY-TZ2-P3-Q01-D": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "D",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "E5.logarithmic_integration"
+  },
+  "2024-MAY-TZ2-P3-Q01-E": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "E",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2024/May/TZ2/Paper 3",
+   "skill": "E5.logarithmic_integration"
+  },
+  "2025-MAY-TZ1-P1-Q12-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "E5.reduction_formula"
+  },
+  "2025-MAY-TZ1-P1-Q12-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "E5.reduction_formula"
+  },
+  "2025-MAY-TZ1-P1-Q12-C": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "E5.reduction_formula"
+  },
+  "2023-NOV-TZ1-P1-Q11-E": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "E",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "E5.termwise_series"
+  },
+  "2023-NOV-TZ2-P1-Q11-E": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(e)",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "E5.termwise_series"
+  },
+  "2025-NOV-TZ1-P1-Q10-A-II": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "A-II",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E5.termwise_series"
+  },
+  "2025-NOV-TZ1-P1-Q10-B-II": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "B-II",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E5.termwise_series"
+  },
+  "2025-NOV-TZ1-P1-Q10-C": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E5.termwise_series"
+  },
+  "2025-NOV-TZ3-P3-Q02-F": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "F",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "E5.termwise_series"
+  },
+  "2023-MAY-TZ2-P1-Q04": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "4",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "11-12",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "E5.integral_as_condition"
+  },
+  "2025-NOV-TZ1-P2-Q11-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "B",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "17",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "E5.integral_as_condition"
+  },
+  "2024-MAY-TZ1-P1-Q09-C-I-II": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "c-i-ii",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "10-11",
+   "markscheme_pages": "20-21",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "E5.integral_as_condition"
+  },
   "2021-NOV-COMMON-P1-Q01": {
    "session": "November 2021",
    "zone": "Common",
@@ -10461,6 +10968,14 @@
    "notebook": "practicum/calculus/practicum-e4-tangents.ipynb",
    "marks": 131,
    "blocks": 33
+  },
+  {
+   "id": "E5",
+   "title": "Техника интегрирования",
+   "section": "E",
+   "notebook": "practicum/calculus/practicum-e5-integration.ipynb",
+   "marks": 157,
+   "blocks": 39
   },
   {
    "id": "E7",
@@ -15388,6 +15903,231 @@
     "2022-MAY-TZ1-P1-Q04",
     "2022-MAY-TZ1-P3-Q02-B",
     "2023-MAY-TZ2-P3-Q01-E"
+   ]
+  },
+  {
+   "id": "E5.antiderivative_and_constant",
+   "practicum": "E5",
+   "name": "Первообразная по таблице и постоянная по точке",
+   "rung": 1,
+   "trigger": "Подынтегральное выражение — сумма степеней, экспонент и простых тригонометрических функций: каждое слагаемое есть в таблице как оно есть. Спрашивают либо значение определённого интеграла, либо «дана f′ и точка графика — найдите f».",
+   "chain": [
+    "Переписать каждое слагаемое в виде, который есть в таблице: 5/√x — это 5x^(−1/2)",
+    "Проинтегрировать почленно",
+    "Определённый интеграл: подставить оба предела и вычесть",
+    "Неопределённый: добавить постоянную и найти её из данной точки"
+   ],
+   "traps": [
+    "Постоянная не добавлена вовсе, и подставлять точку не во что: балл за +c отдельный",
+    "Точка подставлена в f′, а не в проинтегрированное выражение",
+    "Подставлен только верхний предел: нижний забыт, а не равен нулю",
+    "Показатель повышен, но на новый показатель не поделено: ∫x^(−1/2)dx это 2√x, а не x^(1/2)"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 157,
+   "blocks": [
+    "2022-MAY-TZ1-P1-Q01",
+    "2025-MAY-TZ1-P2-Q11-A-I",
+    "2022-MAY-TZ2-P2-Q02",
+    "2025-NOV-TZ1-P1-Q09-E",
+    "2021-MAY-TZ1-P2-Q12-B"
+   ]
+  },
+  {
+   "id": "E5.substitution",
+   "practicum": "E5",
+   "name": "Замена переменной",
+   "rung": 2,
+   "trigger": "В подынтегральном выражении видна пара «функция и её производная»: sec^n x·tan x рядом с sec x, 6x рядом с 1+x², cos√x рядом с √x. Замену либо называют в условии («by using the substitution u = sin x»), либо предлагают выбрать самому («or otherwise»).",
+   "chain": [
+    "Назвать замену u = g(x) и продифференцировать её: du = g′(x)dx",
+    "Выразить всё подынтегральное выражение через u, включая dx",
+    "Проинтегрировать по u",
+    "Вернуться к x — или, если интеграл определённый, пересчитать пределы"
+   ],
+   "traps": [
+    "dx заменено на du без множителя: замена делит на производную, и без этого ответ отличается постоянным множителем",
+    "Пределы оставлены прежними после перехода к u",
+    "Возврат к x забыт: в ответе на неопределённый интеграл стоит u",
+    "После замены в выражении остался x — значит, замена подобрана не под всё выражение"
+   ],
+   "calculator": "no",
+   "practicum_marks": 157,
+   "blocks": [
+    "2022-MAY-TZ2-P1-Q07",
+    "2022-NOV-COMMON-P1-Q04",
+    "2023-MAY-TZ2-P1-Q12-A"
+   ]
+  },
+  {
+   "id": "E5.by_parts",
+   "practicum": "E5",
+   "name": "Интегрирование по частям",
+   "rung": 3,
+   "trigger": "Подынтегральное выражение — произведение двух непохожих множителей, и один из них при дифференцировании упрощается: x·(ln x)², (x²−5)eˣ, t·e^(−3t). Сюда же одиночные arccos x и arctan x: множителем берут единицу.",
+   "chain": [
+    "Выбрать u — тот множитель, который дифференцирование упрощает — и dv, остальное",
+    "Написать uv − ∫v du",
+    "Если оставшийся интеграл того же вида, применить правило ещё раз",
+    "Определённый интеграл — подставить пределы и в uv, и в остаток"
+   ],
+   "traps": [
+    "u и dv выбраны наоборот: интеграл становится сложнее исходного, а не проще",
+    "Знак минус перед вторым интегралом потерян",
+    "Пределы подставлены только в остаточный интеграл, а слагаемое uv оставлено без них",
+    "У arccos и arctan не увидено скрытой единицы: dv = 1·dx",
+    "После второго применения правила слагаемые не собраны, и ответ остаётся с невзятым интегралом внутри"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 157,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q08-A",
+    "2023-NOV-TZ1-P1-Q08-B",
+    "2023-NOV-TZ2-P1-Q08-A",
+    "2023-NOV-TZ2-P1-Q08-B",
+    "2025-MAY-TZ3-P2-Q12-A",
+    "2025-NOV-TZ1-P2-Q11-A",
+    "2025-NOV-TZ3-P3-Q02-E",
+    "2025-MAY-TZ2-P2-Q11-B",
+    "2023-MAY-TZ1-P3-Q01-B",
+    "2023-MAY-TZ1-P3-Q01-C-II",
+    "2023-MAY-TZ1-P3-Q01-D-I",
+    "2023-MAY-TZ1-P3-Q01-D-II"
+   ]
+  },
+  {
+   "id": "E5.partial_fractions",
+   "practicum": "E5",
+   "name": "Разложение на простейшие дроби",
+   "rung": 4,
+   "trigger": "Подынтегральное выражение — правильная рациональная дробь, знаменатель которой раскладывается на множители: (x+3)(x−4), (x+1)²(2x+1), 1−v². Часто разложение уже сделано предыдущим пунктом, и здесь его просят «hence» проинтегрировать.",
+   "chain": [
+    "Разложить знаменатель на неприводимые множители",
+    "Написать сумму простейших дробей с неизвестными числителями",
+    "Найти числители подстановкой корней или сравнением коэффициентов",
+    "Проинтегрировать каждую дробь: линейный знаменатель даёт логарифм, квадрат линейного — степень"
+   ],
+   "traps": [
+    "Кратному множителю (x+1)² отведена одна дробь вместо двух: нужны и A/(x+1), и B/(x+1)²",
+    "У дроби с квадратом знаменателя взят логарифм: ∫dx/(x+1)² — это −1/(x+1), а не ln|x+1|",
+    "Потерян множитель 1/2 у ln|2x+1|: производная внутренней 2x+1 равна двум",
+    "Модуль под логарифмом опущен там, где отрезок задевает отрицательные значения"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 157,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q09",
+    "2021-NOV-COMMON-P2-Q10-E",
+    "2024-MAY-TZ1-P1-Q11-E",
+    "2025-MAY-TZ2-P3-Q01-E"
+   ]
+  },
+  {
+   "id": "E5.logarithmic_integration",
+   "practicum": "E5",
+   "name": "Частное, узнанное как f′/f",
+   "rung": 5,
+   "trigger": "Подынтегральное выражение — дробь, числитель которой оказывается производной знаменателя, иногда после алгебры: g′/(g′−g), f′/f. Признак вопроса — слова «by integrating both sides» и появление постоянной в виде e^C или ln A.",
+   "chain": [
+    "Привести частное к виду, где числитель есть производная знаменателя",
+    "Написать ln от модуля знаменателя",
+    "Постоянную интегрирования одеть по месту: e^C становится множителем A, ln A — слагаемым",
+    "Если сверху осталась не вся производная, отделить лишнее и проинтегрировать отдельно"
+   ],
+   "traps": [
+    "Постоянная оставлена слагаемым там, где обе части потенцируются: e^C — это множитель, а не +C",
+    "Знак в g′ − g перепутан, и вместо −2 sin x выходит 2 cos x",
+    "Ответ не доведён до заказанной формы: просят f(x) = eˣ/h(x), а написано e^(x/2)/√(sin x)",
+    "Модуль под логарифмом потерян, хотя область задана 0 < x < π именно ради него"
+   ],
+   "calculator": "yes",
+   "practicum_marks": 157,
+   "blocks": [
+    "2024-MAY-TZ2-P3-Q01-C",
+    "2024-MAY-TZ2-P3-Q01-D",
+    "2024-MAY-TZ2-P3-Q01-E"
+   ]
+  },
+  {
+   "id": "E5.reduction_formula",
+   "practicum": "E5",
+   "name": "Формула понижения",
+   "rung": 6,
+   "trigger": "Показатель в подынтегральном выражении — буква: cosⁿx, sinⁿx. Просят выразить интеграл при показателе n через интеграл при показателе n − 2, а потом воспользоваться этим для конкретного n.",
+   "chain": [
+    "Отделить один множитель: cosⁿx = cosⁿ⁻¹x · cos x",
+    "Проинтегрировать по частям, взяв u = cosⁿ⁻¹x",
+    "Заменить sin²x на 1 − cos²x, чтобы справа появился тот же интеграл",
+    "Собрать одинаковые интегралы в одну сторону и поделить",
+    "Спускаться по формуле до показателя 0 или 1"
+   ],
+   "traps": [
+    "Множитель (n−1) потерян при дифференцировании cosⁿ⁻¹x",
+    "Одинаковые интегралы не собраны: формула остаётся неявной и пользоваться ею нельзя",
+    "Спуск остановлен на показателе 2, а ∫cos²x dx взят наугад вместо двойного угла",
+    "Постоянная c потеряна, хотя ответ просят в виде p cos³x sin x + q cos x sin x + rx + c"
+   ],
+   "calculator": "no",
+   "practicum_marks": 157,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q12-A",
+    "2025-MAY-TZ1-P1-Q12-B",
+    "2025-MAY-TZ1-P1-Q12-C"
+   ]
+  },
+  {
+   "id": "E5.termwise_series",
+   "practicum": "E5",
+   "name": "Интегрирование ряда почленно",
+   "rung": 7,
+   "trigger": "Первообразной в конечном виде нет — или она не нужна: подынтегральную функцию заменяют несколькими первыми членами ряда. Признак — слова «use the first two non-zero terms», «up to and including the term in x⁷», «hence, use integration to show that the Maclaurin series».",
+   "chain": [
+    "Записать ряд подынтегральной функции до нужной степени",
+    "Проинтегрировать почленно, повышая каждый показатель на единицу",
+    "Не забыть постоянную у неопределённого интеграла",
+    "Подставить пределы или значение x и упростить"
+   ],
+   "traps": [
+    "Проинтегрирован не ряд, а сам ряд выдан за ответ: 1 − x² + x⁴ − x⁶ это подынтегральная функция, а не интеграл",
+    "Показатель повышен, а делить на новый показатель забыли",
+    "Написано больше членов, чем заказано: «up to x⁷» значит, что x⁹ лишний",
+    "Ряд арксинуса подставлен, а сам arcsin не узнан: ∫dx/√(1−x²) — это arcsin x"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 157,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q11-E",
+    "2023-NOV-TZ2-P1-Q11-E",
+    "2025-NOV-TZ1-P1-Q10-A-II",
+    "2025-NOV-TZ1-P1-Q10-B-II",
+    "2025-NOV-TZ1-P1-Q10-C",
+    "2025-NOV-TZ3-P3-Q02-F"
+   ]
+  },
+  {
+   "id": "E5.integral_as_condition",
+   "practicum": "E5",
+   "name": "Интеграл как условие",
+   "rung": 8,
+   "trigger": "Значение интеграла названо, а найти просят что-то другое: предел интегрирования c, постоянную k в плотности вероятности, второй интеграл по чётности подынтегральной функции. Первообразная здесь средство, а не ответ.",
+   "chain": [
+    "Записать интеграл с неизвестным и приравнять его к данному числу",
+    "Взять первообразную и подставить пределы",
+    "Решить получившееся уравнение — точно или на калькуляторе",
+    "Там, где подынтегральная функция чётна или нечётна, интеграл по симметричному отрезку берётся без первообразной вовсе"
+   ],
+   "traps": [
+    "Уравнение решено относительно c², а до самого c дело не дошло",
+    "Отброшен второй корень, хотя оба лежат в области",
+    "У нечётной функции взят модуль: ∫ от −4 до 0 равен −1.6, а не 1.6",
+    "Точность потеряна: k просят с шестью значащими цифрами, и 0.713 такой ответ не заменяет"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 157,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q04",
+    "2025-NOV-TZ1-P2-Q11-B",
+    "2024-MAY-TZ1-P1-Q09-C-I-II"
    ]
   },
   {
@@ -29368,6 +30108,534 @@
    ],
    "answer": "implicit",
    "answer_digest": "3a8f7b6c00a3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:1",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.by_parts",
+   "prompt": "$\\displaystyle\\int t\\,\\mathrm{e}^{-3t}\\,\\mathrm{d}t$",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "parts",
+   "answer_digest": "d887db09649d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:2",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.partial_fractions",
+   "prompt": "$\\displaystyle\\int\\frac{\\mathrm{d}x}{(x+1)^2(2x+1)}$",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "apart",
+   "answer_digest": "1d40973eccd8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:3",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.antiderivative_and_constant",
+   "prompt": "$g'(x)=3x^2+5\\mathrm{e}^x$ and $g(0)=4$; find $g$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "table",
+   "answer_digest": "0d4fc4a78d37",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:4",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.termwise_series",
+   "prompt": "$\\displaystyle\\int_0^{1/\\sqrt3}\\left(x-\\frac{x^3}{3}+\\frac{x^5}{5}-\\frac{x^7}{7}\\right)\\mathrm{d}x$ to six decimal places",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "series",
+   "answer_digest": "9cda38ea3a2b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:5",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.substitution",
+   "prompt": "$\\displaystyle\\int\\frac{6x}{1+x^2}\\,\\mathrm{d}x$, given the graph passes through $(1,5)$",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "usub",
+   "answer_digest": "94844e094039",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:6",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.logarithmic_integration",
+   "prompt": "Integrate both sides of $\\dfrac{f'}{f}=\\dfrac{g'}{g'-g}$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "logint",
+   "answer_digest": "e7816464928f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:7",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.reduction_formula",
+   "prompt": "Show that $\\displaystyle\\int\\cos^n x\\,\\mathrm{d}x=\\frac{1}{n}\\cos^{n-1}x\\sin x +\\frac{n-1}{n}\\int\\cos^{n-2}x\\,\\mathrm{d}x$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "reduce",
+   "answer_digest": "4c7e98bfa0c7",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:8",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.integral_as_condition",
+   "prompt": "The area under $y=\\dfrac{x}{x^2+2}$ from $0$ to $c$ is $\\ln 3$. Find $c$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "condition",
+   "answer_digest": "596d40a4ed24",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:9",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.by_parts",
+   "prompt": "$\\displaystyle\\int\\arccos x\\,\\mathrm{d}x$",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "parts",
+   "answer_digest": "d887db09649d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:10",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.substitution",
+   "prompt": "$\\displaystyle\\int_0^{\\pi/3}\\sec^n x\\tan x\\,\\mathrm{d}x$",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "usub",
+   "answer_digest": "94844e094039",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:11",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.integral_as_condition",
+   "prompt": "$\\displaystyle\\int_{-4}^{4}f(x)\\,\\mathrm{d}x$, where $f$ is odd",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "condition",
+   "answer_digest": "596d40a4ed24",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E5:12",
+   "kind": "recognition",
+   "practicum": "E5",
+   "skill": "E5.partial_fractions",
+   "prompt": "$\\displaystyle\\int_0^3\\frac{2x-15}{(x+3)(x-4)}\\,\\mathrm{d}x$",
+   "options": [
+    {
+     "code": "table",
+     "name": "первообразная по таблице"
+    },
+    {
+     "code": "usub",
+     "name": "замена переменной"
+    },
+    {
+     "code": "parts",
+     "name": "интегрирование по частям"
+    },
+    {
+     "code": "apart",
+     "name": "простейшие дроби"
+    },
+    {
+     "code": "logint",
+     "name": "частное как f′/f"
+    },
+    {
+     "code": "reduce",
+     "name": "формула понижения"
+    },
+    {
+     "code": "series",
+     "name": "интегрирование ряда почленно"
+    },
+    {
+     "code": "condition",
+     "name": "интеграл как условие"
+    }
+   ],
+   "answer": "apart",
+   "answer_digest": "1d40973eccd8",
    "budget_ms": 8000
   },
   {

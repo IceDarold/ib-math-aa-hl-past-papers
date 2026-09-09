@@ -102,6 +102,15 @@ def spoil(answer, spec):
     if kind == 'equation':
         e = sp.sympify(answer)
         return f'{sp.sstr(sp.expand(e.lhs + 3))} = {sp.sstr(e.rhs)}'
+    if kind in ('antiderivative', 'termwise'):
+        # Прибавить единицу к первообразной значит написать тот же ответ:
+        # постоянная свободна, и проверка права, когда его принимает.
+        # Портить надо тем, что меняет производную.
+        return show_answer(sp.sympify(answer) + sp.Symbol(spec.get('var', 'x')))
+    if kind == 'reduction':
+        # У формулы понижения свободной постоянной нет, но есть однородность:
+        # прибавленная единица уехала бы в подстановку пределов. Удваиваем.
+        return show_answer(2*sp.sympify(answer))
     return show_answer(sp.sympify(answer) + 1)
 
 
@@ -1628,6 +1637,102 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('E4.')):
     t(f'{gen_name}: и отвергла испорченный на всех {SEEDS} зёрнах',
       rejected == SEEDS)
     print(f'  {gen_name:32} {SEEDS} задач сверено формулой и проверкой')
+
+
+# --- E5 ---------------------------------------------------------------
+# Здесь зеркало E4. Проверки практикума E5 не интегрируют ни разу: они
+# дифференцируют написанное. Значит, тест обязан интегрировать — и он
+# считает эталон через sp.integrate, после чего гонит его через настоящую
+# проверку тренажёра вместе с испорченным ответом.
+#
+# Портить приходится осторожно: у первообразной «+1» — это тот же ответ,
+# потому что постоянная свободна. Портим тем, что меняет производную.
+E5_SPOIL = {
+    'antiderivative': lambda claim, spec: claim + sp.Symbol(spec.get('var', 'x')),
+    'transformed': lambda claim, spec: claim + 1,
+    'termwise': lambda claim, spec: claim + sp.Symbol(spec.get('var', 'x'))**2,
+    'reduction': lambda claim, spec: 2*claim,
+    'integral': lambda claim, spec: claim + 1,
+}
+
+
+def _same_family(claim, want, var):
+    """Отличаются ли два выражения только постоянной."""
+    gap = sp.simplify(sp.sympify(claim) - sp.sympify(want))
+    if gap.is_number or not gap.has(var):
+        return True
+    return sp.simplify(sp.diff(gap, var)) == 0
+
+
+def _e5_agrees(item):
+    """Тот же ответ, посчитанный интегрированием, а не дифференцированием."""
+    spec = item['check']
+    kind = spec['kind']
+    var = sp.Symbol(spec.get('var', 'x'))
+    claim = sp.sympify(item['answer'])
+
+    if kind == 'antiderivative':
+        found = sp.integrate(sp.sympify(spec['f']), var)
+        if spec.get('through'):
+            spot, height = [sp.sympify(v) for v in spec['through']]
+            found = found + (height - found.subs(var, spot))
+            return sp.simplify(claim - found) == 0
+        return _same_family(claim, found, var)
+
+    if kind == 'termwise':
+        row = sp.series(sp.sympify(spec['f']), var, 0, spec['upto']).removeO()
+        return _same_family(claim, sp.integrate(row, var), var)
+
+    if kind == 'transformed':
+        sub = sp.sympify(spec['sub'])
+        new = sp.Symbol(spec.get('new', 'u'))
+        pushed = claim.subs(new, sub)*sp.diff(sub, var)
+        return sp.simplify(pushed - sp.sympify(spec['f'])) == 0
+
+    if kind == 'reduction':
+        index = sp.Symbol(spec['index'])
+        of = sp.Function(spec['of'])
+        lo, hi = [sp.Rational(str(v)) for v in spec['span']]
+        term = sp.sympify(spec['term'])
+        for power in spec['values']:
+            left = sp.integrate(term.subs(index, power), (var, lo, hi))
+            right = 0
+            for piece in sp.Add.make_args(claim.subs(index, power)):
+                inside = [f for f in piece.atoms(sp.Function) if f.func == of]
+                if inside:
+                    weight = sp.simplify(piece/inside[0])
+                    right += weight*sp.integrate(
+                        term.subs(index, inside[0].args[0]), (var, lo, hi))
+                else:
+                    right += piece.subs(var, hi) - piece.subs(var, lo)
+            if abs(float(sp.N(right - left, 30))) > 1e-9:
+                return False
+        return True
+
+    # integral: обратный ход — ответом служит верхний предел.
+    found = sp.integrate(sp.sympify(spec['f']), (var, sp.sympify(spec['a']), claim))
+    return sp.simplify(found - sp.sympify(spec['value'])) == 0
+
+
+section('E5: эталон генератора пересчитан интегрированием и прогнан проверкой')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('E5.')):
+    agreed = accepted = rejected = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[gen_name](random.Random(seed))
+        spec = item['check']
+        agreed += bool(_e5_agrees(item))
+        ok, _ = evaluate(spec, str(item['answer']))
+        accepted += bool(ok)
+        spoiled = E5_SPOIL[spec['kind']](sp.sympify(item['answer']), spec)
+        bad_answer, _ = evaluate(spec, str(spoiled))
+        rejected += not bad_answer
+    t(f'{gen_name}: интегрирование дало тот же ответ на всех {SEEDS} зёрнах',
+      agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах',
+      accepted == SEEDS)
+    t(f'{gen_name}: и отвергла испорченный на всех {SEEDS} зёрнах',
+      rejected == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено интегралом и проверкой')
 
 
 bad = [name for name, ok in res if not ok]

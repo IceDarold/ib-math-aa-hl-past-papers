@@ -201,7 +201,10 @@ print('--- ходьба, а не дифференцирование ---')
 source = open(os.path.join(ROOT, 'practicum/kit.py')).read()
 start = source.index('# ========================================================= '
                      'кривая и прямая')
-finish = source.index('def trigger_check(answers, key):')
+# Раздел кончается там, где начинается следующий: после E5 между ним и
+# trigger_check стоит целая глава про первообразную, и она сюда не входит.
+finish = source.index('# ================================================= '
+                      'первообразная и её семья')
 section = source[start:finish]
 tree = ast.parse(section[section.index('def curve('):])
 calls = [node.func for node in ast.walk(tree) if isinstance(node, ast.Call)]

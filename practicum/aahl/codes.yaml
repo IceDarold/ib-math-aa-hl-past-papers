@@ -246,6 +246,16 @@ E4:
   right:     {skill: right_angles,         name: прямой угол как условие}
   condition: {skill: tangency_condition,   name: касание как условие}
 
+E5:
+  table:     {skill: antiderivative_and_constant, name: первообразная по таблице}
+  usub:      {skill: substitution,               name: замена переменной}
+  parts:     {skill: by_parts,                   name: интегрирование по частям}
+  apart:     {skill: partial_fractions,          name: простейшие дроби}
+  logint:    {skill: logarithmic_integration,    name: "частное как f′/f"}
+  reduce:    {skill: reduction_formula,          name: формула понижения}
+  series:    {skill: termwise_series,            name: интегрирование ряда почленно}
+  condition: {skill: integral_as_condition,      name: интеграл как условие}
+
 E7:
   int: {skill: direct_integration,           name: прямое интегрирование}
   sep: {skill: separation,                   name: разделение переменных}

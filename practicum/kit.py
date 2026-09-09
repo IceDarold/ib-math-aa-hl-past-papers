@@ -6608,6 +6608,622 @@ def verify_right_angle(label, got, first, second, at, params=None):
     return True
 
 
+# ================================================= первообразная и её семья
+# Восемнадцатое понятие равенства ответов: первообразная узнаётся по своей
+# производной.
+#
+# У производной ответ один. У первообразной ответа нет вовсе — есть семейство:
+# F и F + 7 верны одинаково, и экзамен принимает обе записи. Сверять поэтому
+# не с чем, и хранить нечего. Раздел написан так, что вычислить ответ он
+# не может в принципе: внутри нет ни одного интегрирования — ни sympy,
+# ни своего. Проверка умеет ровно одно — взять написанное и
+# продифференцировать. Совпала производная с подынтегральной функцией —
+# написанное лежит в семействе; постоянная исчезает сама, как бы она ни была
+# одета: +c, +ln A, +(1/2)ln A.
+#
+# Это сильнее, чем у производной (E3): там проверка ответ вычисляла и могла
+# бы его напечатать. Здесь она умеет только узнавать.
+#
+# Определённый интеграл — число, и берётся оно не первообразной, а сложением:
+# адаптивным Симпсоном по самому подынтегральному выражению. Бесконечный
+# предел проходится лестницей, как в verify_limit: 10, 20, 40, ... — пока
+# два соседних значения не сойдутся.
+#
+# Отсюда и остальное. «Покажите, что ∫ от a до s равен G(s)» — это G′(s) = f(s)
+# и G(a) = 0, основная теорема, и снова без интегрирования. Замена переменной —
+# это g(u(x))·u′(x) = f(x), проверяется подстановкой вперёд. Формула понижения —
+# численное тождество между интегралами, проверенное при нескольких n. Ряд
+# вместо первообразной — совпадение производной с рядом подынтегральной
+# функции до нужной степени.
+
+_ANTI_TOL = 5e-4          # три значащие цифры — столько же принимает экзамен
+_QUAD_TOL = 1e-11         # точность квадратуры
+_QUAD_DEPTH = 60          # глубина деления отрезка
+_QUAD_EDGE = 1e-9         # отступ от края, если на самом краю не считается
+_FAR = (10, 20, 40, 80, 160, 320)   # лестница к бесконечному пределу
+_ANTI_PLACES = (0.31, -0.47, 0.83, 1.29, -1.11, 1.87, 2.33, -2.71, 3.19)
+
+
+def _numeric(expr, var, run=None):
+    """Выражение числовой функцией одной переменной. None там, где не считается."""
+    expr = sp.sympify(expr)
+    if run:
+        expr = expr.subs(_swap(run))
+    try:
+        fast = sp.lambdify(var, expr, 'math')
+    except Exception:            # noqa: BLE001 — печатники sympy падают по-разному
+        # Не всякое выражение lambdify переводит в код: Derivative(re(...)),
+        # который приезжает из производной модуля, ему неизвестен. Тогда
+        # считаем через evalf — медленнее, но всегда.
+        fast = None
+
+    def value(point):
+        out = None
+        if fast is not None:
+            try:
+                out = fast(point)
+            except (ValueError, ZeroDivisionError, OverflowError, TypeError,
+                    ArithmeticError):
+                out = None
+        if out is None:
+            try:
+                out = complex(expr.evalf(20, subs={var: point}))
+            except (TypeError, ValueError, ZeroDivisionError, AttributeError,
+                    OverflowError, NotImplementedError):
+                return None
+        if isinstance(out, complex):
+            if abs(out.imag) > 1e-12 * max(1.0, abs(out.real)):
+                return None
+            out = out.real
+        try:
+            out = float(out)
+        except (TypeError, ValueError):
+            return None
+        return out if math.isfinite(out) else None
+
+    return value
+
+
+def _unbar(expr):
+    """Снять модули: у ln|g| и ln g производная одна и та же.
+
+    Ответ темы почти всегда записывают с модулем — так его печатает
+    markscheme, — а sp.diff от Abs выдаёт производную действительной части,
+    которую дальше не посчитать. Для сравнения производных модуль лишний.
+    """
+    expr = sp.sympify(expr)
+    bars = [piece for piece in expr.atoms(sp.Abs)]
+    return expr.subs({bar: bar.args[0] for bar in bars}) if bars else expr
+
+
+def _swap(run):
+    """Словарь подстановки букв: ключ-символ берётся как есть."""
+    return {name if isinstance(name, sp.Symbol) else sp.Symbol(str(name)): value
+            for name, value in (run or {}).items()}
+
+
+def _edge(fn, point, inward):
+    """Значение у края отрезка: на самом краю функции часто нет (ln 0, 1/√0)."""
+    here = fn(point)
+    if here is not None:
+        return point, here
+    for j in range(1, 8):
+        near = point + inward * _QUAD_EDGE * 10 ** j
+        here = fn(near)
+        if here is not None:
+            return near, here
+    return point, None
+
+
+def _simpson(fn, left, right, f_left, f_mid, f_right, whole, depth):
+    """Адаптивный Симпсон: делим отрезок, пока половинки не сойдутся с целым.
+
+    Ни первообразной, ни sympy — только значения функции и арифметика.
+    """
+    mid = (left + right) / 2
+    lq, rq = (left + mid) / 2, (mid + right) / 2
+    f_lq, f_rq = fn(lq), fn(rq)
+    if f_lq is None or f_rq is None:
+        return None
+    step = (right - left) / 12
+    part_left = step * (f_left + 4 * f_lq + f_mid)
+    part_right = step * (f_mid + 4 * f_rq + f_right)
+    both = part_left + part_right
+    if depth <= 0 or abs(both - whole) <= 15 * _QUAD_TOL * max(1.0, abs(both)):
+        return both + (both - whole) / 15
+    a_side = _simpson(fn, left, mid, f_left, f_lq, f_mid, part_left, depth - 1)
+    b_side = _simpson(fn, mid, right, f_mid, f_rq, f_right, part_right, depth - 1)
+    if a_side is None or b_side is None:
+        return None
+    return a_side + b_side
+
+
+def _sum_up(fn, left, right):
+    """Определённый интеграл сложением. None — подынтегральная функция не далась."""
+    if right < left:
+        got = _sum_up(fn, right, left)
+        return None if got is None else -got
+    if right == left:
+        return 0.0
+    left, f_left = _edge(fn, left, +1)
+    right, f_right = _edge(fn, right, -1)
+    if f_left is None or f_right is None:
+        return None
+    mid = (left + right) / 2
+    f_mid = fn(mid)
+    if f_mid is None:
+        return None
+    whole = (right - left) / 6 * (f_left + 4 * f_mid + f_right)
+    return _simpson(fn, left, right, f_left, f_mid, f_right, whole, _QUAD_DEPTH)
+
+
+def _area(f, var, left, right, run=None):
+    """Число ∫ f от left до right. Бесконечный предел проходится лестницей."""
+    fn = _numeric(f, var, run)
+    left = sp.sympify(left).subs(_swap(run)) if run else sp.sympify(left)
+    right = sp.sympify(right).subs(_swap(run)) if run else sp.sympify(right)
+    if right in (sp.oo, -sp.oo) or left in (sp.oo, -sp.oo):
+        return _far_away(fn, left, right)
+    try:
+        return _sum_up(fn, float(left), float(right))
+    except (TypeError, ValueError):
+        return None
+
+
+def _far_away(fn, left, right):
+    """Интеграл до бесконечности: лестница отодвигаемых пределов."""
+    if left in (sp.oo, -sp.oo) and right in (sp.oo, -sp.oo):
+        return None
+    if left in (sp.oo, -sp.oo):
+        got = _far_away(fn, right, left)
+        return None if got is None else -got
+    try:
+        near = float(left)
+    except (TypeError, ValueError):
+        return None
+    sign = 1 if right == sp.oo else -1
+    seen = []
+    for step in _FAR:
+        got = _sum_up(fn, near, near + sign * step)
+        if got is None:
+            break
+        seen.append(got)
+        if len(seen) >= 2 and abs(seen[-1] - seen[-2]) <= _ANTI_TOL * max(
+                1.0, abs(seen[-1])):
+            return seen[-1]
+    return None
+
+
+def _alike(claim, want, var, domain=None, run=None, tol=1e-7):
+    """Одна ли это функция: сначала символьно, потом в точках области."""
+    try:
+        gap = sp.sympify(claim) - sp.sympify(want)
+    except (TypeError, ValueError, sp.SympifyError):
+        return False
+    if run:
+        gap = gap.subs(_swap(run))
+    try:
+        if sp.simplify(gap) == 0:
+            return True
+    except (TypeError, ValueError, AttributeError, NotImplementedError,
+            RecursionError):
+        pass
+    if gap.free_symbols - {var}:
+        return False
+    here = _numeric(gap, var)
+    scale = _numeric(want if not run else sp.sympify(want).subs(_swap(run)), var)
+    checked = 0
+    for point in _places(domain):
+        value = here(point)
+        if value is None:
+            continue
+        size = scale(point)
+        checked += 1
+        if abs(value) > tol * max(1.0, abs(size or 0.0)):
+            return False
+    return checked >= 3
+
+
+def _places(domain=None):
+    """Точки, в которых сравниваются функции."""
+    if domain is None:
+        return _ANTI_PLACES
+    lo, hi = float(sp.sympify(domain[0])), float(sp.sympify(domain[1]))
+    return tuple(lo + (hi - lo) * (i + 0.5) / len(_ANTI_PLACES)
+                 for i in range(len(_ANTI_PLACES)))
+
+
+def _factor_off(claim, f, var, domain, run):
+    """Во сколько раз производная написанного отличается от нужной функции.
+
+    Возвращает постоянную c, если (claim)′ = c·f, и None иначе. Это самый
+    частый промах темы: ∫cos 3x dx записывают как sin 3x — забыт делитель,
+    который приносит внутренняя функция.
+    """
+    rate = sp.diff(sp.sympify(claim), var)
+    try:
+        ratio = sp.simplify(sp.cancel(sp.together(rate / sp.sympify(f))))
+    except (TypeError, ValueError, AttributeError, NotImplementedError,
+            RecursionError, ZeroDivisionError):
+        return None
+    if run:
+        ratio = ratio.subs(_swap(run))
+    if ratio.has(var) or not ratio.is_number:
+        return None
+    return None if ratio == 1 else ratio
+
+
+def _anti_slips(claim, f, var, domain, run):
+    """Промахи темы, собранные из самой f. Возвращает объяснение или None."""
+    f = sp.sympify(f)
+    if sp.simplify(sp.diff(sp.sympify(claim), var)) == 0:
+        return _t(f'написанное не зависит от {var}: продифференцировать его '
+                  f'по переменной интегрирования нечего',
+                  f'your answer does not depend on {var}: there is nothing to '
+                  f'differentiate with respect to the variable of integration')
+    if _alike(claim, f, var, domain, run):
+        return _t('это сама подынтегральная функция: интегрировать её ещё надо',
+                  'this is the integrand itself — it has not been integrated')
+    if _alike(claim, sp.diff(f, var), var, domain, run):
+        return _t('функция продифференцирована, а не проинтегрирована',
+                  'the function has been differentiated, not integrated')
+    times = _factor_off(claim, f, var, domain, run)
+    if times is not None:
+        return _t(
+            f'производная вашего ответа ровно в {times} раз отличается от '
+            f'подынтегральной функции: при замене внутренней функции '
+            f'появляется постоянный множитель, и его легко потерять',
+            f'the derivative of your answer is exactly {times} times the '
+            f'integrand: the inside function brings a constant factor, '
+            f'and it is easy to lose')
+    gap = sp.simplify(sp.diff(sp.sympify(claim), var) - f)
+    if run:
+        gap = gap.subs(_swap(run))
+    if gap.is_number and gap != 0:
+        return _t(
+            f'производная вашего ответа отличается от подынтегральной функции '
+            f'на постоянную {gap}: лишнее слагаемое, линейное по {var}',
+            f'the derivative of your answer differs from the integrand by the '
+            f'constant {gap}: there is a spare term linear in {var}')
+    return None
+
+
+def verify_antiderivative(label, got, f, var=x, domain=None, params=None,
+                          through=None):
+    """Ответ — первообразная: проверка дифференцирует написанное.
+
+    Восемнадцатое понятие равенства ответов. Эталона нет и быть не может:
+    первообразных бесконечно много, они отличаются постоянной. Проверка
+    берёт написанное, дифференцирует его и сравнивает с подынтегральной
+    функцией из условия. Постоянная при этом исчезает сама — и +c, и +ln A,
+    и (1/2)ln A равно годятся, потому что производная у них ноль.
+
+    Сама проинтегрировать проверка не умеет: внутри раздела интегрирования
+    нет ни одного. Она умеет только узнать первообразную, если её принесли.
+
+    domain=(a, b) — где сравнивать, если функция определена не всюду.
+    params={n: (2, 3, 5)} — прогон при каждом значении буквы.
+    through=(x0, y0) — «дана f′ и точка графика, найдите f»: свобода
+    постоянной тогда снимается, и ответ обязан ещё и пройти через точку.
+    """
+    if _blank(label, got):
+        return False
+    claim = sp.sympify(got)
+    f = sp.sympify(f)
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    bare = _unbar(claim)
+    for run in runs:
+        if _alike(sp.diff(bare, var), f, var, domain, run):
+            continue
+        why = _anti_slips(bare, f, var, domain, run)
+        if why is None:
+            why = _t('производная написанного не равна подынтегральной функции',
+                     'the derivative of your answer is not the integrand')
+        print(f"{NO} {label}: {why}{_where_words(run)}")
+        return False
+    if through is not None:
+        spot, height = sp.sympify(through[0]), sp.sympify(through[1])
+        for run in runs:
+            here = _number(claim.subs(var, spot), run)
+            if here is None:
+                print(f"{NO} {label}: " + _t(
+                    'производная верна, но постоянная интегрирования так '
+                    'и осталась буквой: точка на графике дана как раз '
+                    'затем, чтобы её найти',
+                    'the derivative is right, but the constant of integration '
+                    'is still a letter: the point on the graph was given in '
+                    'order to find it') + _where_words(run))
+                return False
+            if abs(here - (_number(height, run) or 0)) > _ANTI_TOL:
+                print(f"{NO} {label}: " + _t(
+                    f'производная верна, но график не проходит через точку '
+                    f'({spot}, {height}): при {var} = {spot} написанное даёт '
+                    f'{_say(here)}. Постоянную интегрирования надо было '
+                    f'найти, а не оставить',
+                    f'the derivative is right, but the graph misses the point '
+                    f'({spot}, {height}): at {var} = {spot} your answer gives '
+                    f'{_say(here)}. The constant of integration had to be '
+                    f'found, not left')
+                    + _where_words(run))
+                return False
+    print(f"{OK} {label}: {claim}")
+    return True
+
+
+def verify_integral(label, got, f, a, b, var=x, params=None, tol=None):
+    """Ответ — число определённого интеграла: считается сложением, не формулой.
+
+    Значение берётся адаптивным Симпсоном прямо по подынтегральному
+    выражению из условия; первообразная не ищется и не хранится. Ответ
+    принимается в любой записи — 2*(E - 1/E) и 4.7008 сравниваются числами.
+
+    b=oo — интеграл до бесконечности: пределы отодвигаются лестницей,
+    пока два соседних значения не сойдутся.
+    """
+    if _blank(label, got, f, a, b):
+        return False
+    claim = sp.sympify(got)
+    tol = _ANTI_TOL if tol is None else tol
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    for run in runs:
+        want = _area(f, var, a, b, run)
+        if want is None:
+            print(f"{NO} {label}: " + _t(
+                'подынтегральное выражение не считается на этом отрезке',
+                'the integrand cannot be evaluated over this interval')
+                + _where_words(run))
+            return False
+        value = _number(claim, run)
+        if value is None:
+            print(f"{NO} {label}: " + _t(
+                f'{claim} — это не число', f'{claim} is not a number')
+                + _where_words(run))
+            return False
+        if abs(value - want) <= tol * max(1.0, abs(want)):
+            continue
+        if abs(value + want) <= tol * max(1.0, abs(want)):
+            print(f"{NO} {label}: " + _t(
+                'знак противоположный: пределы переставлены местами',
+                'the sign is the wrong way round: the limits have been swapped')
+                + _where_words(run))
+            return False
+        print(f"{NO} {label}: " + _t(
+            'не сходится с интегралом из условия',
+            'this does not match the integral in the question')
+            + _where_words(run))
+        return False
+    print(f"{OK} {label}: {_wrote(claim)}")
+    return True
+
+
+def _number(value, run=None):
+    """Число из ответа, в какой бы записи оно ни было."""
+    try:
+        value = sp.sympify(value)
+        if run:
+            value = value.subs(_swap(run))
+        out = complex(value.evalf(_PREC))
+    except (TypeError, ValueError, AttributeError, ZeroDivisionError):
+        return None
+    if abs(out.imag) > 1e-9 * max(1.0, abs(out.real)):
+        return None
+    return out.real if math.isfinite(out.real) else None
+
+
+def verify_accumulated(label, got, f, lower, var=t, upper=None, params=None,
+                       domain=None):
+    """Ответ — накопленное с начала: ∫ от lower до s, записанное функцией s.
+
+    Проверяется основной теоремой, а не интегрированием: производная
+    написанного по верхнему пределу обязана равняться подынтегральной
+    функции в этой точке, а в самой точке lower написанное обязано быть
+    нулём. Обе половины нужны: первая ловит неверную первообразную,
+    вторая — потерянный нижний предел.
+    """
+    if _blank(label, got):
+        return False
+    claim = sp.sympify(got)
+    upper = var if upper is None else sp.sympify(upper)
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    rate = sp.sympify(f).subs(var, upper) if upper != var else sp.sympify(f)
+    for run in runs:
+        if not _alike(sp.diff(_unbar(claim), upper), rate, upper, domain, run):
+            print(f"{NO} {label}: " + _t(
+                'производная написанного по верхнему пределу не равна '
+                'подынтегральной функции',
+                'differentiating your answer with respect to the upper limit '
+                'does not give the integrand') + _where_words(run))
+            return False
+        start = _number(claim.subs(upper, sp.sympify(lower)), run)
+        if start is None or abs(start) > _ANTI_TOL:
+            print(f"{NO} {label}: " + _t(
+                f'при верхнем пределе {lower} интеграл обязан быть нулём, '
+                f'а написанное даёт {_say(start) if start is not None else claim}: '
+                f'потерян нижний предел',
+                f'with upper limit {lower} the integral has to be zero, but '
+                f'your answer gives '
+                f'{_say(start) if start is not None else claim}: '
+                f'the lower limit has been dropped') + _where_words(run))
+            return False
+    print(f"{OK} {label}: {claim}")
+    return True
+
+
+def verify_transformed(label, got, f, sub, var=x, new=u, domain=None):
+    """Ответ — подынтегральное выражение после замены переменной.
+
+    Замена законна, когда g(u(x))·u′(x) = f(x): проверка подставляет замену
+    вперёд и сравнивает с исходным выражением. Интегрировать для этого
+    не нужно — и не приходится.
+    """
+    if _blank(label, got):
+        return False
+    claim = sp.sympify(got)
+    sub = sp.sympify(sub)
+    if claim.has(var) and not claim.has(new):
+        print(f"{NO} {label}: " + _t(
+            f'после замены выражение должно быть записано через {new}, '
+            f'а в нём осталось {var}',
+            f'after the substitution the integrand has to be written in {new}, '
+            f'but {var} is still there'))
+        return False
+    pushed = _unbar(claim).subs(new, sub) * sp.diff(sub, var)
+    if not _alike(pushed, f, var, domain):
+        if _alike(_unbar(claim).subs(new, sub), f, var, domain):
+            print(f"{NO} {label}: " + _t(
+                'потерян множитель замены: dx выражается через du, и это '
+                'делит на производную замены',
+                'the substitution factor is missing: dx has to be written in '
+                'terms of du, which divides by the derivative of the '
+                'substitution'))
+            return False
+        print(f"{NO} {label}: " + _t(
+            'подстановка замены обратно не даёт исходного выражения',
+            'putting the substitution back does not return the original '
+            'integrand'))
+        return False
+    print(f"{OK} {label}: {claim}")
+    return True
+
+
+def verify_reduction(label, got, term, index, of, var=x, span=(0.3, 1.2),
+                     values=(2, 3, 4, 5)):
+    """Ответ — формула понижения: тождество между интегралами.
+
+    got записывается через of(m) — «интеграл от term при index = m» — и
+    обычные слагаемые вне интеграла. Проверка при каждом n из values
+    считает обе стороны на отрезке span сложением: слагаемые с of(m)
+    берутся квадратурой, остальные подставляются в пределы. Первообразная
+    ни разу не ищется, поэтому формулу проверка узнаёт, но не выводит.
+    """
+    if _blank(label, got):
+        return False
+    claim = sp.sympify(got)
+    lo, hi = float(sp.sympify(span[0])), float(sp.sympify(span[1]))
+    cache = {}
+
+    def whole(power):
+        key = sp.nsimplify(power)
+        if key not in cache:
+            cache[key] = _area(sp.sympify(term).subs(index, key), var, lo, hi)
+        return cache[key]
+
+    for n_value in values:
+        want = whole(n_value)
+        if want is None:
+            print(f"{NO} {label}: " + _t(
+                f'интеграл при {index} = {n_value} не считается',
+                f'the integral with {index} = {n_value} cannot be evaluated'))
+            return False
+        total = 0.0
+        for piece in sp.Add.make_args(claim.subs(index, n_value)):
+            inside = [f for f in piece.atoms(sp.Function) if f.func == of]
+            if len(inside) > 1:
+                print(f"{NO} {label}: " + _t(
+                    f'в слагаемом {piece} больше одного интеграла',
+                    f'the term {piece} holds more than one integral'))
+                return False
+            if inside:
+                weight = sp.simplify(piece / inside[0])
+                if weight.has(var) or weight.has(of):
+                    print(f"{NO} {label}: " + _t(
+                        f'множитель при интеграле в {piece} зависит от {var}',
+                        f'the factor in front of the integral in {piece} '
+                        f'depends on {var}'))
+                    return False
+                part = whole(inside[0].args[0])
+                if part is None:
+                    print(f"{NO} {label}: " + _t(
+                        f'интеграл {inside[0]} не считается',
+                        f'the integral {inside[0]} cannot be evaluated'))
+                    return False
+                total += float(weight) * part
+            else:
+                edge = _numeric(piece, var)
+                top, bottom = edge(hi), edge(lo)
+                if top is None or bottom is None:
+                    print(f"{NO} {label}: " + _t(
+                        f'слагаемое {piece} не считается на концах отрезка',
+                        f'the term {piece} cannot be evaluated at the ends '
+                        f'of the interval'))
+                    return False
+                total += top - bottom
+        if abs(total - want) > _ANTI_TOL * max(1.0, abs(want)):
+            print(f"{NO} {label}: " + _t(
+                f'при {index} = {n_value} стороны не равны: слева {_say(want)}, '
+                f'справа {_say(total)}',
+                f'with {index} = {n_value} the two sides differ: '
+                f'{_say(want)} against {_say(total)}'))
+            return False
+    print(f"{OK} {label}: {claim}")
+    return True
+
+
+def verify_termwise(label, got, f, upto, var=x):
+    """Ответ — интеграл ряда: первообразной в конечном виде нет.
+
+    Проверяется тем же вопросом, что и обычная первообразная, но с точностью
+    до нужной степени: производная написанного обязана совпасть с рядом
+    подынтегральной функции до члена степени upto − 1 включительно.
+    Постоянная так же свободна, а вот лишние степени — нет: ответ длиннее
+    заказанного проверка не принимает.
+    """
+    if _blank(label, got):
+        return False
+    claim = sp.sympify(got)
+    f = sp.sympify(f)
+    try:
+        gap = sp.series(sp.diff(_unbar(claim), var) - f, var, 0, upto).removeO()
+    except (TypeError, ValueError, NotImplementedError, sp.PoleError):
+        print(f"{NO} {label}: " + _t(
+            'ряд для этой разности не строится',
+            'the series for this difference cannot be built'))
+        return False
+    if sp.simplify(sp.expand(gap)) != 0:
+        if _alike(claim, sp.series(f, var, 0, upto).removeO(), var):
+            print(f"{NO} {label}: " + _t(
+                'это ряд самой подынтегральной функции: его ещё надо '
+                'проинтегрировать почленно',
+                'this is the series of the integrand itself — it still has to '
+                'be integrated term by term'))
+            return False
+        print(f"{NO} {label}: " + _t(
+            f'производная написанного расходится с рядом подынтегральной '
+            f'функции уже в члене {sp.expand(gap).as_ordered_terms()[0]}',
+            f'the derivative of your answer already parts from the series of '
+            f'the integrand at the term '
+            f'{sp.expand(gap).as_ordered_terms()[0]}'))
+        return False
+    order = _degree_in(claim, var)
+    if order is not None and order > upto:
+        print(f"{NO} {label}: " + _t(
+            f'в ответе есть степень {order}, а заказана степень {upto}',
+            f'the answer carries a power {order} where {upto} was asked for'))
+        return False
+    print(f"{OK} {label}: {claim}")
+    return True
+
+
+def _degree_in(expr, var):
+    """Старшая степень var в выражении. None — это не многочлен."""
+    try:
+        return int(sp.Poly(expr, var).degree())
+    except (sp.PolynomialError, sp.GeneratorsNeeded, TypeError, ValueError):
+        return None
+
+
 def trigger_check(answers, key):
     """Тренажёр распознавания приёма: answers — {номер: код приёма}."""
     if not any(str(v).strip() for v in answers.values()):

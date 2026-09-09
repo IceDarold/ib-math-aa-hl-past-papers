@@ -233,6 +233,26 @@ by_practicum:
       fix: "Write \"m1 m2 = -1, so the curves intersect at right angles.\""
       code: R1
 
+  E5:
+    - id: constant_appears
+      requirement: >
+        The constant of integration is written at the moment of integrating,
+        and where a point is given it is then found rather than left as c.
+      fix: "Write \"+ c\" as you integrate, then substitute the point to find it."
+      code: A1
+    - id: substitution_dx
+      requirement: >
+        A substitution states what dx becomes, not only what the inside
+        function is renamed to.
+      fix: "Write \"u = sec x, du = sec x tan x dx\" before changing the integral."
+      code: M1
+    - id: both_limits
+      requirement: >
+        A definite integral shows the antiderivative evaluated at both limits
+        and subtracted, with the limits changed if the variable was changed.
+      fix: "Write \"[F(x)] from a to b = F(b) - F(a)\" rather than substituting only b."
+      code: M1
+
   E7:
     - id: constant_of_integration
       requirement: >
