@@ -253,6 +253,26 @@ by_practicum:
       fix: "Write \"[F(x)] from a to b = F(b) - F(a)\" rather than substituting only b."
       code: M1
 
+  E6:
+    - id: says_the_slice
+      requirement: >
+        The integral is preceded by what one slice is - a strip of height
+        top minus bottom, or a disc of radius R - not written down bare.
+      fix: "Write \"V = pi * integral of (radius)^2 dy\" with the radius named before integrating."
+      code: M1
+    - id: total_means_modulus
+      requirement: >
+        Where the question says total area or total distance, the interval is
+        split where the sign changes and the pieces are added as positives.
+      fix: "Write \"v = 0 at t = 2, so distance = |integral 0 to 2| + |integral 2 to 3|.\""
+      code: M1
+    - id: y_axis_rewrite
+      requirement: >
+        A rotation about the y-axis states x in terms of y, and the limits
+        are y-values, before the integral is written.
+      fix: "Write \"x^2 = y + 1, y from 0 to 4\" and only then pi * integral x^2 dy."
+      code: A1
+
   E7:
     - id: constant_of_integration
       requirement: >

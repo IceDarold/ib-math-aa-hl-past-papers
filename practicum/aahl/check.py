@@ -451,6 +451,71 @@ def evaluate(spec, raw):
                             span=tuple(spec['span']),
                             values=tuple(spec['values']))
 
+        # E6: измеренное и его измерение. Проверки не берут производных;
+        # они меряют область, тело, поверхность или путь заново.
+        if kind in ('region', 'solid', 'surface', 'travelled', 'position',
+                    'amount'):
+            var = sp.Symbol(spec.get('var', 'x'))
+            params = {sp.Symbol(name): [sp.sympify(v) for v in values]
+                      for name, values in (spec.get('params') or {}).items()}
+            digits = spec.get('digits', 3)
+            edge = lambda name: (sp.sympify(spec[name]) if spec.get(name)
+                                 else None)
+
+            if kind == 'region':
+                extra = ({'window': tuple(sp.sympify(v)
+                                          for v in spec['window'])}
+                         if spec.get('window') else {})
+                return _capture(kit.verify_region, 'Ответ', parse_one(raw),
+                                sp.sympify(spec['top']),
+                                sp.sympify(spec['bottom']),
+                                edge('a'), edge('b'), var=var,
+                                params=params or None, digits=digits, **extra)
+
+            if kind == 'solid':
+                # Обратный ход: объём известен, ответом служит предел.
+                if spec.get('value'):
+                    return _capture(kit.verify_solid, 'Ответ',
+                                    sp.sympify(spec['value']),
+                                    sp.sympify(spec['outer']),
+                                    sp.sympify(spec['a']), parse_one(raw),
+                                    inner=sp.sympify(spec['inner']), var=var,
+                                    axis=spec.get('axis', 'x'),
+                                    params=params or None, digits=digits)
+                return _capture(kit.verify_solid, 'Ответ', parse_one(raw),
+                                sp.sympify(spec['outer']),
+                                sp.sympify(spec['a']), sp.sympify(spec['b']),
+                                inner=sp.sympify(spec['inner']), var=var,
+                                axis=spec.get('axis', 'x'),
+                                params=params or None, digits=digits)
+
+            if kind == 'surface':
+                return _capture(kit.verify_surface, 'Ответ', parse_one(raw),
+                                sp.sympify(spec['curve']),
+                                sp.sympify(spec['a']), sp.sympify(spec['b']),
+                                var=var, params=params or None, digits=digits)
+
+            if kind == 'travelled':
+                return _capture(kit.verify_travelled, 'Ответ', parse_one(raw),
+                                sp.sympify(spec['v']), sp.sympify(spec['a']),
+                                sp.sympify(spec['b']), var=var,
+                                params=params or None, digits=digits)
+
+            if kind == 'position':
+                return _capture(kit.verify_position, 'Ответ', parse_one(raw),
+                                sp.sympify(spec['v']), sp.sympify(spec['a']),
+                                sp.sympify(spec['b']), var=var,
+                                start=sp.sympify(spec['start']),
+                                params=params or None, digits=digits)
+
+            at = (tuple(sp.sympify(v) for v in spec['at'])
+                  if spec.get('at') else None)
+            return _capture(kit.verify_amount, 'Ответ', parse_one(raw),
+                            sp.sympify(spec['rate']), sp.sympify(spec['a']),
+                            edge('b'), var=var,
+                            start=sp.sympify(spec['start']), at=at,
+                            params=params or None, digits=digits)
+
         if kind == 'constants':
             unknowns = [sp.Symbol(name) for name in spec['unknowns']]
             conditions = [(what, sp.sympify(cond))

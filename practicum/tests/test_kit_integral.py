@@ -193,7 +193,8 @@ print('--- узнавать, а не вычислять ---')
 source = open(os.path.join(ROOT, 'practicum/kit.py')).read()
 start = source.index('# ================================================= '
                      'первообразная и её семья')
-finish = source.index('def trigger_check(answers, key):')
+finish = source.index('# ============================================== '
+                      'измеренное и его измерение')
 section = source[start:finish]
 tree = ast.parse(section[section.index('def _numeric('):])
 calls = [node.func for node in ast.walk(tree) if isinstance(node, ast.Call)]

@@ -10297,6 +10297,604 @@
    "dir": "AA_HL/2024/May/TZ1/Paper 1",
    "skill": "E5.integral_as_condition"
   },
+  "2021-MAY-TZ2-P1-Q10-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "E6.area_under_curve"
+  },
+  "2022-NOV-COMMON-P2-Q02-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "2",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "E6.area_under_curve"
+  },
+  "2023-MAY-TZ2-P1-Q12-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "12",
+   "part": "C",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "E6.area_under_curve"
+  },
+  "2025-MAY-TZ2-P1-Q10-D": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "D",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "E6.area_under_curve"
+  },
+  "2021-MAY-TZ1-P2-Q10-D": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "d",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E6.area_between_curves"
+  },
+  "2021-MAY-TZ1-P2-Q10-E": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "e",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E6.area_between_curves"
+  },
+  "2024-MAY-TZ1-P1-Q04-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "4",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "10-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "E6.area_between_curves"
+  },
+  "2024-MAY-TZ2-P2-Q01-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E6.area_between_curves"
+  },
+  "2025-MAY-TZ1-P1-Q03": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "E6.area_between_curves"
+  },
+  "2025-MAY-TZ1-P2-Q12-E": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "E",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "17",
+   "markscheme_pages": "27-28",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "E6.area_between_curves"
+  },
+  "2025-NOV-TZ1-P1-Q03-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "9-10",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E6.area_between_curves"
+  },
+  "2025-NOV-TZ3-P1-Q09-D": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "9",
+   "part": "D",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "E6.area_between_curves"
+  },
+  "2021-MAY-TZ2-P2-Q11-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "A",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "E6.volume_about_x"
+  },
+  "2022-NOV-COMMON-P2-Q11-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "11",
+   "part": "c",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "E6.volume_about_x"
+  },
+  "2024-MAY-TZ1-P1-Q06": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "6",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "15-16",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "E6.volume_about_x"
+  },
+  "2025-MAY-TZ1-P1-Q12-D": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "D",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "E6.volume_about_x"
+  },
+  "2022-MAY-TZ1-P2-Q10-C": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "E6.volume_about_y"
+  },
+  "2023-MAY-TZ2-P2-Q07": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "7",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "E6.volume_about_y"
+  },
+  "2024-MAY-TZ2-P2-Q07": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "7",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E6.volume_about_y"
+  },
+  "2025-MAY-TZ2-P2-Q12-F": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "F",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E6.volume_about_y"
+  },
+  "2025-MAY-TZ3-P1-Q07": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "E6.volume_about_y"
+  },
+  "2025-NOV-TZ3-P2-Q05": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "5",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "E6.volume_about_y"
+  },
+  "2021-MAY-TZ2-P2-Q11-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "E6.volume_between_and_condition"
+  },
+  "2022-MAY-TZ2-P2-Q06": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "6",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E6.volume_between_and_condition"
+  },
+  "2023-MAY-TZ1-P1-Q09": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "17-19",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "E6.volume_between_and_condition"
+  },
+  "2025-NOV-TZ1-P2-Q08": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "13-14",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "E6.volume_between_and_condition"
+  },
+  "2022-NOV-COMMON-P3-Q02-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E6.surface_of_revolution"
+  },
+  "2022-NOV-COMMON-P3-Q02-B-III": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "b(iii)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E6.surface_of_revolution"
+  },
+  "2022-NOV-COMMON-P3-Q02-D": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "d",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E6.surface_of_revolution"
+  },
+  "2022-NOV-COMMON-P3-Q02-E-IV": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "2",
+   "part": "e(iv)",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "E6.surface_of_revolution"
+  },
+  "2021-MAY-TZ1-P2-Q04-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "b",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2021-MAY-TZ2-P1-Q11-B-I-AND-B-II": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(b)(i) and (b)(ii)",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2021-NOV-COMMON-P1-Q10-A-I-AND-A-II": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "10",
+   "part": "(a)(i) and (a)(ii)",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "21–22",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2021-NOV-COMMON-P1-Q10-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 1,
+   "question": "10",
+   "part": "(c)",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2021/November/Common/Paper 1",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2022-MAY-TZ1-P2-Q04-C": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "c",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2023-MAY-TZ2-P2-Q05-C": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2023-NOV-TZ1-P2-Q04-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2023-NOV-TZ2-P2-Q04-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2024-MAY-TZ1-P2-Q04-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "c",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2025-MAY-TZ2-P2-Q05-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2025-NOV-TZ1-P2-Q10-E": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "E",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2025-NOV-TZ3-P2-Q10-C": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "10",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "E6.displacement_and_distance"
+  },
+  "2022-MAY-TZ1-P2-Q10-D": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "E6.accumulated_change"
+  },
+  "2023-MAY-TZ1-P2-Q10-C": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "E6.accumulated_change"
+  },
+  "2025-MAY-TZ3-P2-Q10-D": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "10",
+   "part": "D",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "E6.accumulated_change"
+  },
+  "2025-NOV-TZ1-P2-Q10-C": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "C",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "E6.accumulated_change"
+  },
   "2021-NOV-COMMON-P1-Q01": {
    "session": "November 2021",
    "zone": "Common",
@@ -10976,6 +11574,14 @@
    "notebook": "practicum/calculus/practicum-e5-integration.ipynb",
    "marks": 157,
    "blocks": 39
+  },
+  {
+   "id": "E6",
+   "title": "Площади, объёмы вращения, накопление",
+   "section": "E",
+   "notebook": "practicum/calculus/practicum-e6-areas-volumes.ipynb",
+   "marks": 197,
+   "blocks": 46
   },
   {
    "id": "E7",
@@ -16128,6 +16734,237 @@
     "2023-MAY-TZ2-P1-Q04",
     "2025-NOV-TZ1-P2-Q11-B",
     "2024-MAY-TZ1-P1-Q09-C-I-II"
+   ]
+  },
+  {
+   "id": "E6.area_under_curve",
+   "practicum": "E6",
+   "name": "Площадь под кривой",
+   "rung": 1,
+   "trigger": "Область ограничена одной кривой, осью x и, возможно, вертикальной прямой. Спрашивают «find the area of the shaded region» или «show that the area is 12π». Если кривая пересекает ось внутри отрезка, в вопросе стоит слово total.",
+   "chain": [
+    "Найти, где кривая пересекает ось x внутри отрезка",
+    "Разбить отрезок этими точками",
+    "На каждом куске взять определённый интеграл",
+    "Сложить модули кусков — площадь неотрицательна"
+   ],
+   "traps": [
+    "Взят один интеграл по всему отрезку: куски под осью вычлись, и вместо площади вышла разность",
+    "Модуль поставлен снаружи суммы, а не на каждый кусок",
+    "Точка пересечения с осью найдена не вся: у cos√x их бесконечно много, и нужен именно тот корень, что лежит между пределами",
+    "Ответ отрицательный и так и оставлен: площадь отрицательной не бывает"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 197,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q10-B",
+    "2022-NOV-COMMON-P2-Q02-C",
+    "2023-MAY-TZ2-P1-Q12-C",
+    "2025-MAY-TZ2-P1-Q10-D"
+   ]
+  },
+  {
+   "id": "E6.area_between_curves",
+   "practicum": "E6",
+   "name": "Площадь между двумя графиками",
+   "rung": 2,
+   "trigger": "Область зажата между двумя кривыми или между кривой и прямой. Пределы в условии обычно не названы — их дают пересечения. Частый вид: область между графиком и обратной ему функцией, и тогда работает симметрия относительно y = x.",
+   "chain": [
+    "Найти абсциссы пересечений: решить f(x) = g(x)",
+    "Понять, какая кривая сверху на каждом куске",
+    "Взять ∫(верхняя − нижняя) по каждому куску",
+    "Сложить"
+   ],
+   "traps": [
+    "Вычтено наоборот, и площадь вышла со знаком минус",
+    "Кривые меняются местами внутри отрезка, а интеграл взят один",
+    "Область между f и f⁻¹ посчитана одним интегралом: она симметрична относительно y = x, и половину считают, а потом удваивают",
+    "Пересечения найдены с точностью до трёх цифр и в таком виде подставлены в пределы: округлять надо ответ, а не пределы"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 197,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q10-D",
+    "2021-MAY-TZ1-P2-Q10-E",
+    "2024-MAY-TZ1-P1-Q04-B",
+    "2024-MAY-TZ2-P2-Q01-B",
+    "2025-MAY-TZ1-P1-Q03",
+    "2025-MAY-TZ1-P2-Q12-E",
+    "2025-NOV-TZ1-P1-Q03-B",
+    "2025-NOV-TZ3-P1-Q09-D"
+   ]
+  },
+  {
+   "id": "E6.volume_about_x",
+   "practicum": "E6",
+   "name": "Объём вращения вокруг оси x",
+   "rung": 3,
+   "trigger": "«The region is rotated 2π (360°) about the x-axis». Формула V = π∫y²dx есть в справочнике; работа начинается после того, как функцию возвели в квадрат.",
+   "chain": [
+    "Записать V = π∫[f(x)]²dx с пределами области",
+    "Возвести подынтегральную функцию в квадрат и упростить",
+    "Взять интеграл — как правило, заменой или по частям",
+    "Подставить пределы"
+   ],
+   "traps": [
+    "π потеряно: остался просто интеграл от квадрата",
+    "Возведена в квадрат не функция, а уже взятый интеграл",
+    "(f(x))² записано как f(x²)",
+    "Пределы взяты по y, хотя вращение вокруг оси x"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 197,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q11-A",
+    "2022-NOV-COMMON-P2-Q11-C",
+    "2024-MAY-TZ1-P1-Q06",
+    "2025-MAY-TZ1-P1-Q12-D"
+   ]
+  },
+  {
+   "id": "E6.volume_about_y",
+   "practicum": "E6",
+   "name": "Объём вращения вокруг оси y",
+   "rung": 4,
+   "trigger": "«Rotated about the y-axis», и пределы в условии заданы по y: 0 ≤ y ≤ 4, от y_A до y_B, «filled to a height of h metres». Первый шаг — не интеграл, а алгебра: выразить x через y.",
+   "chain": [
+    "Выразить x через y: обратить функцию или решить уравнение кривой",
+    "Записать V = π∫x²dy с пределами по y",
+    "Возвести в квадрат и упростить",
+    "Взять интеграл и подставить пределы по y"
+   ],
+   "traps": [
+    "Взято π∫y²dx вместо π∫x²dy: перепутана ось",
+    "x выражено через y, а пределы оставлены по x",
+    "(2 + e^(y/4))² раскрыто как 4 + e^(y/2): пропущено удвоенное произведение",
+    "Обратная функция найдена с потерей ветви: у x² = 16y корней два, и берут тот, что лежит в области"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 197,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q10-C",
+    "2023-MAY-TZ2-P2-Q07",
+    "2024-MAY-TZ2-P2-Q07",
+    "2025-MAY-TZ2-P2-Q12-F",
+    "2025-MAY-TZ3-P1-Q07",
+    "2025-NOV-TZ3-P2-Q05"
+   ]
+  },
+  {
+   "id": "E6.volume_between_and_condition",
+   "practicum": "E6",
+   "name": "Кольцо между двумя телами и объём как условие",
+   "rung": 5,
+   "trigger": "Либо тело получено вычитанием: область между двумя кривыми, сфера с высверленным цилиндром. Либо объём уже известен — 285 см³, 300 см³ — и найти просят параметр: радиус k, высоту h.",
+   "chain": [
+    "Записать объём как разность двух интегралов или как интеграл разности квадратов радиусов",
+    "Внешний радиус и внутренний брать от одной и той же оси",
+    "Если объём дан — приравнять выражение к нему",
+    "Решить полученное уравнение относительно параметра"
+   ],
+   "traps": [
+    "Вычтены радиусы, а не их квадраты: π∫(R − r)²dy вместо π∫(R² − r²)dy",
+    "Пределы для внешней и внутренней кривой взяты разные, хотя кольцо одно",
+    "Уравнение решено, но отброшен не тот корень: у k² = 680/π подходит только положительный",
+    "Параметр найден с точностью пределов, а не ответа"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 197,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q11-B",
+    "2022-MAY-TZ2-P2-Q06",
+    "2023-MAY-TZ1-P1-Q09",
+    "2025-NOV-TZ1-P2-Q08"
+   ]
+  },
+  {
+   "id": "E6.surface_of_revolution",
+   "practicum": "E6",
+   "name": "Площадь поверхности вращения",
+   "rung": 6,
+   "trigger": "В самом вопросе напечатана формула A = 2π∫y√(1 + (dy/dx)²)dx. Её не помнят и не выводят — её применяют. Просят обычно show that: получить πrl для конуса, 4πr² для сферы.",
+   "chain": [
+    "Найти dy/dx для данной кривой",
+    "Подставить и упростить подкоренное выражение — оно всегда сворачивается",
+    "Умножить на y: под корнем часто остаётся многочлен",
+    "Взять интеграл и подставить пределы"
+   ],
+   "traps": [
+    "Корень не упрощён, и интеграл дальше не берётся: у полусферы √(1 + x²/(r²−x²)) равно r/√(r²−x²), и после умножения на y остаётся просто r",
+    "y забыт под интегралом: осталась длина дуги, а не площадь",
+    "2π заменено на π по привычке от объёма",
+    "Пределы взяты от 0 до r вместо −r до r: поверхность считается по всей кривой"
+   ],
+   "calculator": "yes",
+   "practicum_marks": 197,
+   "blocks": [
+    "2022-NOV-COMMON-P3-Q02-A",
+    "2022-NOV-COMMON-P3-Q02-B-III",
+    "2022-NOV-COMMON-P3-Q02-D",
+    "2022-NOV-COMMON-P3-Q02-E-IV"
+   ]
+  },
+  {
+   "id": "E6.displacement_and_distance",
+   "practicum": "E6",
+   "name": "Перемещение и путь",
+   "rung": 7,
+   "trigger": "Дана скорость v(t), спрашивают, где точка оказалась или сколько она прошла. Слово displacement — одно, слово distance или total distance — другое, и весь приём в этой разнице.",
+   "chain": [
+    "Прочитать, что спрашивают: перемещение или путь",
+    "Перемещение — ∫v dt по всему отрезку",
+    "Путь — найти, где v меняет знак, разбить отрезок и сложить модули кусков; то же самое — ∫|v|dt",
+    "Если нужна не перемена, а положение, добавить начальное s(0)"
+   ],
+   "traps": [
+    "Путь посчитан как ∫v dt: куски назад вычлись вместо того, чтобы прибавиться",
+    "Модуль поставлен на ответ, а не на скорость",
+    "Корень v(t) = 0 найден не тот или найден не весь: у v = t sin t − 3 на [0, 10] знак меняется трижды",
+    "Постоянная интегрирования не найдена: s(0) = 0 сказано в условии, а не подставлено",
+    "Перемещение названо отрицательным путём"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 197,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q04-B",
+    "2021-MAY-TZ2-P1-Q11-B-I-AND-B-II",
+    "2021-NOV-COMMON-P1-Q10-A-I-AND-A-II",
+    "2021-NOV-COMMON-P1-Q10-C",
+    "2022-MAY-TZ1-P2-Q04-C",
+    "2023-MAY-TZ2-P2-Q05-C",
+    "2023-NOV-TZ1-P2-Q04-B",
+    "2023-NOV-TZ2-P2-Q04-B",
+    "2024-MAY-TZ1-P2-Q04-C",
+    "2025-MAY-TZ2-P2-Q05-B",
+    "2025-NOV-TZ1-P2-Q10-E",
+    "2025-NOV-TZ3-P2-Q10-C"
+   ]
+  },
+  {
+   "id": "E6.accumulated_change",
+   "practicum": "E6",
+   "name": "Накопление по скорости накопления",
+   "rung": 8,
+   "trigger": "Дана скорость, с которой что-то прибывает: R′(t) для дождя в жёлобе, 0.4 м³/с для воды в баке, две скорости бегунов. Спрашивают, сколько накопилось, когда наберётся заданное количество или кто где окажется.",
+   "chain": [
+    "Записать накопленное как интеграл скорости по времени",
+    "Прибавить начальное значение, если оно дано",
+    "Если спрашивают момент — приравнять накопленное к цели и решить",
+    "Сравнить с ёмкостью, если вопрос «переполнится ли»"
+   ],
+   "traps": [
+    "Начальное значение не прибавлено: d(0) = 100 дано затем, чтобы найти постоянную",
+    "Сравнивают скорости вместо накопленного",
+    "Интеграл взят по неверному отрезку: «during any 60-second period» значит от 0 до 60, а не до конца бури",
+    "Ответ на «переполнится ли» дан без двух чисел: нужны и объём жёлоба, и объём воды"
+   ],
+   "calculator": "yes",
+   "practicum_marks": 197,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q10-D",
+    "2023-MAY-TZ1-P2-Q10-C",
+    "2025-MAY-TZ3-P2-Q10-D",
+    "2025-NOV-TZ1-P2-Q10-C"
    ]
   },
   {
@@ -30636,6 +31473,534 @@
    ],
    "answer": "apart",
    "answer_digest": "1d40973eccd8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:1",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.volume_about_y",
+   "prompt": "*The curve $y=4\\ln(x-2)$ for $0\\le y\\le 4$ is rotated $360°$ about the $y$-axis. Find the volume.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "voly",
+   "answer_digest": "4652b2f174f3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:2",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.displacement_and_distance",
+   "prompt": "*Find the total distance travelled by $P$ between $t=0$ and $t=5$.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "motion",
+   "answer_digest": "305238273bb0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:3",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.area_under_curve",
+   "prompt": "*Find the total area enclosed by the graph of $f$, the $x$-axis and the line $x=2$.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "under",
+   "answer_digest": "d767748a6037",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:4",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.surface_of_revolution",
+   "prompt": "*Using $A=2\\pi\\int y\\sqrt{1+(\\mathrm{d}y/\\mathrm{d}x)^2}\\,\\mathrm{d}x$, show that $A=\\pi rl$.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "skin",
+   "answer_digest": "2a0070d014bc",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:5",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.area_between_curves",
+   "prompt": "*Find the area of the region enclosed by the graphs of $f$ and $g$ between $x=a$ and $x=b$.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "between",
+   "answer_digest": "fbb27fbdc4f4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:6",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.volume_between_and_condition",
+   "prompt": "*A bowl is formed by rotating the given arc about the $y$-axis. Find the height $h$ at which it holds 285 cm³.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "ring",
+   "answer_digest": "16b974583155",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:7",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.accumulated_change",
+   "prompt": "*Water is added at a constant rate of 0.4 m³ s⁻¹. Find the time to fill the container.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "accum",
+   "answer_digest": "b1fcdc561d06",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:8",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.volume_about_x",
+   "prompt": "*The region enclosed by $y=f(x)$, the $x$-axis and the $y$-axis is rotated through $2\\pi$ about the $x$-axis. Find the volume.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "volx",
+   "answer_digest": "66ac5af140b1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:9",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.displacement_and_distance",
+   "prompt": "*Find the displacement of the particle relative to $O$ when $t=10$.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "motion",
+   "answer_digest": "305238273bb0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:10",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.area_between_curves",
+   "prompt": "*Find the shaded area bounded by the curve, the normal $L$ and the $y$-axis.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "between",
+   "answer_digest": "fbb27fbdc4f4",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:11",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.volume_about_y",
+   "prompt": "*Find the volume of the solid formed when the curve is rotated $360°$ about the $y$-axis between $y=y_A$ and $y=y_B$.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "voly",
+   "answer_digest": "4652b2f174f3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E6:12",
+   "kind": "recognition",
+   "practicum": "E6",
+   "skill": "E6.accumulated_change",
+   "prompt": "*Find how far Lucy is from the finishing line when Fiona completes 200 m.*",
+   "options": [
+    {
+     "code": "under",
+     "name": "площадь под кривой"
+    },
+    {
+     "code": "between",
+     "name": "площадь между графиками"
+    },
+    {
+     "code": "volx",
+     "name": "объём вращения вокруг оси x"
+    },
+    {
+     "code": "voly",
+     "name": "объём вращения вокруг оси y"
+    },
+    {
+     "code": "ring",
+     "name": "кольцо и объём как условие"
+    },
+    {
+     "code": "skin",
+     "name": "площадь поверхности вращения"
+    },
+    {
+     "code": "motion",
+     "name": "перемещение и путь"
+    },
+    {
+     "code": "accum",
+     "name": "накопление по скорости"
+    }
+   ],
+   "answer": "accum",
+   "answer_digest": "b1fcdc561d06",
    "budget_ms": 8000
   },
   {

@@ -7224,6 +7224,582 @@ def _degree_in(expr, var):
         return None
 
 
+# ============================================== измеренное и его измерение
+# Девятнадцатое понятие равенства ответов: измеренное узнаётся повторным
+# измерением, а не повторением выкладки.
+#
+# Ответ здесь — число, и число это что-то меряет: площадь области, объём
+# тела, длину пройденного пути. Сверять такое число со вторым таким же,
+# полученным той же формулой, бессмысленно: совпадут и две одинаковые
+# ошибки. Поэтому раздел меряет заново — и меряет по определению меры,
+# а не по формуле из справочника.
+#
+# Площадь области — сумма тонких полос между двумя границами. Объём тела
+# вращения — сумма объёмов тонких дисков πR²Δ, и кольца πR²Δ − πr²Δ.
+# Площадь поверхности вращения — сумма боковых поверхностей усечённых
+# конусов π(y₁+y₂)·Δl, где Δl — настоящая длина звена; производной кривой
+# в этой сумме нет вовсе. Путь — полная вариация положения: точка идёт
+# мелким шагом, и складывается, насколько она сдвинулась на каждом.
+#
+# Отсюда главное свойство раздела: он не берёт производных. Ни одной.
+# У соседнего раздела (E5) обратное правило — он не берёт интегралов
+# ни одного; он умеет только дифференцировать. Вместе эти два раздела —
+# две половины основной теоремы, и ни одна не умеет работы другой.
+#
+# Раздел не решает и уравнений. Точка, где кривые пересекаются, ищется
+# делением пополам по смене знака; момент, где скорость меняет знак,
+# не ищется совсем — идущая мелким шагом точка проходит его сама.
+# Ученик обязан разбить отрезок нулями скорости; проверка обязана
+# просто пройти путь.
+#
+# Сравнение чисел идёт округлением: экзамен принимает три значащие цифры,
+# и проверка принимает ровно столько же — 176000 годится там, где на самом
+# деле 176323. Там, где ответ обязан быть точным, digits поднимают.
+
+_STRIPS = 400             # с чего начинается дробление отрезка
+_STRIP_STEPS = 8          # сколько раз его удваивать
+_STRIP_TOL = 1e-9         # когда две соседние ступени считаются сошедшимися
+_CROSS_SCAN = 720         # узлов при поиске пересечений
+_CROSS_HALVES = 60        # делений пополам на каждое пересечение
+
+
+def _pace(f, var, a, b, run=None, steps=_STRIPS):
+    """Прогулка по отрезку мелким шагом: сдвиг на каждом шаге отдельно.
+
+    Шаг i — это f в его середине, умноженная на ширину шага. Дальше из
+    этого списка складывается что угодно: площадь — суммой модулей,
+    перемещение — суммой со знаком, путь — суммой модулей сдвигов.
+    Одна прогулка, много мер.
+    """
+    value = _numeric(f, var, run)
+    lo, hi = _number(a, run), _number(b, run)
+    if lo is None or hi is None:
+        return None
+    width = (hi - lo) / steps
+    out = []
+    for i in range(steps):
+        here = value(lo + (i + 0.5) * width)
+        if here is None:
+            return None
+        out.append(here * width)
+    return out
+
+
+def _sum_slabs(shape, f, var, a, b, run=None):
+    """Мера по всё более мелкому дроблению, пока две ступени не сойдутся.
+
+    shape говорит, что складывать: 'signed' — полосы со знаком,
+    'total' — их модули. Дробление удваивается, пока соседние суммы
+    не перестанут расходиться.
+    """
+    was = None
+    steps = _STRIPS
+    for _ in range(_STRIP_STEPS):
+        slabs = _pace(f, var, a, b, run, steps)
+        if slabs is None:
+            return None
+        now = sum(slabs) if shape == 'signed' else sum(abs(s) for s in slabs)
+        if was is not None and abs(now - was) <= _STRIP_TOL * (1.0 + abs(now)):
+            return now
+        was = now
+        steps *= 2
+    return was
+
+
+def _spread(top, bottom, var, a, b, run=None, shape='total'):
+    """Площадь между двумя границами: сумма полос |верх − низ|.
+
+    Какая граница выше, проверка не выясняет и выяснять не должна:
+    модуль на каждой полосе делает это сам, полоса за полосой.
+    Поэтому смена мест внутри отрезка ничего не ломает.
+    """
+    gap = sp.sympify(top) - sp.sympify(bottom)
+    return _sum_slabs(shape, gap, var, a, b, run)
+
+
+def _discs(outer, inner, var, a, b, run=None):
+    """Объём тела вращения: сумма тонких дисков и колец.
+
+    Радиус — расстояние от оси до кривой, то есть модуль значения;
+    вычитается всегда квадрат внутреннего радиуса, а не сам радиус.
+    """
+    big, small = sp.sympify(outer), sp.sympify(inner)
+    ring = sp.pi * (big ** 2 - small ** 2)
+    return _sum_slabs('signed', ring, var, a, b, run)
+
+
+def _frustums(curve, var, a, b, run=None, steps=_STRIPS):
+    """Площадь поверхности вращения: сумма боковых поверхностей усечённых конусов.
+
+    У усечённого конуса с радиусами y₁ и y₂ и образующей Δl боковая
+    поверхность равна π(y₁ + y₂)Δl. Δl здесь — настоящая длина звена
+    ломаной, √(Δx² + Δy²); производной кривой в этой сумме нет.
+    Это и есть определение площади поверхности, а не формула для неё.
+    """
+    value = _numeric(curve, var, run)
+    lo, hi = _number(a, run), _number(b, run)
+    if lo is None or hi is None:
+        return None
+    was = None
+    for _ in range(_STRIP_STEPS):
+        width = (hi - lo) / steps
+        here, tall = lo, value(lo)
+        if tall is None:
+            return None
+        total = 0.0
+        for i in range(1, steps + 1):
+            there = lo + i * width
+            high = value(there)
+            if high is None:
+                return None
+            total += math.pi * (tall + high) * math.hypot(there - here, high - tall)
+            here, tall = there, high
+        if was is not None and abs(total - was) <= _STRIP_TOL * (1.0 + abs(total)):
+            return total
+        was = total
+        steps *= 2
+    return was
+
+
+def _crossings(top, bottom, var, window, run=None):
+    """Где две границы встречаются: смена знака и деление пополам.
+
+    Уравнение top = bottom не решается — раздел уравнений не решает.
+    Разность считается в узлах сетки, и там, где она меняет знак,
+    место встречи зажимается делением пополам.
+    """
+    gap = _numeric(sp.sympify(top) - sp.sympify(bottom), var, run)
+    lo, hi = _number(window[0], run), _number(window[1], run)
+    if lo is None or hi is None:
+        return []
+    step = (hi - lo) / _CROSS_SCAN
+    found = []
+    here, was = lo, gap(lo)
+    for i in range(1, _CROSS_SCAN + 1):
+        there = lo + i * step
+        now = gap(there)
+        if was is not None and now is not None and was * now <= 0:
+            if was == 0:
+                found.append(here)
+            elif now != 0 or i == _CROSS_SCAN:
+                left, right = here, there
+                for _ in range(_CROSS_HALVES):
+                    mid = 0.5 * (left + right)
+                    value = gap(mid)
+                    if value is None:
+                        break
+                    if (was > 0) == (value > 0):
+                        left = mid
+                    else:
+                        right = mid
+                found.append(0.5 * (left + right))
+        here, was = there, now
+    tidy = []
+    for place in found:
+        if not tidy or abs(place - tidy[-1]) > 10 * step:
+            tidy.append(place)
+    return tidy
+
+
+def _fits(claim, want, digits):
+    """Число сходится с измеренным — с точностью, с какой оно записано."""
+    return _rounds_to(claim, want, digits) or \
+        abs(claim - want) <= 1e-9 * max(1.0, abs(want))
+
+
+def _measured(label, got, want, run, digits, named=()):
+    """Общий хвост всех проверок раздела: сверить число и назвать промах.
+
+    named — список (значение, объяснение): если ответ сходится не
+    с измеренным, а с одним из них, печатается объяснение, а не «не
+    сходится». Так проверка отличает потерянное π от перепутанной оси.
+    """
+    value = _number(got, run)
+    if value is None:
+        print(f"{NO} {label}: " + _t(f'{got} — это не число',
+                                     f'{got} is not a number') + _where_words(run))
+        return False
+    if _fits(value, want, digits):
+        return True
+    for other, why in named:
+        if other is not None and _fits(value, other, digits):
+            print(f"{NO} {label}: {why}{_where_words(run)}")
+            return False
+    print(f"{NO} {label}: " + _t(
+        'не сходится с тем, что вышло при измерении',
+        'this does not match the measurement') + _where_words(run))
+    return False
+
+
+def verify_region(label, got, top, bottom=0, a=None, b=None, var=x,
+                params=None, digits=3, window=(-8, 8)):
+    """Ответ — площадь: она измеряется полосами, а не берётся формулой.
+
+    Девятнадцатое понятие равенства ответов. Проверка складывает тонкие
+    полосы |верх − низ| по отрезку и сравнивает сумму с ответом. Какая
+    из границ выше, она не выясняет: модуль стоит на каждой полосе
+    отдельно, поэтому область, где кривые меняются местами, считается
+    правильно сама собой.
+
+    a и b можно не давать: тогда пределы берутся от первой до последней
+    встречи границ внутри window — проверка находит их делением пополам
+    по смене знака, а не решением уравнения.
+
+    Именованные промахи: сумма со знаком вместо суммы модулей (куски под
+    осью вычлись), противоположный знак (вычтено наоборот), половина
+    (область симметрична, а удвоить забыли).
+    """
+    # Пределы тоже проверяются на пустоту: в обратном чтении задачи ответ
+    # ученика стоит именно пределом, и пустым он не должен ронять ячейку.
+    if _blank(label, got, top, bottom, *[edge for edge in (a, b)
+                                         if edge is not None]):
+        return False
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    for run in runs:
+        lo, hi = a, b
+        if lo is None or hi is None:
+            meet = _crossings(top, bottom, var, window, run)
+            if len(meet) < 2:
+                print(f"{NO} {label}: " + _t(
+                    'границы области не пересекаются там, где её ищут',
+                    'the boundaries do not meet where the region is looked for')
+                    + _where_words(run))
+                return False
+            lo, hi = meet[0], meet[-1]
+        want = _spread(top, bottom, var, lo, hi, run)
+        if want is None:
+            print(f"{NO} {label}: " + _t(
+                'область не измеряется: граница не считается на этом отрезке',
+                'the region cannot be measured: a boundary fails on this interval')
+                + _where_words(run))
+            return False
+        signed = _spread(top, bottom, var, lo, hi, run, shape='signed')
+        named = []
+        # Разность знак не меняла, а сумма вышла со знаком минус — значит
+        # вычли наоборот, и это другой промах, чем «куски под осью».
+        if signed is not None and abs(abs(signed) - want) > 1e-9 * max(1.0, want):
+            named.append((signed, _t(
+                'это интеграл, а не площадь: куски под осью вычлись вместо '
+                'того, чтобы прибавиться. Площадь складывают по модулю',
+                'this is the integral, not the area: the pieces below the axis '
+                'were subtracted instead of added. Area adds up in absolute value')))
+        named += [
+            (-want, _t('знак противоположный: вычтено наоборот, а площадь '
+                       'отрицательной не бывает',
+                       'the sign is the wrong way round: the subtraction went '
+                       'the other way, and an area is never negative')),
+            (want / 2, _t('это ровно половина измеренного. Если область '
+                          'симметрична относительно y = x и вы считали '
+                          'половину — её надо удвоить',
+                          'this is exactly half of what was measured. If the '
+                          'region is symmetric about y = x and you measured '
+                          'one half, it has to be doubled')),
+            (2 * want, _t('это ровно вдвое больше измеренного',
+                          'this is exactly twice what was measured')),
+        ]
+        if not _measured(label, got, want, run, digits, named):
+            return False
+    print(f"{OK} {label}: {_wrote(sp.sympify(got))}")
+    return True
+
+
+def verify_solid(label, got, outer, a, b, inner=0, var=x, axis='x',
+                  params=None, digits=3):
+    """Ответ — объём тела вращения: он складывается из дисков.
+
+    Проверка режет тело плоскостями, перпендикулярными оси, и складывает
+    πR²Δ — а для кольца πR²Δ − πr²Δ. Формулы V = π∫y²dx внутри нет:
+    есть стопка дисков, из которой она и получается.
+
+    outer — расстояние от оси до дальней границы как функция var, inner —
+    до ближней. Вокруг оси y это значит, что outer выражают через y
+    и берут var=y: проверке всё равно, какая буква, ей нужен радиус.
+
+    Именованные промахи: потерянное π, невозведённый в квадрат радиус,
+    разность радиусов вместо разности квадратов, площадь вместо объёма.
+    """
+    if _blank(label, got, outer, a, b, inner):
+        return False
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    for run in runs:
+        want = _discs(outer, inner, var, a, b, run)
+        if want is None:
+            print(f"{NO} {label}: " + _t(
+                'тело не измеряется: радиус не считается на этом отрезке',
+                'the solid cannot be measured: the radius fails on this interval')
+                + _where_words(run))
+            return False
+        flat = _spread(outer, inner, var, a, b, run)
+        plain = _sum_slabs('signed', sp.pi * (sp.sympify(outer) - sp.sympify(inner)),
+                           var, a, b, run)
+        gap = _sum_slabs('signed', sp.pi * (sp.sympify(outer) - sp.sympify(inner)) ** 2,
+                         var, a, b, run)
+        named = [
+            (want / math.pi, _t(
+                'π потеряно: сложены квадраты радиусов, а диск это πR²',
+                'π has been dropped: you added squares of radii, but a disc is πR²')),
+            (plain, _t(
+                'радиус не возведён в квадрат: у диска площадь πR², а не πR',
+                'the radius was not squared: a disc has area πR², not πR')),
+            (flat, _t(
+                'это площадь области, а не объём тела: диски не набраны',
+                'this is the area of the region, not the volume of the solid')),
+        ]
+        if sp.sympify(inner) != 0:
+            named.append((gap, _t(
+                'вычтены радиусы, а не их квадраты: кольцо это π(R² − r²), '
+                'а не π(R − r)²',
+                'the radii were subtracted, not their squares: a washer is '
+                'π(R² − r²), not π(R − r)²')))
+        if not _measured(label, got, want, run, digits, named):
+            return False
+    turn = _t('вокруг оси ', 'about the ') + str(axis)
+    print(f"{OK} {label}: {_wrote(sp.sympify(got))} ({turn})")
+    return True
+
+
+def verify_surface(label, got, curve, a, b, var=x, params=None, digits=3):
+    """Ответ — площадь поверхности вращения: она набирается усечёнными конусами.
+
+    Кривая ломается на звенья, каждое звено при вращении даёт усечённый
+    конус с боковой поверхностью π(y₁ + y₂)·Δl, и они складываются.
+    Δl берётся как длина звена, √(Δx² + Δy²); ни dy/dx, ни корня
+    √(1 + (dy/dx)²) в проверке нет. Формула из условия проверяется тем,
+    что даёт тот же ответ, а не тем, что переписана.
+
+    Именованные промахи: 2π заменено на π, y забыт под интегралом
+    (осталась длина дуги), посчитана половина поверхности.
+    """
+    if _blank(label, got, curve, a, b):
+        return False
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    for run in runs:
+        want = _frustums(curve, var, a, b, run)
+        if want is None:
+            print(f"{NO} {label}: " + _t(
+                'поверхность не измеряется: кривая не считается на этом отрезке',
+                'the surface cannot be measured: the curve fails on this interval')
+                + _where_words(run))
+            return False
+        length = _arc_of(curve, var, a, b, run)
+        named = [
+            (want / 2, _t(
+                'вдвое меньше: у поверхности вращения множитель 2π, а не π — '
+                'или посчитана половина кривой',
+                'half the value: a surface of revolution carries 2π, not π — '
+                'or only half the curve was taken')),
+            (2 * want, _t('вдвое больше: поверхность посчитана дважды',
+                          'twice the value: the surface has been counted twice')),
+            (length, _t(
+                'это длина кривой, а не площадь поверхности: множитель y '
+                'под интегралом потерян',
+                'this is the length of the curve, not the area of the surface: '
+                'the factor y has been dropped')),
+        ]
+        if not _measured(label, got, want, run, digits, named):
+            return False
+    print(f"{OK} {label}: {_wrote(sp.sympify(got))}")
+    return True
+
+
+def _arc_of(curve, var, a, b, run=None, steps=_STRIPS):
+    """Длина кривой ломаной: нужна, чтобы узнать промах «y потерян»."""
+    value = _numeric(curve, var, run)
+    lo, hi = _number(a, run), _number(b, run)
+    if lo is None or hi is None:
+        return None
+    width = (hi - lo) / steps
+    here, tall = lo, value(lo)
+    if tall is None:
+        return None
+    total = 0.0
+    for i in range(1, steps + 1):
+        there = lo + i * width
+        high = value(there)
+        if high is None:
+            return None
+        total += math.hypot(there - here, high - tall)
+        here, tall = there, high
+    return total
+
+
+def verify_travelled(label, got, v, a, b, var=t, params=None, digits=3):
+    """Ответ — пройденный путь: точка идёт мелким шагом, сдвиги складываются.
+
+    Путь — полная вариация положения, и проверка меряет именно её:
+    отрезок времени дробится, на каждом шаге считается, насколько точка
+    сдвинулась, и складываются модули сдвигов. Момент, когда скорость
+    меняет знак, не ищется вовсе — идущая точка проходит его сама.
+    Ученик обязан этот момент найти; проверка обязана просто пройти.
+
+    Именованный промах здесь главный в теме: если ответ сходится
+    с перемещением, значит модуль не поставлен.
+    """
+    if _blank(label, got, v, a, b):
+        return False
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    for run in runs:
+        want = _sum_slabs('total', v, var, a, b, run)
+        shift = _sum_slabs('signed', v, var, a, b, run)
+        if want is None or shift is None:
+            print(f"{NO} {label}: " + _t(
+                'путь не измеряется: скорость не считается на этом отрезке',
+                'the path cannot be measured: the velocity fails on this interval')
+                + _where_words(run))
+            return False
+        named = []
+        if abs(shift - want) > 1e-9 * max(1.0, want):
+            named.append((shift, _t(
+                'это перемещение, а не путь: куски назад вычлись. Путь '
+                'складывают по модулю — ∫|v|dt, а не ∫v dt',
+                'this is the displacement, not the distance: the backwards '
+                'pieces cancelled. Distance adds up in absolute value — '
+                '∫|v|dt, not ∫v dt')))
+            named.append((-abs(shift), _t(
+                'это перемещение со знаком минус: путь не бывает отрицательным',
+                'this is the displacement with a minus sign: a distance is '
+                'never negative')))
+        named.append((-want, _t('путь не бывает отрицательным',
+                                'a distance is never negative')))
+        if not _measured(label, got, want, run, digits, named):
+            return False
+    print(f"{OK} {label}: {_wrote(sp.sympify(got))}")
+    return True
+
+
+def verify_position(label, got, v, a, b, var=t, start=0, params=None, digits=3):
+    """Ответ — перемещение или положение: сумма сдвигов со знаком.
+
+    start=0 — это перемещение за время от a до b. start=s(a) — это
+    положение в момент b, и тогда начальное значение прибавляется:
+    «s(0) = 0» в условии сказано затем, чтобы его подставили.
+
+    Именованный промах, обратный предыдущему: если ответ сходится
+    с путём, значит модуль поставлен там, где его не просили.
+    """
+    if _blank(label, got, v, a, b, start):
+        return False
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    for run in runs:
+        shift = _sum_slabs('signed', v, var, a, b, run)
+        if shift is None:
+            print(f"{NO} {label}: " + _t(
+                'перемещение не измеряется: скорость не считается на этом отрезке',
+                'the displacement cannot be measured: the velocity fails here')
+                + _where_words(run))
+            return False
+        first = _number(start, run)
+        if first is None:
+            print(f"{NO} {label}: " + _t(
+                'начальное положение не число', 'the starting position is not a number')
+                + _where_words(run))
+            return False
+        want = first + shift
+        path = _sum_slabs('total', v, var, a, b, run)
+        named = []
+        if path is not None and abs(path - abs(shift)) > 1e-9 * max(1.0, path):
+            named.append((first + path, _t(
+                'это пройденный путь, а не перемещение: модуль поставлен '
+                'там, где его не просили',
+                'this is the distance travelled, not the displacement: the '
+                'absolute value was taken where it was not asked for')))
+        if first != 0:
+            named.append((shift, _t(
+                'начальное положение не прибавлено: его дали затем, чтобы '
+                'найти постоянную интегрирования',
+                'the starting position has not been added: it was given in '
+                'order to fix the constant of integration')))
+        named.append((-want, _t('знак противоположный: пределы переставлены',
+                                'the sign is the wrong way round: the limits '
+                                'have been swapped')))
+        if not _measured(label, got, want, run, digits, named):
+            return False
+    print(f"{OK} {label}: {_wrote(sp.sympify(got))}")
+    return True
+
+
+def verify_amount(label, got, rate, a, b=None, var=t, start=0, at=None,
+                  params=None, digits=3):
+    """Ответ — накопленное по скорости накопления: числом или функцией времени.
+
+    Накопленное к моменту s — это start плюс сумма полос скорости
+    от a до s. Если ответ записан выражением от var («find d(t)»),
+    он проверяется в нескольких моментах сразу: совпасть случайно
+    в четырёх точках выражение не может.
+
+    at=(t₁, t₂, …) — где сверять. По умолчанию четыре точки внутри
+    отрезка; b нужен только затем, чтобы их расставить.
+    """
+    if _blank(label, got, rate, a, start, *([] if b is None else [b])):
+        return False
+    try:
+        runs = _param_runs(params)
+    except ValueError as why:
+        print(f"{NO} {label}: {why}")
+        return False
+    claim = sp.sympify(got)
+    moments = at
+    if moments is None:
+        if b is None:
+            print(f"{NO} {label}: " + _t('не сказано, к какому моменту считать',
+                                         'no moment to accumulate up to'))
+            return False
+        lo, hi = _number(a, runs[0]), _number(b, runs[0])
+        if lo is None or hi is None:
+            print(f"{NO} {label}: " + _t('отрезок времени не число',
+                                         'the time interval is not a number'))
+            return False
+        moments = (hi,) if not claim.has(var) else \
+            tuple(lo + (hi - lo) * share for share in (0.23, 0.51, 0.78, 1.0))
+    for run in runs:
+        first = _number(start, run)
+        if first is None:
+            print(f"{NO} {label}: " + _t('начальное значение не число',
+                                         'the starting amount is not a number')
+                  + _where_words(run))
+            return False
+        for moment in moments:
+            piled = _sum_slabs('signed', rate, var, a, moment, run)
+            if piled is None:
+                print(f"{NO} {label}: " + _t(
+                    'накопленное не измеряется: скорость не считается',
+                    'the amount cannot be measured: the rate fails here')
+                    + _where_words(run))
+                return False
+            want = first + piled
+            here = claim.subs(var, sp.Float(moment, 20)) if claim.has(var) else claim
+            named = [(piled, _t(
+                'начальное значение не прибавлено: d(0) дали затем, чтобы '
+                'найти постоянную',
+                'the starting amount has not been added: d(0) was given in '
+                'order to find the constant'))] if first != 0 else []
+            mark = label if len(moments) == 1 else f'{label} ({var} = {_say(moment)})'
+            if not _measured(mark, here, want, run, digits, named):
+                return False
+    print(f"{OK} {label}: {_wrote(claim)}")
+    return True
+
+
 def trigger_check(answers, key):
     """Тренажёр распознавания приёма: answers — {номер: код приёма}."""
     if not any(str(v).strip() for v in answers.values()):

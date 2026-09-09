@@ -1735,6 +1735,96 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('E5.')):
     print(f'  {gen_name:32} {SEEDS} задач сверено интегралом и проверкой')
 
 
+# ============================================ E6: измеренное и его измерение
+# Проверки темы меряют: складывают полосы, диски, усечённые конусы и шаги.
+# Значит, тест обязан считать формулой — и он считает через sp.integrate.
+
+E6_KINDS = ('region', 'solid', 'surface', 'travelled', 'position', 'amount')
+
+
+def _e6_agrees(item):
+    """Тот же ответ, посчитанный интегралом, а не измерением."""
+    spec = item['check']
+    kind = spec['kind']
+    var = sp.Symbol(spec.get('var', 'x'))
+    claim = sp.sympify(item['answer'])
+
+    if kind == 'region':
+        gap = sp.sympify(spec['top']) - sp.sympify(spec['bottom'])
+        if spec.get('a') and spec.get('b'):
+            lo, hi = sp.sympify(spec['a']), sp.sympify(spec['b'])
+        else:
+            meet = sorted((p for p in sp.solve(sp.Eq(gap, 0), var)
+                           if p.is_real), key=lambda p: float(p))
+            lo, hi = meet[0], meet[-1]
+        cuts = [p for p in sp.solve(sp.Eq(gap, 0), var)
+                if p.is_real and float(lo) < float(p) < float(hi)]
+        edges = [lo] + sorted(cuts, key=lambda p: float(p)) + [hi]
+        found = sum(abs(sp.integrate(gap, (var, edges[i], edges[i + 1])))
+                    for i in range(len(edges) - 1))
+        return sp.simplify(claim - found) == 0
+
+    if kind == 'solid':
+        ring = sp.pi*(sp.sympify(spec['outer'])**2
+                      - sp.sympify(spec['inner'])**2)
+        if spec.get('value'):
+            # обратный ход: объём известен, ответ стоит верхним пределом
+            found = sp.integrate(ring, (var, sp.sympify(spec['a']), claim))
+            return sp.simplify(found - sp.sympify(spec['value'])) == 0
+        found = sp.integrate(ring, (var, sp.sympify(spec['a']),
+                                    sp.sympify(spec['b'])))
+        return sp.simplify(claim - found) == 0
+
+    if kind == 'surface':
+        curve = sp.sympify(spec['curve'])
+        skin = 2*sp.pi*curve*sp.sqrt(1 + sp.diff(curve, var)**2)
+        found = sp.integrate(skin, (var, sp.sympify(spec['a']),
+                                    sp.sympify(spec['b'])))
+        return sp.simplify(claim - found) == 0
+
+    if kind in ('travelled', 'position'):
+        v = sp.sympify(spec['v'])
+        lo, hi = sp.sympify(spec['a']), sp.sympify(spec['b'])
+        if kind == 'position':
+            found = (sp.sympify(spec['start'])
+                     + sp.integrate(v, (var, lo, hi)))
+            return sp.simplify(claim - found) == 0
+        cuts = [p for p in sp.solve(sp.Eq(v, 0), var)
+                if p.is_real and float(lo) < float(p) < float(hi)]
+        edges = [lo] + sorted(cuts, key=lambda p: float(p)) + [hi]
+        found = sum(abs(sp.integrate(v, (var, edges[i], edges[i + 1])))
+                    for i in range(len(edges) - 1))
+        return sp.simplify(claim - found) == 0
+
+    rate = sp.sympify(spec['rate'])
+    found = (sp.sympify(spec['start'])
+             + sp.integrate(rate, (var, sp.sympify(spec['a']),
+                                   sp.sympify(spec['b']))))
+    return sp.simplify(claim - found) == 0
+
+
+section('E6: эталон генератора пересчитан интегрированием и прогнан проверкой')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('E6.')):
+    agreed = accepted = rejected = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[gen_name](random.Random(seed))
+        spec = item['check']
+        agreed += bool(_e6_agrees(item))
+        ok, _ = evaluate(spec, str(item['answer']))
+        accepted += bool(ok)
+        # площадь, объём, путь и накопленное — величины: удвоенная всегда
+        # другая, и проверка обязана это заметить
+        bad_answer, _ = evaluate(spec, str(2*sp.sympify(item['answer'])))
+        rejected += not bad_answer
+    t(f'{gen_name}: интегрирование дало тот же ответ на всех {SEEDS} зёрнах',
+      agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах',
+      accepted == SEEDS)
+    t(f'{gen_name}: и отвергла удвоенный на всех {SEEDS} зёрнах',
+      rejected == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено интегралом и проверкой')
+
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')

@@ -452,3 +452,99 @@ def hours_word(count):
     if 2 <= last <= 4:
         return 'часа'
     return 'часов'
+
+
+# ================================================ E6: измеренное и измерение
+# Шесть проверок темы площадей и объёмов. Общее у них то же, что и у E5,
+# только с другой стороны: ни одна не берёт производной. Площадь меряется
+# полосами, объём — дисками, поверхность — усечёнными конусами, путь —
+# полной вариацией положения.
+
+def region_check(top, bottom=0, a=None, b=None, var='x', params=None,
+                 digits=3, window=None):
+    """Ответ — площадь: она меряется полосами |верх − низ|.
+
+    a и b можно не задавать: тогда проверка сама находит, где границы
+    встречаются, делением пополам внутри window.
+    """
+    spec = {'kind': 'region', 'top': sp.srepr(sp.sympify(top)),
+            'bottom': sp.srepr(sp.sympify(bottom)), 'var': var,
+            'digits': digits}
+    if a is not None:
+        spec['a'] = sp.srepr(sp.sympify(a))
+    if b is not None:
+        spec['b'] = sp.srepr(sp.sympify(b))
+    if window is not None:
+        spec['window'] = [sp.srepr(sp.sympify(v)) for v in window]
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec
+
+
+def solid_check(outer, a, b, inner=0, var='x', axis='x', params=None,
+                digits=3, value=None):
+    """Ответ — объём тела вращения: стопка дисков и колец.
+
+    value задаёт обратный ход: объём известен, а ответом служит предел
+    интегрирования — он и уходит в b.
+    """
+    spec = {'kind': 'solid', 'outer': sp.srepr(sp.sympify(outer)),
+            'inner': sp.srepr(sp.sympify(inner)), 'var': var, 'axis': axis,
+            'a': sp.srepr(sp.sympify(a)), 'b': sp.srepr(sp.sympify(b)),
+            'digits': digits}
+    if value is not None:
+        spec['value'] = sp.srepr(sp.sympify(value))
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec
+
+
+def surface_check(curve, a, b, var='x', params=None, digits=3):
+    """Ответ — площадь поверхности вращения: набор усечённых конусов."""
+    spec = {'kind': 'surface', 'curve': sp.srepr(sp.sympify(curve)),
+            'a': sp.srepr(sp.sympify(a)), 'b': sp.srepr(sp.sympify(b)),
+            'var': var, 'digits': digits}
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec
+
+
+def travelled_check(v, a, b, var='t', params=None, digits=3):
+    """Ответ — пройденный путь: полная вариация положения."""
+    spec = {'kind': 'travelled', 'v': sp.srepr(sp.sympify(v)),
+            'a': sp.srepr(sp.sympify(a)), 'b': sp.srepr(sp.sympify(b)),
+            'var': var, 'digits': digits}
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec
+
+
+def position_check(v, a, b, var='t', start=0, params=None, digits=3):
+    """Ответ — перемещение или положение: сумма сдвигов со знаком."""
+    spec = {'kind': 'position', 'v': sp.srepr(sp.sympify(v)),
+            'a': sp.srepr(sp.sympify(a)), 'b': sp.srepr(sp.sympify(b)),
+            'start': sp.srepr(sp.sympify(start)), 'var': var, 'digits': digits}
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec
+
+
+def amount_check(rate, a, b=None, var='t', start=0, at=None, params=None,
+                 digits=3):
+    """Ответ — накопленное: числом или выражением от времени."""
+    spec = {'kind': 'amount', 'rate': sp.srepr(sp.sympify(rate)),
+            'a': sp.srepr(sp.sympify(a)),
+            'start': sp.srepr(sp.sympify(start)), 'var': var, 'digits': digits}
+    if b is not None:
+        spec['b'] = sp.srepr(sp.sympify(b))
+    if at is not None:
+        spec['at'] = [sp.srepr(sp.sympify(v)) for v in at]
+    if params:
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in params.items()}
+    return spec

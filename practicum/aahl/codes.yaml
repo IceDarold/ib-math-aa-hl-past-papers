@@ -256,6 +256,16 @@ E5:
   series:    {skill: termwise_series,            name: интегрирование ряда почленно}
   condition: {skill: integral_as_condition,      name: интеграл как условие}
 
+E6:
+  under:     {skill: area_under_curve,             name: площадь под кривой}
+  between:   {skill: area_between_curves,          name: площадь между графиками}
+  volx:      {skill: volume_about_x,               name: "объём вращения вокруг оси x"}
+  voly:      {skill: volume_about_y,               name: "объём вращения вокруг оси y"}
+  ring:      {skill: volume_between_and_condition, name: кольцо и объём как условие}
+  skin:      {skill: surface_of_revolution,        name: площадь поверхности вращения}
+  motion:    {skill: displacement_and_distance,    name: перемещение и путь}
+  accum:     {skill: accumulated_change,           name: накопление по скорости}
+
 E7:
   int: {skill: direct_integration,           name: прямое интегрирование}
   sep: {skill: separation,                   name: разделение переменных}
