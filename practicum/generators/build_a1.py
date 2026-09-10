@@ -150,7 +150,7 @@ After that, the topic stops being about formulas at all.
 > **A progression is two numbers, $u_1$ and $d$. Almost every question
 > gives you two facts about them.**
 
-*"The 7th term is 6, and the 6th and 12th add to 24."* Two facts, two
+*"The 5th term is 11, and the 3rd and 9th add to 20."* Two facts, two
 unknowns, two linear equations — and solving those you have been able to
 do since school. The work is writing them down, not solving them.
 
@@ -302,12 +302,12 @@ $n-1$ times takes you to $u_n$:
 $$u_n=u_1+(n-1)d$$
 
 When the paper hands you the sequence already written as a formula in
-$n$ — *"$u_n=15-3n$"* — read it the same way. It is linear in $n$, the
+$n$ — *"$u_n=4n+3$"* — read it the same way. It is linear in $n$, the
 coefficient of $n$ **is** the common difference, and the constant term is
 $u_0$, which is not a term of the sequence at all.
 
-> The mark that goes missing here: for $u_n=15-3n$ the first term is
-> $12$, not $15$.
+> The mark that goes missing here: for $u_n=4n+3$ the first term is
+> $7$, not $3$.
 
 **The sum.** Write $S_n$ forwards and backwards and add:
 
@@ -441,17 +441,17 @@ a fact about those two numbers, and each fact is one equation.
 
 | what the paper says | the equation |
 |---|---|
-| the 7th term is 6 | $u_1+6d=6$ |
-| $S_8=8$ | $\tfrac82\bigl(2u_1+7d\bigr)=8$ |
-| the 6th and 12th add to 24 | $(u_1+5d)+(u_1+11d)=24$ |
-| $u_8=S_8$ | $u_1+7d=\tfrac82(2u_1+7d)$ |
+| the 5th term is 11 | $u_1+4d=11$ |
+| $S_{10}=75$ | $\tfrac{10}2\bigl(2u_1+9d\bigr)=75$ |
+| the 3rd and 9th add to 20 | $(u_1+2d)+(u_1+8d)=20$ |
+| $u_6=S_3$ | $u_1+5d=\tfrac32(2u_1+2d)$ |
 
 Write both, solve, substitute back. That last step is not optional: it
 costs ten seconds and catches every sign slip you are going to make.
 
-> **The trap is using one fact twice.** *"$u_8=S_8=8$"* looks like one
-> statement and is two: the eighth term is 8, **and** the first eight
-> terms add to 8. Use only one of them and the system has no unique
+> **The trap is using one fact twice.** *"$u_5=S_5=20$"* looks like one
+> statement and is two: the fifth term is 20, **and** the first five
+> terms add to 20. Use only one of them and the system has no unique
 > solution.
 
 ## Theory: from the sum back to the terms
@@ -773,10 +773,11 @@ correct answers.
 
 ### The same question on Paper 1 and on Paper 2
 
-Task 2(b) — *the sum of the first $n$ terms is zero* — is Paper 1, and it
-is one line of algebra: $\frac n2(36+u_n)=0$ needs $u_n=-36$, so $n=13$.
+*The sum of the first $n$ terms is zero* is Paper 1, and it is one line
+of algebra: $\frac n2(u_1+u_n)$ vanishes only when $u_n=-u_1$, so the last
+term is the first one reflected, and the index follows in one step.
 
-Task 11 — *find the maximum value of $S_n$* — is Paper 2, and a table of
+*Find the maximum value of $S_n$* is Paper 2, and a table of
 $S_n$ answers it in ten seconds. But the value must then be taken by
 substituting the whole $n$ back into the formula, not read off the
 graph's vertex: the markscheme deducts the final mark for
@@ -794,8 +795,8 @@ markscheme in the archive for this kind of question says the same thing:
 **uses a table of values**. Build the table, read it, stop.
 
 > The commonest slip is answering a nearby question. *"How many rows so
-> that no cards are left over"* is not *"how many packs"*; the answers
-> are 13 and 5, and only one of them is asked for.
+> that no cards are left over"* is not *"how many packs"* — two different
+> numbers, and only one of them is asked for.
 """)
 
 md(r"""
@@ -891,14 +892,14 @@ Nothing about the sequence changes when its terms are logarithms. What
 changes is that you cannot compare them until they are written the same
 way.
 
-$$9+\ln 9,\qquad 5+\ln 3,\qquad 1+\ln 1$$
+$$2+\ln 8,\qquad 6+\ln 2,\qquad 10+\ln\tfrac12$$
 
-look like three unrelated things until $\ln 9=2\ln 3$ and $\ln 1=0$ turn
-them into
+look like three unrelated things until $\ln 8=3\ln 2$ and
+$\ln\tfrac12=-\ln 2$ turn them into
 
-$$9+2\ln 3,\qquad 5+\ln 3,\qquad 1+0\cdot\ln 3$$
+$$2+3\ln 2,\qquad 6+\ln 2,\qquad 10-\ln 2$$
 
-and now the difference is visible: $-4-\ln 3$, the same both times.
+and now the difference is visible: $4-2\ln 2$, the same both times.
 
 Three laws do all the work in this topic:
 

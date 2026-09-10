@@ -248,14 +248,14 @@ $$\underbrace{y_0=f(x_0)}_{\text{from the curve}}\qquad
 
 Three things follow, and each is worth a mark somewhere in this archive.
 
-**If a tangent is *given*, it hands you both numbers.** *The line $y=6x-1$ is
-the tangent to $y=f(x)$ at $x=4$* tells you $f'(4)=6$ **and** $f(4)=23$ — the
-second because the point of contact lies on both, so you may read $f(4)$ off
-the line. That is a whole mark on its own, and it is the only place in this
-topic where you get a value of $f$ without knowing $f$.
+**If a tangent is *given*, it hands you both numbers.** *The line
+$y=-2x+5$ is the tangent to $y=f(x)$ at $x=1$* tells you $f'(1)=-2$ **and**
+$f(1)=3$ — the second because the point of contact lies on both, so you may
+read the value off the line. That is a whole mark on its own, and it is the
+only place in this topic where you get a value of $f$ without knowing $f$.
 
 **Through a composition, the chain rule survives into the gradient.** If
-$h=f\circ g$ then $h'(4)=f'(g(4))\cdot g'(4)$, and $g'(4)$ is a factor people
+$h=f\circ g$ then $h'(a)=f'(g(a))\cdot g'(a)$, and $g'(a)$ is a factor people
 drop while concentrating on $f'$.
 
 **A tangent with letters in it is still just $y-y_0=m(x-x_0)$.** Paper 3
@@ -788,8 +788,9 @@ then the line $\ell$ meets the curve twice at $x=4$, which is what tangency
 means. It is an alternative proof, it is on the mark scheme, and on a cubic
 it is faster than differentiating.
 
-**And *exact* still means exact.** $a=\mathrm{e}^{1/\mathrm{e}}$ is the answer;
-$1.44$ is the check that you have not blundered.
+**And *exact* still means exact.** When the answer comes out as a power of
+$\mathrm{e}$, that expression *is* the answer; its decimal is the check that
+you have not blundered, not a substitute for it.
 """)
 
 md(r"""

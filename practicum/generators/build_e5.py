@@ -369,8 +369,8 @@ comes out wrong by exactly a constant factor — and that is the slip the check
 names by name, because it is the commonest one in the topic.
 
 **Definite integrals: change the limits or change back, never neither.**
-$\int_0^{\pi/3}$ becomes $\int_1^{2}$ when $u=\sec x$, because
-$\sec 0=1$ and $\sec\tfrac{\pi}{3}=2$. Substituting $x=\pi/3$ into an
+$\int_0^{\pi/4}$ becomes $\int_0^{1}$ when $u=\tan x$, because
+$\tan 0=0$ and $\tan\tfrac{\pi}{4}=1$. Substituting the old limit into an
 expression in $u$ is a wrong answer that looks like a right one.
 
 **How to spot the substitution.** Look for a function sitting next to its own
@@ -465,9 +465,9 @@ never $u$ when something else is available.
 Two applications, and the polynomial is gone. This one always terminates,
 and the number of applications is the degree of the polynomial.
 
-**A power times a logarithm.** $\int x(\ln x)^2\,\mathrm{d}x$. Two
+**A power times a logarithm.** $\int x^2(\ln x)^2\,\mathrm{d}x$. Two
 applications, and the logarithms are gone — but the second application is on
-$\int x\ln x\,\mathrm{d}x$, not on the original, which is where the sign
+$\int x^2\ln x\,\mathrm{d}x$, not on the original, which is where the sign
 errors live.
 
 **A lone function with no product in it.** $\int\ln x\,\mathrm{d}x$. There is

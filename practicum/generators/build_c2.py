@@ -642,10 +642,10 @@ are sums and differences of those:
 
 | the shape | what it is made of |
 |---|---|
-| a logo: rectangle with two bites | rectangle $-$ 2 segments |
-| the letter C between two circles | sector of radius $R$ $-$ sector of radius $r$ |
-| a gutter's cross-section | segment $+$ rectangle |
-| a disc outside an inscribed pentagon | 5 segments |
+| a washer between two circles | disc of radius $R$ $-$ disc of radius $r$ |
+| a running track, straights and bends | rectangle $+$ 2 half-discs |
+| a slice of pizza with the crust cut off | sector $-$ sector |
+| a regular hexagon inscribed in a circle | 6 triangles |
 
 Two rules make the cutting reliable.
 
@@ -845,11 +845,11 @@ S_{\text{total}}=\underbrace{\pi R^2}_{\text{base}}+\underbrace{\pi Rl}_{\text{c
 The archive gives this technique on both papers, and the difference is
 only in the shape of the answer.
 
-| | May 2021 TZ2 Paper 1 | May 2024 TZ1 Paper 2 |
+| | Paper 1 | Paper 2 |
 |---|---|---|
-| given | $R=2$, total surface $12\pi$ | $h=20$, $R$ from part (a) |
-| work | $4\pi+2\pi l=12\pi$; $h=\sqrt{16-4}$ | substitute |
-| answer | exact, of the form $k\sqrt3\,\pi$ | a decimal, three significant figures |
+| given | a surface area, in terms of $\pi$ | a height and a radius, as decimals |
+| work | solve for $l$, then Pythagoras for $h$ | substitute into the volume |
+| answer | exact, usually with a surd and a $\pi$ | a decimal, three significant figures |
 
 Same formulas, same two lines of work. On Paper 1 a decimal earns nothing;
 on Paper 2 three significant figures are expected. The mathematics does

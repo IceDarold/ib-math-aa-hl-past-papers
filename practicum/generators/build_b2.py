@@ -206,18 +206,18 @@ why it is worth a mark.
 
 $$(f \circ g)(x) = f(g(x)), \qquad (g \circ f)(x) = g(f(x)).$$
 
-These are different functions. With $f(x)=x-3$ and $g(x)=x^2$:
+These are different functions. With $f(x)=2x$ and $g(x)=x^2+1$:
 
-$$(g \circ f)(x) = (x-3)^2, \qquad (f \circ g)(x) = x^2 - 3.$$
+$$(g \circ f)(x) = 4x^2+1, \qquad (f \circ g)(x) = 2x^2+2.$$
 
 **Evaluating at a point.** Work inwards out, and carry a *number*, not
 an expression:
 
-$$h(4) = f(g(4)), \quad g(4) = 4^2 - 3\cdot 4 = 4, \quad
-h(4) = f(4).$$
+$$h(2) = f(g(2)), \quad g(2) = 2^2 + 5\cdot 2 = 14, \quad
+h(2) = f(14)\qquad\bigl(g(x)=x^2+5x\bigr).$$
 
-That last line is the whole point of the question: you never need a
-formula for $f$, only its value at 4.
+That last line is the whole point of such a question: you never need a
+formula for $f$, only its value at one point.
 
 **A worked example of the same move.** In May 2025 TZ1 Paper 3 a
 probability distribution is packed into the polynomial
@@ -623,8 +623,8 @@ Read left to right it is a definition; read right to left it is a
 technique. Most inverse questions in the archive ask for **one value**,
 and the value comes out without ever writing the formula:
 
-$$f(x) = 8^{x}, \quad f^{-1}(4) = ? \ \Longrightarrow\ 8^{x} = 4
-\ \Longrightarrow\ 2^{3x} = 2^{2} \ \Longrightarrow\ x = \tfrac23 .$$
+$$f(x) = 27^{x}, \quad f^{-1}(9) = ? \ \Longrightarrow\ 27^{x} = 9
+\ \Longrightarrow\ 3^{3x} = 3^{2} \ \Longrightarrow\ x = \tfrac23 .$$
 
 **Three corollaries, each worth marks somewhere in the archive.**
 
@@ -840,12 +840,12 @@ Copying the domain of $f$ across is the standard mistake, and it is
 usually visible: an inverse whose domain is the same as $f$'s is
 suspicious unless the function is self-inverse.
 
-**So you have to be able to read a range.** In May 2025 TZ2 Paper 1,
-$f(x) = \frac{3x-2}{2x+1}$ and $g(x) = -f(x)$ on $x \ge 0$. Reflecting
-in the $x$-axis sends the horizontal asymptote $y = \frac32$ to
-$y = -\frac32$ and the value $f(0) = -2$ to $g(0) = 2$; $g$ decreases
-from $2$ towards $-\frac32$ without reaching it, so the range is
-$-\frac32 < y \le 2$. Reading ranges properly is B4's subject; here it
+**So you have to be able to read a range.** Take
+$f(x) = \frac{2x-1}{x+2}$ and $g(x) = -f(x)$ on $x \ge 0$. Reflecting
+in the $x$-axis sends the horizontal asymptote $y = 2$ to $y = -2$ and
+the value $f(0) = -\frac12$ to $g(0) = \frac12$; $g$ decreases from
+$\frac12$ towards $-2$ without reaching it, so the range is
+$-2 < y \le \frac12$. Reading ranges properly is B4's subject; here it
 is a prerequisite, because the range of $f$ is the answer to "state the
 domain of $f^{-1}$".
 

@@ -500,7 +500,7 @@ The other half of this rung is the question the other way round: the
 examiner tells you *which* transformations were used and asks for their
 values. The method is the same move, run backwards.
 
-$$f(x)=x^{2}+x, \qquad g(x)=4x^{2}+2x+5 .$$
+$$f(x)=x^{2}+x, \qquad g(x)=9x^{2}+3x+5 .$$
 
 *"The graph of $g$ is obtained from the graph of $f$ by a horizontal
 stretch with scale factor $k$, followed by a vertical translation of $c$
@@ -511,9 +511,9 @@ Apply the named steps with their letters still in place:
 $$f\!\left(\tfrac{x}{k}\right)+c
 = \frac{x^{2}}{k^{2}}+\frac{x}{k}+c .$$
 
-Now compare with $g$. The squared term gives $\tfrac{1}{k^{2}}=4$, so
-$k=\tfrac12$; the linear term then has to agree by itself, and
-$\tfrac{1}{1/2}=2$ duly matches; finally $c=5$. **Match the highest power
+Now compare with $g$. The squared term gives $\tfrac{1}{k^{2}}=9$, so
+$k=\tfrac13$; the linear term then has to agree by itself, and
+$\tfrac{1}{1/3}=3$ duly matches; finally $c=5$. **Match the highest power
 first and the constant last** — the usual lost mark is finding $k$ from
 one term and forgetting that every other term has to agree too, which is
 also the check that the named sequence was the right one.
@@ -910,9 +910,9 @@ markscheme writes the pair, $\left(2a,\,7\right)$, and pays for the pair.
 
 **The domain is a feature.** If the curve is drawn on $0\le x\le L$ it
 stops at $L$, and stopping is worth a mark. Restricted-domain questions
-almost always put the endpoints where they can be checked: $\arccos x$ on
-$[-1,1]$ has endpoints $(-1,\pi)$ and $(1,0)$, and those two points are
-the answer.
+almost always put the endpoints where they can be checked: $\ln x$ on
+$[1,\mathrm{e}]$ has endpoints $(1,0)$ and $(\mathrm{e},1)$, and those two
+points are half of the answer.
 
 **For a stretched trigonometric function, get the period first.** With
 $h(x)=5\cos\!\left(\tfrac{3px}{4}\right)$ the amplitude is $5$ and the
@@ -1094,10 +1094,11 @@ doing it in any other order costs time.
 dashed lines. That instruction is quoted verbatim in the archive and it
 is an A1 of its own.
 
-**The rectangular hyperbola $x^{2}-y^{2}=1$ is the same drill without a
-function.** Intercepts at $(\pm1,0)$; no $y$-intercept; and rearranging
-to $y=\pm\sqrt{x^{2}-1}$ shows that for large $\lvert x\rvert$ the
-curve is $\pm\lvert x\rvert$, so the asymptotes are $y=x$ and $y=-x$.
+**A hyperbola is the same drill without a function.** For
+$\tfrac{x^{2}}{4}-\tfrac{y^{2}}{9}=1$: intercepts at $(\pm2,0)$; no
+$y$-intercept; and rearranging to $y=\pm\tfrac32\sqrt{x^{2}-4}$ shows
+that for large $\lvert x\rvert$ the curve is $\pm\tfrac32\lvert x\rvert$,
+so the asymptotes are $y=\tfrac32x$ and $y=-\tfrac32x$.
 Two branches, and the asymptotes are part of the answer even though no
 point of the curve lies on them.
 """)
@@ -1192,11 +1193,12 @@ $y=x^{n}$ is the simplest case of it — and a student who tries one value
 of $n$ alone will describe half the family.
 
 **The parameter's range splits where the picture changes.** For
-$y=\log_a x$ against $y=x$: below $a=1$ the logarithm is decreasing and
-there is exactly one crossing; just above $1$ it rises steeply enough to
-cross twice; past about $1.44$ it never catches the line at all. Three
-intervals, three counts — and the boundary between the second and the
-third is the tangency, which a later part of that question finds exactly.
+$y=\log_a x$ against $y=x$ the picture changes exactly twice: once as $a$
+passes $1$, where the logarithm turns from decreasing to increasing, and
+once at the value of $a$ where the curve is tangent to the line. Between
+two consecutive changes the number of crossings cannot move, so one plot
+inside each interval settles the whole table — and the second boundary is
+a tangency, which a later part of that question finds exactly.
 
 **A point where $f''=0$ is not automatically a point of inflexion.** The
 concavity has to *change*. For $y=x^{4}$ the second derivative vanishes

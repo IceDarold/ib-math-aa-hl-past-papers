@@ -97,12 +97,12 @@ English in the setup cell.
 
 **The two sentences.**
 
-> $50 = 100e^{-5730k}$ — *the unknown is in the exponent.* Take
-> logarithms of both sides and it walks down: $k=\dfrac{\ln 2}{5730}$.
+> $3000 = 1000e^{8k}$ — *the unknown is in the exponent.* Take
+> logarithms of both sides and it walks down: $k=\dfrac{\ln 3}{8}$.
 >
-> $3\log_8 10x-\log_4 x=1$ — *the unknown is under a logarithm.* Make
+> $\log_3(x+6)+\log_3 x=3$ — *the unknown is under a logarithm.* Make
 > the bases agree, collapse each side to one logarithm, and then remove
-> them: $x=\dfrac{1}{25}$.
+> them: $x=3$.
 
 Everything in the topic is one of these with more furniture around it. A
 population model is the first sentence with two data points instead of
@@ -258,9 +258,10 @@ $\frac{\ln 4.5}{\ln 10}$, which has changed the base and answered
 nothing.
 
 **Monotonicity is a licence, and it costs a mark to skip.** To go from
-$2n\ge n+1$ to $\log_2 2n\ge\log_2(n+1)$ you need the fact that
-$\log_2$ is increasing. The markscheme for May 2025 TZ1 Q8(a) awards
-**R1** for exactly that sentence.
+$u\ge v>0$ to $\log_2 u\ge\log_2 v$ you need the fact that
+$\log_2$ is increasing — the step is not algebra, it is a property of the
+function, and it has to be named. The markscheme for May 2025 TZ1 Q8(a)
+awards **R1** for exactly that sentence.
 """)
 
 md(r"""
@@ -314,8 +315,8 @@ $$\log_{b^{m}} a=\frac{1}{m}\log_b a .$$
 
 That is why $\log_{16}a=\tfrac{1}{4}\log_{2}a$ in one line — if
 $\log_2 a=6$ then $\log_{16}a=\tfrac32$, with no calculator anywhere —
-and why $3\log_8 10x=\log_2 10x$: the $3$ in front and the $3$ in
-$8=2^3$ cancel exactly.
+and why $5\log_{32}y=\log_2 y$: the $5$ in front and the $5$ in
+$32=2^5$ cancel exactly.
 
 **The direction people get wrong.** $\log_b a=\frac{\log a}{\log b}$:
 the *argument* goes on top, the *base* goes underneath. Check it once on
@@ -371,11 +372,12 @@ The recipe is fixed, and every step of it is a separate mark.
    tidiness: taking logarithms is not reversible, and step 3 invents
    roots that the original equation never had.
 
-**Where the archive puts the difficulty.** Not in step 4. November 2025
-TZ3 collapses to $10\sqrt{x}=2$, which is trivial; the five marks are
-for steps 1–3. November 2025 TZ1 collapses to $\frac{x}{2}=x-7$, which
-is trivial; the four marks are for spotting that the loose $-1$ is
-$\log_2\frac12$ and that the fractions cancel.
+**Where the archive puts the difficulty.** Not in step 4. In both
+log-equation questions of the archive what is left after step 3 is one
+line of school algebra, and all the marks are in steps 1–3: making the
+bases agree, turning a loose number into a logarithm, and collapsing each
+side to a single one. If step 4 is taking you more than a line, you have
+collapsed something wrongly.
 
 **The trap with a name.** From $\log A-\log B=\log C$ people conclude
 $A-B=C$. The subtraction is *outside* the logarithms and the division is
@@ -523,9 +525,10 @@ rate instead of its exact logarithmic form moves the answer by years.
 Keep the exact form all the way to the last line — that is what "exact
 form" is *for*, even on a calculator paper.
 
-**"First exceeds" is a ceiling, not a rounding.** May 2025 TZ2 gets
-$n=13.77$ and answers $14$ months. Rounding to the nearest would give
-$14$ here too, by luck; $n=13.2$ would still answer $14$.
+**"First exceeds" is a ceiling, not a rounding.** If the inequality
+gives $n>7.2$, the answer is $8$ periods — and it is still $8$ when the
+inequality gives $n>7.8$. Rounding to the nearest is right half the time
+and wrong the other half, which is the worst kind of habit.
 """)
 
 md(r"""
@@ -801,8 +804,8 @@ $S=c\log_{10}(\text{something} \times 10^{m})$ turns a huge range of
 values into a small one, and two facts follow immediately from Theory 1
 without a calculator:
 
-* doubling the quantity inside adds $c\log_{10}2$ to the scale — not
-  double the reading;
+* multiplying the quantity inside by $k$ adds $c\log_{10}k$ to the
+  reading — it does not multiply the reading by $k$;
 * adding $c$ to the reading multiplies the quantity by $10$.
 
 That is what a log scale is *for*: it turns multiplication into
@@ -929,10 +932,10 @@ two accepted methods, and the marks for setting up $75=100e^{-kt}$ come
 first either way. The cell below does both and prints them together.
 
 The interesting part is what the calculator does **not** give you: the
-exact form. Notice that the graph route lands on $2378.16\ldots$ and
-stops, while the algebra route lands on
-$t=\dfrac{5730\ln\frac43}{\ln 2}$, which you can then round to anything
-the question asks for. On Paper 2 that difference costs nothing. In part
+exact form. Notice that the graph route lands on a decimal and stops,
+while the algebra route lands on an expression built out of logarithms,
+which you can then round to whatever the question asks for. On Paper 2
+that difference costs nothing. In part
 (b) of the same question, where the answer *is* $\frac{\ln 2}{5730}$, it
 costs the whole mark.
 """)

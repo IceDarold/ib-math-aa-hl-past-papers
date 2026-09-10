@@ -247,8 +247,8 @@ md(r"""
 rational function without doing anything: the denominator's zero, and
 the ratio of the leading coefficients. Then the ones you cannot read
 off, where the answer *is* a limit — a logarithm's vertical asymptote is
-the edge of its domain, and $\arcsin\frac{x^2-1}{x^2+1}$ has a
-horizontal asymptote at $\tfrac{\pi}{2}$ that no ratio will give you.
+the edge of its domain, and $\arctan x$ has horizontal asymptotes at
+$\pm\tfrac{\pi}{2}$ that no ratio of coefficients will give you.
 Then the oblique asymptote, which is the same limit written as a
 division.
 
@@ -294,8 +294,8 @@ whole definition, and every method below is a way of computing it.
 one side or the other. For a rational function these are the zeros of
 the denominator — *after cancelling*, because a factor common to both
 gives a hole, not an asymptote. For anything else they sit where the
-domain stops: $\ln x$ has $x=0$, and so does $2\ln x-\ln d$ for every
-value of $d$.
+domain stops: $\ln x$ has $x=0$, and $\ln(x+2)$ has $x=-2$ — the asymptote
+sits where the argument vanishes, not where the $x$ does.
 
 **Horizontal, $y=h$.** $f(x)\to h$ as $x\to+\infty$ or as
 $x\to-\infty$. One side is enough — $e^x$ has $y=0$ on the left and
@@ -935,15 +935,15 @@ goes to zero faster, the halves arrive flat and meet in a **cusp**; if
 not, they arrive vertically and the curve crosses the axis with an
 infinite gradient.
 
-That is exactly the difference the May 2022 TZ2 investigation is built
-on. For $y^{2}=x^{3}$ at the origin, $\frac{dy}{dx}=\tfrac32\sqrt{x}\to
-0$: a cusp. For $y^{2}=x^{3}+1$ at $x=-1$, the gradient is infinite: a
-smooth vertical crossing. Everything else about the two curves is the
-same shape.
+Both happen, and the difference is only in how fast the numerator dies.
+For $y^{2}=x^{5}$ at the origin, $\frac{dy}{dx}=\tfrac52x^{3/2}\to 0$:
+a cusp. For $y^{2}=x$ at the origin, $\frac{dy}{dx}=\frac{1}{2\sqrt x}$
+runs away: a vertical crossing. Same picture at a glance, opposite
+answers to the question actually asked.
 
-**And a sideways parabola is still a parabola.** $y^{2}=16-8x$ opens to
+**And a sideways parabola is still a parabola.** $y^{2}=12-4x$ opens to
 the **left** (larger $y^{2}$ needs smaller $x$) with its vertex at
-$(2,0)$; $y^{2}=4+4x$ opens to the right with its vertex at $(-1,0)$.
+$(3,0)$; $y^{2}=6+3x$ opens to the right with its vertex at $(-2,0)$.
 
 ---
 ## Theory 7. Counting intercepts across a family
@@ -961,16 +961,20 @@ A cubic crosses the axis:
 * **once** when both are on the same side, or when there are no
   stationary points at all.
 
-The heights are $b$ and $\tfrac{4a^{3}}{27}+b$, so with $a=3$ they are
-$b$ and $b+4$, and the whole answer falls out:
+The heights are $b$ and $\tfrac{4a^{3}}{27}+b$. Fix $a$ and those are two
+numbers, one of them $b$ itself; the count is then read off their signs
+and nothing else:
 
-| $b$ | heights | intercepts |
-| --- | --- | --- |
-| $b<-4$ | both negative | 1 |
-| $b=-4$ | one zero | 2 |
-| $-4<b<0$ | opposite signs | 3 |
-| $b=0$ | one zero | 2 |
-| $b>0$ | both positive | 1 |
+| the two heights | intercepts |
+| --- | --- |
+| same sign | 1 |
+| one of them zero | 2 |
+| opposite signs | 3 |
+
+So the two boundary values of $b$ are always the two heights set to zero,
+and the three intervals they cut out are the answer. Which of them gives
+three intercepts depends on the sign of $a$, and that is worth checking
+rather than remembering.
 
 **The general statement.** Three intercepts means $b$ and
 $\tfrac{4a^{3}}{27}+b$ have opposite signs, that is, their product is

@@ -236,12 +236,12 @@ Build one object. You make a sequence of choices. If the choices are
 independent, the counts multiply — that is the whole of the **product
 rule**, and it is the only genuinely primitive idea in the topic:
 
-$$\text{a three-digit code from five symbols} = 5\times5\times5=125$$
+$$\text{a three-symbol code from eleven symbols} = 11\times11\times11=1331$$
 
-Now add a condition: **no symbol is used twice**. The second choice has
-lost one option and the third has lost two:
+Now add a condition: **no symbol is used twice**. Each choice has one
+option fewer than the one before it:
 
-$$5\times4\times3=60=\frac{5!}{2!}={}^5P_3$$
+$$11\times10\times9=990=\frac{11!}{8!}={}^{11}P_3$$
 
 That is an **arrangement**. $^nP_r$ is not a new idea; it is the product
 rule with the supply running down.
@@ -250,7 +250,7 @@ Now add a second condition: **the order of the chosen symbols does not
 matter**. Every group of three has been counted once for each of its $3!$
 orderings, so:
 
-$$^5C_3=\frac{^5P_3}{3!}=\frac{60}{6}=10$$
+$$^{11}C_3=\frac{^{11}P_3}{3!}=\frac{990}{6}=165$$
 
 A **selection**. Again nothing new — a division by an over-count.
 
@@ -709,7 +709,7 @@ girls.
 
 *Part (b) has two honest routes and one dishonest one. Add the two cases
 that qualify, or subtract the two that do not, from everything. Mixing the
-halves of the two routes gives a number that is not 75.*
+halves of the two routes gives a plausible number and a wrong one.*
 """)
 
 code(r"""

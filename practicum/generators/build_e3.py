@@ -698,9 +698,9 @@ build.
 Each sentence of the question is one equation, and the trick is knowing which
 kind:
 
-* **a vertical asymptote at $x=1$** → the denominator is zero there;
-* **the curve passes through $(2,1)$** → substitute the point;
-* **a local minimum at $(2,1)$** → the derivative is zero there, which for a
+* **a vertical asymptote at $x=-3$** → the denominator is zero there;
+* **the curve passes through $(5,2)$** → substitute the point;
+* **a local minimum at $(5,2)$** → the derivative is zero there, which for a
   quotient means the **numerator** of $\frac{\mathrm{d}y}{\mathrm{d}x}$ is
   zero there.
 
