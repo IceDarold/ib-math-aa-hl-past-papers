@@ -312,10 +312,10 @@ nothing on the right. For a rational function compare degrees:
 more than the denominator's. Three routes, and the markscheme prints all
 of them:
 
-$$\frac{x^2-x-12}{2x-15} = \underbrace{\tfrac{x}{2}+\tfrac{13}{4}}_{\text{quotient}} + \underbrace{\frac{147/4}{2x-15}}_{\to\,0}$$
+$$\frac{2x^2+3x-1}{x-2} = \underbrace{2x+7}_{\text{quotient}} + \underbrace{\frac{13}{x-2}}_{\to\,0}$$
 
 * **divide** — long division, and the quotient is the answer;
-* **equate coefficients** — write $x^2-x-12\equiv(ax+b)(2x-15)+c$ and
+* **equate coefficients** — write $2x^2+3x-1\equiv(ax+b)(x-2)+c$ and
   match;
 * **take limits** — $a=\lim\frac{f(x)}{x}$, then
   $b=\lim\bigl(f(x)-ax\bigr)$.
@@ -577,8 +577,8 @@ So the order is forced:
 
 **Count the branches before you draw.** One vertical asymptote cuts the
 plane into two strips and gives two branches. **Two** vertical
-asymptotes give three, and $\dfrac{1}{x^{2}-2x-3}$ is exactly that
-question. The single most expensive mistake in the topic is drawing two
+asymptotes give three: $\dfrac{1}{x^{2}-4}$ has them at $x=\pm2$ and
+therefore three separate pieces of curve, not two. The single most expensive mistake in the topic is drawing two
 branches where there are three, or letting branches overlap because an
 asymptote was left out — May 2021 TZ1 has a note for it: *"If vertical
 asymptotes are absent (or not vertical) and the branches overlap as a
@@ -616,15 +616,17 @@ $y$, then nothing, then everything from the local minimum's $y$ upwards.
 Two inequalities joined by *or*, and neither of them strict.
 
 *From the discriminant.* Put $y=f(x)$ and clear the fraction. For
-$g(x)=\dfrac{2x-5}{x^{2}-3}$,
+$h(x)=\dfrac{x+1}{x^{2}+4}$,
 
-$$yx^{2}-2x+(5-3y)=0,$$
+$$yx^{2}-x+(4y-1)=0,$$
 
 which has a real solution $x$ exactly when
-$\Delta=4-4y(5-3y)=12y^{2}-20y+4\ge 0$, that is
-$y\le\frac{5-\sqrt{13}}{6}$ or $y\ge\frac{5+\sqrt{13}}{6}$. This route
-gives the **exact** boundary; the calculator route gives $0.232$ and
-$1.43$.
+$\Delta=1-4y(4y-1)=-16y^{2}+4y+1\ge 0$, that is
+$\frac{1-\sqrt5}{8}\le y\le\frac{1+\sqrt5}{8}$. This route gives the
+**exact** boundary; the calculator route gives $-0.155$ and $0.405$.
+Note the shape of the answer: here the denominator never vanishes, the
+curve has no vertical asymptote, and the range comes out as one closed
+interval — both ends attained, at the maximum and at the minimum.
 
 **Do not forget the domain.** $-\dfrac{3x-2}{2x+1}$ over all of
 $\mathbb{R}$ and over $x\ge 0$ have different ranges, and the question
@@ -879,15 +881,14 @@ and every one of them is a mark:**
 
 **Two shapes that are drawn wrong from memory.**
 
-*A cubic need not turn.* $(x-1)(x^{2}-2x+5)$ has derivative
-$3x^{2}-6x+7$, whose discriminant is $36-84<0$. No stationary points at
-all: the curve rises everywhere, through a non-stationary point of
-inflexion at $x=1$. Drawing the usual double bend loses every mark for
-shape.
+*A cubic need not turn.* $(x+2)(x^{2}+x+3)=x^{3}+3x^{2}+5x+6$ has
+derivative $3x^{2}+6x+5$, whose discriminant is $36-60<0$. No stationary
+points at all: the curve rises everywhere, through a non-stationary point
+of inflexion. Drawing the usual double bend loses every mark for shape.
 
-*A double root touches.* $x^{3}+4x^{2}+5x+2=(x+1)^{2}(x+2)$ meets the
-axis at $x=-2$ crossing, and at $x=-1$ **touching** — and that touching
-point is the local minimum. Factorise before drawing.
+*A double root touches.* $x^{3}-3x+2=(x-1)^{2}(x+2)$ meets the axis at
+$x=-2$ crossing, and at $x=1$ **touching** — and that touching point is a
+local minimum. Factorise before drawing.
 
 ---
 ## Theory 5. When the question hands you the second derivative
@@ -902,17 +903,17 @@ $f''$ at each. The signs tell you maximum or minimum — that was part
 
 $f''$ measures how fast the gradient is changing, so a large
 $\lvert f''\rvert$ at a turning point means a sharp, tight turn and a
-small one means a long flat one. For $f(x)=e^{\cos 2x}$ on $[0,\pi]$:
+small one means a long flat one. For $g(x)=e^{\sin x}$ on $[0,2\pi]$:
 
-| point | $f''$ | drawn as |
+| point | $g''$ | drawn as |
 | --- | --- | --- |
-| $(0,e)$ | $-4e\approx-10.9$ | a sharp peak |
-| $(\tfrac{\pi}{2},e^{-1})$ | $4e^{-1}\approx 1.47$ | a wide shallow valley |
-| $(\pi,e)$ | $-4e\approx-10.9$ | a sharp peak |
+| $\left(\tfrac{\pi}{2},e\right)$ | $-e\approx-2.72$ | a sharp peak |
+| $\left(\tfrac{3\pi}{2},e^{-1}\right)$ | $e^{-1}\approx 0.368$ | a wide shallow valley |
 
-The peaks are about $e^{2}\approx 7.4$ times as curved as the valley,
-and the sketch has to show it: two narrow spikes and a long flat bottom
-between them, not a symmetric wave.
+The peak is about $e^{2}\approx 7.4$ times as curved as the valley, and
+the sketch has to show it: a narrow spike and a long flat bottom, not a
+symmetric wave. Whenever a question hands you the values of $f''$ rather
+than just their signs, this is what it is paying for.
 
 ---
 ## Theory 6. $y^{2}=f(x)$ is not a function

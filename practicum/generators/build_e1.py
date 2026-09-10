@@ -253,17 +253,18 @@ $\frac00$ tells you the answer — it can come out to $0$, to $\frac23$,
 to $-3$, or to $\infty$. That is exactly why it is called
 *indeterminate*.
 
-**The first cure: they are dying because of a shared factor.** In
-May 2024 TZ1 the function is
-$$f(x)=\frac{P(x)}{(x+1)Q(x)},\qquad
-  P(x)=3x^3+5x^2+x-1,\quad Q(x)=(x+1)(2x+1),$$
-and substituting $x=-1$ gives $\frac00$. But $P(x)=(x+1)^2(3x-1)$, so
-$$f(x)=\frac{(x+1)^2(3x-1)}{(x+1)^2(2x+1)}=\frac{3x-1}{2x+1}
-  \qquad\text{for }x\ne-1,$$
-and now substituting works. The cancelled factor is exactly the shared
-cause of death. Note the phrase *for $x\ne -1$*: the two functions are
-not equal at $-1$, and that is precisely why the limit exists where the
-value does not.
+**The first cure: they are dying because of a shared factor.** Take
+$$g(x)=\frac{x^3-8}{x^2-4}\qquad\text{at }x=2 .$$
+Substituting gives $\frac00$. But $x^3-8=(x-2)(x^2+2x+4)$ and
+$x^2-4=(x-2)(x+2)$, so
+$$g(x)=\frac{x^2+2x+4}{x+2}\qquad\text{for }x\ne 2,$$
+and now substituting works: the limit is $\frac{12}{4}=3$. The cancelled
+factor is exactly the shared cause of death. Note the phrase *for
+$x\ne 2$*: the two functions are not equal at $2$, and that is precisely
+why the limit exists where the value does not.
+
+Factorising the top is the whole of the work, and it is the work the
+next task asks for before it asks for anything else.
 """)
 
 md(r"""
@@ -304,30 +305,32 @@ different — but it is just as mechanical. **Divide the numerator and the
 denominator by the highest power of $x$ that appears**, and then use
 $\dfrac{1}{x^k}\to 0$.
 
-$$\frac{3x-1}{2x+1}
-  =\frac{3-\frac1x}{2+\frac1x}\;\longrightarrow\;\frac{3-0}{2+0}=\frac32 .$$
+$$\frac{5x+2}{4x-7}
+  =\frac{5+\frac2x}{4-\frac7x}\;\longrightarrow\;\frac{5+0}{4-0}=\frac54 .$$
 
 Everything except the leading terms has died. That is the whole of the
 technique, and it gives the three cases at once:
 
 | top vs bottom | example | limit |
 | --- | --- | --- |
-| same degree | $\dfrac{3x-1}{2x+1}$ | ratio of leading coefficients, $\frac32$ |
+| same degree | $\dfrac{5x+2}{4x-7}$ | ratio of leading coefficients, $\frac54$ |
 | bottom wins | $\dfrac{2x+5}{x^2}$ | $0$ |
 | top wins | $\dfrac{x^2}{2x+5}$ | $\infty$ — no limit |
 
-**Roots count as powers.** May 2025 TZ3 models a sprinter's velocity by
-$$v(t)=\frac{8.14\,t}{\sqrt{t^2+0.2}} .$$
-Under the root, $t^2+0.2$ behaves like $t^2$, so $\sqrt{t^2+0.2}$
-behaves like $t$: top and bottom are both degree one and the limit is
-$8.14$. Written out,
-$$\frac{8.14\,t}{\sqrt{t^2+0.2}}
- =\frac{8.14}{\sqrt{1+\frac{0.2}{t^2}}}\;\longrightarrow\;8.14 .$$
+**Roots count as powers.** A square root halves the degree under it:
+$$\frac{6u}{\sqrt{4u^2+9}} .$$
+Under the root, $4u^2+9$ behaves like $4u^2$, so the root behaves like
+$2u$: top and bottom are both degree one, and dividing through by $u$
+makes it visible,
+$$\frac{6u}{\sqrt{4u^2+9}}
+ =\frac{6}{\sqrt{4+\frac{9}{u^2}}}\;\longrightarrow\;\frac62=3 .$$
+A model built out of a root behaves the same way, and the number that
+comes out is the value the model creeps towards but never reaches.
 
 **Exponentials are not powers, and they beat every power.** $e^{x}$
 outgrows $x^{100}$; $e^{-x}$ dies faster than $\frac{1}{x^{100}}$. So
-$\dfrac{3x+1}{e^{3x}}\to 0$ and $\dfrac{e^{b}-b-1}{e^{b}}\to 1$ — but
-neither of those is settled by dividing by a power, and both are in
+$\dfrac{x^{5}}{e^{x}}\to 0$ and $\dfrac{e^{x}+x^{2}}{e^{x}}\to 1$ — but
+neither of those is settled by dividing by a power, and both belong to
 Part II.
 """)
 
@@ -364,24 +367,23 @@ Two of the archive's marks are not for a number at all. They are for one
 sentence about what the number means, and both are worth as much as a
 line of algebra.
 
-**A limit the model never reaches.** Fiona's velocity tends to
-$8.14\ \mathrm{m\,s^{-1}}$ as $t\to\infty$. The examiner then asks: *why
-is this value not valid in the context of the question?* It is a race
-over $200$ metres. It is over in about $26$ seconds; $t$ never gets
-anywhere near infinity, and Fiona never runs at $8.14$. The limit
-describes the formula, and the formula stops describing Fiona when she
-crosses the line.
+**A limit the model never reaches.** A cup of coffee cooling in a room
+is modelled by $T(t)=18+62\mathrm{e}^{-0.06t}$ degrees, and
+$T(t)\to 18$ as $t\to\infty$. Asked *why is this value not attained*,
+the answer is not about the exponential: the coffee is drunk, or thrown
+away, long before then, and in any case it can never be colder than the
+room it is standing in. The limit describes the formula; the formula
+stops describing the coffee at some point the formula does not know
+about.
 
-**A limit that says what a shape looks like from far away.** May 2025
-TZ1 defines the *curvature* of a graph,
-$$k(x)=\frac{|f''(x)|}{\bigl(1+(f'(x))^2\bigr)^{3/2}},$$
-and for a quadratic $h(x)=ax^2+bx+c$ works out
-$$k(x)=\frac{2|a|}{\bigl(1+(2ax+b)^2\bigr)^{3/2}} .$$
-Then: *state $\lim_{x\to\infty}k(x)$ and explain briefly the
-significance of this result.* The value is $0$, and the significance is
-that far out along a parabola the curving has all but stopped — for
-large $x$ a quadratic is nearly straight. One mark for the $0$, one for
-the sentence.
+**A limit that says what a shape looks like from far away.** The
+gradient of $y=\sqrt{x^2+1}$ is
+$$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{x}{\sqrt{x^2+1}}
+ \;\longrightarrow\;1 ,$$
+and the sentence that earns the second mark is what that means about the
+picture: far out to the right the curve has settled into the direction
+of the line $y=x$, which is its asymptote. The number is one mark; the
+sentence about the shape is the other.
 
 **How to write these.** Say what happens to the *thing being modelled*,
 not to the algebra. "The denominator grows without bound" earns nothing.
@@ -449,24 +451,25 @@ subtracted, nothing is squared.
 **The licence has to be shown.** The rule is only true for those two
 forms. Substituting first is what earns the right to use it, and the
 markschemes are explicit: November 2022 gives a mark purely for writing
-$\lim_{x\to1}f_1(x)=\frac{n-(n+1)+1}{0}=\frac00$, and refuses it if the
-$\lim$ symbol is not there.
+down the substitution that produced the $\frac00$, with the $\lim$
+symbol in front of it, and refuses the mark when the symbol is missing.
 
-**It applies to quotients only.** May 2025 TZ2 asks for
-$\lim_{x\to\infty}(3x+1)e^{-3x}$, which is a *product* of the form
-$\infty\cdot 0$. No rule applies to it until it is rewritten:
-$$(3x+1)e^{-3x}=\frac{3x+1}{e^{3x}}\qquad\text{— now it is }
-\frac{\infty}{\infty},$$
-and the markscheme awards its first mark for that rewrite alone.
+**It applies to quotients only.** A *product* of the form
+$\infty\cdot 0$ is not covered until it has been turned into a quotient:
+$$x\sin\frac1x=\frac{\sin\frac1x}{\frac1x}\qquad\text{— now it is }
+\frac{0}{0}\text{ as }x\to\infty,$$
+and in questions of this shape the markscheme awards its first mark for
+that rewrite alone.
 
-**A worked one, in full.** May 2021 TZ1:
-$$\lim_{x\to0}\frac{\arctan 2x}{\tan 3x}
-  \;=\;\frac{\arctan 0}{\tan 0}=\frac00\ \checkmark
-  \;=\;\lim_{x\to0}\frac{\dfrac{2}{1+4x^2}}{3\sec^2 3x}
-  \;=\;\frac{2/1}{3\cdot 1}=\frac23 .$$
-Five marks: one for attempting to differentiate top and bottom, one for
-each derivative, one for substituting, one for $\frac23$. Write the
-$\lim$ on every line or the maximum drops to four.
+**A worked one, in full.**
+$$\lim_{x\to0}\frac{\sin 5x}{\arcsin 2x}
+  \;=\;\frac{\sin 0}{\arcsin 0}=\frac00\ \checkmark
+  \;=\;\lim_{x\to0}\frac{5\cos 5x}{\dfrac{2}{\sqrt{1-4x^2}}}
+  \;=\;\frac{5\cdot 1}{2/1}=\frac52 .$$
+Five marks in a question of this size: one for attempting to
+differentiate top and bottom, one for each derivative, one for
+substituting, one for the number. Write the $\lim$ on every line or the
+maximum drops to four.
 """)
 
 md(r"""
@@ -508,22 +511,25 @@ outcomes.
   indeterminate. Stop, and read the answer off. Applying the rule here
   is not merely wasteful — it gives the wrong number.
 
-May 2024 TZ2 makes the point explicitly. The question is
-$$\lim_{x\to0}\frac{\sec^4x-\cos^2x}{x^4-x^2},$$
-which needs two rounds; after the second the denominator is $12x^2-2$,
-which at $x=0$ is $-2$. The markscheme's note reads: *M1 for second use
-of l'Hôpital's rule provided expression is in indeterminate $\frac00$
-form and no third attempt at using the rule.* A third round costs the
-mark.
+Watch the third outcome happen. For
+$$\lim_{x\to0}\frac{1-\cos 2x}{x^2}$$
+one round gives $\dfrac{2\sin 2x}{2x}$, still $\frac00$; a second gives
+$\dfrac{4\cos 2x}{2}$, and the denominator is now the number $2$. That is
+the signal to stop and read off $\frac{4}{2}=2$. A third round would
+differentiate that $2$ into $0$ and produce nonsense.
+
+The markschemes say so in as many words: *M1 for second use of
+l'Hôpital's rule provided expression is in indeterminate $\frac00$ form
+and no third attempt at using the rule.* A round too many costs the mark
+that the round before it earned.
 
 **How many rounds to expect, at a glance.** Look at the denominator. A
 denominator of $x^2$ usually takes two rounds, $x^3$ three, $x^4$ four —
 each round lowers the power by one, and the limit becomes visible when
-the denominator finally survives substitution. So
-$$\lim_{x\to0}\frac{e^x\cos x-1-x}{x^3}$$
-is a three-round question before you start, and if that sounds like a
-lot of trigonometric differentiation — it is, and Theory 6 is the way
-round it.
+the denominator finally survives substitution. So a numerator over $x^3$
+is a three-round question before you start, and if three rounds of
+differentiating a product of transcendental functions sounds like a lot
+— it is, and Theory 6 is the way round it.
 """)
 
 md(r"""
@@ -586,35 +592,36 @@ settled by looking at the lowest power that survives on each side.
 
 **Why it wins.** l'Hôpital differentiates the whole expression, again
 and again, and every round doubles the mess. The series is built once
-and then you read it. Compare, on the same question:
+and then you read it:
 
-$$e^x\cos x=1+x+\frac{x^2}{2}\cdot 0 - \frac{x^3}{3}+\dots
+$$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\dots
   \;\Longrightarrow\;
-  \frac{e^x\cos x-1-x}{x^3}=\frac{-\frac{x^3}{3}+\dots}{x^3}
-  \longrightarrow -\frac13 .$$
+  \frac{\ln(1+x)-x}{x^2}=\frac{-\frac{x^2}{2}+\dots}{x^2}
+  \longrightarrow -\frac12 .$$
 
-The numerator's first three terms are $1+x+0\cdot x^2$, which is exactly
-why the question subtracts $1+x$: it is clearing everything above the
-$x^3$ you are dividing by.
+Notice what the subtracted $x$ was for: it cleared the term that would
+have survived the division and hidden the answer. Whenever a question
+subtracts the first few terms of a familiar series, that is what it is
+doing, and it tells you which power of $x$ you are about to divide by.
 
-**The version that looks impossible and is not.** November 2021 asks for
-$$\lim_{x\to0}\frac{\bigl(x^2e^x-x^2\bigr)^3}{x^9}.$$
-A ninth power. But $x^9=(x^3)^3$, so the whole thing is a cube:
-$$\frac{\bigl(x^2e^x-x^2\bigr)^3}{x^9}
- =\left(\frac{x^2e^x-x^2}{x^3}\right)^{3}
- =\left(\frac{e^x-1}{x}\right)^{3}
- \longrightarrow 1^3=1,$$
-because $e^x-1=x+\frac{x^2}{2}+\dots$ and dividing by $x$ leaves
-$1+\frac{x}{2}+\dots\to 1$. Pull the power out first, always.
+**The version that looks impossible and is not.**
+$$\lim_{x\to0}\frac{(\sin x-x)^{2}}{x^{6}} .$$
+A sixth power. But $x^6=(x^3)^2$, so the whole thing is a square:
+$$\frac{(\sin x-x)^{2}}{x^{6}}
+ =\left(\frac{\sin x-x}{x^{3}}\right)^{2}
+ \longrightarrow\left(-\frac16\right)^{2}=\frac1{36},$$
+because $\sin x-x=-\frac{x^3}{6}+\dots$ and dividing by $x^3$ leaves
+$-\frac16+\dots$. Pull the power out first, always: one small limit
+raised to a power beats one enormous limit every time.
 
-**With a parameter in the exponent.** May 2025 TZ1 has
-$f_n(x)=\cos^n x$ and asks for $\lim_{x\to0}\frac{f_n(x)-1}{x^2}$ in
-terms of $n$. Raise the series:
-$$\cos^n x=\left(1-\frac{x^2}{2}+\dots\right)^{n}
- =1-\frac{nx^2}{2}+\dots
- \;\Longrightarrow\;\frac{f_n(x)-1}{x^2}\longrightarrow-\frac n2 .$$
-Only the first two terms of the binomial matter, because everything
-after them carries $x^4$.
+**With a parameter in the exponent.** A letter in a power is handled by
+the binomial series and nothing else. For
+$\lim_{x\to0}\dfrac{(1+x)^n-1}{x}$ raise the bracket:
+$$(1+x)^n=1+nx+\frac{n(n-1)}{2}x^2+\dots
+ \;\Longrightarrow\;\frac{(1+x)^n-1}{x}\longrightarrow n .$$
+Only the first two terms matter, because everything after them still
+carries an $x$ once the division is done. The same counting decides how
+many terms you need when the bracket is a series rather than $1+x$.
 """)
 
 md(r"""
@@ -655,33 +662,35 @@ md(r"""
 The rule takes $\frac{\infty}{\infty}$ on exactly the same terms as
 $\frac00$, and at infinity that is usually the form you meet.
 
-**A worked one.** May 2023 TZ1 Paper 3 arrives at the area
-$\dfrac{e^b-b-1}{e^b}$ under $xe^{-x}$ up to $x=b$, and asks for its
-limit as $b\to\infty$. Both parts run away to infinity, so:
-$$\lim_{b\to\infty}\frac{e^b-b-1}{e^b}
- =\lim_{b\to\infty}\frac{e^b-1}{e^b}
- =\lim_{b\to\infty}\frac{e^b}{e^b}=1 .$$
-Two rounds, two marks, and the answer says the total area under
-$xe^{-x}$ from $0$ to $\infty$ is exactly $1$.
+**A worked one.** Both parts of
+$$\lim_{x\to\infty}\frac{x^2}{\mathrm{e}^{x}}$$
+run away to infinity, so the rule applies, and it applies again to what
+it produces:
+$$\lim_{x\to\infty}\frac{x^2}{\mathrm{e}^{x}}
+ =\lim_{x\to\infty}\frac{2x}{\mathrm{e}^{x}}
+ =\lim_{x\to\infty}\frac{2}{\mathrm{e}^{x}}=0 .$$
+Two rounds, and the third would be the mistake: the last quotient is
+$\frac{2}{\infty}$, which is not indeterminate at all.
 
 **The rearrangements you must know.** The rule reads quotients. Anything
 else is rewritten first, and the rewrite is where the mark is.
 
 | what you have | form | rewrite as |
 | --- | --- | --- |
-| $(3x+1)e^{-3x}$ | $\infty\cdot 0$ | $\dfrac{3x+1}{e^{3x}}$ |
+| $x^{2}\mathrm{e}^{-x}$ | $\infty\cdot 0$ | $\dfrac{x^{2}}{\mathrm{e}^{x}}$ |
 | $x\ln x$, $x\to0^+$ | $0\cdot(-\infty)$ | $\dfrac{\ln x}{1/x}$ |
 | $\dfrac{1}{x}-\dfrac{1}{\sin x}$ | $\infty-\infty$ | one fraction |
 
 Put the factor that dies into the denominator, upside down. That is the
 whole of the trick.
 
-**And what the answer is then used for.** In May 2025 TZ2 the limit is
-not the point. $f(t)=kte^{-3t}$ is a probability density function, and
-$$\int_0^{a}f(t)\,dt=\frac k9\Bigl[1-(3a+1)e^{-3a}\Bigr].$$
-Because $(3a+1)e^{-3a}\to 0$, the total probability is $\frac k9$; and a
-density integrates to $1$; so $k=9$. The limit was one step inside a
-five-mark chain.
+**And what the answer is then used for.** The limit is often not the
+point of the question but a step inside it. A probability density has to
+integrate to $1$ over its whole range, so the constant in front of it is
+found by integrating up to $a$, letting $a\to\infty$, and setting the
+result equal to $1$: the limit is what turns an integral with a movable
+end into a number that an equation can use. Expect the limit to be worth
+two marks of five, and the rest to be the equation around it.
 """)
 
 md(r"""
@@ -730,26 +739,28 @@ Sometimes the letter is the answer. The question hands you an unknown
 constant and tells you the limit is finite; you work backwards.
 
 **The reasoning, in one move.** Consider
-$$\lim_{x\to0}\frac{\arctan(\cos x)-k}{x^2},\qquad k\in\mathbb{R}.$$
+$$\lim_{x\to0}\frac{\sqrt{1+x}-c}{x},\qquad c\in\mathbb{R}.$$
 The denominator goes to $0$. If the numerator went to anything other
 than $0$, the quotient would run away to $\pm\infty$ and there would be
 no finite limit. So a finite limit **requires** $\frac00$:
-$$\lim_{x\to0}\bigl(\arctan(\cos x)-k\bigr)=0
- \;\Longrightarrow\;\arctan 1-k=0
- \;\Longrightarrow\;k=\frac{\pi}{4}.$$
-Two marks, and the second one is for $\arctan 1=\frac\pi4$ rather than
-for the reasoning. The markscheme's warning is worth reading twice:
-*award M1A0 for using $k=\frac\pi4$ to show the limit is $\frac00$* —
-that is the argument backwards, and it earns half.
+$$\lim_{x\to0}\bigl(\sqrt{1+x}-c\bigr)=0
+ \;\Longrightarrow\;1-c=0
+ \;\Longrightarrow\;c=1 ,$$
+and only then is there a limit to compute — one round of the rule gives
+$\frac{1}{2\sqrt{1+x}}\to\frac12$. Two marks for the constant, and the
+second of them is for evaluating the numerator at $0$ rather than for
+the reasoning. The markscheme's warning is worth reading twice: *award
+M1A0 for using the value of the constant to show the limit is
+$\frac00$* — that is the argument backwards, and it earns half.
 
-**The same idea from the other end.** November 2023 gives
-$f(x)=\dfrac{\sin^2(kx)}{x^2}$ with $k>0$ and tells you
-$\lim_{x\to0}f(x)=16$. Here the form is $\frac00$ whatever $k$ is; the
-limit itself pins $k$ down:
-$$\frac{\sin^2 kx}{x^2}=\left(\frac{\sin kx}{x}\right)^{2}
- \longrightarrow k^2 ,$$
-so $k^2=16$ and, since $k>0$, $k=4$. The negative root is there to be
-discarded, and discarding it out loud is part of the answer.
+**The same idea from the other end.** Sometimes the form is $\frac00$
+whatever the letter is, and it is the **value** of the limit that pins
+the letter down. Given that
+$$\lim_{x\to0}\frac{1-\cos(px)}{x^{2}}=18,\qquad p>0,$$
+two rounds (or the series $\cos u=1-\frac{u^2}{2}+\dots$) turn the left
+side into $\frac{p^2}{2}$, so $p^2=36$ and, since $p>0$, $p=6$. The
+negative root is there to be discarded, and discarding it out loud is
+part of the answer.
 """)
 
 md(r"""
@@ -791,39 +802,35 @@ $x$ is not sacred. The archive takes limits in $n$, in $b$, in $\alpha$,
 in $m^n$ — and when it does, everything that is not the limiting
 variable simply stays where it is.
 
-**A parameter going to infinity.** May 2025 TZ3 Paper 3 has
-$$f^n(x)=m^nx+c\,\frac{1-m^n}{1-m},\qquad -1<m<1,$$
-and asks for the straight line the family approaches as $n\to\infty$.
-The only thing moving is $m^n$, and $|m|<1$ makes it $0$. So $m^nx\to0$
-and the bracket $\to 1$, leaving
-$$y=\frac{c}{1-m}.$$
-Four marks: one for using $m^n\to0$, one for each of the two terms, one
-for the line. Note that $x$ never went anywhere — the answer is a
-*horizontal* line, which is the point of the question.
+**The limit taken in a second variable.** The oldest example in the
+course is the definition of the derivative, where the limit runs in $h$
+and $x$ is a spectator:
+$$\lim_{h\to0}\frac{(x+h)^3-x^3}{h}
+ =\lim_{h\to0}\frac{3x^2h+3xh^2+h^3}{h}
+ =\lim_{h\to0}\bigl(3x^2+3xh+h^2\bigr)=3x^2 .$$
+Every $x$ survives untouched; only the $h$'s go to zero, and the terms
+that still carry one disappear with it. The answer therefore has an $x$
+in it, and that is not a failure — it is the point. Substituting a number
+for $x$ before taking the limit answers a different question.
 
-**A parameter going to a finite place.** November 2022 Paper 2 takes
-$\mathbf{u}=\mathbf{i}+\mathbf{j}$ and
-$\mathbf{v}=\cos\frac1n\,\mathbf{i}+\sin\frac1n\,\mathbf{j}$, and asks
-for the angle $\theta$ between them as $n\to\infty$. As
-$\frac1n\to0$, $\mathbf{v}\to\mathbf{i}$, so $\theta$ tends to the
-angle between $\mathbf{i}+\mathbf{j}$ and $\mathbf{i}$, which is
-$\frac\pi4$. Or through the cosine:
-$$\cos\theta=\frac{\cos\frac1n+\sin\frac1n}{\sqrt2}
- \longrightarrow\frac{1+0}{\sqrt2}=\frac1{\sqrt2} .$$
-The markscheme accepts $45°$ and refuses $0.785$: an *exact* value was
-asked for.
+**A parameter going to a finite place.** A regular $n$-gon inscribed in
+a circle of radius $1$ has perimeter $2n\sin\frac{\pi}{n}$. As
+$n\to\infty$ the polygon becomes the circle, so the perimeter must tend
+to $2\pi$ — and it does, because with $u=\frac{\pi}{n}\to 0$,
+$$2n\sin\frac{\pi}{n}=2\pi\cdot\frac{\sin u}{u}\longrightarrow 2\pi .$$
+The rewrite is the whole trick: put the vanishing quantity in one place
+and read the standard limit $\frac{\sin u}{u}\to1$ off it. Markschemes
+here accept $2\pi$ and refuse $6.28$ — an *exact* value was asked for.
 
-**A parameter running to a place where a function blows up.**
-November 2023 Paper 3 has two families of curves meeting at an angle
-$\alpha$, with
-$$g(x,y)=\frac{f(x,y)+\tan\alpha}{1-f(x,y)\tan\alpha},$$
-and asks what happens as $\alpha\to\frac\pi2$, where $\tan\alpha$ is
-unbounded. Divide top and bottom by $\tan\alpha$ — then it is
-$\frac1{\tan\alpha}$ that moves, and it moves to $0$:
-$$g=\frac{\frac{f}{\tan\alpha}+1}{\frac{1}{\tan\alpha}-f}
-  \longrightarrow\frac{0+1}{0-f}=-\frac1f .$$
-Perpendicular curves, which is what $\alpha=\frac\pi2$ means, and the
-negative reciprocal gradient, which is what perpendicular means.
+**A parameter running to a place where a function blows up.** When the
+moving letter is the one that becomes unbounded, divide top and bottom
+by it and let its reciprocal go to zero instead:
+$$h(x)=\frac{1+\lambda x}{\lambda-x}
+ =\frac{\frac1\lambda+x}{1-\frac{x}{\lambda}}
+ \;\xrightarrow[\ \lambda\to\infty\ ]{}\;\frac{0+x}{1-0}=x .$$
+Nothing was substituted into infinity; the expression was rearranged
+until the only moving part was something that goes to $0$. That
+rearrangement is the mark, and the rest is substitution.
 """)
 
 md(r"""

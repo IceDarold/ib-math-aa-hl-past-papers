@@ -237,8 +237,8 @@ $$\log_b(MN)=\log_b M+\log_b N, \qquad
 **The law that does not exist** is $\log(M+N)$. There is no rule for it,
 and the examiner knows exactly how tempting it looks. Every appearance
 of a sum inside a logarithm in this archive is there to be
-*factorised* first: $\log_{10}24=\log_{10}(2^3\cdot 3)$, not
-$\log_{10}(20+4)$.
+*factorised* first: $\log_{10}45=\log_{10}(3^2\cdot 5)$, not
+$\log_{10}(40+5)$.
 
 **The fourth fact, which is not a law but is worth as many marks.** A
 number standing next to a logarithm has to become one before it can join
@@ -250,10 +250,12 @@ Both log-equation questions in the archive hinge on this. November 2025
 TZ1 has $\log_2[\dots]-1=\log_2[\dots]$, and the $-1$ is the question.
 
 **"In terms of $p$ and $q$" is an instruction about the form of the
-answer.** May 2025 TZ3 gives $p=\log_{10}2$, $q=\log_{10}3$ and asks for
-$\log_{10}24$. The answer is $3p+q$. A decimal, however accurate, is not
-an answer — and neither is $\log_{10}24$ rewritten as
-$\frac{\ln 24}{\ln 10}$.
+answer.** If a question gives $p=\log_{10}2$ and $q=\log_{10}3$ and asks
+for $\log_{10}\frac{9}{2}$, the answer is $2q-p$: factorise the argument,
+then read the laws right to left. A decimal, however accurate, is not an
+answer — and neither is the same logarithm rewritten as
+$\frac{\ln 4.5}{\ln 10}$, which has changed the base and answered
+nothing.
 
 **Monotonicity is a licence, and it costs a mark to skip.** To go from
 $2n\ge n+1$ to $\log_2 2n\ge\log_2(n+1)$ you need the fact that
@@ -309,10 +311,10 @@ number, the conversion is just a fraction:
 
 $$\log_{b^{m}} a=\frac{1}{m}\log_b a .$$
 
-That is why $\log_{1000}a=\tfrac{1}{3}\log_{10}a=\tfrac{1}{3}\cdot
-\tfrac{1}{3}=\tfrac{1}{9}$ in one line, and why
-$3\log_8 10x=\log_2 10x$ — the $3$ in front and the $3$ in $8=2^3$
-cancel exactly.
+That is why $\log_{16}a=\tfrac{1}{4}\log_{2}a$ in one line — if
+$\log_2 a=6$ then $\log_{16}a=\tfrac32$, with no calculator anywhere —
+and why $3\log_8 10x=\log_2 10x$: the $3$ in front and the $3$ in
+$8=2^3$ cancel exactly.
 
 **The direction people get wrong.** $\log_b a=\frac{\log a}{\log b}$:
 the *argument* goes on top, the *base* goes underneath. Check it once on
@@ -439,23 +441,25 @@ $$a^{m}a^{n}=a^{m+n},\qquad \frac{a^{m}}{a^{n}}=a^{m-n},\qquad
 Nothing here is new. What is new is *where* the archive uses them: not
 to simplify an answer, but to make a substitution possible.
 
-**May 2021 TZ2 Paper 1 Q11** hands you $v(t)=(1+v_0)e^{-t}-1$ and, from
-an earlier part, the relation $e^{T}=1+v_0$. Then it asks for
-$v(T-k)$. The whole of the two marks is one splitting:
+Suppose a question hands you $w(t)=Ce^{2t}$ together with the relation
+$e^{2M}=\dfrac{5}{C}$ from an earlier part, and then asks for $w(M+h)$.
+The whole of the two marks is one splitting:
 
-$$v(T-k)=(1+v_0)e^{-(T-k)}-1
-        =(1+v_0)\,\underbrace{e^{-T}}_{\;=\,1/(1+v_0)}\,e^{k}-1
-        = e^{k}-1 .$$
+$$w(M+h)=Ce^{2(M+h)}
+        =C\,\underbrace{e^{2M}}_{\;=\,5/C}\,e^{2h}
+        = 5e^{2h} .$$
 
 Two things go wrong here and both are visible in the line above. The
-minus in front of the bracket has to reach *both* terms, so the $e^{k}$
-comes out with a plus. And $e^{T}=1+v_0$ gives
-$e^{-T}=\dfrac{1}{1+v_0}$, not $1+v_0$.
+coefficient inside the exponent has to reach *both* terms of $M+h$, so it
+is $e^{2M}e^{2h}$ and not $e^{2M}e^{h}$. And a relation is used in the
+direction it was given: $e^{2M}=\frac5C$, so the $C$ cancels — writing
+$e^{-2M}$ where $e^{2M}$ belongs turns the fraction over and the answer
+with it.
 
-**"Deduce a similar expression" means do not start again.** Part (d)
-asks for $v(T+k)$. Replacing $k$ by $-k$ in the result of (c) is the
-whole of it: $e^{-k}-1$. Two marks, ten seconds, and the word *deduce*
-is the instruction.
+**"Deduce a similar expression" means do not start again.** If the next
+part asks for $w(M-h)$, replacing $h$ by $-h$ in the result is the whole
+of it: $5e^{-2h}$. Two marks, ten seconds, and the word *deduce* is the
+instruction.
 
 **Any positive number is a power of $e$.** $3=e^{\ln 3}$ — not a trick,
 just the definition of $\ln$ read backwards. May 2025 TZ1 Q7 opens with
@@ -497,26 +501,26 @@ out. One operation will, and it is the only one:
 $$a^{\,u}=b \quad\Longrightarrow\quad u\ln a=\ln b
   \quad\Longrightarrow\quad u=\frac{\ln b}{\ln a} .$$
 
-**Isolate the power first.** From $50=100e^{-5730k}$, divide by $100$
-*before* taking logarithms. $\ln(100e^{-5730k})$ is $\ln 100-5730k$, not
-$100\times(-5730k)$, and half the lost marks in this technique are that
-line.
+**Isolate the power first.** From $600=200e^{12k}$, divide by $200$
+*before* taking logarithms. $\ln(200e^{12k})$ is $\ln 200+12k$, not
+$200\times 12k$, and half the lost marks in this technique are that line.
 
-**Two ways to say the same half-life, and the markscheme prints both.**
+**Two ways to say the same doubling time, and the markscheme prints
+both.**
 
-$$e^{-5730k}=\tfrac12 \;\Rightarrow\; -5730k=\ln\tfrac12=-\ln 2
+$$e^{-cT}=\tfrac12 \;\Rightarrow\; -cT=\ln\tfrac12=-\ln 2
   \qquad\text{or}\qquad
-  e^{5730k}=2 \;\Rightarrow\; 5730k=\ln 2 .$$
+  e^{cT}=2 \;\Rightarrow\; cT=\ln 2 .$$
 
 The second avoids the minus sign entirely, which is why it is worth
 preferring: $\ln\frac12=-\ln 2$ is the single most common sign slip in
 the topic.
 
-**Round at the end, never in the middle.** May 2021 asks for the time to
-the nearest 10 years. Carrying $k=1.21\times 10^{-4}$ instead of
-$\frac{\ln 2}{5730}$ moves the answer by years. Keep the exact form all
-the way to the last line — that is what "exact form" is *for*, even on a
-calculator paper.
+**Round at the end, never in the middle.** When a question asks for a
+time to the nearest ten years, carrying a three-figure decimal for the
+rate instead of its exact logarithmic form moves the answer by years.
+Keep the exact form all the way to the last line — that is what "exact
+form" is *for*, even on a calculator paper.
 
 **"First exceeds" is a ceiling, not a rounding.** May 2025 TZ2 gets
 $n=13.77$ and answers $14$ months. Rounding to the nearest would give
@@ -564,27 +568,30 @@ md(r"""
 $A(t)=A_0e^{kt}$ has two unknowns, so it takes exactly two facts to pin
 down. The archive supplies them in the same shape every time.
 
-1. **Decide what $t=0$ is and write it down.** Not later — now. In
-   November 2022 the model starts on 1 January 2014, the second fact is
-   about 1 January 2022, and the question asks about 1 January 2041. So
-   $t=8$ and $t=27$. Answering with $t=19$ is answering a different
-   question perfectly.
+1. **Decide what $t=0$ is and write it down.** Not later — now. If the
+   model starts in one year, the second fact is about another, and the
+   question asks about a third, then two subtractions decide everything
+   that follows. Answering with the gap between the *second* and *third*
+   dates is answering a different question perfectly.
 2. **The first condition gives the multiplier.** Almost always it is
-   $A(0)$, and $e^{0}=1$ makes it immediate: $A_0=15000$.
+   $A(0)$, and $e^{0}=1$ makes it immediate: whatever the quantity was at
+   the start **is** $A_0$, with no algebra at all.
 3. **The second gives $k$,** by Theory 5. Here the phrasing does the
-   damage: *"the population decreased by 11%"* means
-   $A(8)=0.89\times 15000$, not $0.11\times 15000$.
+   damage: *"decreased by $11\%$"* means the new value is $0.89$ of the
+   old one, not $0.11$ of it. Reading that line twice is worth more than
+   any of the algebra after it.
 4. **Substitute the target $t$.** Keep $k$ exact until this line.
 
-**What the markscheme actually pays for.** November 2022 splits seven
-marks as: recognising $A_0$, computing the $11\%$ drop, recognising
-$t=8$, substituting, finding $k$, substituting $t=27$, and the number.
-Five of the seven are set-up. The exponential is one line in the middle.
+**What the markscheme actually pays for.** A seven-mark question of this
+shape splits as: recognising $A_0$, turning the percentage into a
+multiplier, recognising the first $t$, substituting, finding $k$,
+substituting the target $t$, and the number. Five of the seven are
+set-up. The exponential is one line in the middle.
 
 **How to check a fitted model in ten seconds.** Put the data back in. If
-$A(8)$ does not come out to $13350$, the model is wrong regardless of
-how the algebra looked. That is exactly what `verify_model` does below,
-and it is a habit worth having on paper too.
+the model does not reproduce the very value it was fitted to, it is wrong
+regardless of how the algebra looked. That is exactly what
+`verify_model` does below, and it is a habit worth having on paper too.
 """)
 
 md(r"""
@@ -761,39 +768,40 @@ a function with a graph, a domain and a range, and the archive asks
 about all three.
 
 **Composition.** $(f\circ g)(x)=f(g(x))$: put $g$ *inside* $f$. With
-$f(x)=5(x+1)(x+3)$ and $g(x)=\ln x$,
+$f(x)=x^{2}-4$ and $g(x)=\ln x$,
 
-$$(f\circ g)(x)=5(\ln x+1)(\ln x+3).$$
+$$(f\circ g)(x)=(\ln x)^{2}-4 .$$
 
-Solving $(f\circ g)(x)\le 40$ is then a two-stage job, and doing it in
-one stage is how the mark is lost. **Solve for $\ln x$ first** — the
-previous part of that same question gave $-5\le x\le 1$ for $f(x)\le
-40$, so here $-5\le\ln x\le 1$ — and only then exponentiate, which is
-allowed because $e^{u}$ is increasing and so preserves the inequality:
+Solving an inequality on such a composite is a two-stage job, and doing
+it in one stage is how the mark is lost. **Solve for $\ln x$ first**: from
+$(\ln x)^2-4\le 0$ comes $-2\le\ln x\le 2$, and only then exponentiate,
+which is allowed because $e^{u}$ is increasing and so preserves the
+inequality:
 
-$$e^{-5}\le x\le e .$$
+$$e^{-2}\le x\le e^{2} .$$
 
-Applying $e$ to $-5$ and getting $-e^{5}$ is the standard error, and it
+Applying $e$ to $-2$ and getting $-e^{2}$ is the standard error, and it
 is the same error as writing $\ln\frac12=-\ln 2$ backwards.
 
 **Domain of a composition.** $\operatorname{dom}(g\circ f)$ is the set
 of $x$ in the domain of $f$ whose image $f(x)$ lies in the domain of
-$g$. With $g=\ln$ that means $f(x)>0$:
+$g$. With $g=\ln$ that means $f(x)>0$, so for the same $f$,
 
-$$5(x+1)(x+3)>0 \;\Longleftrightarrow\; x<-3 \ \text{ or }\ x>-1 .$$
+$$x^{2}-4>0 \;\Longleftrightarrow\; x<-2 \ \text{ or }\ x>2 .$$
 
 Note what it is *not*: the domain of $f$, which is all of $\mathbb{R}$.
 The composition is narrower than either function alone, and the marks
 are split between finding the critical values and getting the two
 inequalities the right way round.
 
-**A logarithmic scale.** Loudness in decibels is
-$L=10\log_{10}(I\times 10^{12})$. Two facts follow immediately from
-Theory 1 and neither needs a calculator:
+**A logarithmic scale.** A scale of the form
+$S=c\log_{10}(\text{something} \times 10^{m})$ turns a huge range of
+values into a small one, and two facts follow immediately from Theory 1
+without a calculator:
 
-* doubling the intensity adds $10\log_{10}2\approx 3.01$ decibels —
-  not double the loudness;
-* going up $10$ decibels multiplies the intensity by $10$.
+* doubling the quantity inside adds $c\log_{10}2$ to the scale — not
+  double the reading;
+* adding $c$ to the reading multiplies the quantity by $10$.
 
 That is what a log scale is *for*: it turns multiplication into
 addition. Every question about one is Theory 1 wearing a lab coat.
@@ -801,11 +809,12 @@ addition. Every question about one is Theory 1 wearing a lab coat.
 **And an equation given as $\ln(g(x))=\dots$** is not an equation for
 $x$ — it is a definition of $g$, one exponential away:
 
-$$\ln\bigl(g(x)\bigr)=x\ln\frac{S}{x}
-  =\ln\left(\frac{S}{x}\right)^{x}
-  \;\Longrightarrow\; g(x)=\left(\frac{S}{x}\right)^{x}.$$
+$$\ln\bigl(g(x)\bigr)=2x\ln 3
+  =\ln\left(3^{2x}\right)
+  \;\Longrightarrow\; g(x)=9^{\,x}.$$
 
-The power law does the work; exponentiating is the last step, not the
+The power law does the work — a coefficient in front of a logarithm goes
+up into the exponent — and exponentiating is the last step, not the
 first.
 """)
 

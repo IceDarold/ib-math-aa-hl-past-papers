@@ -461,8 +461,9 @@ never $u$ when something else is available.
 
 **Three shapes appear in this archive, and they behave differently.**
 
-**A polynomial times an exponential.** $\int(x^2-5)\mathrm{e}^x\,\mathrm{d}x$.
-Two applications, and the polynomial is gone. This one always terminates.
+**A polynomial times an exponential.** $\int(x^2+3x)\mathrm{e}^{2x}\,\mathrm{d}x$.
+Two applications, and the polynomial is gone. This one always terminates,
+and the number of applications is the degree of the polynomial.
 
 **A power times a logarithm.** $\int x(\ln x)^2\,\mathrm{d}x$. Two
 applications, and the logarithms are gone — but the second application is on

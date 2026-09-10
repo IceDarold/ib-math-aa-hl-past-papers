@@ -464,7 +464,7 @@ $$u_1=S_1,\qquad u_n=S_n-S_{n-1}$$
 The first because the sum of one term is that term. The second because
 $S_n$ and $S_{n-1}$ differ by exactly what the $n$th term added.
 
-$$S_n=n^2+4n\ \Longrightarrow\ u_n=(n^2+4n)-\bigl((n-1)^2+4(n-1)\bigr)=2n+3$$
+$$S_n=3n^2-n\ \Longrightarrow\ u_n=(3n^2-n)-\bigl(3(n-1)^2-(n-1)\bigr)=6n-4$$
 
 > $u_n$ is **not** $S_n/n$. That is the average of the terms.
 
@@ -627,9 +627,11 @@ There are no $u_1$, no $u_5$, no $n$ anywhere. There is one condition,
 
 $$r-m=c-r,$$
 
-and everything else is algebra. With $r=-c/m$ it becomes
-$m^2+cm+2c=0$, and that single equation carries the rest of a
-thirty-one-mark investigation.
+and everything else is algebra: substitute the root of $L$ in terms of
+$m$ and $c$, clear the fraction, and a single equation in two letters
+comes out. That equation carries the rest of a thirty-one-mark
+investigation, and deriving it is the first thing the investigation asks
+for.
 
 > Order matters, and it is the first thing to check. $m,r,c$ and $m,c,r$
 > give different equations and different answers.

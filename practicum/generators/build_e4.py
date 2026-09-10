@@ -258,9 +258,10 @@ topic where you get a value of $f$ without knowing $f$.
 $h=f\circ g$ then $h'(4)=f'(g(4))\cdot g'(4)$, and $g'(4)$ is a factor people
 drop while concentrating on $f'$.
 
-**A tangent with letters in it is still just $y-y_0=m(x-x_0)$.** Paper 3 will
-hand you $g(x)=(x-r)(x^2-2ax+a^2+b^2)$ and ask where its tangent crosses the
-$x$-axis; the algebra is unpleasant and the method is the same three lines.
+**A tangent with letters in it is still just $y-y_0=m(x-x_0)$.** Paper 3
+will hand you a cubic whose coefficients are all letters and ask where its
+tangent crosses the $x$-axis; the algebra is unpleasant and the method is
+the same three lines.
 """)
 
 md(r"""
@@ -348,9 +349,11 @@ line has no gradient at all — its equation is $x=c$, and $y=mx+c$ cannot
 express it.
 
 **A normal with a letter in it is where this topic starts being interesting.**
-For $y=\tfrac1x$ the tangent at $x=t$ has gradient $-\tfrac1{t^2}$, so the
-normal has gradient $t^2$ — and now the *whole family* of normals is
-parametrised by $t$, which is what November 2025 Paper 3 spends 26 marks on.
+For $y=x^2$ the tangent at $x=t$ has gradient $2t$, so the normal has
+gradient $-\tfrac1{2t}$ — and now the *whole family* of normals is
+parametrised by $t$, one for every point of the curve. A Paper 3
+investigation can spend twenty-odd marks on a family like that, and it
+starts with this one line.
 """)
 
 md(r"""
@@ -404,15 +407,17 @@ Three phrasings, one meaning. Convert first, solve second.
 
 Then solve $f'(x)=m$, and after that three habits:
 
-**Throw out the roots the domain forbids.** $f(x)=\ln(x^2-16)$ is given for
-$x>4$; $f'(x)=\tfrac13$ has roots $8$ and $-2$, and the mark scheme says in
-so many words that including $-2$ loses the mark. Extra answers are not free.
+**Throw out the roots the domain forbids.** Take $f(x)=\ln(x^2-1)$ on
+$x>1$. Then $f'(x)=\frac{2x}{x^2-1}$, and $f'(x)=\tfrac34$ gives
+$3x^2-8x-3=0$, whose roots are $3$ and $-\tfrac13$. Only $3$ is in the
+domain, and mark schemes say in so many words that handing in the other one
+loses the mark. Extra answers are not free.
 
 **If the question says *coordinates*, give two numbers.** Substituting back
 into $f$ is a separate mark, every time.
 
 **If the question says *exact*, do not touch the calculator at the end.**
-$2\ln 45$ is exact; $7.61$ is not, and it scores zero on a question that asked
+$3\ln 2$ is exact; $2.08$ is not, and it scores zero on a question that asked
 for exact coordinates even though it is the same number.
 """)
 
@@ -497,10 +502,10 @@ $$\frac{\mathrm{d}}{\mathrm{d}x}\bigl(y^2\bigr)=2y\frac{\mathrm{d}y}{\mathrm{d}x
 Then the same four moves every time: differentiate both sides, collect the
 $\frac{\mathrm{d}y}{\mathrm{d}x}$ terms on one side, factor, divide.
 
-**The answer has both letters in it, and that is not a failure.** $\frac{4(3-x)}{y+2}$
-is a complete answer; there is nothing further to do with it. It also means
-that to get a *number* you need a *point*, both coordinates — which is the
-whole difficulty of the next rung.
+**The answer has both letters in it, and that is not a failure.** Something
+like $\frac{2x-y}{x+2y}$ is a complete answer; there is nothing further to
+do with it. It also means that to get a *number* you need a *point*, both
+coordinates — which is the whole difficulty of the next rung.
 
 **When $x$ is in the base and the exponent at once, take logs first.**
 $g(x)=(S/x)^x$ has no rule that applies. Writing $\ln g=x\ln(S/x)$ and
@@ -561,25 +566,27 @@ md(r"""
 
 This is the whole of rung 5, and it cuts both ways.
 
-**Forwards.** *The tangent at the point where $x=1$.* You have one coordinate;
-the other comes from the **curve's own equation** with $x=1$ substituted —
-here $y=1-y\ln y$, which has the single solution $y=1$. Only then does
-$\frac{\mathrm{d}y}{\mathrm{d}x}$ become a number.
+**Forwards.** *The tangent at the point where $x=1$.* You have one
+coordinate; the other comes from the **curve's own equation** with $x=1$
+substituted, and that is a separate piece of work — sometimes one line,
+sometimes an equation only the calculator will solve. Only when both
+coordinates are in hand does $\frac{\mathrm{d}y}{\mathrm{d}x}$ become a
+number.
 
 **Backwards.** *Where is the tangent horizontal?* Setting a fraction to zero
 means setting its **numerator** to zero, and that is one equation in two
-unknowns. The second equation is the curve. Solve the pair.
+unknowns. The second equation is the curve. Solve the pair. On
+$x^2+xy+y^2=7$ implicit differentiation gives
+$$\frac{\mathrm{d}y}{\mathrm{d}x}=-\frac{2x+y}{x+2y},$$
+so a horizontal tangent needs $y=-2x$; putting that into the curve leaves
+$3x^2=7$, and there are **two** points, one for each sign of $x$. Stopping
+at one is the commonest lost mark of the rung, and the pair is usually
+visible in advance from a symmetry of the curve.
 
-$$2x-\mathrm{e}^{x+y}=0\quad\text{and}\quad\mathrm{e}^{x+y}=x^2+y^2$$
-$$\Longrightarrow\quad y=\ln(2x)-x$$
-$$\Longrightarrow\quad 2x^2+\bigl(\ln 2x\bigr)^2-2x\ln 2x-2x=0,$$
-
-and *that* is what the calculator is for. Two roots, so two points — and
-stopping at one is the commonest lost mark of the rung.
-
-**A gradient of $-1$ on a curve symmetric in $y=x$ is a special case worth
-seeing.** $\frac{\mathrm{d}y}{\mathrm{d}x}=-1$ forces $y=x$ here, and
-substituting that into the curve leaves one equation in one unknown.
+**A symmetry is worth looking for before any algebra.** If the curve is
+unchanged when $x$ and $y$ are swapped, it is symmetric in the line $y=x$,
+and every horizontal tangent has a vertical one mirroring it: find one and
+you have been handed the other, with the coordinates in the other order.
 """)
 
 md(r"""
@@ -629,9 +636,10 @@ $$\frac{\mathrm{d}}{\mathrm{d}x}\Bigl(x\frac{\mathrm{d}y}{\mathrm{d}x}\Bigr)
 The second of these is where $\bigl(\frac{\mathrm{d}y}{\mathrm{d}x}\bigr)^2$
 comes from, and it is the term people lose.
 
-**Substitute numbers last.** Differentiate the whole relation, *then* put in
-$x=1$, $y=\tfrac32$, $\frac{\mathrm{d}y}{\mathrm{d}x}=-1.7$. Substituting
-first destroys the variable you were about to differentiate.
+**Substitute numbers last.** Differentiate the whole relation, *then* put
+in the point and the first derivative you already found there. Substituting
+first destroys the variable you were about to differentiate: a differentiated
+equation is still an equation, but a number is not.
 
 **The same move solves a differential equation you have never solved.**
 $\frac{\mathrm{d}P}{\mathrm{d}t}=kP(1-P/N)$ gives
@@ -691,13 +699,15 @@ The failure is almost never the differentiation. It is substituting the point
 into one curve's gradient and a different point into the other's, or stopping
 after showing the two gradients are different.
 
-**Families are where this gets used.** *Each member of the family $y=mx$ meets
-each member of family $C$ at right angles.* The gradient of $y=mx$ at the
-point $(x,y)$ on it is $m=\frac{y}{x}$ — written in $x$ and $y$, not in $m$,
-which is a mark on its own and the reason the whole thing works. Then
-perpendicularity says the other family has $\frac{\mathrm{d}y}{\mathrm{d}x}=-\frac{x}{y}$,
-and solving *that* differential equation gives $x^2+y^2=k$: circles, cutting
-every line through the origin square.
+**Families are where this gets used.** *Each member of one family meets
+each member of the other at right angles.* The move that makes it work is
+to write each family's gradient **in $x$ and $y$**, with the family's own
+parameter eliminated — for $y=kx^2$ the gradient is $2kx$, and since
+$k=\frac{y}{x^2}$ that is $\frac{2y}{x}$, a formula with no $k$ left in it.
+Only then can perpendicularity be imposed, because only then do the two
+gradients speak about the same point rather than about their own
+parameters. What comes out is a differential equation for the second
+family, and solving it is the last part of such a question.
 """)
 
 md(r"""

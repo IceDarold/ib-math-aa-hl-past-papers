@@ -261,28 +261,30 @@ A **selection**. Again nothing new — a division by an over-count.
 ### The decision is not always announced
 
 Sometimes the paper says *order is not important*. More often it does not,
-and the giveaway is subtler. May 2022 TZ2 asks for six-digit numbers whose
-digits are **in increasing order**. Order matters enormously to the number
-— 134679 and 971643 are different numbers — but you do not get to choose
-it: each set of six digits produces exactly **one** increasing number. So
-the count is a selection, $^9C_6$, and the markscheme gives a whole mark
-for saying why:
+and the giveaway is subtler. Consider four-letter codes made from the eight
+letters A–H, all different, with the letters in **alphabetical order**.
+Order matters enormously to the code — ABDG and GDBA are different
+strings — but you do not get to choose it: each set of four letters
+produces exactly **one** alphabetical code. So the count is a selection,
+$^8C_4=70$, and a markscheme gives a whole mark for saying why. The
+sentence it wants has this shape:
 
-> *"every unordered subset of 6 digits from the set of 9 non-zero digits
-> can be arranged in exactly one way into a 6-digit number with the digits
-> in increasing order."*
+> *"every unordered subset can be arranged in exactly one way into a
+> string with the letters in increasing order."*
+
+Whenever a condition pins the order down completely, the arrangements
+collapse to selections. Look for the words *increasing*, *decreasing*,
+*alphabetical*, *in size order*.
 
 ### Restricted positions go first
 
-If one position is special, fill it first. A six-digit number cannot start
-with 0, so:
+If one position is special, fill it first. Seven people in a row, one of
+whom must take one of the two end seats:
 
-$$\underbrace{9}_{\text{not }0}\times\underbrace{^9P_5}_{\text{the rest, from the nine left}}=9\times15120=136080$$
+$$\underbrace{2}_{\text{the two ends}}\times\underbrace{6!}_{\text{everyone else}}=2\times720=1440$$
 
-The markscheme for that question names two wrong answers explicitly, and
-both come from filling the special position last:
-
-> *"Award M1A0 for $10\times9\times8\times7\times6\times5={}^{10}P_6=151200$"*
+Markschemes for such questions name the wrong answers explicitly, and they
+all come from filling the special position last:
 > and *"Award M1A0 for $^9P_6=60480$."*
 
 The first forgot the restriction; the second applied it to the wrong pool.
@@ -387,32 +389,32 @@ They are not two techniques. They are one technique and its complement.
 Treat the things that must stand together as **one object**, arrange what
 you now have, and multiply by the orders **inside** the glued object.
 
-Nine people in a line with three of them together:
+Six people in a line with two of them together:
 
-$$\underbrace{7!}_{\text{six others }+\text{ the block}}\times\underbrace{3!}_{\text{inside the block}}=5040\times6=30240$$
+$$\underbrace{5!}_{\text{four others }+\text{ the block}}\times\underbrace{2!}_{\text{inside the block}}=120\times2=240$$
 
-The $3!$ is the mark people lose. The markscheme for November 2023 awards
-M1 for *"an attempt to consider girls as a single object"* and A1 for
-$7!\times3!$ — the second mark is entirely the inside.
+The $2!$ is the mark people lose. Markschemes award M1 for *"an attempt to
+consider the pair as a single object"* and A1 for the product — the second
+mark is entirely the inside, and it grows fast: a block of three carries
+$3!=6$, a block of four carries $24$.
 
-**Two glued objects means two insides and one outside.** Fifteen books,
-grouped by three continents:
+**Two glued objects means two insides and one outside.** Seven books in
+three groups — three, two and two — each group kept together:
 
-$$\underbrace{6!\times5!\times4!}_{\text{inside each continent}}\times\underbrace{3!}_{\text{the order of the continents}}=12\,441\,600$$
+$$\underbrace{3!\times2!\times2!}_{\text{inside each group}}\times\underbrace{3!}_{\text{the order of the groups}}=24\times6=144$$
 
-and the markscheme gives that last $3!$ its own M1: *"recognise that the
-three groups can be placed in any order."*
+and the last $3!$ gets its own M1: *"recognise that the three groups can be
+placed in any order."* Forgetting it is the commonest single error of the
+rung, because the groups look like fixtures rather than objects.
 
-**When the block does not fill the row, count its positions.** Five people
-sitting together somewhere in a row of ten seats: the block can start at
-seat 1 through seat 6, so
+**When the block does not fill the row, count its positions.** Three people
+sitting together somewhere in a row of seven seats: the block can start at
+seat 1 through seat 5, so
 
-$$6\times5!=720$$
+$$5\times3!=30$$
 
-Six positions, not $6!$ objects — although here, by coincidence,
-$6\times5!$ *is* $6!$, and the markscheme resignedly writes *"accept 6!"*.
-A right answer can arrive for the wrong reason; on a different row length
-it would not.
+Five positions, not $5!$ objects. Count where the block can begin — that
+is $(\text{seats}-\text{block}+1)$ — and multiply by the orders inside it.
 
 ### Apart: count everything, then remove the together
 
@@ -421,14 +423,16 @@ complement takes two lines:
 
 $$\text{apart}=\text{all}-\text{together}$$
 
-and you already know how to count *together*. Amber and Brownie in a
-$3\times2$ grid of pens, one sheep each, not sharing a boundary:
+and you already know how to count *together*. Five people in a row, two
+particular ones **not** next to each other:
 
-$$6!-\underbrace{2\times7\times4!}_{\text{7 adjacent pairs, 2 orders, 4! for the rest}}=720-336=384$$
+$$5!-\underbrace{2!\times4!}_{\text{glued, then arranged}}=120-48=72$$
 
-The 7 is worth pausing on. In a grid of three rows and two columns there
-are three horizontal adjacent pairs and four vertical ones. Not eight, not
-six — you have to look at the picture.
+In a row the *together* count is the glue formula and nothing more. On a
+board or a grid it is not: there you have to count the adjacent **pairs**
+from the picture, because how many of them there are depends on the shape,
+not on the number of cells. Counting the pairs wrong is the one place this
+method fails, and it fails silently.
 
 > **Which whole are you subtracting from?** May 2024 TZ1 asks for
 > arrangements with Alvin and Bobby adjacent, then asks again with
@@ -438,15 +442,17 @@ six — you have to look at the picture.
 
 ### Symmetry is the complement in disguise
 
-*Jack finishes somewhere after Andrea.* Every finishing order has a mirror
-image in which they are swapped, and exactly one of the two has Jack
-later. So the answer is half of everything:
+*One runner finishes somewhere after another.* Every finishing order has
+a mirror image in which the two are swapped, and exactly one of the pair
+has the first runner later. So the answer is half of everything — for six
+runners,
 
-$$\frac{8!}{2}=20160$$
+$$\frac{6!}{2}=360 .$$
 
 No cases, no gluing. It works whenever the condition and its negation are
-in bijection — and it is worth spotting, because the case-by-case route is
-$(7+6+5+4+3+2+1)\times6!$ and takes seven times as long.
+in bijection — and it is worth spotting, because the case-by-case route
+here is $(5+4+3+2+1)\times 4!$ and takes several times as long for the
+same number.
 """)
 
 md(r"""

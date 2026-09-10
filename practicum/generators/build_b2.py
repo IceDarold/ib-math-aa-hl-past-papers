@@ -276,31 +276,31 @@ md(r"""
 Substituting a number was arithmetic. Substituting an **expression** is
 where brackets start earning marks:
 
-$$g(x) = x^2 + k^2, \quad f(x) = x - 3
-\ \Longrightarrow\ (g \circ f)(x) = (x-3)^2 + k^2.$$
+$$g(x) = x^2 - 5, \quad f(x) = x + 4
+\ \Longrightarrow\ (g \circ f)(x) = (x+4)^2 - 5.$$
 
 Write the bracket first, expand second. The most common lost mark in
-this rung is $(x-3)^2$ turned into $x^2 - 9$, or into $x^2 - 3$.
+this rung is $(x+4)^2$ turned into $x^2 + 16$, or into $x^2 + 4$.
 
 **"Show that" is a different kind of question.** The answer is printed
 in the question, so the marks are for the road to it. A typical
 three-mark chain:
 
-$$(f \circ g)(x) = 4^{\,1 + \log_2 x}
-= 4 \cdot 4^{\log_2 x}
-= 4 \cdot 2^{2\log_2 x}
-= 4 \cdot \left(2^{\log_2 x}\right)^2
-= 4x^2 .$$
+$$(f \circ g)(x) = 9^{\log_3 x}
+= 3^{2\log_3 x}
+= \left(3^{\log_3 x}\right)^{2}
+= x^2 .$$
 
-M1 for attempting the composite, A1 for splitting the exponent, A1 for
-landing on $4x^2$. Writing $4x^2$ straight from the question earns
-nothing.
+M1 for attempting the composite, A1 for rewriting the base as a power of
+the logarithm's base, A1 for landing on $x^2$. Writing the printed answer
+straight from the question earns nothing.
 
-**Composites hide inside identities too.** $f(t) = \frac{e^t+e^{-t}}{2}$
-and $g(t) = \frac{e^t-e^{-t}}{2}$ satisfy
-$\big(f(t)\big)^2 + \big(g(t)\big)^2 = f(2t)$, and the proof is nothing
-but substituting the definitions and collecting. Those two functions are
-$\cosh$ and $\sinh$; the exam does not name them, and does not need to.
+**Composites hide inside identities too.** $p(x) = \dfrac{2x}{1+x^2}$
+and $q(x) = \dfrac{1-x^2}{1+x^2}$ satisfy $\big(p(x)\big)^2 +
+\big(q(x)\big)^2 = 1$, and the proof is nothing but substituting the
+definitions over a common denominator and collecting. Those two are the
+sine and cosine of an angle whose half-tangent is $x$; the exam does not
+name them, and does not need to.
 """)
 
 md(r"""
@@ -377,20 +377,24 @@ join:
 2. set it equal to the given value,
 3. solve — and then check every root against the domain in the question.
 
-$$(g \circ f)(2) = 10 \ \Longrightarrow\ (2-3)^2 + k^2 = 10
-\ \Longrightarrow\ k^2 = 9 \ \Longrightarrow\ k = \pm 3 .$$
+$$(g \circ f)(1) = 20 \ \Longrightarrow\ (1+4)^2 + c^2 = 20
+\ \Longrightarrow\ c^2 = -5 ,$$
 
-Both signs. "The possible values" is plural on purpose, and $k^2 = 9$ is
-where the answer is decided.
+and there is no real $c$ at all — which is itself an answer, and a
+question can ask for exactly that. When the square comes out positive
+there are **two** values, and "the possible values" is plural on
+purpose: the squaring step is where the count of answers is decided,
+long before the arithmetic ends.
 
 **When $f$ itself is unknown.** If $f(x) = ax+b$ and the composite is
 given as a polynomial, compare coefficients:
 
-$$(g \circ f)(x) = (ax+b)^2 + (ax+b) + 3 = 4x^2 - 14x + 15 .$$
+$$(g \circ f)(x) = (ax+b)^2 + 4 = 9x^2 - 12x + 8 .$$
 
-From $x^2$: $a^2 = 4$, so $a = \pm 2$. From $x$: $2ab + a = -14$, which
-pairs each $a$ with its own $b$. Two functions come out, not one, and
-the constant term is the check that both work.
+From $x^2$: $a^2 = 9$, so $a = \pm 3$. From $x$: $2ab = -12$, which
+pairs each $a$ with its own $b$ — here $(3,-2)$ and $(-3,2)$. Two
+functions come out, not one, and the constant term is the check that
+both work.
 
 **When the domain throws a root away.** In a question with $x > 3$ in
 the definition, a quadratic gives two roots and one of them is smaller
@@ -476,12 +480,12 @@ $f$ is even" is.
 
 **Write the brackets.** $f(-x)$ means replacing every $x$, brackets
 included: $(-x)^2 = x^2$, $(-x)^3 = -x^3$, $(-x)^4 = x^4$. In
-$\arcsin\dfrac{x^2-1}{x^2+1}$ every $x$ appears squared, so $f(-x)$ is
-the same expression, character for character — and that is the proof.
+$\dfrac{x^4}{1+x^2}$ every $x$ appears squared, so $f(-x)$ is the same
+expression, character for character — and that is the proof.
 
 **Inside a sum, the claim is about every term.** For
 
-$$f_n(x) = \sum_{r=0}^{n} \left(-2x^2\right)^r ,$$
+$$h_n(x) = \sum_{r=0}^{n} \frac{x^{2r}}{r+1} ,$$
 
 each term contains $(-x)^2 = x^2$, so each term is unchanged, so the sum
 is unchanged. Checking $r = 0$ and $r = 1$ and writing "and so on" is
@@ -543,32 +547,35 @@ explicitly before using it:
 $$f^{2}(x) = f(f(x)), \qquad f^{3}(x) = f(f(f(x))), \qquad
 f^{n}(x) = \underbrace{f(f(\cdots f(x)\cdots))}_{n \text{ times}} .$$
 
-For a linear $f(x) = mx + c$ the pattern appears immediately, provided
-you do not simplify it away:
+**How a formula for $f^{n}$ is found: compute two, then look.** Take
+$f(x) = \dfrac{x}{1+x}$. Substituting $f$ into itself and tidying,
 
-$$f^{2}(x) = m(mx+c)+c = m^2x + c(1+m),$$
-$$f^{3}(x) = m\big(m^2x + c(1+m)\big)+c = m^3x + c(1+m+m^2),$$
-$$f^{4}(x) = m^4x + c(1+m+m^2+m^3).$$
+$$f^{2}(x) = \frac{\frac{x}{1+x}}{1+\frac{x}{1+x}} = \frac{x}{1+2x},
+\qquad
+f^{3}(x) = \frac{x}{1+3x},$$
 
-Two separate stories: the coefficient of $x$ is just $m^n$, and the
-constant is a geometric sum. Closing it,
+and the pattern is now impossible to miss: $f^{n}(x) = \dfrac{x}{1+nx}$.
+The method is always this — build $f^2$, build $f^3$, and then write them
+**in the same shape as each other**, because the pattern lives in what
+changes between them and nothing else. Here the numerators stayed $x$ and
+only the coefficient of $x$ in the denominator moved, $1\to2\to3$; had the
+second one been left as $\frac{x}{1+x}\div\frac{1+2x}{1+x}$, there would
+have been nothing to compare.
 
-$$f^{n}(x) = m^{n}x + c\,(1 + m + \cdots + m^{n-1})
-= m^{n}x + c\,\frac{1-m^{n}}{1-m}, \qquad m \ne 1 .$$
+**Two traps in the guessing.**
 
-**Three cases, and the exam asks about all of them.**
+*A closed form can fail at one value of a parameter.* When the pattern is
+summed as a geometric series, the sum's closed form divides by
+$1-\text{ratio}$, and at ratio $1$ that division is $\frac00$. The
+formula is then not wrong but inapplicable: go back to the sum itself,
+where $n$ equal terms add to $n$ times one of them.
 
-* $m = 1$: the closed form is $\frac00$ and useless. Go back to the sum:
-  $1+1+\cdots+1 = n$, so $f^{n}(x) = x + nc$. The graph slides.
-* $-1 < m < 1$: $m^n \to 0$, so $f^{n}(x) \to \dfrac{c}{1-m}$ for every
-  $x$. The family of lines flattens onto the horizontal line
-  $y = \dfrac{c}{1-m}$ — which is the fixed point of $f$.
-* $m = -1$: $(-1)^n$ alternates. For odd $n$, $f^{n}(x) = -x + c$; for
-  even $n$, $f^{n}(x) = x$. The function is **self-inverse**, and
-  $f \circ f$ being the identity is precisely what that means.
-
-That last case is the loop of this practicum closing: composition run
-twice and coming back to $x$ is the same statement as $f = f^{-1}$.
+*A pattern that repeats is not a mistake.* For $f(x) = \dfrac{6}{x}$,
+$f^{2}(x) = x$: the composite is the identity, and $f^{n}$ is $f$ for odd
+$n$ and $x$ for even $n$. A function whose square is the identity is
+exactly a **self-inverse** function, which is where this practicum closes
+its own loop: $f\circ f = \text{id}$ and $f = f^{-1}$ are the same
+sentence.
 """)
 
 md(r"""
@@ -616,8 +623,8 @@ Read left to right it is a definition; read right to left it is a
 technique. Most inverse questions in the archive ask for **one value**,
 and the value comes out without ever writing the formula:
 
-$$f(x) = 4^{x}, \quad f^{-1}(8) = ? \ \Longrightarrow\ 4^{x} = 8
-\ \Longrightarrow\ 2^{2x} = 2^{3} \ \Longrightarrow\ x = \tfrac32 .$$
+$$f(x) = 8^{x}, \quad f^{-1}(4) = ? \ \Longrightarrow\ 8^{x} = 4
+\ \Longrightarrow\ 2^{3x} = 2^{2} \ \Longrightarrow\ x = \tfrac23 .$$
 
 **Three corollaries, each worth marks somewhere in the archive.**
 
@@ -626,17 +633,20 @@ $$f(x) = 4^{x}, \quad f^{-1}(8) = ? \ \Longrightarrow\ 4^{x} = 8
   symmetric in that line — a maximum distance, a point of intersection
   with $y=x$ — is shared by both.
 * **Nested.** $f^{-1}(\text{something}) = b$ becomes
-  $\text{something} = f(b)$. In $f^{-1}(2x-7) = -3$ the inner bracket
-  equals $f(-3)$, **not** $-3$. That single confusion is the whole
+  $\text{something} = f(b)$. In $f^{-1}(3x+1) = 2$ the inner bracket
+  equals $f(2)$, **not** $2$. That single confusion is the whole
   difficulty of the question.
 * **Self-inverse.** $g = g^{-1}$ can be attacked two ways: find $g^{-1}$
   and equate, or compute $g(g(x))$ and set it equal to $x$. Both are in
   the markscheme; the second is usually shorter.
 
-**On a calculator.** $f^{-1}(2)$ where $f(x) = 4\cot x + \sin x$ is the
-one place in this whole topic where a GDC does real work: solve
-$f(x) = 2$ on $0 < x < \pi$ and read $x = 1.32$. Everywhere else the
-"calculator" papers still want exact answers.
+**On a calculator.** The one place in this whole topic where a GDC does
+real work is a single value of an inverse whose formula does not exist:
+the property turns $f^{-1}(k)$ into the equation $f(x) = k$, you solve
+that on the interval you were given, and the root **is** the answer. The
+domain in the question is what picks the root out; the calculator will
+happily offer others. Everywhere else the "calculator" papers still want
+exact answers.
 """)
 
 md(r"""
@@ -729,15 +739,19 @@ The formula for an inverse comes from one honest procedure:
 For a rational function, step 3 is always the same three moves —
 multiply out, collect every $y$ on one side, factorise:
 
-$$x = \frac{7y+7}{2y-4} \Rightarrow 2xy - 4x = 7y + 7
-\Rightarrow y(2x-7) = 4x+7
-\Rightarrow f^{-1}(x) = \frac{4x+7}{2x-7} .$$
+$$x = \frac{3y-2}{y+5} \Rightarrow xy + 5x = 3y - 2
+\Rightarrow y(x-3) = -5x-2
+\Rightarrow f^{-1}(x) = \frac{5x+2}{3-x} .$$
+
+Note the last step: both signs were flipped at once to keep the leading
+coefficient positive. Flipping only one of them is the standard slip, and
+it is invisible unless you check.
 
 For a logarithm or an exponential, step 3 is one application of the
 opposite operation:
 
-$$x = 1 + \log_2 y \Rightarrow \log_2 y = x - 1
-\Rightarrow g^{-1}(x) = 2^{\,x-1} .$$
+$$x = 3 + \log_5 y \Rightarrow \log_5 y = x - 3
+\Rightarrow g^{-1}(x) = 5^{\,x-3} .$$
 
 **Check by undoing.** Substitute $f$ into your answer and you must get
 $x$ back. This is not an optional flourish — it is how the checks in
@@ -805,13 +819,16 @@ horizontal line meets the graph twice. A function that turns — a
 parabola, a cosine — is one-to-one only up to its turning point, so the
 question becomes "where does $f$ turn?"
 
-$$f(x) = \cos(x-k), \quad 0 \le x \le a .$$
+$$f(x) = x^2 - 6x + 1, \quad 0 \le x \le a .$$
 
-The graph is a cosine wave shifted right by $k$. Starting from $x=0$ it
-is monotonic until the first turning point, and that point is where
-$f'(x) = -\sin(x-k)$ first vanishes for $x>0$. For $\pi < k < 2\pi$ that
-happens at $x = k - \pi$, so $a = k-\pi$ is the largest domain that
-keeps an inverse.
+Starting from $x=0$ the parabola falls until its vertex and rises after
+it, so it is one-to-one exactly up to the vertex. That is where
+$f'(x) = 2x-6$ vanishes, at $x=3$, so $a=3$ is the largest domain that
+keeps an inverse — and $a=4$ is not, because $f(2)=f(4)$.
+
+The same reasoning runs on any function that turns; only the hunt for the
+turning point changes. For a shifted trigonometric function the turning
+point moves with the shift, and the answer comes out in terms of it.
 
 **The swap.** Once the inverse exists, its domain and range are the
 range and domain of the original — swapped, both of them:
@@ -953,15 +970,16 @@ is rejected because the domain of $g$ is $x>3$". A correct final formula
 with no reason loses it.
 
 **Why checking by $f(f^{-1}(x)) = x$ will not save you.** Take
-$f(x)=\sqrt{x^2-1}$ on $[1,2]$ and the wrong branch
-$g(x) = -\sqrt{x^2+1}$. Then
+$f(x)=x^2+6x$ on $x \ge -3$, where completing the square gives
+$f(x)=(x+3)^2-9$ and the swap ends in $y = -3 \pm \sqrt{x+9}$. Try the
+wrong branch, $g(x) = -3-\sqrt{x+9}$. Then
 
-$$f(g(x)) = \sqrt{\left(-\sqrt{x^2+1}\right)^2 - 1} = \sqrt{x^2} = x$$
+$$f(g(x)) = \bigl(-3-\sqrt{x+9}+3\bigr)^2 - 9 = (x+9) - 9 = x$$
 
-for $x \ge 0$ — the square erases the sign, and the wrong branch passes.
-Compose the other way and it fails at once:
+— the square erases the sign, and the wrong branch passes. Compose the
+other way and it fails at once: for $t \ge -3$,
 
-$$g(f(t)) = -\sqrt{t^2-1+1} = -t \ne t .$$
+$$g(f(t)) = -3-\sqrt{(t+3)^2} = -3-(t+3) = -t-6 \ne t .$$
 
 That is why every inverse in this notebook is checked as
 $f^{-1}(f(t)) = t$, and it is the same asymmetry the R1 is testing.

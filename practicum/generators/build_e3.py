@@ -237,8 +237,8 @@ Three things are worth saying before any of the rules.
 $c$ is a parameter: $-3cx$ differentiates to $-3c$, and the $2$ disappears.
 People who differentiate $c$ lose the question, not the mark.
 
-**A bottom without $x$ in it is not a quotient.** $\frac{2500-1000\tan\theta}{3}$
-is $\frac13$ times something — the quotient rule on it is legal and three
+**A bottom without $x$ in it is not a quotient.** $\frac{4-7\sin\theta}{5}$
+is $\frac15$ times something — the quotient rule on it is legal and three
 times the work.
 
 **Expand first when expanding is cheap.** $x(2-x)$ is a product, but writing
@@ -316,8 +316,8 @@ The reliable tell is not the shape of the formula but what evaluating it
 would make you do: if computing $f(2)$ forces you to work out something
 *inside* first, that inside comes back out as a multiplier.
 
-$$\mathrm{e}^{x^{2}+1}\ \to\ 2x\,\mathrm{e}^{x^{2}+1}\qquad
-\sqrt{r^{2}-x^{2}}\ \to\ \frac{-x}{\sqrt{r^{2}-x^{2}}}\qquad
+$$\mathrm{e}^{3x^{2}-x}\ \to\ (6x-1)\,\mathrm{e}^{3x^{2}-x}\qquad
+\sqrt{1+4x^{2}}\ \to\ \frac{4x}{\sqrt{1+4x^{2}}}\qquad
 \ln(\cot x)\ \to\ \frac{-\csc^{2}x}{\cot x}$$
 
 **The whole inside gets differentiated, constants included.** For
@@ -325,8 +325,8 @@ $\sqrt{r^{2}-k^{2}x^{2}}$ the inside derivative is $-2k^{2}x$, and the $k^{2}$
 stays. It is not being differentiated; it is coming along.
 
 **Rewriting first is usually cheaper than the quotient rule.**
-$\frac{1}{(2-x)^{2}}$ is $(2-x)^{-2}$, and one chain rule beats one quotient
-rule every time. Watch the two minus signs though: $-2(2-x)^{-3}\cdot(-1)$
+$\frac{1}{(5-x)^{3}}$ is $(5-x)^{-3}$, and one chain rule beats one quotient
+rule every time. Watch the two minus signs though: $-3(5-x)^{-4}\cdot(-1)$
 comes out **positive**.
 
 **A chain of three is still one rule, applied three times.**
@@ -485,10 +485,12 @@ leaving $f'(x)=\frac12(1+x)^{-1/2}$ gives $f''$ in one line. Leaving it as
 $\frac{1}{2\sqrt{1+x}}$ invites the quotient rule and three times the work,
 for the same answer.
 
-**An identity between derivatives can be differentiated as it stands.** Once
-you have shown $g''=2(g'-g)$, you get $g'''=2(g''-g')$ and
-$g^{(4)}=2(g'''-g'')$ for nothing — no further differentiation of $g$ at all.
-That is what *hence deduce* means, and it is two of the five marks.
+**An identity between derivatives can be differentiated as it stands.** For
+$y=\mathrm{e}^{-x}\sin x$ one computes $y''=-2y'-2y$ once; after that
+$y'''=-2y''-2y'$ and $y^{(4)}=-2y'''-2y''$ come for nothing — no further
+differentiation of $y$ at all, only differentiation of the identity. That
+is what *hence deduce* means, and in a question of this shape it is two of
+the five marks.
 
 **Substitute back what you know about the curve.** For $y=\sqrt{r^{2}-x^{2}}$,
 $$\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}=-\frac{y^{2}+x^{2}}{y^{3}}
@@ -560,10 +562,13 @@ and two habits decide it for you.
 $m=2$ into both the original and your answer and differentiate numerically.
 Ten seconds, and it catches a dropped factor every time.
 
-**Keep the modulus.** $k_{\max}=2|a|$, not $2a$. A parabola opening downwards
-curves exactly as hard as the one opening upwards, and the question that comes
-next — *which of $p$ and $q$ is more curved* — is answerable only if the
-modulus survived. Writing $2a$ gets one wrong answer and then a second one.
+**Keep the modulus.** The steepest the curve $y=a\sin x$ ever gets is
+$|a|$, not $a$: its gradient $a\cos x$ runs over $[-|a|,\,|a|]$, and *how
+steep* is a size, not a signed number. A curve that dips as sharply as
+another rises is exactly as steep. Whenever the next part compares two
+members of a family — *which of them is steeper*, *which is more curved* —
+that comparison is answerable only if the modulus survived. Dropping it
+gets one wrong answer and then a second one.
 """)
 
 md(r"""

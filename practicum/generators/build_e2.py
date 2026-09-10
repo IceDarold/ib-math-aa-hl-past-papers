@@ -257,22 +257,22 @@ md(r"""
 
 ## Theory 1. Substitution is the first thing to try
 
-$\sin(x^2)$ is not a new function. It is $\sin u$ with $u=x^2$, and the
-series for $\sin u$ is known, so put $x^2$ where $u$ was:
+$\ln(1+x^3)$ is not a new function. It is $\ln(1+u)$ with $u=x^3$, and the
+series for $\ln(1+u)$ is known, so put $x^3$ where $u$ was:
 
-$$\sin(x^2)=x^2-\frac{(x^2)^3}{3!}+\dots=x^2-\frac{x^6}{6}+\dots$$
+$$\ln(1+x^3)=x^3-\frac{(x^3)^2}{2}+\dots=x^3-\frac{x^6}{2}+\dots$$
 
 Two things go wrong here, and both go wrong to nearly everybody.
 
-**The whole argument gets substituted, power and all.** $(x^2)^3$ is $x^6$,
-not $x^3$. If you catch yourself writing $-\frac{x^3}{6}$, you substituted
+**The whole argument gets substituted, power and all.** $(x^3)^2$ is $x^6$,
+not $x^5$. If you catch yourself writing $-\frac{x^5}{2}$, you substituted
 into the exponent instead of into the variable.
 
-**How deep to expand changes.** For $\cos 2x$ up to $x^4$ you need three
-terms of the cosine series, because $(2x)^4$ lands on $x^4$. For
-$\sin(x^2)$ up to $x^6$ you need two, because $(x^2)^3$ already lands
-there. Work out which power of the original series reaches your target
-*before* you start writing.
+**How deep to expand changes.** For $\mathrm{e}^{-3x}$ up to $x^3$ you need
+four terms of the exponential series, because $(-3x)^3$ is what lands on
+$x^3$. For $\ln(1+x^3)$ up to $x^6$ you need two, because $(x^3)^2$ already
+lands there. Work out which power of the original series reaches your
+target *before* you start writing.
 
 And a phrase worth reading carefully: **"the first two non-zero terms"**
 is not "the first two terms". Every one of these functions is even or odd,
@@ -316,10 +316,12 @@ here as well as there.
 it is $\sqrt2\left(1-\frac x2\right)^{1/2}$. Taking the factor out is the
 first mark whenever the question needs it.
 
-**The sign travels with $u$.** For $(1-x)^{-4}$ you have $u=-x$, and the
-coefficient of $x^2$ is $\frac{(-4)(-5)}{2}(-x)^2=10x^2$: four minus signs,
-all cancelling. Every coefficient of $(1-x)^{-4}$ comes out positive, and
-if yours alternate you dropped one of them.
+**The sign travels with $u$.** For $(1-2x)^{-3}$ you have $u=-2x$, and the
+coefficient of $x^2$ is $\frac{(-3)(-4)}{2}(-2x)^2=6\cdot4x^2=24x^2$: the
+minus signs cancel in pairs and the $2$ is squared along with the $x$.
+Every coefficient of $(1-2x)^{-3}$ comes out positive, and if yours
+alternate you dropped one of the minus signs; if they are too small you
+left the $2$ behind.
 
 **$|u|<1$ is part of the answer** when the question asks for it. For a
 product of two such brackets, both conditions have to hold and the tighter
@@ -354,18 +356,21 @@ This always works and is almost always slower than recognising a known
 series. It earns its place in two situations, and both are all over this
 archive.
 
-**The derivatives have been handed to you.** The part before asked you to
-prove $\frac{\mathrm{d}^n}{\mathrm{d}x^n}(x^2\mathrm{e}^x)$ by induction,
-or to show that $g''=2(g'-g)$. That is not a separate question — it is the
+**The derivatives have been handed to you.** The part before proved a
+formula for $f^{(n)}$ by induction — say
+$\frac{\mathrm{d}^n}{\mathrm{d}x^n}\bigl(x\mathrm{e}^{2x}\bigr)
+=2^{\,n-1}(2x+n)\mathrm{e}^{2x}$ — and all you have to do is put $x=0$ into
+it, once for each $n$ you need. That is not a separate question; it is the
 supply of $f^{(n)}(0)$, and *hence* means use it.
 
-**A relation, not a formula.** When you are given $g''=2(g'-g)$, substitute
-$x=0$ **into the relation**. It stops being about functions and becomes
-arithmetic on numbers: $g''(0)=2(g'(0)-g(0))$, then $g'''(0)$, then
-$g^{(4)}(0)$, each from the two before it.
+**A relation, not a formula.** When you are given something like
+$h''=3h'-2h$, substitute $x=0$ **into the relation**. It stops being about
+functions and becomes arithmetic on numbers: $h''(0)=3h'(0)-2h(0)$, then
+$h'''(0)=3h''(0)-2h'(0)$, and so on, each from the two before it. No
+further differentiation of $h$ is needed at all.
 
-**The factorial is the whole thing.** $f'''(0)=9$ gives the term
-$\frac{9}{3!}x^3=\frac32x^3$, not $9x^3$. In every question of this kind
+**The factorial is the whole thing.** $f^{(4)}(0)=48$ gives the term
+$\frac{48}{4!}x^4=2x^4$, not $48x^4$. In every question of this kind
 the marks that go missing are the divisions by $n!$, and there is nothing
 subtle about it: it is simply forgotten under time pressure.
 
@@ -429,20 +434,24 @@ factors, multiply, keep the powers you were asked for.
 polynomials gives sixteen products, of which you want four. Writing all
 sixteen is how the question runs out of time.
 
-**The two factors need different depths.** For $\mathrm{e}^x\sin x$ up to
-$x^3$:
+**The two factors need different depths.** For
+$\mathrm{e}^{2x}\ln(1+x)$ up to $x^3$:
 
-$$\mathrm{e}^x=1+x+\frac{x^2}{2}+\frac{x^3}{6},\qquad
- \sin x=x-\frac{x^3}{6}$$
+$$\mathrm{e}^{2x}=1+2x+2x^2+\dots,\qquad
+ \ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\dots$$
 
-three terms of the exponential and two of the sine, because $\sin x$ starts
-at $x^1$ and every one of its terms gets pushed up by whatever it meets.
-Symmetric truncation is the standard way to lose the last coefficient.
+three terms of the exponential and three of the logarithm, because
+$\ln(1+x)$ starts at $x^1$ and every one of its terms gets pushed up by
+whatever it meets — so the exponential's $x^3$ term can never reach $x^3$
+in the product and need not be written at all. Symmetric truncation is the
+standard way to lose the last coefficient, and writing more than you need
+is the standard way to lose the time.
 
-**Squaring is multiplying.** $\left(x^2-\frac{x^6}{6}\right)^2$ is
-$x^4-\frac{x^8}{3}+\dots$, and the middle term $2\cdot x^2\cdot
-\frac{x^6}{6}$ is the mark. The markscheme for May 2024 awards **M0** —
-not one mark of the three — for squaring term by term.
+**Squaring is multiplying.** $\bigl(\ln(1+x)\bigr)^2$ is
+$\left(x-\frac{x^2}{2}+\dots\right)^2=x^2-x^3+\dots$, and that $-x^3$ is
+the cross term $2\cdot x\cdot\left(-\frac{x^2}{2}\right)$ — the mark. A
+markscheme in this archive awards **M0** — not one mark of the three — for
+squaring term by term and producing $x^2+\frac{x^4}{4}$.
 
 **The constant term is a check you can do in one second.** It is the
 product of the two constant terms, always. If yours is not, stop and look.
@@ -496,16 +505,16 @@ inside is itself a series, and one condition suddenly matters:
 
 > **The inside has to vanish at zero.**
 
-$\mathrm{e}^u$ is expanded about $u=0$. At $x=0$, $\cos 2x$ equals $1$, not
-$0$ — so $\mathrm{e}^{\cos 2x}$ cannot be expanded by substituting
-$\cos 2x$ for $u$. The repair is to subtract the $1$ and put it back
+$\mathrm{e}^u$ is expanded about $u=0$. At $x=0$, $\sqrt{1+x}$ equals $1$,
+not $0$ — so $\mathrm{e}^{\sqrt{1+x}}$ cannot be expanded by substituting
+$\sqrt{1+x}$ for $u$. The repair is to subtract the $1$ and put it back
 outside:
 
-$$\mathrm{e}^{\cos 2x}=\mathrm{e}\cdot\mathrm{e}^{\cos 2x-1},$$
+$$\mathrm{e}^{\sqrt{1+x}}=\mathrm{e}\cdot\mathrm{e}^{\sqrt{1+x}-1},$$
 
-and now the exponent does vanish at zero. November 2023 walks you through
-exactly this in three parts, which is the examiner telling you that the
-step is the question.
+and now the exponent does vanish at zero. When the archive sets a question
+of this shape it splits it into parts and gives the subtraction its own
+mark, which is the examiner telling you that the step *is* the question.
 
 The same trick builds $\sec x$ out of nothing:
 
@@ -513,14 +522,14 @@ $$\sec x=\frac{1}{\cos x}=\frac{1}{1-(1-\cos x)}=(1+t)^{-1},
  \qquad t=\cos x-1 .$$
 
 **Powers of the inside.** $u^2$ and $u^3$ have to be expanded too, but only
-as far as they reach. If $u=-2x^2+\frac{2x^4}{3}$, then up to $x^4$ the
-square is just $(-2x^2)^2=4x^4$ — the cross term is $x^6$ and out of range.
+as far as they reach. If $u=3x^2-x^4$, then up to $x^4$ the square is just
+$(3x^2)^2=9x^4$ — the cross term already carries $x^6$ and is out of range.
 Taking only the leading term of $u$ inside $u^2$ is right; taking only the
 leading term of $u$ *outside* loses a coefficient.
 
 **The factor put outside must come back.** Writing the series for
-$\mathrm{e}^{\cos 2x-1}$ and forgetting to multiply by $\mathrm{e}$ is a
-whole mark, and it is the last line of the question.
+$\mathrm{e}^{\,\text{inside}-1}$ and forgetting to multiply by
+$\mathrm{e}$ is a whole mark, and it is the last line of the question.
 """)
 
 md(r"""
@@ -600,15 +609,19 @@ and November 2025 asks you to produce it.
 $+C$, then put $x=0$: $\arctan 0=0$, so $C=0$. Skipping the line loses the
 mark even though the constant is zero.
 
-**Differentiating the closed form needs the chain rule.**
-$\frac{\mathrm{d}}{\mathrm{d}r}\frac{a}{1-r}=\frac{a}{(1-r)^2}$: the minus
-from differentiating $(1-r)$ cancels the minus from the power, which is
-why the answer is positive and squared.
+**Differentiating a series recovers the one it came from.** Differentiate
+$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\dots$ term by term and you get
+$1-x+x^2-\dots$, which is the geometric series for $\frac{1}{1+x}$ — as it
+must be, since that is the derivative of the left-hand side. Whenever a
+question differentiates or integrates a closed form as well as its series,
+the chain rule is where the sign lives: the minus from differentiating
+$(1-u)$ cancels the minus from the power, which is why such answers come
+out positive and squared.
 
-**Backwards counts too.** If a question hands you $\sum_{r=0}^{n}(-2x^2)^r$
+**Backwards counts too.** If a question hands you $\sum_{r=0}^{n}(3x)^r$
 and asks for the function, recognise the geometric series and fold it up
-into $\frac{1}{1+2x^2}$. Same identity, read right to left — and the radius
-of convergence comes with it: $|-2x^2|<1$ means $|x|<\frac{1}{\sqrt2}$.
+into $\frac{1}{1-3x}$. Same identity, read right to left — and the radius
+of convergence comes with it: $|3x|<1$ means $|x|<\frac13$.
 """)
 
 md(r"""
@@ -651,16 +664,17 @@ verify_identity('9c', q9c, PARTIAL, var=x,
 md(r"""
 ## Theory 7. When there is no formula for the function at all
 
-$$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{x^2y-y}{x^2+1},\qquad y(0)=3 .$$
+$$\frac{\mathrm{d}y}{\mathrm{d}x}=x+y^2,\qquad y(0)=1 .$$
 
 There is no $y=\dots$ here, and the question still asks for the Maclaurin
 series of $y$. It can, because the series only needs the derivatives at one
 point, and the equation produces them one at a time:
 
-* put $x=0$ and $y=3$ into the equation → $y'(0)=-3$;
-* differentiate the whole equation → an expression for $y''$ in terms of
-  $x$, $y$ and $y'$; put $x=0$ and what you have → $y''(0)$;
-* differentiate again → $y'''(0)$; and so on for as many terms as asked.
+* put $x=0$ and $y=1$ into the equation → $y'(0)=1$;
+* differentiate the whole equation → $y''=1+2y\,y'$; put in what you have
+  → $y''(0)=1+2\cdot1\cdot1=3$;
+* differentiate again → $y'''=2(y')^2+2y\,y''$, so $y'''(0)=2+6=8$; and so
+  on for as many terms as asked.
 
 **The one thing that goes wrong.** The right-hand side contains $y$, and
 $y$ is a function of $x$. Differentiating it produces
@@ -671,7 +685,8 @@ constant makes the second derivative wrong and everything above it too.
 differentiating, not before: a differentiated equation is still an
 equation, but a number is not.
 
-**And divide by $n!$.** $y'''(0)=9$ gives $\frac{9}{3!}x^3=\frac32x^3$.
+**And divide by $n!$.** In the example above $y'''(0)=8$ gives
+$\frac{8}{3!}x^3=\frac43x^3$, not $8x^3$.
 """)
 
 md(r"""
@@ -709,12 +724,19 @@ md(r"""
 Now the point of all of it. A polynomial can be integrated, cancelled and
 evaluated; the function often cannot.
 
-$$\int_0^1\mathrm{e}^{x^2}\sin\!\left(x^2\right)\mathrm{d}x$$
+$$\int_0^1\mathrm{e}^{-x^2}\,\mathrm{d}x$$
 
 has no antiderivative in closed form. That is not an obstacle to the
-question — it *is* the question. Substitute $x^2$ into the series you
-already found for $\mathrm{e}^x\sin x$, integrate the polynomial, and the
-answer is $\frac{61}{105}$.
+question — it *is* the question. Substitute $-x^2$ into the series for
+$\mathrm{e}^u$,
+
+$$\mathrm{e}^{-x^2}=1-x^2+\frac{x^4}{2}-\dots,$$
+
+integrate the polynomial term by term, and three terms already give
+$1-\frac13+\frac1{10}=\frac{23}{30}$ against a true value of $0.7468\ldots$
+The same three moves — substitute, integrate, evaluate — answer every
+question of this kind; which series goes in is the only thing that
+changes.
 
 **«Hence» names the series you are meant to use.** It almost always points
 at the part immediately above. Solving the question again from scratch may
@@ -764,24 +786,26 @@ md(r"""
 Everywhere above, the series was exact enough and nobody asked. November
 2025 Paper 3 asks, and it is the only place in the archive that does.
 
-It can ask because the series for $\arctan x$ **alternates** and its terms
-shrink:
+It can ask because such a series **alternates** and its terms shrink:
 
 > **Theorem.** For an alternating series with terms of decreasing
 > magnitude, the error from using a finite number of terms is at most the
 > absolute value of the next term.
 
 That is the whole of rung 9, and it turns an approximation into a
-guarantee. With $x=\frac{1}{\sqrt3}$, where
-$\arctan\frac{1}{\sqrt3}=\frac{\pi}{6}$, the series computes $\pi$ and the
-theorem says how well.
+guarantee. Put $x=1$ into $\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\dots$
+and four terms give $1-\frac12+\frac13-\frac14=0.5833\ldots$ for
+$\ln 2=0.6931\ldots$; the theorem promises an error of at most
+$\frac15=0.2$, and the real error, $0.1098$, duly obeys. The bound is
+generous, and it is a bound, which is the point: it holds without knowing
+the answer.
 
 **This is the Paper 1 / Paper 3 split made visible.** Same series, same
 substitution. On Paper 1 you would be asked for the exact form and stop.
-Here you are asked for $\pi$ to four decimal places, for the number of
-terms that buys an error under $10^{-6}$, and for the actual error against
-the bound — three things a calculator has to do, and none of them has an
-exact form to hide behind.
+On Paper 3 you are asked for a decimal to a stated accuracy, for the
+number of terms that buys an error under some $10^{-k}$, and for the
+actual error against the bound — three things a calculator has to do, and
+none of them has an exact form to hide behind.
 
 **The one mistake.** The error from $n$ terms is bounded by term number
 $n+1$. Solving the inequality gives you the index of the first term small

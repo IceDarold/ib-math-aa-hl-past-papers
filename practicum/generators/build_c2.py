@@ -672,12 +672,13 @@ give you two *measurements* — a perimeter and an area, an area and a
 ratio — and both of those are expressions in $r$ and $\theta$. Two
 equations, two unknowns:
 
-$$2r+r\theta=10\qquad\text{and}\qquad\tfrac12r^2\theta=6.25$$
+$$2r+r\theta=16\qquad\text{and}\qquad\tfrac12r^2\theta=12$$
 
-The first one gives $r\theta=10-2r$. Put that into the second, written as
+The first one gives $r\theta=16-2r$. Put that into the second, written as
 $\tfrac12r\cdot(r\theta)$:
 
-$$\tfrac12r(10-2r)=6.25\ \Longrightarrow\ 4r^2-20r+25=0$$
+$$\tfrac12r(16-2r)=12\ \Longrightarrow\ r^2-8r+12=0
+\ \Longrightarrow\ r=2\ \text{or}\ r=6$$
 
 Eliminate the one you are not asked for; solve what is left; and then do
 the step that carries its own mark:

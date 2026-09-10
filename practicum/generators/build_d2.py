@@ -239,11 +239,12 @@ $P(A'\mid B)=1-P(A\mid B)$ is true — the events inside $B$ still add to
 one. But $P(A\mid B')$ has nothing to do with $P(A\mid B)$: it is a
 different question about a different piece of the space.
 
-> **What the markscheme actually wants.** November 2023 is worth reading
-> once: *"For the final mark, 0.2 must be stated as the candidate's answer,
-> or labeled as $P(A'\cap B')$ in their Venn diagram. Just seeing an
-> unlabeled 0.2 in the correct region earns M1A0."* A number in the right
-> place on a picture is not an answer until you say what it is.
+> **What the markscheme actually wants.** One note in the archive is worth
+> reading twice: *"For the final mark, the value must be stated as the
+> candidate's answer, or labeled as $P(A'\cap B')$ in their Venn diagram.
+> Just seeing an unlabeled number in the correct region earns M1A0."*
+> A number in the right place on a picture is not an answer until you say
+> what it is.
 """)
 
 md(r"""
@@ -346,8 +347,10 @@ whole point.
 
 And when it is quadratic, **one root goes in the bin** — not because it is
 extraneous, but because it is bigger than one and probabilities are not.
-Say so in writing. May 2022 TZ2 gives $P(B)=0.2$ and $P(B)=\tfrac{17}{15}$,
-and the markscheme awards **A1 instead of A2** to anyone who hands in both.
+Say so in writing. A typical such quadratic offers, say, $P(B)=0.4$ and
+$P(B)=\tfrac{9}{5}$, and the markscheme awards **A1 instead of A2** to
+anyone who hands in both: the second is greater than one and is therefore
+not a probability at all.
 
 ### Trees: along a branch multiply, between branches add
 
@@ -372,8 +375,9 @@ $1-(1-p)^{n}$ — never a sum, because the sum is where a term gets dropped.
 
 An unknown $k$, $p$ or $x$ sits inside the probabilities and a probability
 computed from it is given. You do not substitute; you write the equation
-and solve it. Then you throw a root away and **say why**: May 2024 TZ2
-gives a whole R1 mark for the sentence *"$\tfrac83>1$"*.
+and solve it. Then you throw a root away and **say why** — a whole R1
+mark hangs on one short sentence naming the reason, and "greater than
+one" is the whole of it.
 """)
 
 md(r"""
@@ -529,9 +533,11 @@ it**. Check first that the parts cover everything and do not overlap; that
 is what makes the sum legitimate.
 
 The standard wrong answer is to add the conditional probabilities without
-their weights. For May 2025 TZ3 that gives $0.08+0.06+0.11=0.25$ instead of
-$0.081$ — wrong by a factor of three, and it looks perfectly reasonable
-until you notice it is not a weighted average of anything.
+their weights. Three machines faulty $2\%$, $5\%$ and $9\%$ of the time
+give $0.02+0.05+0.09=0.16$ — but every one of the three rates is below
+$0.09$, so the true answer cannot be above it either. A weighted average
+always lands between the smallest and the largest of the things being
+averaged; if yours does not, you dropped the weights.
 
 ### Back up the tree: Bayes
 
@@ -545,11 +551,15 @@ total probability, and Bayes is a division.
 The markscheme wants the conditional written **in context** — *"not just
 $P(A\mid B)$"*. Letters earn nothing; name the events.
 
-Bayes is also where intuition is worst. Task 9's Amanda enters 55% of the
-surveys and makes 54% of the errors — barely a shift, because her error
-rate is near average. But in the archive's apple question, 80% of apples
-are eating apples and only **one in six** of the heavy ones is: the
-conditioning is severe because the rates differ by a factor of twenty.
+Bayes is also where intuition is worst, and how far the conditioning
+moves the answer depends entirely on how far the rates differ. If one
+source handles most of the work and its error rate is close to the
+average, the share of the errors it accounts for is close to its share of
+the work — the conditioning barely shifts anything. If instead one group
+is rare but many times more likely to produce the effect, the shift is
+enormous, and a majority before the evidence can become a minority after
+it. Before computing, ask which of the two situations you are in; it
+tells you what kind of answer to expect.
 
 ### Without replacement
 

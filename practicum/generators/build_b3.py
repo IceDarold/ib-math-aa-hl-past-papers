@@ -226,7 +226,7 @@ md(r"""
 | # | Technique | Trigger in the question | First move |
 | --- | --- | --- | --- |
 | 1 | Read a value off a graph | a printed curve, «write down the value of $f(2)$» | go up to the curve, then across |
-| 2 | Apply a translation or a stretch | «let $g(x)=\tfrac12 f(x)+1$; sketch $g$» | move the labelled points, one at a time |
+| 2 | Apply a translation or a stretch | «let $g(x)=3f(x)-2$; sketch $g$» | move the labelled points, one at a time |
 | 3 | Name the sequence | «describe a sequence of transformations that maps … onto …» | write the target so the source is visible inside it |
 | 4 | Find the parameters | «$g$ is obtained by a stretch factor $k$ then a translation of $c$; find $k$ and $c$» | apply the named steps with their letters, then compare |
 | 5 | Use the symmetry | «show that $f$ is odd», «using the line of symmetry $y=x$» | write $f(-x)$ out in full; or swap the coordinates |
@@ -381,20 +381,19 @@ The question prints two formulas and wants the words between them.
 There is a mechanical way to produce those words, and it never fails.
 
 **Write the target so that the source is visible inside it.** For
-$y=\arctan(2x+1)+\tfrac{\pi}{4}$ the source is $\arctan x$, so factor
-the inside:
+$y=\ln(3x-6)-1$ the source is $\ln x$, so factor the inside:
 
-$$\arctan\bigl(2(x+\tfrac12)\bigr)+\tfrac{\pi}{4}.$$
+$$\ln\bigl(3(x-2)\bigr)-1 .$$
 
-Now peel from the inside out: $x \to 2x$ is a horizontal stretch by
-$\tfrac12$; then $x \to x+\tfrac12$ is a translation $\tfrac12$ **left**;
-then $+\tfrac{\pi}{4}$ is a translation up.
+Now peel from the inside out: $x \to 3x$ is a horizontal stretch by
+$\tfrac13$; then $x \to x-2$ is a translation $2$ **right**; then $-1$
+is a translation down.
 
-**Or peel in the other order** — $\arctan(2x+1)$ is also
-$\arctan x$ with $x\to x+1$ first and then $x\to 2x$. Both descriptions
-are correct, and the markscheme takes either. What it will not take is
-the stretch by $\tfrac12$ followed by a translation of $\tfrac12$ left:
-that gives $\arctan(2x+\tfrac12)$.
+**Or peel in the other order** — $\ln(3x-6)$ is also $\ln x$ with
+$x\to x-6$ first and then $x\to 3x$. Both descriptions are correct, and
+the markscheme takes either. What it will not take is the stretch by
+$\tfrac13$ followed by a translation of $2$ right applied to the wrong
+copy: that gives $\ln(3x-2)$, a different curve.
 
 **The vocabulary is marked too.** November 2025 TZ3 says it outright:
 *"the transformations may be described using terms such as translate or
@@ -406,7 +405,7 @@ transformation is described by **direction and amount**, or by **factor**
 runs it:
 
 ```python
-[('stretch_x', Rational(1, 2)), ('shift_x', -Rational(1, 2)), ('shift_y', pi/4)]
+[('stretch_x', Rational(1, 3)), ('shift_x', 2), ('shift_y', -1)]
 ```
 
 * `('shift_x', h)` — $h$ to the right ($h<0$ means left)
@@ -501,7 +500,7 @@ The other half of this rung is the question the other way round: the
 examiner tells you *which* transformations were used and asks for their
 values. The method is the same move, run backwards.
 
-$$f(x)=e^{x}-3x-4, \qquad g(x)=e^{2x}-6x-7 .$$
+$$f(x)=x^{2}+x, \qquad g(x)=4x^{2}+2x+5 .$$
 
 *"The graph of $g$ is obtained from the graph of $f$ by a horizontal
 stretch with scale factor $k$, followed by a vertical translation of $c$
@@ -510,24 +509,25 @@ units. Find $k$ and $c$."*
 Apply the named steps with their letters still in place:
 
 $$f\!\left(\tfrac{x}{k}\right)+c
-= e^{x/k}-\tfrac{3x}{k}-4+c .$$
+= \frac{x^{2}}{k^{2}}+\frac{x}{k}+c .$$
 
-Now compare with $g$. The exponent gives $\tfrac{x}{k}=2x$, so
-$k=\tfrac12$; then $-\tfrac{3x}{1/2}=-6x$ agrees, and $-4+c=-7$ gives
-$c=-3$. **Match the exponent first and the constant last** — the usual
-lost mark is finding $k$ from the exponential and forgetting that the
-linear term has to agree too.
+Now compare with $g$. The squared term gives $\tfrac{1}{k^{2}}=4$, so
+$k=\tfrac12$; the linear term then has to agree by itself, and
+$\tfrac{1}{1/2}=2$ duly matches; finally $c=5$. **Match the highest power
+first and the constant last** — the usual lost mark is finding $k$ from
+one term and forgetting that every other term has to agree too, which is
+also the check that the named sequence was the right one.
 
 **Rational targets need one extra move first.** A function like
-$\dfrac{2x+6}{x-4}$ shows nothing until you divide out:
+$\dfrac{3x+1}{x+2}$ shows nothing until you divide out:
 
-$$\frac{2x+6}{x-4} = \frac{2(x-4)+14}{x-4} = 2 + \frac{14}{x-4}.$$
+$$\frac{3x+1}{x+2} = \frac{3(x+2)-5}{x+2} = 3 - \frac{5}{x+2}.$$
 
 Now every transformation from $y=\tfrac1x$ is visible at once —
-translate $4$ right, stretch vertically by $14$, translate $2$ up — and
-the two constants are the two asymptotes, $x=4$ and $y=2$. **The
-asymptotes and the translations are the same two numbers**, which is why
-the markscheme gives a mark for either.
+translate $2$ left, stretch vertically by $5$, reflect in the $x$-axis,
+translate $3$ up — and the two constants are the two asymptotes,
+$x=-2$ and $y=3$. **The asymptotes and the translations are the same two
+numbers**, which is why the markscheme gives a mark for either.
 """)
 
 md(r"""
@@ -626,8 +626,8 @@ $$f \text{ is odd} \iff f(-x)=-f(x) \iff \text{half-turn about the origin}.$$
 **"Show that $f$ is odd" is worth two marks and one of them is the last
 line.** The algebra is one substitution:
 
-$$f(x)=\frac{1}{2^{x}}-2^{x}
-\ \Longrightarrow\ f(-x)=2^{x}-2^{-x}=-\left(2^{-x}-2^{x}\right)=-f(x),$$
+$$f(x)=\frac{x}{1+x^{2}}
+\ \Longrightarrow\ f(-x)=\frac{-x}{1+(-x)^{2}}=\frac{-x}{1+x^{2}}=-f(x),$$
 
 and the mark that gets lost is the sentence **"therefore $f$ is odd"**.
 Write $f(-x)$ out in full before simplifying anything — most of the lost
@@ -715,9 +715,10 @@ corner (a cusp)**, because the curve arrives with one gradient and
 leaves with minus that gradient. The markscheme asks for these by name:
 *"sharp points (cusps) at the $x$-intercepts."*
 
-An asymptote gets folded too. If a branch that had the oblique asymptote
-$y=5x+5$ lies below the axis and gets reflected, the reflected branch
-has the asymptote $y=-5x-5$. Draw it; it is a mark.
+An asymptote gets folded too. If a branch that had an oblique asymptote
+$y=ax+b$ lies below the axis and gets reflected, the reflected branch is
+asymptotic to $y=-ax-b$ — the whole line turns over, both coefficients
+with it. Draw the second line; it is a mark of its own.
 
 **$y=f(\lvert x\rvert)$** — the left half is **discarded** and replaced
 by a mirror image of the right half. The graph becomes even. Note which
@@ -904,23 +905,23 @@ markscheme. A four-mark sketch is typically:
 * **A1** the turning points, with **both** coordinates;
 * **A1** the domain — where the curve starts and stops.
 
-**Both coordinates.** "Maximum at $x=\tfrac{3m}{2}$" is half an answer.
-The markscheme writes $\left(\tfrac{3m}{2},\,3\right)$ and pays for the
-pair.
+**Both coordinates.** "Maximum at $x=2a$" is half an answer. A
+markscheme writes the pair, $\left(2a,\,7\right)$, and pays for the pair.
 
-**The domain is a feature.** On $0\le x\le 6m$ the curve stops at $6m$,
-and stopping is worth a mark. Restricted-domain questions almost always
-put the endpoints where they can be checked: $\arccos x$ on $[-1,1]$ has
-endpoints $(-1,\pi)$ and $(1,0)$, and those two points are the answer.
+**The domain is a feature.** If the curve is drawn on $0\le x\le L$ it
+stops at $L$, and stopping is worth a mark. Restricted-domain questions
+almost always put the endpoints where they can be checked: $\arccos x$ on
+$[-1,1]$ has endpoints $(-1,\pi)$ and $(1,0)$, and those two points are
+the answer.
 
 **For a stretched trigonometric function, get the period first.** With
-$g(x)=3\sin\!\left(\tfrac{2qx}{3}\right)$ the amplitude is $3$ and the
+$h(x)=5\cos\!\left(\tfrac{3px}{4}\right)$ the amplitude is $5$ and the
 period is
 
-$$T=\frac{2\pi}{2q/3}=\frac{3\pi}{q},$$
+$$T=\frac{2\pi}{3p/4}=\frac{8\pi}{3p},$$
 
-and everything else — the zeros at $0,\tfrac{T}{2},T$, the maximum a
-quarter of a period in — follows from $T$ alone. The lost mark is
+and everything else — the zeros a quarter and three quarters of a period
+in, the minimum halfway — follows from $T$ alone. The lost mark is
 computing the period from the wrong coefficient, or inverting the
 stretch.
 
@@ -1080,14 +1081,14 @@ For a rational function the sketch has a fixed order of operations, and
 doing it in any other order costs time.
 
 1. **Vertical asymptotes.** Set the denominator to zero. For
-   $f(x)=\dfrac{4x+2}{x-2}$ that is $x=2$.
+   $f(x)=\dfrac{2x+9}{x+1}$ that is $x=-1$.
 2. **Behaviour at infinity.** Divide out, or take the limit. Here
-   $f(x)=4+\dfrac{10}{x-2}$, so $y=4$.
-3. **Intercepts.** Numerator zero gives $x=-\tfrac12$; $f(0)=-1$.
+   $f(x)=2+\dfrac{7}{x+1}$, so $y=2$.
+3. **Intercepts.** Numerator zero gives $x=-\tfrac92$; $f(0)=9$.
 4. **Which side of what.** You now have a grid of four regions and four
    numbers; the two branches are forced.
 5. **The range comes free.** The horizontal asymptote is the value never
-   reached: the range of $f$ is $y\ne 4$.
+   reached: the range of $f$ is $y\ne 2$.
 
 **"Label any asymptotes with their equations"** — the equations, not
 dashed lines. That instruction is quoted verbatim in the archive and it
@@ -1185,9 +1186,10 @@ local maxima. How many points of inflexion with zero gradient. How many
 intersection points. The calculator is not decoration here — it is the
 method.
 
-**Plot two or three members, never one.** $f_n(x)=x^{n}(2-x)^{n}$ looks
-entirely different for $n$ odd and $n$ even, and a student who tries
-$n=3$ alone will describe half the family.
+**Plot two or three members, never one.** A family with $n$ in an
+exponent usually looks entirely different for $n$ odd and $n$ even —
+$y=x^{n}$ is the simplest case of it — and a student who tries one value
+of $n$ alone will describe half the family.
 
 **The parameter's range splits where the picture changes.** For
 $y=\log_a x$ against $y=x$: below $a=1$ the logarithm is decreasing and
@@ -1197,15 +1199,18 @@ intervals, three counts — and the boundary between the second and the
 third is the tangency, which a later part of that question finds exactly.
 
 **A point where $f''=0$ is not automatically a point of inflexion.** The
-concavity has to *change*. For $x^{n}(2-x)^{n}$ with $n$ even, $f''$
-vanishes at $x=0$ and $x=2$, and those are minima — the curve touches
-the axis and comes back. With $n$ odd the same two points really are
-inflexions with zero gradient. This is the single most reliable way to
-get the table wrong.
+concavity has to *change*. For $y=x^{4}$ the second derivative vanishes
+at $x=0$, and that point is a **minimum**: the curve touches the axis and
+comes back, concave-up on both sides. For $y=x^{3}$ the same computation
+gives a genuine point of inflexion with zero gradient. Same $f''(0)=0$,
+opposite answers — this is the single most reliable way to get the table
+wrong, and the cure is to test the concavity on both sides rather than
+at the point.
 
-**Say what stays the same.** Every member of that family has its maximum
-at $x=1$, whatever $n$ is. Noticing that is usually what the next part
-of the question is about.
+**Say what stays the same.** In a family of curves, some feature is
+usually independent of the parameter — a fixed maximum, a shared
+intercept, a common asymptote. Noticing which one it is is usually
+exactly what the next part of the question is about.
 """)
 
 md(r"""
