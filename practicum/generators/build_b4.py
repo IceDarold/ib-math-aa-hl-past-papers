@@ -903,17 +903,19 @@ $f''$ at each. The signs tell you maximum or minimum — that was part
 
 $f''$ measures how fast the gradient is changing, so a large
 $\lvert f''\rvert$ at a turning point means a sharp, tight turn and a
-small one means a long flat one. For $g(x)=e^{\sin x}$ on $[0,2\pi]$:
+small one means a long flat one. For $g(x)=x^{4}-8x^{2}+5$:
 
 | point | $g''$ | drawn as |
 | --- | --- | --- |
-| $\left(\tfrac{\pi}{2},e\right)$ | $-e\approx-2.72$ | a sharp peak |
-| $\left(\tfrac{3\pi}{2},e^{-1}\right)$ | $e^{-1}\approx 0.368$ | a wide shallow valley |
+| $(-2,-11)$ | $32$ | a tight valley |
+| $(0,5)$ | $-16$ | a broad, lazy hump |
+| $(2,-11)$ | $32$ | a tight valley |
 
-The peak is about $e^{2}\approx 7.4$ times as curved as the valley, and
-the sketch has to show it: a narrow spike and a long flat bottom, not a
-symmetric wave. Whenever a question hands you the values of $f''$ rather
-than just their signs, this is what it is paying for.
+The two dips are twice as curved as the hump between them, and the sketch
+has to show it: the curve leaves each minimum steeply and rolls over the
+middle slowly. Whenever a question hands you the **values** of $f''$
+rather than just their signs, that contrast is what it is paying for —
+the signs were already worth their marks in the part before.
 
 ---
 ## Theory 6. $y^{2}=f(x)$ is not a function

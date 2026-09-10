@@ -298,13 +298,14 @@ compared. Nothing from Theory 1 applies until they agree. So the first
 move in any question with two bases is to pick one and convert.
 
 **Which base to pick.** Almost always the smallest one that the others
-are powers of. The archive is unsubtle about this:
+are powers of — and if the question has already handed you a logarithm in
+some base, that base is the one it wants:
 
-| question | bases seen | base to use |
-| --- | --- | --- |
-| May 2024 TZ1 | $10$ and $1000$ | $10$, since $1000=10^3$ |
-| May 2025 TZ3 | $10$ and $3$ | $10$, since $q=\log_{10}3$ is given |
-| Nov 2025 TZ3 | $8$ and $4$ | $2$, since $8=2^3$ and $4=2^2$ |
+| bases seen | base to use |
+| --- | --- |
+| $5$ and $25$ | $5$, since $25=5^2$ |
+| $9$ and $27$ | $3$, since $9=3^2$ and $27=3^3$ |
+| $10$ and something, with $\log_{10}$ already given | $10$, because the given value is what the answer must be built from |
 
 **The shortcut worth memorising.** When the bases are powers of one
 number, the conversion is just a fraction:
@@ -501,9 +502,9 @@ out. One operation will, and it is the only one:
 $$a^{\,u}=b \quad\Longrightarrow\quad u\ln a=\ln b
   \quad\Longrightarrow\quad u=\frac{\ln b}{\ln a} .$$
 
-**Isolate the power first.** From $600=200e^{12k}$, divide by $200$
-*before* taking logarithms. $\ln(200e^{12k})$ is $\ln 200+12k$, not
-$200\times 12k$, and half the lost marks in this technique are that line.
+**Isolate the power first.** From $450=150e^{12k}$, divide by $150$
+*before* taking logarithms. $\ln(150e^{12k})$ is $\ln 150+12k$, not
+$150\times 12k$, and half the lost marks in this technique are that line.
 
 **Two ways to say the same doubling time, and the markscheme prints
 both.**
@@ -577,8 +578,8 @@ down. The archive supplies them in the same shape every time.
    $A(0)$, and $e^{0}=1$ makes it immediate: whatever the quantity was at
    the start **is** $A_0$, with no algebra at all.
 3. **The second gives $k$,** by Theory 5. Here the phrasing does the
-   damage: *"decreased by $11\%$"* means the new value is $0.89$ of the
-   old one, not $0.11$ of it. Reading that line twice is worth more than
+   damage: *"decreased by $30\%$"* means the new value is $0.70$ of the
+   old one, not $0.30$ of it. Reading that line twice is worth more than
    any of the algebra after it.
 4. **Substitute the target $t$.** Keep $k$ exact until this line.
 
@@ -601,16 +602,16 @@ A percentage change per period is a multiplier per period:
 
 | the question says | the multiplier is |
 | --- | --- |
-| grows by $15\%$ a year | $1.15$ per year |
-| depreciates at $15\%$ per annum | $0.85$ per year |
-| decreased by $11\%$ over the period | $0.89$ over the period |
-| nominal $4\%$ per year, compounded **quarterly** | $1+\frac{0.04}{4}=1.01$ per **quarter** |
-| interest $1.5\%$ a month against inflation $0.8\%$ a month | $\dfrac{1.015}{1.008}$, or $1.007$ — see below |
+| grows by $8\%$ a year | $1.08$ per year |
+| depreciates at $12\%$ per annum | $0.88$ per year |
+| decreased by $30\%$ over the period | $0.70$ over the period |
+| nominal $6\%$ per year, compounded **monthly** | $1+\frac{0.06}{12}=1.005$ per **month** |
+| interest $2\%$ a month against inflation $1.2\%$ a month | $\dfrac{1.02}{1.012}$, or $1.0079\ldots$ — see below |
 
-**Nominal rate ÷ number of periods.** $4\%$ compounded quarterly is
-$1\%$ four times, not $4\%$ once. The May 2025 TZ1 question makes this
-its one-mark part (a) precisely because everything after it depends on
-it.
+**Nominal rate ÷ number of periods.** $6\%$ compounded monthly is
+$0.5\%$ twelve times, not $6\%$ once. Questions of this shape make the
+division their own one-mark part precisely because everything after it
+depends on it.
 
 **The exponent counts periods, not years.** After ten years of monthly
 compounding the exponent is $120$, and this is where the archive puts
@@ -618,20 +619,19 @@ its named wrong answer: see the solution to Task 7.
 
 **Inflation: the exam accepts both the exact version and the
 approximation.** The *real* multiplier for an investment growing at $i$
-while prices grow at $j$ is $\frac{1+i}{1+j}$. The markscheme for May
-2025 TZ2 prints $r=c-i=1.5-0.8=0.7\%$ as **METHOD 1** and the quotient
-$\frac{1.015}{1.008}=1.00694\ldots$ as **METHOD 2**, and pays the same
-for either — the two differ in the fifth decimal place and land on the
-same month. Worth knowing which is which anyway: subtraction is a first-
-order approximation to the quotient, and it stops being close when the
-rates get large.
+while prices grow at $j$ is $\frac{1+i}{1+j}$. Markschemes print the
+subtraction $r=i-j$ as **METHOD 1** and the quotient as **METHOD 2**, and
+pay the same for either — for rates of this size the two differ around
+the fifth decimal place and land on the same period. Worth knowing which
+is which anyway: subtraction is a first-order approximation to the
+quotient, and it stops being close when the rates get large.
 
-**On Paper 1 the power gets expanded, not evaluated.** $1000(1.01)^4$ is
-$1000\bigl(1+4(0.01)+6(0.01)^2+\dots\bigr)=1000+40+0.6+\dots=1041$ to the
-nearest dinar, and $1000\times 0.9^{-4}$ is the Maclaurin series of
-$(1-x)^{-4}$ at $x=0.1$. That is the binomial theorem from A7 doing
-service here, and it is the reason both of these are Paper 1 questions
-at all.
+**On Paper 1 the power gets expanded, not evaluated.** $400(1.05)^3$ is
+$400\bigl(1+3(0.05)+3(0.05)^2+(0.05)^3\bigr)=400+60+3+0.05=463.05$,
+and a depreciation run **backwards** — dividing by the multiplier several
+times — is the Maclaurin series of $(1-x)^{-m}$ at a small $x$. That is
+the binomial theorem from A3 doing service here, and it is the reason
+questions like these are set on Paper 1 at all.
 """)
 
 md(r"""
@@ -700,23 +700,25 @@ $$x(t)=\frac{L}{1+Ce^{-kt}},\qquad L,C,k>0 .$$
 
 Three constants, and the archive gives you them in a fixed order.
 
-**$L$ is read off the page.** It is the value the population settles at
-as $t\to\infty$, because $e^{-kt}\to 0$. When November 2025 says a wolf
-population *"had a stable size of 200"* and the researchers *"decide to
-let $L=200$"*, the assumption being made is that the long-run size after
-the disruption will be the same as it was before. That sentence is a
-mark.
+**$L$ is read off the page.** It is the value the quantity settles at as
+$t\to\infty$, because $e^{-kt}\to 0$. When a question says a population
+*"had a stable size of"* something and then tells you to take that as
+$L$, the assumption being made is that the long-run size will be what it
+was before — and stating that assumption is itself a mark.
+
+Take a colony that levels off at $L=5000$, starts at $500$ and reaches
+$1500$ after three hours.
 
 **$C$ comes from $t=0$,** and it is easy because $e^{0}=1$:
 
-$$40=\frac{200}{1+C}\;\Longrightarrow\;40+40C=200\;\Longrightarrow\;C=4 .$$
+$$500=\frac{5000}{1+C}\;\Longrightarrow\;500+500C=5000\;\Longrightarrow\;C=9 .$$
 
 **$k$ comes from the second data point,** by Theory 5 again:
-$70=\dfrac{200}{1+4e^{-5k}}$ unwinds to
-$k=\tfrac15\ln\tfrac{28}{13}=0.153$.
+$1500=\dfrac{5000}{1+9e^{-3k}}$ gives $e^{-3k}=\tfrac{7}{27}$, so
+$k=\tfrac13\ln\tfrac{27}{7}=0.450$.
 
-**Then predict, and round to a whole animal.**
-$x(10)=107.397\ldots\to 107$ wolves.
+**Then predict, and round to whole units.**
+$x(6)=3115.38\ldots\to 3115$.
 
 **The ten-second sanity check.** Evaluate your model at a large $t$. It
 must approach $L$ from below. If it runs away or falls, the sign of $k$

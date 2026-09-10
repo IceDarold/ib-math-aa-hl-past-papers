@@ -214,10 +214,10 @@ along and the answer is a formula: $\frac12 n(n+1)$, or simply $1$ for
 every $n$ at once.
 
 **Rung 9 — the sentence at the end.** Two marks in the archive are for
-saying what the limit means: that a sprinter's speed never reaches
-$8.14\ \mathrm{m\,s^{-1}}$ because the race ends first, that a parabola
-looks straight from far enough away. They are the easiest marks in the
-topic and the ones most often left blank.
+saying what the limit **means**: why a modelled quantity never actually
+reaches the value its formula tends to, or what a curve looks like from
+far enough away. They are the easiest marks in the topic and the ones
+most often left blank.
 
 **What saves the most time.** Write $\lim_{x\to a}$ on *every* line. It
 looks like decoration and it is not: May 2021 caps the question at

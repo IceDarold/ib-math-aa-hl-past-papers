@@ -685,12 +685,14 @@ the step that carries its own mark:
 
 > **Reject the root the question forbids.** *"Award (A1)(M1)A0 if
 > additional answers are given"* — November 2025 TZ3. The circle does not
-> care that $\theta=9.73$ solves the quadratic; the question said the
-> angle was acute.
+> care that the larger root solves the quadratic just as well; if the
+> question said the angle was acute, an angle above $\tfrac{\pi}{2}$ is
+> not an answer, and handing in both costs the last mark.
 
-Sometimes what is left is not a quadratic at all. $20-4\theta+4\sin\theta
-=13.4$ has no algebraic solution, and none is expected: this is where the
-calculator finally does something a pencil cannot.
+Sometimes what is left is not a quadratic at all. An equation mixing
+$\theta$ with $\sin\theta$ has no algebraic solution, and none is
+expected: this is where the calculator finally does something a pencil
+cannot.
 """)
 
 md(r"""

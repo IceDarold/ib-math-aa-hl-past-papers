@@ -284,10 +284,10 @@ whom must take one of the two end seats:
 $$\underbrace{2}_{\text{the two ends}}\times\underbrace{6!}_{\text{everyone else}}=2\times720=1440$$
 
 Markschemes for such questions name the wrong answers explicitly, and they
-all come from filling the special position last:
-> and *"Award M1A0 for $^9P_6=60480$."*
-
-The first forgot the restriction; the second applied it to the wrong pool.
+all come from filling the special position last: one arrangement count
+that ignored the restriction altogether, and another that applied it to
+the wrong pool of objects. Both look like plausible permutations, which
+is exactly why they are named.
 """)
 
 md(r"""
@@ -607,72 +607,84 @@ md(r"""
 ### Cases
 
 Sometimes no single expression covers the question, because the number of
-options for one object depends on **where another object went**. May 2022
-TZ1 is the cleanest example: Peter must have an empty seat on each side of
-him, so
+options depends on **how the first choice went**. A committee of four from
+five men and four women, with **at least two women**, splits by how many
+women there are:
 
-- Peter at either end (2 seats): one neighbour to protect, four girls from
-  the eight remaining seats, $2\times{}^8P_4=3360$;
-- Peter not at an end (8 seats): two neighbours, $8\times{}^7P_4=6720$.
+- two women, two men: $^4C_2\times{}^5C_2=6\times10=60$;
+- three women, one man: $^4C_3\times{}^5C_1=4\times5=20$;
+- four women: $^4C_4=1$.
 
-$$3360+6720=10080$$
+$$60+20+1=81$$
 
 Two rules govern every case split, and both are worth checking out loud:
 
 **They must not overlap.** Ask: can one object land in two cases at once?
-If it can, you have counted it twice.
+If it can, you have counted it twice. Here a committee has one definite
+number of women, so it cannot.
 
-**They must cover everything.** Four books from one continent is
-$^6C_4+{}^5C_4+{}^4C_4=15+5+1=21$ — and the last term is easy to drop,
-because there is only one way to take all four African books and it does
-not feel like a case. The markscheme gives a separate M1 just for
-*"recognition that the sum of 3 different cases is required."*
+**They must cover everything.** The last term above is the one people
+drop: there is only one way to take all four women, it produces a single
+committee, and it does not *feel* like a case. Markschemes give a separate
+M1 just for *"recognition that the sum of 3 different cases is required."*
 
-The split does not have to be by position. May 2023 TZ2 asks for triples
-from $\{1,\dots,30\}$ whose sum is divisible by 3. Sort the thirty numbers
-by remainder — ten leave 0, ten leave 1, ten leave 2 — and a triple works
-exactly when the three remainders are all equal or all different:
+The split does not have to be by count. For pairs from $\{1,\dots,20\}$
+whose **sum is even**, sort the numbers by parity — ten odd, ten even —
+and a pair works exactly when both come from the same half:
 
-$$3\times{}^{10}C_3+\left({}^{10}C_1\right)^3=360+1000=1360$$
+$$^{10}C_2+{}^{10}C_2=45+45=90$$
+
+Choosing what to split by is the whole of the technique. Position, count,
+parity, remainder: pick the property that makes the options inside each
+case stop depending on anything else.
 
 ### Identical groups: divide by their order
 
-Fifteen students into three teams of five. Choosing team A, then team B,
-then team C gives
+Eight people into two groups of four. Choosing group A and letting the
+rest be group B gives
 
-$$^{15}C_5\times{}^{10}C_5\times{}^{5}C_5=3003\times252\times1=756\,756$$
+$$^{8}C_4\times{}^{4}C_4=70\times1=70$$
 
-but the teams have no names. Each actual split has been counted once for
-every order in which its three teams could have been picked — $3!$ of them:
+but the groups have no names. Each actual split has been counted once for
+every order in which its two groups could have been picked — $2!$ of them:
 
-$$\frac{756756}{3!}=126\,126$$
+$$\frac{70}{2!}=35$$
 
-There is a way to avoid the division entirely, and the markscheme accepts
-it: put a fixed student in a team, choose their four teammates
-($^{14}C_4$), take whoever is now lowest-numbered and choose theirs
-($^9C_4$), and the last four are forced:
+There is a way to avoid the division entirely, and markschemes accept it:
+put a fixed person in a group and choose their three companions from the
+seven who are left; whoever remains forms the other group by itself:
 
-$$^{14}C_4\times{}^9C_4\times{}^4C_4=1001\times126\times1=126\,126$$
+$$^{7}C_3=35$$
 
-No over-count happens, so no division is needed. The two methods disagree
-about nothing except how much you have to remember.
+No over-count happens, so no division is needed. With $g$ identical
+groups the division is by $g!$ — and the fixed-person trick removes it by
+making one group distinguishable, which is the same idea seen from the
+other side. The two methods disagree about nothing except how much you
+have to remember.
 
 ### A letter in the count
 
 The last rung is every rung before it, with $n$ where a number used to be.
 Three things go wrong here and all three are worth naming.
 
-**Cancel, do not expand.** $\tfrac12{}^nC_3={}^2C_1\times{}^{n-2}C_2$
-becomes $n(n-1)=12(n-3)$ after the factorials cancel, and
-$n^2-13n+36=0$ after that. Expanding $n!$ gets you nowhere. The markscheme
-awards M1 for *"a valid attempt to eliminate all factorials."*
+**Cancel, do not expand.** From $^nC_3=4\,{}^nC_2$ write both sides out
+as products and strike out what is common:
 
-**Throw away the root the question forbids.** $n^2-13n+36=0$ has roots
-9 and 4. At $n=4$ the second group holds one student, and the question
-says it must hold at least three. The markscheme is blunt: *"Do not award
-the final A1 if additional values of $n$ are given."* The rejection is a
-mark, not a tidy-up — which is why the answer here is written as the set
-$\{9\}$.
+$$\frac{n(n-1)(n-2)}{6}=4\cdot\frac{n(n-1)}{2}
+\;\Longrightarrow\;\frac{n-2}{6}=2\;\Longrightarrow\;n=14 .$$
+
+The $n(n-1)$ went away without ever being multiplied out. Expanding $n!$
+gets you nowhere; markschemes award M1 for *"a valid attempt to eliminate
+all factorials."*
+
+**Throw away the root the question forbids.** When the cancellation leaves
+a quadratic there are two roots and usually one of them is impossible.
+$^nC_2=45$ gives $n(n-1)=90$, so $n=10$ or $n=-9$, and $n$ counts objects.
+Elsewhere the second root is positive but still forbidden — a group would
+come out too small, a case would be empty — and only the question says so.
+Markschemes are blunt about it: *"Do not award the final A1 if additional
+values of $n$ are given."* The rejection is a mark, not a tidy-up, which
+is why answers of this kind are written as a set.
 
 **Round an inequality towards the condition, not towards the arithmetic.**
 $\frac{6}{n(n-1)}>0.05$ gives $n<11.47$, so the greatest integer is 11.
