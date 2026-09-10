@@ -798,9 +798,9 @@ md(r"""
 ---
 ## Theory 9. The limit taken somewhere other than $x$
 
-$x$ is not sacred. The archive takes limits in $n$, in $b$, in $\alpha$,
-in $m^n$ — and when it does, everything that is not the limiting
-variable simply stays where it is.
+$x$ is not sacred. The archive takes limits in $n$, in $h$, in $b$, in
+$\alpha$ — and when it does, everything that is not the limiting variable
+simply stays where it is.
 
 **The limit taken in a second variable.** The oldest example in the
 course is the definition of the derivative, where the limit runs in $h$
@@ -825,7 +825,7 @@ here accept $2\pi$ and refuse $6.28$ — an *exact* value was asked for.
 **A parameter running to a place where a function blows up.** When the
 moving letter is the one that becomes unbounded, divide top and bottom
 by it and let its reciprocal go to zero instead:
-$$h(x)=\frac{1+\lambda x}{\lambda-x}
+$$F(x)=\frac{1+\lambda x}{\lambda-x}
  =\frac{\frac1\lambda+x}{1-\frac{x}{\lambda}}
  \;\xrightarrow[\ \lambda\to\infty\ ]{}\;\frac{0+x}{1-0}=x .$$
 Nothing was substituted into infinity; the expression was rearranged
