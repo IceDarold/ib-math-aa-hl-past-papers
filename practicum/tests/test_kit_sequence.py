@@ -6,10 +6,14 @@
 промахи и не падает на пустом ответе.
 
 Главное свойство, ради которого всё затевалось: внутри проверки нет
-ни u₁ + (n − 1)d, ни n/2 (2u₁ + (n − 1)d). Член она получает сложением
-шага, сумму — сложением членов, наибольшую сумму — перебором. Поэтому
-5 + 2(n − 1), 2n + 3 и n + (n + 3) проходят одинаково, и поэтому же
-логарифмические члены работают наравне с числовыми.
+ни u₁ + (n − 1)d, ни n/2 (2u₁ + (n − 1)d), ни u₁r^(n−1), ни u₁(rⁿ−1)/(r−1).
+Член получается одним шагом, повторённым n − 1 раз: арифметическая
+прибавляет разность, геометрическая умножает на знаменатель. Сумма —
+сложением членов, наибольшая сумма — перебором, бесконечная — сложением
+до тех пор, пока хвост не станет мал. Поэтому 5 + 2(n − 1), 2n + 3 и
+n + (n + 3) проходят одинаково, и поэтому же условие |r| < 1 не написано
+отдельным правилом: у расходящейся прогрессии сложению негде
+остановиться.
 
 Запуск:  python practicum/tests/test_kit_sequence.py
 """
@@ -146,6 +150,92 @@ t('blank-helper', term(empty, 5) is Ellipsis)
 t('blank-helper-total', total(empty, 5) is Ellipsis)
 t('blank-predicate', blank(1, ..., 3) and not blank(1, 2, 3))
 
+print('\n=== геометрическая прогрессия как правило ===')
+gp = geometric(2, 3)                        # 2, 6, 18, 54, 162, ...
+t('g-term', verify_term('пятый член', 162, gp, 5))
+t('g-term-1', verify_term('первый член', 2, gp, 1))
+t('g-total', verify_total('сумма пяти', 242, gp, 5))
+t('g-start', verify_start('первые четыре', [2, 6, 18, 54], gp))
+t('g-helper-term', term(gp, 5) == 162)
+t('g-helper-total', total(gp, 5) == 242)
+t('g-law', verify_term('u_n = 2·3^(n−1)', 2*3**(n - 1), gp, n))
+t('g-law-other', verify_term('та же формула иначе', Rational(2, 3)*3**n, gp, n))
+t('g-law-wrong', verify_term('показатель не тот', 2*3**n, gp, n), False)
+t('g-next', verify_term('следующий член', 486, gp, 5), False)
+t('g-sum-not-term', verify_total('это член, а не сумма', 162, gp, 5), False)
+
+print('\n=== знаменатель берётся делением ===')
+t('ratio', verify_ratio('знаменатель', 3, [2, 6, 18]))
+t('ratio-neg', verify_ratio('отрицательный знаменатель', -3, [7, -21, 63]))
+t('ratio-lost-sign', verify_ratio('знак потерян', 3, [7, -21, 63]), False)
+t('ratio-upside', verify_ratio('перевёрнут', Rational(1, 3), [2, 6, 18]), False)
+t('ratio-not-geometric', verify_ratio('не геометрическая', 2, [1, 2, 5]), False)
+t('ratio-letter', verify_ratio('знаменатель с буквой', xp, [1, xp, xp**2],
+                               var=xp, values=(2, 3)))
+t('is-geometric', verify_geometric('три члена', [7, -21, 63]))
+t('is-geometric-no', verify_geometric('а эти нет', [7, -21, 62]), False)
+t('is-geometric-short', verify_geometric('двух мало', [7, -21]), False)
+t('is-geometric-zero', verify_geometric('нуль членом не бывает', [0, 0, 0]),
+  False)
+t('is-geometric-letter', verify_geometric('с буквой', [m - 5, 3 - 2*m, 5*m + 3],
+                                          var=m, values=(12, -2)))
+t('is-geometric-letter-no', verify_geometric('и не при всех значениях',
+                                             [m - 5, 3 - 2*m, 5*m + 3],
+                                             var=m, values=(12, 1)), False)
+
+print('\n=== бесконечная сумма: сложение, которому есть где остановиться ===')
+half = geometric(1, Rational(1, 2))
+t('inf', verify_infinite('сумма всей прогрессии', 2, half))
+t('inf-exact', verify_infinite('точное значение', Rational(14, 3),
+                               geometric(Rational(7, 12), Rational(7, 8)),
+                               exact=True))
+t('inf-decimal', verify_infinite('десятичная запись не точная', 4.67,
+                                 geometric(Rational(7, 12), Rational(7, 8)),
+                                 exact=True), False)
+t('inf-3sf', verify_infinite('три значащие цифры', 4.67,
+                             geometric(Rational(7, 12), Rational(7, 8))))
+t('inf-exact-close', verify_infinite('почти та же дробь точной не считается',
+                                     Rational(53, 999),
+                                     geometric(Rational(53, 1000),
+                                               Rational(1, 100)),
+                                     exact=True), False)
+t('inf-exact-right', verify_infinite('а эта — считается', Rational(53, 990),
+                                     geometric(Rational(53, 1000),
+                                               Rational(1, 100)),
+                                     exact=True))
+t('inf-helper', abs(float(infinite(half)) - 2) < 1e-9)
+t('inf-diverges', verify_infinite('расходится', 100, geometric(1, 2)), False)
+t('inf-diverges-helper', infinite(geometric(1, 2)) is None)
+t('inf-one', verify_infinite('r = 1 тоже расходится', 5, geometric(1, 1)), False)
+t('inf-arithmetic', verify_infinite('у арифметической её нет', 5,
+                                    progression(1, -1)), False)
+t('inf-letter', verify_infinite('знаменатель с буквой', 1/(1 + xp**2),
+                                geometric(1, -xp**2), var=xp,
+                                values=(Rational(1, 2), Rational(1, 3))))
+t('inf-letter-outside', verify_infinite('вне области сходимости',
+                                        1/(1 + xp**2), geometric(1, -xp**2),
+                                        var=xp, values=(2,)), False)
+
+print('\n=== наименьшее n ищется перебором ===')
+grow = geometric(50, 1.2)
+t('least', verify_least('наименьшее n', 27, grow, lambda s: s > 33500))
+t('least-one-less', verify_least('на единицу меньше', 26, grow,
+                                 lambda s: s > 33500), False)
+t('least-one-more', verify_least('на единицу больше', 28, grow,
+                                 lambda s: s > 33500), False)
+t('least-term', verify_least('условие про член, а не про сумму', 10,
+                             geometric(1, 2), lambda u: u > 500,
+                             what='term'))
+t('least-never', verify_least('условие не выполняется никогда', 5, half,
+                              lambda s: s > 100, limit=50), False)
+t('least-fraction', verify_least('номером дробь не бывает', 26.9, grow,
+                                 lambda s: s > 33500), False)
+t('blank-geometric', verify_geometric('пустой член', [2, ..., 18]), False)
+t('blank-ratio', verify_ratio('пустой знаменатель', ..., [2, 6, 18]), False)
+t('blank-infinite', verify_infinite('пустая сумма', ..., half), False)
+t('blank-least', verify_least('пустое n', ..., grow, lambda s: s > 10), False)
+t('blank-geometric-rule', term(geometric(..., ...), 5) is Ellipsis)
+
 print('\n=== формулы темы внутри проверки нет ===')
 # Смотреть надо на код, а не на текст: в строках документации обе формулы
 # как раз названы — там сказано, что их-то проверка и не использует.
@@ -153,10 +243,13 @@ import ast
 
 source = open(os.path.join(ROOT, 'practicum', 'kit.py')).read()
 tree = ast.parse(source)
-names = {'progression', '_run', '_index', '_as_value', '_agree', '_seq_report',
-         '_sampled', '_differences', 'term', 'total', 'blank', 'verify_term',
-         'verify_total', 'verify_start', 'verify_arithmetic', 'verify_step',
-         'verify_peak'}
+names = {'progression', 'geometric', '_kind', '_run', '_fixed', '_index',
+         '_as_value', '_agree', '_seq_report', '_sampled', '_walkpoints',
+         '_where', '_differences', '_ratios', '_converges', 'infinite',
+         'term', 'total', 'blank', 'verify_term', 'verify_total',
+         'verify_start', 'verify_arithmetic', 'verify_step', 'verify_peak',
+         'verify_geometric', 'verify_ratio', 'verify_infinite',
+         'verify_least'}
 bodies = {}
 for node in tree.body:
     if isinstance(node, ast.FunctionDef) and node.name in names:
@@ -168,16 +261,27 @@ for node in tree.body:
         bodies[node.name] = '\n'.join(ast.unparse(line) for line in stripped)
 t('all-found', set(bodies) == names)
 
-# Члены порождает ровно одна функция, и она только складывает.
+# Члены порождает ровно одна функция, и она делает ровно один шаг:
+# прибавляет разность или умножает на знаменатель. Степени внутри нет —
+# а именно степень и превращает шаг в формулу u₁r^(n−1).
 walk = ast.parse(bodies['_run'])
-t('walk-adds-only', not any(isinstance(node, (ast.Mult, ast.Pow, ast.Div))
-                            for node in ast.walk(walk)))
+t('walk-steps-once', not any(isinstance(node, (ast.Pow, ast.Div))
+                             for node in ast.walk(walk)))
 t('walk-uses-add', any(isinstance(node, ast.Add) for node in ast.walk(walk)))
+t('walk-uses-mult', any(isinstance(node, ast.Mult) for node in ast.walk(walk)))
 
 code = '\n'.join(bodies.values())
-t('no-step-times', 'seq[2] *' not in code and '* seq[2]' not in code)
+t('no-step-power', 'seq[2] **' not in code and 'here[2] **' not in code)
 t('no-n-minus-one', '(n - 1)' not in code and 'index - 1) *' not in code)
 t('no-half-sum', 'index / 2' not in code and 'index * (' not in code)
+# Сумма геометрической прогрессии — тоже сложение. Единственное деление
+# на (1 − |r|) во всей секции стоит в правиле остановки: оно оценивает
+# сверху то, что осталось не сложенным, и в ответ не попадает ни разу.
+body = bodies['infinite']
+t('infinite-adds', 'running = running + value' in body)
+t('infinite-returns-sum', body.strip().endswith('return running'))
+t('no-closed-form', all(text not in code for text in (
+    '/ (1 - seq[2])', '/ (1 - ratio)', '/ (1 - here[2])', '- 1) / (')))
 
 print(f"\n{'ВСЁ ВЕРНО' if not bad else 'ПРОВАЛЫ: ' + str(bad)}  "
       f"({len(ok)}/{len(ok) + len(bad)})")
