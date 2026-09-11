@@ -24,6 +24,15 @@ A1:
   integer:      {skill: integer_condition,         name: номер обязан быть целым}
   log:          {skill: log_terms,                 name: члены-логарифмы}
 
+A2:
+  ratio:     {skill: ratio_and_term,      name: знаменатель и член по номеру}
+  sum:       {skill: finite_sum,          name: сложить первые n}
+  infinite:  {skill: sum_to_infinity,     name: бесконечная сумма}
+  sigma:     {skill: series_from_sigma,   name: прогрессия в сигме}
+  condition: {skill: geometric_condition, name: три величины в прогрессии}
+  least:     {skill: smallest_n,          name: наименьшее n}
+  letter:    {skill: ratio_with_x,        name: знаменатель — выражение}
+
 A3:
   expand:  {skill: full_expansion,            name: раскрыть целиком}
   term:    {skill: general_term,              name: один член разложения}

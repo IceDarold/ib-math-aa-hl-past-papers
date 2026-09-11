@@ -1543,6 +1543,124 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('A1.')):
     print(f'  {gen_name:32} {SEEDS} задач пройдено шагами')
 
 
+# =============================================================== A2
+# Генераторы A2 считают формулами: u₁r^(n−1), u₁(rⁿ−1)/(r−1), u₁/(1−r).
+# Сверка здесь идёт тем путём, которого в генераторах нет: прогрессия
+# проходится умножением, сумма складывается, бесконечная сумма складывается
+# до малого хвоста, а наименьшее n находится перебором номеров.
+
+_A2_VALUE = re.compile(r'(-?)\\frac\{(\d+)\}\{(\d+)\}|(-?\d+(?:\.\d+)?)')
+_A2_SHIFT = re.compile(r'\$k ([+-]) (\d+)\$')
+
+
+def _a2_values(prompt):
+    """Числа условия по порядку: дробь LaTeX — дробью, а не парой цифр."""
+    out = []
+    for sign, top, bottom, plain in _A2_VALUE.findall(prompt):
+        if plain:
+            out.append(sp.Rational(plain))
+        else:
+            value = sp.Rational(int(top), int(bottom))
+            out.append(-value if sign else value)
+    return out
+
+
+def _a2_walked(name, prompt, answer):
+    """Сходится ли ответ с прогрессией, пройденной умножением."""
+    v = _a2_values(prompt)
+
+    if name == 'A2.ratio_and_term':
+        if 'Найдите знаменатель' in prompt:
+            low, low_value, high, high_value = v
+            return quiet(kit.verify_term, 'x', high_value,
+                         kit.geometric(low_value, answer), high - low + 1)
+        if 'Найдите второй член' in prompt:
+            first, fourth = v
+            # знаменатель восстанавливается из ответа, а проверяется
+            # четвёртым членом, пройденным умножением
+            return quiet(kit.verify_term, 'x', fourth,
+                         kit.geometric(first, sp.Rational(answer) / first), 4)
+        first, ratio, index = v
+        return quiet(kit.verify_term, 'x', answer,
+                     kit.geometric(first, ratio), index)
+
+    if name == 'A2.finite_sum':
+        if '\\sum' in prompt:
+            _, top, first, ratio = v
+            return quiet(kit.verify_total, 'x', answer,
+                         kit.geometric(first, ratio), top + 1)
+        count, first, ratio = v
+        return quiet(kit.verify_total, 'x', answer,
+                     kit.geometric(first, ratio), count)
+
+    if name == 'A2.sum_to_infinity':
+        if 'Найдите первый член' in prompt:
+            ratio, whole = v
+            return quiet(kit.verify_infinite, 'x', whole,
+                         kit.geometric(answer, ratio), exact=True)
+        first, ratio = v
+        return quiet(kit.verify_infinite, 'x', answer,
+                     kit.geometric(first, ratio), exact=True)
+
+    if name == 'A2.series_from_sigma':
+        low, coeff, ratio = v
+        # слагаемое при нижнем пределе — член прогрессии, начатой с coeff
+        head = kit.term(kit.geometric(coeff, ratio), low + 1)
+        return quiet(kit.verify_infinite, 'x', answer,
+                     kit.geometric(head, ratio), exact=True)
+
+    if name == 'A2.geometric_condition':
+        if '$w$' in prompt:
+            left, right = v
+            return (len(answer) == 2 and len(set(answer)) == 2
+                    and all(quiet(kit.verify_geometric, 'x',
+                                  [left, value, right]) for value in answer))
+        terms = [answer + (1 if sign == '+' else -1) * int(size)
+                 for sign, size in _A2_SHIFT.findall(prompt)]
+        return len(terms) == 3 and quiet(kit.verify_geometric, 'x', terms)
+
+    if name == 'A2.smallest_n':
+        if 'Машина' in prompt:
+            price, percent, share = v
+            keep = 1 - percent / 100
+            return quiet(kit.verify_least, 'x', answer,
+                         kit.geometric(price * keep, keep),
+                         lambda value: value < price * share / 100,
+                         what='term')
+        first, ratio, target = v
+        return quiet(kit.verify_least, 'x', answer,
+                     kit.geometric(first, ratio),
+                     lambda partial: partial > target)
+
+    if name == 'A2.ratio_with_x':
+        c = v[1]
+        if 'наибольшее $K$' in prompt:
+            # чуть внутри границы ряд складывается, чуть снаружи — уже нет
+            def summed(share):
+                return kit.infinite(kit.geometric(
+                    1, -c * (sp.Float(share) * answer) ** 2))
+            return summed(0.99) is not None and summed(1.01) is None
+        if '$1 + ' in prompt:
+            return quiet(kit.verify_infinite, 'x', answer,
+                         kit.geometric(1, c * x_sym), var=x_sym,
+                         values=(sp.Rational(1, 20), sp.Rational(1, 11)))
+        return quiet(kit.verify_infinite, 'x', answer,
+                     kit.geometric(1, -c * x_sym ** 2), var=x_sym,
+                     values=(sp.Rational(1, 10), sp.Rational(1, 4)))
+
+    raise AssertionError(f'условие A2 не разобрано: {prompt}')
+
+
+section('A2: прогрессия, пройденная умножением, сходится с формулой генератора')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('A2.')):
+    matched = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[gen_name](random.Random(seed))
+        matched += bool(_a2_walked(gen_name, item['prompt'], item['answer']))
+    t(f'{gen_name}: умножение сошлось на всех {SEEDS} зёрнах', matched == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач пройдено умножением')
+
+
 # =============================================================== E4
 # Генераторы E4 считают формулами: sp.diff, точка-наклон, минус обратная
 # величина. Проверки, которые к ним приложены, формул не знают вовсе —

@@ -612,6 +612,357 @@
    "dir": "AA_HL/2024/May/TZ2/Paper 1",
    "skill": "A1.log_terms"
   },
+  "2025-MAY-TZ2-P2-Q07-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "A2.ratio_and_term"
+  },
+  "2025-MAY-TZ3-P1-Q10-B-I": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "b-i",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A2.ratio_and_term"
+  },
+  "2025-MAY-TZ1-P1-Q05-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "A2.ratio_and_term"
+  },
+  "2024-MAY-TZ1-P2-Q01-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "A2.ratio_and_term"
+  },
+  "2024-MAY-TZ1-P2-Q01-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "b",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "A2.ratio_and_term"
+  },
+  "2024-MAY-TZ1-P1-Q05-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "(a)",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A2.finite_sum"
+  },
+  "2024-MAY-TZ1-P1-Q05-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "(b)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "6",
+   "markscheme_pages": "12-14",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "A2.finite_sum"
+  },
+  "2025-MAY-TZ1-P1-Q05-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "5",
+   "part": "A",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "7",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "A2.finite_sum"
+  },
+  "2021-NOV-COMMON-P2-Q05-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "5",
+   "part": "b",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "A2.sum_to_infinity"
+  },
+  "2025-MAY-TZ3-P1-Q10-B-II": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "b-ii",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A2.sum_to_infinity"
+  },
+  "2025-NOV-TZ3-P2-Q10-E": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "10",
+   "part": "E",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "A2.sum_to_infinity"
+  },
+  "2022-MAY-TZ1-P1-Q10-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19-20",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "A2.sum_to_infinity"
+  },
+  "2021-NOV-COMMON-P2-Q05-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "5",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "A2.series_from_sigma"
+  },
+  "2025-NOV-TZ1-P2-Q06-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "A2.series_from_sigma"
+  },
+  "2025-NOV-TZ1-P2-Q06-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "A2.series_from_sigma"
+  },
+  "2024-MAY-TZ2-P1-Q10-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "15/17",
+   "markscheme_pages": "21/31",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "A2.geometric_condition"
+  },
+  "2023-MAY-TZ1-P1-Q10-D": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "D",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "A2.geometric_condition"
+  },
+  "2023-MAY-TZ1-P1-Q10-E": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "E",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "A2.geometric_condition"
+  },
+  "2025-MAY-TZ3-P1-Q10-C-I": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "c-i",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A2.geometric_condition"
+  },
+  "2025-MAY-TZ3-P1-Q10-C-II": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "c-ii",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A2.geometric_condition"
+  },
+  "2025-MAY-TZ3-P1-Q10-C-III": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "c-iii",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "A2.geometric_condition"
+  },
+  "2022-NOV-COMMON-P2-Q03": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "3",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "A2.smallest_n"
+  },
+  "2021-NOV-COMMON-P2-Q05-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "5",
+   "part": "c",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "A2.smallest_n"
+  },
+  "2024-MAY-TZ1-P2-Q01-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "c",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "A2.smallest_n"
+  },
+  "2022-NOV-COMMON-P3-Q01-E": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 3,
+   "question": "1",
+   "part": "e",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2022/November/Common/Paper 3",
+   "skill": "A2.ratio_with_x"
+  },
+  "2025-NOV-TZ3-P3-Q02-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 3",
+   "skill": "A2.ratio_with_x"
+  },
+  "2025-MAY-TZ1-P2-Q12-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "17",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "A2.ratio_with_x"
+  },
   "2025-MAY-TZ1-P1-Q02-B": {
    "session": "May 2025",
    "zone": "TZ1",
@@ -11400,6 +11751,14 @@
    "blocks": 61
   },
   {
+   "id": "A2",
+   "title": "Геометрические прогрессии и бесконечные суммы",
+   "section": "A",
+   "notebook": "practicum/number_algebra/practicum-a2-geometric-sequences.ipynb",
+   "marks": 89,
+   "blocks": 31
+  },
+  {
    "id": "A3",
    "title": "Биномиальная теорема",
    "section": "A",
@@ -11844,6 +12203,193 @@
    "blocks": [
     "2022-MAY-TZ1-P1-Q10-B",
     "2024-MAY-TZ2-P1-Q10-E"
+   ]
+  },
+  {
+   "id": "A2.ratio_and_term",
+   "practicum": "A2",
+   "name": "Знаменатель и член по номеру",
+   "rung": 1,
+   "trigger": "Даны два члена (не обязательно соседние) или процент роста, спрашивают третий член, знаменатель или значение через сколько-то шагов. Признак — слова first term, fourth term, increases by 50%, decreases by 11% each year.",
+   "chain": [
+    "Выписать, какие члены даны и какие у них номера",
+    "Между номерами p и q ровно q − p умножений, значит u_q = u_p·r^(q−p)",
+    "Извлечь корень нужной степени, не забыв про знак при чётной",
+    "Дойти до спрошенного члена умножением от ближайшего известного"
+   ],
+   "traps": [
+    "Умножение сделано n раз вместо n − 1. Первый член тоже член, и до него умножений ноль",
+    "При чётной степени взят только положительный корень. У r² = 9 два решения, и следующий пункт часто выбирает второе",
+    "Знаменатель взят как u₁/u₂ вместо u₂/u₁, и вся прогрессия пошла в обратную сторону",
+    "В модели с процентами первый год посчитан дважды. Стоимость после n лет это u₁r^(n−1), если u₁ — стоимость после первого года"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 89,
+   "blocks": [
+    "2025-MAY-TZ2-P2-Q07-A",
+    "2025-MAY-TZ3-P1-Q10-B-I",
+    "2025-MAY-TZ1-P1-Q05-B",
+    "2024-MAY-TZ1-P2-Q01-A",
+    "2024-MAY-TZ1-P2-Q01-B"
+   ]
+  },
+  {
+   "id": "A2.finite_sum",
+   "practicum": "A2",
+   "name": "Сложить первые n",
+   "rung": 2,
+   "trigger": "Слово sum рядом с конечным числом членов, знак Σ с верхним пределом n, или «сколько всего» у чего-то, что каждый раз умножается. Признак того, что сумма конечная, — верхний предел есть, и он не бесконечность.",
+   "chain": [
+    "Выписать u₁ и r",
+    "Сосчитать, сколько именно членов складывается: от 0 до n их n + 1",
+    "Подставить в S_n = u₁(rⁿ − 1)/(r − 1)",
+    "Проверить знаменатель на нуль — при r = 1 сумма это просто nu₁"
+   ],
+   "traps": [
+    "Число слагаемых взято за n там, где ряд начинается с x⁰. В 1 + x + … + xⁿ слагаемых n + 1, и отдельный балл схемы стоит именно за это",
+    "Сумма спутана с членом. S_n растёт, u_n при |r| < 1 убывает",
+    "Знаменатель дроби записан как 1 − r при r > 1 или наоборот. Обе записи верны вместе со своим числителем и неверны порознь",
+    "Среднее десяти членов посчитано как S₁₀, а делить на десять забыто"
+   ],
+   "calculator": "helps",
+   "practicum_marks": 89,
+   "blocks": [
+    "2024-MAY-TZ1-P1-Q05-A",
+    "2024-MAY-TZ1-P1-Q05-B",
+    "2025-MAY-TZ1-P1-Q05-A"
+   ]
+  },
+  {
+   "id": "A2.sum_to_infinity",
+   "practicum": "A2",
+   "name": "Бесконечная сумма и условие сходимости",
+   "rung": 3,
+   "trigger": "S∞, слова sum to infinity, converges, indefinitely, total distance if it continued forever. Или обратный вопрос — «объясните, почему бесконечной суммы не существует».",
+   "chain": [
+    "Найти r и посмотреть на |r|",
+    "При |r| ≥ 1 ответ словами: члены не убывают, суммы нет",
+    "При |r| < 1 подставить в S∞ = u₁/(1 − r)",
+    "Если спрашивают букву внутри u₁, решить полученное уравнение"
+   ],
+   "traps": [
+    "Условие |r| < 1 названо как r < 1. Отрицательный знаменатель меньше единицы всегда, и чередующийся расходящийся ряд под такую формулировку подходит",
+    "Оба значения r, найденные раньше, не рассмотрены. Схема оценивания снимает балл за рассуждение, где взято одно из двух",
+    "Полный пройденный путь взят за S∞. Частица уходит и возвращается, и путь вдвое больше суммы расстояний",
+    "В знаменателе 1 + r вместо 1 − r, когда r отрицательный"
+   ],
+   "calculator": "partial",
+   "practicum_marks": 89,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q05-B",
+    "2025-MAY-TZ3-P1-Q10-B-II",
+    "2025-NOV-TZ3-P2-Q10-E",
+    "2022-MAY-TZ1-P1-Q10-A"
+   ]
+  },
+  {
+   "id": "A2.series_from_sigma",
+   "practicum": "A2",
+   "name": "Прогрессия, записанная сигмой",
+   "rung": 4,
+   "trigger": "Ряд задан знаком суммы, и члена списком не написано ни одного. Признак — показатель при индексе внутри скобки, а не снаружи, и нижний предел, который бывает и нулём, и единицей.",
+   "chain": [
+    "Подставить нижний предел и получить первый член",
+    "Взять отношение двух соседних слагаемых — это и есть r",
+    "Проверить, чему равен первый член на самом деле: множитель перед скобкой им не является",
+    "Дальше как обычно — конечная сумма или бесконечная"
+   ],
+   "traps": [
+    "За первый член принят множитель перед скобкой. У Σ от r = 1 выражения (2/3)(7/8)^r первый член это 7/12, а не 2/3",
+    "Нижний предел не посмотрен. Сумма от 0 и сумма от 1 отличаются на целый член",
+    "Периодическая дробь собрана не полностью. 0.2535353… это 0.2 плюс ряд, и первое слагаемое в ряд не входит"
+   ],
+   "calculator": "helps",
+   "practicum_marks": 89,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q05-A",
+    "2025-NOV-TZ1-P2-Q06-A",
+    "2025-NOV-TZ1-P2-Q06-B"
+   ]
+  },
+  {
+   "id": "A2.geometric_condition",
+   "practicum": "A2",
+   "name": "Три величины в геометрической прогрессии",
+   "rung": 5,
+   "trigger": "Слова form a geometric sequence рядом с выражениями, в которых сидит буква, или show that s² = at. Ответа-числа в условии нет — он внутри самих членов.",
+   "chain": [
+    "Приравнять два отношения — второе к первому и третье ко второму",
+    "Умножить крест-накрест и получить s² = at",
+    "Раскрыть скобки — уравнение выйдет квадратным на букву",
+    "Решить и оставить оба корня: выбирать между ними будет следующий пункт"
+   ],
+   "traps": [
+    "Один корень потерян. У квадратного уравнения их два, и второе значение буквы даёт совсем другую последовательность",
+    "Знак у r потерян при извлечении корня. Схема оценивания даёт M1A1A0 за √3 без ±",
+    "Условие записано разностями, а не отношениями. Это проверка на арифметическую последовательность, а не на геометрическую",
+    "При r = −1 сумма чётного числа членов равна нулю, и это отдельный ответ, который считать не нужно"
+   ],
+   "calculator": "no",
+   "practicum_marks": 89,
+   "blocks": [
+    "2024-MAY-TZ2-P1-Q10-B",
+    "2023-MAY-TZ1-P1-Q10-D",
+    "2023-MAY-TZ1-P1-Q10-E",
+    "2025-MAY-TZ3-P1-Q10-C-I",
+    "2025-MAY-TZ3-P1-Q10-C-II",
+    "2025-MAY-TZ3-P1-Q10-C-III"
+   ]
+  },
+  {
+   "id": "A2.smallest_n",
+   "practicum": "A2",
+   "name": "Наименьшее n",
+   "rung": 6,
+   "trigger": "Слова smallest, least, how many years рядом с неравенством, в котором n стоит в показателе. Ответ обязан быть целым, и потому это не решение неравенства, а его округление в нужную сторону.",
+   "chain": [
+    "Записать неравенство через S_n или через u_n",
+    "Свести к r^n > c или r^n < c",
+    "Взять логарифм, помня, что при основании меньше единицы знак переворачивается",
+    "Округлить в нужную сторону и проверить соседний номер: он условию отвечать не должен"
+   ],
+   "traps": [
+    "Округление в другую сторону. У «наименьшего n при S_n больше числа» дробный корень 26.9 округляется вверх, до 27",
+    "Неравенство записано через u_n там, где условие про S_n. Схема оценивания ноября 2021 снимает за это M0 отдельной оговоркой",
+    "При делении на отрицательное или при логарифме по основанию меньше единицы знак неравенства не перевёрнут",
+    "Номер года и номер члена перепутаны. После n полных лет стоимость это (n + 1)-й член"
+   ],
+   "calculator": "replaces",
+   "practicum_marks": 89,
+   "blocks": [
+    "2022-NOV-COMMON-P2-Q03",
+    "2021-NOV-COMMON-P2-Q05-C",
+    "2024-MAY-TZ1-P2-Q01-C"
+   ]
+  },
+  {
+   "id": "A2.ratio_with_x",
+   "practicum": "A2",
+   "name": "Знаменатель — выражение с буквой",
+   "rung": 7,
+   "trigger": "Ряд из степеней x, и отношение соседних членов не число, а выражение. Признак — многоточие в записи 1 + x + x² + … или сигма, внутри которой стоит степень чего-то с x.",
+   "chain": [
+    "Взять отношение двух соседних слагаемых и увидеть в нём r",
+    "Сосчитать слагаемые: у 1 + x + … + xⁿ их n + 1",
+    "Подставить в ту же формулу суммы — она не знает, число r или нет",
+    "При бесконечной сумме выписать область, где |r| < 1"
+   ],
+   "traps": [
+    "Слагаемых сосчитано n вместо n + 1, и в ответе xⁿ вместо x^(n+1)",
+    "Область сходимости записана через r, а не через x. |−2x²| < 1 это |x| < 1/√2, и именно x спрашивают",
+    "Знак минус внутри знаменателя потерян. У ряда 1 − x² + x⁴ − … знаменатель равен −x², и сумма выходит 1/(1 + x²)",
+    "Случай x = 1 не оговорён. Формула суммы при нём делит на нуль, и условие «for x ≠ 1» в вопросе стоит не случайно"
+   ],
+   "calculator": "no",
+   "practicum_marks": 89,
+   "blocks": [
+    "2022-NOV-COMMON-P3-Q01-E",
+    "2025-NOV-TZ3-P3-Q02-A",
+    "2025-MAY-TZ1-P2-Q12-B"
    ]
   },
   {
@@ -17733,6 +18279,486 @@
    ],
    "answer": "difference",
    "answer_digest": "69ea741e98fd",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:1",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.ratio_and_term",
+   "prompt": "A geometric sequence has $u_1=6$ and $u_4=48$. Find $u_2$.",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "ratio",
+   "answer_digest": "2f04a79ef13b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:2",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.sum_to_infinity",
+   "prompt": "Find $9+3+1+\\tfrac13+\\dots$ continued forever.",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "infinite",
+   "answer_digest": "704b7acbacf9",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:3",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.geometric_condition",
+   "prompt": "The numbers $p$, $p+4$ and $4p$ form a geometric sequence. Find $p$.",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "condition",
+   "answer_digest": "596d40a4ed24",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:4",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.smallest_n",
+   "prompt": "A colony doubles every day and starts at $200$. After how many days does it pass a million?",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "least",
+   "answer_digest": "6bab65a2bdde",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:5",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.series_from_sigma",
+   "prompt": "Evaluate $\\displaystyle\\sum_{i=1}^{\\infty}\\frac74\\left(\\frac13\\right)^{i}$.",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "sigma",
+   "answer_digest": "38de90475bb3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:6",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.finite_sum",
+   "prompt": "Find $2+6+18+\\dots+2\\cdot3^{\\,9}$.",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "sum",
+   "answer_digest": "09f5ffef2830",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:7",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.ratio_with_x",
+   "prompt": "For which $x$ does $1+4x+16x^2+\\dots$ have a sum?",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "letter",
+   "answer_digest": "f80105efab6d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:8",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.sum_to_infinity",
+   "prompt": "A ball rebounds to $60\\%$ of its height each bounce. Explain why the total distance is finite.",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "infinite",
+   "answer_digest": "704b7acbacf9",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:9",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.geometric_condition",
+   "prompt": "The terms $u_1=m-1$, $u_2=m+3$, $u_3=5m-3$ are geometric. Find $m$.",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "condition",
+   "answer_digest": "596d40a4ed24",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:10",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.smallest_n",
+   "prompt": "A savings account grows by $4\\%$ a year from $\\$500$. When does it first exceed $\\$800$?",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "least",
+   "answer_digest": "6bab65a2bdde",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:11",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.ratio_and_term",
+   "prompt": "A sequence has $u_3=20$ and $u_6=2.5$. Find the common ratio.",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "ratio",
+   "answer_digest": "2f04a79ef13b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:A2:12",
+   "kind": "recognition",
+   "practicum": "A2",
+   "skill": "A2.ratio_with_x",
+   "prompt": "Write $\\displaystyle\\sum_{k=0}^{\\infty}\\left(\\frac{x}{2}\\right)^{k}$ as a rational function.",
+   "options": [
+    {
+     "code": "ratio",
+     "name": "знаменатель и член по номеру"
+    },
+    {
+     "code": "sum",
+     "name": "сложить первые n"
+    },
+    {
+     "code": "infinite",
+     "name": "бесконечная сумма"
+    },
+    {
+     "code": "sigma",
+     "name": "прогрессия в сигме"
+    },
+    {
+     "code": "condition",
+     "name": "три величины в прогрессии"
+    },
+    {
+     "code": "least",
+     "name": "наименьшее n"
+    },
+    {
+     "code": "letter",
+     "name": "знаменатель — выражение"
+    }
+   ],
+   "answer": "letter",
+   "answer_digest": "f80105efab6d",
    "budget_ms": 8000
   },
   {
