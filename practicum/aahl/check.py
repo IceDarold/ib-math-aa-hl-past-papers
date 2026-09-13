@@ -551,6 +551,9 @@ def evaluate(spec, raw):
             verdict = 'независимы' if product == joint else 'зависимы'
             return True, f'{kit.OK} числа верны, и они говорят: {verdict}'
 
+        if kind in ('binomial', 'moment', 'parameter', 'trials'):
+            return _binomial_kind(kind, spec, raw)
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0
@@ -561,6 +564,66 @@ def evaluate(spec, raw):
         return False, f'{kit.NO} {exc}'
 
     raise ValueError(f'неизвестный вид проверки: {kind!r}')
+
+
+_COMPARE = {'==': lambda X, k: X == k, '<': lambda X, k: X < k,
+            '<=': lambda X, k: X <= k, '>': lambda X, k: X > k,
+            '>=': lambda X, k: X >= k}
+_HOLDS = {'>': lambda v, t: v > t, '>=': lambda v, t: v >= t,
+          '<': lambda v, t: v < t, '<=': lambda v, t: v <= t}
+
+
+def _draw_model(packed):
+    """Bin(...) из описания задания; p бывает событием над другой моделью."""
+    n, p = packed
+    if isinstance(p, list) and p and p[0] == 'inner':
+        inner = kit.Bin(p[1][0], sp.sympify(p[1][1]), 'A')
+        return kit.Bin(n, kit.P(_draw_event(p[2], {'A': inner})))
+    return kit.Bin(n, sp.sympify(p))
+
+
+def _draw_event(tree, variables):
+    """Событие kit из дерева сравнений."""
+    head = tree[0]
+    if head == 'leaf':
+        return _COMPARE[tree[2]](variables[tree[1]], tree[3])
+    if head == 'not':
+        return ~_draw_event(tree[1], variables)
+    left, right = _draw_event(tree[1], variables), _draw_event(tree[2], variables)
+    return {'and': left & right, 'or': left | right, 'xor': left ^ right}[head]
+
+
+def _binomial_kind(kind, spec, raw):
+    """Биномиальное распределение, D3: те же проверки, что в ноутбуке."""
+    if kind == 'binomial':
+        variables = {}
+        for name, packed in spec['model'].items():
+            variables[name] = _draw_model(packed)
+            variables[name].name = name
+        given = spec.get('given')
+        find = kit.P(_draw_event(spec['event'], variables),
+                     given=_draw_event(given, variables) if given else None)
+        return _capture(kit.verify_binomial, 'Ответ', parse_one(raw), find)
+    if kind == 'moment':
+        X = kit.Bin(spec['n'], sp.sympify(spec['p']))
+        linear = sp.sympify(spec['a']) * X + sp.sympify(spec['b'])
+        what = kit.Expect(linear) if spec['what'] == 'mean' else kit.Var(linear)
+        return _capture(kit.verify_moment, 'Ответ', parse_one(raw), what)
+    if kind == 'parameter':
+        p = sp.Symbol('p')
+        condition = sp.Eq(kit.Var(kit.Bin(spec['n'], p)),
+                          sp.sympify(spec['variance']))
+        return _capture(kit.verify_parameter, 'Ответ', parse_many(raw),
+                        condition, p)
+    # trials
+    p, rel, k = sp.sympify(spec['p']), spec['rel'], spec['k']
+    family = lambda n: kit.P(_COMPARE[rel](kit.Bin(n, p), k))
+    if spec.get('holds'):
+        sign, level = spec['holds'][0], sp.sympify(spec['holds'][1])
+        return _capture(kit.verify_trials, 'Ответ', parse_one(raw), family,
+                        holds=lambda value: _HOLDS[sign](value, level))
+    return _capture(kit.verify_trials, 'Ответ', parse_one(raw), family,
+                    near=float(sp.sympify(spec['near'])))
 
 
 def show_answer(value, sf=3, var='x'):

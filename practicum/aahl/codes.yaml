@@ -202,6 +202,14 @@ D2:
   count:     {skill: counting_space,       name: перебор исходов}
   letter:    {skill: unknown_probability,  name: буква внутри вероятности}
 
+D3:
+  exact:       {skill: exact_value,          name: ровно k}
+  cumulative:  {skill: cumulative,           name: слова в границу}
+  mean:        {skill: mean_variance,        name: среднее и дисперсия}
+  conditional: {skill: conditional_binomial, name: условие внутри распределения}
+  nested:      {skill: nested,               name: биномиальное поверх другого}
+  trials:      {skill: unknown_trials,       name: неизвестное n}
+
 E1:
   substitute: {skill: substitute,      name: подстановка и сокращение}
   infinity:   {skill: at_infinity,     name: старшая степень на бесконечности}

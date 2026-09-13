@@ -387,6 +387,55 @@ def independence_check(space, a, b):
             'a': list(a), 'b': list(b)}
 
 
+def binomial_check(model, event, given=None):
+    """Вероятность события над биномиальными величинами — сложением, без эталона.
+
+    model — словарь «имя → (n, p)»; p бывает и событием над другой моделью:
+    `(10, ('inner', (40, 0.628364), ['leaf', 'A', '>=', 30]))` — коробка,
+    в которой не меньше тридцати яблок. event и given — деревья сравнений
+    ['leaf', имя, '>=', k], ['and', …], ['or', …], ['xor', …], ['not', …].
+    Страница пересобирает из них Bin(...) и P(...) и зовёт тот же
+    verify_binomial, что стоит в ноутбуке D3.
+    """
+    def pack(value):
+        n, p = value
+        if isinstance(p, tuple) and p and p[0] == 'inner':
+            return [int(n), ['inner', pack(p[1]), p[2]]]
+        return [int(n), sp.srepr(sp.sympify(p))]
+
+    spec = {'kind': 'binomial',
+            'model': {name: pack(value) for name, value in model.items()},
+            'event': event}
+    if given is not None:
+        spec['given'] = given
+    return spec
+
+
+def moment_check(what, n, p, a=1, b=0):
+    """E(aX + b) или Var(aX + b) для X ~ B(n, p); what — 'mean' или 'var'."""
+    return {'kind': 'moment', 'what': what, 'n': int(n),
+            'p': sp.srepr(sp.sympify(p)), 'a': sp.srepr(sp.sympify(a)),
+            'b': sp.srepr(sp.sympify(b))}
+
+
+def parameter_check(n, variance):
+    """Все p, при которых у B(n, p) данная дисперсия. Корни ищет проверка."""
+    return {'kind': 'parameter', 'n': int(n),
+            'variance': sp.srepr(sp.sympify(variance))}
+
+
+def trials_check(p, rel, k, holds=None, near=None):
+    """Число испытаний: наименьшее n, при котором P(X rel k) holds, или n,
+    при котором она примерно равна near. holds — пара ('>', 0.99)."""
+    spec = {'kind': 'trials', 'p': sp.srepr(sp.sympify(p)), 'rel': rel,
+            'k': int(k)}
+    if holds is not None:
+        spec['holds'] = [holds[0], sp.srepr(sp.sympify(holds[1]))]
+    if near is not None:
+        spec['near'] = sp.srepr(sp.sympify(near))
+    return spec
+
+
 def indeterminate_check(num, den, var='x', point=0, side=None, params=None):
     """Ответ — сама неопределённость: '0/0' или 'oo/oo', проверяется порознь."""
     spec = {'kind': 'indeterminate', 'num': sp.srepr(sp.sympify(num)),

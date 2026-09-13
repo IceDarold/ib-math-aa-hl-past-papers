@@ -8399,6 +8399,305 @@
    "dir": "AA_HL/2025/May/TZ3/Paper 2",
    "skill": "D2.unknown_probability"
   },
+  "2022-MAY-TZ1-P2-Q11-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D3.exact_value"
+  },
+  "2023-MAY-TZ2-P2-Q03-D": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "3",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "D3.exact_value"
+  },
+  "2024-MAY-TZ1-P2-Q06-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D3.exact_value"
+  },
+  "2023-MAY-TZ1-P2-Q11-D": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D3.exact_value"
+  },
+  "2023-NOV-TZ2-P2-Q10-C-I": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "C-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14-15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "D3.exact_value"
+  },
+  "2024-MAY-TZ1-P2-Q06-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "b",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D3.cumulative"
+  },
+  "2021-MAY-TZ2-P2-Q10-E": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "e",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D3.cumulative"
+  },
+  "2025-MAY-TZ2-P2-Q10-D": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "21-22",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "D3.cumulative"
+  },
+  "2025-MAY-TZ3-P2-Q11-A-I": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "A-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D3.cumulative"
+  },
+  "2021-NOV-COMMON-P2-Q03-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "3",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "D3.cumulative"
+  },
+  "2021-MAY-TZ2-P2-Q10-D": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "d",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D3.mean_variance"
+  },
+  "2023-NOV-TZ1-P2-Q06-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "D3.mean_variance"
+  },
+  "2023-NOV-TZ2-P2-Q06-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "6",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "D3.mean_variance"
+  },
+  "2023-NOV-TZ1-P2-Q06-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "D3.mean_variance"
+  },
+  "2021-NOV-COMMON-P2-Q03-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "D3.conditional_binomial"
+  },
+  "2025-MAY-TZ3-P2-Q11-A-II": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "A-II",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D3.conditional_binomial"
+  },
+  "2023-NOV-TZ1-P2-Q10-C-I-AND-C-II": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "c(i) and c(ii)",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "D3.conditional_binomial"
+  },
+  "2023-NOV-TZ2-P2-Q10-C-II": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "C-II",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14-15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "D3.conditional_binomial"
+  },
+  "2025-MAY-TZ2-P2-Q10-E": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "E",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "D3.nested"
+  },
+  "2022-MAY-TZ2-P2-Q08": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "8",
+   "part": "",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "D3.nested"
+  },
+  "2023-MAY-TZ1-P2-Q11-C": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D3.unknown_trials"
+  },
+  "2024-MAY-TZ2-P2-Q05": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "11-12",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "D3.unknown_trials"
+  },
+  "2025-MAY-TZ3-P2-Q11-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D3.unknown_trials"
+  },
   "2024-MAY-TZ1-P1-Q11-F-I-II": {
    "session": "May 2024",
    "zone": "TZ1",
@@ -11893,6 +12192,14 @@
    "notebook": "practicum/statistics/practicum-d2-probability.ipynb",
    "marks": 156,
    "blocks": 50
+  },
+  {
+   "id": "D3",
+   "title": "Биномиальное распределение",
+   "section": "D",
+   "notebook": "practicum/statistics/practicum-d3-binomial.ipynb",
+   "marks": 71,
+   "blocks": 23
   },
   {
    "id": "E1",
@@ -16109,6 +16416,164 @@
     "2024-MAY-TZ2-P1-Q04-B",
     "2023-MAY-TZ1-P2-Q07-B",
     "2025-MAY-TZ3-P2-Q11-D"
+   ]
+  },
+  {
+   "id": "D3.exact_value",
+   "practicum": "D3",
+   "name": "Узнать B(n, p) и взять P(X = k)",
+   "rung": 1,
+   "trigger": "Одно и то же испытание повторяют фиксированное число раз, исходов у него два, вероятность успеха не меняется, испытания независимы — и спрашивают «exactly k». Чаще всего p получено в предыдущем пункте из нормального распределения: «in a random selection of 12 chocolate muffins, find the probability that exactly 5 weigh less than 61 g».",
+   "chain": [
+    "Назвать величину и модель словами или символами — X ~ B(n, p). За это первый балл, и без него ответ без решения теряет второй",
+    "Взять p полностью, со всеми цифрами калькулятора, а не округлённым",
+    "P(X = k) — binompdf, или nCk·pᵏ(1 − p)ⁿ⁻ᵏ"
+   ],
+   "traps": [
+    "Берут накопленную вероятность вместо точечной: binomcdf там, где «exactly». Для 10 дождливых дней из 31 это 0,967 вместо 0,0419",
+    "Путают p и 1 − p: считают вероятность того, что вес больше 61 г, когда спрашивали «меньше»",
+    "Ответ с двумя значащими цифрами. Схема оценивания мая 2024: «If no working shown, award (M1)A0 for 0.042 (2 sf)»",
+    "Не пишут модель: B(12; 0,365) — это и есть M1"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 71,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q11-B",
+    "2023-MAY-TZ2-P2-Q03-D",
+    "2024-MAY-TZ1-P2-Q06-A",
+    "2023-MAY-TZ1-P2-Q11-D",
+    "2023-NOV-TZ2-P2-Q10-C-I"
+   ]
+  },
+  {
+   "id": "D3.cumulative",
+   "practicum": "D3",
+   "name": "Слова в границу: не больше, хотя бы, больше",
+   "rung": 2,
+   "trigger": "В вопросе стоит «at most», «at least», «more than», «fewer than» — слово, превращающее одно значение в диапазон. Калькулятор умеет только P(X ≤ k), и всё остальное переводится в эту форму руками.",
+   "chain": [
+    "Записать событие неравенством на X — отдельной строкой, до калькулятора",
+    "«Не больше k» это X ≤ k; «меньше k» это X ≤ k − 1",
+    "«Хотя бы k» это 1 − P(X ≤ k − 1); «больше k» это 1 − P(X ≤ k)",
+    "«Хотя бы один» — через дополнение, 1 − P(X = 0)"
+   ],
+   "traps": [
+    "«At least 10» считают как 1 − P(X ≤ 10): десять выпадает. Схема оценивания мая 2024 даёт M1 именно за 1 − P(X ≤ 9)",
+    "«More than 6» считают как 1 − P(X ≤ 5): шесть попадает туда, где его нет",
+    "Вместо 1 − P(X ≤ k) пишут P(X ≤ k) — это противоположное событие",
+    "«Хотя бы один» складывают по слагаемым от 1 до 30 и теряют член"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 71,
+   "blocks": [
+    "2024-MAY-TZ1-P2-Q06-B",
+    "2021-MAY-TZ2-P2-Q10-E",
+    "2025-MAY-TZ2-P2-Q10-D",
+    "2025-MAY-TZ3-P2-Q11-A-I",
+    "2021-NOV-COMMON-P2-Q03-A"
+   ]
+  },
+  {
+   "id": "D3.mean_variance",
+   "practicum": "D3",
+   "name": "Среднее, дисперсия и p по дисперсии",
+   "rung": 3,
+   "trigger": "Спрашивают «expected number», E(X), Var(X) или дисперсию величины, линейно выраженной через X, — либо дисперсия дана, а неизвестно p.",
+   "chain": [
+    "E(X) = np — ожидаемое число успехов, и оно не обязано быть целым",
+    "Var(X) = np(1 − p)",
+    "Var(aX + b) = a²·Var(X) — постоянная уходит, множитель в квадрате",
+    "Если дана дисперсия, np(1 − p) = данное число — квадратное уравнение на p, и корней у него обычно два"
+   ],
+   "traps": [
+    "Округляют ожидаемое число до целого: 4,56 рейса — верный ответ",
+    "Берут один корень: p = 0,641 и p = 0,359 дают одну дисперсию, потому что p и 1 − p в np(1 − p) симметричны. Схема оценивания ноября 2023 — A1A1, по баллу за каждый",
+    "Var(1 − 2X) считают как −2·Var(X) или как 4·Var(X) + 1",
+    "Путают дисперсию и стандартное отклонение"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 71,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q10-D",
+    "2023-NOV-TZ1-P2-Q06-A",
+    "2023-NOV-TZ2-P2-Q06-A",
+    "2023-NOV-TZ1-P2-Q06-B"
+   ]
+  },
+  {
+   "id": "D3.conditional_binomial",
+   "practicum": "D3",
+   "name": "Условная вероятность внутри одного распределения",
+   "rung": 4,
+   "trigger": "«Given that at most six surveys were entered inaccurately, find the probability that exactly four…» — оба события про одну и ту же X. Условие отрезает диапазон значений, и всё считается внутри него.",
+   "chain": [
+    "Записать P(A | B) с событиями в контексте — «X = 4 | X ≤ 6», а не голое P(A | B): иначе M0",
+    "Числитель — пересечение диапазонов. {X ≤ 2} ∩ {X ≥ 1} это X = 1 или 2",
+    "Знаменатель — вероятность условия, и границу в нём перевести так же аккуратно, как в приёме 2"
+   ],
+   "traps": [
+    "«Fewer than 49» переводят как X ≤ 49. Схема оценивания ноября 2023 разбирает этот случай отдельной оговоркой: 0,0149581 вместо 0,0157 — (A0)(M1)(A1)A0",
+    "В числитель ставят всё событие, а не пересечение: P(X ≤ 2)/P(X ≥ 1) больше единицы, и это видно — если посмотреть",
+    "Условную вероятность переворачивают: P(X ≥ 1 | X ≤ 2)",
+    "Забывают разделить и сдают пересечение как ответ"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 71,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q03-B",
+    "2025-MAY-TZ3-P2-Q11-A-II",
+    "2023-NOV-TZ1-P2-Q10-C-I-AND-C-II",
+    "2023-NOV-TZ2-P2-Q10-C-II"
+   ]
+  },
+  {
+   "id": "D3.nested",
+   "practicum": "D3",
+   "name": "Биномиальное поверх другого распределения",
+   "rung": 5,
+   "trigger": "Успехом названо событие, вероятность которого сама считается: коробка «with at least 30 premium apples», спортсменка, у которой «at least one throw of 60 metres». Внутренний шаг — нормальное или биномиальное, внешний — снова биномиальное или «ровно один из двоих».",
+   "chain": [
+    "Решить, что здесь одно испытание: яблоко, коробка или бросок",
+    "Посчитать вероятность успеха этого испытания и держать её полностью",
+    "Построить внешнюю модель с этим p и ответить на вопрос о ней",
+    "«Ровно один из двоих» — P(A)(1 − P(B)) + P(B)(1 − P(A)), не объединение"
+   ],
+   "traps": [
+    "Во внешнюю модель подставляют вероятность внутреннего испытания: B(10; 0,628) вместо B(10; 0,0739)",
+    "«Only one of Rachel or Sophia qualifies» считают как «хотя бы одна» — случай, когда прошли обе, остаётся внутри",
+    "Промежуточную вероятность округляют до 0,0739 и получают 0,00395 вместо 0,00394; схема оценивания даёт FT, но не всегда"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 71,
+   "blocks": [
+    "2025-MAY-TZ2-P2-Q10-E",
+    "2022-MAY-TZ2-P2-Q08"
+   ]
+  },
+  {
+   "id": "D3.unknown_trials",
+   "practicum": "D3",
+   "name": "Неизвестное число испытаний",
+   "rung": 6,
+   "trigger": "«Determine the least value of n such that P(X ≥ 1) > 0.99», «the least number of trials required to be 99% sure of at least one success», «the probability that at most six… is approximately 0.367. Find n». Неизвестна не вероятность, а n.",
+   "chain": [
+    "Записать неравенство на вероятность как функцию n",
+    "Для «хотя бы одного» это 1 − (1 − p)ⁿ > 0,99, и логарифм даёт границу",
+    "Иначе — таблица значений на калькуляторе по n",
+    "Ответ — целое n по нужную сторону границы, и соседнее проверить"
+   ],
+   "traps": [
+    "Сдают границу из логарифма, 16,0078, вместо целого 17",
+    "Округляют вниз: при n = 16 вероятность 0,98998 — ещё меньше 0,99",
+    "Логарифм числа меньше единицы отрицателен, и знак неравенства при делении на него не переворачивают",
+    "В «approximately 0.367» ищут n, при котором вероятность больше 0,367, а не близка к нему"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 71,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q11-C",
+    "2024-MAY-TZ2-P2-Q05",
+    "2025-MAY-TZ3-P2-Q11-B"
    ]
   },
   {
@@ -29715,6 +30180,438 @@
    ],
    "answer": "indep",
    "answer_digest": "1e76c19f7fab",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:1",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.exact_value",
+   "prompt": "A test has $15$ questions with four options each, all guessed. Find the probability of exactly $7$ right.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "exact",
+   "answer_digest": "fa79d4746c21",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:2",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.cumulative",
+   "prompt": "$5\\%$ of bolts are faulty. In a box of $200$, find the probability that at most $8$ are faulty.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "cumulative",
+   "answer_digest": "2dfda8e4279b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:3",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.mean_variance",
+   "prompt": "$X\\sim B(n,p)$ with $E(X)=12$ and $\\mathrm{Var}(X)=3$. Find $n$ and $p$.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "mean",
+   "answer_digest": "82523faea1b0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:4",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.conditional_binomial",
+   "prompt": "A spinner shows red with probability $0.35$ and is spun $20$ times. Given that red appears at least $5$ times, find the probability that it appears exactly $7$ times.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "conditional",
+   "answer_digest": "6929adae851d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:5",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.nested",
+   "prompt": "Each egg in a carton of $12$ is cracked with probability $0.02$, and a carton with more than one cracked egg is rejected. Find the probability that exactly $3$ of $50$ cartons are rejected.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "nested",
+   "answer_digest": "233562de1a02",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:6",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.unknown_trials",
+   "prompt": "How many times must a fair die be rolled for the probability of at least one six to exceed $0.9$?",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "trials",
+   "answer_digest": "959a9132f6c7",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:7",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.cumulative",
+   "prompt": "A seed germinates with probability $0.85$. Of $30$ seeds, find the probability that more than $25$ germinate.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "cumulative",
+   "answer_digest": "2dfda8e4279b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:8",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.mean_variance",
+   "prompt": "A fair coin is tossed $400$ times. Find the standard deviation of the number of heads.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "mean",
+   "answer_digest": "82523faea1b0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:9",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.nested",
+   "prompt": "Two archers shoot $6$ arrows each and hit with probabilities $0.6$ and $0.75$. Find the probability that exactly one of them hits at least $5$ times.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "nested",
+   "answer_digest": "233562de1a02",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:10",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.conditional_binomial",
+   "prompt": "$X\\sim B(10,0.3)$. Find $P(X=2\\mid X<4)$.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "conditional",
+   "answer_digest": "6929adae851d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:11",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.exact_value",
+   "prompt": "A bulb is defective with probability $0.03$. In a sample of $25$, find the probability that exactly one is defective.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "exact",
+   "answer_digest": "fa79d4746c21",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D3:12",
+   "kind": "recognition",
+   "practicum": "D3",
+   "skill": "D3.unknown_trials",
+   "prompt": "$X\\sim B(n,0.2)$ and $P(X\\le3)\\approx0.411$. Find $n$.",
+   "options": [
+    {
+     "code": "exact",
+     "name": "ровно k"
+    },
+    {
+     "code": "cumulative",
+     "name": "слова в границу"
+    },
+    {
+     "code": "mean",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "conditional",
+     "name": "условие внутри распределения"
+    },
+    {
+     "code": "nested",
+     "name": "биномиальное поверх другого"
+    },
+    {
+     "code": "trials",
+     "name": "неизвестное n"
+    }
+   ],
+   "answer": "trials",
+   "answer_digest": "959a9132f6c7",
    "budget_ms": 8000
   },
   {

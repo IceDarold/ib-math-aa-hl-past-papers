@@ -1661,6 +1661,146 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('A2.')):
     print(f'  {gen_name:32} {SEEDS} задач пройдено умножением')
 
 
+# =============================================================== D3
+# Проверки D3 складывают P(X = k) по значениям. Сверка идёт путём, которого
+# в них нет: накопленная вероятность — регуляризованная неполная
+# бета-функция, P(X ≤ k) = I₁₋ₚ(n − k, k + 1); среднее и дисперсия —
+# формулами np и a²np(1 − p); p по дисперсии — формулой корней; наименьшее
+# n — логарифмом; n по приблизительной вероятности — делением пополам.
+# Затем эталон прогоняется через проверку тренажёра, и рядом с ним —
+# ответ со сдвинутой границей, который она обязана отвергнуть.
+
+import mpmath  # noqa: E402
+
+_D3_BOUNDS = {'==': lambda k: (k, k), '<=': lambda k: (0, k),
+              '<': lambda k: (0, k - 1), '>=': lambda k: (k, None),
+              '>': lambda k: (k + 1, None)}
+_D3_MOVED = {'==': '<=', '<=': '<', '<': '<=', '>=': '>', '>': '>='}
+
+
+def _d3_cdf(n, p, k):
+    if k < 0:
+        return mpmath.mpf(0)
+    if k >= n:
+        return mpmath.mpf(1)
+    return mpmath.betainc(n - k, k + 1, 0, 1 - mpmath.mpf(p), regularized=True)
+
+
+def _d3_range(n, p, low, high):
+    """P(low ≤ X ≤ high) разностью двух бета-функций."""
+    high = n if high is None else min(high, n)
+    if low > high:
+        return mpmath.mpf(0)
+    return _d3_cdf(n, p, high) - _d3_cdf(n, p, low - 1)
+
+
+def _d3_model(packed):
+    n, p = packed
+    if isinstance(p, list) and p[0] == 'inner':
+        inner_n, inner_p = p[1][0], float(sp.sympify(p[1][1]))
+        _, _, rel, k = p[2]
+        low, high = _D3_BOUNDS[rel](k)
+        return n, _d3_range(inner_n, inner_p, low, high)
+    return n, float(sp.sympify(p))
+
+
+def _d3_leaf(model, leaf):
+    n, p = model[leaf[1]]
+    low, high = _D3_BOUNDS[leaf[2]](leaf[3])
+    return n, p, low, high
+
+
+def _d3_probability(spec, moved=False):
+    """Вероятность события задания; moved — первая граница сдвинута."""
+    model = {name: _d3_model(packed) for name, packed in spec['model'].items()}
+    event = spec['event']
+    if moved and event[0] == 'leaf':
+        event = ['leaf', event[1], _D3_MOVED[event[2]], event[3]]
+    if event[0] == 'xor':
+        first = _d3_range(*_d3_leaf(model, event[1]))
+        second = _d3_range(*_d3_leaf(model, event[2]))
+        return first * (1 - second) + second * (1 - first)
+    n, p, low, high = _d3_leaf(model, event)
+    if not spec.get('given'):
+        return _d3_range(n, p, low, high)
+    _, _, g_low, g_high = _d3_leaf(model, spec['given'])
+    both_high = high if g_high is None else (g_high if high is None else min(high, g_high))
+    return (_d3_range(n, p, max(low, g_low), both_high)
+            / _d3_range(n, p, g_low, g_high))
+
+
+def _d3_expected(item):
+    spec = item['check']
+    kind = spec['kind']
+    if kind == 'binomial':
+        return _d3_probability(spec)
+    if kind == 'moment':
+        n, p = spec['n'], sp.sympify(spec['p'])
+        a = sp.sympify(spec['a'])
+        if spec['what'] == 'mean':
+            return a * n * p + sp.sympify(spec['b'])
+        return a ** 2 * n * p * (1 - p)
+    if kind == 'parameter':
+        n, v = spec['n'], sp.sympify(spec['variance'])
+        half = sp.sqrt(1 - 4 * v / n) / 2
+        return sorted([sp.Rational(1, 2) - half, sp.Rational(1, 2) + half])
+    p = float(sp.sympify(spec['p']))
+    if spec.get('holds'):
+        level = float(sp.sympify(spec['holds'][1]))
+        boundary = math.log(1 - level) / math.log(1 - p)
+        return math.floor(boundary) + 1
+    near = kit.sig(sp.sympify(spec['near']), 3)
+    low, high = spec['k'] + 1, 2000      # P(X ≤ k) убывает по n
+    while high - low > 1:
+        middle = (low + high) // 2
+        if _d3_cdf(middle, p, spec['k']) > mpmath.mpf(near):
+            low = middle
+        else:
+            high = middle
+    for candidate in range(max(spec['k'] + 1, low - 2), high + 3):
+        if kit.sig(_d3_cdf(candidate, p, spec['k']), 3) == near:
+            return candidate
+    return None
+
+
+def _d3_same(expected, answer):
+    if isinstance(expected, list):
+        return (len(expected) == len(answer)
+                and all(abs(float(e) - float(a)) < 1e-9
+                        for e, a in zip(expected, sorted(answer))))
+    if expected is None:
+        return False
+    return abs(float(expected) - float(answer)) <= 1e-9 * max(1, abs(float(answer)))
+
+
+section('D3: бета-функция и формулы сходятся с генератором, проверка их принимает')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('D3.')):
+    agreed = accepted = moved = moved_named = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[gen_name](random.Random(seed))
+        spec = item['check']
+        agreed += bool(_d3_same(_d3_expected(item), item['answer']))
+        ok, _ = evaluate(spec, show_answer(item['answer']))
+        accepted += bool(ok)
+        if spec['kind'] == 'binomial' and spec['event'][0] == 'leaf':
+            shifted = _d3_probability(spec, moved=True)
+            if kit.sig(shifted, 3) != kit.sig(item['answer'], 3):
+                wrong, message = evaluate(spec, f'{float(shifted):.6g}')
+                moved += not wrong
+                moved_named += ('границ' in message or 'cdf' in message)
+            else:
+                moved += 1
+                moved_named += 1
+        else:
+            moved += 1
+            moved_named += 1
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: сдвинутая граница отвергнута на всех {SEEDS} зёрнах', moved == SEEDS)
+    t(f'{gen_name}: и названа по имени на всех {SEEDS} зёрнах', moved_named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено бета-функцией и проверкой')
+
+
 # =============================================================== E4
 # Генераторы E4 считают формулами: sp.diff, точка-наклон, минус обратная
 # величина. Проверки, которые к ним приложены, формул не знают вовсе —
