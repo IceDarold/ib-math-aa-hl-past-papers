@@ -255,6 +255,16 @@ C4:
   thresh: {skill: threshold_interval,      name: порог и неравенство}
   bound:  {skill: bounds_argument,         name: оценка через ±1}
 
+C5:
+  points:     {skill: points,     name: точки и длины}
+  scalar:     {skill: scalar,     name: скалярное произведение}
+  angle:      {skill: angle,      name: угол между векторами}
+  line:       {skill: line,       name: уравнение прямой}
+  line_angle: {skill: line_angle, name: угол между прямыми}
+  meet:       {skill: meet,       name: точка пересечения}
+  skew:       {skill: skew,       name: параллельны, пересекаются, скрещиваются}
+  motion:     {skill: motion,     name: движение по прямой}
+
 E2:
   def:      {skill: from_derivatives,   name: по определению}
   sub:      {skill: substitution,       name: подстановка в известный ряд}

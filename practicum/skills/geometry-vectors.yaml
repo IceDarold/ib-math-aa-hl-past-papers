@@ -1,0 +1,430 @@
+version: 0.1
+practicum: C5
+title: "Векторы: операции, прямые, углы"
+source_topic: geometry.vectors
+also_covers: [geometry.vectors_3d]
+
+corpus:
+  blocks: 42
+  marks: 148
+  effective_blocks: 39
+  effective_marks: 137
+  sessions: May 2021 — November 2025
+  papers: {1: 58, 2: 71, 3: 8}
+  gdc_marks: 79
+  note: >
+    Тема разрезана по вопросу, а не по разметке. geometry.vectors — 182
+    балла, но в них и плоскости, и векторное произведение, и расстояния,
+    и системы уравнений; geometry.vectors_3d — 216 баллов, и в них же
+    лежат прямые, углы и точки пересечения. C5 берёт из обеих тем одно:
+    всё, что делается без плоскости и без векторного произведения.
+    96 баллов из 182 geometry.vectors (доля 0.527) и 52 балла из 216
+    geometry.vectors_3d (0.241). Плоскости и системы — C6, векторное
+    произведение, расстояния и углы с плоскостью — C7.
+
+    Дубль ноября 2023 года здесь снова есть: пирамида Q1 и прямые Q12(a)
+    стоят и в TZ1, и в TZ2 одной бумаги. 42 блока по корпусу, 39 рабочих;
+    148 баллов, 137 рабочих.
+
+    Paper 1 — 58 баллов, Paper 2 — 71, Paper 3 — 8. Калькуляторных 79, но
+    честной работы для GDC меньше половины: скорость, угол до трёх цифр,
+    корень уравнения с косинусами. Уравнение прямой, пересечение и
+    «скрещиваются» на Paper 2 решаются так же, как на Paper 1, — система
+    из двух уравнений и проверка третьего.
+
+directions:
+  forwards: >
+    Даны точки и векторы, спрашивают число или вектор: AB, середину,
+    четвёртую вершину, длину (приём 1), скалярное произведение (приём 2),
+    угол (приём 3).
+  lines: >
+    Прямая — точка и направление. Записать её (приём 4), найти угол между
+    двумя прямыми (приём 5), их общую точку (приём 6) и понять, есть ли
+    она вообще: параллельны, пересекаются или скрещиваются (приём 7).
+  motion: >
+    Прямая, по которой идут во времени: r = r₀ + t·v. Скорость — длина v,
+    курс — направление v на горизонтали, и «кто раньше в точке» — два
+    разных t для одной точки (приём 8).
+
+skills:
+  - id: points
+    name: Точки и отрезки — AB = b − a, середина, длина
+    rung: 1
+    trigger: >
+      «Find the coordinates of D, diagonally opposite B»; «find the coordinates
+      of the centre of the circle and its radius»; «find BV»; «write down AB
+      and AC»; «given that A, B and C lie on a straight line, show that k = 9»;
+      «express OM in terms of a and c». Даны точки или векторы, ничего не
+      сказано про прямую.
+    chain:
+      - "Вектор между точками — конец минус начало: AB = b − a"
+      - "Середина — полусумма концов; четвёртая вершина параллелограмма ABCD —
+        из AB = DC, то есть d = a + c − b"
+      - "Длина — корень из суммы квадратов компонент; расстояние между точками
+        — длина вектора между ними"
+      - "Три точки на одной прямой — AB кратен AC: сравнить компоненты и найти
+        букву"
+      - "В задаче с буквами-векторами идти по фигуре: OM = OA + AM, и
+        противоположные стороны параллелограмма — один вектор"
+    traps:
+      - "Берут вершину не в том порядке: D = a + b − c вместо a + c − b, и
+        ABCD перестаёт быть параллелограммом"
+      - "Середину путают с половиной вектора: (b − a)/2 вместо (a + b)/2"
+      - "Отвечают вектором на вопрос о длине BV — схема ставит за это SC(A0)"
+      - "Радиус берут равным всему AB, хотя AB — диаметр"
+      - "Для наименьшего |a + b| пишут b, а не a + b; или берут b того же
+        направления, что a"
+    calculator:
+      mode: speeds_up
+      note: >
+        11 баллов из 21 на Paper 2, и калькулятор там только извлекает корень:
+        BV = √106 = 10.3. Остальное — Paper 1, где всё целое.
+    prereq: []
+    raw_tags: [vector_addition, parallelogram_property, midpoint_formula, vector_equation,
+               midpoint_3d, distance_formula_3d, radius_from_diameter,
+               square_root_simplification, rounding, simplify_surd, vector_subtraction,
+               collinearity_condition, scalar_multiple, magnitude_of_vector,
+               triangle_inequality, antiparallel_vectors, scalar_multiplication]
+    blocks: ['2025-MAY-TZ3-P1-Q11-A', '2025-MAY-TZ3-P1-Q11-B',
+             '2022-NOV-COMMON-P1-Q02-A-I-A-II', '2023-NOV-TZ1-P2-Q01-A',
+             '2025-MAY-TZ2-P2-Q02-A', '2022-NOV-COMMON-P2-Q12-A',
+             '2022-NOV-COMMON-P2-Q12-B', '2022-MAY-TZ1-P2-Q07-A',
+             '2022-MAY-TZ1-P2-Q07-B', '2023-MAY-TZ2-P1-Q09-A']
+
+  - id: scalar
+    name: Скалярное произведение — перпендикулярность и алгебра векторов
+    rung: 2
+    trigger: >
+      «Find an expression, in terms of p, for a · c»; «find q such that
+      |q| = |b| and q is perpendicular to a»; «use a vector method to show
+      that |a|²(1 − 2k)(2cos θ − (1 − 2k)) = 0»; «prove that BĈA is a right
+      angle». В условии «perpendicular», «right angle», «OM · MC = 0».
+    chain:
+      - "По компонентам: a · b = a₁b₁ + a₂b₂ + a₃b₃ — число, а не вектор"
+      - "Перпендикулярны — скалярное произведение ноль; это уравнение на
+        неизвестную компоненту или букву"
+      - "Длина задана — второе уравнение: |q|² = x² + y²; решить вместе и
+        отбросить решение, нарушающее условие (x, y > 0)"
+      - "С буквами-векторами раскрывать как скобки: a · a = |a|², a · c =
+        |a||c| cos θ"
+      - "Прямой угол при C — CA · CB = 0, векторы из C, а не радиус-векторы"
+    traps:
+      - "Теряют знак компоненты: a · c = 5p − 42 вместо −5p − 42"
+      - "Находят направление (5, 12), перпендикулярное a, и забывают растянуть
+        его до длины 15"
+      - "Оставляют оба решения системы, хотя x, y ∈ ℝ⁺"
+      - "В раскрытии (a + kc) · ((1 − k)c − a) теряют |c|² = 4|a|²"
+      - "Для прямого угла берут OA · OB, а не CA · CB"
+    calculator:
+      mode: mixed
+      note: >
+        8 баллов на Paper 2, 3 на Paper 1 и 6 на Paper 3. Считать калькулятору
+        нечего: 75/13 и 180/13 он лишь переводит в десятичные, а доказательство
+        Paper 3 — алгебра в буквах k и t.
+    prereq: [points]
+    raw_tags: [perpendicular_vectors, dot_product, magnitude_of_vector,
+               simultaneous_equations, algebraic_expansion, substitution,
+               factorisation, scalar_product, perpendicular_lines, slope_product,
+               pythagorean_theorem]
+    blocks: ['2022-MAY-TZ1-P2-Q07-C', '2023-MAY-TZ2-P1-Q09-B',
+             '2025-MAY-TZ3-P2-Q06-A', '2025-NOV-TZ1-P3-Q01-F']
+
+  - id: angle
+    name: Угол между векторами — cos θ = a·b/(|a||b|)
+    rung: 3
+    trigger: >
+      «Find the size of BV̂C»; «let θ be the angle between u and v, find an
+      expression for cos θ in terms of n»; «use the scalar product to find the
+      angle between p and n»; «the angle between a and c is equal to the angle
+      between b and c, find p».
+    chain:
+      - "Угол при вершине V — между векторами из V: VB и VC, а не OB и OC"
+      - "cos θ = a · b / (|a||b|); θ = arccos — от 0 до π"
+      - "Скалярное произведение ноль — угол прямой, считать дальше нечего"
+      - "Буква в векторе — приравнять косинусы и решить; не возводить в
+        квадрат без проверки: квадрат добавляет корень с косинусами разных
+        знаков"
+    traps:
+      - "Берут радиус-векторы вершин, OB и OC, — выходит угол при начале
+        координат"
+      - "Забывают поделить на |u||v|: cos θ = cos(1/n) + sin(1/n)"
+      - "Ответ в градусах там, где ждут радианы, или наоборот; схема ноября
+        2023 принимает оба, но две значащие цифры — нет"
+      - "Отвечают cos θ = 0 вместо угла π/2"
+    calculator:
+      mode: needed
+      note: >
+        12 баллов из 14 на Paper 2: арккосинус до трёх цифр и корень
+        уравнения для p. Paper 3 — угол π/2 без вычислений.
+    prereq: [scalar]
+    raw_tags: [cosine_rule, distance_formula_3d, inverse_cosine, rounding,
+               scalar_product, vector_magnitude, cosine_formula,
+               angle_between_vectors, magnitude, equating_expressions,
+               solving_equation]
+    blocks: ['2023-NOV-TZ1-P2-Q01-B', '2022-NOV-COMMON-P2-Q07-A',
+             '2025-MAY-TZ2-P3-Q02-B-I', '2025-MAY-TZ3-P2-Q06-B']
+
+  - id: line
+    name: Уравнение прямой — точка и направление
+    rung: 4
+    trigger: >
+      «Find a vector equation of L1» при декартовой записи (x − 1)/2 = (y + 2)/3
+      = z; «write down a vector equation for L1 in the form r = a + λb»; «find a
+      vector equation for L2, given that L2 passes through A and B»; «given that
+      the point S lies on L3, find γ».
+    chain:
+      - "r = a + λb: a — любая точка прямой, b — любое направление вдоль неё"
+      - "Через две точки: направление — их разность, точка — любая из двух"
+      - "Из декартовой формы: приравнять все части λ и выразить x, y, z;
+        точка — числа при x, y, z с обратным знаком, направление —
+        знаменатели"
+      - "3 − z = λ даёт z = 3 − λ: компонента направления −1"
+      - "Точка на прямой — приравнять r точке и найти λ из одной компоненты,
+        проверив остальные"
+      - "Написать «r =» — без него A1 не ставят"
+    traps:
+      - "Точку берут со знаками числителей: (−1, 2, 0) из (x − 1)/2 = (y + 2)/3"
+      - "Направление через две точки берут радиус-вектором второй точки"
+      - "Из 3 − z берут направление +1"
+      - "Меняют местами точку и направление"
+      - "Не пишут «r =» или «s =» — схема ставит A0"
+    calculator:
+      mode: allowed
+      note: >
+        9 баллов из 11 на Paper 1, и на Paper 2 считать тоже нечего: γ находят
+        из одной компоненты.
+    prereq: [points]
+    raw_tags: [substitute_point, verify_cartesian_equation, convert_to_parametric,
+               express_vector_equation, convert_cartesian_to_vector,
+               parameter_introduction, vector_equation_of_line,
+               direction_vector_from_two_points, solve_for_parameter]
+    blocks: ['2021-MAY-TZ1-P1-Q11-A', '2025-MAY-TZ2-P1-Q02-A',
+             '2025-NOV-TZ3-P1-Q10-A', '2025-NOV-TZ3-P1-Q10-B',
+             '2025-NOV-TZ1-P2-Q12-F']
+
+  - id: line_angle
+    name: Угол между прямыми — направления и острый угол
+    rung: 5
+    trigger: >
+      «Find the acute angle between the two airplanes' lines of flight»; «find
+      the possible values of a when the acute angle between L1 and L2 is 45°»;
+      «the acute angle between the two lines is π/3, show that 4t = √(10t² +
+      12t + 18)».
+    chain:
+      - "Угол между прямыми — угол между их направлениями; точки не нужны"
+      - "Острый: cos θ = |d₁ · d₂| / (|d₁||d₂|); если вышел тупой — 180° − θ"
+      - "Буква в направлении — уравнение на косинус; модуль и корни уходят
+        возведением в квадрат, и оба корня квадратного уравнения годятся"
+      - "На Paper 1 — точные корни: −4 ± 3√2"
+    traps:
+      - "Отдают тупой угол 139.8° вместо 40.2°"
+      - "Берут радиус-векторы точек прямых вместо направлений"
+      - "Находят одно значение a из двух"
+      - "Делят только на одну длину: 2t/√(5t² + 6t + 9) без √2"
+    calculator:
+      mode: mixed
+      note: >
+        12 баллов из 16 на Paper 1, где уравнение для a решается руками. На
+        Paper 2 калькулятор только берёт арккосинус.
+    prereq: [angle, line]
+    raw_tags: [compute_dot_product, compute_magnitude, apply_angle_formula,
+               solve_absolute_value_equation, solve_quadratic, dot_product,
+               angle_between_vectors, arccos, acute_angle, supplementary_angle,
+               scalar_product, vector_magnitude, cosine_formula,
+               algebraic_simplification]
+    blocks: ['2021-MAY-TZ1-P1-Q11-B', '2022-MAY-TZ2-P2-Q11-C',
+             '2023-MAY-TZ1-P1-Q12-A']
+
+  - id: meet
+    name: Точка пересечения — разные параметры, две компоненты и третья
+    rung: 6
+    trigger: >
+      «Find the coordinates of the point where L1 and L2 intersect»; «show that
+      the position vector of the point of intersection is (1, 8, −2)»; «show
+      that lines L and M intersect at a point A and find the position vector of
+      A»; «find the coordinates of A in terms of a».
+    chain:
+      - "У каждой прямой свой параметр: λ и μ, даже если вопрос назвал оба t"
+      - "Приравнять компоненты — три уравнения на два параметра"
+      - "Решить любые два, подставить в третье: сошлось — точка есть"
+      - "Найденный параметр подставить в свою прямую"
+      - "С буквой в направлении — решение с дробью; знаменатель ноль — это то
+        значение буквы, при котором единственной точки нет"
+    traps:
+      - "Один параметр на обе прямые — система без решений"
+      - "λ одной прямой подставляют в другую"
+      - "Решают две компоненты и не проверяют третью"
+      - "Отвечают параметрами вместо точки"
+    calculator:
+      mode: speeds_up
+      note: >
+        8 баллов из 18 на Paper 2, и калькулятор решает систему из двух
+        уравнений. Схема ставит баллы за «attempt to set at least two
+        components equal» — это пишут руками.
+    prereq: [line]
+    raw_tags: [equate_components, solve_linear_system, find_intersection,
+               set_up_system_of_equations, solve_linear_equations,
+               substitute_parameter, verify_position_vector, set_components_equal,
+               solve_simultaneous_equations, find_parameters, verify_consistency,
+               compute_position_vector, equate_parametric_forms,
+               find_parallel_condition, find_intersection_point]
+    blocks: ['2025-MAY-TZ2-P1-Q02-B', '2025-NOV-TZ1-P2-Q12-A',
+             '2023-NOV-TZ1-P2-Q12-A', '2021-MAY-TZ1-P1-Q11-C']
+
+  - id: skew
+    name: Параллельны, пересекаются или скрещиваются
+    rung: 7
+    trigger: >
+      «Show that l1 and l2 do not intersect»; «show that L1 and L2 are skew»;
+      «the lines L1 and L2 are perpendicular and intersect at a unique point,
+      find the value of a and the value of b».
+    chain:
+      - "Сначала направления: кратны — прямые параллельны (или совпадают), и
+        пересечения искать не надо"
+      - "Не кратны — решить две компоненты, подставить в третью"
+      - "Третья не сошлась — нет общей точки; не параллельны и не
+        пересекаются — скрещиваются"
+      - "Для «скрещиваются» нужны оба довода: R1 за «не параллельны» и R1 за
+        противоречие"
+      - "Условия на буквы: перпендикулярны — d₁ · d₂ = 0; пересекаются — система
+        разрешима; решать вместе"
+    traps:
+      - "Параллельные прямые называют скрещивающимися"
+      - "Показывают только противоречие и забывают «не параллельны»"
+      - "Решают с ошибкой в значениях и объявляют противоречие — схема
+        снимает R1"
+      - "Для перпендикулярности берут радиус-векторы точек"
+    calculator:
+      mode: mixed
+      note: >
+        14 баллов на Paper 1, 10 на Paper 2. Вопрос ноября 2022 на 10 баллов
+        стоит на калькуляторной бумаге, но каждый балл схемы — за запись
+        уравнений и за довод.
+    prereq: [meet]
+    raw_tags: [set_components_equal, solve_linear_system, find_contradiction,
+               recognize_parallel_vectors, compare_position_vectors, check_parallel,
+               solve_intersection, skew_lines, vector_equation_of_line,
+               parametric_form, simultaneous_equations, contradiction_check,
+               parallelism_check, extract_direction_vectors, scalar_product_zero,
+               intersection_conditions]
+    blocks: ['2021-MAY-TZ2-P1-Q08-A', '2025-NOV-TZ3-P1-Q10-C',
+             '2022-NOV-COMMON-P2-Q12-C', '2025-MAY-TZ1-P1-Q06']
+
+  - id: motion
+    name: Движение по прямой — скорость, курс, время
+    rung: 8
+    trigger: >
+      «Find the three-figure bearing on which airplane B is travelling»; «show
+      that airplane A travels at a greater speed than airplane B»; «determine
+      the length of time between the first airplane arriving at P and the
+      second»; «find the speed of the helicopter»; «find β, the angle of
+      descent».
+    chain:
+      - "r = r₀ + t·v: вектор при t — скорость, его длина — скорость по
+        модулю; число перед t входит в скорость"
+      - "Курс — по горизонтальным компонентам: восток x, север y; угол от
+        севера по часовой стрелке, три цифры"
+      - "Точка встречи путей — пересечение прямых с разными t₁ и t₂; время
+        между прилётами — |t₁ − t₂|"
+      - "Угол с горизонталью — между скоростью и её горизонтальной частью:
+        tan β = вертикальная / горизонтальная"
+    traps:
+      - "Скорость считают по положению (19, −1, 1), а не по вектору при t"
+      - "Теряют множитель: у r = (10, 3, 0.5) + 4t(10, −25, 0) скорость
+        4√725, а не √725"
+      - "Курс отсчитывают от востока: 027° вместо 063°; пишут 063.4°"
+      - "Приравнивают rA(t) = rB(t) с одним t — ищут столкновение, а не
+        пересечение путей"
+      - "β в радианах: 0.147 — схема ставит M1A1A0"
+    calculator:
+      mode: needed
+      note: >
+        Все 16 баллов на Paper 2: длины, арктангенс, система для t₁ и t₂.
+    prereq: [meet, angle]
+    raw_tags: [extract_vector_components, bearing_angle, arctan, horizontal_plane,
+               vector_magnitude, speed_calculation, comparison, vector_equation,
+               system_of_linear_equations, parametric_equations, substitution,
+               time_difference, absolute_value, magnitude_of_velocity,
+               angle_between_vectors, trigonometric_ratio, descent_angle]
+    blocks: ['2022-MAY-TZ2-P2-Q11-A', '2022-MAY-TZ2-P2-Q11-B',
+             '2022-MAY-TZ2-P2-Q11-D', '2025-MAY-TZ1-P2-Q07-A',
+             '2025-MAY-TZ1-P2-Q07-B']
+
+imported:
+  - practicum: C6
+    what: >
+      Плоскости и системы: декартово уравнение плоскости через нормаль, три
+      плоскости по прямой, плоскость через две прямые, пересечение прямой с
+      плоскостью — май 2025 TZ1 Q11(b), май 2025 TZ2 Q9, май 2025 TZ3
+      Q11(d), (f), ноябрь 2025 TZ1 Q12(b), (c), (e), ноябрь 2025 TZ3 Q10(f)
+      и Q7, май 2023 TZ1 Q12(d). Всего 38 баллов geometry.vectors.
+  - practicum: C7
+    what: >
+      Векторное произведение, расстояния и углы с плоскостью: тождества
+      |a × b|² = |a|²|b|² − (a · b)² мая 2021 TZ2 Q5 и мая 2024 TZ1 Q12(a),
+      площадь параллелограмма и треугольника, объём пирамиды, угол между
+      плоскостями мая 2025 TZ1 Q11(a) и TZ3 Q11(e), кратчайшее расстояние
+      от точки до прямой мая 2023 TZ1 Q12(c) и ближайшая точка ноября 2025
+      TZ3 Q10(d), (e). 39 баллов geometry.vectors.
+  - practicum: E9
+    what: >
+      Наименьшее расстояние между самолётами мая 2022 TZ2 Q11(e) — функция
+      D(t) и её минимум.
+  - practicum: C1
+    what: >
+      Диагональ основания и угол ребра с основанием пирамиды мая 2025 TZ2
+      Q2(b), (c) — прямоугольный треугольник в теле, векторов там нет.
+  - practicum: C2
+    what: >
+      Объём конуса ноября 2022 Q2(b) и вершины конуса мая 2023 TZ1 Q12(e).
+  - practicum: A4
+    what: >
+      Май 2023 TZ1 Q12(b): 16t² = 10t² + 12t + 18 и t = 3 — квадратное
+      уравнение после «show that» из пункта (a).
+  - practicum: C3
+    what: >
+      Май 2023 TZ2 Q9(c): при каких θ у M два положения — неравенство с
+      cos θ после векторного «show that» из (b).
+
+corpus_issues:
+  - id: 'тема разрезана по бумагам, а не по действию'
+    what: >
+      Одно и то же действие стоит в двух темах. Прямые, их пересечение и
+      скрещивание в мае 2025 TZ2 Q2, ноябре 2025 TZ3 Q10 и мае 2021 TZ1 Q11
+      размечены geometry.vectors, а в мае 2021 TZ2 Q8, ноябре 2022 Q12,
+      ноябре 2023 Q12 и мае 2025 TZ1 Q6 — geometry.vectors_3d. Расстояние
+      между точками — vectors у ноября 2023 Q1(a), vectors_3d у мая 2025 TZ2
+      Q2(a). Граница по «плоскость или нет» проходит внутри обеих тем, и
+      карта берёт из них доли 0.527 и 0.241.
+  - id: 'вопросы не про векторы'
+    what: >
+      Два блока geometry.vectors векторов не содержат: поворот гиперболы
+      x² − y² = 1 в xy = k ноября 2021 Q1(g) (Paper 3, 5 баллов — это
+      преобразование графика или комплексное умножение) и площадь
+      многоугольника на диаграмме Аргана мая 2025 TZ2 Q12(c) (4 балла, A6).
+      Системы уравнений ноября 2025 TZ3 Q7 (6 баллов) — те, про которые уже
+      сказано в карточке C6.
+  - id: 'скорость вертолёта в task_summary'
+    what: >
+      Май 2025 TZ1 Q7(a): в разметке скорость — √741 = 107.703, и угол
+      спуска считается от √741. В бумаге r = (10, 3, 0.5) + 4t(10, −25, 0),
+      скорость 4√725 = 20√29 = 107.703; √741 = 27.2. Число верное, формула
+      перед ним — нет, и tan β = 16/√741 даёт 30.4°, а не 8.45°.
+  - id: 'знак в скалярном произведении'
+    what: >
+      Май 2025 TZ3 Q6(a): в разметке a · c = 5p − 42 и b · c = 8p − 54. В
+      бумаге a = (−5, 7), b = (−8, 9), и схема печатает −5p − 42 и −8p − 54.
+      Ответ p = 4.79 от этого не меняется, но уравнение из разметки даёт
+      другой корень.
+  - id: 'γ зависит от направления'
+    what: >
+      Ноябрь 2025 TZ1 Q12(f): γ = 3 для r₃ = (1, 8, −2) + γ(−4, −1, 3) из
+      схемы и γ = −3 для направления (4, 1, −3), которое схема тоже
+      принимает в (e). В разметке γ = 3 без оговорки о направлении.
+  - id: 'дубль ноября 2023'
+    what: >
+      Пирамида Q1 и прямые Q12(a) ноября 2023 года стоят в корпусе дважды:
+      TZ1 и TZ2 Paper 2 — одна бумага. У копии TZ2 точка B в Q12 записана как
+      (−3, 12, 2), у TZ1 — (3, 12, 2); в бумаге (−3, 12, 2).
+
+ladder: [points, scalar, angle, line, line_angle, meet, skew, motion]

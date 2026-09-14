@@ -563,6 +563,9 @@ def evaluate(spec, raw):
         if kind == 'density':                   # плотность формулой, D6
             return _density_kind(spec, raw)
 
+        if kind == 'vector':                    # векторы и прямые, C5
+            return _vector_kind(spec, raw)
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0
@@ -765,6 +768,72 @@ def _density_kind(spec, raw):
     find = kit.P(event(spec['find']), given=given)
     return _capture(kit.verify_chance, 'Ответ', parse_one(raw), find,
                     given=[] if letters else None, var=letters or None)
+
+
+_RELATION_RU = {'параллельны': 'parallel', 'параллельные': 'parallel',
+                'пересекаются': 'intersecting', 'пересекающиеся': 'intersecting',
+                'скрещиваются': 'skew', 'скрещивающиеся': 'skew',
+                'совпадают': 'same'}
+LINE_TEXT = re.compile(r'^\s*(?:[a-zA-Z]\s*=)?\s*\(([^()]*)\)\s*\+\s*([^\s(*]+)\s*\*?\s*\(([^()]*)\)\s*$')
+
+
+def parse_line(raw):
+    """Прямая, как её пишут: «r = (1, -2, 0) + λ(2, 3, 1)»."""
+    text = _clean(raw).replace('λ', 'lam').replace('μ', 'mu').replace('τ', 'tau')
+    found = LINE_TEXT.match(text)
+    if not found:
+        raise BadInput('прямую пишут так: r = (x, y, z) + λ(a, b, c)')
+    point = [parse_one(v) for v in found.group(1).split(',')]
+    direction = [parse_one(v) for v in found.group(3).split(',')]
+    letter = sp.Symbol(found.group(2))
+    return kit.vec(*point) + letter * kit.vec(*direction)
+
+
+def _vector_kind(spec, raw):
+    """Векторы и прямые, C5: те же проверки, что в ноутбуке."""
+    parts = {name: kit.vec(*[sp.sympify(v) for v in values])
+             for name, values in spec['parts'].items()}
+    what = spec['what']
+
+    def point():
+        values = parse_many(raw)
+        return tuple(values)
+
+    def two_lines():
+        return (kit.line(parts['p1'], parts['d1']), kit.line(parts['p2'], parts['d2']))
+
+    if what in ('midpoint', 'vertex'):
+        unknown = kit.unknown('X', len(parts['A']))
+        fact = (kit.midpoint(unknown, parts['A'], parts['B']) if what == 'midpoint'
+                else kit.parallelogram(parts['A'], parts['B'], parts['C'], unknown))
+        return _capture(kit.verify_find, 'Ответ', point(), unknown, [fact])
+    if what == 'distance':
+        return _capture(kit.verify_find, 'Ответ', parse_one(raw), kit.distance(parts['A'], parts['B']))
+    if what == 'dot':
+        return _capture(kit.verify_find, 'Ответ', parse_one(raw), kit.dot(parts['u'], parts['v']))
+    if what == 'perpendicular':
+        letter = sp.Symbol(spec['letter'])
+        return _capture(kit.verify_find, 'Ответ', parse_one(raw), letter,
+                        [kit.perpendicular(parts['u'], parts['v'])])
+    if what == 'angle':
+        return _capture(kit.verify_angle, 'Ответ', parse_one(raw), parts['u'], parts['v'], deg=True)
+    if what == 'vertex_angle':
+        return _capture(kit.verify_angle, 'Ответ', parse_one(raw), parts['P'], parts['V'], parts['Q'], deg=True)
+    if what == 'line':
+        return _capture(kit.verify_line, 'Ответ', parse_line(raw), kit.line(parts['point'], parts['direction']))
+    if what == 'line_angle':
+        return _capture(kit.verify_angle, 'Ответ', parse_one(raw), *two_lines(), deg=True)
+    if what == 'meet':
+        return _capture(kit.verify_meet, 'Ответ', point(), *two_lines())
+    if what == 'relation':
+        word = str(raw).strip().lower().rstrip('.')
+        return _capture(kit.verify_relation, 'Ответ', _RELATION_RU.get(word, word), *two_lines())
+    if what == 'speed':
+        return _capture(kit.verify_speed, 'Ответ', parse_one(raw),
+                        parts['r0'] + kit.t * parts['v'])
+    if what == 'bearing':
+        return _capture(kit.verify_bearing, 'Ответ', str(raw).strip(), parts['v'])
+    raise ValueError(f'неизвестный вопрос о векторах: {what!r}')
 
 
 def show_answer(value, sf=3, var='x'):

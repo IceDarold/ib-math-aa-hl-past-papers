@@ -7385,6 +7385,513 @@
    "dir": "AA_HL/2022/May/TZ2/Paper 2",
    "skill": "C4.bounds_argument"
   },
+  "2025-MAY-TZ3-P1-Q11-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "C5.points"
+  },
+  "2025-MAY-TZ3-P1-Q11-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "C5.points"
+  },
+  "2022-NOV-COMMON-P1-Q02-A-I-A-II": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "2",
+   "part": "a-i, a-ii",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "C5.points"
+  },
+  "2023-NOV-TZ1-P2-Q01-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2023-NOV-TZ1-P2, page 4 of 17",
+   "markscheme_pages": "2023-NOV-TZ1-P2 markscheme, page 8 of 32",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C5.points"
+  },
+  "2025-MAY-TZ2-P2-Q02-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "C5.points"
+  },
+  "2022-NOV-COMMON-P2-Q12-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "12",
+   "part": "(a)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "C5.points"
+  },
+  "2022-NOV-COMMON-P2-Q12-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "12",
+   "part": "(b)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "C5.points"
+  },
+  "2022-MAY-TZ1-P2-Q07-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "C5.points"
+  },
+  "2022-MAY-TZ1-P2-Q07-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "C5.points"
+  },
+  "2023-MAY-TZ2-P1-Q09-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "9",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "C5.points"
+  },
+  "2022-MAY-TZ1-P2-Q07-C": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "16, 17",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "C5.scalar"
+  },
+  "2023-MAY-TZ2-P1-Q09-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "9",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "C5.scalar"
+  },
+  "2025-MAY-TZ3-P2-Q06-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "6",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "C5.scalar"
+  },
+  "2025-NOV-TZ1-P3-Q01-F": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "F",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "13-15",
+   "dir": "AA_HL/2025/November/TZ1/Paper 3",
+   "skill": "C5.scalar"
+  },
+  "2023-NOV-TZ1-P2-Q01-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "2023-NOV-TZ1-P2, page 4 of 17",
+   "markscheme_pages": "2023-NOV-TZ1-P2 markscheme, pages 8-9 of 32",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C5.angle"
+  },
+  "2022-NOV-COMMON-P2-Q07-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "7",
+   "part": "a",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "C5.angle"
+  },
+  "2025-MAY-TZ2-P3-Q02-B-I": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "B-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "C5.angle"
+  },
+  "2025-MAY-TZ3-P2-Q06-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "6",
+   "part": "B",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "C5.angle"
+  },
+  "2021-MAY-TZ1-P1-Q11-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "a",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "C5.line"
+  },
+  "2025-MAY-TZ2-P1-Q02-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "2",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "C5.line"
+  },
+  "2025-NOV-TZ3-P1-Q10-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "C5.line"
+  },
+  "2025-NOV-TZ3-P1-Q10-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "C5.line"
+  },
+  "2025-NOV-TZ1-P2-Q12-F": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "F",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "18",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C5.line"
+  },
+  "2021-MAY-TZ1-P1-Q11-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "b",
+   "marks": 8,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "20–21",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "C5.line_angle"
+  },
+  "2022-MAY-TZ2-P2-Q11-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "c",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C5.line_angle"
+  },
+  "2023-MAY-TZ1-P1-Q12-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "(a)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "C5.line_angle"
+  },
+  "2025-MAY-TZ2-P1-Q02-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "2",
+   "part": "B",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "C5.meet"
+  },
+  "2025-NOV-TZ1-P2-Q12-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "18",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C5.meet"
+  },
+  "2023-NOV-TZ1-P2-Q12-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C5.meet"
+  },
+  "2021-MAY-TZ1-P1-Q11-C": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "c",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "21–22",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "C5.meet"
+  },
+  "2021-MAY-TZ2-P1-Q08-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "A",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C5.skew"
+  },
+  "2025-NOV-TZ3-P1-Q10-C": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "C",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "C5.skew"
+  },
+  "2022-NOV-COMMON-P2-Q12-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "12",
+   "part": "(c)",
+   "marks": 10,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "25-28",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "C5.skew"
+  },
+  "2025-MAY-TZ1-P1-Q06": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "6",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "8",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "C5.skew"
+  },
+  "2022-MAY-TZ2-P2-Q11-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C5.motion"
+  },
+  "2022-MAY-TZ2-P2-Q11-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "b",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "22-23",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C5.motion"
+  },
+  "2022-MAY-TZ2-P2-Q11-D": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "d",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "25-26",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "C5.motion"
+  },
+  "2025-MAY-TZ1-P2-Q07-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "C5.motion"
+  },
+  "2025-MAY-TZ1-P2-Q07-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "15-16",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "C5.motion"
+  },
   "2022-NOV-COMMON-P1-Q11-A-I": {
    "session": "November 2022",
    "zone": "Common",
@@ -13595,6 +14102,14 @@
    "blocks": 34
   },
   {
+   "id": "C5",
+   "title": "Векторы: операции, прямые, углы",
+   "section": "C",
+   "notebook": "practicum/geometry/practicum-c5-vectors.ipynb",
+   "marks": 148,
+   "blocks": 42
+  },
+  {
    "id": "D1",
    "title": "Комбинаторика: размещения, блоки, дополнение",
    "section": "D",
@@ -17402,6 +17917,239 @@
    "blocks": [
     "2022-MAY-TZ1-P1-Q05-B",
     "2022-MAY-TZ2-P2-Q10-C"
+   ]
+  },
+  {
+   "id": "C5.points",
+   "practicum": "C5",
+   "name": "Точки и отрезки — AB = b − a, середина, длина",
+   "rung": 1,
+   "trigger": "«Find the coordinates of D, diagonally opposite B»; «find the coordinates of the centre of the circle and its radius»; «find BV»; «write down AB and AC»; «given that A, B and C lie on a straight line, show that k = 9»; «express OM in terms of a and c». Даны точки или векторы, ничего не сказано про прямую.",
+   "chain": [
+    "Вектор между точками — конец минус начало: AB = b − a",
+    "Середина — полусумма концов; четвёртая вершина параллелограмма ABCD — из AB = DC, то есть d = a + c − b",
+    "Длина — корень из суммы квадратов компонент; расстояние между точками — длина вектора между ними",
+    "Три точки на одной прямой — AB кратен AC: сравнить компоненты и найти букву",
+    "В задаче с буквами-векторами идти по фигуре: OM = OA + AM, и противоположные стороны параллелограмма — один вектор"
+   ],
+   "traps": [
+    "Берут вершину не в том порядке: D = a + b − c вместо a + c − b, и ABCD перестаёт быть параллелограммом",
+    "Середину путают с половиной вектора: (b − a)/2 вместо (a + b)/2",
+    "Отвечают вектором на вопрос о длине BV — схема ставит за это SC(A0)",
+    "Радиус берут равным всему AB, хотя AB — диаметр",
+    "Для наименьшего |a + b| пишут b, а не a + b; или берут b того же направления, что a"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 148,
+   "blocks": [
+    "2025-MAY-TZ3-P1-Q11-A",
+    "2025-MAY-TZ3-P1-Q11-B",
+    "2022-NOV-COMMON-P1-Q02-A-I-A-II",
+    "2023-NOV-TZ1-P2-Q01-A",
+    "2025-MAY-TZ2-P2-Q02-A",
+    "2022-NOV-COMMON-P2-Q12-A",
+    "2022-NOV-COMMON-P2-Q12-B",
+    "2022-MAY-TZ1-P2-Q07-A",
+    "2022-MAY-TZ1-P2-Q07-B",
+    "2023-MAY-TZ2-P1-Q09-A"
+   ]
+  },
+  {
+   "id": "C5.scalar",
+   "practicum": "C5",
+   "name": "Скалярное произведение — перпендикулярность и алгебра векторов",
+   "rung": 2,
+   "trigger": "«Find an expression, in terms of p, for a · c»; «find q such that |q| = |b| and q is perpendicular to a»; «use a vector method to show that |a|²(1 − 2k)(2cos θ − (1 − 2k)) = 0»; «prove that BĈA is a right angle». В условии «perpendicular», «right angle», «OM · MC = 0».",
+   "chain": [
+    "По компонентам: a · b = a₁b₁ + a₂b₂ + a₃b₃ — число, а не вектор",
+    "Перпендикулярны — скалярное произведение ноль; это уравнение на неизвестную компоненту или букву",
+    "Длина задана — второе уравнение: |q|² = x² + y²; решить вместе и отбросить решение, нарушающее условие (x, y > 0)",
+    "С буквами-векторами раскрывать как скобки: a · a = |a|², a · c = |a||c| cos θ",
+    "Прямой угол при C — CA · CB = 0, векторы из C, а не радиус-векторы"
+   ],
+   "traps": [
+    "Теряют знак компоненты: a · c = 5p − 42 вместо −5p − 42",
+    "Находят направление (5, 12), перпендикулярное a, и забывают растянуть его до длины 15",
+    "Оставляют оба решения системы, хотя x, y ∈ ℝ⁺",
+    "В раскрытии (a + kc) · ((1 − k)c − a) теряют |c|² = 4|a|²",
+    "Для прямого угла берут OA · OB, а не CA · CB"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 148,
+   "blocks": [
+    "2022-MAY-TZ1-P2-Q07-C",
+    "2023-MAY-TZ2-P1-Q09-B",
+    "2025-MAY-TZ3-P2-Q06-A",
+    "2025-NOV-TZ1-P3-Q01-F"
+   ]
+  },
+  {
+   "id": "C5.angle",
+   "practicum": "C5",
+   "name": "Угол между векторами — cos θ = a·b/(|a||b|)",
+   "rung": 3,
+   "trigger": "«Find the size of BV̂C»; «let θ be the angle between u and v, find an expression for cos θ in terms of n»; «use the scalar product to find the angle between p and n»; «the angle between a and c is equal to the angle between b and c, find p».",
+   "chain": [
+    "Угол при вершине V — между векторами из V: VB и VC, а не OB и OC",
+    "cos θ = a · b / (|a||b|); θ = arccos — от 0 до π",
+    "Скалярное произведение ноль — угол прямой, считать дальше нечего",
+    "Буква в векторе — приравнять косинусы и решить; не возводить в квадрат без проверки: квадрат добавляет корень с косинусами разных знаков"
+   ],
+   "traps": [
+    "Берут радиус-векторы вершин, OB и OC, — выходит угол при начале координат",
+    "Забывают поделить на |u||v|: cos θ = cos(1/n) + sin(1/n)",
+    "Ответ в градусах там, где ждут радианы, или наоборот; схема ноября 2023 принимает оба, но две значащие цифры — нет",
+    "Отвечают cos θ = 0 вместо угла π/2"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 148,
+   "blocks": [
+    "2023-NOV-TZ1-P2-Q01-B",
+    "2022-NOV-COMMON-P2-Q07-A",
+    "2025-MAY-TZ2-P3-Q02-B-I",
+    "2025-MAY-TZ3-P2-Q06-B"
+   ]
+  },
+  {
+   "id": "C5.line",
+   "practicum": "C5",
+   "name": "Уравнение прямой — точка и направление",
+   "rung": 4,
+   "trigger": "«Find a vector equation of L1» при декартовой записи (x − 1)/2 = (y + 2)/3 = z; «write down a vector equation for L1 in the form r = a + λb»; «find a vector equation for L2, given that L2 passes through A and B»; «given that the point S lies on L3, find γ».",
+   "chain": [
+    "r = a + λb: a — любая точка прямой, b — любое направление вдоль неё",
+    "Через две точки: направление — их разность, точка — любая из двух",
+    "Из декартовой формы: приравнять все части λ и выразить x, y, z; точка — числа при x, y, z с обратным знаком, направление — знаменатели",
+    "3 − z = λ даёт z = 3 − λ: компонента направления −1",
+    "Точка на прямой — приравнять r точке и найти λ из одной компоненты, проверив остальные",
+    "Написать «r =» — без него A1 не ставят"
+   ],
+   "traps": [
+    "Точку берут со знаками числителей: (−1, 2, 0) из (x − 1)/2 = (y + 2)/3",
+    "Направление через две точки берут радиус-вектором второй точки",
+    "Из 3 − z берут направление +1",
+    "Меняют местами точку и направление",
+    "Не пишут «r =» или «s =» — схема ставит A0"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 148,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q11-A",
+    "2025-MAY-TZ2-P1-Q02-A",
+    "2025-NOV-TZ3-P1-Q10-A",
+    "2025-NOV-TZ3-P1-Q10-B",
+    "2025-NOV-TZ1-P2-Q12-F"
+   ]
+  },
+  {
+   "id": "C5.line_angle",
+   "practicum": "C5",
+   "name": "Угол между прямыми — направления и острый угол",
+   "rung": 5,
+   "trigger": "«Find the acute angle between the two airplanes' lines of flight»; «find the possible values of a when the acute angle between L1 and L2 is 45°»; «the acute angle between the two lines is π/3, show that 4t = √(10t² + 12t + 18)».",
+   "chain": [
+    "Угол между прямыми — угол между их направлениями; точки не нужны",
+    "Острый: cos θ = |d₁ · d₂| / (|d₁||d₂|); если вышел тупой — 180° − θ",
+    "Буква в направлении — уравнение на косинус; модуль и корни уходят возведением в квадрат, и оба корня квадратного уравнения годятся",
+    "На Paper 1 — точные корни: −4 ± 3√2"
+   ],
+   "traps": [
+    "Отдают тупой угол 139.8° вместо 40.2°",
+    "Берут радиус-векторы точек прямых вместо направлений",
+    "Находят одно значение a из двух",
+    "Делят только на одну длину: 2t/√(5t² + 6t + 9) без √2"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 148,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q11-B",
+    "2022-MAY-TZ2-P2-Q11-C",
+    "2023-MAY-TZ1-P1-Q12-A"
+   ]
+  },
+  {
+   "id": "C5.meet",
+   "practicum": "C5",
+   "name": "Точка пересечения — разные параметры, две компоненты и третья",
+   "rung": 6,
+   "trigger": "«Find the coordinates of the point where L1 and L2 intersect»; «show that the position vector of the point of intersection is (1, 8, −2)»; «show that lines L and M intersect at a point A and find the position vector of A»; «find the coordinates of A in terms of a».",
+   "chain": [
+    "У каждой прямой свой параметр: λ и μ, даже если вопрос назвал оба t",
+    "Приравнять компоненты — три уравнения на два параметра",
+    "Решить любые два, подставить в третье: сошлось — точка есть",
+    "Найденный параметр подставить в свою прямую",
+    "С буквой в направлении — решение с дробью; знаменатель ноль — это то значение буквы, при котором единственной точки нет"
+   ],
+   "traps": [
+    "Один параметр на обе прямые — система без решений",
+    "λ одной прямой подставляют в другую",
+    "Решают две компоненты и не проверяют третью",
+    "Отвечают параметрами вместо точки"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 148,
+   "blocks": [
+    "2025-MAY-TZ2-P1-Q02-B",
+    "2025-NOV-TZ1-P2-Q12-A",
+    "2023-NOV-TZ1-P2-Q12-A",
+    "2021-MAY-TZ1-P1-Q11-C"
+   ]
+  },
+  {
+   "id": "C5.skew",
+   "practicum": "C5",
+   "name": "Параллельны, пересекаются или скрещиваются",
+   "rung": 7,
+   "trigger": "«Show that l1 and l2 do not intersect»; «show that L1 and L2 are skew»; «the lines L1 and L2 are perpendicular and intersect at a unique point, find the value of a and the value of b».",
+   "chain": [
+    "Сначала направления: кратны — прямые параллельны (или совпадают), и пересечения искать не надо",
+    "Не кратны — решить две компоненты, подставить в третью",
+    "Третья не сошлась — нет общей точки; не параллельны и не пересекаются — скрещиваются",
+    "Для «скрещиваются» нужны оба довода: R1 за «не параллельны» и R1 за противоречие",
+    "Условия на буквы: перпендикулярны — d₁ · d₂ = 0; пересекаются — система разрешима; решать вместе"
+   ],
+   "traps": [
+    "Параллельные прямые называют скрещивающимися",
+    "Показывают только противоречие и забывают «не параллельны»",
+    "Решают с ошибкой в значениях и объявляют противоречие — схема снимает R1",
+    "Для перпендикулярности берут радиус-векторы точек"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 148,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q08-A",
+    "2025-NOV-TZ3-P1-Q10-C",
+    "2022-NOV-COMMON-P2-Q12-C",
+    "2025-MAY-TZ1-P1-Q06"
+   ]
+  },
+  {
+   "id": "C5.motion",
+   "practicum": "C5",
+   "name": "Движение по прямой — скорость, курс, время",
+   "rung": 8,
+   "trigger": "«Find the three-figure bearing on which airplane B is travelling»; «show that airplane A travels at a greater speed than airplane B»; «determine the length of time between the first airplane arriving at P and the second»; «find the speed of the helicopter»; «find β, the angle of descent».",
+   "chain": [
+    "r = r₀ + t·v: вектор при t — скорость, его длина — скорость по модулю; число перед t входит в скорость",
+    "Курс — по горизонтальным компонентам: восток x, север y; угол от севера по часовой стрелке, три цифры",
+    "Точка встречи путей — пересечение прямых с разными t₁ и t₂; время между прилётами — |t₁ − t₂|",
+    "Угол с горизонталью — между скоростью и её горизонтальной частью: tan β = вертикальная / горизонтальная"
+   ],
+   "traps": [
+    "Скорость считают по положению (19, −1, 1), а не по вектору при t",
+    "Теряют множитель: у r = (10, 3, 0.5) + 4t(10, −25, 0) скорость 4√725, а не √725",
+    "Курс отсчитывают от востока: 027° вместо 063°; пишут 063.4°",
+    "Приравнивают rA(t) = rB(t) с одним t — ищут столкновение, а не пересечение путей",
+    "β в радианах: 0.147 — схема ставит M1A1A0"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 148,
+   "blocks": [
+    "2022-MAY-TZ2-P2-Q11-A",
+    "2022-MAY-TZ2-P2-Q11-B",
+    "2022-MAY-TZ2-P2-Q11-D",
+    "2025-MAY-TZ1-P2-Q07-A",
+    "2025-MAY-TZ1-P2-Q07-B"
    ]
   },
   {
@@ -31042,6 +31790,534 @@
    ],
    "answer": "sign",
    "answer_digest": "0b6f395ca14a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:1",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.points",
+   "prompt": "Find the coordinates of the midpoint of $[PQ]$, where $P(2,5,-1)$ and $Q(4,-3,7)$.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "points",
+   "answer_digest": "c54a061dfcc1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:2",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.scalar",
+   "prompt": "$\\mathbf u=(3,-2,1)$ and $\\mathbf v=(p,4,2)$ are perpendicular. Find $p$.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "scalar",
+   "answer_digest": "da3a456ba70b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:3",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.angle",
+   "prompt": "Find the angle between the vectors $(1,2,2)$ and $(2,0,-1)$.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "angle",
+   "answer_digest": "49387897bee2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:4",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.line",
+   "prompt": "A line passes through $(0,3,-2)$ and $(4,1,5)$. Write down its vector equation.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "line",
+   "answer_digest": "38a9c1e72158",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:5",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.line_angle",
+   "prompt": "Find the acute angle between $\\mathbf r=(1,0,1)+\\lambda(2,1,2)$ and $\\mathbf r=(0,5,0)+\\mu(1,-2,2)$.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "line_angle",
+   "answer_digest": "e26736118709",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:6",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.meet",
+   "prompt": "Find the point of intersection of $\\mathbf r=(1,1,0)+\\lambda(1,0,2)$ and $\\mathbf r=(3,2,5)+\\mu(0,-1,1)$.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "meet",
+   "answer_digest": "8ccb033c0e48",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:7",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.skew",
+   "prompt": "Determine whether $\\mathbf r=(2,0,1)+\\lambda(1,3,-1)$ and $\\mathbf r=(0,1,4)+\\mu(2,1,1)$ are parallel, intersecting or skew.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "skew",
+   "answer_digest": "fd1478e5fc36",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:8",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.motion",
+   "prompt": "A boat's position at time $t$ hours is $\\mathbf r=(4,-1)+t(5,12)$ km. Find its speed.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "motion",
+   "answer_digest": "305238273bb0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:9",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.points",
+   "prompt": "$ABCD$ is a parallelogram with $A(1,1)$, $B(4,2)$ and $C(6,5)$. Find $D$.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "points",
+   "answer_digest": "c54a061dfcc1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:10",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.scalar",
+   "prompt": "Show that the triangle with vertices $(0,0,0)$, $(2,1,2)$ and $(1,-2,0)$ has a right angle.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "scalar",
+   "answer_digest": "da3a456ba70b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:11",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.line",
+   "prompt": "Find a vector equation of the line $\\frac{x-3}{4}=\\frac{y+1}{-2}=\\frac z5$.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "line",
+   "answer_digest": "38a9c1e72158",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C5:12",
+   "kind": "recognition",
+   "practicum": "C5",
+   "skill": "C5.motion",
+   "prompt": "An aircraft flies with velocity $(300,400,0)$ km/h, east and north. Find the bearing of its course.",
+   "options": [
+    {
+     "code": "points",
+     "name": "точки и длины"
+    },
+    {
+     "code": "scalar",
+     "name": "скалярное произведение"
+    },
+    {
+     "code": "angle",
+     "name": "угол между векторами"
+    },
+    {
+     "code": "line",
+     "name": "уравнение прямой"
+    },
+    {
+     "code": "line_angle",
+     "name": "угол между прямыми"
+    },
+    {
+     "code": "meet",
+     "name": "точка пересечения"
+    },
+    {
+     "code": "skew",
+     "name": "параллельны"
+    },
+    {
+     "code": "motion",
+     "name": "движение по прямой"
+    }
+   ],
+   "answer": "motion",
+   "answer_digest": "305238273bb0",
    "budget_ms": 8000
   },
   {

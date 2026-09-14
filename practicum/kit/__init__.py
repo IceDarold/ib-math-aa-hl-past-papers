@@ -23,6 +23,7 @@
     table         таблица распределения                       D4
     normal        нормальное распределение                    D5
     density       величина с плотностью                       D6
+    vectors       векторы, прямые, углы                       C5
 
 Снаружи пакет — по-прежнему один набор. Ноутбук пишет `from kit import *`,
 тренажёр — `kit.verify_chance`, генераторы — `from kit import _series_canon`,
@@ -33,11 +34,11 @@
 
 from . import (
     core, algebra, functions, geometry, sequences, derivative, tangent,
-    integral, probability, distribution, table, normal, density,
+    integral, probability, distribution, table, normal, density, vectors,
 )
 
 MODULES = (core, algebra, functions, geometry, sequences, derivative, tangent,
-           integral, probability, distribution, table, normal, density)
+           integral, probability, distribution, table, normal, density, vectors)
 
 for _module in MODULES:
     globals().update((name, value) for name, value in vars(_module).items()

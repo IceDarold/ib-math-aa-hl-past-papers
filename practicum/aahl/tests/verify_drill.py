@@ -63,9 +63,31 @@ def section(title):
 
 # --- 1. эталон проходит, испорченный ответ не проходит -------------------
 
+def _vector_spoil(answer, spec):
+    """Испорченный ответ о векторах, C5: точка не та, прямая не та, слово не то."""
+    what = spec['what']
+    parts = {name: [sp.sympify(v) for v in values] for name, values in spec['parts'].items()}
+    if what in ('midpoint', 'vertex', 'meet'):
+        values = list(answer)
+        return show_answer([values[0] + 1] + values[1:])
+    if what == 'line':
+        point, direction = parts['point'], parts['direction']
+        step = [1, 0, 0] if (direction[1], direction[2]) != (0, 0) else [0, 1, 0]
+        moved = [a + b for a, b in zip(point, step)]
+        return f"r = ({', '.join(map(str, moved))}) + λ({', '.join(map(str, direction))})"
+    if what == 'relation':
+        return 'скрещиваются' if answer != 'скрещиваются' else 'параллельны'
+    if what == 'bearing':
+        return f'{(int(answer) + 90) % 360:03d}'
+    return show_answer(sp.sympify(answer) + 1)
+
+
+
 def spoil(answer, spec):
     """Ответ, который обязан быть отвергнут."""
     kind = spec['kind']
+    if kind == 'vector':
+        return _vector_spoil(answer, spec)
     if kind == 'count':
         return str(int(spec['value']) + 1)
     if kind == 'indeterminate':
@@ -2489,6 +2511,176 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('D6.')):
     t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
     t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
     print(f'  {gen_name:32} {SEEDS} задач сверено квадратурой mpmath и проверкой')
+
+
+# =============================================================== C5
+# Проверки C5 решают условия sympy, углы берут через скалярное произведение,
+# а точку пересечения — из системы по компонентам. Здесь всё пересчитано
+# без sympy и без kit: дроби Fraction, векторное произведение, atan2 и
+# правило Крамера на двух компонентах. Затем эталон прогоняется через
+# проверку тренажёра, и рядом — ответ с типовым промахом, который она
+# обязана отвергнуть и назвать своим словом.
+
+def _c5_parts(spec):
+    return {name: [Fraction(str(sp.sympify(v))) if sp.sympify(v).is_number else sp.sympify(v)
+                   for v in values] for name, values in spec['parts'].items()}
+
+
+def _c5_cross(a, b):
+    return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]
+
+
+def _c5_dot(a, b):
+    return sum(x * y for x, y in zip(a, b))
+
+
+def _c5_degrees(a, b, acute=False):
+    across = math.sqrt(float(_c5_dot(_c5_cross(a, b), _c5_cross(a, b))))
+    along = float(_c5_dot(a, b))
+    return math.degrees(math.atan2(across, abs(along) if acute else along))
+
+
+def _c5_meet(p1, d1, p2, d2):
+    """Параметры общей точки правилом Крамера по двум компонентам, третья — проверка."""
+    for i, j in ((0, 1), (0, 2), (1, 2)):
+        det = d1[i] * (-d2[j]) - d1[j] * (-d2[i])
+        if det != 0:
+            rhs = [p2[i] - p1[i], p2[j] - p1[j]]
+            s_val = (rhs[0] * (-d2[j]) - rhs[1] * (-d2[i])) / det
+            u_val = (d1[i] * rhs[1] - d1[j] * rhs[0]) / det
+            third = 3 - i - j
+            if p1[third] + s_val * d1[third] == p2[third] + u_val * d2[third]:
+                return s_val, u_val
+            return None
+    return None
+
+
+def _c5_expected(item):
+    spec, name = item['check'], item['id']
+    what, parts = spec['what'], _c5_parts(spec)
+    if what == 'midpoint':
+        return tuple((a + b) / 2 for a, b in zip(parts['A'], parts['B']))
+    if what == 'vertex':
+        middle = [(a + c) / 2 for a, c in zip(parts['A'], parts['C'])]
+        return tuple(2 * m - b for m, b in zip(middle, parts['B']))
+    if what == 'distance':
+        return math.dist([float(v) for v in parts['A']], [float(v) for v in parts['B']])
+    if what == 'dot':
+        return _c5_dot(parts['u'], parts['v'])
+    if what == 'perpendicular':
+        u, v = parts['u'], parts['v']
+        return -(u[1] * v[1] + u[2] * v[2]) / u[0]
+    if what == 'angle':
+        return _c5_degrees(parts['u'], parts['v'])
+    if what == 'vertex_angle':
+        P, V, Q = parts['P'], parts['V'], parts['Q']
+        return _c5_degrees([a - b for a, b in zip(P, V)], [a - b for a, b in zip(Q, V)])
+    if what == 'line':
+        return parts['point'], parts['direction']
+    if what == 'line_angle':
+        return _c5_degrees(parts['d1'], parts['d2'], acute=True)
+    if what == 'meet':
+        s_val, _ = _c5_meet(parts['p1'], parts['d1'], parts['p2'], parts['d2'])
+        return tuple(a + s_val * b for a, b in zip(parts['p1'], parts['d1']))
+    if what == 'relation':
+        if _c5_cross(parts['d1'], parts['d2']) == [0, 0, 0]:
+            return 'параллельны'
+        gap = [a - b for a, b in zip(parts['p2'], parts['p1'])]
+        return 'пересекаются' if _c5_dot(gap, _c5_cross(parts['d1'], parts['d2'])) == 0 else 'скрещиваются'
+    if what == 'speed':
+        return math.sqrt(float(_c5_dot(parts['v'], parts['v'])))
+    return f"{round(math.degrees(math.atan2(float(parts['v'][0]), float(parts['v'][1]))) % 360) % 360:03d}"
+
+
+def _c5_agrees(item, want):
+    answer = item['answer']
+    if item['check']['what'] == 'line':
+        point, direction = want
+        text = str(answer)
+        numbers = [Fraction(n) for n in re.findall(r'-?\d+', text)]
+        mine_point, mine_dir = numbers[:3], numbers[3:6]
+        on = _c5_cross([a - b for a, b in zip(mine_point, point)], direction) == [0, 0, 0]
+        return on and _c5_cross(mine_dir, direction) == [0, 0, 0]
+    if isinstance(want, tuple):
+        return all(Fraction(str(a)) == b for a, b in zip(answer, want))
+    if isinstance(want, str):
+        return str(answer) == want
+    return abs(float(answer) - float(want)) <= 1e-9 * max(1.0, abs(float(want)))
+
+
+def _c5_slip(item):
+    """Ответ с типовым промахом и слово, которым проверка обязана его назвать."""
+    spec, answer = item['check'], item['answer']
+    what, parts = spec['what'], _c5_parts(spec)
+    if what == 'midpoint':
+        return show_answer([(b - a) / 2 for a, b in zip(parts['A'], parts['B'])]), 'середина'
+    if what == 'vertex':
+        return show_answer([a + b - c for a, b, c in zip(parts['A'], parts['B'], parts['C'])]), 'параллелограмм'
+    if what == 'distance':
+        return show_answer(sp.Integer(int(round(float(answer) ** 2)))), 'корень'
+    if what == 'dot':
+        return show_answer([a * b for a, b in zip(parts['u'], parts['v'])]), 'не вектор'
+    if what == 'perpendicular':
+        return show_answer(sp.sympify(answer) + 1), 'не перпендикулярны'
+    if what == 'angle':
+        if abs(float(answer) - 90) < 1e-9:
+            return '0', 'cos θ'
+        return f'{180 - float(answer):.4g}', 'развёрнутым'
+    if what == 'vertex_angle':
+        P, Q = parts['P'], parts['Q']
+        if all(v == 0 for v in P) or all(v == 0 for v in Q) or _c5_cross(P, Q) == [0, 0, 0]:
+            return f'{180 - float(answer):.4g}', 'развёрнутым'
+        return f'{_c5_degrees(P, Q):.4g}', 'радиус-вектор'
+    if what == 'line':
+        point, direction = parts['point'], parts['direction']
+        if _c5_cross(point, direction) == [0, 0, 0]:
+            moved = [a + b for a, b in zip(point, [1, 0, 0] if (direction[1], direction[2]) != (0, 0) else [0, 1, 0])]
+            return (f"r = ({', '.join(str(v) for v in moved)}) + λ({', '.join(str(v) for v in direction)})",
+                    'параллельная')
+        return (f"r = ({', '.join(str(-v) for v in point)}) + λ({', '.join(str(v) for v in direction)})",
+                'обратными знаками')
+    if what == 'line_angle':
+        return f'{180 - float(answer):.4g}', 'тупой'
+    if what == 'meet':
+        s_val, u_val = _c5_meet(parts['p1'], parts['d1'], parts['p2'], parts['d2'])
+        if s_val != u_val:
+            return show_answer([a + s_val * b for a, b in zip(parts['p2'], parts['d2'])]), 'параметр'
+        return show_answer([a + (s_val + 1) * b for a, b in zip(parts['p1'], parts['d1'])]), 'первой прямой'
+    if what == 'relation':
+        return {'параллельны': ('скрещиваются', 'кратны'),
+                'пересекаются': ('скрещиваются', 'пересекаются в'),
+                'скрещиваются': ('пересекаются', 'третья')}[answer]
+    if what == 'speed':
+        full = math.sqrt(float(_c5_dot(parts['v'], parts['v'])))
+        common = math.gcd(*[int(v) for v in parts['v']])
+        if common > 1:
+            return f'{full / common:.6g}', 'множитель'
+        return f'{full * full:.6g}', 'квадрат'
+    if (90 - int(answer)) % 360 == int(answer):
+        return f'{(360 - int(answer)) % 360:03d}', 'против часовой'
+    return f'{(90 - int(answer)) % 360:03d}', 'от востока'
+
+
+section('C5: эталон пересчитан без sympy и kit, проверка принимает и называет промах')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('C5.')):
+    agreed = accepted = slipped = named = 0
+    for seed in range(SEEDS):
+        item = dict(GENERATORS[gen_name](random.Random(seed)), id=gen_name)
+        spec = item['check']
+        agreed += bool(_c5_agrees(item, _c5_expected(item)))
+        ok, _ = evaluate(spec, show_answer(item['answer']))
+        accepted += bool(ok)
+        wrong_text, word = _c5_slip(item)
+        wrong, message = evaluate(spec, wrong_text)
+        slipped += not wrong
+        named += word in message
+        if word not in message or wrong:
+            print(f'    {gen_name} {seed}: {wrong_text} → {message}')
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
+    t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено дробями, Крамером и atan2')
 
 
 bad = [name for name, ok in res if not ok]

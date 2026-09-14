@@ -545,6 +545,26 @@ def density_check(what, pieces, var='x', find=None, given=None, conditions=(), u
     return spec
 
 
+def vector_check(what, letter=None, **parts):
+    """Вопрос о векторах, C5.
+
+    what — что спрашивают: 'midpoint', 'vertex', 'distance', 'dot',
+    'perpendicular', 'angle', 'vertex_angle', 'line', 'line_angle', 'meet',
+    'relation', 'speed', 'bearing'. parts — точки и направления списками
+    чисел (в 'perpendicular' одна компонента — буква letter).
+
+    Эталона в описании нет: страница пересобирает векторы и прямые и зовёт те
+    же verify_find, verify_line, verify_meet, verify_relation, verify_angle,
+    verify_speed и verify_bearing, что стоят в ноутбуке.
+    """
+    spec = {'kind': 'vector', 'what': what,
+            'parts': {name: [sp.srepr(sp.sympify(v)) for v in values]
+                      for name, values in parts.items()}}
+    if letter is not None:
+        spec['letter'] = letter
+    return spec
+
+
 def indeterminate_check(num, den, var='x', point=0, side=None, params=None):
     """Ответ — сама неопределённость: '0/0' или 'oo/oo', проверяется порознь."""
     spec = {'kind': 'indeterminate', 'num': sp.srepr(sp.sympify(num)),

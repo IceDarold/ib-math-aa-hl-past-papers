@@ -325,10 +325,20 @@ PAGE = """<!doctype html>
   // Режет TeX по операторам, стоящим на нулевой глубине вложенности.
   // Считаются и фигурные скобки (дроби, индексы, \\text), и круглые с
   // квадратными: в TeX они обычные символы, и без их учёта (\\alpha+\\beta)
-  // разрезается посередине.
+  // разрезается посередине. И окружения: у \\begin{{pmatrix}} скобки имени
+  // закрываются сразу, а содержимое столбца — «19 \\\\ -1 \\\\ 1» — стоит
+  // на нулевой глубине, и вектор разрезался по минусу внутри (C5).
   function splitTokens(tex, ops) {{
     var depth = 0, parts = [], cur = '', i = 0;
     while (i < tex.length) {{
+      var opens = tex.startsWith('\\\\begin{{', i);
+      if ((opens || tex.startsWith('\\\\end{{', i)) && tex.indexOf('}}', i) > i) {{
+        var close = tex.indexOf('}}', i);
+        depth += opens ? 1 : -1;
+        cur += tex.slice(i, close + 1);
+        i = close + 1;
+        continue;
+      }}
       var c = tex[i];
       if (c === '{{' || c === '(' || c === '[') depth++;
       else if (c === '}}' || c === ')' || c === ']') depth--;
