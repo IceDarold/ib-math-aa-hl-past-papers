@@ -560,6 +560,9 @@ def evaluate(spec, raw):
         if kind == 'bell':                      # нормальное распределение, D5
             return _normal_kind(spec, raw)
 
+        if kind == 'density':                   # плотность формулой, D6
+            return _density_kind(spec, raw)
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0
@@ -725,6 +728,43 @@ def _normal_kind(spec, raw):
     return _capture(kit.verify_chance, 'Ответ', parse_one(raw), find,
                     given=conditions or None, var=letters or None, sf=spec.get('sf'),
                     percent=spec.get('percent', False), free=free)
+
+
+def _density_kind(spec, raw):
+    """Величина с плотностью, D6: те же проверки, что в ноутбуке."""
+    var = sp.Symbol(spec['var'])
+    X = kit.Density({(sp.sympify(lo), sp.sympify(hi)): sp.sympify(f)
+                     for lo, hi, f in spec['pieces']}, spec.get('name', 'X'), var=var)
+
+    def event(packed):
+        kind, _, *bounds = packed
+        bounds = [sp.sympify(b) for b in bounds]
+        if kind == '<':
+            return X < bounds[0]
+        if kind == '>':
+            return X > bounds[0]
+        return (X > bounds[0]) & (X < bounds[1])
+
+    conditions = [sp.Eq(kit.P(event(e)), sp.sympify(value)) for e, value in spec['conditions']]
+    letters = list(X.letters)
+    exact = spec.get('exact', False)
+    if spec['what'] == 'letters':
+        unknowns = [sp.sympify(u) for u in spec['unknowns']]
+        values = parse_many(raw) if len(unknowns) > 1 else parse_one(raw)
+        return _capture(kit.verify_letters, 'Ответ', values,
+                        unknowns if len(unknowns) > 1 else unknowns[0], [X],
+                        conditions, exact=exact)
+    if spec['what'] == 'mode':
+        return _capture(kit.verify_mode, 'Ответ', parse_one(raw), X,
+                        given=[] if letters else None, var=letters or None)
+    if spec['what'] in ('mean', 'var'):
+        what = kit.Expect(X) if spec['what'] == 'mean' else kit.Var(X)
+        return _capture(kit.verify_moment, 'Ответ', parse_one(raw), what,
+                        given=[] if letters else None, var=letters or None, exact=exact)
+    given = event(spec['given']) if spec.get('given') else None
+    find = kit.P(event(spec['find']), given=given)
+    return _capture(kit.verify_chance, 'Ответ', parse_one(raw), find,
+                    given=[] if letters else None, var=letters or None)
 
 
 def show_answer(value, sf=3, var='x'):

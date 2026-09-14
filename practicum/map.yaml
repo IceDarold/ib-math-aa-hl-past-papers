@@ -833,6 +833,29 @@ sections:
         subtopics: [{topic: statistics.continuous_random_variables, share: 0.452},
                     {topic: statistics.expected_value, share: 0.167},
                     {topic: statistics.probability, share: 0.059}]
+        status: ready
+        notebook: practicum/statistics/practicum-d6-density.ipynb
+        kaggle: ib-math-praktikum-d6-density
+        archive: practicum/statistics/archive-d6-density.ipynb
+        kaggle_archive: ib-math-archive-d6-density
+        skills: practicum/skills/statistics-density.yaml
+        note: >
+          Плотностная половина statistics.continuous_random_variables: 90
+          баллов из 199 (0.452) — всё, где величина задана формулой, а не
+          кривой с μ и σ. 10 баллов statistics.expected_value (0.167 — 10 из
+          60): ожидаемая сумма покупки и E, Var по плотности. 14 баллов
+          statistics.probability (0.059 — 14 из 237): три условные под
+          плотностью и доля времени в синусоидальной модели. 114 баллов,
+          35 блоков, и дубля нет — впервые за шесть практикумов статистики.
+          95 баллов на Paper 2, 19 на Paper 1; из 95 калькуляторных 29 —
+          алгебра «show that», точное E(X) и формулы через n.
+
+          Двадцать третье понятие равенства ответов: всё — интеграл одной
+          плотности. Проверка знает только формулу по кускам; вероятность,
+          медиану, моду, среднее и дисперсию получает из неё сама —
+          адаптивной квадратурой Гаусса — Лежандра, — буквы плотности
+          находит из того, что площадь под ней единица, и отбрасывает
+          решения, где плотность отрицательна. Первообразной внутри нет.
       - id: D7
         title: Регрессия и корреляция
         subtopics: [statistics.regression,

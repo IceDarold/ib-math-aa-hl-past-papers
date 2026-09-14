@@ -9,6 +9,7 @@
 засчитываются — ровно как в markscheme.
 """
 
+import cmath
 import contextlib
 import hashlib
 import io
@@ -8226,6 +8227,14 @@ def _draw_agree(got, want):
         return abs(left) < 1e-12
     if abs(left - right) <= 5e-4 * abs(right):
         return True
+    # ровно пополам в четвёртой цифре: 0,3375 честно округляется и в 0,337,
+    # и в 0,338, а двоичная запись решает за человека
+    if not (math.isfinite(left) and math.isfinite(right)):
+        return False
+    unit = 10 ** (math.floor(math.log10(abs(right))) - 2)
+    scaled = abs(right) / unit
+    if abs(scaled - math.floor(scaled) - 0.5) < 1e-9 and abs(left - right) <= unit / 2 * (1 + 1e-9):
+        return True
     return sig(left, 3) == sig(right, 3)
 
 
@@ -8770,6 +8779,8 @@ def _moment(kind, linear, p_mode=None):
     var, a, b = linear.var, linear.a, linear.b
     if isinstance(var, _Series):
         return var.moment(kind, a, b)          # значений бесконечно много, D4
+    if isinstance(var, _Density) or (isinstance(var, _Mapped) and isinstance(var.base, _Density)):
+        return _density_moment(kind, var, a, b)   # интеграл, а не сумма, D6
     p = _draw_chance(var, p_mode)
     if kind == 'square':                       # E((aX + b)²), для разбора промаха
         return sp.expand(sp.Add(*[(a * k + b) ** 2 * var.chance(k, p)
@@ -8889,7 +8900,8 @@ def verify_parameter(label, got, condition, var):
     return True
 
 
-def verify_moment(label, got, what, given=None, var=None, tables=(), count=False):
+def verify_moment(label, got, what, given=None, var=None, tables=(), count=False,
+                  exact=False, places=None):
     """Ответ — E(aX + b), Var(aX + b) или SD(aX + b).
 
     Среднее проверка получает сложением k·P(X = k), дисперсию — сложением
@@ -8915,6 +8927,11 @@ def verify_moment(label, got, what, given=None, var=None, tables=(), count=False
     `count=True` — спрашивают оценку числа предметов («estimate the number
     of bags»): схема оценивания принимает и 7,66, и 8, и целое тогда не
     промах, а допустимая запись.
+
+    У величины с плотностью (D6) среднее и дисперсия — интегралы, а буквы
+    плотности находятся из того, что площадь под ней — единица: `given=[]`,
+    `var=k`. `exact=True` — вопрос просит точное значение; `places=2` —
+    ответ до цента, два знака после запятой.
     """
     if _blank(label, got, what):
         return False
@@ -8951,6 +8968,21 @@ def verify_moment(label, got, what, given=None, var=None, tables=(), count=False
     for run in runs:
         want = sp.sympify(what).subs(run)
         if _draw_agree(value, want):
+            if exact and value.has(sp.Float):
+                print(f"{NO} {label}: " + _t(
+                    "вопрос просит точное значение, а это десятичная дробь",
+                    "the question asks for the exact value, and this is a decimal"))
+                return False
+            if exact and abs(float(value) - float(want)) > 1e-9 * max(1.0, abs(float(want))):
+                print(f"{NO} {label}: " + _t("это близко, но не точное значение",
+                                             "that is close, but it is not the exact value"))
+                return False
+            if places is not None and (round(float(value), places) != round(float(want), places)
+                                       or abs(float(value) - round(float(value), places)) > 1e-9):
+                print(f"{NO} {label}: " + _t(
+                    f"вопрос просит ответ с {places} знаками после запятой",
+                    f"the question asks for {places} decimal places"))
+                return False
             continue
         for rounded, how in _rounded_runs(run):
             near = sp.sympify(what).subs(rounded)
@@ -8977,6 +9009,19 @@ def verify_moment(label, got, what, given=None, var=None, tables=(), count=False
                          "number")] = linear.var.p.subs(run)
             slips[_t("постоянная потеряна", "the constant is lost")] = \
                 linear.a * mean_x
+            if isinstance(linear.var, _Density):
+                shape = linear.var.shape(run)
+                lo, hi = linear.var.support(shape)
+                slips[_t("это ∫ x dx без плотности: каждое x умножают на f(x)",
+                         "that is ∫ x dx with no density: each x is multiplied by "
+                         "f(x)")] = math.fsum(
+                    _quad(lambda p: float(linear.a.subs(run)) * p + float(linear.b.subs(run)), a, b)
+                    for a, b, _ in shape if b > a)
+                if not (math.isinf(lo) or math.isinf(hi)):
+                    slips[_t("это середина промежутка: так бывает только у симметричной "
+                             "плотности",
+                             "that is the middle of the interval: that only works for a "
+                             "symmetric density")] = linear.a * (lo + hi) / 2 + linear.b
             if isinstance(linear.var, _Table):
                 listed = list(linear.var.values())
                 slips[_t("это среднее значений без весов: каждое значение "
@@ -9286,7 +9331,7 @@ def Moments(mean, variance, name='T'):
 def _sum_of(first, second):
     """X + Y для независимых X и Y: по парам значений, с произведением вероятностей."""
     for var in (first, second):
-        if isinstance(var, (_Curve, _Mapped)):
+        if isinstance(var, (_Curve, _Mapped, _Density)):
             raise TypeError(_t('сумма непрерывных величин здесь не складывается',
                                'a sum of continuous variables is not added up here'))
         if isinstance(var, _Series):
@@ -9366,6 +9411,9 @@ def total_probability(X):
     """Сумма всех вероятностей таблицы — то, что обязано быть единицей."""
     if X.blank():
         return Ellipsis
+    if isinstance(X, _Density):
+        # у плотности — площадь над всей осью: событие «X < 0 или X ≥ 0»
+        return _area_of(('or', ('leaf', X, '<', sp.Integer(0)), ('leaf', X, '>=', sp.Integer(0))))
     whole = sp.Add(*[X.chance(v) for v in X.values()])
     return _Prob(whole, 'whole', (X,), f"ΣP({X.name} = x)")
 
@@ -9503,6 +9551,11 @@ def _poly_roots(poly):
 def _broken_rule(run, variables, unknowns):
     """Что сломано в таблице при этих буквах, или None, если ничего."""
     for var in variables:
+        if isinstance(var, _Density):
+            broken = var.broken(run)
+            if broken is not None:
+                return broken
+            continue
         for what, expr, kind in var.rules():
             value = sp.sympify(expr).subs(run)
             if value.free_symbols:
@@ -9544,6 +9597,12 @@ def _rule_words(broken):
     if kind == 'sd':
         return _t(f"{what}{shown}, а стандартное отклонение положительно",
                   f"{what}{shown}, and a standard deviation is positive")
+    if kind == 'density' and value is None:
+        return _t(f"{what} не действительное число, а плотность — число",
+                  f"{what} is not a real number, and a density is a number")
+    if kind == 'density':
+        return _t(f"{what}{shown}, а плотность не бывает отрицательной",
+                  f"{what}{shown}, and a density is never negative")
     if kind == 'whole':
         return _t(f"{what}{shown}, а по условию это целое число",
                   f"{what}{shown}, and the question says it is a whole number")
@@ -9567,7 +9626,10 @@ def _letter_runs(conditions, unknowns, variables=()):
     for var in variables:
         if isinstance(var, _Table) and not var.counts and not var.parts:
             residuals.append(sp.Add(*[var.chance(v) for v in var.values()]) - 1)
-    if any(isinstance(var, (_Curve, _Mapped)) for var in variables) or \
+        if isinstance(var, _Density) and var.letters:
+            # площадь под плотностью — единица, как сумма таблицы в D4
+            residuals.append(total_probability(var) - 1)
+    if any(isinstance(var, (_Curve, _Mapped, _Density)) for var in variables) or \
             any(sp.sympify(r).has(_Area) for r in residuals):
         # площади не многочлены: буквы ищет Ньютон, D5
         roots = _curve_roots([sp.sympify(r) for r in residuals], unknowns, variables)
@@ -9610,6 +9672,9 @@ def _rounded_runs(run):
 def _letters_in(variables, conditions):
     found = set()
     for var in variables:
+        if isinstance(var, _Density):
+            found |= set(var.letters)
+            continue
         for _, expr, _ in var.rules():
             found |= sp.sympify(expr).free_symbols
         if isinstance(var, _Table):
@@ -9622,8 +9687,30 @@ def _letters_in(variables, conditions):
     return sorted(found, key=str)
 
 
+def _pinned(variables, run):
+    """Те же величины, где часть букв заменена числами."""
+    out = []
+    for var in variables:
+        if isinstance(var, _Curve):
+            out.append(_Curve(sp.sympify(var.mean).subs(run), sp.sympify(var.variance).subs(run),
+                              var.name, var.rule))
+        elif isinstance(var, _Density):
+            out.append(var.pinned(run))
+        else:
+            out.append(var)
+    return out
+
+
+def _free_runs(free):
+    """Наборы значений свободных букв: буква, список букв или готовые наборы."""
+    if isinstance(free, (list, tuple)) and free and all(isinstance(item, dict) for item in free):
+        return [{sp.sympify(u): sp.sympify(v) for u, v in item.items()} for item in free]
+    loose = _as_unknowns(free)
+    return [{letter: sp.Float(sample) for letter in loose} for sample in _FREE_SAMPLES]
+
+
 def verify_letters(label, got, unknowns, variables, conditions=(), whole=False,
-                   sf=None, free=None):
+                   sf=None, free=None, exact=False):
     """Ответ — буквы таблицы: `verify_letters('2b', 0.3, k, [X])`.
 
     Условия — те, что даёт вопрос (`Eq(Expect(X), 2.3)`); условие «таблица
@@ -9642,25 +9729,35 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False,
     просит столько значащих цифр, и не больше. `free` — буква модели,
     которую вопрос оставляет свободной: ответ обязан годиться при любом её
     значении, и проверка пробует несколько.
+
+    С плотностью (D6) условие «площадь под ней — единица» добавляется само,
+    как сумма таблицы. Медиана и квартиль — тоже буквы: `Eq(P(X < m), 0.5)`.
+    Ответ может быть выражением от свободных букв («a через b», «медиана
+    через a, b и c»); тогда `free` — буква или список готовых наборов
+    `[{a: 0, b: 4, c: 3}, ...]`, если значения букв связаны условием.
+    `exact=True` — вопрос Paper 1 просит точное значение.
     """
     if _blank(label, got):
         return False
-    loose = _as_unknowns(free)
-    if loose:
+    if free is not None and _as_unknowns(free):
         verdict = True
-        for sample in _FREE_SAMPLES:
-            run = {letter: sp.Float(sample) for letter in loose}
+        for run in _free_runs(free):
             fixed = [sp.sympify(c).subs(run) for c in conditions]
-            pinned = [_Curve(var.mean.subs(run), var.variance.subs(run), var.name, var.rule)
-                      if isinstance(var, _Curve) else var for var in variables]
+            pinned = _pinned(variables, run)
+            given = [sp.sympify(item).subs(run) for item in got] if isinstance(got, (list, tuple)) \
+                else sp.sympify(got).subs(run)
             buffer = io.StringIO()
             with contextlib.redirect_stdout(buffer):
-                verdict = verify_letters(label, got, unknowns, pinned, fixed, whole, sf)
+                verdict = verify_letters(label, given, unknowns, pinned, fixed, whole, sf,
+                                         exact=exact)
             if not verdict:
-                shown = ', '.join(f"{u} = {sample}" for u in loose)
+                shown = ', '.join(f"{u} = {sig(v, 4)}" for u, v in run.items())
                 print(buffer.getvalue().rstrip() + _t(f" (при {shown})", f" (at {shown})"))
                 return False
-        print(buffer.getvalue().rstrip())
+        if isinstance(got, (list, tuple)) or not sp.sympify(got).free_symbols:
+            print(buffer.getvalue().rstrip())
+        else:
+            print(f"{OK} {label}: {got}")
         return True
     names = _as_unknowns(unknowns)
     given = list(got) if isinstance(got, (list, tuple)) else [got]
@@ -9710,6 +9807,8 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False,
         if sf is not None and any(float(v) != float(sig(v, sf)) for v in numbers):
             print(f"{NO} {label}: " + _sf_words(sf))
             return False
+        if exact and not _exact_letters(label, names, numbers, good):
+            return False
         print(f"{OK} {label}: {plain_shown}")
         return True
     for run, broken in bad:
@@ -9735,26 +9834,37 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False,
         print(f"{NO} {label}: " + _t("вопрос просит ответ до целого",
                                      "the question asks for whole numbers"))
         return False
-    curve = any(isinstance(var, (_Curve, _Mapped)) for var in variables)
+    curve = any(isinstance(var, (_Curve, _Mapped, _Density)) for var in variables)
+    dense = [var for var in variables if isinstance(var, _Density)]
     if curve and good:
         # граница, найденная по площади с другой стороны: invNorm(0,2)
         # там, где «больше w с вероятностью 0,2» требует 0,8 слева
         for number, item in enumerate(conditions):
             eq = sp.sympify(item)
-            if not (isinstance(eq, sp.Equality) and isinstance(eq.lhs, _Area)):
+            if not (isinstance(eq, sp.Equality) and isinstance(eq.lhs, _Area)
+                    and 'node' in _AREAS[int(eq.lhs.args[0])]):
                 continue
             flipped = list(conditions)
             flipped[number] = sp.Eq(1 - eq.lhs, eq.rhs)
             runs, _ = _letter_runs(flipped, letters, variables)
             if runs and any(matches(run) for run in runs):
-                print(f"{NO} {label}: " + _t(
+                print(f"{NO} {label}: " + (_t(
+                    "здесь площадь набрана с другой стороны: нижний квартиль — "
+                    "четверть площади слева, а не справа",
+                    "this collects the area from the other side: the lower quartile "
+                    "has a quarter of the area to its left, not to its right") if dense else _t(
                     "здесь взята площадь с другой стороны от границы: калькулятор "
                     "и invNorm считают площадь слева, и «больше» надо перевести в "
                     "1 − данное",
                     "this uses the area on the other side of the boundary: invNorm "
                     "works with the area to the left, so «more than» becomes 1 − the "
-                    "given area"))
+                    "given area")))
                 return False
+    if dense and good and len(names) == 1:
+        said = _density_letter_slips(dense[0], names[0], numbers[0], conditions, good[0], agree)
+        if said:
+            print(f"{NO} {label}: {said}")
+            return False
     if not good:
         print(f"{NO} {label}: " + (_t("условиям не отвечает ни одна годная модель",
                                       "no valid model satisfies the conditions") if curve else
@@ -9764,6 +9874,20 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False,
     if len(names) == len(letters):
         run = dict(zip(names, numbers))
         for var in variables:
+            if isinstance(var, _Density) and var.letters:
+                try:
+                    whole_area = sp.sympify(total_probability(var)).subs(run)
+                    whole_area = float(whole_area)
+                except (TypeError, ValueError):
+                    whole_area = None
+                if whole_area is not None and not math.isnan(whole_area) \
+                        and not _draw_agree(whole_area, 1):
+                    print(f"{NO} {label}: " + _t(
+                        f"при {shown} площадь под плотностью {var.name} равна "
+                        f"{sig(whole_area, 4)}, а должна быть 1",
+                        f"with {shown} the area under the density of {var.name} is "
+                        f"{sig(whole_area, 4)}, and it has to be 1"))
+                    return False
             if isinstance(var, _Table) and not var.counts and not var.parts:
                 whole_sum = sp.Add(*[var.chance(v) for v in var.values()]).subs(run)
                 if not _draw_agree(whole_sum, 1):
@@ -9930,6 +10054,8 @@ def verify_mode(label, got, X, given=None, var=None):
     """Ответ — мода: значение с наибольшей вероятностью, а не сама вероятность."""
     if _blank(label, got, X):
         return False
+    if isinstance(X, _Density):
+        return _verify_density_mode(label, got, X, given, var)      # D6
     unknowns = _as_unknowns(var)
     if given is None and not unknowns:
         runs = [{}]
@@ -10053,6 +10179,23 @@ def _moment_expression(label, got, what, letters):
         return False
     samples = [sp.Rational(3, 20), sp.Rational(3, 10), sp.Rational(11, 20), sp.Rational(4, 5)]
     want_expr = sp.sympify(what)
+    if what.kind == 'var':
+        # E(X²) без вычтенного квадрата среднего — самый частый промах
+        linear = what.args[0]
+        square = _moment('square', _Linear(linear.var, 1, 0))
+        try:
+            if all(_draw_agree(sp.N(answer.subs({u: s for u in letters}).doit(), 20),
+                               sp.N(square.subs({u: s for u in letters}), 20)) and
+                   not _draw_agree(sp.N(square.subs({u: s for u in letters}), 20),
+                                   sp.N(want_expr.subs({u: s for u in letters}), 20))
+                   for s in samples):
+                print(f"{NO} {label}: " + _t(
+                    f"это E({linear.var.name}²): квадрат среднего ещё не вычтен",
+                    f"that is E({linear.var.name}²): the square of the mean has not been "
+                    f"subtracted yet"))
+                return False
+        except (TypeError, ValueError, ZeroDivisionError):
+            pass
     weightless = True
     for sample in samples:
         run = {u: sample for u in letters}
@@ -10236,7 +10379,11 @@ class _Mapped(_Variable):
         self.name = name or f"g({base.name})"
         self.dummy = sp.Dummy('z')
         self.expr = sp.sympify(rule(self.dummy))
-        self._number = sp.lambdify(self.dummy, self.expr, 'cmath')
+        # функции из cmath — корень из отрицательного даёт комплексное, а не
+        # ошибку, — но печать чисел от math: у принтера cmath десятичная
+        # дробь в правиле (−0,4·cos 7,8t, D6) уходит в бесконечную рекурсию
+        functions = {name: getattr(cmath, name) for name in dir(cmath) if not name.startswith('_')}
+        self._number = sp.lambdify(self.dummy, self.expr, modules=[functions, 'math'])
 
     __hash__ = object.__hash__
 
@@ -10246,10 +10393,21 @@ class _Mapped(_Variable):
     def values(self):
         return self.base.values()
 
+    def breaks(self):
+        """Где правило может скакать: числа из условий Piecewise."""
+        found = set()
+        for piece in self.expr.atoms(sp.Piecewise):
+            for _, cond in piece.args:
+                for rel in cond.atoms(sp.core.relational.Relational):
+                    for side in (rel.lhs, rel.rhs):
+                        if side.is_number and side.is_real:
+                            found.add(float(side))
+        return sorted(found)
+
     def at(self, point):
         try:
             value = complex(self._number(point))
-        except (ValueError, ZeroDivisionError, OverflowError):
+        except (ValueError, TypeError, ZeroDivisionError, OverflowError):
             return None
         if abs(value.imag) > 1e-12 * max(1.0, abs(value)):
             return None
@@ -10346,7 +10504,7 @@ def _curve_base(node):
     bases = []
     for var in _draw_vars(node):
         base = var.base if isinstance(var, _Mapped) else var
-        if not isinstance(base, _Curve):
+        if not isinstance(base, (_Curve, _Density)):
             raise TypeError(_t('в одном событии непрерывная величина и дискретная',
                                'one event mixes a continuous and a discrete variable'))
         if not any(base is seen for seen in bases):
@@ -10360,7 +10518,7 @@ def _curve_base(node):
 
 
 def _is_curve(node):
-    return any(isinstance(var, (_Curve, _Mapped, _Mixture)) for var in _draw_vars(node))
+    return any(isinstance(var, (_Curve, _Mapped, _Mixture, _Density)) for var in _draw_vars(node))
 
 
 def _no_variables(node):
@@ -10368,7 +10526,7 @@ def _no_variables(node):
 
 
 def _curve_side(item, point):
-    if isinstance(item, _Curve):
+    if isinstance(item, (_Curve, _Density)):
         return point
     if isinstance(item, _Mapped):
         return item.at(point)
@@ -10405,18 +10563,17 @@ def _curve_fix(node, number):
     return (node[0],) + tuple(_curve_fix(child, number) for child in node[1:])
 
 
-def _curve_cuts(node, mean, spread):
-    """Точки оси, где событие может начаться или кончиться."""
+def _curve_cuts(node, lo, hi):
+    """Точки оси, где событие может начаться или кончиться; [lo, hi] — где искать."""
     cuts, walk = set(), []
     for _, leaf in _draw_leaves(node):
         _, left, _, right = leaf
-        if isinstance(left, _Curve) and not isinstance(right, _Variable):
+        if isinstance(left, (_Curve, _Density)) and not isinstance(right, _Variable):
             cuts.add(right)
-        elif isinstance(right, _Curve) and not isinstance(left, _Variable):
+        elif isinstance(right, (_Curve, _Density)) and not isinstance(left, _Variable):
             cuts.add(left)
         else:
             walk.append(leaf)
-    lo, hi = mean - _CURVE_SPAN * spread, mean + _CURVE_SPAN * spread
     for _, left, _, right in walk:
         def state(point, left=left, right=right):
             one, two = _curve_side(left, point), _curve_side(right, point)
@@ -10460,20 +10617,22 @@ def _rule_area(base, mean, spread, lo, hi):
     return below(hi) - below(lo)
 
 
-def _region_area(base, node, mean, spread, exact=False):
-    """Площадь под кривой над всеми x, где событие выполняется."""
-    cuts = _curve_cuts(node, mean, spread)
-    edges = [-math.inf] + cuts + [math.inf]
-    total, pieces = 0.0, []
+def _region_pieces(node, edges, window, step):
+    """Промежутки между соседними точками edges, где событие выполняется.
+
+    Проба в середине промежутка; у бесконечного края — на шаг step от
+    конечного, а у промежутка без конечных краёв — в середине window.
+    """
+    pieces = []
     for lo, hi in zip(edges, edges[1:]):
         if not hi > lo:
             continue
         if math.isinf(lo) and math.isinf(hi):
-            probe = mean
+            probe = (window[0] + window[1]) / 2
         elif math.isinf(lo):
-            probe = hi - spread
+            probe = hi - step
         elif math.isinf(hi):
-            probe = lo + spread
+            probe = lo + step
         else:
             probe = (lo + hi) / 2
         if _curve_holds(node, probe):
@@ -10481,7 +10640,15 @@ def _region_area(base, node, mean, spread, exact=False):
                 pieces[-1] = (pieces[-1][0], hi)
             else:
                 pieces.append((lo, hi))
-    for lo, hi in pieces:
+    return pieces
+
+
+def _region_area(base, node, mean, spread, exact=False):
+    """Площадь под кривой над всеми x, где событие выполняется."""
+    cuts = _curve_cuts(node, mean - _CURVE_SPAN * spread, mean + _CURVE_SPAN * spread)
+    edges = [-math.inf] + cuts + [math.inf]
+    total = 0.0
+    for lo, hi in _region_pieces(node, edges, (mean, mean), spread):
         if base.rule is not None and not exact:
             total += _rule_area(base, mean, spread, lo, hi)
         else:
@@ -10498,8 +10665,10 @@ def _curve_mass(node, run=None, exact=False):
     if _no_variables(node):
         return 1.0 if _curve_holds(node, 0.0) else 0.0
     base = _curve_base(node)
-    mean, spread = base.numbers(run)
     fixed = _curve_fix(node, lambda item: float(sp.sympify(item).subs(run or {})))
+    if isinstance(base, _Density):
+        return base.region_area(fixed, base.shape(run))
+    mean, spread = base.numbers(run)
     return _region_area(base, fixed, mean, spread, exact)
 
 
@@ -10507,13 +10676,21 @@ _AREAS = []
 
 
 def _area_call(key, *numbers):
-    """Площадь события из реестра при числах вместо букв — быстрый путь."""
+    """Площадь события из реестра при числах вместо букв — быстрый путь.
+
+    Запись реестра бывает и не площадью, а средним по плотности (D6): у неё
+    своя функция `call`.
+    """
     entry = _AREAS[int(key)]
+    if 'call' in entry:
+        return entry['call'](*numbers)
+    fixed = _curve_fix(entry['node'], lambda item: float(entry['bound'](item)(*numbers)))
+    if 'shape' in entry:
+        return entry['base'].region_area(fixed, entry['shape'](*numbers))
     mean = float(entry['mean'](*numbers))
     variance = float(entry['variance'](*numbers))
     if not variance > 0:
         raise ValueError('variance')
-    fixed = _curve_fix(entry['node'], lambda item: float(entry['bound'](item)(*numbers)))
     return _region_area(entry['base'], fixed, mean, math.sqrt(variance))
 
 
@@ -10530,10 +10707,18 @@ class _Area(sp.Function):
         return None
 
 
+def _numeric_lambda(letters, expr):
+    """lambdify, который понимает и площади внутри выражения."""
+    return sp.lambdify(letters, sp.sympify(expr), modules=[{'_Area': _area_call}, 'math'])
+
+
 def _curve_letters(node):
     found = set()
     base = _curve_base(node)
-    found |= sp.sympify(base.mean).free_symbols | sp.sympify(base.variance).free_symbols
+    if isinstance(base, _Density):
+        found |= set(base.letters)
+    else:
+        found |= sp.sympify(base.mean).free_symbols | sp.sympify(base.variance).free_symbols
     for _, leaf in _draw_leaves(node):
         for item in (leaf[1], leaf[3]):
             if not isinstance(item, _Variable):
@@ -10555,12 +10740,16 @@ def _area_of(node):
     def bound(item):
         text = sp.srepr(sp.sympify(item))
         if text not in compiled:
-            compiled[text] = sp.lambdify(letters, sp.sympify(item), 'math')
+            compiled[text] = _numeric_lambda(letters, item)
         return compiled[text]
 
-    _AREAS.append({'node': node, 'base': base, 'bound': bound,
-                   'mean': sp.lambdify(letters, base.mean, 'math'),
-                   'variance': sp.lambdify(letters, base.variance, 'math')})
+    if isinstance(base, _Density):
+        _AREAS.append({'node': node, 'base': base, 'bound': bound,
+                       'shape': base.compiler(letters)})
+    else:
+        _AREAS.append({'node': node, 'base': base, 'bound': bound,
+                       'mean': sp.lambdify(letters, base.mean, 'math'),
+                       'variance': sp.lambdify(letters, base.variance, 'math')})
     if not letters:
         # без букв площадь считается сразу, и ошибка — правило из условия
         # не даёт такой площади — доходит до ячейки, а не прячется в nan
@@ -10600,19 +10789,33 @@ def _solve_small(matrix, right):
 
 def _curve_starts(unknowns, variables, residuals):
     """Начальные точки для поиска букв: числа самого вопроса и масштаб разброса."""
-    places, scales, spread_letters = set(), set(), set()
+    places, scales, spread_letters, density_letters, inner = set(), set(), set(), set(), set()
     nodes = []
     for residual in residuals:
         for area in residual.atoms(_Area):
             nodes.append(_AREAS[int(area.args[0])])
         plain = residual.xreplace({area: 0 for area in residual.atoms(_Area)})
         places |= {float(n) for n in plain.atoms(sp.Number) if n.is_finite and abs(n) > 1}
-    bases = [entry['base'] for entry in nodes] + [v for v in variables if isinstance(v, _Curve)]
+    bases = [entry['base'] for entry in nodes] + [v for v in variables
+                                                   if isinstance(v, (_Curve, _Density))]
     for base in bases:
+        if isinstance(base, _Density):
+            # у плотности масштаб задают края промежутков, а буквы в ней
+            # бывают любыми положительными: 0,645, 3√3/π, 9
+            density_letters |= set(base.letters)
+            for lo, hi, _ in base.pieces:
+                for edge in (lo, hi):
+                    places |= {float(n) for n in edge.atoms(sp.Number) if n.is_finite}
+                if lo.is_number and hi.is_number and lo.is_finite and hi.is_finite:
+                    # и точки внутри куска: из края промежутка Ньютон для
+                    # границы по площади уходит туда, где плотность ноль
+                    inner |= {float(lo + (hi - lo) * share) for share in (0.1, 0.3, 0.5, 0.7, 0.9)}
+            continue
         spread_letters |= sp.sympify(base.variance).free_symbols
         places |= {float(n) for n in sp.sympify(base.mean).atoms(sp.Number) if n.is_finite}
         if sp.sympify(base.variance).is_number:
             scales.add(math.sqrt(float(base.variance)))
+    nodes = [entry for entry in nodes if 'node' in entry]
     for entry in nodes:
         for _, leaf in _draw_leaves(entry['node']):
             for item in (leaf[1], leaf[3]):
@@ -10635,6 +10838,11 @@ def _curve_starts(unknowns, variables, residuals):
             # и отрицательный: σ² не отличает σ от −σ, а отброшенный корень
             # проверка должна уметь назвать
             options.append([typical / 3, typical, typical * 3, -typical])
+        elif letter in density_letters:
+            options.append(sorted(set(around) | {0.1, 0.5, 1.0, 2.0, 5.0}))
+        elif inner:
+            # граница по площади под плотностью: внутри промежутка и возле нуля
+            options.append(sorted(inner | {0.1}))
         else:
             options.append(around)
     combos = list(itertools.product(*options))
@@ -10707,7 +10915,7 @@ def _curve_roots(residuals, unknowns, variables):
                 share /= 2
             if not better:
                 break
-        if size(now) >= 1e-9:
+        if now is None or size(now) >= 1e-9:
             continue
         # невязка мала и там, где обе площади почти нули, — в далёком хвосте.
         # Корень настоящий, только если и шаг Ньютона здесь мал
@@ -10804,6 +11012,8 @@ def _curve_slips(find, run):
             slips[_t(f"здесь только «{_draw_say(keep)}»: граница «{_draw_say(lost)}» потеряна",
                      f"this is only «{_draw_say(keep)}»: the boundary «{_draw_say(lost)}» "
                      f"is lost")] = area(keep)
+    if isinstance(base, _Density):
+        return _density_slips(base, target, leaves, run, slips)
     if len(leaves) == 1 and isinstance(leaves[0][1][1], _Curve) and \
             not isinstance(leaves[0][1][3], _Variable):
         mean, spread = base.numbers(run)
@@ -10871,7 +11081,12 @@ def _curve_variables(find, conditions=()):
         except (sp.SympifyError, TypeError):
             expr = None
         if isinstance(expr, sp.Basic):
-            nodes += [_AREAS[int(area.args[0])]['node'] for area in expr.atoms(_Area)]
+            for area in expr.atoms(_Area):
+                entry = _AREAS[int(area.args[0])]
+                if 'node' in entry:
+                    nodes.append(entry['node'])
+                elif not any(entry['base'] is seen for seen in found):
+                    found.append(entry['base'])
         for node in nodes:
             for _, piece in _unmix(node):
                 if _no_variables(piece):
@@ -10885,11 +11100,14 @@ def _curve_variables(find, conditions=()):
 def _verify_curve_chance(label, got, find, given, var, sf, percent, free):
     """verify_chance для непрерывной величины: ответ — площадь."""
     try:
-        value = sp.sympify(got)
+        answer = sp.sympify(got)
     except (sp.SympifyError, TypeError, AttributeError):
-        value = None
-    if value is None or getattr(value, 'free_symbols', set()) \
-            or not value.is_number or value.is_real is False:
+        answer = None
+    loose = _as_unknowns(free)
+    # ответ-выражение от свободных букв: «покажите, что площадь равна
+    # 1/√k − 1/√(16 + k)» (D6) — сверяется при каждом их значении
+    if answer is None or (getattr(answer, 'free_symbols', set()) - set(loose)) \
+            or (not answer.free_symbols and (not answer.is_number or answer.is_real is False)):
         print(f"{NO} {label}: " + (_t("процент это число", "a percentage is a number")
                                    if percent else _t("вероятность это число",
                                                       "a probability is a number")))
@@ -10898,11 +11116,14 @@ def _verify_curve_chance(label, got, find, given, var, sf, percent, free):
     unknowns = _as_unknowns(var)
     variables = _curve_variables(find, conditions)
     samples = [{}]
-    loose = _as_unknowns(free)
     if loose:
         samples = [{letter: sp.Float(s) for letter in loose} for s in _FREE_SAMPLES]
     unit = 100 if percent else 1
     for sample in samples:
+        value = answer.subs(sample)
+        if not value.is_number or value.is_real is False:
+            print(f"{NO} {label}: " + _t("выражение не вычисляется", "the expression does not evaluate"))
+            return False
         runs = _curve_runs(label, conditions, unknowns, variables, sample)
         if runs is None:
             return False
@@ -10961,6 +11182,633 @@ def _verify_curve_chance(label, got, find, given, var, sf, percent, free):
             print(f"{NO} {label}: " + _t("у этой модели выходит другое",
                                          "this model gives something else"))
             return False
+    print(f"{OK} {label}")
+    return True
+
+
+# ======================================================= плотность формулой
+# Двадцать третье понятие равенства ответов: всё — интеграл одной плотности.
+#
+# В D5 кривая была одна на всех, и менялись только μ и σ. Здесь величину
+# задаёт формула по кускам — f(x) = x/√((x² + k)³) на [0, 4] и ноль вне, —
+# и проверка знает только её. Вероятность — площадь под f над тем, где
+# событие выполняется; медиана и квартиль — граница, левее которой набралась
+# нужная площадь; мода — где f наибольшая; среднее и дисперсия — интегралы
+# x·f и (x − μ)²·f. Ни первообразной, ни формулы E(X) = ∫ x f(x) dx,
+# записанной для этой плотности, внутри нет: площадь складывает адаптивная
+# квадратура Гаусса — Лежандра, кусок за куском.
+#
+# Буквы в плотности — k, a и b, края промежутка вида [a, 3a] — находятся
+# тем же Ньютоном, что σ в D5. Условие «площадь под плотностью — единица»
+# проверка добавляет сама, как сумму таблицы в D4, и отбрасывает решения,
+# при которых плотность где-то отрицательна.
+
+_DENSITY_GRID = 4000      # узлов при поиске моды
+_DENSITY_ROOT_SCAN = 600  # узлов при поиске корней «чужого» уравнения медианы
+_QUAD_BUDGET = 3000       # сколько раз квадратура делит отрезок
+
+
+def _gauss_piece(fn, a, b):
+    half, middle = (b - a) / 2, (a + b) / 2
+    return half * math.fsum(weight * fn(middle + half * node) for node, weight in _GAUSS)
+
+
+def _adaptive(fn, a, b):
+    """Интеграл fn от a до b: делить пополам, пока шестнадцать узлов не сойдутся."""
+    whole = _gauss_piece(fn, a, b)
+    stack, done, used = [(a, b, whole)], [], 0
+    while stack:
+        lo, hi, guess = stack.pop()
+        middle = (lo + hi) / 2
+        left, right = _gauss_piece(fn, lo, middle), _gauss_piece(fn, middle, hi)
+        used += 1
+        both = left + right
+        if abs(both - guess) <= 1e-13 * max(1.0, abs(both)) or used > _QUAD_BUDGET \
+                or hi - lo < 1e-12 * (b - a):
+            done.append(both)
+        else:
+            stack += [(lo, middle, left), (middle, hi, right)]
+    return math.fsum(done)
+
+
+def _quad(fn, a, b):
+    """∫ fn от a до b, в том числе до бесконечности — заменой x = a + s/(1 − s).
+
+    Конечный отрезок проходится заменой x = a + (b − a)(3s² − 2s³): у неё
+    производная обращается в ноль на концах, и корневая особенность на
+    краю (arccos x у единицы) перестаёт требовать тысячи делений.
+    """
+    if a == b:
+        return 0.0
+    if b < a:
+        return -_quad(fn, b, a)
+    if math.isinf(a) and math.isinf(b):
+        return _quad(fn, a, 0.0) + _quad(fn, 0.0, b)
+    if math.isinf(b):
+        return _adaptive(lambda s: fn(a + s / (1 - s)) / (1 - s) ** 2, 0.0, 1.0)
+    if math.isinf(a):
+        return _adaptive(lambda s: fn(b - s / (1 - s)) / (1 - s) ** 2, 0.0, 1.0)
+    width = b - a
+    return _adaptive(lambda s: fn(a + width * s * s * (3 - 2 * s)) * 6 * s * (1 - s) * width,
+                     0.0, 1.0)
+
+
+def _real(value):
+    """Число из того, что вернула формула; комплексное — ошибка, как корень из минуса."""
+    if isinstance(value, complex):
+        if abs(value.imag) > 1e-12 * max(1.0, abs(value)):
+            raise ValueError('complex')
+        value = value.real
+    value = float(value)
+    if math.isnan(value):
+        raise ValueError('nan')
+    return value
+
+
+class _Density(_Variable):
+    """Величина с плотностью: f(x) по кускам и ноль вне их.
+
+    `pieces` — словарь «промежуток → формула», как в условии:
+    `{(0, k): k*x, (k, 2*k): 2*k*x - x**2}`. Края могут быть буквами и
+    бесконечностью, формулы — содержать буквы. Где кусок кончается и
+    начинается следующий, неважно, включён ли край: у точки площади нет.
+    """
+
+    def __init__(self, pieces, name='X', var=x):
+        self.name = name
+        self.var = sp.sympify(var)
+        self.origin = self
+        self._compiled = {}
+        self._blank = pieces is Ellipsis or any(
+            key is Ellipsis or expr is Ellipsis
+            or (isinstance(key, tuple) and any(edge is Ellipsis for edge in key))
+            for key, expr in pieces.items())
+        if self._blank:
+            self.pieces, self.letters = [], []
+            return
+        self.pieces = []
+        for key, expr in pieces.items():
+            lo, hi = (key.start, key.end) if isinstance(key, sp.Interval) else key
+            self.pieces.append((_exact(lo), _exact(hi), _exact(expr)))
+        found = set()
+        for lo, hi, expr in self.pieces:
+            found |= lo.free_symbols | hi.free_symbols | (expr.free_symbols - {self.var})
+        self.letters = sorted(found, key=str)
+        if not self.letters:
+            broken = self.broken({})
+            if broken is not None:
+                raise ValueError(_rule_words(broken))
+            whole = self.area_between(self.shape({}), -math.inf, math.inf)
+            if abs(whole - 1) > 1e-6:
+                raise ValueError(_t(f'площадь под плотностью {sig(whole, 6)}, а не 1',
+                                    f'the area under the density is {sig(whole, 6)}, not 1'))
+
+    __hash__ = object.__hash__
+
+    def blank(self):
+        return self._blank
+
+    def values(self):
+        raise TypeError(_t('у непрерывной величины значений не перечислить: вероятность '
+                           'здесь площадь, а не сумма',
+                           'a continuous variable has no list of values: a probability '
+                           'here is an area, not a sum'))
+
+    def chance(self, k, p=None):
+        return self.values()
+
+    def map(self, rule, name=None):
+        """Величина, посчитанная из этой: `X.map(lambda w: 25*w, 'cost')`."""
+        return _Mapped(self, rule, name)
+
+    def pinned(self, run):
+        """Та же плотность, где часть букв заменена числами.
+
+        Площадь такой копии не проверяется: годится ли она — как раз то,
+        что проверка выясняет.
+        """
+        copy = _Density.__new__(_Density)
+        copy.name, copy.var, copy._compiled, copy._blank = self.name, self.var, {}, False
+        copy.pieces = [(lo.subs(run), hi.subs(run), expr.subs(run))
+                       for lo, hi, expr in self.pieces]
+        found = set()
+        for lo, hi, expr in copy.pieces:
+            found |= lo.free_symbols | hi.free_symbols | (expr.free_symbols - {copy.var})
+        copy.letters = sorted(found, key=str)
+        copy.origin = self.origin
+        return copy
+
+    def pdf(self, value):
+        """f(value) выражением: `X.pdf(9)` — то, что вопрос пишет как f(9)."""
+        value = sp.sympify(value)
+        for lo, hi, expr in self.pieces:
+            inside = sp.And(sp.sympify(value >= lo), sp.sympify(value <= hi))
+            if inside is sp.true:
+                return expr.subs(self.var, value)
+        for lo, hi, expr in self.pieces:
+            if sp.And(sp.sympify(value >= lo), sp.sympify(value <= hi)) is not sp.false:
+                raise ValueError(_t(f'не понять, на каком куске лежит {value}',
+                                    f'cannot tell which piece {value} is on'))
+        return sp.Integer(0)
+
+    def compiler(self, letters):
+        """Функция «числа букв → куски [(lo, hi, f)] числами»."""
+        key = tuple(letters)
+        if key not in self._compiled:
+            parts = [(_numeric_lambda(letters, lo), _numeric_lambda(letters, hi),
+                      sp.lambdify([self.var] + list(letters), expr, 'math'))
+                     for lo, hi, expr in self.pieces]
+
+            def shape(*numbers):
+                out = []
+                for lo_f, hi_f, fn in parts:
+                    out.append((float(lo_f(*numbers)), float(hi_f(*numbers)),
+                                lambda point, fn=fn: _real(fn(point, *numbers))))
+                return out
+            self._compiled[key] = shape
+        return self._compiled[key]
+
+    def shape(self, run=None):
+        run = run or {}
+        missing = [u for u in self.letters if u not in run]
+        if missing:
+            raise ValueError(_t(f"в плотности осталась буква {missing[0]}",
+                                f"the density still has the letter {missing[0]}"))
+        return self.compiler(self.letters)(*[float(run[u]) for u in self.letters])
+
+    @staticmethod
+    def support(shape):
+        live = [(lo, hi) for lo, hi, _ in shape if hi > lo]
+        if not live:
+            raise ValueError('empty')
+        return min(lo for lo, _ in live), max(hi for _, hi in live)
+
+    @staticmethod
+    def at(shape, point):
+        """f(point) числом: кусок, где point лежит; на стыке — правый."""
+        for lo, hi, fn in shape:
+            if lo <= point < hi:
+                return fn(point)
+        for lo, hi, fn in reversed(shape):
+            if hi > lo and point == hi:
+                return fn(point)
+        return 0.0
+
+    @staticmethod
+    def area_between(shape, a, b):
+        total = []
+        for lo, hi, fn in shape:
+            left, right = max(a, lo), min(b, hi)
+            if right > left:
+                total.append(_quad(fn, left, right))
+        return math.fsum(total)
+
+    def window(self, shape):
+        """Конечный отрезок, где лежит почти вся площадь: там ищут моду и границы."""
+        lo, hi = self.support(shape)
+        if math.isinf(lo) or math.isinf(hi):
+            step = 1.0
+            while step < 1e6:
+                a = lo if not math.isinf(lo) else -step
+                b = hi if not math.isinf(hi) else step
+                outside = (self.area_between(shape, b, math.inf) if math.isinf(hi) else 0.0) + \
+                    (self.area_between(shape, -math.inf, a) if math.isinf(lo) else 0.0)
+                if abs(outside) < 1e-12:
+                    return a, b
+                step *= 2
+            return (lo if not math.isinf(lo) else -step), (hi if not math.isinf(hi) else step)
+        return lo, hi
+
+    def region_area(self, node, shape, exact=False):
+        """Площадь под f над теми x, где событие выполняется."""
+        lo, hi = self.support(shape)
+        window = self.window(shape)
+        edges = {lo, hi}
+        for a, b, _ in shape:
+            edges |= {a, b}
+        edges |= set(_curve_cuts(node, *window))
+        edges = sorted(e for e in edges if lo <= e <= hi)
+        step = max(1e-6, (window[1] - window[0]) / 1000)
+        return math.fsum(self.area_between(shape, a, b)
+                         for a, b in _region_pieces(node, edges, window, step))
+
+    def broken(self, run):
+        """Где плотность перестаёт быть плотностью при этих буквах, или None."""
+        try:
+            shape = self.shape(run)
+        except (ValueError, TypeError, ZeroDivisionError, OverflowError):
+            return None
+        for lo, hi, fn in shape:
+            if not hi > lo:
+                continue
+            a, b = lo, hi
+            if math.isinf(a) or math.isinf(b):
+                a, b = self.window([(lo, hi, fn)]) if not (math.isinf(a) and math.isinf(b)) \
+                    else (-50.0, 50.0)
+            points = [a + (b - a) * (i + 0.5) / 200 for i in range(200)]
+            points += [a + (b - a) * (1 + node) / 2 for node, _ in _GAUSS]
+            for point in points:
+                try:
+                    value = fn(point)
+                except (ValueError, TypeError, ZeroDivisionError, OverflowError):
+                    return f"f({sig(point, 4)})", None, 'density'
+                if value < -1e-9:
+                    return f"f({sig(point, 4)})", value, 'density'
+        return None
+
+    def __repr__(self):
+        cells = '; '.join(f"{expr} on [{lo}, {hi}]" for lo, hi, expr in self.pieces)
+        return f"{self.name}: f({self.var}) = {cells}, 0 otherwise"
+
+
+def Density(pieces, name='X', var=x):
+    """Величина с плотностью: `X = Density({(0, 4): x/sqrt((x**2 + k)**3)})`.
+
+    Ключ — промежуток, значение — формула на нём; вне всех промежутков
+    плотность ноль, как «0, otherwise» в условии. Сравнения дают события,
+    `P()` — их площадь, `Expect`, `Var`, `SD` — интегралы. Буквы разрешены
+    и в формуле, и в краях: `Density({(a, 3*a): 1/(2*a)})`.
+    """
+    return _Density(pieces, name, var)
+
+
+# -------------------------------------------------- мода, медиана, моменты
+
+def _density_top(X, run):
+    """Мода и значение плотности в ней: сетка по окну, потом золотое сечение."""
+    shape = X.shape(run)
+    lo, hi = X.window(shape)
+
+    def height(point):
+        try:
+            return X.at(shape, point)
+        except (ValueError, TypeError, ZeroDivisionError, OverflowError):
+            return -math.inf
+    grid = [lo + (hi - lo) * i / _DENSITY_GRID for i in range(_DENSITY_GRID + 1)]
+    heights = [height(point) for point in grid]
+    best = max(range(len(grid)), key=lambda i: heights[i])
+    a, b = grid[max(0, best - 1)], grid[min(len(grid) - 1, best + 1)]
+    ratio = (math.sqrt(5) - 1) / 2
+    for _ in range(200):
+        one, two = b - ratio * (b - a), a + ratio * (b - a)
+        if height(one) >= height(two):
+            b = two
+        else:
+            a = one
+    point = (a + b) / 2
+    candidates = [(height(point), point), (heights[best], grid[best])]
+    top, where = max(candidates)
+    return where, top
+
+
+def _density_share(X, run, share):
+    """Граница, левее которой площадь share, — делением пополам по окну."""
+    shape = X.shape(run)
+    lo, hi = X.window(shape)
+    for _ in range(200):
+        middle = (lo + hi) / 2
+        if X.area_between(shape, -math.inf, middle) < share:
+            lo = middle
+        else:
+            hi = middle
+    return (lo + hi) / 2
+
+
+def _density_moment_numbers(shape, kind, a, b, g=None, breaks=()):
+    """E(aX + b), E((aX + b)²) или Var(aX + b) по кускам плотности.
+
+    `breaks` — где g(x) скачет (цена 25x до 0,75 кг и 24x после): там кусок
+    режется, иначе квадратура сходится к скачку тысячами делений.
+    """
+    if breaks:
+        cut = []
+        for lo, hi, fn in shape:
+            edges = [lo] + sorted(p for p in breaks if lo < p < hi) + [hi]
+            cut += [(one, two, fn) for one, two in zip(edges, edges[1:])]
+        shape = cut
+
+    def h(point):
+        inner = point if g is None else g(point)
+        if inner is None:
+            raise ValueError('value')
+        return a * inner + b
+    mean = math.fsum(_quad(lambda p, fn=fn: h(p) * fn(p), lo, hi)
+                     for lo, hi, fn in shape if hi > lo)
+    if kind == 'mean':
+        return mean
+    if kind == 'square':
+        return math.fsum(_quad(lambda p, fn=fn: h(p) ** 2 * fn(p), lo, hi)
+                         for lo, hi, fn in shape if hi > lo)
+    return math.fsum(_quad(lambda p, fn=fn: (h(p) - mean) ** 2 * fn(p), lo, hi)
+                     for lo, hi, fn in shape if hi > lo)
+
+
+def _density_moment(kind, var, a, b):
+    """Среднее, квадрат или дисперсия aX + b — число или _Area от букв."""
+    base = var.base if isinstance(var, _Mapped) else var
+    g = var.at if isinstance(var, _Mapped) else None
+    letters = sorted(set(base.letters) | sp.sympify(a).free_symbols | sp.sympify(b).free_symbols,
+                     key=str)
+    a_f, b_f = _numeric_lambda(letters, a), _numeric_lambda(letters, b)
+    shape = base.compiler(letters)
+
+    def call(*numbers):
+        return _density_moment_numbers(shape(*numbers), kind, float(a_f(*numbers)),
+                                       float(b_f(*numbers)), g,
+                                       var.breaks() if isinstance(var, _Mapped) else ())
+    if not letters:
+        return sp.Float(call(), 15)
+    _AREAS.append({'base': base, 'call': call})
+    return _Area(sp.Integer(len(_AREAS) - 1), *letters)
+
+
+def _density_slips(base, target, leaves, run, slips):
+    """Промахи с площадью под плотностью — к тем, что уже набраны по событию."""
+    if len(leaves) == 1 and isinstance(leaves[0][1][1], _Density) and \
+            not isinstance(leaves[0][1][3], _Variable):
+        try:
+            shape = base.shape(run)
+            edge = float(sp.sympify(leaves[0][1][3]).subs(run))
+            slips[_t(f"это значение плотности в точке {sig(edge, 6)}, а вероятность — "
+                     f"площадь под ней",
+                     f"that is the value of the density at {sig(edge, 6)}; a probability "
+                     f"is the area under it")] = base.at(shape, edge)
+        except (ValueError, TypeError, ZeroDivisionError, OverflowError):
+            pass
+    return slips
+
+
+def _density_letter_slips(X, name, value, conditions, run, agree):
+    """Промахи с границей по площади: медиана, квартиль. Слово или None.
+
+    Три промаха, и все три — «не та площадь»: набрана от нуля, хотя
+    плотность начинается дальше; формула одного куска взята на всём
+    промежутке; корень уравнения лежит там, где эта формула не действует.
+    """
+    for item in conditions:
+        eq = sp.sympify(item)
+        if not (isinstance(eq, sp.Equality) and isinstance(eq.lhs, _Area)):
+            continue
+        entry = _AREAS[int(eq.lhs.args[0])]
+        node = entry.get('node')
+        if node is None or node[0] != 'leaf' or entry['base'] is not X.origin:
+            continue
+        _, left, rel, bound = node
+        if not isinstance(left, _Density) or sp.sympify(bound) != name:
+            continue
+        try:
+            share = float(sp.sympify(eq.rhs).subs(run))
+            fixed = X.pinned({u: v for u, v in run.items() if u in X.letters})
+            shape = fixed.shape({})
+            lo, hi = fixed.support(shape)
+        except (ValueError, TypeError, ZeroDivisionError, OverflowError):
+            return None
+        if rel in ('>', '>='):
+            share = 1 - share
+        truth = float(run[name])
+        wlo, whi = fixed.window(shape)
+        width = whi - wlo
+
+        def roots(fn, a, b):
+            found, before = [], None
+            for i in range(_DENSITY_ROOT_SCAN + 1):
+                point = a + (b - a) * i / _DENSITY_ROOT_SCAN
+                try:
+                    now = fn(point)
+                except (ValueError, TypeError, ZeroDivisionError, OverflowError):
+                    before = None
+                    continue
+                if before is not None and (before[1] < 0) != (now < 0):
+                    x0, x1 = before[0], point
+                    for _ in range(80):
+                        middle = (x0 + x1) / 2
+                        try:
+                            if (fn(middle) < 0) == (before[1] < 0):
+                                x0 = middle
+                            else:
+                                x1 = middle
+                        except (ValueError, TypeError, ZeroDivisionError, OverflowError):
+                            break
+                    found.append((x0 + x1) / 2)
+                before = (point, now)
+            return found
+
+        def said(root):
+            return agree(value, root) and not agree(truth, root)
+        if abs(share - 0.5) < 1e-12:
+            try:
+                mean = _density_moment_numbers(shape, 'mean', 1.0, 0.0)
+                mode, _ = _density_top(fixed, {})
+            except (ValueError, TypeError, ZeroDivisionError, OverflowError):
+                mean = mode = None
+            if mean is not None and said(mean):
+                return _t("это среднее, а медиана — граница, левее которой половина площади",
+                          "that is the mean; the median is the boundary with half the area "
+                          "to its left")
+            if mode is not None and said(mode):
+                return _t("это мода, а медиана — граница, левее которой половина площади",
+                          "that is the mode; the median is the boundary with half the area "
+                          "to its left")
+        first_lo, first_hi, first_fn = min(((a, b, f) for a, b, f in shape if b > a),
+                                           key=lambda item: item[0])
+        if first_lo > 0 and not math.isinf(first_lo):
+            zero = [(0.0, first_hi, first_fn)] + [p for p in shape if p[0] >= first_hi]
+            for root in roots(lambda q: X.area_between(zero, -math.inf, q) - share, 0.0, whi):
+                if said(root):
+                    return _t(f"площадь набрана от 0, а плотность начинается с "
+                              f"{sig(first_lo, 4)}: левее неё она ноль, и формула "
+                              f"там не действует",
+                              f"the area is collected from 0, and the density starts at "
+                              f"{sig(first_lo, 4)}: to the left of it the density is zero, "
+                              f"and the formula does not apply")
+        live = [(a, b, f) for a, b, f in shape if b > a]
+        before_area = 0.0
+        for a, b, fn in sorted(live, key=lambda item: item[0]):
+            def equation(q, a=a, fn=fn, start=before_area):
+                return start + _quad(fn, a, q) - share
+            for root in roots(equation, wlo - 4 * width, whi + 4 * width):
+                if a <= root <= b or not said(root):
+                    continue
+                if root < lo or root > hi:
+                    return _t(f"{sig(value, 6)} — корень уравнения, но он лежит вне "
+                              f"[{sig(lo, 4)}, {sig(hi, 4)}], где задана плотность: такой "
+                              f"корень отбрасывают",
+                              f"{sig(value, 6)} solves the equation, but it lies outside "
+                              f"[{sig(lo, 4)}, {sig(hi, 4)}], where the density lives: that "
+                              f"root is rejected")
+                return _t(f"это корень уравнения с формулой куска [{sig(a, 4)}, {sig(b, 4)}], "
+                          f"а сам он лежит на другом куске, где формула другая",
+                          f"that solves the equation with the formula of the piece "
+                          f"[{sig(a, 4)}, {sig(b, 4)}], but it lies on another piece, where "
+                          f"the formula is different")
+            before_area += _quad(fn, a, b)
+        if len(live) > 1:
+            for a, b, fn in live:
+                whole = [(lo, hi, fn)]
+                for root in roots(lambda q: X.area_between(whole, -math.inf, q) - share, lo, hi):
+                    if said(root):
+                        return _t(f"формула куска [{sig(a, 4)}, {sig(b, 4)}] взята на всём "
+                                  f"промежутке, а на остальных кусках плотность другая",
+                                  f"the formula of the piece [{sig(a, 4)}, {sig(b, 4)}] is used "
+                                  f"everywhere, and on the other pieces the density is "
+                                  f"different")
+    return None
+
+
+def _exact_letters(label, names, numbers, good):
+    """Точное значение буквы: без десятичных дробей и до последнего знака."""
+    if any(value.has(sp.Float) for value in numbers):
+        print(f"{NO} {label}: " + _t(
+            "вопрос просит точное значение, а это десятичная дробь",
+            "the question asks for the exact value, and this is a decimal"))
+        return False
+    run = good[0]
+    if not all(abs(float(v) - float(run[n])) <= 1e-9 * max(1.0, abs(float(run[n])))
+               for n, v in zip(names, numbers)):
+        print(f"{NO} {label}: " + _t(
+            "это близко, но не точное значение",
+            "that is close, but it is not the exact value"))
+        return False
+    return True
+
+
+def verify_greater(label, got, X, among=('mode', 'median'), given=None, var=None):
+    """Ответ — слово: что больше, мода или медиана (или среднее).
+
+    Проверка находит все три сама: моду — где плотность наибольшая,
+    медиану — где набирается половина площади, среднее — интегралом. Неверное
+    слово получает ту причину, за которую схема оценивания даёт R1:
+    сколько площади левее моды.
+    """
+    if _blank(label, got, X):
+        return False
+    answer = str(got).strip().lower()
+    if answer not in among:
+        print(f"{NO} {label}: " + _t(f"ответ — одно из слов: {', '.join(among)}",
+                                     f"the answer is one of the words: {', '.join(among)}"))
+        return False
+    unknowns = _as_unknowns(var)
+    if given is None and not unknowns:
+        runs = [{}]
+    else:
+        runs, _ = _letter_runs(_as_conditions(given), unknowns, [X])
+        runs = runs or []
+    if not runs:
+        print(f"{NO} {label}: " + _t("условиям не отвечает ни одна годная плотность",
+                                     "no valid density satisfies the conditions"))
+        return False
+    for run in runs:
+        mode, _ = _density_top(X, run)
+        values = {'mode': mode, 'median': _density_share(X, run, 0.5)}
+        if 'mean' in among:
+            values['mean'] = _density_moment_numbers(X.shape(run), 'mean', 1.0, 0.0)
+        larger = max(among, key=lambda word: values[word])
+        if answer == larger:
+            continue
+        shape = X.shape(run)
+        left = X.area_between(shape, -math.inf, mode)
+        if set(among) == {'mode', 'median'}:
+            print(f"{NO} {label}: " + _t(
+                f"левее моды лежит площадь {sig(left, 3)} — "
+                f"{'меньше' if left < 0.5 else 'больше'} половины, так что половина "
+                f"площади набирается {'правее' if left < 0.5 else 'левее'} моды",
+                f"the area to the left of the mode is {sig(left, 3)} — "
+                f"{'less' if left < 0.5 else 'more'} than a half, so half the area is "
+                f"reached to the {'right' if left < 0.5 else 'left'} of the mode"))
+        else:
+            print(f"{NO} {label}: " + _t("у этой плотности больше другое",
+                                         "for this density the other one is greater"))
+        return False
+    print(f"{OK} {label}")
+    return True
+
+
+def _verify_density_mode(label, got, X, given, var):
+    unknowns = _as_unknowns(var)
+    if given is None and not unknowns:
+        runs = [{}]
+    else:
+        runs, _ = _letter_runs(_as_conditions(given), unknowns, [X])
+        runs = runs or []
+    if not runs:
+        print(f"{NO} {label}: " + _t("условиям не отвечает ни одна годная плотность",
+                                     "no valid density satisfies the conditions"))
+        return False
+    try:
+        value = float(sp.sympify(got))
+    except (TypeError, ValueError, sp.SympifyError):
+        print(f"{NO} {label}: " + _t("мода — это число", "the mode is a number"))
+        return False
+    for run in runs:
+        mode, top = _density_top(X, run)
+        if _draw_agree(value, mode):
+            continue
+        shape = X.shape(run)
+        if _draw_agree(value, top):
+            print(f"{NO} {label}: " + _t(
+                "это наибольшее значение плотности, а мода — x, при котором оно",
+                "that is the largest value of the density; the mode is the x where it "
+                "happens"))
+        elif _draw_agree(value, _density_share(X, run, 0.5)):
+            print(f"{NO} {label}: " + _t(
+                "это медиана: мода — там, где плотность наибольшая",
+                "that is the median: the mode is where the density is largest"))
+        elif _draw_agree(value, _density_moment_numbers(shape, 'mean', 1.0, 0.0)):
+            print(f"{NO} {label}: " + _t(
+                "это среднее: мода — там, где плотность наибольшая",
+                "that is the mean: the mode is where the density is largest"))
+        else:
+            try:
+                here = X.at(shape, value)
+            except (ValueError, TypeError, ZeroDivisionError, OverflowError):
+                here = None
+            print(f"{NO} {label}: " + (_t(
+                f"f({sig(value, 4)}) = {sig(here, 4)}, а плотность бывает и больше",
+                f"f({sig(value, 4)}) = {sig(here, 4)}, and the density gets larger than "
+                f"that") if here is not None else _t(
+                f"в {sig(value, 4)} плотность не определена",
+                f"the density is not defined at {sig(value, 4)}")))
+        return False
     print(f"{OK} {label}")
     return True
 

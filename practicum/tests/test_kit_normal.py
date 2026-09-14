@@ -210,7 +210,7 @@ check('count-not-by-default', verify_moment('8 мешков', 8, Expect(Bin(100,
 print('\n=== формул темы внутри проверки нет ===')
 source = open(os.path.join(ROOT, 'practicum', 'kit.py')).read()
 start = source.index('# ================================================== нормальное распределение')
-end = source.index('\ndef trigger_check(')
+end = source.index('# ======================================================= плотность формулой')
 section = source[start:end]
 tree = ast.parse(section)
 check('section-parses', isinstance(tree, ast.Module))

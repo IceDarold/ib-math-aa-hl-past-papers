@@ -512,6 +512,39 @@ def normal_check(what, models, find=None, given=None, conditions=(), unknowns=()
     return spec
 
 
+def density_check(what, pieces, var='x', find=None, given=None, conditions=(), unknowns=(),
+                  exact=False, name='X'):
+    """Вопрос о величине с плотностью, D6.
+
+    pieces — список (левый край, правый край, формула), вне них плотность
+    ноль; буквы разрешены. События — как у normal_check: ('<', 'X', 1.5),
+    ('>', 'X', 2), ('between', 'X', 0.5, 1.5). what — 'chance' (площадь
+    события find, при условии given), 'letters' (буквы unknowns: константа
+    плотности из того, что площадь — единица, или граница по conditions),
+    'mode', 'mean' или 'var'.
+
+    Эталона в описании нет: страница пересобирает Density и события и зовёт
+    те же verify_chance, verify_letters, verify_mode и verify_moment, что
+    стоят в ноутбуке.
+    """
+    def event(item):
+        kind, label, *bounds = item
+        return [kind, label] + [sp.srepr(sp.sympify(b)) for b in bounds]
+
+    spec = {'kind': 'density', 'what': what, 'var': var, 'name': name,
+            'pieces': [[sp.srepr(sp.sympify(lo)), sp.srepr(sp.sympify(hi)), sp.srepr(sp.sympify(f))]
+                       for lo, hi, f in pieces],
+            'conditions': [[event(e), sp.srepr(sp.sympify(value))] for e, value in conditions],
+            'unknowns': [sp.srepr(u) for u in unknowns]}
+    if find is not None:
+        spec['find'] = event(find)
+    if given is not None:
+        spec['given'] = event(given)
+    if exact:
+        spec['exact'] = True
+    return spec
+
+
 def indeterminate_check(num, den, var='x', point=0, side=None, params=None):
     """Ответ — сама неопределённость: '0/0' или 'oo/oo', проверяется порознь."""
     spec = {'kind': 'indeterminate', 'num': sp.srepr(sp.sympify(num)),

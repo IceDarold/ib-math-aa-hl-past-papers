@@ -1,0 +1,356 @@
+version: 0.2
+practicum: D6
+title: "Непрерывные СВ: плотность, медиана, квантили"
+source_topic: statistics.continuous_random_variables
+also_covers: [statistics.expected_value, statistics.probability]
+
+corpus:
+  blocks: 35
+  marks: 114
+  effective_blocks: 35
+  effective_marks: 114
+  sessions: May 2021 — November 2025
+  papers: {1: 5, 2: 30, 3: 0}
+  gdc_marks: 95
+  note: >
+    Вторая половина statistics.continuous_random_variables: всё, где у
+    величины не кривая с μ и σ, а плотность формулой, — 90 баллов из 199
+    (доля 0.452). Ещё 10 баллов statistics.expected_value (0.167 — 10 из 60):
+    ожидаемая сумма покупки мая 2024 TZ2 Q10(e) и E(X), Var(X) ноября 2025
+    TZ1 Q11(c), — и 14 баллов statistics.probability (0.059 — 14 из 237):
+    три условные вероятности под плотностью и доля времени в синусоидальной
+    модели мая 2023 TZ2 Q10(e), где время — равномерная величина.
+
+    Дубля нет: в ноябре 2023 года плотности не спрашивали, и 35 блоков —
+    35 рабочих. У всех пяти прежних практикумов статистики дубль был; D6 —
+    первый, где вычитать нечего.
+
+    95 баллов из 114 на Paper 2, и доля калькулятора честна меньше, чем
+    кажется. 29 из этих 95 — алгебра, которой калькулятор не касается:
+    «show that» из нормировки (ноябрь 2022 Q6(a), май 2021 TZ1 Q7(a), май
+    2024 TZ1 Q8(a), ноябрь 2025 TZ3 Q11(a), (b)(i)), общие формулы E и Var
+    через n мая 2021 TZ2 Q6 и точное E(X) мая 2023 TZ1 Q11(a). Настоящей
+    работы для GDC — 66 баллов: интеграл, который не берётся руками, и
+    уравнение медианы с arccos или xeˣ.
+
+directions:
+  forwards: >
+    Плотность известна, спрашивают площадь: вероятность промежутка, в том
+    числе события про другую величину — сумму покупки, высоту груза.
+    Приём 1.
+  backwards: >
+    Площадь известна, неизвестна буква. Вся площадь — единица, и из неё
+    константа k (приём 2); половина или четверть площади — и из неё
+    медиана или квартиль (приём 3). Мода — не площадь, а наибольшее
+    значение f, и сравнивают её с медианой по площади (приём 4).
+  inside: >
+    Интегралы не от f, а от x·f и (x − μ)²·f — среднее и дисперсия (приём 5);
+    и второй вопрос вокруг площади: условная вероятность, промежуток
+    μ ± σ из найденных моментов (приём 6).
+
+skills:
+  - id: area
+    name: Вероятность — интеграл плотности над промежутком
+    rung: 1
+    trigger: >
+      «A continuous random variable X has probability density function
+      f(x) = … for 0 ≤ x ≤ 2, 0 otherwise. Find P(X < 0.5)»; «find the
+      probability that a runner chosen at random is a fast runner»; «find
+      the probability that a customer spends at most $48». Плотность дана
+      целиком, букв в ней нет.
+    chain:
+      - "Нарисовать f и отметить промежуток: вероятность — площадь под f
+        над ним"
+      - "Обрезать промежуток по тому, где f задана: вне него плотность ноль,
+        и формула там не действует"
+      - "P(a < X < b) = ∫ₐᵇ f(x) dx — на калькуляторе fnInt; у кусочной f
+        — сумма интегралов по кускам"
+      - "Событие про другую величину (стоимость 25x или 24x, высоту
+        −0,4cos 7,8t + 1,4) сначала перевести в промежуток x или t"
+    traps:
+      - "Площадь с другой стороны от границы: 0,761 вместо 0,239"
+      - "Для «at most $48» решают 25x ≤ 48 и получают x ≤ 1,92, хотя от
+        0,75 кг цена уже 24 за килограмм и граница x = 2"
+      - "Долю времени считают за одну неполную волну или не умножают на
+        число полных: в первых пяти секундах шесть периодов"
+      - "Значение f в точке отдают за вероятность"
+    calculator:
+      mode: needed
+      note: >
+        Все 13 баллов на Paper 2, и интеграл берёт калькулятор. Балл M1 —
+        за запись ∫ₐᵇ f(x) dx с правильными пределами и за перевод «at most
+        $48» в 0,5 ≤ x ≤ 2: этого калькулятор не делает.
+    prereq: []
+    raw_tags: [cumulative_probability, definite_integral, gdc_integration,
+               probability_from_pdf, piecewise_cost_function, inequality_to_bound,
+               time_above_threshold, geometric_probability, ratio_of_durations,
+               periodic_analysis]
+    blocks: ['2023-MAY-TZ1-P2-Q11-B', '2024-MAY-TZ2-P2-Q10-B',
+             '2025-MAY-TZ1-P2-Q11-B', '2024-MAY-TZ2-P2-Q10-D',
+             '2023-MAY-TZ2-P2-Q10-E']
+
+  - id: constant
+    name: Константа плотности — вся площадь равна единице
+    rung: 2
+    trigger: >
+      «Where k ∈ ℝ⁺. Find the value of k»; «find an expression for a in
+      terms of b»; «show that 324a + 72b = 1»; «show that k satisfies the
+      equation 7k³ = 6». В плотности буква, и больше о ней ничего не
+      сказано.
+    chain:
+      - "Записать ∫ f(x) dx = 1 по всему промежутку — за «= 1» отдельный M1"
+      - "Взять интеграл: подстановкой (x/√((x² + k)³), k/√(4 − 3x²)), по
+        частям (axeˣ) или по кускам, если f кусочная и края — буквы"
+      - "Подставить пределы и решить: точно на Paper 1, калькулятором на
+        Paper 2"
+      - "Вторая буква требует второго условия: f(9) = 0 даёт 6a + b = 0"
+    traps:
+      - "Не пишут «= 1» до последней строки — схема ноября 2025 TZ3 даёт
+        тогда не больше M0M1A1A0"
+      - "На Paper 1 отдают 1,65 вместо 3√3/π"
+      - "У кусочной f берут интеграл только первого куска"
+      - "Решают одно уравнение на две буквы и получают бесконечно много
+        ответов"
+    calculator:
+      mode: mixed
+      note: >
+        Из 24 баллов 20 на Paper 2, но калькулятор нужен только в двух:
+        найти k = 0,645 из уравнения мая 2021. Остальное — «show that» и
+        алгебра, где балл стоит на подстановке и на «= 1».
+    prereq: [area]
+    raw_tags: [integrate_pdf, u_substitution, apply_limits, set_equal_to_one,
+               algebraic_manipulation, solve_equation, gdc_numerical,
+               definite_integration, arcsine_antiderivative, pdf_normalization,
+               solve_for_constant, total_probability_equals_one, definite_integral,
+               integration_by_parts, evaluate_antiderivative, solve_for_parameter,
+               set_up_integral, integrate_piecewise, evaluate_definite_integral,
+               algebraic_simplification, integrate_polynomial,
+               apply_total_probability_condition, substitute_value,
+               simplify_expression, solve_linear_equation]
+    blocks: ['2021-MAY-TZ1-P2-Q07-A', '2021-MAY-TZ1-P2-Q07-B',
+             '2022-MAY-TZ1-P1-Q07-A', '2022-NOV-COMMON-P2-Q06-A',
+             '2024-MAY-TZ1-P2-Q08-A', '2025-NOV-TZ3-P2-Q11-A',
+             '2025-NOV-TZ3-P2-Q11-B-I']
+
+  - id: quantile
+    name: Медиана и квартиль — граница по площади
+    rung: 3
+    trigger: >
+      «Find the median of X»; «find the lower quartile of T»; «given that
+      P(|X − m| ≤ a) = 0.3, determine the value of a»; «find an expression
+      for the median in terms of a, b and c». Плотность известна, дана доля
+      площади, неизвестна граница.
+    chain:
+      - "Записать ∫ от начала промежутка до m f(x) dx = 0,5 — нижний
+        предел там, где f начинается, а не 0"
+      - "У кусочной f сначала понять, на каком куске граница: площадь
+        первого куска 3/7 < 0,5 — значит, медиана на втором"
+      - "Решить уравнение калькулятором или, если f линейна, квадратным
+        уравнением"
+      - "Из корней оставить тот, что лежит на своём куске; P(|X − m| ≤ a)
+        — это ∫ от m − a до m + a"
+    traps:
+      - "Интеграл от 0, хотя f задана с 0,5: медиана 1,31 вместо 1,69"
+      - "Берут формулу первого куска и там, где действует второй, — в мае
+        2024 TZ1 это случайно даёт верные три цифры, и схема ставит
+        M1A0M0A0"
+      - "Не отбрасывают корень m = a − √((b − a)(c − a)/2), лежащий левее a"
+      - "Нижний квартиль ищут по площади 0,25 справа"
+    calculator:
+      mode: needed
+      note: >
+        21 балл из 27 на Paper 2, и уравнение медианы с arccos x или xeˣ
+        руками не решается. Шесть баллов Paper 1 — треугольная плотность
+        мая 2022 TZ2, где медиана — квадратное уравнение в буквах.
+    prereq: [area, constant]
+    raw_tags: [definite_integral, inverse_trigonometric_integration, median_equation,
+               numerical_equation_solving, rounding, absolute_value_inequality,
+               probability_interval, median_cumulative_equals_half,
+               integration_by_parts, solve_equation_numerically, define_median,
+               numerical_gdc, integrate_piecewise, solve_equation,
+               median_of_continuous_distribution, equation_solving,
+               quartile_from_cdf, trigonometric_equation, numerical_solution,
+               set_up_median_condition, integrate_pdf, compute_triangle_area,
+               set_equal_to_one_half, solve_quadratic_equation,
+               reject_extraneous_root]
+    blocks: ['2021-NOV-COMMON-P2-Q07-A', '2021-NOV-COMMON-P2-Q07-B',
+             '2022-NOV-COMMON-P2-Q06-B', '2024-MAY-TZ1-P2-Q08-B',
+             '2024-MAY-TZ2-P2-Q10-C', '2025-MAY-TZ1-P2-Q11-D',
+             '2025-MAY-TZ2-P2-Q11-D', '2022-MAY-TZ2-P1-Q08']
+
+  - id: mode
+    name: Мода — где плотность наибольшая, и что больше
+    rung: 4
+    trigger: >
+      «Find the mode of X»; «write down the mode of T»; «determine which is
+      greater, the mode of T or the median of T, justifying your answer»;
+      «show that the median of X is less than the mode of X».
+    chain:
+      - "Мода — x, где f наибольшая: по графику, из f′(x) = 0 или по оси
+        симметрии параболы"
+      - "Ответ — x, а не значение f в нём"
+      - "Сравнить с медианой можно без медианы: площадь левее моды меньше
+        половины — медиана правее моды"
+    traps:
+      - "Отдают (1,5; 0,441) или 0,441 — схема ставит M1A0"
+      - "Пишут «медиана больше» без причины: R1 ставится за P(T < 4,5) < 0,5"
+      - "Ищут максимум на всей оси, а не на промежутке, где f задана"
+    calculator:
+      mode: helps
+      note: >
+        Все 10 баллов на Paper 2, но мода мая 2024 и мая 2025 видна по
+        симметрии и по графику из условия. Калькулятор находит максимум
+        кубической плотности ноября 2025 и площадь левее моды для R1.
+    prereq: [quantile]
+    raw_tags: [mode_of_pdf, function_maximum, derivative_or_symmetry, mode_from_graph,
+               median_comparison, probability_inequality, find_mode, find_median,
+               compare_values, integrate_pdf, solve_equation]
+    blocks: ['2024-MAY-TZ2-P2-Q10-A', '2025-MAY-TZ1-P2-Q11-A-II',
+             '2025-MAY-TZ1-P2-Q11-A-III', '2025-NOV-TZ3-P2-Q11-C']
+
+  - id: moments
+    name: Среднее и дисперсия — интегралы x·f и x²·f
+    rung: 5
+    trigger: >
+      «Find E(X)»; «find the exact value of E(X)»; «show that
+      Var(X) = (n + 1)/((n + 2)²(n + 3))»; «use integration to find Var(X)
+      in terms of a»; «find the expected amount spent per customer».
+    chain:
+      - "E(X) = ∫ x f(x) dx по промежутку, где f задана"
+      - "Var(X) = ∫ x² f(x) dx − (E(X))² — или ∫ (x − μ)² f(x) dx"
+      - "Точное значение — подстановкой: u = 16 − x², u = 4 − 3x²"
+      - "E(g(X)) = ∫ g(x) f(x) dx; у кусочной цены — сумма по кускам цены"
+    traps:
+      - "Отдают E(X²) за дисперсию: 13a²/3 вместо a²/3 — схема ставит
+        (M1)A0A0A0"
+      - "Забывают f и пишут ∫ x dx"
+      - "Для ожидаемой суммы умножают E(X) на одну цену, 25 или 24"
+      - "Округляют до 41,0, когда просят до цента"
+    calculator:
+      mode: mixed
+      note: >
+        Из 30 баллов 21 на Paper 2, но 11 из них — алгебра: общие формулы
+        через n мая 2021 TZ2 и точное E(X) мая 2023 TZ1. Калькулятор честно
+        нужен в ноябре 2025 TZ1 и в ожидаемой сумме мая 2024.
+    prereq: [area]
+    raw_tags: [expected_value, definite_integral, power_rule_for_integration,
+               algebraic_simplification, variance_formula, expected_value_of_square,
+               algebraic_expansion, common_denominator, expected_value_integral,
+               integration_by_inspection, u_substitution,
+               definite_integral_evaluation, substitution,
+               trigonometric_substitution, evaluate_definite_integral,
+               uniform_distribution, symmetry, power_rule, evaluation, variance,
+               numerical_gdc, piecewise_integration, weighted_sum]
+    blocks: ['2021-MAY-TZ2-P2-Q06-A', '2021-MAY-TZ2-P2-Q06-B',
+             '2022-MAY-TZ1-P1-Q07-B', '2023-MAY-TZ1-P2-Q11-A',
+             '2023-MAY-TZ2-P1-Q06-A', '2023-MAY-TZ2-P1-Q06-B',
+             '2025-NOV-TZ1-P2-Q11-C', '2024-MAY-TZ2-P2-Q10-E']
+
+  - id: condition
+    name: Второй вопрос вокруг площади — условная, промежуток μ ± σ
+    rung: 6
+    trigger: >
+      «Find the probability that a fast runner chosen at random finishes
+      the race in 3 hours or less»; «given that he jumps over 8 m, find the
+      probability that he wins»; «given that μ = E(X) and σ² = Var(X), find
+      P(μ − σ < X < μ + σ)».
+    chain:
+      - "Условная — отношение площадей: пересечение события и условия,
+        делённое на площадь условия"
+      - "Если событие внутри условия (X > 8,52 внутри X > 8), числитель —
+        само событие"
+      - "Промежуток μ ± σ — сначала моменты (приём 5), σ — корень из
+        дисперсии, потом площадь"
+    traps:
+      - "Не делят на вероятность условия: 0,0344 вместо 0,261"
+      - "Делят в обратную сторону: P(условие | событие)"
+      - "Берут μ ± σ², подставив дисперсию вместо стандартного отклонения"
+      - "Считают a и b до трёх цифр и получают 0,263 — схема принимает"
+    calculator:
+      mode: needed
+      note: >
+        Все 10 баллов на Paper 2: три площади калькулятором. Баллы метода —
+        за «recognising conditional probability in context» и за то, что
+        P(X > 8,52 ∩ X > 8) = P(X > 8,52).
+    prereq: [area, moments]
+    raw_tags: [conditional_probability, definite_integral, integrate_pdf,
+               evaluate_definite_integral, probability_calculation, numerical_gdc]
+    blocks: ['2025-MAY-TZ1-P2-Q11-C', '2025-NOV-TZ3-P2-Q11-D',
+             '2025-NOV-TZ1-P2-Q11-D']
+
+imported:
+  - practicum: D5
+    what: >
+      Нормальная величина — D5. Общее с ним одно: вероятность — площадь.
+      Там кривую знает калькулятор, здесь её пишет вопрос, и площадь —
+      интеграл.
+  - practicum: E6
+    what: >
+      Нормировка ноября 2025 TZ1 Q11(b) — «show that k² arccos(k²) − √(1 − k⁴)
+      + 1/3 = 0, hence find k to six significant figures» — и ∫ f на
+      половине промежутка мая 2025 TZ1 Q11(a)(i) размечены в
+      calculus.integration_applications и лежат в карточке E6, как и
+      интеграл по частям мая 2025 TZ2 Q11(b). Практикум берёт их условия
+      целиком: без k не найти E(X) в Q11(c).
+  - practicum: E1
+    what: >
+      Предел (3x + 1)e^(−3x) по правилу Лопиталя мая 2025 TZ2 Q11(c) — E1.
+      Здесь от него нужно только k = 9.
+  - practicum: D4
+    what: >
+      E(a − bT) и Var(a − bT) мая 2025 TZ1 Q11(e), (f) — D4: там известны
+      только E(T) и Var(T), а плотность не нужна.
+  - practicum: D3
+    what: >
+      Биномиальная модель поверх площади под плотностью — май 2023 TZ1
+      Q11(c), (d): «хотя бы один успех из n испытаний», «ровно три из
+      десяти» — D3. Здесь считается только площадь, которая становится p.
+  - practicum: C4
+    what: >
+      Синусоидальная модель мая 2023 TZ2 Q10(a)–(d) — период, a и b, первое
+      время на высоте 1,5 — C4. Практикум берёт только (e), где время
+      становится случайной величиной.
+
+corpus_issues:
+  - id: 'нормировка в двух темах'
+    what: >
+      Одно и то же действие — ∫ f = 1, и из него буква — размечено дважды
+      по-разному. Май 2021 TZ1 Q7(a), май 2022 TZ1 Q7(a), ноябрь 2022 Q6(a),
+      май 2024 TZ1 Q8(a) и ноябрь 2025 TZ3 Q11(a) — в
+      statistics.continuous_random_variables; ноябрь 2025 TZ1 Q11(b) и
+      май 2025 TZ2 Q11(b), (c) — в calculus. Разница только в том, что во
+      втором случае интеграл труднее.
+  - id: 'моменты в двух темах'
+    what: >
+      E(X) и Var(X) по плотности — в continuous_random_variables у мая
+      2021 TZ2 Q6, мая 2022 TZ1 Q7(b), мая 2023 TZ1 Q11(a) и мая 2023 TZ2
+      Q6; в statistics.expected_value — у ноября 2025 TZ1 Q11(c) и
+      ожидаемой суммы мая 2024 TZ2 Q10(e). Действие одно.
+  - id: 'условная под плотностью в probability'
+    what: >
+      Май 2025 TZ1 Q11(c), ноябрь 2025 TZ3 Q11(d) и P(μ − σ < X < μ + σ)
+      ноября 2025 TZ1 Q11(d) размечены в statistics.probability, хотя
+      каждая — площадь под плотностью соседних пунктов того же вопроса.
+  - id: 'равномерное время в probability'
+    what: >
+      Май 2023 TZ2 Q10(e): «a camera takes a picture at a random time during
+      the first five seconds» — время равномерно на [0, 5], и вероятность —
+      доля этого отрезка. Размечено как statistics.probability с тегом
+      geometric_probability; по устройству это непрерывная величина с
+      плотностью 1/5.
+  - id: 'источник страниц в теме'
+    what: >
+      source_pages смещены на единицу у семи вопросов из пятнадцати: май
+      2021 TZ2 Q6, май 2022 TZ2 Q8, ноябрь 2022 Q6, май 2023 TZ1 Q11, май
+      2023 TZ2 P1 Q6, май 2024 TZ1 Q8 и май 2024 TZ2 Q10. У остальных
+      восьми номер совпадает с листом PDF. Причина та же, что в D5: у
+      этих файлов спереди лист об авторских правах, и в корпус попал
+      напечатанный номер.
+  - id: 'верный ответ неверным методом в схеме'
+    what: >
+      Май 2024 TZ1 Q8(b): схема сама пишет, что ∫₀ᵐ kx dx = 0,5 даёт верные
+      три цифры медианы 1,03, хотя m > k и первая формула там не действует,
+      и ставит за это M1A0M0A0. Проверка по одному числу этого не отличит —
+      сказано в ноутбуке.
+
+ladder: [area, constant, quantile, mode, moments, condition]

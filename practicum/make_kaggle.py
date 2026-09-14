@@ -55,6 +55,47 @@ def load_map():
     return out
 
 
+def compact(source):
+    """kit.py без комментариев и docstring-ов — для ячейки Kaggle.
+
+    Kaggle не принимает ноутбук больше мегабайта, а kit с секцией плотности
+    (D6) его перерос. Код не переписывается: удаляются только комментарии, а
+    docstring заменяется пустой строкой, так что синтаксис остаётся тем же,
+    что в репозитории, и не зависит от версии Python на Kaggle. Пустые строки
+    убираются, кроме тех, что внутри многострочных строковых литералов.
+    """
+    import io
+    import tokenize
+    lines = source.splitlines(keepends=True)
+    cuts, keep_lines = [], set()
+    previous = tokenize.NEWLINE
+    for token in tokenize.generate_tokens(io.StringIO(source).readline):
+        kind, _, start, end, _ = token
+        if kind == tokenize.COMMENT:
+            cuts.append((start, end, ''))
+        elif kind == tokenize.STRING and previous in (tokenize.NEWLINE, tokenize.INDENT,
+                                                      tokenize.DEDENT, tokenize.NL):
+            cuts.append((start, end, "''"))
+        elif kind == tokenize.STRING and end[0] > start[0]:
+            keep_lines.update(range(start[0] + 1, end[0] + 1))
+        if kind not in (tokenize.COMMENT, tokenize.NL):
+            previous = kind
+    for (row, col), (end_row, end_col), text in reversed(cuts):
+        head = lines[row - 1][:col]
+        rest = lines[end_row - 1][end_col:]
+        lines[row - 1:end_row] = [head + text + rest]
+        shift = end_row - row
+        if shift:
+            keep_lines = {n if n <= row else n - shift for n in keep_lines}
+    out = []
+    for number, line in enumerate(lines, start=1):
+        if number in keep_lines:
+            out.append(line)
+        elif line.strip():
+            out.append(line.rstrip() + '\n')
+    return ''.join(out)
+
+
 def build(entry, user, out_dir, public=False):
     """Собирает Kaggle-версию одного практикума. Возвращает путь к папке."""
     src = os.path.join(ROOT, entry['notebook'])
@@ -62,7 +103,7 @@ def build(entry, user, out_dir, public=False):
 
     kit = open(os.path.join(ROOT, 'practicum/kit.py')).read()
     # docstring модуля не нужен: назначение уже описано в титульной ячейке
-    kit_body = re.sub(r'^""".*?"""\n\n', '', kit, count=1, flags=re.S).strip()
+    kit_body = compact(re.sub(r'^""".*?"""\n\n', '', kit, count=1, flags=re.S)).strip()
 
     nb = nbformat.read(src, as_version=4)
     setup = next((c for c in nb.cells

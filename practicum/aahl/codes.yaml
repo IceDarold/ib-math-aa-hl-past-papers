@@ -226,6 +226,14 @@ D5:
   both:      {skill: two_parameters, name: μ и σ по двум площадям}
   condition: {skill: condition,      name: условие внутри}
 
+D6:
+  area:      {skill: area,      name: вероятность — интеграл плотности}
+  constant:  {skill: constant,  name: константа — площадь единица}
+  quantile:  {skill: quantile,  name: медиана и квартиль}
+  mode:      {skill: mode,      name: мода — вершина плотности}
+  moments:   {skill: moments,   name: среднее и дисперсия}
+  condition: {skill: condition, name: второй вопрос вокруг площади}
+
 E1:
   substitute: {skill: substitute,      name: подстановка и сокращение}
   infinity:   {skill: at_infinity,     name: старшая степень на бесконечности}

@@ -2398,6 +2398,99 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('D5.')):
     print(f'  {gen_name:32} {SEEDS} задач сверено функцией ошибок mpmath и проверкой')
 
 
+# =============================================================== D6
+# Проверки D6 складывают площадь адаптивной квадратурой Гаусса — Лежандра
+# под формулой плотности и находят буквы Ньютоном. Генераторы считают эталон
+# точной первообразной sympy. Здесь третий путь: mpmath.quad (tanh-sinh) по
+# той же формуле, а граница и мода — mpmath.findroot по площади и по
+# производной. Затем эталон прогоняется через проверку тренажёра, и рядом с
+# ним — ответ с типовым промахом, который она обязана отвергнуть и назвать.
+
+def _d6_density(spec):
+    var = sp.Symbol(spec['var'])
+    lo, hi, f = (sp.sympify(v) for v in spec['pieces'][0])
+    letters = sorted(f.free_symbols - {var}, key=str)
+    return float(lo), float(hi), sp.lambdify([var] + letters, f, 'mpmath'), letters
+
+
+def _d6_area(fn, a, b, **extra):
+    return mpmath.quad(lambda z: fn(z, **extra) if extra else fn(z), [a, b])
+
+
+def _d6_expected(item):
+    spec, name = item['check'], item['id']
+    lo, hi, fn, letters = _d6_density(spec)
+    if name == 'D6.constant':
+        return 1 / mpmath.quad(lambda z: fn(z, 1), [lo, hi])
+    if name in ('D6.area', 'D6.condition'):
+        def area(event):
+            kind, _, *bounds = event
+            bounds = [float(sp.sympify(v)) for v in bounds]
+            if kind == '<':
+                return _d6_area(fn, lo, bounds[0])
+            if kind == '>':
+                return _d6_area(fn, bounds[0], hi)
+            return _d6_area(fn, bounds[0], bounds[1])
+        if name == 'D6.area':
+            return area(spec['find'])
+        return area(spec['find']) / area(spec['given'])
+    if name == 'D6.quantile':
+        share = float(sp.sympify(spec['conditions'][0][1]))
+        return mpmath.findroot(lambda q: _d6_area(fn, lo, q) - share, (lo + hi) / 2)
+    if name == 'D6.mode':
+        return mpmath.findroot(lambda z: mpmath.diff(fn, z), (lo + hi) / 2 + (hi - lo) / 8)
+    mean = mpmath.quad(lambda z: z * fn(z), [lo, hi])
+    if spec['what'] == 'mean':
+        return mean
+    return mpmath.quad(lambda z: z * z * fn(z), [lo, hi]) - mean ** 2
+
+
+def _d6_slip(item):
+    """Ответ с типовым промахом и слово, которым проверка обязана его назвать."""
+    spec, name, answer = item['check'], item['id'], float(item['answer'])
+    lo, hi, fn, _ = _d6_density(spec)
+    if name == 'D6.area':
+        return f'{1 - answer:.6g}', 'другой стороны'
+    if name == 'D6.constant':
+        return f'{2 * answer:.6g}', 'площадь под плотностью'
+    if name == 'D6.quantile':
+        share = float(sp.sympify(spec['conditions'][0][1]))
+        if abs(share - 0.5) < 1e-12:
+            return f'{float(_d6_area(lambda z: z * fn(z), lo, hi)):.6g}', 'среднее'
+        flipped = mpmath.findroot(lambda q: _d6_area(fn, q, hi) - share, (lo + hi) / 2)
+        return f'{float(flipped):.6g}', 'с другой стороны'
+    if name == 'D6.mode':
+        return f'{float(fn(answer)):.6g}', 'наибольшее значение плотности'
+    if name == 'D6.moments':
+        if spec['what'] == 'mean':
+            return f'{(hi ** 2 - lo ** 2) / 2:.6g}', 'без плотности'
+        return f'{float(mpmath.quad(lambda z: z * z * fn(z), [lo, hi])):.6g}', 'не вычтен'
+    kind, _, edge = spec['find']
+    return f'{float(_d6_area(fn, float(sp.sympify(edge)), hi)):.6g}', 'пересечения'
+
+
+section('D6: квадратура mpmath сходится с генератором, проверка принимает и называет промах')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('D6.')):
+    agreed = accepted = slipped = named = 0
+    for seed in range(SEEDS):
+        item = dict(GENERATORS[gen_name](random.Random(seed)), id=gen_name)
+        spec = item['check']
+        agreed += bool(_d5_same(_d6_expected(item), item['answer']))
+        ok, _ = evaluate(spec, show_answer(item['answer']))
+        accepted += bool(ok)
+        wrong_text, word = _d6_slip(item)
+        wrong, message = evaluate(spec, wrong_text)
+        slipped += not wrong
+        named += word in message
+        if word not in message:
+            print(f'    {gen_name} {seed}: {wrong_text} → {message}')
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
+    t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено квадратурой mpmath и проверкой')
+
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')

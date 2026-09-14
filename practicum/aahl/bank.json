@@ -9660,6 +9660,461 @@
    "dir": "AA_HL/2024/May/TZ2/Paper 3",
    "skill": "D5.condition"
   },
+  "2023-MAY-TZ1-P2-Q11-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D6.area"
+  },
+  "2024-MAY-TZ2-P2-Q10-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "D6.area"
+  },
+  "2025-MAY-TZ1-P2-Q11-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "D6.area"
+  },
+  "2024-MAY-TZ2-P2-Q10-D": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "D6.area"
+  },
+  "2023-MAY-TZ2-P2-Q10-E": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "E",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "D6.area"
+  },
+  "2021-MAY-TZ1-P2-Q07-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "12–13",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "D6.constant"
+  },
+  "2021-MAY-TZ1-P2-Q07-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "D6.constant"
+  },
+  "2022-MAY-TZ1-P1-Q07-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "7",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "D6.constant"
+  },
+  "2022-NOV-COMMON-P2-Q06-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "6",
+   "part": "A",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "D6.constant"
+  },
+  "2024-MAY-TZ1-P2-Q08-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D6.constant"
+  },
+  "2025-NOV-TZ3-P2-Q11-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "D6.constant"
+  },
+  "2025-NOV-TZ3-P2-Q11-B-I": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "B-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "D6.constant"
+  },
+  "2021-NOV-COMMON-P2-Q07-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "7",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "D6.quantile"
+  },
+  "2021-NOV-COMMON-P2-Q07-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "7",
+   "part": "b",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "15,16",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "D6.quantile"
+  },
+  "2022-NOV-COMMON-P2-Q06-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "6",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "D6.quantile"
+  },
+  "2024-MAY-TZ1-P2-Q08-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "16-17",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D6.quantile"
+  },
+  "2024-MAY-TZ2-P2-Q10-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "D6.quantile"
+  },
+  "2025-MAY-TZ1-P2-Q11-D": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "D6.quantile"
+  },
+  "2025-MAY-TZ2-P2-Q11-D": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "D6.quantile"
+  },
+  "2022-MAY-TZ2-P1-Q08": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "D6.quantile"
+  },
+  "2024-MAY-TZ2-P2-Q10-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "D6.mode"
+  },
+  "2025-MAY-TZ1-P2-Q11-A-II": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "A-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "D6.mode"
+  },
+  "2025-MAY-TZ1-P2-Q11-A-III": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "A-III",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "D6.mode"
+  },
+  "2025-NOV-TZ3-P2-Q11-C": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "D6.mode"
+  },
+  "2021-MAY-TZ2-P2-Q06-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "6",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D6.moments"
+  },
+  "2021-MAY-TZ2-P2-Q06-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "6",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "14-15",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D6.moments"
+  },
+  "2022-MAY-TZ1-P1-Q07-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "7",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "D6.moments"
+  },
+  "2023-MAY-TZ1-P2-Q11-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "A",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D6.moments"
+  },
+  "2023-MAY-TZ2-P1-Q06-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "6",
+   "part": "A",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "D6.moments"
+  },
+  "2023-MAY-TZ2-P1-Q06-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "6",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "14–15",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "D6.moments"
+  },
+  "2025-NOV-TZ1-P2-Q11-C": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "17",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "D6.moments"
+  },
+  "2024-MAY-TZ2-P2-Q10-E": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "E",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "D6.moments"
+  },
+  "2025-MAY-TZ1-P2-Q11-C": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "23",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "D6.condition"
+  },
+  "2025-NOV-TZ3-P2-Q11-D": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "D6.condition"
+  },
+  "2025-NOV-TZ1-P2-Q11-D": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "17",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "D6.condition"
+  },
   "2024-MAY-TZ1-P1-Q11-F-I-II": {
    "session": "May 2024",
    "zone": "TZ1",
@@ -13178,6 +13633,14 @@
    "notebook": "practicum/statistics/practicum-d5-normal.ipynb",
    "marks": 107,
    "blocks": 37
+  },
+  {
+   "id": "D6",
+   "title": "Непрерывные СВ: плотность, медиана, квантили",
+   "section": "D",
+   "notebook": "practicum/statistics/practicum-d6-density.ipynb",
+   "marks": 114,
+   "blocks": 35
   },
   {
    "id": "E1",
@@ -17907,6 +18370,176 @@
     "2021-MAY-TZ2-P2-Q10-C",
     "2024-MAY-TZ2-P3-Q02-G",
     "2024-MAY-TZ2-P3-Q02-H"
+   ]
+  },
+  {
+   "id": "D6.area",
+   "practicum": "D6",
+   "name": "Вероятность — интеграл плотности над промежутком",
+   "rung": 1,
+   "trigger": "«A continuous random variable X has probability density function f(x) = … for 0 ≤ x ≤ 2, 0 otherwise. Find P(X < 0.5)»; «find the probability that a runner chosen at random is a fast runner»; «find the probability that a customer spends at most $48». Плотность дана целиком, букв в ней нет.",
+   "chain": [
+    "Нарисовать f и отметить промежуток: вероятность — площадь под f над ним",
+    "Обрезать промежуток по тому, где f задана: вне него плотность ноль, и формула там не действует",
+    "P(a < X < b) = ∫ₐᵇ f(x) dx — на калькуляторе fnInt; у кусочной f — сумма интегралов по кускам",
+    "Событие про другую величину (стоимость 25x или 24x, высоту −0,4cos 7,8t + 1,4) сначала перевести в промежуток x или t"
+   ],
+   "traps": [
+    "Площадь с другой стороны от границы: 0,761 вместо 0,239",
+    "Для «at most $48» решают 25x ≤ 48 и получают x ≤ 1,92, хотя от 0,75 кг цена уже 24 за килограмм и граница x = 2",
+    "Долю времени считают за одну неполную волну или не умножают на число полных: в первых пяти секундах шесть периодов",
+    "Значение f в точке отдают за вероятность"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 114,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q11-B",
+    "2024-MAY-TZ2-P2-Q10-B",
+    "2025-MAY-TZ1-P2-Q11-B",
+    "2024-MAY-TZ2-P2-Q10-D",
+    "2023-MAY-TZ2-P2-Q10-E"
+   ]
+  },
+  {
+   "id": "D6.constant",
+   "practicum": "D6",
+   "name": "Константа плотности — вся площадь равна единице",
+   "rung": 2,
+   "trigger": "«Where k ∈ ℝ⁺. Find the value of k»; «find an expression for a in terms of b»; «show that 324a + 72b = 1»; «show that k satisfies the equation 7k³ = 6». В плотности буква, и больше о ней ничего не сказано.",
+   "chain": [
+    "Записать ∫ f(x) dx = 1 по всему промежутку — за «= 1» отдельный M1",
+    "Взять интеграл: подстановкой (x/√((x² + k)³), k/√(4 − 3x²)), по частям (axeˣ) или по кускам, если f кусочная и края — буквы",
+    "Подставить пределы и решить: точно на Paper 1, калькулятором на Paper 2",
+    "Вторая буква требует второго условия: f(9) = 0 даёт 6a + b = 0"
+   ],
+   "traps": [
+    "Не пишут «= 1» до последней строки — схема ноября 2025 TZ3 даёт тогда не больше M0M1A1A0",
+    "На Paper 1 отдают 1,65 вместо 3√3/π",
+    "У кусочной f берут интеграл только первого куска",
+    "Решают одно уравнение на две буквы и получают бесконечно много ответов"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 114,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q07-A",
+    "2021-MAY-TZ1-P2-Q07-B",
+    "2022-MAY-TZ1-P1-Q07-A",
+    "2022-NOV-COMMON-P2-Q06-A",
+    "2024-MAY-TZ1-P2-Q08-A",
+    "2025-NOV-TZ3-P2-Q11-A",
+    "2025-NOV-TZ3-P2-Q11-B-I"
+   ]
+  },
+  {
+   "id": "D6.quantile",
+   "practicum": "D6",
+   "name": "Медиана и квартиль — граница по площади",
+   "rung": 3,
+   "trigger": "«Find the median of X»; «find the lower quartile of T»; «given that P(|X − m| ≤ a) = 0.3, determine the value of a»; «find an expression for the median in terms of a, b and c». Плотность известна, дана доля площади, неизвестна граница.",
+   "chain": [
+    "Записать ∫ от начала промежутка до m f(x) dx = 0,5 — нижний предел там, где f начинается, а не 0",
+    "У кусочной f сначала понять, на каком куске граница: площадь первого куска 3/7 < 0,5 — значит, медиана на втором",
+    "Решить уравнение калькулятором или, если f линейна, квадратным уравнением",
+    "Из корней оставить тот, что лежит на своём куске; P(|X − m| ≤ a) — это ∫ от m − a до m + a"
+   ],
+   "traps": [
+    "Интеграл от 0, хотя f задана с 0,5: медиана 1,31 вместо 1,69",
+    "Берут формулу первого куска и там, где действует второй, — в мае 2024 TZ1 это случайно даёт верные три цифры, и схема ставит M1A0M0A0",
+    "Не отбрасывают корень m = a − √((b − a)(c − a)/2), лежащий левее a",
+    "Нижний квартиль ищут по площади 0,25 справа"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 114,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q07-A",
+    "2021-NOV-COMMON-P2-Q07-B",
+    "2022-NOV-COMMON-P2-Q06-B",
+    "2024-MAY-TZ1-P2-Q08-B",
+    "2024-MAY-TZ2-P2-Q10-C",
+    "2025-MAY-TZ1-P2-Q11-D",
+    "2025-MAY-TZ2-P2-Q11-D",
+    "2022-MAY-TZ2-P1-Q08"
+   ]
+  },
+  {
+   "id": "D6.mode",
+   "practicum": "D6",
+   "name": "Мода — где плотность наибольшая, и что больше",
+   "rung": 4,
+   "trigger": "«Find the mode of X»; «write down the mode of T»; «determine which is greater, the mode of T or the median of T, justifying your answer»; «show that the median of X is less than the mode of X».",
+   "chain": [
+    "Мода — x, где f наибольшая: по графику, из f′(x) = 0 или по оси симметрии параболы",
+    "Ответ — x, а не значение f в нём",
+    "Сравнить с медианой можно без медианы: площадь левее моды меньше половины — медиана правее моды"
+   ],
+   "traps": [
+    "Отдают (1,5; 0,441) или 0,441 — схема ставит M1A0",
+    "Пишут «медиана больше» без причины: R1 ставится за P(T < 4,5) < 0,5",
+    "Ищут максимум на всей оси, а не на промежутке, где f задана"
+   ],
+   "calculator": "helps",
+   "practicum_marks": 114,
+   "blocks": [
+    "2024-MAY-TZ2-P2-Q10-A",
+    "2025-MAY-TZ1-P2-Q11-A-II",
+    "2025-MAY-TZ1-P2-Q11-A-III",
+    "2025-NOV-TZ3-P2-Q11-C"
+   ]
+  },
+  {
+   "id": "D6.moments",
+   "practicum": "D6",
+   "name": "Среднее и дисперсия — интегралы x·f и x²·f",
+   "rung": 5,
+   "trigger": "«Find E(X)»; «find the exact value of E(X)»; «show that Var(X) = (n + 1)/((n + 2)²(n + 3))»; «use integration to find Var(X) in terms of a»; «find the expected amount spent per customer».",
+   "chain": [
+    "E(X) = ∫ x f(x) dx по промежутку, где f задана",
+    "Var(X) = ∫ x² f(x) dx − (E(X))² — или ∫ (x − μ)² f(x) dx",
+    "Точное значение — подстановкой: u = 16 − x², u = 4 − 3x²",
+    "E(g(X)) = ∫ g(x) f(x) dx; у кусочной цены — сумма по кускам цены"
+   ],
+   "traps": [
+    "Отдают E(X²) за дисперсию: 13a²/3 вместо a²/3 — схема ставит (M1)A0A0A0",
+    "Забывают f и пишут ∫ x dx",
+    "Для ожидаемой суммы умножают E(X) на одну цену, 25 или 24",
+    "Округляют до 41,0, когда просят до цента"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 114,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q06-A",
+    "2021-MAY-TZ2-P2-Q06-B",
+    "2022-MAY-TZ1-P1-Q07-B",
+    "2023-MAY-TZ1-P2-Q11-A",
+    "2023-MAY-TZ2-P1-Q06-A",
+    "2023-MAY-TZ2-P1-Q06-B",
+    "2025-NOV-TZ1-P2-Q11-C",
+    "2024-MAY-TZ2-P2-Q10-E"
+   ]
+  },
+  {
+   "id": "D6.condition",
+   "practicum": "D6",
+   "name": "Второй вопрос вокруг площади — условная, промежуток μ ± σ",
+   "rung": 6,
+   "trigger": "«Find the probability that a fast runner chosen at random finishes the race in 3 hours or less»; «given that he jumps over 8 m, find the probability that he wins»; «given that μ = E(X) and σ² = Var(X), find P(μ − σ < X < μ + σ)».",
+   "chain": [
+    "Условная — отношение площадей: пересечение события и условия, делённое на площадь условия",
+    "Если событие внутри условия (X > 8,52 внутри X > 8), числитель — само событие",
+    "Промежуток μ ± σ — сначала моменты (приём 5), σ — корень из дисперсии, потом площадь"
+   ],
+   "traps": [
+    "Не делят на вероятность условия: 0,0344 вместо 0,261",
+    "Делят в обратную сторону: P(условие | событие)",
+    "Берут μ ± σ², подставив дисперсию вместо стандартного отклонения",
+    "Считают a и b до трёх цифр и получают 0,263 — схема принимает"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 114,
+   "blocks": [
+    "2025-MAY-TZ1-P2-Q11-C",
+    "2025-NOV-TZ3-P2-Q11-D",
+    "2025-NOV-TZ1-P2-Q11-D"
    ]
   },
   {
@@ -32809,6 +33442,438 @@
    ],
    "answer": "both",
    "answer_digest": "ff7772053abf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:1",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.constant",
+   "prompt": "$f(x)=cx^3$ for $0\\le x\\le2$, and $0$ otherwise. Find $c$.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "constant",
+   "answer_digest": "96f6549c6b97",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:2",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.area",
+   "prompt": "$f(x)=\\frac12\\sin x$ for $0\\le x\\le\\pi$. Find the probability that $X$ is greater than $\\frac\\pi3$.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "area",
+   "answer_digest": "4a91ee5f0106",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:3",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.quantile",
+   "prompt": "$f(x)=2x$ for $0\\le x\\le1$. Find the value of $x$ below which half of the distribution lies.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "quantile",
+   "answer_digest": "de00222d4f99",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:4",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.mode",
+   "prompt": "$f(x)=\\frac34(1-x^2)$ for $-1\\le x\\le1$. Write down the most likely value of $X$.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "mode",
+   "answer_digest": "e642b12901a6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:5",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.moments",
+   "prompt": "$f(x)=\\frac2{x^2}$ for $1\\le x\\le2$. Find $\\mathrm E(X)$.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "moments",
+   "answer_digest": "690a8d18f75d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:6",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.condition",
+   "prompt": "$f(x)=\\frac18x$ for $0\\le x\\le4$. Given that $X>1$, find the probability that $X>3$.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "condition",
+   "answer_digest": "596d40a4ed24",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:7",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.area",
+   "prompt": "A bus arrives at a random moment in the next $12$ minutes. Find the probability that you wait more than $8$ minutes.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "area",
+   "answer_digest": "4a91ee5f0106",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:8",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.constant",
+   "prompt": "$f(x)=p+qx$ for $0\\le x\\le4$, with $f(4)=0$. Find $p$ and $q$.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "constant",
+   "answer_digest": "96f6549c6b97",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:9",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.quantile",
+   "prompt": "$f(x)=\\frac1{9}x^2$ for $0\\le x\\le3$. Find the upper quartile.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "quantile",
+   "answer_digest": "de00222d4f99",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:10",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.moments",
+   "prompt": "$f(x)=e^{-x}$ for $x\\ge0$. Find $\\mathrm{Var}(X)$.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "moments",
+   "answer_digest": "690a8d18f75d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:11",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.mode",
+   "prompt": "$f(x)=xe^{-x}$ for $x\\ge0$. Show that the median is greater than the mode.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "mode",
+   "answer_digest": "e642b12901a6",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D6:12",
+   "kind": "recognition",
+   "practicum": "D6",
+   "skill": "D6.condition",
+   "prompt": "$f(x)=\\frac32x^2$ for $-1\\le x\\le1$. Find $P(\\mu-\\sigma<X<\\mu+\\sigma)$.",
+   "options": [
+    {
+     "code": "area",
+     "name": "вероятность — интеграл плотности"
+    },
+    {
+     "code": "constant",
+     "name": "константа — площадь единица"
+    },
+    {
+     "code": "quantile",
+     "name": "медиана и квартиль"
+    },
+    {
+     "code": "mode",
+     "name": "мода — вершина плотности"
+    },
+    {
+     "code": "moments",
+     "name": "среднее и дисперсия"
+    },
+    {
+     "code": "condition",
+     "name": "второй вопрос вокруг площади"
+    }
+   ],
+   "answer": "condition",
+   "answer_digest": "596d40a4ed24",
    "budget_ms": 8000
   },
   {
