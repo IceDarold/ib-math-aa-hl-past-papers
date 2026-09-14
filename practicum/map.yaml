@@ -803,26 +803,51 @@ sections:
           описательной статистики из discrete_random_variables — D7.
       - id: D5
         title: Нормальное распределение и обратная задача
-        subtopics: [{topic: statistics.continuous_random_variables, share: 0.55},
+        subtopics: [{topic: statistics.continuous_random_variables, share: 0.518},
                     {topic: statistics.probability, share: 0.017}]
+        status: ready
+        notebook: practicum/statistics/practicum-d5-normal.ipynb
+        kaggle: ib-math-praktikum-d5-normal
+        archive: practicum/statistics/archive-d5-normal.ipynb
+        kaggle_archive: ib-math-archive-d5-normal
+        skills: practicum/skills/statistics-normal.yaml
+        note: >
+          Нормальная половина statistics.continuous_random_variables: 103
+          балла из 199 (доля 0.518) — всё, где у величины кривая с μ и σ,
+          а не плотность формулой. И 4 балла statistics.probability (0.017 —
+          4 из 237): сумма трёх площадей ноября 2023 Q10(a). 107 баллов по
+          корпусу, 97 рабочих: десять — ноябрьский дубль 2023 года. 80 баллов
+          Paper 2, 10 Paper 3, 7 Paper 1; доля калькулятора 90 из 97 честная.
+
+          Двадцать второе понятие равенства ответов: вероятность — это
+          площадь. Проверка знает только кривую и складывает площадь под ней
+          квадратурой там, где событие выполняется; границу, σ и μ находит
+          сама из условий на площади, методом Ньютона, и отбрасывает решения
+          с σ ≤ 0. Ни функции ошибок, ни обратной нормальной внутри нет.
+
+          Прежняя доля 0.55 была оценкой на глаз. Пересчитано по блокам:
+          плотность — D6 (90 баллов, 0.452), ящик с усами мая 2022 TZ2 Q4 —
+          D7 (6 баллов, 0.030).
       - id: D6
         title: "Непрерывные СВ: плотность, медиана, квантили"
-        subtopics: [{topic: statistics.continuous_random_variables, share: 0.45},
+        subtopics: [{topic: statistics.continuous_random_variables, share: 0.452},
                     {topic: statistics.expected_value, share: 0.167},
                     {topic: statistics.probability, share: 0.059}]
       - id: D7
         title: Регрессия и корреляция
         subtopics: [statistics.regression,
                     {topic: statistics.probability, share: 0.051},
-                    {topic: statistics.discrete_random_variables, share: 0.045}]
+                    {topic: statistics.discrete_random_variables, share: 0.045},
+                    {topic: statistics.continuous_random_variables, share: 0.030}]
         revisit: >
-          Доли statistics.probability 0.051 и discrete_random_variables 0.045 —
-          16 баллов описательной статистики, которой в карте нет (см.
-          corpus_issues D2 и D4): ящик с усами мая 2021 TZ1 Q3, среднее
-          и размах ноября 2025 TZ3 Q2, способ отбора мая 2025 TZ3 Q3(c),
-          медиана и стандартное отклонение таблицы частот мая 2022 TZ1 Q1.
-          Приписаны сюда, чтобы доли тем складывались в единицу; при сборке
-          D7 решить, становится ли описательная статистика приёмом или D7
+          Доли statistics.probability 0.051, discrete_random_variables 0.045
+          и continuous_random_variables 0.030 — 22 балла описательной
+          статистики, которой в карте нет (см. corpus_issues D2, D4 и D5):
+          ящики с усами мая 2021 TZ1 Q3 и мая 2022 TZ2 Q4, среднее и размах
+          ноября 2025 TZ3 Q2, способ отбора мая 2025 TZ3 Q3(c), медиана и
+          стандартное отклонение таблицы частот мая 2022 TZ1 Q1. Приписаны
+          сюда, чтобы доли тем складывались в единицу; при сборке D7 решить,
+          становится ли описательная статистика приёмом или D7
           переименовывается.
 
   E:

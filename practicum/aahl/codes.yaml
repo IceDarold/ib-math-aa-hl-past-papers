@@ -218,6 +218,14 @@ D4:
   series:   {skill: first_success,       name: первый успех}
   pgf:      {skill: generating_function, name: производящая функция}
 
+D5:
+  area:      {skill: area,           name: вероятность — площадь}
+  symmetry:  {skill: symmetry,       name: площади без калькулятора}
+  boundary:  {skill: boundary,       name: граница по площади}
+  sigma:     {skill: one_parameter,  name: σ по одной площади}
+  both:      {skill: two_parameters, name: μ и σ по двум площадям}
+  condition: {skill: condition,      name: условие внутри}
+
 E1:
   substitute: {skill: substitute,      name: подстановка и сокращение}
   infinity:   {skill: at_infinity,     name: старшая степень на бесконечности}

@@ -472,6 +472,46 @@ def table_check(what, tables, target=None, unknowns=(), conditions=(), letters=N
     return spec
 
 
+def normal_check(what, models, find=None, given=None, conditions=(), unknowns=(),
+                 sf=None, percent=False, free=None, rules=None):
+    """Вопрос о нормальной величине, D5.
+
+    models — словарь «имя → (среднее, дисперсия)», буквы разрешены. События
+    записываются списками: ('<', 'X', 170), ('>', 'X', 185), ('between', 'X',
+    170, 185). what — 'chance' (ответ — площадь события find, при условии
+    given, если оно есть) или 'letters' (ответ — буквы unknowns). conditions —
+    пары (событие, площадь): так вопрос задаёт σ, μ или границу.
+    free — буква, от которой ответ не зависит. rules — правило из условия:
+    {'X': {2: 0.95}} — «95 % в пределах двух стандартных отклонений».
+
+    Эталона в описании нет: страница пересобирает Normal и события и зовёт
+    те же verify_chance и verify_letters, что стоят в ноутбуке.
+    """
+    def event(item):
+        kind, name, *bounds = item
+        return [kind, name] + [sp.srepr(sp.sympify(b)) for b in bounds]
+
+    spec = {'kind': 'bell', 'what': what,
+            'models': {name: [sp.srepr(sp.sympify(m)), sp.srepr(sp.sympify(v))]
+                       for name, (m, v) in models.items()},
+            'conditions': [[event(e), sp.srepr(sp.sympify(value))] for e, value in conditions],
+            'unknowns': [str(u) for u in unknowns]}
+    if find is not None:
+        spec['find'] = event(find)
+    if given is not None:
+        spec['given'] = event(given)
+    if sf is not None:
+        spec['sf'] = sf
+    if percent:
+        spec['percent'] = True
+    if free is not None:
+        spec['free'] = str(free)
+    if rules:
+        spec['rules'] = {name: [[str(k), sp.srepr(sp.sympify(v))] for k, v in rule.items()]
+                         for name, rule in rules.items()}
+    return spec
+
+
 def indeterminate_check(num, den, var='x', point=0, side=None, params=None):
     """Ответ — сама неопределённость: '0/0' или 'oo/oo', проверяется порознь."""
     spec = {'kind': 'indeterminate', 'num': sp.srepr(sp.sympify(num)),

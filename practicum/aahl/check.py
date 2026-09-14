@@ -557,6 +557,9 @@ def evaluate(spec, raw):
         if kind == 'table':
             return _table_kind(spec, raw)
 
+        if kind == 'bell':                      # нормальное распределение, D5
+            return _normal_kind(spec, raw)
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0
@@ -685,6 +688,43 @@ def _table_kind(spec, raw):
     # pgf
     return _capture(kit.verify_pgf, 'Ответ', parse_one(raw), X, sp.Symbol('t'),
                     given=given, unknowns=free or None)
+
+
+def _normal_kind(spec, raw):
+    """Нормальная величина, D5: те же проверки, что в ноутбуке."""
+    def read(text):
+        return sp.sympify(text)
+
+    rules = {name: {float(k): float(read(v)) for k, v in rule}
+             for name, rule in spec.get('rules', {}).items()}
+    models = {name: kit.Normal(read(m), read(v), name, rule=rules.get(name))
+              for name, (m, v) in spec['models'].items()}
+
+    def event(packed):
+        kind, name, *bounds = packed
+        X, bounds = models[name], [read(b) for b in bounds]
+        if kind == '<':
+            return X < bounds[0]
+        if kind == '>':
+            return X > bounds[0]
+        return (X > bounds[0]) & (X < bounds[1])
+
+    conditions = [sp.Eq(kit.P(event(e)), read(value)) for e, value in spec['conditions']]
+    free = sp.Symbol(spec['free']) if spec.get('free') else None
+    variables = list(models.values())
+    if spec['what'] == 'letters':
+        unknowns = [sp.Symbol(name) for name in spec['unknowns']]
+        values = parse_many(raw) if len(unknowns) > 1 else parse_one(raw)
+        return _capture(kit.verify_letters, 'Ответ', values,
+                        unknowns if len(unknowns) > 1 else unknowns[0], variables,
+                        conditions, sf=spec.get('sf'), free=free)
+    given = event(spec['given']) if spec.get('given') else None
+    find = kit.P(event(spec['find']), given=given)
+    letters = kit._letters_in(variables, conditions)
+    letters = [u for u in letters if u != free]
+    return _capture(kit.verify_chance, 'Ответ', parse_one(raw), find,
+                    given=conditions or None, var=letters or None, sf=spec.get('sf'),
+                    percent=spec.get('percent', False), free=free)
 
 
 def show_answer(value, sf=3, var='x'):

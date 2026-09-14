@@ -9,7 +9,9 @@
 засчитываются — ровно как в markscheme.
 """
 
+import contextlib
 import hashlib
+import io
 import itertools
 import math
 
@@ -8441,7 +8443,11 @@ def _draw_say(node):
     kind = node[0]
     if kind == 'leaf':
         other = node[3].name if isinstance(node[3], _Variable) else node[3]
+        if node[2] == 'from':
+            return _t(f"{node[1].name} из {other}", f"{node[1].name} from {other}")
         return f"{node[1].name} {_DRAW_SAY[node[2]]} {other}"
+    if kind in ('yes', 'no'):
+        return kind
     if kind == 'not':
         return _t(f"не ({_draw_say(node[1])})", f"not ({_draw_say(node[1])})")
     word = {'and': _t('и', 'and'), 'or': _t('или', 'or'),
@@ -8538,6 +8544,8 @@ def _draw_prob(event, given=None):
     nodes = [event.node] + ([] if given is None else [given.node])
     if any(_draw_blank(node) for node in nodes):
         return Ellipsis
+    if any(_is_curve(node) for node in nodes):
+        return _curve_prob(event, given)      # нормальная величина, D5
     for node in nodes:
         for var in _draw_vars(node):
             if getattr(var, 'stand_in', None) is not None:
@@ -8790,6 +8798,14 @@ def Var(item):
     return _Prob(_moment('var', linear), 'var', (linear,), f"Var({linear})")
 
 
+def SD(item):
+    """Стандартное отклонение aX + b — корень из дисперсии, сложенной по значениям."""
+    linear = _as_linear(item)
+    if linear.var.blank():
+        return Ellipsis
+    return _Prob(sp.sqrt(_moment('var', linear)), 'sd', (linear,), f"SD({linear})")
+
+
 def binompdf(n, p, k):
     """P(X = k) для X ~ B(n, p) — кнопка калькулятора, десятичной дробью."""
     if blank(n, p, k):
@@ -8873,8 +8889,8 @@ def verify_parameter(label, got, condition, var):
     return True
 
 
-def verify_moment(label, got, what, given=None, var=None, tables=()):
-    """Ответ — E(aX + b) или Var(aX + b).
+def verify_moment(label, got, what, given=None, var=None, tables=(), count=False):
+    """Ответ — E(aX + b), Var(aX + b) или SD(aX + b).
 
     Среднее проверка получает сложением k·P(X = k), дисперсию — сложением
     квадратов отклонений; ни np, ни np(1 − p), ни a²Var(X) внутри нет.
@@ -8895,6 +8911,10 @@ def verify_moment(label, got, what, given=None, var=None, tables=()):
     Если в `what` осталась буква, которую никто не задавал, ответ — не
     число, а выражение от неё: «write down E(X) in terms of p». Тогда оно
     сверяется в нескольких значениях буквы.
+
+    `count=True` — спрашивают оценку числа предметов («estimate the number
+    of bags»): схема оценивания принимает и 7,66, и 8, и целое тогда не
+    промах, а допустимая запись.
     """
     if _blank(label, got, what):
         return False
@@ -8910,9 +8930,11 @@ def verify_moment(label, got, what, given=None, var=None, tables=()):
     if value is None or getattr(value, 'free_symbols', set()) or not value.is_number:
         print(f"{NO} {label}: " + _t("ответ это число", "the answer is a number"))
         return False
-    if kind == 'var' and float(value) < 0:
-        print(f"{NO} {label}: " + _t("дисперсия не бывает отрицательной",
-                                     "a variance is never negative"))
+    if kind in ('var', 'sd') and float(value) < 0:
+        print(f"{NO} {label}: " + (_t("дисперсия не бывает отрицательной",
+                                      "a variance is never negative") if kind == 'var' else
+                                   _t("стандартное отклонение не бывает отрицательным",
+                                      "a standard deviation is never negative")))
         return False
     if given is None:
         runs = [{}]
@@ -8966,6 +8988,21 @@ def verify_moment(label, got, what, given=None, var=None, tables=()):
                 slips[_t(f"это E({linear.var.name}), а спрашивали E({linear})",
                          f"that is E({linear.var.name}), and the question asks for "
                          f"E({linear})")] = mean_x
+        elif kind == 'sd':
+            spread_y = _moment('var', linear).subs(run)
+            slips[_t("это дисперсия: стандартное отклонение — корень из неё",
+                     "that is the variance: the standard deviation is its square "
+                     "root")] = spread_y
+            slips[_t("это среднее, а не стандартное отклонение",
+                     "that is the mean, not the standard deviation")] = \
+                _moment('mean', linear).subs(run)
+            if isinstance(linear.var, _Table) and linear.var.counts:
+                size = sp.sympify(linear.var.size).subs(run)
+                slips[_t("поделено на n − 1: это оценка по выборке, а стандартное "
+                         "отклонение данных в IB делится на n",
+                         "divided by n − 1: that is the sample estimate, and IB's "
+                         "standard deviation of data divides by n")] = \
+                    sp.sqrt(spread_y * size / (size - 1))
         else:
             slips[_t("это среднее, а не дисперсия",
                      "that is the mean, not the variance")] = \
@@ -8995,6 +9032,13 @@ def verify_moment(label, got, what, given=None, var=None, tables=()):
             if not _draw_agree(slip, want) and _draw_agree(value, slip):
                 print(f"{NO} {label}: {what_word}")
                 return False
+        if kind == 'mean' and value.is_integer and value == round(float(want)) and count:
+            print(f"{OK} {label}: " + _t(
+                f"оценка числа предметов: схема оценивания принимает и целое, и "
+                f"{sig(want, 3)}",
+                f"an estimate of a number of items: the markscheme accepts both the "
+                f"whole number and {sig(want, 3)}"))
+            return True
         if kind == 'mean' and value.is_integer and value == round(float(want)):
             print(f"{NO} {label}: " + _t(
                 "ожидаемое число округлено до целого, а оно не обязано быть "
@@ -9216,6 +9260,10 @@ def Freq(table, name='X'):
     частот и есть E и Var этого распределения; дисперсия делится на Σf,
     а не на Σf − 1, как и в IB. `X.size` — сколько всего наблюдений.
     """
+    if not any(key is Ellipsis for key in table):
+        # класс 15 < y ≤ 20 читается серединой, как в IB
+        table = {(key.start + key.end) / 2 if isinstance(key, sp.Interval) else key: value
+                 for key, value in table.items()}
     return _Table(table, name, counts=True)
 
 
@@ -9238,6 +9286,9 @@ def Moments(mean, variance, name='T'):
 def _sum_of(first, second):
     """X + Y для независимых X и Y: по парам значений, с произведением вероятностей."""
     for var in (first, second):
+        if isinstance(var, (_Curve, _Mapped)):
+            raise TypeError(_t('сумма непрерывных величин здесь не складывается',
+                               'a sum of continuous variables is not added up here'))
         if isinstance(var, _Series):
             raise TypeError(_t('сумма с величиной без последнего значения здесь не складывается',
                                'a sum with a variable that has no last value is not added up here'))
@@ -9334,14 +9385,30 @@ def _whole_values(X):
     return listed
 
 
-def verify_chance(label, got, find):
+def verify_chance(label, got, find, given=None, var=None, sf=None, percent=False,
+                  free=None):
     """Ответ — вероятность события над величинами: `P(rides >= 1)`, `P(X < Y)`.
 
     То же, что `verify_binomial` из D3, для любых величин — таблиц, частот,
     сумм. Сравнение в событии помнит свою границу, и неверный ответ
     разбирается по ней: «X ≥ 1 включает само 1».
+
+    Для нормальной величины (D5) вероятность — площадь, и параметров
+    больше. `given` и `var` — условия, из которых проверка сама находит
+    буквы модели: σ по «2 % дольше 82 минут». `sf` — вопрос просит
+    столько значащих цифр, и не больше. `percent=True` — ответ в процентах.
+    `free` — буква, от которой ответ не зависит и должен годиться при
+    любом её значении. `find` может быть и выражением из площадей:
+    `0.6*P(C < 61) + 0.4*P(B < 61)`.
     """
-    return verify_binomial(label, got, find)
+    if _blank(label, got, find):
+        return False
+    curve = isinstance(find, sp.Basic) or (
+        isinstance(find, _Prob) and find.args and isinstance(find.args[0], _Draw)
+        and _is_curve(find.args[0].node))
+    if not curve:
+        return verify_binomial(label, got, find)
+    return _verify_curve_chance(label, got, find, given, var, sf, percent, free)
 
 
 # ---------------------------------------------------------------- буквы
@@ -9447,6 +9514,8 @@ def _broken_rule(run, variables, unknowns):
                 return what, number.real, kind
             if kind == 'count' and number.real < -_LETTER_TOL:
                 return what, number.real, kind
+            if kind == 'sd' and number.real <= _LETTER_TOL:
+                return what, number.real, kind
     for letter in unknowns:
         if letter not in run:
             continue
@@ -9472,6 +9541,9 @@ def _rule_words(broken):
     if kind == 'count':
         return _t(f"{what}{shown}, а частота не бывает отрицательной",
                   f"{what}{shown}, and a frequency is never negative")
+    if kind == 'sd':
+        return _t(f"{what}{shown}, а стандартное отклонение положительно",
+                  f"{what}{shown}, and a standard deviation is positive")
     if kind == 'whole':
         return _t(f"{what}{shown}, а по условию это целое число",
                   f"{what}{shown}, and the question says it is a whole number")
@@ -9495,12 +9567,17 @@ def _letter_runs(conditions, unknowns, variables=()):
     for var in variables:
         if isinstance(var, _Table) and not var.counts and not var.parts:
             residuals.append(sp.Add(*[var.chance(v) for v in var.values()]) - 1)
-    polys = []
-    for residual in residuals:
-        top = sp.expand(sp.numer(sp.together(sp.sympify(residual))))
-        if top != 0:
-            polys.append(top)
-    roots = _system_roots(polys, unknowns)
+    if any(isinstance(var, (_Curve, _Mapped)) for var in variables) or \
+            any(sp.sympify(r).has(_Area) for r in residuals):
+        # площади не многочлены: буквы ищет Ньютон, D5
+        roots = _curve_roots([sp.sympify(r) for r in residuals], unknowns, variables)
+    else:
+        polys = []
+        for residual in residuals:
+            top = sp.expand(sp.numer(sp.together(sp.sympify(residual))))
+            if top != 0:
+                polys.append(top)
+        roots = _system_roots(polys, unknowns)
     if roots is None:
         return None, None
     good, bad = [], []
@@ -9545,7 +9622,8 @@ def _letters_in(variables, conditions):
     return sorted(found, key=str)
 
 
-def verify_letters(label, got, unknowns, variables, conditions=(), whole=False):
+def verify_letters(label, got, unknowns, variables, conditions=(), whole=False,
+                   sf=None, free=None):
     """Ответ — буквы таблицы: `verify_letters('2b', 0.3, k, [X])`.
 
     Условия — те, что даёт вопрос (`Eq(Expect(X), 2.3)`); условие «таблица
@@ -9558,9 +9636,32 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False):
     даёт отдельный балл R1.
 
     `whole=True` — вопрос просит буквы до целого.
+
+    С нормальной величиной (D5) условия — площади: `Eq(P(T > 82), 0.02)`,
+    и буквы ищутся численно; отбрасываются решения с σ ≤ 0. `sf` — вопрос
+    просит столько значащих цифр, и не больше. `free` — буква модели,
+    которую вопрос оставляет свободной: ответ обязан годиться при любом её
+    значении, и проверка пробует несколько.
     """
     if _blank(label, got):
         return False
+    loose = _as_unknowns(free)
+    if loose:
+        verdict = True
+        for sample in _FREE_SAMPLES:
+            run = {letter: sp.Float(sample) for letter in loose}
+            fixed = [sp.sympify(c).subs(run) for c in conditions]
+            pinned = [_Curve(var.mean.subs(run), var.variance.subs(run), var.name, var.rule)
+                      if isinstance(var, _Curve) else var for var in variables]
+            buffer = io.StringIO()
+            with contextlib.redirect_stdout(buffer):
+                verdict = verify_letters(label, got, unknowns, pinned, fixed, whole, sf)
+            if not verdict:
+                shown = ', '.join(f"{u} = {sample}" for u in loose)
+                print(buffer.getvalue().rstrip() + _t(f" (при {shown})", f" (at {shown})"))
+                return False
+        print(buffer.getvalue().rstrip())
+        return True
     names = _as_unknowns(unknowns)
     given = list(got) if isinstance(got, (list, tuple)) else [got]
     if len(given) != len(names):
@@ -9591,7 +9692,7 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False):
     def agree(value, want):
         if whole:
             return value.is_integer and int(value) == round(float(want))
-        return _draw_agree(value, want)
+        return _sf_agree(value, want, sf)
 
     def matches(run):
         return all(agree(value, run[name]) for name, value in zip(names, numbers))
@@ -9606,6 +9707,9 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False):
                 f"это одно из решений, а годных решений {len(wanted)}",
                 f"that is one of the solutions, and {len(wanted)} of them are valid"))
             return False
+        if sf is not None and any(float(v) != float(sig(v, sf)) for v in numbers):
+            print(f"{NO} {label}: " + _sf_words(sf))
+            return False
         print(f"{OK} {label}: {plain_shown}")
         return True
     for run, broken in bad:
@@ -9616,8 +9720,13 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False):
                 f"{shown} satisfies the equations, but then {_rule_words(broken)}. "
                 f"That solution is rejected"))
             return False
-    if not whole and any(all(sig(v, 2) == sig(run[n], 2) and float(sig(v, 2)) == float(v)
-                             for n, v in zip(names, numbers)) for run in good):
+    if sf is not None and any(all(_draw_agree(v, run[n]) for n, v in zip(names, numbers))
+                              for run in good):
+        print(f"{NO} {label}: " + _sf_words(sf))
+        return False
+    if not whole and sf is None and any(
+            all(sig(v, 2) == sig(run[n], 2) and float(sig(v, 2)) == float(v)
+                for n, v in zip(names, numbers)) for run in good):
         print(f"{NO} {label}: " + _t("две значащие цифры, а нужны три",
                                      "two significant figures, and three are needed"))
         return False
@@ -9626,9 +9735,31 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False):
         print(f"{NO} {label}: " + _t("вопрос просит ответ до целого",
                                      "the question asks for whole numbers"))
         return False
+    curve = any(isinstance(var, (_Curve, _Mapped)) for var in variables)
+    if curve and good:
+        # граница, найденная по площади с другой стороны: invNorm(0,2)
+        # там, где «больше w с вероятностью 0,2» требует 0,8 слева
+        for number, item in enumerate(conditions):
+            eq = sp.sympify(item)
+            if not (isinstance(eq, sp.Equality) and isinstance(eq.lhs, _Area)):
+                continue
+            flipped = list(conditions)
+            flipped[number] = sp.Eq(1 - eq.lhs, eq.rhs)
+            runs, _ = _letter_runs(flipped, letters, variables)
+            if runs and any(matches(run) for run in runs):
+                print(f"{NO} {label}: " + _t(
+                    "здесь взята площадь с другой стороны от границы: калькулятор "
+                    "и invNorm считают площадь слева, и «больше» надо перевести в "
+                    "1 − данное",
+                    "this uses the area on the other side of the boundary: invNorm "
+                    "works with the area to the left, so «more than» becomes 1 − the "
+                    "given area"))
+                return False
     if not good:
-        print(f"{NO} {label}: " + _t("условиям не отвечает ни одна годная таблица",
-                                     "no valid table satisfies the conditions"))
+        print(f"{NO} {label}: " + (_t("условиям не отвечает ни одна годная модель",
+                                      "no valid model satisfies the conditions") if curve else
+                                   _t("условиям не отвечает ни одна годная таблица",
+                                      "no valid table satisfies the conditions")))
         return False
     if len(names) == len(letters):
         run = dict(zip(names, numbers))
@@ -9655,8 +9786,11 @@ def verify_letters(label, got, unknowns, variables, conditions=(), whole=False):
                 print(f"{NO} {label}: " + _t(f"при {shown} не выполнено {which}",
                                              f"with {shown} {which} fails"))
                 return False
-    print(f"{NO} {label}: " + _t("с этими значениями таблица не выполняет условий вопроса",
-                                 "with these values the table does not meet the conditions"))
+    print(f"{NO} {label}: " + (_t("с этими значениями модель не выполняет условий вопроса",
+                                  "with these values the model does not meet the conditions")
+                               if curve else
+                               _t("с этими значениями таблица не выполняет условий вопроса",
+                                  "with these values the table does not meet the conditions")))
     return False
 
 
@@ -9944,6 +10078,889 @@ def _moment_expression(label, got, what, letters):
             "that is the sum of the probabilities, which is one: the mean is the sum "
             "of x·P(X = x)"))
         return False
+    print(f"{OK} {label}")
+    return True
+
+
+# ================================================== нормальное распределение
+# Двадцать второе понятие равенства ответов: вероятность — это площадь.
+#
+# В D3 и D4 у величины была таблица, и вероятность события складывалась
+# по её значениям. У нормальной величины значений не перечислить: ей
+# известна только кривая, e^(−(x − μ)²/(2σ²))/(σ√(2π)), и вероятность
+# события — площадь под этой кривой над теми x, где событие выполняется.
+# Проверка так её и получает: находит, где событие выполняется, и складывает
+# площадь квадратурой Гаусса — Лежандра по кускам шириной σ. Ни функции
+# ошибок, ни таблиц стандартного нормального, ни обратной нормальной внутри
+# нет, и test_kit_normal.py проверяет это по коду.
+#
+# Отсюда всё остальное. «Найдите w, если P(W > w) = 0,2» — буква, при
+# которой площадь равна 0,2; «найдите μ и σ» — две буквы и два условия
+# на площади. Их проверка находит сама, методом Ньютона от нескольких
+# начальных точек, и отбрасывает решения, при которых стандартное
+# отклонение не положительно. Эталона нет ни одного.
+#
+# Событие хранится тем же деревом сравнений, что в D3. Граница, у которой
+# сравнивается сама величина, известна сразу; величина, посчитанная из
+# другой (X₁ = −Z − √(Z² − 1)), проходится по оси, и границы находятся
+# там, где сравнение меняет знак или перестаёт иметь смысл.
+
+_CURVE_SPAN = 15          # за μ ± 15σ площадь меньше 10⁻⁵⁰, её не складывают
+_CURVE_GRID = 3000        # шагов по оси, когда границу события приходится искать
+
+
+def _legendre(n):
+    """Узлы и веса Гаусса — Лежандра на [−1, 1], найденные методом Ньютона."""
+    nodes = []
+    for i in range(1, n + 1):
+        z = math.cos(math.pi * (i - 0.25) / (n + 0.5))
+        for _ in range(100):
+            before, here = 1.0, z
+            for j in range(2, n + 1):
+                before, here = here, ((2 * j - 1) * z * here - (j - 1) * before) / j
+            slope = n * (z * here - before) / (z * z - 1)
+            step = here / slope
+            z -= step
+            if abs(step) < 1e-16:
+                break
+        before, here = 1.0, z
+        for j in range(2, n + 1):
+            before, here = here, ((2 * j - 1) * z * here - (j - 1) * before) / j
+        slope = n * (z * here - before) / (z * z - 1)
+        nodes.append((z, 2 / ((1 - z * z) * slope * slope)))
+    return nodes
+
+
+_GAUSS = _legendre(16)
+
+
+def _bell_area(mean, spread, lo, hi):
+    """Площадь под кривой N(μ, σ²) от lo до hi.
+
+    Кривая складывается кусками шириной σ, в каждом шестнадцать узлов.
+    Хвост за μ ± 15σ отбрасывается: там площадь меньше любой, о которой
+    спрашивают.
+    """
+    lo = max(lo, mean - _CURVE_SPAN * spread)
+    hi = min(hi, mean + _CURVE_SPAN * spread)
+    if hi <= lo:
+        return 0.0
+    pieces = max(1, math.ceil((hi - lo) / spread))
+    width = (hi - lo) / pieces
+    twice = 2 * spread * spread
+    terms = []
+    for i in range(pieces):
+        centre = lo + (i + 0.5) * width
+        for node, weight in _GAUSS:
+            point = centre + node * width / 2
+            terms.append(weight * math.exp(-(point - mean) ** 2 / twice))
+    return math.fsum(terms) * width / 2 / (spread * math.sqrt(2 * math.pi))
+
+
+class _Curve(_Variable):
+    """X ~ N(μ, σ²): величина, у которой есть кривая и нет таблицы.
+
+    Второй параметр — дисперсия, как пишет IB: N(1000, 3.5²). Буквы в
+    обоих параметрах разрешены — так ставят вопрос «найдите σ».
+
+    `rule` — когда вопрос сам говорит, какой площадью пользоваться:
+    «95 % весов лежат в пределах двух стандартных отклонений». Тогда
+    площади берутся из этого правила и симметрии, а не из кривой, и
+    площадь, которую правило не даёт, проверка посчитать откажется.
+    """
+
+    def __init__(self, mean, variance, name='X', rule=None):
+        self.name = name
+        self.rule = None if rule is None else {float(k): float(v) for k, v in rule.items()}
+        self._blank = mean is Ellipsis or variance is Ellipsis
+        if self._blank:
+            self.mean = self.variance = Ellipsis
+            return
+        self.mean, self.variance = sp.sympify(mean), sp.sympify(variance)
+        if self.variance.is_number and not float(self.variance) > 0:
+            raise ValueError(_t(f'дисперсия положительна, а не {variance}',
+                                f'a variance is positive, not {variance}'))
+
+    __hash__ = object.__hash__
+
+    def blank(self):
+        return self._blank
+
+    def values(self):
+        raise TypeError(_t('у непрерывной величины значений не перечислить: вероятность '
+                           'здесь площадь, а не сумма',
+                           'a continuous variable has no list of values: a probability '
+                           'here is an area, not a sum'))
+
+    def chance(self, k, p=None):
+        return self.values()
+
+    @property
+    def spread(self):
+        """σ так, как его пишет вопрос: у N(75, σ²) это σ, а не |σ|."""
+        if isinstance(self.variance, sp.Pow) and self.variance.exp == 2:
+            return self.variance.base
+        return sp.sqrt(self.variance)
+
+    def rules(self):
+        return [(_t(f'стандартное отклонение {self.name}',
+                    f'the standard deviation of {self.name}'), self.spread, 'sd')]
+
+    def numbers(self, run=None):
+        """μ и σ числами при данных буквах."""
+        mean = float(sp.sympify(self.mean).subs(run or {}))
+        variance = float(sp.sympify(self.variance).subs(run or {}))
+        if not variance > 0:
+            raise ValueError('variance')
+        return mean, math.sqrt(variance)
+
+    def map(self, rule, name=None):
+        """Величина, посчитанная из этой: `Z.map(lambda z: -z - sqrt(z**2 - 1), 'X1')`."""
+        return _Mapped(self, rule, name)
+
+    def __repr__(self):
+        return f"{self.name} ~ N({self.mean}, {self.variance})"
+
+
+class _Mapped(_Variable):
+    """Величина, посчитанная из непрерывной: X₁ = −Z − √(Z² − 1).
+
+    Своей кривой у неё нет; событие над ней — это множество значений Z,
+    при которых оно выполняется, и площадь берётся под кривой Z. Там, где
+    значение не действительно (корень из отрицательного), событие не
+    выполняется.
+    """
+
+    def __init__(self, base, rule, name=None):
+        self.base = base
+        self.name = name or f"g({base.name})"
+        self.dummy = sp.Dummy('z')
+        self.expr = sp.sympify(rule(self.dummy))
+        self._number = sp.lambdify(self.dummy, self.expr, 'cmath')
+
+    __hash__ = object.__hash__
+
+    def blank(self):
+        return self.base.blank()
+
+    def values(self):
+        return self.base.values()
+
+    def at(self, point):
+        try:
+            value = complex(self._number(point))
+        except (ValueError, ZeroDivisionError, OverflowError):
+            return None
+        if abs(value.imag) > 1e-12 * max(1.0, abs(value)):
+            return None
+        return value.real
+
+    def __repr__(self):
+        return f"{self.name} = {str(self.expr).replace(str(self.dummy), self.base.name)}"
+
+
+def Normal(mean, variance, name='X', rule=None):
+    """Нормальная величина: `W = Normal(204, 5**2, 'W')` — это W ~ N(204, 5²).
+
+    Второй параметр — дисперсия, а не стандартное отклонение, как в записи
+    IB. Сравнения дают события, `P()` находит их площадь: `P(W > 210)`,
+    `P((W > w) & (W < 210))`, `P(T < 82, given=T > 80)`.
+    """
+    return _Curve(mean, variance, name, rule)
+
+
+class _Mixture(_Variable):
+    """Смесь: 60 % кексов шоколадные, 40 % банановые, и у каждых своя кривая.
+
+    Событие над смесью раскладывается по частям: P(кекс < 61) — это доля
+    шоколадных, умноженная на площадь под их кривой, плюс то же для
+    банановых. `muffin.came_from(C)` — событие «кекс шоколадный», и
+    условная вероятность P(muffin.came_from(C), given=muffin < 61)
+    складывается из тех же частей.
+    """
+
+    def __init__(self, parts, name='X'):
+        self.name = name
+        self.parts = [(var, w if w is Ellipsis else sp.sympify(w)) for var, w in parts.items()]
+        if self.blank():
+            return
+        for var, _ in self.parts:
+            if not isinstance(var, _Curve):
+                raise TypeError(_t('смешивать здесь можно нормальные величины',
+                                   'only normal variables are mixed here'))
+        total = sp.Add(*[w for _, w in self.parts])
+        if total.is_number and abs(float(total) - 1) > 1e-9:
+            raise ValueError(_t(f'доли частей складываются в {total}, а не в 1',
+                                f'the shares of the parts add up to {total}, not 1'))
+
+    __hash__ = object.__hash__
+
+    def blank(self):
+        return any(w is Ellipsis or var.blank() for var, w in self.parts)
+
+    def values(self):
+        raise TypeError(_t('у смеси непрерывных величин значений не перечислить',
+                           'a mixture of continuous variables has no list of values'))
+
+    def came_from(self, part):
+        """Событие «значение взято из этой части смеси»."""
+        return _Draw(('leaf', self, 'from', part))
+
+    def rules(self):
+        return [(_t(f'доля {var.name}', f'the share of {var.name}'), w, 'prob')
+                for var, w in self.parts]
+
+    def __repr__(self):
+        return f"{self.name}: " + ', '.join(f"{w} of {var}" for var, w in self.parts)
+
+
+def Mix(parts, name='X'):
+    """Смесь нормальных величин: `Mix({C: 0.6, B: 0.4}, 'muffin')`."""
+    return _Mixture(parts, name)
+
+
+def _unmix(node):
+    """[(доля, событие)] — событие над смесью, разложенное по её частям."""
+    mixes = []
+    for var in _draw_vars(node):
+        if isinstance(var, _Mixture) and not any(var is seen for seen in mixes):
+            mixes.append(var)
+    if not mixes:
+        return [(sp.Integer(1), node)]
+    if len(mixes) > 1:
+        raise ValueError(_t('в одном событии две смеси', 'one event has two mixtures'))
+    mix = mixes[0]
+
+    def pin(here, part):
+        if here[0] == 'leaf':
+            _, left, rel, right = here
+            if rel == 'from':
+                return ('yes',) if right is part else ('no',)
+            return ('leaf', part if left is mix else left, rel, part if right is mix else right)
+        return (here[0],) + tuple(pin(child, part) for child in here[1:])
+    return [(weight, pin(node, part)) for part, weight in mix.parts]
+
+
+def _curve_base(node):
+    """Единственная непрерывная величина, над которой построено событие."""
+    bases = []
+    for var in _draw_vars(node):
+        base = var.base if isinstance(var, _Mapped) else var
+        if not isinstance(base, _Curve):
+            raise TypeError(_t('в одном событии непрерывная величина и дискретная',
+                               'one event mixes a continuous and a discrete variable'))
+        if not any(base is seen for seen in bases):
+            bases.append(base)
+    if len(bases) != 1:
+        raise ValueError(_t('событие над двумя непрерывными величинами здесь не складывается: '
+                            'запишите его через одну',
+                            'an event about two continuous variables is not added up here: '
+                            'write it in terms of one'))
+    return bases[0]
+
+
+def _is_curve(node):
+    return any(isinstance(var, (_Curve, _Mapped, _Mixture)) for var in _draw_vars(node))
+
+
+def _no_variables(node):
+    return not _draw_vars(node)
+
+
+def _curve_side(item, point):
+    if isinstance(item, _Curve):
+        return point
+    if isinstance(item, _Mapped):
+        return item.at(point)
+    return item
+
+
+def _curve_holds(node, point):
+    """Выполняется ли событие при данном значении непрерывной величины."""
+    kind = node[0]
+    if kind == 'leaf':
+        _, left, rel, right = node
+        one, two = _curve_side(left, point), _curve_side(right, point)
+        if one is None or two is None:
+            return False
+        return {'==': one == two, '<': one < two, '<=': one <= two,
+                '>': one > two, '>=': one >= two}[rel]
+    if kind in ('yes', 'no'):
+        return kind == 'yes'
+    if kind == 'not':
+        return not _curve_holds(node[1], point)
+    left, right = _curve_holds(node[1], point), _curve_holds(node[2], point)
+    return {'and': left and right, 'or': left or right, 'xor': left != right}[kind]
+
+
+def _curve_fix(node, number):
+    """То же дерево, где границы-выражения заменены числами."""
+    if node[0] == 'leaf':
+        _, left, rel, right = node
+        if not isinstance(left, _Variable):
+            left = number(left)
+        if not isinstance(right, _Variable):
+            right = number(right)
+        return ('leaf', left, rel, right)
+    return (node[0],) + tuple(_curve_fix(child, number) for child in node[1:])
+
+
+def _curve_cuts(node, mean, spread):
+    """Точки оси, где событие может начаться или кончиться."""
+    cuts, walk = set(), []
+    for _, leaf in _draw_leaves(node):
+        _, left, _, right = leaf
+        if isinstance(left, _Curve) and not isinstance(right, _Variable):
+            cuts.add(right)
+        elif isinstance(right, _Curve) and not isinstance(left, _Variable):
+            cuts.add(left)
+        else:
+            walk.append(leaf)
+    lo, hi = mean - _CURVE_SPAN * spread, mean + _CURVE_SPAN * spread
+    for _, left, _, right in walk:
+        def state(point, left=left, right=right):
+            one, two = _curve_side(left, point), _curve_side(right, point)
+            if one is None or two is None:
+                return None
+            return one < two
+        before = state(lo)
+        for i in range(1, _CURVE_GRID + 1):
+            a = lo + (hi - lo) * (i - 1) / _CURVE_GRID
+            b = lo + (hi - lo) * i / _CURVE_GRID
+            now = state(b)
+            if now != before:
+                start = state(a)
+                for _ in range(80):
+                    middle = (a + b) / 2
+                    if state(middle) == start:
+                        a = middle
+                    else:
+                        b = middle
+                cuts.add((a + b) / 2)
+            before = now
+    return sorted(cuts)
+
+
+def _rule_area(base, mean, spread, lo, hi):
+    """Площадь по правилу из условия и симметрии, без кривой."""
+    marks = [(-math.inf, 0.0), (mean, 0.5), (math.inf, 1.0)]
+    for many, share in base.rule.items():
+        marks += [(mean - many * spread, 0.5 - share / 2), (mean + many * spread, 0.5 + share / 2)]
+
+    def below(point):
+        for where, share in marks:
+            if where == point or (math.isfinite(where) and math.isfinite(point)
+                                  and abs(where - point) <= 1e-9 * max(1.0, abs(point), spread)):
+                return share
+        raise ValueError(_t(
+            f'правило из условия не даёт площади до {sig(point, 6)}: граница стоит не на '
+            f'μ ± kσ',
+            f'the rule in the question gives no area up to {sig(point, 6)}: the boundary '
+            f'is not at μ ± kσ'))
+    return below(hi) - below(lo)
+
+
+def _region_area(base, node, mean, spread, exact=False):
+    """Площадь под кривой над всеми x, где событие выполняется."""
+    cuts = _curve_cuts(node, mean, spread)
+    edges = [-math.inf] + cuts + [math.inf]
+    total, pieces = 0.0, []
+    for lo, hi in zip(edges, edges[1:]):
+        if not hi > lo:
+            continue
+        if math.isinf(lo) and math.isinf(hi):
+            probe = mean
+        elif math.isinf(lo):
+            probe = hi - spread
+        elif math.isinf(hi):
+            probe = lo + spread
+        else:
+            probe = (lo + hi) / 2
+        if _curve_holds(node, probe):
+            if pieces and pieces[-1][1] == lo:
+                pieces[-1] = (pieces[-1][0], hi)
+            else:
+                pieces.append((lo, hi))
+    for lo, hi in pieces:
+        if base.rule is not None and not exact:
+            total += _rule_area(base, mean, spread, lo, hi)
+        else:
+            total += _bell_area(mean, spread, lo, hi)
+    return total
+
+
+def _curve_mass(node, run=None, exact=False):
+    """Площадь события при данных буквах — медленный путь, через подстановку."""
+    parts = _unmix(node)
+    if len(parts) > 1 or parts[0][1] is not node:
+        return math.fsum(float(sp.sympify(w).subs(run or {})) * _curve_mass(n, run, exact)
+                         for w, n in parts)
+    if _no_variables(node):
+        return 1.0 if _curve_holds(node, 0.0) else 0.0
+    base = _curve_base(node)
+    mean, spread = base.numbers(run)
+    fixed = _curve_fix(node, lambda item: float(sp.sympify(item).subs(run or {})))
+    return _region_area(base, fixed, mean, spread, exact)
+
+
+_AREAS = []
+
+
+def _area_call(key, *numbers):
+    """Площадь события из реестра при числах вместо букв — быстрый путь."""
+    entry = _AREAS[int(key)]
+    mean = float(entry['mean'](*numbers))
+    variance = float(entry['variance'](*numbers))
+    if not variance > 0:
+        raise ValueError('variance')
+    fixed = _curve_fix(entry['node'], lambda item: float(entry['bound'](item)(*numbers)))
+    return _region_area(entry['base'], fixed, mean, math.sqrt(variance))
+
+
+class _Area(sp.Function):
+    """Площадь события под кривой, пока в модели есть буквы; с числами — число."""
+
+    @classmethod
+    def eval(cls, key, *letters):
+        if key.is_Integer and all(value.is_number for value in letters):
+            try:
+                return sp.Float(_area_call(int(key), *[float(v) for v in letters]), 15)
+            except (ValueError, TypeError, OverflowError, ZeroDivisionError):
+                return sp.nan
+        return None
+
+
+def _curve_letters(node):
+    found = set()
+    base = _curve_base(node)
+    found |= sp.sympify(base.mean).free_symbols | sp.sympify(base.variance).free_symbols
+    for _, leaf in _draw_leaves(node):
+        for item in (leaf[1], leaf[3]):
+            if not isinstance(item, _Variable):
+                found |= sp.sympify(item).free_symbols
+    return sorted(found, key=str)
+
+
+def _area_of(node):
+    """Площадь события как выражение sympy: число или _Area от букв."""
+    parts = _unmix(node)
+    if len(parts) > 1 or parts[0][1] is not node:
+        return sp.Add(*[w * _area_of(n) for w, n in parts])
+    if _no_variables(node):
+        return sp.Integer(1 if _curve_holds(node, 0.0) else 0)
+    letters = _curve_letters(node)
+    base = _curve_base(node)
+    compiled = {}
+
+    def bound(item):
+        text = sp.srepr(sp.sympify(item))
+        if text not in compiled:
+            compiled[text] = sp.lambdify(letters, sp.sympify(item), 'math')
+        return compiled[text]
+
+    _AREAS.append({'node': node, 'base': base, 'bound': bound,
+                   'mean': sp.lambdify(letters, base.mean, 'math'),
+                   'variance': sp.lambdify(letters, base.variance, 'math')})
+    if not letters:
+        # без букв площадь считается сразу, и ошибка — правило из условия
+        # не даёт такой площади — доходит до ячейки, а не прячется в nan
+        return sp.Float(_area_call(len(_AREAS) - 1), 15)
+    return _Area(sp.Integer(len(_AREAS) - 1), *letters)
+
+
+def _curve_prob(event, given=None):
+    """P(...) для событий над непрерывной величиной — площадь, а не сумма."""
+    if given is None:
+        return _Prob(_area_of(event.node), 'plain', (event,), f"P({event})")
+    base = _area_of(given.node)
+    if base.is_number and float(base) == 0:
+        raise ValueError(_t(f"условие {given} невозможно",
+                            f"the condition {given} cannot happen"))
+    joint = _area_of(('and', event.node, given.node))
+    return _Prob(joint / base, 'given', (event, given), f"P({event} | {given})")
+
+
+# ------------------------------------------------------ буквы из площадей
+
+def _solve_small(matrix, right):
+    """Линейная система n×n методом Гаусса с выбором главного элемента."""
+    n = len(right)
+    rows = [list(matrix[i]) + [right[i]] for i in range(n)]
+    for col in range(n):
+        pivot = max(range(col, n), key=lambda r: abs(rows[r][col]))
+        if abs(rows[pivot][col]) < 1e-300:
+            return None
+        rows[col], rows[pivot] = rows[pivot], rows[col]
+        for r in range(n):
+            if r != col:
+                factor = rows[r][col] / rows[col][col]
+                rows[r] = [a - factor * b for a, b in zip(rows[r], rows[col])]
+    return [rows[i][n] / rows[i][i] for i in range(n)]
+
+
+def _curve_starts(unknowns, variables, residuals):
+    """Начальные точки для поиска букв: числа самого вопроса и масштаб разброса."""
+    places, scales, spread_letters = set(), set(), set()
+    nodes = []
+    for residual in residuals:
+        for area in residual.atoms(_Area):
+            nodes.append(_AREAS[int(area.args[0])])
+        plain = residual.xreplace({area: 0 for area in residual.atoms(_Area)})
+        places |= {float(n) for n in plain.atoms(sp.Number) if n.is_finite and abs(n) > 1}
+    bases = [entry['base'] for entry in nodes] + [v for v in variables if isinstance(v, _Curve)]
+    for base in bases:
+        spread_letters |= sp.sympify(base.variance).free_symbols
+        places |= {float(n) for n in sp.sympify(base.mean).atoms(sp.Number) if n.is_finite}
+        if sp.sympify(base.variance).is_number:
+            scales.add(math.sqrt(float(base.variance)))
+    for entry in nodes:
+        for _, leaf in _draw_leaves(entry['node']):
+            for item in (leaf[1], leaf[3]):
+                if not isinstance(item, _Variable):
+                    places |= {float(n) for n in sp.sympify(item).atoms(sp.Number)
+                               if n.is_finite}
+    ordered = sorted(places)
+    if len(ordered) > 1:
+        scales.add((ordered[-1] - ordered[0]) / 2)
+    scales = sorted(s for s in scales if s > 0) or [1.0]
+    typical = scales[len(scales) // 2]
+    spots = [ordered[i] for i in sorted({0, len(ordered) // 2, len(ordered) - 1})] \
+        if ordered else [0.0]
+    around = sorted({spot + shift * typical for spot in spots for shift in (-1, 0, 1)})
+    if len(around) > 5:
+        around = [around[round(i * (len(around) - 1) / 4)] for i in range(5)]
+    options = []
+    for letter in unknowns:
+        if letter in spread_letters:
+            # и отрицательный: σ² не отличает σ от −σ, а отброшенный корень
+            # проверка должна уметь назвать
+            options.append([typical / 3, typical, typical * 3, -typical])
+        else:
+            options.append(around)
+    combos = list(itertools.product(*options))
+    if len(combos) > 60:
+        combos = combos[::math.ceil(len(combos) / 60)]
+    return combos
+
+
+def _curve_roots(residuals, unknowns, variables):
+    """Решения условий на площади — Ньютоном от нескольких начальных точек.
+
+    None — условий меньше, чем букв: решений бесконечно много.
+    """
+    unknowns = list(unknowns)
+    if len(residuals) < len(unknowns):
+        return None
+    numeric = sp.lambdify(unknowns, list(residuals), modules=[{'_Area': _area_call}, 'math'])
+    n = len(unknowns)
+
+    def value(vector):
+        try:
+            out = [float(v) for v in numeric(*vector)]
+        except (ValueError, TypeError, ZeroDivisionError, OverflowError, IndexError):
+            return None
+        if any(math.isnan(v) or math.isinf(v) for v in out):
+            return None
+        return out
+
+    def size(vector):
+        return max(abs(v) for v in vector)
+
+    def newton_step(here, now):
+        columns = []
+        for j in range(n):
+            nudge = 1e-7 * max(1.0, abs(here[j]))
+            moved = list(here)
+            moved[j] += nudge
+            there = value(moved)
+            if there is None:
+                return None
+            columns.append([(there[i] - now[i]) / nudge for i in range(len(now))])
+        square = [[columns[j][i] for j in range(n)] for i in range(n)]
+        return _solve_small(square, [-now[i] for i in range(n)])
+
+    found = []
+    for start in _curve_starts(unknowns, variables, residuals):
+        here = list(start)
+        now = value(here)
+        if now is None:
+            continue
+        for _ in range(60):
+            if size(now) < 1e-13:
+                break
+            step = newton_step(here, now)
+            if step is None:
+                # вырожденная точка — например, граница ровно на среднем, где
+                # площадь не чувствует σ: сдвинуться и искать дальше
+                here = [v + 1e-3 * max(1.0, abs(v)) * (j + 1) for j, v in enumerate(here)]
+                now = value(here)
+                if now is None:
+                    break
+                continue
+            share, better = 1.0, False
+            while share > 1e-9:
+                trial = [here[i] + share * step[i] for i in range(n)]
+                there = value(trial)
+                if there is not None and size(there) < size(now):
+                    here, now, better = trial, there, True
+                    break
+                share /= 2
+            if not better:
+                break
+        if size(now) >= 1e-9:
+            continue
+        # невязка мала и там, где обе площади почти нули, — в далёком хвосте.
+        # Корень настоящий, только если и шаг Ньютона здесь мал
+        last = newton_step(here, now)
+        if last is None or any(abs(d) > 1e-6 * max(1.0, abs(v)) for d, v in zip(last, here)):
+            continue
+        if not any(all(abs(a - b) <= 1e-6 * max(1.0, abs(a)) for a, b in zip(here, old))
+                   for old in found):
+            found.append(here)
+    return [{u: sp.Float(v, 15) for u, v in zip(unknowns, root)} for root in found]
+
+
+# ---------------------------------------------------------------- проверка
+
+_FREE_SAMPLES = (1.5, 2.5, 4.0)
+
+
+def _sf_agree(value, want, sf):
+    if sf is None:
+        return _draw_agree(value, want)
+    return sig(value, sf) == sig(want, sf)
+
+
+def _sf_words(sf):
+    return _t(f"вопрос просит {sf} значащие цифры" if sf < 5 else f"вопрос просит {sf} значащих цифр",
+              f"the question asks for {sf} significant figures")
+
+
+def _curve_swap(node, old, new):
+    if node[0] == 'leaf':
+        _, left, rel, right = node
+        return ('leaf', new if left is old else left, rel, new if right is old else right)
+    return (node[0],) + tuple(_curve_swap(child, old, new) for child in node[1:])
+
+
+def _curve_slips(find, run):
+    """Типовые промахи с нормальной величиной — из самого события."""
+    slips = {}
+    if not (isinstance(find, _Prob) and find.args and isinstance(find.args[0], _Draw)):
+        return slips
+    target = find.args[0].node
+    condition = find.args[1].node if find.kind == 'given' else None
+
+    def area(node, exact=False):
+        try:
+            return _curve_mass(node, run, exact)
+        except (ValueError, TypeError, ZeroDivisionError):
+            return None
+
+    whole = area(target if condition is None else ('and', target, condition))
+    if condition is not None:
+        base, alone = area(condition), area(target)
+        if base and alone:
+            slips[_t("условная вероятность взята в обратную сторону: посчитано "
+                     "P(условие | событие)",
+                     "the conditional is the wrong way round: that is "
+                     "P(condition | event)")] = whole / alone
+            slips[_t("это вероятность пересечения — делить на вероятность условия "
+                     "ещё не стали",
+                     "that is the intersection: it has not been divided by the "
+                     "probability of the condition")] = whole
+            slips[_t("в числителе всё событие, а нужна только та его часть, что "
+                     "лежит внутри условия",
+                     "the numerator is the whole event, but only the part of it "
+                     "inside the condition belongs there")] = alone / base
+            slips[_t("это вероятность самого условия, а не события внутри него",
+                     "that is the probability of the condition itself, not of the "
+                     "event inside it")] = base
+        return slips
+    slips[_t("это площадь с другой стороны от границы: вероятность противоположного "
+             "события",
+             "that is the area on the other side of the boundary: the probability of "
+             "the opposite event")] = 1 - whole
+    mixes = [var for var in _draw_vars(target) if isinstance(var, _Mixture)]
+    if mixes:
+        pieces = _unmix(target)
+        for (part, _), (_, alone) in zip(mixes[0].parts, pieces):
+            slips[_t(f"это площадь только для {part.name}: вторая часть смеси тоже "
+                     f"даёт свою долю",
+                     f"that is the area for {part.name} only: the other part of the "
+                     f"mixture contributes its share too")] = area(alone)
+        plain = [area(alone) for _, alone in pieces]
+        if all(v is not None for v in plain):
+            slips[_t("площади частей сложены без их долей",
+                     "the areas of the parts are added without their shares")] = sum(plain)
+            slips[_t("площади частей усреднены поровну, а доли частей разные",
+                     "the areas of the parts are averaged equally, and the shares "
+                     "differ")] = sum(plain) / len(plain)
+        return slips
+    base = _curve_base(target)
+    leaves = _draw_leaves(target)
+    if target[0] == 'and' and len(leaves) == 2:
+        for (_, keep), (_, lost) in ((leaves[0], leaves[1]), (leaves[1], leaves[0])):
+            slips[_t(f"здесь только «{_draw_say(keep)}»: граница «{_draw_say(lost)}» потеряна",
+                     f"this is only «{_draw_say(keep)}»: the boundary «{_draw_say(lost)}» "
+                     f"is lost")] = area(keep)
+    if len(leaves) == 1 and isinstance(leaves[0][1][1], _Curve) and \
+            not isinstance(leaves[0][1][3], _Variable):
+        mean, spread = base.numbers(run)
+        edge = float(sp.sympify(leaves[0][1][3]).subs(run))
+        height = math.exp(-(edge - mean) ** 2 / (2 * spread * spread)) / (spread * math.sqrt(2 * math.pi))
+        slips[_t(f"посчитаны оба хвоста, а спрашивают только тот, что за {sig(edge, 6)}",
+                 f"that counts both tails, and only the one beyond {sig(edge, 6)} is "
+                 f"asked")] = 2 * min(whole, 1 - whole)
+        slips[_t(f"это высота кривой в точке {sig(edge, 6)}, а вероятность — площадь под ней",
+                 f"that is the height of the curve at {sig(edge, 6)}; a probability is "
+                 f"the area under it")] = height
+        if _curve_holds(_curve_fix(target, lambda item: float(sp.sympify(item).subs(run))), mean) \
+                and base.rule is None:
+            slips[_t("это площадь только от среднего до границы: половина кривой по "
+                     "другую сторону от среднего потеряна",
+                     "that is only the area from the mean to the boundary: the half of "
+                     "the curve on the other side of the mean is lost")] = \
+                _bell_area(mean, spread, min(mean, edge), max(mean, edge))
+    if base.rule is not None:
+        slips[_t("это площадь под точной кривой, а вопрос велит пользоваться правилом "
+                 "из условия",
+                 "that is the area under the exact curve, and the question says to use "
+                 "the rule it gives")] = area(target, exact=True)
+    try:
+        wide = _Curve(base.mean, sp.sympify(base.variance) ** 2, base.name)
+        slips[_t("в N(μ, σ²) второе число — дисперсия: вместо σ взята σ²",
+                 "the second number in N(μ, σ²) is the variance: σ² was used where σ "
+                 "belongs")] = _curve_mass(_curve_swap(target, base, wide), run)
+    except (ValueError, TypeError):
+        pass
+    return slips
+
+
+def _curve_runs(label, conditions, unknowns, variables, free_run):
+    """Годные наборы букв при данных значениях свободных букв, или None с сообщением."""
+    conditions = [sp.sympify(c).subs(free_run) if not isinstance(c, (tuple, list)) else c
+                  for c in conditions]
+    letters = [u for u in _letters_in(variables, conditions) if u not in free_run]
+    for name in unknowns:
+        if name not in letters:
+            letters.append(name)
+    if not conditions and not letters:
+        return [dict(free_run)]
+    good, _ = _letter_runs(conditions, letters, variables)
+    if good is None:
+        print(f"{NO} {label}: " + _t("условий не хватает, чтобы найти буквы",
+                                     "the conditions are not enough to fix the letters"))
+        return None
+    if not good:
+        print(f"{NO} {label}: " + _t("условиям не отвечает ни одна годная модель",
+                                     "no valid model satisfies the conditions"))
+        return None
+    return [{**free_run, **run} for run in good]
+
+
+def _curve_variables(find, conditions=()):
+    found = []
+    items = [find] + list(conditions)
+    for item in items:
+        nodes = []
+        if isinstance(item, _Prob) and item.args and isinstance(item.args[0], _Draw):
+            nodes += [arg.node for arg in item.args if isinstance(arg, _Draw)]
+        try:
+            expr = sp.sympify(item)
+        except (sp.SympifyError, TypeError):
+            expr = None
+        if isinstance(expr, sp.Basic):
+            nodes += [_AREAS[int(area.args[0])]['node'] for area in expr.atoms(_Area)]
+        for node in nodes:
+            for _, piece in _unmix(node):
+                if _no_variables(piece):
+                    continue
+                base = _curve_base(piece)
+                if not any(base is seen for seen in found):
+                    found.append(base)
+    return found
+
+
+def _verify_curve_chance(label, got, find, given, var, sf, percent, free):
+    """verify_chance для непрерывной величины: ответ — площадь."""
+    try:
+        value = sp.sympify(got)
+    except (sp.SympifyError, TypeError, AttributeError):
+        value = None
+    if value is None or getattr(value, 'free_symbols', set()) \
+            or not value.is_number or value.is_real is False:
+        print(f"{NO} {label}: " + (_t("процент это число", "a percentage is a number")
+                                   if percent else _t("вероятность это число",
+                                                      "a probability is a number")))
+        return False
+    conditions = _as_conditions(given)
+    unknowns = _as_unknowns(var)
+    variables = _curve_variables(find, conditions)
+    samples = [{}]
+    loose = _as_unknowns(free)
+    if loose:
+        samples = [{letter: sp.Float(s) for letter in loose} for s in _FREE_SAMPLES]
+    unit = 100 if percent else 1
+    for sample in samples:
+        runs = _curve_runs(label, conditions, unknowns, variables, sample)
+        if runs is None:
+            return False
+        for run in runs:
+            want = float(sp.sympify(find).subs(run)) * unit
+            if _sf_agree(value, want, sf):
+                if sf is not None and float(value) != float(sig(value, sf)):
+                    print(f"{NO} {label}: " + _sf_words(sf))
+                    return False
+                continue
+            letters_only = {u: v for u, v in run.items() if u not in sample}
+            for rounded, how in _rounded_runs(letters_only):
+                near = float(sp.sympify(find).subs({**sample, **rounded})) * unit
+                if not _sf_agree(near, want, sf) and _sf_agree(value, near, sf):
+                    print(f"{OK} {label}: " + _t(
+                        f"сходится с {how}, округлённым по дороге. Схема оценивания "
+                        f"такое принимает, но промежуточное значение лучше держать "
+                        f"полностью",
+                        f"this matches {how} rounded on the way. The markscheme "
+                        f"accepts it, but carry the full value next time"))
+                    return True
+            if sf is not None and _draw_agree(value, want):
+                print(f"{NO} {label}: " + _sf_words(sf))
+                return False
+            if percent and _draw_agree(float(value) * 100, want):
+                print(f"{NO} {label}: " + _t(
+                    "это вероятность, а вопрос просит процент",
+                    "that is a probability, and the question asks for a percentage"))
+                return False
+            if not percent and float(value) > 1 and _sf_agree(float(value) / 100, want, sf):
+                print(f"{OK} {label}: " + _t(
+                    "это процент, а вопрос просит вероятность. Схема оценивания "
+                    "такое принимает, но записывать лучше долей единицы",
+                    "that is a percentage, and the question asks for a probability. "
+                    "The markscheme accepts it, but write it as a probability"))
+                return True
+            if not -_PROB_TOL <= float(value) / unit <= 1 + _PROB_TOL:
+                print(f"{NO} {label}: " + (_t(
+                    "процент лежит между 0 и 100", "a percentage lies between 0 and 100")
+                    if percent else _t(
+                    "вероятность не бывает меньше нуля или больше единицы",
+                    "a probability is never below zero or above one")))
+                return False
+            for what, slip in _curve_slips(find, run).items():
+                if slip is None:
+                    continue
+                slip = float(slip) * unit
+                if not _sf_agree(slip, want, sf) and _sf_agree(value, slip, sf):
+                    print(f"{NO} {label}: {what}")
+                    return False
+            if sf is None and sig(value, 2) == sig(want, 2) and float(sig(value, 2)) == float(value):
+                print(f"{NO} {label}: " + _t(
+                    "две значащие цифры, а нужны три",
+                    "two significant figures, and three are needed"))
+                return False
+            print(f"{NO} {label}: " + _t("у этой модели выходит другое",
+                                         "this model gives something else"))
+            return False
     print(f"{OK} {label}")
     return True
 

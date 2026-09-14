@@ -1,0 +1,337 @@
+version: 0.2
+practicum: D5
+title: Нормальное распределение и обратная задача
+source_topic: statistics.continuous_random_variables
+also_covers: [statistics.probability]
+
+corpus:
+  blocks: 37
+  marks: 107
+  effective_blocks: 34
+  effective_marks: 97
+  sessions: May 2021 — November 2025
+  papers: {1: 4, 2: 28, 3: 2}
+  gdc_marks: 90
+  note: >
+    Тема statistics.continuous_random_variables на 199 баллов делится
+    пополам по тому, что задано: у нормальной величины известна кривая
+    с μ и σ — это D5, 103 балла; у остальных дана плотность формулой, и
+    работа — интеграл, медиана, мода — это D6, 90 баллов. Ещё 6 баллов —
+    ящик с усами мая 2022 TZ2 Q4 — описательная статистика, и они уходят
+    в D7 вместе с остальной. Из statistics.probability D5 берёт 4 балла:
+    сумму трёх площадей ноября 2023 Q10(a), размеченную как вероятность.
+
+    Десять баллов — ноябрьский дубль 2023 года, десятый раз за серию:
+    Q10(a), (b), (d) посчитаны двумя зональными копиями. Без дубля
+    34 блока и 97 баллов.
+
+    Почти всё на Paper 2 — 80 баллов из 97, ещё 10 на Paper 3, — и доля
+    калькулятора 90 из 97 честная: нормальную площадь руками не берут.
+    Но баллы за метод стоят не на кнопке: на рисунке с заштрихованной
+    областью, на фразе «P(W < w) = 1 − 0,8 − 0,115» и на уравнении в
+    z-значениях, а не в вероятностях. Семь баллов Paper 1 — симметрия и
+    правило 68–95–99,7.
+
+directions:
+  forwards: >
+    Модель известна, спрашивают площадь: меньше, больше, между, процент,
+    ожидаемое число. На Paper 1 то же без калькулятора — симметрией и
+    правилом целых σ. Приёмы 1, 2.
+  backwards: >
+    Площадь дана, неизвестна граница, σ или μ и σ вместе. Каждый шаг
+    добавляет одну неизвестную и одно уравнение в z. Приёмы 3, 4, 5.
+  inside: >
+    Вокруг площади второй вопрос: условная вероятность, смесь двух
+    кривых, событие про другую величину, которое надо перевести в
+    интервал Z. Приём 6.
+
+skills:
+  - id: area
+    name: Вероятность — площадь над нужным промежутком
+    rung: 1
+    trigger: >
+      «Can be modelled by a normal distribution with mean 175 and standard
+      deviation 8», а дальше «find the probability that … weighs less
+      than», «find the percentage», «estimate the number of bags». μ и σ
+      даны числами.
+    chain:
+      - "Нарисовать колокол со средним в центре и заштриховать то, о чём
+        спрашивают: слева от границы, справа или между"
+      - "normalcdf(нижняя, верхняя, μ, σ) — со стандартным отклонением, а
+        не с дисперсией"
+      - "«Больше» и «не меньше» — одна площадь: у отдельного значения
+        площади нет"
+      - "Ожидаемое число — n умножить на площадь; процент — площадь на 100"
+    traps:
+      - "Площадь с другой стороны от границы: 0,734 вместо 0,266"
+      - "Между двумя границами берут только одну: P(W < 185) вместо
+        P(170 < W < 185)"
+      - "В калькулятор вводят дисперсию 12,25 вместо σ = 3,5 — запись
+        N(1000, 3,5²) читают буквально"
+      - "Две значащие цифры вместо трёх: 0,077 — A0"
+      - "Процент вместо вероятности и наоборот; схема мая 2025 TZ2 в (a)
+        принимает 26,6 %, но в (c) спрашивают именно процент"
+    calculator:
+      mode: needed
+      note: >
+        Все 17 баллов на Paper 2, и калькулятор здесь — само вычисление.
+        Балл M1 ставится за «evidence of identifying the correct area» —
+        рисунок или запись P(X < 995), которых калькулятор не делает.
+    prereq: []
+    raw_tags: [normal_distribution, gdc_normal_cdf, probability_calculation,
+               expected_frequency, multiplication, normal_probability, upper_tail,
+               probability_less_than, gdc, gdc_calculation, upper_tail_probability]
+    blocks: ['2021-MAY-TZ1-P2-Q02-A', '2021-MAY-TZ1-P2-Q02-B',
+             '2021-MAY-TZ2-P2-Q10-B', '2022-MAY-TZ1-P2-Q11-A',
+             '2022-NOV-COMMON-P2-Q10-A', '2023-MAY-TZ2-P2-Q03-A',
+             '2024-MAY-TZ1-P2-Q03-A', '2025-MAY-TZ2-P2-Q10-A',
+             '2025-MAY-TZ2-P2-Q10-C']
+
+  - id: symmetry
+    name: Площади, которые складываются без калькулятора
+    rung: 2
+    trigger: >
+      Paper 1 и нормальная величина; «you can assume that 95 % of the
+      weights are within two standard deviations»; «write down the
+      approximate value … correct to two significant figures»; две площади
+      даны, третья — нет.
+    chain:
+      - "Кривая симметрична: по половине площади с каждой стороны от μ,
+        и хвост за μ + d равен хвосту до μ − d"
+      - "Все площади вместе — единица: известные вычитаются из неё"
+      - "В пределах μ ± σ, μ ± 2σ, μ ± 3σ лежит около 68 %, 95 %, 99,7 %;
+        если правило дано в условии — брать его число, а не кривой"
+      - "Одинаковое число σ от среднего — одинаковая площадь: при равных σ
+        сравнивают x − μ, при разных — (x − μ)/σ"
+    traps:
+      - "Берут площадь с кривой, 2,28 %, когда условие велит 95 % в
+        пределах двух σ и ответ 2,5 %"
+      - "Считают оба хвоста: 5 % вместо 2,5 %"
+      - "За P(Y < μ + σ) отдают хвост 0,16 или половину 0,34"
+      - "Пишут 0,6827 там, где просят две значащие цифры"
+      - "P(W < w) = 1 − 0,8, забыв хвост за 210"
+    calculator:
+      mode: mixed
+      note: >
+        Семь баллов из одиннадцати на Paper 1, где калькулятора нет и
+        вопрос построен так, чтобы он был не нужен. Четыре — Paper 2, но
+        и там сумма трёх площадей считается в уме: 1 − 0,288 − 0,434.
+    prereq: [area]
+    raw_tags: [complement_rule, probability_calculation, probability_sum,
+               normal_distribution, total_probability, empirical_rule, tail_probability,
+               standardize_normal, equate_probabilities, solve_linear, normal_probability,
+               symmetry]
+    blocks: ['2023-NOV-TZ1-P2-Q10-A', '2023-NOV-TZ2-P2-Q10-A',
+             '2023-MAY-TZ2-P2-Q03-B', '2024-MAY-TZ2-P1-Q06-A',
+             '2025-MAY-TZ3-P1-Q05-A', '2025-MAY-TZ3-P1-Q05-B',
+             '2025-MAY-TZ3-P1-Q05-C']
+
+  - id: boundary
+    name: Граница по площади
+    rung: 3
+    trigger: >
+      «Find w such that», «20 % of the apples weigh more than w», «find the
+      lower quartile», «more than k standard deviations above the mean»,
+      «approximate the interquartile range». Модель известна, дана
+      площадь, неизвестна граница.
+    chain:
+      - "Перевести в площадь слева: invNorm знает только её; «больше w с
+        вероятностью 0,2» — это 0,8 слева"
+      - "Если площадь слева не дана прямо — сначала получить её приёмом 2"
+      - "invNorm(площадь, μ, σ); квартили — площади 0,25 и 0,75"
+      - "k стандартных отклонений — граница μ + kσ, и k читается с N(0, 1)"
+    traps:
+      - "invNorm(0,2) вместо invNorm(0,8) для «20 % больше w»"
+      - "«Correct to four significant figures» пропускают: 181,73 вместо
+        181,7 — схема пишет «must be 4 sf»"
+      - "Стандартное отклонение данных делят на n − 1: 6,28 вместо 6,26"
+      - "IQR отдают с тремя цифрами, когда просят две"
+    calculator:
+      mode: needed
+      note: >
+        Все 18 баллов на Paper 2: обратная нормальная функция руками не
+        берётся. Работа, за которую M1, — перевод «больше» в площадь
+        слева и сумма площадей в ноябре 2022, где граница прячется за
+        P(T > b) = 2P(T < a).
+    prereq: [area, symmetry]
+    raw_tags: [inverse_normal_distribution, gdc, normal_distribution, inverse_normal,
+               standard_normal, z_score, grouped_data_mean,
+               grouped_data_standard_deviation, percentile, interquartile_range,
+               probability_sum_to_one, algebraic_manipulation]
+    blocks: ['2023-MAY-TZ2-P2-Q03-C', '2025-MAY-TZ2-P2-Q10-B',
+             '2024-MAY-TZ1-P2-Q03-B', '2025-NOV-TZ3-P2-Q04-A',
+             '2025-NOV-TZ1-P2-Q05-A', '2025-NOV-TZ1-P2-Q05-B',
+             '2022-NOV-COMMON-P2-Q10-D']
+
+  - id: one_parameter
+    name: Одна неизвестная модели — σ по площади
+    rung: 4
+    trigger: >
+      «Standard deviation of σ minutes. Given that 2 % of the flight times
+      are longer than 82 minutes, find σ»; «the interquartile range of the
+      diameters is 0.28»; «88 % have a height between 153 and 173». Одна
+      буква в модели и одна площадь.
+    chain:
+      - "Перевести данное в площадь слева от известной границы"
+      - "z = invNorm(площадь) — с N(0, 1), потому что σ калькулятору не
+        дать"
+      - "(x − μ)/σ = z — одно уравнение на σ; или графиком normalcdf от
+        буквы против данной площади"
+      - "Симметричный промежуток: вне его — поровну с двух сторон; IQR —
+        это 2·0,6745·σ"
+      - "Смесь двух кривых: сначала найти площадь неизвестной части из
+        уравнения полной вероятности, потом z"
+    traps:
+      - "Уравнение в вероятностях: (82 − 75)/σ = 0,98"
+      - "Отрицательный корень σ, когда решают графиком без ограничения"
+      - "Весь IQR делят на z или половину IQR отдают как σ"
+      - "Для 88 % между границами берут 0,88 слева, а не 0,94"
+    calculator:
+      mode: needed
+      note: >
+        Все 19 рабочих баллов на Paper 2. Калькулятор даёт z и решает
+        уравнение, но M1 ставится за «use of inverse normal to find
+        z-score» — за то, что поняли, что σ через z.
+    prereq: [boundary]
+    raw_tags: [inverse_normal, z_score, solve_for_parameter, inverse_normal_distribution,
+               interquartile_range, normal_distribution_properties, algebraic_solution,
+               normal_distribution, quartile, law_of_total_probability, equation_solving,
+               gdc]
+    blocks: ['2021-MAY-TZ2-P2-Q10-A', '2023-MAY-TZ1-P2-Q04',
+             '2023-NOV-TZ1-P2-Q10-D', '2023-NOV-TZ2-P2-Q10-D',
+             '2025-MAY-TZ1-P2-Q04-C', '2022-MAY-TZ1-P2-Q11-D']
+
+  - id: two_parameters
+    name: Две неизвестные — μ и σ по двум площадям
+    rung: 5
+    trigger: >
+      «Normal distribution with mean m and standard deviation s. It is
+      known that P(H < 94.6) = 0.288 and P(H > 98.1) = 0.434»; «82 % are
+      premium and the percentage below 170 is twice that above 185»;
+      «mean 35 cm more and standard deviation double».
+    chain:
+      - "Каждое данное — площадь слева от своей границы, и по ней z"
+      - "Два уравнения μ + z₁σ = x₁ и μ + z₂σ = x₂; вычесть — получится σ"
+      - "Если площади даны отношением — сначала решить их (приём 2)"
+      - "Вторая модель со сдвигом и растяжением — N(μ + 35, (2σ)²) с теми
+        же буквами"
+    traps:
+      - "Система в вероятностях: μ + 0,288σ = 94,6 — схема: «that involve
+        z-values rather than probabilities»"
+      - "Для «больше 98,1» берут z от 0,434, а не от 0,566"
+      - "У второй модели оставляют σ, а не 2σ"
+      - "Не называют, какая буква среднее, а какая отклонение — последний A1"
+    calculator:
+      mode: needed
+      note: >
+        Все 15 рабочих баллов на Paper 2: два z и система двух уравнений.
+        Сама система линейная и решается в строку, но z без калькулятора не
+        получить.
+    prereq: [one_parameter, symmetry]
+    raw_tags: [inverse_normal, z_score, system_of_equations, gdc_solver, gdc_solve,
+               normal_distribution, simultaneous_equations]
+    blocks: ['2023-NOV-TZ1-P2-Q10-B', '2023-NOV-TZ2-P2-Q10-B',
+             '2025-MAY-TZ2-P2-Q10-F', '2025-NOV-TZ3-P2-Q04-B']
+
+  - id: condition
+    name: Условие внутри — условная, смесь, событие через Z
+    rung: 6
+    trigger: >
+      «Given that a flight takes longer than 80 minutes, find the
+      probability that it takes less than 82»; «given that a bag is not
+      rejected»; «60 % of the muffins made are chocolate»; «f(x) = x² + 2Zx
+      + 1, find the probability that the graph has two x-intercepts».
+    chain:
+      - "Условная — отношение площадей: пересечение события и условия,
+        делённое на условие; нарисовать обе области"
+      - "Смесь — дерево с площадью на каждой ветви; обратная условная —
+        одна ветвь, делённая на сумму"
+      - "Событие про другую величину — перевести в промежуток Z: дискриминант,
+        неравенство на корень"
+      - "Возводить неравенство в квадрат, только проверив знаки частей"
+    traps:
+      - "Не делят на вероятность условия: 0,0512 вместо 0,719"
+      - "В числителе всё событие, P(T < 82), а не пересечение 80 < T < 82"
+      - "Условная в обратную сторону: P(< 61 | шоколадный) вместо
+        P(шоколадный | < 61)"
+      - "Теряют вторую часть смеси"
+      - "Из −Z − √(Z² − 1) > 0,5 получают только Z > −1,25, без Z < −1 —
+        схема мая 2024 снимает последний A1"
+    calculator:
+      mode: needed
+      note: >
+        Все 17 баллов на калькуляторных бумагах. Площади берёт калькулятор;
+        промежуток Z в Paper 3 — алгебра, и за неё там четыре балла из семи.
+    prereq: [area, one_parameter]
+    raw_tags: [conditional_probability, normal_distribution, symmetry,
+               probability_calculation, normal_probability, interval_probability,
+               discriminant, probability, inequality, algebraic_manipulation]
+    blocks: ['2021-MAY-TZ1-P2-Q02-C', '2021-MAY-TZ2-P2-Q10-C',
+             '2024-MAY-TZ2-P3-Q02-G', '2024-MAY-TZ2-P3-Q02-H']
+
+imported:
+  - practicum: D2
+    what: >
+      Полная вероятность и формула Байеса со смесью кривых — май 2022 TZ1
+      Q11(c) и май 2024 TZ2 Q6(b) — размечены в statistics.probability и
+      стоят в карточке D2. Практикум их берёт целиком, потому что без них
+      не решается Q11(d): σ ищется из той же суммы по дереву.
+  - practicum: D3
+    what: >
+      Биномиальная модель поверх нормальной площади — «ровно 5 из 12 кексов
+      легче 61 г», «больше 6 из 64 рейсов», «хотя бы 30 премиальных яблок
+      из 40» — D3. Здесь считается только площадь, которая становится p.
+  - practicum: D7
+    what: >
+      Регрессионные прямые мая 2025 TZ1 Q4(a)–(b) и ящик с усами мая 2022
+      TZ2 Q4 — D7. Среднее и стандартное отклонение сгруппированных данных
+      ноября 2025 TZ1 Q5(a) остались здесь: без них не построить модель
+      в (b).
+  - practicum: B1
+    what: >
+      Система двух линейных уравнений на μ и σ — B1. Новое только то,
+      откуда уравнения: из z-значений площадей.
+
+corpus_issues:
+  - id: 'ноябрьский дубль 2023 года'
+    what: >
+      2023-NOV-TZ1-P2 и 2023-NOV-TZ2-P2 — одна и та же бумага. В D5 это
+      Q10(a), (b), (d), десять баллов посчитаны дважды. Десятый практикум
+      серии, где дубль вычитают руками.
+  - id: 'одна тема — две разные работы'
+    what: >
+      statistics.continuous_random_variables держит и нормальное
+      распределение (103 балла), и плотность, заданную формулой (90), и
+      ящик с усами (6). У нормальной величины интеграл не пишут никогда —
+      площадь берёт калькулятор, а работа в обратной задаче; у плотности
+      вся работа — интеграл. Карта делит тему долями 0.518, 0.452 и 0.030.
+  - id: 'сумма площадей в statistics.probability'
+    what: >
+      Ноябрь 2023 Q10(a) — P(94,6 < H < 98,1) = 1 − 0,288 − 0,434 —
+      размечен как statistics.probability в обеих копиях, а соседние (b)
+      и (d) того же вопроса — как continuous_random_variables. Действие
+      одно: площади под нормальной кривой складываются в единицу.
+  - id: 'нормальная площадь в чужих темах'
+    what: >
+      Четыре вопроса, где нормальная площадь — главный шаг, размечены
+      в statistics.probability и лежат в карточках D2 и D3: смесь кексов
+      мая 2022 TZ1 Q11(c), смесь яблок мая 2024 TZ2 Q6(b), два метателя
+      копья мая 2022 TZ2 Q8 и P(T < 55 | T > 40) ноября 2022 Q10(c)(i).
+      Последняя — ровно условная вероятность под кривой, как май 2021 TZ2
+      Q10(c), которая размечена в continuous_random_variables.
+  - id: 'source_pages в теме'
+    what: >
+      Смещение на единицу у одиннадцати вопросов из шестнадцати: номер
+      страницы в корпусе на один меньше номера страницы PDF. Верны только
+      май 2023 TZ2 Q3, май 2025 TZ2 Q10, май 2025 TZ3 Q5, ноябрь 2025 TZ1 Q5
+      и ноябрь 2025 TZ3 Q4. Сверено по странице каждого пункта, а не только
+      начала вопроса: у мая 2024 TZ2 P3 Q2 пункты (g) и (h) стоят на шестой
+      странице PDF, в корпусе — пятая.
+    why: >
+      Смещение совпадает с напечатанным номером страницы: к этим PDF спереди
+      приклеен лист об авторских правах, и печатная «16EP04» — пятый лист
+      файла. Ноябрь 2023 опять самый наглядный и опять новый: в копии TZ2
+      пункты (a) и (b) Q10 смещены, а (d) того же вопроса — нет. Номер брался
+      по-разному даже внутри одного вопроса одной копии.
+
+ladder: [area, symmetry, boundary, one_parameter, two_parameters, condition]

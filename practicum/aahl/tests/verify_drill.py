@@ -2261,6 +2261,143 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('E6.')):
     print(f'  {gen_name:32} {SEEDS} задач сверено интегралом и проверкой')
 
 
+# =============================================================== D5
+# Проверки D5 складывают площадь квадратурой под самой кривой и находят
+# буквы модели Ньютоном по площадям. Генераторы считают эталон функцией
+# ошибок statistics.NormalDist. Здесь третий путь: mpmath.ncdf и обратная
+# через mpmath.erfinv, и формулы, выписанные заново, — σ = (x − μ)/z,
+# система двух уравнений в z. Затем эталон прогоняется через проверку
+# тренажёра, и рядом с ним — ответ с типовым промахом, который она обязана
+# отвергнуть и назвать.
+
+def _d5_cdf(x, mean, spread):
+    return mpmath.ncdf(x, mu=mean, sigma=spread)
+
+
+def _d5_z(area):
+    return mpmath.sqrt(2) * mpmath.erfinv(2 * mpmath.mpf(area) - 1)
+
+
+def _d5_area(event, mean, spread):
+    kind, _, *bounds = event
+    bounds = [mpmath.mpf(float(sp.sympify(b))) for b in bounds]
+    if kind == '<':
+        return _d5_cdf(bounds[0], mean, spread)
+    if kind == '>':
+        return 1 - _d5_cdf(bounds[0], mean, spread)
+    return _d5_cdf(bounds[1], mean, spread) - _d5_cdf(bounds[0], mean, spread)
+
+
+def _d5_model(spec):
+    mean, variance = (sp.sympify(v) for v in spec['models']['X'])
+    if mean.free_symbols or variance.free_symbols:
+        return None
+    return mpmath.mpf(float(mean)), mpmath.sqrt(float(variance))
+
+
+def _d5_numerator(spec):
+    """Пересечение события и условия «больше first» — руками, по виду события."""
+    model = _d5_model(spec)
+    kind, _, edge = spec['find']
+    first, edge = float(sp.sympify(spec['given'][2])), float(sp.sympify(edge))
+    if kind == '>':
+        return 1 - _d5_cdf(edge, *model)
+    return _d5_cdf(edge, *model) - _d5_cdf(first, *model)
+
+
+def _d5_expected(item):
+    """Эталон заново: функция ошибок mpmath и формулы через z."""
+    spec, name = item['check'], item['id']
+    conditions = [(event, float(sp.sympify(value))) for event, value in spec['conditions']]
+    model = _d5_model(spec)
+    if name == 'D5.area':
+        value = _d5_area(spec['find'], *model)
+        return 100 * value if spec.get('percent') else value
+    if name == 'D5.symmetry':
+        if spec.get('rules'):
+            share = float(sp.sympify(spec['rules']['X'][0][1]))
+            return (1 - share) / 2
+        return 1 - sum(value for _, value in conditions)
+    if name == 'D5.boundary':
+        (kind, _, _), share = conditions[0]
+        left = share if kind == '<' else 1 - share
+        return model[0] + _d5_z(left) * model[1]
+    if name == 'D5.one_parameter':
+        (kind, _, *bounds), share = conditions[0]
+        mean = float(sp.sympify(spec['models']['X'][0]))
+        if kind == '>':
+            return (float(sp.sympify(bounds[0])) - mean) / _d5_z(1 - share)
+        half = (float(sp.sympify(bounds[1])) - float(sp.sympify(bounds[0]))) / 2
+        return half / _d5_z((1 + share) / 2)
+    if name == 'D5.two_parameters':
+        (_, _, low), below = conditions[0]
+        (_, _, high), above = conditions[1]
+        z1, z2 = _d5_z(below), _d5_z(1 - above)
+        low, high = float(sp.sympify(low)), float(sp.sympify(high))
+        spread = (high - low) / (z2 - z1)
+        return [low - z1 * spread, spread]
+    return _d5_numerator(spec) / _d5_area(spec['given'], *model)
+
+
+def _d5_same(expected, answer):
+    if isinstance(expected, list):
+        return all(abs(float(e) - float(a)) <= 1e-9 * max(1, abs(float(a)))
+                   for e, a in zip(expected, answer))
+    return abs(float(expected) - float(answer)) <= 1e-9 * max(1, abs(float(answer)))
+
+
+def _d5_slip(item):
+    """Ответ с типовым промахом и слово, которым проверка обязана его назвать."""
+    spec, name, answer = item['check'], item['id'], item['answer']
+    if name == 'D5.area':
+        return f'{(100 if spec.get("percent") else 1) - float(answer):.6g}', 'другой стороны'
+    if name == 'D5.symmetry':
+        if spec.get('rules'):
+            many = float(spec['rules']['X'][0][0])
+            return f'{1 - float(mpmath.ncdf(many)):.6g}', 'правилом'
+        value = float(answer)
+        if f'{value:.2g}' != f'{value:.3g}':
+            return f'{value:.2g}', 'две значащие'
+        return None
+    if name == 'D5.boundary':
+        (kind, _, _), share = spec['conditions'][0]
+        share = float(sp.sympify(share))
+        mean, spread = _d5_model(spec)
+        left = share if kind == '<' else 1 - share
+        return f'{float(mean + _d5_z(1 - left) * spread):.6g}', 'другой стороны'
+    if name == 'D5.one_parameter':
+        return f'{-float(answer):.6g}', 'положительно'
+    if name == 'D5.two_parameters':
+        return f'{float(answer[0]):.6g}, {-float(answer[1]):.6g}', 'положительно'
+    return f'{float(_d5_numerator(spec)):.6g}', 'пересечения'
+
+
+section('D5: функция ошибок сходится с генератором, проверка принимает и называет промах')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('D5.')):
+    agreed = accepted = slipped = named = 0
+    for seed in range(SEEDS):
+        item = dict(GENERATORS[gen_name](random.Random(seed)), id=gen_name)
+        spec = item['check']
+        agreed += bool(_d5_same(_d5_expected(item), item['answer']))
+        ok, _ = evaluate(spec, show_answer(item['answer']))
+        accepted += bool(ok)
+        slip = _d5_slip(item)
+        if slip is None:
+            slipped += 1
+            named += 1
+            continue
+        wrong, message = evaluate(spec, slip[0])
+        slipped += not wrong
+        named += slip[1] in message
+        if slip[1] not in message:
+            print(f'    {gen_name} {seed}: {slip[0]} → {message}')
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
+    t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено функцией ошибок mpmath и проверкой')
+
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')
