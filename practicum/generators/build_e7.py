@@ -74,7 +74,7 @@ md(r"""
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/calculus к practicum/kit.py
+sys.path.append('..')          # из practicum/calculus к practicum/kit/
 import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
 from kit import *              # проверки + exp, log, sqrt, Eq, diff и прочие имена
 

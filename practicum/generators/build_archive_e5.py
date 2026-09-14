@@ -137,7 +137,7 @@ The check answers at once. Solutions are at the bottom — all of them, in
 order; use them when you are stuck or when you are done, not in between.
 
 **What the checks do.** They differentiate. Not one of them integrates —
-there is no call to `integrate` anywhere in this part of `kit.py`, and a test
+there is no call to `integrate` anywhere in `kit/integral.py`, and a test
 proves it by reading the source. A check can *recognise* your antiderivative;
 it cannot produce one. Definite values are added up by adaptive Simpson
 straight from the integrand.
@@ -156,7 +156,7 @@ same integral between different limits. Those places are marked.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/calculus to practicum/kit.py
+sys.path.append('..')          # from practicum/calculus to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + Rational, sqrt, pi, E, log, Eq
 

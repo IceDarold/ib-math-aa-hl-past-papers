@@ -241,7 +241,7 @@ print('\n=== формулы темы внутри проверки нет ===')
 # как раз названы — там сказано, что их-то проверка и не использует.
 import ast
 
-source = open(os.path.join(ROOT, 'practicum', 'kit.py')).read()
+source = open(os.path.join(ROOT, 'practicum', 'kit', 'sequences.py')).read()
 tree = ast.parse(source)
 names = {'progression', 'geometric', '_kind', '_run', '_fixed', '_index',
          '_as_value', '_agree', '_seq_report', '_sampled', '_walkpoints',

@@ -140,7 +140,7 @@ mark scheme's own printed numbers rather than a formula I cannot read.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/calculus to practicum/kit.py
+sys.path.append('..')          # from practicum/calculus to practicum/kit/
 import sympy as sp
 from kit import *
 

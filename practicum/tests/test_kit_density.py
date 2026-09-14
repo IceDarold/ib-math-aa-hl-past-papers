@@ -200,10 +200,9 @@ check('density-value-named', '❌' in text and 'value of the density' in text)
 check('blank-answer', verify_chance('пусто', ..., P(X < 1)), False)
 
 print('\n=== первообразной внутри проверки нет ===')
-source = open(os.path.join(ROOT, 'practicum', 'kit.py')).read()
+source = open(os.path.join(ROOT, 'practicum', 'kit', 'density.py')).read()
 start = source.index('# ======================================================= плотность формулой')
-end = source.index('\ndef trigger_check(')
-section = source[start:end]
+section = source[start:]
 tree = ast.parse(section)
 check('section-parses', isinstance(tree, ast.Module))
 # Ни интеграла sympy, ни решателя уравнений: площадь — квадратура, буквы — Ньютон.

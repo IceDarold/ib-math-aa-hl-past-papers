@@ -221,7 +221,7 @@ equation, with the one like it in the timer, is 9 marks out of 105.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/geometry to practicum/kit.py
+sys.path.append('..')          # from practicum/geometry to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + sin, cos, pi, sqrt, arc, seg, cone, ...
 

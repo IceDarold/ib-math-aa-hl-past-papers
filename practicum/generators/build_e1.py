@@ -17,7 +17,7 @@ in indeterminate form» стоит в архиве отдельным балло
 второе его применение без повторной проверки — стандартная потеря баллов.
 Проверка смотрит на числитель и знаменатель порознь и не верит на слово.
 
-Обе живут в kit.py и проверены в tests/test_kit_limit.py.
+Обе живут в kit/derivative.py и проверены в tests/test_kit_limit.py.
 """
 import json
 import os
@@ -153,7 +153,7 @@ wrapper · 🔴 several techniques, or a whole exam question.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/calculus to practicum/kit.py
+sys.path.append('..')          # from practicum/calculus to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + Interval, Rational, oo, pi, limit-free tools
 

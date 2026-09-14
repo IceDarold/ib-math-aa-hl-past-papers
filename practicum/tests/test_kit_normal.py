@@ -208,10 +208,9 @@ check('count-whole', verify_moment('8 мешков', 8, Expect(Bin(100, P(bags <
 check('count-not-by-default', verify_moment('8 мешков', 8, Expect(Bin(100, P(bags < 995)))), False)
 
 print('\n=== формул темы внутри проверки нет ===')
-source = open(os.path.join(ROOT, 'practicum', 'kit.py')).read()
+source = open(os.path.join(ROOT, 'practicum', 'kit', 'normal.py')).read()
 start = source.index('# ================================================== нормальное распределение')
-end = source.index('# ======================================================= плотность формулой')
-section = source[start:end]
+section = source[start:]
 tree = ast.parse(section)
 check('section-parses', isinstance(tree, ast.Module))
 # Ни функции ошибок, ни обратной нормальной, ни таблиц z.

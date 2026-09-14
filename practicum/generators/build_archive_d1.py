@@ -168,7 +168,7 @@ you have worked the question, not before.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/statistics to practicum/kit.py
+sys.path.append('..')          # from practicum/statistics to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + factorial, binomial, permutations, ...
 

@@ -80,7 +80,7 @@ md(r"""
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/geometry к practicum/kit.py
+sys.path.append('..')          # из practicum/geometry к practicum/kit/
 import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
 from kit import *              # проверки + sin, cos, pi, sqrt, solve и прочие имена
 

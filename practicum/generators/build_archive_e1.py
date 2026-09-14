@@ -188,7 +188,7 @@ indeterminate form outright.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/calculus to practicum/kit.py
+sys.path.append('..')          # from practicum/calculus to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + Interval, Rational, oo, pi
 

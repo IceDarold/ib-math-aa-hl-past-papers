@@ -1,9 +1,9 @@
 """Сообщения проверок не смешивают языки.
 
-Практикум B2 написан по-английски, а kit.py общий: одна забытая строка —
+Практикум B2 написан по-английски, а kit общий: одна забытая строка —
 и посреди английской работы печатается «не сходится». Проверок две.
 
-Статическая разбирает kit.py через ast и ищет строковые литералы
+Статическая разбирает модули kit через ast и ищет строковые литералы
 с кириллицей, не спрятанные в первый аргумент `_t`. Она полная: видит
 и то, что печатается не напрямую, а через возвращённое поясение.
 
@@ -28,7 +28,7 @@ import kit
 from kit import *                                                    # noqa: F403
 
 # `from kit import *` приносит sympy-шный re (действительная часть) и
-# перекрывает модуль регулярных выражений — про это сказано в самом kit.py.
+# перекрывает модуль регулярных выражений — про это сказано в kit/core.py.
 # Поэтому настоящий re импортируется после звёздочки и под своим именем.
 import re as _re                                                     # noqa: E402
 import itertools                                                     # noqa: E402
@@ -88,14 +88,24 @@ def _from_answer(angle):
 _ANSWER = [2]
 
 CYR = _re.compile('[А-Яа-яЁё]')
-KIT = os.path.join(ROOT, 'practicum', 'kit.py')
+KIT = os.path.join(ROOT, 'practicum', 'kit')
 n = sp.Symbol('n')
 problems = []
 
 
 def static_scan():
-    """Строки с кириллицей вне русской половины `_t`."""
-    tree = ast.parse(io.open(KIT, encoding='utf-8').read())
+    """Строки с кириллицей вне русской половины `_t`: (файл, строка, текст)."""
+    out = []
+    for name in sorted(os.listdir(KIT)):
+        if name.endswith('.py'):
+            path = os.path.join(KIT, name)
+            out += [(f'kit/{name}', line, text)
+                    for line, text in scan_file(io.open(path, encoding='utf-8').read())]
+    return out
+
+
+def scan_file(source):
+    tree = ast.parse(source)
     exempt, docs = set(), set()
     for node in ast.walk(tree):
         if (isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
@@ -869,9 +879,9 @@ def calls():
 
 print('=== статически: строки с кириллицей вне русской половины _t ===')
 leftovers = static_scan()
-for line, text in leftovers:
-    print(f'  kit.py:{line}  {text!r}')
-    problems.append(f'kit.py:{line}')
+for where, line, text in leftovers:
+    print(f'  {where}:{line}  {text!r}')
+    problems.append(f'{where}:{line}')
 print(f'найдено: {len(leftovers)}')
 
 print('\n=== динамически: вывод в режиме en ===')

@@ -103,7 +103,7 @@ November 2025. Каждое задание ниже — настоящий во�
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/geometry к practicum/kit.py
+sys.path.append('..')          # из practicum/geometry к practicum/kit/
 import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
 from kit import *              # проверки + solve_triangle, sqrt, pi
 

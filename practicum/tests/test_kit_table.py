@@ -164,7 +164,10 @@ check('pgf-sum-mean', verify_moment('E(Z)', 1.97, Expect(reds + coinY), given=to
 check('blank-pgf', verify_pgf('пусто', ..., reds, t), False)
 
 print('\n=== формул темы внутри проверки нет ===')
-source = open(os.path.join(ROOT, 'practicum', 'kit.py')).read()
+# Таблица живёт в kit/table.py, а моменты, которыми она пользуется, — в
+# kit/distribution.py рядом с биномиальным распределением.
+source = ''.join(open(os.path.join(ROOT, 'practicum', 'kit', name)).read()
+                 for name in ('distribution.py', 'table.py'))
 tree = ast.parse(source)
 names = {'_Table', '_Series', 'Dist', 'Freq', 'Moments', '_sum_of', 'Geo', 'total_probability',
          'Pgf', 'verify_letters', '_letter_runs', '_system_roots', 'verify_table_range',

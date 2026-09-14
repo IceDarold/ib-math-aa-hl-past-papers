@@ -2,8 +2,8 @@
 """Собирает и публикует Kaggle-версии практикумов.
 
 На Kaggle ноутбук лежит один, соседних файлов рядом нет, поэтому
-`from kit import *` там не работает. Скрипт встраивает kit.py в ячейку
-настройки и кладёт рядом kernel-metadata.json.
+`from kit import *` там не работает. Скрипт склеивает модули пакета kit
+в одну ячейку настройки и кладёт рядом kernel-metadata.json.
 
 Источник правды — practicum/map.yaml: у готового практикума есть поля
 `notebook` и `kaggle`, и публиковать можно по идентификатору, не помня путей.
@@ -25,7 +25,6 @@ username+key в ~/.kaggle/kaggle.json свежий CLI уже не приним�
 import argparse
 import json
 import os
-import re
 import shutil
 import subprocess
 import sys
@@ -55,8 +54,37 @@ def load_map():
     return out
 
 
+def glued_kit():
+    """Пакет kit одним текстом: модули в порядке kit.MODULES, без импортов между ними.
+
+    В одном пространстве имён импорты `from .core import ...` не нужны, а
+    ссылки вперёд между модулями статистики разрешаются сами: имена зовутся
+    только изнутри функций, к моменту вызова все они уже определены. Порядок
+    берётся из __init__.py разбором, без импорта: sympy здесь не нужен.
+    """
+    import ast
+    folder = os.path.join(ROOT, 'practicum/kit')
+    init = ast.parse(open(os.path.join(folder, '__init__.py')).read())
+    order = next([name.id for name in node.value.elts] for node in init.body
+                 if isinstance(node, ast.Assign) and node.targets[0].id == 'MODULES')
+    parts = []
+    for module in order:
+        source = open(os.path.join(folder, module + '.py')).read()
+        lines = source.splitlines(keepends=True)
+        body, drop = ast.parse(source).body, set()
+        for node in body:
+            local = isinstance(node, ast.ImportFrom) and node.level == 1
+            doc = (node is body[0] and isinstance(node, ast.Expr)
+                   and isinstance(node.value, ast.Constant))
+            if local or doc:
+                drop.update(range(node.lineno, node.end_lineno + 1))
+        parts.append(''.join(line for number, line in enumerate(lines, start=1)
+                             if number not in drop).strip('\n') + '\n')
+    return '\n\n'.join(parts)
+
+
 def compact(source):
-    """kit.py без комментариев и docstring-ов — для ячейки Kaggle.
+    """Код kit без комментариев и docstring-ов — для ячейки Kaggle.
 
     Kaggle не принимает ноутбук больше мегабайта, а kit с секцией плотности
     (D6) его перерос. Код не переписывается: удаляются только комментарии, а
@@ -101,9 +129,8 @@ def build(entry, user, out_dir, public=False):
     src = os.path.join(ROOT, entry['notebook'])
     slug = entry['kaggle']
 
-    kit = open(os.path.join(ROOT, 'practicum/kit.py')).read()
-    # docstring модуля не нужен: назначение уже описано в титульной ячейке
-    kit_body = compact(re.sub(r'^""".*?"""\n\n', '', kit, count=1, flags=re.S)).strip()
+    # docstring-и модулей не нужны: назначение уже описано в титульной ячейке
+    kit_body = compact(glued_kit()).strip()
 
     nb = nbformat.read(src, as_version=4)
     setup = next((c for c in nb.cells
@@ -113,8 +140,8 @@ def build(entry, user, out_dir, public=False):
 
     tail = setup.source.split('from kit import', 1)[1].split('\n', 1)[1]
     setup.source = (
-        "# Проверочный набор практикума. В репозитории это отдельный файл practicum/kit.py,\n"
-        "# здесь он встроен, чтобы ноутбук работал на Kaggle самостоятельно.\n"
+        "# Проверочный набор практикума. В репозитории это пакет practicum/kit/,\n"
+        "# здесь его модули склеены, чтобы ноутбук работал на Kaggle самостоятельно.\n"
         f"# Исходник: {REPO_URL}\n\n"
         + kit_body + "\n" + tail.replace("import sympy as sp\n", "", 1)
     )

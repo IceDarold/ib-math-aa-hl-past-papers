@@ -123,6 +123,11 @@ if [[ -n "$previous" && -d "$previous" ]]; then
     *) printf 'Unsafe previous release path.\n' >&2; exit 64 ;;
   esac
   cp -al -- "$previous" "$release"
+  # kit.py разрезан на пакет practicum/kit/. Фильтр rsync старый файл больше
+  # не берёт, а значит, и --delete его не тронет: убираем копию прошлого
+  # релиза здесь, иначе сайт отдавал бы устаревший набор. Жёсткая ссылка —
+  # прошлый релиз не меняется.
+  rm -f -- "$release/practicum/kit.py"
 else
   install -d -m 755 "$release"
 fi
@@ -148,7 +153,7 @@ rsync -rlptzc --delete -e "$rsync_ssh" \
   "$archive/" "$remote:$release/AA_HL/"
 
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
-  --include='*/' --include='*.ipynb' --include='*.pdf' --include='kit.py' \
+  --include='*/' --include='*.ipynb' --include='*.pdf' --include='kit/*.py' \
   --include='aahl/***' --include='map.yaml' \
   --exclude='*' -e "$rsync_ssh" \
   "$practicum/" "$remote:$release/practicum/"
@@ -216,7 +221,9 @@ test -f "$release/practicum/map.yaml"
 test -f "$release/vendor/drill-core/drill/server.py"
 test -f "$release/vendor/ib-physics/bank/2025/bank.json"
 test -f "$release/vendor/ib-physics/bank/2025/atlas.sqlite"
-test -f "$release/practicum/kit.py"
+# Проверочный набор — пакет: тренажёр импортирует его отсюда.
+test -f "$release/practicum/kit/__init__.py"
+test -f "$release/practicum/kit/density.py"
 
 install -d -m 755 "$api_runtime"
 if [[ ! -x "$api_venv/bin/python" ]]; then

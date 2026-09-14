@@ -109,7 +109,7 @@ the $x$-coordinates satisfy $x^2 - 2dx + 9d = 0$» — это четыре ба�
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/functions к practicum/kit.py
+sys.path.append('..')          # из practicum/functions к practicum/kit/
 import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
 from kit import *              # проверки + solveset, Interval, real_roots
 

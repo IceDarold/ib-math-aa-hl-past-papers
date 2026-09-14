@@ -17,7 +17,7 @@
 а после подстановки истинных значений получается то самое число. Без
 первого условия ответ log 24, переписанный сам через себя, проходил бы.
 
-Обе живут в kit.py и проверены в tests/test_kit_model.py.
+Обе живут в kit/functions.py и проверены в tests/test_kit_model.py.
 """
 import json
 import os
@@ -153,7 +153,7 @@ wrapper · 🔴 several techniques, or a whole exam question.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/functions to practicum/kit.py
+sys.path.append('..')          # from practicum/functions to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + Interval, Union, solveset, Rational
 

@@ -5,7 +5,7 @@
 наклон кривой проверка получает **ходьбой по ней**, а не производной.
 Утверждение это легко обронить при правке — одна строка sp.diff, и раздел
 станет обычной сверкой с sympy, ничего внешне не изменив. Поэтому в конце
-файла стоит разбор самого kit.py через ast: в разделе не должно быть ни
+файла стоит разбор kit/tangent.py через ast: в разделе не должно быть ни
 вызова diff, ни Derivative, ни idiff, а sp.solve разрешён ровно там, где
 разбирается прямая из ответа студента.
 
@@ -198,14 +198,12 @@ t('одно значение из двух — неполный ответ',
   not ok and 'таких значений' in message)
 
 print('--- ходьба, а не дифференцирование ---')
-source = open(os.path.join(ROOT, 'practicum/kit.py')).read()
+# Раздел — весь модуль kit/tangent.py: первообразная из E5 живёт в
+# соседнем модуле и сюда не входит.
+source = open(os.path.join(ROOT, 'practicum/kit/tangent.py')).read()
 start = source.index('# ========================================================= '
                      'кривая и прямая')
-# Раздел кончается там, где начинается следующий: после E5 между ним и
-# trigger_check стоит целая глава про первообразную, и она сюда не входит.
-finish = source.index('# ================================================= '
-                      'первообразная и её семья')
-section = source[start:finish]
+section = source[start:]
 tree = ast.parse(section[section.index('def curve('):])
 calls = [node.func for node in ast.walk(tree) if isinstance(node, ast.Call)]
 names = {node.attr for node in calls if isinstance(node, ast.Attribute)}

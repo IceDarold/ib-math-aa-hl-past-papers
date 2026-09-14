@@ -119,7 +119,7 @@ $(ax+1/x^2)^9$ целиком, не ошибается — он просто н�
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/number_algebra к practicum/kit.py
+sys.path.append('..')          # из practicum/number_algebra к practicum/kit/
 import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
 from kit import *              # проверки + binomial, factorial, sqrt, I и прочие имена
 

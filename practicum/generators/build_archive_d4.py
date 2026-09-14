@@ -136,7 +136,7 @@ Solutions are at the very bottom, deliberately far away.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/statistics to practicum/kit.py
+sys.path.append('..')          # from practicum/statistics to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + Dist, Freq, Geo, Moments, P(), Expect, Var, Pgf
 

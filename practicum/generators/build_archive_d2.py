@@ -193,7 +193,7 @@ The other 126 are done on paper.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/statistics to practicum/kit.py
+sys.path.append('..')          # from practicum/statistics to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + Rational, Eq, events, P(...)
 

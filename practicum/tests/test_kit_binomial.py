@@ -190,7 +190,7 @@ t('blank-moment-answer', verify_moment('пустое среднее', ..., Expec
 print('\n=== формул темы внутри проверки нет ===')
 # Смотреть надо на код, а не на текст: в документации np и np(1 − p)
 # как раз названы — там сказано, что проверка их не использует.
-source = open(os.path.join(ROOT, 'practicum', 'kit.py')).read()
+source = open(os.path.join(ROOT, 'practicum', 'kit', 'distribution.py')).read()
 tree = ast.parse(source)
 names = {'_Trials', 'Bin', '_Linear', '_as_linear', '_Draw', '_draw_say',
          '_draw_vars', '_draw_holds', '_draw_blank', '_draw_chance', '_draw_mass',

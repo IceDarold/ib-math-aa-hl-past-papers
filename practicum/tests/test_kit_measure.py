@@ -7,7 +7,7 @@
 полной вариацией положения. Утверждение легко обронить при правке: одна
 строка sp.diff в проверке поверхности, и вместо длины звена появится
 √(1 + (dy/dx)²) — то есть та самая формула, которую ученик и должен был
-применить. Поэтому в конце файла стоит разбор kit.py через ast.
+применить. Поэтому в конце файла стоит разбор kit/integral.py через ast.
 
 Раздел E5 умеет только дифференцировать и не берёт ни одного интеграла.
 Раздел E6 умеет только складывать и не берёт ни одной производной.
@@ -153,11 +153,10 @@ for name, call in (
     t(f'{name}: пустой ответ даёт ⬜', not ok and msg.startswith('⬜'))
 
 print('--- мерить, а не дифференцировать ---')
-source = open(os.path.join(ROOT, 'practicum/kit.py')).read()
+source = open(os.path.join(ROOT, 'practicum/kit/integral.py')).read()
 start = source.index('# ============================================== '
                      'измеренное и его измерение')
-finish = source.index('def trigger_check(answers, key):')
-section = source[start:finish]
+section = source[start:]
 tree = ast.parse(section[section.index('def _pace('):])
 calls = [node.func for node in ast.walk(tree) if isinstance(node, ast.Call)]
 names = {node.attr for node in calls if isinstance(node, ast.Attribute)}

@@ -146,7 +146,7 @@ Solutions are at the very bottom, deliberately far away.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/number_algebra to practicum/kit.py
+sys.path.append('..')          # from practicum/number_algebra to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + geometric, term, total, infinite, ...
 

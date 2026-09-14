@@ -146,7 +146,7 @@ has to be faked, and $k=0.713250$ to six significant figures.
 
 **How the checks work here.** Six are new, and all six rest on one thing:
 **the checks never integrate.** There is not one call to `integrate` inside
-this part of `kit.py`, by sympy or by hand — a test proves it by reading the
+`kit/integral.py`, by sympy or by hand — a test proves it by reading the
 source. The checks can *recognise* an antiderivative; they cannot produce one.
 
 | check | what it does to your answer |
@@ -178,7 +178,7 @@ topic and the one your own differentiation would have caught.
 
 code(r"""
 import sys
-sys.path.append('..')          # from practicum/calculus to practicum/kit.py
+sys.path.append('..')          # from practicum/calculus to practicum/kit/
 import sympy as sp             # the escape hatch: anything not in kit is in sp
 from kit import *              # checks + Rational, sqrt, pi, E, log, Eq
 
