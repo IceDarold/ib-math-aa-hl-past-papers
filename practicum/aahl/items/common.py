@@ -436,6 +436,42 @@ def trials_check(p, rel, k, holds=None, near=None):
     return spec
 
 
+def table_check(what, tables, target=None, unknowns=(), conditions=(), letters=None,
+                a=1, b=0, var=None, geo=None, whole=False):
+    """Вопрос о дискретной величине, заданной таблицей, D4.
+
+    tables — словарь «имя → (таблица, частоты ли)», таблица — «значение →
+    вероятность», буквы внутри разрешены. what — что спрашивают: 'letters'
+    (буквы unknowns), 'mean' и 'var' (от aX + b величины target), 'range'
+    (диапазон буквы var), 'mode', 'pgf'. conditions — пары вида
+    ('mean', имя, число), ('var', имя, число), ('size', имя, число).
+    letters — допущения о буквах: {'f': {'integer': True, 'nonnegative': True}}.
+    geo — p для величины «первый успех»: тогда таблиц нет, target = 'X'.
+
+    Эталона в описании нет: страница пересобирает Dist, Freq, Geo и зовёт
+    те же verify_letters, verify_moment, verify_table_range, verify_mode и
+    verify_pgf, что стоят в ноутбуке.
+    """
+    packed = {}
+    for name, (table, counts) in tables.items():
+        packed[name] = {'counts': bool(counts),
+                        'cells': [[sp.srepr(sp.sympify(value)), sp.srepr(sp.sympify(chance))]
+                                  for value, chance in table.items()]}
+    spec = {'kind': 'table', 'what': what, 'tables': packed,
+            'target': target, 'unknowns': [str(u) for u in unknowns],
+            'conditions': [[kind, name, sp.srepr(sp.sympify(value))]
+                           for kind, name, value in conditions],
+            'letters': {str(k): dict(v) for k, v in (letters or {}).items()},
+            'a': sp.srepr(sp.sympify(a)), 'b': sp.srepr(sp.sympify(b))}
+    if var is not None:
+        spec['var'] = str(var)
+    if geo is not None:
+        spec['geo'] = sp.srepr(sp.sympify(geo))
+    if whole:
+        spec['whole'] = True
+    return spec
+
+
 def indeterminate_check(num, den, var='x', point=0, side=None, params=None):
     """Ответ — сама неопределённость: '0/0' или 'oo/oo', проверяется порознь."""
     spec = {'kind': 'indeterminate', 'num': sp.srepr(sp.sympify(num)),

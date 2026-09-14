@@ -697,7 +697,7 @@ sections:
           а остальные 55 стоят за решение о том, что считать.
       - id: D2
         title: "Вероятность: события, условная, независимость, деревья"
-        subtopics: [{topic: statistics.probability, share: 0.658}]
+        subtopics: [{topic: statistics.probability, share: 0.675}]
         status: ready
         notebook: practicum/statistics/practicum-d2-probability.ipynb
         kaggle: ib-math-praktikum-d2-probability
@@ -708,8 +708,10 @@ sections:
           Первый практикум секции D и первый по статистике вообще.
           Тема statistics.probability — 77 блоков и 237 баллов; D2 берёт
           50 блоков и 156 баллов, то есть всё, где ответ получают из
-          устройства вероятностного пространства. Доля 0.658 — это те
-          самые 156 из 237, а не подобранное число.
+          устройства вероятностного пространства. Доля была 0.658 — те
+          самые 156 из 237; при сборке D4 она стала 0.675, 160 из 237:
+          в неё вошли 4 балла ноябрьского дубля 2023 года (TZ2 P1 Q2),
+          как дубль входит в доли всех остальных практикумов.
 
           Тринадцатое понятие равенства ответов, и первое, где ответ —
           просто число от нуля до единицы. Сверять его с эталоном значило
@@ -732,7 +734,8 @@ sections:
       - id: D3
         title: Биномиальное распределение
         subtopics: [{topic: statistics.probability, share: 0.152},
-                    {topic: statistics.discrete_random_variables, share: 0.393}]
+                    {topic: statistics.discrete_random_variables, share: 0.393},
+                    {topic: statistics.expected_value, share: 0.033}]
         status: ready
         notebook: practicum/statistics/practicum-d3-binomial.ipynb
         kaggle: ib-math-praktikum-d3-binomial
@@ -765,28 +768,62 @@ sections:
           остальные 45 баллов переданы D4 и ждут разбора там.
       - id: D4
         title: Дискретные случайные величины и математическое ожидание
-        subtopics: [{topic: statistics.discrete_random_variables, share: 0.607},
-                    statistics.expected_value,
-                    {topic: statistics.probability, share: 0.190}]
-        revisit: >
-          Доля statistics.probability 0.190 — это 45 баллов, которые не
-          взяли ни D2, ни D3, и принадлежат они D4 лишь частично. Сюда по
-          делу 11 баллов производящей функции (май 2025 TZ1 P3). Остальное:
-          7 баллов нормального распределения (D5), 11 плотности (D6),
-          4 ноябрьского дубля 2023 года, 12 описательной статистики, которой
-          в карте нет (см. corpus_issues D2), и 4 балла «доли времени» в
-          тригонометрической модели (май 2023 TZ2 Q10(e)). Разнести при
-          сборке D4, D5 и D6 — пока доля стоит здесь, чтобы доли темы
-          складывались в единицу.
+        subtopics: [{topic: statistics.discrete_random_variables, share: 0.562},
+                    {topic: statistics.expected_value, share: 0.800},
+                    {topic: statistics.probability, share: 0.046}]
+        status: ready
+        notebook: practicum/statistics/practicum-d4-discrete.ipynb
+        kaggle: ib-math-praktikum-d4-discrete
+        archive: practicum/statistics/archive-d4-discrete.ipynb
+        kaggle_archive: ib-math-archive-d4-discrete
+        skills: practicum/skills/statistics-discrete.yaml
+        note: >
+          Собран из трёх тем: 50 баллов statistics.discrete_random_variables
+          (0.562 — 50 из 89), 48 statistics.expected_value (0.800 — 48 из 60)
+          и 11 производящей функции из statistics.probability (0.046 — 11
+          из 237). 109 баллов по корпусу, 104 рабочих: пять — ноябрьский
+          дубль 2023 года. Первая тема статистики, стоящая на трёх бумагах
+          почти поровну: 41 балл Paper 1, 30 Paper 2, 33 Paper 3.
+
+          Двадцать первое понятие равенства ответов: таблица сама себе
+          условие. Буквы таблицы проверка находит сама из её собственных
+          правил (клетки в [0, 1], сумма единица) и условий вопроса, а корень,
+          при котором клетка уходит в минус, отбрасывает с именем клетки.
+          Среднее, дисперсия, мода и производящая функция складываются по
+          той же таблице; у геометрического распределения ряд складывает
+          sympy.
+
+          Revisit прежней карты закрыт. Доля 0.190 от statistics.probability
+          была остатком после D2 и D3 — 45 баллов. Из них D4 взял 11;
+          остальное разнесено: 4 балла ноябрьского дубля — D2, 4 балла
+          нормального распределения ноября 2023 — D5, 10 баллов плотности
+          и 4 доли времени в синусоидальной модели — D6, 12 описательной
+          статистики — D7. Заодно разнесены statistics.expected_value (10 баллов
+          плотности — D6, 2 — дисперсия биномиальной величины D3) и 4 балла
+          описательной статистики из discrete_random_variables — D7.
       - id: D5
         title: Нормальное распределение и обратная задача
-        subtopics: [{topic: statistics.continuous_random_variables, share: 0.55}]
+        subtopics: [{topic: statistics.continuous_random_variables, share: 0.55},
+                    {topic: statistics.probability, share: 0.017}]
       - id: D6
         title: "Непрерывные СВ: плотность, медиана, квантили"
-        subtopics: [{topic: statistics.continuous_random_variables, share: 0.45}]
+        subtopics: [{topic: statistics.continuous_random_variables, share: 0.45},
+                    {topic: statistics.expected_value, share: 0.167},
+                    {topic: statistics.probability, share: 0.059}]
       - id: D7
         title: Регрессия и корреляция
-        subtopics: [statistics.regression]
+        subtopics: [statistics.regression,
+                    {topic: statistics.probability, share: 0.051},
+                    {topic: statistics.discrete_random_variables, share: 0.045}]
+        revisit: >
+          Доли statistics.probability 0.051 и discrete_random_variables 0.045 —
+          16 баллов описательной статистики, которой в карте нет (см.
+          corpus_issues D2 и D4): ящик с усами мая 2021 TZ1 Q3, среднее
+          и размах ноября 2025 TZ3 Q2, способ отбора мая 2025 TZ3 Q3(c),
+          медиана и стандартное отклонение таблицы частот мая 2022 TZ1 Q1.
+          Приписаны сюда, чтобы доли тем складывались в единицу; при сборке
+          D7 решить, становится ли описательная статистика приёмом или D7
+          переименовывается.
 
   E:
     title: Calculus

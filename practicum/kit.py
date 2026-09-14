@@ -8227,15 +8227,83 @@ def _draw_agree(got, want):
     return sig(left, 3) == sig(right, 3)
 
 
-class _Trials:
+class _Variable:
+    """Случайная величина: набор значений и вероятность каждого.
+
+    Общее у биномиальной модели D3 и таблицы D4. Сравнения возвращают
+    события: `X >= 1`, `X == 5`, `X < Y`. Это не булевы значения, а
+    множества значений, и `P(...)` их складывает. Арифметика с числом даёт
+    aX + b, от которого берут среднее и дисперсию; сумма двух величин —
+    новая величина, сложенная по парам значений.
+
+    Осторожно: `==` здесь событие, а не сравнение объектов, поэтому
+    величины сравнивают только через `is`.
+    """
+
+    name = 'X'
+    inner = None
+    p = None
+
+    __hash__ = object.__hash__
+
+    def _compare(self, rel, k):
+        if not (k is Ellipsis or isinstance(k, _Variable)):
+            k = sp.sympify(k)
+        return _Draw(('leaf', self, rel, k))
+
+    def __eq__(self, k):
+        return self._compare('==', k)
+
+    def __ne__(self, k):
+        return ~self._compare('==', k)
+
+    def __lt__(self, k):
+        return self._compare('<', k)
+
+    def __le__(self, k):
+        return self._compare('<=', k)
+
+    def __gt__(self, k):
+        return self._compare('>', k)
+
+    def __ge__(self, k):
+        return self._compare('>=', k)
+
+    def __mul__(self, a):
+        return _Linear(self, a, 0)
+
+    __rmul__ = __mul__
+
+    def __truediv__(self, a):
+        return _Linear(self, 1 / sp.sympify(a), 0)
+
+    def __add__(self, b):
+        if isinstance(b, _Variable):
+            return _sum_of(self, b)
+        return _Linear(self, 1, b)
+
+    __radd__ = __add__
+
+    def __sub__(self, b):
+        return _Linear(self, 1, -sp.sympify(b))
+
+    def __rsub__(self, b):
+        return _Linear(self, -1, b)
+
+    def __neg__(self):
+        return _Linear(self, -1, 0)
+
+    def rules(self):
+        """Что обязано выполняться, чтобы величина была величиной."""
+        return []
+
+
+class _Trials(_Variable):
     """X ~ B(n, p): n независимых испытаний с вероятностью успеха p.
 
     Хранит только n, p и имя. Вероятность одного значения — `chance` —
     единственное место секции, где p возводится в степень: это само
     определение распределения, а не формула для ответа.
-
-    Сравнения возвращают события: `X >= 1`, `X == 5`, `X < 49`. Это не
-    булевы значения, а множества значений X, и `P(...)` их складывает.
     """
 
     def __init__(self, n, p, name='X'):
@@ -8270,45 +8338,8 @@ class _Trials:
         p = self.p if p is None else p
         return binomial(self.n, k) * p ** k * (1 - p) ** (self.n - k)
 
-    def _compare(self, rel, k):
-        return _Draw(('leaf', self, rel, k if k is Ellipsis else sp.sympify(k)))
-
-    def __eq__(self, k):
-        return self._compare('==', k)
-
-    def __ne__(self, k):
-        return ~self._compare('==', k)
-
-    def __lt__(self, k):
-        return self._compare('<', k)
-
-    def __le__(self, k):
-        return self._compare('<=', k)
-
-    def __gt__(self, k):
-        return self._compare('>', k)
-
-    def __ge__(self, k):
-        return self._compare('>=', k)
-
-    def __mul__(self, a):
-        return _Linear(self, a, 0)
-
-    __rmul__ = __mul__
-
-    def __add__(self, b):
-        return _Linear(self, 1, b)
-
-    __radd__ = __add__
-
-    def __sub__(self, b):
-        return _Linear(self, 1, -sp.sympify(b))
-
-    def __rsub__(self, b):
-        return _Linear(self, -1, b)
-
-    def __neg__(self):
-        return _Linear(self, -1, 0)
+    def rules(self):
+        return [(_t('вероятность успеха', 'the probability of success'), self.p, 'prob')]
 
     def __repr__(self):
         shown = f"{float(self.p):.10g}" if getattr(self.p, 'is_Float', False) else self.p
@@ -8336,7 +8367,14 @@ class _Linear:
 
     __rmul__ = __mul__
 
+    def __truediv__(self, c):
+        return self * (1 / sp.sympify(c))
+
     def __add__(self, c):
+        if isinstance(c, (_Variable, _Linear)):
+            raise TypeError(_t('aX + bY складывается из двух величин: сначала X + Y, '
+                               'потом множитель',
+                               'aX + bY is built from two variables: form X + Y first'))
         return _Linear(self.var, self.a, self.b + sp.sympify(c))
 
     __radd__ = __add__
@@ -8352,6 +8390,8 @@ class _Linear:
 
     def __repr__(self):
         name = self.var.name
+        if not (self.a.is_number and self.b.is_number):
+            return f"{self.b} + ({self.a})*{name}" if self.b != 0 else f"({self.a})*{name}"
         size = abs(self.a)
         head = name if size == 1 else f"{size}{name}"
         if self.b == 0:
@@ -8360,7 +8400,7 @@ class _Linear:
 
 
 def _as_linear(item):
-    if isinstance(item, _Trials):
+    if isinstance(item, _Variable):
         return _Linear(item, 1, 0)
     return item
 
@@ -8400,7 +8440,8 @@ class _Draw:
 def _draw_say(node):
     kind = node[0]
     if kind == 'leaf':
-        return f"{node[1].name} {_DRAW_SAY[node[2]]} {node[3]}"
+        other = node[3].name if isinstance(node[3], _Variable) else node[3]
+        return f"{node[1].name} {_DRAW_SAY[node[2]]} {other}"
     if kind == 'not':
         return _t(f"не ({_draw_say(node[1])})", f"not ({_draw_say(node[1])})")
     word = {'and': _t('и', 'and'), 'or': _t('или', 'or'),
@@ -8414,8 +8455,9 @@ def _draw_vars(node, out=None):
     """Величины события в порядке появления, каждая один раз."""
     out = [] if out is None else out
     if node[0] == 'leaf':
-        if not any(node[1] is seen for seen in out):
-            out.append(node[1])
+        for var in (node[1], node[3]):
+            if isinstance(var, _Variable) and not any(var is seen for seen in out):
+                out.append(var)
     else:
         for child in node[1:]:
             _draw_vars(child, out)
@@ -8428,6 +8470,8 @@ def _draw_holds(node, values):
     if kind == 'leaf':
         _, var, rel, k = node
         here = values[id(var)]
+        if isinstance(k, _Variable):
+            k = values[id(k)]
         return {'==': here == k, '<': here < k, '<=': here <= k,
                 '>': here > k, '>=': here >= k}[rel]
     if kind == 'not':
@@ -8443,7 +8487,13 @@ def _draw_blank(node):
 
 
 def _draw_chance(var, p_mode):
-    """Вероятность успеха, какой её взяли: как есть, перепутанной или округлённой."""
+    """Вероятность успеха, какой её взяли: как есть, перепутанной или округлённой.
+
+    У таблицы вероятности успеха нет — у неё своя вероятность каждого
+    значения, и промахи с p к ней неприменимы.
+    """
+    if not isinstance(var, _Trials):
+        return None
     if p_mode == 'swap':
         return 1 - var.p
     if p_mode == 'round' and var.p.is_number:
@@ -8488,6 +8538,12 @@ def _draw_prob(event, given=None):
     nodes = [event.node] + ([] if given is None else [given.node])
     if any(_draw_blank(node) for node in nodes):
         return Ellipsis
+    for node in nodes:
+        for var in _draw_vars(node):
+            if getattr(var, 'stand_in', None) is not None:
+                raise ValueError(_t(
+                    f"о {var.name} известны только E и Var — вероятностей событий по ним не посчитать",
+                    f"only E and Var of {var.name} are known — they do not give probabilities of events"))
     if given is None:
         return _Prob(_draw_mass(event.node), 'plain', (event,), f"P({event})")
     base = _draw_mass(given.node)
@@ -8530,6 +8586,11 @@ def _boundary_words(leaf, moved):
     """Как назвать сдвинутую границу: какое сравнение и что с ним стало."""
     _, var, rel, k = leaf
     was, now = _draw_say(leaf), _draw_say(moved)
+    if isinstance(k, _Variable):
+        return _t(f"«{was}» и «{now}» различаются ничьими: равные значения "
+                  f"посчитаны не с той стороны",
+                  f"«{was}» and «{now}» differ by the ties: equal values "
+                  f"are on the wrong side")
     if rel == '==':
         return _t(f"это P({now}): накопленная вероятность вместо вероятности "
                   f"одного значения — cdf там, где нужен pdf",
@@ -8598,7 +8659,7 @@ def _draw_slips(find):
         slips[_t("это вероятность противоположного события",
                  "that is the probability of the opposite event")] = 1 - want
         variables = _draw_vars(target)
-        if len(variables) == 1:
+        if len(variables) == 1 and isinstance(variables[0], _Trials):
             slips[_t("это вероятность одного испытания, а не события над всеми n",
                      "that is the probability for a single trial, not for the "
                      "event about all n of them")] = variables[0].p
@@ -8612,9 +8673,10 @@ def _draw_slips(find):
                  "from the inner model")] = \
             _draw_value(kind, target, condition, 'inner')
 
-    slips[_t("успех и неудача перепутаны: посчитано с 1 − p вместо p",
-             "success and failure are swapped: this uses 1 − p instead of p")] = \
-        _draw_value(kind, target, condition, 'swap')
+    if any(isinstance(var, _Trials) for var in _draw_vars(target)):
+        slips[_t("успех и неудача перепутаны: посчитано с 1 − p вместо p",
+                 "success and failure are swapped: this uses 1 − p instead of p")] = \
+            _draw_value(kind, target, condition, 'swap')
     return {what: value for what, value in slips.items()
             if value is not None and not _draw_agree(value, want)}
 
@@ -8658,8 +8720,8 @@ def verify_binomial(label, got, find):
         return False
     if not isinstance(find, _Prob) or not isinstance(find.args[0], _Draw):
         print(f"{NO} {label}: " + _t(
-            "нечего искать: событие строится из Bin(...)",
-            "nothing to find: the event is built from Bin(...)"))
+            "нечего искать: событие строится из величин — Bin(...), Dist(...)",
+            "nothing to find: the event is built from variables — Bin(...), Dist(...)"))
         return False
     value = _chance_answer(label, got)
     if value is None:
@@ -8698,7 +8760,12 @@ def verify_binomial(label, got, find):
 def _moment(kind, linear, p_mode=None):
     """Среднее или дисперсия aX + b — сложением по значениям X."""
     var, a, b = linear.var, linear.a, linear.b
+    if isinstance(var, _Series):
+        return var.moment(kind, a, b)          # значений бесконечно много, D4
     p = _draw_chance(var, p_mode)
+    if kind == 'square':                       # E((aX + b)²), для разбора промаха
+        return sp.expand(sp.Add(*[(a * k + b) ** 2 * var.chance(k, p)
+                                  for k in var.values()]))
     mean = sp.expand(sp.Add(*[(a * k + b) * var.chance(k, p) for k in var.values()]))
     if kind == 'mean':
         return mean
@@ -8806,18 +8873,36 @@ def verify_parameter(label, got, condition, var):
     return True
 
 
-def verify_moment(label, got, what, given=None, var=None):
+def verify_moment(label, got, what, given=None, var=None, tables=()):
     """Ответ — E(aX + b) или Var(aX + b).
 
     Среднее проверка получает сложением k·P(X = k), дисперсию — сложением
     квадратов отклонений; ни np, ни np(1 − p), ни a²Var(X) внутри нет.
 
-    `given` и `var` — когда p в вопросе не дано, а задано условием: тогда
-    проверка сама находит все допустимые p и требует, чтобы ответ годился
-    при каждом. Так Var(1 − 2X) проверяется, даже если p найдено неверно.
+    `given` и `var` — когда буква в вопросе не дана, а задана условием:
+    тогда проверка сама находит все допустимые значения и требует, чтобы
+    ответ годился при каждом. Так Var(1 − 2X) проверяется, даже если p
+    найдено неверно. У таблицы с буквами условие «вероятности складываются
+    в единицу» добавляется само, и `given` бывает пустым списком.
+
+    Ответ, посчитанный от буквы, округлённой по дороге до трёх значащих
+    цифр или до целого, принимается с замечанием: схемы оценивания так и
+    делают («accept 3.80 from their 3sf answer», «accept 362 to 370»).
+
+    `tables` — другие таблицы, чьи буквы входят в условие: у P(X < Y) = 1/2
+    складываться в единицу обязаны обе.
+
+    Если в `what` осталась буква, которую никто не задавал, ответ — не
+    число, а выражение от неё: «write down E(X) in terms of p». Тогда оно
+    сверяется в нескольких значениях буквы.
     """
     if _blank(label, got, what):
         return False
+    kind, linear = what.kind, what.args[0]
+    unknowns = _as_unknowns(var)
+    loose = sp.sympify(what).free_symbols - set(unknowns)
+    if given is None and loose:
+        return _moment_expression(label, got, what, sorted(loose, key=str))
     try:
         value = sp.sympify(got)
     except (sp.SympifyError, TypeError, AttributeError):
@@ -8825,42 +8910,62 @@ def verify_moment(label, got, what, given=None, var=None):
     if value is None or getattr(value, 'free_symbols', set()) or not value.is_number:
         print(f"{NO} {label}: " + _t("ответ это число", "the answer is a number"))
         return False
-    kind, linear = what.kind, what.args[0]
     if kind == 'var' and float(value) < 0:
         print(f"{NO} {label}: " + _t("дисперсия не бывает отрицательной",
                                      "a variance is never negative"))
         return False
-    runs = [{}] if given is None else [{var: root} for root in _draw_roots(given, var)]
+    if given is None:
+        runs = [{}]
+    else:
+        runs, _ = _letter_runs(_as_conditions(given), unknowns,
+                               [linear.var] + list(tables))
+        runs = runs or []
     if not runs:
-        print(f"{NO} {label}: " + _t("условию не отвечает ни одно p",
-                                     "no p satisfies the condition"))
+        names = ', '.join(str(u) for u in unknowns)
+        print(f"{NO} {label}: " + _t(f"условию не отвечает ни одно {names}",
+                                     f"no {names} satisfies the condition"))
         return False
+    trials = isinstance(linear.var, _Trials)
     for run in runs:
         want = sp.sympify(what).subs(run)
         if _draw_agree(value, want):
             continue
-        if kind == 'mean' and value.is_integer and value == round(float(want)):
-            print(f"{NO} {label}: " + _t(
-                "ожидаемое число округлено до целого, а оно не обязано быть "
-                "целым: это среднее, а не число, которое случится",
-                "the expected number has been rounded to a whole number, and it "
-                "does not have to be one: it is a mean, not a count that will "
-                "happen"))
-            return False
+        for rounded, how in _rounded_runs(run):
+            near = sp.sympify(what).subs(rounded)
+            if not _draw_agree(near, want) and _draw_agree(value, near):
+                print(f"{OK} {label}: " + _t(
+                    f"сходится с {how}, округлённым по дороге. Схема оценивания "
+                    f"такое принимает, но промежуточное значение лучше держать "
+                    f"полностью",
+                    f"this matches {how} rounded on the way. The markscheme "
+                    f"accepts it, but carry the full value next time"))
+                return True
         plain = _Linear(linear.var, 1, 0)
         mean_x = _moment('mean', plain).subs(run)
         spread_x = _moment('var', plain).subs(run)
         slips = {}
         if kind == 'mean':
-            slips[_t("это ожидаемое число неудач: успех и неудача перепутаны",
-                     "that is the expected number of failures: success and "
-                     "failure are swapped")] = \
-                _moment('mean', linear, 'swap').subs(run)
-            slips[_t("это вероятность одного испытания, а не ожидаемое число",
-                     "that is the probability for one trial, not the expected "
-                     "number")] = linear.var.p.subs(run)
+            if trials:
+                slips[_t("это ожидаемое число неудач: успех и неудача перепутаны",
+                         "that is the expected number of failures: success and "
+                         "failure are swapped")] = \
+                    _moment('mean', linear, 'swap').subs(run)
+                slips[_t("это вероятность одного испытания, а не ожидаемое число",
+                         "that is the probability for one trial, not the expected "
+                         "number")] = linear.var.p.subs(run)
             slips[_t("постоянная потеряна", "the constant is lost")] = \
                 linear.a * mean_x
+            if isinstance(linear.var, _Table):
+                listed = list(linear.var.values())
+                slips[_t("это среднее значений без весов: каждое значение "
+                         "умножают на его вероятность",
+                         "that is the average of the values with no weights: each "
+                         "value is multiplied by its own probability")] = \
+                    sp.Add(*[linear.a * v + linear.b for v in listed]).subs(run) / len(listed)
+            if linear.a != 1 or linear.b != 0:
+                slips[_t(f"это E({linear.var.name}), а спрашивали E({linear})",
+                         f"that is E({linear.var.name}), and the question asks for "
+                         f"E({linear})")] = mean_x
         else:
             slips[_t("это среднее, а не дисперсия",
                      "that is the mean, not the variance")] = \
@@ -8874,10 +8979,30 @@ def verify_moment(label, got, what, given=None, var=None):
             slips[_t("постоянная в дисперсию не входит: сдвиг не меняет разброса",
                      "a constant does not enter a variance: shifting does not "
                      "change the spread")] = linear.a * linear.a * spread_x + linear.b
+            if not isinstance(linear.var, _Trials):
+                square = _moment('square', linear).subs(run)
+                slips[_t(f"это E({linear.var.name}²): квадрат среднего ещё не вычтен",
+                         f"that is E({linear.var.name}²): the square of the mean has "
+                         f"not been subtracted yet")] = _moment('square', plain).subs(run)
+                mean_y = _moment('mean', linear).subs(run)
+                slips[_t(f"это E(({linear})²): квадрат среднего ещё не вычтен",
+                         f"that is E(({linear})²): the square of the mean has not "
+                         f"been subtracted yet")] = square
+                slips[_t("вычтено среднее, а не его квадрат",
+                         "the mean was subtracted, not its square")] = square - mean_y
         for what_word, slip in slips.items():
+            slip = sp.sympify(slip).subs(run)
             if not _draw_agree(slip, want) and _draw_agree(value, slip):
                 print(f"{NO} {label}: {what_word}")
                 return False
+        if kind == 'mean' and value.is_integer and value == round(float(want)):
+            print(f"{NO} {label}: " + _t(
+                "ожидаемое число округлено до целого, а оно не обязано быть "
+                "целым: это среднее, а не число, которое случится",
+                "the expected number has been rounded to a whole number, and it "
+                "does not have to be one: it is a mean, not a count that will "
+                "happen"))
+            return False
         print(f"{NO} {label}: " + _t("у этого распределения выходит другое",
                                      "this distribution gives something else"))
         return False
@@ -8956,6 +9081,871 @@ def verify_trials(label, got, family, holds=None, near=None, limit=_DRAW_LIMIT):
             f"при n = {got_n} вероятность {sig(here, 3)}, а не {near}",
             f"at n = {got_n} the probability is {sig(here, 3)}, not {near}"))
     return False
+
+
+# ================================================== таблица распределения
+# Двадцать первое понятие равенства ответов: таблица сама себе условие.
+#
+# В D3 распределение задавала модель, и проверка знала P(X = k) по формуле.
+# В D4 его задаёт таблица, и в таблице стоят буквы. Проверке не нужен
+# эталон: у таблицы есть два собственных правила — каждая вероятность лежит
+# в [0, 1], и все вместе они дают единицу, — и вопрос добавляет к ним своё
+# (E(X) = 2,3, P(X < Y) = 1/2). Буквы — это решения этих условий, найденные
+# самой проверкой, а корень, при котором клетка таблицы уходит в минус,
+# решением не считается, и проверка говорит, какая клетка.
+#
+# Всё остальное снова складывается по значениям: среднее, дисперсия, мода,
+# вероятность события. У геометрического распределения значений бесконечно
+# много, и сумму ряда складывает sympy — 1/p внутри не написано. Производящая
+# функция — та же таблица, записанная многочленом, и сверяется она
+# коэффициент за коэффициентом.
+#
+# Величина, о которой известны только E(T) и Var(T), заменяется таблицей
+# из двух равновероятных значений μ ± σ. Среднее и дисперсия aT + b
+# зависят только от E(T) и Var(T), так что любая таблица с теми же двумя
+# числами даёт тот же ответ, а сложение по значениям остаётся сложением.
+
+_LETTER_TOL = 1e-9
+
+from mpmath.libmp.libhyper import NoConvergence as mpmath_NoConvergence   # noqa: E402
+
+
+class _Table(_Variable):
+    """Величина, заданная таблицей: значение → вероятность (или частота).
+
+    Вероятности и значения могут содержать буквы. Десятичные дроби
+    переводятся в точные: 0,41 — это 41/100, и сумма таблицы тогда
+    проверяется точно, а не с допуском.
+    """
+
+    def __init__(self, table, name='X', counts=False, parts=(), stand_in=None):
+        self.name = name
+        self.counts = counts
+        self.parts = tuple(parts)
+        self.stand_in = stand_in
+        self.shown = dict(table)
+        self._blank = any(key is Ellipsis or value is Ellipsis
+                          for key, value in table.items())
+        if self._blank:
+            self.table, self.size = {}, None
+            return
+        merged = {}
+        for key, value in table.items():
+            key = _exact(key)
+            value = _exact(value)
+            for seen in merged:
+                if sp.simplify(seen - key) == 0:
+                    merged[seen] = merged[seen] + value
+                    break
+            else:
+                merged[key] = value
+        self.weights = merged
+        if counts:
+            self.size = sp.Add(*merged.values())
+            self.table = {key: value / self.size for key, value in merged.items()}
+        else:
+            self.size = None
+            self.table = merged
+
+    def blank(self):
+        return self._blank or any(part.blank() for part in self.parts)
+
+    def values(self):
+        keys = list(self.table)
+        if all(key.is_number for key in keys):
+            keys.sort(key=float)
+        return keys
+
+    def chance(self, k, p=None):
+        """P(X = k) — то, что стоит в клетке таблицы."""
+        for key, value in self.table.items():
+            if key is k or sp.simplify(key - k) == 0:
+                return value
+        return sp.Integer(0)
+
+    def rules(self):
+        if self.parts:
+            return [rule for part in self.parts for rule in part.rules()]
+        if self.counts:
+            return [(_t(f"частота значения {key}", f"the frequency of {key}"), value, 'count')
+                    for key, value in self.weights.items()]
+        return [(f"P({self.name} = {key})", value, 'prob')
+                for key, value in self.table.items()]
+
+    def __repr__(self):
+        if self.stand_in is not None:
+            mean, spread = self.stand_in
+            return f"{self.name}: E({self.name}) = {mean}, Var({self.name}) = {spread}"
+        cells = ', '.join(f"{key}: {value}" for key, value in self.shown.items())
+        return f"{self.name} ~ {{{cells}}}"
+
+
+def _exact(value):
+    """Десятичную дробь — в точную, буквы оставить буквами."""
+    value = sp.sympify(value)
+    if value.has(sp.Float):
+        value = sp.nsimplify(value, rational=True)
+    return value
+
+
+def Dist(table, name='X', rule=None):
+    """Дискретная величина по таблице: `Dist({0: 0.41, 1: k - 0.28, ...})`.
+
+    Таблицу можно не выписывать, а получить из опыта: `rule` переводит
+    исход в значение, и вероятности исходов с одним значением складываются.
+    Два кубика и их максимум — `Dist(dice, rule=max, name='M')`, где
+    `dice` — словарь «пара очков → 1/16».
+
+    `Dist(X + Y, name='Z')` — просто даёт сумме имя.
+    """
+    if isinstance(table, _Table):
+        return _Table(table.shown, name, table.counts, table.parts, table.stand_in)
+    if rule is not None:
+        gathered = {}
+        for outcome, weight in table.items():
+            value = sp.sympify(rule(outcome))
+            gathered[value] = gathered.get(value, 0) + sp.sympify(weight)
+        table = gathered
+    return _Table(table, name)
+
+
+def Freq(table, name='X'):
+    """Таблица частот как распределение: `Freq({0: 6, 1: 16, 2: 13})`.
+
+    Вероятность значения — его доля, f/Σf. Среднее и дисперсия таблицы
+    частот и есть E и Var этого распределения; дисперсия делится на Σf,
+    а не на Σf − 1, как и в IB. `X.size` — сколько всего наблюдений.
+    """
+    return _Table(table, name, counts=True)
+
+
+def Moments(mean, variance, name='T'):
+    """Величина, о которой известны только E и Var: `Moments(4.723, 0.906)`.
+
+    Внутри — два равновероятных значения μ ± σ. Этого достаточно для
+    среднего и дисперсии любого aT + b, и ничего другого у такой величины
+    не спрашивают: P(T < 3) по ней не посчитать, и проверка это запрещает.
+    """
+    if blank(mean, variance):
+        return _Table({...: ...}, name)
+    centre, spread = _exact(mean), _exact(variance)
+    step = sp.sqrt(spread)
+    half = sp.Rational(1, 2)
+    return _Table({centre - step: half, centre + step: half}, name,
+                  stand_in=(mean, variance))
+
+
+def _sum_of(first, second):
+    """X + Y для независимых X и Y: по парам значений, с произведением вероятностей."""
+    for var in (first, second):
+        if isinstance(var, _Series):
+            raise TypeError(_t('сумма с величиной без последнего значения здесь не складывается',
+                               'a sum with a variable that has no last value is not added up here'))
+    if first.blank() or second.blank():
+        return _Table({...: ...}, f"{first.name} + {second.name}")
+    table = {}
+    for one in first.values():
+        for two in second.values():
+            key = sp.sympify(one + two)
+            table[key] = table.get(key, 0) + first.chance(one) * second.chance(two)
+    return _Table(table, f"{first.name} + {second.name}", parts=(first, second))
+
+
+class _Series(_Variable):
+    """X ~ Geo(p): номер испытания, на котором случился первый успех.
+
+    Значений бесконечно много, поэтому среднее и дисперсию нельзя сложить
+    циклом — их складывает sympy как ряд Σ x·P(X = x). Ответ ряда верен
+    при 0 < p < 1, и берётся именно эта ветвь.
+    """
+
+    def __init__(self, p, name='X'):
+        self.name = name
+        self.p = p if p is Ellipsis else _exact(p)
+        self._sums = {}
+
+    def blank(self):
+        return self.p is Ellipsis
+
+    def values(self):
+        raise TypeError(_t('у этой величины значений бесконечно много: событие над '
+                           'ней здесь не складывается',
+                           'this variable has infinitely many values: an event about '
+                           'it is not added up here'))
+
+    def chance(self, k, p=None):
+        """P(X = k): k − 1 неудача подряд, потом успех."""
+        return self.p * (1 - self.p) ** (k - 1)
+
+    def rules(self):
+        return [(_t('вероятность успеха', 'the probability of success'), self.p, 'prob')]
+
+    def add_up(self, term):
+        """Σ term(j)·P(X = j) по j = 1, 2, 3, …"""
+        index = sp.Symbol('j', integer=True, positive=True)
+        key = sp.srepr(term(index))
+        if key not in self._sums:
+            total = sp.piecewise_fold(sp.summation(term(index) * self.chance(index),
+                                                   (index, 1, sp.oo)))
+            if isinstance(total, sp.Piecewise):
+                total = total.args[0][0]           # ветвь, где ряд сходится
+            if total.has(sp.Sum):
+                raise ValueError(_t('ряд не сложился', 'the series did not add up'))
+            self._sums[key] = sp.simplify(total)
+        return self._sums[key]
+
+    def moment(self, kind, a, b):
+        if kind == 'square':
+            return self.add_up(lambda j: (a * j + b) ** 2)
+        mean = self.add_up(lambda j: a * j + b)
+        if kind == 'mean':
+            return mean
+        return self.add_up(lambda j: (a * j + b - mean) ** 2)
+
+    def __repr__(self):
+        return f"{self.name} ~ Geo({self.p})"
+
+
+def Geo(p, name='X'):
+    """Первый успех на X-м испытании: P(X = x) = p(1 − p)^(x − 1), x = 1, 2, …"""
+    return _Series(p, name)
+
+
+def total_probability(X):
+    """Сумма всех вероятностей таблицы — то, что обязано быть единицей."""
+    if X.blank():
+        return Ellipsis
+    whole = sp.Add(*[X.chance(v) for v in X.values()])
+    return _Prob(whole, 'whole', (X,), f"ΣP({X.name} = x)")
+
+
+def Pgf(X, var=t):
+    """G(t) = Σ P(X = x)·tˣ — таблица, записанная многочленом."""
+    if X.blank():
+        return Ellipsis
+    return sp.Add(*[X.chance(v) * var ** v for v in _whole_values(X)])
+
+
+def _whole_values(X):
+    listed = list(X.values())
+    if not all(v.is_integer and v >= 0 for v in listed):
+        raise ValueError(_t('производящая функция пишется для величин со значениями 0, 1, 2, …',
+                            'a generating function is for variables taking the values 0, 1, 2, …'))
+    return listed
+
+
+def verify_chance(label, got, find):
+    """Ответ — вероятность события над величинами: `P(rides >= 1)`, `P(X < Y)`.
+
+    То же, что `verify_binomial` из D3, для любых величин — таблиц, частот,
+    сумм. Сравнение в событии помнит свою границу, и неверный ответ
+    разбирается по ней: «X ≥ 1 включает само 1».
+    """
+    return verify_binomial(label, got, find)
+
+
+# ---------------------------------------------------------------- буквы
+
+def _as_unknowns(var):
+    if var is None:
+        return []
+    if isinstance(var, (list, tuple, set)):
+        return list(var)
+    return [var]
+
+
+def _as_conditions(given):
+    if given is None:
+        return []
+    if isinstance(given, (list, tuple)):
+        return list(given)
+    return [given]
+
+
+def _residual(item):
+    """Условие → выражение, обращающееся в ноль. True — нет условия, False — нет решений."""
+    if isinstance(item, (tuple, list)):
+        item = sp.Eq(sp.sympify(item[0]), sp.sympify(item[1]), evaluate=False)
+    item = sp.sympify(item)
+    if item is sp.true:
+        return None
+    if item is sp.false:
+        return sp.Integer(1)
+    if isinstance(item, sp.Equality):
+        item = item.lhs - item.rhs
+    return _exact(item)
+
+
+def _system_roots(polys, unknowns):
+    """Все действительные решения системы многочленов. None — решений бесконечно много.
+
+    Базис Грёбнера в лексикографическом порядке ставит последним многочлен
+    от одной последней буквы; его корни ищутся численно, подставляются, и
+    так буква за буквой.
+    """
+    if not unknowns:
+        return [{}]
+    if not polys:
+        return None
+    basis = sp.groebner(polys, *unknowns, order='lex')
+    exprs = list(basis.exprs)
+    if exprs == [1]:
+        return []
+    runs = [{}]
+    for letter in reversed(unknowns):
+        following = []
+        for run in runs:
+            here = [sp.expand(e.subs(run)) for e in exprs]
+            here = [e for e in here if not (e.is_number and abs(complex(e)) < 1e-12)]
+            alone = [e for e in here if e.free_symbols == {letter}]
+            if not alone:
+                return None
+            base = min(alone, key=lambda e: sp.Poly(e, letter).degree())
+            for root in _poly_roots(sp.Poly(base, letter)):
+                number = complex(root)
+                if abs(number.imag) > 1e-9 * max(1.0, abs(number)):
+                    continue
+                value = sp.Float(number.real, 30)
+                scale = max([1.0] + [abs(float(c)) for e in alone
+                                     for c in sp.Poly(e, letter).coeffs()])
+                if all(abs(complex(e.subs(letter, value))) < 1e-7 * scale for e in alone):
+                    if not any(abs(float(old[letter] - value)) < 1e-12 and
+                               all(old[u] == run[u] for u in run) for old in following):
+                        following.append({**run, letter: value})
+        runs = following
+    return runs
+
+
+def _poly_roots(poly):
+    """Корни многочлена численно.
+
+    Кратный корень численный поиск находит плохо — знаменатель q + 20
+    таблицы частот входит в условия квадратом, и корень −20 у многочлена
+    двойной. Поэтому у точного многочлена кратность сначала снимается.
+    """
+    if all(c.is_Rational for c in poly.all_coeffs()):
+        poly = poly.sqf_part()
+    for digits, steps in ((30, 200), (30, 2000), (15, 5000)):
+        try:
+            return poly.nroots(n=digits, maxsteps=steps)
+        except mpmath_NoConvergence:
+            continue
+    return [root for root in sp.polys.polyroots.roots(poly, multiple=True)]
+
+
+def _broken_rule(run, variables, unknowns):
+    """Что сломано в таблице при этих буквах, или None, если ничего."""
+    for var in variables:
+        for what, expr, kind in var.rules():
+            value = sp.sympify(expr).subs(run)
+            if value.free_symbols:
+                continue
+            number = complex(sp.N(value, 30))
+            if abs(number.imag) > _LETTER_TOL:
+                return what, None, kind
+            if kind == 'prob' and not -_LETTER_TOL <= number.real <= 1 + _LETTER_TOL:
+                return what, number.real, kind
+            if kind == 'count' and number.real < -_LETTER_TOL:
+                return what, number.real, kind
+    for letter in unknowns:
+        if letter not in run:
+            continue
+        value = float(run[letter])
+        if letter.is_integer and abs(value - round(value)) > 1e-7:
+            return str(letter), value, 'whole'
+        if letter.is_positive and value <= _LETTER_TOL:
+            return str(letter), value, 'positive'
+        if letter.is_nonnegative and value < -_LETTER_TOL:
+            return str(letter), value, 'positive'
+    return None
+
+
+def _rule_words(broken):
+    what, value, kind = broken
+    shown = '' if value is None else f" = {sig(value, 4)}"
+    if kind == 'prob' and value is not None and value < 0:
+        return _t(f"{what}{shown}, а вероятность не бывает отрицательной",
+                  f"{what}{shown}, and a probability is never negative")
+    if kind == 'prob':
+        return _t(f"{what}{shown}, а вероятность не бывает больше единицы",
+                  f"{what}{shown}, and a probability is never above one")
+    if kind == 'count':
+        return _t(f"{what}{shown}, а частота не бывает отрицательной",
+                  f"{what}{shown}, and a frequency is never negative")
+    if kind == 'whole':
+        return _t(f"{what}{shown}, а по условию это целое число",
+                  f"{what}{shown}, and the question says it is a whole number")
+    return _t(f"{what}{shown}, а по условию это положительное число",
+              f"{what}{shown}, and the question says it is positive")
+
+
+def _letter_runs(conditions, unknowns, variables=()):
+    """Решения условий вопроса: годные и отброшенные вместе с причиной.
+
+    К условиям вопроса сами добавляются условия таблиц: вероятности
+    складываются в единицу. Возвращает (годные, [(отброшенное, причина)]),
+    или (None, None), если условий не хватает.
+    """
+    unknowns = list(unknowns)
+    residuals = []
+    for item in conditions:
+        residual = _residual(item)
+        if residual is not None:
+            residuals.append(residual)
+    for var in variables:
+        if isinstance(var, _Table) and not var.counts and not var.parts:
+            residuals.append(sp.Add(*[var.chance(v) for v in var.values()]) - 1)
+    polys = []
+    for residual in residuals:
+        top = sp.expand(sp.numer(sp.together(sp.sympify(residual))))
+        if top != 0:
+            polys.append(top)
+    roots = _system_roots(polys, unknowns)
+    if roots is None:
+        return None, None
+    good, bad = [], []
+    for run in roots:
+        broken = _broken_rule(run, variables, unknowns)
+        if broken is None:
+            good.append(run)
+        else:
+            bad.append((run, broken))
+    return good, bad
+
+
+def _rounded_runs(run):
+    """Те же буквы, округлённые так, как их округляют по дороге."""
+    if not run:
+        return []
+    out = []
+    try:
+        three = {u: sp.Float(sig(v, 3)) for u, v in run.items()}
+        whole = {u: sp.Integer(round(float(v))) for u, v in run.items()}
+    except (TypeError, ValueError):
+        return out
+    names = ', '.join(str(u) for u in run)
+    out.append((three, _t(f"{names} до трёх значащих цифр", f"{names} to three figures")))
+    if whole != three:
+        out.append((whole, _t(f"{names} до целого", f"{names} to the nearest whole number")))
+    return out
+
+
+def _letters_in(variables, conditions):
+    found = set()
+    for var in variables:
+        for _, expr, _ in var.rules():
+            found |= sp.sympify(expr).free_symbols
+        if isinstance(var, _Table):
+            for key in var.values():
+                found |= sp.sympify(key).free_symbols
+    for item in conditions:
+        residual = _residual(item)
+        if residual is not None:
+            found |= residual.free_symbols
+    return sorted(found, key=str)
+
+
+def verify_letters(label, got, unknowns, variables, conditions=(), whole=False):
+    """Ответ — буквы таблицы: `verify_letters('2b', 0.3, k, [X])`.
+
+    Условия — те, что даёт вопрос (`Eq(Expect(X), 2.3)`); условие «таблица
+    складывается в единицу» проверка добавляет сама. Решает она их сама же,
+    все буквы сразу, даже если спрашивают одну, — и отбрасывает решения,
+    при которых таблица перестаёт быть таблицей вероятностей.
+
+    Ответ, совпавший с отброшенным корнем, получает имя клетки, которая
+    при нём ломается: «P(X = 1) = −0,08». За эту фразу схема оценивания
+    даёт отдельный балл R1.
+
+    `whole=True` — вопрос просит буквы до целого.
+    """
+    if _blank(label, got):
+        return False
+    names = _as_unknowns(unknowns)
+    given = list(got) if isinstance(got, (list, tuple)) else [got]
+    if len(given) != len(names):
+        print(f"{NO} {label}: " + _t(f"букв {len(names)}, а значений {len(given)}",
+                                     f"there are {len(names)} letters and {len(given)} values"))
+        return False
+    numbers = []
+    for item in given:
+        try:
+            value = sp.sympify(item)
+        except (sp.SympifyError, TypeError):
+            value = None
+        if value is None or value.free_symbols or not value.is_number:
+            print(f"{NO} {label}: " + _t("буква — это число", "each letter is a number"))
+            return False
+        numbers.append(value)
+    conditions = list(conditions)
+    letters = _letters_in(variables, conditions)
+    for name in names:
+        if name not in letters:
+            letters.append(name)
+    good, bad = _letter_runs(conditions, letters, variables)
+    if good is None:
+        print(f"{NO} {label}: " + _t("условий не хватает, чтобы найти буквы",
+                                     "the conditions are not enough to fix the letters"))
+        return False
+
+    def agree(value, want):
+        if whole:
+            return value.is_integer and int(value) == round(float(want))
+        return _draw_agree(value, want)
+
+    def matches(run):
+        return all(agree(value, run[name]) for name, value in zip(names, numbers))
+
+    shown = ', '.join(f"{n} = {sig(v, 6)}" for n, v in zip(names, numbers))
+    plain_shown = ', '.join(f"{n} = {sig(v, 6) if isinstance(v, (float, sp.Float)) else v}"
+                            for n, v in zip(names, given))
+    if any(matches(run) for run in good):
+        wanted = {tuple(sig(run[n], 6) for n in names) for run in good}
+        if len(wanted) > 1:
+            print(f"{NO} {label}: " + _t(
+                f"это одно из решений, а годных решений {len(wanted)}",
+                f"that is one of the solutions, and {len(wanted)} of them are valid"))
+            return False
+        print(f"{OK} {label}: {plain_shown}")
+        return True
+    for run, broken in bad:
+        if matches(run):
+            print(f"{NO} {label}: " + _t(
+                f"{shown} удовлетворяет уравнениям, но при этом {_rule_words(broken)}. "
+                f"Такое решение отбрасывают",
+                f"{shown} satisfies the equations, but then {_rule_words(broken)}. "
+                f"That solution is rejected"))
+            return False
+    if not whole and any(all(sig(v, 2) == sig(run[n], 2) and float(sig(v, 2)) == float(v)
+                             for n, v in zip(names, numbers)) for run in good):
+        print(f"{NO} {label}: " + _t("две значащие цифры, а нужны три",
+                                     "two significant figures, and three are needed"))
+        return False
+    if whole and any(all(_draw_agree(v, run[n]) for n, v in zip(names, numbers))
+                     for run in good):
+        print(f"{NO} {label}: " + _t("вопрос просит ответ до целого",
+                                     "the question asks for whole numbers"))
+        return False
+    if not good:
+        print(f"{NO} {label}: " + _t("условиям не отвечает ни одна годная таблица",
+                                     "no valid table satisfies the conditions"))
+        return False
+    if len(names) == len(letters):
+        run = dict(zip(names, numbers))
+        for var in variables:
+            if isinstance(var, _Table) and not var.counts and not var.parts:
+                whole_sum = sp.Add(*[var.chance(v) for v in var.values()]).subs(run)
+                if not _draw_agree(whole_sum, 1):
+                    print(f"{NO} {label}: " + _t(
+                        f"при {shown} вероятности {var.name} складываются в "
+                        f"{sig(whole_sum, 4)}, а не в 1",
+                        f"with {shown} the probabilities of {var.name} add up to "
+                        f"{sig(whole_sum, 4)}, not 1"))
+                    return False
+        for number, item in enumerate(conditions, start=1):
+            residual = _residual(item)
+            if residual is None:
+                continue
+            eq = sp.sympify(item)
+            left = eq.lhs.subs(run) if isinstance(eq, sp.Equality) else residual.subs(run)
+            right = eq.rhs.subs(run) if isinstance(eq, sp.Equality) else 0
+            if not _draw_agree(left, right):
+                which = _t(f"условие вопроса номер {number}", f"the question's condition number {number}") \
+                    if len(conditions) > 1 else _t("условие вопроса", "the question's condition")
+                print(f"{NO} {label}: " + _t(f"при {shown} не выполнено {which}",
+                                             f"with {shown} {which} fails"))
+                return False
+    print(f"{NO} {label}: " + _t("с этими значениями таблица не выполняет условий вопроса",
+                                 "with these values the table does not meet the conditions"))
+    return False
+
+
+# --------------------------------------------------------- множество значений
+
+def _same_set(one, two):
+    """Два объединения промежутков совпадают — концы с точностью до трёх цифр."""
+    if one == two:
+        return True
+    left, right = _pieces(one), _pieces(two)
+    if left is None or right is None or len(left) != len(right):
+        return False
+    for (a1, b1, lo1, ro1), (a2, b2, lo2, ro2) in zip(left, right):
+        if (lo1, ro1) != (lo2, ro2):
+            return False
+        if not (_draw_agree(a1, a2) and _draw_agree(b1, b2)):
+            return False
+    return True
+
+
+def _feasible_set(letter, variables, others=()):
+    """Где может лежать буква, чтобы каждая клетка была вероятностью."""
+    region = sp.S.Reals
+    for var in variables:
+        for _, expr, kind in var.rules():
+            expr = sp.sympify(expr)
+            if expr.free_symbols - {letter}:
+                continue
+            if not expr.free_symbols:
+                continue
+            upper = 1 if kind == 'prob' else sp.oo
+            here = (expr >= 0).as_set()
+            if upper != sp.oo:
+                here = sp.Intersection(here, (expr <= upper).as_set())
+            region = sp.Intersection(region, here)
+    return region
+
+
+def verify_table_range(label, got, target, variables):
+    """Ответ — все возможные значения буквы или E(X): `Interval(0, 1/3)`.
+
+    Проверка исключает лишние буквы условием «таблица складывается
+    в единицу», требует от каждой клетки лежать в [0, 1] и получает
+    множество сама. Для E(X) — образ этого множества.
+
+    Промахи с именем: клетки взяты по отдельности, без суммы; концы
+    выколоты, хотя вероятность бывает и нулём, и единицей.
+    """
+    if _blank(label, got, target):
+        return False
+    letters = _letters_in(variables, ())
+    as_letter = isinstance(target, sp.Symbol)
+    free = target if as_letter else (letters[0] if letters else None)
+    if free is None:
+        print(f"{NO} {label}: " + _t("в таблице нет букв", "the table has no letters"))
+        return False
+    others = [u for u in letters if u != free]
+    sums = [sp.Add(*[var.chance(v) for v in var.values()]) - 1
+            for var in variables if isinstance(var, _Table) and not var.counts]
+    sums = [s for s in sums if s.free_symbols]
+    fix = {}
+    if others:
+        solved = sp.solve(sums, others, dict=True)
+        if len(solved) != 1 or set(solved[0]) != set(others):
+            print(f"{NO} {label}: " + _t("условий не хватает, чтобы свести таблицу к одной букве",
+                                         "the conditions do not reduce the table to one letter"))
+            return False
+        fix = solved[0]
+    reduced = [_Table({key: sp.sympify(value).subs(fix) for key, value in var.table.items()},
+                      var.name) for var in variables]
+    region = _feasible_set(free, reduced)
+    if as_letter:
+        truth = region
+        loose = _feasible_set(free, variables)
+    else:
+        expr = sp.sympify(target).subs(fix)
+        from sympy.calculus.util import function_range
+        truth = function_range(expr, free, region)
+        loose = None
+    try:
+        mine = _as_set(got, free)
+    except (TypeError, ValueError):
+        mine = None
+    if mine is None and not as_letter:
+        value = sp.sympify(got)
+        if isinstance(value, sp.core.relational.Relational) or isinstance(value, sp.And):
+            symbols_here = list(value.free_symbols)
+            mine = value.as_set() if len(symbols_here) == 1 else None
+    if mine is None:
+        print(f"{NO} {label}: " + _t(
+            "ответ — множество: Interval(0, 1) или (r >= 0) & (r <= 1)",
+            "the answer is a set: Interval(0, 1) or (r >= 0) & (r <= 1)"))
+        return False
+    mine = sp.Intersection(mine, sp.S.Reals) if not isinstance(mine, sp.Interval) else mine
+    if _same_set(mine, truth):
+        print(f"{OK} {label}: {_show_set(truth, free) if as_letter else truth}")
+        return True
+    pieces = _pieces(truth)
+    if pieces and len(pieces) == 1:
+        a, b, _, _ = pieces[0]
+        if _same_set(mine, sp.Interval(a, b, True, True)) and truth != sp.Interval(a, b, True, True):
+            print(f"{NO} {label}: " + _t(
+                "концы входят: вероятность бывает и нулём, и единицей",
+                "the ends belong: a probability can be 0 or 1 itself"))
+            return False
+    if loose is not None and not _same_set(loose, truth) and _same_set(mine, loose):
+        print(f"{NO} {label}: " + _t(
+            "каждая клетка по отдельности лежит в [0, 1], но клетки ещё и "
+            "складываются в единицу — это сужает множество",
+            "each cell on its own lies in [0, 1], but the cells also add up "
+            "to one, and that narrows the set"))
+        return False
+    extra = sp.Complement(mine, truth)
+    if as_letter and extra is not sp.S.EmptySet:
+        spots = _pieces(extra) or []
+        for a, b, _, _ in spots:
+            probe = (a + b) / 2 if a.is_finite and b.is_finite else (a + 1 if a.is_finite else b - 1)
+            run = {free: probe, **{u: sp.sympify(e).subs(free, probe) for u, e in fix.items()}}
+            broken = _broken_rule(run, variables, [])
+            if broken is not None:
+                print(f"{NO} {label}: " + _t(
+                    f"при {free} = {sig(probe, 4)} {_rule_words(broken)}",
+                    f"at {free} = {sig(probe, 4)} {_rule_words(broken)}"))
+                return False
+    if extra is not sp.S.EmptySet:
+        print(f"{NO} {label}: " + _t("в ответе есть значения, которых быть не может",
+                                     "the answer contains values that cannot occur"))
+    else:
+        print(f"{NO} {label}: " + _t("потеряны значения, которые возможны",
+                                     "some possible values are missing"))
+    return False
+
+
+# ------------------------------------------------------------- мода и G(t)
+
+def verify_mode(label, got, X, given=None, var=None):
+    """Ответ — мода: значение с наибольшей вероятностью, а не сама вероятность."""
+    if _blank(label, got, X):
+        return False
+    unknowns = _as_unknowns(var)
+    if given is None and not unknowns:
+        runs = [{}]
+    else:
+        runs, _ = _letter_runs(_as_conditions(given), unknowns, [X])
+        runs = runs or []
+    if not runs:
+        print(f"{NO} {label}: " + _t("условиям не отвечает ни одна таблица",
+                                     "no table satisfies the conditions"))
+        return False
+    value = sp.sympify(got)
+    for run in runs:
+        chances = {v: sp.N(sp.sympify(X.chance(v)).subs(run), 20) for v in X.values()}
+        top = max(chances.values())
+        modes = [v for v, c in chances.items() if abs(c - top) < 1e-12]
+        if not any(_draw_agree(value, v) for v in modes):
+            if _draw_agree(value, top):
+                print(f"{NO} {label}: " + _t(
+                    "это наибольшая вероятность, а мода — значение, у которого она",
+                    "that is the largest probability; the mode is the value that has it"))
+            else:
+                print(f"{NO} {label}: " + _t(
+                    f"у значения {value} вероятность не наибольшая",
+                    f"the value {value} does not have the largest probability"))
+            return False
+    print(f"{OK} {label}")
+    return True
+
+
+def verify_pgf(label, got, X, var=t, given=None, unknowns=None):
+    """Ответ — производящая функция G(t) = Σ P(X = x)·tˣ.
+
+    Сверяется коэффициент за коэффициентом с таблицей величины, а таблицу
+    проверка строит сама: из опыта (`Dist(..., rule=...)`) или из суммы
+    независимых величин. Промахи с именем: G(1) не единица, коэффициенты
+    в обратном порядке (посчитана противоположная величина), степени
+    сдвинуты на одну.
+    """
+    if _blank(label, got, X):
+        return False
+    try:
+        answer = sp.expand(sp.sympify(got))
+    except (sp.SympifyError, TypeError):
+        answer = None
+    if answer is None or answer.free_symbols - {var}:
+        print(f"{NO} {label}: " + _t(f"ответ — многочлен от {var} с числовыми коэффициентами",
+                                     f"the answer is a polynomial in {var} with number coefficients"))
+        return False
+    try:
+        mine = sp.Poly(answer, var)
+    except sp.PolynomialError:
+        print(f"{NO} {label}: " + _t(f"это не многочлен от {var}",
+                                     f"that is not a polynomial in {var}"))
+        return False
+    letters = _as_unknowns(unknowns)
+    if given is None and not letters:
+        runs = [{}]
+    else:
+        runs, _ = _letter_runs(_as_conditions(given), letters, [X])
+        runs = runs or []
+    if not runs:
+        print(f"{NO} {label}: " + _t("условиям не отвечает ни одна таблица",
+                                     "no table satisfies the conditions"))
+        return False
+    listed = _whole_values(X)
+    top = max(max(listed), mine.degree())
+    have = [mine.coeff_monomial(var ** i) for i in range(top + 2)]
+    for run in runs:
+        want = [sp.sympify(X.chance(i)).subs(run) if any(i == v for v in listed) else 0
+                for i in range(top + 2)]
+        if all(_draw_agree(h, w) for h, w in zip(have, want)):
+            continue
+        whole = sp.Add(*have)
+        if not _draw_agree(whole, 1):
+            print(f"{NO} {label}: " + _t(
+                f"G(1) = {sig(whole, 4)}, а должно быть 1: коэффициенты — это вся "
+                f"таблица, и они складываются в единицу",
+                f"G(1) = {sig(whole, 4)}, and it has to be 1: the coefficients are "
+                f"the whole table, and they add up to one"))
+            return False
+        last = max(listed)
+        flipped = [want[last - i] if i <= last else 0 for i in range(top + 2)]
+        if all(_draw_agree(h, w) for h, w in zip(have, flipped)):
+            print(f"{NO} {label}: " + _t(
+                f"коэффициенты стоят в обратном порядке: при {var}ᵏ должна быть "
+                f"P({X.name} = k), а здесь P({X.name} = {last} − k) — посчитано "
+                f"противоположное",
+                f"the coefficients are in reverse order: {var}ᵏ carries "
+                f"P({X.name} = k), and this has P({X.name} = {last} − k) — the "
+                f"opposite count"))
+            return False
+        shifted = [0] + want[:-1]
+        if all(_draw_agree(h, w) for h, w in zip(have, shifted)):
+            print(f"{NO} {label}: " + _t(
+                f"степени сдвинуты на одну: P({X.name} = k) стоит при {var}ᵏ, а не "
+                f"при {var}ᵏ⁺¹",
+                f"the powers are shifted by one: P({X.name} = k) goes with {var}ᵏ, "
+                f"not {var}ᵏ⁺¹"))
+            return False
+        for i, (h, w) in enumerate(zip(have, want)):
+            if not _draw_agree(h, w):
+                print(f"{NO} {label}: " + _t(
+                    f"коэффициент при {var}^{i} — это P({X.name} = {i}), и он не сходится",
+                    f"the coefficient of {var}^{i} is P({X.name} = {i}), and it does "
+                    f"not match"))
+                return False
+    print(f"{OK} {label}")
+    return True
+
+
+def _moment_expression(label, got, what, letters):
+    """Ответ — E или Var как выражение от буквы: сверка в нескольких её значениях."""
+    try:
+        answer = sp.sympify(got)
+    except (sp.SympifyError, TypeError):
+        answer = None
+    if answer is None or answer.free_symbols - set(letters):
+        names = ', '.join(str(u) for u in letters)
+        print(f"{NO} {label}: " + _t(f"ответ — выражение от {names}",
+                                     f"the answer is an expression in {names}"))
+        return False
+    samples = [sp.Rational(3, 20), sp.Rational(3, 10), sp.Rational(11, 20), sp.Rational(4, 5)]
+    want_expr = sp.sympify(what)
+    weightless = True
+    for sample in samples:
+        run = {u: sample for u in letters}
+        try:
+            mine = sp.N(answer.subs(run).doit(), 20)
+            want = sp.N(want_expr.subs(run), 20)
+        except (TypeError, ValueError, ZeroDivisionError):
+            print(f"{NO} {label}: " + _t("выражение не вычисляется",
+                                         "the expression does not evaluate"))
+            return False
+        if not _draw_agree(mine, 1):
+            weightless = False
+        if not _draw_agree(mine, want):
+            if weightless and what.kind == 'mean':
+                continue
+            print(f"{NO} {label}: " + _t(
+                f"при {letters[0]} = {sample} выражение даёт другое",
+                f"at {letters[0]} = {sample} the expression gives something else"))
+            return False
+    if weightless and what.kind == 'mean':
+        print(f"{NO} {label}: " + _t(
+            "это сумма вероятностей, и она равна единице: среднее — сумма x·P(X = x)",
+            "that is the sum of the probabilities, which is one: the mean is the sum "
+            "of x·P(X = x)"))
+        return False
+    print(f"{OK} {label}")
+    return True
 
 
 def trigger_check(answers, key):

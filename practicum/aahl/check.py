@@ -554,6 +554,9 @@ def evaluate(spec, raw):
         if kind in ('binomial', 'moment', 'parameter', 'trials'):
             return _binomial_kind(kind, spec, raw)
 
+        if kind == 'table':
+            return _table_kind(spec, raw)
+
         if kind == 'count':
             value = parse_one(raw)
             ok = sp.simplify(value - sp.Integer(spec['value'])) == 0
@@ -624,6 +627,64 @@ def _binomial_kind(kind, spec, raw):
                         holds=lambda value: _HOLDS[sign](value, level))
     return _capture(kit.verify_trials, 'Ответ', parse_one(raw), family,
                     near=float(sp.sympify(spec['near'])))
+
+
+def _table_letters(spec):
+    """Буквы задания с их допущениями: частота целая и не отрицательная."""
+    return {name: sp.Symbol(name, **flags) for name, flags in spec.get('letters', {}).items()}
+
+
+def _table_build(spec):
+    """Величины задания и условия вопроса — те же объекты, что в ноутбуке D4."""
+    letters = _table_letters(spec)
+
+    def read(text):
+        return sp.sympify(text, locals=letters)
+
+    variables = {}
+    for name, packed in spec['tables'].items():
+        table = {read(value): read(chance) for value, chance in packed['cells']}
+        maker = kit.Freq if packed['counts'] else kit.Dist
+        variables[name] = maker(table, name)
+    if spec.get('geo'):
+        variables['X'] = kit.Geo(read(spec['geo']), 'X')
+    conditions = []
+    for kind, name, value in spec.get('conditions', []):
+        X = variables[name]
+        left = {'mean': lambda: kit.Expect(X), 'var': lambda: kit.Var(X),
+                'size': lambda: X.size}[kind]()
+        conditions.append(sp.Eq(left, read(value)))
+    return letters, variables, conditions, read
+
+
+def _table_kind(spec, raw):
+    """Дискретная величина по таблице, D4: те же проверки, что в ноутбуке."""
+    letters, variables, conditions, read = _table_build(spec)
+    what = spec['what']
+    tables = list(variables.values())
+    if what == 'letters':
+        unknowns = [letters.get(name, sp.Symbol(name)) for name in spec['unknowns']]
+        values = parse_many(raw) if len(unknowns) > 1 else parse_one(raw)
+        return _capture(kit.verify_letters, 'Ответ', values, unknowns, tables,
+                        conditions, whole=spec.get('whole', False))
+    if what == 'range':
+        letter = letters.get(spec['var'], sp.Symbol(spec['var']))
+        return _capture(kit.verify_table_range, 'Ответ',
+                        parse_solution_set(raw, letter), letter, tables)
+    X = variables[spec['target']]
+    free = kit._letters_in(tables, [])
+    given = conditions if (conditions or free) else None
+    if what in ('mean', 'var'):
+        linear = read(spec['a']) * X + read(spec['b'])
+        find = kit.Expect(linear) if what == 'mean' else kit.Var(linear)
+        return _capture(kit.verify_moment, 'Ответ', parse_one(raw), find,
+                        given=given, var=free or None, tables=tables)
+    if what == 'mode':
+        return _capture(kit.verify_mode, 'Ответ', parse_one(raw), X,
+                        given=given, var=free or None)
+    # pgf
+    return _capture(kit.verify_pgf, 'Ответ', parse_one(raw), X, sp.Symbol('t'),
+                    given=given, unknowns=free or None)
 
 
 def show_answer(value, sf=3, var='x'):

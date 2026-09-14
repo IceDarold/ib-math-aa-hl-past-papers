@@ -8698,6 +8698,487 @@
    "dir": "AA_HL/2025/May/TZ3/Paper 2",
    "skill": "D3.unknown_trials"
   },
+  "2021-MAY-TZ1-P1-Q10-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "a",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "D4.valid_table"
+  },
+  "2021-MAY-TZ1-P1-Q10-C": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "c",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "D4.valid_table"
+  },
+  "2022-MAY-TZ1-P2-Q03-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D4.valid_table"
+  },
+  "2022-MAY-TZ1-P2-Q03-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D4.valid_table"
+  },
+  "2025-MAY-TZ3-P2-Q03-A": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "3",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D4.valid_table"
+  },
+  "2025-NOV-TZ3-P1-Q07-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "7",
+   "part": "A",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "D4.valid_table"
+  },
+  "2021-MAY-TZ1-P1-Q10-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "b",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "D4.expectation"
+  },
+  "2021-MAY-TZ1-P1-Q10-D": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "d",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "D4.expectation"
+  },
+  "2022-MAY-TZ1-P2-Q03-C": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D4.expectation"
+  },
+  "2025-MAY-TZ3-P2-Q03-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D4.expectation"
+  },
+  "2023-MAY-TZ1-P1-Q02-A": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "A",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "D4.expectation"
+  },
+  "2023-MAY-TZ1-P1-Q02-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "D4.expectation"
+  },
+  "2025-MAY-TZ1-P3-Q01-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "D4.expectation"
+  },
+  "2024-MAY-TZ1-P3-Q01-G-II": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(g)(ii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D4.expectation"
+  },
+  "2022-MAY-TZ2-P1-Q10-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "A",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "D4.two_conditions"
+  },
+  "2023-NOV-TZ1-P2-Q05": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "D4.two_conditions"
+  },
+  "2023-NOV-TZ2-P2-Q05": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "D4.two_conditions"
+  },
+  "2024-MAY-TZ1-P1-Q01-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "A",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "2",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "D4.two_conditions"
+  },
+  "2025-MAY-TZ2-P2-Q08": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "8",
+   "part": "",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "D4.two_conditions"
+  },
+  "2021-MAY-TZ1-P1-Q10-E": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "10",
+   "part": "e",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "11-12",
+   "markscheme_pages": "18-19",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "D4.two_conditions"
+  },
+  "2025-NOV-TZ3-P1-Q07-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "7",
+   "part": "B",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "10",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "D4.variance_linear"
+  },
+  "2025-MAY-TZ1-P2-Q11-E": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "E",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "D4.variance_linear"
+  },
+  "2025-MAY-TZ1-P2-Q11-F": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "F",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "D4.variance_linear"
+  },
+  "2024-MAY-TZ1-P3-Q01-G-III": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(g)(iii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D4.variance_linear"
+  },
+  "2024-MAY-TZ1-P1-Q01-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "B",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "2",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2024/May/TZ1/Paper 1",
+   "skill": "D4.variance_linear"
+  },
+  "2024-MAY-TZ1-P3-Q01-B-I": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "b-i",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D4.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-B-II": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "b-ii",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D4.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-C-II": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "c-ii",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D4.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-D": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "d",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D4.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-H-I": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(h)(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D4.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-H-II": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(h)(ii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D4.first_success"
+  },
+  "2024-MAY-TZ1-P3-Q01-H-III": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "(h)(iii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "2-3",
+   "markscheme_pages": "7-11",
+   "dir": "AA_HL/2024/May/TZ1/Paper 3",
+   "skill": "D4.first_success"
+  },
+  "2025-MAY-TZ1-P3-Q01-C-II": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "C-II",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "D4.generating_function"
+  },
+  "2025-MAY-TZ1-P3-Q01-D": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "D",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "D4.generating_function"
+  },
+  "2025-MAY-TZ1-P3-Q01-E-I": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "E-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "D4.generating_function"
+  },
+  "2025-MAY-TZ1-P3-Q01-E-II": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "E-II",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "D4.generating_function"
+  },
+  "2025-MAY-TZ1-P3-Q01-F": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "F",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11-12",
+   "dir": "AA_HL/2025/May/TZ1/Paper 3",
+   "skill": "D4.generating_function"
+  },
   "2024-MAY-TZ1-P1-Q11-F-I-II": {
    "session": "May 2024",
    "zone": "TZ1",
@@ -12200,6 +12681,14 @@
    "notebook": "practicum/statistics/practicum-d3-binomial.ipynb",
    "marks": 71,
    "blocks": 23
+  },
+  {
+   "id": "D4",
+   "title": "Дискретные случайные величины и математическое ожидание",
+   "section": "D",
+   "notebook": "practicum/statistics/practicum-d4-discrete.ipynb",
+   "marks": 109,
+   "blocks": 37
   },
   {
    "id": "E1",
@@ -16574,6 +17063,182 @@
     "2023-MAY-TZ1-P2-Q11-C",
     "2024-MAY-TZ2-P2-Q05",
     "2025-MAY-TZ3-P2-Q11-B"
+   ]
+  },
+  {
+   "id": "D4.valid_table",
+   "practicum": "D4",
+   "name": "Таблица обязана быть распределением",
+   "rung": 1,
+   "trigger": "В таблице распределения стоят буквы — p, k, a — и спрашивают «find the value of k», «state the range of possible values of r». Условия на букву никто не пишет: оно в самой таблице.",
+   "chain": [
+    "Сумма всех вероятностей — единица: это уравнение на букву",
+    "Если корней больше одного, подставить каждый в каждую клетку: клетка ниже нуля или выше единицы отбрасывает корень",
+    "Диапазон буквы — пересечение условий 0 ≤ клетка ≤ 1 по всем клеткам, после того как лишние буквы исключены суммой",
+    "Мода — значение с наибольшей вероятностью, а не сама вероятность"
+   ],
+   "traps": [
+    "Берут оба корня 2k² − k + 0,12 = 0. При k = 0,2 клетка k − 0,28 отрицательна, и схема оценивания мая 2022 даёт за эту фразу R1",
+    "Диапазон q ищут по одной клетке, 0 ≤ q ≤ 1, забыв, что четыре клетки складываются в единицу: верно 0 ≤ q ≤ 1/3",
+    "Выкалывают концы: 0 < r < 1. Вероятность бывает и нулём",
+    "За моду пишут 0,308 — наибольшую вероятность, а мода — значение 2"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 109,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q10-A",
+    "2021-MAY-TZ1-P1-Q10-C",
+    "2022-MAY-TZ1-P2-Q03-A",
+    "2022-MAY-TZ1-P2-Q03-B",
+    "2025-MAY-TZ3-P2-Q03-A",
+    "2025-NOV-TZ3-P1-Q07-A"
+   ]
+  },
+  {
+   "id": "D4.expectation",
+   "practicum": "D4",
+   "name": "Среднее — сумма значений с весами",
+   "rung": 2,
+   "trigger": "«Find E(X)», «find the mean of X», «estimate the expected number of times» — и таблица, иногда таблица частот, по которой вероятность надо ещё получить долей.",
+   "chain": [
+    "E(X) = Σ x·P(X = x): каждое значение умножить на свою вероятность",
+    "Таблица частот — распределение с вероятностями f/Σf, и её среднее то же самое",
+    "Ожидаемое число на n человек — n·E(X); оно не обязано быть целым, но «сколько раз должна проехать карусель» — уже целое, вверх",
+    "Если в E(X) осталась буква с диапазоном — среднее тоже диапазон: подставить концы"
+   ],
+   "traps": [
+    "Складывают значения без весов и делят на их число",
+    "Складывают вероятности вместо x·P: получается единица",
+    "Оставляют в сумме значения, которых нет в таблице — схема оценивания мая 2022: «M1A0 if additional values are given»",
+    "Для диапазона E(Y) подставляют концы диапазона одной клетки, а не буквы, через которую выражены все"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 109,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q10-B",
+    "2021-MAY-TZ1-P1-Q10-D",
+    "2022-MAY-TZ1-P2-Q03-C",
+    "2025-MAY-TZ3-P2-Q03-B",
+    "2023-MAY-TZ1-P1-Q02-A",
+    "2023-MAY-TZ1-P1-Q02-B",
+    "2025-MAY-TZ1-P3-Q01-A",
+    "2024-MAY-TZ1-P3-Q01-G-II"
+   ]
+  },
+  {
+   "id": "D4.two_conditions",
+   "practicum": "D4",
+   "name": "Две буквы — два условия",
+   "rung": 3,
+   "trigger": "В таблице две неизвестные, и вопрос даёт ещё одно число про распределение: «given that E(X) = 2.3», «the mean and variance of the marks are 31 and 124», «the probability that Agnes' score is less than Barbara's is 1/2». Таблица частот с неизвестными частотами — тот же вопрос.",
+   "chain": [
+    "Первое уравнение — сумма вероятностей (или частот) из приёма 1",
+    "Второе — из данного числа: E(X) = Σ x·P, Var(X) = Σ (x − μ)²·P, P(X < Y) — сумма по парам значений",
+    "Решить систему; нелинейную — подстановкой или графиками на GDC",
+    "Отобрать корни по правилам таблицы и по условию вопроса (a, k > 0, p, q — целые)"
+   ],
+   "traps": [
+    "Отдают корень, при котором вероятность отрицательна. Ноябрь 2023: a = 2,44587 и a = −10,8987 — «award (A1)(A1)(M1)(M1)A0»",
+    "Для таблицы частот делят на число строк, а не на Σf",
+    "В P(X < Y) считают и ничьи, или берут пары, где X > Y",
+    "Ответ с двумя значащими цифрами: 0,55 — (A0)(A0)(M1)(M1)A0"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 109,
+   "blocks": [
+    "2022-MAY-TZ2-P1-Q10-A",
+    "2023-NOV-TZ1-P2-Q05",
+    "2023-NOV-TZ2-P2-Q05",
+    "2024-MAY-TZ1-P1-Q01-A",
+    "2025-MAY-TZ2-P2-Q08",
+    "2021-MAY-TZ1-P1-Q10-E"
+   ]
+  },
+  {
+   "id": "D4.variance_linear",
+   "practicum": "D4",
+   "name": "Дисперсия и величина, построенная из X",
+   "rung": 4,
+   "trigger": "«Find Var(Y)», «determine Var(2 − X)», «each score is multiplied by 10», «the score is calculated as a − bt» — спрашивают разброс или среднее величины, линейно выраженной через X.",
+   "chain": [
+    "Var(X) = E(X²) − (E(X))², где E(X²) = Σ x²·P(X = x)",
+    "E(aX + b) = a·E(X) + b",
+    "Var(aX + b) = a²·Var(X): сдвиг уходит, множитель в квадрате, знак не важен — Var(2 − X) = Var(X)",
+    "Если известны только E(T) и Var(T), этого хватает для любой a − bT"
+   ],
+   "traps": [
+    "Отдают E(X²) = 4,4 как дисперсию, не вычтя квадрат среднего",
+    "Вычитают E(X), а не E(X)²",
+    "Var(2 − X) считают как −Var(X) или 4 − Var(X)",
+    "Var(a − bT) = b·Var(T) — множитель не в квадрате",
+    "b округляют до 20 раньше времени: Var(P) = 362 вместо 370. Схема оценивания мая 2025 принимает от 362 до 370, но это милость, а не правило"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 109,
+   "blocks": [
+    "2025-NOV-TZ3-P1-Q07-B",
+    "2025-MAY-TZ1-P2-Q11-E",
+    "2025-MAY-TZ1-P2-Q11-F",
+    "2024-MAY-TZ1-P3-Q01-G-III",
+    "2024-MAY-TZ1-P1-Q01-B"
+   ]
+  },
+  {
+   "id": "D4.first_success",
+   "practicum": "D4",
+   "name": "Первый успех — распределение без последнего значения",
+   "rung": 5,
+   "trigger": "«Let X be the number of actions until the first boost occurs»: испытания повторяются, пока не случится успех, и значений у X бесконечно много. Спрашивают E(X) суммой ряда, Var(X) по данной формуле, p по заданному среднему.",
+   "chain": [
+    "P(X = x) = p(1 − p)^(x − 1): x − 1 неудача, потом успех",
+    "E(X) = Σ x·p(1 − p)^(x − 1) по x от 1 до бесконечности",
+    "Сумму берут из производной геометрического ряда: Σ n·a·rⁿ⁻¹ = a/(1 − r)², с a = p и r = 1 − p, — это 1/p",
+    "Сравнивая две модели с одним средним, сравнивают дисперсии: меньше разброс — ровнее опыт"
+   ],
+   "traps": [
+    "Пишут Σ p(1 − p)^(x − 1) без множителя x — это сумма вероятностей, она равна единице",
+    "Путают a и r при подстановке в a/(1 − r)²",
+    "Var(X) = 3,80 от округлённого p = 0,398; схема оценивания принимает, но только от их же ответа",
+    "Вывод «вторая модель ровнее» без сравнения чисел: R1 не ставится, если дисперсии не посчитаны положительными"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 109,
+   "blocks": [
+    "2024-MAY-TZ1-P3-Q01-B-I",
+    "2024-MAY-TZ1-P3-Q01-B-II",
+    "2024-MAY-TZ1-P3-Q01-C-II",
+    "2024-MAY-TZ1-P3-Q01-D",
+    "2024-MAY-TZ1-P3-Q01-H-I",
+    "2024-MAY-TZ1-P3-Q01-H-II",
+    "2024-MAY-TZ1-P3-Q01-H-III"
+   ]
+  },
+  {
+   "id": "D4.generating_function",
+   "practicum": "D4",
+   "name": "Производящая функция — таблица, записанная многочленом",
+   "rung": 6,
+   "trigger": "«The probability distribution of X can be represented by the polynomial function G(t) = Σ P(X = x)tˣ». Строят G по опыту, находят букву по коэффициенту, берут G′(1) как среднее, перемножают G двух независимых величин.",
+   "chain": [
+    "Коэффициент при tˣ — это P(X = x); G(1) = 1, потому что это сумма таблицы",
+    "Таблицу для G строят обычным перечислением исходов — деревом или сочетаниями",
+    "G′(1) = Σ x·P(X = x) = E(X)",
+    "Сумма независимых величин — произведение их G; E(X + Y) = E(X) + E(Y) быстрее, чем раскрывать произведение"
+   ],
+   "traps": [
+    "Пишут коэффициенты без обоснования — схема мая 2025: «Do not award A marks for P(X = 0) = 3/10… stated without any working shown»",
+    "Коэффициенты в обратном порядке: p = 1/3 вместо 2/3 даёт G = 1/3 + t/2 + t²/6, то есть посчитаны орлы, а не решки",
+    "Сдвигают степени: P(X = 0) ставят при t",
+    "Раскрывают G_X·G_Y с ошибкой и теряют A1, хотя E(Z) = 4/5 + 7/6 получается без раскрытия"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 109,
+   "blocks": [
+    "2025-MAY-TZ1-P3-Q01-C-II",
+    "2025-MAY-TZ1-P3-Q01-D",
+    "2025-MAY-TZ1-P3-Q01-E-I",
+    "2025-MAY-TZ1-P3-Q01-E-II",
+    "2025-MAY-TZ1-P3-Q01-F"
    ]
   },
   {
@@ -30612,6 +31277,438 @@
    ],
    "answer": "trials",
    "answer_digest": "959a9132f6c7",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:1",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.valid_table",
+   "prompt": "$P(X=x)=cx$ for $x=1,2,3,4$. Find $c$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "table",
+   "answer_digest": "0d4fc4a78d37",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:2",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.expectation",
+   "prompt": "A shop sells $0$, $1$, $2$ or $3$ cakes an hour with probabilities $0.1,0.3,0.4,0.2$. Find the expected number of cakes sold in an eight-hour day.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "mean",
+   "answer_digest": "82523faea1b0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:3",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.two_conditions",
+   "prompt": "A table has cells $a$, $0.2$, $b$, $0.3$ for $x=0,1,2,3$ and $E(X)=1.5$. Find $a$ and $b$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "unknowns",
+   "answer_digest": "2041e4cdf428",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:4",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.variance_linear",
+   "prompt": "$E(X)=3$ and $\\mathrm{Var}(X)=2$. Find $\\mathrm{Var}(4-3X)$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "spread",
+   "answer_digest": "909802b269de",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:5",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.first_success",
+   "prompt": "A basketball player shoots until she scores, each shot scoring with probability $0.35$. Find the expected number of shots.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "series",
+   "answer_digest": "9cda38ea3a2b",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:6",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.generating_function",
+   "prompt": "$G(t)=\\frac14(1+t)^2$. Find $P(X=1)$ and $E(X)$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "pgf",
+   "answer_digest": "e10f417d699c",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:7",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.two_conditions",
+   "prompt": "The frequencies $3$, $f$, $g$, $2$ of the scores $1,2,3,4$ total $15$, and the mean score is $2.4$. Find $f$ and $g$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "unknowns",
+   "answer_digest": "2041e4cdf428",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:8",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.valid_table",
+   "prompt": "A table has cells $0.5-k$, $2k$, $0.5-k$. State the range of possible values of $k$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "table",
+   "answer_digest": "0d4fc4a78d37",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:9",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.variance_linear",
+   "prompt": "Each score in a data set is multiplied by $5$ and then $3$ is subtracted. The old standard deviation was $1.2$. Find the new variance.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "spread",
+   "answer_digest": "909802b269de",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:10",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.expectation",
+   "prompt": "$X$ takes the values $-2$, $0$, $3$ with probabilities $0.3,0.5,0.2$. Find $E(X)$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "mean",
+   "answer_digest": "82523faea1b0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:11",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.generating_function",
+   "prompt": "Two independent variables have $G_X(t)=0.4+0.6t$ and $G_Y(t)=0.7+0.3t$. Find the distribution of $X+Y$.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "pgf",
+   "answer_digest": "e10f417d699c",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D4:12",
+   "kind": "recognition",
+   "practicum": "D4",
+   "skill": "D4.first_success",
+   "prompt": "A machine fails each day with probability $0.02$, independently. Find the variance of the number of days up to and including the first failure.",
+   "options": [
+    {
+     "code": "table",
+     "name": "таблица обязана быть распределением"
+    },
+    {
+     "code": "mean",
+     "name": "среднее — сумма с весами"
+    },
+    {
+     "code": "unknowns",
+     "name": "две буквы — два условия"
+    },
+    {
+     "code": "spread",
+     "name": "дисперсия и aX + b"
+    },
+    {
+     "code": "series",
+     "name": "первый успех"
+    },
+    {
+     "code": "pgf",
+     "name": "производящая функция"
+    }
+   ],
+   "answer": "series",
+   "answer_digest": "9cda38ea3a2b",
    "budget_ms": 8000
   },
   {

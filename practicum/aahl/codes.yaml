@@ -210,6 +210,14 @@ D3:
   nested:      {skill: nested,               name: биномиальное поверх другого}
   trials:      {skill: unknown_trials,       name: неизвестное n}
 
+D4:
+  table:    {skill: valid_table,         name: таблица обязана быть распределением}
+  mean:     {skill: expectation,         name: среднее — сумма с весами}
+  unknowns: {skill: two_conditions,      name: две буквы — два условия}
+  spread:   {skill: variance_linear,     name: дисперсия и aX + b}
+  series:   {skill: first_success,       name: первый успех}
+  pgf:      {skill: generating_function, name: производящая функция}
+
 E1:
   substitute: {skill: substitute,      name: подстановка и сокращение}
   infinity:   {skill: at_infinity,     name: старшая степень на бесконечности}

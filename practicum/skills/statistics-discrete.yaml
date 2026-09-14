@@ -1,0 +1,359 @@
+version: 0.2
+practicum: D4
+title: Дискретные случайные величины и математическое ожидание
+source_topic: statistics.discrete_random_variables
+also_covers: [statistics.expected_value, statistics.probability]
+
+corpus:
+  blocks: 37
+  marks: 109
+  effective_blocks: 36
+  effective_marks: 104
+  sessions: May 2021 — November 2025
+  papers: {1: 12, 2: 10, 3: 15}
+  gdc_marks: 68
+  note: >
+    Три темы разметки. Из statistics.discrete_random_variables D4 берёт
+    50 баллов из 89 — всё, что не биномиальное (35 у D3) и не описательная
+    статистика (4 балла медианы и стандартного отклонения таблицы частот
+    мая 2022 TZ1 Q1). Из statistics.expected_value — 48 из 60: 10 баллов
+    там про плотность и уходят в D6, 2 — дисперсия биномиальной величины
+    из D3. Из statistics.probability — 11 баллов производящей функции,
+    которые D2 оставил здесь.
+
+    Пять баллов — ноябрьский дубль 2023 года, девятый раз за серию: Q5
+    посчитан двумя зональными копиями. Без дубля 36 блоков и 104 балла.
+
+    Тема стоит на трёх бумагах почти поровну, и это первая такая тема
+    статистики: 41 балл Paper 1, 30 рабочих Paper 2 и 33 Paper 3 — два
+    исследования, геометрическое распределение мая 2024 и производящая
+    функция мая 2025. Формально 63 рабочих балла из 104 с калькулятором,
+    но на Paper 3 он почти не нужен: производящая функция складывается
+    дробями, E(X) = 1/p выводится рядом. Настоящей работы для GDC около
+    дюжины баллов — кубическое уравнение ноября 2023 и система из среднего
+    и дисперсии мая 2025 TZ2.
+
+directions:
+  read: >
+    Таблица дана, и в ней буквы. Сначала — что таблица обязана быть
+    распределением: каждая клетка в [0, 1], все вместе единица. Потом —
+    сложить по ней среднее. Приёмы 1, 2.
+  solve: >
+    Букв две, и одного правила таблицы на них не хватает: вопрос даёт
+    второе условие — среднее, дисперсию, P(X < Y). Таблица частот устроена
+    так же, только буквы в ней частоты. Приём 3.
+  spread: >
+    Спрашивают разброс или величину, построенную из X: Var(X), Var(2 − X),
+    E(a − bT). Приём 4.
+  beyond: >
+    Paper 3 выводит сами правила: среднее распределения без последнего
+    значения — суммой ряда, распределение целиком — многочленом. Приёмы 5, 6.
+
+skills:
+  - id: valid_table
+    name: Таблица обязана быть распределением
+    rung: 1
+    trigger: >
+      В таблице распределения стоят буквы — p, k, a — и спрашивают «find
+      the value of k», «state the range of possible values of r». Условия
+      на букву никто не пишет: оно в самой таблице.
+    chain:
+      - "Сумма всех вероятностей — единица: это уравнение на букву"
+      - "Если корней больше одного, подставить каждый в каждую клетку:
+        клетка ниже нуля или выше единицы отбрасывает корень"
+      - "Диапазон буквы — пересечение условий 0 ≤ клетка ≤ 1 по всем
+        клеткам, после того как лишние буквы исключены суммой"
+      - "Мода — значение с наибольшей вероятностью, а не сама вероятность"
+    traps:
+      - "Берут оба корня 2k² − k + 0,12 = 0. При k = 0,2 клетка k − 0,28
+        отрицательна, и схема оценивания мая 2022 даёт за эту фразу R1"
+      - "Диапазон q ищут по одной клетке, 0 ≤ q ≤ 1, забыв, что четыре
+        клетки складываются в единицу: верно 0 ≤ q ≤ 1/3"
+      - "Выкалывают концы: 0 < r < 1. Вероятность бывает и нулём"
+      - "За моду пишут 0,308 — наибольшую вероятность, а мода — значение 2"
+    calculator:
+      mode: allowed
+      note: >
+        Три блока из шести на Paper 1, и на Paper 2 калькулятор нужен
+        разве что для квадратного уравнения. Балл стоит на фразе, почему
+        корень отброшен, а её калькулятор не пишет.
+    prereq: []
+    raw_tags: [sum_of_probabilities, solve_linear_equation, probability_range,
+               substitution, solve_compound_inequality, sum_of_probabilities_equals_one,
+               algebraic_simplification, quadratic_equation, solve_quadratic,
+               check_probability_constraint, reject_extraneous_solution,
+               nonnegative_probability, sum_probabilities, identify_mode,
+               probability_distribution_conditions, inequality_solving]
+    blocks: ['2021-MAY-TZ1-P1-Q10-A', '2021-MAY-TZ1-P1-Q10-C',
+             '2022-MAY-TZ1-P2-Q03-A', '2022-MAY-TZ1-P2-Q03-B',
+             '2025-MAY-TZ3-P2-Q03-A', '2025-NOV-TZ3-P1-Q07-A']
+
+  - id: expectation
+    name: Среднее — сумма значений с весами
+    rung: 2
+    trigger: >
+      «Find E(X)», «find the mean of X», «estimate the expected number of
+      times» — и таблица, иногда таблица частот, по которой вероятность
+      надо ещё получить долей.
+    chain:
+      - "E(X) = Σ x·P(X = x): каждое значение умножить на свою вероятность"
+      - "Таблица частот — распределение с вероятностями f/Σf, и её среднее
+        то же самое"
+      - "Ожидаемое число на n человек — n·E(X); оно не обязано быть целым,
+        но «сколько раз должна проехать карусель» — уже целое, вверх"
+      - "Если в E(X) осталась буква с диапазоном — среднее тоже диапазон:
+        подставить концы"
+    traps:
+      - "Складывают значения без весов и делят на их число"
+      - "Складывают вероятности вместо x·P: получается единица"
+      - "Оставляют в сумме значения, которых нет в таблице — схема
+        оценивания мая 2022: «M1A0 if additional values are given»"
+      - "Для диапазона E(Y) подставляют концы диапазона одной клетки, а не
+        буквы, через которую выражены все"
+    calculator:
+      mode: allowed
+      note: >
+        Половина баллов на Paper 1, где сумма пяти произведений считается
+        столбиком. На Paper 2 калькулятор умеет среднее списка с весами,
+        но таблицу в него переписывают руками.
+    prereq: [valid_table]
+    raw_tags: [expected_value_formula, substitution, inequality_bounds, weighted_sum,
+               sum_product, sum_frequencies, relative_frequency, multiplication,
+               division, expected_total_demand, expected_value, summation,
+               expected_value_calculation]
+    blocks: ['2021-MAY-TZ1-P1-Q10-B', '2021-MAY-TZ1-P1-Q10-D',
+             '2022-MAY-TZ1-P2-Q03-C', '2025-MAY-TZ3-P2-Q03-B',
+             '2023-MAY-TZ1-P1-Q02-A', '2023-MAY-TZ1-P1-Q02-B',
+             '2025-MAY-TZ1-P3-Q01-A', '2024-MAY-TZ1-P3-Q01-G-II']
+
+  - id: two_conditions
+    name: Две буквы — два условия
+    rung: 3
+    trigger: >
+      В таблице две неизвестные, и вопрос даёт ещё одно число про
+      распределение: «given that E(X) = 2.3», «the mean and variance of the
+      marks are 31 and 124», «the probability that Agnes' score is less than
+      Barbara's is 1/2». Таблица частот с неизвестными частотами — тот же
+      вопрос.
+    chain:
+      - "Первое уравнение — сумма вероятностей (или частот) из приёма 1"
+      - "Второе — из данного числа: E(X) = Σ x·P, Var(X) = Σ (x − μ)²·P,
+        P(X < Y) — сумма по парам значений"
+      - "Решить систему; нелинейную — подстановкой или графиками на GDC"
+      - "Отобрать корни по правилам таблицы и по условию вопроса (a, k > 0,
+        p, q — целые)"
+    traps:
+      - "Отдают корень, при котором вероятность отрицательна. Ноябрь 2023:
+        a = 2,44587 и a = −10,8987 — «award (A1)(A1)(M1)(M1)A0»"
+      - "Для таблицы частот делят на число строк, а не на Σf"
+      - "В P(X < Y) считают и ничьи, или берут пары, где X > Y"
+      - "Ответ с двумя значащими цифрами: 0,55 — (A0)(A0)(M1)(M1)A0"
+    calculator:
+      mode: needed
+      note: >
+        Самый калькуляторный приём темы: кубическое уравнение на k ноября
+        2023 и система из среднего и дисперсии мая 2025 TZ2 руками не
+        решаются за отведённое время. Две остальные системы — Paper 1 и
+        линейные.
+    prereq: [valid_table, expectation]
+    raw_tags: [sum_of_probabilities, expected_value_formula, linear_equation,
+               simultaneous_equations, expected_value_equation, probability_sum_to_one,
+               system_of_equations, solving_cubic, solve_for_parameter, cubic_equation,
+               gdc_solve, set_up_linear_equation, solve_linear_system, elimination,
+               setup_mean_equation, setup_variance_equation, substitution,
+               solve_quadratic, combined_event_probability, solve_linear_equation]
+    blocks: ['2022-MAY-TZ2-P1-Q10-A', '2023-NOV-TZ1-P2-Q05',
+             '2023-NOV-TZ2-P2-Q05', '2024-MAY-TZ1-P1-Q01-A',
+             '2025-MAY-TZ2-P2-Q08', '2021-MAY-TZ1-P1-Q10-E']
+
+  - id: variance_linear
+    name: Дисперсия и величина, построенная из X
+    rung: 4
+    trigger: >
+      «Find Var(Y)», «determine Var(2 − X)», «each score is multiplied by
+      10», «the score is calculated as a − bt» — спрашивают разброс или
+      среднее величины, линейно выраженной через X.
+    chain:
+      - "Var(X) = E(X²) − (E(X))², где E(X²) = Σ x²·P(X = x)"
+      - "E(aX + b) = a·E(X) + b"
+      - "Var(aX + b) = a²·Var(X): сдвиг уходит, множитель в квадрате, знак
+        не важен — Var(2 − X) = Var(X)"
+      - "Если известны только E(T) и Var(T), этого хватает для любой a − bT"
+    traps:
+      - "Отдают E(X²) = 4,4 как дисперсию, не вычтя квадрат среднего"
+      - "Вычитают E(X), а не E(X)²"
+      - "Var(2 − X) считают как −Var(X) или 4 − Var(X)"
+      - "Var(a − bT) = b·Var(T) — множитель не в квадрате"
+      - "b округляют до 20 раньше времени: Var(P) = 362 вместо 370. Схема
+        оценивания мая 2025 принимает от 362 до 370, но это милость, а не
+        правило"
+    calculator:
+      mode: allowed
+      note: >
+        Шесть баллов ноября 2025 — Paper 1, где E(X²) складывается из трёх
+        слагаемых. На Paper 2 калькулятор решает систему на a и b, но
+        формулу E(a − bT) ему не написать.
+    prereq: [expectation]
+    raw_tags: [variance_properties, expected_value_calculation, variance_calculation,
+               linear_transformation, expected_value, system_of_equations,
+               variance_of_linear_transformation, sum_of_squares, gdc_usage,
+               linear_transformation_of_mean]
+    blocks: ['2025-NOV-TZ3-P1-Q07-B', '2025-MAY-TZ1-P2-Q11-E',
+             '2025-MAY-TZ1-P2-Q11-F', '2024-MAY-TZ1-P3-Q01-G-III',
+             '2024-MAY-TZ1-P1-Q01-B']
+
+  - id: first_success
+    name: Первый успех — распределение без последнего значения
+    rung: 5
+    trigger: >
+      «Let X be the number of actions until the first boost occurs»:
+      испытания повторяются, пока не случится успех, и значений у X
+      бесконечно много. Спрашивают E(X) суммой ряда, Var(X) по данной
+      формуле, p по заданному среднему.
+    chain:
+      - "P(X = x) = p(1 − p)^(x − 1): x − 1 неудача, потом успех"
+      - "E(X) = Σ x·p(1 − p)^(x − 1) по x от 1 до бесконечности"
+      - "Сумму берут из производной геометрического ряда: Σ n·a·rⁿ⁻¹ =
+        a/(1 − r)², с a = p и r = 1 − p, — это 1/p"
+      - "Сравнивая две модели с одним средним, сравнивают дисперсии: меньше
+        разброс — ровнее опыт"
+    traps:
+      - "Пишут Σ p(1 − p)^(x − 1) без множителя x — это сумма вероятностей,
+        она равна единице"
+      - "Путают a и r при подстановке в a/(1 − r)²"
+      - "Var(X) = 3,80 от округлённого p = 0,398; схема оценивания
+        принимает, но только от их же ответа"
+      - "Вывод «вторая модель ровнее» без сравнения чисел: R1 не ставится,
+        если дисперсии не посчитаны положительными"
+    calculator:
+      mode: allowed
+      note: >
+        Paper 3 с калькулятором, но из девяти баллов на счёт один-два:
+        10 и 90 при p = 0,1 считаются в уме, 1/2,5104 — делением. Остальное —
+        объяснение и вывод.
+    prereq: [expectation, variance_linear]
+    raw_tags: [geometric_distribution, reasoning, probability_explanation,
+               expected_value, sigma_notation, identify_parameters,
+               substitute_into_series_formula, simplify_to_expected_value,
+               substitute_p, compute_expected_value, compute_variance,
+               use_of_expected_value, algebraic_solution, variance_formula,
+               variance_comparison, interpretation]
+    blocks: ['2024-MAY-TZ1-P3-Q01-B-I', '2024-MAY-TZ1-P3-Q01-B-II',
+             '2024-MAY-TZ1-P3-Q01-C-II', '2024-MAY-TZ1-P3-Q01-D',
+             '2024-MAY-TZ1-P3-Q01-H-I', '2024-MAY-TZ1-P3-Q01-H-II',
+             '2024-MAY-TZ1-P3-Q01-H-III']
+
+  - id: generating_function
+    name: Производящая функция — таблица, записанная многочленом
+    rung: 6
+    trigger: >
+      «The probability distribution of X can be represented by the
+      polynomial function G(t) = Σ P(X = x)tˣ». Строят G по опыту, находят
+      букву по коэффициенту, берут G′(1) как среднее, перемножают G двух
+      независимых величин.
+    chain:
+      - "Коэффициент при tˣ — это P(X = x); G(1) = 1, потому что это сумма
+        таблицы"
+      - "Таблицу для G строят обычным перечислением исходов — деревом или
+        сочетаниями"
+      - "G′(1) = Σ x·P(X = x) = E(X)"
+      - "Сумма независимых величин — произведение их G; E(X + Y) = E(X) + E(Y)
+        быстрее, чем раскрывать произведение"
+    traps:
+      - "Пишут коэффициенты без обоснования — схема мая 2025: «Do not award A
+        marks for P(X = 0) = 3/10… stated without any working shown»"
+      - "Коэффициенты в обратном порядке: p = 1/3 вместо 2/3 даёт
+        G = 1/3 + t/2 + t²/6, то есть посчитаны орлы, а не решки"
+      - "Сдвигают степени: P(X = 0) ставят при t"
+      - "Раскрывают G_X·G_Y с ошибкой и теряют A1, хотя E(Z) = 4/5 + 7/6
+        получается без раскрытия"
+    calculator:
+      mode: allowed
+      note: >
+        Все 18 баллов на Paper 3 с калькулятором, и ни в одном он не нужен:
+        коэффициенты — дроби с десятыми и шестыми, а производная многочлена
+        берётся в уме.
+    prereq: [valid_table, expectation]
+    raw_tags: [evaluate_derivative, expected_value, probability_distribution,
+               polynomial_representation, without_replacement, solve_equation,
+               product_rule]
+    blocks: ['2025-MAY-TZ1-P3-Q01-C-II', '2025-MAY-TZ1-P3-Q01-D',
+             '2025-MAY-TZ1-P3-Q01-E-I', '2025-MAY-TZ1-P3-Q01-E-II',
+             '2025-MAY-TZ1-P3-Q01-F']
+
+imported:
+  - practicum: D2
+    what: >
+      Вероятности первого успеха на третьем действии и хотя бы одного успеха
+      за шесть (май 2024 TZ1 P3 Q1(a), (e), (f), (g)(i)) — дерево D2, хотя
+      стоят в том же исследовании, что E(X) = 1/p. Таблица распределения
+      второй модели дана здесь готовой, с m и n из (g)(i).
+  - practicum: D3
+    what: >
+      E(X) = np и Var(aX + b) для биномиальной X — D3. Здесь то же правило
+      Var(aX + b) = a²Var(X) для любой таблицы.
+  - practicum: A2
+    what: >
+      E(X) = 1/p выводится дифференцированием суммы бесконечной
+      геометрической прогрессии; сама сумма a/(1 − r) — A2, производная
+      обеих частей (май 2024 TZ1 P3 Q1(c)(i)) — E2 и E3.
+  - practicum: D6
+    what: >
+      E(T) = 4,723 и Var(T) = 0,906 мая 2025 TZ1 Q11 получены интегралами
+      плотности. Как — D6; здесь они даны числами, и работа — только
+      линейное преобразование.
+  - practicum: B1
+    what: >
+      Кубическое уравнение на k и система из среднего и дисперсии — техника
+      B1. Новое здесь только то, откуда уравнения и какие корни отбросить.
+
+corpus_issues:
+  - id: 'ноябрьский дубль 2023 года'
+    what: >
+      2023-NOV-TZ1-P2 и 2023-NOV-TZ2-P2 — одна и та же бумага. В D4 это Q5,
+      пять баллов посчитаны дважды. Девятый практикум серии, где дубль
+      вычитают руками.
+  - id: 'таблица частот в двух темах'
+    what: >
+      Три вопроса про таблицу частот устроены одинаково — неизвестные
+      частоты или значения из суммы и среднего, — а размечены в три разных
+      места: май 2024 TZ1 Q1 в statistics.expected_value, май 2025 TZ2 Q8
+      и май 2022 TZ1 Q1 в statistics.discrete_random_variables. При этом
+      медиана и стандартное отклонение мая 2022 TZ1 Q1 — описательная
+      статистика, которой в карте нет (см. D2), а среднее ноября 2025 TZ3
+      Q2 той же природы лежит в statistics.probability.
+    why: >
+      Разметка решает по слову «frequency» или «probability» в условии, а
+      не по действию. D4 берёт две таблицы частот, где действие —
+      E(X) = Σx·f/Σf как уравнение; май 2022 TZ1 Q1 уходит в описательную
+      статистику вместе с остальными.
+  - id: '2024-MAY-TZ1-P3-Q01 в четырёх темах'
+    what: >
+      Одно исследование на 27 баллов разложено по statistics.probability
+      (a), (e), (f), (g)(i); statistics.discrete_random_variables (b), (h)(ii),
+      (h)(iii); statistics.expected_value (c)(ii), (d), (g)(ii), (g)(iii),
+      (h)(i); calculus.series (c)(i). Var(X) при p = 0,1 в (d) — expected_value,
+      Var(X) при другом p в (h)(ii) — discrete_random_variables.
+  - id: '2025-MAY-TZ1-P3-Q01 в четырёх темах'
+    what: >
+      Производящая функция размечена так: E(M) и G′(1) = E(M) — expected_value,
+      G_X и G_Y — probability, G(1) — functions.equations, G′(t) —
+      calculus.differentiation. Вопрос про одно понятие, и никакой из
+      четырёх тем оно не принадлежит; в таксономии производящей функции
+      нет.
+  - id: 'source_pages в теме'
+    what: >
+      Смещение на единицу у пяти вопросов из тринадцати:
+      2021-MAY-TZ1-P1-Q10 (11 вместо 12), 2022-MAY-TZ1-P2-Q03 (6 вместо 7),
+      2023-NOV-TZ2-P2-Q05 (9 вместо 10), 2024-MAY-TZ1-P1-Q01 (2 вместо 3 —
+      вторая страница этой бумаги с инструкциями) и 2024-MAY-TZ1-P3-Q01
+      (2–3 вместо 3–4). Остальные восемь совпадают с PDF.
+    why: >
+      Ноябрь 2023 опять самый наглядный, но наоборот: в D3 смещение было
+      у копии TZ1 и не было у TZ2, здесь Q5 смещён в копии TZ2 и верен
+      в TZ1. Значит, номер брался не из одного источника даже внутри одной
+      копии бумаги — вопрос к тому, как разметчик читал страницу, а не
+      к самой бумаге.
+
+ladder: [valid_table, expectation, two_conditions, variance_linear, first_success,
+         generating_function]

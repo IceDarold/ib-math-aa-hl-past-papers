@@ -99,6 +99,10 @@ def spoil(answer, spec):
         # и притом правдоподобно выглядящий: так ошибаются со знаком.
         return show_answer(sp.Complement(sp.S.Reals, answer),
                            var=spec.get('var', 'x'))
+    if kind == 'table' and isinstance(answer, sp.Interval):
+        # Верхний конец вдвое дальше: в множество попадают значения буквы,
+        # при которых последняя клетка отрицательна.
+        return show_answer(sp.Interval(answer.start, 2 * answer.end), var=spec['var'])
     if kind == 'equation':
         e = sp.sympify(answer)
         return f'{sp.sstr(sp.expand(e.lhs + 3))} = {sp.sstr(e.rhs)}'
@@ -1799,6 +1803,180 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('D3.')):
     t(f'{gen_name}: сдвинутая граница отвергнута на всех {SEEDS} зёрнах', moved == SEEDS)
     t(f'{gen_name}: и названа по имени на всех {SEEDS} зёрнах', moved_named == SEEDS)
     print(f'  {gen_name:32} {SEEDS} задач сверено бета-функцией и проверкой')
+
+
+# =============================================================== D4
+# Проверки D4 решают таблицу сами: буквы — базисом Грёбнера, среднее и
+# дисперсия — суммами kit, ряд первого успеха — символьно. Сверка идёт
+# формулами, которых в них нет: 1/p и (1 − p)/p² для первого успеха,
+# a²·Var для линейной величины, буквы — sp.solve по условиям, выписанным
+# заново, с отбором годных руками, производящая функция — коэффициентами. Затем
+# эталон прогоняется через проверку тренажёра, и рядом с ним — ответ
+# с типовым промахом, который она обязана отвергнуть и назвать.
+
+from fractions import Fraction  # noqa: E402
+
+
+def _d4_tables(spec):
+    """Таблицы задания точными дробями — без kit."""
+    out = {}
+    for name, packed in spec['tables'].items():
+        cells = [(sp.sympify(v), sp.sympify(c)) for v, c in packed['cells']]
+        if packed['counts'] and all(c.is_number for _, c in cells):
+            total = sum(c for _, c in cells)
+            cells = [(v, c / total) for v, c in cells]
+        out[name] = cells
+    return out
+
+
+def _d4_mean(cells, a=1, b=0):
+    return sum((a * v + b) * c for v, c in cells)
+
+
+def _d4_var(cells, a=1):
+    m = _d4_mean(cells)
+    return a * a * (sum(v * v * c for v, c in cells) - m * m)
+
+
+def _d4_expected(item):
+    spec = item['check']
+    what = spec['what']
+    if spec.get('geo'):
+        p = sp.sympify(spec['geo'])
+        if what == 'mean':
+            return 1 / p
+        if what == 'var':
+            return (1 - p) / p ** 2
+        mean = sp.sympify(spec['conditions'][0][2])
+        return [1 / mean]
+    tables = _d4_tables(spec)
+    cells = next(iter(tables.values()))
+    free = sorted(set().union(*[sp.sympify(c).free_symbols | sp.sympify(v).free_symbols
+                                for v, c in cells]), key=str)
+    if what in ('mean', 'var') and not free:
+        a, b = sp.sympify(spec['a']), sp.sympify(spec['b'])
+        return _d4_mean(cells, a, b) if what == 'mean' else _d4_var(cells, a)
+    if what == 'pgf':
+        return [c for _, c in sorted(cells, key=lambda vc: vc[0])]
+    if what == 'range':
+        letter = free[0]
+        low, high = sp.Integer(0), sp.oo
+        for _, c in cells:
+            slope, rest = sp.Poly(c, letter).all_coeffs() if sp.degree(c, letter) == 1 else (0, c)
+            # 0 ≤ slope·m + rest ≤ 1 — руками, по знаку наклона
+            for edge in (0, 1):
+                if slope > 0:
+                    bound = (edge - rest) / slope
+                    high = min(high, bound) if edge == 1 else high
+                    low = max(low, bound) if edge == 0 else low
+                elif slope < 0:
+                    bound = (edge - rest) / slope
+                    high = min(high, bound) if edge == 0 else high
+                    low = max(low, bound) if edge == 1 else low
+        return sp.Interval(low, high)
+    # буквы и мода: sp.solve по условиям, выписанным заново, и отбор годных руками
+    counts = spec['tables'][next(iter(spec['tables']))]['counts']
+    total = sum(c for _, c in cells)
+    if counts:
+        probs = [(v, c / total) for v, c in cells]
+        equations = []
+    else:
+        probs = cells
+        equations = [sp.Eq(total, 1)]
+    for kind, _, value in spec.get('conditions', []):
+        value = sp.sympify(value)
+        if kind == 'mean':
+            equations.append(sp.Eq(sum(v * c for v, c in probs), value))
+        elif kind == 'size':
+            equations.append(sp.Eq(total, value))
+    found = []
+    for run in sp.solve(equations, free, dict=True):
+        here = [sp.sympify(c).subs(run) for _, c in cells]
+        if not all(h.is_real for h in here):
+            continue
+        if counts:
+            good = all(h >= 0 and h.is_integer for h in here)
+        else:
+            good = all(0 <= h <= 1 for h in here)
+        if good:
+            found.append(run)
+    run, = found
+    if what == 'mode':
+        return max(cells, key=lambda vc: sp.sympify(vc[1]).subs(run))[0]
+    return [next(v for key, v in run.items() if str(key) == name) for name in spec['unknowns']]
+
+
+def _d4_same(expected, answer, what):
+    if what == 'pgf':
+        t_sym = sp.Symbol('t')
+        poly = sp.Poly(sp.expand(answer), t_sym)
+        return all(sp.simplify(poly.coeff_monomial(t_sym ** i) - c) == 0
+                   for i, c in enumerate(expected))
+    if isinstance(expected, sp.Set):
+        return expected == answer
+    if isinstance(expected, list):
+        answer = answer if isinstance(answer, (list, tuple)) else [answer]
+        return len(expected) == len(answer) and all(
+            abs(float(e) - float(a)) < 1e-9 for e, a in zip(expected, answer))
+    return abs(float(expected) - float(answer)) < 1e-9 * max(1, abs(float(answer)))
+
+
+def _d4_slip(item):
+    """Ответ с типовым промахом и слово, которым проверка обязана его назвать."""
+    spec = item['check']
+    what = spec['what']
+    if spec.get('geo'):
+        return None
+    tables = _d4_tables(spec)
+    cells = next(iter(tables.values()))
+    free = set().union(*[sp.sympify(c).free_symbols for _, c in cells])
+    if what == 'letters' and not free - {sp.Symbol('k')} and 'k' in spec['unknowns']:
+        # второй корень квадратного уравнения: клетка k − сдвиг отрицательна
+        k_sym = sp.Symbol('k')
+        roots = sp.solve(sum(c for _, c in cells) - 1, k_sym)
+        other = [r for r in roots if abs(float(r) - float(item['answer'])) > 1e-9]
+        return (show_answer(other[0]), 'P(X =') if other else None
+    if what == 'mean' and not free and not spec['tables'][next(iter(spec['tables']))]['counts'] \
+            and sp.sympify(spec['a']) == 1 and sp.sympify(spec['b']) == 0:
+        plain = sum(v for v, _ in cells) / len(cells)
+        if abs(float(plain) - float(item['answer'])) > 0.01:
+            return f'{float(plain):.6g}', 'без весов'
+    if what == 'var' and not free and sp.sympify(spec['a']) == 1 and len(cells) == 3 \
+            and all(c.is_Rational and c.q > 2 for _, c in cells):
+        square = sum(v * v * c for v, c in cells)
+        if abs(float(square) - float(item['answer'])) > 0.01:
+            return f'{float(square):.6g}', 'E(X²)'
+    if what == 'pgf':
+        t_sym = sp.Symbol('t')
+        ordered = [c for _, c in sorted(cells, key=lambda vc: vc[0])]
+        if ordered != ordered[::-1]:
+            flipped = sum(c * t_sym ** i for i, c in enumerate(ordered[::-1]))
+            return show_answer(flipped), 'обратном'
+    return None
+
+
+section('D4: формулы сходятся с генератором, проверка принимает и называет промах')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('D4.')):
+    agreed = accepted = slipped = named = 0
+    for seed in range(SEEDS):
+        item = GENERATORS[gen_name](random.Random(seed))
+        spec = item['check']
+        agreed += bool(_d4_same(_d4_expected(item), item['answer'], spec['what']))
+        ok, _ = evaluate(spec, show_answer(item['answer'], var=spec.get('var', 'x')))
+        accepted += bool(ok)
+        slip = _d4_slip(item)
+        if slip is None:
+            slipped += 1
+            named += 1
+            continue
+        wrong, message = evaluate(spec, slip[0])
+        slipped += not wrong
+        named += slip[1] in message
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
+    t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено формулами и отбором корней')
 
 
 # =============================================================== E4
