@@ -35,7 +35,7 @@ The first manual topic-and-method classification covers the complete November 20
 - [Карта практикумов](practicum/map.yaml) и проверка `python practicum/check_map.py`
 - [Карточки приёмов](practicum/skills/) — нормализованный слой над `method_tags`
 - Собранные практикумы: двадцать пять из тридцати шести, помечены `status: ready` в карте; PDF для чтения с телефона — в [practicum/pdf/](practicum/pdf/)
-- [Тренажёр повторения](practicum/aahl/) — вкладка «Повторение» на math.archik.tech: короткие задания вперемешку по всем темам, с секундомером и расписанием по приёмам
+- [Тренажёр повторения](practicum/aahl/) — вкладка «Повторение» на ib.archik.tech: короткие задания вперемешку по всем темам, с секундомером и расписанием по приёмам
 
 ## Question Atlas
 

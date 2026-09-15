@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Ставит конфигурацию nginx для math.archik.tech. Запускать от root на самой
+# Ставит конфигурацию nginx для ib.archik.tech (и переезда со старого math.archik.tech). Запускать от root на самой
 # машине — учётная запись деплоя (mathdeploy) прав sudo не имеет вовсе,
 # поэтому в deploy.sh этот шаг не входит.
 #
-# Нужен после правки classification/web/deploy/math.archik.tech.conf:
+# Нужен после правки classification/web/deploy/ib.archik.tech.conf:
 # сам деплой конфигурацию не трогает, только выкладывает файлы и службы.
 #
 #   sudo practicum/aahl/deploy/install-nginx.sh
@@ -15,9 +15,13 @@
 set -euo pipefail
 
 root=$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)
-source_conf="$root/classification/web/deploy/math.archik.tech.conf"
-durable=/etc/archik-sites/math.archik.tech.conf
-live=/opt/hiddify-manager/nginx/conf.d/math.archik.tech.conf
+source_conf="$root/classification/web/deploy/ib.archik.tech.conf"
+durable=/etc/archik-sites/ib.archik.tech.conf
+live=/opt/hiddify-manager/nginx/conf.d/ib.archik.tech.conf
+# До 2026-09-15 файл назывался по старому имени сайта. Оставить его рядом
+# нельзя: два server-блока на math.archik.tech, и nginx возьмёт первый.
+old_names=(/etc/archik-sites/math.archik.tech.conf
+           /opt/hiddify-manager/nginx/conf.d/math.archik.tech.conf)
 htpasswd=/var/www/math.archik.tech/htpasswd
 
 test -f "$source_conf"
@@ -28,6 +32,7 @@ if [[ ! -f "$htpasswd" ]]; then
   exit 1
 fi
 
+rm -f -- "${old_names[@]}"
 install -m 0644 -o root -g root "$source_conf" "$durable"
 install -m 0644 -o root -g root "$source_conf" "$live"
 nginx -t -c /opt/hiddify-manager/nginx/nginx.conf

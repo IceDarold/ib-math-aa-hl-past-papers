@@ -413,39 +413,39 @@ auth=(--user "$BASIC_AUTH_USER:$BASIC_AUTH_PASSWORD")
 
 if ! curl --fail --silent --show-error --location "${auth[@]}" \
   --retry 5 --retry-delay 2 --max-time 20 \
-  https://math.archik.tech/ | grep -q 'Question Atlas'; then
+  https://ib.archik.tech/ | grep -q 'Question Atlas'; then
   rollback
   exit 1
 fi
 
 if ! curl --fail --silent --show-error --head "${auth[@]}" \
   --retry 5 --retry-delay 2 --max-time 20 \
-  'https://math.archik.tech/AA_HL/2022/May/TZ2/Paper%201/question-paper.pdf' >/dev/null; then
+  'https://ib.archik.tech/AA_HL/2022/May/TZ2/Paper%201/question-paper.pdf' >/dev/null; then
   rollback
   exit 1
 fi
 
 if ! curl --fail --silent --show-error "${auth[@]}" --max-time 20 \
-  'https://math.archik.tech/api/health' | grep -q '"ok":true'; then
+  'https://ib.archik.tech/api/health' | grep -q '"ok":true'; then
   rollback
   exit 1
 fi
 
 if ! curl --fail --silent --show-error --head "${auth[@]}" \
   --retry 5 --retry-delay 2 --max-time 20 \
-  'https://math.archik.tech/practicum/calculus/practicum-e7-differential-equations.ipynb' >/dev/null; then
+  'https://ib.archik.tech/practicum/calculus/practicum-e7-differential-equations.ipynb' >/dev/null; then
   rollback
   exit 1
 fi
 
 if ! curl --fail --silent --show-error "${auth[@]}" --max-time 20 \
-  'https://math.archik.tech/api/drill/health' | grep -q '"ok": true'; then
+  'https://ib.archik.tech/api/drill/health' | grep -q '"ok": true'; then
   rollback
   exit 1
 fi
 
 if curl --fail --silent --head --max-time 20 \
-  'https://math.archik.tech/AA_HL/2022/May/TZ2/Paper%201/question-paper.pdf' \
+  'https://ib.archik.tech/AA_HL/2022/May/TZ2/Paper%201/question-paper.pdf' \
   >/dev/null; then
   printf 'Archive is reachable without a password.\n' >&2
   rollback
@@ -455,15 +455,26 @@ fi
 # API физики идёт мимо пароля сайта, и замок у него один — ключ. Снаружи
 # без ключа должен быть отказ, а не банк и не 502 от упавшей службы.
 if ! curl --fail --silent --show-error --max-time 20 --retry 5 --retry-delay 2 \
-  'https://math.archik.tech/api/physics/v1/health' | grep -q '"ok":true'; then
+  'https://ib.archik.tech/api/physics/v1/health' | grep -q '"ok":true'; then
   printf 'Physics API is not reachable.\n' >&2
   rollback
   exit 1
 fi
 physics_anonymous=$(curl --silent --output /dev/null --write-out '%{http_code}' \
-  --max-time 20 'https://math.archik.tech/api/physics/v1/questions')
+  --max-time 20 'https://ib.archik.tech/api/physics/v1/questions')
 if [[ "$physics_anonymous" != "401" ]]; then
   printf 'Physics API answered %s without a key.\n' "$physics_anonymous" >&2
+  rollback
+  exit 1
+fi
+
+# С 2026-09-15 сайт живёт на ib.archik.tech; старый адрес обязан вести
+# туда же, с тем же путём, — на нём ссылки из заметок и программы у API.
+moved=$(curl --silent --output /dev/null --max-time 20 \
+  --write-out '%{http_code} %{redirect_url}' \
+  'https://math.archik.tech/api/physics/v1/health?probe=1')
+if [[ "$moved" != "308 https://ib.archik.tech/api/physics/v1/health?probe=1" ]]; then
+  printf 'Old address does not move to the new one: %s\n' "$moved" >&2
   rollback
   exit 1
 fi
