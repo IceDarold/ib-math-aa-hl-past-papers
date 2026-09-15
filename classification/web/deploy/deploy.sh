@@ -346,6 +346,14 @@ if [[ ! -f "$physics_keys" ]]; then
   printf 'Physics API keys file is missing: %s\n' "$physics_keys" >&2
   exit 1
 fi
+# Секрет подписи временных ссылок на файлы (рисунок, рендер без ключа).
+# Создаётся один раз и живёт вне релизов рядом с ключами; если его сменить,
+# перестанут открываться только уже выданные ссылки.
+physics_signing="$physics_runtime/signing-key"
+if [[ ! -s "$physics_signing" ]]; then
+  ( umask 077; od -An -N32 -tx1 /dev/urandom | tr -d ' \n' > "$physics_signing.tmp" )
+  mv -f -- "$physics_signing.tmp" "$physics_signing"
+fi
 "$api_venv/bin/pip" install --disable-pip-version-check --quiet \
   -r "$release/vendor/ib-physics/api/requirements.txt"
 
@@ -381,7 +389,7 @@ if [[ -n "$(physics_listener)" ]] || { ss -ltnH 'sport = :8043' | grep -q . ; };
   exit 1
 fi
 
-nohup env PHYSICS_API_KEYS="$physics_keys" \
+nohup env PHYSICS_API_KEYS="$physics_keys" PHYSICS_API_SIGNING_KEY="$physics_signing" \
   "$api_venv/bin/uvicorn" --app-dir "$release/vendor/ib-physics/api" app:app \
   --host 127.0.0.1 --port 8043 --proxy-headers \
   >> "$physics_log" 2>&1 &
@@ -493,6 +501,14 @@ physics_anonymous=$(curl --silent --output /dev/null --write-out '%{http_code}' 
   --max-time 20 'https://ib.archik.tech/api/physics/v1/questions')
 if [[ "$physics_anonymous" != "401" ]]; then
   printf 'Physics API answered %s without a key.\n' "$physics_anonymous" >&2
+  rollback
+  exit 1
+fi
+# Подписанная ссылка — вторая дверь без ключа; поддельная обязана получить отказ.
+physics_forged=$(curl --silent --output /dev/null --write-out '%{http_code}' \
+  --max-time 20 "https://ib.archik.tech/api/physics/s/$(( $(date +%s) + 600 )).000000000000.$(printf 'A%.0s' {1..43})/v1/questions/19M.2.HL.TZ1.2/render/question.png")
+if [[ "$physics_forged" != "403" ]]; then
+  printf 'Physics API answered %s to a forged signed link.\n' "$physics_forged" >&2
   rollback
   exit 1
 fi
