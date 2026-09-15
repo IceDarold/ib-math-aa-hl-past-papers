@@ -364,8 +364,11 @@ fi
 # после ручного перезапуска, — и тогда старая служба остаётся на порту, новая
 # падает с «address already in use», а проверка здоровья отвечает старой:
 # выкатка зелёная, а работает прошлый релиз. Так и было 2026-09-15.
+# Под set -e и pipefail пустой grep — это ошибка всего скрипта, а пустой
+# порт здесь нормальный ответ. Поэтому || true: так 2026-09-15 выкатка
+# погасила старую службу и оборвалась, не запустив новую.
 physics_listener() {
-  ss -ltnpH 'sport = :8043' 2>/dev/null | grep -o 'pid=[0-9]*' | head -n 1 | cut -d= -f2
+  { ss -ltnpH 'sport = :8043' 2>/dev/null | grep -o 'pid=[0-9]*' | head -n 1 | cut -d= -f2; } || true
 }
 for _ in {1..50}; do
   stale=$(physics_listener)
@@ -373,7 +376,7 @@ for _ in {1..50}; do
   kill "$stale" 2>/dev/null || true
   sleep 0.1
 done
-if [[ -n "$(physics_listener)" ]] || ss -ltnH 'sport = :8043' | grep -q .; then
+if [[ -n "$(physics_listener)" ]] || { ss -ltnH 'sport = :8043' | grep -q . ; }; then
   printf 'Port 8043 is still taken by another process.\n' >&2
   exit 1
 fi
