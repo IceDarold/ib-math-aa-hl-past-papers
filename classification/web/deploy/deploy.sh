@@ -360,11 +360,30 @@ if [[ -f "$physics_pid" ]]; then
   fi
 fi
 
+# Порт обязан освободиться до запуска. pid-файл может врать — например,
+# после ручного перезапуска, — и тогда старая служба остаётся на порту, новая
+# падает с «address already in use», а проверка здоровья отвечает старой:
+# выкатка зелёная, а работает прошлый релиз. Так и было 2026-09-15.
+physics_listener() {
+  ss -ltnpH 'sport = :8043' 2>/dev/null | grep -o 'pid=[0-9]*' | head -n 1 | cut -d= -f2
+}
+for _ in {1..50}; do
+  stale=$(physics_listener)
+  [[ -z "$stale" ]] && break
+  kill "$stale" 2>/dev/null || true
+  sleep 0.1
+done
+if [[ -n "$(physics_listener)" ]] || ss -ltnH 'sport = :8043' | grep -q .; then
+  printf 'Port 8043 is still taken by another process.\n' >&2
+  exit 1
+fi
+
 nohup env PHYSICS_API_KEYS="$physics_keys" \
   "$api_venv/bin/uvicorn" --app-dir "$release/vendor/ib-physics/api" app:app \
   --host 127.0.0.1 --port 8043 --proxy-headers \
   >> "$physics_log" 2>&1 &
-printf '%s\n' "$!" > "$physics_pid"
+physics_process=$!
+printf '%s\n' "$physics_process" > "$physics_pid"
 
 # Банк и приёмы грузятся при старте, до первого запроса: это секунды.
 printf 'Waiting for physics API health check.\n'
@@ -377,6 +396,13 @@ done
 if ! curl --fail --silent --show-error http://127.0.0.1:8043/health >/dev/null; then
   printf 'Physics API did not start. Recent log:\n' >&2
   tail -n 40 "$physics_log" >&2 || true
+  exit 1
+fi
+# Отвечать должен именно тот процесс, который запустили сейчас.
+if [[ "$(physics_listener)" != "$physics_process" ]]; then
+  printf 'Port 8043 is served by pid %s, not by the new process %s.\n' \
+    "$(physics_listener)" "$physics_process" >&2
+  tail -n 20 "$physics_log" >&2 || true
   exit 1
 fi
 anonymous=$(curl --silent --output /dev/null --write-out '%{http_code}' \
