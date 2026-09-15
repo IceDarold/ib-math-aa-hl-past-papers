@@ -164,8 +164,11 @@ rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
 
 # У физики нужен предмет, банк и собранные страницы: по ним предмет и
 # понимает, какие практикумы готовы.
+# Рендеры задач (bank/2025/renders, 118 МБ) места почти не прибавляют: релиз
+# заводится жёсткими ссылками на прошлый, а -c оставляет совпавшие файлы
+# нетронутыми — копируется только то, что перерисовали.
 rsync -rlptzc --delete --exclude='__pycache__/' --exclude='*.pyc' \
-  --exclude='.git/' --exclude='tests/' -e "$rsync_ssh" \
+  --exclude='.git/' --exclude='.venv/' --exclude='tests/' -e "$rsync_ssh" \
   "$physics_subject/" "$remote:$release/vendor/ib-physics/"
 
 # Те же страницы вторым экземпляром там, куда ведут ссылки: их отдаёт
@@ -221,6 +224,8 @@ test -f "$release/practicum/map.yaml"
 test -f "$release/vendor/drill-core/drill/server.py"
 test -f "$release/vendor/ib-physics/bank/2025/bank.json"
 test -f "$release/vendor/ib-physics/bank/2025/atlas.sqlite"
+test -f "$release/vendor/ib-physics/bank/2025/renders.json"
+test -f "$release/vendor/ib-physics/api/app.py"
 # Проверочный набор — пакет: тренажёр импортирует его отсюда.
 test -f "$release/practicum/kit/__init__.py"
 test -f "$release/practicum/kit/density.py"
@@ -329,6 +334,58 @@ if ! curl --fail --silent --show-error http://127.0.0.1:8042/api/drill/health >/
   exit 1
 fi
 
+# API банка физики. Пускает только по ключу, и файл ключей живёт вне
+# релизов: в нём SHA-256 ключей, а сами ключи на машине не хранятся. Кладёт
+# его root, один раз; нет файла — служба не поднимется, и выкатка остановится
+# здесь, а не выставит банк наружу без замка.
+physics_runtime="$remote_root/physics-api"
+physics_keys="$physics_runtime/keys"
+physics_pid="$physics_runtime/physics-api.pid"
+physics_log="$physics_runtime/physics-api.log"
+if [[ ! -f "$physics_keys" ]]; then
+  printf 'Physics API keys file is missing: %s\n' "$physics_keys" >&2
+  exit 1
+fi
+"$api_venv/bin/pip" install --disable-pip-version-check --quiet \
+  -r "$release/vendor/ib-physics/api/requirements.txt"
+
+if [[ -f "$physics_pid" ]]; then
+  old_physics=$(cat "$physics_pid" || true)
+  if [[ "$old_physics" =~ ^[0-9]+$ ]] && kill -0 "$old_physics" 2>/dev/null; then
+    kill "$old_physics"
+    for _ in {1..20}; do
+      kill -0 "$old_physics" 2>/dev/null || break
+      sleep 0.1
+    done
+  fi
+fi
+
+nohup env PHYSICS_API_KEYS="$physics_keys" \
+  "$api_venv/bin/uvicorn" --app-dir "$release/vendor/ib-physics/api" app:app \
+  --host 127.0.0.1 --port 8043 --proxy-headers \
+  >> "$physics_log" 2>&1 &
+printf '%s\n' "$!" > "$physics_pid"
+
+# Банк и приёмы грузятся при старте, до первого запроса: это секунды.
+printf 'Waiting for physics API health check.\n'
+for _ in {1..120}; do
+  if curl --fail --silent http://127.0.0.1:8043/health >/dev/null; then
+    break
+  fi
+  sleep 0.25
+done
+if ! curl --fail --silent --show-error http://127.0.0.1:8043/health >/dev/null; then
+  printf 'Physics API did not start. Recent log:\n' >&2
+  tail -n 40 "$physics_log" >&2 || true
+  exit 1
+fi
+anonymous=$(curl --silent --output /dev/null --write-out '%{http_code}' \
+  http://127.0.0.1:8043/api/physics/v1/questions)
+if [[ "$anonymous" != "401" ]]; then
+  printf 'Physics API answered %s without a key.\n' "$anonymous" >&2
+  exit 1
+fi
+
 ln -s -- "$release" "$next"
 mv -Tf -- "$next" "$current"
 REMOTE
@@ -391,6 +448,22 @@ if curl --fail --silent --head --max-time 20 \
   'https://math.archik.tech/AA_HL/2022/May/TZ2/Paper%201/question-paper.pdf' \
   >/dev/null; then
   printf 'Archive is reachable without a password.\n' >&2
+  rollback
+  exit 1
+fi
+
+# API физики идёт мимо пароля сайта, и замок у него один — ключ. Снаружи
+# без ключа должен быть отказ, а не банк и не 502 от упавшей службы.
+if ! curl --fail --silent --show-error --max-time 20 --retry 5 --retry-delay 2 \
+  'https://math.archik.tech/api/physics/v1/health' | grep -q '"ok":true'; then
+  printf 'Physics API is not reachable.\n' >&2
+  rollback
+  exit 1
+fi
+physics_anonymous=$(curl --silent --output /dev/null --write-out '%{http_code}' \
+  --max-time 20 'https://math.archik.tech/api/physics/v1/questions')
+if [[ "$physics_anonymous" != "401" ]]; then
+  printf 'Physics API answered %s without a key.\n' "$physics_anonymous" >&2
   rollback
   exit 1
 fi
