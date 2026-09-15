@@ -226,6 +226,8 @@ test -f "$release/vendor/ib-physics/bank/2025/bank.json"
 test -f "$release/vendor/ib-physics/bank/2025/atlas.sqlite"
 test -f "$release/vendor/ib-physics/bank/2025/renders.json"
 test -f "$release/vendor/ib-physics/api/app.py"
+test -f "$release/vendor/ib-physics/api/practice.py"
+test -f "$release/vendor/ib-physics/api/widget/practice.html"
 # Проверочный набор — пакет: тренажёр импортирует его отсюда.
 test -f "$release/practicum/kit/__init__.py"
 test -f "$release/practicum/kit/density.py"
@@ -501,6 +503,16 @@ physics_anonymous=$(curl --silent --output /dev/null --write-out '%{http_code}' 
   --max-time 20 'https://ib.archik.tech/api/physics/v1/questions')
 if [[ "$physics_anonymous" != "401" ]]; then
   printf 'Physics API answered %s without a key.\n' "$physics_anonymous" >&2
+  rollback
+  exit 1
+fi
+# Практика в ChatGPT (MCP) — третья дверь; без ключа тоже отказ.
+physics_mcp=$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 20 \
+  -X POST -H 'Content-Type: application/json' -H 'Accept: application/json, text/event-stream' \
+  --data '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' \
+  'https://ib.archik.tech/api/physics/mcp')
+if [[ "$physics_mcp" != "401" ]]; then
+  printf 'Physics practice MCP answered %s without a key.\n' "$physics_mcp" >&2
   rollback
   exit 1
 fi

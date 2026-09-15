@@ -82,6 +82,7 @@ jobs:
           python vendor/ib-physics/tests/test_cards.py
           # API физики: замок по ключу, фильтры, картинки у каждого задания.
           python vendor/ib-physics/tests/test_api.py
+          python vendor/ib-physics/tests/test_practice.py
           # verify_drill.py здесь не запускается: он пересчитывает каждую
           # сгенерированную задачу и идёт четверть часа. Его место — рядом
           # с правкой генератора, а не на каждой выкатке.
