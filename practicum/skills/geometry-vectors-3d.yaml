@@ -2,64 +2,364 @@ version: 0.1
 practicum: C6
 title: Прямые и плоскости в пространстве
 source_topic: geometry.vectors_3d
-status: stub
-stub_note: >
-  Карточка заведена раньше самого практикума, чтобы не потерять разбор
-  систем линейных уравнений. Здесь пока один приём; остальные появятся,
-  когда C6 будут собирать. Лестницы и раздела corpus в файле поэтому нет.
+also_covers: [geometry.vectors]
+
+corpus:
+  blocks: 35
+  marks: 136
+  effective_blocks: 32
+  effective_marks: 123
+  sessions: May 2021 — November 2025
+  papers: {1: 51, 2: 72}
+  gdc_marks: 72
+  note: >
+    Разрез продолжает C5: тема делится по действию, а не по разметке. C6
+    берёт всё, где плоскость — сам предмет вопроса: её уравнение, нормаль,
+    встреча с прямой, прямая пересечения двух плоскостей, три плоскости и
+    системы уравнений, перпендикуляр из точки и отражение. 38 баллов из 182
+    geometry.vectors (доля 0.209, разобрано при сборке C5) и 98 из 216
+    geometry.vectors_3d (0.4537). Остаток vectors_3d, 66 баллов, — C7:
+    векторное произведение как площадь, углы с плоскостью, расстояния до
+    прямой и между прямыми, сферический треугольник Paper 3.
+
+    Граница с C7 проведена так. Векторное произведение здесь есть, но только
+    как способ получить нормаль; площадь, объём и тождества — C7.
+    Расстояние от точки до плоскости — длина перпендикуляра, который C6
+    строит всё равно (основание, отражение), поэтому оно здесь; расстояние
+    до прямой и ближайшая точка прямой — C7.
+
+    Дубль ноября 2023 года снова есть: прямые в плоскости, основание
+    перпендикуляра и отражение Q12(b)–(d) стоят и в TZ1, и в TZ2 одной
+    бумаги. 35 блоков по корпусу, 32 рабочих; 136 баллов, 123 рабочих.
+
+    Paper 1 — 51 балл, Paper 2 — 72, Paper 3 нет. Калькуляторных 72, но
+    работы для GDC почти нет: он решает систему с числами (схема прямо
+    разрешает «using GDC or manual row operations») и извлекает корень в
+    расстоянии. Системы с буквой, нормаль, основание и отражение на Paper 2
+    делаются так же, как на Paper 1.
+
+    Две системы из других тем идут в практикум содержанием, но не долей:
+    ноябрь 2025 TZ1 P1 Q6 (6 баллов, размечен number_algebra.inequalities,
+    считается в A8) и ноябрь 2022 P3 Q1(b)(iii) (2 балла, polynomials, A4).
+    Первая стоит в практикуме заданием на время.
+
+directions:
+  plane: >
+    Плоскость — точка и нормаль, n · r = n · a. Записать её (приём 1) и
+    найти нормаль, когда дана не она, а точки, прямые или две другие
+    плоскости (приём 2).
+  meeting: >
+    Что общего у прямой и плоскости (приём 3), у двух плоскостей (приём 4),
+    у трёх плоскостей — и то же самое, записанное системой уравнений
+    (приём 5). Ответ всегда — множество: точка, прямая или ничего.
+  perpendicular: >
+    Прямая по нормали из точки: где она встречает плоскость и как далеко
+    (приём 6), куда попадает точка, отражённая в плоскости (приём 7).
 
 skills:
-  - id: linear_system
-    name: Система линейных уравнений и три её случая
-    rung: null
+  - id: plane
+    name: Плоскость — точка и нормаль
+    rung: 1
     trigger: >
-      Три (реже два) линейных уравнения с тремя неизвестными. Признак,
-      отличающий этот приём от обычной подстановки: в системе есть буквенный
-      параметр, и спрашивают не решение, а при каком значении параметра
-      решение единственно, отсутствует или его бесконечно много.
-      Геометрическая формулировка того же самого — «при каких b и d три
-      плоскости пересекаются по прямой».
+      «Verify that the point A lies on the plane»; «P2 is perpendicular to P1,
+      find the value of k»; «P2 is parallel to P1, determine the value of p»;
+      «the plane intersects the coordinate axes at P, Q and R»; «L3 is normal
+      to Π and passes through the point, write down its equation». Уравнение
+      плоскости уже дано или нормаль видна сразу.
     chain:
-      - Выписать расширенную матрицу или подготовиться исключать переменную
-      - Привести к ступенчатому виду, исключая по одной переменной
-      - Посмотреть на последнюю строку — весь вопрос в ней
-      - "Строка 0 = 0: решений бесконечно много, ответ записывается
-        параметрически через t"
-      - "Строка 0 = c при c ≠ 0: решений нет"
-      - "Иначе решение единственно, дорешать обратным ходом"
+      - "Нормаль — коэффициенты при x, y, z: у 2x + 6y − 2z = 5 это (2, 6, −2)"
+      - "Уравнение через точку a и нормаль n — n · r = n · a: правая часть —
+        левая, вычисленная в точке"
+      - "Точка на плоскости — подставить координаты в левую часть"
+      - "Плоскости параллельны — нормали кратны; перпендикулярны — скалярное
+        произведение нормалей ноль"
+      - "Пересечение с осью — две другие координаты ноль"
+      - "Прямая перпендикулярно плоскости — нормаль становится направлением"
     traps:
-      - "Найдено значение параметра, при котором нет единственного решения,
-        и на этом остановились. А спрашивали два разных случая: при одном
-        значении параметра решений нет, при другом их бесконечно много"
-      - Бесконечное множество решений записано одной точкой вместо
-        параметрической формы
-      - Обнуление последней строки проверено только по коэффициентам,
-        без правой части — а именно она различает «нет решений»
-        и «бесконечно много»
+      - "Правую часть берут с обратным знаком, −n · a"
+      - "Для перпендикулярных плоскостей требуют кратных нормалей, а для
+        параллельных — нулевого скалярного произведения"
+      - "Нормаль плоскости путают с направлением, лежащим в ней"
+      - "У нормальной прямой не пишут «r =» — схема ставит A1A0"
+    calculator:
+      mode: allowed
+      note: >
+        8 баллов из 12 на Paper 1, и на Paper 2 считать тоже нечего:
+        пересечения с осями и нормаль как направление пишут сразу.
+    prereq: []
+    raw_tags: [dot_product_normals, equate_normal_ratios, equate_to_zero,
+               evaluate_plane_equation, find_intercepts, line_equation, normal_vector,
+               parallel_plane_condition, solve_linear_equation, solve_proportion,
+               solve_quadratic, substitute_coordinates, substitute_point_into_plane,
+               verify_equality]
+    blocks: ['2024-MAY-TZ2-P1-Q11-A', '2024-MAY-TZ2-P1-Q11-B', '2024-MAY-TZ2-P1-Q11-C',
+             '2025-NOV-TZ1-P2-Q12-C', '2025-NOV-TZ1-P2-Q12-E']
+
+  - id: normal
+    name: Нормаль из двух направлений — векторное произведение
+    rung: 2
+    trigger: >
+      «Find the equation of Π1 through A, B and C»; «the plane P1 contains the
+      line L1 and passes through the point (2, 1, 5)»; «the plane Π contains
+      the lines L1 and L2»; «a third plane P3 is perpendicular to both P1 and
+      P2»; «find a normal vector to Π»; «give your answer in the form
+      r = a + λb + μc».
+    chain:
+      - "Найти два непараллельных направления в плоскости: AB и AC, направление
+        прямой и вектор от её точки к данной, направления двух прямых"
+      - "Нормаль — их векторное произведение; у плоскости, перпендикулярной
+        двум другим, — произведение их нормалей"
+      - "Средняя компонента a × b — a₃b₁ − a₁b₃, знак именно такой"
+      - "Сократить нормаль на общий множитель и подставить одну точку: d"
+      - "Проверить остальными точками — они обязаны дать то же d"
+      - "Векторная форма — точка и те же два направления, r = a + λb + μc"
+    traps:
+      - "Знак средней компоненты векторного произведения: (14, 21, −7) вместо
+        (14, −21, −7)"
+      - "Нормалью берут одно из направлений в плоскости"
+      - "Для плоскости через прямую и точку берут направление прямой и
+        радиус-вектор точки, а не вектор от прямой к точке"
+      - "У двух параллельных прямых произведение направлений нулевое, и этого
+        не замечают"
+      - "Нормаль отдают координатами (1, −1, −1) — схема мая 2023 ставит A0"
+    calculator:
+      mode: allowed
+      note: >
+        17 баллов из 29 на Paper 2, но векторное произведение трёх чисел
+        быстрее и надёжнее руками, чем через меню; калькулятор разве что
+        проверяет.
+    prereq: [plane]
+    raw_tags: [cartesian_equation, cross_product, derive_cartesian_equation,
+               find_direction_vector, find_normal_vector, normal_vector,
+               parameter_elimination, parametric_plane_form, plane_equation,
+               plane_equation_from_normal, point_substitution, simplify_equation,
+               substitute_point, vector_form, vector_product, vector_subtraction,
+               write_plane_equation]
+    blocks: ['2021-MAY-TZ1-P2-Q06-A', '2021-NOV-COMMON-P2-Q11-A', '2023-MAY-TZ1-P1-Q12-D',
+             '2025-MAY-TZ1-P1-Q11-B', '2025-MAY-TZ2-P2-Q09-A', '2025-MAY-TZ3-P1-Q11-D',
+             '2025-NOV-TZ1-P2-Q12-B', '2025-NOV-TZ3-P1-Q10-F']
+
+  - id: line_plane
+    name: Прямая и плоскость — подставить общую точку
+    rung: 3
+    trigger: >
+      «The line L and the plane Π3 intersect at the point P, show that at the
+      point P, λ = 3/4»; «the line L intersects the plane P2 at point F, find
+      the coordinates of F»; «verify that the lines L and M both lie in the
+      plane P».
+    chain:
+      - "Общую точку прямой, (x₀ + λa, y₀ + λb, z₀ + λc), подставить в
+        уравнение плоскости"
+      - "Выходит линейное уравнение на λ, и у него три исхода"
+      - "Одно λ — прямая протыкает плоскость; λ подставить в прямую, это точка"
+      - "Тождество (7 = 7 при любом λ) — прямая лежит в плоскости"
+      - "Противоречие (0 = 4) — прямая параллельна плоскости и её не касается"
+    traps:
+      - "Отвечают значением λ вместо точки"
+      - "Подставляют в плоскость исходную точку прямой или её направление
+        вместо общей точки"
+      - "«Лежит в плоскости» показывают одной точкой прямой"
+      - "Теряют знак λ при подстановке обратно"
+    calculator:
+      mode: allowed
+      note: >
+        6 баллов из 11 на Paper 2, но уравнение на λ линейное, и калькулятор
+        ему не нужен.
+    prereq: [plane]
+    raw_tags: [dot_product, evaluate_parametric_point, line_equation, parametric_form,
+               plane_intersection, solve_linear_equation, substitute_parametric,
+               substitute_parametric_form, substitute_parametric_line,
+               verify_plane_condition, verify_plane_equation]
+    blocks: ['2021-NOV-COMMON-P2-Q11-C', '2023-NOV-TZ1-P2-Q12-B', '2023-NOV-TZ2-P2-Q12-B',
+             '2025-MAY-TZ3-P1-Q11-F']
+
+  - id: two_planes
+    name: Прямая пересечения двух плоскостей
+    rung: 4
+    trigger: >
+      «Find a vector equation of L, the line of intersection of Π1 and Π2»;
+      «verify that a vector equation of L is r = …»; «verify that the point P
+      lies on both Π1 and Π2».
+    chain:
+      - "Направление прямой перпендикулярно обеим нормалям: n₁ × n₂"
+      - "Точка — любая общая: положить одну координату нулём и решить два
+        уравнения"
+      - "Или решить два уравнения, оставив одно неизвестное свободным: x = t"
+      - "Проверить данную прямую — подставить общую точку в оба уравнения,
+        оба обязаны стать тождествами"
+      - "Написать «r =»"
+    traps:
+      - "Направлением берут нормаль одной из плоскостей"
+      - "Знак средней компоненты n₁ × n₂"
+      - "Точку берут на одной плоскости, не проверив вторую"
+      - "Проверяют прямую одним значением λ — схема ставит (M1)A0"
+    calculator:
+      mode: helps
+      note: >
+        5 баллов из 10 на Paper 2: систему из двух уравнений с параметром
+        калькулятор решает («convincing use of a GDC»), но общий вид всё равно
+        записывают руками.
+    prereq: [normal, line_plane]
+    raw_tags: [cross_product, cross_product_of_normals, line_of_intersection,
+               parametric_substitution, plane_equation_verification, point_verification,
+               solve_simultaneous, substitute_parametric, vector_equation_of_line,
+               verify_plane_satisfaction]
+    blocks: ['2021-NOV-COMMON-P2-Q11-B', '2022-MAY-TZ1-P1-Q11-B-I-II', '2023-MAY-TZ2-P2-Q06-A']
+
+  - id: three_planes
+    name: Три плоскости и система уравнений — точка, прямая или ничего
+    rung: 5
+    trigger: >
+      «Find the coordinates of the point where Π1, Π2 and Π3 intersect»; «show
+      that the three planes do not intersect»; «the three planes intersect in
+      a line, find the value of b and the value of d»; «determine the general
+      solution giving the answer in parametric form»; «the value of a for
+      which there is no unique solution»; «an infinite number of solutions».
+      Три (реже два) линейных уравнения, часто с буквой.
+    chain:
+      - "Система из трёх уравнений — три плоскости, её решение — их общая часть"
+      - "Исключить одно неизвестное из двух пар уравнений — получится два
+        уравнения с двумя неизвестными"
+      - "Посмотреть на последнюю строку: 0 = 0 — общая прямая, решений
+        бесконечно много; 0 = c при c ≠ 0 — общих точек нет; иначе одна точка"
+      - "С буквой: нет единственного решения — обнулились коэффициенты
+        последней строки (определитель нормалей ноль); бесконечно много —
+        обнулилась и правая часть"
+      - "Общее решение — прямая: одно неизвестное — параметр t, остальные
+        через него"
+      - "Числовую систему решает GDC, и схема это разрешает; систему с буквой
+        — нет"
+    traps:
+      - "Найдено значение буквы, при котором нет единственного решения, и на
+        этом остановились, а спрашивали ещё и правую часть для бесконечного
+        множества"
+      - "Бесконечное множество решений записано одной точкой"
+      - "Обнуление последней строки проверено только по коэффициентам, без
+        правой части, — а именно она различает «нет решений» и «бесконечно
+        много»"
+      - "«Не пересекаются» объявляют по двум уравнениям, не проверив третье"
+      - "Отбрасывают ограничение b, d ∈ ℝ⁺"
     geometry: >
-      Три случая — это взаимное расположение трёх плоскостей: единственное
-      решение есть точка пересечения, бесконечное множество есть общая прямая,
-      отсутствие решений означает, что общей точки у трёх плоскостей нет.
-      Поэтому приём и живёт в C6: алгебраический и геометрический вопрос
-      здесь буквально один и тот же, заданный на двух языках.
+      Три случая системы — это взаимное расположение трёх плоскостей:
+      единственное решение — точка пересечения, бесконечное множество — общая
+      прямая, отсутствие решений — общей точки нет. Поэтому системы и живут в
+      C6: алгебраический и геометрический вопрос здесь один и тот же, заданный
+      на двух языках.
     calculator:
       mode: partial
       note: >
-        Разделение резкое, и его стоит запомнить. Систему с числовыми
-        коэффициентами GDC решает сразу, и markscheme это прямо разрешает:
-        «M1 for attempt to solve using GDC or manual row operations».
-        Но вопрос про параметр калькулятор не решает вообще — там надо
-        понимать, когда строка обнуляется. Из шести блоков архива пять
-        с калькулятором, и все пять на параметр приходится делать руками.
-    prereq: []
-    raw_tags: [row_reduction, gaussian_elimination, solve_linear_system,
-               linear_system, eliminate_variable, elimination, infinite_solutions,
-               consistency_condition, linear_dependence, determinant_zero,
-               parameter_determination, parametric_form, form_linear_system]
-    blocks: [2025-NOV-TZ1-P1-Q06, 2025-NOV-TZ3-P2-Q07-A, 2025-NOV-TZ3-P2-Q07-B,
-             2025-NOV-TZ3-P2-Q07-C, 2025-MAY-TZ2-P2-Q09-B,
-             2022-NOV-COMMON-P3-Q01-B-III]
-    corpus_marks: 18
+        Разделение резкое. Систему с числами GDC решает сразу: «M1 for attempt
+        to solve using GDC or manual row operations». Вопрос про букву
+        калькулятор не решает вообще — там надо видеть, когда строка
+        обнуляется. 12 баллов из 16 на Paper 2, и на буквы из них — половина.
+    prereq: [two_planes]
+    raw_tags: [consistency_condition, contradiction, determinant_zero, eliminate_variable,
+               gaussian_elimination, gdc, inconsistent_system, intersection_point,
+               linear_dependence, linear_system, parallel_planes, parametric_form,
+               row_reduction, simultaneous_equations, solve_for_parameters,
+               solve_linear_system, substitution]
+    blocks: ['2021-MAY-TZ1-P2-Q06-B', '2022-MAY-TZ1-P1-Q11-A', '2025-MAY-TZ2-P2-Q09-B',
+             '2025-NOV-TZ3-P2-Q07-A', '2025-NOV-TZ3-P2-Q07-B', '2025-NOV-TZ3-P2-Q07-C']
+    also_blocks:
+      - {block: '2025-NOV-TZ1-P1-Q06', marks: 6, counted_in: A8}
+      - {block: '2022-NOV-COMMON-P3-Q01-B-III', marks: 2, counted_in: A4}
+
+  - id: foot
+    name: Перпендикуляр к плоскости — основание и расстояние
+    rung: 6
+    trigger: >
+      «A line through B perpendicular to P intersects P at point C, find the
+      position vector of C»; «hence, find |BC|»; «find the coordinates of the
+      point on the plane Π which is closest to the origin»; «find the distance
+      between L and Π3»; «show that the perpendicular distance between P1 and
+      P2 is √11».
+    chain:
+      - "Прямая через точку B по нормали: r = b + λn"
+      - "Подставить её в плоскость — одно λ"
+      - "Основание C — прямая при этом λ"
+      - "Расстояние — |BC| = |λ|·|n|, а не |λ|"
+      - "Ближайшая к началу координат точка — основание перпендикуляра из O"
+      - "Расстояние от параллельной прямой или параллельной плоскости — от любой
+        их точки"
+    traps:
+      - "Отвечают |λ| вместо |λ|·|n|"
+      - "Забывают поделить |n·b − d| на |n|"
+      - "Основание ищут на прямой, а в плоскость её не подставляют"
+      - "Расстояние между плоскостями считают разностью правых частей, не
+        приведя нормали к одной"
+    calculator:
+      mode: speeds_up
+      note: >
+        16 баллов из 29 на Paper 2, и калькулятор там извлекает корень:
+        √45 = 6.71. Уравнение на λ линейное.
+    prereq: [line_plane]
+    raw_tags: [compute_point_coordinates, compute_position_vector, cross_product,
+               distance_between_line_and_plane, distance_formula, find_intersection_point,
+               form_parametric_line, line_plane_intersection, magnitude_formula,
+               normal_vector, parallel_planes, parametric_line, parametric_line_equation,
+               perpendicular_line, plane_equation_cartesian, simplify_radical,
+               solve_for_parameter, substitute_into_plane, substitute_plane_equation,
+               substitution, vector_difference, vector_subtraction]
+    blocks: ['2022-MAY-TZ1-P1-Q11-C', '2022-NOV-COMMON-P2-Q12-D', '2023-NOV-TZ1-P2-Q12-C',
+             '2023-NOV-TZ2-P2-Q12-C', '2024-MAY-TZ2-P1-Q11-D-I-II']
+
+  - id: reflection
+    name: Отражение в плоскости — точка, прямая, плоскость по ту сторону
+    rung: 7
+    trigger: >
+      «Find the reflection of the point B in the plane P»; «hence find the
+      vector equation of the line formed when L is reflected in the plane Π3»;
+      «find the equation of a third parallel plane P3 which is also a
+      perpendicular distance of √11 from P1».
+    chain:
+      - "Основание перпендикуляра C — при λ; отражение B′ — при 2λ на той же
+        прямой"
+      - "Или B′ = 2C − B: основание — середина BB′"
+      - "Отражённая прямая проходит через точку, где прямая встречает плоскость
+        (она остаётся на месте), и через отражение любой другой её точки"
+      - "Плоскость по другую сторону на том же расстоянии — та же нормаль и
+        точка A + (A − B)"
+    traps:
+      - "Отдают основание C вместо отражения"
+      - "Берут −λ или λ вместо 2λ"
+      - "Направление отражённой прямой оставляют прежним"
+      - "Для третьей плоскости меняют знак правой части исходной"
+    calculator:
+      mode: allowed
+      note: >
+        12 баллов из 16 на Paper 2, но это удвоение уже найденного λ и
+        сложение векторов.
+    prereq: [foot]
+    raw_tags: [compute_opposite_point, compute_position_vector, construct_parametric_line,
+               form_line_equation, identify_normal, line_plane_intersection, parametric_form,
+               point_reflection, reflect_point, scalar_multiplication,
+               substitute_point_into_plane_form, vector_addition, vector_between_points,
+               vector_equality, vector_reflection, write_plane_equation]
+    blocks: ['2021-NOV-COMMON-P2-Q11-D', '2023-NOV-TZ1-P2-Q12-D', '2023-NOV-TZ2-P2-Q12-D',
+             '2024-MAY-TZ2-P1-Q11-E']
+
+imported:
+  - practicum: C5
+    what: >
+      Точки, прямые и их пересечение внутри вопросов C6: вершина D и центр E
+      параллелограмма мая 2025 TZ3 Q11(a), (b), точка пересечения прямых
+      ноября 2025 TZ1 Q12(a) и ноября 2023 Q12(a), γ из точки на нормали
+      ноября 2025 TZ1 Q12(f), прямые и «скрещиваются» ноября 2022 Q12(a)–(c)
+      и ноября 2025 TZ3 Q10(a)–(c).
+  - practicum: C7
+    what: >
+      Площадь параллелограмма мая 2025 TZ3 Q11(c), угол между плоскостями мая
+      2025 TZ1 Q11(a) и TZ3 Q11(e), площадь треугольника и объём пирамиды
+      ноября 2025 TZ1 Q12(d), (g), ближайшая к началу координат точка прямой
+      мая 2023 TZ2 Q6(b), ближайшая точка N ноября 2025 TZ3 Q10(d), (e),
+      кратчайшее расстояние от A до L1 мая 2023 TZ1 Q12(c).
+  - practicum: C3
+    what: >
+      Май 2025 TZ1 Q11(c): зеркала в P1 и P2 — sin 75° и теорема синусов
+      после угла между плоскостями.
+  - practicum: C2
+    what: >
+      Май 2023 TZ1 Q12(e): вершины конуса с основанием в Π.
 
 # Замечания к классификации, отправить в classification/reviews.
 corpus_issues:
@@ -81,7 +381,8 @@ corpus_issues:
       «Find α and β for which the linear system has infinitely many solutions»,
       method_path — расширенная матрица, приведение к ступенчатому виду,
       обнуление третьей строки. Неравенств в блоке нет вовсе. Самая грубая
-      из ошибок: блок уезжает в практикум A8, где метод не разбирается.
+      из ошибок: доля блока уезжает в A8, где метод не разбирается. В C6 он
+      стоит заданием на время.
   - blocks: [2025-NOV-TZ3-P2-Q07-A, 2025-NOV-TZ3-P2-Q07-B, 2025-NOV-TZ3-P2-Q07-C]
     marks: 6
     assigned: geometry.vectors
@@ -89,20 +390,41 @@ corpus_issues:
     issue: >
       Чистая система уравнений: параметрическое общее решение, единственное
       решение при данных a и k, значения параметров для вырожденного случая.
-      Ни векторов, ни плоскостей в условии нет. Сейчас уезжают в C5.
+      Ни векторов, ни плоскостей в условии нет.
   - block: 2025-MAY-TZ2-P2-Q09-B
     marks: 4
     assigned: geometry.vectors
     should_be: geometry.vectors_3d
     issue: >
       Тема угадана верно по смыслу — три плоскости и условие пересечения
-      по прямой, — но подтема должна быть vectors_3d, а не vectors:
-      по карте практикумов vectors уходит в C5, а плоскости разбираются в C6.
+      по прямой, — но подтема должна быть vectors_3d, а не vectors.
   - kind: watch
     issue: >
-      Пять блоков из шести — из сессий 2025 года. В двенадцати полных сессиях
-      2021–2024 (все три бумаги в каждой) таких вопросов нет ни одного.
-      Либо совпадение, либо экзамен начал их спрашивать. Сейчас на тему
-      18 баллов, до нижней границы практикума не хватает. Если следующие
+      Пять блоков систем из шести — из сессий 2025 года. В двенадцати полных
+      сессиях 2021–2024 (все три бумаги в каждой) таких вопросов нет ни
+      одного. Либо совпадение, либо экзамен начал их спрашивать. Сейчас на
+      тему 18 баллов, до нижней границы практикума не хватает. Если следующие
       сессии добавят ещё, тему надо выносить в секцию A отдельным
       практикумом, а не держать приёмом в C6.
+  - id: 'точка B ноября 2023 в TZ1'
+    what: >
+      Ноябрь 2023 TZ1 Q12(c): в разметке B = (3, 12, 2) и BC = (−6, −6, 3),
+      хотя основание C = (−3, 6, 5) выписано там же. В бумаге и схеме
+      B = (−3, 12, 2) и BC = (0, −6, 3). Длины обоих векторов — √45, поэтому
+      число в разметке сходится, а вектор — нет. Копия TZ2 записана верно.
+      Это та же опечатка, что C5 нашёл в Q12(a).
+  - id: 'знаки в AB × AD мая 2025 TZ3'
+    what: >
+      Май 2025 TZ3 Q11(c): текстовый слой бумаги теряет минусы, и условие
+      читается как «AB × AD = m(1, 1, 1)». В схеме AB × AD = (−12, 12, −12),
+      то есть m(−1, 1, −1) при m = 12, и плоскость (d) — −x + y − z = −5.
+      Разметка этого не видит: вектор в task_summary не выписан. С условием
+      из текстового слоя выходит плоскость x + y + z = −3, в которой нет ни
+      B, ни C.
+  - id: 'второй способ в мае 2022 TZ1 Q11(c)'
+    what: >
+      Расстояние от L до Π3 схема считает и через единичные нормали двух
+      параллельных плоскостей: 32/√94 − (−15)/√94 = √94/2. Разметка
+      записывает только перпендикуляр из P, и accepted_alternatives пустое.
+
+ladder: [plane, normal, line_plane, two_planes, three_planes, foot, reflection]

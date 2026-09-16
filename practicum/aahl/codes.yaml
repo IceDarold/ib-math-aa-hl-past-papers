@@ -265,6 +265,15 @@ C5:
   skew:       {skill: skew,       name: параллельны, пересекаются, скрещиваются}
   motion:     {skill: motion,     name: движение по прямой}
 
+C6:
+  plane:        {skill: plane,        name: точка и нормаль}
+  normal:       {skill: normal,       name: нормаль из двух направлений}
+  line_plane:   {skill: line_plane,   name: прямая и плоскость}
+  two_planes:   {skill: two_planes,   name: прямая пересечения плоскостей}
+  three_planes: {skill: three_planes, name: три плоскости и система}
+  foot:         {skill: foot,         name: перпендикуляр и расстояние}
+  reflection:   {skill: reflection,   name: отражение}
+
 E2:
   def:      {skill: from_derivatives,   name: по определению}
   sub:      {skill: substitution,       name: подстановка в известный ряд}

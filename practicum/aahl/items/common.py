@@ -546,11 +546,14 @@ def density_check(what, pieces, var='x', find=None, given=None, conditions=(), u
 
 
 def vector_check(what, letter=None, **parts):
-    """Вопрос о векторах, C5.
+    """Вопрос о векторах, C5, и о плоскостях, C6.
 
     what — что спрашивают: 'midpoint', 'vertex', 'distance', 'dot',
     'perpendicular', 'angle', 'vertex_angle', 'line', 'line_angle', 'meet',
-    'relation', 'speed', 'bearing'. parts — точки и направления списками
+    'relation', 'speed', 'bearing'; для плоскостей — 'plane',
+    'perpendicular_planes', 'three_points', 'line_plane', 'two_planes',
+    'three_planes', 'no_unique', 'foot', 'plane_distance', 'reflection'
+    (правая часть уравнения плоскости — список из одного числа). parts — точки и направления списками
     чисел (в 'perpendicular' одна компонента — буква letter).
 
     Эталона в описании нет: страница пересобирает векторы и прямые и зовёт те

@@ -563,7 +563,7 @@ def evaluate(spec, raw):
         if kind == 'density':                   # плотность формулой, D6
             return _density_kind(spec, raw)
 
-        if kind == 'vector':                    # векторы и прямые, C5
+        if kind == 'vector':                    # векторы и прямые C5, плоскости C6
             return _vector_kind(spec, raw)
 
         if kind == 'count':
@@ -785,7 +785,7 @@ def parse_line(raw):
         raise BadInput('прямую пишут так: r = (x, y, z) + λ(a, b, c)')
     point = [parse_one(v) for v in found.group(1).split(',')]
     direction = [parse_one(v) for v in found.group(3).split(',')]
-    letter = sp.Symbol(found.group(2))
+    letter = {'lam': kit.lam, 'mu': kit.mu}.get(found.group(2)) or sp.Symbol(found.group(2))
     return kit.vec(*point) + letter * kit.vec(*direction)
 
 
@@ -833,6 +833,59 @@ def _vector_kind(spec, raw):
                         parts['r0'] + kit.t * parts['v'])
     if what == 'bearing':
         return _capture(kit.verify_bearing, 'Ответ', str(raw).strip(), parts['v'])
+    return _plane_kind(spec, parts, raw, point)
+
+
+_NONE_RU = {'нет', 'нет общих точек', 'нет общей точки', 'нет решений', 'пусто', '∅'}
+
+
+def _plane_kind(spec, parts, raw, point):
+    """Плоскости, C6: плоскость и система — множества, проверки из ноутбука."""
+    what = spec['what']
+
+    def surface(normal, constant):
+        return kit.plane(kit.Eq(kit.dot(kit.vec(kit.x, kit.y, kit.z), parts[normal]), parts[constant][0]))
+
+    def answer_set():
+        text = _clean(raw).lower().strip('.')
+        if text in _NONE_RU:
+            return 'none'
+        if '+' in text and ('λ' in raw or 'lam' in text or 'mu' in text or 'μ' in raw or 't(' in text):
+            return parse_line(raw)
+        values = point()
+        return values[0] if len(values) == 1 else values
+
+    if what == 'plane':
+        return _capture(kit.verify_plane, 'Ответ', parse_equation(raw), kit.plane(parts['point'], parts['normal']))
+    if what == 'perpendicular_planes':
+        letter = sp.Symbol(spec['letter'])
+        origin = kit.vec(0, 0, 0)
+        return _capture(kit.verify_find, 'Ответ', parse_one(raw), letter,
+                        [kit.perpendicular(kit.plane(origin, parts['n1']), kit.plane(origin, parts['n2']))])
+    if what == 'three_points':
+        return _capture(kit.verify_plane, 'Ответ', parse_equation(raw), kit.plane(parts['A'], parts['B'], parts['C']))
+    if what == 'line_plane':
+        return _capture(kit.verify_intersection, 'Ответ', answer_set(), kit.line(parts['p'], parts['d']),
+                        surface('n', 'c'))
+    if what == 'two_planes':
+        return _capture(kit.verify_intersection, 'Ответ', answer_set(), surface('n1', 'c1'), surface('n2', 'c2'))
+    if what == 'three_planes':
+        return _capture(kit.verify_intersection, 'Ответ', answer_set(), surface('n1', 'c1'), surface('n2', 'c2'),
+                        surface('n3', 'c3'))
+    if what == 'no_unique':
+        letter = sp.Symbol(spec['letter'])
+        return _capture(kit.verify_find, 'Ответ', parse_one(raw), letter,
+                        [kit.no_unique_meet(surface('n1', 'c1'), surface('n2', 'c2'), surface('n3', 'c3'))])
+    if what == 'foot':
+        where = kit.unknown('F', 3)
+        wall = surface('n', 'c')
+        return _capture(kit.verify_find, 'Ответ', point(), where,
+                        [kit.on(where, wall), kit.perpendicular(where - parts['q'], wall)])
+    if what == 'plane_distance':
+        return _capture(kit.verify_distance, 'Ответ', parse_one(raw), parts['q'], surface('n', 'c'))
+    if what == 'reflection':
+        image = kit.unknown('Q', 3)
+        return _capture(kit.verify_find, 'Ответ', point(), image, [kit.reflection(image, parts['q'], surface('n', 'c'))])
     raise ValueError(f'неизвестный вопрос о векторах: {what!r}')
 
 

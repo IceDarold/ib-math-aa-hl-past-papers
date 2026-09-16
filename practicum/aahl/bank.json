@@ -7892,6 +7892,461 @@
    "dir": "AA_HL/2025/May/TZ1/Paper 2",
    "skill": "C5.motion"
   },
+  "2024-MAY-TZ2-P1-Q11-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(a)",
+   "marks": 1,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "C6.plane"
+  },
+  "2024-MAY-TZ2-P1-Q11-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(b)",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "C6.plane"
+  },
+  "2024-MAY-TZ2-P1-Q11-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(c)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "C6.plane"
+  },
+  "2025-NOV-TZ1-P2-Q12-C": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "18",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C6.plane"
+  },
+  "2025-NOV-TZ1-P2-Q12-E": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "E",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "18",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C6.plane"
+  },
+  "2021-MAY-TZ1-P2-Q06-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "C6.normal"
+  },
+  "2021-NOV-COMMON-P2-Q11-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "11",
+   "part": "a",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C6.normal"
+  },
+  "2023-MAY-TZ1-P1-Q12-D": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "(d)",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "30",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "C6.normal"
+  },
+  "2025-MAY-TZ1-P1-Q11-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "C6.normal"
+  },
+  "2025-MAY-TZ2-P2-Q09-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "C6.normal"
+  },
+  "2025-MAY-TZ3-P1-Q11-D": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "D",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "C6.normal"
+  },
+  "2025-NOV-TZ1-P2-Q12-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "18",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C6.normal"
+  },
+  "2025-NOV-TZ3-P1-Q10-F": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "F",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "C6.normal"
+  },
+  "2021-NOV-COMMON-P2-Q11-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "11",
+   "part": "c",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "30",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C6.line_plane"
+  },
+  "2023-NOV-TZ1-P2-Q12-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "28-29",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C6.line_plane"
+  },
+  "2023-NOV-TZ2-P2-Q12-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "28-29",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "C6.line_plane"
+  },
+  "2025-MAY-TZ3-P1-Q11-F": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "F",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "C6.line_plane"
+  },
+  "2021-NOV-COMMON-P2-Q11-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "11",
+   "part": "b",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "28-29",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C6.two_planes"
+  },
+  "2022-MAY-TZ1-P1-Q11-B-I-II": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "b(i)(ii)",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "28-29",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "C6.two_planes"
+  },
+  "2023-MAY-TZ2-P2-Q06-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "6",
+   "part": "a",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "12-14",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "C6.two_planes"
+  },
+  "2021-MAY-TZ1-P2-Q06-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "6",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "C6.three_planes"
+  },
+  "2022-MAY-TZ1-P1-Q11-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "a",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "25-27",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "C6.three_planes"
+  },
+  "2025-MAY-TZ2-P2-Q09-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "9",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "18-20",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "C6.three_planes"
+  },
+  "2025-NOV-TZ3-P2-Q07-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "7",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "C6.three_planes"
+  },
+  "2025-NOV-TZ3-P2-Q07-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "7",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "C6.three_planes"
+  },
+  "2025-NOV-TZ3-P2-Q07-C": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "7",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "C6.three_planes"
+  },
+  "2022-MAY-TZ1-P1-Q11-C": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "c",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "30-31",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "C6.foot"
+  },
+  "2022-NOV-COMMON-P2-Q12-D": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "12",
+   "part": "(d)",
+   "marks": 9,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "29-32",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "C6.foot"
+  },
+  "2023-NOV-TZ1-P2-Q12-C": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "30-31",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C6.foot"
+  },
+  "2023-NOV-TZ2-P2-Q12-C": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "30-31",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "C6.foot"
+  },
+  "2024-MAY-TZ2-P1-Q11-D-I-II": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(d)(i)(ii)",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "26–27",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "C6.foot"
+  },
+  "2021-NOV-COMMON-P2-Q11-D": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "11",
+   "part": "d",
+   "marks": 9,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "30-32",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "C6.reflection"
+  },
+  "2023-NOV-TZ1-P2-Q12-D": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "32",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C6.reflection"
+  },
+  "2023-NOV-TZ2-P2-Q12-D": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "D",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "32",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "C6.reflection"
+  },
+  "2024-MAY-TZ2-P1-Q11-E": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(e)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2024/May/TZ2/Paper 1",
+   "skill": "C6.reflection"
+  },
   "2022-NOV-COMMON-P1-Q11-A-I": {
    "session": "November 2022",
    "zone": "Common",
@@ -14110,6 +14565,14 @@
    "blocks": 42
   },
   {
+   "id": "C6",
+   "title": "Прямые и плоскости в пространстве",
+   "section": "C",
+   "notebook": "practicum/geometry/practicum-c6-planes.ipynb",
+   "marks": 136,
+   "blocks": 35
+  },
+  {
    "id": "D1",
    "title": "Комбинаторика: размещения, блоки, дополнение",
    "section": "D",
@@ -18150,6 +18613,214 @@
     "2022-MAY-TZ2-P2-Q11-D",
     "2025-MAY-TZ1-P2-Q07-A",
     "2025-MAY-TZ1-P2-Q07-B"
+   ]
+  },
+  {
+   "id": "C6.plane",
+   "practicum": "C6",
+   "name": "Плоскость — точка и нормаль",
+   "rung": 1,
+   "trigger": "«Verify that the point A lies on the plane»; «P2 is perpendicular to P1, find the value of k»; «P2 is parallel to P1, determine the value of p»; «the plane intersects the coordinate axes at P, Q and R»; «L3 is normal to Π and passes through the point, write down its equation». Уравнение плоскости уже дано или нормаль видна сразу.",
+   "chain": [
+    "Нормаль — коэффициенты при x, y, z: у 2x + 6y − 2z = 5 это (2, 6, −2)",
+    "Уравнение через точку a и нормаль n — n · r = n · a: правая часть — левая, вычисленная в точке",
+    "Точка на плоскости — подставить координаты в левую часть",
+    "Плоскости параллельны — нормали кратны; перпендикулярны — скалярное произведение нормалей ноль",
+    "Пересечение с осью — две другие координаты ноль",
+    "Прямая перпендикулярно плоскости — нормаль становится направлением"
+   ],
+   "traps": [
+    "Правую часть берут с обратным знаком, −n · a",
+    "Для перпендикулярных плоскостей требуют кратных нормалей, а для параллельных — нулевого скалярного произведения",
+    "Нормаль плоскости путают с направлением, лежащим в ней",
+    "У нормальной прямой не пишут «r =» — схема ставит A1A0"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 136,
+   "blocks": [
+    "2024-MAY-TZ2-P1-Q11-A",
+    "2024-MAY-TZ2-P1-Q11-B",
+    "2024-MAY-TZ2-P1-Q11-C",
+    "2025-NOV-TZ1-P2-Q12-C",
+    "2025-NOV-TZ1-P2-Q12-E"
+   ]
+  },
+  {
+   "id": "C6.normal",
+   "practicum": "C6",
+   "name": "Нормаль из двух направлений — векторное произведение",
+   "rung": 2,
+   "trigger": "«Find the equation of Π1 through A, B and C»; «the plane P1 contains the line L1 and passes through the point (2, 1, 5)»; «the plane Π contains the lines L1 and L2»; «a third plane P3 is perpendicular to both P1 and P2»; «find a normal vector to Π»; «give your answer in the form r = a + λb + μc».",
+   "chain": [
+    "Найти два непараллельных направления в плоскости: AB и AC, направление прямой и вектор от её точки к данной, направления двух прямых",
+    "Нормаль — их векторное произведение; у плоскости, перпендикулярной двум другим, — произведение их нормалей",
+    "Средняя компонента a × b — a₃b₁ − a₁b₃, знак именно такой",
+    "Сократить нормаль на общий множитель и подставить одну точку: d",
+    "Проверить остальными точками — они обязаны дать то же d",
+    "Векторная форма — точка и те же два направления, r = a + λb + μc"
+   ],
+   "traps": [
+    "Знак средней компоненты векторного произведения: (14, 21, −7) вместо (14, −21, −7)",
+    "Нормалью берут одно из направлений в плоскости",
+    "Для плоскости через прямую и точку берут направление прямой и радиус-вектор точки, а не вектор от прямой к точке",
+    "У двух параллельных прямых произведение направлений нулевое, и этого не замечают",
+    "Нормаль отдают координатами (1, −1, −1) — схема мая 2023 ставит A0"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 136,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q06-A",
+    "2021-NOV-COMMON-P2-Q11-A",
+    "2023-MAY-TZ1-P1-Q12-D",
+    "2025-MAY-TZ1-P1-Q11-B",
+    "2025-MAY-TZ2-P2-Q09-A",
+    "2025-MAY-TZ3-P1-Q11-D",
+    "2025-NOV-TZ1-P2-Q12-B",
+    "2025-NOV-TZ3-P1-Q10-F"
+   ]
+  },
+  {
+   "id": "C6.line_plane",
+   "practicum": "C6",
+   "name": "Прямая и плоскость — подставить общую точку",
+   "rung": 3,
+   "trigger": "«The line L and the plane Π3 intersect at the point P, show that at the point P, λ = 3/4»; «the line L intersects the plane P2 at point F, find the coordinates of F»; «verify that the lines L and M both lie in the plane P».",
+   "chain": [
+    "Общую точку прямой, (x₀ + λa, y₀ + λb, z₀ + λc), подставить в уравнение плоскости",
+    "Выходит линейное уравнение на λ, и у него три исхода",
+    "Одно λ — прямая протыкает плоскость; λ подставить в прямую, это точка",
+    "Тождество (7 = 7 при любом λ) — прямая лежит в плоскости",
+    "Противоречие (0 = 4) — прямая параллельна плоскости и её не касается"
+   ],
+   "traps": [
+    "Отвечают значением λ вместо точки",
+    "Подставляют в плоскость исходную точку прямой или её направление вместо общей точки",
+    "«Лежит в плоскости» показывают одной точкой прямой",
+    "Теряют знак λ при подстановке обратно"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 136,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q11-C",
+    "2023-NOV-TZ1-P2-Q12-B",
+    "2023-NOV-TZ2-P2-Q12-B",
+    "2025-MAY-TZ3-P1-Q11-F"
+   ]
+  },
+  {
+   "id": "C6.two_planes",
+   "practicum": "C6",
+   "name": "Прямая пересечения двух плоскостей",
+   "rung": 4,
+   "trigger": "«Find a vector equation of L, the line of intersection of Π1 and Π2»; «verify that a vector equation of L is r = …»; «verify that the point P lies on both Π1 and Π2».",
+   "chain": [
+    "Направление прямой перпендикулярно обеим нормалям: n₁ × n₂",
+    "Точка — любая общая: положить одну координату нулём и решить два уравнения",
+    "Или решить два уравнения, оставив одно неизвестное свободным: x = t",
+    "Проверить данную прямую — подставить общую точку в оба уравнения, оба обязаны стать тождествами",
+    "Написать «r =»"
+   ],
+   "traps": [
+    "Направлением берут нормаль одной из плоскостей",
+    "Знак средней компоненты n₁ × n₂",
+    "Точку берут на одной плоскости, не проверив вторую",
+    "Проверяют прямую одним значением λ — схема ставит (M1)A0"
+   ],
+   "calculator": "helps",
+   "practicum_marks": 136,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q11-B",
+    "2022-MAY-TZ1-P1-Q11-B-I-II",
+    "2023-MAY-TZ2-P2-Q06-A"
+   ]
+  },
+  {
+   "id": "C6.three_planes",
+   "practicum": "C6",
+   "name": "Три плоскости и система уравнений — точка, прямая или ничего",
+   "rung": 5,
+   "trigger": "«Find the coordinates of the point where Π1, Π2 and Π3 intersect»; «show that the three planes do not intersect»; «the three planes intersect in a line, find the value of b and the value of d»; «determine the general solution giving the answer in parametric form»; «the value of a for which there is no unique solution»; «an infinite number of solutions». Три (реже два) линейных уравнения, часто с буквой.",
+   "chain": [
+    "Система из трёх уравнений — три плоскости, её решение — их общая часть",
+    "Исключить одно неизвестное из двух пар уравнений — получится два уравнения с двумя неизвестными",
+    "Посмотреть на последнюю строку: 0 = 0 — общая прямая, решений бесконечно много; 0 = c при c ≠ 0 — общих точек нет; иначе одна точка",
+    "С буквой: нет единственного решения — обнулились коэффициенты последней строки (определитель нормалей ноль); бесконечно много — обнулилась и правая часть",
+    "Общее решение — прямая: одно неизвестное — параметр t, остальные через него",
+    "Числовую систему решает GDC, и схема это разрешает; систему с буквой — нет"
+   ],
+   "traps": [
+    "Найдено значение буквы, при котором нет единственного решения, и на этом остановились, а спрашивали ещё и правую часть для бесконечного множества",
+    "Бесконечное множество решений записано одной точкой",
+    "Обнуление последней строки проверено только по коэффициентам, без правой части, — а именно она различает «нет решений» и «бесконечно много»",
+    "«Не пересекаются» объявляют по двум уравнениям, не проверив третье",
+    "Отбрасывают ограничение b, d ∈ ℝ⁺"
+   ],
+   "calculator": "partial",
+   "practicum_marks": 136,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q06-B",
+    "2022-MAY-TZ1-P1-Q11-A",
+    "2025-MAY-TZ2-P2-Q09-B",
+    "2025-NOV-TZ3-P2-Q07-A",
+    "2025-NOV-TZ3-P2-Q07-B",
+    "2025-NOV-TZ3-P2-Q07-C"
+   ]
+  },
+  {
+   "id": "C6.foot",
+   "practicum": "C6",
+   "name": "Перпендикуляр к плоскости — основание и расстояние",
+   "rung": 6,
+   "trigger": "«A line through B perpendicular to P intersects P at point C, find the position vector of C»; «hence, find |BC|»; «find the coordinates of the point on the plane Π which is closest to the origin»; «find the distance between L and Π3»; «show that the perpendicular distance between P1 and P2 is √11».",
+   "chain": [
+    "Прямая через точку B по нормали: r = b + λn",
+    "Подставить её в плоскость — одно λ",
+    "Основание C — прямая при этом λ",
+    "Расстояние — |BC| = |λ|·|n|, а не |λ|",
+    "Ближайшая к началу координат точка — основание перпендикуляра из O",
+    "Расстояние от параллельной прямой или параллельной плоскости — от любой их точки"
+   ],
+   "traps": [
+    "Отвечают |λ| вместо |λ|·|n|",
+    "Забывают поделить |n·b − d| на |n|",
+    "Основание ищут на прямой, а в плоскость её не подставляют",
+    "Расстояние между плоскостями считают разностью правых частей, не приведя нормали к одной"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 136,
+   "blocks": [
+    "2022-MAY-TZ1-P1-Q11-C",
+    "2022-NOV-COMMON-P2-Q12-D",
+    "2023-NOV-TZ1-P2-Q12-C",
+    "2023-NOV-TZ2-P2-Q12-C",
+    "2024-MAY-TZ2-P1-Q11-D-I-II"
+   ]
+  },
+  {
+   "id": "C6.reflection",
+   "practicum": "C6",
+   "name": "Отражение в плоскости — точка, прямая, плоскость по ту сторону",
+   "rung": 7,
+   "trigger": "«Find the reflection of the point B in the plane P»; «hence find the vector equation of the line formed when L is reflected in the plane Π3»; «find the equation of a third parallel plane P3 which is also a perpendicular distance of √11 from P1».",
+   "chain": [
+    "Основание перпендикуляра C — при λ; отражение B′ — при 2λ на той же прямой",
+    "Или B′ = 2C − B: основание — середина BB′",
+    "Отражённая прямая проходит через точку, где прямая встречает плоскость (она остаётся на месте), и через отражение любой другой её точки",
+    "Плоскость по другую сторону на том же расстоянии — та же нормаль и точка A + (A − B)"
+   ],
+   "traps": [
+    "Отдают основание C вместо отражения",
+    "Берут −λ или λ вместо 2λ",
+    "Направление отражённой прямой оставляют прежним",
+    "Для третьей плоскости меняют знак правой части исходной"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 136,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q11-D",
+    "2023-NOV-TZ1-P2-Q12-D",
+    "2023-NOV-TZ2-P2-Q12-D",
+    "2024-MAY-TZ2-P1-Q11-E"
    ]
   },
   {
@@ -32318,6 +32989,486 @@
    ],
    "answer": "motion",
    "answer_digest": "305238273bb0",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:1",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.plane",
+   "prompt": "Find the equation of the plane through $(1,-1,2)$ with normal $(3,0,-4)$.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "plane",
+   "answer_digest": "fad900280ce5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:2",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.normal",
+   "prompt": "Find the equation of the plane containing the points $(0,1,1)$, $(2,0,3)$ and $(1,1,0)$.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "normal",
+   "answer_digest": "317b32c14369",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:3",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.line_plane",
+   "prompt": "Find where the line $\\mathbf r=(2,1,0)+\\lambda(1,-1,3)$ meets the plane $x+y+z=9$.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "line_plane",
+   "answer_digest": "01fe0f8f75b2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:4",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.two_planes",
+   "prompt": "Find a vector equation of the line where $x+2y-z=1$ and $2x-y+z=7$ meet.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "two_planes",
+   "answer_digest": "cab053b1e3e1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:5",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.three_planes",
+   "prompt": "For which $c$ does the system $x+y=2$, $y+z=3$, $x+cz=1$ have no unique solution?",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "three_planes",
+   "answer_digest": "c2b6103cd165",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:6",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.foot",
+   "prompt": "Find the distance from $(4,0,-1)$ to the plane $2x+y-2z=3$.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "foot",
+   "answer_digest": "22e4f6912a69",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:7",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.reflection",
+   "prompt": "Find the image of the point $(1,2,5)$ in the plane $z=1$.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "reflection",
+   "answer_digest": "f30409c51a78",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:8",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.plane",
+   "prompt": "Show that the plane $3x-y+2z=4$ is perpendicular to the plane $x+5y+z=0$.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "plane",
+   "answer_digest": "fad900280ce5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:9",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.normal",
+   "prompt": "Find a normal to the plane containing $\\mathbf r=\\lambda(1,1,0)$ and $\\mathbf r=\\mu(0,1,1)$.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "normal",
+   "answer_digest": "317b32c14369",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:10",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.line_plane",
+   "prompt": "Show that the line $\\mathbf r=(1,1,1)+\\lambda(2,0,-1)$ lies in the plane $x+3y+2z=6$.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "line_plane",
+   "answer_digest": "01fe0f8f75b2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:11",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.three_planes",
+   "prompt": "Determine whether the planes $x+y+z=1$, $x-y=0$ and $2x+z=3$ meet at a single point.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "three_planes",
+   "answer_digest": "c2b6103cd165",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C6:12",
+   "kind": "recognition",
+   "practicum": "C6",
+   "skill": "C6.foot",
+   "prompt": "Find the point of the plane $x-2y+2z=18$ closest to the origin.",
+   "options": [
+    {
+     "code": "plane",
+     "name": "точка и нормаль"
+    },
+    {
+     "code": "normal",
+     "name": "нормаль из двух направлений"
+    },
+    {
+     "code": "line_plane",
+     "name": "прямая и плоскость"
+    },
+    {
+     "code": "two_planes",
+     "name": "прямая пересечения плоскостей"
+    },
+    {
+     "code": "three_planes",
+     "name": "три плоскости и система"
+    },
+    {
+     "code": "foot",
+     "name": "перпендикуляр и расстояние"
+    },
+    {
+     "code": "reflection",
+     "name": "отражение"
+    }
+   ],
+   "answer": "foot",
+   "answer_digest": "22e4f6912a69",
    "budget_ms": 8000
   },
   {

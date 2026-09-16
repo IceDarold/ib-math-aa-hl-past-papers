@@ -67,9 +67,15 @@ def _vector_spoil(answer, spec):
     """Испорченный ответ о векторах, C5: точка не та, прямая не та, слово не то."""
     what = spec['what']
     parts = {name: [sp.sympify(v) for v in values] for name, values in spec['parts'].items()}
-    if what in ('midpoint', 'vertex', 'meet'):
+    if what in ('midpoint', 'vertex', 'meet', 'line_plane', 'three_planes', 'foot', 'reflection'):
         values = list(answer)
         return show_answer([values[0] + 1] + values[1:])
+    if what in ('plane', 'three_points'):
+        return show_answer(sp.Eq(answer.lhs, answer.rhs + 1))
+    if what == 'two_planes':
+        point = [sp.sympify(v) for v in re.findall(r'-?\d+', str(answer))[:3]]
+        direction = [sp.sympify(v) for v in re.findall(r'-?\d+', str(answer))[3:6]]
+        return f"r = ({point[0] + 1}, {point[1]}, {point[2]}) + λ({', '.join(map(str, direction))})"
     if what == 'line':
         point, direction = parts['point'], parts['direction']
         step = [1, 0, 0] if (direction[1], direction[2]) != (0, 0) else [0, 1, 0]
@@ -2681,6 +2687,195 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('C5.')):
     t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
     t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
     print(f'  {gen_name:32} {SEEDS} задач сверено дробями, Крамером и atan2')
+
+
+# =============================================================== C6
+# Проверки C6 решают системы linsolve, нормаль берут векторным произведением,
+# основание — подстановкой прямой по нормали. Здесь всё пересчитано без
+# sympy и без kit: дроби Fraction, правило Крамера на три неизвестных,
+# плоскость через три точки — уравнение ax + by + cz = d, решённое по
+# трём точкам при d = 1 или d = 0, основание — проекцией. Затем эталон
+# прогоняется через проверку тренажёра, и рядом — ответ с типовым промахом,
+# который она обязана отвергнуть и назвать своим словом.
+
+def _c6_cramer(rows, rhs):
+    """Решение 3×3 правилом Крамера; None — определитель ноль."""
+    def det(m):
+        return (m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1])
+                - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0])
+                + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]))
+    whole = det(rows)
+    if whole == 0:
+        return None
+    out = []
+    for column in range(3):
+        swapped = [[rhs[i] if j == column else rows[i][j] for j in range(3)] for i in range(3)]
+        out.append(Fraction(det(swapped)) / whole)
+    return out
+
+
+def _c6_plane_through(points):
+    """(a, b, c, d) плоскости через три точки: сначала d = 1, если она не через начало, иначе d = 0."""
+    solved = _c6_cramer([list(p) for p in points], [1, 1, 1])
+    if solved is not None:
+        return solved + [Fraction(1)]
+    for fixed in range(3):
+        rest = [i for i in range(3) if i != fixed]
+        rows = [[p[rest[0]], p[rest[1]]] for p in points]
+        for pair in ((0, 1), (0, 2), (1, 2)):
+            m = [rows[pair[0]], rows[pair[1]]]
+            det = m[0][0] * m[1][1] - m[0][1] * m[1][0]
+            if det != 0:
+                rhs = [-points[pair[0]][fixed], -points[pair[1]][fixed]]
+                u = Fraction(rhs[0] * m[1][1] - rhs[1] * m[0][1], det)
+                w = Fraction(m[0][0] * rhs[1] - m[1][0] * rhs[0], det)
+                coefficients = [Fraction(0)] * 3
+                coefficients[fixed], coefficients[rest[0]], coefficients[rest[1]] = Fraction(1), u, w
+                if all(sum(c * q for c, q in zip(coefficients, p)) == 0 for p in points):
+                    return coefficients + [Fraction(0)]
+    return None
+
+
+def _c6_equation(answer):
+    expr = sp.expand(answer.lhs - answer.rhs)
+    x, y, z = sp.symbols('x y z')
+    return [Fraction(str(expr.coeff(v))) for v in (x, y, z)] + [Fraction(str(-expr.subs({x: 0, y: 0, z: 0})))]
+
+
+def _c6_proportional(one, two):
+    return all(one[i] * two[j] == one[j] * two[i] for i in range(4) for j in range(4))
+
+
+def _c6_expected(item):
+    spec = item['check']
+    what, parts = spec['what'], _c5_parts(spec)
+    if what == 'plane':
+        n, A = parts['normal'], parts['point']
+        return list(n) + [_c5_dot(n, A)]
+    if what == 'perpendicular_planes':
+        n1, n2 = parts['n1'], parts['n2']
+        return -(n1[1] * n2[1] + n1[2] * n2[2]) / Fraction(n1[0])
+    if what == 'three_points':
+        return _c6_plane_through([parts['A'], parts['B'], parts['C']])
+    if what == 'line_plane':
+        P, d, n, c = parts['p'], parts['d'], parts['n'], parts['c'][0]
+        lam_value = (c - _c5_dot(n, P)) / Fraction(_c5_dot(n, d))
+        return tuple(a + lam_value * b for a, b in zip(P, d))
+    if what == 'two_planes':
+        n1, n2 = parts['n1'], parts['n2']
+        third = _c5_cross(n1, n2)
+        point = _c6_cramer([n1, n2, third], [parts['c1'][0], parts['c2'][0], 0])
+        return point, third
+    if what == 'three_planes':
+        return tuple(_c6_cramer([parts['n1'], parts['n2'], parts['n3']],
+                                [parts['c1'][0], parts['c2'][0], parts['c3'][0]]))
+    if what == 'no_unique':
+        n1, n2, n3 = parts['n1'], parts['n2'], parts['n3']
+        index = next(i for i, v in enumerate(n3) if not isinstance(v, Fraction))
+        others = [i for i in range(3) if i != index]
+        # det линеен по a: подставить два значения и найти ноль прямой
+        values = []
+        for trial in (0, 1):
+            row = [Fraction(trial) if i == index else n3[i] for i in range(3)]
+            values.append(_c6_det3([n1, n2, row]))
+        return -values[0] / (values[1] - values[0])
+    q, n, c = parts['q'], parts['n'], parts['c'][0]
+    size = _c5_dot(n, n)
+    lam_value = (c - _c5_dot(n, q)) / Fraction(size)
+    if what == 'foot':
+        return tuple(a + lam_value * b for a, b in zip(q, n))
+    if what == 'reflection':
+        return tuple(a + 2 * lam_value * b for a, b in zip(q, n))
+    return abs(float(lam_value)) * math.sqrt(size)
+
+
+def _c6_det3(m):
+    return (m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1])
+            - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0])
+            + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]))
+
+
+def _c6_agrees(item, want):
+    answer, what = item['answer'], item['check']['what']
+    if what in ('plane', 'three_points'):
+        return _c6_proportional(_c6_equation(answer), want)
+    if what == 'two_planes':
+        point, direction = want
+        numbers = [Fraction(n) for n in re.findall(r'-?\d+', str(answer))]
+        mine_point, mine_dir = numbers[:3], numbers[3:6]
+        on = _c5_cross([a - b for a, b in zip(mine_point, point)], direction) == [0, 0, 0]
+        return on and _c5_cross(mine_dir, direction) == [0, 0, 0]
+    if isinstance(want, tuple):
+        return all(Fraction(str(a)) == b for a, b in zip(answer, want))
+    if isinstance(want, Fraction):
+        return Fraction(str(answer)) == want
+    return abs(float(answer) - float(want)) <= 1e-9 * max(1.0, abs(float(want)))
+
+
+def _c6_slip(item):
+    """Ответ с типовым промахом и слово, которым проверка обязана его назвать."""
+    spec, answer = item['check'], item['answer']
+    what, parts = spec['what'], _c5_parts(spec)
+    if what == 'plane':
+        n, A = parts['normal'], parts['point']
+        d = _c5_dot(n, A)
+        lhs = show_answer(answer).split('=')[0].strip()
+        if d != 0:
+            return f'{lhs} = {-d}', 'знак у правой части'
+        return f'{lhs} = 1', 'параллельная плоскость'
+    if what == 'perpendicular_planes':
+        return show_answer(sp.sympify(answer) + 1), 'не перпендикулярны'
+    if what == 'three_points':
+        a, b, c, d = _c6_equation(answer)
+        A = parts['A']
+        if b != 0 and (a != 0 or c != 0):
+            flipped = [a, -b, c]
+            return show_answer(sp.Eq(sum(k * v for k, v in zip(flipped, sp.symbols('x y z'))),
+                                     sum(k * v for k, v in zip(flipped, A)))), 'средняя компонента'
+        return show_answer(sp.Eq(answer.lhs, answer.rhs + 1)), 'параллельная плоскость'
+    if what == 'line_plane':
+        P, d, n, c = parts['p'], parts['d'], parts['n'], parts['c'][0]
+        lam_value = (c - _c5_dot(n, P)) / Fraction(_c5_dot(n, d))
+        return show_answer(sp.Rational(lam_value.numerator, lam_value.denominator)), 'значение параметра'
+    if what == 'two_planes':
+        point = re.findall(r'-?\d+', str(answer))[:3]
+        return f"r = ({', '.join(point)}) + λ({', '.join(str(v) for v in parts['n1'])})", 'нормаль плоскости'
+    if what == 'three_planes':
+        values = list(answer)
+        return show_answer([values[0] + 1] + values[1:]), 'не лежит в плоскости'
+    if what == 'no_unique':
+        return show_answer(sp.sympify(answer) + 1), 'в одной точке'
+    q, n, c = parts['q'], parts['n'], parts['c'][0]
+    size = _c5_dot(n, n)
+    lam_value = (c - _c5_dot(n, q)) / Fraction(size)
+    if what == 'foot':
+        return show_answer([sp.Rational(str(a + 2 * lam_value * b)) for a, b in zip(q, n)]), 'не лежит в плоскости'
+    if what == 'reflection':
+        return show_answer([sp.Rational(str(a + lam_value * b)) for a, b in zip(q, n)]), 'основание перпендикуляра'
+    raw = abs(c - _c5_dot(n, q))
+    return str(raw), 'длину нормали'
+
+
+section('C6: эталон пересчитан без sympy и kit, проверка принимает и называет промах')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('C6.')):
+    agreed = accepted = slipped = named = 0
+    for seed in range(SEEDS):
+        item = dict(GENERATORS[gen_name](random.Random(seed)), id=gen_name)
+        spec = item['check']
+        agreed += bool(_c6_agrees(item, _c6_expected(item)))
+        ok, _ = evaluate(spec, show_answer(item['answer']))
+        accepted += bool(ok)
+        wrong_text, word = _c6_slip(item)
+        wrong, message = evaluate(spec, wrong_text)
+        slipped += not wrong
+        named += word in message
+        if word not in message or wrong:
+            print(f'    {gen_name} {seed}: {wrong_text} → {message}')
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
+    t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено дробями и Крамером')
 
 
 bad = [name for name, ok in res if not ok]

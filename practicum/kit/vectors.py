@@ -154,7 +154,9 @@ def mag(v):
 
 
 def distance(A, B):
-    """Расстояние между точками — длина AB."""
+    """Расстояние между точками — длина AB; с плоскостью — по перпендикуляру (C6)."""
+    if isinstance(A, _Plane) or isinstance(B, _Plane):
+        return _plane_distance(A, B)
     return mag(_as_vec(B) - _as_vec(A))
 
 
@@ -193,6 +195,7 @@ class _Line:
         self.direction = sp.Matrix(direction)
         self.param = param if param is not None else lam
         self.name = name
+        self.extra = {}          # откуда прямая взялась: пересечение плоскостей, отражение (C6)
 
     @property
     def letters(self):
@@ -204,7 +207,10 @@ class _Line:
     def subs(self, run):
         if not run:
             return self
-        return _Line(self.point.subs(run), self.direction.subs(run), self.param, self.name)
+        out = _Line(self.point.subs(run), self.direction.subs(run), self.param, self.name)
+        out.extra = {key: [item.subs(run) for item in value] if isinstance(value, list) else value.subs(run)
+                     for key, value in self.extra.items()}
+        return out
 
     def __repr__(self):
         return f"r = {_text(self.point)} + {_text(self.param)}{_text(self.direction)}"
@@ -339,7 +345,7 @@ def _vec_same(got, want, exact=False):
 def _subs(value, run):
     if not run:
         return value
-    if isinstance(value, _Line):
+    if isinstance(value, (_Line, _Plane)):
         return value.subs(run)
     vector = _as_vec(value)
     if vector is not None:
@@ -355,7 +361,7 @@ def _subs(value, run):
 def _letters_of(*items):
     out = set()
     for item in items:
-        if isinstance(item, _Line):
+        if isinstance(item, (_Line, _Plane)):
             out |= item.letters
         elif isinstance(item, _Fact):
             out |= item.letters
@@ -413,6 +419,12 @@ def _one_sign(mine, theirs):
 def _line_slip(mine, theirs, loose):
     par = _parallel(mine.direction, theirs.direction, loose)
     on = _on(mine.point, theirs, loose)
+    original = theirs.extra.get('mirrored')
+    if original is not None and not par and _parallel(mine.direction, original.direction, loose):
+        return _t(f"направление {_text(mine.direction)} — у исходной прямой; отражение поворачивает "
+                  f"прямую, и её направление меняется",
+                  f"the direction {_text(mine.direction)} is the original line's; the reflection "
+                  f"turns the line, and its direction changes")
     if not par and _parallel(mine.point, theirs.direction, loose) and _on(mine.direction, theirs, loose):
         return _t("точка и направление поменялись местами: точка прямой стоит "
                   "там, где направление, и наоборот",
@@ -1119,7 +1131,9 @@ def midpoint(M, A, B):
 
 
 def on(P, first, second=None):
-    """Условие: P лежит на прямой — `on(E, L)` или `on(E, A, C)`."""
+    """Условие: P лежит на прямой — `on(E, L)` или `on(E, A, C)` — или в плоскости, `on(C, P)`."""
+    if isinstance(first, _Plane):
+        return _plane_on_fact(P, first)
     L = first if isinstance(first, _Line) else through(first, second)
     point = _as_vec(P)
     s = sp.Dummy('s')
@@ -1136,7 +1150,9 @@ def _minors(one, two):
 
 
 def parallel(u, v):
-    """Условие: векторы (или прямые) параллельны."""
+    """Условие: векторы (или прямые) параллельны; с плоскостью — C6."""
+    if isinstance(u, _Plane) or isinstance(v, _Plane):
+        return _plane_pair_fact(u, v, 'parallel')
     one, two = _direction(u), _direction(v)
 
     def words(run):
@@ -1146,7 +1162,13 @@ def parallel(u, v):
 
 
 def perpendicular(u, v):
-    """Условие: векторы (или прямые) перпендикулярны — скалярное произведение ноль."""
+    """Условие: векторы (или прямые) перпендикулярны — скалярное произведение ноль.
+
+    С плоскостью (C6): вектор или прямая перпендикулярны плоскости — кратны
+    нормали; две плоскости перпендикулярны — нормали перпендикулярны.
+    """
+    if isinstance(u, _Plane) or isinstance(v, _Plane):
+        return _plane_pair_fact(u, v, 'perpendicular')
     one, two = _direction(u), _direction(v)
 
     def words(run):
@@ -1167,15 +1189,24 @@ def length(v, size):
                  words=words)
 
 
-def meet(L1, L2):
-    """Условие: прямые пересекаются — у них есть общая точка."""
+def meet(*objects):
+    """Условие: прямые пересекаются — у них есть общая точка; с плоскостями — C6."""
+    if any(isinstance(item, _Plane) for item in objects):
+        return _plane_meet_fact(objects)
+    L1, L2 = objects
     s, u = sp.Dummy('s'), sp.Dummy('u')
     return _Fact(list(L1.at(s) - L2.at(u)), params=[s, u], words=lambda run: _t(
         "при этих значениях прямые не пересекаются", "with these values the lines do not meet"))
 
 
-def no_unique_meet(L1, L2):
-    """Условие: у прямых нет единственной общей точки — направления кратны."""
+def no_unique_meet(*objects):
+    """Условие: у прямых нет единственной общей точки — направления кратны.
+
+    У трёх плоскостей (C6) — определитель нормалей ноль: «no unique solution».
+    """
+    if any(isinstance(item, _Plane) for item in objects):
+        return _plane_no_unique(objects)
+    L1, L2 = objects
     return _Fact(_minors(L1.direction, L2.direction), words=lambda run: _t(
         "при этом значении прямые пересекаются в одной точке",
         "with this value the lines meet at a single point"))
@@ -1536,3 +1567,8 @@ def _find_slip(facts, target, mine, want, rejected, unknowns, run, several=False
     if several:
         return _t(f"{_text(mine)} условиям не удовлетворяет", f"{_text(mine)} does not meet the conditions")
     return _t("ответ не удовлетворяет условиям вопроса", "the answer does not meet the conditions")
+
+
+from .planes import (  # noqa: E402
+    _Plane, _plane_distance, _plane_meet_fact, _plane_no_unique, _plane_on_fact, _plane_pair_fact,
+)
