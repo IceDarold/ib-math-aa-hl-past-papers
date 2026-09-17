@@ -536,4 +536,41 @@ if [[ "$moved" != "308 https://ib.archik.tech/api/physics/v1/health?probe=1" ]];
   exit 1
 fi
 
+# Каждая выкатка оставляет на диске свой каталог, и никто их не убирал: к
+# 17 сентября их накопилось 116 на 2.2 ГБ. Этого хватило, чтобы заполнить
+# диск, и Postgres Life OS ушёл в бесконечный цикл восстановления — ему
+# негде было записать контрольную точку. Держим последние KEEP, плюс тот,
+# на который смотрит current, плюс предыдущий: откат должен остаться
+# возможным. Релизы связаны жёсткими ссылками, поэтому старые стоят только
+# тем, что в них изменилось, — но счёт всё равно не должен расти без края.
+ssh "${ssh_args[@]}" "$remote" bash -s -- "$remote_root" "$current" "$previous" <<'REMOTE'
+set -euo pipefail
+
+root=$1
+current=$2
+previous=$3
+keep=5
+
+case "$root" in
+  /var/www/math.archik.tech) ;;
+  *) printf 'Unsafe root for pruning.\n' >&2; exit 64 ;;
+esac
+
+live=$(readlink -f -- "$current" || true)
+cd -- "$root/releases" || exit 0
+# Через подстановку процесса, а не через конвейер: под pipefail пустой
+# каталог уронил бы выкатку уже после того, как она прошла.
+mapfile -t all < <(ls -1dt -- */ 2>/dev/null | sed 's|/$||')
+for name in "${all[@]:keep}"; do
+  case "$name" in
+    */*|''|.|..) continue ;;
+  esac
+  path="$root/releases/$name"
+  if [[ "$path" == "$live" || "$path" == "$previous" ]]; then
+    continue
+  fi
+  rm -rf -- "$path"
+done
+REMOTE
+
 printf 'Deployed %s\n' "$release_id"
