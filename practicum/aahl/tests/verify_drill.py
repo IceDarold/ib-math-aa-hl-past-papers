@@ -64,10 +64,15 @@ def section(title):
 # --- 1. эталон проходит, испорченный ответ не проходит -------------------
 
 def _vector_spoil(answer, spec):
-    """Испорченный ответ о векторах, C5: точка не та, прямая не та, слово не то."""
+    """Испорченный ответ о векторах: точка не та, прямая не та, слово не то.
+
+    C5 и C6 — точка, прямая, плоскость и буква; C7 — произведение, ближайшая
+    точка и величина, которую меряет фигура.
+    """
     what = spec['what']
     parts = {name: [sp.sympify(v) for v in values] for name, values in spec['parts'].items()}
-    if what in ('midpoint', 'vertex', 'meet', 'line_plane', 'three_planes', 'foot', 'reflection'):
+    if what in ('midpoint', 'vertex', 'meet', 'line_plane', 'three_planes', 'foot', 'reflection',
+                'cross', 'closest'):
         values = list(answer)
         return show_answer([values[0] + 1] + values[1:])
     if what in ('plane', 'three_points'):
@@ -2876,6 +2881,136 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('C6.')):
     t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
     t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
     print(f'  {gen_name:32} {SEEDS} задач сверено дробями и Крамером')
+
+
+# =============================================================== C7
+# Проверки C7 меряют фигуру: площадь длиной векторного произведения, объём
+# определителем, расстояние — тем же произведением, угол — через нормаль.
+# Здесь всё пересчитано без sympy и без kit: дроби Fraction для точных
+# величин, math.sqrt, math.acos и math.degrees для остальных, а ближайшая
+# точка — из условия (Q − N) · d = 0, решённого вручную. Затем эталон
+# прогоняется через проверку тренажёра, и рядом — ответ с типовым промахом,
+# который она обязана отвергнуть и назвать своим словом.
+
+def _c7_size(vector):
+    return math.sqrt(float(_c5_dot(vector, vector)))
+
+
+def _c7_edges(parts, names):
+    first = parts[names[0]]
+    return [[b - a for a, b in zip(first, parts[name])] for name in names[1:]]
+
+
+def _c7_closest(p, d, q):
+    """Параметр ближайшей точки: ((Q − P) · d) / (d · d)."""
+    gap = [a - b for a, b in zip(q, p)]
+    return Fraction(_c5_dot(gap, d)) / Fraction(_c5_dot(d, d))
+
+
+def _c7_expected(item):
+    spec = item['check']
+    what, parts = spec['what'], _c5_parts(spec)
+    if what == 'cross':
+        return _c5_cross(parts['u'], parts['v'])
+    if what == 'area_triangle':
+        u, v = _c7_edges(parts, ('A', 'B', 'C'))
+        return _c7_size(_c5_cross(u, v)) / 2
+    if what == 'area_parallelogram':
+        first, third = _c7_edges(parts, ('A', 'B', 'D'))
+        return _c7_size(_c5_cross(first, third))
+    if what == 'volume':
+        rows = _c7_edges(parts, ('S', 'A', 'B', 'C'))
+        return abs(Fraction(_c6_det3(rows))) / 6
+    if what == 'lagrange':
+        product, known = parts['dot'][0], parts['known'][0]
+        if spec['letter'] == 'u':
+            return Fraction(int(math.isqrt(int(product ** 2 + parts['cross'][0] ** 2))), 1) / known
+        return Fraction(int(math.isqrt(int((known * parts['other'][0]) ** 2 - product ** 2))), 1)
+    if what == 'plane_angle':
+        n1, n2 = parts['n1'], parts['n2']
+        return abs(float(_c5_dot(n1, n2))) / (_c7_size(n1) * _c7_size(n2))
+    if what == 'line_plane_angle':
+        n, d = parts['n'], parts['d']
+        return math.degrees(math.asin(abs(float(_c5_dot(n, d))) / (_c7_size(n) * _c7_size(d))))
+    if what == 'sphere_arc':
+        u, v = parts['u'], parts['v']
+        return float(parts['radius'][0]) * math.acos(float(_c5_dot(u, v)) / (_c7_size(u) * _c7_size(v)))
+    if what == 'closest':
+        p, d = parts['p'], parts['d']
+        at = _c7_closest(p, d, parts['q'])
+        return tuple(a + at * b for a, b in zip(p, d))
+    p, d = parts['p'], parts['d']
+    other = parts['p2'] if 'p2' in parts else parts['q']
+    gap = [a - b for a, b in zip(p, other)]
+    return _c7_size(_c5_cross(gap, d)) / _c7_size(d)
+
+
+def _c7_agrees(item, want):
+    answer = item['answer']
+    if isinstance(want, list):
+        return list(answer) == want
+    if isinstance(want, tuple):
+        return all(Fraction(str(a)) == b for a, b in zip(answer, want))
+    if isinstance(want, Fraction):
+        return Fraction(str(answer)) == want
+    return abs(float(answer) - want) <= 1e-9 * max(1.0, abs(want))
+
+
+def _c7_slip(item):
+    """Ответ с типовым промахом и слово, которым проверка обязана его назвать."""
+    spec, answer = item['check'], item['answer']
+    what, parts = spec['what'], _c5_parts(spec)
+    if what == 'cross':
+        values = list(answer)
+        if values[1] != 0:
+            return show_answer([values[0], -values[1], values[2]]), 'средняя компонента'
+        return show_answer([-v for v in values]), 'перестановки множителей'
+    if what == 'area_triangle':
+        return show_answer(sp.sympify(answer) * 2), 'половина забыта'
+    if what == 'area_parallelogram':
+        return show_answer(sp.sympify(answer) / 2), 'треугольник на двух сторонах'
+    if what == 'volume':
+        return show_answer(sp.sympify(answer) * 6), 'параллелепипеда'
+    if what == 'lagrange':
+        return show_answer(sp.sympify(answer) ** 2), 'не извлечён корень'
+    if what == 'plane_angle':
+        return show_answer(-sp.sympify(answer)), 'острого угла'
+    if what == 'line_plane_angle':
+        return show_answer(sp.Float(90 - float(answer), 6)), 'с нормалью'
+    if what == 'sphere_arc':
+        u, v = parts['u'], parts['v']
+        central = math.acos(float(_c5_dot(u, v)) / (_c7_size(u) * _c7_size(v)))
+        return show_answer(sp.Float(central, 6)), 'центральный угол'
+    if what == 'closest':
+        d = parts['d']
+        return show_answer([sp.Rational(str(a + b)) for a, b in zip(answer, d)]), 'не перпендикулярны'
+    across = _c5_cross([a - b for a, b in zip(parts['p'],
+                                              parts['p2'] if 'p2' in parts else parts['q'])],
+                       parts['d'])
+    square = _c5_dot(across, across)                    # целое: ответ обязан быть точным
+    return show_answer(sp.sqrt(sp.Rational(square))), 'не поделено'
+
+
+section('C7: эталон пересчитан без sympy и kit, проверка принимает и называет промах')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('C7.')):
+    agreed = accepted = slipped = named = 0
+    for seed in range(SEEDS):
+        item = dict(GENERATORS[gen_name](random.Random(seed)), id=gen_name)
+        spec = item['check']
+        agreed += bool(_c7_agrees(item, _c7_expected(item)))
+        ok, _ = evaluate(spec, show_answer(item['answer']))
+        accepted += bool(ok)
+        wrong_text, word = _c7_slip(item)
+        wrong, message = evaluate(spec, wrong_text)
+        slipped += not wrong
+        named += word in message
+        if word not in message or wrong:
+            print(f'    {gen_name} {seed}: {wrong_text} → {message}')
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
+    t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено дробями и корнями')
 
 
 bad = [name for name, ok in res if not ok]

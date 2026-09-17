@@ -886,6 +886,54 @@ def _plane_kind(spec, parts, raw, point):
     if what == 'reflection':
         image = kit.unknown('Q', 3)
         return _capture(kit.verify_find, 'Ответ', point(), image, [kit.reflection(image, parts['q'], surface('n', 'c'))])
+    return _space_kind(spec, parts, raw, point)
+
+
+def _space_kind(spec, parts, raw, point):
+    """Измерения, C7: величину меряет фигура вопроса, проверки из ноутбука."""
+    what = spec['what']
+
+    def surface(normal):
+        return kit.plane(kit.vec(0, 0, 0), parts[normal])
+
+    if what == 'cross':
+        return _capture(kit.verify_cross, 'Ответ', point(), parts['u'], parts['v'])
+    if what == 'area_triangle':
+        return _capture(kit.verify_measure, 'Ответ', parse_one(raw), 'triangle',
+                        parts['A'], parts['B'], parts['C'], exact=True)
+    if what == 'area_parallelogram':
+        return _capture(kit.verify_measure, 'Ответ', parse_one(raw), 'parallelogram',
+                        parts['A'], parts['B'], parts['C'], parts['D'], exact=True)
+    if what == 'volume':
+        return _capture(kit.verify_measure, 'Ответ', parse_one(raw), 'pyramid',
+                        parts['S'], parts['A'], parts['B'], parts['C'])
+    if what == 'lagrange':
+        size = kit.unknown('L')
+        product, known = parts['dot'][0], parts['known'][0]
+        if spec['letter'] == 'u':
+            across = parts['cross'][0]
+            rule = kit.Eq(product ** 2 + across ** 2, size ** 2 * known ** 2)
+        else:
+            rule = kit.Eq(product ** 2 + size ** 2, known ** 2 * parts['other'][0] ** 2)
+        return _capture(kit.verify_find, 'Ответ', parse_one(raw), size, [rule, size > 0])
+    if what == 'plane_angle':
+        return _capture(kit.verify_angle, 'Ответ', parse_one(raw), surface('n1'), surface('n2'),
+                        cosine=True, exact=True)
+    if what == 'line_plane_angle':
+        return _capture(kit.verify_angle, 'Ответ', parse_one(raw),
+                        kit.line(kit.vec(0, 0, 0), parts['d']), surface('n'), deg=True)
+    if what == 'sphere_arc':
+        return _capture(kit.verify_arc, 'Ответ', parse_one(raw), parts['radius'][0],
+                        parts['u'], parts['v'])
+    if what == 'closest':
+        where = kit.unknown('N', 3)
+        track = kit.line(parts['p'], parts['d'])
+        return _capture(kit.verify_find, 'Ответ', point(), where,
+                        [kit.on(where, track), kit.perpendicular(where - parts['q'], track)])
+    if what == 'line_distance':
+        track = kit.line(parts['p'], parts['d'])
+        other = kit.line(parts['p2'], parts['d2']) if 'p2' in parts else parts['q']
+        return _capture(kit.verify_distance, 'Ответ', parse_one(raw), track, other, exact=True)
     raise ValueError(f'неизвестный вопрос о векторах: {what!r}')
 
 

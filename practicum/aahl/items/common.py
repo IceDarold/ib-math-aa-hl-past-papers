@@ -553,12 +553,17 @@ def vector_check(what, letter=None, **parts):
     'relation', 'speed', 'bearing'; для плоскостей — 'plane',
     'perpendicular_planes', 'three_points', 'line_plane', 'two_planes',
     'three_planes', 'no_unique', 'foot', 'plane_distance', 'reflection'
-    (правая часть уравнения плоскости — список из одного числа). parts — точки и направления списками
+    (правая часть уравнения плоскости — список из одного числа); об измерениях,
+    C7 — 'cross', 'area_triangle', 'area_parallelogram', 'volume', 'lagrange'
+    (letter говорит, что ищут: 'u' или 'cross'), 'plane_angle',
+    'line_plane_angle', 'sphere_arc', 'closest', 'line_distance'.
+    parts — точки и направления списками
     чисел (в 'perpendicular' одна компонента — буква letter).
 
-    Эталона в описании нет: страница пересобирает векторы и прямые и зовёт те
-    же verify_find, verify_line, verify_meet, verify_relation, verify_angle,
-    verify_speed и verify_bearing, что стоят в ноутбуке.
+    Эталона в описании нет: страница пересобирает векторы, прямые, плоскости и
+    фигуры и зовёт те же verify_find, verify_line, verify_meet, verify_relation,
+    verify_angle, verify_speed, verify_bearing, verify_plane, verify_cross,
+    verify_measure, verify_arc и verify_distance, что стоят в ноутбуках.
     """
     spec = {'kind': 'vector', 'what': what,
             'parts': {name: [sp.srepr(sp.sympify(v)) for v in values]

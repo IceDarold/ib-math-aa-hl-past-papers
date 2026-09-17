@@ -51,8 +51,10 @@ def cross(u, v):
 def _sign_words(index, what):
     """Знак одной компоненты; про среднюю — правило векторного произведения."""
     axis = 'xyz'[index]
-    normal = what == 'normal'
-    whose = _t("у нормали" if normal else "у направления", "of the normal" if normal else "of the direction")
+    whose = _t({'normal': "у нормали", 'direction': "у направления",
+                'product': "у произведения"}[what],
+               {'normal': "of the normal", 'direction': "of the direction",
+                'product': "of the product"}[what])
     if index == 1:
         return _t(f"{whose} неверный знак компоненты y: в векторном произведении средняя компонента — "
                   f"a₃b₁ − a₁b₃, а не a₁b₃ − a₃b₁",
@@ -794,9 +796,13 @@ def verify_distance(label, got, first, second, exact=False):
 
     Промахи: |n·a − d| без деления на |n|, параметр основания вместо
     расстояния, расстояние от начала координат, расстояние до отражения.
+
+    Без плоскости — расстояние до прямой, и его меряет секция измерений (C7).
     """
     if _blank(label, got):
         return False
+    if not (isinstance(first, _Plane) or isinstance(second, _Plane)):
+        return _verify_line_distance(label, got, first, second, exact)      # прямые — C7
     P, point = _distance_parts(first, second)
     want = _plane_distance(first, second)
     value = _vec_number(got)
@@ -997,3 +1003,6 @@ def mirror(item, P, half=False):
     point = _as_vec(item)
     step = (P.constant - P.side(point)) / dot(P.normal, P.normal)
     return point + (1 if half else 2) * step * P.normal
+
+
+from .space import _verify_line_distance  # noqa: E402 — расстояния до прямой живут в C7

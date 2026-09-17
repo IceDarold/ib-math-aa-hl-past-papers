@@ -8347,6 +8347,318 @@
    "dir": "AA_HL/2024/May/TZ2/Paper 1",
    "skill": "C6.reflection"
   },
+  "2023-NOV-TZ1-P2-Q08-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C7.cross"
+  },
+  "2023-NOV-TZ2-P2-Q08-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "8",
+   "part": "A",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "C7.cross"
+  },
+  "2025-MAY-TZ2-P3-Q02-C-I": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "C-I",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "C7.cross"
+  },
+  "2023-NOV-TZ1-P2-Q08-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C7.area"
+  },
+  "2023-NOV-TZ1-P2-Q08-C": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "C7.area"
+  },
+  "2023-NOV-TZ2-P2-Q08-C": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "8",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "C7.area"
+  },
+  "2024-MAY-TZ1-P2-Q12-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "c",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "15-16",
+   "markscheme_pages": "25-29",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "C7.area"
+  },
+  "2025-MAY-TZ3-P1-Q11-C": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "C7.area"
+  },
+  "2025-NOV-TZ1-P2-Q12-D": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "D",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "18",
+   "markscheme_pages": "25",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C7.area"
+  },
+  "2025-NOV-TZ1-P2-Q12-G": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "G",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "18",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "C7.volume"
+  },
+  "2021-MAY-TZ2-P1-Q05": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "5",
+   "part": "",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "8 of 17",
+   "markscheme_pages": "12 of 29",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C7.identity"
+  },
+  "2024-MAY-TZ1-P2-Q12-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "15-16",
+   "markscheme_pages": "25-29",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "C7.identity"
+  },
+  "2024-MAY-TZ1-P2-Q12-B-I-III": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "(b)(i-iii)",
+   "marks": 13,
+   "calculator": "yes",
+   "source_pages": "15-16",
+   "markscheme_pages": "25-29",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "C7.identity"
+  },
+  "2023-MAY-TZ1-P2-Q08": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "8",
+   "part": "",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "10",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "C7.angle"
+  },
+  "2025-MAY-TZ1-P1-Q11-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "A",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "C7.angle"
+  },
+  "2025-MAY-TZ2-P3-Q02-C-II": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "C-II",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "C7.angle"
+  },
+  "2025-MAY-TZ2-P3-Q02-E": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "E",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "17-18",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "C7.angle"
+  },
+  "2025-MAY-TZ2-P3-Q02-F": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "2",
+   "part": "F",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "19",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "C7.angle"
+  },
+  "2025-MAY-TZ3-P1-Q11-E": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "11",
+   "part": "E",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/May/TZ3/Paper 1",
+   "skill": "C7.angle"
+  },
+  "2023-MAY-TZ2-P2-Q06-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "6",
+   "part": "b",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "C7.closest"
+  },
+  "2025-NOV-TZ3-P1-Q10-D": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "D",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "C7.closest"
+  },
+  "2025-NOV-TZ3-P1-Q10-E": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "10",
+   "part": "E",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "20",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "C7.closest"
+  },
+  "2021-MAY-TZ2-P1-Q08-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "8",
+   "part": "B",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "16–18",
+   "dir": "AA_HL/2021/May/TZ2/Paper 1",
+   "skill": "C7.distance"
+  },
+  "2023-MAY-TZ1-P1-Q12-C": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "12",
+   "part": "(c)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "26,27,28,29",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "C7.distance"
+  },
   "2022-NOV-COMMON-P1-Q11-A-I": {
    "session": "November 2022",
    "zone": "Common",
@@ -14573,6 +14885,14 @@
    "blocks": 35
   },
   {
+   "id": "C7",
+   "title": "Расстояния, углы и векторное произведение",
+   "section": "C",
+   "notebook": "practicum/geometry/practicum-c7-measuring.ipynb",
+   "marks": 114,
+   "blocks": 26
+  },
+  {
    "id": "D1",
    "title": "Комбинаторика: размещения, блоки, дополнение",
    "section": "D",
@@ -18821,6 +19141,205 @@
     "2023-NOV-TZ1-P2-Q12-D",
     "2023-NOV-TZ2-P2-Q12-D",
     "2024-MAY-TZ2-P1-Q11-E"
+   ]
+  },
+  {
+   "id": "C7.cross",
+   "practicum": "C7",
+   "name": "Векторное произведение — счёт и проверка",
+   "rung": 1,
+   "trigger": "«Show that AB × AC = …»; «find the vector a × p»; «given that b × c = (−4, −1, 3)»; «use a vector method». Два вектора даны или строятся по точкам, и нужен третий, перпендикулярный обоим.",
+   "chain": [
+    "Свести к двум векторам из одной вершины: AB = B − A, AC = C − A",
+    "Компоненты произведения — u₂v₃ − u₃v₂, u₃v₁ − u₁v₃, u₁v₂ − u₂v₁",
+    "Средняя компонента именно u₃v₁ − u₁v₃: в записи определителем перед j стоит минус",
+    "Проверить скалярным произведением: u · (u × v) и v · (u × v) — нули",
+    "С буквой всё то же: раскрыть скобки и привести подобные",
+    "Порядок множителей менять нельзя: v × u = −(u × v)"
+   ],
+   "traps": [
+    "Знак средней компоненты: (2 − 3p, 2 + p, p² − 2p) вместо (2 − 3p, −2 − p, p² − 2p)",
+    "Множители переставлены, и весь вектор вышел с обратным знаком",
+    "Компоненты перемножены по отдельности: (u₁v₁, u₂v₂, u₃v₃)",
+    "Произведение сокращают на общий множитель, как нормаль, — а у произведения своя длина",
+    "В «show that» приводят результат, не выписав ни AB, ни AC: схема ставит A0A0"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 114,
+   "blocks": [
+    "2023-NOV-TZ1-P2-Q08-A",
+    "2023-NOV-TZ2-P2-Q08-A",
+    "2025-MAY-TZ2-P3-Q02-C-I"
+   ]
+  },
+  {
+   "id": "C7.area",
+   "practicum": "C7",
+   "name": "Площадь — длина векторного произведения",
+   "rung": 2,
+   "trigger": "«Hence, find the area of parallelogram ABCD»; «use a vector method to find the area of the triangle PQR»; «find the smallest possible area of triangle ABC»; «the area of triangle ABC is √6». Площадь — и дана, и искомая: в одну сторону из неё достают |u × v|.",
+   "chain": [
+    "Два ребра из одной вершины и их векторное произведение",
+    "|u × v| — площадь параллелограмма на этих рёбрах",
+    "Треугольник — его половина: S = ½|u × v|",
+    "Длину брать от произведения, а не перемножать длины: |u||v| было бы площадью только при прямом угле",
+    "Если площадь дана, а искать нужно вектор, читать то же равенство справа налево: |u × v| = 2S",
+    "Наименьшая площадь при букве — минимум |u × v|², и корень брать в самом конце"
+   ],
+   "traps": [
+    "Половина забыта: у треугольника взята площадь параллелограмма",
+    "Ответ — |u × v|², корень не извлечён",
+    "Площадь считают как |u||v| или как скалярное произведение",
+    "Минимум найден по p и в ответ пошло само p, а не площадь",
+    "Три значащие цифры округлены до двух: 1.3 вместо 1.30"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 114,
+   "blocks": [
+    "2023-NOV-TZ1-P2-Q08-B",
+    "2023-NOV-TZ1-P2-Q08-C",
+    "2023-NOV-TZ2-P2-Q08-C",
+    "2024-MAY-TZ1-P2-Q12-C",
+    "2025-MAY-TZ3-P1-Q11-C",
+    "2025-NOV-TZ1-P2-Q12-D"
+   ]
+  },
+  {
+   "id": "C7.volume",
+   "practicum": "C7",
+   "name": "Объём пирамиды — основание и высота",
+   "rung": 3,
+   "trigger": "«Hence, find the volume of pyramid PQRS». Основание уже посчитано предыдущим пунктом, вершина лежит на нормали к нему.",
+   "chain": [
+    "Основание — треугольник или параллелограмм, его площадь уже есть",
+    "Высота — расстояние от вершины до плоскости основания; если вершина стоит на нормали, это длина отрезка до неё",
+    "V = ⅓ · S · h",
+    "То же одним счётом: шестая часть определителя из трёх рёбер, выходящих из вершины",
+    "Определитель брать по модулю: знак говорит только про порядок рёбер"
+   ],
+   "traps": [
+    "Треть забыта: посчитана призма",
+    "Взят весь определитель: это параллелепипед, вшестеро больше",
+    "Высотой берут расстояние до вершины основания, а не до плоскости",
+    "В ответ идёт площадь основания"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 114,
+   "blocks": [
+    "2025-NOV-TZ1-P2-Q12-G"
+   ]
+  },
+  {
+   "id": "C7.identity",
+   "practicum": "C7",
+   "name": "Тождество Лагранжа — скалярное и векторное вместе",
+   "rung": 4,
+   "trigger": "«Show that |a × b|² = |a|²|b|² − (a · b)²»; «using the definitions of u · v and u × v in terms of |u|, |v| and θ, show that (u · v)² + |u × v|² = |u|²|v|²»; «hence, or otherwise, find the value of |u|». Само тождество спрашивают, а следующим пунктом им пользуются.",
+   "chain": [
+    "Записать оба произведения через длины и угол: u · v = |u||v| cos θ, |u × v| = |u||v| sin θ",
+    "Возвести в квадрат и вынести |u|²|v|²",
+    "cos²θ + sin²θ = 1 — и тождество доказано",
+    "Обратный ход: из трёх известных величин четвёртая находится подстановкой, без угла",
+    "Дальше — система: u · v даёт линейное уравнение на буквы, |u| — квадратное"
+   ],
+   "traps": [
+    "Написано |u × v| = |u||v| cos θ: синус и косинус перепутаны",
+    "Тождество доказывают на конкретных векторах — схема требует общего хода",
+    "Компонентный способ начат и брошен: «full marks only if fully developed»",
+    "Из квадратного уравнения взят один корень, а их два, и каждому отвечает своя вторая буква"
+   ],
+   "calculator": "partial",
+   "practicum_marks": 114,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q05",
+    "2024-MAY-TZ1-P2-Q12-A",
+    "2024-MAY-TZ1-P2-Q12-B-I-III"
+   ]
+  },
+  {
+   "id": "C7.angle",
+   "practicum": "C7",
+   "name": "Углы с плоскостью — через нормаль",
+   "rung": 5,
+   "trigger": "«Show that the acute angle between the planes P1 and P2 is 60°»; «show that cos θ = 1/5»; «the angle between a line and a plane is α, find the value of α»; «show that the angle at vertex A is 90°»; «find the bearing from Bogotá to Moscow».",
+   "chain": [
+    "У плоскости работает нормаль, у прямой — направление",
+    "Между плоскостями: cos θ = |n₁ · n₂| / (|n₁||n₂|), модуль и даёт острый угол",
+    "Между прямой и плоскостью: угол с нормалью считается тем же скалярным произведением, а искомый — то, что осталось до прямого: sin α = |d · n| / (|d||n|)",
+    "Без модуля выйдет тупой угол; тогда острый — 180° − θ",
+    "С буквой в нормали получается уравнение на угол, и решает его GDC",
+    "Угол между двумя векторными произведениями считается так же: они сами векторы"
+   ],
+   "traps": [
+    "В ответ идёт угол с нормалью, а не с плоскостью",
+    "Оставлен тупой угол, хотя спрашивали острый",
+    "Модуль потерян, и косинус вышел отрицательным",
+    "Ответ в градусах, когда вопрос просит радианы: схема ставит A0",
+    "Дуга на сфере считается по хорде, а не по углу: s = rθ"
+   ],
+   "calculator": "helps",
+   "practicum_marks": 114,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q08",
+    "2025-MAY-TZ1-P1-Q11-A",
+    "2025-MAY-TZ2-P3-Q02-C-II",
+    "2025-MAY-TZ2-P3-Q02-E",
+    "2025-MAY-TZ2-P3-Q02-F",
+    "2025-MAY-TZ3-P1-Q11-E"
+   ]
+  },
+  {
+   "id": "C7.closest",
+   "practicum": "C7",
+   "name": "Ближайшая точка прямой — перпендикуляр из точки",
+   "rung": 6,
+   "trigger": "«Find the coordinates of the point P on L that is nearest to the origin»; «find PN · AB in terms of μ»; «given that N is the point on L2 that lies closest to P, find the coordinates of N».",
+   "chain": [
+    "Общая точка прямой — с буквой: N = c + μd",
+    "Вектор от данной точки к ней, PN = N − P, тоже с буквой",
+    "Ближайшая — та, где PN перпендикулярен прямой: PN · d = 0",
+    "Уравнение линейное, буква одна; её значение — обратно в прямую",
+    "Тот же ответ даёт минимум |PN|² по букве — производная даёт то же уравнение"
+   ],
+   "traps": [
+    "В ответ идёт значение буквы, а не точка",
+    "Скалярное произведение берут с радиус-вектором точки, а не с направлением прямой",
+    "PN считают как P − N: знак уравнения меняется, корень тот же, но дальше путается",
+    "Для ближайшей к началу координат точки забывают, что P здесь — O"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 114,
+   "blocks": [
+    "2023-MAY-TZ2-P2-Q06-B",
+    "2025-NOV-TZ3-P1-Q10-D",
+    "2025-NOV-TZ3-P1-Q10-E"
+   ]
+  },
+  {
+   "id": "C7.distance",
+   "practicum": "C7",
+   "name": "Расстояние до прямой и между прямыми",
+   "rung": 7,
+   "trigger": "«Hence or otherwise, find the shortest distance from A to L1»; «find the minimum distance between l1 and l2». Прямые параллельны или точка лежит вне прямой, и нужна длина перпендикуляра.",
+   "chain": [
+    "Взять любую точку прямой и вектор к ней от данной точки: AP",
+    "Расстояние — |AP × d| / |d|: векторное произведение отрезает продольную часть",
+    "Или так: |AP| sin θ, где θ — угол между AP и прямой",
+    "Между параллельными прямыми — то же самое от точки одной до другой",
+    "Или без произведения: общая точка второй прямой, условие перпендикулярности, длина",
+    "Сначала убедиться, что прямые параллельны: у пересекающихся расстояние ноль"
+   ],
+   "traps": [
+    "Не поделено на |d|: ответ вышел в |d| раз больше",
+    "В ответ идёт |AP| — расстояние до выбранной точки, а не до прямой",
+    "Взята длина проекции на прямую: это второй катет, а не искомый",
+    "Для непараллельных прямых считают как для параллельных"
+   ],
+   "calculator": "no",
+   "practicum_marks": 114,
+   "blocks": [
+    "2021-MAY-TZ2-P1-Q08-B",
+    "2023-MAY-TZ1-P1-Q12-C"
    ]
   },
   {
@@ -33469,6 +33988,486 @@
    ],
    "answer": "foot",
    "answer_digest": "22e4f6912a69",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:1",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.cross",
+   "prompt": "Find $(1,0,-2)\\times(3,1,1)$.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "cross",
+   "answer_digest": "b3986952b145",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:2",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.area",
+   "prompt": "Find the area of the triangle with vertices $(0,0,0)$, $(1,2,0)$, $(0,3,4)$.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "area",
+   "answer_digest": "4a91ee5f0106",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:3",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.volume",
+   "prompt": "A pyramid has base $(0,0,0)$, $(2,0,0)$, $(0,3,0)$ and apex $(0,0,5)$. Find its volume.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "volume",
+   "answer_digest": "62d7a6b1211d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:4",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.identity",
+   "prompt": "Given $\\mathbf u\\cdot\\mathbf v=6$, $|\\mathbf u\\times\\mathbf v|=8$ and $|\\mathbf v|=2$, find $|\\mathbf u|$.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "identity",
+   "answer_digest": "689f6a627384",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:5",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.angle",
+   "prompt": "Find the acute angle between $x+y=1$ and $x-z=4$.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "angle",
+   "answer_digest": "49387897bee2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:6",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.closest",
+   "prompt": "Find the point of $\\mathbf r=\\lambda(1,2,2)$ closest to $(3,0,0)$.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "closest",
+   "answer_digest": "2b327541ac3d",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:7",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.distance",
+   "prompt": "Find the distance from $(1,1,1)$ to the line $\\mathbf r=\\mu(0,0,1)$.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "distance",
+   "answer_digest": "63e6ce93e1bc",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:8",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.area",
+   "prompt": "Find the area of the parallelogram with sides $(2,1,0)$ and $(0,1,3)$ from one corner.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "area",
+   "answer_digest": "4a91ee5f0106",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:9",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.angle",
+   "prompt": "Find the angle the line $\\mathbf r=\\lambda(1,1,1)$ makes with the plane $z=0$.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "angle",
+   "answer_digest": "49387897bee2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:10",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.cross",
+   "prompt": "Show that $(\\mathbf a\\times\\mathbf b)\\cdot\\mathbf a=0$ for all $\\mathbf a$ and $\\mathbf b$.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "cross",
+   "answer_digest": "b3986952b145",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:11",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.distance",
+   "prompt": "Two parallel lines pass through $(0,0,0)$ and $(1,1,0)$ with direction $(0,0,1)$. How far apart are they?",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "distance",
+   "answer_digest": "63e6ce93e1bc",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:C7:12",
+   "kind": "recognition",
+   "practicum": "C7",
+   "skill": "C7.identity",
+   "prompt": "Show that $|\\mathbf a\\times\\mathbf b|\\le|\\mathbf a||\\mathbf b|$.",
+   "options": [
+    {
+     "code": "cross",
+     "name": "векторное произведение"
+    },
+    {
+     "code": "area",
+     "name": "площадь"
+    },
+    {
+     "code": "volume",
+     "name": "объём пирамиды"
+    },
+    {
+     "code": "identity",
+     "name": "тождество и длина из него"
+    },
+    {
+     "code": "angle",
+     "name": "углы с плоскостью"
+    },
+    {
+     "code": "closest",
+     "name": "ближайшая точка прямой"
+    },
+    {
+     "code": "distance",
+     "name": "расстояние до прямой"
+    }
+   ],
+   "answer": "identity",
+   "answer_digest": "689f6a627384",
    "budget_ms": 8000
   },
   {

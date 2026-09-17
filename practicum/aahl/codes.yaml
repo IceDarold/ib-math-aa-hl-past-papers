@@ -274,6 +274,15 @@ C6:
   foot:         {skill: foot,         name: перпендикуляр и расстояние}
   reflection:   {skill: reflection,   name: отражение}
 
+C7:
+  cross:    {skill: cross,    name: векторное произведение}
+  area:     {skill: area,     name: площадь}
+  volume:   {skill: volume,   name: объём пирамиды}
+  identity: {skill: identity, name: тождество и длина из него}
+  angle:    {skill: angle,    name: углы с плоскостью}
+  closest:  {skill: closest,  name: ближайшая точка прямой}
+  distance: {skill: distance, name: расстояние до прямой}
+
 E2:
   def:      {skill: from_derivatives,   name: по определению}
   sub:      {skill: substitution,       name: подстановка в известный ряд}

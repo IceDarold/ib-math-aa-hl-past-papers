@@ -154,18 +154,19 @@ def mag(v):
 
 
 def distance(A, B):
-    """Расстояние между точками — длина AB; с плоскостью — по перпендикуляру (C6)."""
+    """Расстояние между точками — длина AB; с плоскостью — по перпендикуляру (C6),
+    с прямой — кратчайшее, по перпендикуляру к ней (C7)."""
     if isinstance(A, _Plane) or isinstance(B, _Plane):
         return _plane_distance(A, B)
+    if isinstance(A, _Line) or isinstance(B, _Line):
+        return _line_distance(A, B)
     return mag(_as_vec(B) - _as_vec(A))
 
 
 def angle(u, v):
-    """Угол между векторами, от 0 до π. Между прямыми — острый."""
-    acute = isinstance(u, _Line) or isinstance(v, _Line)
-    one, two = _direction(u), _direction(v)
-    cosine = dot(one, two) / (mag(one) * mag(two))
-    return sp.acos(sp.Abs(cosine) if acute else cosine)
+    """Угол между векторами, от 0 до π. Между прямыми — острый, с плоскостью — C7."""
+    one, two, acute, kind, _ = _angle_parts((u, v))
+    return _angle_value(one, two, acute, kind)[0]
 
 
 def _time(r, var):
@@ -754,6 +755,8 @@ def verify_line_parameter(label, got, L, P):
 
 def _angle_parts(objects):
     """(u, v, acute, kind, extra) из того, что передал вопрос."""
+    if any(isinstance(item, _Plane) for item in objects):
+        return _space_angle_parts(objects)                    # углы с плоскостью — C7
     if len(objects) == 3:
         P, V, Q = (_as_vec(item) for item in objects)
         return P - V, Q - V, False, 'vertex', (P, V, Q)
@@ -770,6 +773,8 @@ def _angle_parts(objects):
 
 def _angle_value(u, v, acute, kind):
     """Угол в радианах и его косинус — для сравнения."""
+    if kind == 'line_plane':
+        return _space_angle_value(u, v), None                 # C7: дополнение до угла с нормалью
     if kind == 'horizontal':
         size = mag(u)
         return sp.asin(sp.Abs(u[len(u) - 1]) / size), None
@@ -854,6 +859,10 @@ def _angle_slip(mine, radians, cos_value, deg, kind, extra, u):
         return _t("это градусы, а вопрос просит радианы", "that is in degrees, and the question asks for radians")
     if cos_value is not None and _draw_agree(value, _vec_number(cos_value)):
         return _t("это cos θ, а не сам угол", "that is cos θ, not the angle itself")
+    if kind in ('planes', 'line_plane'):
+        words = _space_angle_words(kind, value, here, unit)      # C7
+        if words:
+            return words
     if _draw_agree(value, unit - here):
         if kind == 'lines':
             return _t("это тупой угол между направлениями; угол между прямыми — "
@@ -963,9 +972,14 @@ def verify_optimum(label, got, target, var, domain, kind='min', of=None):
 
     `verify_optimum('b', p, a + b, theta, Interval(0, 2*pi))`: b пробегает
     окружность, и проверка сама ищет, где |a + b| меньше всего.
+
+    Если target — не вектор, а величина (C7: площадь, длина произведения),
+    ответом считается само её наименьшее или наибольшее значение.
     """
     if _blank(label, got):
         return False
+    if _as_vec(target) is None:
+        return _scalar_optimum(label, got, target, var, domain, kind)
     measure = of or mag
     target = _as_vec(target)
     where, extreme = _sweep(measure(target), var, domain, kind)
@@ -992,12 +1006,67 @@ def verify_optimum(label, got, target, var, domain, kind='min', of=None):
     return False
 
 
+def _scalar_optimum(label, got, expr, var, domain, kind):
+    """Ответ — само наименьшее (наибольшее) значение величины, а не точка, где оно."""
+    where, extreme = _sweep(expr, var, domain, kind)
+    _, other = _sweep(expr, var, domain, 'max' if kind == 'min' else 'min')
+    word = _t('наименьшее' if kind == 'min' else 'наибольшее',
+              'the smallest' if kind == 'min' else 'the largest')
+    if _vec_number(got) is None:
+        print(f"{NO} {label}: " + _t(f"{word} значение — это число", f"{word} value is a number"))
+        return False
+    value = _vec_number(got)
+    if _draw_agree(value, extreme):
+        print(f"{OK} {label}: {_text(got)}")
+        return True
+    if _draw_agree(value, where):
+        print(f"{NO} {label}: " + _t(f"это значение буквы {_text(var)}, при котором величина "
+                                     f"{word}, а вопрос просит саму величину",
+                                     f"that is the value of {_text(var)} at which the quantity is "
+                                     f"least or greatest, and the question asks for the quantity"))
+        return False
+    if _draw_agree(value, other):
+        print(f"{NO} {label}: " + _t("это значение на другом конце: наибольшее вместо "
+                                     "наименьшего или наоборот",
+                                     "that is the value at the other end: the largest instead of "
+                                     "the smallest, or the other way"))
+        return False
+    print(f"{NO} {label}: " + (_generic_slip(got, extreme)
+                               or _t(f"{word} значение величины другое",
+                                     f"{word} value of the quantity is something else")))
+    return False
+
+
+def _window(domain, size, pick):
+    """Конечные концы промежутка: бесконечный отодвигается, пока лучшая точка в него упирается."""
+    start = float(domain.start) if domain.start.is_finite else None
+    end = float(domain.end) if domain.end.is_finite else None
+    if start is not None and end is not None:
+        return start, end
+    lo = start if start is not None else -10.0
+    hi = end if end is not None else 10.0
+    for _ in range(12):
+        step = (hi - lo) / 200
+        best = pick((lo + step * i for i in range(201)), key=size)
+        if (start is not None or best > lo + 2 * step) and (end is not None or best < hi - 2 * step):
+            break
+        if start is None:
+            lo *= 4
+        if end is None:
+            hi *= 4
+    return lo, hi
+
+
 def _sweep(expr, var, domain, kind):
-    """Наименьшее или наибольшее значение выражения на отрезке: сетка и золотое сечение."""
-    lo, hi = float(domain.start), float(domain.end)
+    """Наименьшее или наибольшее значение выражения на отрезке: сетка и золотое сечение.
+
+    Бесконечный конец промежутка заменяется конечным: окно расширяется, пока
+    лучшая точка не перестанет упираться в его край (C7: «p — положительное»).
+    """
     size = sp.lambdify(var, expr, 'math')
-    grid = [lo + (hi - lo) * i / 2000 for i in range(2001)]
     pick = min if kind == 'min' else max
+    lo, hi = _window(domain, size, pick)
+    grid = [lo + (hi - lo) * i / 2000 for i in range(2001)]
     best = pick(grid, key=size)
     left, right = max(lo, best - (hi - lo) / 2000), min(hi, best + (hi - lo) / 2000)
     golden = (math.sqrt(5) - 1) / 2
@@ -1336,7 +1405,12 @@ def _solve_facts(facts, unknowns):
         equations += [e for e in fact.equations if e != 0]
         filters += fact.filters
         params += fact.params
-    names = [s for s in list(unknowns) + params if any(e.has(s) for e in equations)]
+    # Буква не называется дважды: параметр условия приходит и из unknowns, и
+    # из params, а sp.solve с повторённым символом не решает ничего.
+    names = []
+    for letter in list(unknowns) + params:
+        if letter not in names and any(e.has(letter) for e in equations):
+            names.append(letter)
     if not equations:
         return [{}], []
     found = _candidates(equations, names)
@@ -1520,8 +1594,11 @@ def verify_find(label, got, target, facts=(), exact=False, free=None):
             message = _find_slip(placed, target, mine, values[0], rejected, unknowns, run)
             print(f"{NO} {label}: {message}" + _at_words(run))
             return False
-        given = list(mine) if isinstance(mine, (list, tuple, set)) and not (
-            targets is None and _as_vec(target) is not None and _as_vec(mine) is not None) else [mine]
+        # Список делится на ответы, если это не один вектор, записанный скобками:
+        # у (x, y, z) длина совпадает с искомым, у списка из двух векторов — нет.
+        whole = (targets is None and _as_vec(target) is not None and _as_vec(mine) is not None
+                 and len(_as_vec(mine)) == len(_as_vec(target)))
+        given = list(mine) if isinstance(mine, (list, tuple, set)) and not whole else [mine]
         matched = [any(_same_answer(item, value, closeness) for item in given) for value in values]
         stray = [item for item in given if not any(_same_answer(item, v, closeness) for v in values)]
         if all(matched) and not stray:
@@ -1571,4 +1648,7 @@ def _find_slip(facts, target, mine, want, rejected, unknowns, run, several=False
 
 from .planes import (  # noqa: E402
     _Plane, _plane_distance, _plane_meet_fact, _plane_no_unique, _plane_on_fact, _plane_pair_fact,
+)
+from .space import (  # noqa: E402 — измерения в пространстве живут в C7
+    _line_distance, _space_angle_parts, _space_angle_value, _space_angle_words,
 )
