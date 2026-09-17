@@ -5069,7 +5069,7 @@ verify_find('9c(i)', q9c_i, a, [no_unique_meet(first, second, third)])
 ## C7, измерения в пространстве: векторное произведение и то, что оно меряет
 
 [`practicum/geometry/practicum-c7-measuring.ipynb`](practicum/geometry/practicum-c7-measuring.ipynb)
-— 39 ячеек, 108 баллов архива, [карточки приёмов](practicum/skills/geometry-vectors-product.yaml).
+— 40 ячеек, 108 баллов архива, [карточки приёмов](practicum/skills/geometry-vectors-product.yaml).
 Тридцать третий практикум серии и третий, последний по векторам. **108 баллов,
 24 блока, семь приёмов, двенадцать заданий.**
 
