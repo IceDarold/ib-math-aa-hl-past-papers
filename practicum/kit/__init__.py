@@ -17,6 +17,7 @@
     sequences     прогрессии                                  A1 A2
     derivative    пределы, ряды Маклорена, производная        E1 E2 E3
     tangent       касательная и нормаль                       E4
+    shape         стационарные точки, вогнутость, перегиб     E8
     integral      первообразная и измеренное                  E5 E6
     probability   вероятность и счёт                          D1 D2
     distribution  распределение по модели                     D3
@@ -35,14 +36,14 @@
 """
 
 from . import (
-    core, algebra, functions, geometry, sequences, derivative, tangent,
+    core, algebra, functions, geometry, sequences, derivative, tangent, shape,
     integral, probability, distribution, table, normal, density, vectors,
     planes, space,
 )
 
 MODULES = (core, algebra, functions, geometry, sequences, derivative, tangent,
-           integral, probability, distribution, table, normal, density, vectors,
-           planes, space)
+           shape, integral, probability, distribution, table, normal, density,
+           vectors, planes, space)
 
 for _module in MODULES:
     globals().update((name, value) for name, value in vars(_module).items()

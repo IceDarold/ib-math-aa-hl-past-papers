@@ -277,6 +277,39 @@ def constant_check(rule, letter, at, slope, window, var='x', dep='y'):
             'window': [sp.srepr(sp.sympify(v)) for v in window]}
 
 
+def shape_check(what, rule, var='x', dep='y', **extra):
+    """Вопрос о форме графика, E8: стационарные точки, вогнутость, перегиб.
+
+    what — что спрашивают: 'turning' (сама точка), 'nature' (вид точки
+    словом), 'bend' (перегиб), 'side' (по какую сторону оси), 'tally'
+    (множество значений буквы по видам стационарных точек), 'meets' (то же
+    по числу пересечений с осью), 'count' (сколько стационарных точек).
+
+    Эталона в описании нет: страница пересобирает кривую и зовёт те же
+    verify_turning, verify_nature, verify_bend, verify_side и
+    verify_param_set, что стоят в ноутбуке. Вид точки там решают соседи,
+    перегиб — хорда, а множество значений буквы спрашивается у самого
+    свойства.
+    """
+    shape, var, dep = _curve_spec(rule, var, dep)
+    spec = {'kind': 'shape', 'what': what, 'rule': shape, 'var': var, 'dep': dep}
+    if what in ('tally', 'meets'):
+        # Ответ здесь — множество значений буквы, и печатать его надо в ней;
+        # переменная самой кривой уезжает в отдельный ключ.
+        spec['curve'], spec['var'] = var, str(extra['letter'])
+    for name in ('coordinates', 'which', 'letter', 'times', 'kinds',
+                 'positive'):
+        if name in extra and extra[name] is not None:
+            spec[name] = extra[name]
+    for name in ('domain', 'window', 'at'):
+        if extra.get(name) is not None:
+            spec[name] = [sp.srepr(sp.sympify(v)) for v in extra[name]]
+    if extra.get('params'):
+        spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
+                          for name, values in extra['params'].items()}
+    return spec
+
+
 def antiderivative_check(f, var='x', domain=None, params=None, through=None):
     """Ответ — первообразная: эталона нет, проверка дифференцирует написанное.
 

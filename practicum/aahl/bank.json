@@ -14729,6 +14729,552 @@
    "markscheme_pages": "18",
    "dir": "AA_HL/2025/May/TZ1/Paper 2",
    "skill": "E7.euler_error_sign"
+  },
+  "2025-MAY-TZ1-P1-Q01": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "1",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ1/Paper 1",
+   "skill": "E8.find"
+  },
+  "2023-NOV-TZ2-P1-Q11-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(a)",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "E8.find"
+  },
+  "2022-NOV-COMMON-P2-Q02-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "E8.find"
+  },
+  "2025-MAY-TZ2-P2-Q12-C": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E8.find"
+  },
+  "2025-MAY-TZ2-P3-Q01-A-III": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "A-III",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ2/Paper 3",
+   "skill": "E8.find"
+  },
+  "2023-MAY-TZ1-P3-Q02-B-I": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "b(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E8.find"
+  },
+  "2023-MAY-TZ1-P3-Q02-B-II": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "b(ii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E8.find"
+  },
+  "2023-NOV-TZ1-P2-Q04-A": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/November/TZ1/Paper 2",
+   "skill": "E8.find"
+  },
+  "2022-MAY-TZ2-P1-Q06-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "6",
+   "part": "B",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2022/May/TZ2/Paper 1",
+   "skill": "E8.find"
+  },
+  "2023-NOV-TZ1-P1-Q11-B": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "B",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "14",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2023/November/TZ1/Paper 1",
+   "skill": "E8.classify"
+  },
+  "2023-NOV-TZ2-P1-Q11-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "11",
+   "part": "(b)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "15",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2023/November/TZ2/Paper 1",
+   "skill": "E8.classify"
+  },
+  "2023-NOV-TZ1-P3-Q01-F-I": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "F-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E8.classify"
+  },
+  "2023-NOV-TZ2-P3-Q01-F-I": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "F-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E8.classify"
+  },
+  "2023-NOV-TZ1-P3-Q01-G-I": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "G-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E8.classify"
+  },
+  "2023-NOV-TZ2-P3-Q01-G-I": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "G-I",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E8.classify"
+  },
+  "2025-MAY-TZ3-P3-Q02-D": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "D",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "E8.classify"
+  },
+  "2025-NOV-TZ1-P1-Q09-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "B",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E8.sign"
+  },
+  "2021-MAY-TZ2-P3-Q01-G-I": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "G-I",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "13-14",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "E8.sign"
+  },
+  "2021-MAY-TZ2-P3-Q01-G-II": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "G-II",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2021/May/TZ2/Paper 3",
+   "skill": "E8.sign"
+  },
+  "2021-MAY-TZ1-P2-Q11-C": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "11",
+   "part": "c",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E8.inflexion"
+  },
+  "2022-MAY-TZ1-P3-Q02-G-I": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "(g)(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "E8.inflexion"
+  },
+  "2022-MAY-TZ1-P3-Q02-G-II": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "(g)(ii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "26",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "E8.inflexion"
+  },
+  "2022-MAY-TZ1-P3-Q02-H-II": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "(h)(ii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2022/May/TZ1/Paper 3",
+   "skill": "E8.inflexion"
+  },
+  "2022-MAY-TZ2-P3-Q01-B-I": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(b)(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "E8.inflexion"
+  },
+  "2022-MAY-TZ2-P3-Q01-E": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(e)",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "12-13",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "E8.inflexion"
+  },
+  "2023-MAY-TZ2-P2-Q12-E": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "E",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "16",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "E8.inflexion"
+  },
+  "2025-NOV-TZ1-P1-Q09-D": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "9",
+   "part": "D",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "12",
+   "markscheme_pages": "21-22",
+   "dir": "AA_HL/2025/November/TZ1/Paper 1",
+   "skill": "E8.inflexion"
+  },
+  "2023-NOV-TZ1-P3-Q01-E": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "E",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "9–10",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E8.family"
+  },
+  "2023-NOV-TZ2-P3-Q01-E": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "E",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9-10",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E8.family"
+  },
+  "2021-MAY-TZ1-P3-Q01-D-I": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "d(i)",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E8.family"
+  },
+  "2021-MAY-TZ1-P3-Q01-D-II": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "d(ii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E8.family"
+  },
+  "2023-NOV-TZ1-P3-Q01-F-II": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "F-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E8.side"
+  },
+  "2023-NOV-TZ1-P3-Q01-G-II": {
+   "session": "November 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "G-II",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/November/Common/Paper 3",
+   "skill": "E8.side"
+  },
+  "2021-MAY-TZ1-P3-Q01-C-I": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "c(i)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E8.count"
+  },
+  "2021-MAY-TZ1-P3-Q01-C-II": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "c(ii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E8.count"
+  },
+  "2021-MAY-TZ1-P3-Q01-C-III": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "c(iii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E8.count"
+  },
+  "2021-MAY-TZ1-P3-Q01-E-I": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "e(i)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E8.count"
+  },
+  "2021-MAY-TZ1-P3-Q01-E-II": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "e(ii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E8.count"
+  },
+  "2021-MAY-TZ1-P3-Q01-E-III": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "e(iii)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E8.count"
+  },
+  "2021-MAY-TZ1-P3-Q01-F": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "1",
+   "part": "f",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "14,15",
+   "dir": "AA_HL/2021/May/TZ1/Paper 3",
+   "skill": "E8.count"
+  },
+  "2022-NOV-COMMON-P1-Q07": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 1,
+   "question": "7",
+   "part": "",
+   "marks": 7,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/November/Common/Paper 1",
+   "skill": "E8.none"
+  },
+  "2022-MAY-TZ2-P3-Q01-D-II": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 3,
+   "question": "1",
+   "part": "(d)(ii)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2022/May/TZ2/Paper 3",
+   "skill": "E8.none"
   }
  },
  "practicums": [
@@ -14995,6 +15541,14 @@
    "notebook": "practicum/calculus/practicum-e7-differential-equations.ipynb",
    "marks": 254,
    "blocks": 64
+  },
+  {
+   "id": "E8",
+   "title": "Стационарные точки, вогнутость, перегиб",
+   "section": "E",
+   "notebook": "practicum/calculus/practicum-e8-stationary-points.ipynb",
+   "marks": 114,
+   "blocks": 43
   }
  ],
  "skills": [
@@ -22070,6 +22624,246 @@
     "2023-NOV-TZ2-P2-Q09-C",
     "2024-MAY-TZ2-P2-Q12-E-I-II-III",
     "2025-MAY-TZ1-P2-Q09-B"
+   ]
+  },
+  {
+   "id": "E8.find",
+   "practicum": "E8",
+   "name": "Найти точку — обе координаты",
+   "rung": 1,
+   "trigger": "«Find the coordinates of the local minimum point»; «find the points on the curve where the gradient is zero»; «the graph has a local minimum at (p, q), find p and q»; «the particle first comes to rest». Функция дана, и нужна точка, в которой её график горизонтален.",
+   "chain": [
+    "Продифференцировать и приравнять производную нулю",
+    "Решить уравнение — точно, если бумага без калькулятора, иначе GDC",
+    "Подставить каждый корень в саму функцию: вторая координата берётся у f",
+    "Проверить, все ли корни попали в область из условия",
+    "Закрытый отрезок добавляет концы: они не стационарны, но могут быть крайними значениями"
+   ],
+   "traps": [
+    "Названо x и на этом остановились: вторая координата — отдельный балл",
+    "Вторая координата взята у f′, а не у f, и вышел ноль",
+    "Найден один корень из двух или из трёх: схема даёт A0 за неполный набор",
+    "Дробь приравняли нулю целиком, вместе со знаменателем: нулю равен только числитель, и знаменатель там обязан быть жив",
+    "Округлённое x подставлено обратно, и третья значащая цифра y уехала"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 114,
+   "blocks": [
+    "2025-MAY-TZ1-P1-Q01",
+    "2023-NOV-TZ2-P1-Q11-A",
+    "2022-NOV-COMMON-P2-Q02-A",
+    "2025-MAY-TZ2-P2-Q12-C",
+    "2025-MAY-TZ2-P3-Q01-A-III",
+    "2023-MAY-TZ1-P3-Q02-B-I",
+    "2023-MAY-TZ1-P3-Q02-B-II",
+    "2023-NOV-TZ1-P2-Q04-A",
+    "2022-MAY-TZ2-P1-Q06-B"
+   ]
+  },
+  {
+   "id": "E8.classify",
+   "practicum": "E8",
+   "name": "Вид точки по второй производной",
+   "rung": 2,
+   "trigger": "«Using the second derivative at each point, show that…»; «find d²y/dx² and hence determine whether each point is a local maximum or a local minimum»; «use d²V/dx² to show that there is a local maximum». Точки уже найдены, и спрашивают, какие они.",
+   "chain": [
+    "Продифференцировать ещё раз",
+    "Подставить каждую стационарную точку",
+    "Отрицательно — максимум, положительно — минимум",
+    "Выписать само значение, а не только его знак",
+    "С буквой: упростить до вида, у которого знак виден — например до −4√(a² − ab + b²)"
+   ],
+   "traps": [
+    "Знак прочитан наоборот: f″ < 0 это максимум, кривая выгнута вниз",
+    "При f″ = 0 объявляют перегиб, а вывода нет никакого",
+    "Выписан только знак: схема требует значения («the values for the second derivative must be correct»)",
+    "Взята первая производная вместо второй",
+    "В семействе не сказано, какого знака параметр, и знак 2a остался неопределённым"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 114,
+   "blocks": [
+    "2023-NOV-TZ1-P1-Q11-B",
+    "2023-NOV-TZ2-P1-Q11-B",
+    "2023-NOV-TZ1-P3-Q01-F-I",
+    "2023-NOV-TZ2-P3-Q01-F-I",
+    "2023-NOV-TZ1-P3-Q01-G-I",
+    "2023-NOV-TZ2-P3-Q01-G-I",
+    "2025-MAY-TZ3-P3-Q02-D"
+   ]
+  },
+  {
+   "id": "E8.sign",
+   "practicum": "E8",
+   "name": "Вид точки по смене знака первой производной",
+   "rung": 3,
+   "trigger": "«State, with a reason, whether there is a local maximum point or a local minimum point»; «by considering the sign of fₙ′(−1), show that (0, 0) is…»; знаки производной даны диаграммой или выводятся из чётности показателя. Второй производной здесь либо нет, либо она молчит.",
+   "chain": [
+    "Взять по точке слева и справа от стационарной",
+    "Убедиться, что между ними нет другой стационарной точки",
+    "Определить знак f′ в каждой — счётом или разбором множителей",
+    "− потом + — минимум; + потом − — максимум; знак не сменился — перегиб с нулевым наклоном",
+    "Записать причину словами: смена знака и есть балл R"
+   ],
+   "traps": [
+    "Назван вид, но не названа причина: схема ставит A0R1 или вовсе A0, «do not award A0R1»",
+    "Взята точка по другую сторону от соседней вершины, и знак вышел чужой",
+    "Чётность показателя разобрана наоборот: при чётном n показатель n − 1 нечётен, и (−1)ⁿ⁻¹ = −1",
+    "Из f′(0) = 0 делают вывод о виде точки: сам по себе ноль не говорит ничего"
+   ],
+   "calculator": "no",
+   "practicum_marks": 114,
+   "blocks": [
+    "2025-NOV-TZ1-P1-Q09-B",
+    "2021-MAY-TZ2-P3-Q01-G-I",
+    "2021-MAY-TZ2-P3-Q01-G-II"
+   ]
+  },
+  {
+   "id": "E8.inflexion",
+   "practicum": "E8",
+   "name": "Точка перегиба",
+   "rung": 4,
+   "trigger": "«Find the x-coordinate of the point of inflexion»; «write down the coordinates of the two points of inflexion»; «by sketching the graph of an appropriate derivative, determine the x-coordinate of P»; «state, with a reason, whether there is a point of inflexion at x = c».",
+   "chain": [
+    "Найти вторую производную и приравнять её нулю",
+    "Убедиться, что знак f″ при переходе меняется",
+    "На калькуляторной бумаге короче: вершина графика f′ — это и есть перегиб f",
+    "У неявной кривой дифференцировать ещё раз само равенство: 2(dy/dx)² + 2y d²y/dx² = 6x",
+    "Координату y брать у исходной кривой"
+   ],
+   "traps": [
+    "Названо f″(c) = 0 как причина: схема ставит R0, нужна смена знака",
+    "Взята вершина самой f вместо вершины f′",
+    "У неявной кривой подставили dy/dx = 0 вместо d²y/dx² = 0",
+    "Ответ округлён мимо третьей цифры: 0.655 вместо 0.656",
+    "Найдена одна точка перегиба из двух: у y² = x³ + 1 их две, по одной на ветвь"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 114,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q11-C",
+    "2022-MAY-TZ1-P3-Q02-G-I",
+    "2022-MAY-TZ1-P3-Q02-G-II",
+    "2022-MAY-TZ1-P3-Q02-H-II",
+    "2022-MAY-TZ2-P3-Q01-B-I",
+    "2022-MAY-TZ2-P3-Q01-E",
+    "2023-MAY-TZ2-P2-Q12-E",
+    "2025-NOV-TZ1-P1-Q09-D"
+   ]
+  },
+  {
+   "id": "E8.family",
+   "practicum": "E8",
+   "name": "Стационарные точки семейства с буквой",
+   "rung": 5,
+   "trigger": "«Show that the curve has a point of zero gradient at P(0, b) and at Q(−2a/3, 4a³/27 + b)»; «show that the y-coordinate of the local maximum point is 2c^{3/2} + 2». В функции стоит параметр, и ответ — выражение, а не число.",
+   "chain": [
+    "Дифференцировать по x; буква ведёт себя как число",
+    "Решить f′ = 0 относительно x — ответом будет выражение с буквой",
+    "Подставить каждый корень обратно в f и упростить",
+    "Довести запись ровно до напечатанной строки: за AG платят только за неё",
+    "Сказать, при каком знаке буквы точки вообще существуют"
+   ],
+   "traps": [
+    "Букву дифференцируют как переменную: у 3cx производная 3c, а не 3x",
+    "Корень найден, но не подставлен, и второй координаты нет",
+    "Выкладка оборвана до напечатанного вида: схема ставит A0 за −8a³/27 + 4a³/9 + b без приведения",
+    "(−√c)³ раскрыто без минуса: у нечётной степени знак сохраняется",
+    "Забыто, что c^{3/2} существует только при c ≥ 0"
+   ],
+   "calculator": "no",
+   "practicum_marks": 114,
+   "blocks": [
+    "2023-NOV-TZ1-P3-Q01-E",
+    "2023-NOV-TZ2-P3-Q01-E",
+    "2021-MAY-TZ1-P3-Q01-D-I",
+    "2021-MAY-TZ1-P3-Q01-D-II"
+   ]
+  },
+  {
+   "id": "E8.side",
+   "practicum": "E8",
+   "name": "По какую сторону оси стоит точка",
+   "rung": 6,
+   "trigger": "«Determine whether each point is located above or below the x-axis»; «state whether P is a local maximum or a local minimum and whether it is above or below the x-axis»; «state the conditions on a and b that determine when Q is below the x-axis».",
+   "chain": [
+    "Взять y-координату точки — она уже найдена приёмом family",
+    "Определить её знак при тех ограничениях, что даны на буквы",
+    "Если знак не определён, ответом будет неравенство на буквы",
+    "Максимум может стоять ниже оси, минимум — выше: вид точки ничего о стороне не говорит"
+   ],
+   "traps": [
+    "Сторону оси выводят из вида точки: «максимум, значит выше»",
+    "Знак 4a³/27 + b определяют только по b, забыв про куб",
+    "Ответ дан примером, а не условием на буквы",
+    "Неравенство записано нестрогим там, где точка на оси меняет дело"
+   ],
+   "calculator": "no",
+   "practicum_marks": 114,
+   "blocks": [
+    "2023-NOV-TZ1-P3-Q01-F-II",
+    "2023-NOV-TZ1-P3-Q01-G-II"
+   ]
+  },
+  {
+   "id": "E8.count",
+   "practicum": "E8",
+   "name": "Сколько точек и сколько пересечений с осью",
+   "rung": 7,
+   "trigger": "«Find the set of values of c such that the graph has one local maximum and one local minimum point»; «…has no points where the gradient is zero»; «…has exactly two x-axis intercepts»; «find all conditions on c and d such that the graph has exactly one x-axis intercept».",
+   "chain": [
+    "Сколько стационарных точек — это сколько решений у f′ = 0; для квадратного f′ решает дискриминант",
+    "Два разных корня — максимум и минимум; кратный — перегиб с нулевым наклоном; корней нет — точек нет",
+    "Сколько пересечений с осью — это знаки стационарных значений",
+    "Обе вершины по одну сторону — одно пересечение; вершина на оси — два; вершины по разные стороны — три",
+    "Если букв две, случай «вершин нет вовсе» разбирается первым и отдельно",
+    "Ответ записывается множеством или неравенством, а не примером"
+   ],
+   "traps": [
+    "Кратный корень f′ читают как «две точки» или как «ни одной»",
+    "Касание оси считают за два пересечения или за ноль: это одно",
+    "Строгое неравенство заменено нестрогим, и граница попала не туда",
+    "Случай c ≤ 0 не выписан, и схема даёт не больше половины баллов",
+    "Названо одно значение параметра вместо множества"
+   ],
+   "calculator": "no",
+   "practicum_marks": 114,
+   "blocks": [
+    "2021-MAY-TZ1-P3-Q01-C-I",
+    "2021-MAY-TZ1-P3-Q01-C-II",
+    "2021-MAY-TZ1-P3-Q01-C-III",
+    "2021-MAY-TZ1-P3-Q01-E-I",
+    "2021-MAY-TZ1-P3-Q01-E-II",
+    "2021-MAY-TZ1-P3-Q01-E-III",
+    "2021-MAY-TZ1-P3-Q01-F"
+   ]
+  },
+  {
+   "id": "E8.none",
+   "practicum": "E8",
+   "name": "Показать, что стационарных точек нет",
+   "rung": 8,
+   "trigger": "«Show that the curve has no local maximum or local minimum points for x > 0»; «hence deduce that the curve has no local minimum or maximum points». Кривая почти всегда задана уравнением, а не формулой.",
+   "chain": [
+    "Продифференцировать неявно, с правилом произведения",
+    "Приравнять dy/dx нулю — у дроби это значит «числитель ноль»",
+    "Решить получившееся уравнение",
+    "Сверить решения с областью из условия — и отбросить все",
+    "Сказать вслух, что не осталось ни одного: это и есть последний балл"
+   ],
+   "traps": [
+    "Область из условия не применена, и найденные y = ±2 приняты за ответ",
+    "Числитель 3x² + 1 приравняли нулю и решили в комплексных",
+    "Дробь приравняли нулю вместе со знаменателем",
+    "Показано, что решений нет, но не сказано, что отсюда нет и точек",
+    "Правило произведения применено к (x² + y²)y² не полностью"
+   ],
+   "calculator": "no",
+   "practicum_marks": 114,
+   "blocks": [
+    "2022-NOV-COMMON-P1-Q07",
+    "2022-MAY-TZ2-P3-Q01-D-II"
    ]
   }
  ],
@@ -41044,6 +41838,534 @@
    ],
    "answer": "sep",
    "answer_digest": "c19588ee9c72",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:1",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.find",
+   "prompt": "Find the coordinates of the local minimum of $y=x^3-3x$.",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "find",
+   "answer_digest": "e6640de835ad",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:2",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.classify",
+   "prompt": "Given $f''(2)=-5$ and $f'(2)=0$, what kind of point is at $x=2$?",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "classify",
+   "answer_digest": "fc1f263d32b8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:3",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.sign",
+   "prompt": "$f'$ changes from negative to positive at $x=4$. What kind of point is there?",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "sign",
+   "answer_digest": "0b6f395ca14a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:4",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.inflexion",
+   "prompt": "Find the $x$-coordinate of the point of inflexion of $y=xe^{-x}$.",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "inflexion",
+   "answer_digest": "715155bf98ba",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:5",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.family",
+   "prompt": "Show that $y=x^3+kx^2$ has a stationary point at $x=-\\frac{2k}{3}$.",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "family",
+   "answer_digest": "d34a569ab7aa",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:6",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.side",
+   "prompt": "The local minimum of a cubic has $y=-7$. State whether it lies above or below the axis.",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "side",
+   "answer_digest": "ea7bf4bb7230",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:7",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.count",
+   "prompt": "Find the values of $m$ for which $y=x^3+mx$ has no stationary point.",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "count",
+   "answer_digest": "6c35493a2b93",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:8",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.none",
+   "prompt": "Show that $y=\\dfrac{1}{x}$ has no local maximum or minimum for $x>0$.",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "none",
+   "answer_digest": "140bedbf9c3f",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:9",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.find",
+   "prompt": "Find every point where the gradient of $y=\\sin x+\\cos x$ is zero on $[0,2\\pi]$.",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "find",
+   "answer_digest": "e6640de835ad",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:10",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.inflexion",
+   "prompt": "Where does $y=x^4-6x^2$ change from concave down to concave up?",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "inflexion",
+   "answer_digest": "715155bf98ba",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:11",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.classify",
+   "prompt": "$\\dfrac{d^2y}{dx^2}=6x+4$ at a stationary point $x=1$. Maximum or minimum?",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "classify",
+   "answer_digest": "fc1f263d32b8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E8:12",
+   "kind": "recognition",
+   "practicum": "E8",
+   "skill": "E8.count",
+   "prompt": "For which $p$ does $y=x^4+px^2$ have exactly three stationary points?",
+   "options": [
+    {
+     "code": "find",
+     "name": "найти точку"
+    },
+    {
+     "code": "classify",
+     "name": "вид по второй производной"
+    },
+    {
+     "code": "sign",
+     "name": "вид по знаку первой"
+    },
+    {
+     "code": "inflexion",
+     "name": "точка перегиба"
+    },
+    {
+     "code": "family",
+     "name": "семейство с буквой"
+    },
+    {
+     "code": "side",
+     "name": "по какую сторону оси"
+    },
+    {
+     "code": "count",
+     "name": "сколько точек и пересечений"
+    },
+    {
+     "code": "none",
+     "name": "точек нет"
+    }
+   ],
+   "answer": "count",
+   "answer_digest": "6c35493a2b93",
    "budget_ms": 8000
   }
  ],

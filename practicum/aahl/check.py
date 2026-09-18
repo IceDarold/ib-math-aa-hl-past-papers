@@ -356,6 +356,9 @@ def evaluate(spec, raw):
                             order=spec.get('order', 1),
                             params=params or None)
 
+        if kind == 'shape':
+            return _shape_kind(spec, raw)
+
         if kind in ('tangent', 'normal', 'slope', 'where', 'second',
                     'constant'):
             var, dep = sp.Symbol(spec['var']), sp.Symbol(spec['dep'])
@@ -935,6 +938,77 @@ def _space_kind(spec, parts, raw, point):
         other = kit.line(parts['p2'], parts['d2']) if 'p2' in parts else parts['q']
         return _capture(kit.verify_distance, 'Ответ', parse_one(raw), track, other, exact=True)
     raise ValueError(f'неизвестный вопрос о векторах: {what!r}')
+
+
+def _shape_kind(spec, raw):
+    """Форма графика, E8: вид точки решают соседи, перегиб — хорда."""
+    what = spec['what']
+    var, dep = sp.Symbol(spec.get('curve', spec['var'])), sp.Symbol(spec['dep'])
+    shape = sp.sympify(spec['rule'])
+    here = kit.curve(shape, var=var, dep=dep)
+    domain = ([sp.sympify(v) for v in spec['domain']]
+              if spec.get('domain') else None)
+    params = {sp.Symbol(name): [sp.sympify(v) for v in values]
+              for name, values in (spec.get('params') or {}).items()} or None
+    at = [sp.sympify(v) for v in spec['at']] if spec.get('at') else None
+
+    if what == 'turning':
+        values = parse_many(raw)
+        got = values if len(values) > 1 else values[0]
+        return _capture(kit.verify_turning, 'Ответ', got, here,
+                        spec.get('which'), var=var, dep=dep, domain=domain,
+                        coordinates=spec.get('coordinates', True), params=params)
+    if what == 'nature':
+        words = _words(raw, len(at))
+        return _capture(kit.verify_nature, 'Ответ', words, here,
+                        at if len(at) > 1 else at[0], var=var, dep=dep,
+                        domain=domain, params=params)
+    if what == 'side':
+        words = _words(raw, len(at))
+        return _capture(kit.verify_side, 'Ответ', words, here,
+                        at if len(at) > 1 else at[0], var=var, dep=dep,
+                        params=params)
+    if what == 'bend':
+        values = parse_many(raw)
+        got = values if len(values) > 1 else values[0]
+        return _capture(kit.verify_bend, 'Ответ', got, here, var=var, dep=dep,
+                        domain=domain, coordinates=spec.get('coordinates', False),
+                        params=params)
+    if what == 'count':
+        found = kit.stationary(here, domain, var=var, dep=dep)
+        said = parse_one(raw)
+        if said == len(found):
+            return True, f'{kit.OK} {said}'
+        return False, (f'{kit.NO} на этом промежутке кривая горизонтальна '
+                       f'{len(found)} раз, а не {int(said)}')
+
+    letter = sp.Symbol(spec['letter'])
+    window = ([sp.sympify(v) for v in spec['window']]
+              if spec.get('window') else (-4, 4))
+
+    # Условие записано как F(x, y) = 0, то есть y − f(x); сама f нужна
+    # и счёту пересечений, и просмотру стационарных точек.
+    formula = -shape.subs(dep, 0)
+
+    def holds(value):
+        if spec.get('positive') and value <= 0:
+            return None                    # вопрос спрашивает только о c > 0
+        now = formula.subs(letter, value)
+        if what == 'meets':
+            return kit.crossings(now, (-30, 30)) == spec['times']
+        return [word for _, _, word in
+                kit.stationary(now, domain, var=var)] == list(spec['kinds'])
+
+    return _capture(kit.verify_param_set, 'Ответ',
+                    parse_solution_set(raw, letter), holds, var=letter,
+                    window=tuple(window))
+
+
+def _words(raw, count):
+    """Ответ-слова тренажёра: «maximum, minimum» или одно слово."""
+    parts = [piece.strip().strip("'\"") for piece in
+             re.split(r'[,;]|\bи\b|\band\b', _clean(raw)) if piece.strip()]
+    return parts if count > 1 else (parts[0] if parts else '')
 
 
 def show_answer(value, sf=3, var='x'):

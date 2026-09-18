@@ -94,11 +94,36 @@ def _vector_spoil(answer, spec):
 
 
 
+def _shape_spoil(answer, spec):
+    """Испорченный ответ о форме графика, E8.
+
+    Слово меняется на соседнее, у точки уезжает вторая координата, перегиб
+    сдвигается на единицу, число точек — тоже, а множество значений буквы
+    заменяется дополнением.
+    """
+    what = spec['what']
+    if what == 'nature':
+        return {'maximum': 'minimum', 'minimum': 'inflexion',
+                'inflexion': 'minimum'}[answer]
+    if what == 'side':
+        return 'below' if answer == 'above' else 'above'
+    if what == 'turning':
+        first, second = answer
+        return show_answer([first, sp.sympify(second) + 1])
+    if what == 'bend':
+        return show_answer(sp.sympify(answer) + 1)
+    if what == 'count':
+        return str(int(answer) + 1)
+    return show_answer(sp.Complement(sp.S.Reals, answer), var=spec['var'])
+
+
 def spoil(answer, spec):
     """Ответ, который обязан быть отвергнут."""
     kind = spec['kind']
     if kind == 'vector':
         return _vector_spoil(answer, spec)
+    if kind == 'shape':
+        return _shape_spoil(answer, spec)
     if kind == 'count':
         return str(int(spec['value']) + 1)
     if kind == 'indeterminate':
@@ -156,7 +181,8 @@ for name, gen in sorted(GENERATORS.items()):
     good = bad = 0
     for seed in range(SEEDS):
         item = gen(random.Random(seed))
-        ok, _ = evaluate(item['check'], show_answer(item['answer']))
+        letter = item['check'].get('var', 'x')
+        ok, _ = evaluate(item['check'], show_answer(item['answer'], var=letter))
         good += ok
         accepted, _ = evaluate(item['check'], spoil(item['answer'],
                                                    item['check']))
@@ -3011,6 +3037,175 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('C7.')):
     t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
     t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
     print(f'  {gen_name:32} {SEEDS} задач сверено дробями и корнями')
+
+
+# --- E8: форма графика, выведенная дробями ------------------------------
+# Проверки ноутбука и тренажёра здесь идут по кривой ногами и производных
+# не берут вовсе. Независимый вывод делает ровно обратное и тоже без kit:
+# коэффициенты многочлена, степенное правило руками, корни квадратного
+# уравнения формулой, знак второй производной подстановкой, а число
+# пересечений кубики с осью — её дискриминантом.
+
+def _e8_coeffs(spec, letter=None, value=None):
+    """Коэффициенты f(x) из условия, от старшего к младшему, дробями."""
+    shape = sp.sympify(spec['rule'])
+    formula = -shape.subs(sp.Symbol(spec['dep']), 0)
+    if letter is not None:
+        formula = formula.subs(sp.Symbol(letter), value)
+    poly = sp.Poly(sp.expand(formula), sp.Symbol(spec.get('curve', spec['var'])))
+    return [Fraction(str(number)) for number in poly.all_coeffs()]
+
+
+def _e8_at(coeffs, at):
+    """Значение многочлена по схеме Горнера."""
+    out = Fraction(0)
+    for number in coeffs:
+        out = out * Fraction(at) + number
+    return out
+
+
+def _e8_prime(coeffs):
+    """Производная степенным правилом, написанным здесь заново."""
+    power = len(coeffs) - 1
+    return [number * (power - i) for i, number in enumerate(coeffs[:-1])]
+
+
+def _e8_roots(coeffs):
+    """Корни многочлена степени 1 или 2 — формулой, без solve."""
+    while coeffs and coeffs[0] == 0:
+        coeffs = coeffs[1:]
+    if len(coeffs) == 2:
+        return [-coeffs[1] / coeffs[0]]
+    if len(coeffs) != 3:
+        return []
+    a, b, c = coeffs
+    inside = b * b - 4 * a * c
+    if inside < 0:
+        return []
+    root = Fraction(math.isqrt(inside.numerator), 1) / math.isqrt(inside.denominator)
+    if root * root != inside:
+        root = Fraction(math.sqrt(float(inside))).limit_denominator(10 ** 6)
+    pair = sorted({(-b - root) / (2 * a), (-b + root) / (2 * a)})
+    return pair
+
+
+def _e8_kind(coeffs, at):
+    """Вид точки: сначала знак второй производной, потом — соседи дробями."""
+    second = _e8_at(_e8_prime(_e8_prime(coeffs)), at)
+    if second > 0:
+        return 'minimum'
+    if second < 0:
+        return 'maximum'
+    step = Fraction(1, 100)
+    here = _e8_at(coeffs, at)
+    left = _e8_at(coeffs, Fraction(at) - step) - here
+    right = _e8_at(coeffs, Fraction(at) + step) - here
+    if left > 0 and right > 0:
+        return 'minimum'
+    if left < 0 and right < 0:
+        return 'maximum'
+    return 'inflexion'
+
+
+def _e8_expected(name, item):
+    """Ответ, выведенный заново из условия задания."""
+    spec = item['check']
+    if name == 'E8.family':
+        value = Fraction(3)                      # любое a > 0 из params
+        coeffs = _e8_coeffs(spec, 'a', value)
+        roots = _e8_roots(_e8_prime(coeffs))
+        top = [root for root in roots if _e8_kind(coeffs, root) == 'maximum'][0]
+        return (top, _e8_at(coeffs, top))
+    if name in ('E8.count',):
+        return None                              # множество сверяется отдельно
+    coeffs = _e8_coeffs(spec)
+    if name == 'E8.find':
+        roots = _e8_roots(_e8_prime(coeffs))
+        want = spec['which']
+        at = [root for root in roots if _e8_kind(coeffs, root) == want][0]
+        return (at, _e8_at(coeffs, at))
+    if name in ('E8.classify', 'E8.sign'):
+        return _e8_kind(coeffs, Fraction(str(sp.sympify(spec['at'][0]))))
+    if name == 'E8.inflexion':
+        return _e8_roots(_e8_prime(_e8_prime(coeffs)))[0]
+    if name == 'E8.side':
+        at = Fraction(str(sp.sympify(spec['at'][0])))
+        return 'above' if _e8_at(coeffs, at) > 0 else 'below'
+    lo, hi = (Fraction(str(sp.sympify(v))) for v in spec['domain'])
+    return len([root for root in _e8_roots(_e8_prime(coeffs)) if lo <= root <= hi])
+
+
+def _e8_set(item):
+    """Множество значений буквы, выведенное дискриминантом."""
+    spec = item['check']
+    letter = sp.Symbol(spec['var'])
+    coeffs = _e8_coeffs(spec, spec['letter'], 0)          # без буквы в хвосте
+    if spec['what'] == 'tally':
+        # f′ = 3x² + k, и корней два ровно при k < 0: дискриминант −12k.
+        return (sp.Interval.open(-sp.oo, 0) if spec['kinds']
+                else sp.Interval.open(0, sp.oo))
+    # Кубика x³ + px + q: Δ = −4p³ − 27q², три разных корня при Δ > 0.
+    p = coeffs[2]
+    edge = sp.sqrt(sp.Rational(-4 * p ** 3, 27))
+    if spec['times'] == 3:
+        return sp.Interval.open(-edge, edge)
+    return sp.Union(sp.Interval.open(-sp.oo, -edge),
+                    sp.Interval.open(edge, sp.oo))
+
+
+_E8_WORDS = {'maximum': 'максимум', 'minimum': 'минимум',
+             'inflexion': 'перегиб', 'above': 'above', 'below': 'below'}
+
+
+def _e8_slip(item):
+    """Промах и слово, которым проверка обязана его назвать."""
+    spec, answer = item['check'], item['answer']
+    what = spec['what']
+    if what in ('nature', 'side'):
+        return _shape_spoil(answer, spec), _E8_WORDS[answer]
+    if what == 'turning':
+        return _shape_spoil(answer, spec), 'вторая'
+    if what == 'bend':
+        return _shape_spoil(answer, spec), 'вогнутость'
+    if what == 'count':
+        return _shape_spoil(answer, spec), 'горизонтальна'
+    return _shape_spoil(answer, spec), 'условие'
+
+
+section('E8: эталон пересчитан дробями без kit, проверка принимает и называет промах')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('E8.')):
+    agreed = accepted = slipped = named = 0
+    for seed in range(SEEDS):
+        item = dict(GENERATORS[gen_name](random.Random(seed)), id=gen_name)
+        spec = item['check']
+        letter = spec.get('var', 'x')
+        if spec['what'] in ('tally', 'meets'):
+            agreed += bool(sp.simplify(_e8_set(item)) == sp.simplify(item['answer']))
+        else:
+            want = _e8_expected(gen_name, item)
+            if isinstance(want, tuple):
+                # У семейства ответ с буквой: сверяем при том же a, что и вывод.
+                mine = [sp.sympify(one).subs(sp.Symbol('a'), 3)
+                        for one in item['answer']]
+                agreed += all(Fraction(str(sp.nsimplify(one))) == two
+                              for one, two in zip(mine, want))
+            elif isinstance(want, str):
+                agreed += item['answer'] == want
+            else:
+                agreed += Fraction(str(sp.nsimplify(item['answer']))) == Fraction(want)
+        ok, _ = evaluate(spec, show_answer(item['answer'], var=letter))
+        accepted += bool(ok)
+        wrong_text, word = _e8_slip(item)
+        wrong, message = evaluate(spec, wrong_text)
+        slipped += not wrong
+        named += word in message
+        if word not in message or wrong:
+            print(f'    {gen_name} {seed}: {wrong_text} → {message}')
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
+    t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено дробями')
 
 
 bad = [name for name, ok in res if not ok]

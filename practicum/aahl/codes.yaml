@@ -283,6 +283,16 @@ C7:
   closest:  {skill: closest,  name: ближайшая точка прямой}
   distance: {skill: distance, name: расстояние до прямой}
 
+E8:
+  find:      {skill: find,      name: найти точку}
+  classify:  {skill: classify,  name: вид по второй производной}
+  sign:      {skill: sign,      name: вид по знаку первой}
+  inflexion: {skill: inflexion, name: точка перегиба}
+  family:    {skill: family,    name: семейство с буквой}
+  side:      {skill: side,      name: по какую сторону оси}
+  count:     {skill: count,     name: сколько точек и пересечений}
+  none:      {skill: none,      name: точек нет}
+
 E2:
   def:      {skill: from_derivatives,   name: по определению}
   sub:      {skill: substitution,       name: подстановка в известный ряд}

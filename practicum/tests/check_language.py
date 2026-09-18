@@ -1219,6 +1219,80 @@ def calls():
     yield lambda: verify_optimum('t', vec(1, 2), (ss_ - 2) ** 2 + 3, ss_, Interval(0, 5), 'min')
     yield lambda: verify_optimum('t', ..., (ss_ - 2) ** 2 + 3, ss_, Interval(0, 5), 'min')
 
+    # форма графика, E8: точка, её вид, вогнутость, перегиб, сторона оси
+    cube = x ** 3 - 6 * x ** 2 + 9 * x + 1
+    flat_curve = curve(Eq(y, cube))
+    yield lambda: print(stationary(cube, (-1, 5)), concavity(cube, 1),
+                        nature(cube, 3), inflexions(cube, (-1, 5)),
+                        crossings(cube, (-5, 5)))
+    yield lambda: verify_turning('t', [(1, 5), (3, 1)], cube, domain=(-1, 5))
+    yield lambda: verify_turning('t', (1, 5), cube, 'maximum', domain=(-1, 5))
+    yield lambda: verify_turning('t', (1, 4), cube, 'maximum', domain=(-1, 5))
+    yield lambda: verify_turning('t', (2, 3), cube, 'maximum', domain=(-1, 5))
+    yield lambda: verify_turning('t', [(1, 5)], cube, domain=(-1, 5))
+    yield lambda: verify_turning('t', [(1, 5), (1, 5)], cube, domain=(-1, 5))
+    yield lambda: verify_turning('t', (7, 1), cube, domain=(-1, 5))
+    yield lambda: verify_turning('t', 1, cube, 'maximum', domain=(-1, 5))
+    yield lambda: verify_turning('t', 1, cube, 'maximum', domain=(-1, 5), coordinates=False)
+    yield lambda: verify_turning('t', [], cube, domain=(-1, 5))
+    yield lambda: verify_turning('t', [], x ** 3 + x, domain=(-2, 2))
+    yield lambda: verify_turning('t', (1, 5), flat_curve, 'maximum', domain=(-1, 5))
+    yield lambda: verify_turning('t', (5, 1), cube, domain=(-1, 5))
+    yield lambda: verify_turning('t', ..., cube, domain=(-1, 5))
+    yield lambda: verify_nature('t', 'maximum', cube, 1, domain=(-1, 5))
+    yield lambda: verify_nature('t', 'minimum', cube, 1, domain=(-1, 5))
+    yield lambda: verify_nature('t', 'inflexion', cube, 1, domain=(-1, 5))
+    yield lambda: verify_nature('t', 'maximum', cube, 3, domain=(-1, 5))
+    yield lambda: verify_nature('t', 'inflexion', cube, 2, domain=(-1, 5))
+    yield lambda: verify_nature('t', 'minimum', cube, 2, domain=(-1, 5))
+    yield lambda: verify_nature('t', ['maximum', 'minimum'], cube, [1, 3], domain=(-1, 5))
+    yield lambda: verify_nature('t', ['maximum'], cube, [1, 3], domain=(-1, 5))
+    yield lambda: verify_nature('t', 'sideways', cube, 1, domain=(-1, 5))
+    yield lambda: verify_nature('t', 'maximum', cube, 99, domain=(-1, 5))
+    yield lambda: verify_nature('t', 'minimum', x ** 4, 0, domain=(-2, 2))
+    yield lambda: verify_nature('t', 'inflexion', x ** 3, 0, domain=(-2, 2))
+    yield lambda: verify_nature('t', 'maximum', x ** 3 + sp.Symbol('a') * x ** 2,
+                                -2 * sp.Symbol('a') / 3, domain=(-8, 8),
+                                params={sp.Symbol('a'): (3, 6)})
+    yield lambda: verify_nature('t', ..., cube, 1, domain=(-1, 5))
+    yield lambda: verify_concavity('t', 'down', cube, 1)
+    yield lambda: verify_concavity('t', 'up', cube, 1)
+    yield lambda: verify_concavity('t', 'sideways', cube, 1)
+    yield lambda: verify_concavity('t', ['down', 'up'], cube, [1, 3])
+    yield lambda: verify_concavity('t', ['down'], cube, [1, 3])
+    yield lambda: verify_concavity('t', 'up', cube, 99)
+    yield lambda: verify_concavity('t', ..., cube, 1)
+    yield lambda: verify_bend('t', 2, cube, domain=(-1, 5))
+    yield lambda: verify_bend('t', 3, cube, domain=(-1, 5))
+    yield lambda: verify_bend('t', 2.01, cube, domain=(-1, 5))
+    yield lambda: verify_bend('t', (2, 3), cube, domain=(-1, 5), coordinates=True)
+    yield lambda: verify_bend('t', (3, 2), cube, domain=(-1, 5), coordinates=True)
+    yield lambda: verify_bend('t', (2, 9), cube, domain=(-1, 5), coordinates=True)
+    yield lambda: verify_bend('t', [2, 2], cube, domain=(-1, 5))
+    yield lambda: verify_bend('t', [], cube, domain=(-1, 5))
+    yield lambda: verify_bend('t', [], x ** 2, domain=(-2, 2))
+    yield lambda: verify_bend('t', ..., cube, domain=(-1, 5))
+    yield lambda: verify_side('t', 'above', cube, 1)
+    yield lambda: verify_side('t', 'below', cube, 1)
+    yield lambda: verify_side('t', 'upwards', cube, 1)
+    yield lambda: verify_side('t', ['above', 'above'], cube, [1, 3])
+    yield lambda: verify_side('t', ['above'], cube, [1, 3])
+    yield lambda: verify_side('t', 'above', cube, 99)
+    yield lambda: verify_side('t', ..., cube, 1)
+    cd_ = sp.Symbol('d')
+    yield lambda: verify_condition('t', Or(cc_ <= 0, cd_ > 2 * cc_ ** Rational(3, 2),
+                                           cd_ < -2 * cc_ ** Rational(3, 2)),
+                                   lambda c, d: crossings(x ** 3 - 3 * c * x + d,
+                                                          (-30, 30)) == 1,
+                                   (cc_, cd_), window=(-2, 2), steps=6)
+    yield lambda: verify_condition('t', Or(cc_ <= 0, cd_ > 2 * cc_ ** Rational(3, 2)),
+                                   lambda c, d: crossings(x ** 3 - 3 * c * x + d,
+                                                          (-30, 30)) == 1,
+                                   (cc_, cd_), window=(-2, 2), steps=6)
+    yield lambda: verify_condition('t', cc_ + cd_ > 0, lambda c, d: None,
+                                   (cc_, cd_), window=(-2, 2), steps=6)
+    yield lambda: verify_condition('t', ..., lambda c, d: True, (cc_, cd_))
+
 
 print('=== статически: строки с кириллицей вне русской половины _t ===')
 leftovers = static_scan()
