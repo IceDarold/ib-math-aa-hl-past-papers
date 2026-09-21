@@ -117,9 +117,52 @@ def _shape_spoil(answer, spec):
     return show_answer(sp.Complement(sp.S.Reals, answer), var=spec['var'])
 
 
+def _data_spoil(answer, spec):
+    """Испорченный ответ о данных, D7 — тот промах, который делают.
+
+    Пропавшее значение на единицу мимо; граница выброса как 1.5 · Q3; r²
+    вместо r; a и b местами; подстановка не в ту переменную или обращённая
+    чужая прямая; координаты средней точки местами; не то слово про r.
+    """
+    what = spec['what']
+    if what == 'missing':
+        return show_answer(sp.sympify(answer) + 1)
+    if what == 'fence':
+        upper = sp.sympify(spec['box'][3])
+        return show_answer(sp.Rational(3, 2) * upper)
+    if what == 'strength':
+        xs = [sp.sympify(v) for v in spec['xs']]
+        ys = [sp.sympify(v) for v in spec['ys']]
+        n = len(xs)
+        mx, my = sum(xs) / n, sum(ys) / n
+        sxy = sum((a - mx) * (b - my) for a, b in zip(xs, ys))
+        sxx = sum((a - mx) ** 2 for a in xs)
+        syy = sum((b - my) ** 2 for b in ys)
+        return f'{float(sxy ** 2 / (sxx * syy)):.3g}'      # r², а не r
+    if what == 'fit':
+        return show_answer([answer[1], answer[0]])
+    if what == 'estimate':
+        xs = [sp.sympify(v) for v in spec['xs']]
+        ys = [sp.sympify(v) for v in spec['ys']]
+        at = sp.sympify(spec['at'])
+        if spec.get('of') != 'x':
+            xs, ys = ys, xs                        # x на y, решённая относительно y
+        # иначе y на x, решённая относительно x
+        n = len(xs)
+        mx, my = sum(xs) / n, sum(ys) / n
+        slope = (sum((a - mx) * (b - my) for a, b in zip(xs, ys))
+                 / sum((a - mx) ** 2 for a in xs))
+        return f'{float((at - my + slope * mx) / slope):.3g}'
+    if what == 'centre':
+        return show_answer([answer[1], answer[0]])
+    return 'decreases' if answer == 'no effect' else 'no effect'
+
+
 def spoil(answer, spec):
     """Ответ, который обязан быть отвергнут."""
     kind = spec['kind']
+    if kind == 'data':
+        return _data_spoil(answer, spec)
     if kind == 'vector':
         return _vector_spoil(answer, spec)
     if kind == 'shape':
@@ -3207,6 +3250,103 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('E8.')):
     t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
     print(f'  {gen_name:32} {SEEDS} задач сверено дробями')
 
+
+
+# --- D7: данные и регрессия, выведенные суммами -------------------------
+# Проверки ноутбука и тренажёра ищут прямую поиском по дну суммы квадратов,
+# а генератор показывает эталон формулой Sxy/Sxx. Независимый вывод идёт
+# третьим путём и без kit: нормальные уравнения на суммах Σx, Σx², Σxy
+# решаются правилом Крамера, r — через те же суммы, точка средних — Крамером
+# для двух прямых. Всё в дробях.
+
+def _d7_sums(xs, ys):
+    n = len(xs)
+    return (n, sum(xs), sum(ys), sum(a * a for a in xs), sum(b * b for b in ys),
+            sum(a * b for a, b in zip(xs, ys)))
+
+
+def _d7_line(xs, ys):
+    """Наклон и свободный член правилом Крамера для нормальных уравнений."""
+    n, sx, sy, sxx, _, sxy = _d7_sums(xs, ys)
+    det = n * sxx - sx * sx
+    return (n * sxy - sx * sy) / det, (sxx * sy - sx * sxy) / det
+
+
+def _d7_r(xs, ys):
+    n, sx, sy, sxx, syy, sxy = _d7_sums(xs, ys)
+    return float(n * sxy - sx * sy) / math.sqrt(float((n * sxx - sx * sx) * (n * syy - sy * sy)))
+
+
+def _d7_fracs(spec, name):
+    return [Fraction(str(sp.sympify(v))) for v in spec[name]]
+
+
+def _d7_expected(item):
+    spec = item['check']
+    what = spec['what']
+    if what == 'missing':
+        items = [sp.sympify(v) for v in spec['items']]
+        mean = Fraction(str(sp.sympify(spec['given']['mean'])))
+        known = sum(Fraction(str(v)) for v in items if not v.free_symbols)
+        return mean * len(items) - known
+    if what == 'fence':
+        box = _d7_fracs(spec, 'box')
+        return box[3] + Fraction(3, 2) * (box[3] - box[1])
+    if what == 'centre':
+        (_, k1, c1), (_, k2, c2) = [(lhs, Fraction(str(sp.sympify(k))), Fraction(str(sp.sympify(c))))
+                                    for lhs, k, c in spec['lines']]
+        # y = k1 x + c1 и x = k2 y + c2:  x − k2 y = c2,  −k1 x + y = c1
+        det = 1 - k1 * k2
+        return ((c2 + k2 * c1) / det, (c1 + k1 * c2) / det)
+    xs, ys = _d7_fracs(spec, 'xs'), _d7_fracs(spec, 'ys')
+    if what == 'strength':
+        return _d7_r(xs, ys)
+    if what == 'fit':
+        return _d7_line(xs, ys)
+    if what == 'estimate':
+        at = Fraction(str(sp.sympify(spec['at'])))
+        slope, cut = _d7_line(ys, xs) if spec.get('of') == 'x' else _d7_line(xs, ys)
+        return slope * at + cut
+    scale = Fraction(str(sp.sympify(spec['scale'])))
+    shift = Fraction(str(sp.sympify(spec['shift'])))
+    before, after = _d7_r(xs, ys), _d7_r([scale * v + shift for v in xs], ys)
+    return ('no effect' if abs(after - before) < 1e-12 else
+            'increases' if after > before else 'decreases')
+
+
+def _d7_same(want, answer):
+    if isinstance(want, str):
+        return want == answer
+    if isinstance(want, tuple):
+        return all(_d7_same(one, two) for one, two in zip(want, answer))
+    return abs(float(want) - float(answer)) <= 0.0051 * max(1.0, abs(float(want)))
+
+
+_D7_WORDS = {'missing': 'выходит', 'fence': 'Q3', 'strength': 'r²', 'fit': 'местами',
+             'estimate': 'решённ', 'centre': 'переставлены', 'effect': 'правк'}
+
+
+section('D7: эталон пересчитан суммами без kit, проверка принимает и называет промах')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('D7.')):
+    agreed = accepted = slipped = named = 0
+    for seed in range(SEEDS):
+        item = dict(GENERATORS[gen_name](random.Random(seed)), id=gen_name)
+        spec = item['check']
+        agreed += _d7_same(_d7_expected(item), item['answer'])
+        ok, _ = evaluate(spec, show_answer(item['answer']))
+        accepted += bool(ok)
+        wrong_text = _data_spoil(item['answer'], spec)
+        wrong, message = evaluate(spec, wrong_text)
+        word = _D7_WORDS[spec['what']]
+        slipped += not wrong
+        named += word in message
+        if word not in message or wrong:
+            print(f'    {gen_name} {seed}: {wrong_text} → {message}')
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
+    t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено суммами')
 
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '

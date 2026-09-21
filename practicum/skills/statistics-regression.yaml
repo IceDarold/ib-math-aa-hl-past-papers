@@ -1,0 +1,530 @@
+version: 0.1
+practicum: D7
+title: Описательная статистика, регрессия и корреляция
+source_topic: statistics.regression
+also_covers: [statistics.probability, statistics.discrete_random_variables,
+              statistics.continuous_random_variables]
+
+corpus:
+  blocks: 44
+  marks: 91
+  effective_blocks: 44
+  effective_marks: 91
+  sessions: May 2021 — November 2025
+  papers: {1: 12, 2: 79}
+  gdc_marks: 79
+  note: >
+    statistics.regression целиком — 33 блока и 69 баллов — плюс 22 балла
+    описательной статистики, которой в разметке нет отдельной темой и
+    которая приписана к D7 в карте: доли statistics.probability 0.051
+    (12 баллов), discrete_random_variables 0.045 (4) и
+    continuous_random_variables 0.030 (6). Всего 44 блока и 91 балл.
+    check_map.py показывает 40 блоков, а не 44: он считает блоки долей
+    темы, а доли — дробные.
+
+    Revisit прежней карты закрыт в пользу приёма, а не переименования
+    ради красоты: описательная статистика уже лежит внутри
+    statistics.regression, и разметка это видит. Май 2022 TZ1 Paper 1 Q2 —
+    один вопрос, у которого пункт (a) читает ящик с усами, а пункт (b)
+    решает систему двух прямых регрессии; оба блока размечены сюда. То же
+    у мая 2021 TZ1 Paper 1 Q3 (ящик с усами в statistics.probability) и
+    ноября 2025 TZ3 Q2 (среднее и размах там же). Сводное число — это
+    первая ступень темы, а не чужой материал: r и прямая регрессии
+    построены на средних и разбросе, и вопрос «найдите пропавшее значение
+    по среднему» стоит в архиве и с одной переменной, и с двумя.
+
+    Поэтому практикум переименован: не «Регрессия и корреляция», а
+    «Описательная статистика, регрессия и корреляция».
+
+    Дубля ноября 2023 года здесь нет — и не потому, что его вычли: в этой
+    теме нет ни одного блока ноября 2023 вовсе. Сессий с регрессией
+    тринадцать из семнадцати, и в каждой это первый или почти первый
+    вопрос Paper 2 на 4–7 баллов.
+
+    79 баллов из 91 на Paper 2, и доля GDC 87% — самая высокая в серии
+    после D3. Настоящей кнопки здесь баллов на двадцать пять: коэффициенты
+    прямой по данным (2 + 1 + 2 + 2 + 2 = 9), r по данным (3 + 2 + 1 + 2 +
+    1 = 9), прямая x на y (3 + часть 4), стандартное отклонение таблицы
+    частот (2). Остальные 54 балла — подстановка числа в готовую прямую,
+    система двух линейных уравнений, чтение диаграммы и одно предложение
+    словами. Девятая иллюзия калькулятора и самая большая по разрыву:
+    87% формально, 27% по делу.
+
+    Paper 3 в теме нет ни одного балла — единственная тема статистики
+    без длинного исследования. Вопрос про двумерные данные стоит в
+    начале Paper 2 и стоит 4–7 баллов, потому что дальше его развивать
+    нечем: GDC отдаёт ответ целиком.
+
+directions:
+  - >
+    Сводное число — это свойство набора, и обратный ход к набору всегда
+    возможен: сумма = n · среднее. Половина вопросов темы с одной
+    переменной — обратные: среднее известно, пропало значение.
+  - >
+    У ящика с усами пять чисел, и шестого нет. Среднего на нём не видно
+    вовсе, а «выброс» — не мнение, а правило: дальше чем на 1.5 · IQR
+    от края коробки.
+  - >
+    r меряет силу линейной связи и ничего больше. Он не меняется, когда
+    все данные сдвигают или растягивают, и он ничего не говорит о
+    причине.
+  - >
+    Прямых регрессии две, и они разные. y на x предсказывает y по x;
+    чтобы предсказать x по y, берут прямую x на y, а не решают первую
+    относительно x. Это отдельный балл в двух сессиях.
+  - >
+    Обе прямые проходят через точку средних (x̄, ȳ) — и только через
+    неё пересекаются. Отсюда средние находят системой, а не по данным.
+  - >
+    Подставлять в прямую можно только внутри диапазона данных.
+    Экстраполяция — готовый балл R1 за одно слово.
+
+skills:
+  - id: summary
+    name: Сводное число и обратный ход к нему
+    rung: 1
+    trigger: >
+      «Find the mean», «find the standard deviation», «find the value of x
+      given that the median is 4.5», «determine Aiden's score and Brett's
+      score», «find ȳ and the value of p». В условии набор чисел или
+      таблица частот, и спрашивают сводное число — или наоборот, сводное
+      число дано, а пропало значение набора.
+    chain:
+      - "Сумма = n · среднее: это и есть весь обратный ход"
+      - "Медиана — место, а не значение: у n чисел она стоит на месте
+         (n + 1)/2, и у таблицы частот её ищут накопленной частотой"
+      - "Стандартное отклонение таблицы частот — σ с делением на Σf,
+         как в IB, и считает его GDC одной командой"
+      - "Размах — max − min, и он же второе уравнение, когда неизвестных два"
+      - "Две неизвестных — две записи условия: среднее даёт одну, размах
+         или разность — вторую"
+    traps:
+      - "Среднее таблицы частот посчитано как среднее значений, без веса частот"
+      - "Стандартное отклонение поделено на Σf − 1: в IB делят на Σf"
+      - "Медиана таблицы частот взята как среднее её значений, а не по
+         накопленной частоте"
+      - "В обратной задаче найдена сумма пропавших значений, но не сами
+         значения: второе уравнение из условия не выписано"
+      - "Размах посчитан по старым краям набора, хотя новые значения
+         лежат снаружи"
+    calculator:
+      mode: mixed
+      note: >
+        Из 20 баллов приёма 15 на Paper 2, и GDC там нужен ровно в одном
+        месте — стандартное отклонение таблицы частот (2 балла). Всё
+        остальное — одно уравнение на сумму и одна система, и они решаются
+        быстрее руками, чем вводом списка.
+    prereq: []
+    raw_tags: [mean, mean_calculation, median_position, cumulative_frequency,
+               solve_linear_equation, standard_deviation, variance, summation,
+               range_calculation, simultaneous_equations, median_reasoning,
+               data_interpretation, linear_equations, substitution_method,
+               arithmetic_evaluation, gdc]
+    blocks: ['2025-NOV-TZ3-P2-Q02-A', '2025-NOV-TZ3-P2-Q02-B',
+             '2022-MAY-TZ1-P2-Q01-A', '2022-MAY-TZ1-P2-Q01-B',
+             '2024-MAY-TZ2-P2-Q02-B', '2025-NOV-TZ1-P2-Q03-A',
+             '2025-NOV-TZ1-P2-Q03-B']
+
+  - id: outlier
+    name: Ящик с усами и граница выброса
+    rung: 2
+    trigger: >
+      «State the median», «find the largest value that would not be
+      considered an outlier», «verify that 0.46 is not an outlier», «find
+      the minimum possible value of U», «state why the mean appears to be
+      greater than the median». В условии диаграмма из пяти чисел, и
+      спрашивают либо одно из них, либо правило выброса.
+    chain:
+      - "Прочитать пятёрку: минимум, Q1, медиана, Q3, максимум"
+      - "IQR = Q3 − Q1"
+      - "Границы выброса: Q1 − 1.5 · IQR и Q3 + 1.5 · IQR"
+      - "«Не выброс» — значение внутри границ; «наибольшее не-выброс» —
+         сама верхняя граница"
+      - "Нет выбросов вовсе — условие на края: max ≤ Q3 + 1.5 · IQR и
+         min ≥ Q1 − 1.5 · IQR; из него неизвестный квартиль выходит
+         неравенством, и просят его крайнее значение"
+      - "Асимметрия видна по коробке: медиана ближе к Q1 — хвост справа,
+         и тогда среднее больше медианы"
+    traps:
+      - "Взято 1.5 · Q3 вместо Q3 + 1.5 · IQR"
+      - "Граница посчитана от медианы, а не от квартиля"
+      - "Найдена граница, но не сказано, выброс это или нет: «verify»
+         требует сравнения и вывода"
+      - "В задаче на минимум решено уравнение вместо неравенства, и вторая
+         граница (та, что сверху) не проверена вовсе"
+      - "Асимметрия объяснена средним: схема прямо не принимает сравнение
+         средних, потому что среднего на диаграмме нет"
+      - "Сказано «correlation does not imply causation» там, где корреляции
+         нет: схема ставит R0"
+    calculator:
+      mode: mixed
+      note: >
+        8 из 13 баллов приёма на Paper 2, но калькулятор здесь не нужен
+        нигде: все пять чисел читаются с картинки, а 1.5 · 0.08
+        умножается в уме. Пять баллов приёма стоят на Paper 1, и ровно так
+        же выглядят.
+    prereq: [summary]
+    raw_tags: [box_and_whisker_plot, box_plot_reading, read_box_plot,
+               outlier_condition, outlier_fence, iqr_calculation, iqr_formula,
+               calculate_iqr, calculate_upper_fence, apply_outlier_test,
+               identify_median, identify_quartiles, quartile, inequality_solving,
+               interpret_skewness, relate_mean_median_skewness, substitution]
+    blocks: ['2021-MAY-TZ1-P1-Q03-A', '2021-MAY-TZ1-P1-Q03-B',
+             '2022-MAY-TZ1-P1-Q02-A', '2022-MAY-TZ2-P2-Q04-A',
+             '2022-MAY-TZ2-P2-Q04-B', '2022-MAY-TZ2-P2-Q04-C']
+
+  - id: strength
+    name: Коэффициент корреляции
+    rung: 3
+    trigger: >
+      «Find Pearson's product-moment correlation coefficient r», «write down
+      the value of r», «hence find r». Два списка чисел одной длины, и
+      спрашивают одно число между −1 и 1.
+    chain:
+      - "Ввести два списка в GDC"
+      - "Взять r из вывода линейной регрессии — это то же окно, что даёт a и b"
+      - "Записать три значащие цифры и знак"
+      - "Знак r — знак наклона прямой: они не бывают разными"
+    traps:
+      - "Записан r² вместо r: GDC печатает оба, и они похожи"
+      - "Потерян минус при отрицательной связи"
+      - "r округлён до двух цифр: 0.98 вместо 0.978"
+      - "Списки введены разной длины или сдвинуты на строку — r выходит
+         правдоподобным, но другим"
+    calculator:
+      mode: needed
+      note: >
+        Все 9 баллов приёма — Paper 2, и все девять настоящая кнопка:
+        Σ(x − x̄)(y − ȳ) по восьми парам руками не считают. Это ровно та
+        часть темы, где 87% доли GDC честные.
+    prereq: [summary]
+    raw_tags: [correlation_coefficient, pearson_correlation_coefficient,
+               pearsons_r, pearson_correlation, gdc_calculation, gdc,
+               gdc_computation, rounding, linear_regression]
+    blocks: ['2021-MAY-TZ2-P2-Q01-A', '2021-NOV-COMMON-P2-Q01-A',
+             '2022-NOV-COMMON-P2-Q01-B', '2024-MAY-TZ1-P2-Q05-A',
+             '2025-NOV-TZ1-P2-Q03-C']
+
+  - id: fit
+    name: Прямая регрессии по данным
+    rung: 4
+    trigger: >
+      «The relationship can be modelled by the regression line of y on x
+      with equation y = ax + b. Find the value of a and the value of b»;
+      «write down the value of a and the value of b»; «draw the line of
+      best fit on the scatter diagram». Даны пары чисел, нужна прямая.
+    chain:
+      - "Ввести пары в GDC и взять линейную регрессию y на x"
+      - "Записать a и b с тремя значащими цифрами"
+      - "Держать в памяти калькулятора неокруглённые значения: следующий
+         пункт почти всегда подставляет в эту прямую"
+      - "Рисуют прямую по двум точкам: через (x̄, ȳ) и через пересечение
+         с осью y, то есть через (0, b)"
+    traps:
+      - "a и b перепутаны местами: GDC печатает их в порядке своей модели,
+         и у некоторых моделей это y = a + bx"
+      - "В следующий пункт подставлены округлённые a и b, и третья цифра
+         ответа уехала"
+      - "Прямая проведена по крайним точкам данных, а не через (x̄, ȳ)"
+      - "Регрессия взята квадратичной или экспоненциальной — в меню GDC
+         они рядом"
+    calculator:
+      mode: needed
+      note: >
+        11 баллов, все на Paper 2, и 9 из них — та же кнопка, что даёт r.
+        Двух баллов кнопки нет: их дают за проведённую линейкой прямую,
+        и там проверяют, что она проходит через точку средних.
+    prereq: [strength]
+    raw_tags: [linear_regression, gdc_regression, linear_regression_coefficients,
+               gdc_linear_regression, rounding_coefficients, gdc_computation,
+               gdc_calculation, coefficient_determination, regression_line,
+               draw_regression_line, scatter_diagram]
+    blocks: ['2021-MAY-TZ1-P2-Q01-A', '2021-MAY-TZ1-P2-Q01-D',
+             '2021-NOV-COMMON-P2-Q01-B', '2022-NOV-COMMON-P2-Q01-A',
+             '2023-MAY-TZ2-P2-Q01-A', '2025-MAY-TZ2-P2-Q01-A']
+
+  - id: predict
+    name: Подстановка в прямую и наклон в контексте
+    rung: 5
+    trigger: >
+      «Use this model to predict the value of y when x = 18»; «estimate the
+      average height when the experiment has been running for 20 days»;
+      «interpret, in context, the value of a»; «determine how her score
+      could have been expected to alter had she practised an extra five
+      hours». Прямая уже есть, и её применяют.
+    chain:
+      - "Подставить данное значение в прямую"
+      - "Округлить как просят: «to the nearest integer» — это отдельный балл"
+      - "Наклон в контексте — это «на столько меняется y, когда x
+         увеличивается на единицу», с единицами измерения"
+      - "«На пять единиц больше» — это 5a, а не подстановка: считать разность
+         двух подстановок тоже можно, ответ тот же"
+    traps:
+      - "Подставлено в не ту переменную: прочитано «y = 18» вместо «x = 18»"
+      - "Ответ не округлён до целого там, где просят целое"
+      - "Наклон истолкован как «y растёт на a процентов» или без единиц"
+      - "«Пять лишних часов» умножено на b, а не на a"
+      - "Подстановка сделана в округлённую прямую, и ответ разошёлся
+         в третьей цифре"
+    calculator:
+      mode: allowed
+      note: >
+        15 баллов, все на Paper 2, и настоящей работы для GDC здесь нет:
+        0.433 · 18 + 4.50 считается в уме быстрее, чем набирается. Самая
+        льстивая часть доли калькулятора в теме.
+    prereq: [fit]
+    raw_tags: [substitution, prediction, prediction_from_model, evaluation,
+               linear_prediction, regression_slope, multiplication,
+               slope_interpretation, contextual_application, rounding,
+               regression_line_application, arithmetic_evaluation]
+    blocks: ['2021-MAY-TZ1-P2-Q01-B', '2021-MAY-TZ2-P2-Q01-B',
+             '2021-MAY-TZ2-P2-Q01-C', '2021-NOV-COMMON-P2-Q01-C',
+             '2022-NOV-COMMON-P2-Q01-C', '2023-MAY-TZ2-P2-Q01-B',
+             '2025-MAY-TZ1-P2-Q04-A', '2025-MAY-TZ2-P2-Q01-B']
+
+  - id: direction
+    name: Какая из двух прямых, и где подставлять нельзя
+    rung: 6
+    trigger: >
+      «Find an appropriate regression equation that will allow the vendor to
+      predict the number of ice creams sold on a day when there are y
+      children»; «give a reason why this method is not appropriate»; «use an
+      appropriate method to show that the estimated score is 86». В условии
+      уже есть одна прямая или данные, и спрашивают, годится ли она.
+    chain:
+      - "Посмотреть, что предсказывают: эта переменная стоит слева"
+      - "Предсказывают x по y — берут регрессию x на y, а не решают
+         прямую y на x относительно x"
+      - "Посмотреть, лежит ли данное значение внутри диапазона данных;
+         снаружи — экстраполяция, и модель не годится"
+      - "Назвать причину одной фразой: «should not extrapolate», «should
+         not use the line of y on x to predict x»"
+    traps:
+      - "Прямая y на x решена относительно x: ответ похож, но другой —
+         в мае 2024 TZ1 это 87 вместо 86, и балла за него нет"
+      - "Взята регрессия x на y там, где предсказывают y"
+      - "Сказано «r близок к 1, значит можно»: вопрос не о силе связи"
+      - "Причина названа, но не та: экстраполяция и не та прямая — два
+         разных балла в одном вопросе"
+    calculator:
+      mode: mixed
+      note: >
+        10 баллов на Paper 2, и кнопка нужна трижды: регрессия x на y по
+        пяти парам (3 балла) и она же по десяти (часть 4 баллов). Два
+        балла — слова, и там калькулятор мешает: он выдаст число и там,
+        где числа давать не надо.
+    prereq: [predict]
+    raw_tags: [regression_x_on_y, regression_line_x_on_y, gdc_linear_regression,
+               prediction_from_regression, extrapolation, model_limitations,
+               interpretation, follow_through, rounding, critical_evaluation]
+    blocks: ['2023-MAY-TZ1-P2-Q03-B', '2023-MAY-TZ1-P2-Q03-C',
+             '2024-MAY-TZ1-P2-Q05-B', '2024-MAY-TZ1-P2-Q05-C']
+
+  - id: centre
+    name: Точка средних
+    rung: 7
+    trigger: >
+      «Write down the value of x̄ and the value of ȳ»; «given that x̄ = 7,
+      verify that ȳ = 16»; «find the mean arm span and the mean foot
+      length»; «find the mean age of all the adults surveyed». Спрашивают
+      средние, а данных для них нет — есть прямые.
+    chain:
+      - "Прямая регрессии проходит через (x̄, ȳ) — всегда, обе"
+      - "Дано x̄ — подстановка в прямую даёт ȳ"
+      - "Даны две прямые — их пересечение и есть точка средних, и находится
+         оно системой из двух уравнений"
+      - "Даны данные и одна прямая — среднее считают по данным, второе
+         среднее берут подстановкой"
+    traps:
+      - "Средние посчитаны по данным там, где часть данных неизвестна"
+      - "Решена одна прямая вместо системы: точек на прямой бесконечно много"
+      - "Система решена, но координаты выданы не в том порядке"
+      - "Проверка «verify that ȳ = 16» сделана округлённой прямой, и
+         вышло 16.0001 — схема требует точного равенства"
+    calculator:
+      mode: mixed
+      note: >
+        9 баллов, из них 4 на Paper 1 — самый «бумажный» приём темы:
+        система двух линейных уравнений решается подстановкой за две
+        строки. На Paper 2 GDC здесь нужен ровно в одном месте: точку
+        средних он печатает сам вместе с регрессией.
+    prereq: [fit, summary]
+    raw_tags: [mean_point, mean_point_property, read_from_gdc,
+               intersection_of_lines, solving_linear_equations,
+               system_of_equations, simultaneous_equations, substitution,
+               linear_regression]
+    blocks: ['2021-MAY-TZ1-P2-Q01-C', '2022-MAY-TZ1-P1-Q02-B',
+             '2024-MAY-TZ2-P2-Q02-A', '2025-MAY-TZ1-P2-Q04-B']
+
+  - id: cause
+    name: Чего данные не говорят
+    rung: 8
+    trigger: >
+      «Comment on the validity of the assertion that practising has a direct
+      effect»; «state how, if at all, the value of r would be affected»;
+      «comment on whether these diagrams provide evidence that not sleeping
+      well causes an increase»; «identify which one best describes the
+      sampling method». Числа посчитаны, и спрашивают, что из них следует.
+    chain:
+      - "Связь — не причина: сильный r не означает, что x влияет на y"
+      - "Сдвиг или растяжение данных не меняет r: он меряет форму облака,
+         а не его место"
+      - "Сравнивать два ящика с усами можно по медиане и квартилям, а по
+         средним — нельзя: их там нет"
+      - "Способ отбора называют по тому, как выбирали: первые пятьдесят
+         подряд — convenience"
+    traps:
+      - "«Correlation does not imply causation» сказано там, где корреляции
+         нет вовсе: за это R0"
+      - "Ответ «r уменьшится», когда из каждого x вычли одно и то же число"
+      - "Сравнение двух ящиков сделано по средним"
+      - "Способ отбора назван systematic вместо convenience: «первые
+         пятьдесят» — это не каждый k-й"
+    calculator:
+      mode: 'no'
+      note: >
+        Четыре балла, и ни один не считается. Это единственный приём темы,
+        где GDC не только не нужен, но вреден: он выдаёт число, а балл
+        стоит за предложение.
+    prereq: [strength, outlier]
+    raw_tags: [causation_vs_correlation, critical_evaluation,
+               correlation_invariance, linear_transformation,
+               compare_box_plots, evaluate_causation_evidence,
+               identify_sampling_method]
+    blocks: ['2021-NOV-COMMON-P2-Q01-D', '2021-NOV-COMMON-P2-Q01-E',
+             '2022-MAY-TZ2-P2-Q04-D', '2025-MAY-TZ3-P2-Q03-C']
+
+# Блоки темы, не вошедшие в ноутбук практикума.
+leftovers:
+  - block: 2021-MAY-TZ1-P2-Q01-D
+    marks: 2
+    why: >
+      «Draw the line of best fit on the scatter diagram» — балл за
+      проведённую линейкой прямую. Проверить нельзя ничем, кроме глаз;
+      в архивном ноутбуке пункт есть, и сдаётся в нём точка, через которую
+      прямая обязана пройти.
+  - block: 2023-MAY-TZ2-P2-Q01-A
+    marks: 2
+    why: >
+      Ещё одна пара «найдите a и b по данным» — четвёртая такая же.
+      Приём fit отрабатывается на двух заданиях, остальные в архиве.
+  - block: 2023-MAY-TZ2-P2-Q01-B
+    marks: 2
+    why: Подстановка в прямую, седьмая такая же. В архиве.
+  - block: 2025-MAY-TZ2-P2-Q01-A
+    marks: 2
+    why: То же, что 2023-MAY-TZ2-P2-Q01-A. В архиве.
+  - block: 2025-MAY-TZ2-P2-Q01-B
+    marks: 2
+    why: То же, что 2023-MAY-TZ2-P2-Q01-B. В архиве.
+  - block: 2025-NOV-TZ1-P2-Q03-A
+    marks: 2
+    why: >
+      Среднее восьми чисел. Слишком просто для задания практикума и стоит
+      первым пунктом; в архиве есть целиком вместе с (b) и (c).
+  - block: 2025-NOV-TZ1-P2-Q03-B
+    marks: 4
+    why: >
+      Обратный ход через точку средних: ȳ подстановкой x̄ в прямую, потом p
+      по сумме. Тот же ход, что в задании 11 (май 2024 TZ2), и там он
+      чище — там нет округления прямой.
+  - block: 2025-NOV-TZ1-P2-Q03-C
+    marks: 1
+    why: r по данным, пятый такой же. В архиве.
+  - block: 2025-NOV-TZ3-P2-Q02-A
+    marks: 1
+    why: >
+      «Explain briefly why the median would still be 10.5» — одно
+      предложение, и сдавать нечего. В архиве есть как выбор из
+      четырёх формулировок.
+
+# Материал, пришедший из других практикумов.
+imported:
+  - practicum: D4
+    what: >
+      Таблица частот и её среднее (май 2022 TZ1 Paper 2 Q1 размечена в
+      statistics.discrete_random_variables). D4 берёт таблицу как
+      распределение и спрашивает E и Var; D7 берёт её как набор
+      наблюдений и спрашивает медиану и стандартное отклонение. Объект
+      один, вопросы разные, и в kit это видно: `Freq` из table.py и
+      `Sample` из data.py считают одно и то же двумя путями.
+  - practicum: D5
+    what: >
+      Ящик с усами мая 2022 TZ2 Q4 лежит в
+      statistics.continuous_random_variables, откуда собран D5. Нормального
+      распределения в вопросе нет ни в одном пункте.
+  - practicum: D2
+    what: >
+      Ящик с усами мая 2021 TZ1 Q3 и среднее с размахом ноября 2025 TZ3 Q2
+      лежат в statistics.probability, откуда собраны D2 и D3. Вероятности
+      в них нет.
+  - practicum: B1
+    what: >
+      Система двух линейных уравнений — она решает пересечение двух прямых
+      регрессии (май 2022 TZ1 Q2(b)(ii), май 2025 TZ1 Q4(b)) и обратную
+      задачу на среднее (май 2024 TZ2 Q2(b)).
+
+# Замечания к классификации, отправить в classification/reviews.
+corpus_issues:
+  - id: 'описательной статистики нет в разметке'
+    what: >
+      Третий раз за серию (после D2 и D4) и на этот раз с решением.
+      Двадцать два балла — ящики с усами, медиана и стандартное отклонение
+      таблицы частот, среднее с размахом, способ отбора — размечены по
+      трём разным темам вероятностей, хотя вероятности в них нет ни в
+      одном пункте. Нужна тема statistics.descriptive; до неё блоки
+      приписаны к statistics.regression долями, и это записано в карте.
+  - block: 2022-MAY-TZ1-P1-Q02-A
+    marks: 3
+    assigned: statistics.regression
+    should_be: statistics.descriptive
+    issue: >
+      «Find the largest value of c that would not be considered an
+      outlier» — ящик с усами, регрессии в пункте нет. Блок стоит в
+      statistics.regression только потому, что пункт (b) того же вопроса
+      про регрессию, и у блока стоит флаг topic_uncertain. Это самый
+      сильный довод за отдельную тему: один вопрос экзамена лежит на
+      границе, и разметка провела границу по вопросу, а не по пункту.
+  - block: 2022-MAY-TZ2-P2-Q04-A
+    marks: 1
+    assigned: statistics.continuous_random_variables
+    should_be: statistics.descriptive
+    issue: >
+      «State the median reaction time from the box and whisker diagram».
+      Непрерывной величины в вопросе нет; флаг topic_uncertain стоит у
+      всех четырёх пунктов Q4.
+  - block: 2025-NOV-TZ1-P2-Q05-A
+    marks: 2
+    assigned: statistics.continuous_random_variables
+    should_be: statistics.descriptive
+    issue: >
+      «Estimate the mean and standard deviation from a grouped frequency
+      table» — сводные числа таблицы частот, как в мае 2022 TZ1 Q1.
+      Пункт (b) того же вопроса действительно про нормальное
+      распределение, и блок уехал за ним. В долю D7 не включён, чтобы
+      не двигать доли D5 и D6; приём summary без него полон.
+  - block: 2023-MAY-TZ1-P2-Q03-C
+    marks: 2
+    assigned: statistics.regression
+    issue: >
+      В схеме оценивания две ветви, и они дают разные ответы: 36 по
+      прямой x на y и 37 по прямой y на x, решённой относительно x.
+      Обе получают M1A1FT. Это единственное место в теме, где неверный
+      выбор прямой не стоит балла — и ровно в мае 2024 TZ1 он стоит
+      целого балла. Расхождение схем стоит записать.
+  - block: 2024-MAY-TZ1-P2-Q05-B
+    marks: 1
+    issue: >
+      В схеме пункт назван «Student 11 Test B», а в бумаге студентов
+      десять, и Пауло с Джованни идут без номеров. Нумерация схемы
+      продолжает таблицу, и при чтении схемы без бумаги пункт непонятен.
+  - kind: watch
+    issue: >
+      Приём cause держится на четырёх блоках по одному баллу из трёх
+      сессий, и ни один из них не вычисляется. Ступень оставлена
+      отдельной, потому что это единственное место темы, где ответ —
+      предложение, и терять его обиднее всего: балл дают за одну фразу.
+      Если разметка получит тему statistics.descriptive, способ отбора
+      уедет туда, и у ступени останется три балла.
+
+ladder: [summary, outlier, strength, fit, predict, direction, centre, cause]

@@ -359,6 +359,9 @@ def evaluate(spec, raw):
         if kind == 'shape':
             return _shape_kind(spec, raw)
 
+        if kind == 'data':                      # данные и регрессия, D7
+            return _data_kind(spec, raw)
+
         if kind in ('tangent', 'normal', 'slope', 'where', 'second',
                     'constant'):
             var, dep = sp.Symbol(spec['var']), sp.Symbol(spec['dep'])
@@ -938,6 +941,42 @@ def _space_kind(spec, parts, raw, point):
         other = kit.line(parts['p2'], parts['d2']) if 'p2' in parts else parts['q']
         return _capture(kit.verify_distance, 'Ответ', parse_one(raw), track, other, exact=True)
     raise ValueError(f'неизвестный вопрос о векторах: {what!r}')
+
+
+def _data_kind(spec, raw):
+    """Данные, D7: прямую находит поиск по дну суммы квадратов."""
+    what = spec['what']
+
+    def numbers(name):
+        return [sp.sympify(v) for v in spec[name]]
+
+    if what == 'missing':
+        values = parse_many(raw)
+        got = values if len(values) > 1 else values[0]
+        given = {key: sp.sympify(v) for key, v in spec['given'].items()}
+        return _capture(kit.verify_missing, 'Ответ', got, kit.Sample(numbers('items')),
+                        **given)
+    if what == 'fence':
+        return _capture(kit.verify_fence, 'Ответ', parse_one(raw), kit.Box(*numbers('box')))
+    if what == 'centre':
+        lines = [sp.Eq(sp.Symbol(lhs), sp.sympify(k) * sp.Symbol('x' if lhs == 'y' else 'y')
+                       + sp.sympify(c)) for lhs, k, c in spec['lines']]
+        values = parse_many(raw)
+        return _capture(kit.verify_centre, 'Ответ', tuple(values), lines,
+                        order=(sp.Symbol('x'), sp.Symbol('y')))
+    pairs = kit.Pairs(numbers('xs'), numbers('ys'))
+    if what == 'strength':
+        return _capture(kit.verify_strength, 'Ответ', parse_one(raw), pairs)
+    if what == 'fit':
+        values = parse_many(raw)
+        return _capture(kit.verify_fit, 'Ответ', tuple(values) if len(values) == 2
+                        else values[0], pairs)
+    if what == 'estimate':
+        return _capture(kit.verify_estimate, 'Ответ', parse_one(raw), pairs,
+                        sp.sympify(spec['at']), of=spec.get('of'))
+    scale, shift = sp.sympify(spec['scale']), sp.sympify(spec['shift'])
+    return _capture(kit.verify_effect, 'Ответ', raw.strip(), pairs,
+                    lambda value: scale * value + shift)
 
 
 def _shape_kind(spec, raw):

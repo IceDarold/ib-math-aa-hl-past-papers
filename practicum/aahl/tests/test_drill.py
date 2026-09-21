@@ -136,11 +136,12 @@ only_c1 = engine.candidates(bank, 'mixed', GENERATORS, practicums=('C1',))
 t('в отобранной теме все её приёмы', len(only_c1) == 8)
 
 # Первый практикум карты, которого в банке ещё нет. Имя не зашито:
-# сегодня это D3, завтра его соберут, и тест должен переехать сам.
+# сегодня это E9, завтра его соберут, и тест должен переехать сам. Когда
+# собраны все, берётся имя, которого в карте нет вовсе: отказ тот же.
 built = {p['id'] for p in bank['practicums']}
-unbuilt = next(pid for pid in ('D3', 'D4', 'D5', 'D6', 'D7', 'C5', 'C6',
-                               'A1', 'A2', 'E4', 'E5')
-               if pid not in built)
+unbuilt = next((pid for pid in ('D3', 'D4', 'D5', 'D6', 'D7', 'C5', 'C6',
+                                'A1', 'A2', 'E4', 'E5', 'E9')
+                if pid not in built), 'Z0')
 try:
     engine.choose(bank, {}, GENERATORS, mode='compute', rng=rng,
                   practicums=(unbuilt,))

@@ -234,6 +234,16 @@ D6:
   moments:   {skill: moments,   name: среднее и дисперсия}
   condition: {skill: condition, name: второй вопрос вокруг площади}
 
+D7:
+  summary:   {skill: summary,   name: пропавшее значение по среднему}
+  outlier:   {skill: outlier,   name: граница выброса}
+  strength:  {skill: strength,  name: коэффициент корреляции}
+  fit:       {skill: fit,       name: прямая по данным}
+  predict:   {skill: predict,   name: подстановка в прямую}
+  direction: {skill: direction, name: какая из двух прямых}
+  centre:    {skill: centre,    name: точка средних}
+  cause:     {skill: cause,     name: что меняет r}
+
 E1:
   substitute: {skill: substitute,      name: подстановка и сокращение}
   infinity:   {skill: at_infinity,     name: старшая степень на бесконечности}

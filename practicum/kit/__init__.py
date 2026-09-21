@@ -24,6 +24,7 @@
     table         таблица распределения                       D4
     normal        нормальное распределение                    D5
     density       величина с плотностью                       D6
+    data          сводные числа, ящик с усами, регрессия      D7
     vectors       векторы, прямые, углы                       C5
     planes        плоскости и системы уравнений               C6
     space         произведение, площади, углы, расстояния     C7
@@ -37,13 +38,13 @@
 
 from . import (
     core, algebra, functions, geometry, sequences, derivative, tangent, shape,
-    integral, probability, distribution, table, normal, density, vectors,
-    planes, space,
+    integral, probability, distribution, table, normal, density, data,
+    vectors, planes, space,
 )
 
 MODULES = (core, algebra, functions, geometry, sequences, derivative, tangent,
            shape, integral, probability, distribution, table, normal, density,
-           vectors, planes, space)
+           data, vectors, planes, space)
 
 for _module in MODULES:
     globals().update((name, value) for name, value in vars(_module).items()

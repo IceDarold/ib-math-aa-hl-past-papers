@@ -767,3 +767,27 @@ def amount_check(rate, a, b=None, var='t', start=0, at=None, params=None,
         spec['params'] = {str(name): [sp.srepr(sp.sympify(v)) for v in values]
                           for name, values in params.items()}
     return spec
+
+
+def data_check(what, **parts):
+    """Вопрос о данных, D7: пропавшее значение, граница выброса, прямая, r.
+
+    what — 'missing', 'fence', 'strength', 'fit', 'estimate', 'centre',
+    'effect'. Эталона в описании нет: страница собирает Sample, Box или
+    Pairs из самих данных и зовёт те же verify_*, что стоят в ноутбуке.
+    Прямую там находит поиск по дну суммы квадратов, а не формула.
+    """
+    spec = {'kind': 'data', 'what': what}
+    for name in ('xs', 'ys', 'items', 'box'):
+        if name in parts:
+            spec[name] = [sp.srepr(sp.sympify(v)) for v in parts[name]]
+    if 'given' in parts:
+        spec['given'] = {key: sp.srepr(sp.sympify(v)) for key, v in parts['given'].items()}
+    if 'lines' in parts:
+        spec['lines'] = [[lhs, sp.srepr(sp.sympify(k)), sp.srepr(sp.sympify(c))]
+                         for lhs, k, c in parts['lines']]
+    for name in ('at', 'of', 'scale', 'shift'):
+        if parts.get(name) is not None:
+            spec[name] = parts[name] if isinstance(parts[name], str) else sp.srepr(
+                sp.sympify(parts[name]))
+    return spec

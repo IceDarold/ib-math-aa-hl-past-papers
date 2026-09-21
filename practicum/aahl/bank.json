@@ -11389,6 +11389,578 @@
    "dir": "AA_HL/2025/November/TZ1/Paper 2",
    "skill": "D6.condition"
   },
+  "2025-NOV-TZ3-P2-Q02-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "D7.summary"
+  },
+  "2025-NOV-TZ3-P2-Q02-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "D7.summary"
+  },
+  "2022-MAY-TZ1-P2-Q01-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D7.summary"
+  },
+  "2022-MAY-TZ1-P2-Q01-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "D7.summary"
+  },
+  "2024-MAY-TZ2-P2-Q02-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "D7.summary"
+  },
+  "2025-NOV-TZ1-P2-Q03-A": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "D7.summary"
+  },
+  "2025-NOV-TZ1-P2-Q03-B": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "D7.summary"
+  },
+  "2021-MAY-TZ1-P1-Q03-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "a",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "D7.outlier"
+  },
+  "2021-MAY-TZ1-P1-Q03-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "3",
+   "part": "b",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "5",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2021/May/TZ1/Paper 1",
+   "skill": "D7.outlier"
+  },
+  "2022-MAY-TZ1-P1-Q02-A": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "(a)",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "D7.outlier"
+  },
+  "2022-MAY-TZ2-P2-Q04-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "D7.outlier"
+  },
+  "2022-MAY-TZ2-P2-Q04-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "D7.outlier"
+  },
+  "2022-MAY-TZ2-P2-Q04-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "C",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "D7.outlier"
+  },
+  "2021-MAY-TZ2-P2-Q01-A": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D7.strength"
+  },
+  "2021-NOV-COMMON-P2-Q01-A": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "D7.strength"
+  },
+  "2022-NOV-COMMON-P2-Q01-B": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "D7.strength"
+  },
+  "2024-MAY-TZ1-P2-Q05-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6-7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D7.strength"
+  },
+  "2025-NOV-TZ1-P2-Q03-C": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "C",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "D7.strength"
+  },
+  "2021-MAY-TZ1-P2-Q01-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "(a)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "D7.fit"
+  },
+  "2021-MAY-TZ1-P2-Q01-D": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "(d)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "D7.fit"
+  },
+  "2021-NOV-COMMON-P2-Q01-B": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "D7.fit"
+  },
+  "2022-NOV-COMMON-P2-Q01-A": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "D7.fit"
+  },
+  "2023-MAY-TZ2-P2-Q01-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "D7.fit"
+  },
+  "2025-MAY-TZ2-P2-Q01-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "D7.fit"
+  },
+  "2021-MAY-TZ1-P2-Q01-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "(b)",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "D7.predict"
+  },
+  "2021-MAY-TZ2-P2-Q01-B": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D7.predict"
+  },
+  "2021-MAY-TZ2-P2-Q01-C": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "D7.predict"
+  },
+  "2021-NOV-COMMON-P2-Q01-C": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "1",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "D7.predict"
+  },
+  "2022-NOV-COMMON-P2-Q01-C": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "1",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "D7.predict"
+  },
+  "2023-MAY-TZ2-P2-Q01-B": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "2",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "D7.predict"
+  },
+  "2025-MAY-TZ1-P2-Q04-A": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "D7.predict"
+  },
+  "2025-MAY-TZ2-P2-Q01-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "1",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "3",
+   "markscheme_pages": "7",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "D7.predict"
+  },
+  "2023-MAY-TZ1-P2-Q03-B": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D7.direction"
+  },
+  "2023-MAY-TZ1-P2-Q03-C": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "3",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2023/May/TZ1/Paper 2",
+   "skill": "D7.direction"
+  },
+  "2024-MAY-TZ1-P2-Q05-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "B",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6-7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D7.direction"
+  },
+  "2024-MAY-TZ1-P2-Q05-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "5",
+   "part": "C",
+   "marks": 4,
+   "calculator": "yes",
+   "source_pages": "6-7",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "D7.direction"
+  },
+  "2021-MAY-TZ1-P2-Q01-C": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "1",
+   "part": "(c)",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "D7.centre"
+  },
+  "2022-MAY-TZ1-P1-Q02-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "2",
+   "part": "(b)",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "4",
+   "markscheme_pages": "9",
+   "dir": "AA_HL/2022/May/TZ1/Paper 1",
+   "skill": "D7.centre"
+  },
+  "2024-MAY-TZ2-P2-Q02-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "2",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "D7.centre"
+  },
+  "2025-MAY-TZ1-P2-Q04-B": {
+   "session": "May 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2025/May/TZ1/Paper 2",
+   "skill": "D7.centre"
+  },
+  "2021-NOV-COMMON-P2-Q01-D": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "1",
+   "part": "D",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "D7.cause"
+  },
+  "2021-NOV-COMMON-P2-Q01-E": {
+   "session": "November 2021",
+   "zone": "Common",
+   "paper": 2,
+   "question": "1",
+   "part": "E",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "3-4",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2021/November/Common/Paper 2",
+   "skill": "D7.cause"
+  },
+  "2022-MAY-TZ2-P2-Q04-D": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "D",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "D7.cause"
+  },
+  "2025-MAY-TZ3-P2-Q03-C": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "3",
+   "part": "C",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "8",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "D7.cause"
+  },
   "2024-MAY-TZ1-P1-Q11-F-I-II": {
    "session": "May 2024",
    "zone": "TZ1",
@@ -15485,6 +16057,14 @@
    "notebook": "practicum/statistics/practicum-d6-density.ipynb",
    "marks": 114,
    "blocks": 35
+  },
+  {
+   "id": "D7",
+   "title": "Описательная статистика, регрессия и корреляция",
+   "section": "D",
+   "notebook": "practicum/statistics/practicum-d7-regression.ipynb",
+   "marks": 91,
+   "blocks": 44
   },
   {
    "id": "E1",
@@ -21032,6 +21612,241 @@
     "2025-MAY-TZ1-P2-Q11-C",
     "2025-NOV-TZ3-P2-Q11-D",
     "2025-NOV-TZ1-P2-Q11-D"
+   ]
+  },
+  {
+   "id": "D7.summary",
+   "practicum": "D7",
+   "name": "Сводное число и обратный ход к нему",
+   "rung": 1,
+   "trigger": "«Find the mean», «find the standard deviation», «find the value of x given that the median is 4.5», «determine Aiden's score and Brett's score», «find ȳ and the value of p». В условии набор чисел или таблица частот, и спрашивают сводное число — или наоборот, сводное число дано, а пропало значение набора.",
+   "chain": [
+    "Сумма = n · среднее: это и есть весь обратный ход",
+    "Медиана — место, а не значение: у n чисел она стоит на месте (n + 1)/2, и у таблицы частот её ищут накопленной частотой",
+    "Стандартное отклонение таблицы частот — σ с делением на Σf, как в IB, и считает его GDC одной командой",
+    "Размах — max − min, и он же второе уравнение, когда неизвестных два",
+    "Две неизвестных — две записи условия: среднее даёт одну, размах или разность — вторую"
+   ],
+   "traps": [
+    "Среднее таблицы частот посчитано как среднее значений, без веса частот",
+    "Стандартное отклонение поделено на Σf − 1: в IB делят на Σf",
+    "Медиана таблицы частот взята как среднее её значений, а не по накопленной частоте",
+    "В обратной задаче найдена сумма пропавших значений, но не сами значения: второе уравнение из условия не выписано",
+    "Размах посчитан по старым краям набора, хотя новые значения лежат снаружи"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 91,
+   "blocks": [
+    "2025-NOV-TZ3-P2-Q02-A",
+    "2025-NOV-TZ3-P2-Q02-B",
+    "2022-MAY-TZ1-P2-Q01-A",
+    "2022-MAY-TZ1-P2-Q01-B",
+    "2024-MAY-TZ2-P2-Q02-B",
+    "2025-NOV-TZ1-P2-Q03-A",
+    "2025-NOV-TZ1-P2-Q03-B"
+   ]
+  },
+  {
+   "id": "D7.outlier",
+   "practicum": "D7",
+   "name": "Ящик с усами и граница выброса",
+   "rung": 2,
+   "trigger": "«State the median», «find the largest value that would not be considered an outlier», «verify that 0.46 is not an outlier», «find the minimum possible value of U», «state why the mean appears to be greater than the median». В условии диаграмма из пяти чисел, и спрашивают либо одно из них, либо правило выброса.",
+   "chain": [
+    "Прочитать пятёрку: минимум, Q1, медиана, Q3, максимум",
+    "IQR = Q3 − Q1",
+    "Границы выброса: Q1 − 1.5 · IQR и Q3 + 1.5 · IQR",
+    "«Не выброс» — значение внутри границ; «наибольшее не-выброс» — сама верхняя граница",
+    "Нет выбросов вовсе — условие на края: max ≤ Q3 + 1.5 · IQR и min ≥ Q1 − 1.5 · IQR; из него неизвестный квартиль выходит неравенством, и просят его крайнее значение",
+    "Асимметрия видна по коробке: медиана ближе к Q1 — хвост справа, и тогда среднее больше медианы"
+   ],
+   "traps": [
+    "Взято 1.5 · Q3 вместо Q3 + 1.5 · IQR",
+    "Граница посчитана от медианы, а не от квартиля",
+    "Найдена граница, но не сказано, выброс это или нет: «verify» требует сравнения и вывода",
+    "В задаче на минимум решено уравнение вместо неравенства, и вторая граница (та, что сверху) не проверена вовсе",
+    "Асимметрия объяснена средним: схема прямо не принимает сравнение средних, потому что среднего на диаграмме нет",
+    "Сказано «correlation does not imply causation» там, где корреляции нет: схема ставит R0"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 91,
+   "blocks": [
+    "2021-MAY-TZ1-P1-Q03-A",
+    "2021-MAY-TZ1-P1-Q03-B",
+    "2022-MAY-TZ1-P1-Q02-A",
+    "2022-MAY-TZ2-P2-Q04-A",
+    "2022-MAY-TZ2-P2-Q04-B",
+    "2022-MAY-TZ2-P2-Q04-C"
+   ]
+  },
+  {
+   "id": "D7.strength",
+   "practicum": "D7",
+   "name": "Коэффициент корреляции",
+   "rung": 3,
+   "trigger": "«Find Pearson's product-moment correlation coefficient r», «write down the value of r», «hence find r». Два списка чисел одной длины, и спрашивают одно число между −1 и 1.",
+   "chain": [
+    "Ввести два списка в GDC",
+    "Взять r из вывода линейной регрессии — это то же окно, что даёт a и b",
+    "Записать три значащие цифры и знак",
+    "Знак r — знак наклона прямой: они не бывают разными"
+   ],
+   "traps": [
+    "Записан r² вместо r: GDC печатает оба, и они похожи",
+    "Потерян минус при отрицательной связи",
+    "r округлён до двух цифр: 0.98 вместо 0.978",
+    "Списки введены разной длины или сдвинуты на строку — r выходит правдоподобным, но другим"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 91,
+   "blocks": [
+    "2021-MAY-TZ2-P2-Q01-A",
+    "2021-NOV-COMMON-P2-Q01-A",
+    "2022-NOV-COMMON-P2-Q01-B",
+    "2024-MAY-TZ1-P2-Q05-A",
+    "2025-NOV-TZ1-P2-Q03-C"
+   ]
+  },
+  {
+   "id": "D7.fit",
+   "practicum": "D7",
+   "name": "Прямая регрессии по данным",
+   "rung": 4,
+   "trigger": "«The relationship can be modelled by the regression line of y on x with equation y = ax + b. Find the value of a and the value of b»; «write down the value of a and the value of b»; «draw the line of best fit on the scatter diagram». Даны пары чисел, нужна прямая.",
+   "chain": [
+    "Ввести пары в GDC и взять линейную регрессию y на x",
+    "Записать a и b с тремя значащими цифрами",
+    "Держать в памяти калькулятора неокруглённые значения: следующий пункт почти всегда подставляет в эту прямую",
+    "Рисуют прямую по двум точкам: через (x̄, ȳ) и через пересечение с осью y, то есть через (0, b)"
+   ],
+   "traps": [
+    "a и b перепутаны местами: GDC печатает их в порядке своей модели, и у некоторых моделей это y = a + bx",
+    "В следующий пункт подставлены округлённые a и b, и третья цифра ответа уехала",
+    "Прямая проведена по крайним точкам данных, а не через (x̄, ȳ)",
+    "Регрессия взята квадратичной или экспоненциальной — в меню GDC они рядом"
+   ],
+   "calculator": "needed",
+   "practicum_marks": 91,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q01-A",
+    "2021-MAY-TZ1-P2-Q01-D",
+    "2021-NOV-COMMON-P2-Q01-B",
+    "2022-NOV-COMMON-P2-Q01-A",
+    "2023-MAY-TZ2-P2-Q01-A",
+    "2025-MAY-TZ2-P2-Q01-A"
+   ]
+  },
+  {
+   "id": "D7.predict",
+   "practicum": "D7",
+   "name": "Подстановка в прямую и наклон в контексте",
+   "rung": 5,
+   "trigger": "«Use this model to predict the value of y when x = 18»; «estimate the average height when the experiment has been running for 20 days»; «interpret, in context, the value of a»; «determine how her score could have been expected to alter had she practised an extra five hours». Прямая уже есть, и её применяют.",
+   "chain": [
+    "Подставить данное значение в прямую",
+    "Округлить как просят: «to the nearest integer» — это отдельный балл",
+    "Наклон в контексте — это «на столько меняется y, когда x увеличивается на единицу», с единицами измерения",
+    "«На пять единиц больше» — это 5a, а не подстановка: считать разность двух подстановок тоже можно, ответ тот же"
+   ],
+   "traps": [
+    "Подставлено в не ту переменную: прочитано «y = 18» вместо «x = 18»",
+    "Ответ не округлён до целого там, где просят целое",
+    "Наклон истолкован как «y растёт на a процентов» или без единиц",
+    "«Пять лишних часов» умножено на b, а не на a",
+    "Подстановка сделана в округлённую прямую, и ответ разошёлся в третьей цифре"
+   ],
+   "calculator": "allowed",
+   "practicum_marks": 91,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q01-B",
+    "2021-MAY-TZ2-P2-Q01-B",
+    "2021-MAY-TZ2-P2-Q01-C",
+    "2021-NOV-COMMON-P2-Q01-C",
+    "2022-NOV-COMMON-P2-Q01-C",
+    "2023-MAY-TZ2-P2-Q01-B",
+    "2025-MAY-TZ1-P2-Q04-A",
+    "2025-MAY-TZ2-P2-Q01-B"
+   ]
+  },
+  {
+   "id": "D7.direction",
+   "practicum": "D7",
+   "name": "Какая из двух прямых, и где подставлять нельзя",
+   "rung": 6,
+   "trigger": "«Find an appropriate regression equation that will allow the vendor to predict the number of ice creams sold on a day when there are y children»; «give a reason why this method is not appropriate»; «use an appropriate method to show that the estimated score is 86». В условии уже есть одна прямая или данные, и спрашивают, годится ли она.",
+   "chain": [
+    "Посмотреть, что предсказывают: эта переменная стоит слева",
+    "Предсказывают x по y — берут регрессию x на y, а не решают прямую y на x относительно x",
+    "Посмотреть, лежит ли данное значение внутри диапазона данных; снаружи — экстраполяция, и модель не годится",
+    "Назвать причину одной фразой: «should not extrapolate», «should not use the line of y on x to predict x»"
+   ],
+   "traps": [
+    "Прямая y на x решена относительно x: ответ похож, но другой — в мае 2024 TZ1 это 87 вместо 86, и балла за него нет",
+    "Взята регрессия x на y там, где предсказывают y",
+    "Сказано «r близок к 1, значит можно»: вопрос не о силе связи",
+    "Причина названа, но не та: экстраполяция и не та прямая — два разных балла в одном вопросе"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 91,
+   "blocks": [
+    "2023-MAY-TZ1-P2-Q03-B",
+    "2023-MAY-TZ1-P2-Q03-C",
+    "2024-MAY-TZ1-P2-Q05-B",
+    "2024-MAY-TZ1-P2-Q05-C"
+   ]
+  },
+  {
+   "id": "D7.centre",
+   "practicum": "D7",
+   "name": "Точка средних",
+   "rung": 7,
+   "trigger": "«Write down the value of x̄ and the value of ȳ»; «given that x̄ = 7, verify that ȳ = 16»; «find the mean arm span and the mean foot length»; «find the mean age of all the adults surveyed». Спрашивают средние, а данных для них нет — есть прямые.",
+   "chain": [
+    "Прямая регрессии проходит через (x̄, ȳ) — всегда, обе",
+    "Дано x̄ — подстановка в прямую даёт ȳ",
+    "Даны две прямые — их пересечение и есть точка средних, и находится оно системой из двух уравнений",
+    "Даны данные и одна прямая — среднее считают по данным, второе среднее берут подстановкой"
+   ],
+   "traps": [
+    "Средние посчитаны по данным там, где часть данных неизвестна",
+    "Решена одна прямая вместо системы: точек на прямой бесконечно много",
+    "Система решена, но координаты выданы не в том порядке",
+    "Проверка «verify that ȳ = 16» сделана округлённой прямой, и вышло 16.0001 — схема требует точного равенства"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 91,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q01-C",
+    "2022-MAY-TZ1-P1-Q02-B",
+    "2024-MAY-TZ2-P2-Q02-A",
+    "2025-MAY-TZ1-P2-Q04-B"
+   ]
+  },
+  {
+   "id": "D7.cause",
+   "practicum": "D7",
+   "name": "Чего данные не говорят",
+   "rung": 8,
+   "trigger": "«Comment on the validity of the assertion that practising has a direct effect»; «state how, if at all, the value of r would be affected»; «comment on whether these diagrams provide evidence that not sleeping well causes an increase»; «identify which one best describes the sampling method». Числа посчитаны, и спрашивают, что из них следует.",
+   "chain": [
+    "Связь — не причина: сильный r не означает, что x влияет на y",
+    "Сдвиг или растяжение данных не меняет r: он меряет форму облака, а не его место",
+    "Сравнивать два ящика с усами можно по медиане и квартилям, а по средним — нельзя: их там нет",
+    "Способ отбора называют по тому, как выбирали: первые пятьдесят подряд — convenience"
+   ],
+   "traps": [
+    "«Correlation does not imply causation» сказано там, где корреляции нет вовсе: за это R0",
+    "Ответ «r уменьшится», когда из каждого x вычли одно и то же число",
+    "Сравнение двух ящиков сделано по средним",
+    "Способ отбора назван systematic вместо convenience: «первые пятьдесят» — это не каждый k-й"
+   ],
+   "calculator": "no",
+   "practicum_marks": 91,
+   "blocks": [
+    "2021-NOV-COMMON-P2-Q01-D",
+    "2021-NOV-COMMON-P2-Q01-E",
+    "2022-MAY-TZ2-P2-Q04-D",
+    "2025-MAY-TZ3-P2-Q03-C"
    ]
   },
   {
@@ -38094,6 +38909,534 @@
    ],
    "answer": "condition",
    "answer_digest": "596d40a4ed24",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:1",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.summary",
+   "prompt": "The mean of $4,\\ 7,\\ k,\\ 9$ is $7$. Find $k$.",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "summary",
+   "answer_digest": "761b7ad8ad43",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:2",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.outlier",
+   "prompt": "Is $31$ an outlier for the box $5,\\ 12,\\ 15,\\ 19,\\ 31$?",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "outlier",
+   "answer_digest": "2aed12b734be",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:3",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.strength",
+   "prompt": "Find Pearson's product-moment correlation coefficient for the data in the table.",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "strength",
+   "answer_digest": "e6b88623f720",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:4",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.fit",
+   "prompt": "The relationship is modelled by the regression line of $y$ on $x$, $y=ax+b$. Find $a$ and $b$.",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "fit",
+   "answer_digest": "da4270e3735a",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:5",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.predict",
+   "prompt": "Use the regression line $y=1.2x+7$ to estimate $y$ when $x=15$.",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "predict",
+   "answer_digest": "8e9afe9d1df3",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:6",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.direction",
+   "prompt": "Find a regression equation that predicts the price from the age of the car, given the line of age on price.",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "direction",
+   "answer_digest": "93c4abe27cf1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:7",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.centre",
+   "prompt": "The regression lines of $y$ on $x$ and of $x$ on $y$ are given. Find $\\bar x$.",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "centre",
+   "answer_digest": "fa25baee7bac",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:8",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.cause",
+   "prompt": "Does a correlation of $0.95$ show that revision time improves exam scores?",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "cause",
+   "answer_digest": "6a7ef1ed9f15",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:9",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.summary",
+   "prompt": "Find the standard deviation of the frequency table.",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "summary",
+   "answer_digest": "761b7ad8ad43",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:10",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.direction",
+   "prompt": "The line was fitted for $2\\le x\\le 9$. Why should it not be used at $x=30$?",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "direction",
+   "answer_digest": "93c4abe27cf1",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:11",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.centre",
+   "prompt": "Given that $\\bar x=4$, verify that $\\bar y=11$ using the regression line.",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "centre",
+   "answer_digest": "fa25baee7bac",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:D7:12",
+   "kind": "recognition",
+   "practicum": "D7",
+   "skill": "D7.outlier",
+   "prompt": "State why the mean appears to be greater than the median, using the box plot.",
+   "options": [
+    {
+     "code": "summary",
+     "name": "пропавшее значение по среднему"
+    },
+    {
+     "code": "outlier",
+     "name": "граница выброса"
+    },
+    {
+     "code": "strength",
+     "name": "коэффициент корреляции"
+    },
+    {
+     "code": "fit",
+     "name": "прямая по данным"
+    },
+    {
+     "code": "predict",
+     "name": "подстановка в прямую"
+    },
+    {
+     "code": "direction",
+     "name": "какая из двух прямых"
+    },
+    {
+     "code": "centre",
+     "name": "точка средних"
+    },
+    {
+     "code": "cause",
+     "name": "что меняет r"
+    }
+   ],
+   "answer": "outlier",
+   "answer_digest": "2aed12b734be",
    "budget_ms": 8000
   },
   {
