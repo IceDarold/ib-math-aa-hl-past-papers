@@ -791,3 +791,45 @@ def data_check(what, **parts):
             spec[name] = parts[name] if isinstance(parts[name], str) else sp.srepr(
                 sp.sympify(parts[name]))
     return spec
+
+
+def rates_check(what, **parts):
+    """Вопрос о скорости или наилучшем, E9.
+
+    what — 'rate' (скорость величины в момент), 'when' (момент события
+    частицы), 'extreme' (наибольшее в движении), 'related' (связанная
+    скорость), 'best' (наилучшее значение модели). Эталона в описании нет:
+    страница пересобирает модель и зовёт те же verify_rate, verify_when,
+    verify_extreme, verify_related и verify_best, что стоят в ноутбуке.
+    Скорость там меряют сдвигом времени, а наилучшее — просмотром промежутка.
+    """
+    spec = {'kind': 'rates', 'what': what}
+    for name in ('f', 'v', 'at', 'report'):
+        if parts.get(name) is not None and not isinstance(parts[name], str):
+            spec[name] = sp.srepr(sp.sympify(parts[name]))
+        elif parts.get(name) is not None:
+            spec[name] = parts[name]
+    for name in ('event', 'which', 'quantity', 'want', 'var', 'integer',
+                 'exact', 'rate', 'size'):
+        if parts.get(name) is not None:
+            spec[name] = parts[name]
+    if parts.get('kind') is not None:
+        # «kind» у описания уже занят видом проверки; наибольшее или наименьшее
+        # едет отдельным ключом.
+        spec['sense'] = parts['kind']
+    if 'span' in parts:
+        spec['span'] = [sp.srepr(sp.sympify(v)) for v in parts['span']]
+    if 'domain' in parts:
+        lo, hi, open_lo, open_hi = parts['domain']
+        spec['domain'] = [sp.srepr(sp.sympify(lo)), sp.srepr(sp.sympify(hi)), open_lo, open_hi]
+    for name in ('relations', 'at'):
+        if name == 'at' and what != 'related':
+            continue
+        if name in parts:
+            spec[name] = [sp.srepr(sp.sympify(e)) for e in parts[name]]
+    if 'rates' in parts:
+        spec['rates'] = {key: sp.srepr(sp.sympify(v)) for key, v in parts['rates'].items()}
+    if 'where' in parts:
+        spec['where'] = {key: [sp.srepr(sp.sympify(v)) for v in ends]
+                         for key, ends in parts['where'].items()}
+    return spec

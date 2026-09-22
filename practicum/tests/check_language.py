@@ -1400,6 +1400,100 @@ def calls():
     yield lambda: check_word('t', 'quota', digest('convenience'))
     yield lambda: check_word('t', ..., digest('convenience'))
 
+    # скорости, E9: движение, связанные скорости, наилучшее
+    e_v, e_h, e_y, e_th, e_s, e_n, e_p = sp.symbols('V h y theta S n pop')
+    e_move = particle(v=(t ** 2 + 1) * sp.cos(t) / 4, span=(0, 3))
+    e_touch = particle(v=(t - 2) ** 2 * (t - 5), span=(0, 6))
+    e_back = particle(v=sp.exp(-sp.sin(t)) * sp.cos(2 * t), span=(0, 5))
+    e_far = particle(s=2 ** (1 - t / 5) * sp.sin(2 * sp.pi * t / 3), span=(0, sp.oo))
+    e_flask = (sp.Eq(e_v, 5 * sp.pi * e_h ** 2 - sp.pi * e_h ** 3 / 3), sp.Eq(e_v, 200),
+               {dt(e_v): 2}, dt(e_h))
+    e_area = (e_n + 3) * sp.sqrt(9 - e_n ** 2)
+    yield lambda: verify_motion('t', -1.84, e_move, 'acceleration', 'fastest')
+    yield lambda: verify_motion('t', 0, e_move, 'acceleration', 'fastest')
+    yield lambda: verify_motion('t', -2.47, e_move, 'acceleration', 'fastest')
+    yield lambda: verify_motion('t', -0.986, e_back, 'acceleration', ('turn', 2))
+    yield lambda: verify_motion('t', 7, e_back, 'acceleration', 1)
+    yield lambda: verify_motion('t', ..., e_back, 'acceleration', 1)
+    yield lambda: verify_when('t', 5, e_touch, 'turn')
+    yield lambda: verify_when('t', 2, e_touch, 'turn')
+    yield lambda: verify_when('t', [5, 2], e_touch, 'turn')
+    yield lambda: verify_when('t', [2], e_touch, 'rest', 'all')
+    yield lambda: verify_when('t', 'soon', e_touch, 'rest')
+    yield lambda: verify_when('t', 1.3, e_touch, ('acceleration', 0))
+    yield lambda: verify_when('t', 0.785, e_back, 'turn', 2)
+    yield lambda: verify_when('t', 4.1, e_touch, 'turn')
+    yield lambda: verify_while('t', Interval(5, 6), e_touch)
+    yield lambda: verify_while('t', Interval(0, 5), e_touch)
+    yield lambda: verify_while('t', Interval(0, 1), e_touch)
+    yield lambda: verify_while('t', 3, e_touch)
+    yield lambda: verify_extreme('t', 2.72, e_back, 'speed')
+    yield lambda: verify_extreme('t', -2.72, e_back, 'speed')
+    yield lambda: verify_extreme('t', 1.13, e_back, 'speed')
+    yield lambda: verify_extreme('t', 2.79, e_far, 'velocity')
+    yield lambda: verify_extreme('t', 0.718, e_far, 'displacement')
+    yield lambda: verify_extreme('t', 1.81, e_far, 'displacement', 'min')
+    yield lambda: verify_extreme('t', 1.8, e_far, 'displacement')
+    yield lambda: verify_rate('t', -0.651, 1.63 * sp.sin(0.513 * (t - 8.2)) + 2.13, 13)
+    yield lambda: verify_rate('t', 3.15, 1.63 * sp.sin(0.513 * (t - 8.2)) + 2.13, 13)
+    yield lambda: verify_rate('t', 2, 1.63 * sp.sin(0.513 * (t - 8.2)) + 2.13, 13)
+    yield lambda: verify_duration('t', sp.pi, 8 * t + 32, sp.sin(2 * t + 6) + 9 * t + 27, (0, 9))
+    yield lambda: verify_duration('t', 9 - sp.pi, 8 * t + 32, sp.sin(2 * t + 6) + 9 * t + 27,
+                                  (0, 9))
+    yield lambda: verify_duration('t', sp.pi / 3, 8 * t + 32, sp.sin(2 * t + 6) + 9 * t + 27,
+                                  (0, 9))
+    yield lambda: verify_related('t', 0.0261, *e_flask, where={e_h: (0, 10)})
+    yield lambda: verify_related('t', 0.0131, *e_flask, where={e_h: (0, 10)})
+    yield lambda: verify_related('t', 153, *e_flask, where={e_h: (0, 10)})
+    yield lambda: verify_related('t', -0.0113, *e_flask, where={e_h: (0, 10)})
+    yield lambda: verify_related('t', 0.026, *e_flask, where={e_h: (0, 10)})
+    yield lambda: verify_related('t', 0.5, *e_flask, where={e_h: (0, 10)})
+    yield lambda: verify_related('t', 'fast', *e_flask, where={e_h: (0, 10)})
+    yield lambda: verify_related('t', 425, sp.Eq(e_th, sp.atan((x + 2) / 6) - sp.atan(x / 6)),
+                                 sp.Eq(e_th, 0.178), {dt(e_th): 12.5}, dt(x),
+                                 where={x: (0, 50)}, size=True)
+    yield lambda: verify_related('t', -425, sp.Eq(e_th, sp.atan((x + 2) / 6) - sp.atan(x / 6)),
+                                 sp.Eq(e_th, 0.178), {dt(e_th): 12.5}, dt(x),
+                                 where={x: (0, 50)}, size=True)
+    yield lambda: verify_related('t', 0.724, [sp.Eq(x, sp.sqrt(625 - 600 * sp.cos(e_th))),
+                                              sp.Eq(e_s, 150 * sp.sin(e_th))],
+                                 sp.Eq(e_s, 140), {dt(e_th): -sp.pi / 60}, dt(x),
+                                 where={e_th: (0, sp.pi / 2)})
+    yield lambda: verify_related('t', 30.0, sp.Eq(e_v, x ** 2), sp.Eq(x, 3), {dt(x): 5},
+                                 dt(e_v), where={x: (0, 9)}, exact=True)
+    yield lambda: verify_best('t', -3 * sp.sqrt(3) / 2, e_area, Interval.open(0, 3), 'max',
+                              var=e_n, report=-sp.sqrt(9 - e_n ** 2), exact=True)
+    yield lambda: verify_best('t', sp.Rational(3, 2), e_area, Interval.open(0, 3), 'max',
+                              var=e_n, report=-sp.sqrt(9 - e_n ** 2), exact=True)
+    yield lambda: verify_best('t', 0, e_area, Interval.open(0, 3), 'max',
+                              var=e_n, report=-sp.sqrt(9 - e_n ** 2), exact=True)
+    yield lambda: verify_best('t', -2.6, e_area, Interval.open(0, 3), 'max',
+                              var=e_n, report=-sp.sqrt(9 - e_n ** 2), exact=True)
+    yield lambda: verify_best('t', 3 * sp.sqrt(3) / 2, e_area, Interval.open(0, 3), 'max',
+                              var=e_n, report=-sp.sqrt(9 - e_n ** 2), exact=True)
+    yield lambda: verify_best('t', 1.03, sp.sqrt((10 * t - 18) ** 2 + 1 + (11 - 6 * t) ** 2),
+                              (0, 2.5), 'min', var=t)
+    yield lambda: verify_best('t', 5, sp.sqrt((10 * t - 18) ** 2 + 1 + (11 - 6 * t) ** 2),
+                              (0, 2.5), 'min', var=t)
+    yield lambda: verify_best('t', (1570, 7.36), (20 / e_n) ** e_n, (1, 40), 'max', var=e_n,
+                              report=('value', 'place'), integer=True)
+    yield lambda: verify_best('t', 81, (12 / e_n) ** e_n, (1, 40), 'max', var=e_n,
+                              report=('value', 'place'), integer=True)
+    yield lambda: verify_best('t', (81, 4), (12 / e_n) ** e_n, (1, 40), 'max', var=e_n,
+                              report=('value', 'place'), integer=True)
+    yield lambda: verify_best('t', N, k * e_p * (1 - e_p / N), (0, N), 'max', var=e_p,
+                              report='place', params={k: (0.7, 2), N: (100, 7)})
+    yield lambda: verify_best('t', 'half', k * e_p * (1 - e_p / N), (0, N), 'max', var=e_p,
+                              report='place', params={k: (0.7, 2), N: (100, 7)})
+    yield lambda: verify_best('t', 0.2, e_n ** 2 * (1 - e_n), (0, 1), 'max', var=e_n,
+                              report='place')
+    yield lambda: verify_fits('t', 'no', 3 / (4 * sp.cos(x)) + 6 / sp.sin(x),
+                              Interval.open(0, sp.pi / 2), 11.25)
+    yield lambda: verify_fits('t', 'yes', 3 / (4 * sp.cos(x)) + 6 / sp.sin(x),
+                              Interval.open(0, sp.pi / 2), 11.25)
+    yield lambda: verify_fits('t', 'maybe', 3 / (4 * sp.cos(x)) + 6 / sp.sin(x),
+                              Interval.open(0, sp.pi / 2), 11.25)
+
 
 print('=== статически: строки с кириллицей вне русской половины _t ===')
 leftovers = static_scan()

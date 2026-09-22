@@ -15847,6 +15847,552 @@
    "markscheme_pages": "11",
    "dir": "AA_HL/2022/May/TZ2/Paper 3",
    "skill": "E8.none"
+  },
+  "2022-MAY-TZ2-P2-Q12-A": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "28",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E9.rate"
+  },
+  "2024-MAY-TZ1-P2-Q10-C": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12-13",
+   "markscheme_pages": "20-22",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "E9.rate"
+  },
+  "2021-MAY-TZ1-P2-Q04-C": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "c",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E9.rate"
+  },
+  "2022-MAY-TZ2-P2-Q05-B": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E9.rate"
+  },
+  "2025-MAY-TZ3-P2-Q10-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "10",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "E9.rate"
+  },
+  "2023-MAY-TZ2-P2-Q05-A": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "11",
+   "dir": "AA_HL/2023/May/TZ2/Paper 2",
+   "skill": "E9.rate"
+  },
+  "2022-MAY-TZ2-P2-Q10-D": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "10",
+   "part": "(d)",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "21",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E9.rate"
+  },
+  "2024-MAY-TZ2-P2-Q04-A": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "A",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E9.rate"
+  },
+  "2021-MAY-TZ1-P2-Q04-A": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E9.rest"
+  },
+  "2023-NOV-TZ2-P2-Q04-A": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "E9.rest"
+  },
+  "2024-MAY-TZ1-P2-Q04-A": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "a",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "E9.rest"
+  },
+  "2024-MAY-TZ1-P2-Q04-B": {
+   "session": "May 2024",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "b",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2024/May/TZ1/Paper 2",
+   "skill": "E9.rest"
+  },
+  "2022-MAY-TZ1-P2-Q04-B": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "4",
+   "part": "b",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "E9.rest"
+  },
+  "2024-MAY-TZ2-P2-Q04-C": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E9.rest"
+  },
+  "2025-MAY-TZ2-P2-Q05-C": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "C",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E9.rest"
+  },
+  "2022-MAY-TZ2-P2-Q05-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "C",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E9.peak"
+  },
+  "2024-MAY-TZ2-P2-Q04-B": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "4",
+   "part": "B",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "10",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E9.peak"
+  },
+  "2025-MAY-TZ2-P2-Q05-A": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "5",
+   "part": "A",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "7",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2025/May/TZ2/Paper 2",
+   "skill": "E9.peak"
+  },
+  "2025-NOV-TZ3-P2-Q10-A": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "10",
+   "part": "A",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "E9.peak"
+  },
+  "2025-NOV-TZ3-P2-Q10-B": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "10",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "17",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 2",
+   "skill": "E9.peak"
+  },
+  "2023-MAY-TZ1-P1-Q06": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "6",
+   "part": "",
+   "marks": 5,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "12",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "E9.chain"
+  },
+  "2024-MAY-TZ2-P2-Q06": {
+   "session": "May 2024",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "6",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "8",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2024/May/TZ2/Paper 2",
+   "skill": "E9.chain"
+  },
+  "2022-MAY-TZ1-P2-Q10-E": {
+   "session": "May 2022",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "10",
+   "part": "E",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "14",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2022/May/TZ1/Paper 2",
+   "skill": "E9.chain"
+  },
+  "2022-NOV-COMMON-P2-Q08": {
+   "session": "November 2022",
+   "zone": "Common",
+   "paper": 2,
+   "question": "8",
+   "part": "",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "9",
+   "markscheme_pages": "16-17",
+   "dir": "AA_HL/2022/November/Common/Paper 2",
+   "skill": "E9.chain"
+  },
+  "2021-MAY-TZ1-P2-Q09-B": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "b",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E9.angle"
+  },
+  "2025-MAY-TZ3-P2-Q09-B": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 2,
+   "question": "9",
+   "part": "B",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "11",
+   "markscheme_pages": "12-14",
+   "dir": "AA_HL/2025/May/TZ3/Paper 2",
+   "skill": "E9.angle"
+  },
+  "2025-NOV-TZ1-P2-Q09": {
+   "session": "November 2025",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "9",
+   "part": "",
+   "marks": 7,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/November/TZ1/Paper 2",
+   "skill": "E9.angle"
+  },
+  "2023-MAY-TZ2-P1-Q10-D": {
+   "session": "May 2023",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "10",
+   "part": "d",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "13",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2023/May/TZ2/Paper 1",
+   "skill": "E9.optimum"
+  },
+  "2025-NOV-TZ3-P1-Q08-C": {
+   "session": "November 2025",
+   "zone": "TZ3",
+   "paper": 1,
+   "question": "8",
+   "part": "C",
+   "marks": 4,
+   "calculator": "no",
+   "source_pages": "11",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2025/November/TZ3/English/Paper 1",
+   "skill": "E9.optimum"
+  },
+  "2023-MAY-TZ1-P1-Q11-D": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "D",
+   "marks": 3,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "E9.optimum"
+  },
+  "2023-MAY-TZ1-P1-Q11-E": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 1,
+   "question": "11",
+   "part": "E",
+   "marks": 2,
+   "calculator": "no",
+   "source_pages": "16",
+   "markscheme_pages": "24",
+   "dir": "AA_HL/2023/May/TZ1/Paper 1",
+   "skill": "E9.optimum"
+  },
+  "2025-MAY-TZ3-P3-Q02-E": {
+   "session": "May 2025",
+   "zone": "TZ3",
+   "paper": 3,
+   "question": "2",
+   "part": "E",
+   "marks": 1,
+   "calculator": "yes",
+   "source_pages": "6",
+   "markscheme_pages": "14",
+   "dir": "AA_HL/2025/May/TZ3/Paper 3",
+   "skill": "E9.optimum"
+  },
+  "2025-MAY-TZ2-P1-Q06-B": {
+   "session": "May 2025",
+   "zone": "TZ2",
+   "paper": 1,
+   "question": "6",
+   "part": "B",
+   "marks": 6,
+   "calculator": "no",
+   "source_pages": "9",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2025/May/TZ2/Paper 1",
+   "skill": "E9.distance"
+  },
+  "2022-MAY-TZ2-P2-Q11-E": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "e",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "27",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E9.distance"
+  },
+  "2023-NOV-TZ2-P2-Q08-B": {
+   "session": "November 2023",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "8",
+   "part": "B",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "12",
+   "markscheme_pages": "16",
+   "dir": "AA_HL/2023/November/TZ2/Paper 2",
+   "skill": "E9.distance"
+  },
+  "2021-MAY-TZ1-P2-Q12-E": {
+   "session": "May 2021",
+   "zone": "TZ1",
+   "paper": 2,
+   "question": "12",
+   "part": "E",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "22",
+   "dir": "AA_HL/2021/May/TZ1/Paper 2",
+   "skill": "E9.fastest"
+  },
+  "2021-MAY-TZ2-P2-Q11-D": {
+   "session": "May 2021",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "11",
+   "part": "D",
+   "marks": 6,
+   "calculator": "yes",
+   "source_pages": "13",
+   "markscheme_pages": "23-24",
+   "dir": "AA_HL/2021/May/TZ2/Paper 2",
+   "skill": "E9.fastest"
+  },
+  "2022-MAY-TZ2-P2-Q12-C": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "C",
+   "marks": 5,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "29-30",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E9.fastest"
+  },
+  "2022-MAY-TZ2-P2-Q12-D": {
+   "session": "May 2022",
+   "zone": "TZ2",
+   "paper": 2,
+   "question": "12",
+   "part": "D",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "15",
+   "markscheme_pages": "30",
+   "dir": "AA_HL/2022/May/TZ2/Paper 2",
+   "skill": "E9.fastest"
+  },
+  "2023-MAY-TZ1-P3-Q02-F": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "f",
+   "marks": 2,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E9.whole"
+  },
+  "2023-MAY-TZ1-P3-Q02-G": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "g",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "4",
+   "markscheme_pages": "13",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E9.whole"
+  },
+  "2023-MAY-TZ1-P3-Q02-J": {
+   "session": "May 2023",
+   "zone": "TZ1",
+   "paper": 3,
+   "question": "2",
+   "part": "j",
+   "marks": 3,
+   "calculator": "yes",
+   "source_pages": "5",
+   "markscheme_pages": "15",
+   "dir": "AA_HL/2023/May/TZ1/Paper 3",
+   "skill": "E9.whole"
   }
  },
  "practicums": [
@@ -16129,6 +16675,14 @@
    "notebook": "practicum/calculus/practicum-e8-stationary-points.ipynb",
    "marks": 114,
    "blocks": 43
+  },
+  {
+   "id": "E9",
+   "title": "Оптимизация и связанные скорости",
+   "section": "E",
+   "notebook": "practicum/calculus/practicum-e9-optimisation-rates.ipynb",
+   "marks": 147,
+   "blocks": 42
   }
  ],
  "skills": [
@@ -23679,6 +24233,267 @@
    "blocks": [
     "2022-NOV-COMMON-P1-Q07",
     "2022-MAY-TZ2-P3-Q01-D-II"
+   ]
+  },
+  {
+   "id": "E9.rate",
+   "practicum": "E9",
+   "name": "Производная как скорость в момент",
+   "rung": 1,
+   "trigger": "«Find the rate of change of the height of the water when t = 13»; «find the acceleration of the particle when t = 7»; «find the time when Fiona's acceleration is 4 m s⁻²»; «interpret the meaning of dP/dt»; «find the total amount of time when the rate of growth of Plant B was greater than the rate of growth of Plant A».",
+   "chain": [
+    "Назвать, чья это скорость: скорость изменения H — это H′(t), ускорение — это v′(t)",
+    "В момент: производная в точке, на калькуляторной бумаге — кнопкой d/dx прямо по формуле",
+    "Обратный вопрос «когда ускорение равно 4»: решить v′(t) = 4 на промежутке из условия",
+    "Сравнение скоростей роста: неравенство между производными, а не между самими величинами; сложить длины всех кусков",
+    "Интерпретация dP/dt: скорость изменения численности во времени, со словом rate"
+   ],
+   "traps": [
+    "Вместо скорости изменения дано само значение H(13)",
+    "Калькулятор в градусах: схема даёт A0 за ответ, посчитанный так",
+    "Сравнили высоты растений, а вопрос про скорости роста",
+    "Сложили не все куски: у cos(2t + 6) < −½ на [0, 9] их три",
+    "«Growth per year» вместо «rate of growth»: схема такую фразу не принимает"
+   ],
+   "calculator": "replaces",
+   "practicum_marks": 147,
+   "blocks": [
+    "2022-MAY-TZ2-P2-Q12-A",
+    "2024-MAY-TZ1-P2-Q10-C",
+    "2021-MAY-TZ1-P2-Q04-C",
+    "2022-MAY-TZ2-P2-Q05-B",
+    "2025-MAY-TZ3-P2-Q10-B",
+    "2023-MAY-TZ2-P2-Q05-A",
+    "2022-MAY-TZ2-P2-Q10-D",
+    "2024-MAY-TZ2-P2-Q04-A"
+   ]
+  },
+  {
+   "id": "E9.rest",
+   "practicum": "E9",
+   "name": "Покой и смена направления",
+   "rung": 2,
+   "trigger": "«Find the smallest value of t for which the particle is at rest»; «find the smallest value of t when the particle changes direction»; «find the range of values of t for which the displacement is increasing»; «find the acceleration when P changes direction for the second time».",
+   "chain": [
+    "Покой — v = 0; смена направления — v меняет знак",
+    "Если дано перемещение s, сначала v = ds/dt",
+    "Решить на промежутке из условия и выбрать нужный по счёту корень",
+    "Перемещение растёт там, где v > 0: между соседними корнями",
+    "Если спрашивают ускорение в этот момент — подставить найденное t в v′"
+   ],
+   "traps": [
+    "Названо несколько корней, когда просят один: «do not award A1 if additional values are given»",
+    "Взят корень вне 0 ≤ t ≤ 6 (−0.205, 6.08 у мая 2022)",
+    "Первый раз вместо второго",
+    "Перемещение растёт там, где растёт v, — перепутаны v > 0 и a > 0",
+    "Остановку без смены знака приняли за разворот"
+   ],
+   "calculator": "replaces",
+   "practicum_marks": 147,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q04-A",
+    "2023-NOV-TZ2-P2-Q04-A",
+    "2024-MAY-TZ1-P2-Q04-A",
+    "2024-MAY-TZ1-P2-Q04-B",
+    "2022-MAY-TZ1-P2-Q04-B",
+    "2024-MAY-TZ2-P2-Q04-C",
+    "2025-MAY-TZ2-P2-Q05-C"
+   ]
+  },
+  {
+   "id": "E9.peak",
+   "practicum": "E9",
+   "name": "Наибольшее значение в движении",
+   "rung": 3,
+   "trigger": "«Find the maximum speed of P»; «find the maximum velocity of the particle»; «find the particle's acceleration when its speed is at its greatest»; «find the maximum displacement of P from O»; «find the minimum value of the displacement function».",
+   "chain": [
+    "Назвать величину: скорость v, модуль скорости |v|, перемещение s",
+    "Найти вершины на промежутке — v′ = 0 или по графику",
+    "Сравнить вершины с концами промежутка",
+    "Для модуля скорости сравнивать |v|: самая отрицательная скорость может дать наибольший модуль",
+    "Если просят ускорение «когда модуль скорости наибольший», подставить найденный момент в v′"
+   ],
+   "traps": [
+    "Наибольший модуль скорости взят в вершине v, а он на конце промежутка (май 2022 TZ2: t = 3)",
+    "Ответ −2.72 вместо 2.72: модуль скорости не бывает отрицательным",
+    "Наибольшая скорость частицы с s(t) — не вершина v, а начало t = 0, где гра­фик s круче всего",
+    "Калькулятор в градусах: схема мая 2025 даёт A0 за ответ 1"
+   ],
+   "calculator": "replaces",
+   "practicum_marks": 147,
+   "blocks": [
+    "2022-MAY-TZ2-P2-Q05-C",
+    "2024-MAY-TZ2-P2-Q04-B",
+    "2025-MAY-TZ2-P2-Q05-A",
+    "2025-NOV-TZ3-P2-Q10-A",
+    "2025-NOV-TZ3-P2-Q10-B"
+   ]
+  },
+  {
+   "id": "E9.chain",
+   "practicum": "E9",
+   "name": "Связанные скорости через одну величину",
+   "rung": 4,
+   "trigger": "«Liquid is poured in at a rate of 2 cm³ s⁻¹; find the rate of change of the height when the volume is 200 cm³»; «the volume of a spherical bubble increases at 5 cm³ s⁻¹; find the rate at which the radius increases»; «the side lengths increase at 4 cm s⁻¹; find the rate at which the area is increasing».",
+   "chain": [
+    "Записать связь двух величин: V через h, A через x — до всяких чисел",
+    "Цепочка: dV/dt = dV/dh · dh/dt, и отсюда dh/dt = (dV/dt) / (dV/dh)",
+    "Найти состояние в тот момент: h из V = 200, r из V = 20",
+    "Подставить состояние и данную скорость",
+    "Проверить единицы: см/с, а не см³/см"
+   ],
+   "traps": [
+    "Ответ dh/dV: забыли умножить на dV/dt",
+    "Цепочка перевёрнута: dh/dt = dV/dt · dV/dh",
+    "Значение h = 200 подставлено вместо V = 200",
+    "Выбран не тот корень состояния: у 200 = 5πh² − πh³/3 их три, и годится только 0 < h < 10",
+    "Производная взята от формулы, куда уже подставили x = 5√3"
+   ],
+   "calculator": "helps",
+   "practicum_marks": 147,
+   "blocks": [
+    "2023-MAY-TZ1-P1-Q06",
+    "2024-MAY-TZ2-P2-Q06",
+    "2022-MAY-TZ1-P2-Q10-E",
+    "2022-NOV-COMMON-P2-Q08"
+   ]
+  },
+  {
+   "id": "E9.angle",
+   "practicum": "E9",
+   "name": "Связанные скорости через угол",
+   "rung": 5,
+   "trigger": "«The rate of change of the angle θ is −0.1 radians per second; find the speed of boat A»; «the viewing angle is changing at 12.5 radians per hour; find the speed of the airplane»; «angle θ is decreasing at π/60 radians per minute; determine how fast the length of AC is changing».",
+   "chain": [
+    "Связь из картинки: теорема косинусов, котангенс, разность арктангенсов",
+    "Продифференцировать её по t целиком, помня, что каждая буква зависит от времени",
+    "Состояние в момент из второго условия: площадь 140 даёт sin θ = 14/15, y − x = 10 даёт cot θ = 1/5",
+    "Подставить и выразить нужную скорость",
+    "«Speed» — размер, без знака; «how fast is AC changing» — со знаком"
+   ],
+   "traps": [
+    "Speed дан со знаком минус: −425 вместо 425",
+    "AC убывает, а ответ дан положительным: схема ставит A0 за 0.724",
+    "Взят cos θ = 14/15 вместо sin θ: площадь даёт синус",
+    "Второе условие (y′ = 2x′) не подставлено, и неизвестных осталось две",
+    "Производная арктангенса без множителя внутренней функции 1/6"
+   ],
+   "calculator": "helps",
+   "practicum_marks": 147,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q09-B",
+    "2025-MAY-TZ3-P2-Q09-B",
+    "2025-NOV-TZ1-P2-Q09"
+   ]
+  },
+  {
+   "id": "E9.optimum",
+   "practicum": "E9",
+   "name": "Оптимум модели и его обоснование",
+   "rung": 6,
+   "trigger": "«Find the y-coordinate of R such that area A is a maximum»; «show that in this case PX = 160√5 m» (T наименьшее); «justify that L is a minimum when α = arctan 2»; «determine whether this is possible» (шест за угол); «explain why x_m will give the maximum volume».",
+   "chain": [
+    "Модель уже дана или выведена в прошлом пункте: A(x), T(θ), L(α), V(x)",
+    "Приравнять производную нулю и решить — точно, бумага без калькулятора",
+    "Отбросить корни вне области из условия (x = −3, Q в первой четверти)",
+    "Обосновать вид: знак второй производной или значения на концах",
+    "Ответить на вопрос — часто это не x, а другая величина в этой точке"
+   ],
+   "traps": [
+    "Названо x = 3/2, а просят y-координату R",
+    "y взят со знаком плюс: это Q, а R в четвёртой четверти",
+    "Корень x = −3 не отброшен",
+    "«L минимально, потому что dL/dα = 0» — без второй производной балла R нет",
+    "Шест сравнили не с наименьшим L: проносят то, что не длиннее самого короткого AB"
+   ],
+   "calculator": "no",
+   "practicum_marks": 147,
+   "blocks": [
+    "2023-MAY-TZ2-P1-Q10-D",
+    "2025-NOV-TZ3-P1-Q08-C",
+    "2023-MAY-TZ1-P1-Q11-D",
+    "2023-MAY-TZ1-P1-Q11-E",
+    "2025-MAY-TZ3-P3-Q02-E"
+   ]
+  },
+  {
+   "id": "E9.distance",
+   "practicum": "E9",
+   "name": "Наименьшее расстояние",
+   "rung": 7,
+   "trigger": "«Find the x-coordinate of the point on the graph of f which is closest to the origin»; «let D(t) represent the distance between airplane A and airplane B; find the minimum value of D(t)»; «find the smallest possible value of |AB × AC|²».",
+   "chain": [
+    "Записать расстояние как функцию одной буквы — у двух самолётов одно и то же t",
+    "Минимизировать квадрат расстояния: корень там же, а дифференцировать проще",
+    "Производная квадрата — ноль, решить",
+    "Вернуть корень, если просят само расстояние"
+   ],
+   "traps": [
+    "Ответ D² вместо D: 1.03 вместо 1.01",
+    "У самолётов разные параметры s и t: это расстояние между прямыми, а не между самолётами, и схема ставит M0",
+    "В ответ попал x = 0, который вне области x > 0",
+    "Минимум взят у самой f, а не у расстояния до начала координат"
+   ],
+   "calculator": "mixed",
+   "practicum_marks": 147,
+   "blocks": [
+    "2025-MAY-TZ2-P1-Q06-B",
+    "2022-MAY-TZ2-P2-Q11-E",
+    "2023-NOV-TZ2-P2-Q08-B"
+   ]
+  },
+  {
+   "id": "E9.fastest",
+   "practicum": "E9",
+   "name": "Наибольшая скорость изменения",
+   "rung": 8,
+   "trigger": "«Find the value of t when the rate of change of the population is at its maximum»; «find where the cross-sectional radius of the bowl is decreasing most rapidly»; «show that the population will increase at its maximum rate when P = N/2»; «determine the maximum value of dP/dt».",
+   "chain": [
+    "Величина, которую делают наибольшей, — сама скорость: dP/dt или f′",
+    "Её вершина — ноль второй производной, то есть перегиб исходной",
+    "На калькуляторе: вершина графика f′ или ноль графика f″",
+    "«Decreasing most rapidly» — наименьшее значение f′, самое отрицательное",
+    "Обосновать: знак d²P/dt² по обе стороны или диаграмма знаков"
+   ],
+   "traps": [
+    "Искали вершину самой P, а не её скорости",
+    "«Decreasing most rapidly» прочитали как наименьшее f",
+    "P = 0 и P = N тоже корни d²P/dt² = 0, но там скорость — ноль",
+    "Показали только d²P/dt² = 0 при P = N/2 — без смены знака R нет"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 147,
+   "blocks": [
+    "2021-MAY-TZ1-P2-Q12-E",
+    "2021-MAY-TZ2-P2-Q11-D",
+    "2022-MAY-TZ2-P2-Q12-C",
+    "2022-MAY-TZ2-P2-Q12-D"
+   ]
+  },
+  {
+   "id": "E9.whole",
+   "practicum": "E9",
+   "name": "Наилучшее целое",
+   "rung": 9,
+   "trigger": "«Write down the value of P(12) and the value of n at which it occurs»; «determine the value of P(20) and the value of n»; «find the largest possible product of positive numbers whose sum is 100». Буква считает слагаемые и бывает только целой.",
+   "chain": [
+    "Найти вершину непрерывной функции: n = S/e",
+    "Сравнить значения в целых по обе стороны от вершины",
+    "Выбрать большее и записать и значение, и n",
+    "Вершину не округлять: (20/7.36)^7.36 — не ответ, и n = 7.36 не бывает"
+   ],
+   "traps": [
+    "Ответ по вершине: n = 7.36, P(20) = 1570 — схема даёт M1A0A1",
+    "Округлили вершину 36.8 до 37 без сравнения с 36 — балл R теряется",
+    "Непрерывный максимум 100/e даёт 9.48 × 10¹⁵, а целый — 9.47 × 10¹⁵",
+    "Назвали n, но не значение, или наоборот"
+   ],
+   "calculator": "speeds_up",
+   "practicum_marks": 147,
+   "blocks": [
+    "2023-MAY-TZ1-P3-Q02-F",
+    "2023-MAY-TZ1-P3-Q02-G",
+    "2023-MAY-TZ1-P3-Q02-J"
    ]
   }
  ],
@@ -43709,6 +44524,582 @@
    ],
    "answer": "count",
    "answer_digest": "6c35493a2b93",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:1",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.rate",
+   "prompt": "Find the rate of change of the temperature $T(t)=15+40e^{-0.2t}$ at $t=3$.",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "rate",
+   "answer_digest": "c549779d79e5",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:2",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.rest",
+   "prompt": "$v(t)=\\cos t-0.2t$; find the first time the particle turns back.",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "rest",
+   "answer_digest": "2e09d5210db8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:3",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.peak",
+   "prompt": "$v(t)=4-t^2$ on $0\\le t\\le3$; find the maximum speed.",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "peak",
+   "answer_digest": "9ee9e606474e",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:4",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.chain",
+   "prompt": "Sand forms a cone with $V=\\frac{\\pi}{3}h^3$, poured at $2$ m³ min⁻¹; find $\\frac{dh}{dt}$ when $h=1.5$.",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "chain",
+   "answer_digest": "9414886b1ebf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:5",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.angle",
+   "prompt": "A kite at height $30$ m moves horizontally; the angle of the string changes at $0.02$ rad s⁻¹. Find the speed of the kite.",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "angle",
+   "answer_digest": "49387897bee2",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:6",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.optimum",
+   "prompt": "A box with a square base and volume $32$ has the least surface area. Find its height.",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "optimum",
+   "answer_digest": "60d64ceea6ed",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:7",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.distance",
+   "prompt": "Find the point of $y=x^2$ nearest to $(0,2)$.",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "distance",
+   "answer_digest": "63e6ce93e1bc",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:8",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.fastest",
+   "prompt": "$N(t)=\\dfrac{500}{1+4e^{-t}}$; when is the number growing fastest?",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "fastest",
+   "answer_digest": "ec0002c89581",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:9",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.whole",
+   "prompt": "How many identical parcels $n$ make $n(20-n)^2$ largest?",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "whole",
+   "answer_digest": "5d5766cf2d78",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:10",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.rest",
+   "prompt": "$s(t)=t^3-6t^2+9t$; for which $t$ is the displacement decreasing?",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "rest",
+   "answer_digest": "2e09d5210db8",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:11",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.chain",
+   "prompt": "A spherical balloon loses air at $3$ cm³ s⁻¹; how fast is the radius shrinking when $r=5$?",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "chain",
+   "answer_digest": "9414886b1ebf",
+   "budget_ms": 8000
+  },
+  {
+   "key": "recog:E9:12",
+   "kind": "recognition",
+   "practicum": "E9",
+   "skill": "E9.peak",
+   "prompt": "$s(t)=e^{-t}\\sin 2t$, $t\\ge0$; find the maximum velocity.",
+   "options": [
+    {
+     "code": "rate",
+     "name": "скорость в момент"
+    },
+    {
+     "code": "rest",
+     "name": "покой и разворот"
+    },
+    {
+     "code": "peak",
+     "name": "наибольшее в движении"
+    },
+    {
+     "code": "chain",
+     "name": "цепочка через одну величину"
+    },
+    {
+     "code": "angle",
+     "name": "цепочка через угол"
+    },
+    {
+     "code": "optimum",
+     "name": "оптимум модели"
+    },
+    {
+     "code": "distance",
+     "name": "наименьшее расстояние"
+    },
+    {
+     "code": "fastest",
+     "name": "быстрее всего"
+    },
+    {
+     "code": "whole",
+     "name": "наилучшее целое"
+    }
+   ],
+   "answer": "peak",
+   "answer_digest": "9ee9e606474e",
    "budget_ms": 8000
   }
  ],

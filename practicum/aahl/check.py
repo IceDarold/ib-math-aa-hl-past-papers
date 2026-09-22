@@ -362,6 +362,9 @@ def evaluate(spec, raw):
         if kind == 'data':                      # данные и регрессия, D7
             return _data_kind(spec, raw)
 
+        if kind == 'rates':                     # скорости и наилучшее, E9
+            return _rates_kind(spec, raw)
+
         if kind in ('tangent', 'normal', 'slope', 'where', 'second',
                     'constant'):
             var, dep = sp.Symbol(spec['var']), sp.Symbol(spec['dep'])
@@ -977,6 +980,46 @@ def _data_kind(spec, raw):
     scale, shift = sp.sympify(spec['scale']), sp.sympify(spec['shift'])
     return _capture(kit.verify_effect, 'Ответ', raw.strip(), pairs,
                     lambda value: scale * value + shift)
+
+
+def _rates_kind(spec, raw):
+    """Скорости и наилучшее, E9: скорость меряют сдвигом, наилучшее — просмотром."""
+    what = spec['what']
+    t = sp.Symbol('t')
+    if what == 'rate':
+        return _capture(kit.verify_rate, 'Ответ', parse_one(raw), sp.sympify(spec['f']),
+                        sp.sympify(spec['at']))
+    if what in ('when', 'extreme'):
+        span = tuple(sp.sympify(v) for v in spec['span'])
+        path = kit.particle(v=sp.sympify(spec['v']), span=span)
+        if what == 'when':
+            return _capture(kit.verify_when, 'Ответ', parse_one(raw), path, spec['event'],
+                            spec.get('which', 1))
+        return _capture(kit.verify_extreme, 'Ответ', parse_one(raw), path, spec['quantity'],
+                        spec.get('sense', 'max'))
+    if what == 'related':
+        rates = {kit.dt(sp.Symbol(name)): sp.sympify(value)
+                 for name, value in spec['rates'].items()}
+        where = {sp.Symbol(name): tuple(sp.sympify(v) for v in ends)
+                 for name, ends in (spec.get('where') or {}).items()}
+        return _capture(kit.verify_related, 'Ответ', parse_one(raw),
+                        [sp.sympify(e) for e in spec['relations']],
+                        [sp.sympify(e) for e in spec['at']], rates,
+                        kit.dt(sp.Symbol(spec['want'])), where=where or None,
+                        size=spec.get('size', False))
+    var = sp.Symbol(spec.get('var', 'x'))
+    lo, hi, open_lo, open_hi = spec['domain']
+    lo, hi = sp.sympify(lo), sp.sympify(hi)
+    domain = sp.Interval(lo, hi, open_lo, open_hi)
+    body = sp.sympify(spec['f'])
+    if spec.get('rate'):
+        body = kit.rate_of(body, var)
+    report = spec.get('report', 'value')
+    if report not in ('value', 'place'):
+        report = sp.sympify(report)
+    return _capture(kit.verify_best, 'Ответ', parse_one(raw), body, domain,
+                    spec.get('sense', 'max'), var=var, report=report,
+                    integer=spec.get('integer', False), exact=spec.get('exact', False))
 
 
 def _shape_kind(spec, raw):

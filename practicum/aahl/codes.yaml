@@ -303,6 +303,17 @@ E8:
   count:     {skill: count,     name: сколько точек и пересечений}
   none:      {skill: none,      name: точек нет}
 
+E9:
+  rate:     {skill: rate,     name: скорость в момент}
+  rest:     {skill: rest,     name: покой и разворот}
+  peak:     {skill: peak,     name: наибольшее в движении}
+  chain:    {skill: chain,    name: цепочка через одну величину}
+  angle:    {skill: angle,    name: цепочка через угол}
+  optimum:  {skill: optimum,  name: оптимум модели}
+  distance: {skill: distance, name: наименьшее расстояние}
+  fastest:  {skill: fastest,  name: быстрее всего}
+  whole:    {skill: whole,    name: наилучшее целое}
+
 E2:
   def:      {skill: from_derivatives,   name: по определению}
   sub:      {skill: substitution,       name: подстановка в известный ряд}

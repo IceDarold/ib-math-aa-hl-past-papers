@@ -3348,6 +3348,127 @@ for gen_name in sorted(name for name in GENERATORS if name.startswith('D7.')):
     t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
     print(f'  {gen_name:32} {SEEDS} задач сверено суммами')
 
+# --- E9: скорости и наилучшее, выведенные производной ---------------------
+# Проверки ноутбука и тренажёра не дифференцируют: скорость меряют сдвигом
+# времени, связанную скорость — подталкиванием, наилучшее — просмотром. Здесь
+# наоборот и без kit: sympy.diff, решение f′ = 0 и сравнение с концами,
+# неявное дифференцирование связи по t, перебор целых.
+
+def _e9_expected(item):
+    spec = item['check']
+    what = spec['what']
+    t_ = sp.Symbol('t')
+    if what == 'rate':
+        return sp.diff(sp.sympify(spec['f']), t_).subs(t_, sp.sympify(spec['at']))
+    if what == 'when':
+        v = sp.sympify(spec['v'])
+        lo, hi = (sp.sympify(e) for e in spec['span'])
+        roots = sorted(r for r in sp.solve(v, t_) if lo < r < hi)
+        return roots[spec.get('which', 1) - 1]
+    if what == 'extreme':
+        v = sp.sympify(spec['v'])
+        lo, hi = (sp.sympify(e) for e in spec['span'])
+        spots = [r for r in sp.solve(sp.diff(v, t_), t_) if lo <= r <= hi] + [lo, hi]
+        return max(abs(v.subs(t_, p)) for p in spots)
+    if what == 'related':
+        relation = sp.sympify(spec['relations'][0])
+        known, = spec['rates']
+        rate = sp.sympify(spec['rates'][known])
+        want = sp.Symbol(spec['want'])
+        pinned = sp.sympify(spec['at'][0])
+        lead = sp.Symbol(known)
+        # связь как функция одной переменной: want через known или known через want
+        other = want if relation.lhs == lead else lead
+        body = relation.rhs
+        slope = sp.diff(body, other)
+        if relation.lhs == lead:            # lead = g(want): d(want)/dt = rate / g′
+            return sp.simplify((rate / slope).subs(pinned.lhs, pinned.rhs))
+        return sp.simplify((slope * rate).subs(pinned.lhs, pinned.rhs))
+    var = sp.Symbol(spec.get('var', 'x'))
+    body = sp.sympify(spec['f'])
+    lo, hi = sp.sympify(spec['domain'][0]), sp.sympify(spec['domain'][1])
+    if spec.get('integer'):
+        values = {n: body.subs(var, n) for n in range(int(lo), int(hi) + 1)}
+        return max(values, key=values.get)
+    if spec.get('rate'):
+        body = sp.diff(body, var)
+    spots = [r for r in sp.solve(sp.diff(body, var), var) if r.is_real and lo < r < hi]
+    pick = max if spec.get('sense', 'max') == 'max' else min
+    place = pick(spots, key=lambda p: body.subs(var, p))
+    report = spec.get('report', 'value')
+    if report == 'place':
+        return place
+    if report == 'value':
+        return body.subs(var, place)
+    return sp.sympify(report).subs(var, place)
+
+
+def _e9_spoil(item):
+    """Тот промах, который делают: сама величина вместо скорости, другой
+    разворот, вершина вместо конца, забытая данная скорость, потерянный знак,
+    x вместо спрошенной величины, значение вместо места, вершина вместо
+    целого."""
+    spec, answer = item['check'], sp.sympify(item['answer'])
+    what = spec['what']
+    t_ = sp.Symbol('t')
+    if what == 'rate':
+        return sp.sympify(spec['f']).subs(t_, sp.sympify(spec['at']))
+    if what == 'when':
+        v = sp.sympify(spec['v'])
+        hi = sp.sympify(spec['span'][1])
+        roots = sorted(r for r in sp.solve(v, t_) if 0 < r < hi)
+        return roots[1] if spec.get('which', 1) == 1 else roots[0]
+    if what == 'extreme':
+        return sp.sympify(spec['v']).subs(t_, 0)
+    if what == 'related':
+        known, = spec['rates']
+        rate = sp.sympify(spec['rates'][known])
+        return -answer if rate < 0 else answer / rate
+    if spec.get('integer'):
+        top = sp.sympify(spec['f']).args
+        return sp.Rational(int(sp.sympify(spec['domain'][1])) + 1, 3)
+    var = sp.Symbol(spec.get('var', 'x'))
+    body = sp.sympify(spec['f'])
+    if spec.get('rate'):
+        body = sp.diff(body, var)
+    report = spec.get('report', 'value')
+    if report == 'place':
+        return sp.simplify(body.subs(var, answer))
+    lo, hi = sp.sympify(spec['domain'][0]), sp.sympify(spec['domain'][1])
+    spots = [r for r in sp.solve(sp.diff(body, var), var) if r.is_real and lo < r < hi]
+    return spots[0]
+
+
+_E9_WORDS = {'rate': 'сама величина', 'when': 'раз', 'extreme': 'без знака',
+             'related': ('умножьте', 'знак'), 'best': ('лучшей точке', 'самой величины',
+                                                       'целым')}
+
+
+section('E9: эталон пересчитан производной без kit, проверка принимает и называет промах')
+for gen_name in sorted(name for name in GENERATORS if name.startswith('E9.')):
+    agreed = accepted = slipped = named = 0
+    for seed in range(SEEDS):
+        item = dict(GENERATORS[gen_name](random.Random(seed)), id=gen_name)
+        spec = item['check']
+        want = _e9_expected(item)
+        agreed += abs(float(sp.N(want - sp.sympify(item['answer'])))) < 1e-9
+        ok, _ = evaluate(spec, show_answer(item['answer']))
+        accepted += bool(ok)
+        wrong_text = show_answer(_e9_spoil(item))
+        wrong, message = evaluate(spec, wrong_text)
+        words = _E9_WORDS[spec['what']]
+        words = words if isinstance(words, tuple) else (words,)
+        slipped += not wrong
+        hit = any(word in message for word in words)
+        named += hit
+        if not hit or wrong:
+            print(f'    {gen_name} {seed}: {wrong_text} → {message}')
+    t(f'{gen_name}: независимый вывод сошёлся на всех {SEEDS} зёрнах', agreed == SEEDS)
+    t(f'{gen_name}: проверка приняла эталон на всех {SEEDS} зёрнах', accepted == SEEDS)
+    t(f'{gen_name}: типовой промах отвергнут на всех {SEEDS} зёрнах', slipped == SEEDS)
+    t(f'{gen_name}: и назван по имени на всех {SEEDS} зёрнах', named == SEEDS)
+    print(f'  {gen_name:32} {SEEDS} задач сверено производной')
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad[:6])}  '
       f'({len(res) - len(bad)}/{len(res)})')

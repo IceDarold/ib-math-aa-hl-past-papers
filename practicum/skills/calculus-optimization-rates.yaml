@@ -1,0 +1,489 @@
+version: 0.1
+practicum: E9
+title: Оптимизация и связанные скорости
+source_topic: calculus.optimization
+also_covers: [calculus.rates_of_change, calculus.differentiation]
+
+corpus:
+  blocks: 42
+  marks: 147
+  effective_blocks: 42
+  effective_marks: 147
+  sessions: May 2021 — November 2025
+  papers: {1: 26, 2: 112, 3: 9}
+  gdc_marks: 121
+  note: >
+    Три части: calculus.optimization целиком (18 блоков, 60 баллов),
+    calculus.rates_of_change целиком (14 блоков, 56 баллов) и десять блоков
+    calculus.differentiation на 31 балл, отданных сюда при разборе E3:
+    v = ds/dt, a = dv/dt, скорость роста растения. Метод там —
+    дифференцирование, а вопрос — про скорость, и ответ на него проверяется
+    так же, как ответ на соседний пункт про момент покоя. Всего 42 блока и
+    147 баллов; check_map.py показывает 41, потому что десять блоков он
+    считает долей 0.089 от 98.
+
+    Разметка разрезала тему не там, где она режется по смыслу. Движение
+    частицы по прямой разнесено по трём темам — «при каком t частица стоит»
+    в rates_of_change, «найдите ускорение» в differentiation, «наибольший
+    модуль скорости» в optimization, — хотя это пункты (a), (b), (c) одного
+    вопроса на шесть баллов. Такие вопросы стоят почти в каждой сессии
+    (одиннадцать из семнадцати), и это самая плотная часть темы: 50 баллов
+    из 147. Связанные скорости — 43 балла в семи вопросах, оптимизация по
+    модели — 54 балла.
+
+    Дубль ноября 2023 года здесь есть, но не внутри темы, а поперёк серии.
+    Paper 2 ноября 2023 TZ1 и TZ2 — одна бумага, и два её пункта лежат
+    здесь копией TZ2, а копией TZ1 — в других практикумах: Q4(a), «когда
+    частица впервые приходит в покой» (2 балла), в TZ1 размечен
+    calculus.stationary_points и стоит в E8; Q8(b), наименьшее |AB × AC|²
+    (3 балла), в TZ1 размечен geometry.vectors_3d и стоит в C7. Внутри E9
+    дубля нет, и рабочих баллов 147. Оба пункта в архиве E9 остаются, с
+    пометкой, где лежит близнец.
+
+    121 балл из 147 формально с калькулятором, и на этот раз число почти
+    честное. Движение по прямой — 50 баллов — калькулятор делает почти
+    целиком: корень v = 0, производная в точке, вершина графика, и схема
+    прямо пишет «using GDC». В связанных скоростях кнопка находит
+    состояние (h по V = 200, x по θ = 0.178) — баллов на двенадцать, —
+    а цепочку правил пишут руками. В оптимизации с калькулятором — минимум
+    D(t) и |AB × AC|², вершина графика dP/dt и производной радиуса, таблица
+    (20/n)ⁿ по целым n. Итого настоящей работы для GDC баллов на
+    семьдесят пять из 121: 62%, самая честная доля серии после D2.
+
+directions:
+  - >
+    Скорость — это производная по времени, и вопрос всегда называет, чья.
+    Ускорение — скорость изменения скорости, поэтому «найдите ускорение в
+    момент, когда частица меняет направление» — два шага: момент по v,
+    значение по v′.
+  - >
+    «At rest» и «changes direction» — разные условия. Стоит частица там, где
+    v = 0; направление меняет там, где v меняет знак. Касание нуля без смены
+    знака — остановка без разворота.
+  - >
+    Наибольшее на отрезке ищется среди вершин и концов. Модуль скорости —
+    это |v|: самая отрицательная скорость тоже в счёт, и наибольший модуль
+    часто стоит на конце промежутка, где вершины нет.
+  - >
+    Связанные скорости: сначала связь между величинами, потом производная
+    по времени, и только потом числа момента. Подставить h = 4 до
+    дифференцирования — значит продифференцировать константу.
+  - >
+    Оптимизация: модель — функция одной буквы, её область из условия
+    отбрасывает лишние корни, а ответ часто не сама буква, а другая
+    величина в той точке — y точки R, PX, радиус.
+  - >
+    Если буква считает предметы, лучшее значение — целое, и его ищут
+    сравнением соседей вершины, а не округлением вершины.
+
+skills:
+  - id: rate
+    name: Производная как скорость в момент
+    rung: 1
+    trigger: >
+      «Find the rate of change of the height of the water when t = 13»;
+      «find the acceleration of the particle when t = 7»; «find the time when
+      Fiona's acceleration is 4 m s⁻²»; «interpret the meaning of dP/dt»;
+      «find the total amount of time when the rate of growth of Plant B was
+      greater than the rate of growth of Plant A».
+    chain:
+      - "Назвать, чья это скорость: скорость изменения H — это H′(t), ускорение
+        — это v′(t)"
+      - "В момент: производная в точке, на калькуляторной бумаге — кнопкой
+        d/dx прямо по формуле"
+      - "Обратный вопрос «когда ускорение равно 4»: решить v′(t) = 4 на
+        промежутке из условия"
+      - "Сравнение скоростей роста: неравенство между производными, а не между
+        самими величинами; сложить длины всех кусков"
+      - "Интерпретация dP/dt: скорость изменения численности во времени, со
+        словом rate"
+    traps:
+      - "Вместо скорости изменения дано само значение H(13)"
+      - "Калькулятор в градусах: схема даёт A0 за ответ, посчитанный так"
+      - "Сравнили высоты растений, а вопрос про скорости роста"
+      - "Сложили не все куски: у cos(2t + 6) < −½ на [0, 9] их три"
+      - "«Growth per year» вместо «rate of growth»: схема такую фразу не
+        принимает"
+    calculator:
+      mode: replaces
+      note: >
+        Все 19 баллов на калькуляторных бумагах, и кнопка делает всю работу:
+        производная в точке и корень v′(t) = 4 берутся с экрана. Руками
+        остаётся одно — понять, от чего брать производную.
+    prereq: []
+    raw_tags: [interpret_derivative, derivative, evaluate_derivative, substitute_value,
+               acceleration_as_velocity_derivative, evaluate_derivative_at_point,
+               gdc_derivative, recognise_acceleration_as_derivative, differentiate,
+               solve_equation_gdc, set_derivative_to_zero, solve_with_gdc,
+               identify_first_root, differentiate_function, set_up_inequality,
+               solve_trigonometric_inequality, find_interval_lengths, sum_intervals,
+               differentiation, equation_solving, substitution, gdc_numerical,
+               evaluate_function]
+    blocks: ['2022-MAY-TZ2-P2-Q12-A', '2024-MAY-TZ1-P2-Q10-C', '2021-MAY-TZ1-P2-Q04-C',
+             '2022-MAY-TZ2-P2-Q05-B', '2025-MAY-TZ3-P2-Q10-B', '2023-MAY-TZ2-P2-Q05-A',
+             '2022-MAY-TZ2-P2-Q10-D', '2024-MAY-TZ2-P2-Q04-A']
+
+  - id: rest
+    name: Покой и смена направления
+    rung: 2
+    trigger: >
+      «Find the smallest value of t for which the particle is at rest»; «find
+      the smallest value of t when the particle changes direction»; «find the
+      range of values of t for which the displacement is increasing»; «find
+      the acceleration when P changes direction for the second time».
+    chain:
+      - "Покой — v = 0; смена направления — v меняет знак"
+      - "Если дано перемещение s, сначала v = ds/dt"
+      - "Решить на промежутке из условия и выбрать нужный по счёту корень"
+      - "Перемещение растёт там, где v > 0: между соседними корнями"
+      - "Если спрашивают ускорение в этот момент — подставить найденное t в v′"
+    traps:
+      - "Названо несколько корней, когда просят один: «do not award A1 if
+        additional values are given»"
+      - "Взят корень вне 0 ≤ t ≤ 6 (−0.205, 6.08 у мая 2022)"
+      - "Первый раз вместо второго"
+      - "Перемещение растёт там, где растёт v, — перепутаны v > 0 и a > 0"
+      - "Остановку без смены знака приняли за разворот"
+    calculator:
+      mode: replaces
+      note: >
+        Все 17 баллов с калькулятором, и корень v = 0 берётся только им:
+        t sin t = 3 или e^{sin t} + 4 sin t = 0 руками не решить.
+    prereq: [rate]
+    raw_tags: [set_v_equal_zero, gdc_numerical_solve, select_smallest_root,
+               set_velocity_zero, solve_equation_gdc, smallest_positive_t,
+               identify_positive_velocity_interval, between_zeros, state_interval,
+               identify_direction_change_condition, differentiate_composite_function,
+               evaluate_at_point, interpret_kinematics, find_roots, second_derivative,
+               gdc_solve, trigonometric_equation, differentiation, gdc_solving,
+               solve_equation, differentiate, gdc_numerical, evaluate_function,
+               equation_solving]
+    blocks: ['2021-MAY-TZ1-P2-Q04-A', '2023-NOV-TZ2-P2-Q04-A', '2024-MAY-TZ1-P2-Q04-A',
+             '2024-MAY-TZ1-P2-Q04-B', '2022-MAY-TZ1-P2-Q04-B', '2024-MAY-TZ2-P2-Q04-C',
+             '2025-MAY-TZ2-P2-Q05-C']
+
+  - id: peak
+    name: Наибольшее значение в движении
+    rung: 3
+    trigger: >
+      «Find the maximum speed of P»; «find the maximum velocity of the
+      particle»; «find the particle's acceleration when its speed is at its
+      greatest»; «find the maximum displacement of P from O»; «find the
+      minimum value of the displacement function».
+    chain:
+      - "Назвать величину: скорость v, модуль скорости |v|, перемещение s"
+      - "Найти вершины на промежутке — v′ = 0 или по графику"
+      - "Сравнить вершины с концами промежутка"
+      - "Для модуля скорости сравнивать |v|: самая отрицательная скорость
+        может дать наибольший модуль"
+      - "Если просят ускорение «когда модуль скорости наибольший», подставить
+        найденный момент в v′"
+    traps:
+      - "Наибольший модуль скорости взят в вершине v, а он на конце
+        промежутка (май 2022 TZ2: t = 3)"
+      - "Ответ −2.72 вместо 2.72: модуль скорости не бывает отрицательным"
+      - "Наибольшая скорость частицы с s(t) — не вершина v, а начало t = 0,
+        где гра­фик s круче всего"
+      - "Калькулятор в градусах: схема мая 2025 даёт A0 за ответ 1"
+    calculator:
+      mode: replaces
+      note: >
+        Все 14 баллов с калькулятором. Вершина и её высота читаются с графика;
+        руками — только решение, что сравнивать: |v| и концы.
+    prereq: [rest]
+    raw_tags: [identify_max_speed, evaluate_acceleration, find_maximum,
+               gdc_graphical_analysis, trigonometric_function, find_critical_point,
+               find_minimum, evaluate_derivative_at_point, differentiate, solve_equation,
+               gdc_numerical, evaluate_function]
+    blocks: ['2022-MAY-TZ2-P2-Q05-C', '2024-MAY-TZ2-P2-Q04-B', '2025-MAY-TZ2-P2-Q05-A',
+             '2025-NOV-TZ3-P2-Q10-A', '2025-NOV-TZ3-P2-Q10-B']
+
+  - id: chain
+    name: Связанные скорости через одну величину
+    rung: 4
+    trigger: >
+      «Liquid is poured in at a rate of 2 cm³ s⁻¹; find the rate of change of
+      the height when the volume is 200 cm³»; «the volume of a spherical
+      bubble increases at 5 cm³ s⁻¹; find the rate at which the radius
+      increases»; «the side lengths increase at 4 cm s⁻¹; find the rate at
+      which the area is increasing».
+    chain:
+      - "Записать связь двух величин: V через h, A через x — до всяких чисел"
+      - "Цепочка: dV/dt = dV/dh · dh/dt, и отсюда dh/dt = (dV/dt) / (dV/dh)"
+      - "Найти состояние в тот момент: h из V = 200, r из V = 20"
+      - "Подставить состояние и данную скорость"
+      - "Проверить единицы: см/с, а не см³/см"
+    traps:
+      - "Ответ dh/dV: забыли умножить на dV/dt"
+      - "Цепочка перевёрнута: dh/dt = dV/dt · dV/dh"
+      - "Значение h = 200 подставлено вместо V = 200"
+      - "Выбран не тот корень состояния: у 200 = 5πh² − πh³/3 их три, и
+        годится только 0 < h < 10"
+      - "Производная взята от формулы, куда уже подставили x = 5√3"
+    calculator:
+      mode: helps
+      note: >
+        18 из 23 баллов с калькулятором, и нужен он в одном месте — найти h по
+        V = 200 или r по V = 20: это пара баллов на вопрос. Треугольник мая
+        2023 целиком без калькулятора, и ответ там точный: 30.
+    prereq: [rate]
+    raw_tags: [related_rates, chain_rule, implicit_differentiation, derivative_computation,
+               equation_solving, substitution, area_of_equilateral_triangle,
+               differentiation, solve_for_radius, volume_of_sphere, differentiate_implicitly,
+               substitute_values, solve_equation]
+    blocks: ['2023-MAY-TZ1-P1-Q06', '2024-MAY-TZ2-P2-Q06', '2022-MAY-TZ1-P2-Q10-E',
+             '2022-NOV-COMMON-P2-Q08']
+
+  - id: angle
+    name: Связанные скорости через угол
+    rung: 5
+    trigger: >
+      «The rate of change of the angle θ is −0.1 radians per second; find the
+      speed of boat A»; «the viewing angle is changing at 12.5 radians per
+      hour; find the speed of the airplane»; «angle θ is decreasing at π/60
+      radians per minute; determine how fast the length of AC is changing».
+    chain:
+      - "Связь из картинки: теорема косинусов, котангенс, разность арктангенсов"
+      - "Продифференцировать её по t целиком, помня, что каждая буква зависит
+        от времени"
+      - "Состояние в момент из второго условия: площадь 140 даёт sin θ = 14/15,
+        y − x = 10 даёт cot θ = 1/5"
+      - "Подставить и выразить нужную скорость"
+      - "«Speed» — размер, без знака; «how fast is AC changing» — со знаком"
+    traps:
+      - "Speed дан со знаком минус: −425 вместо 425"
+      - "AC убывает, а ответ дан положительным: схема ставит A0 за 0.724"
+      - "Взят cos θ = 14/15 вместо sin θ: площадь даёт синус"
+      - "Второе условие (y′ = 2x′) не подставлено, и неизвестных осталось две"
+      - "Производная арктангенса без множителя внутренней функции 1/6"
+    calculator:
+      mode: helps
+      note: >
+        Все 20 баллов с калькулятором, и нужен он, чтобы решить состояние: x
+        из разности арктангенсов, θ из площади. Схема ноября 2025 допускает
+        и dx/dθ с экрана — это ещё два балла кнопке.
+    prereq: [chain]
+    raw_tags: [implicit_differentiation, related_rates, trigonometric_identity,
+               substitution, solve_linear_equation, chain_rule, arctan_derivative,
+               equation_solving, cosine_rule, area_of_triangle]
+    blocks: ['2021-MAY-TZ1-P2-Q09-B', '2025-MAY-TZ3-P2-Q09-B', '2025-NOV-TZ1-P2-Q09']
+
+  - id: optimum
+    name: Оптимум модели и его обоснование
+    rung: 6
+    trigger: >
+      «Find the y-coordinate of R such that area A is a maximum»; «show that
+      in this case PX = 160√5 m» (T наименьшее); «justify that L is a minimum
+      when α = arctan 2»; «determine whether this is possible» (шест за угол);
+      «explain why x_m will give the maximum volume».
+    chain:
+      - "Модель уже дана или выведена в прошлом пункте: A(x), T(θ), L(α), V(x)"
+      - "Приравнять производную нулю и решить — точно, бумага без калькулятора"
+      - "Отбросить корни вне области из условия (x = −3, Q в первой четверти)"
+      - "Обосновать вид: знак второй производной или значения на концах"
+      - "Ответить на вопрос — часто это не x, а другая величина в этой точке"
+    traps:
+      - "Названо x = 3/2, а просят y-координату R"
+      - "y взят со знаком плюс: это Q, а R в четвёртой четверти"
+      - "Корень x = −3 не отброшен"
+      - "«L минимально, потому что dL/dα = 0» — без второй производной
+        балла R нет"
+      - "Шест сравнили не с наименьшим L: проносят то, что не длиннее
+        самого короткого AB"
+    calculator:
+      mode: 'no'
+      note: >
+        15 из 16 баллов на бумагах без калькулятора: ответы −3√3/2,
+        15√5/4, sin θ = 2/3. Один балл Paper 3 — фраза про концы отрезка.
+    prereq: [rate]
+    raw_tags: [setting_derivative_to_zero, solving_quadratic, coordinate_substitution,
+               domain_validation, second_derivative_test, minimum_verification,
+               trigonometric_evaluation, algebraic_simplification, numerical_comparison,
+               contextual_interpretation, set_derivative_zero,
+               solve_trigonometric_equation, find_tan, find_sec, distance_calculation,
+               endpoint_analysis, global_maximum]
+    blocks: ['2023-MAY-TZ2-P1-Q10-D', '2025-NOV-TZ3-P1-Q08-C', '2023-MAY-TZ1-P1-Q11-D',
+             '2023-MAY-TZ1-P1-Q11-E', '2025-MAY-TZ3-P3-Q02-E']
+
+  - id: distance
+    name: Наименьшее расстояние
+    rung: 7
+    trigger: >
+      «Find the x-coordinate of the point on the graph of f which is closest to
+      the origin»; «let D(t) represent the distance between airplane A and
+      airplane B; find the minimum value of D(t)»; «find the smallest possible
+      value of |AB × AC|²».
+    chain:
+      - "Записать расстояние как функцию одной буквы — у двух самолётов одно
+        и то же t"
+      - "Минимизировать квадрат расстояния: корень там же, а дифференцировать
+        проще"
+      - "Производная квадрата — ноль, решить"
+      - "Вернуть корень, если просят само расстояние"
+    traps:
+      - "Ответ D² вместо D: 1.03 вместо 1.01"
+      - "У самолётов разные параметры s и t: это расстояние между прямыми, а не
+        между самолётами, и схема ставит M0"
+      - "В ответ попал x = 0, который вне области x > 0"
+      - "Минимум взят у самой f, а не у расстояния до начала координат"
+    calculator:
+      mode: mixed
+      note: >
+        8 из 14 баллов с калькулятором — минимум D(t) и |AB × AC|² берутся с
+        графика. Точка мая 2025 — без калькулятора, и ответ точный: e^{−1/2}.
+    prereq: [optimum]
+    raw_tags: [distance_minimization, chain_rule, product_rule, derivative_set_to_zero,
+               logarithmic_differentiation, critical_point, vector_difference,
+               distance_formula, expand_quadratic, differentiate, minimize_distance,
+               magnitude_squared, polynomial_expansion, derivative, minimization]
+    blocks: ['2025-MAY-TZ2-P1-Q06-B', '2022-MAY-TZ2-P2-Q11-E', '2023-NOV-TZ2-P2-Q08-B']
+
+  - id: fastest
+    name: Наибольшая скорость изменения
+    rung: 8
+    trigger: >
+      «Find the value of t when the rate of change of the population is at its
+      maximum»; «find where the cross-sectional radius of the bowl is
+      decreasing most rapidly»; «show that the population will increase at its
+      maximum rate when P = N/2»; «determine the maximum value of dP/dt».
+    chain:
+      - "Величина, которую делают наибольшей, — сама скорость: dP/dt или f′"
+      - "Её вершина — ноль второй производной, то есть перегиб исходной"
+      - "На калькуляторе: вершина графика f′ или ноль графика f″"
+      - "«Decreasing most rapidly» — наименьшее значение f′, самое
+        отрицательное"
+      - "Обосновать: знак d²P/dt² по обе стороны или диаграмма знаков"
+    traps:
+      - "Искали вершину самой P, а не её скорости"
+      - "«Decreasing most rapidly» прочитали как наименьшее f"
+      - "P = 0 и P = N тоже корни d²P/dt² = 0, но там скорость — ноль"
+      - "Показали только d²P/dt² = 0 при P = N/2 — без смены знака R нет"
+    calculator:
+      mode: speeds_up
+      note: >
+        Все 16 баллов на калькуляторных бумагах. Кнопка отдаёт t = 1.58 и
+        x = 1.76 по графику производной; логистическая часть мая 2022 — 7
+        баллов буквами k и N, и там калькулятор бесполезен.
+    prereq: [optimum]
+    raw_tags: [maximize_rate, find_vertex, substitute, solve, differentiation,
+               second_derivative, find_minimum, solve_equation, evaluate_function,
+               sketch_graph, set_second_derivative_zero, concavity_analysis,
+               second_derivative_test, substitution, algebraic_simplification]
+    blocks: ['2021-MAY-TZ1-P2-Q12-E', '2021-MAY-TZ2-P2-Q11-D', '2022-MAY-TZ2-P2-Q12-C',
+             '2022-MAY-TZ2-P2-Q12-D']
+
+  - id: whole
+    name: Наилучшее целое
+    rung: 9
+    trigger: >
+      «Write down the value of P(12) and the value of n at which it occurs»;
+      «determine the value of P(20) and the value of n»; «find the largest
+      possible product of positive numbers whose sum is 100». Буква считает
+      слагаемые и бывает только целой.
+    chain:
+      - "Найти вершину непрерывной функции: n = S/e"
+      - "Сравнить значения в целых по обе стороны от вершины"
+      - "Выбрать большее и записать и значение, и n"
+      - "Вершину не округлять: (20/7.36)^7.36 — не ответ, и n = 7.36 не
+        бывает"
+    traps:
+      - "Ответ по вершине: n = 7.36, P(20) = 1570 — схема даёт M1A0A1"
+      - "Округлили вершину 36.8 до 37 без сравнения с 36 — балл R теряется"
+      - "Непрерывный максимум 100/e даёт 9.48 × 10¹⁵, а целый — 9.47 × 10¹⁵"
+      - "Назвали n, но не значение, или наоборот"
+    calculator:
+      mode: speeds_up
+      note: >
+        Все 8 баллов Paper 3 с калькулятором: таблица (20/n)ⁿ по целым n
+        отдаёт ответ сразу. Руками — понять, что нужно целое.
+    prereq: [optimum]
+    raw_tags: [discrete_optimization, comparison, numerical_evaluation,
+               numerical_comparison, scientific_notation]
+    blocks: ['2023-MAY-TZ1-P3-Q02-F', '2023-MAY-TZ1-P3-Q02-G', '2023-MAY-TZ1-P3-Q02-J']
+
+leftovers: []
+
+imported:
+  - practicum: E3
+    what: >
+      Вся техника производной внутри вопросов: цепочка у e^{sin t}, частное у
+      ke^{x/2}/(1 + eˣ), производная арктангенса у θ = arctan((x + 2)/6) −
+      arctan(x/6), произведение у x² ln x.
+  - practicum: E8
+    what: >
+      Вершина и её вид: f′ = 0 и вторая производная у L(α) и V(x); ноль
+      второй производной у приёма fastest — это перегиб исходной функции.
+      Ноябрь 2023 TZ1 Q4(a) — близнец блока 2023-NOV-TZ2-P2-Q04-A — стоит там.
+  - practicum: E6
+    what: >
+      Соседний пункт почти каждого вопроса о движении — пройденный путь,
+      интеграл |v|. Момент покоя из этого практикума — граница его
+      интеграла.
+  - practicum: E7
+    what: >
+      Логистическое уравнение dP/dt = kP(1 − P/N) и его решение P(t): здесь
+      берётся готовым, чтобы найти, когда рост быстрее всего.
+  - practicum: C1
+    what: >
+      Теорема косинусов и площадь ½ab sin C — связь, через которую
+      движется треугольник ноября 2025 TZ1 Q9.
+  - practicum: C5
+    what: >
+      Положение самолётов r = a + tb мая 2022 TZ2 Q11: расстояние между
+      ними — функция одного t.
+  - practicum: C7
+    what: >
+      Векторное произведение AB × AC ноября 2023 Q8(a); его наименьшую длину
+      ищут здесь. Копия TZ1 того же пункта стоит в C7.
+
+# Замечания к классификации, отправить в classification/reviews.
+corpus_issues:
+  - block: 2025-MAY-TZ2-P1-Q06-B
+    marks: 6
+    issue: >
+      В task_summary и method_path расстояние записано как
+      √(x² + (x/2 − 4 ln x)²) и производная «упрощается до (x + 2 ln x)/l».
+      В бумаге f(x) = √(x² ln x + 4 − x²), а пункт (a) даёт
+      l = √(x² ln x + 4). Ответ e^{−1/2} сходится случайно: по записанной
+      разметкой функции он не получается. Разметку надо переписать по бумаге.
+  - block: 2021-MAY-TZ2-P2-Q11-D
+    marks: 6
+    issue: >
+      В method_path «x = ln(2 + √3) ≈ 1.76». Но ln(2 + √3) ≈ 1.317; ноль
+      e^{2x} − 6eˣ + 1 — это eˣ = 3 + 2√2 и x = ln(3 + 2√2) ≈ 1.7627.
+      Число 1.76 верно, точная запись — нет.
+  - block: 2023-NOV-TZ2-P2-Q08-B
+    marks: 3
+    assigned: calculus.optimization
+    should_be: geometry.vectors_3d
+    issue: >
+      Копия TZ1 того же пункта размечена geometry.vectors_3d и стоит в C7.
+      Разметка TZ2 к тому же пишет |AB × AC|² = (p − 2)² + (3p − p² − 2)² +
+      (2p² − 2)² и «4p⁴ − 14p³ + 8p² + 8p + 8»; по бумаге и схеме
+      (2 − 3p)² + (2 + p)² + (p² − 2p)² = p⁴ − 4p³ + 14p² − 8p + 8. Минимум
+      6.75 у схемы верный. Карточка C7 называла получателем этих трёх
+      баллов E4 — на деле это E9, исправлено там же.
+  - block: 2023-NOV-TZ2-P2-Q04-A
+    marks: 2
+    assigned: calculus.differentiation
+    should_be: calculus.rates_of_change
+    issue: >
+      Копия TZ1 размечена calculus.stationary_points и стоит в E8. Вопрос
+      один: «the particle first comes to rest after q seconds; find q».
+      Paper 2 ноября 2023 TZ1 и TZ2 — одна бумага.
+  - id: 'движение частицы разнесено по трём темам'
+    what: >
+      Вопрос о частице на прямой — (a) когда стоит, (b) ускорение, (c)
+      наибольший модуль скорости — размечен по пунктам в rates_of_change,
+      differentiation и optimization, а соседний пункт про пройденный путь —
+      в integration_applications. Для практикума это не беда: карта
+      собирает первые три сюда. Для классификации это сигнал, что тема
+      «кинематика по прямой» просится отдельной.
+  - id: '2025-MAY-TZ3-P3-Q02-H-III'
+    what: >
+      Четыре балла коробки из картона числятся за number_algebra.sequences и
+      стоят в доле A1, хотя пункт — про целое x_m, дающее целый наибольший
+      объём, то есть про этот практикум. В долю E9 не перенесены, чтобы не
+      двигать A1; отмечено в карточке A1.
+
+ladder: [rate, rest, peak, chain, angle, optimum, distance, fastest, whole]
