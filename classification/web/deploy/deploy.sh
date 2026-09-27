@@ -200,18 +200,28 @@ remote_root=$4
 next="${current}.next.${release_id}"
 api_runtime="$remote_root/api-runtime"
 api_venv="$api_runtime/venv"
-api_pid="$api_runtime/question-atlas-api.pid"
-api_log="$api_runtime/question-atlas-api.log"
 
-api_failure() {
+# Три службы банка держит systemd: ib-atlas-api (8041), ib-drill (8042) и
+# ib-physics-api (8043). До 27 сентября их пускала эта выкатка -- nohup плюс
+# pid-файл, без юнита и без супервизора, -- и SIGTERM гасил службу навсегда:
+# снаружи это 502 на ib.archik.tech, а внутри Knowy -- «пустой банк», то есть
+# поломка выглядела чужой. Заодно ушла причина аварии 2026-09-15: pid-файл врал,
+# старая служба оставалась на порту, новая падала с «address already in use», а
+# проверка здоровья отвечала старой -- выкатка зелёная, работает прошлый релиз.
+# У порта теперь один владелец, и pid-файлы не нужны.
+services=(ib-atlas-api.service ib-drill.service ib-physics-api.service)
+
+deployment_failure() {
   status=$?
-  printf 'Question Atlas API deployment failed. Recent service log:\n' >&2
-  if [[ -f "$api_log" ]]; then
-    tail -n 80 "$api_log" >&2 || true
-  fi
+  printf 'Bank services failed. State and recent journal:\n' >&2
+  sudo -n /usr/bin/systemctl is-active "${services[@]}" >&2 || true
+  for unit in "${services[@]}"; do
+    printf -- '--- %s\n' "$unit" >&2
+    journalctl -u "$unit" -n 40 --no-pager >&2 || true
+  done
   exit "$status"
 }
-trap api_failure ERR
+trap deployment_failure ERR
 
 test -f "$release/index.html"
 test -d "$release/assets"
@@ -240,44 +250,9 @@ fi
 printf 'Installing Question Atlas API dependencies.\n'
 "$api_venv/bin/pip" install --disable-pip-version-check --quiet -r "$release/api/requirements.txt"
 
-if [[ -f "$api_pid" ]]; then
-  old_pid=$(cat "$api_pid" || true)
-  if [[ "$old_pid" =~ ^[0-9]+$ ]] && kill -0 "$old_pid" 2>/dev/null; then
-    kill "$old_pid"
-    for _ in {1..20}; do
-      kill -0 "$old_pid" 2>/dev/null || break
-      sleep 0.1
-    done
-  fi
-fi
-
-# Индексы атласа: математика из своего каталога, физика из подмодуля.
-# Первый в списке отвечает на запросы, где предмет не назвали.
-atlas_dbs="math:$release/api/data/questions.sqlite"
-if [[ -f "$release/vendor/ib-physics/bank/2025/atlas.sqlite" ]]; then
-  atlas_dbs="$atlas_dbs,physics:$release/vendor/ib-physics/bank/2025/atlas.sqlite"
-fi
-printf 'Atlas indexes: %s\n' "$atlas_dbs"
-
-nohup env QUESTION_ATLAS_DBS="$atlas_dbs" \
-  "$api_venv/bin/uvicorn" --app-dir "$release/api" app:app --host 127.0.0.1 --port 8041 \
-  >> "$api_log" 2>&1 &
-api_process=$!
-printf '%s\n' "$api_process" > "$api_pid"
-
-printf 'Waiting for Question Atlas API health check.\n'
-for _ in {1..30}; do
-  if curl --fail --silent http://127.0.0.1:8041/health >/dev/null; then
-    break
-  fi
-  sleep 0.1
-done
-curl --fail --silent --show-error http://127.0.0.1:8041/health >/dev/null
 
 drill_runtime="$remote_root/drill-runtime"
 drill_venv="$drill_runtime/venv"
-drill_pid="$drill_runtime/drill.pid"
-drill_log="$drill_runtime/drill.log"
 drill_data="$remote_root/drill-data"
 
 install -d -m 755 "$drill_runtime" "$drill_data"
@@ -290,51 +265,6 @@ printf 'Installing drill dependencies.\n'
   -r "$release/vendor/drill-core/requirements.txt" \
   -r "$release/practicum/aahl/requirements.txt"
 
-if [[ -f "$drill_pid" ]]; then
-  old_drill=$(cat "$drill_pid" || true)
-  if [[ "$old_drill" =~ ^[0-9]+$ ]] && kill -0 "$old_drill" 2>/dev/null; then
-    kill "$old_drill"
-    for _ in {1..20}; do
-      kill -0 "$old_drill" 2>/dev/null || break
-      sleep 0.1
-    done
-  fi
-fi
-
-# Предметы: математика и физика из самого релиза, остальные — если они
-# заведены на машине. Первый в списке отвечает на запросы, где предмет
-# не назвали, и это математика: так работали все прежние ссылки.
-drill_subjects="math:$release/practicum/aahl/subject.py"
-drill_subjects="$drill_subjects,physics:$release/vendor/ib-physics/subject.py"
-for candidate in "$remote_root"/subjects/*/subject.py; do
-  [[ -f "$candidate" ]] || continue
-  name=$(basename "$(dirname "$candidate")")
-  [[ "$name" == "math" || "$name" == "physics" ]] && continue
-  drill_subjects="$drill_subjects,$name:$candidate"
-done
-printf 'Drill subjects: %s\n' "$drill_subjects"
-
-nohup env DRILL_DB="$drill_data/drill.sqlite" \
-  DRILL_GRADER_KEY_FILE="$drill_runtime/openai.env" \
-  DRILL_SUBJECTS="$drill_subjects" \
-  PYTHONPATH="$release/vendor/drill-core:$release/practicum" \
-  "$drill_venv/bin/python" -m drill.server \
-  --host 127.0.0.1 --port 8042 \
-  >> "$drill_log" 2>&1 &
-printf '%s\n' "$!" > "$drill_pid"
-
-printf 'Waiting for drill health check.\n'
-for _ in {1..60}; do
-  if curl --fail --silent http://127.0.0.1:8042/api/drill/health >/dev/null; then
-    break
-  fi
-  sleep 0.2
-done
-if ! curl --fail --silent --show-error http://127.0.0.1:8042/api/drill/health >/dev/null; then
-  printf 'Drill service did not start. Recent log:\n' >&2
-  tail -n 40 "$drill_log" >&2 || true
-  exit 1
-fi
 
 # API банка физики. Пускает только по ключу, и файл ключей живёт вне
 # релизов: в нём SHA-256 ключей, а сами ключи на машине не хранятся. Кладёт
@@ -342,8 +272,6 @@ fi
 # здесь, а не выставит банк наружу без замка.
 physics_runtime="$remote_root/physics-api"
 physics_keys="$physics_runtime/keys"
-physics_pid="$physics_runtime/physics-api.pid"
-physics_log="$physics_runtime/physics-api.log"
 if [[ ! -f "$physics_keys" ]]; then
   printf 'Physics API keys file is missing: %s\n' "$physics_keys" >&2
   exit 1
@@ -359,46 +287,38 @@ fi
 "$api_venv/bin/pip" install --disable-pip-version-check --quiet \
   -r "$release/vendor/ib-physics/api/requirements.txt"
 
-if [[ -f "$physics_pid" ]]; then
-  old_physics=$(cat "$physics_pid" || true)
-  if [[ "$old_physics" =~ ^[0-9]+$ ]] && kill -0 "$old_physics" 2>/dev/null; then
-    kill "$old_physics"
-    for _ in {1..20}; do
-      kill -0 "$old_physics" 2>/dev/null || break
-      sleep 0.1
-    done
+
+
+# Ссылку переключаем ДО перезапуска: службы читают код по пути current, поэтому
+# порядок обратный прежнему. У прежнего порядка была своя цена -- проверка могла
+# отвечать от прошлого релиза. Если проверка здоровья здесь не пройдёт,
+# rollback() вернёт ссылку и перезапустит службы: наружу снова пойдёт прошлый
+# релиз, как и раньше.
+ln -s -- "$release" "$next"
+mv -Tf -- "$next" "$current"
+
+printf 'Restarting bank services.\n'
+sudo -n /usr/bin/systemctl restart "${services[@]}"
+
+printf 'Waiting for Question Atlas API health check.\n'
+for _ in {1..30}; do
+  if curl --fail --silent http://127.0.0.1:8041/health >/dev/null; then
+    break
   fi
-fi
-
-# Порт обязан освободиться до запуска. pid-файл может врать — например,
-# после ручного перезапуска, — и тогда старая служба остаётся на порту, новая
-# падает с «address already in use», а проверка здоровья отвечает старой:
-# выкатка зелёная, а работает прошлый релиз. Так и было 2026-09-15.
-# Под set -e и pipefail пустой grep — это ошибка всего скрипта, а пустой
-# порт здесь нормальный ответ. Поэтому || true: так 2026-09-15 выкатка
-# погасила старую службу и оборвалась, не запустив новую.
-physics_listener() {
-  { ss -ltnpH 'sport = :8043' 2>/dev/null | grep -o 'pid=[0-9]*' | head -n 1 | cut -d= -f2; } || true
-}
-for _ in {1..50}; do
-  stale=$(physics_listener)
-  [[ -z "$stale" ]] && break
-  kill "$stale" 2>/dev/null || true
-  sleep 0.1
+  sleep 0.5
 done
-if [[ -n "$(physics_listener)" ]] || { ss -ltnH 'sport = :8043' | grep -q . ; }; then
-  printf 'Port 8043 is still taken by another process.\n' >&2
-  exit 1
-fi
+curl --fail --silent --show-error http://127.0.0.1:8041/health >/dev/null
 
-nohup env PHYSICS_API_KEYS="$physics_keys" PHYSICS_API_SIGNING_KEY="$physics_signing" \
-  "$api_venv/bin/uvicorn" --app-dir "$release/vendor/ib-physics/api" app:app \
-  --host 127.0.0.1 --port 8043 --proxy-headers \
-  >> "$physics_log" 2>&1 &
-physics_process=$!
-printf '%s\n' "$physics_process" > "$physics_pid"
+printf 'Waiting for drill health check.\n'
+for _ in {1..60}; do
+  if curl --fail --silent http://127.0.0.1:8042/api/drill/health >/dev/null; then
+    break
+  fi
+  sleep 0.5
+done
+curl --fail --silent --show-error http://127.0.0.1:8042/api/drill/health >/dev/null
 
-# Банк и приёмы грузятся при старте, до первого запроса: это секунды.
+# Банк и приёмы физики грузятся при старте, до первого запроса: это секунды.
 printf 'Waiting for physics API health check.\n'
 for _ in {1..120}; do
   if curl --fail --silent http://127.0.0.1:8043/health >/dev/null; then
@@ -406,27 +326,15 @@ for _ in {1..120}; do
   fi
   sleep 0.25
 done
-if ! curl --fail --silent --show-error http://127.0.0.1:8043/health >/dev/null; then
-  printf 'Physics API did not start. Recent log:\n' >&2
-  tail -n 40 "$physics_log" >&2 || true
-  exit 1
-fi
-# Отвечать должен именно тот процесс, который запустили сейчас.
-if [[ "$(physics_listener)" != "$physics_process" ]]; then
-  printf 'Port 8043 is served by pid %s, not by the new process %s.\n' \
-    "$(physics_listener)" "$physics_process" >&2
-  tail -n 20 "$physics_log" >&2 || true
-  exit 1
-fi
+curl --fail --silent --show-error http://127.0.0.1:8043/health >/dev/null
+
+# Наружу банк только за ключом: без ключа обязан быть 401.
 anonymous=$(curl --silent --output /dev/null --write-out '%{http_code}' \
   http://127.0.0.1:8043/api/physics/v1/questions)
 if [[ "$anonymous" != "401" ]]; then
   printf 'Physics API answered %s without a key.\n' "$anonymous" >&2
   exit 1
 fi
-
-ln -s -- "$release" "$next"
-mv -Tf -- "$next" "$current"
 REMOTE
 
 rollback() {
@@ -445,6 +353,12 @@ if [[ -n "$previous" && -d "$previous" ]]; then
 else
   unlink -- "$current"
 fi
+
+# Вернуть ссылку недостаточно: службы читают код по пути current уже при
+# запуске, поэтому без перезапуска они продолжат работать на том релизе,
+# который только что не прошёл проверку.
+sudo -n /usr/bin/systemctl restart \
+  ib-atlas-api.service ib-drill.service ib-physics-api.service || true
 REMOTE
 }
 
