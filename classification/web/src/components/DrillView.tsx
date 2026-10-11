@@ -5,8 +5,9 @@ import { WriteUpVerdict, type Verdict as WriteUp } from './WriteUpVerdict'
 import * as drillApi from '../drillApi'
 import type { SubjectInfo } from '../drillApi'
 import { EveningView, type Evening, type EveningTheme } from './EveningView'
+import { PickCatalogue } from './PickCatalogue'
 
-type Mode = 'mixed' | 'recognition' | 'compute' | 'written'
+type Mode = 'mixed' | 'recognition' | 'pick' | 'compute' | 'written'
 type Order = 'schedule' | 'ladder' | 'random'
 type Screen = 'setup' | 'running' | 'done' | 'history' | 'map' | 'evening'
 
@@ -14,18 +15,21 @@ interface Option { code: string; name: string }
 
 interface Item {
   item: string
-  kind: 'recognition' | 'compute' | 'written'
+  kind: 'recognition' | 'pick' | 'compute' | 'written'
   block?: string
   reference?: string
   marks?: number
+  paper?: number
   calculator?: string
   pages?: number
-  skill: string
-  skill_name: string
-  trigger: string
-  practicum: string
-  practicum_title: string
-  prompt: string
+  // В режиме выбора приёма карточка приходит без приёма, практикума и
+  // признака узнавания: в них и состоит ответ. Поэтому необязательные.
+  skill?: string
+  skill_name?: string
+  trigger?: string
+  practicum?: string
+  practicum_title?: string
+  prompt?: string
   note?: string
   placeholder?: string
   options?: Option[]
@@ -43,6 +47,13 @@ interface Verdict {
   traps: string[]
   practicum: string
   answer: string
+  /** Разбор карточки архива: что назвали и как шла схема оценивания. */
+  picked?: { skill: string; name: string; practicum: string; near: boolean } | null
+  method?: string[]
+  alternatives?: string[]
+  reference?: string
+  marks?: number | null
+  block?: string
 }
 
 interface WrittenBlock {
@@ -60,6 +71,7 @@ interface SetupPracticum {
   recognition: number
   compute: number
   written: number
+  pick: number
   share: number
 }
 
@@ -163,6 +175,10 @@ const CALCULATOR: Record<string, string> = {
 interface Stats {
   skills: SkillStat[]
   totals: { attempts: number; correct: number; avg_ms: number; avg_first_ms: number; today: number; today_correct: number }
+  /** Кого с кем путают: пары из режима выбора приёма. */
+  confusions?: { skill: string; name: string; picked: string; picked_name: string; count: number }[]
+  /** Карточки, у которых отмечена неверная разметка. */
+  flagged?: { block: string; count: number; reference: string }[]
 }
 
 type MarksBand = 'any' | 'easy' | 'mid' | 'hard'
@@ -199,6 +215,7 @@ const SUBJECT_KEY = 'question-atlas:drill-subject'
 const MODES: { id: Mode; label: string; hint: string }[] = [
   { id: 'mixed', label: 'вперемешку', hint: 'И назвать приём, и решить — вразнобой' },
   { id: 'recognition', label: 'узнавание', hint: 'Только назвать приём. Считать не нужно' },
+  { id: 'pick', label: 'выбор приёма', hint: 'Настоящая карточка архива: прочитать вопрос и найти приём в каталоге' },
   { id: 'compute', label: 'счёт', hint: 'Только решить и ввести ответ' },
   { id: 'written', label: 'разбор', hint: 'Настоящий вопрос архива: решаешь на бумаге и прикрепляешь фото' },
 ]
@@ -351,6 +368,7 @@ function minutes(ms: number) {
 /** Сколько заданий этой темы доступно в выбранном режиме. */
 function available(practicum: SetupPracticum, mode: Mode) {
   if (mode === 'recognition') return practicum.recognition
+  if (mode === 'pick') return practicum.pick
   if (mode === 'compute') return practicum.compute
   if (mode === 'written') return practicum.written
   return practicum.recognition + practicum.compute
@@ -411,6 +429,9 @@ export function DrillView() {
   const [writeUp, setWriteUp] = useState<WriteUp | null>(null)
   const [gradingMs, setGradingMs] = useState(0)
   const [dragging, setDragging] = useState(false)
+  // Какой вопрос уже отмечен как «разметка неверна»: отметка ставится
+  // один раз за показ, второе нажатие ничего не добавляет.
+  const [flagged, setFlagged] = useState<string | null>(null)
   // Подсказка к заданию — по нажатию. Открытая сразу, она называет метод
   // до того, как задание вообще прочитано, и решать становится нечего.
   const [hint, setHint] = useState(false)
@@ -721,11 +742,11 @@ export function DrillView() {
       if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
       const result: Verdict = await response.json()
       setVerdict(result)
-      recent.current = [...recent.current, item.skill].slice(-6)
+      recent.current = [...recent.current, result.skill ?? item.skill ?? ''].slice(-6)
       setDone((current) => [...current, {
-        skill: item.skill,
+        skill: result.skill ?? item.skill ?? '',
         skillName: result.skill_name,
-        practicum: item.practicum,
+        practicum: result.practicum ?? item.practicum ?? '',
         kind: item.kind,
         ok: result.ok,
         hint,
@@ -740,6 +761,22 @@ export function DrillView() {
     // hint здесь не для красоты: без него замыкание submit помнит ту
     // подсказку, что была на момент показа задания, то есть всегда «нет».
   }, [busy, hint, item, settings.mode, subject, verdict])
+
+  /** «Разметка неверна» на карточке архива: уходит в журнал тренажёра. */
+  const flagMarkup = useCallback(async (block: string, skill: string) => {
+    if (!block || flagged === block) return
+    try {
+      const response = await fetch(drillApi.url('/flag', subject), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: drillApi.payload(subject, { block, skill }),
+      })
+      if (!response.ok) throw new Error(`сервер ответил ${response.status}`)
+      setFlagged(block)
+    } catch (failure) {
+      setError(failure instanceof Error ? failure.message : 'отметка не прошла')
+    }
+  }, [flagged, subject])
 
   const addPhotos = useCallback(async (files: FileList | File[] | null) => {
     const chosen = Array.from(files ?? []).filter(
@@ -790,12 +827,12 @@ export function DrillView() {
       const result = payload as WriteUp
       result.elapsedMs = Math.round(performance.now() - sentAt)
       setWriteUp(result)
-      recent.current = [...recent.current, item.skill].slice(-6)
+      recent.current = [...recent.current, item.skill ?? ''].slice(-6)
       if (item.block) recentBlocks.current = [...recentBlocks.current, item.block].slice(-20)
       setDone((current) => [...current, {
-        skill: item.skill,
-        skillName: result.skill_name ?? item.skill_name,
-        practicum: item.practicum,
+        skill: item.skill ?? '',
+        skillName: result.skill_name ?? item.skill_name ?? '',
+        practicum: item.practicum ?? '',
         kind: 'written',
         ok: (result.marks?.available ?? 0) > 0
           && result.marks.earned === result.marks.available,
@@ -1196,6 +1233,27 @@ export function DrillView() {
               </button>
             </div>
 
+            {!card && (stats?.confusions?.length ?? 0) > 0 && (
+              <div className="flex flex-col gap-1.5 border border-line bg-canvas p-3">
+                <p className="font-mono text-[10px] text-muted">что с чем слиплось</p>
+                <ul className="flex flex-col gap-1">
+                  {(stats?.confusions ?? []).slice(0, 8).map((pair) => (
+                    <li key={`${pair.skill}>${pair.picked}`} className="flex flex-wrap items-baseline gap-x-2 text-[13px] text-ink">
+                      <span className="font-mono text-[10px] text-faint">{pair.count}×</span>
+                      <span>назвали «{pair.picked_name}»</span>
+                      <span className="text-muted">вместо</span>
+                      <span>«{pair.name}»</span>
+                      <span className="font-mono text-[10px] text-faint">{pair.picked.split('.')[0]} → {pair.skill.split('.')[0]}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-[11px] text-faint">
+                  Это не «приём просел», а «два приёма у вас слиплись»: единственное
+                  место, где журнал знает не только «ошибся», но и «назвал вместо».
+                </p>
+              </div>
+            )}
+
             {!card && strength && (
               <div className="flex flex-col gap-4" onMouseLeave={() => setHovered(null)}>
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -1517,8 +1575,14 @@ export function DrillView() {
                 className="flex flex-col gap-4 border border-line bg-canvas p-5"
               >
                 <div className="flex items-center gap-2 font-mono text-[10px] text-faint">
-                  <span className="border border-line px-1.5 py-0.5">{item.practicum}</span>
-                  <span>{item.kind === 'recognition' ? 'назвать приём' : 'решить и ввести ответ'}</span>
+                  {/* Тему в режиме выбора приёма не показываем: половина
+                      ответа — это она. */}
+                  {item.kind !== 'pick' && (
+                    <span className="border border-line px-1.5 py-0.5">{item.practicum}</span>
+                  )}
+                  <span>{item.kind === 'recognition' ? 'назвать приём'
+                    : item.kind === 'pick' ? 'найти приём в каталоге'
+                    : 'решить и ввести ответ'}</span>
                   {/* Своей цены у сгенерированной задачи нет — её не печатал
                       экзамен. Показывается цена вопросов архива, из которых
                       вырос приём: по ней видно, два это балла или семь. */}
@@ -1527,7 +1591,32 @@ export function DrillView() {
                   )}
                 </div>
 
-                {item.kind === 'written' ? (
+                {item.kind === 'pick' ? (
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <span className="text-sm text-ink">{item.reference}</span>
+                      <span className="font-mono text-[11px] text-muted">
+                        {item.marks} marks · {item.calculator === 'yes' ? 'GDC' : 'no GDC'}
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      {Array.from({ length: item.pages ?? 1 }, (_, page) => (
+                        <img
+                          key={page}
+                          src={drillApi.url(`/page?block=${encodeURIComponent(item.block ?? '')}&kind=question&n=${page}&crop=1`, subject)}
+                          alt={`question page ${page + 1}`}
+                          loading="lazy"
+                          className="w-full border border-line bg-canvas"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-[11px] text-faint">
+                      На странице бывает несколько вопросов — отвечайте по тому,
+                      который назван сверху. Решать не нужно: нужно назвать приём,
+                      которым этот пункт берётся.
+                    </p>
+                  </div>
+                ) : item.kind === 'written' ? (
                   <div className="flex flex-col gap-3">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <span className="text-sm text-ink">{item.reference}</span>
@@ -1553,7 +1642,7 @@ export function DrillView() {
                     </p>
                   </div>
                 ) : <>
-                  <MathText className="text-[15px] leading-relaxed text-ink">{item.prompt}</MathText>
+                  <MathText className="text-[15px] leading-relaxed text-ink">{item.prompt ?? ''}</MathText>
                   {item.note && (hint || verdict
                     // После ответа подсказка уже ничего не выдаёт, а объясняет,
                     // и прятать её за нажатием незачем.
@@ -1629,6 +1718,18 @@ export function DrillView() {
                       )}
                     </div>
                   </div>
+                ) : item.kind === 'pick' ? (
+                  // После ответа каталог убирается: что выбрали и что было
+                  // верным, сказано в разборе, а триста строк под ним
+                  // только мешают читать.
+                  verdict ? null : (
+                    <PickCatalogue
+                      subject={subject}
+                      disabled={busy}
+                      locked={null}
+                      onPick={(skill) => { markFirstKey(); void submit(skill) }}
+                    />
+                  )
                 ) : item.kind === 'recognition' && item.options
                   ? <div className="grid grid-cols-2 gap-1.5 max-[560px]:grid-cols-1">
                       {item.options.map((option, index) => (
@@ -1690,9 +1791,20 @@ export function DrillView() {
                     )}
 
                     <dl className="grid grid-cols-[8rem_1fr] items-baseline gap-x-3 gap-y-2.5 border-t border-line pt-3 max-[560px]:grid-cols-1 max-[560px]:gap-y-1">
-                      {!verdict.ok && <>
+                      {!verdict.ok && item.kind !== 'pick' && <>
                         <dt className={LABEL}>верный ответ</dt>
                         <dd className="font-mono text-sm text-ink">{verdict.answer}</dd>
+                      </>}
+
+                      {verdict.picked && <>
+                        <dt className={LABEL}>вы назвали</dt>
+                        <dd className="text-sm text-ink">
+                          {verdict.picked.name}
+                          <span className="ml-2 font-mono text-[10px] text-faint">{verdict.picked.practicum}</span>
+                          {verdict.picked.near && (
+                            <span className="ml-2 text-[11px] text-muted">— схема этот ход упоминает</span>
+                          )}
+                        </dd>
                       </>}
 
                       <dt className={LABEL}>приём</dt>
@@ -1703,6 +1815,36 @@ export function DrillView() {
 
                       <dt className={LABEL}>узнаётся по</dt>
                       <dd className="text-xs leading-relaxed text-muted">{verdict.trigger}</dd>
+
+                      {/* Как шла сама схема оценивания. Это не наш пересказ
+                          приёма, а разметка вопроса: «что на самом деле». */}
+                      {verdict.method && verdict.method.length > 0 && <>
+                        <dt className={LABEL}>схема шла</dt>
+                        <dd>
+                          <ol className="flex flex-col gap-0.5 text-xs leading-relaxed text-muted">
+                            {verdict.method.map((step, index) => (
+                              <li key={step} className="flex gap-2">
+                                <span className="font-mono text-[10px] text-faint">{index + 1}</span>
+                                <span>{step}</span>
+                              </li>
+                            ))}
+                          </ol>
+                        </dd>
+                      </>}
+
+                      {verdict.alternatives && verdict.alternatives.length > 0 && <>
+                        <dt className={LABEL}>и так тоже</dt>
+                        <dd>
+                          <ul className="flex flex-col gap-1 text-xs leading-relaxed text-muted">
+                            {verdict.alternatives.map((line) => (
+                              <li key={line} className="flex gap-2">
+                                <span className="text-faint">·</span>
+                                <span>{line}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </dd>
+                      </>}
 
                       {verdict.chain.length > 0 && <>
                         <dt className={LABEL}>ход</dt>
@@ -1733,7 +1875,7 @@ export function DrillView() {
                       </>}
                     </dl>
 
-                    <div className="flex items-center gap-3 pt-1">
+                    <div className="flex flex-wrap items-center gap-3 pt-1">
                       <button
                         type="button"
                         className="h-8 cursor-pointer border border-line-strong bg-canvas px-3 font-mono text-[11px] text-ink hover:bg-surface"
@@ -1742,6 +1884,18 @@ export function DrillView() {
                         {sessionLength > 0 && done.length >= sessionLength ? 'итог' : 'дальше'}
                       </button>
                       <span className="font-mono text-[10px] text-faint">Enter или пробел</span>
+                      {/* Разметка корпуса делалась моделью: место, где её
+                          ошибку видно, — вот это. Отметка идёт в журнал. */}
+                      {item.kind === 'pick' && verdict.block && (
+                        <button
+                          type="button"
+                          disabled={flagged === verdict.block}
+                          className="h-8 cursor-pointer border-0 bg-transparent p-0 font-mono text-[11px] text-muted underline hover:text-ink disabled:cursor-default disabled:no-underline disabled:opacity-60"
+                          onClick={() => void flagMarkup(verdict.block ?? '', verdict.skill)}
+                        >
+                          {flagged === verdict.block ? 'отмечено' : 'разметка неверна'}
+                        </button>
+                      )}
                     </div>
                   </div>
                 )}

@@ -200,13 +200,20 @@ def block_page_numbers(block, which='question'):
     return locate(block['dir'], int(block['question']), hint, which)
 
 
-def page_image(block, which='question', index=0):
-    """Одна страница блока картинкой."""
+def page_image(block, which='question', index=0, crop=False):
+    """Одна страница блока картинкой.
+
+    crop вырезает сам вопрос, без поля для письма: на экзаменационном
+    листе оно занимает две трети страницы, и в режиме выбора приёма,
+    где писать не нужно, оно только заставляет листать.
+    """
     numbers = block_page_numbers(block, which)
     if not 0 <= index < len(numbers):
         raise LookupError('такой страницы нет')
     name = QUESTION_PDF if which == 'question' else MARKSCHEME_PDF
-    return paper.render_page(os.path.join(ROOT, block['dir'], name), numbers[index], DPI)
+    path = os.path.join(ROOT, block['dir'], name)
+    clip = paper.question_clip(path, numbers[index]) if crop else None
+    return paper.render_page(path, numbers[index], DPI, clip=clip)
 
 
 def reference(block):

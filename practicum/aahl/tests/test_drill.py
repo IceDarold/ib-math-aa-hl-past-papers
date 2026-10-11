@@ -33,6 +33,12 @@ SUBJECT = subjects.load('math', os.path.join(DRILL, 'subject.py'))
 res = []
 
 
+def archive_pages(block):
+    """Страницы билета у блока — тем же способом, каким их ищет служба."""
+    from aahl import archive
+    return archive.block_page_numbers(block, 'question')
+
+
 def t(name, ok):
     res.append((name, ok))
     print(('✅' if ok else '❌'), name)
@@ -759,6 +765,64 @@ shown_price = drill.next_item('compute', skills=('D2.bayes',))
 t('цена доезжает до страницы вместе с заданием',
   shown_price['archive_marks'] == drill.archive_price(
       bank['skills_by_id']['D2.bayes']))
+
+# --- выбор приёма по карточке архива ---------------------------------------
+# Карточка — страница настоящего билета, ответ — приём из всего каталога.
+# Здесь проверяется то, чего нет у игрушечного предмета ядра: что страница
+# находится, обрезается по вопросу и не отдаёт ответ вместе с собой.
+print('\n--- выбор приёма ---')
+cards = bank['archive']
+t(f'карточек архива {len(cards)}', len(cards) > 1000)
+t('у каждой есть приём, ход схемы и признак «метод назван»',
+  all(card.get('skill') and 'named' in card and 'method' in card
+      for card in cards.values()))
+t('соседние приёмы — из того же практикума',
+  all(near.split('.')[0] == card['skill'].split('.')[0]
+      for card in cards.values() for near in card.get('near') or ()))
+unnamed = [b for b, card in cards.items() if not card['named']]
+t(f'без названного метода {len(unnamed)} карточек', len(unnamed) > 900)
+
+euler = [b for b, card in cards.items()
+         if card['skill'].endswith('.euler_method')]
+t('вопросы про метод Эйлера помечены как называющие метод',
+  euler and all(cards[b]['named'] for b in euler))
+
+card = drill.next_item('pick')
+t('карточка выдаётся без приёма и без темы',
+  'skill' not in card and 'practicum' not in card and 'trigger' not in card)
+t('в карточке есть вопрос, цена и страницы',
+  card['block'] in cards and card['marks'] and card['pages'] >= 1)
+t('подпись карточки называет сессию и пункт',
+  re.search(r'(May|November) \d{4}.*Paper \d', card['reference']))
+
+picked = drill.answer({'item': card['item'], 'answer': cards[card['block']]['skill'],
+                       'ms': 20000, 'first_ms': 9000, 'mode': 'pick'})
+t('верный приём засчитан', picked['ok'] is True)
+t('в разборе приехал ход схемы оценивания', picked['method'])
+
+# Страница билета: она же карточка. Обрезка обязана оставить сам вопрос.
+whole = SUBJECT.page_image(cards[card['block']], 'question', 0)
+cut = SUBJECT.page_image(cards[card['block']], 'question', 0, True)
+t('страница рисуется целиком и обрезанной', len(whole) > 0 and len(cut) > 0)
+t('обрезанная не больше целой', len(cut) <= len(whole))
+
+sample = [b for b in sorted(unnamed)[:40]]
+clips = 0
+for block_id in sample:
+    block = cards[block_id]
+    numbers = archive_pages(block)
+    path_pdf = os.path.join(os.path.dirname(PRACTICUM), block['dir'],
+                            'question-paper.pdf')
+    clip = paper.question_clip(path_pdf, numbers[0])
+    if clip is not None:
+        clips += 1
+        t_height = clip[3] - clip[1]
+        if t_height < 40:
+            t(f'{block_id}: обрезка не схлопнулась', False)
+t(f'на сорока карточках обрезка сработала {clips} раз', clips >= 30)
+
+t('каталог отдаёт весь банк приёмов',
+  len(drill.catalogue()['skills']) == len(bank['skills']))
 
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad)}  '
