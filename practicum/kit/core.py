@@ -134,24 +134,79 @@ def sig(value, sf):
     return f"{float(value):.{sf}g}"
 
 
-def verify_ode(label, y_expr, rhs, ic=None, var=x, dep=y):
+_ZERO_FILL = (0.73, 1.37, 2.11, 0.41, 1.87, 3.29)
+_ZERO_SPOTS = (0.37, 0.83, 1.29, 2.11, 3.07)
+
+
+def _vanishes(expr, var, tol=1e-7):
+    """Тождественно ли выражение нулём.
+
+    Сначала символьно. Но simplify доводит до нуля не всякую верную невязку:
+    log(e^u) он не свернёт, не зная знака u, а корень из тангенса и модуль
+    под логарифмом не свернёт и зная. Поэтому дальше выражение считается
+    числами в нескольких точках, а прочие буквы заполняются числами:
+    невязка верного решения уходит в машинный нуль, невязка неверного — нет.
+
+    Особые точки (полюсы, отрицательное под корнем) пропускаются. Если
+    посчитать не удалось нигде, остаётся символьный ответ.
+    """
+    expr = sp.sympify(expr)
+    try:
+        if sp.simplify(expr) == 0:
+            return True
+    except (TypeError, ValueError, AttributeError, RecursionError):
+        pass
+    spare = sorted(expr.free_symbols - {var}, key=str)
+    worst, checked = 0.0, 0
+    for shift in range(2):
+        fill = {name: sp.Float(_ZERO_FILL[(i + shift) % len(_ZERO_FILL)])
+                for i, name in enumerate(spare)}
+        for spot in _ZERO_SPOTS:
+            try:
+                value = complex(expr.subs({var: sp.Float(spot), **fill}).evalf())
+            except (TypeError, ValueError, ZeroDivisionError, AttributeError):
+                continue
+            if not (math.isfinite(value.real) and math.isfinite(value.imag)):
+                continue
+            checked += 1
+            worst = max(worst, abs(value))
+    return checked >= 3 and worst <= tol
+
+
+def verify_ode(label, y_expr, rhs, ic=None, var=x, dep=y, letters=0):
     """Проверяет, что y = y_expr решает dy/dvar = rhs и проходит через ic = (x0, y0).
 
     Эталонный ответ не хранится: невязка считается подстановкой в уравнение,
     поэтому любая верная форма записи проходит проверку.
+
+    letters — сколько букв обязано остаться в ответе. Там, где спрашивают
+    общее решение, частное решение уравнению тоже удовлетворяет, и отличить
+    их можно только по числу произвольных постоянных: потерянная постоянная
+    интегрирования — первый по частоте промах темы.
     """
     if _blank(label, y_expr, rhs, *(ic or ())):
         return False
     y_expr, rhs = sp.sympify(y_expr), sp.sympify(rhs)
-    resid = sp.simplify(sp.diff(y_expr, var) - rhs.subs(dep, y_expr))
-    if resid != 0:
+    if letters:
+        spare = y_expr.free_symbols - {var, dep}
+        if len(spare) < letters:
+            print(f"{NO} {label}: " + _t(
+                f"в ответе {len(spare)} букв, а общее решение несёт {letters}: "
+                f"постоянная интегрирования — часть ответа",
+                f"the answer carries {len(spare)} letters where the general "
+                f"solution carries {letters}: the constant of integration is "
+                f"part of the answer"))
+            return False
+    resid = sp.diff(y_expr, var) - rhs.subs(dep, y_expr)
+    if not _vanishes(resid, var):
+        resid = sp.simplify(resid)
         print(f"{NO} {label}: " + _t(f"не удовлетворяет уравнению, невязка = {resid}",
                               f"does not satisfy the equation, residual = {resid}"))
         return False
     if ic is not None:
         x0, y0 = ic
         got = sp.simplify(y_expr.subs(var, sp.sympify(x0)))
-        if sp.simplify(got - sp.sympify(y0)) != 0:
+        if not _vanishes(got - sp.sympify(y0), var):
             print(f"{NO} {label}: " + _t(
                 f"уравнение решено, но y({x0}) = {got}, а нужно {y0}",
                 f"the equation is solved, but y({x0}) = {got} instead of {y0}"))

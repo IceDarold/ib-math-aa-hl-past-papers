@@ -66,6 +66,7 @@ _segment = (arc((0, 0), 2, 0, 2),
 # закрепляет at.
 TH = sp.Symbol('theta')
 MM = sp.Symbol('m')
+F, G, v = sp.symbols('F G v')
 
 
 def _grow(angle):
@@ -1493,6 +1494,83 @@ def calls():
                               Interval.open(0, sp.pi / 2), 11.25)
     yield lambda: verify_fits('t', 'maybe', 3 / (4 * sp.cos(x)) + 6 / sp.sin(x),
                               Interval.open(0, sp.pi / 2), 11.25)
+
+    # --- E7: дифференциальные уравнения (kit/flow.py) ---
+    e_field = (4 - y) / 10
+    yield lambda: verify_family('t', Eq(x**2 + y**2, k), -x / y)
+    yield lambda: verify_family('t', Eq(x**2 - y**2, k), -x / y)
+    yield lambda: verify_family('t', Eq(x**2 + y**2, 9), -x / y, ic=(2, 0))
+    yield lambda: verify_family('t', Eq(x**2, k), -x / y)
+    yield lambda: verify_family('t', Eq(y, x**3), -x / y)
+    yield lambda: verify_family('t', ..., -x / y)
+    yield lambda: verify_solved('t', 2.0975, e_field, (0, 2), 0.5, digits=4)
+    yield lambda: verify_solved('t', 2, e_field, (0, 2), 0.5, digits=4)
+    yield lambda: verify_solved('t', 0.198, e_field, (0, 2), 0.5, digits=4)
+    yield lambda: verify_solved('t', 2.1, e_field, (0, 2), 0.5, euler=0.1, digits=4)
+    yield lambda: verify_solved('t', ..., e_field, (0, 2), 0.5)
+    yield lambda: verify_field('t', 0.2, e_field, (0, 2))
+    yield lambda: verify_field('t', 2, e_field, (0, 2))
+    yield lambda: verify_field('t', ..., e_field, (0, 2))
+    yield lambda: verify_letter('t', 2, A * x, A, (3, 6))
+    yield lambda: verify_letter('t', 3, A * x, A, (3, 6))
+    yield lambda: verify_letter('t', ..., A * x, A, (3, 6))
+    yield lambda: verify_euler('t', 2.098, e_field, (0, 2), 0.1, 0.5, digits=4)
+    yield lambda: verify_euler('t', 2.0975, e_field, (0, 2), 0.1, 0.5, digits=4)
+    yield lambda: verify_euler('t', 2.079, e_field, (0, 2), 0.1, 0.5, digits=4)
+    yield lambda: verify_euler('t', 0.000479, e_field, (0, 2), 0.1, 0.5, report='error')
+    yield lambda: verify_euler('t', 0.00479, e_field, (0, 2), 0.1, 0.5, report='error')
+    yield lambda: verify_euler('t', 'over', e_field, (0, 2), 0.1, 0.5, report='sense')
+    yield lambda: verify_euler('t', 'under', e_field, (0, 2), 0.1, 0.5, report='sense')
+    yield lambda: verify_euler('t', 'sideways', e_field, (0, 2), 0.1, 0.5, report='sense')
+    yield lambda: verify_euler('t', ..., e_field, (0, 2), 0.1, 0.5)
+    yield lambda: verify_curvature('t', 'down', e_field, (0, 2), (0, 0.5))
+    yield lambda: verify_curvature('t', 'up', e_field, (0, 2), (0, 0.5))
+    yield lambda: verify_curvature('t', 'sideways', e_field, (0, 2), (0, 0.5))
+    yield lambda: verify_curvature('t', 'up', sp.cos(x), (0, 0), (0, 6))
+    yield lambda: verify_curvature('t', ..., e_field, (0, 2), (0, 0.5))
+    yield lambda: verify_substitution('t', v**2 - v - 2, (y**2 - 2 * x**2) / x**2)
+    yield lambda: verify_substitution('t', v**2 - 2, (y**2 - 2 * x**2) / x**2)
+    yield lambda: verify_substitution('t', x * v, (y**2 - 2 * x**2) / x**2)
+    yield lambda: verify_substitution('t', v, (y**2 - 2 * x**2) / x**2)
+    yield lambda: verify_substitution('t', ..., (y**2 - 2 * x**2) / x**2)
+    yield lambda: verify_factor('t', sp.exp(-x), x + y)
+    yield lambda: verify_factor('t', sp.exp(x), x + y)
+    yield lambda: verify_factor('t', y, x + y)
+    yield lambda: verify_factor('t', x**2, x + y)
+    yield lambda: verify_factor('t', ..., x + y)
+    yield lambda: verify_directions('t', [sqrt(2), -sqrt(2)], (y**2 - 2 * x**2) / (x * y),
+                                    slope=MM)
+    yield lambda: verify_directions('t', [sqrt(2)], (y**2 - 2 * x**2) / (x * y), slope=MM)
+    yield lambda: verify_directions('t', [1, 2], (y**2 - 2 * x**2) / (x * y), slope=MM)
+    yield lambda: verify_directions('t', ..., (y**2 - 2 * x**2) / (x * y), slope=MM)
+    yield lambda: verify_inflexion('t', 1 / sqrt(3), (x**2 + 3 * y**2) / (x * y), (1, 2),
+                                   (0.58, 1))
+    yield lambda: verify_inflexion('t', sqrt(3), (x**2 + 3 * y**2) / (x * y), (1, 2),
+                                   (0.58, 1))
+    yield lambda: verify_inflexion('t', 0.9, (x**2 + 3 * y**2) / (x * y), (1, 2), (0.58, 1))
+    yield lambda: verify_inflexion('t', ..., (x**2 + 3 * y**2) / (x * y), (1, 2), (0.58, 1))
+    yield lambda: verify_system('t', (-(B / 2) * exp(2 * t) + C, (B / 2) * exp(2 * t) + C),
+                                {x: x - y, y: -x + y})
+    yield lambda: verify_system('t', ((B / 2) * exp(2 * t) + C, (B / 2) * exp(2 * t) + C),
+                                {x: x - y, y: -x + y})
+    yield lambda: verify_system('t', (exp(2 * t),), {x: x - y, y: -x + y})
+    yield lambda: verify_system('t', (exp(2 * t), exp(2 * t)), {x: x - y, y: -x + y},
+                                ic={x: (0, 5)})
+    yield lambda: verify_system('t', (..., ...), {x: x - y, y: -x + y})
+    yield lambda: verify_eliminated('t', (2, 3), {x: x - y, y: -4 * x + y}, y)
+    yield lambda: verify_eliminated('t', (3, 2), {x: x - y, y: -4 * x + y}, y)
+    yield lambda: verify_eliminated('t', (1, 1), {x: x - y, y: -4 * x + y}, y)
+    yield lambda: verify_eliminated('t', (1, 1, 1), {x: x - y, y: -4 * x + y}, y)
+    yield lambda: verify_eliminated('t', (..., ...), {x: x - y, y: -4 * x + y}, y)
+    yield lambda: verify_second_order('t', [3, -1], (1, -2, -3))
+    yield lambda: verify_second_order('t', [3, 1], (1, -2, -3))
+    yield lambda: verify_second_order('t', [3], (1, -2, -3))
+    yield lambda: verify_second_order('t', F * exp(3 * t) + G * exp(-t), (1, -2, -3))
+    yield lambda: verify_second_order('t', F * exp(3 * t) + G * exp(t), (1, -2, -3))
+    yield lambda: verify_second_order('t', F * exp(3 * t), (1, -2, -3), letters=2)
+    yield lambda: verify_second_order('t', F + G, (1, -2, -3))
+    yield lambda: verify_second_order('t', ..., (1, -2, -3))
+    yield lambda: verify_ode('t', x**2 - 2 * x - 3, x**2 - y - 5, letters=1)
 
 
 print('=== статически: строки с кириллицей вне русской половины _t ===')

@@ -19,6 +19,7 @@
     tangent       касательная и нормаль                       E4
     shape         стационарные точки, вогнутость, перегиб     E8
     integral      первообразная и измеренное                  E5 E6
+    flow          дифференциальные уравнения                  E7
     probability   вероятность и счёт                          D1 D2
     distribution  распределение по модели                     D3
     table         таблица распределения                       D4
@@ -39,13 +40,13 @@
 
 from . import (
     core, algebra, functions, geometry, sequences, derivative, tangent, shape,
-    integral, probability, distribution, table, normal, density, data,
+    integral, flow, probability, distribution, table, normal, density, data,
     vectors, planes, space, rates,
 )
 
 MODULES = (core, algebra, functions, geometry, sequences, derivative, tangent,
-           shape, integral, probability, distribution, table, normal, density,
-           data, vectors, planes, space, rates)
+           shape, integral, flow, probability, distribution, table, normal,
+           density, data, vectors, planes, space, rates)
 
 for _module in MODULES:
     globals().update((name, value) for name, value in vars(_module).items()

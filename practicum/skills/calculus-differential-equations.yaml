@@ -3,10 +3,20 @@ practicum: E7
 title: Дифференциальные уравнения первого порядка
 source_topic: calculus.differential_equations
 corpus:
-  blocks: 64
-  marks: 254
+  blocks: 69
+  marks: 275
   sessions: May 2021 — November 2025
-  papers: {1: 6, 2: 31, 3: 17}
+  papers: {1: 9, 2: 32, 3: 23}
+  note: >
+    69 блоков и 275 баллов — это с двойниками ноября 2023 года: Paper 2 TZ1 и
+    TZ2 той сессии оказались одной бумагой, а Paper 3 общим. Рабочих блоков
+    64 и баллов 255; по бумагам они и посчитаны. Пять блоков (20 баллов)
+    прогнаны классификацией дважды.
+
+    Числа выросли после того, как в корпус добавили ноябрь 2025 TZ3: пять
+    блоков и 21 балл (Paper 1 Q6 и Paper 2 Q12). Шапка самого практикума
+    написана до этого и говорит про 64 блока — там счёт без TZ3.
+  calculator_marks: 205
 
 # Приём — атомарная единица навыка внутри практикума.
 # trigger  — по какому признаку в условии приём узнаётся; главное, чего нет в архиве
@@ -62,7 +72,8 @@ skills:
                logarithmic_integration, exponentiation, exponential_form,
                initial_condition, initial_conditions, substitute_initial_condition]
     blocks: [2021-MAY-TZ2-P1-Q11-A, 2021-NOV-COMMON-P3-Q02-A-I, 2023-NOV-TZ1-P2-Q09-B,
-             2023-NOV-TZ2-P2-Q09-B, 2023-NOV-TZ1-P3-Q02-A-III, 2025-NOV-TZ1-P1-Q07-A]
+             2023-NOV-TZ2-P2-Q09-B, 2023-NOV-TZ1-P3-Q02-A-III, 2025-NOV-TZ1-P1-Q07-A,
+             2025-NOV-TZ1-P3-Q02-B-IV]
 
   - id: separation_partial_fractions
     name: Разделение с дробно-рациональным разложением
@@ -114,7 +125,7 @@ skills:
                product_rule, implicit_differentiation]
     blocks: [2022-MAY-TZ1-P2-Q12-B, 2022-NOV-COMMON-P1-Q09-A, 2023-MAY-TZ2-P2-Q12-B,
              2023-NOV-TZ1-P3-Q02-E-II, 2023-NOV-TZ2-P3-Q02-E-II, 2025-MAY-TZ1-P1-Q09,
-             2025-MAY-TZ2-P3-Q01-F]
+             2025-MAY-TZ2-P3-Q01-F, 2025-NOV-TZ3-P2-Q12-D]
 
   - id: integrating_factor
     name: Интегрирующий множитель
@@ -143,7 +154,8 @@ skills:
                solving_first_order_linear_ode, product_rule_recognition,
                recognize_derivative, integration_by_parts, particular_solution]
     blocks: [2021-NOV-COMMON-P1-Q08, 2021-NOV-COMMON-P3-Q02-A-III, 2024-MAY-TZ1-P2-Q07,
-             2024-MAY-TZ2-P2-Q12-C, 2024-MAY-TZ2-P2-Q12-D, 2025-MAY-TZ3-P2-Q12-B]
+             2024-MAY-TZ2-P2-Q12-C, 2024-MAY-TZ2-P2-Q12-D, 2025-MAY-TZ3-P2-Q12-B,
+             2025-NOV-TZ3-P1-Q06]
 
   - id: euler_method
     name: Метод Эйлера
@@ -171,7 +183,8 @@ skills:
                recursive_formula, DE_step_evaluation]
     blocks: [2022-MAY-TZ1-P2-Q12-A, 2023-MAY-TZ1-P2-Q12-A, 2023-MAY-TZ2-P2-Q12-A,
              2023-NOV-TZ1-P2-Q09-A, 2023-NOV-TZ2-P2-Q09-A, 2024-MAY-TZ2-P2-Q12-A,
-             2025-MAY-TZ1-P2-Q09-A]
+             2025-MAY-TZ1-P2-Q09-A, 2025-NOV-TZ1-P3-Q02-D-I,
+             2025-NOV-TZ3-P2-Q12-A-II]
 
   - id: euler_error_sign
     name: Знак ошибки Эйлера через вогнутость
@@ -200,7 +213,8 @@ skills:
                euler_method_interpretation, error_analysis, absolute_error,
                approximation_error, numerical_vs_exact, gradient_analysis]
     blocks: [2023-MAY-TZ1-P2-Q12-E, 2023-MAY-TZ2-P2-Q12-D, 2023-NOV-TZ1-P2-Q09-C,
-             2023-NOV-TZ2-P2-Q09-C, 2024-MAY-TZ2-P2-Q12-E-I-II-III, 2025-MAY-TZ1-P2-Q09-B]
+             2023-NOV-TZ2-P2-Q09-C, 2024-MAY-TZ2-P2-Q12-E-I-II-III, 2025-MAY-TZ1-P2-Q09-B,
+             2025-NOV-TZ3-P2-Q12-A-III]
 
 # Приёмы, встречающиеся в теме, но принадлежащие другим практикумам.
 # Здесь только повторяются, а ставятся в своих темах.
@@ -208,6 +222,49 @@ imported:
   - {id: integration_by_parts, from: E5}
   - {id: trig_identity_double_angle, from: C3}
   - {id: second_order_linear_ansatz, from: E7b, note: только Paper 3}
+
+# Что в разметке корпуса разошлось с бумагами. Найдено при сборке архива:
+# каждый ответ выводился заново и сверялся с markscheme, и там, где
+# markscheme не сходился с разметкой, прав оказывался markscheme.
+corpus_issues:
+  - block: 2024-MAY-TZ2-P2-Q12-A
+    issue: >
+      В разметке уравнение записано как dy/dx = y/tan x + cosec 2x. В бумаге
+      стоит dy/dx = y·cosec 2x + √(tan x), и решение (d) — y = x√(tan x).
+      Виноват текстовый слой PDF: знак корня из него выпадает, поэтому
+      «√(cot x) — интегрирующий множитель» в (c) читается как «cot x», а
+      «√(tan x)·√(cot x) = 1» в (d) — как «tan x·cot x». Числа markscheme
+      (y₁ = 1.25281, y(5π/12) = 2.52878) сходятся только с формой из бумаги.
+  - block: 2025-MAY-TZ1-P2-Q09-A
+    issue: >
+      В разметке dy/dx = (x+2)/(x+y). В бумаге dy/dx = 2x/(x²+y); итерация
+      markscheme (0.5, 0.803030, 1.04868, 1.26152) сходится только с ней.
+  - block: 2025-MAY-TZ1-P2-Q03
+    issue: >
+      Скорость в условии отрицательная: dP/dt = −104000e^{−0.0145t}. Минус
+      теряется в текстовом слое PDF, и в разметке его нет; markscheme
+      интегрирует отрицательную скорость и получает убыль населения.
+  - blocks: [2023-NOV-TZ1-P2-Q09-A, 2023-NOV-TZ1-P2-Q09-B, 2023-NOV-TZ1-P2-Q09-C,
+             2023-NOV-TZ1-P3-Q02-A-III, 2023-NOV-TZ1-P3-Q02-E-II]
+    issue: >
+      Ноябрь 2023: Paper 2 TZ1 и TZ2 — одна бумага (вопрос 9 совпадает слово
+      в слово), Paper 3 той сессии общий. Пять блоков и 20 баллов посчитаны
+      дважды; в архиве они стоят по одному разу.
+  - block: 2025-NOV-TZ1-P3-Q02-B-III
+    issue: >
+      Вопрос про волков разрезан по трём темам: подбор логистической модели
+      уехал в functions.mathematical_models, шаг «покажите, что f′(x) = …» —
+      в calculus.differentiation, а разделение переменных и Эйлер остались
+      здесь. Внутри вопроса это одна цепочка, и в архиве она собрана обратно.
+  - blocks: [2021-NOV-COMMON-P3-Q02-B-I, 2021-NOV-COMMON-P3-Q02-B-II,
+             2021-NOV-COMMON-P3-Q02-B-III, 2021-NOV-COMMON-P3-Q02-B-IV,
+             2021-NOV-COMMON-P3-Q02-C-I, 2021-NOV-COMMON-P3-Q02-C-II,
+             2021-NOV-COMMON-P3-Q02-C-III]
+    issue: >
+      Система двух линейных уравнений и сведение её к уравнению второго
+      порядка: 22 балла темы, которых не покрывает ни один из семи приёмов.
+      В архиве под них отведён отдельный раздел § 8, а не восьмая ступень
+      лестницы. См. пометку revisit у E7 в карте.
 
 # Лестница: каждый следующий приём сводится к предыдущему или расширяет его.
 ladder:
