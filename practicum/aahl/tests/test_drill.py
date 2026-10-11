@@ -824,6 +824,26 @@ t(f'на сорока карточках обрезка сработала {clip
 t('каталог отдаёт весь банк приёмов',
   len(drill.catalogue()['skills']) == len(bank['skills']))
 
+# Длинный вопрос переходит на следующий лист, и на том листе часто стоит
+# только «(Question 2 continued)» и строчки под ответ. Для разбора на
+# бумаге она нужна, для карточки узнавания — пустая.
+from aahl import archive as originals  # noqa: E402
+paged = [b for b, card in cards.items()
+         if len(originals.block_page_numbers(card, 'question')) > 1][:25]
+known = '2023-NOV-TZ1-P2-Q02-B'   # вопрос на две страницы, вторая — линейка
+t('страница с одной линейкой под ответ в карточку не идёт',
+  known in cards
+  and len(originals.block_page_numbers(cards[known], 'question')) == 2
+  and originals.page_count(cards[known], 'question', True) == 1)
+t('для разбора на бумаге та же страница остаётся',
+  originals.page_count(cards[known], 'question') == 2)
+t('но хотя бы одна страница остаётся всегда',
+  all(originals.page_count(cards[b], 'question', True) >= 1 for b in paged))
+t('картинка берётся из того же списка, что и счёт',
+  all(originals.page_image(cards[b], 'question',
+                           originals.page_count(cards[b], 'question', True) - 1,
+                           True) for b in paged[:5]))
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad)}  '
       f'({len(res) - len(bad)}/{len(res)})')

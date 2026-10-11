@@ -200,14 +200,41 @@ def block_page_numbers(block, which='question'):
     return locate(block['dir'], int(block['question']), hint, which)
 
 
+def card_pages(block):
+    """Страницы вопроса, на которых есть сам вопрос, а не линейка.
+
+    Длинный вопрос переходит на следующий лист, и на том листе часто
+    стоит только «(Question 2 continued)» и строчки под ответ. Для
+    разбора на бумаге такая страница нужна — на ней пишут; для карточки
+    узнавания она пустая, и показывать её нечем.
+
+    Если содержательной не оказалось ни одной, остаётся первая: лучше
+    показать лист целиком, чем не показать ничего.
+    """
+    numbers = block_page_numbers(block, 'question')
+    path = os.path.join(ROOT, block['dir'], QUESTION_PDF)
+    kept = [number for number in numbers
+            if paper.question_clip(path, number) is not None]
+    return kept or numbers[:1]
+
+
+def page_count(block, which='question', crop=False):
+    """Сколько страниц у блока. crop считает только содержательные."""
+    if crop and which == 'question':
+        return len(card_pages(block))
+    return len(block_page_numbers(block, which))
+
+
 def page_image(block, which='question', index=0, crop=False):
     """Одна страница блока картинкой.
 
     crop вырезает сам вопрос, без поля для письма: на экзаменационном
     листе оно занимает две трети страницы, и в режиме выбора приёма,
-    где писать не нужно, оно только заставляет листать.
+    где писать не нужно, оно только заставляет листать. Счёт страниц при
+    этом идёт по содержательным — тем же, что считает page_count.
     """
-    numbers = block_page_numbers(block, which)
+    numbers = (card_pages(block) if crop and which == 'question'
+               else block_page_numbers(block, which))
     if not 0 <= index < len(numbers):
         raise LookupError('такой страницы нет')
     name = QUESTION_PDF if which == 'question' else MARKSCHEME_PDF

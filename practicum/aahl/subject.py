@@ -192,9 +192,9 @@ def reference(block):
     return archive.reference(block)
 
 
-def page_count(block, which='question'):
+def page_count(block, which='question', crop=False):
     from aahl import archive
-    return len(archive.block_page_numbers(block, which))
+    return archive.page_count(block, which, crop)
 
 
 def page_image(block, which='question', index=0, crop=False):
