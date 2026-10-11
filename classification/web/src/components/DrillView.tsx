@@ -1724,9 +1724,9 @@ export function DrillView() {
                   // только мешают читать.
                   verdict ? null : (
                     <PickCatalogue
+                      key={item.item}
                       subject={subject}
                       disabled={busy}
-                      locked={null}
                       onPick={(skill) => { markFirstKey(); void submit(skill) }}
                     />
                   )
