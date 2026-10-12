@@ -144,9 +144,9 @@ def locate(folder, question, hint, which='question', span=1):
     with pymupdf.open(path) as document:
         total = document.page_count
 
-    hints = paper.parse_pages(hint) or [1]
+    hints = _hint_pages(hint, total)
     start = None
-    for candidate in _search_order(hints[0], total):
+    for candidate in _search_order(hints, total):
         numbers, _ = _page_numbers(path, candidate)
         if question in numbers:
             start = candidate
@@ -169,12 +169,32 @@ def locate(folder, question, hint, which='question', span=1):
     return pages
 
 
-def _search_order(hint, total):
-    """Подсказка корпуса, затем ближайшие страницы вокруг неё."""
-    order = [hint]
+LOOSE_PAGE = re.compile(r'\d+')
+
+
+def _hint_pages(hint, total):
+    """Номера страниц из подсказки корпуса, включая написанные прозой.
+
+    У восьми блоков подсказка выглядит как «15/17», «8 of 17» или
+    «2023-NOV-TZ1-P2, page 4 of 17»: номер в ней есть, но parse_pages
+    его не берёт, и поиск начинался с первой страницы — то есть с
+    обложки. Лишние числа не опасны: страницу всё равно подтверждает
+    номер вопроса, напечатанный на ней.
+    """
+    pages = paper.parse_pages(hint)
+    if pages:
+        return pages
+    loose = [int(n) for n in LOOSE_PAGE.findall(str(hint or ''))]
+    return [n for n in dict.fromkeys(loose) if 1 <= n <= total] or [1]
+
+
+def _search_order(hints, total):
+    """Подсказки корпуса, затем ближайшие страницы вокруг каждой."""
+    order = list(hints)
     for step in range(1, SEARCH_RADIUS + 1):
-        order += [hint + step, hint - step]
-    return [n for n in order if 1 <= n <= total]
+        for hint in hints:
+            order += [hint + step, hint - step]
+    return [n for n in dict.fromkeys(order) if 1 <= n <= total]
 
 
 def block_pages(block, with_markscheme=True):
@@ -218,10 +238,72 @@ def card_pages(block):
     return kept or numbers[:1]
 
 
+PART_TOKEN = re.compile(r'[a-z]+')
+# Пункт случается на листе, который locate не взял: страница с одним
+# чертежом считается почти пустой и до неё разбор не доходит.
+BAND_LOOKAHEAD = 2
+
+
+def part_parts(part, question=None):
+    """Пункт корпуса — в части: «(g)(ii)» → ('g', 'ii'), «B-I» → ('b', 'i').
+
+    Записан он четырьмя способами: «A», «a», «(a)», «a-i», «(a)(i)»,
+    «e(i)», «D-II». У 101 блока пункта нет вовсе — такой вопрос не
+    делится, — а иногда поле повторяет номер вопроса: это тоже не пункт.
+    Дальше (j) пункты не заходят ни в одной бумаге архива.
+    """
+    body = str(part or '').strip().lower()
+    if not body or (question is not None and body == str(question).lower()):
+        return ()
+    tokens = PART_TOKEN.findall(body)
+    if not tokens or tokens[0] not in 'abcdefghij' or len(tokens[0]) != 1:
+        return ()
+    out = [tokens[0]]
+    for token in tokens[1:]:
+        if set(token) - set('ivx'):
+            break                      # дальше не пункт, а слово
+        out.append(token)
+    return tuple(out)
+
+
+def part_letter(block):
+    """Буква пункта блока: «B» → b, «(g)(ii)» → g, «» → None."""
+    found = part_parts(block.get('part'), block.get('question'))
+    return found[0] if found else None
+
+
+def part_label(block):
+    """Пункт для подписи карточки: «(g)(ii)»."""
+    return ''.join(f'({token})'
+                   for token in part_parts(block.get('part'),
+                                           block.get('question')))
+
+
+def card_bands(block):
+    """Полосы листа, из которых собирается карточка одного пункта.
+
+    None — пункта у блока нет или его не нашли на листе; тогда карточка
+    остаётся страницей целиком (см. card_pages).
+    """
+    letter = part_letter(block)
+    if not letter:
+        return None
+    numbers = block_page_numbers(block, 'question')
+    path = os.path.join(ROOT, block['dir'], QUESTION_PDF)
+    if not os.path.isfile(path):
+        return None
+    with pymupdf.open(path) as document:
+        total = document.page_count
+    tail = [n for n in range(numbers[-1] + 1,
+                             numbers[-1] + 1 + BAND_LOOKAHEAD) if n <= total]
+    return paper.part_bands(path, tuple(numbers + tail), letter,
+                            int(block['question']))
+
+
 def page_count(block, which='question', crop=False):
     """Сколько страниц у блока. crop считает только содержательные."""
     if crop and which == 'question':
-        return len(card_pages(block))
+        return 1 if card_bands(block) else len(card_pages(block))
     return len(block_page_numbers(block, which))
 
 
@@ -230,9 +312,19 @@ def page_image(block, which='question', index=0, crop=False):
 
     crop вырезает сам вопрос, без поля для письма: на экзаменационном
     листе оно занимает две трети страницы, и в режиме выбора приёма,
-    где писать не нужно, оно только заставляет листать. Счёт страниц при
-    этом идёт по содержательным — тем же, что считает page_count.
+    где писать не нужно, оно только заставляет листать. Если у блока
+    есть пункт, вырезается ещё и он один: у вопроса Paper 3 пунктов
+    бывает десять, и все про разное, а спрашивают про один. Счёт
+    страниц при этом идёт по содержательным — тем же, что считает
+    page_count.
     """
+    if crop and which == 'question':
+        bands = card_bands(block)
+        if bands:
+            if index:
+                raise LookupError('такой страницы нет')
+            return paper.render_bands(
+                os.path.join(ROOT, block['dir'], QUESTION_PDF), bands, DPI)
     numbers = (card_pages(block) if crop and which == 'question'
                else block_page_numbers(block, which))
     if not 0 <= index < len(numbers):
@@ -245,14 +337,5 @@ def page_image(block, which='question', index=0, crop=False):
 
 def reference(block):
     """Ссылка на источник словами экзамена: «May 2022 TZ2, Paper 1, Q3(b)»."""
-    part = (block.get('part') or '').lower()
-    # В корпусе поле part иногда повторяет номер вопроса — такую «часть»
-    # печатать незачем, она не существует в бумаге.
-    if not re.fullmatch(r'[a-z]+(?:-[ivx]+)*', part) or part == str(
-            block.get('question', '')).lower():
-        part = ''
-    tail = f"({part.replace('-', ')(')})" if part else ''
     return (f"{block['session']} {block['zone']}, Paper {block['paper']}, "
-            f"Q{block['question']}{tail}")
-
-
+            f"Q{block['question']}{part_label(block)}")

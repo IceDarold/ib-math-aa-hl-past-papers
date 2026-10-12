@@ -844,6 +844,85 @@ t('картинка берётся из того же списка, что и с
                            originals.page_count(cards[b], 'question', True) - 1,
                            True) for b in paged[:5]))
 
+# Вопрос — это условие и до десяти пунктов, каждый о своём приёме.
+# Карточка показывает один пункт: условие, пояснение перед пунктом и сам
+# пункт. Остальные девять к спрашиваемому приёму отношения не имеют.
+print('\n--- карточка — один пункт ---')
+
+t('пункт корпуса читается во всех четырёх записях',
+  [originals.part_parts(value) for value in
+   ('A', 'a', '(a)', 'a-i', '(a)(i)', 'e(i)', 'D-II', '', '—')]
+  == [('a',), ('a',), ('a',), ('a', 'i'), ('a', 'i'), ('e', 'i'),
+      ('d', 'ii'), (), ()])
+t('пункт, повторяющий номер вопроса, пунктом не считается',
+  originals.part_parts('9', question='9') == ())
+t('подпись карточки называет пункт, как бы он ни был записан',
+  archive.reference(dict(session='May 2024', zone='TZ1', paper=3,
+                         question=1, part='(h)(iii)', dir='x'))
+  == 'May 2024 TZ1, Paper 3, Q1(h)(iii)')
+
+long_q = '2024-MAY-TZ1-P3-Q01-E'      # исследование Paper 3 из десяти пунктов
+t('у вопроса на десять пунктов карточка — одна картинка',
+  originals.page_count(cards[long_q], 'question', True) == 1)
+t('на листе этого вопроса пунктов и правда больше восьми',
+  len({mark for number in originals.block_page_numbers(cards[long_q],
+                                                       'question')
+       for _, _, mark, junk, _ in paper.page_blocks(
+           os.path.join(os.path.dirname(PRACTICUM), cards[long_q]['dir'],
+                        'question-paper.pdf'), number)
+       if not junk and paper._is_part(mark)}) >= 8)
+
+
+def card_text(block_id):
+    """Что на самом деле видно на карточке — текст внутри вырезанных полос."""
+    import pymupdf
+    block = cards[block_id]
+    path = os.path.join(os.path.dirname(PRACTICUM), block['dir'],
+                        'question-paper.pdf')
+    out = []
+    with pymupdf.open(path) as document:
+        for number, clip in originals.card_bands(block) or ():
+            out.append(document[number - 1].get_text(
+                'text', clip=pymupdf.Rect(*clip)))
+    return ' '.join(' '.join(out).split())
+
+
+seen = card_text(long_q)
+t('на карточке стоит её пункт', '(e)' in seen)
+t('чужих пунктов на карточке нет',
+  not any(f'({letter})' in seen for letter in 'abcdfgh'))
+t('условие вопроса на карточке осталось',
+  'two possible models' in seen and '[Maximum mark: 27]' in seen)
+
+split = '2023-MAY-TZ2-P1-Q02-C'       # условие на одном листе, пункт на другом
+t('условие и пункт с разных листов сшиваются в одну картинку',
+  len({number for number, _ in originals.card_bands(cards[split])}) == 2
+  and originals.page_count(cards[split], 'question', True) == 1)
+
+ninth = '2023-MAY-TZ1-P3-Q02-I'       # пункт (i), а не римская единица
+t('девятый пункт отличается от первого подпункта по отступу',
+  originals.part_letter(cards[ninth]) == 'i'
+  and originals.card_bands(cards[ninth]))
+
+whole_q = next(b for b, card in cards.items() if not originals.part_letter(card))
+t('у вопроса без пунктов карточка остаётся страницей',
+  originals.card_bands(cards[whole_q]) is None)
+
+sample = sorted(b for b, card in cards.items() if originals.part_letter(card))
+sample = sample[::97]
+t(f'пункт находится на листе у всех {len(sample)} проверенных карточек',
+  all(originals.card_bands(cards[b]) for b in sample))
+t('ни одна полоса не схлопнулась',
+  all(clip[3] - clip[1] >= paper.MIN_HEIGHT
+      for b in sample for _, clip in originals.card_bands(cards[b])))
+
+# Корпус записывает страницу и прозой: «15/17», «page 4 of 17». Раньше
+# такой блок искал вопрос с первой страницы и показывал обложку.
+prose = '2024-MAY-TZ2-P1-Q10-A'
+t('страница из прозаической подсказки всё равно находится',
+  cards[prose]['source_pages'] == '15/17'
+  and originals.block_page_numbers(cards[prose], 'question') == [15])
+
 bad = [name for name, ok in res if not ok]
 print(f'\n{"ВСЁ ВЕРНО" if not bad else "ПРОВАЛЫ: " + str(bad)}  '
       f'({len(res) - len(bad)}/{len(res)})')

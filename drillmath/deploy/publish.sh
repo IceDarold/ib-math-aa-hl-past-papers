@@ -47,5 +47,5 @@ if ! diff -q "$here/deploy/drillmath.archik.tech.conf" "$live" >/dev/null 2>&1; 
 fi
 
 printf 'Проверка.\n'
-code=$(curl -s -o /dev/null -w '%%{http_code}' --max-time 15 https://drillmath.archik.tech/ || true)
+code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 https://drillmath.archik.tech/ || true)
 printf 'https://drillmath.archik.tech/ → %s\n' "$code"
