@@ -53,7 +53,7 @@ zeros1b = sp.solve(sp.Eq(g1, 0), x)
 y1b = g1.subs(x, 0)
 print(f'Задание 1(b): ось x в {zeros1b}, ось y в {y1b}')
 t('1b-x', verify_root_set('Задание 1(b), ось x', zeros1b, g1))
-t('1b-y', check_num('Задание 1(b), ось y', y1b, 6, D['Задание 1(b), ось y']))
+t('1b-y', check_num('Задание 1(b), ось y', y1b, 6, D['Task 1(b), the y-axis']))
 
 # Задание 5: раскладываем на множители, а не делим — оба корня на месте.
 factored5 = sp.factor(s**2 - 4 * s)
@@ -113,7 +113,7 @@ f3 = -x**2 + 4 * x + p
 xv3 = sp.solve(sp.Eq(sp.diff(f3, x), 0), x)[0]
 p3 = sp.solve(sp.Eq(f3.subs(x, xv3), 2 * xv3 - 1), p)[0]
 print(f'Задание 3(a): вершина при x = {xv3}, p = {p3}')
-t('3a', check_num('Задание 3(a)', p3, 6, D['Задание 3(a)']))
+t('3a', check_num('Задание 3(a)', p3, 6, D['Task 3(a)']))
 
 g3 = x**2 + q * x - 1
 xv3b = sp.solve(sp.Eq(sp.diff(g3, x), 0), x)[0]
@@ -131,9 +131,9 @@ p4 = sp.solve(sp.Eq((R(-1, 2) + p) / 2, 2), p)[0]
 g4 = sp.expand((x + R(1, 2)) * (x - p4))
 b4, c4 = sp.Poly(g4, x).all_coeffs()[1], sp.Poly(g4, x).all_coeffs()[2]
 print(f'Задание 4: p = {p4}, g = {g4}, b = {b4}, c = {c4}')
-t('4a', check_num('Задание 4(a)', p4, 6, D['Задание 4(a)']))
-t('4b', check_num('Задание 4(b), b', b4, 6, D['Задание 4(b), b']))
-t('4c', check_num('Задание 4(b), c', c4, 6, D['Задание 4(b), c']))
+t('4a', check_num('Задание 4(a)', p4, 6, D['Task 4(a)']))
+t('4b', check_num('Задание 4(b), b', b4, 6, D['Task 4(b), b']))
+t('4c', check_num('Задание 4(b), c', c4, 6, D['Task 4(b), c']))
 t('4vieta', -b4 == R(-1, 2) + p4 and c4 == R(-1, 2) * p4)
 
 print('\n=== построить уравнение ===')
@@ -156,8 +156,8 @@ pairs7 = [(bb, 8 / sp.Integer(bb - 4) + 4) for bb in range(5, 40)
           if (8 / sp.Integer(bb - 4) + 4).is_integer]
 tri7 = {frozenset((bb, aa)) for bb, aa in pairs7}
 print(f'Задание 7: пары (b, a) = {pairs7}, различных треугольников {len(tri7)}')
-t('7a', check_set('Задание 7(a)', [bb for bb, _ in pairs7], D['Задание 7(a)']))
-t('7b', check_num('Задание 7(b)', len(tri7), 6, D['Задание 7(b)']))
+t('7a', check_set('Задание 7(a)', [bb for bb, _ in pairs7], D['Task 7(a)']))
+t('7b', check_num('Задание 7(b)', len(tri7), 6, D['Task 7(b)']))
 t('7pyth', all(sp.sqrt(aa**2 + bb**2).is_integer for bb, aa in pairs7))
 
 # Задание 11: уравнение пересечения — разность правых частей.
@@ -171,8 +171,8 @@ sol12 = sp.solve([sp.Eq(y**2, 4 * a**2 - 4 * a * x),
 x12 = sol12[0][0]
 y12 = max(sol12, key=lambda pair: sp.default_sort_key(pair[1]))[1]
 print(f'Задание 12: решения {sol12}')
-t('12x', check_expr('Задание 12, x', x12, D['Задание 12, x']))
-t('12y', check_expr('Задание 12, y', y12, D['Задание 12, y']))
+t('12x', check_expr('Задание 12, x', x12, D['Task 12, x']))
+t('12y', check_expr('Задание 12, y', y12, D['Task 12, y']))
 
 print('\n=== численно ===')
 
@@ -186,9 +186,9 @@ d13 = (0.05 * tt**2 + 1.1 * tt + 18).subs(tt, t13)
 later13 = sp.nsolve(model13, tt, (12.77, 12.78), solver='bisect')
 print(f'Задание 13: x = {x13}, первая встреча t = {t13}, расстояние {d13}, '
       f'вторая встреча t = {later13}')
-t('13a', check_num('Задание 13(a)', x13, 3, D['Задание 13(a)']))
-t('13t', check_num('Задание 13(b), время', t13, 3, D['Задание 13(b), время']))
-t('13g', check_num('Задание 13(b), место', d13, 3, D['Задание 13(b), место']))
+t('13a', check_num('Задание 13(a)', x13, 3, D['Task 13(a)']))
+t('13t', check_num('Задание 13(b), время', t13, 3, D['Task 13(b), the time']))
+t('13g', check_num('Задание 13(b), место', d13, 3, D['Task 13(b), the place']))
 t('13first', t13 < later13)
 # Округлив время до 3 s.f., получаем 22.2461 вместо 22.2444: до третьей
 # значащей цифры здесь повезло, и это именно везение, а не правило.
@@ -210,7 +210,7 @@ t('14', verify_param_set('Задание 14, по смыслу', sp.FiniteSet(*m
                          lambda mv: roots_count(x**2 - (mv + 1) * x + 2) == 1,
                          var=m))
 t('14set', check_set('Задание 14, оба значения', sp.FiniteSet(*ms14),
-                     D['Задание 14, оба значения']))
+                     D['Task 14, both values']))
 t('14tangent', all(roots_count(x**2 - (mv + 1) * x + 2) == 1 for mv in ms14))
 
 # Задание 15: дискриминант по замене плюс область логарифма.
@@ -346,7 +346,7 @@ qp19 = sp.simplify(roots19[1] - roots19[0])
 print(f'Задание 19(c): корни {roots19}, q − p = {qp19}')
 t('19roots', verify_root_set('Задание 19(c), корни', roots19,
                              x**2 - 20 * x + 90))
-t('19qp', check_expr('Задание 19(c), q − p', qp19, D['Задание 19(c), q − p']))
+t('19qp', check_expr('Задание 19(c), q − p', qp19, D['Task 19(c), q - p']))
 # Оба корня попадают в область обеих функций: 2x − 9 > 0 и x > 0.
 t('19domain', all(2 * sp.N(r) - 9 > 0 for r in roots19))
 
@@ -379,7 +379,7 @@ t('нет: раскрытая скобка вместо вершинной фо�
                          5 * (x + 1) * (x + 3)))
 t('нет: касание при одном значении m из двух — ловит check_set',
   not check_set('  только +', sp.FiniteSet(ms14[0]),
-                D['Задание 14, оба значения']))
+                D['Task 14, both values']))
 t('нет: строгий знак вместо нестрогого в задании 15',
   not verify_param_set('  k < e^{9/4}', sp.Interval.open(0, k15), has_root15))
 t('нет: границы кубической включены',

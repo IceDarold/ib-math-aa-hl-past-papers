@@ -63,452 +63,456 @@ def code(src):
 
 
 md(r"""
-# Практикум A5: комплексные числа, формы и арифметика ℂ
+# Practicum A5: complex numbers, forms and arithmetic ℂ
 
-Самая «бумажная» тема архива после тригонометрических уравнений: **102 балла
-из 144 — это Paper 1**, доля с калькулятором 29%. Считать нечего, всё решается
-переходом между тремя записями одного и того же числа.
+The most «paper» topic of the archive after trigonometric equations: **102 marks out
+of 144 are Paper 1**, and the calculator share is 29%. There is nothing to compute;
+everything is solved by moving between three ways of writing the same number.
 
-**Материал.** 42 блока и 144 балла из архива AA HL, сессии May 2021 —
-November 2025. Каждое задание ниже — настоящий вопрос прошлых лет,
-источник указан.
+**Material.** 42 blocks and 144 marks from the AA HL archive, sessions May 2021 —
+November 2025. Every task below is a real past-paper question, cited.
 
-**Что здесь и что в A6.** Тема комплексных чисел в архиве большая, 238 баллов,
-и делится надвое по существу приёма, а не пополам:
+**What is here and what is in A6.** Complex numbers make a large topic in the
+archive, 238 marks, and it splits in two by the substance of the technique rather
+than down the middle:
 
-- **A5, этот практикум** — три формы записи, переходы между ними, арифметика,
-  сопряжение, модуль и аргумент, сопряжённые корни многочленов;
-- **A6** — теорема Муавра, корни $n$-й степени, корни из единицы, повороты
-  и геометрия на плоскости Аргана.
+- **A5, this practicum** — the three forms, moving between them, arithmetic,
+  the conjugate, modulus and argument, conjugate roots of polynomials;
+- **A6** — de Moivre's theorem, $n$-th roots, roots of unity, rotations and the
+  geometry of the Argand plane.
 
-Граница проходит там, где заканчивается арифметика и начинается возведение
-в степень. Если в решении появляется $z^n$ — это A6.
+The border runs where the arithmetic ends and raising to a power begins. If $z^n$
+shows up in the solution, it is A6.
 
-**Как работать**
+**How to work**
 
-1. Прочитайте карту приёмов. Первые четыре — про формы записи, пятый —
-   про свойства произведения, шестой — про многочлены.
-2. Решайте **на бумаге**. Рисуйте плоскость Аргана: четверть, в которой лежит
-   число, определяет аргумент, и на глаз это надёжнее, чем через арктангенс.
-3. Ответ вводите в любой удобной форме. Проверка сверяет **само число**,
-   а не запись: `2*exp(I*pi/3)`, `2*(cos(pi/3) + I*sin(pi/3))` и `1 + sqrt(3)*I`
-   засчитываются одинаково.
-4. Последние блоки — тренажёр распознавания и задание на таймере.
+1. Read the map of techniques. The first four are about the forms, the fifth is
+   about the properties of a product, the sixth is about polynomials.
+2. Work **on paper**. Draw the Argand plane: the quadrant the number lies in
+   determines the argument, and by eye that is more reliable than an arctangent.
+3. Enter the answer in whichever form suits you. The check compares **the number
+   itself**, not the writing: `2*exp(I*pi/3)`, `2*(cos(pi/3) + I*sin(pi/3))` and
+   `1 + sqrt(3)*I` all count the same.
+4. The last blocks are a recognition trainer and one question on a timer.
 
-Метки сложности: 🟢 приём в чистом виде · 🟡 приём в неочевидной обёртке ·
-🔴 комбинация приёмов или экзаменационный формат целиком.
+Difficulty marks: 🟢 the technique on its own · 🟡 the technique in a wrapper ·
+🔴 several techniques, or a whole exam question.
 """)
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/number_algebra к practicum/kit/
-import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
-from kit import *              # проверки + I, pi, sqrt, exp, re, im и прочие имена
+sys.path.append('..')          # from practicum/number_algebra to practicum/kit/
+import sympy as sp             # the escape hatch: anything not in kit is in sp
+from kit import *              # checks + I, pi, sqrt, exp, re, im and the other names
+
+language('en')                 # this notebook is in English, and so are the checks
 
 z, w = symbols('z w')
 a, b = symbols('a b', real=True)
 
-print('готово; sympy', sp.__version__)
-print('мнимая единица пишется I:', (1 + I)**2, '   а pi и sqrt как обычно:', 2*exp(I*pi/3))
+print('ready; sympy', sp.__version__)
+print('the imaginary unit is I:', (1 + I)**2, '   and pi, sqrt as usual:', 2*exp(I*pi/3))
 """)
 
 md(r"""
 ---
-## Карта приёмов
+## Map of techniques
 
-| # | Приём | Триггер в условии | Даёт |
+| # | Technique | Trigger in the question | Gives |
 | --- | --- | --- | --- |
-| 1 | Арифметика и сопряжённое | дробь с $i$ в знаменателе, «rationalise» | $a + bi$ |
-| 2 | Приравнять части | равенство двух комплексных выражений с неизвестными | систему |
-| 3 | Модуль и аргумент | «find $\lvert z\rvert$ and $\arg z$» | $r$, $\theta$ |
-| 4 | Перевод форм | «in the form $re^{i\theta}$», «in Cartesian form» | другую запись |
-| 5 | Свойства произведения | $\lvert z_1z_2\rvert$, $\arg(z_1z_2)$, условие «$z \in \mathbb{R}$» | связь |
-| 6 | Сопряжённые корни | многочлен с действительными коэффициентами | остальные корни |
+| 1 | Arithmetic and the conjugate | a fraction with $i$ in the denominator, «rationalise» | $a + bi$ |
+| 2 | Equate the parts | an equality of two complex expressions with unknowns | a system |
+| 3 | Modulus and argument | «find $\lvert z\rvert$ and $\arg z$» | $r$, $\theta$ |
+| 4 | Change of form | «in the form $re^{i\theta}$», «in Cartesian form» | another writing |
+| 5 | Properties of a product | $\lvert z_1z_2\rvert$, $\arg(z_1z_2)$, the condition «$z \in \mathbb{R}$» | a relation |
+| 6 | Conjugate roots | a polynomial with real coefficients | the other roots |
 
-Приёмы 1–4 — это одно и то же умение с четырёх сторон: **свободно переходить
-между тремя записями числа.** Пятый и шестой — надстройка над ним.
+Techniques 1–4 are one and the same skill seen from four sides: **moving freely
+between the three ways of writing a number.** The fifth and the sixth are built on
+top of it.
 
-Три записи, между которыми всё происходит:
+The three forms, between which everything happens:
 
 $$z = a + bi
 \;=\; r(\cos\theta + i\sin\theta)
 \;=\; r e^{i\theta}.$$
 
-Правило выбора, экономящее половину работы: **складывают в декартовой,
-умножают в полярной.** Сложение и вычитание в $a+bi$ тривиальны, а в полярной
-форме бессмысленны; умножение, деление и степени в полярной сводятся
-к действиям с $r$ и $\theta$ по отдельности.
+The rule of choice that saves half the work: **add in Cartesian, multiply in
+polar.** Addition and subtraction are trivial in $a+bi$ and meaningless in the polar
+form; multiplication, division and powers in the polar form come down to doing
+something to $r$ and to $\theta$ separately.
 """)
 
 md(r"""
 ---
-## Теория 1. Сопряжённое и зачем оно нужно
+## Theory 1. The conjugate, and what it is for
 
-Сопряжённое $\bar z = a - bi$ отражает число относительно действительной оси.
-Два его свойства делают всю работу:
+The conjugate $\bar z = a - bi$ reflects the number in the real axis. Two of its
+properties do all the work:
 
-$$z\bar z = a^2 + b^2 = |z|^2 \quad(\text{всегда действительно}), \qquad
+$$z\bar z = a^2 + b^2 = |z|^2 \quad(\text{always real}), \qquad
 z + \bar z = 2a = 2\operatorname{Re}(z).$$
 
-Первое — причина, по которой сопряжённое вообще применяют. Комплексное число
-в знаменателе — это не ответ; чтобы от него избавиться, умножают числитель
-и знаменатель на сопряжённое знаменателю, и знаменатель становится
-действительным:
+The first is the reason the conjugate is used at all. A complex number in a
+denominator is not an answer; to get rid of it, multiply numerator and denominator by
+the conjugate of the denominator, and the denominator becomes real:
 
 $$\frac{1}{2 + 3i} = \frac{1}{2+3i}\cdot\frac{2 - 3i}{2 - 3i}
 = \frac{2 - 3i}{4 + 9} = \frac{2}{13} - \frac{3}{13}i.$$
 
-Это ровно тот же приём, которым избавляются от корня в знаменателе,
-и в markscheme он называется rationalising.
+This is exactly the technique used to clear a root out of a denominator, and in the
+markscheme it is called rationalising.
 """)
 
 md(r"""
-## Задание 1 🟢 — в показательную форму
+## Task 1 🟢 — into exponential form
 
-Выразите $z_1 = 3 - 3i$ в виде $re^{i\theta}$, где $r > 0$ и $-\pi < \theta \le \pi$.
+Express $z_1 = 3 - 3i$ in the form $re^{i\theta}$, where $r > 0$ and
+$-\pi < \theta \le \pi$.
 
-Порядок: модуль по теореме Пифагора, потом четверть по знакам, потом острый
-угол через арктангенс отношения.
+The order: the modulus by Pythagoras, then the quadrant from the signs, then the
+acute angle from the arctangent of the ratio.
 
-*Источник: May 2025 TZ3, Paper 1, Q8(a) (3 балла, без калькулятора).*
+*Source: May 2025 TZ3, Paper 1, Q8(a) (3 marks, no calculator).*
 """)
 
 code(r"""
-my_z1 = ...              # например 5*exp(I*pi/3) или 5*(cos(pi/3) + I*sin(pi/3))
+my_z1 = ...              # for example 5*exp(I*pi/3) or 5*(cos(pi/3) + I*sin(pi/3))
 
-check_complex('Задание 1', my_z1, '""" + D_Z1 + r"""')
+check_complex('Task 1', my_z1, '""" + D_Z1 + r"""')
 """)
 
 md(r"""
-## Задание 2 🟢 — ещё один перевод
+## Task 2 🟢 — one more change of form
 
-Выразите $w = 1 + i\sqrt{3}$ в виде $re^{i\alpha}$, где $r > 0$
-и $-\pi < \alpha \le \pi$.
+Express $w = 1 + i\sqrt{3}$ in the form $re^{i\alpha}$, where $r > 0$ and
+$-\pi < \alpha \le \pi$.
 
-*Источник: November 2025 TZ3, Paper 1, Q11(a)(i) (2 балла, без калькулятора).*
+*Source: November 2025 TZ3, Paper 1, Q11(a)(i) (2 marks, no calculator).*
 """)
 
 code(r"""
 my_w = ...
 
-check_complex('Задание 2', my_w, '""" + D_Z2 + r"""')
+check_complex('Task 2', my_w, '""" + D_Z2 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 2. Аргумент и четверть
+## Theory 2. The argument and the quadrant
 
-Модуль вопросов не вызывает: $|a + bi| = \sqrt{a^2 + b^2}$. Аргумент вызывает,
-и почти всегда одинаково.
+The modulus raises no questions: $|a + bi| = \sqrt{a^2 + b^2}$. The argument does,
+and almost always in the same way.
 
-Формула $\arg z = \arctan\dfrac{b}{a}$ **верна только в правой полуплоскости**,
-при $a > 0$. Арктангенс возвращает значения из $\left(-\frac{\pi}{2},
-\frac{\pi}{2}\right)$, а аргумент бывает любым в $(-\pi, \pi]$. Числа
-$1 + i$ и $-1 - i$ имеют одинаковое отношение $b/a = 1$, но аргументы
-$\frac{\pi}{4}$ и $-\frac{3\pi}{4}$.
+The formula $\arg z = \arctan\dfrac{b}{a}$ is **only valid in the right half-plane**,
+when $a > 0$. The arctangent returns values in $\left(-\frac{\pi}{2},
+\frac{\pi}{2}\right)$, while an argument can be anything in $(-\pi, \pi]$. The
+numbers $1 + i$ and $-1 - i$ have the same ratio $b/a = 1$ but arguments
+$\frac{\pi}{4}$ and $-\frac{3\pi}{4}$.
 
-Надёжный порядок:
+A reliable order:
 
-1. Отметить число на плоскости и назвать четверть.
-2. Найти **острый** угол $\alpha = \arctan\left|\dfrac{b}{a}\right|$.
-3. Достроить до нужной четверти: I — это $\alpha$, II — $\pi - \alpha$,
-   III — $\alpha - \pi$, IV — $-\alpha$.
+1. Mark the number on the plane and name the quadrant.
+2. Find the **acute** angle $\alpha = \arctan\left|\dfrac{b}{a}\right|$.
+3. Build it up to the right quadrant: I is $\alpha$, II is $\pi - \alpha$,
+   III is $\alpha - \pi$, IV is $-\alpha$.
 
-Рисунок здесь не иллюстрация, а сам метод. Проверка занимает секунду:
-у числа во второй четверти аргумент обязан лежать между $\frac{\pi}{2}$ и $\pi$.
+The drawing here is not an illustration, it is the method itself. Checking takes a
+second: a number in the second quadrant must have its argument between
+$\frac{\pi}{2}$ and $\pi$.
 """)
 
 md(r"""
-## Задание 3 🟢 — модуль, аргумент и вывод формы
+## Task 3 🟢 — modulus, argument, and deducing the form
 
-Дано $u = -1 + \sqrt{3}\,i$.
+Given $u = -1 + \sqrt{3}\,i$.
 
-**(a)** Найдите $|u|$ и $\arg u$.
-**(b)** Отсюда покажите, что $u = 2e^{2\pi i/3}$.
+**(a)** Find $|u|$ and $\arg u$.
+**(b)** Hence show that $u = 2e^{2\pi i/3}$.
 
-Число лежит во второй четверти — именно там формула через арктангенс
-даёт неверный ответ.
+The number lies in the second quadrant — which is exactly where the arctangent
+formula gives the wrong answer.
 
-*Источник: May 2023 TZ2, Paper 1, Q11(a) (3 балла, без калькулятора).*
+*Source: May 2023 TZ2, Paper 1, Q11(a) (3 marks, no calculator).*
 """)
 
 code(r"""
 my_mod = ...
-my_arg = ...             # точное значение
+my_arg = ...             # the exact value
 
-check_num('Задание 3, |u|', my_mod, 6, '""" + D_MOD3 + r"""')
-check_expr('Задание 3, arg u', my_arg, '""" + D_ARG3 + r"""')
+check_num('Task 3, |u|', my_mod, 6, '""" + D_MOD3 + r"""')
+check_expr('Task 3, arg u', my_arg, '""" + D_ARG3 + r"""')
 """)
 
 md(r"""
-## Задание 4 🟢 — избавиться от i в знаменателе
+## Task 4 🟢 — clearing the i out of the denominator
 
-Дано $w = \dfrac{4i}{1 + i\sqrt{3}}$.
+Given $w = \dfrac{4i}{1 + i\sqrt{3}}$.
 
-Покажите, что $w = \sqrt{3} + i$.
+Show that $w = \sqrt{3} + i$.
 
-*Источник: November 2025 TZ1, Paper 1, Q11(a) (2 балла, без калькулятора).*
+*Source: November 2025 TZ1, Paper 1, Q11(a) (2 marks, no calculator).*
 """)
 
 code(r"""
-my_w4 = ...              # результат в виде a + b*I
+my_w4 = ...              # the result in the form a + b*I
 
-check_complex('Задание 4', my_w4, '""" + D_Z4 + r"""')
+check_complex('Task 4', my_w4, '""" + D_Z4 + r"""')
 """)
 
 md(r"""
-## Задание 5 🟢 — модуль и аргумент результата
+## Task 5 🟢 — the modulus and argument of the result
 
-Для того же $w = \sqrt{3} + i$ найдите $|w|$ и $\arg w$.
+For the same $w = \sqrt{3} + i$, find $|w|$ and $\arg w$.
 
-*Источник: November 2025 TZ1, Paper 1, Q11(b) (3 балла, без калькулятора).*
+*Source: November 2025 TZ1, Paper 1, Q11(b) (3 marks, no calculator).*
 """)
 
 code(r"""
 my_mod5 = ...
-my_arg5 = ...            # точное значение
+my_arg5 = ...            # the exact value
 
-check_num('Задание 5, |w|', my_mod5, 6, '""" + D_MOD5 + r"""')
-check_expr('Задание 5, arg w', my_arg5, '""" + D_ARG5 + r"""')
+check_num('Task 5, |w|', my_mod5, 6, '""" + D_MOD5 + r"""')
+check_expr('Task 5, arg w', my_arg5, '""" + D_ARG5 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 3. Приравнять действительные и мнимые части
+## Theory 3. Equating real and imaginary parts
 
-Приём, на котором держится треть темы. Основан на определении равенства:
+The technique a third of the topic rests on. It comes from the definition of
+equality:
 
-$$a + bi = c + di \quad\Longleftrightarrow\quad a = c \ \text{ и } \ b = d.$$
+$$a + bi = c + di \quad\Longleftrightarrow\quad a = c \ \text{ and } \ b = d.$$
 
-То есть **одно комплексное уравнение равносильно двум действительным**.
-Отсюда рецепт: если в условии неизвестные действительные, а уравнение
-комплексное, разложите обе части на части и получите систему.
+That is, **one complex equation is equivalent to two real ones**. Hence the recipe:
+if the unknowns in the question are real and the equation is complex, split both
+sides into parts and get a system.
 
-Порядок, который экономит время:
+The order that saves time:
 
-1. Записать неизвестное как $z = a + bi$ с действительными $a$, $b$.
-2. Раскрыть все скобки, помня, что $i^2 = -1$.
-3. Собрать отдельно всё без $i$ и всё при $i$.
-4. Приравнять к соответствующим частям правой части.
-5. Решить получившуюся систему из двух действительных уравнений.
+1. Write the unknown as $z = a + bi$ with $a$, $b$ real.
+2. Expand everything, remembering that $i^2 = -1$.
+3. Collect separately everything without $i$ and everything multiplying $i$.
+4. Equate them to the corresponding parts of the right-hand side.
+5. Solve the resulting system of two real equations.
 
-Шаг 3 — тот, на котором теряют баллы: слагаемое вида $qi \cdot i$
-действительное, а не мнимое, и его легко оставить не в той куче.
+Step 3 is where the marks go: a term like $qi \cdot i$ is real, not imaginary, and
+it is easy to leave it in the wrong pile.
 """)
 
 md(r"""
-## Задание 6 🟡 — система из одного уравнения
+## Task 6 🟡 — a system out of one equation
 
-Известно, что $z = 5 + qi$ удовлетворяет уравнению
+Given that $z = 5 + qi$ satisfies the equation
 
 $$z^2 + iz = -p + 25i,$$
 
-где $p, q \in \mathbb{R}$. Найдите значения $p$ и $q$.
+where $p, q \in \mathbb{R}$, find the values of $p$ and $q$.
 
-*Источник: November 2023 TZ1, Paper 1, Q7 (5 баллов, без калькулятора).*
+*Source: November 2023 TZ1, Paper 1, Q7 (5 marks, no calculator).*
 """)
 
 code(r"""
 my_p = ...
 my_q = ...
 
-check_num('Задание 6, p', my_p, 6, '""" + D_P6 + r"""')
-check_num('Задание 6, q', my_q, 6, '""" + D_Q6 + r"""')
+check_num('Task 6, p', my_p, 6, '""" + D_P6 + r"""')
+check_num('Task 6, q', my_q, 6, '""" + D_Q6 + r"""')
 """)
 
 md(r"""
-## Задание 7 🟡 — уравнение с сопряжённым
+## Task 7 🟡 — an equation with a conjugate
 
-Решите $z^2 = 2\bar z$ при $z \ne 0$. Найдите **все** корни.
+Solve $z^2 = 2\bar z$ for $z \ne 0$. Find **all** the roots.
 
-Здесь тот же приём, но с двумя сюрпризами. Первый: после разложения на части
-одно из уравнений раскладывается на множители, и появляются два случая.
-Второй: корней три, а уравнение на вид квадратное.
+The same technique here, but with two surprises. First: after splitting into parts
+one of the equations factorises, and two cases appear. Second: there are three roots,
+although the equation looks quadratic.
 
-*Источник: May 2023 TZ2, Paper 1, Q11(d) (5 баллов, без калькулятора).*
+*Source: May 2023 TZ2, Paper 1, Q11(d) (5 marks, no calculator).*
 """)
 
 code(r"""
-my_roots = [...]         # список всех корней, порядок не важен
+my_roots = [...]         # the list of all roots, order does not matter
 
-check_complex_set('Задание 7', my_roots, '""" + D_SET7 + r"""')
+check_complex_set('Task 7', my_roots, '""" + D_SET7 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 4. Свойства произведения и частного
+## Theory 4. Properties of a product and a quotient
 
-В полярной форме умножение распадается на два независимых действия:
+In polar form multiplication splits into two independent actions:
 
 $$|z_1 z_2| = |z_1|\,|z_2|, \qquad \arg(z_1 z_2) = \arg z_1 + \arg z_2,$$
 
 $$\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}, \qquad
 \arg\!\left(\frac{z_1}{z_2}\right) = \arg z_1 - \arg z_2.$$
 
-Модули перемножаются, аргументы складываются. Это единственная причина,
-по которой полярная форма вообще нужна.
+The moduli multiply, the arguments add. This is the only reason the polar form is
+needed at all.
 
-**Как это спрашивают.** Почти всегда через условие «$z_1z_2$ действительно»
-или «чисто мнимо». Переводится оно так:
+**How it is asked.** Almost always through the condition «$z_1z_2$ is real» or «is
+purely imaginary». It translates like this:
 
 $$z \in \mathbb{R} \iff \arg z = k\pi, \qquad
-z \text{ чисто мнимое} \iff \arg z = \frac{\pi}{2} + k\pi.$$
+z \text{ is purely imaginary} \iff \arg z = \frac{\pi}{2} + k\pi.$$
 
-Дальше получается уравнение в целых числах, и просят наименьшее решение.
-Ноль как значение аргумента тоже подходит — про это забывают.
+That gives an equation in integers, and the smallest solution is asked for. Zero is
+an allowed value of the argument too — that is the one people forget.
 """)
 
 md(r"""
-## Задание 8 🟡 — аргумент произведения
+## Task 8 🟡 — the argument of a product
 
-Даны $z_1 = 1 + bi$ и $z_2 = (1 - b^2) - 2bi$, где $b \in \mathbb{R}$, $b \ne 0$.
+Given $z_1 = 1 + bi$ and $z_2 = (1 - b^2) - 2bi$, where $b \in \mathbb{R}$,
+$b \ne 0$.
 
-**(a)** Найдите выражение для $z_1z_2$ через $b$.
-**(b)** Известно, что $\arg(z_1z_2) = \dfrac{\pi}{4}$. Найдите значение $b$.
+**(a)** Find an expression for $z_1z_2$ in terms of $b$.
+**(b)** Given that $\arg(z_1z_2) = \dfrac{\pi}{4}$, find the value of $b$.
 
-Пункт (a) стоит довести до вида «положительное число, умноженное на что-то»:
-тогда в (b) положительный множитель не влияет на аргумент, и всё сводится
-к одному арктангенсу.
+Part (a) is worth taking as far as «a positive number times something»: then in (b)
+the positive factor does not affect the argument, and everything comes down to one
+arctangent.
 
-*Источник: May 2022 TZ1, Paper 1, Q9 (6 баллов, без калькулятора).*
+*Source: May 2022 TZ1, Paper 1, Q9 (6 marks, no calculator).*
 """)
 
 code(r"""
-my_b8 = ...              # точное значение
+my_b8 = ...              # the exact value
 
-check_expr('Задание 8', my_b8, '""" + D_B8 + r"""')
+check_expr('Task 8', my_b8, '""" + D_B8 + r"""')
 """)
 
 md(r"""
-## Задание 9 🟡 — условие действительности
+## Task 9 🟡 — the condition for being real
 
-Даны комплексные числа $z$ и $w$ с
+Given complex numbers $z$ and $w$ with
 $|z| = 2$, $\arg z = \dfrac{\pi}{5}$, $|w| = 8$, $\arg w = -\dfrac{2k\pi}{5}$,
-где $k \in \mathbb{Z}^+$.
+where $k \in \mathbb{Z}^+$.
 
-Известно, что $zw \in \mathbb{R}$. Найдите наименьшее значение $k$
-и соответствующее значение $zw$.
+Given that $zw \in \mathbb{R}$, find the smallest value of $k$ and the corresponding
+value of $zw$.
 
-*Источник: May 2021 TZ1, Paper 2, Q8 (7 баллов, с калькулятором).*
+*Source: May 2021 TZ1, Paper 2, Q8 (7 marks, calculator).*
 """)
 
 code(r"""
 my_k = ...
 my_zw = ...
 
-check_num('Задание 9, k', my_k, 6, '""" + D_K9 + r"""')
-check_complex('Задание 9, zw', my_zw, '""" + D_ZW9 + r"""')
+check_num('Task 9, k', my_k, 6, '""" + D_K9 + r"""')
+check_complex('Task 9, zw', my_zw, '""" + D_ZW9 + r"""')
 """)
 
 md(r"""
-## Задание 10 🔴 — квадратный корень через части
+## Task 10 🔴 — a square root through the parts
 
-Известно, что $w = \sqrt{3} + i$ можно записать как $w = (a + bi)^2$,
-где $a, b > 0$.
+Given that $w = \sqrt{3} + i$ can be written as $w = (a + bi)^2$, where $a, b > 0$.
 
-Найдите $a^2$ и $b^2$. Ответы **точные**.
+Find $a^2$ and $b^2$. The answers are **exact**.
 
-Раскройте квадрат, приравняйте части и получите систему. Она нелинейная,
-но сводится к квадратному уравнению относительно $a^2$. Есть и короткий путь:
-$a^2 + b^2 = |a+bi|^2 = |w|$, и вместе с $a^2 - b^2 = \sqrt3$ это уже
-линейная система.
+Expand the square, equate the parts and get a system. It is non-linear, but it comes
+down to a quadratic in $a^2$. There is a short way too: $a^2 + b^2 = |a+bi|^2 = |w|$,
+and together with $a^2 - b^2 = \sqrt3$ that is already a linear system.
 
-*Источник: November 2025 TZ1, Paper 1, Q11(d) (8 баллов, без калькулятора).*
+*Source: November 2025 TZ1, Paper 1, Q11(d) (8 marks, no calculator).*
 """)
 
 code(r"""
-my_a2 = ...              # точное значение
-my_b2 = ...              # точное значение
+my_a2 = ...              # the exact value
+my_b2 = ...              # the exact value
 
-check_expr('Задание 10, a^2', my_a2, '""" + D_A10 + r"""')
-check_expr('Задание 10, b^2', my_b2, '""" + D_B10 + r"""')
+check_expr('Task 10, a^2', my_a2, '""" + D_A10 + r"""')
+check_expr('Task 10, b^2', my_b2, '""" + D_B10 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 5. Сопряжённые корни многочлена
+## Theory 5. Conjugate roots of a polynomial
 
-Факт, из которого растёт весь приём:
+The fact the whole technique grows out of:
 
-> Если многочлен имеет **действительные коэффициенты** и $z_0$ — его корень,
-> то $\bar z_0$ тоже корень.
+> If a polynomial has **real coefficients** and $z_0$ is a root of it, then
+> $\bar z_0$ is a root as well.
 
-Условие про действительные коэффициенты обязательно, и в условии задачи
-оно всегда написано явно. Без него теорема неверна.
+The condition about real coefficients is essential, and in the question it is always
+written out explicitly. Without it the theorem is false.
 
-Следствия, которыми пользуются:
+The consequences that get used:
 
-- комплексные корни идут **парами**, поэтому у многочлена нечётной степени
-  есть хотя бы один действительный корень;
-- зная один комплексный корень, вы бесплатно получаете второй;
-- пара $z_0, \bar z_0$ даёт действительный квадратный множитель
+- complex roots come in **pairs**, so a polynomial of odd degree has at least one
+  real root;
+- knowing one complex root, you get a second one for free;
+- a pair $z_0, \bar z_0$ gives a real quadratic factor
   $z^2 - 2\operatorname{Re}(z_0)z + |z_0|^2$.
 
-Дальше подключается Виет. Для многочлена $z^n + c_{n-1}z^{n-1} + \ldots + c_0$:
+After that Vieta comes in. For a polynomial $z^n + c_{n-1}z^{n-1} + \ldots + c_0$:
 
 $$\sum z_i = -c_{n-1}, \qquad \prod z_i = (-1)^n c_0.$$
 
-Сумма пары сопряжённых равна $2\operatorname{Re}(z_0)$, произведение равно
-$|z_0|^2$ — оба действительны, и неизвестные находятся из одного уравнения.
+The sum of a conjugate pair is $2\operatorname{Re}(z_0)$, the product is $|z_0|^2$ —
+both real, and the unknowns come out of a single equation.
 
-**Разберём на настоящем вопросе.** У многочлена $z^4 + pz^3 + \ldots + 80$
-с действительными коэффициентами корни $3+i$, $\alpha$, $\alpha^2$
-(и $\alpha$ действительно). Произведение корней равно 80, значит
-$(3+i)(3-i)\alpha\cdot\alpha^2 = 80$, то есть $10\alpha^3 = 80$ и $\alpha = 2$.
-Затем сумма корней: $-p = (3+i) + (3-i) + 2 + 4 = 12$, откуда $p = -12$.
-Мнимые части сократились сами — так всегда и происходит.
+**On a real question.** A polynomial $z^4 + pz^3 + \ldots + 80$ with real
+coefficients has roots $3+i$, $\alpha$, $\alpha^2$ (with $\alpha$ real). The product
+of the roots is 80, so $(3+i)(3-i)\alpha\cdot\alpha^2 = 80$, that is
+$10\alpha^3 = 80$ and $\alpha = 2$. Then the sum of the roots:
+$-p = (3+i) + (3-i) + 2 + 4 = 12$, hence $p = -12$. The imaginary parts cancelled by
+themselves — they always do.
 """)
 
 md(r"""
-## Задание 11 🟡 — остальные корни кубического
+## Task 11 🟡 — the other roots of a cubic
 
-Известно, что $u = -1 + \sqrt{3}\,i$ — корень уравнения
+Given that $u = -1 + \sqrt{3}\,i$ is a root of the equation
 
-$$z^3 + 5z^2 + 10z + 12 = 0.$$
+$$z^3 + 5z^2 + 10z + 12 = 0,$$
 
-Найдите два других корня.
+find the other two roots.
 
-*Источник: May 2023 TZ2, Paper 1, Q11(c)(i) (часть из 9 баллов, без калькулятора).*
+*Source: May 2023 TZ2, Paper 1, Q11(c)(i) (part of 9 marks, no calculator).*
 """)
 
 code(r"""
-my_rest = [...]          # два оставшихся корня
+my_rest = [...]          # the two remaining roots
 
-check_complex_set('Задание 11', my_rest, '""" + D_SET11 + r"""')
+check_complex_set('Task 11', my_rest, '""" + D_SET11 + r"""')
 """)
 
 md(r"""
 ---
-## Тренажёр распознавания
+## Trainer: name the technique
 
-Ничего не решаем: назовите приём одним кодом.
+Nothing is solved here: name the technique with one code.
 
-| Код | Приём |
+| Code | Technique |
 | --- | --- |
-| `cart` | арифметика, избавиться от $i$ в знаменателе |
-| `parts` | приравнять действительные и мнимые части |
-| `modarg` | найти модуль и аргумент |
-| `form` | перевести в другую форму записи |
-| `prop` | свойства модуля и аргумента произведения |
-| `roots` | сопряжённые корни многочлена, Виет |
+| `cart` | arithmetic, clear the $i$ out of the denominator |
+| `parts` | equate real and imaginary parts |
+| `modarg` | find the modulus and the argument |
+| `form` | change to another form |
+| `prop` | properties of the modulus and argument of a product |
+| `roots` | conjugate roots of a polynomial, Vieta |
 
-1. «Выразите $3 - 3i$ в виде $re^{i\theta}$»
-2. «Запишите $2e^{i\pi/3}$ в декартовой форме»
-3. «Найдите $|u|$ и $\arg u$ для $u = -1 + \sqrt3 i$»
-4. «Покажите, что $\dfrac{4i}{1 + i\sqrt3} = \sqrt3 + i$»
-5. «Найдите $\arg w$, где $w = \sqrt3 + i$»
-6. «$z = 5 + qi$ удовлетворяет $z^2 + iz = -p + 25i$. Найдите $p$ и $q$»
-7. «Решите $z^2 = 2\bar z$»
-8. «Найдите $\arg(z_1z_2)$ через $k$»
-9. «Известно, что $zw$ действительно. Найдите наименьшее $k$»
-10. «$w = (a+bi)^2$, найдите $a^2$»
-11. «$-1+\sqrt3 i$ — корень кубического. Найдите остальные»
-12. «Корни квартики $a+bi$ и $b+ai$. Найдите $a$»
-13. «Упростите $\dfrac{1}{2+3i}$»
-14. «Найдите $p$, если сумма корней равна 12»
-15. «Покажите, что $\lvert z_1z_2\rvert = \lvert z_1\rvert\lvert z_2\rvert$»
+1. «Express $3 - 3i$ in the form $re^{i\theta}$»
+2. «Write $2e^{i\pi/3}$ in Cartesian form»
+3. «Find $|u|$ and $\arg u$ for $u = -1 + \sqrt3 i$»
+4. «Show that $\dfrac{4i}{1 + i\sqrt3} = \sqrt3 + i$»
+5. «Find $\arg w$, where $w = \sqrt3 + i$»
+6. «$z = 5 + qi$ satisfies $z^2 + iz = -p + 25i$. Find $p$ and $q$»
+7. «Solve $z^2 = 2\bar z$»
+8. «Find $\arg(z_1z_2)$ in terms of $k$»
+9. «Given that $zw$ is real, find the smallest $k$»
+10. «$w = (a+bi)^2$, find $a^2$»
+11. «$-1+\sqrt3 i$ is a root of a cubic. Find the others»
+12. «Two roots of a quartic are $a+bi$ and $b+ai$. Find $a$»
+13. «Simplify $\dfrac{1}{2+3i}$»
+14. «Find $p$, given that the sum of the roots is 12»
+15. «Show that $\lvert z_1z_2\rvert = \lvert z_1\rvert\lvert z_2\rvert$»
 
-Цель — 15 из 15 меньше чем за две минуты.
+The target is 15 out of 15 in under two minutes.
 """)
 
 code(r"""
@@ -523,63 +527,61 @@ trigger_check(answers, KEY)
 
 md(r"""
 ---
-## Задание 12 🔴 — НА ТАЙМЕРЕ: 12 минут
+## Task 12 🔴 — ON THE TIMER: 12 minutes
 
-Закройте всё выше. Формат Paper 1, без калькулятора, 8 баллов.
+Close everything above. Paper 1 format, no calculator, 8 marks.
 
-Уравнение $z^4 + 4z^3 + 8z^2 + 80z + 400 = 0$ имеет действительные
-коэффициенты. Известно, что $a + bi$ и $b + ai$ — два его корня,
-где $a, b \in \mathbb{R}$.
+The equation $z^4 + 4z^3 + 8z^2 + 80z + 400 = 0$ has real coefficients. Given that
+$a + bi$ and $b + ai$ are two of its roots, where $a, b \in \mathbb{R}$, find the
+possible values of $a$.
 
-Найдите возможные значения $a$.
+A hint about the structure, not about the solution: the coefficients are real, so you
+know not two roots but four. After that you need both of Vieta's formulas — one gives
+a linear relation, the other a quadratic one.
 
-Подсказка о структуре, а не о решении: коэффициенты действительны, значит
-корней вы знаете не два, а четыре. Дальше нужны обе формулы Виета —
-одна даст линейное соотношение, другая квадратичное.
-
-*Источник: May 2021 TZ1, Paper 1, Q7 (8 баллов, без калькулятора).*
+*Source: May 2021 TZ1, Paper 1, Q7 (8 marks, no calculator).*
 """)
 
 code(r"""
-# заведите таймер на 12 минут
-my_a_values = [...]      # все возможные значения a
+# set a timer for 12 minutes
+my_a_values = [...]      # all the possible values of a
 
-check_complex_set('Задание 12', my_a_values, '""" + D_SETA + r"""')
+check_complex_set('Task 12', my_a_values, '""" + D_SETA + r"""')
 """)
 
 md(r"""
-### Журнал попытки
+### Attempt log
 
-| Вопрос | Ответ |
+| Question | Answer |
 | --- | --- |
-| Уложились в 12 минут? | |
-| Сразу выписали все четыре корня? | |
-| Какое уравнение Виета взяли первым? | |
-| Где потеряли время? | |
+| Did you finish inside 12 minutes? | |
+| Did you write down all four roots straight away? | |
+| Which of Vieta's formulas did you take first? | |
+| Where did the time go? | |
 
-Если начали раскрывать $(z - (a+bi))(z - (a-bi))\ldots$ в лоб — это тоже рабочий
-путь, markscheme его принимает, но он длиннее выписывания суммы
-и произведения.
+If you started expanding $(z - (a+bi))(z - (a-bi))\ldots$ head-on, that works too and
+the markscheme accepts it, but it is longer than writing down the sum and the
+product.
 """)
 
 md(r"""
 ---
-# 🔑 Решения
+# 🔑 Solutions
 
-Сверяйте не только ответ, но и то, что ни один шаг не пропущен: markscheme
-платит за метод.
+Check not only the answer but that no step is missing: the markscheme pays for
+method.
 """)
 
 md(r"""
-## Решение 1 — в показательную форму
+## Solution 1 — into exponential form
 
-$z_1 = 3 - 3i$ лежит в **четвёртой** четверти: действительная часть
-положительна, мнимая отрицательна.
+$z_1 = 3 - 3i$ lies in the **fourth** quadrant: the real part is positive, the
+imaginary part negative.
 
 $$r = \sqrt{3^2 + (-3)^2} = \sqrt{18} = 3\sqrt2.$$
 
-Острый угол: $\arctan\left|\frac{-3}{3}\right| = \arctan 1 = \frac{\pi}{4}$.
-В четвёртой четверти аргумент отрицателен, значит $\theta = -\frac{\pi}{4}$.
+The acute angle: $\arctan\left|\frac{-3}{3}\right| = \arctan 1 = \frac{\pi}{4}$.
+In the fourth quadrant the argument is negative, so $\theta = -\frac{\pi}{4}$.
 
 $$z_1 = 3\sqrt2\, e^{-i\pi/4}.$$
 
@@ -589,9 +591,10 @@ my_z1 = 3*sqrt(2)*exp(-I*pi/4)
 """)
 
 md(r"""
-## Решение 2 — ещё один перевод
+## Solution 2 — one more change of form
 
-$w = 1 + i\sqrt3$ в **первой** четверти, поэтому арктангенс сразу даёт ответ.
+$w = 1 + i\sqrt3$ is in the **first** quadrant, so the arctangent gives the answer
+straight away.
 
 $$r = \sqrt{1 + 3} = 2, \qquad
 \alpha = \arctan\frac{\sqrt3}{1} = \frac{\pi}{3}.$$
@@ -604,14 +607,14 @@ my_w = 2*exp(I*pi/3)
 """)
 
 md(r"""
-## Решение 3 — модуль, аргумент и вывод формы
+## Solution 3 — modulus, argument, and deducing the form
 
-$u = -1 + \sqrt3 i$ во **второй** четверти.
+$u = -1 + \sqrt3 i$ is in the **second** quadrant.
 
 $$|u| = \sqrt{(-1)^2 + (\sqrt3)^2} = \sqrt4 = 2.$$
 
-Острый угол $\arctan\frac{\sqrt3}{1} = \frac{\pi}{3}$, и во второй четверти
-аргумент достраивается как $\pi - \frac{\pi}{3} = \frac{2\pi}{3}$.
+The acute angle is $\arctan\frac{\sqrt3}{1} = \frac{\pi}{3}$, and in the second
+quadrant the argument is built up as $\pi - \frac{\pi}{3} = \frac{2\pi}{3}$.
 
 $$u = 2\left(\cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}\right) = 2e^{2\pi i/3}.$$
 
@@ -620,14 +623,15 @@ my_mod = 2
 my_arg = 2*pi/3
 ```
 
-Ответ $-\frac{\pi}{3}$ — та самая ошибка: калькулятор от $\arctan(-\sqrt3)$
-даёт именно её, потому что не знает, в какой четверти лежит число.
+The answer $-\frac{\pi}{3}$ is the standard mistake: that is exactly what a
+calculator gives for $\arctan(-\sqrt3)$, because it does not know which quadrant the
+number is in.
 """)
 
 md(r"""
-## Решение 4 — избавиться от i в знаменателе
+## Solution 4 — clearing the i out of the denominator
 
-Умножаем на сопряжённое знаменателю:
+Multiply by the conjugate of the denominator:
 
 $$w = \frac{4i}{1 + i\sqrt3}\cdot\frac{1 - i\sqrt3}{1 - i\sqrt3}
 = \frac{4i(1 - i\sqrt3)}{1 + 3}
@@ -638,14 +642,14 @@ $$w = \frac{4i}{1 + i\sqrt3}\cdot\frac{1 - i\sqrt3}{1 - i\sqrt3}
 my_w4 = sqrt(3) + I
 ```
 
-Ключевой шаг — $-4i^2\sqrt3 = +4\sqrt3$: минус на минус даёт плюс,
-и мнимое слагаемое становится действительным.
+The key step is $-4i^2\sqrt3 = +4\sqrt3$: minus times minus gives plus, and the
+imaginary term becomes real.
 """)
 
 md(r"""
-## Решение 5 — модуль и аргумент результата
+## Solution 5 — the modulus and argument of the result
 
-$w = \sqrt3 + i$ в первой четверти.
+$w = \sqrt3 + i$ is in the first quadrant.
 
 $$|w| = \sqrt{3 + 1} = 2, \qquad
 \arg w = \arctan\frac{1}{\sqrt3} = \frac{\pi}{6}.$$
@@ -657,51 +661,50 @@ my_arg5 = pi/6
 """)
 
 md(r"""
-## Решение 6 — система из одного уравнения
+## Solution 6 — a system out of one equation
 
-Подставляем $z = 5 + qi$ и раскрываем:
+Substitute $z = 5 + qi$ and expand:
 
 $$z^2 = (5 + qi)^2 = 25 + 10qi + q^2i^2 = (25 - q^2) + 10qi,$$
 
 $$iz = i(5 + qi) = 5i + qi^2 = -q + 5i.$$
 
-Складываем и собираем части:
+Add them and collect the parts:
 
-$$z^2 + iz = \underbrace{(25 - q^2 - q)}_{\text{действительная}}
-+ \underbrace{(10q + 5)}_{\text{мнимая}}\,i = -p + 25i.$$
+$$z^2 + iz = \underbrace{(25 - q^2 - q)}_{\text{real}}
++ \underbrace{(10q + 5)}_{\text{imaginary}}\,i = -p + 25i.$$
 
-Мнимые части: $10q + 5 = 25 \Rightarrow q = 2$.
-Действительные: $25 - 4 - 2 = 19 = -p \Rightarrow p = -19$.
+Imaginary parts: $10q + 5 = 25 \Rightarrow q = 2$.
+Real parts: $25 - 4 - 2 = 19 = -p \Rightarrow p = -19$.
 
 ```python
 my_p = -19
 my_q = 2
 ```
 
-Обратите внимание на порядок: мнимое уравнение содержит только $q$,
-поэтому решать надо с него. Начав с действительного, вы получите
-уравнение с двумя неизвестными.
+Note the order: the imaginary equation contains only $q$, so that is the one to start
+with. Starting with the real one you get an equation in two unknowns.
 """)
 
 md(r"""
-## Решение 7 — уравнение с сопряжённым
+## Solution 7 — an equation with a conjugate
 
-Пусть $z = a + bi$. Тогда
+Let $z = a + bi$. Then
 
 $$z^2 = (a^2 - b^2) + 2abi, \qquad 2\bar z = 2a - 2bi.$$
 
-Приравниваем части:
+Equate the parts:
 
 $$a^2 - b^2 = 2a, \qquad 2ab = -2b.$$
 
-**Второе уравнение раскладывается:** $2b(a + 1) = 0$, значит $b = 0$
-или $a = -1$. Разбираем оба случая.
+**The second equation factorises:** $2b(a + 1) = 0$, so $b = 0$ or $a = -1$. Take
+both cases.
 
-*Случай $b = 0$.* Тогда $a^2 = 2a$, то есть $a = 0$ или $a = 2$.
-Ноль исключён условием, остаётся $z = 2$.
+*Case $b = 0$.* Then $a^2 = 2a$, that is, $a = 0$ or $a = 2$. Zero is excluded by the
+question, so $z = 2$ remains.
 
-*Случай $a = -1$.* Тогда $1 - b^2 = -2$, значит $b^2 = 3$ и $b = \pm\sqrt3$.
-Получаем $z = -1 \pm \sqrt3 i$.
+*Case $a = -1$.* Then $1 - b^2 = -2$, so $b^2 = 3$ and $b = \pm\sqrt3$. That gives
+$z = -1 \pm \sqrt3 i$.
 
 $$z \in \{\,2,\ -1 + \sqrt3 i,\ -1 - \sqrt3 i\,\}.$$
 
@@ -709,62 +712,62 @@ $$z \in \{\,2,\ -1 + \sqrt3 i,\ -1 - \sqrt3 i\,\}.$$
 my_roots = [2, -1 + sqrt(3)*I, -1 - sqrt(3)*I]
 ```
 
-Соблазн поделить второе уравнение на $b$ здесь стоит двух корней из трёх:
-делить на выражение, которое может обратиться в ноль, нельзя — ровно
-как в тригонометрических уравнениях.
+The temptation to divide the second equation by $b$ costs two roots out of three
+here: you cannot divide by an expression that may be zero — exactly as in
+trigonometric equations.
 
-Приятное наблюдение: три найденных числа — это в точности кубические корни
-из 8. Так и должно быть: из $z^2 = 2\bar z$ умножением на $z$ получается
-$z^3 = 2z\bar z = 2|z|^2$, а $|z| = 2$ для всех трёх.
+A pleasant observation: the three numbers found are precisely the cube roots of 8.
+And so they should be: multiplying $z^2 = 2\bar z$ by $z$ gives
+$z^3 = 2z\bar z = 2|z|^2$, and $|z| = 2$ for all three.
 """)
 
 md(r"""
-## Решение 8 — аргумент произведения
+## Solution 8 — the argument of a product
 
-**(a)** Раскрываем:
+**(a)** Expand:
 
 $$z_1z_2 = (1 + bi)\bigl((1 - b^2) - 2bi\bigr)
 = (1 - b^2) - 2bi + bi(1-b^2) - 2b^2i^2.$$
 
-Собираем: действительная часть $1 - b^2 + 2b^2 = 1 + b^2$,
-мнимая $-2b + b - b^3 = -b(1 + b^2)$. Значит
+Collect: the real part is $1 - b^2 + 2b^2 = 1 + b^2$, the imaginary part
+$-2b + b - b^3 = -b(1 + b^2)$. So
 
 $$z_1z_2 = (1 + b^2)(1 - bi).$$
 
-**(b)** Множитель $1 + b^2$ **строго положителен**, поэтому на аргумент
-не влияет:
+**(b)** The factor $1 + b^2$ is **strictly positive**, so it does not affect the
+argument:
 
 $$\arg(z_1z_2) = \arg(1 - bi) = \frac{\pi}{4}.$$
 
-Число $1 - bi$ имеет действительную часть 1 и мнимую $-b$. Аргумент
-$\frac{\pi}{4}$ означает, что части равны и обе положительны:
-$-b = 1$, то есть $b = -1$.
+The number $1 - bi$ has real part 1 and imaginary part $-b$. An argument of
+$\frac{\pi}{4}$ means the parts are equal and both positive: $-b = 1$, that is,
+$b = -1$.
 
 ```python
 my_b8 = -1
 ```
 
-Проверка: при $b = -1$ получаем $z_1z_2 = 2(1 + i) = 2 + 2i$,
-и $\arg(2+2i) = \frac{\pi}{4}$.
+Check: at $b = -1$ we get $z_1z_2 = 2(1 + i) = 2 + 2i$, and
+$\arg(2+2i) = \frac{\pi}{4}$.
 """)
 
 md(r"""
-## Решение 9 — условие действительности
+## Solution 9 — the condition for being real
 
-Модуль: $|zw| = |z||w| = 2 \cdot 8 = 16$.
+The modulus: $|zw| = |z||w| = 2 \cdot 8 = 16$.
 
-Аргумент: $\arg(zw) = \arg z + \arg w = \dfrac{\pi}{5} - \dfrac{2k\pi}{5}
+The argument: $\arg(zw) = \arg z + \arg w = \dfrac{\pi}{5} - \dfrac{2k\pi}{5}
 = \dfrac{(1 - 2k)\pi}{5}$.
 
-Число действительно тогда и только тогда, когда аргумент кратен $\pi$:
+A number is real exactly when its argument is a multiple of $\pi$:
 
 $$\frac{(1-2k)\pi}{5} = n\pi \;\Longrightarrow\; 1 - 2k = 5n.$$
 
-Перебираем $n$: при $n = -1$ получаем $1 - 2k = -5$, то есть $k = 3$ —
-целое и положительное. При $n = 1$ выходит $k = -2$, при $n = 0$ дробное.
-Наименьшее подходящее $k = 3$.
+Go through the $n$: at $n = -1$ we get $1 - 2k = -5$, that is, $k = 3$ — a positive
+integer. At $n = 1$ we get $k = -2$, at $n = 0$ a fraction. The smallest value that
+works is $k = 3$.
 
-Тогда $\arg(zw) = \dfrac{(1-6)\pi}{5} = -\pi$, и
+Then $\arg(zw) = \dfrac{(1-6)\pi}{5} = -\pi$, and
 
 $$zw = 16(\cos(-\pi) + i\sin(-\pi)) = -16.$$
 
@@ -775,50 +778,50 @@ my_zw = -16
 """)
 
 md(r"""
-## Решение 10 — квадратный корень через части
+## Solution 10 — a square root through the parts
 
 $$(a + bi)^2 = a^2 - b^2 + 2abi = \sqrt3 + i.$$
 
-Приравниваем части: $a^2 - b^2 = \sqrt3$ и $2ab = 1$.
+Equate the parts: $a^2 - b^2 = \sqrt3$ and $2ab = 1$.
 
-**Короткий путь.** Возьмём модули обеих частей исходного равенства:
-$|a+bi|^2 = |w|$, то есть $a^2 + b^2 = 2$. Вместе с $a^2 - b^2 = \sqrt3$
-это линейная система относительно $a^2$ и $b^2$:
+**The short way.** Take the modulus of both sides of the original equality:
+$|a+bi|^2 = |w|$, that is, $a^2 + b^2 = 2$. Together with $a^2 - b^2 = \sqrt3$ this
+is a linear system in $a^2$ and $b^2$:
 
 $$a^2 = \frac{2 + \sqrt3}{2}, \qquad b^2 = \frac{2 - \sqrt3}{2}.$$
 
-**Прямой путь.** Из $2ab = 1$ следует $b = \frac{1}{2a}$, подстановка даёт
-$a^2 - \frac{1}{4a^2} = \sqrt3$, то есть $4a^4 - 4\sqrt3\,a^2 - 1 = 0$.
-Как квадратное относительно $a^2$:
+**The direct way.** From $2ab = 1$ we get $b = \frac{1}{2a}$, and substituting gives
+$a^2 - \frac{1}{4a^2} = \sqrt3$, that is, $4a^4 - 4\sqrt3\,a^2 - 1 = 0$. As a
+quadratic in $a^2$:
 
 $$a^2 = \frac{4\sqrt3 \pm \sqrt{48 + 16}}{8} = \frac{4\sqrt3 \pm 8}{8}
 = \frac{\sqrt3 \pm 2}{2}.$$
 
-Условие $a > 0$ оставляет знак плюс, и оба пути сходятся.
+The condition $a > 0$ leaves the plus sign, and both ways agree.
 
 ```python
 my_a2 = (2 + sqrt(3))/2
 my_b2 = (2 - sqrt(3))/2
 ```
 
-Проверка: $a^2 - b^2 = \sqrt3$ ✓, а $2ab = 2\sqrt{a^2b^2}
+Check: $a^2 - b^2 = \sqrt3$ ✓, and $2ab = 2\sqrt{a^2b^2}
 = 2\sqrt{\frac{4-3}{4}} = 1$ ✓.
 """)
 
 md(r"""
-## Решение 11 — остальные корни кубического
+## Solution 11 — the other roots of a cubic
 
-Коэффициенты действительны, поэтому сопряжённое $-1 - \sqrt3 i$ —
-тоже корень. Это первый ответ и первый балл.
+The coefficients are real, so the conjugate $-1 - \sqrt3 i$ is a root as well. That
+is the first answer and the first mark.
 
-Третий корень $c$ действителен (у кубического многочлена комплексные корни
-идут парой). Из суммы корней:
+The third root $c$ is real (in a cubic the complex roots come as a pair). From the
+sum of the roots:
 
 $$(-1 + \sqrt3 i) + (-1 - \sqrt3 i) + c = -5 \;\Longrightarrow\; -2 + c = -5
 \;\Longrightarrow\; c = -3.$$
 
-Или из произведения: $(-1+\sqrt3 i)(-1-\sqrt3 i)\,c = -12$, где первый
-множитель равен $1 + 3 = 4$, значит $4c = -12$ и $c = -3$.
+Or from the product: $(-1+\sqrt3 i)(-1-\sqrt3 i)\,c = -12$, where the first factor is
+$1 + 3 = 4$, so $4c = -12$ and $c = -3$.
 
 $$z \in \{\,-1 + \sqrt3 i,\ -1 - \sqrt3 i,\ -3\,\}.$$
 
@@ -828,37 +831,37 @@ my_rest = [-1 - sqrt(3)*I, -3]
 """)
 
 md(r"""
-## Решение 12 — задание на таймере
+## Solution 12 — the task on the timer
 
-Коэффициенты действительны, а корней дано два: $a + bi$ и $b + ai$.
-Значит есть ещё два — сопряжённые к ним: $a - bi$ и $b - ai$.
+The coefficients are real and two roots are given: $a + bi$ and $b + ai$. So there
+are two more — their conjugates: $a - bi$ and $b - ai$.
 
-**Сумма корней** равна минус коэффициенту при $z^3$, то есть $-4$:
+**The sum of the roots** equals minus the coefficient of $z^3$, that is, $-4$:
 
 $$(a+bi) + (a-bi) + (b+ai) + (b-ai) = 2a + 2b = -4
 \;\Longrightarrow\; a + b = -2.$$
 
-**Произведение корней** равно свободному члену (степень чётная), то есть 400.
-Сопряжённые пары дают модули в квадрате:
+**The product of the roots** equals the constant term (the degree is even), that is,
+400. The conjugate pairs give squared moduli:
 
 $$(a+bi)(a-bi)\,(b+ai)(b-ai) = (a^2+b^2)(b^2+a^2) = (a^2+b^2)^2 = 400,$$
 
-откуда $a^2 + b^2 = 20$ (модуль неотрицателен, поэтому только плюс).
+hence $a^2 + b^2 = 20$ (a modulus is non-negative, so only the plus sign).
 
-Решаем систему. Из первого $b = -2 - a$, подставляем:
+Solve the system. From the first, $b = -2 - a$; substituting:
 
 $$a^2 + (a+2)^2 = 20 \;\Longrightarrow\; 2a^2 + 4a - 16 = 0
 \;\Longrightarrow\; a^2 + 2a - 8 = 0,$$
 
-$$a = 2 \quad\text{или}\quad a = -4.$$
+$$a = 2 \quad\text{or}\quad a = -4.$$
 
 ```python
 my_a_values = [2, -4]
 ```
 
-Проверка: при $a = 2$ выходит $b = -4$, и $a^2 + b^2 = 4 + 16 = 20$ ✓.
-Пара $(a, b) = (-4, 2)$ даёт те же четыре корня, просто в другом порядке,
-поэтому оба значения $a$ действительно возможны.
+Check: at $a = 2$ we get $b = -4$, and $a^2 + b^2 = 4 + 16 = 20$ ✓. The pair
+$(a, b) = (-4, 2)$ gives the same four roots in a different order, so both values of
+$a$ really are possible.
 """)
 
 nb = {

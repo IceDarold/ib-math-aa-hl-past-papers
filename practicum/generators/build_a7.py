@@ -41,689 +41,697 @@ def code(src):
 
 
 md(r"""
-# Практикум A7: доказательство — индукция, прямое, от противного
+# Practicum A7: proof — induction, direct, by contradiction
 
-Самая «бумажная» тема архива: **106 баллов из 160 — это Paper 1**, и ещё
-48 приходится на Paper 3, где калькулятор лежит рядом, но в самом
-доказательстве бесполезен. Считать здесь нечего вообще.
+The most «paper» topic of the archive: **106 marks out of 160 are Paper 1**, and
+another 48 fall on Paper 3, where the calculator is lying next to you but is useless
+in the proof itself. There is nothing to compute here at all.
 
-**Материал.** 28 блоков и 160 баллов из архива AA HL, сессии May 2021 —
-November 2025. Каждое задание ниже — настоящий вопрос прошлых лет,
-источник указан.
+**Material.** 28 blocks and 160 marks from the AA HL archive, sessions May 2021 —
+November 2025. Every task below is a real past-paper question, cited.
 
-**Чем эта тема отличается от всех остальных.** Во всех прочих практикумах
-ответ надо найти, и его можно спрятать под хеш. Здесь ответ **напечатан
-в условии**: «prove that», «show that», «hence show that». Баллы дают
-не за результат, а за дорогу к нему и за то, как она записана. Поэтому:
+**What makes this topic different from all the others.** In every other practicum
+the answer has to be found, and it can be hidden behind a hash. Here the answer is
+**printed in the question**: «prove that», «show that», «hence show that». The marks
+are not for the result but for the road to it and for how that road is written
+down. Hence:
 
-- проверки ниже сверяют **переход** — что ваша выкладка действительно
-  приводит туда, куда вы говорите;
-- за словесную часть проверка не отвечает, и это принципиально: R1 ставят
-  за фразу, а её ноутбук не прочитает. Зато в каждом решении приведена
-  формулировка из markscheme — сравнивайте с ней свою дословно;
-- в разделах теории отдельно разобрано, **где именно в семи баллах сидят
-  два бесплатных**, и почему их регулярно теряют.
+- the checks below confirm the **step** — that your working really does lead where
+  you say it does;
+- the check is not responsible for the part in words, and that is a matter of
+  principle: an R1 is given for a sentence, and a notebook will not read it. What
+  the solutions do carry is the wording from the markscheme — compare yours with it
+  word for word;
+- the theory sections say separately **where exactly two of the seven marks are
+  free**, and why they get lost so regularly.
 
-**Как работать**
+**How to work**
 
-1. Прочитайте карту приёмов. Первые три — доказательства без индукции,
-   четвёртый задаёт рамку индукции, остальные пять эту рамку заполняют.
-2. Решайте **на бумаге и словами**. Здесь это не поза: половина баллов
-   ставится за предложения, а не за формулы.
-3. В ячейку вводите то, что получилось в ключевом переходе. Проверка скажет,
-   ведёт ли он к нужному утверждению.
-4. Последние блоки — тренажёр распознавания и задание на таймере.
+1. Read the map of techniques. The first three are proofs without induction, the
+   fourth sets up the frame of induction, and the other five fill that frame in.
+2. Work **on paper and in words**. That is not a pose here: half the marks are given
+   for sentences rather than formulas.
+3. Into the cell goes whatever came out of the key step. The check will say whether
+   it leads to the required statement.
+4. The last blocks are a recognition trainer and one question on a timer.
 
-Метки сложности: 🟢 приём в чистом виде · 🟡 приём в неочевидной обёртке ·
-🔴 комбинация приёмов или экзаменационный формат целиком.
+Difficulty marks: 🟢 the technique on its own · 🟡 the technique in a wrapper ·
+🔴 several techniques, or a whole exam question.
 """)
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/number_algebra к practicum/kit/
-import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
-from kit import *              # проверки + factorial, binomial, exp, log и прочие имена
+sys.path.append('..')          # from practicum/number_algebra to practicum/kit/
+import sympy as sp             # the escape hatch: anything not in kit is in sp
+from kit import *              # checks + factorial, binomial, exp, log and the rest
+
+language('en')                 # this notebook is in English, and so are the checks
 
 n, m, p, q, r, s = symbols('n m p q r s', integer=True)
 al = Symbol('alpha', integer=True)
-a, b, c = symbols('a b c')     # без целочисленности: в задании 2 a — обычное число
+a, b, c = symbols('a b c')     # not integers: in task 2 a is an ordinary number
 
-# k приходит из kit и переопределять его не нужно: проверки индукции по умолчанию
-# работают именно с этим символом, а Symbol('k', integer=True) — уже другой символ.
+# k comes from kit and there is no need to redefine it: the induction checks work
+# with that symbol by default, and Symbol('k', integer=True) is a different symbol.
 
-print('готово; sympy', sp.__version__)
-print('факториал и бином на месте:', factorial(k + 1), binomial(k + 1, 2))
+print('ready; sympy', sp.__version__)
+print('the factorial and the binomial are here:', factorial(k + 1), binomial(k + 1, 2))
 """)
 
 md(r"""
 ---
-## Карта приёмов
+## Map of techniques
 
-| # | Приём | Триггер в условии | Первый ход |
+| # | Technique | Trigger in the question | First move |
 | --- | --- | --- | --- |
-| 1 | Прямое доказательство | «show that A = B», обе части выписаны | преобразовать одну сторону |
-| 2 | Представление целых | «consecutive», «odd», «divisible by» | дать целому букву: $2m+1$, $n-1$ |
-| 3 | От противного | «prove that there is no», «never», «cannot» | написать «предположим противное» |
-| 4 | Скелет индукции | «prove by induction» | четыре обязательные строки |
-| 5 | Индукция для суммы | $\sum_{r=1}^{n}$ в утверждении | отделить $(k+1)$-е слагаемое |
-| 6 | Индукция для делимости | «divisible by $d$ for all $n$» | записать гипотезу как $=ds$ |
-| 7 | Индукция для $n$-й производной | $f^{(n)}(x)$, $\frac{d^n}{dx^n}$ | продифференцировать гипотезу |
-| 8 | Индукция для рекурсии | $u_{n+1}=\dots$, $f^{n}$, $I_n$ через $I_{n-1}$ | применить рекуррентность к гипотезе |
-| 9 | Индукция для неравенства | «prove that $n > \dots$ for all $n$» | продолжить цепочку от гипотезы |
+| 1 | Direct proof | «show that A = B», both sides written out | transform one side |
+| 2 | Representing integers | «consecutive», «odd», «divisible by» | give the integer a letter: $2m+1$, $n-1$ |
+| 3 | By contradiction | «prove that there is no», «never», «cannot» | write «suppose the opposite» |
+| 4 | The skeleton of induction | «prove by induction» | the four compulsory lines |
+| 5 | Induction for a sum | $\sum_{r=1}^{n}$ in the statement | split off the $(k+1)$-th term |
+| 6 | Induction for divisibility | «divisible by $d$ for all $n$» | write the hypothesis as $=ds$ |
+| 7 | Induction for the $n$-th derivative | $f^{(n)}(x)$, $\frac{d^n}{dx^n}$ | differentiate the hypothesis |
+| 8 | Induction for a recursion | $u_{n+1}=\dots$, $f^{n}$, $I_n$ via $I_{n-1}$ | apply the recursion to the hypothesis |
+| 9 | Induction for an inequality | «prove that $n > \dots$ for all $n$» | continue the chain from the hypothesis |
 
-Лестница здесь одна, хотя выглядит как две. Приёмы 1–3 — доказательства
-без индукции, и они идут первыми не только потому, что проще: **шаг индукции
-сам по себе является прямым доказательством**, а приём 6 целиком построен
-на приёме 2. Не научившись писать три строки без индукции, вы не напишете
-и семь с ней.
+There is one ladder here, although it looks like two. Techniques 1–3 are proofs
+without induction, and they come first not only because they are easier: **the
+inductive step is itself a direct proof**, and technique 6 is built entirely on
+technique 2. Without learning to write three lines without induction you will not
+write the seven with it.
 
-Приёмы 5–9 отличаются друг от друга ровно одним: что делают с гипотезой.
-Прибавляют слагаемое, вычитают кратное, дифференцируют, подставляют
-в рекуррентность, продолжают неравенство. Всё остальное в них одинаково
-до последней запятой — и это хорошая новость, потому что «всё остальное»
-стоит два балла из семи.
+Techniques 5–9 differ from one another in exactly one thing: what they do to the
+hypothesis. Add a term, subtract a multiple, differentiate, substitute into the
+recursion, continue the inequality. Everything else in them is identical down to the
+last comma — and that is good news, because «everything else» is worth two marks out
+of seven.
 """)
 
 md(r"""
 ---
-## Теория 1. Прямое доказательство: куда идти, если ответ уже написан
+## Theory 1. Direct proof: where to go when the answer is already written
 
-В вопросе «show that $A = B$» обе стороны даны. Соблазн — писать
-$A = B$, потом преобразовывать обе половины и радоваться, когда сойдётся.
-Так делать нельзя: вы начали с того, что требуется доказать.
+In a question «show that $A = B$» both sides are given. The temptation is to write
+$A = B$, then transform both halves and be pleased when they meet. That must not be
+done: you have started from what you were asked to prove.
 
-Правильная форма: **берём одну сторону и превращаем её в другую**, ни разу
-не пользуясь доказываемым равенством. В записи это выглядит как цепочка,
-которая начинается с $A$ и заканчивается $= B$.
+The right form: **take one side and turn it into the other**, never once using the
+equality you are proving. On the page it looks like a chain that starts with $A$ and
+ends with $= B$.
 
-Какую сторону брать — свободный выбор, и markscheme его признаёт явно.
-Утверждение «покажите, что $(a+b)^2 - (a-b)^2 = 4ab$» разбирается двумя
-путями: METHOD 1 раскрывает обе скобки слева и приводит подобные, METHOD 2
-видит слева разность квадратов и раскладывает её на
-$\bigl((a+b)+(a-b)\bigr)\bigl((a+b)-(a-b)\bigr)$. Оба дают полный балл,
-и второй короче. Практическое правило: **начинайте с той стороны, где
-больше действий**, — сворачивать проще, чем угадывать разворот.
+Which side to take is a free choice, and the markscheme recognises that explicitly.
+The statement «show that $(a+b)^2 - (a-b)^2 = 4ab$» is worked two ways: METHOD 1
+expands both brackets on the left and collects terms, METHOD 2 sees a difference of
+two squares on the left and factorises it into
+$\bigl((a+b)+(a-b)\bigr)\bigl((a+b)-(a-b)\bigr)$. Both get full marks, and the
+second is shorter. A practical rule: **start from the side with more going on in
+it** — collapsing is easier than guessing an expansion.
 
-Отдельная строчка из markscheme, которую стоит запомнить дословно:
-*«Do not award final A1 unless all previous working is correct»*. Последний
-балл в прямом доказательстве — за то, что цепочка сошлась целиком.
-Пропущенный знак в середине снимает не один балл, а два.
+One line from the markscheme worth remembering word for word: *«Do not award final
+A1 unless all previous working is correct»*. The last mark in a direct proof is for
+the chain meeting up as a whole. A missing sign in the middle takes off not one mark
+but two.
 """)
 
 md(r"""
-## Задание 1 🟢 — разность квадратов
+## Task 1 🟢 — a difference of two squares
 
-Докажите, что разность квадратов двух последовательных целых чисел равна
-сумме этих чисел.
+Prove that the difference of the squares of two consecutive integers equals the sum
+of those integers.
 
-Возьмите числа $n$ и $n+1$ и упростите $(n+1)^2 - n^2$. В ячейку введите
-то, что получилось после упрощения, — проверка сверит это с суммой $n + (n+1)$.
+Take the numbers $n$ and $n+1$ and simplify $(n+1)^2 - n^2$. Into the cell put what
+came out after simplifying — the check will compare it with the sum $n + (n+1)$.
 
-*Источник: May 2021 TZ2, Paper 1, Q1 (4 балла, без калькулятора).*
+*Source: May 2021 TZ2, Paper 1, Q1 (4 marks, no calculator).*
 """)
 
 code(r"""
-my1 = ...                # результат упрощения (n+1)^2 - n^2
+my1 = ...                # the result of simplifying (n+1)^2 - n^2
 
-verify_identity('Задание 1', my1, n + (n + 1), var=n)
+verify_identity('Task 1', my1, n + (n + 1), var=n)
 """)
 
 md(r"""
-## Задание 2 🟢 — тождество с дробью
+## Task 2 🟢 — an identity with a fraction
 
-Докажите, что для всех $a \ne 0$
+Prove that for all $a \ne 0$
 
 $$\left(\frac{a^2-1}{2a}\right)^2 + 1 = \left(\frac{a^2+1}{2a}\right)^2.$$
 
-Раскройте левую часть, приведите к одной дроби и введите результат.
-Он должен совпасть с правой частью.
+Expand the left-hand side, bring it to a single fraction and enter the result. It
+should match the right-hand side.
 
-*Источник: November 2022, Paper 1, Q3(a) (3 балла, без калькулятора).*
+*Source: November 2022, Paper 1, Q3(a) (3 marks, no calculator).*
 """)
 
 code(r"""
-my2 = ...                # левая часть, приведённая к одной дроби
+my2 = ...                # the left-hand side as a single fraction
 
-verify_identity('Задание 2', my2, ((a**2 + 1) / (2 * a))**2, var=a)
+verify_identity('Task 2', my2, ((a**2 + 1) / (2 * a))**2, var=a)
 """)
 
 md(r"""
 ---
-## Теория 2. Представление целых: как дать числу букву
+## Theory 2. Representing integers: how to give a number a letter
 
-Почти все утверждения этой темы звучат про «какое-нибудь» целое число:
-чётное, нечётное, три подряд идущих. Доказательство начинается с того,
-что такому числу дают буквенную запись — и дальше это обычная алгебра.
+Almost every statement in this topic is about «some» integer: an even one, an odd
+one, three in a row. The proof begins by giving such a number a letter — and from
+there it is ordinary algebra.
 
-| Условие | Запись |
+| Condition | How it is written |
 | --- | --- |
-| произвольное чётное | $2m$ |
-| произвольное нечётное | $2m+1$ |
-| три последовательных целых | $n-1,\; n,\; n+1$ |
-| два последовательных | $n,\; n+1$ |
-| кратное трём | $3m$ |
-| любое целое по остатку от 3 | $3m,\; 3m+1,\; 3m+2$ |
+| an arbitrary even number | $2m$ |
+| an arbitrary odd number | $2m+1$ |
+| three consecutive integers | $n-1,\; n,\; n+1$ |
+| two consecutive ones | $n,\; n+1$ |
+| a multiple of three | $3m$ |
+| any integer, by remainder mod 3 | $3m,\; 3m+1,\; 3m+2$ |
 
-Нечётное количество подряд идущих чисел удобнее записывать симметрично,
-от середины: для пяти сумма $(n-2)+(n-1)+n+(n+1)+(n+2) = 5n$ получается
-в одну строку, а из $n, n+1, \ldots, n+4$ пришлось бы возиться с $5n+10$.
+An odd number of consecutive integers is more convenient written symmetrically, from
+the middle: for five the sum $(n-2)+(n-1)+n+(n+1)+(n+2) = 5n$ comes out in one line,
+while from $n, n+1, \ldots, n+4$ you would have to fuss with $5n+10$.
 
-**Ловушка, за которую снимают балл.** Если целых чисел в утверждении два
-и они независимы, им нужны **разные буквы**. Запись «пусть $a = 2m+1$
-и $b = 2m+1$» доказывает утверждение только для случая $a = b$. В markscheme
-за это стоит отдельный A1: *«Then $a = 2m+1$ and $b = 2n+1$»* — с разными
-буквами, и это не придирка к оформлению.
+**The trap that costs a mark.** If the statement has two integers in it and they are
+independent, they need **different letters**. Writing «let $a = 2m+1$ and
+$b = 2m+1$» proves the statement only in the case $a = b$. The markscheme has a
+separate A1 for that: *«Then $a = 2m+1$ and $b = 2n+1$»* — with different letters,
+and it is not a quibble about presentation.
 
-Эту ошибку — и только её одну во всём практикуме — проверка поймать
-не может, и стоит понимать почему. Возьмём утверждение попроще: сумма
-двух нечётных чисел чётна. Запись $(2m+1)+(2m+1) = 4m+2$ даёт чётное
-число ровно так же, как честная $(2m+1)+(2n+1) = 2(m+n+1)$: арифметика
-сходится, потому что для частного случая $a = b$ утверждение и правда
-верно. Неполно здесь **рассуждение**, а полноту рассуждения из остатков
-не вычислить. Следите за этим сами.
+This mistake — and this one alone in the whole practicum — the check cannot catch,
+and it is worth understanding why. Take a simpler statement: the sum of two odd
+numbers is even. The writing $(2m+1)+(2m+1) = 4m+2$ gives an even number just as
+well as the honest $(2m+1)+(2n+1) = 2(m+n+1)$: the arithmetic works out, because in
+the special case $a = b$ the statement is indeed true. What is incomplete here is
+the **reasoning**, and the completeness of reasoning cannot be computed from
+remainders. Watch for it yourself.
 
-**Как из представления получается вывод.** Довели выражение до вида
-$5k^2 + 3$ — дальше говорят словами: $5k^2$ делится на 5, а 3 не делится,
-значит вся сумма на 5 не делится никогда. Это и есть R1. Ниже такие выводы
-проверяет `verify_residue`: она перебирает целые значения и убеждается,
-что остаток и правда всегда один и тот же.
+**How a conclusion comes out of a representation.** You have brought the expression
+to the form $5k^2 + 3$ — and then you say it in words: $5k^2$ is divisible by 5 and
+3 is not, so the whole sum is never divisible by 5. That is the R1. Below,
+`verify_residue` checks such conclusions: it runs through integer values and
+confirms that the remainder really is always the same.
 """)
 
 md(r"""
-## Задание 3 🟢 — три подряд идущих
+## Task 3 🟢 — three in a row
 
-Докажите, что сумма любых трёх последовательных целых чисел делится на 3.
+Prove that the sum of any three consecutive integers is divisible by 3.
 
-*Источник: May 2022 TZ2, Paper 1, Q2(a) (2 балла, без калькулятора).*
+*Source: May 2022 TZ2, Paper 1, Q2(a) (2 marks, no calculator).*
 """)
 
 code(r"""
-my3 = ...                # упрощённая сумма (n-1) + n + (n+1)
+my3 = ...                # the simplified sum (n-1) + n + (n+1)
 
-verify_identity('Задание 3, выкладка', my3, (n - 1) + n + (n + 1), var=n)
-verify_residue('Задание 3, вывод', my3, 3, 0)
+verify_identity('Task 3, the working', my3, (n - 1) + n + (n + 1), var=n)
+verify_residue('Task 3, the conclusion', my3, 3, 0)
 """)
 
 md(r"""
-## Задание 4 🟡 — а вот сумма квадратов уже никогда
+## Task 4 🟡 — but the sum of the squares never is
 
-Докажите, что сумма квадратов трёх последовательных целых чисел
-**никогда** не делится на 3.
+Prove that the sum of the squares of three consecutive integers is **never**
+divisible by 3.
 
-Слово «никогда» — подсказка: доводим до вида «кратное трёх плюс остаток»
-и показываем, что остаток не ноль. Во второй строке введите этот остаток.
+The word «never» is the hint: bring it to the form «a multiple of three plus a
+remainder» and show that the remainder is not zero. On the second line enter that
+remainder.
 
-*Источник: May 2022 TZ2, Paper 1, Q2(b) (4 балла, без калькулятора).*
+*Source: May 2022 TZ2, Paper 1, Q2(b) (4 marks, no calculator).*
 """)
 
 code(r"""
-my4 = ...                # упрощённая сумма (n-1)^2 + n^2 + (n+1)^2
-rest4 = ...              # остаток при делении на 3
+my4 = ...                # the simplified sum (n-1)^2 + n^2 + (n+1)^2
+rest4 = ...              # the remainder on division by 3
 
-verify_identity('Задание 4, выкладка', my4, (n - 1)**2 + n**2 + (n + 1)**2, var=n)
-verify_residue('Задание 4, вывод', my4, 3, rest4)
+verify_identity('Task 4, the working', my4, (n - 1)**2 + n**2 + (n + 1)**2, var=n)
+verify_residue('Task 4, the conclusion', my4, 3, rest4)
 """)
 
 md(r"""
 ---
-## Теория 3. Доказательство от противного
+## Theory 3. Proof by contradiction
 
-Схема одна и та же:
+The scheme is always the same:
 
-1. **Предположим противное** — и записать, что именно предполагается.
-2. Из этого предположения выкладками получить утверждение, которое
-   заведомо ложно.
-3. Значит, предположение неверно, а исходное утверждение верно.
+1. **Suppose the opposite** — and write down what exactly is being supposed.
+2. From that supposition, derive by working a statement that is plainly false.
+3. So the supposition is wrong, and the original statement is true.
 
-Первый шаг — это M1, и он ставится **за запись предположения**, а не за
-намерение. В markscheme это выглядит буквально так: *«M1 for assuming
-there exists some $\alpha \in \mathbb{Z}$ such that …»* — с выписанным
-целиком равенством, которое предполагается. Кто начал сразу с выкладок,
-этот балл не получил.
+The first step is an M1, and it is awarded **for writing the supposition down**, not
+for intending it. In the markscheme it looks literally like this: *«M1 for assuming
+there exists some $\alpha \in \mathbb{Z}$ such that …»* — with the whole supposed
+equality written out. Whoever started straight into the working did not get that
+mark.
 
-**Откуда берётся противоречие.** В архиве встречаются три источника,
-и полезно знать их наперёд:
+**Where the contradiction comes from.** Three sources appear in the archive, and it
+is useful to know them in advance:
 
-| Источник | Как выглядит | Пример из архива |
+| Source | What it looks like | Example from the archive |
 | --- | --- | --- |
-| чётность | одна сторона чётна, другая нет | $(2a+1)^2 = 2b$ |
-| делимость | остатки не сходятся | $3(\dots)+1$ не делится на 3 |
-| знак или граница | квадрат отрицателен, значение меньше минимума | $(2x-1)^2 < 0$ |
+| parity | one side is even, the other is not | $(2a+1)^2 = 2b$ |
+| divisibility | the remainders do not match | $3(\dots)+1$ is not divisible by 3 |
+| a sign or a bound | a square is negative, a value is below the minimum | $(2x-1)^2 < 0$ |
 
-Третий стоит отдельного слова. В мае 2025 требовалось доказать
-$\frac{1}{x(1-x)} \ge 4$ при $0 < x < 1$. Markscheme приводит **три** способа:
-предположить $< 4$ и свести к $(2x-1)^2 < 0$; найти минимум через
-разложение на простейшие дроби; найти минимум производной. Все три
-получают полный балл — противоречие можно добывать откуда удобнее,
-лишь бы предположение было записано и вывод сделан явно.
+The third deserves a word of its own. In May 2025 the task was to prove that
+$\frac{1}{x(1-x)} \ge 4$ for $0 < x < 1$. The markscheme gives **three** ways:
+suppose $< 4$ and reduce it to $(2x-1)^2 < 0$; find the minimum through partial
+fractions; find the minimum with the derivative. All three get full marks — a
+contradiction may be mined wherever it is convenient, as long as the supposition is
+written down and the conclusion drawn explicitly.
 
-**Ловушка.** Доказательство не заканчивается формулой. Нужна финальная
-фраза: «это противоречие, значит предположение неверно». За неё стоит
-последний R1, и в трёх заданиях из четырёх это отдельный балл.
+**The trap.** A proof does not end with a formula. A final sentence is needed: «this
+is a contradiction, so the supposition is wrong». The last R1 is for it, and in
+three questions out of four it is a mark of its own.
 """)
 
 md(r"""
-## Задание 5 🟡 — не оба нечётные
+## Task 5 🟡 — not both odd
 
-Числа $a$ и $b$ целые, и $a^2 + b^2$ делится на 4. Докажите, что $a$ и $b$
-не могут быть оба нечётными.
+The numbers $a$ and $b$ are integers, and $a^2 + b^2$ is divisible by 4. Prove that
+$a$ and $b$ cannot both be odd.
 
-Предположите противное, запишите оба числа через **разные** буквы, раскройте
-скобки и приведите к виду «кратное четырёх плюс остаток».
+Suppose the opposite, write both numbers with **different** letters, expand and
+bring the result to the form «a multiple of four plus a remainder».
 
-*Источник: May 2022 TZ1, Paper 1, Q8 (6 баллов, без калькулятора).*
+*Source: May 2022 TZ1, Paper 1, Q8 (6 marks, no calculator).*
 """)
 
 code(r"""
-my5 = ...                # раскрытая сумма (2m+1)^2 + (2n+1)^2
-rest5 = ...              # остаток при делении на 4
+my5 = ...                # the expanded sum (2m+1)^2 + (2n+1)^2
+rest5 = ...              # the remainder on division by 4
 
-verify_identity('Задание 5, выкладка', my5, (2 * m + 1)**2 + (2 * n + 1)**2, var=m)
-verify_residue('Задание 5, вывод', my5, 4, rest5)
+verify_identity('Task 5, the working', my5, (2 * m + 1)**2 + (2 * n + 1)**2, var=m)
+verify_residue('Task 5, the conclusion', my5, 4, rest5)
 """)
 
 md(r"""
-## Задание 6 🔴 — уравнение без целых корней
+## Task 6 🔴 — an equation with no integer roots
 
-Докажите, что уравнение $2\alpha^3 + 6\alpha + 1 = 0$ не имеет целых корней.
+Prove that the equation $2\alpha^3 + 6\alpha + 1 = 0$ has no integer roots.
 
-Предположите, что целый корень $\alpha$ существует, и перенесите свободный
-член вправо. Слева окажется выражение, чётность которого очевидна,
-справа — число с другой чётностью.
+Suppose that an integer root $\alpha$ exists and move the constant term to the
+right. On the left there will be an expression whose parity is obvious, on the right
+a number of the other parity.
 
-*Источник: May 2022 TZ2, Paper 1, Q9 (5 баллов, без калькулятора).*
+*Source: May 2022 TZ2, Paper 1, Q9 (5 marks, no calculator).*
 """)
 
 code(r"""
-left6 = ...              # левая часть после переноса
-right6 = ...             # правая часть после переноса
+left6 = ...              # the left-hand side after moving the term
+right6 = ...             # the right-hand side after moving the term
 
-verify_rewrite('Задание 6, перенос', left6, right6, 2 * al**3 + 6 * al + 1, var=al)
-verify_residue('Задание 6, слева', left6, 2, 0)
-verify_residue('Задание 6, справа', right6, 2, 1)
+verify_rewrite('Task 6, the rearrangement', left6, right6, 2 * al**3 + 6 * al + 1, var=al)
+verify_residue('Task 6, on the left', left6, 2, 0)
+verify_residue('Task 6, on the right', right6, 2, 1)
 """)
 
 md(r"""
-## Задание 7 🔴 — чётность после подстановки
+## Task 7 🔴 — parity after a substitution
 
-Докажите, что не существует целых $p$ и $q$, для которых $p^2 - 8q - 11 = 0$.
+Prove that there are no integers $p$ and $q$ for which $p^2 - 8q - 11 = 0$.
 
-Здесь два шага рассуждения подряд. Сначала из $p^2 = 8q+11$ следует, что
-$p^2$ нечётно, а значит нечётно и само $p$. Только после этого имеет смысл
-писать $p = 2k+1$: подставлять $2k$ и $2k+1$ по очереди не нужно, половина
-случаев уже отсечена.
+There are two steps of reasoning in a row here. First, from $p^2 = 8q+11$ it follows
+that $p^2$ is odd, and so $p$ itself is odd. Only after that does it make sense to
+write $p = 2k+1$: there is no need to substitute $2k$ and $2k+1$ in turn, half the
+cases have already been cut away.
 
-Подставьте, раскройте и приведите к равенству двух частей с разной чётностью.
+Substitute, expand and bring it to an equality of two sides of different parity.
 
-*Источник: May 2023 TZ1, Paper 2, Q9 (6 баллов, с калькулятором — который
-здесь ничем не поможет).*
+*Source: May 2023 TZ1, Paper 2, Q9 (6 marks, with a calculator — which is of no
+help whatsoever here).*
 """)
 
 code(r"""
-left7 = ...              # левая часть итогового равенства
-right7 = ...             # правая часть итогового равенства
+left7 = ...              # the left-hand side of the final equality
+right7 = ...             # the right-hand side of the final equality
 
-verify_rewrite('Задание 7, равносильность', left7, right7,
+verify_rewrite('Task 7, the equivalence', left7, right7,
                (2 * k + 1)**2 - 8 * q - 11, var=k, factor=2)
-verify_residue('Задание 7, слева', left7, 2, 0)
-verify_residue('Задание 7, справа', right7, 2, 1)
+verify_residue('Task 7, on the left', left7, 2, 0)
+verify_residue('Task 7, on the right', right7, 2, 1)
 """)
 
 md(r"""
 ---
-## Теория 4. Скелет индукции и где в нём баллы
+## Theory 4. The skeleton of induction, and where the marks are in it
 
-Дальше половина практикума про один-единственный шаблон. Выучить его
-имеет смысл дословно: он даёт **два балла из семи вообще без математики**,
-и эти два балла теряют чаще, чем любые другие в теме.
+From here half the practicum is about one single template. It is worth learning word
+for word: it gives **two marks out of seven with no mathematics at all**, and those
+two marks are lost more often than any others in the topic.
 
-Четыре обязательные части:
+The four compulsory parts:
 
-| Часть | Что пишут | Балл |
+| Part | What is written | Mark |
 | --- | --- | --- |
-| **База** | «при $n = 1$: левая часть $=\dots$, правая часть $=\dots$, равны» | R1 или A1 |
-| **Гипотеза** | «предположим, что утверждение верно при $n = k$, то есть $\dots$» | M1 |
-| **Шаг** | «рассмотрим $n = k+1$» и выкладка до нужного вида | M1 + A1-ы |
-| **Вывод** | «верно при $n=1$; из $P(k)$ следует $P(k+1)$; значит верно для всех $n \in \mathbb{Z}^+$» | R1 |
+| **Base** | «at $n = 1$: the left-hand side $=\dots$, the right-hand side $=\dots$, they are equal» | R1 or A1 |
+| **Hypothesis** | «suppose the statement is true for $n = k$, that is, $\dots$» | M1 |
+| **Step** | «consider $n = k+1$» and the working to the required form | M1 + the A1s |
+| **Conclusion** | «true for $n=1$; $P(k)$ implies $P(k+1)$; so it is true for all $n \in \mathbb{Z}^+$» | R1 |
 
-Три замечания из markscheme, каждое стоит балла:
+Three remarks from the markscheme, each worth a mark:
 
-**«M1 not awarded for mere "let $n = k$"».** Гипотезу надо выписать целиком,
-с формулой. Слова «пусть $n = k$» баллом не считаются: вы ничего
-не предположили, вы переобозначили букву.
+**«M1 not awarded for mere "let $n = k$"».** The hypothesis has to be written out in
+full, with the formula. The words «let $n = k$» are not a mark: you have supposed
+nothing, you have renamed a letter.
 
-**«Award R0 for not starting at $n = 2$».** База проверяется там, где
-утверждение начинается. Если в условии сказано «для всех $n \ge 2$»,
-подстановка $n = 1$ балла не приносит. В мае 2021 формула для $f^{(n)}$
-имела смысл только с $n = 2$, и за базу при $n = 1$ ставили ноль.
+**«Award R0 for not starting at $n = 2$».** The base is checked where the statement
+begins. If the question says «for all $n \ge 2$», substituting $n = 1$ earns
+nothing. In May 2021 the formula for $f^{(n)}$ only made sense from $n = 2$, and a
+base at $n = 1$ scored zero.
 
 **«Only award R1 if 4 of the previous 6 marks have been awarded».**
-Заключительный балл — с порогом. Написать первую и последнюю строки,
-оставив середину пустой, не выйдет: вывод без выкладки не засчитывают.
-Эта пометка стоит в markscheme почти каждого задания темы.
+The final mark has a threshold. Writing the first and the last line and leaving the
+middle empty will not do: a conclusion with no working is not credited. That note
+stands in the markscheme of nearly every question in the topic.
 
-Отсюда практический вывод, обратный интуиции: **если шаг не доводится
-до конца, всё равно допишите все четыре части**. База и гипотеза дают
-свои баллы независимо от того, чем кончилась алгебра.
+Hence a practical conclusion that runs against intuition: **if the step does not
+come out, write all four parts anyway.** The base and the hypothesis earn their
+marks regardless of how the algebra ended.
 """)
 
 md(r"""
-## Задание 8 🟢 — собрать доказательство из строк
+## Task 8 🟢 — assemble a proof out of lines
 
-Ниже семь строк одного доказательства по индукции, перемешанные.
-Расставьте их в правильном порядке.
+Below are seven lines of one proof by induction, shuffled. Put them in the right
+order.
 
-| Метка | Строка |
+| Label | Line |
 | --- | --- |
-| **A** | подставляем гипотезу в выделенную часть |
-| **B** | проверяем: при $n = 1$ левая часть равна правой |
-| **C** | значит, верно при $n = 1$, и из $P(k)$ следует $P(k+1)$; по индукции верно при всех $n \in \mathbb{Z}^+$ |
-| **D** | предположим, что утверждение верно при $n = k$, то есть $\dots$ |
-| **E** | приводим к общему знаменателю и упрощаем |
-| **F** | рассматриваем $n = k+1$ и отделяем сумму первых $k$ слагаемых |
-| **G** | получилось в точности утверждение при $n = k+1$ |
+| **A** | substitute the hypothesis into the part singled out |
+| **B** | check: at $n = 1$ the left-hand side equals the right-hand side |
+| **C** | so it is true at $n = 1$, and $P(k)$ implies $P(k+1)$; by induction it is true for all $n \in \mathbb{Z}^+$ |
+| **D** | suppose the statement is true for $n = k$, that is, $\dots$ |
+| **E** | bring to a common denominator and simplify |
+| **F** | consider $n = k+1$ and split off the sum of the first $k$ terms |
+| **G** | this is exactly the statement at $n = k+1$ |
 
-Вторая часть — про разметку. Задание стоит **7 баллов**: A1 за базу,
-M1 за гипотезу, M1 за рассмотрение $n = k+1$, три A1 за выкладку,
-R1 за вывод, причём последний R1 ставится только при четырёх набранных
-из шести предыдущих. Сколько баллов получит работа, в которой написаны
-**только строки B и C**, а середины нет?
+The second part is about the marking. The question is worth **7 marks**: A1 for the
+base, M1 for the hypothesis, M1 for considering $n = k+1$, three A1s for the
+working, R1 for the conclusion, and that last R1 is awarded only if four of the
+previous six have been. How many marks does a script get in which **only lines B and
+C** are written and there is no middle?
 """)
 
 code(r"""
-my8 = ...                # например ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-marks8 = ...             # сколько баллов из 7
+my8 = ...                # for example ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+marks8 = ...             # how many marks out of 7
 
-check_order('Задание 8, порядок', my8, '""" + D_ORDER8 + r"""', n=7)
-check_num('Задание 8, баллы', marks8, 6, '""" + D_MARKS8 + r"""')
+check_order('Task 8, the order', my8, '""" + D_ORDER8 + r"""', n=7)
+check_num('Task 8, the marks', marks8, 6, '""" + D_MARKS8 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 5. Индукция для суммы
+## Theory 5. Induction for a sum
 
-Самый частый вид в архиве: 41 балл из 112. Утверждение выглядит как
+The most frequent kind in the archive: 41 marks out of 112. The statement looks like
 
 $$\sum_{r=1}^{n} a_r = S(n),$$
 
-и весь шаг — одна строка, которую стоит запомнить:
+and the whole step is one line, worth remembering:
 
-$$\sum_{r=1}^{k+1} a_r \;=\; \underbrace{\sum_{r=1}^{k} a_r}_{\text{сюда гипотезу}} \;+\; a_{k+1}.$$
+$$\sum_{r=1}^{k+1} a_r \;=\; \underbrace{\sum_{r=1}^{k} a_r}_{\text{the hypothesis goes here}} \;+\; a_{k+1}.$$
 
-Отделили последнее слагаемое, вместо суммы подставили $S(k)$ — и дальше
-чистая алгебра: привести к общему знаменателю и узнать в результате $S(k+1)$.
+Split off the last term, put $S(k)$ in place of the sum — and from there it is pure
+algebra: bring to a common denominator and recognise $S(k+1)$ in the result.
 
-**Где спотыкаются.** Не на идее, а на алгебре с факториалами. Полезно
-помнить, что факториал следующего номера получается умножением:
-$(k+1)! = (k+1)\cdot k!$. Поэтому у двух дробей, знаменатели которых
-отличаются на один номер, общий знаменатель — тот, что больше, и меньшую
-дробь домножают ровно на один множитель, а не на что-то сложнее.
-Половина потерянных баллов приёма — это домножение «на всякий случай»
-на произведение двух скобок.
+**Where people stumble.** Not on the idea but on the algebra with factorials. It is
+useful to remember that the factorial of the next index comes by multiplication:
+$(k+1)! = (k+1)\cdot k!$. So for two fractions whose denominators differ by one
+index, the common denominator is the larger one, and the smaller fraction is
+multiplied by exactly one factor, not by anything more complicated. Half the marks
+lost in this technique are a multiplication «just in case» by a product of two
+brackets.
 
-**Как проверять себя.** Целевое выражение $S(k+1)$ полезно выписать
-на полях **до** того, как начали упрощать. Тогда видно, куда сворачивать,
-и не приходится гадать, достаточно ли упрощено. Ниже это и делает
-`verify_induction`: вы вводите то, что получили, а она сверяет это
-с $S(k+1)$.
+**How to check yourself.** It pays to write the target expression $S(k+1)$ in the
+margin **before** starting to simplify. Then you can see where to collapse to, and
+you do not have to guess whether you have simplified enough. That is what
+`verify_induction` does below: you enter what you got, and it compares it with
+$S(k+1)$.
 """)
 
 md(r"""
-## Задание 9 🟢 — сумма с факториалами
+## Task 9 🟢 — a sum with factorials
 
-Докажите по индукции, что для всех $n \ge 1$
+Prove by induction that for all $n \ge 1$
 
 $$\sum_{r=1}^{n} \frac{r}{(r+1)!} = 1 - \frac{1}{(n+1)!}.$$
 
-В ячейку введите выражение, которое получилось после подстановки гипотезы
-и отделения $(k+1)$-го слагаемого, а также значение левой части при $n = 1$.
+Into the cell put the expression you got after substituting the hypothesis and
+splitting off the $(k+1)$-th term, and also the value of the left-hand side at
+$n = 1$.
 
-*Источник: May 2023 TZ2, Paper 1, Q7 (7 баллов, без калькулятора).*
+*Source: May 2023 TZ2, Paper 1, Q7 (7 marks, no calculator).*
 """)
 
 code(r"""
-step9 = ...              # что получилось в шаге: S(k) + a_{k+1}
-base9 = ...              # левая часть при n = 1
+step9 = ...              # what came out in the step: S(k) + a_{k+1}
+base9 = ...              # the left-hand side at n = 1
 
-verify_induction('Задание 9', step9, 1 - 1 / factorial(k + 1), base_lhs=base9)
+verify_induction('Task 9', step9, 1 - 1 / factorial(k + 1), base_lhs=base9)
 """)
 
 md(r"""
-## Задание 10 🟡 — сумма биномиальных коэффициентов
+## Task 10 🟡 — a sum of binomial coefficients
 
-Докажите по индукции, что для всех $n \in \mathbb{Z}^+$
+Prove by induction that for all $n \in \mathbb{Z}^+$
 
 $$\sum_{r=1}^{n} \binom{r}{1} = \binom{n+1}{2}.$$
 
-Приём тот же, что в задании 9, но алгебра идёт через факториалы биномов.
-Markscheme даёт два равноправных пути: сокращать факториалы или сразу
-приводить к общему знаменателю.
+The technique is the one from task 9, but the algebra goes through the factorials of
+binomials. The markscheme gives two equally valid routes: cancel the factorials, or
+go straight to a common denominator.
 
-*Источник: May 2024 TZ1, Paper 1, Q7 (7 баллов, без калькулятора).*
+*Source: May 2024 TZ1, Paper 1, Q7 (7 marks, no calculator).*
 """)
 
 code(r"""
-step10 = ...             # S(k) + очередное слагаемое
-base10 = ...             # левая часть при n = 1
+step10 = ...             # S(k) + the next term
+base10 = ...             # the left-hand side at n = 1
 
-verify_induction('Задание 10', step10, binomial(k + 1, 2), base_lhs=base10)
+verify_induction('Task 10', step10, binomial(k + 1, 2), base_lhs=base10)
 """)
 
 md(r"""
 ---
-## Теория 6. Индукция для делимости
+## Theory 6. Induction for divisibility
 
-Утверждение «$E(n)$ делится на $d$ при всех $n$» отличается от суммы тем,
-что равенства нет — и гипотезу приходится записывать самому:
+The statement «$E(n)$ is divisible by $d$ for all $n$» differs from a sum in that
+there is no equality — and the hypothesis has to be written by you:
 
-$$\text{предположим } E(k) = d\,s, \quad s \in \mathbb{Z}.$$
+$$\text{suppose } E(k) = d\,s, \quad s \in \mathbb{Z}.$$
 
-Буква $s$ здесь обязательна: без неё гипотезой невозможно воспользоваться.
+The letter $s$ is compulsory here: without it the hypothesis cannot be used.
 
-Дальше механика. Считаем $E(k+1)$, и в нём надо **увидеть $E(k)$**.
-Для этого $E(k+1)$ разбивают на кратное гипотезы плюс остаток. Разберём
-на $E(n) = 3^{2n} - 1$, которое делится на 8:
+Then the mechanics. Compute $E(k+1)$, and in it you have to **see $E(k)$**. For
+that, $E(k+1)$ is split into a multiple of the hypothesis plus a remainder. On
+$E(n) = 3^{2n} - 1$, which is divisible by 8:
 
 $$3^{2(k+1)} - 1 = 9\cdot 3^{2k} - 1
 = 9\underbrace{\left(3^{2k} - 1\right)}_{= \,8s} + 8 .$$
 
-Множитель 9 выбран не случайно: это коэффициент, с которым $3^{2k}$
-входит в $3^{2(k+1)}$, и после вынесения гипотезы остаётся ровно то,
-что осталось от единицы. Когда слагаемых с показателями два, годится
-коэффициент любого из них: тогда исчезает одно слагаемое, а второе
-остаётся в остатке. Markscheme признаёт оба пути (EITHER/OR), и проверка
-ниже тоже.
+The factor 9 is not chosen at random: it is the coefficient with which $3^{2k}$ sits
+inside $3^{2(k+1)}$, and after the hypothesis is taken out, exactly what is left of
+the one remains. When there are two terms with exponents, the coefficient of either
+will do: then one term disappears and the other stays in the remainder. The
+markscheme recognises both routes (EITHER/OR), and so does the check below.
 
-**Что именно проверяется.** Остаток обязан делиться на $d$ **как выражение**,
-то есть после деления должны остаться целые коэффициенты. Требование
-не формальное: разность бывает кратна $d$ при каждом целом $k$ и без этого,
-но тогда её не записать в виде $d\cdot(\text{целое})$ одной строкой,
-и доказательства не выходит. A1 в markscheme стоит именно за вынесение
-$d$ за скобку.
+**What exactly is checked.** The remainder has to be divisible by $d$ **as an
+expression**, that is, after dividing, integer coefficients must be left. The
+requirement is not a formality: a difference may well be a multiple of $d$ at every
+integer $k$ without it, but then it cannot be written as $d\cdot(\text{an integer})$
+in one line, and there is no proof. The A1 in the markscheme is precisely for taking
+$d$ outside the bracket.
 """)
 
 md(r"""
-## Задание 11 🟡 — делимость на 17
+## Task 11 🟡 — divisibility by 17
 
-Докажите по индукции, что $5^{2n} - 2^{3n}$ делится на 17 для всех
+Prove by induction that $5^{2n} - 2^{3n}$ is divisible by 17 for all
 $n \in \mathbb{Z}^+$.
 
-Введите само выражение и множитель, с которым гипотеза входит в шаг.
+Enter the expression itself and the factor with which the hypothesis enters the
+step.
 
-*Источник: November 2023 TZ1, Paper 1, Q6 (7 баллов, без калькулятора).
-Тот же вопрос дословно повторён в TZ2 той же сессии.*
+*Source: November 2023 TZ1, Paper 1, Q6 (7 marks, no calculator). The same question
+is repeated word for word in TZ2 of the same session.*
 """)
 
 code(r"""
-expr11 = ...             # выражение E(n), записанное через k
-mult11 = ...             # множитель при гипотезе
+expr11 = ...             # the expression E(n), written in terms of k
+mult11 = ...             # the factor multiplying the hypothesis
 
-verify_divisibility('Задание 11', expr11, 17, mult11)
+verify_divisibility('Task 11', expr11, 17, mult11)
 """)
 
 md(r"""
 ---
-## Теория 7. Индукция для $n$-й производной
+## Theory 7. Induction for the $n$-th derivative
 
-38 баллов архива — больше, чем у делимости и неравенств вместе. Формат
-всегда один: дана $f(x)$, дана формула для $f^{(n)}(x)$, доказать по индукции.
+38 marks of the archive — more than divisibility and inequalities together. The
+format is always the same: $f(x)$ is given, a formula for $f^{(n)}(x)$ is given,
+prove it by induction.
 
-Шаг здесь проще, чем в суммах: **гипотезу дифференцируют**. Если
-$f^{(k)}(x) = g(k, x)$, то
+The step here is simpler than in sums: **the hypothesis is differentiated**. If
+$f^{(k)}(x) = g(k, x)$, then
 
 $$f^{(k+1)}(x) = \frac{d}{dx}\,f^{(k)}(x) = \frac{d}{dx}\,g(k, x),$$
 
-и остаётся показать, что результат — это $g(k+1, x)$.
+and what is left is to show that the result is $g(k+1, x)$.
 
-**Два места, где теряют баллы.**
+**Two places where marks are lost.**
 
-*База.* Проверять надо не $f(x)$, а **первую производную**: утверждение
-про $f^{(n)}$ при $n = 1$ — это $f'(x)$. И если формула осмысленна только
-с $n = 2$ (в мае 2021 так и было), базу берут при $n = 2$, иначе R0.
+*The base.* What has to be checked is not $f(x)$ but the **first derivative**: the
+statement about $f^{(n)}$ at $n = 1$ is $f'(x)$. And if the formula only makes sense
+from $n = 2$ (in May 2021 that was the case), the base is taken at $n = 2$, else
+R0.
 
-*Алгебра после дифференцирования.* Производная выходит в «неузнаваемом»
-виде, и её надо привести к форме с $k+1$. В заданиях с факториалами это
-отдельные два-три A1: например, $\frac{(2k-1)!}{(k-1)!}$ превращают
-в $\frac{2(2k-3)!}{(k-2)!}$ вручную. Выпишите целевое выражение заранее —
-без него непонятно, к чему сворачивать.
+*The algebra after differentiating.* The derivative comes out in an
+«unrecognisable» form and has to be brought to a form with $k+1$. In questions with
+factorials that is two or three A1s of its own: for example,
+$\frac{(2k-1)!}{(k-1)!}$ is turned into $\frac{2(2k-3)!}{(k-2)!}$ by hand. Write the
+target expression out in advance — without it there is no telling what to collapse
+to.
 """)
 
 md(r"""
-## Задание 12 🟡 — $n$-я производная произведения
+## Task 12 🟡 — the $n$-th derivative of a product
 
-Докажите по индукции, что для $f(x) = x^2 e^x$ и всех $n \in \mathbb{Z}^+$
+Prove by induction that for $f(x) = x^2 e^x$ and all $n \in \mathbb{Z}^+$
 
 $$\frac{d^n}{dx^n}\left(x^2 e^x\right) = \left(x^2 + 2nx + n(n-1)\right)e^x.$$
 
-В шаге дифференцируйте гипотезу по правилу произведения. В ячейку введите
-результат дифференцирования — упрощать до конца не обязательно, проверка
-сама сверит его с формулой при $k+1$.
+In the step, differentiate the hypothesis with the product rule. Into the cell put
+the result of the differentiation — simplifying it all the way is not necessary, the
+check will compare it with the formula at $k+1$ itself.
 
-*Источник: November 2021, Paper 1, Q11(a) (7 баллов, без калькулятора).*
+*Source: November 2021, Paper 1, Q11(a) (7 marks, no calculator).*
 """)
 
 code(r"""
-hyp12 = (x**2 + 2 * k * x + k * (k - 1)) * exp(x)     # гипотеза: f^(k)(x)
+hyp12 = (x**2 + 2 * k * x + k * (k - 1)) * exp(x)     # the hypothesis: f^(k)(x)
 
-step12 = ...             # производная гипотезы по x
-base12 = ...             # f'(x), то есть левая часть при n = 1
+step12 = ...             # the derivative of the hypothesis with respect to x
+base12 = ...             # f'(x), that is, the left-hand side at n = 1
 
-verify_induction('Задание 12', step12, hyp12, base_lhs=base12)
+verify_induction('Task 12', step12, hyp12, base_lhs=base12)
 """)
 
 md(r"""
 ---
-## Теория 8. Индукция для рекурсии
+## Theory 8. Induction for a recursion
 
-Последний вид: утверждение про $u_n$, $f^n$ или $I_n$, где следующий член
-выражается через предыдущий. Шаг — применить рекуррентность к гипотезе.
+The last kind: a statement about $u_n$, $f^n$ or $I_n$, where the next term is
+expressed through the previous one. The step is to apply the recursion to the
+hypothesis.
 
-Разница с $n$-й производной только в том, какое действие применяют:
+The difference from the $n$-th derivative is only in which action is applied:
 
-| Что дано | Шаг |
+| What is given | The step |
 | --- | --- |
-| $u_{n+1} = g(u_n)$ | подставить гипотезу в $g$ |
-| $f^{n+1}(x) = f\!\left(f^{n}(x)\right)$ | подставить гипотезу внутрь $f$ |
-| $I_n$ через $I_{n-1}$ (интегрирование по частям) | взять интеграл по частям и узнать $I_{k}$ |
+| $u_{n+1} = g(u_n)$ | substitute the hypothesis into $g$ |
+| $f^{n+1}(x) = f\!\left(f^{n}(x)\right)$ | substitute the hypothesis inside $f$ |
+| $I_n$ via $I_{n-1}$ (integration by parts) | integrate by parts and recognise $I_{k}$ |
 
-Во втором случае есть развилка: $f^{k+1} = f(f^k)$ или $f^{k+1} = f^k(f)$.
-Markscheme мая 2025 приводит обе как EITHER/OR — считайте той, где
-подстановка выглядит проще. Обычно это первая: внешняя $f$ применяется
-к готовому выражению, а не наоборот.
+In the second case there is a fork: $f^{k+1} = f(f^k)$ or $f^{k+1} = f^k(f)$. The
+May 2025 markscheme gives both as EITHER/OR — count the one in which the
+substitution looks simpler. Usually that is the first: the outer $f$ is applied to a
+ready expression rather than the other way round.
 
-Третий случай — красивый: в мае 2023 требовалось доказать
-$\int_0^{\infty} x^n e^{-x}\,dx = n!$. Интегрирование по частям превращает
-$I_{k+1}$ в $(k+1)I_k$, гипотеза даёт $I_k = k!$, и вместе выходит $(k+1)!$.
-Индукция здесь не украшение, а единственный способ: рекуррентность
-без неё не замыкается.
+The third case is a pretty one: in May 2023 the task was to prove
+$\int_0^{\infty} x^n e^{-x}\,dx = n!$. Integration by parts turns $I_{k+1}$ into
+$(k+1)I_k$, the hypothesis gives $I_k = k!$, and together that is $(k+1)!$.
+Induction here is not decoration but the only way: the recursion does not close up
+without it.
 """)
 
 md(r"""
-## Задание 13 🔴 — композиция линейной функции
+## Task 13 🔴 — the composition of a linear function
 
-Пусть $f(x) = mx + c$, где $m \ne 1$. Через $f^{n}$ обозначена $n$-кратная
-композиция $f$ с собой. Докажите по индукции, что для всех $n \in \mathbb{Z}^+$
+Let $f(x) = mx + c$, where $m \ne 1$. By $f^{n}$ we denote the $n$-fold composition
+of $f$ with itself. Prove by induction that for all $n \in \mathbb{Z}^+$
 
 $$f^{n}(x) = m^n x + \frac{c\left(1 - m^n\right)}{1 - m}.$$
 
-В шаге примените $f$ к гипотезе: $f^{k+1}(x) = f\!\left(f^{k}(x)\right)$.
+In the step, apply $f$ to the hypothesis: $f^{k+1}(x) = f\!\left(f^{k}(x)\right)$.
 
-*Источник: May 2025 TZ3, Paper 3, Q1(c) (8 баллов, с калькулятором —
-но вся работа здесь ручная).*
+*Source: May 2025 TZ3, Paper 3, Q1(c) (8 marks, with a calculator — but all the
+work here is by hand).*
 """)
 
 code(r"""
-hyp13 = m**k * x + c * (1 - m**k) / (1 - m)           # гипотеза: f^k(x)
+hyp13 = m**k * x + c * (1 - m**k) / (1 - m)           # the hypothesis: f^k(x)
 
-step13 = ...             # f, применённая к гипотезе
+step13 = ...             # f applied to the hypothesis
 base13 = ...             # f^1(x)
 
-verify_induction('Задание 13', step13, hyp13, base_lhs=base13)
+verify_induction('Task 13', step13, hyp13, base_lhs=base13)
 """)
 
 md(r"""
 ---
-## Где здесь калькулятор
+## Where the calculator is in this topic
 
-Ответ короткий: **нигде**. И это единственная тема архива, про которую так
-можно сказать без оговорок.
+The short answer: **nowhere**. And this is the only topic of the archive about which
+that can be said without reservations.
 
-Формально доля «с калькулятором» здесь 34%, но разложение объясняет цифру
-полностью:
+Formally the «with a calculator» share here is 34%, but the breakdown explains the
+figure completely:
 
-| Paper | Баллов | Калькулятор |
+| Paper | Marks | Calculator |
 | --- | --- | --- |
-| Paper 1 | 106 | нет |
-| Paper 3 | 48 | лежит рядом |
-| Paper 2 | 6 | лежит рядом |
+| Paper 1 | 106 | none |
+| Paper 3 | 48 | lying next to you |
+| Paper 2 | 6 | lying next to you |
 
-Все 48 баллов Paper 3 — это части `(c)`, `(f)` длинных исследований, где
-калькулятор нужен в соседних пунктах, а само доказательство пишут от руки.
-Единственный вопрос Paper 2 — доказательство от противного про
-$p^2 - 8q - 11$, где считать тоже нечего.
+All 48 marks of Paper 3 are parts `(c)`, `(f)` of long investigations, where the
+calculator is needed in the neighbouring parts while the proof itself is written by
+hand. The single Paper 2 question is the proof by contradiction about
+$p^2 - 8q - 11$, where there is nothing to compute either.
 
-**Что калькулятор всё же делает — до доказательства, а не вместо него:**
+**What the calculator does do — before the proof, not instead of it:**
 
-- *проверить утверждение при паре значений $n$.* Если формула не сходится
-  при $n = 3$, доказывать нечего — ищите ошибку в условии или в своей записи;
-- *опровергнуть.* Для «disprove» достаточно одного контрпримера, и вот его
-  калькулятор находит отлично;
-- *проверить арифметику базы.* Подставить $n = 1$ в утверждение о делимости
-  и убедиться, что число и правда делится, — три секунды и один
-  гарантированный балл.
+- *check the statement at a couple of values of $n$.* If the formula does not work
+  at $n = 3$, there is nothing to prove — look for the mistake in the question or in
+  your own writing of it;
+- *disprove.* For «disprove» one counterexample is enough, and finding one is
+  something a calculator is excellent at;
+- *check the arithmetic of the base.* Put $n = 1$ into a divisibility statement and
+  confirm that the number really is divisible — three seconds and one guaranteed
+  mark.
 
-Чего он не делает никогда: **проверка при $n = 1, \dots, 100$
-доказательством не является.** Утверждение $n^2 + n + 41$ — простое число
-даёт простые числа при всех $n$ от 0 до 39 и составное при $n = 40$.
-Отсюда и вся тема.
+What it never does: **checking at $n = 1, \dots, 100$ is not a proof.** The
+statement that $n^2 + n + 41$ is prime gives primes for every $n$ from 0 to 39 and a
+composite number at $n = 40$. That is where the whole topic comes from.
 """)
 
 code(r"""
-# что калькулятор умеет: проверить формулу перед тем, как её доказывать
+# what a calculator can do: check a formula before you prove it
 formula = 1 - 1 / factorial(n + 1)
 for i in range(1, 6):
     left = sum(Rational(j, factorial(j + 1)) for j in range(1, i + 1))
-    print(f'n = {i}:  сумма = {left},  формула = {formula.subs(n, i)},'
-          f'  {"сходится" if left == formula.subs(n, i) else "НЕ сходится"}')
+    print(f'n = {i}:  sum = {left},  formula = {formula.subs(n, i)},'
+          f'  {"agrees" if left == formula.subs(n, i) else "DOES NOT agree"}')
 
 print()
-# и чего не умеет: согласие в первых значениях ничего не доказывает
+# and what it cannot: agreement in the first few values proves nothing
 bad = n**2 + n + 41
-print('n^2 + n + 41 при n = 0..5:', [bad.subs(n, i) for i in range(6)],
-      '— все простые')
-print('а при n = 40:', bad.subs(n, 40), '= 41 * 41')
+print('n^2 + n + 41 at n = 0..5:', [bad.subs(n, i) for i in range(6)],
+      '— all prime')
+print('and at n = 40:', bad.subs(n, 40), '= 41 * 41')
 """)
 
 md(r"""
 ---
-## Тренажёр распознавания
+## Trainer: name the technique
 
-Приём выбирают до того, как начали писать. Для каждого условия назовите
-приём одним кодом:
+The technique is chosen before anything is written. For each statement, name the
+technique with one code:
 
 `direct` · `repr` · `contra` · `sum` · `div` · `deriv` · `rec` · `ineq`
 
-| # | Условие |
+| # | Statement |
 | --- | --- |
 | 1 | Prove that the sum of three consecutive integers is divisible by 3 |
 | 2 | Prove by induction that $\sum_{r=1}^{n} r\cdot r! = (n+1)! - 1$ |
@@ -755,76 +763,76 @@ trigger_check(answers, KEY)
 
 md(r"""
 ---
-## Задание 14 🔴 — НА ТАЙМЕРЕ: 8 минут
+## Task 14 🔴 — ON THE TIMER: 8 minutes
 
-Экзаменационный формат целиком. Заведите таймер и пишите на бумаге,
-включая все словесные части.
+A whole exam format. Set a timer and write on paper, including all the parts in
+words.
 
-**(a)** Покажите, что $1 + \log_2 k \ge \log_2(k+1)$ для всех
-$k \in \mathbb{Z}^+$.
+**(a)** Show that $1 + \log_2 k \ge \log_2(k+1)$ for all $k \in \mathbb{Z}^+$.
 
-**(b)** Докажите по индукции, что $n > \log_2 n$ для всех $n \in \mathbb{Z}^+$.
+**(b)** Prove by induction that $n > \log_2 n$ for all $n \in \mathbb{Z}^+$.
 
-Подсказка к (b): из гипотезы $k > \log_2 k$ прибавлением единицы получается
-$k + 1 > 1 + \log_2 k$, а дальше в дело идёт пункт (a). Это единственный
-в практикуме шаг, где индукция работает с неравенством, и цепочка
-собирается из двух звеньев.
+A hint for (b): adding one to the hypothesis $k > \log_2 k$ gives
+$k + 1 > 1 + \log_2 k$, and then part (a) comes in. This is the only step in the
+practicum where induction works with an inequality, and the chain is assembled out
+of two links.
 
-В ячейку введите левую часть неравенства из пункта (a), записанную
-одним логарифмом.
+Into the cell put the left-hand side of the inequality from part (a), written as a
+single logarithm.
 
-*Источник: May 2025 TZ1, Paper 1, Q8 (5 баллов за пункт (b), без калькулятора).*
+*Source: May 2025 TZ1, Paper 1, Q8 (5 marks for part (b), no calculator).*
 """)
 
 code(r"""
-# заведите таймер на 8 минут
+# set a timer for 8 minutes
 
-my14 = ...               # 1 + log_2(k), записанное одним логарифмом
+my14 = ...               # 1 + log_2(k), written as a single logarithm
 
-verify_identity('Задание 14', my14, log(2 * k) / log(2), var=k,
+verify_identity('Task 14', my14, log(2 * k) / log(2), var=k,
                 samples=(1, 2, 3, 5, 8, 13))
 
-# а неравенство 2k >= k+1 при k >= 1 проверяется в одну строку
-print('2k - (k+1) при k = 1..5:', [(2 * i - (i + 1)) for i in range(1, 6)])
+# and the inequality 2k >= k+1 for k >= 1 is checked in one line
+print('2k - (k+1) at k = 1..5:', [(2 * i - (i + 1)) for i in range(1, 6)])
 """)
 
 md(r"""
-### Журнал попытки
+### Attempt log
 
-Заполните после проверки по решению — по одной строке на пункт.
+Fill it in after checking against the solution — one line per part.
 
-| Пункт | Уложился | Приём назван верно | Что стоило балла |
+| Part | In time | Technique named right | What cost a mark |
 | --- | --- | --- | --- |
 | (a) |  |  |  |
 | (b) |  |  |  |
 
-Для этой темы в журнал стоит добавить отдельную графу: **все ли четыре
-части индукции написаны словами.** Алгебра здесь ошибается реже,
-чем перо забывает про вывод.
+For this topic the log is worth an extra column: **were all four parts of the
+induction written in words.** The algebra here goes wrong less often than the pen
+forgets the conclusion.
 """)
 
 md(r"""
 ---
-# 🔑 Решения
+# 🔑 Solutions
 
-Дальше — разборы. Читайте после того, как решили: подглядывание
-в доказательствах вреднее, чем где-либо ещё, потому что «понял идею»
-и «умею записать» здесь разные умения, а баллы дают за второе.
+What follows are the worked solutions. Read them after you have solved: peeking is
+more harmful in proofs than anywhere else, because «I got the idea» and «I can write
+it down» are different skills here, and the marks are for the second.
 """)
 
 md(r"""
-## Решение 1 — разность квадратов
+## Solution 1 — a difference of two squares
 
-Берём два последовательных целых $n$ и $n+1$ и считаем разность квадратов
-**в правильном порядке** — большего минус меньшего:
+Take two consecutive integers $n$ and $n+1$ and compute the difference of the
+squares **in the right order** — the larger minus the smaller:
 
 $$(n+1)^2 - n^2 = n^2 + 2n + 1 - n^2 = 2n + 1.$$
 
-Осталось узнать в $2n+1$ сумму исходных чисел:
+What is left is to recognise the sum of the original numbers in $2n+1$:
 
 $$2n + 1 = n + (n+1). \qquad \blacksquare$$
 
-Второй путь из markscheme — сразу разложить разность квадратов:
+The second route from the markscheme — factorise the difference of two squares
+straight away:
 
 $$(n+1)^2 - n^2 = \bigl((n+1) - n\bigr)\bigl((n+1) + n\bigr) = 1\cdot(2n+1).$$
 
@@ -832,25 +840,25 @@ $$(n+1)^2 - n^2 = \bigl((n+1) - n\bigr)\bigl((n+1) + n\bigr) = 1\cdot(2n+1).$$
 my1 = 2*n + 1
 ```
 
-**Разметка.** M1 за попытку вычесть квадраты, A1A1 за верный порядок
-и верное раскрытие (или за верное разложение), A1 за финальную строку
-$= n + (n+1)$. Пометка markscheme: последний A1 не ставят, если хоть
-что-то выше неверно.
+**The marking.** M1 for attempting to subtract the squares, A1A1 for the right order
+and the right expansion (or for the right factorisation), A1 for the final line
+$= n + (n+1)$. The markscheme note: the last A1 is not awarded if anything above it
+is wrong.
 
-**Где теряют.** Порядок вычитания. $n^2 - (n+1)^2 = -(2n+1)$ — и дальше
-доказывать нечего.
+**Where marks are lost.** The order of the subtraction.
+$n^2 - (n+1)^2 = -(2n+1)$ — and there is nothing left to prove.
 """)
 
 md(r"""
-## Решение 2 — тождество с дробью
+## Solution 2 — an identity with a fraction
 
-Раскрываем левую часть, как советует METHOD 1:
+Expand the left-hand side, as METHOD 1 suggests:
 
 $$\left(\frac{a^2-1}{2a}\right)^2 + 1
 = \frac{a^4 - 2a^2 + 1}{4a^2} + \frac{4a^2}{4a^2}
 = \frac{a^4 + 2a^2 + 1}{4a^2}.$$
 
-Числитель — полный квадрат:
+The numerator is a perfect square:
 
 $$\frac{\left(a^2+1\right)^2}{4a^2} = \left(\frac{a^2+1}{2a}\right)^2. \qquad \blacksquare$$
 
@@ -858,458 +866,460 @@ $$\frac{\left(a^2+1\right)^2}{4a^2} = \left(\frac{a^2+1}{2a}\right)^2. \qquad \b
 my2 = (a**4 + 2*a**2 + 1) / (4*a**2)
 ```
 
-**Разметка.** M1 за попытку раскрыть, A1 за приведение к общему
-знаменателю $4a^2$, A1 за свёртку в квадрат.
+**The marking.** M1 for attempting to expand, A1 for bringing it to the common
+denominator $4a^2$, A1 for collapsing into a square.
 
-**Про выбор стороны.** METHOD 2 в markscheme идёт из правой части
-и приходит к левой — те же три балла. Обратите внимание, что единицу
-приходится записывать как $\frac{4a^2}{4a^2}$: это и есть тот шаг,
-ради которого дают A1.
+**On the choice of side.** METHOD 2 in the markscheme goes from the right-hand side
+and arrives at the left — the same three marks. Note that the one has to be written
+as $\frac{4a^2}{4a^2}$: that is the step the A1 is given for.
 """)
 
 md(r"""
-## Решение 3 — три подряд идущих
+## Solution 3 — three in a row
 
-Обозначим средний член $n$; тогда три последовательных целых — это
-$n-1$, $n$, $n+1$. Их сумма:
+Call the middle term $n$; then the three consecutive integers are $n-1$, $n$,
+$n+1$. Their sum:
 
 $$(n-1) + n + (n+1) = 3n,$$
 
-а $3n$ делится на 3 при любом целом $n$. $\blacksquare$
+and $3n$ is divisible by 3 for any integer $n$. $\blacksquare$
 
 ```python
 my3 = 3*n
 ```
 
-**Разметка.** A1 за запись суммы, A1 за $3n$ с выводом «делится на 3».
-Всего два балла — и оба уходят почти даром, если начать с $n$, $n+1$, $n+2$:
-сумма $3n+3$ тоже делится на 3, но лишний шаг с вынесением тройки
-даёт лишний шанс ошибиться.
+**The marking.** A1 for writing the sum, A1 for $3n$ with the conclusion «divisible
+by 3». Two marks in all — and both go almost for free if you start with $n$, $n+1$,
+$n+2$: the sum $3n+3$ is divisible by 3 as well, but the extra step of taking the
+three out gives an extra chance to go wrong.
 """)
 
 md(r"""
-## Решение 4 — сумма квадратов никогда не делится на 3
+## Solution 4 — the sum of the squares is never divisible by 3
 
-Те же три числа, но в квадратах:
+The same three numbers, but squared:
 
 $$(n-1)^2 + n^2 + (n+1)^2
 = n^2 - 2n + 1 + n^2 + n^2 + 2n + 1 = 3n^2 + 2.$$
 
-Слагаемое $3n^2$ делится на 3, а 2 — нет. Значит сумма при делении на 3
-всегда даёт остаток 2 и не делится на 3 ни при каком $n$. $\blacksquare$
+The term $3n^2$ is divisible by 3 and 2 is not. So on division by 3 the sum always
+leaves remainder 2 and is never divisible by 3. $\blacksquare$
 
 ```python
 my4 = 3*n**2 + 2
 rest4 = 2
 ```
 
-**Разметка.** A1 за запись суммы, M1 за раскрытие хотя бы одного квадрата,
-A1 за $3n^2+2$, R1 за вывод про остаток. Последний балл — словесный,
-и он стоит ровно четверти задания.
+**The marking.** A1 for writing the sum, M1 for expanding at least one square, A1
+for $3n^2+2$, R1 for the conclusion about the remainder. The last mark is the one in
+words, and it is worth a quarter of the question.
 
-**Почему это не индукция.** Утверждение про «все $n$», а индукции нет:
-представление трёх подряд идущих чисел покрывает все случаи сразу.
-Индукция нужна там, где $n$-е утверждение опирается на $(n-1)$-е,
-а здесь каждое стоит само по себе.
+**Why this is not induction.** The statement is about «all $n$», and there is no
+induction: representing three consecutive integers covers every case at once.
+Induction is needed where the $n$-th statement leans on the $(n-1)$-th, and here
+each one stands by itself.
 """)
 
 md(r"""
-## Решение 5 — не оба нечётные
+## Solution 5 — not both odd
 
-**Предположим противное:** пусть $a$ и $b$ оба нечётны. Тогда найдутся
-целые $m$ и $n$ такие, что $a = 2m+1$, $b = 2n+1$ — буквы **разные**,
-потому что числа независимы.
+**Suppose the opposite:** let $a$ and $b$ both be odd. Then there are integers $m$
+and $n$ such that $a = 2m+1$, $b = 2n+1$ — **different** letters, because the
+numbers are independent.
 
 $$a^2 + b^2 = (2m+1)^2 + (2n+1)^2 = 4m^2 + 4m + 1 + 4n^2 + 4n + 1
 = 4\left(m^2 + m + n^2 + n\right) + 2.$$
 
-Первое слагаемое делится на 4, второе — нет. Значит $a^2+b^2$ при делении
-на 4 даёт остаток 2 и на 4 не делится. Это противоречит условию, значит
-предположение неверно: $a$ и $b$ не могут быть оба нечётными. $\blacksquare$
+The first term is divisible by 4, the second is not. So on division by 4 the number
+$a^2+b^2$ leaves remainder 2 and is not divisible by 4. That contradicts the
+question, so the supposition is wrong: $a$ and $b$ cannot both be odd.
+$\blacksquare$
 
 ```python
 my5 = 4*(m**2 + m + n**2 + n) + 2
 rest5 = 2
 ```
 
-**Разметка.** M1 за само предположение, A1 за $a = 2m+1$, $b = 2n+1$,
-A1 за раскрытие, (A1) за свёртку к $4(\dots)+2$, R1 за «делится на 4,
-а 2 не делится», R1 за слово «противоречие». **Два из шести баллов —
-за две фразы.**
+**The marking.** M1 for the supposition itself, A1 for $a = 2m+1$, $b = 2n+1$, A1
+for the expansion, (A1) for collapsing to $4(\dots)+2$, R1 for «divisible by 4, and
+2 is not», R1 for the word «contradiction». **Two of the six marks are for two
+sentences.**
 
-**Где теряют.** Одна буква на оба числа. И финальная фраза: остановиться
-на $4(\dots)+2$ — значит не получить последний R1.
+**Where marks are lost.** One letter for both numbers. And the final sentence:
+stopping at $4(\dots)+2$ means not getting the last R1.
 """)
 
 md(r"""
-## Решение 6 — уравнение без целых корней
+## Solution 6 — an equation with no integer roots
 
-**Предположим,** что существует целое $\alpha$ с $2\alpha^3 + 6\alpha + 1 = 0$.
-Переносим:
+**Suppose** there exists an integer $\alpha$ with $2\alpha^3 + 6\alpha + 1 = 0$.
+Rearranging:
 
 $$2\alpha^3 + 6\alpha = -1.$$
 
-Слева $2\left(\alpha^3 + 3\alpha\right)$ — чётное число при любом целом
-$\alpha$. Справа $-1$ — нечётное. Чётное не равно нечётному: противоречие.
-Значит целых корней нет. $\blacksquare$
+On the left, $2\left(\alpha^3 + 3\alpha\right)$ — an even number for any integer
+$\alpha$. On the right, $-1$ — odd. An even number does not equal an odd one: a
+contradiction. So there are no integer roots. $\blacksquare$
 
 ```python
 left6 = 2*al**3 + 6*al
 right6 = -1
 ```
 
-**Разметка.** M1 за предположение, M1 за попытку перегруппировать,
-A1 за верную запись $2\alpha^3+6\alpha = -1$, R1 за «слева чётное»,
-R1 за противоречие.
+**The marking.** M1 for the supposition, M1 for attempting to rearrange, A1 for the
+correct $2\alpha^3+6\alpha = -1$, R1 for «the left-hand side is even», R1 for the
+contradiction.
 
-**Второй путь.** Markscheme принимает и анализ через производную:
-$f'(x) = 6x^2 + 6 > 0$, значит $f$ строго возрастает и корень один;
-$f(-1) = -7$, $f(0) = 1$, значит он лежит строго между $-1$ и $0$,
-а целых чисел там нет. Тоже пять баллов. Полезно заметить: здесь
-противоречие берётся из границ, а не из чётности, — и оба раза
-задание одно и то же.
+**The second route.** The markscheme also accepts the analysis through the
+derivative: $f'(x) = 6x^2 + 6 > 0$, so $f$ is strictly increasing and there is one
+root; $f(-1) = -7$, $f(0) = 1$, so it lies strictly between $-1$ and $0$, and there
+are no integers there. Five marks as well. Worth noticing: here the contradiction is
+mined from bounds rather than from parity — and both times the task is the same
+one.
 """)
 
 md(r"""
-## Решение 7 — чётность после подстановки
+## Solution 7 — parity after a substitution
 
-**Предположим,** что нашлись целые $p$ и $q$ с $p^2 - 8q - 11 = 0$, то есть
+**Suppose** there are integers $p$ and $q$ with $p^2 - 8q - 11 = 0$, that is,
 
 $$p^2 = 8q + 11.$$
 
-**Первый шаг рассуждения.** Правая часть $= 2(4q+5)+1$ — нечётна, значит
-$p^2$ нечётно, а значит нечётно и $p$. Это отдельный R1, и без него
-подстановка $p = 2k+1$ ничем не обоснована.
+**The first step of the reasoning.** The right-hand side is $2(4q+5)+1$ — odd, so
+$p^2$ is odd, and so $p$ is odd. That is an R1 of its own, and without it the
+substitution $p = 2k+1$ is unjustified.
 
-**Второй шаг.** Пусть $p = 2k+1$, $k \in \mathbb{Z}$:
+**The second step.** Let $p = 2k+1$, $k \in \mathbb{Z}$:
 
 $$(2k+1)^2 = 8q + 11 \;\Longrightarrow\; 4k^2 + 4k + 1 = 8q + 11
 \;\Longrightarrow\; 4k^2 + 4k = 8q + 10.$$
 
-Делим на 2:
+Divide by 2:
 
 $$2k^2 + 2k = 4q + 5.$$
 
-Слева чётное, справа нечётное — противоречие. Значит таких целых
-$p$ и $q$ не существует. $\blacksquare$
+The left-hand side is even, the right-hand side odd — a contradiction. So no such
+integers $p$ and $q$ exist. $\blacksquare$
 
 ```python
 left7 = 2*k**2 + 2*k
 right7 = 4*q + 5
 ```
 
-**Разметка.** M1 за предположение, R1 за вывод «$p$ нечётно», M1 за
-$p = 2k+1$, (A1) за подстановку, A1 за равенство с разной чётностью,
-R1 за противоречие.
+**The marking.** M1 for the supposition, R1 for the conclusion «$p$ is odd», M1 for
+$p = 2k+1$, (A1) for the substitution, A1 for the equality with different parities,
+R1 for the contradiction.
 
-**Почему в проверке стоит `factor=2`.** Деление на 2 — законный шаг,
-но после него равенство уже не совпадает с исходным буквально.
-Обратное умножение возвращает
-к $(2k+1)^2 - 8q - 11$, и так проверяется, что по дороге ничего
-не потерялось.
+**Why the check has `factor=2`.** Dividing by 2 is a legitimate step, but after it
+the equality no longer matches the original literally. Multiplying back returns you
+to $(2k+1)^2 - 8q - 11$, and that is how it is checked that nothing was lost along
+the way.
 
-**Где теряют.** Пропуск первого шага. Без него приходится разбирать
-$p = 2k$ отдельно — это не ошибка, но лишняя половина работы,
-а в Paper 2 время считанное.
+**Where marks are lost.** Skipping the first step. Without it you have to treat
+$p = 2k$ separately — not an error, but an extra half of the work, and on Paper 2
+the time is counted.
 """)
 
 md(r"""
-## Решение 8 — собрать доказательство из строк
+## Solution 8 — assemble a proof out of lines
 
-Правильный порядок: **B → D → F → A → E → G → C**.
+The right order: **B → D → F → A → E → G → C**.
 
-| Место | Метка | Что это |
+| Place | Label | What it is |
 | --- | --- | --- |
-| 1 | B | база |
-| 2 | D | гипотеза |
-| 3 | F | рассмотрение $n = k+1$ |
-| 4 | A | подстановка гипотезы |
-| 5 | E | алгебра |
-| 6 | G | узнали утверждение при $k+1$ |
-| 7 | C | вывод |
+| 1 | B | the base |
+| 2 | D | the hypothesis |
+| 3 | F | considering $n = k+1$ |
+| 4 | A | substituting the hypothesis |
+| 5 | E | the algebra |
+| 6 | G | the statement at $k+1$ recognised |
+| 7 | C | the conclusion |
 
-Границы жёсткие: база всегда первая, вывод всегда последний, гипотеза
-обязана стоять раньше своей подстановки. Внутри выкладки (E) порядок
-свободен, но G должно идти после неё — иначе вы объявляете результат
-до того, как его получили.
+The boundaries are rigid: the base is always first, the conclusion always last, and
+the hypothesis has to stand before its own substitution. Inside the working (E) the
+order is free, but G has to come after it — otherwise you are announcing the result
+before you have got it.
 
-**Про баллы: ответ 1.**
+**On the marks: the answer is 1.**
 
-Строка B — это A1 за базу, он ставится. Строка C — это R1 за вывод,
-и он **не** ставится: markscheme требует четырёх набранных баллов
-из шести предыдущих, а набран один. Итого один балл из семи.
+Line B is the A1 for the base, and it is awarded. Line C is the R1 for the
+conclusion, and it is **not**: the markscheme requires four of the previous six
+marks, and one has been earned. One mark out of seven in total.
 
 ```python
 my8 = ['B', 'D', 'F', 'A', 'E', 'G', 'C']
 marks8 = 1
 ```
 
-**Зачем это знать.** Отсюда следует правило, обратное интуиции. Порог
-работает только на последний R1; база и гипотеза порогов не имеют.
-Значит, если шаг не доводится, надо всё равно написать базу, гипотезу
-и «рассмотрим $n = k+1$» — это A1 + M1 + M1, три балла из семи
-за то, что помнишь шаблон. Пустое место не даёт ничего.
+**Why know this.** It gives a rule that runs against intuition. The threshold
+applies only to the final R1; the base and the hypothesis have no thresholds. So if
+the step does not come out, you should still write the base, the hypothesis and
+«consider $n = k+1$» — that is A1 + M1 + M1, three marks out of seven for
+remembering the template. Empty space gives nothing.
 """)
 
 md(r"""
-## Решение 9 — сумма с факториалами
+## Solution 9 — a sum with factorials
 
-**База.** При $n = 1$ левая часть $= \frac{1}{2!} = \frac{1}{2}$,
-правая $= 1 - \frac{1}{2!} = \frac{1}{2}$. Равны.
+**Base.** At $n = 1$ the left-hand side is $\frac{1}{2!} = \frac{1}{2}$ and the
+right-hand side $1 - \frac{1}{2!} = \frac{1}{2}$. Equal.
 
-**Гипотеза.** Предположим, что при $n = k$
+**Hypothesis.** Suppose that at $n = k$
 
 $$\sum_{r=1}^{k} \frac{r}{(r+1)!} = 1 - \frac{1}{(k+1)!}.$$
 
-**Шаг.** Отделяем последнее слагаемое и подставляем гипотезу:
+**Step.** Split off the last term and substitute the hypothesis:
 
 $$\sum_{r=1}^{k+1} \frac{r}{(r+1)!}
 = \left(1 - \frac{1}{(k+1)!}\right) + \frac{k+1}{(k+2)!}.$$
 
-Общий знаменатель $(k+2)! = (k+2)(k+1)!$:
+The common denominator is $(k+2)! = (k+2)(k+1)!$:
 
 $$= 1 - \frac{k+2}{(k+2)!} + \frac{k+1}{(k+2)!}
 = 1 - \frac{(k+2) - (k+1)}{(k+2)!}
 = 1 - \frac{1}{(k+2)!},$$
 
-а это в точности утверждение при $n = k+1$.
+and that is exactly the statement at $n = k+1$.
 
-**Вывод.** Верно при $n = 1$; из истинности при $n = k$ следует истинность
-при $n = k+1$; значит по индукции верно при всех $n \ge 1$. $\blacksquare$
+**Conclusion.** True at $n = 1$; the truth at $n = k$ implies the truth at
+$n = k+1$; so by induction it is true for all $n \ge 1$. $\blacksquare$
 
 ```python
 step9 = 1 - 1/factorial(k + 1) + (k + 1)/factorial(k + 2)
 base9 = Rational(1, 2)
 ```
 
-**Разметка.** R1 база, M1 гипотеза, (M1) за расщепление суммы,
-A1 за подстановку, A1 за промежуточное упрощение, A1 за итоговый вид,
-R1 вывод (нужны любые четыре предыдущих).
+**The marking.** R1 base, M1 hypothesis, (M1) for splitting the sum, A1 for the
+substitution, A1 for the intermediate simplification, A1 for the final form, R1
+conclusion (any four of the previous marks needed).
 
-**Ключевое место** — $(k+2)! = (k+2)(k+1)!$. Без этого равенства дроби
-не складываются, и дальше работа встаёт.
+**The key place** is $(k+2)! = (k+2)(k+1)!$. Without that equality the fractions do
+not add and the work comes to a halt.
 """)
 
 md(r"""
-## Решение 10 — сумма биномиальных коэффициентов
+## Solution 10 — a sum of binomial coefficients
 
-**База.** При $n = 1$: слева $\binom{1}{1} = 1$, справа $\binom{2}{2} = 1$.
+**Base.** At $n = 1$: on the left $\binom{1}{1} = 1$, on the right
+$\binom{2}{2} = 1$.
 
-**Гипотеза.** $\sum_{r=1}^{k} \binom{r}{1} = \binom{k+1}{2}$.
+**Hypothesis.** $\sum_{r=1}^{k} \binom{r}{1} = \binom{k+1}{2}$.
 
-**Шаг.**
+**Step.**
 
 $$\sum_{r=1}^{k+1} \binom{r}{1} = \binom{k+1}{2} + \binom{k+1}{1}
 = \frac{(k+1)k}{2} + (k+1) = \frac{(k+1)(k+2)}{2} = \binom{k+2}{2}.$$
 
-Это утверждение при $n = k+1$. $\blacksquare$
+That is the statement at $n = k+1$. $\blacksquare$
 
 ```python
 step10 = binomial(k + 1, 2) + binomial(k + 1, 1)
 base10 = 1
 ```
 
-**Разметка.** R1 база, M1 гипотеза, M1 за расщепление суммы,
-A1 за $\binom{k+1}{2} + \binom{k+1}{1}$, M1 за приведение (любым
-из двух путей markscheme), A1 за $\binom{k+2}{2}$, R1 вывод.
+**The marking.** R1 base, M1 hypothesis, M1 for splitting the sum, A1 for
+$\binom{k+1}{2} + \binom{k+1}{1}$, M1 for the simplification (by either of the
+markscheme's routes), A1 for $\binom{k+2}{2}$, R1 conclusion.
 
-**Что тут на самом деле.** $\binom{r}{1} = r$, так что доказывается
-знакомое $1 + 2 + \dots + n = \frac{n(n+1)}{2}$, только записанное
-биномиально. Заметить это полезно для проверки себя, но **писать
-в ответе не стоит**: вопрос просит индукцию, и переход к формуле суммы
-арифметической прогрессии её не заменяет.
+**What is really going on.** $\binom{r}{1} = r$, so what is being proved is the
+familiar $1 + 2 + \dots + n = \frac{n(n+1)}{2}$, only written binomially. Noticing
+that is useful as a check on yourself, but **it is not worth writing in the
+answer**: the question asks for induction, and switching to the formula for the sum
+of an arithmetic sequence does not replace it.
 
-**Тождество за кадром.** Шаг $\binom{k+1}{2} + \binom{k+1}{1} = \binom{k+2}{2}$
-— это правило Паскаля. Знать его необязательно, факториалы дают то же самое,
-но с ним строка выходит в один ход.
+**The identity behind the scenes.** The step
+$\binom{k+1}{2} + \binom{k+1}{1} = \binom{k+2}{2}$ is Pascal's rule. Knowing it is
+not compulsory, the factorials give the same thing, but with it the line comes out in
+one move.
 """)
 
 md(r"""
-## Решение 11 — делимость на 17
+## Solution 11 — divisibility by 17
 
-**База.** При $n = 1$: $5^2 - 2^3 = 25 - 8 = 17$, делится на 17.
+**Base.** At $n = 1$: $5^2 - 2^3 = 25 - 8 = 17$, divisible by 17.
 
-**Гипотеза.** Предположим, что при $n = k$
+**Hypothesis.** Suppose that at $n = k$
 
 $$5^{2k} - 2^{3k} = 17s, \quad s \in \mathbb{Z}.$$
 
-**Шаг.**
+**Step.**
 
 $$5^{2(k+1)} - 2^{3(k+1)} = 25\cdot 5^{2k} - 8\cdot 2^{3k}.$$
 
-Прибавим и вычтем $8\cdot 5^{2k}$, чтобы собрать гипотезу:
+Add and subtract $8\cdot 5^{2k}$ to collect the hypothesis:
 
 $$= 8\left(5^{2k} - 2^{3k}\right) + 17\cdot 5^{2k}
 = 8\cdot 17s + 17\cdot 5^{2k}
 = 17\left(8s + 5^{2k}\right).$$
 
-В скобках целое число, значит выражение делится на 17. $\blacksquare$
+The bracket is an integer, so the expression is divisible by 17. $\blacksquare$
 
 ```python
 expr11 = 5**(2*k) - 2**(3*k)
 mult11 = 8
 ```
 
-**Разметка.** A1 база, M1 гипотеза, M1 за рассмотрение $n = k+1$,
-A1 за раскрытие степеней, A1 за появление $17s$, A1 за вынесение 17,
-R1 вывод (нужны 4 из 6).
+**The marking.** A1 base, M1 hypothesis, M1 for considering $n = k+1$, A1 for
+expanding the powers, A1 for $17s$ appearing, A1 for taking the 17 out, R1
+conclusion (4 of the 6 needed).
 
-**Второй путь.** Можно собрать гипотезу с множителем 25:
+**The second route.** The hypothesis can be collected with the factor 25:
 
 $$25\cdot 5^{2k} - 8\cdot 2^{3k} = 25\left(5^{2k} - 2^{3k}\right) + 17\cdot 2^{3k}.$$
 
-`mult11 = 25` проверка тоже примет — markscheme даёт оба варианта как
-EITHER/OR.
+The check accepts `mult11 = 25` too — the markscheme gives both as EITHER/OR.
 
-**Почему подходят только эти два множителя.** Возьмите, скажем, 1:
-получится $24\cdot 5^{2k} - 7\cdot 2^{3k}$. Это число **и правда** кратно 17
-при каждом целом $k$ — но увидеть множитель 17 в такой записи нельзя,
-за скобку его не вынести, и доказательства не выходит. Проверка ловит
-ровно это: после деления на 17 обязаны остаться целые коэффициенты.
+**Why only those two factors work.** Take, say, 1: you get
+$24\cdot 5^{2k} - 7\cdot 2^{3k}$. That number **really is** a multiple of 17 at
+every integer $k$ — but the factor 17 cannot be seen in such a writing, it cannot be
+taken outside a bracket, and there is no proof. The check looks for exactly that:
+after dividing by 17, integer coefficients have to be left.
 
-**Мелочь про запись.** $5^{2k} = 25^k$ и $2^{3k} = 8^k$; markscheme
-разрешает любую из форм. С $25^k - 8^k$ шаг иногда виден быстрее:
-$25^{k+1} - 8^{k+1} = 25\cdot 25^k - 8\cdot 8^k$, и дальше то же самое.
+**A small point about notation.** $5^{2k} = 25^k$ and $2^{3k} = 8^k$; the markscheme
+allows either form. With $25^k - 8^k$ the step is sometimes quicker to see:
+$25^{k+1} - 8^{k+1} = 25\cdot 25^k - 8\cdot 8^k$, and then the same thing.
 """)
 
 md(r"""
-## Решение 12 — $n$-я производная произведения
+## Solution 12 — the $n$-th derivative of a product
 
-**База.** При $n = 1$ левая часть — это $f'(x)$:
+**Base.** At $n = 1$ the left-hand side is $f'(x)$:
 
 $$\frac{d}{dx}\left(x^2 e^x\right) = 2x e^x + x^2 e^x = \left(x^2 + 2x\right)e^x.$$
 
-Правая часть при $n = 1$: $\left(x^2 + 2\cdot 1\cdot x + 1\cdot 0\right)e^x
-= \left(x^2+2x\right)e^x$. Совпало.
+The right-hand side at $n = 1$: $\left(x^2 + 2\cdot 1\cdot x + 1\cdot 0\right)e^x
+= \left(x^2+2x\right)e^x$. They match.
 
-**Гипотеза.** При $n = k$:
+**Hypothesis.** At $n = k$:
 $\;\dfrac{d^k}{dx^k}\left(x^2e^x\right) = \left(x^2 + 2kx + k(k-1)\right)e^x$.
 
-**Шаг.** Дифференцируем гипотезу по правилу произведения:
+**Step.** Differentiate the hypothesis with the product rule:
 
 $$\frac{d^{k+1}}{dx^{k+1}}\left(x^2e^x\right)
 = \frac{d}{dx}\left[\left(x^2 + 2kx + k(k-1)\right)e^x\right]
 = (2x + 2k)e^x + \left(x^2 + 2kx + k(k-1)\right)e^x.$$
 
-Собираем:
+Collect:
 
 $$= \left(x^2 + 2kx + 2x + 2k + k(k-1)\right)e^x
 = \left(x^2 + 2(k+1)x + (k+1)k\right)e^x,$$
 
-а это формула при $n = k+1$. $\blacksquare$
+and that is the formula at $n = k+1$. $\blacksquare$
 
 ```python
 step12 = diff(hyp12, x)
 base12 = diff(x**2 * exp(x), x)
 ```
 
-**Разметка.** A1 за левую часть базы, A1 за правую, M1 за гипотезу,
-M1 за дифференцирование, A1A1 за приведение к виду с $k+1$, R1 вывод.
+**The marking.** A1 for the left-hand side of the base, A1 for the right-hand side,
+M1 for the hypothesis, M1 for differentiating, A1A1 for bringing it to the form with
+$k+1$, R1 conclusion.
 
-**Ключевое место** — узнать в $2k + k(k-1)$ выражение $(k+1)k$:
+**The key place** is recognising $(k+1)k$ in $2k + k(k-1)$:
 
 $$2k + k^2 - k = k^2 + k = k(k+1).$$
 
-Без этой свёртки формула при $k+1$ не видна, и последние A1 не ставятся.
+Without that collapse the formula at $k+1$ is not visible, and the last A1s are not
+awarded.
 
-**Про базу.** Проверяем **первую производную**, а не саму функцию.
-В мае 2021 в похожем задании формула имела смысл только с $n = 2$,
-и markscheme прямо предупреждает: *«Award R0 for not starting at $n = 2$»*.
-Первым делом смотрите, с какого $n$ утверждение вообще сформулировано.
+**About the base.** Check the **first derivative**, not the function itself. In May
+2021 a similar question had a formula that only made sense from $n = 2$, and the
+markscheme warns directly: *«Award R0 for not starting at $n = 2$»*. The first thing
+to look at is which $n$ the statement is actually stated from.
 """)
 
 md(r"""
-## Решение 13 — композиция линейной функции
+## Solution 13 — the composition of a linear function
 
-**База.** При $n = 1$ формула даёт
-$m^1 x + \frac{c(1-m^1)}{1-m} = mx + c = f(x)$. Верно.
+**Base.** At $n = 1$ the formula gives
+$m^1 x + \frac{c(1-m^1)}{1-m} = mx + c = f(x)$. True.
 
-**Гипотеза.** При $n = k$:
+**Hypothesis.** At $n = k$:
 $\;f^{k}(x) = m^k x + \dfrac{c\left(1-m^k\right)}{1-m}$.
 
-**Шаг.** Применяем $f$ к гипотезе:
+**Step.** Apply $f$ to the hypothesis:
 
 $$f^{k+1}(x) = f\!\left(f^{k}(x)\right)
 = m\left(m^k x + \frac{c\left(1-m^k\right)}{1-m}\right) + c
 = m^{k+1}x + \frac{cm\left(1-m^k\right)}{1-m} + c.$$
 
-Приводим два последних слагаемых к общему знаменателю:
+Bring the last two terms to a common denominator:
 
 $$\frac{cm - cm^{k+1} + c(1-m)}{1-m}
 = \frac{cm - cm^{k+1} + c - cm}{1-m}
 = \frac{c\left(1 - m^{k+1}\right)}{1-m}.$$
 
-Итого $f^{k+1}(x) = m^{k+1}x + \frac{c\left(1-m^{k+1}\right)}{1-m}$ —
-формула при $n = k+1$. $\blacksquare$
+So $f^{k+1}(x) = m^{k+1}x + \frac{c\left(1-m^{k+1}\right)}{1-m}$ — the formula at
+$n = k+1$. $\blacksquare$
 
 ```python
 step13 = m*hyp13 + c
 base13 = m*x + c
 ```
 
-**Разметка.** R1 база, M1 гипотеза, M1 за $f(f^k(x))$, A1 за подстановку,
-M1 за общий знаменатель, A1 за свёртку, A1 за итоговый вид, R1 вывод.
+**The marking.** R1 base, M1 hypothesis, M1 for $f(f^k(x))$, A1 for the
+substitution, M1 for the common denominator, A1 for the collapse, A1 for the final
+form, R1 conclusion.
 
-**Развилка.** Markscheme даёт EITHER $f\!\left(f^k(x)\right)$ OR
-$f^k\!\left(f(x)\right)$ — оба по M1. Первый обычно короче: внешняя $f$
-линейна, и подстановка сводится к «домножить на $m$, прибавить $c$».
-Второй требует подставить $mx+c$ вместо $x$ внутрь громоздкой формулы.
+**The fork.** The markscheme gives EITHER $f\!\left(f^k(x)\right)$ OR
+$f^k\!\left(f(x)\right)$ — both M1. The first is usually shorter: the outer $f$ is
+linear, and the substitution comes down to «multiply by $m$, add $c$». The second
+requires substituting $mx+c$ for $x$ inside a bulky formula.
 
-**Третий путь из markscheme** — узнать геометрическую прогрессию:
-$f^{n}(x) = m^n x + c\left(1 + m + \dots + m^{n-1}\right)$, и сумма в скобках
-равна $\frac{1-m^n}{1-m}$. Отсюда, кстати, видно, откуда в условии
-взялось требование $m \ne 1$: при $m = 1$ знаменатель обращается в ноль,
-а сама композиция даёт $f^n(x) = x + nc$.
+**A third route from the markscheme** — recognise a geometric sequence:
+$f^{n}(x) = m^n x + c\left(1 + m + \dots + m^{n-1}\right)$, and the sum in the
+bracket equals $\frac{1-m^n}{1-m}$. That also shows, incidentally, where the
+condition $m \ne 1$ in the question came from: at $m = 1$ the denominator vanishes,
+while the composition itself gives $f^n(x) = x + nc$.
 """)
 
 md(r"""
-## Решение 14 — задание на таймере
+## Solution 14 — the task on the timer
 
-**(a)** Единица — это $\log_2 2$, поэтому
+**(a)** One is $\log_2 2$, so
 
 $$1 + \log_2 k = \log_2 2 + \log_2 k = \log_2 (2k).$$
 
-При $k \ge 1$ имеем $2k \ge k+1$ (это равносильно $k \ge 1$), а $\log_2$
-возрастает, поэтому
+For $k \ge 1$ we have $2k \ge k+1$ (which is equivalent to $k \ge 1$), and $\log_2$
+is increasing, so
 
-$$\log_2(2k) \ge \log_2(k+1), \quad\text{то есть}\quad
+$$\log_2(2k) \ge \log_2(k+1), \quad\text{that is,}\quad
 1 + \log_2 k \ge \log_2(k+1). \qquad \blacksquare$$
 
-**(b) База.** При $n = 1$: $\log_2 1 = 0$ и $1 > 0$. Верно.
+**(b) Base.** At $n = 1$: $\log_2 1 = 0$ and $1 > 0$. True.
 
-**Гипотеза.** При $n = k$: $\;k > \log_2 k$.
+**Hypothesis.** At $n = k$: $\;k > \log_2 k$.
 
-**Шаг.** Прибавим к обеим частям единицу:
+**Step.** Add one to both sides:
 
 $$k + 1 > 1 + \log_2 k.$$
 
-По пункту (a) правая часть не меньше $\log_2(k+1)$, значит
+By part (a) the right-hand side is at least $\log_2(k+1)$, so
 
 $$k + 1 > 1 + \log_2 k \ge \log_2(k+1)
 \;\Longrightarrow\; k+1 > \log_2(k+1),$$
 
-а это утверждение при $n = k+1$.
+and that is the statement at $n = k+1$.
 
-**Вывод.** Верно при $n = 1$; из $n = k$ следует $n = k+1$; значит верно
-при всех $n \in \mathbb{Z}^+$. $\blacksquare$
+**Conclusion.** True at $n = 1$; $n = k$ implies $n = k+1$; so it is true for all
+$n \in \mathbb{Z}^+$. $\blacksquare$
 
 ```python
 my14 = log(2*k)/log(2)
 ```
 
-**Разметка (b).** R1 за базу, M1 за гипотезу, M1 за $k+1 > 1 + \log_2 k$,
-A1 за применение пункта (a), R1 за вывод. Пять баллов.
+**The marking of (b).** R1 for the base, M1 for the hypothesis, M1 for
+$k+1 > 1 + \log_2 k$, A1 for applying part (a), R1 for the conclusion. Five marks.
 
-**Что здесь особенного.** Единственный в теме случай, где гипотеза —
-неравенство. Механика та же, но соединять приходится **два** отношения:
-строгое $>$ из гипотезы и нестрогое $\ge$ из пункта (a). Цепочка
-$a > b \ge c$ даёт $a > c$ — строгость сохраняется, и это стоит проверить
-глазами, прежде чем писать вывод.
+**What is special here.** The only case in the topic where the hypothesis is an
+inequality. The mechanics are the same, but **two** relations have to be joined: the
+strict $>$ from the hypothesis and the non-strict $\ge$ from part (a). The chain
+$a > b \ge c$ gives $a > c$ — the strictness survives, and that is worth checking
+with your eyes before writing the conclusion.
 
-**Зачем пункт (a).** Он не украшение: без него из $k+1 > 1 + \log_2 k$
-никак не получить $k+1 > \log_2(k+1)$. Слово «hence» в условии всегда
-значит, что предыдущий пункт обязателен к применению, — и его отсутствие
-стоит A1.
+**What part (a) is for.** It is not decoration: without it there is no way to get
+$k+1 > \log_2(k+1)$ from $k+1 > 1 + \log_2 k$. The word «hence» in a question always
+means that the previous part must be used — and its absence costs an A1.
 """)
 
 nb = {

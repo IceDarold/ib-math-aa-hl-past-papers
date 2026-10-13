@@ -61,730 +61,724 @@ def code(src):
 
 
 md(r"""
-# Практикум B1: уравнения
+# Practicum B1: equations
 
-**222 балла, 73 блока, девять приёмов.** Самая большая тема архива после
-дифференциальных уравнений — и самая незаметная: своим именем вопрос
-называется редко, зато уравнение решают почти в каждом.
+**222 marks, 73 blocks, nine techniques.** The largest topic of the archive after
+differential equations — and the least conspicuous: a question rarely calls itself
+by this name, yet an equation is solved in almost every one.
 
-**Материал.** 73 блока и 222 балла из архива AA HL, сессии May 2021 —
-November 2025 (шесть из этих баллов — один и тот же вопрос ноября 2023,
-попавший в корпус дважды). Каждое задание ниже — настоящий вопрос
-прошлых лет, источник указан.
+**Material.** 73 blocks and 222 marks from the AA HL archive, sessions May 2021 —
+November 2025 (six of those marks are one and the same November 2023 question, which
+made it into the corpus twice). Every task below is a real past-paper question,
+cited.
 
-**Главная мысль темы.** Уравнение чаще всего не дано, а **построено**:
-половина баллов темы стоит до того, как начинается решение. «Show that
-the $x$-coordinates satisfy $x^2 - 2dx + 9d = 0$» — это четыре балла,
-и ни один из них не за корни.
+**The main idea of the topic.** More often than not the equation is not given but
+**built**: half the marks of the topic are earned before the solving begins. «Show
+that the $x$-coordinates satisfy $x^2 - 2dx + 9d = 0$» is four marks, and not one of
+them is for the roots.
 
-Вторая половина мысли про сами корни. Решение уравнения — цепочка шагов,
-и не каждый шаг равносилен:
+The second half of the idea is about the roots themselves. Solving an equation is a
+chain of steps, and not every step is an equivalence:
 
-* возвести обе части в квадрат, умножить на знаменатель, «снять
-  логарифмы» — корни **добавляются**;
-* поделить обе части на выражение с переменной — корни **теряются**;
-* область из условия ($x>4$, $s>0$, $q \ne 0$) выбрасывает лишние
-  уже в самом конце, и за это стоит отдельный балл.
+* squaring both sides, multiplying by a denominator, «removing the logarithms» —
+  roots are **added**;
+* dividing both sides by an expression with the variable — roots are **lost**;
+* the domain from the question ($x>4$, $s>0$, $q \ne 0$) throws out the surplus at
+  the very end, and there is a separate mark for it.
 
-Отсюда устройство практикума. Приёмы 1–2 решают то, что уже записано
-уравнением. Приёмы 3–6 строят уравнение: из условия задачи, из
-пересечения графиков, из замены. Приёмы 7–9 переворачивают вопрос:
-уравнение дано с буквой, а спрашивают, при каких значениях буквы
-у него столько-то корней.
+Hence how the practicum is built. Techniques 1–2 solve what is already written as an
+equation. Techniques 3–6 build the equation: out of the question's situation, out of
+an intersection of graphs, out of a substitution. Techniques 7–9 turn the question
+round: the equation is given with a letter, and what is asked is for which values of
+the letter it has a given number of roots.
 
-**Как работать**
+**How to work**
 
-1. Прочитайте карту приёмов. Различать «решить» и «построить» важнее,
-   чем помнить любой отдельный приём.
-2. Решайте **на бумаге**. Ответ вводите точный: `sqrt(17)`,
-   `Rational(9, 2)`, `-1 + 2*sqrt(2)` — округление только там, где
-   в условии сказано «3 s.f.».
-3. Корни вводите **списком целиком**: `[4]`, `[10 - sqrt(10), 10 +
-   sqrt(10)]`. Проверка смотрит и на лишние, и на потерянные.
-4. Последние блоки — тренажёр распознавания и задание на таймере.
+1. Read the map of techniques. Telling «solve» from «build» matters more than
+   remembering any single technique.
+2. Work **on paper**. Enter the exact answer: `sqrt(17)`, `Rational(9, 2)`,
+   `-1 + 2*sqrt(2)` — rounding only where the question says «3 s.f.».
+3. Enter roots **as a complete list**: `[4]`, `[10 - sqrt(10), 10 + sqrt(10)]`. The
+   check looks both for extra ones and for lost ones.
+4. The last blocks are a recognition trainer and one question on a timer.
 
-Метки сложности: 🟢 приём в чистом виде · 🟡 приём в неочевидной обёртке ·
-🔴 комбинация приёмов или экзаменационный формат целиком.
+Difficulty marks: 🟢 the technique on its own · 🟡 the technique in a wrapper ·
+🔴 several techniques, or a whole exam question.
 """)
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/functions к practicum/kit/
-import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
-from kit import *              # проверки + solveset, Interval, real_roots
+sys.path.append('..')          # from practicum/functions to practicum/kit/
+import sympy as sp             # the escape hatch: anything not in kit is in sp
+from kit import *              # checks + solveset, Interval, real_roots
+
+language('en')                 # this notebook is in English, and so are the checks
 
 a, b, c, d = symbols('a b c d')
 m, p, q, s, w = symbols('m p q s w')
 
-print('готово; sympy', sp.__version__)
-print('решить уравнение:    ', solveset(x**2 - 20*x + 90, x, S.Reals))
-print('то же, но x > 10:    ', solveset(x**2 - 20*x + 90, x, Interval.open(10, oo)))
-print('уравнение как ответ: ', Eq(x**2 - (m + 1)*x + 2, 0))
-print('сколько корней:      ', len(solveset(x**2 - 4*x + 4, x, S.Reals)))
+print('ready; sympy', sp.__version__)
+print('solve an equation:     ', solveset(x**2 - 20*x + 90, x, S.Reals))
+print('the same, but x > 10:  ', solveset(x**2 - 20*x + 90, x, Interval.open(10, oo)))
+print('an equation as answer: ', Eq(x**2 - (m + 1)*x + 2, 0))
+print('how many roots:        ', len(solveset(x**2 - 4*x + 4, x, S.Reals)))
 """)
 
 md(r"""
 ---
-## Карта приёмов
+## Map of techniques
 
-| # | Приём | Триггер в условии | Первый ход |
+| # | Technique | Trigger in the question | First move |
 | --- | --- | --- | --- |
-| 1 | Нуль функции | «find the zero», «where the graph crosses the axes» | приравнять к нулю числитель, подставить $x=0$ |
-| 2 | Квадратный трёхчлен | «in the form $a(x-h)^2+k$», «vertex», «axis of symmetry» | выделить квадрат или взять полусумму корней |
-| 3 | Построить уравнение | «show that … satisfies …», «hence show that» | записать обе величины и приравнять |
-| 4 | Лишние и потерянные корни | дробь, корень, логарифм, область в условии | после решения подставить каждый корень обратно |
-| 5 | Замена и законы логарифмов | $a^{2x}$ рядом с $a^x$, несколько логарифмов | заменить $a^x=A$, привести логарифмы к одной базе |
-| 6 | Пересечение графиков | «meet», «intersect», «the line and the curve» | приравнять правые части и привести к нулю |
-| 7 | Численно, по GDC | Paper 2, некрасивые числа, «3 s.f.» | построить обе части и взять точку пересечения |
-| 8 | Дискриминант как условие | «tangent», «exactly one solution», «two distinct» | $\Delta$ от буквы, дальше знак |
-| 9 | Число решений | «how many solutions», «exactly two intercepts» | найти, где корни сливаются или исчезают |
+| 1 | A zero of a function | «find the zero», «where the graph crosses the axes» | set the numerator to zero, put $x=0$ |
+| 2 | A quadratic | «in the form $a(x-h)^2+k$», «vertex», «axis of symmetry» | complete the square or take the mean of the roots |
+| 3 | Build the equation | «show that … satisfies …», «hence show that» | write both quantities and equate them |
+| 4 | Extra and lost roots | a fraction, a root, a logarithm, a domain in the question | after solving, put every root back in |
+| 5 | A substitution and the log laws | $a^{2x}$ next to $a^x$, several logarithms | put $a^x=A$, bring the logarithms to one base |
+| 6 | An intersection of graphs | «meet», «intersect», «the line and the curve» | equate the right-hand sides and reduce to zero |
+| 7 | Numerically, on the GDC | Paper 2, ugly numbers, «3 s.f.» | draw both sides and take the intersection |
+| 8 | The discriminant as a condition | «tangent», «exactly one solution», «two distinct» | $\Delta$ in the letter, then the sign |
+| 9 | The number of solutions | «how many solutions», «exactly two intercepts» | find where the roots merge or disappear |
 
-Лестница идёт по тому, **что именно дано**. Приёмы 1–2 работают с уже
-записанным уравнением: это самая простая четверть темы и почти весь её
-Paper 1 в лёгких вопросах.
+The ladder goes by **what exactly is given**. Techniques 1–2 work with an equation
+already written: that is the easiest quarter of the topic and almost all of its
+Paper 1 in the easy questions.
 
-Приёмы 3–6 — сердце темы. Уравнения в условии нет, есть ситуация:
-площадь равна периметру, вершина лежит на прямой, две кривые
-пересекаются. Работа в том, чтобы записать уравнение, привести его
-к стандартному виду и не потерять по дороге корни.
+Techniques 3–6 are the heart of the topic. There is no equation in the question,
+there is a situation: the area equals the perimeter, the vertex lies on a line, two
+curves meet. The work is in writing the equation down, bringing it to standard form
+and not losing roots along the way.
 
-Приёмы 7–9 переворачивают вопрос. Уравнение дано с буквой, корни искать
-не нужно — нужно понять, сколько их и когда. Ответом здесь оказывается
-множество значений буквы, и дальше работает всё, что было в A8.
+Techniques 7–9 turn the question round. The equation is given with a letter and the
+roots do not have to be found — what has to be understood is how many there are and
+when. The answer here is a set of values of the letter, and from there everything
+from A8 applies.
 
-**Что экономит больше всего времени.** Прежде чем решать, посмотрите,
-просят ли решить. «Show that», «hence show», «find the value of $k$
-such that» — это три разных вопроса, и корни нужны только в первом.
+**What saves the most time.** Before solving, look at whether solving is being
+asked for. «Show that», «hence show», «find the value of $k$ such that» are three
+different questions, and the roots are only needed in the first.
 """)
 
 md(r"""
 ---
-## Теория 1. Нуль функции и пересечения с осями
+## Theory 1. A zero of a function and the intercepts
 
-Самый частый вопрос темы и самый короткий. Два разных вопроса, которые
-легко перепутать:
+The most frequent question in the topic and the shortest. Two different questions
+that are easy to confuse:
 
-$$\text{пересечение с осью } y: \quad x = 0, \ \text{вычислить } f(0);$$
-$$\text{пересечение с осью } x: \quad f(x) = 0, \ \text{решить.}$$
+$$\text{the } y\text{-intercept}: \quad x = 0, \ \text{evaluate } f(0);$$
+$$\text{the } x\text{-intercepts}: \quad f(x) = 0, \ \text{solve.}$$
 
-Для дроби $f(x) = \dfrac{u(x)}{v(x)}$ работает правило: дробь равна нулю
-тогда и только тогда, когда **числитель ноль, а знаменатель нет**.
-Поэтому $f(x)=0$ решается как $u(x)=0$, и каждый найденный корень надо
-проверить на то, что он не обнуляет заодно и знаменатель.
+For a fraction $f(x) = \dfrac{u(x)}{v(x)}$ the rule is: the fraction equals zero if
+and only if **the numerator is zero and the denominator is not**. So $f(x)=0$ is
+solved as $u(x)=0$, and every root found has to be checked against the denominator.
 
-**Осторожно с формой ответа.** «Find the zero» ждёт число, «find the
-coordinates» — пару. Балл за $(3, 0)$ не поставят тому, кто написал 3,
-если в условии стоит слово coordinates.
+**Careful with the form of the answer.** «Find the zero» expects a number, «find the
+coordinates» a pair. The mark for $(3, 0)$ will not be given to somebody who wrote 3,
+if the question says coordinates.
 """)
 
 md(r"""
-## Задание 1 🟢 — нули и пересечения
+## Task 1 🟢 — zeros and intercepts
 
-**(a)** Найдите нуль функции $f(x) = \dfrac{7x+7}{2x-4}$.
+**(a)** Find the zero of the function $f(x) = \dfrac{7x+7}{2x-4}$.
 
-**(b)** Для функции $g(x) = 1 - \dfrac{1}{x-2}$ найдите координаты точек
-пересечения с осями.
+**(b)** For the function $g(x) = 1 - \dfrac{1}{x-2}$, find the coordinates of the
+points where the graph meets the axes.
 
-*Источники: May 2023 TZ1, Paper 1, Q1(a) (2 балла) и May 2023 TZ2,
-Paper 1, Q1(b) (2 балла), обе бумаги без калькулятора.*
+*Sources: May 2023 TZ1, Paper 1, Q1(a) (2 marks) and May 2023 TZ2, Paper 1, Q1(b)
+(2 marks), both no calculator.*
 """)
 
 code(r"""
-my1a = [...]             # нули f, списком
-my1b_x = [...]           # x-координаты пересечений g с осью x
-my1b_y = ...             # y-координата пересечения g с осью y
+my1a = [...]             # the zeros of f, as a list
+my1b_x = [...]           # the x-coordinates where g meets the x-axis
+my1b_y = ...             # the y-coordinate where g meets the y-axis
 
-verify_root_set('Задание 1(a)', my1a, (7*x + 7)/(2*x - 4))
-verify_root_set('Задание 1(b), ось x', my1b_x, 1 - 1/(x - 2))
-check_num('Задание 1(b), ось y', my1b_y, 6, '""" + D_Y1 + r"""')
+verify_root_set('Task 1(a)', my1a, (7*x + 7)/(2*x - 4))
+verify_root_set('Task 1(b), the x-axis', my1b_x, 1 - 1/(x - 2))
+check_num('Task 1(b), the y-axis', my1b_y, 6, '""" + D_Y1 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 2. Квадратный трёхчлен: четыре записи одного
+## Theory 2. A quadratic: four writings of one thing
 
-Квадратный трёхчлен пишут четырьмя способами, и каждый вопрос требует
-своего:
+A quadratic is written in four ways, and each question wants its own:
 
-$$ax^2+bx+c \quad\text{(коэффициенты)}, \qquad
-a(x-h)^2+k \quad\text{(вершина)},$$
-$$a(x-x_1)(x-x_2) \quad\text{(корни)}, \qquad
-\Delta = b^2-4ac \quad\text{(сколько корней)}.$$
+$$ax^2+bx+c \quad\text{(the coefficients)}, \qquad
+a(x-h)^2+k \quad\text{(the vertex)},$$
+$$a(x-x_1)(x-x_2) \quad\text{(the roots)}, \qquad
+\Delta = b^2-4ac \quad\text{(how many roots)}.$$
 
-Переходы между ними и есть приём:
+Moving between them is the technique:
 
-| Что спрашивают | Из какой записи отвечать |
+| What is asked | Which writing answers it |
 | --- | --- |
-| вершина, наибольшее или наименьшее значение | $a(x-h)^2+k$ |
-| ось симметрии | $x = h = -\dfrac{b}{2a}$ = полусумма корней |
-| корни, пересечения с осью $x$ | $a(x-x_1)(x-x_2)$ |
-| сколько корней, касание | $\Delta$ |
+| the vertex, the greatest or least value | $a(x-h)^2+k$ |
+| the axis of symmetry | $x = h = -\dfrac{b}{2a}$ = the mean of the roots |
+| the roots, the $x$-intercepts | $a(x-x_1)(x-x_2)$ |
+| how many roots, a touching | $\Delta$ |
 
-**Ось симметрии — полусумма корней.** Это самый недооценённый факт темы:
-он позволяет найти второй корень по первому и по вершине, не решая
-ничего. Если корни $3$ и $p$, а ось симметрии $x=-1$, то
-$\frac{3 + p}{2} = -1$, откуда $p = -5$ — одна строка вместо разложения
-на множители.
+**The axis of symmetry is the mean of the roots.** That is the most underrated fact
+of the topic: it lets you find the second root from the first and the vertex, with no
+solving at all. If the roots are $3$ and $p$ and the axis of symmetry is $x=-1$, then
+$\frac{3 + p}{2} = -1$, hence $p = -5$ — one line instead of factorising.
 
-**Выделение квадрата — требование к записи.** «Write in the form
-$a(x-h)^2+k$» проверяет не значение, а вид: ответ $2x^2-12x+7$
-численно равен $2(x-3)^2-11$, но балла не получит. Внутри квадрата
-должно стоять именно $(x-h)$, с единицей при $x$.
+**Completing the square is a requirement on the writing.** «Write in the form
+$a(x-h)^2+k$» checks not the value but the form: the answer $2x^2-12x+7$ is
+numerically equal to $2(x-3)^2-11$, but it earns no mark. Inside the square there has
+to be exactly $(x-h)$, with a one in front of $x$.
 """)
 
 md(r"""
-## Задание 2 🟢 — вершинная форма
+## Task 2 🟢 — the vertex form
 
-Запишите $f(x) = 5(x+1)(x+3)$ в виде $a(x-h)^2+k$.
+Write $f(x) = 5(x+1)(x+3)$ in the form $a(x-h)^2+k$.
 
-Проверка смотрит на форму записи, а не только на равенство: раскрытая
-скобка численно равна ответу, но формой не является.
+The check looks at the form of the writing, not only at the equality: an expanded
+bracket is numerically equal to the answer but is not the form.
 
-*Источник: May 2025 TZ1, Paper 1, Q10(a) (4 балла, без калькулятора).*
+*Source: May 2025 TZ1, Paper 1, Q10(a) (4 marks, no calculator).*
 """)
 
 code(r"""
-my2 = ...                # f(x) в виде a(x − h)² + k
+my2 = ...                # f(x) in the form a(x - h)^2 + k
 
-verify_vertex_form('Задание 2', my2, 5*(x + 1)*(x + 3))
+verify_vertex_form('Task 2', my2, 5*(x + 1)*(x + 3))
 """)
 
 md(r"""
-## Задание 3 🟡 — вершина на прямой
+## Task 3 🟡 — a vertex on a line
 
-Функции заданы формулами
+The functions are given by
 
 $$f(x) = -x^2+4x+p, \qquad g(x) = x^2+qx-1,$$
 
-где $p$ и $q$ — **ненулевые** постоянные. Вершина графика $f$ — точка
-$A$, вершина графика $g$ — точка $B$, и обе лежат на прямой $y = 2x-1$.
+where $p$ and $q$ are **non-zero** constants. The vertex of the graph of $f$ is the
+point $A$, the vertex of the graph of $g$ is the point $B$, and both lie on the line
+$y = 2x-1$.
 
-**(a)** Покажите, что $p = -1$.
+**(a)** Show that $p = -1$.
 
-**(b)** Найдите значение $q$.
+**(b)** Find the value of $q$.
 
-В пункте (b) получается квадратное уравнение на $q$, и один из двух его
-корней в ответ не идёт. Подумайте, какое условие задачи его отбрасывает —
-и почему без этого условия он был бы совершенно законным.
+In part (b) a quadratic in $q$ comes out, and one of its two roots does not go into
+the answer. Think about which condition of the question throws it out — and why
+without that condition it would have been perfectly legitimate.
 
-*Источник: November 2025 TZ1, Paper 1, Q4 (3 + 5 баллов, без калькулятора).*
+*Source: November 2025 TZ1, Paper 1, Q4 (3 + 5 marks, no calculator).*
 """)
 
 code(r"""
-my3_p = ...              # значение p
-my3_q = [...]            # значения q, списком
+my3_p = ...              # the value of p
+my3_q = [...]            # the values of q, as a list
 
-check_num('Задание 3(a)', my3_p, 6, '""" + D_P3 + r"""')
-verify_root_set('Задание 3(b)', my3_q, q**2 - 4*q, var=q,
+check_num('Task 3(a)', my3_p, 6, '""" + D_P3 + r"""')
+verify_root_set('Task 3(b)', my3_q, q**2 - 4*q, var=q,
                 domain=Complement(S.Reals, FiniteSet(0)))
 """)
 
 md(r"""
-## Задание 4 🟡 — по корням и оси симметрии
+## Task 4 🟡 — from the roots and the axis of symmetry
 
-Функция $g(x) = x^2+bx+c$, её график симметричен относительно прямой
-$x = 2$, а корни уравнения $g(x)=0$ равны $-\frac12$ и $p$.
+The function $g(x) = x^2+bx+c$ has a graph symmetric about the line $x = 2$, and the
+roots of $g(x)=0$ are $-\frac12$ and $p$.
 
-**(a)** Покажите, что $p = \frac92$.
+**(a)** Show that $p = \frac92$.
 
-**(b)** Найдите $b$ и $c$.
+**(b)** Find $b$ and $c$.
 
-*Источник: May 2024 TZ1, Paper 1, Q10(c)(d) (1 + 3 балла, без калькулятора).*
+*Source: May 2024 TZ1, Paper 1, Q10(c)(d) (1 + 3 marks, no calculator).*
 """)
 
 code(r"""
-my4_p = ...              # второй корень
-my4_b = ...              # коэффициент при x
-my4_c = ...              # свободный член
+my4_p = ...              # the second root
+my4_b = ...              # the coefficient of x
+my4_c = ...              # the constant term
 
-check_num('Задание 4(a)', my4_p, 6, '""" + D_P4 + r"""')
-check_num('Задание 4(b), b', my4_b, 6, '""" + D_B4 + r"""')
-check_num('Задание 4(b), c', my4_c, 6, '""" + D_C4 + r"""')
+check_num('Task 4(a)', my4_p, 6, '""" + D_P4 + r"""')
+check_num('Task 4(b), b', my4_b, 6, '""" + D_B4 + r"""')
+check_num('Task 4(b), c', my4_c, 6, '""" + D_C4 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 3. Уравнение, которое надо построить
+## Theory 3. The equation that has to be built
 
-Здесь начинается настоящая тема. Уравнения в условии нет — есть
-ситуация, и первый ход состоит в том, чтобы записать две величины
-и приравнять их.
+Here the real topic begins. There is no equation in the question — there is a
+situation, and the first move is to write two quantities down and equate them.
 
-Формат вопроса почти всегда один и тот же: **«show that»**. Ответ
-напечатан в условии, и баллы стоят за дорогу к нему. Из семи баллов
-типичного такого пункта за корни не стоит ни одного.
+The format of the question is almost always the same: **«show that»**. The answer is
+printed in the question, and the marks are for the road to it. Of the seven marks of
+a typical such part, not one is for the roots.
 
-**Как выглядит дорога.**
+**What the road looks like.**
 
-1. Записать обе величины по отдельности — для прямоугольника со
-   сторонами $a$ и $b$ это $A = ab$ и $P = 2a+2b$ — за это A1, иногда
-   A1A1.
-2. Приравнять — M1.
-3. Привести к виду из условия — цепочка M1 за каждый содержательный шаг.
-4. Написать требуемое и поставить точку — последний A1, и он **не
-   ставится**, если написать сразу ответ из условия.
+1. Write both quantities separately — for a rectangle with sides $a$ and $b$ that is
+   $A = ab$ and $P = 2a+2b$ — an A1 for that, sometimes A1A1.
+2. Equate them — M1.
+3. Bring it to the form given in the question — a chain of M1s, one for each
+   substantial step.
+4. Write what was required and stop — the last A1, and it is **not** given if the
+   answer from the question is simply written down.
 
-**Про AG.** Ответ дан, поэтому проверяющий читает только выкладку.
-Правило простое: если из ваших строк не следует напечатанное — баллов
-нет, даже когда последняя строка совпадает с условием дословно.
+**About AG.** The answer is given, so the examiner reads only the working. The rule
+is simple: if what is printed does not follow from your lines, there are no marks,
+even when the last line matches the question word for word.
 
-**Осторожно: приведение к нужному виду тоже бывает неравносильным.**
-Домножить обе части на скобку со буквой значит разрешить случай, когда
-эта скобка равна нулю, — а в исходной записи его не было. В экзамене это редко наказывают, но в проверке ниже
-уравнения сравниваются честно: перенос слагаемых и множитель-**число**
-разрешены, множитель с буквой — нет.
+**Careful: bringing it to the required form can also fail to be an equivalence.**
+Multiplying both sides by a bracket with a letter in it allows the case where that
+bracket is zero — and in the original writing there was no such case. In the exam
+that is rarely penalised, but in the check below the equations are compared honestly:
+moving terms and a **numerical** factor are allowed, a factor with a letter is not.
 """)
 
 md(r"""
-## Задание 5 🟢 — площадь равна периметру
+## Task 5 🟢 — the area equals the perimeter
 
-У квадрата со стороной $s$ численное значение площади равно численному
-значению периметра. Найдите $s$.
+For a square of side $s$ the numerical value of the area equals the numerical value
+of the perimeter. Find $s$.
 
-Уравнение получится в две строки. Всё содержание задания — в том,
-что делать со вторым корнем.
+The equation comes out in two lines. The whole substance of the task is what to do
+with the second root.
 
-*Источник: May 2021 TZ1, Paper 3, Q2(a) (3 балла, с калькулятором).*
+*Source: May 2021 TZ1, Paper 3, Q2(a) (3 marks, calculator).*
 """)
 
 code(r"""
-my5 = [...]              # значения s, списком
+my5 = [...]              # the values of s, as a list
 
-verify_root_set('Задание 5', my5, Eq(s**2, 4*s), var=s,
+verify_root_set('Task 5', my5, Eq(s**2, 4*s), var=s,
                 domain=Interval.open(0, oo))
 """)
 
 md(r"""
-## Задание 6 🔴 — то же для прямоугольного треугольника
+## Task 6 🔴 — the same for a right-angled triangle
 
-У прямоугольного треугольника катеты $a$ и $b$, гипотенуза
-$\sqrt{a^2+b^2}$, и снова площадь численно равна периметру.
+A right-angled triangle has legs $a$ and $b$ and hypotenuse $\sqrt{a^2+b^2}$, and
+again the area is numerically equal to the perimeter.
 
-**(a)** Приравняв площадь и периметр, изолируйте корень и возведите обе
-части в квадрат. Запишите получившееся уравнение (всё в одной стороне,
-справа ноль).
+**(a)** Equating the area and the perimeter, isolate the root and square both sides.
+Write down the resulting equation (everything on one side, zero on the other).
 
-**(b)** Покажите, что $a = \dfrac{8}{b-4} + 4$.
+**(b)** Show that $a = \dfrac{8}{b-4} + 4$.
 
-Между (a) и (b) стоит шаг, ради которого задание здесь: обе части делят
-на $ab$. Это деление на выражение с переменными, и законно оно только
-потому, что $a>0$ и $b>0$ — иначе так теряют корни.
+Between (a) and (b) stands the step this task is here for: both sides are divided by
+$ab$. That is a division by an expression with the variables, and it is legitimate
+only because $a>0$ and $b>0$ — otherwise that is how roots get lost.
 
-*Источник: May 2021 TZ1, Paper 3, Q2(f) (7 баллов, с калькулятором).*
+*Source: May 2021 TZ1, Paper 3, Q2(f) (7 marks, calculator).*
 """)
 
 code(r"""
-my6_sq = ...             # уравнение после возведения в квадрат
-my6_a = ...              # выражение для a через b
+my6_sq = ...             # the equation after squaring
+my6_a = ...              # the expression for a in terms of b
 
-verify_equation('Задание 6(a)', my6_sq,
+verify_equation('Task 6(a)', my6_sq,
                 a**2*b**2/4 - a**2*b - a*b**2 + 2*a*b, var=a)
-verify_identity('Задание 6(b)', my6_a, 8/(b - 4) + 4, var=b)
+verify_identity('Task 6(b)', my6_a, 8/(b - 4) + 4, var=b)
 """)
 
 md(r"""
 ---
-## Теория 4. Лишние и потерянные корни
+## Theory 4. Extra and lost roots
 
-Решение уравнения — цепочка переходов, и не каждый переход равносилен.
-Таблица, которую стоит держать в голове целиком:
+Solving an equation is a chain of steps, and not every step is an equivalence. A
+table worth keeping in your head whole:
 
-| Шаг | Что происходит с корнями | Что делать |
+| Step | What happens to the roots | What to do |
 | --- | --- | --- |
-| возвести обе части в квадрат | добавляются | подставить каждый корень в исходное |
-| умножить на знаменатель | добавляются нули знаменателя | проверить, что знаменатель не ноль |
-| «снять» логарифмы | добавляются те, где аргумент был $\le 0$ | проверить область |
-| поделить на выражение с $x$ | **теряются** | вынести множитель, а не делить |
-| возвести в чётную степень | добавляются | то же, что с квадратом |
+| square both sides | they are added | put every root into the original |
+| multiply by a denominator | the zeros of the denominator are added | check that the denominator is not zero |
+| «remove» the logarithms | the ones where the argument was $\le 0$ are added | check the domain |
+| divide by an expression with $x$ | they are **lost** | take out a factor, do not divide |
+| raise to an even power | they are added | the same as with squaring |
 
-Первые три ошибки видны при подстановке, последняя — нет: потерянный
-корень не оставляет следа, и заметить его можно, только не делая
-деления вовсе.
+The first three mistakes show up on substituting, the last one does not: a lost root
+leaves no trace, and the only way to notice it is not to do the division at all.
 
-**Правило.** Вместо «делим обе части на $t$» в уравнении $t^2 = 6t$
-пишем $t^2-6t=0$, $t(t-6)=0$, и оба корня, $0$ и $6$, на месте. Дальше уже смотрим, какой из них
-проходит по условию задачи.
+**The rule.** Instead of «divide both sides by $t$» in the equation $t^2 = 6t$ write
+$t^2-6t=0$, $t(t-6)=0$, and both roots, $0$ and $6$, are there. Then look at which
+of them satisfies the question.
 
-**Область — часть уравнения.** $x>4$, $s>0$, $q\ne0$ в условии стоят
-не для красоты: почти всегда ровно они отбрасывают лишний корень,
-и за это стоит отдельный A1. Причём отбрасывает область, а не алгебра:
-корень сам по себе законный, просто не про эту задачу.
+**The domain is part of the equation.** $x>4$, $s>0$, $q\ne0$ are in the question not
+for decoration: almost always it is exactly they that throw out the extra root, and
+there is a separate A1 for it. And it is the domain that throws it out, not the
+algebra: the root is legitimate in itself, it is simply not about this question.
 """)
 
 md(r"""
-## Задание 7 🟡 — целые решения дробного уравнения
+## Task 7 🟡 — the integer solutions of a rational equation
 
-Продолжение задания 6: $a = \dfrac{8}{b-4} + 4$, стороны $a$ и $b$
-целые положительные.
+A continuation of task 6: $a = \dfrac{8}{b-4} + 4$, with the sides $a$ and $b$
+positive integers.
 
-**(a)** Найдите все целые $b$, при которых $a$ тоже целое и обе стороны
-положительны.
+**(a)** Find all the integers $b$ for which $a$ is an integer too and both sides are
+positive.
 
-**(b)** Сколько **различных** прямоугольных треугольников при этом
-получается?
+**(b)** How many **different** right-angled triangles does that give?
 
-Разница между (a) и (b) и есть содержание задания.
+The difference between (a) and (b) is the substance of the task.
 
-*Источник: May 2021 TZ1, Paper 3, Q2(g)(i) (3 балла, с калькулятором).*
+*Source: May 2021 TZ1, Paper 3, Q2(g)(i) (3 marks, calculator).*
 """)
 
 code(r"""
-my7_b = [...]            # все подходящие целые b
-my7_n = ...              # сколько различных треугольников
+my7_b = [...]            # all the integers b that work
+my7_n = ...              # how many different triangles
 
-check_set('Задание 7(a)', my7_b, '""" + D_B7 + r"""')
-check_num('Задание 7(b)', my7_n, 6, '""" + D_N7 + r"""')
+check_set('Task 7(a)', my7_b, '""" + D_B7 + r"""')
+check_num('Task 7(b)', my7_n, 6, '""" + D_N7 + r"""')
 """)
 
 md(r"""
-## Задание 8 🟡 — логарифм и его область
+## Task 8 🟡 — a logarithm and its domain
 
-График функции $f(x) = \ln(x^2-16)$ пересекает ось $x$ в точке
-$A(\alpha, 0)$, где $x > 4$. Найдите точное значение $\alpha$.
+The graph of $f(x) = \ln(x^2-16)$ meets the $x$-axis at the point $A(\alpha, 0)$,
+where $x > 4$. Find the exact value of $\alpha$.
 
-*Источник: May 2021 TZ2, Paper 1, Q4(a) (3 балла, без калькулятора).*
+*Source: May 2021 TZ2, Paper 1, Q4(a) (3 marks, no calculator).*
 """)
 
 code(r"""
-my8 = [...]              # значения α, списком
+my8 = [...]              # the values of alpha, as a list
 
-verify_root_set('Задание 8', my8, log(x**2 - 16),
+verify_root_set('Task 8', my8, log(x**2 - 16),
                 domain=Interval.open(4, oo))
 """)
 
 md(r"""
 ---
-## Теория 5. Замена и законы логарифмов
+## Theory 5. A substitution and the log laws
 
-Показательные и логарифмические уравнения решают не как показательные,
-а как **алгебраические после замены**. Два случая покрывают почти весь
-архив.
+Exponential and logarithmic equations are solved not as exponential ones but as
+**algebraic ones after a substitution**. Two cases cover almost the whole archive.
 
-**Квадратное по $a^x$.** Если в уравнении встречаются $a^{2x}$ (он же
-$(a^2)^x$) и $a^x$, замена $A = a^x$ превращает его в квадратное:
+**Quadratic in $a^x$.** If the equation contains $a^{2x}$ (which is $(a^2)^x$) and
+$a^x$, the substitution $A = a^x$ turns it into a quadratic:
 
 $$4^x - 6\cdot 2^x + 8 = 0 \ \Longrightarrow\
 A^2-6A+8=0, \quad A = 2^x > 0.$$
 
-Условие $A>0$ здесь не формальность, а половина задания: отрицательный
-корень квадратного уравнения отбрасывается **до** возвращения к $x$.
+The condition $A>0$ here is not a formality but half the task: a negative root of the
+quadratic is discarded **before** going back to $x$.
 
-**Один логарифм слева, один справа.** Логарифмы собирают в один
-с каждой стороны и приравнивают аргументы:
+**One logarithm on the left, one on the right.** The logarithms are collected into
+one on each side and the arguments are equated:
 
 $$\log_a M = \log_a N \iff M = N \ \ (M, N > 0).$$
 
-Инструменты для сборки — три закона и смена базы:
+The tools for the collecting are three laws and the change of base:
 
 $$\log_a M^n = n\log_a M, \quad
 \log_a M + \log_a N = \log_a MN, \quad
 \log_a M - \log_a N = \log_a \tfrac MN,$$
 $$\log_a b = \frac{\log_c b}{\log_c a}, \qquad
-\text{в частности } \frac{1}{\log_b a} = \log_a b.$$
+\text{in particular } \frac{1}{\log_b a} = \log_a b.$$
 
-Последняя формула — самая полезная и самая незаметная: дробь
-$\frac{3}{\log_5 2}$ это $3\log_2 5$, то есть $\log_2 125$, то есть
-слагаемое, которое можно занести под общий логарифм. Всякий раз, когда
-логарифм стоит **в знаменателе**, посмотрите на него так: скорее всего
-это переставленное основание, а не дробь.
+The last formula is the most useful and the least conspicuous: the fraction
+$\frac{3}{\log_5 2}$ is $3\log_2 5$, that is, $\log_2 125$, that is, a term that can
+be taken under a common logarithm. Whenever a logarithm stands **in a denominator**,
+look at it that way: it is most likely a rearranged base rather than a fraction.
 
-**Область.** «Снять логарифмы» — шаг неравносильный: он забывает, что
-аргументы были положительны. Поэтому в конце подставляем корни обратно.
+**The domain.** «Removing the logarithms» is not an equivalence: it forgets that the
+arguments were positive. So at the end the roots are put back in.
 """)
 
 md(r"""
-## Задание 9 🟢 — квадратное по $3^x$
+## Task 9 🟢 — quadratic in $3^x$
 
-Решите уравнение
+Solve the equation
 
 $$3 \cdot 9^x + 5 \cdot 3^x - 2 = 0.$$
 
-*Источник: May 2024 TZ2, Paper 1, Q2 (5 баллов, без калькулятора).*
+*Source: May 2024 TZ2, Paper 1, Q2 (5 marks, no calculator).*
 """)
 
 code(r"""
-my9 = [...]              # решения, списком
+my9 = [...]              # the solutions, as a list
 
-verify_root_set('Задание 9', my9, 3*9**x + 5*3**x - 2)
+verify_root_set('Task 9', my9, 3*9**x + 5*3**x - 2)
 """)
 
 md(r"""
-## Задание 10 🔴 — три закона логарифмов подряд
+## Task 10 🔴 — three log laws in a row
 
-Решите уравнение
+Solve the equation
 
 $$\log_3 \sqrt{x} = \frac{1}{2\log_2 3} + \log_3 (4x^3), \qquad x > 0.$$
 
-Три балла из пяти здесь стоят за три отдельных действия: смена базы,
-вынесение показателя, объединение логарифмов. Начните с дроби.
+Three of the five marks here are for three separate actions: the change of base,
+taking the exponent out, combining the logarithms. Start with the fraction.
 
-*Источник: November 2021, Paper 1, Q3 (5 баллов, без калькулятора).*
+*Source: November 2021, Paper 1, Q3 (5 marks, no calculator).*
 """)
 
 code(r"""
-my10 = [...]             # решения, списком
+my10 = [...]             # the solutions, as a list
 
-verify_root_set('Задание 10', my10,
+verify_root_set('Task 10', my10,
                 log(sqrt(x), 3) - 1/(2*log(3, 2)) - log(4*x**3, 3),
                 domain=Interval.open(0, oo))
 """)
 
 md(r"""
 ---
-## Теория 6. Пересечение графиков
+## Theory 6. An intersection of graphs
 
-«The line and the curve meet», «the graphs intersect» — это всегда одно
-и то же уравнение:
+«The line and the curve meet», «the graphs intersect» — that is always one and the
+same equation:
 
 $$f(x) = g(x) \iff f(x) - g(x) = 0.$$
 
-Дальше всё зависит от того, что спрашивают:
+What comes next depends on what is asked:
 
-| Вопрос | Что делать |
+| The question | What to do |
 | --- | --- |
-| «show that they meet when $\ldots=0$» | привести к нужному виду и остановиться |
-| «find the points of intersection» | решить и **вернуть $y$**: ответ — координаты |
-| «find the value of $k$ such that they are tangent» | $\Delta=0$, приём 8 |
-| «how many points of intersection» | приём 9 |
+| «show that they meet when $\ldots=0$» | bring it to the required form and stop |
+| «find the points of intersection» | solve and **give $y$ back**: the answer is coordinates |
+| «find the value of $k$ such that they are tangent» | $\Delta=0$, technique 8 |
+| «how many points of intersection» | technique 9 |
 
-**Две ловушки формата.** Первая: остановиться на $x$, когда просят
-точки. Вторая: решать не то уравнение — «$f$ и $g$ пересекаются на оси
-$x$» означает не $f=g$, а $f=0$ и $g=0$ одновременно.
+**Two traps of the format.** The first: stopping at $x$ when the points are asked
+for. The second: solving the wrong equation — «$f$ and $g$ meet on the $x$-axis»
+means not $f=g$ but $f=0$ and $g=0$ at once.
 
-**Про равносильность.** Приведение $f=g$ к стандартному виду — это
-перенос слагаемых, и он безопасен. Опасно начинается там, где обе части
-домножают на знаменатель: у $\frac{x+1}{x-3} = kx$ после домножения
-появляется корень $x=3$, которого у исходного уравнения нет — там эта
-точка вообще выколота.
+**About equivalence.** Bringing $f=g$ to standard form is moving terms, and it is
+safe. The danger starts where both sides are multiplied by a denominator: in
+$\frac{x+1}{x-3} = kx$, after multiplying, the root $x=3$ appears, which the original
+equation does not have — there that point is excluded altogether.
 """)
 
 md(r"""
-## Задание 11 🟡 — «show that» про пересечение
+## Task 11 🟡 — a «show that» about an intersection
 
-Кривая $y = x^2-x-1$ и прямая $y = mx-3$ пересекаются. Покажите, что
-в точках пересечения
+The curve $y = x^2-x-1$ and the line $y = mx-3$ meet. Show that at the points of
+intersection
 
 $$x^2 - (m+1)x + 2 = 0.$$
 
-Введите уравнение целиком: `Eq(левая часть, правая часть)` или просто
-выражение, которое приравнивается к нулю.
+Enter the whole equation: `Eq(left-hand side, right-hand side)`, or simply the
+expression that is set equal to zero.
 
-*Источник: May 2025 TZ3, Paper 1, Q4(a) (2 балла, без калькулятора).*
+*Source: May 2025 TZ3, Paper 1, Q4(a) (2 marks, no calculator).*
 """)
 
 code(r"""
-my11 = ...               # уравнение точек пересечения
+my11 = ...               # the equation of the points of intersection
 
-verify_equation('Задание 11', my11, x**2 - (m + 1)*x + 2)
+verify_equation('Task 11', my11, x**2 - (m + 1)*x + 2)
 """)
 
 md(r"""
-## Задание 12 🔴 — две семьи кривых
+## Task 12 🔴 — two families of curves
 
-Семейство кривых задано уравнением $y^2 = 4a^2-4ax$, второе семейство —
-уравнением $y^2 = 4b^2+4bx$, где $a$ и $b$ положительны.
+One family of curves is given by $y^2 = 4a^2-4ax$ and a second by
+$y^2 = 4b^2+4bx$, where $a$ and $b$ are positive.
 
-Решив эти уравнения совместно, покажите, что кривые пересекаются
-в точках $M(a-b,\ 2\sqrt{ab})$ и $N(a-b,\ -2\sqrt{ab})$.
+Solving these equations simultaneously, show that the curves meet at the points
+$M(a-b,\ 2\sqrt{ab})$ and $N(a-b,\ -2\sqrt{ab})$.
 
-Первый ход — приравнять правые части: $y^2$ одинаков, значит одинаковы
-и выражения справа. Дальше в уравнении остаётся только $x$.
+The first move is to equate the right-hand sides: $y^2$ is the same, so the
+expressions on the right are the same too. After that only $x$ is left in the
+equation.
 
-*Источник: November 2023, Paper 3, Q2(c) (6 баллов, с калькулятором;
-тот же вопрос стоит в обеих часовых зонах).*
+*Source: November 2023, Paper 3, Q2(c) (6 marks, calculator; the same question
+appears in both time zones).*
 """)
 
 code(r"""
-my12_x = ...             # общая x-координата точек M и N
-my12_y = ...             # y-координата точки M (положительная)
+my12_x = ...             # the common x-coordinate of M and N
+my12_y = ...             # the y-coordinate of M (the positive one)
 
-check_expr('Задание 12, x', my12_x, '""" + de(a - b) + r"""')
-check_expr('Задание 12, y', my12_y, '""" + de(2 * sq(a * b)) + r"""')
+check_expr('Task 12, x', my12_x, '""" + de(a - b) + r"""')
+check_expr('Task 12, y', my12_y, '""" + de(2 * sq(a * b)) + r"""')
 """)
 
 md(r"""
 ---
-## Теория 7. Численное решение: что GDC умеет и чего не умеет
+## Theory 7. A numerical solution: what a GDC can and cannot do
 
-В Paper 2 уравнение чаще всего не решается руками вовсе: показательная
-функция против многочлена, синус против прямой, разность двух моделей.
-Приём один: построить обе части и взять точку пересечения — или ввести
-solver и получить корень.
+On Paper 2 the equation most often does not solve by hand at all: an exponential
+against a polynomial, a sine against a line, the difference of two models. The
+technique is one: draw both sides and take the intersection — or type it into the
+solver and get a root.
 
-**Три вещи, которые GDC не делает за вас.**
+**Three things a GDC does not do for you.**
 
-1. **Выбор корня.** Уравнение из модели почти всегда имеет несколько
-   решений, а по смыслу подходит одно: «the first time», «$0 \le t \le
-   6$», «$x>0$». Область в условии — часть задания.
-2. **Точность.** Ответ пишут с тремя значащими цифрами, но промежуточные
-   значения в дальнейших пунктах берут неокруглённые. Округлив рано,
-   теряют A1 в следующем пункте, а не в этом.
-3. **Запись метода.** «Solutions found from a graphic display calculator
-   should be supported by suitable working» — на бумаге должно остаться
-   уравнение, которое вы решали, и хотя бы эскиз. Голый ответ без M1.
+1. **Choosing the root.** An equation from a model almost always has several
+   solutions, and one of them fits the meaning: «the first time»,
+   «$0 \le t \le 6$», «$x>0$». The domain in the question is part of the task.
+2. **Accuracy.** The answer is written to three significant figures, but
+   intermediate values in later parts are taken unrounded. Round early and you lose
+   an A1 in the next part, not in this one.
+3. **Writing the method down.** «Solutions found from a graphic display calculator
+   should be supported by suitable working» — the equation you solved and at least a
+   sketch have to be left on the paper. A bare answer earns no M1.
 
-**Чего не стоит делать.** Загонять в GDC то, что решается устно.
-Квадратное уравнение с целыми корнями, $\ln(x^2-16)=0$, $3^x = \frac13$ —
-всё это быстрее руками, и в Paper 1 калькулятора не будет вовсе.
+**What not to do.** Typing into the GDC what can be done in your head. A quadratic
+with integer roots, $\ln(x^2-16)=0$, $3^x = \frac13$ — all of that is faster by hand,
+and on Paper 1 there is no calculator at all.
 """)
 
 md(r"""
-## Задание 13 🟢 — два численных решения
+## Task 13 🟢 — two numerical solutions
 
-**(a)** Кривая $f(x) = 90e^{-0.5x}$ пересекает прямую $y = x$ в точке
-$P$. Найдите $x$-координату $P$ с точностью до трёх значащих цифр.
+**(a)** The curve $f(x) = 90e^{-0.5x}$ meets the line $y = x$ at the point $P$. Find
+the $x$-coordinate of $P$ to three significant figures.
 
-**(b)** Черепаха ползёт от точки $A$ на юг, её удаление описывается
-функцией $g(t) = 0.05t^2 + 1.1t + 18$. Кромка воды описывается функцией
+**(b)** A tortoise crawls south from a point $A$, and its distance is described by
+the function $g(t) = 0.05t^2 + 1.1t + 18$. The edge of the water is described by the
+function
 
 $$d(t) = \frac{20\sin\frac{\pi t}{8}}{\sin\left(2.37 - \frac{\pi t}{8}\right)}.$$
 
-Найдите момент $t$, когда вода впервые достигает черепахи, и на каком
-расстоянии от $A$ это происходит. Оба ответа — с точностью до трёх
-значащих цифр.
+Find the time $t$ at which the water first reaches the tortoise, and the distance
+from $A$ at which that happens. Both answers to three significant figures.
 
-*Источники: May 2021 TZ1, Paper 2, Q10(a) (2 балла) и May 2024 TZ2,
-Paper 2, Q11(g) (4 балла), обе бумаги с калькулятором.*
+*Sources: May 2021 TZ1, Paper 2, Q10(a) (2 marks) and May 2024 TZ2, Paper 2, Q11(g)
+(4 marks), both calculator papers.*
 """)
 
 code(r"""
-my13_x = ...             # x-координата точки пересечения
-my13_t = ...             # момент встречи, с
-my13_g = ...             # расстояние от A, м
+my13_x = ...             # the x-coordinate of the intersection
+my13_t = ...             # the time of the meeting, s
+my13_g = ...             # the distance from A, m
 
-check_num('Задание 13(a)', my13_x, 3, '""" + D_X13 + r"""')
-check_num('Задание 13(b), время', my13_t, 3, '""" + D_T13 + r"""')
-check_num('Задание 13(b), место', my13_g, 3, '""" + D_G13 + r"""')
+check_num('Task 13(a)', my13_x, 3, '""" + D_X13 + r"""')
+check_num('Task 13(b), the time', my13_t, 3, '""" + D_T13 + r"""')
+check_num('Task 13(b), the place', my13_g, 3, '""" + D_G13 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 8. Дискриминант как условие на букву
+## Theory 8. The discriminant as a condition on a letter
 
-Здесь тема поворачивается. До сих пор уравнение решали; теперь его
-корни не нужны вовсе — нужно, сколько их. Для квадратного уравнения
-всё видно из дискриминанта:
+Here the topic turns round. Until now the equation was being solved; now its roots
+are not needed at all — what is needed is how many there are. For a quadratic
+everything is visible from the discriminant:
 
-$$\Delta > 0 \iff \text{два различных корня}, \qquad
-\Delta = 0 \iff \text{один}, \qquad
-\Delta < 0 \iff \text{ни одного}.$$
+$$\Delta > 0 \iff \text{two distinct roots}, \qquad
+\Delta = 0 \iff \text{one}, \qquad
+\Delta < 0 \iff \text{none}.$$
 
-Дальше $\Delta$ — выражение с буквой, и получается уравнение или
-неравенство **на букву**, то есть работа из A8.
+After that $\Delta$ is an expression in the letter, and what comes out is an
+equation or an inequality **in the letter**, that is, the work of A8.
 
-**Как условие звучит в задаче.**
+**How the condition sounds in a question.**
 
-| В условии | Условие на $\Delta$ |
+| In the question | The condition on $\Delta$ |
 | --- | --- |
 | two distinct real roots · meets the curve twice | $\Delta>0$ |
 | tangent to the curve · touches · exactly one solution | $\Delta=0$ |
 | does not meet · no real solutions | $\Delta<0$ |
 | at least one real solution | $\Delta\ge0$ |
 
-**Три оговорки, каждая из которых стоит балл.**
+**Three caveats, each worth a mark.**
 
-1. **Уравнение должно быть квадратным.** Если старший коэффициент
-   содержит букву, случай, когда он ноль, разбирается отдельно:
-   уравнение становится линейным и корень у него ровно один.
-2. **Замена сужает область.** После замены $A=a^x$ корни получаются
-   для $A$, а нужны для $x$ — и годятся только положительные $A$. Если
-   в коэффициентах стоит логарифм буквы, он требует положительности
-   своего аргумента отдельно. Дискриминант ни о том, ни о другом
-   не знает, и оба ограничения приходится добавлять руками.
-3. **«Ровно одно решение» и «$\Delta=0$» — не одно и то же.** Уравнение
-   с дробью может потерять корень на полюсе, а уравнение с заменой —
-   при возвращении к $x$. Считать надо решения исходной задачи.
+1. **The equation has to be quadratic.** If the leading coefficient contains the
+   letter, the case where it is zero is treated separately: the equation becomes
+   linear and has exactly one root.
+2. **A substitution narrows the domain.** After the substitution $A=a^x$ the roots
+   come out for $A$, while they are wanted for $x$ — and only positive $A$ will do.
+   If a logarithm of the letter stands in the coefficients, it demands the positivity
+   of its own argument separately. The discriminant knows about neither, and both
+   restrictions have to be added by hand.
+3. **«Exactly one solution» and «$\Delta=0$» are not the same thing.** An equation
+   with a fraction can lose a root at a pole, and one with a substitution can lose it
+   on the way back to $x$. What has to be counted are the solutions of the original
+   problem.
 
-Проверки в этом разделе устроены соответственно: они не считают
-дискриминант, а берут ваше множество значений буквы и в каждой пробной
-точке спрашивают у самого уравнения, сколько у него решений.
+The checks in this section are built accordingly: they do not compute a discriminant
+but take your set of values of the letter and at every test point ask the equation
+itself how many solutions it has.
 """)
 
 md(r"""
-## Задание 14 🟡 — касание
+## Task 14 🟡 — a tangent
 
-Продолжение задания 11: кривая $y = x^2-x-1$, прямая $y = mx-3$,
-и в точках пересечения $x^2-(m+1)x+2=0$.
+A continuation of task 11: the curve $y = x^2-x-1$, the line $y = mx-3$, and at the
+points of intersection $x^2-(m+1)x+2=0$.
 
-Найдите все значения $m$, при которых прямая касается кривой.
+Find all the values of $m$ for which the line is tangent to the curve.
 
-Проверок здесь две, и это не дублирование. Первая берёт каждое ваше
-значение и спрашивает у уравнения, сколько у него корней, — но пробами
-нельзя заметить **пропущенное** отдельное значение, тем более
-иррациональное. Вторая сверяет набор целиком.
+There are two checks here, and that is not duplication. The first takes each of your
+values and asks the equation how many roots it has — but sampling cannot notice a
+**missing** isolated value, least of all an irrational one. The second compares the
+set as a whole.
 
-*Источник: May 2025 TZ3, Paper 1, Q4(b) (5 баллов, без калькулятора).*
+*Source: May 2025 TZ3, Paper 1, Q4(b) (5 marks, no calculator).*
 """)
 
 code(r"""
 def one_root14(mv):
-    '''Ровно ли один действительный корень у x² − (m+1)x + 2 при m = mv.'''
+    '''Does x^2 - (m+1)x + 2 have exactly one real root at m = mv.'''
     return len(solveset(x**2 - (mv + 1)*x + 2, x, S.Reals)) == 1
 
 
-my14 = ...               # множество значений m
+my14 = ...               # the set of values of m
 
-verify_param_set('Задание 14, по смыслу', my14, one_root14, var=m)
-check_set('Задание 14, оба значения', my14, '""" + D_M14 + r"""')
+verify_param_set('Task 14, by substance', my14, one_root14, var=m)
+check_set('Task 14, both values', my14, '""" + D_M14 + r"""')
 """)
 
 md(r"""
-## Задание 15 🔴 — замена, дискриминант и область
+## Task 15 🔴 — a substitution, the discriminant and the domain
 
-Найдите все значения $k$, при которых уравнение
+Find all the values of $k$ for which the equation
 
 $$e^{2x} + \ln k = 3e^x$$
 
-имеет хотя бы одно действительное решение.
+has at least one real solution.
 
-Дискриминанта здесь мало: ответ ограничен с двух сторон, и второе
-ограничение приходит не из него.
+The discriminant alone is not enough here: the answer is bounded on both sides, and
+the second bound does not come from it.
 
-*Источник: May 2023 TZ1, Paper 1, Q4 (6 баллов, без калькулятора).*
+*Source: May 2023 TZ1, Paper 1, Q4 (6 marks, no calculator).*
 """)
 
 code(r"""
 def has_root15(kv):
-    '''Есть ли у уравнения действительное решение при k = kv.'''
+    '''Does the equation have a real solution at k = kv.'''
     if kv <= 0:
-        return None          # ln k не определён: судить не о чем
+        return None          # ln k is undefined: there is nothing to judge
     return solveset(Eq(exp(2*x) + log(kv), 3*exp(x)), x, S.Reals) != S.EmptySet
 
 
-my15 = ...               # множество значений k
+my15 = ...               # the set of values of k
 
-verify_param_set('Задание 15', my15, has_root15)
+verify_param_set('Task 15', my15, has_root15)
 """)
 
 md(r"""
-## Задание 16 🔴 — одно решение и два решения
+## Task 16 🔴 — one solution and two solutions
 
-Функция $f(x) = \dfrac{2x+6}{3x+6}$ определена при $x \ne -2$, прямая
-задана как $g(x) = mx+1$, где $m \ne 0$.
+The function $f(x) = \dfrac{2x+6}{3x+6}$ is defined for $x \ne -2$, and the line is
+given by $g(x) = mx+1$, where $m \ne 0$.
 
-**(a)** Найдите значение $m$, при котором уравнение $f(x) = g(x)$ имеет
-ровно одно решение.
+**(a)** Find the value of $m$ for which the equation $f(x) = g(x)$ has exactly one
+solution.
 
-**(b)** Найдите все $m$, при которых у уравнения $f(x)=g(x)$ ровно два
-решения с $x \ge 0$.
+**(b)** Find all $m$ for which the equation $f(x)=g(x)$ has exactly two solutions
+with $x \ge 0$.
 
-Условие $m \ne 0$ здесь работает: при $m=0$ решение тоже ровно одно,
-и без этой оговорки ответ в (a) был бы другим. Проверка про оговорку
-знает и точку $m=0$ пропускает.
+The condition $m \ne 0$ is at work here: at $m=0$ there is also exactly one solution,
+and without that caveat the answer to (a) would be different. The check knows about
+the caveat and skips the point $m=0$.
 
-*Источник: May 2024 TZ2, Paper 1, Q5(b)(ii)(iii) (4 + 2 балла,
-без калькулятора).*
+*Source: May 2024 TZ2, Paper 1, Q5(b)(ii)(iii) (4 + 2 marks, no calculator).*
 """)
 
 code(r"""
 def solutions16(mv, region=S.Reals):
-    '''Решения уравнения f(x) = g(x) при m = mv в заданной области.'''
+    '''The solutions of f(x) = g(x) at m = mv in the given region.'''
     return solveset(Eq((2*x + 6)/(3*x + 6), mv*x + 1), x, region)
 
 
 def one_solution16(mv):
     if mv == 0:
-        return None          # в условии сказано m ≠ 0
+        return None          # the question says m != 0
     return len(solutions16(mv)) == 1
 
 
@@ -794,159 +788,157 @@ def two_nonneg16(mv):
     return len(solutions16(mv, Interval(0, oo))) == 2
 
 
-my16_a = ...             # значение m из пункта (a), множеством
-my16_b = ...             # множество значений m из пункта (b)
+my16_a = ...             # the value of m from part (a), as a set
+my16_b = ...             # the set of values of m from part (b)
 
-verify_param_set('Задание 16(a)', my16_a, one_solution16, var=m)
-verify_param_set('Задание 16(b)', my16_b, two_nonneg16, var=m)
+verify_param_set('Task 16(a)', my16_a, one_solution16, var=m)
+verify_param_set('Task 16(b)', my16_b, two_nonneg16, var=m)
 """)
 
 md(r"""
-## Задание 17 🔴 — множество значений через дискриминант
+## Task 17 🔴 — a range through the discriminant
 
-Найдите множество значений функции
+Find the range of the function
 
 $$f(x) = \frac{x^2-14x+24}{2x+6}.$$
 
-Приём неочевидный и стоит того, чтобы его знать: обозначьте $y = f(x)$,
-избавьтесь от дроби и посмотрите на получившееся равенство как
-на **квадратное уравнение относительно $x$** с параметром $y$. Значение
-$y$ достижимо ровно тогда, когда у этого уравнения есть корень.
+The technique is not obvious and is worth knowing: write $y = f(x)$, clear the
+fraction and look at the resulting equality as a **quadratic equation in $x$** with
+the parameter $y$. A value of $y$ is attained exactly when that equation has a
+root.
 
-Ответ запишите точно, через радикалы.
+Write the answer exactly, with surds.
 
-*Источник: November 2023 TZ1, Paper 2, Q11(e) (4 балла, с калькулятором).*
+*Source: November 2023 TZ1, Paper 2, Q11(e) (4 marks, calculator).*
 """)
 
 code(r"""
 def attained17(yv):
-    '''Принимает ли f значение yv.'''
+    '''Does f take the value yv.'''
     return solveset(Eq((x**2 - 14*x + 24)/(2*x + 6), yv), x, S.Reals) != S.EmptySet
 
 
-my17 = ...               # множество значений f
+my17 = ...               # the range of f
 
-verify_param_set('Задание 17', my17, attained17, var=y)
+verify_param_set('Task 17', my17, attained17, var=y)
 """)
 
 md(r"""
 ---
-## Теория 9. Сколько решений
+## Theory 9. How many solutions
 
-Последний приём темы и самый непохожий на остальные: здесь не решают
-вовсе. Вопрос «при каких значениях параметра решений ровно столько-то»
-почти всегда решается картинкой.
+The last technique of the topic and the least like the others: here nothing is
+solved at all. The question «for which values of the parameter are there exactly so
+many solutions» is almost always solved with a picture.
 
-**Основная картина.** Уравнение $f(x) = k$ — это горизонтальная прямая
-$y=k$ и график $y=f(x)$. Число решений равно числу пересечений, а
-меняется оно ровно тогда, когда прямая проходит через **локальный
-максимум или минимум**. Отсюда рецепт:
+**The basic picture.** The equation $f(x) = k$ is the horizontal line $y=k$ and the
+graph $y=f(x)$. The number of solutions equals the number of intersections, and it
+changes exactly when the line passes through a **local maximum or minimum**. Hence
+the recipe:
 
-1. найти стационарные точки $f$ и значения $f$ в них;
-2. эти значения — границы; между ними число решений постоянно;
-3. на самих границах прямая касается, и два решения сливаются в одно.
+1. find the stationary points of $f$ and the values of $f$ at them;
+2. those values are the boundaries; between them the number of solutions is
+   constant;
+3. at the boundaries themselves the line touches, and two solutions merge into one.
 
-Разберём это на $f(x) = x^4-4x^2$. Стационарные точки: $x=0$ со
-значением $0$ и $x=\pm\sqrt2$ со значением $-4$. Значит для $f(x)=k$
-решений нет при $k<-4$; два при $k=-4$ (минимумы касаются); четыре при
-$-4<k<0$; три при $k=0$ (прямая проходит через локальный максимум);
-и снова два при $k>0$. Пять ответов, и все пять читаются с одной
-картинки, на которой отмечены два числа — $0$ и $-4$.
+Take $f(x) = x^4-4x^2$. The stationary points are $x=0$ with value $0$ and
+$x=\pm\sqrt2$ with value $-4$. So $f(x)=k$ has no solutions for $k<-4$; two at
+$k=-4$ (the minima touch); four for $-4<k<0$; three at $k=0$ (the line passes
+through the local maximum); and two again for $k>0$. Five answers, and all five are
+read off one picture on which two numbers are marked — $0$ and $-4$.
 
-**Второй тип картины — чётность.** Если функция чётная, каждое решение
-$x_0 \ne 0$ приходит в паре с $-x_0$, и нечётное число решений возможно
-только за счёт нуля. Поэтому вопросы вида «ровно четыре решения» часто
-решаются не вычислением, а фразой «$n$ чётно».
+**A second kind of picture — parity.** If the function is even, every solution
+$x_0 \ne 0$ comes paired with $-x_0$, and an odd number of solutions is only possible
+through the zero. So questions of the form «exactly four solutions» are often solved
+not by computing but by the sentence «$n$ is even».
 
-**Что писать в ответе.** Ответ — множество значений параметра, со всеми
-оговорками про строгость: на границе число решений другое, и знаки
-$<$ или $\le$ здесь не украшение.
+**What to write in the answer.** The answer is a set of values of the parameter, with
+all the caveats about strictness: at a boundary the number of solutions is different,
+and the signs $<$ or $\le$ here are not decoration.
 """)
 
 md(r"""
-## Задание 18 🔴 — семейство кривых
+## Task 18 🔴 — a family of curves
 
-**(a)** Найдите два значения $b$, при которых кривая $y = x^3+3x^2+b$
-пересекает ось $x$ ровно в двух точках.
+**(a)** Find the two values of $b$ for which the curve $y = x^3+3x^2+b$ meets the
+$x$-axis at exactly two points.
 
-**(b)** Запишите множество значений $b$, при которых у кривой
-$y = x^3+3x^2+b$ ровно одно пересечение с осью $x$, и множество, при
-котором их три.
+**(b)** Write down the set of values of $b$ for which the curve $y = x^3+3x^2+b$ has
+exactly one $x$-intercept, and the set for which it has three.
 
-**(c)** То же для кривой $y = x^3-3x^2+b$: множества для двух, одного
-и трёх пересечений.
+**(c)** The same for the curve $y = x^3-3x^2+b$: the sets for two, one and three
+intercepts.
 
-**(d)** Уравнение $x^4(2-x)^4 = k$. Найдите все $k$, при которых у него
-ровно четыре решения.
+**(d)** The equation $x^4(2-x)^4 = k$. Find all $k$ for which it has exactly four
+solutions.
 
-*Источники: November 2023, Paper 3, Q1(a)(b)(c) (2+2+3 балла) и
-May 2021 TZ2, Paper 3, Q1(h) (5 баллов), обе бумаги с калькулятором.*
+*Sources: November 2023, Paper 3, Q1(a)(b)(c) (2+2+3 marks) and May 2021 TZ2,
+Paper 3, Q1(h) (5 marks), both calculator papers.*
 """)
 
 code(r"""
 def intercepts18(bv, av):
-    '''Сколько различных пересечений с осью x у y = x³ + a x² + b.'''
+    '''How many distinct x-intercepts y = x^3 + a x^2 + b has.'''
     return len(set(real_roots(Poly(x**3 + av*x**2 + bv, x))))
 
 
 def four_roots18(kv):
-    '''Ровно ли четыре решения у x⁴(2 − x)⁴ = k.'''
+    '''Does x^4(2 - x)^4 = k have exactly four solutions.'''
     left = lambdify(x, x**4*(2 - x)**4 - kv, 'math')
     return count_roots(left, -3, 5) == 4
 
 
-my18_a = ...             # два значения b: ровно два пересечения, a = 3
-my18_b1 = ...            # множество b: одно пересечение, a = 3
-my18_b3 = ...            # множество b: три пересечения, a = 3
-my18_c2 = ...            # два значения b: ровно два пересечения, a = −3
-my18_c1 = ...            # множество b: одно пересечение, a = −3
-my18_c3 = ...            # множество b: три пересечения, a = −3
-my18_d = ...             # множество k: ровно четыре решения
+my18_a = ...             # the two values of b: exactly two intercepts, a = 3
+my18_b1 = ...            # the set of b: one intercept, a = 3
+my18_b3 = ...            # the set of b: three intercepts, a = 3
+my18_c2 = ...            # the two values of b: exactly two intercepts, a = -3
+my18_c1 = ...            # the set of b: one intercept, a = -3
+my18_c3 = ...            # the set of b: three intercepts, a = -3
+my18_d = ...             # the set of k: exactly four solutions
 
-verify_param_set('Задание 18(a)', my18_a,
+verify_param_set('Task 18(a)', my18_a,
                  lambda bv: intercepts18(bv, 3) == 2, var=b)
-verify_param_set('Задание 18(b), одно', my18_b1,
+verify_param_set('Task 18(b), one', my18_b1,
                  lambda bv: intercepts18(bv, 3) == 1, var=b)
-verify_param_set('Задание 18(b), три', my18_b3,
+verify_param_set('Task 18(b), three', my18_b3,
                  lambda bv: intercepts18(bv, 3) == 3, var=b)
-verify_param_set('Задание 18(c), два', my18_c2,
+verify_param_set('Task 18(c), two', my18_c2,
                  lambda bv: intercepts18(bv, -3) == 2, var=b)
-verify_param_set('Задание 18(c), одно', my18_c1,
+verify_param_set('Task 18(c), one', my18_c1,
                  lambda bv: intercepts18(bv, -3) == 1, var=b)
-verify_param_set('Задание 18(c), три', my18_c3,
+verify_param_set('Task 18(c), three', my18_c3,
                  lambda bv: intercepts18(bv, -3) == 3, var=b)
-verify_param_set('Задание 18(d)', my18_d, four_roots18)
+verify_param_set('Task 18(d)', my18_d, four_roots18)
 """)
 
 md(r"""
 ---
-## Тренажёр: узнать приём за пять секунд
+## Trainer: name the technique in five seconds
 
-Ниже пятнадцать условий без решений. Для каждого напишите код приёма —
-и всё. Считать ничего не нужно; цель в том, чтобы первый ход находился
-раньше, чем начинается счёт.
+Below are fifteen statements with no solutions. For each one write the code of the
+technique — and nothing else. Nothing has to be computed; the aim is for the first
+move to be found before the computing starts.
 
-Коды: `zero` (нуль функции) · `quad` (квадратный трёхчлен) ·
-`form` (построить уравнение) · `extra` (лишние и потерянные корни) ·
-`explog` (замена и логарифмы) · `meet` (пересечение графиков) ·
-`gdc` (численно) · `disc` (дискриминант как условие) ·
-`count` (число решений)
+The codes: `zero` (a zero of a function) · `quad` (a quadratic) · `form` (build the
+equation) · `extra` (extra and lost roots) · `explog` (a substitution and
+logarithms) · `meet` (an intersection of graphs) · `gdc` (numerically) ·
+`disc` (the discriminant as a condition) · `count` (the number of solutions)
 
-1. Найдите координаты точек пересечения графика $y = \dfrac{x-5}{x+1}$ с осями.
-2. Запишите $x^2-6x+11$ в виде $(x-h)^2+k$.
-3. Решите $\log_2 x + \log_2(x-2) = 3$.
-4. При каких $c$ прямая $y = 2x+c$ касается параболы $y = x^2$?
-5. Решите $\sqrt{x+7} = x+1$.
-6. Найдите точки пересечения $y = x^2$ и $y = 3x-2$.
-7. Сколько решений у уравнения $|x^2-4| = 3$?
-8. Площадь прямоугольника со сторонами $x$ и $x+3$ равна его периметру. Составьте уравнение.
-9. Решите $e^{\sin t} = 2t$ при $0 \le t \le 3$ (Paper 2).
-10. Найдите ось симметрии графика $y = 2x^2-12x+7$.
-11. Решите $\dfrac{1}{x-1} + \dfrac{1}{x+1} = 1$.
-12. При каких $k$ уравнение $kx^2+4x+k=0$ не имеет действительных корней?
-13. Решите $4^x - 5\cdot2^x + 4 = 0$.
-14. При каких $a$ уравнение $x^3-3x+a=0$ имеет ровно три решения?
-15. Покажите, что $y = mx$ и $x^2+y^2 = 9$ пересекаются при $x^2(1+m^2) = 9$.
+1. Find the coordinates of the points where $y = \dfrac{x-5}{x+1}$ meets the axes.
+2. Write $x^2-6x+11$ in the form $(x-h)^2+k$.
+3. Solve $\log_2 x + \log_2(x-2) = 3$.
+4. For which $c$ is the line $y = 2x+c$ tangent to the parabola $y = x^2$?
+5. Solve $\sqrt{x+7} = x+1$.
+6. Find the points of intersection of $y = x^2$ and $y = 3x-2$.
+7. How many solutions does $|x^2-4| = 3$ have?
+8. The area of a rectangle with sides $x$ and $x+3$ equals its perimeter. Form the equation.
+9. Solve $e^{\sin t} = 2t$ for $0 \le t \le 3$ (Paper 2).
+10. Find the axis of symmetry of $y = 2x^2-12x+7$.
+11. Solve $\dfrac{1}{x-1} + \dfrac{1}{x+1} = 1$.
+12. For which $k$ does $kx^2+4x+k=0$ have no real roots?
+13. Solve $4^x - 5\cdot2^x + 4 = 0$.
+14. For which $a$ does $x^3-3x+a=0$ have exactly three solutions?
+15. Show that $y = mx$ and $x^2+y^2 = 9$ meet when $x^2(1+m^2) = 9$.
 """)
 
 code(r"""
@@ -961,71 +953,69 @@ trigger_check(answers, """ + repr(TRIGGER_KEY) + r""")
 
 md(r"""
 ---
-## Задание 19 🔴 — на таймере, 21 минута
+## Task 19 🔴 — on the timer, 21 minutes
 
-Полный вопрос Paper 1 без калькулятора. Четырнадцать баллов, целевое
-время примерно 21 минута.
+A whole Paper 1 question with no calculator. Fourteen marks, target time about 21
+minutes.
 
-Даны функции
+The functions are given by
 
 $$f(x) = \ln(2x-9), \qquad g(x) = 2\ln x - \ln d,$$
 
-где $d$ — положительная постоянная. Графики $f$ и $g$ пересекаются
-в двух различных точках.
+where $d$ is a positive constant. The graphs of $f$ and $g$ meet at two distinct
+points.
 
-**(b)(i)** Покажите, что $x$-координаты точек пересечения удовлетворяют
-уравнению $x^2-2dx+9d = 0$. [4]
+**(b)(i)** Show that the $x$-coordinates of the points of intersection satisfy the
+equation $x^2-2dx+9d = 0$. [4]
 
-**(b)(ii)** Отсюда покажите, что $d^2-9d>0$. Введите дискриминант —
-то выражение, из которого требуемое получается делением на 4. [3]
+**(b)(ii)** Hence show that $d^2-9d>0$. Enter the discriminant — the expression from
+which the required inequality comes by dividing by 4. [3]
 
-**(b)(iii)** Найдите множество возможных значений $d$. [2]
+**(b)(iii)** Find the set of possible values of $d$. [2]
 
-**(c)** При $d = 10$ графики пересекаются в точках с $x = p$ и $x = q$,
-где $p<q$. Найдите $q-p$ в виде $a\sqrt{b}$, где $a, b$ — целые
-положительные. [5]
+**(c)** For $d = 10$ the graphs meet at the points with $x = p$ and $x = q$, where
+$p<q$. Find $q-p$ in the form $a\sqrt{b}$, where $a, b$ are positive integers. [5]
 
-*Источник: November 2023 TZ2, Paper 1, Q10(b)(c) (9 + 5 баллов,
-без калькулятора).*
+*Source: November 2023 TZ2, Paper 1, Q10(b)(c) (9 + 5 marks, no calculator).*
 """)
 
 code(r"""
-my19_eq = ...            # уравнение из пункта (b)(i)
-my19_disc = ...          # дискриминант из пункта (b)(ii)
-my19_d = ...             # множество значений d из пункта (b)(iii)
-my19_roots = [...]       # корни при d = 10
-my19_qp = ...            # q − p
+my19_eq = ...            # the equation from part (b)(i)
+my19_disc = ...          # the discriminant from part (b)(ii)
+my19_d = ...             # the set of values of d from part (b)(iii)
+my19_roots = [...]       # the roots at d = 10
+my19_qp = ...            # q - p
 
-verify_equation('Задание 19(b)(i)', my19_eq, x**2 - 2*d*x + 9*d)
-verify_identity('Задание 19(b)(ii)', my19_disc, 4*d**2 - 36*d, var=d)
-verify_solution_set('Задание 19(b)(iii)', my19_d, d**2 - 9*d > 0, var=d,
+verify_equation('Task 19(b)(i)', my19_eq, x**2 - 2*d*x + 9*d)
+verify_identity('Task 19(b)(ii)', my19_disc, 4*d**2 - 36*d, var=d)
+verify_solution_set('Task 19(b)(iii)', my19_d, d**2 - 9*d > 0, var=d,
                     domain=Interval.open(0, oo))
-verify_root_set('Задание 19(c), корни', my19_roots, x**2 - 20*x + 90)
-check_expr('Задание 19(c), q − p', my19_qp, '""" + D_QP19 + r"""')
+verify_root_set('Task 19(c), the roots', my19_roots, x**2 - 20*x + 90)
+check_expr('Task 19(c), q - p', my19_qp, '""" + D_QP19 + r"""')
 """)
 
 md(r"""
 ---
-# Решения
+# Solutions
 
-Ниже полный разбор каждого задания с разметкой markscheme. Открывайте
-после того, как решили сами: разбор объясняет не только ответ, но и то,
-за что именно ставят баллы.
+Below is a full working of every task with the markscheme's marking. Open them after
+you have solved on your own: the working explains not only the answer but what
+exactly the marks are given for.
 """)
 
 md(r"""
-## Решение 1 — нули и пересечения
+## Solution 1 — zeros and intercepts
 
-**(a)** Дробь равна нулю, когда числитель ноль, а знаменатель нет:
+**(a)** A fraction is zero when the numerator is zero and the denominator is not:
 
 $$7x+7 = 0 \iff x = -1, \qquad 2\cdot(-1)-4 = -6 \ne 0.$$
 
-**(b)** Ось $y$ — это $x=0$:
+**(b)** The $y$-axis is $x=0$:
 
 $$g(0) = 1 - \frac{1}{0-2} = 1 + \frac12 = \frac32
 \ \Longrightarrow\ \left(0,\ \tfrac32\right).$$
 
-Ось $x$ — это $g(x)=0$:
+The $x$-axis is $g(x)=0$:
 
 $$1 = \frac{1}{x-2} \iff x-2 = 1 \iff x = 3
 \ \Longrightarrow\ (3,\ 0).$$
@@ -1036,67 +1026,68 @@ my1b_x = [3]
 my1b_y = Rational(3, 2)
 ```
 
-**Разметка.** (a): M1 за понимание, что нужно $f(x)=0$, A1 за $x=-1$.
-(b): A1 за $(0, \frac32)$, A1 за $(3, 0)$.
+**The marking.** (a): M1 for realising that $f(x)=0$ is wanted, A1 for $x=-1$. (b):
+A1 for $(0, \frac32)$, A1 for $(3, 0)$.
 
-**Про слово coordinates.** В (b) спрашивают координаты, и ответ «$3$ и
-$\frac32$» балла не получит: нужны пары. Это не придирка проверяющего,
-а разница между «нуль функции» и «точка на графике».
+**About the word coordinates.** In (b) coordinates are asked for, and the answer
+«$3$ and $\frac32$» earns no mark: pairs are wanted. That is not an examiner's
+quibble but the difference between «a zero of a function» and «a point on a
+graph».
 
-**Знаменатель проверяют всегда.** Здесь он не мешает, но привычка
-нужна: у $\frac{x-2}{x^2-4}$ числитель обнуляется в точке $x=2$, где
-дробь не определена вовсе, и нулей у функции нет.
+**The denominator is always checked.** Here it does not interfere, but the habit is
+needed: for $\frac{x-2}{x^2-4}$ the numerator vanishes at $x=2$, where the fraction
+is undefined altogether, and the function has no zeros.
 """)
 
 md(r"""
-## Решение 2 — вершинная форма
+## Solution 2 — the vertex form
 
-Раскрываем и выделяем полный квадрат:
+Expand and complete the square:
 
 $$5(x+1)(x+3) = 5(x^2+4x+3) = 5\left[(x+2)^2 - 4 + 3\right]
 = 5(x+2)^2 - 5.$$
 
-Короче — через симметрию: корни $-1$ и $-3$, ось симметрии посередине,
-$h = \frac{-1-3}{2} = -2$, и $k = f(-2) = 5\cdot1\cdot(-1) = -5$.
+Shorter — through the symmetry: the roots are $-1$ and $-3$, the axis of symmetry is
+midway, $h = \frac{-1-3}{2} = -2$, and $k = f(-2) = 5\cdot1\cdot(-1) = -5$.
 
 ```python
 my2 = 5*(x + 2)**2 - 5
 ```
 
-**Разметка.** A1 за $a=5$, M1 за попытку (раскрыть и выделить квадрат
-**или** взять полусумму корней), A1 за $h=-2$, A1 за готовую запись.
+**The marking.** A1 for $a=5$, M1 for an attempt (expanding and completing the
+square **or** taking the mean of the roots), A1 for $h=-2$, A1 for the finished
+writing.
 
-**Второй путь быстрее.** Корни видны сразу, ось симметрии — их
-полусумма, значение в вершине считается одной подстановкой. Раскрывать
-скобки не нужно вовсе.
+**The second route is faster.** The roots are visible at once, the axis of symmetry
+is their mean, and the value at the vertex is one substitution. There is no need to
+expand the brackets at all.
 
-**Почему проверка смотрит на форму.** Вопрос звучит «write in the form»,
-и это требование к записи, как «в виде произведения линейных
-множителей» в A4. Ответ $5x^2+20x+15$ тому же числу равен, но формой
-не является: из него не видно ни вершины, ни наименьшего значения.
+**Why the check looks at the form.** The question says «write in the form», and that
+is a requirement on the writing, like «as a product of linear factors» in A4. The
+answer $5x^2+20x+15$ equals the same number but is not the form: neither the vertex
+nor the least value is visible in it.
 """)
 
 md(r"""
-## Решение 3 — вершина на прямой
+## Solution 3 — a vertex on a line
 
-**(a)** У $f(x) = -x^2+4x+p$ вершина при
-$x = -\frac{b}{2a} = -\frac{4}{2\cdot(-1)} = 2$. На прямой в этой точке
-$y = 2\cdot2-1 = 3$, а на параболе $f(2) = -4+8+p = p+4$. Значит
+**(a)** For $f(x) = -x^2+4x+p$ the vertex is at
+$x = -\frac{b}{2a} = -\frac{4}{2\cdot(-1)} = 2$. On the line at that point
+$y = 2\cdot2-1 = 3$, and on the parabola $f(2) = -4+8+p = p+4$. So
 
 $$p + 4 = 3 \iff p = -1. \qquad \blacksquare$$
 
-**(b)** У $g(x) = x^2+qx-1$ вершина при $x = -\frac q2$, и
+**(b)** For $g(x) = x^2+qx-1$ the vertex is at $x = -\frac q2$, and
 
 $$g\left(-\tfrac q2\right) = \frac{q^2}{4} - \frac{q^2}{2} - 1
 = -\frac{q^2}{4} - 1.$$
 
-На прямой в той же точке $y = 2\left(-\frac q2\right) - 1 = -q-1$.
-Приравниваем:
+On the line at the same point $y = 2\left(-\frac q2\right) - 1 = -q-1$. Equate:
 
 $$-\frac{q^2}{4} - 1 = -q - 1 \iff \frac{q^2}{4} = q
 \iff q^2 - 4q = 0 \iff q(q-4) = 0.$$
 
-Корни $q=0$ и $q=4$. По условию $q$ — ненулевая постоянная, поэтому
+The roots are $q=0$ and $q=4$. By the question $q$ is a non-zero constant, so
 $q = 4$.
 
 ```python
@@ -1104,36 +1095,37 @@ my3_p = -1
 my3_q = [4]
 ```
 
-**Разметка.** (a): A1 за $x$-координату вершины, M1 за подстановку,
-$p=-1$ — AG. (b): A1 за $-\frac q2$, M1 за подстановку в прямую,
-M1 за подстановку в $g$, A1 за $q^2-4q=0$, A1 за $q=4$ с оговоркой.
+**The marking.** (a): A1 for the $x$-coordinate of the vertex, M1 for the
+substitution, $p=-1$ is AG. (b): A1 for $-\frac q2$, M1 for substituting into the
+line, M1 for substituting into $g$, A1 for $q^2-4q=0$, A1 for $q=4$ with the
+caveat.
 
-**Отброшенный корень здесь законен.** При $q=0$ вершина параболы
-$y = x^2-1$ это точка $(0,-1)$, и она **лежит** на прямой $y=2x-1$.
-Математика его не отбрасывает — его отбрасывает фраза условия «$p$ and
-$q$ are non-zero constants». Именно поэтому в проверке стоит
-`domain=Complement(S.Reals, FiniteSet(0))`: область берётся из условия,
-а не из уравнения.
+**The discarded root is legitimate here.** At $q=0$ the vertex of the parabola
+$y = x^2-1$ is the point $(0,-1)$, and it **does** lie on the line $y=2x-1$. The
+mathematics does not discard it — the question's phrase «$p$ and $q$ are non-zero
+constants» does. That is why the check has
+`domain=Complement(S.Reals, FiniteSet(0))`: the domain is taken from the question,
+not from the equation.
 
-**Не делите на $q$.** Из $\frac{q^2}{4} = q$ так получается $q=4$ —
-верный ответ и потерянный корень. В экзамене это сходит с рук, пока
-потерянный корень не оказывается нужным; привычка вредная.
+**Do not divide by $q$.** From $\frac{q^2}{4} = q$ that way you get $q=4$ — the
+right answer and a lost root. In the exam it gets away with it until the lost root
+turns out to be the one wanted; the habit is a bad one.
 """)
 
 md(r"""
-## Решение 4 — по корням и оси симметрии
+## Solution 4 — from the roots and the axis of symmetry
 
-**(a)** Ось симметрии проходит посередине между корнями:
+**(a)** The axis of symmetry runs midway between the roots:
 
 $$\frac{-\frac12 + p}{2} = 2 \iff -\frac12 + p = 4 \iff p = \frac92.
 \qquad \blacksquare$$
 
-**(b)** Зная оба корня и старший коэффициент 1:
+**(b)** Knowing both roots and the leading coefficient 1:
 
 $$g(x) = \left(x+\tfrac12\right)\left(x-\tfrac92\right)
 = x^2 - 4x - \tfrac94,$$
 
-то есть $b = -4$, $c = -\frac94$.
+that is, $b = -4$, $c = -\frac94$.
 
 ```python
 my4_p = Rational(9, 2)
@@ -1141,28 +1133,29 @@ my4_b = -4
 my4_c = Rational(-9, 4)
 ```
 
-**Разметка.** (a): 1 балл, ответ AG. (b): M1 за запись через корни или
-за использование оси симметрии, A1 за $b$, A1 за $c$.
+**The marking.** (a): 1 mark, the answer is AG. (b): M1 for writing it through the
+roots or for using the axis of symmetry, A1 for $b$, A1 for $c$.
 
-**Три дороги к $b$ и $c$.** Через произведение скобок; через
-$b = -2h = -4$ и подстановку одного корня; через систему из двух
-уравнений $g(-\frac12)=0$, $g(\frac92)=0$. Первая короче, но проверить
-себя стоит второй: $b$ обязано равняться $-2\cdot2$.
+**Three roads to $b$ and $c$.** Through the product of brackets; through
+$b = -2h = -4$ and substituting one root; through the system of two equations
+$g(-\frac12)=0$, $g(\frac92)=0$. The first is shorter, but it pays to check with the
+second: $b$ has to equal $-2\cdot2$.
 
-**Формулы Виета — тот же факт.** $x_1+x_2 = -b$ даёт
-$-\frac12+\frac92 = 4 = -b$, а $x_1x_2 = c$ даёт
-$-\frac12\cdot\frac92 = -\frac94 = c$. Это A4, и здесь виден стык двух
-тем: ось симметрии — это полусумма корней, то есть $-\frac{b}{2}$.
+**Vieta's formulas are the same fact.** $x_1+x_2 = -b$ gives
+$-\frac12+\frac92 = 4 = -b$, and $x_1x_2 = c$ gives
+$-\frac12\cdot\frac92 = -\frac94 = c$. That is A4, and here the join of the two
+topics shows: the axis of symmetry is the mean of the roots, that is,
+$-\frac{b}{2}$.
 """)
 
 md(r"""
-## Решение 5 — площадь равна периметру
+## Solution 5 — the area equals the perimeter
 
-Площадь $s^2$, периметр $4s$, по условию они равны:
+The area is $s^2$, the perimeter $4s$, and by the question they are equal:
 
 $$s^2 = 4s \iff s^2 - 4s = 0 \iff s(s-4) = 0.$$
 
-Корни $s=0$ и $s=4$. Сторона квадрата положительна, поэтому
+The roots are $s=0$ and $s=4$. The side of a square is positive, so
 
 $$s = 4.$$
 
@@ -1170,46 +1163,45 @@ $$s = 4.$$
 my5 = [4]
 ```
 
-**Разметка.** A1 за $A=s^2$ и $P=4s$, M1 за приравнивание, A1 за $s=4$.
-И примечание markscheme дословно: **A1M1A0**, если в ответе записаны оба
-значения, $s=4$ и $s=0$.
+**The marking.** A1 for $A=s^2$ and $P=4s$, M1 for equating them, A1 for $s=4$. And
+the markscheme's note word for word: **A1M1A0** if both values, $s=4$ and $s=0$, are
+written in the answer.
 
-**Балл стоит за отбрасывание.** Это самый ясный пример темы: вся
-алгебра здесь на полстроки, а третий балл — за то, что нуль не попал
-в ответ. Проверка устроена так же: `domain=Interval.open(0, oo)`.
+**The mark is for the discarding.** This is the clearest example in the topic: all
+the algebra here is half a line, and the third mark is for the zero not reaching the
+answer. The check is built the same way: `domain=Interval.open(0, oo)`.
 
-**Не делите на $s$.** Соблазн большой: $s^2=4s \Rightarrow s=4$
-в одну строку. Ответ совпадает, но приём неверный — так теряют корень,
-и в следующем задании это будет стоить решения.
+**Do not divide by $s$.** The temptation is strong: $s^2=4s \Rightarrow s=4$ in one
+line. The answer matches, but the method is wrong — that is how a root gets lost, and
+in the next task it would cost the solution.
 """)
 
 md(r"""
-## Решение 6 — то же для прямоугольного треугольника
+## Solution 6 — the same for a right-angled triangle
 
-**(a)** Площадь и периметр:
+**(a)** The area and the perimeter:
 
 $$A = \frac12 ab, \qquad P = a + b + \sqrt{a^2+b^2}.$$
 
-Приравниваем и изолируем корень:
+Equate them and isolate the root:
 
 $$\frac12 ab = a+b+\sqrt{a^2+b^2}
 \iff \sqrt{a^2+b^2} = \frac12 ab - a - b.$$
 
-Возводим обе части в квадрат:
+Square both sides:
 
 $$a^2+b^2 = \frac{a^2b^2}{4} + a^2 + b^2 - a^2b - ab^2 + 2ab,$$
 
-и после сокращения $a^2+b^2$
+and after cancelling $a^2+b^2$
 
 $$\frac{a^2b^2}{4} - a^2 b - ab^2 + 2ab = 0.$$
 
-**(b)** Каждое слагаемое делится на $ab$, а $ab > 0$, поэтому делить
-можно:
+**(b)** Every term is divisible by $ab$, and $ab > 0$, so dividing is allowed:
 
 $$\frac{ab}{4} - a - b + 2 = 0 \iff ab - 4a - 4b + 8 = 0
 \iff a(b-4) = 4b - 8.$$
 
-Осталось выделить целую часть:
+What is left is separating the whole part:
 
 $$a = \frac{4b-8}{b-4} = \frac{4(b-4)+8}{b-4} = \frac{8}{b-4} + 4.
 \qquad \blacksquare$$
@@ -1219,80 +1211,79 @@ my6_sq = a**2*b**2/4 - a**2*b - a*b**2 + 2*a*b
 my6_a = 8/(b - 4) + 4
 ```
 
-**Разметка.** A1A1 за $A$ и $P$ по отдельности, M1 за приравнивание,
-M1 за изоляцию корня, M1 за попытку возвести в квадрат, A1 за
-промежуточное упрощение, A1 за требуемый вид (AG). И примечание:
-за проверку готового ответа подстановкой — максимум A1A1M1M1M0A0A0.
+**The marking.** A1A1 for $A$ and $P$ separately, M1 for equating them, M1 for
+isolating the root, M1 for attempting to square, A1 for the intermediate
+simplification, A1 for the required form (AG). And the note: verifying the given
+answer by substitution earns at most A1A1M1M1M0A0A0.
 
-**Почему деление на $ab$ здесь законно.** Потому что $a$ и $b$ — длины
-сторон, и обе положительны. Без этой оговорки шаг неверен: делить
-на выражение с переменными значит объявлять его ненулевым.
+**Why dividing by $ab$ is legitimate here.** Because $a$ and $b$ are side lengths
+and both are positive. Without that caveat the step is wrong: dividing by an
+expression with variables means declaring it non-zero.
 
-**Возведение в квадрат добавляет корни, и это не страшно.** Здесь
-формально появляется вторая ветвь ($\frac12ab-a-b$ могло быть
-отрицательным), но ответ — не число, а формула, и лишних корней
-у формулы не бывает. Проверять придётся в следующем задании, когда
-из формулы начнут получать конкретные треугольники.
+**Squaring adds roots, and that is not frightening here.** Formally a second branch
+appears ($\frac12ab-a-b$ could have been negative), but the answer is not a number
+but a formula, and a formula has no surplus roots. The checking will have to be done
+in the next task, when concrete triangles start coming out of the formula.
 
-**Про «verifying».** Примечание markscheme про максимум баллов
-за проверку — общее место всех AG-вопросов: подставить готовый ответ
-и увидеть, что сходится, это не вывод.
+**About «verifying».** The markscheme's note about the maximum marks for verifying is
+common to every AG question: substituting the finished answer and seeing that it
+works is not a derivation.
 """)
 
 md(r"""
-## Решение 7 — целые решения дробного уравнения
+## Solution 7 — the integer solutions of a rational equation
 
-Из $a = \frac{8}{b-4} + 4$ видно: $a$ целое тогда и только тогда, когда
-$b-4$ делит 8. Стороны положительны, поэтому нас интересуют
-положительные делители:
+From $a = \frac{8}{b-4} + 4$ it is clear that $a$ is an integer if and only if
+$b-4$ divides 8. The sides are positive, so the positive divisors are the ones of
+interest:
 
 $$b - 4 \in \{1, 2, 4, 8\} \ \Longrightarrow\ b \in \{5, 6, 8, 12\},$$
 
-и соответственно
+and correspondingly
 
 $$a = 12,\ 8,\ 6,\ 5.$$
 
-Отрицательные делители дают $b \le 3$ и $a \le 0$ — не треугольник.
+The negative divisors give $b \le 3$ and $a \le 0$ — not a triangle.
 
-Пар получилось четыре, но треугольников два: $(a,b) = (12,5)$ и
-$(5,12)$ — один и тот же треугольник со сторонами $5, 12, 13$, а
-$(8,6)$ и $(6,8)$ — треугольник $6, 8, 10$.
+There are four pairs but two triangles: $(a,b) = (12,5)$ and $(5,12)$ are one and the
+same triangle with sides $5, 12, 13$, and $(8,6)$ and $(6,8)$ are the triangle
+$6, 8, 10$.
 
 ```python
 my7_b = [5, 6, 8, 12]
 my7_n = 2
 ```
 
-**Разметка.** M1 за метод (перебор $b$ или свойство делимости),
-A1 за $(5,12,13)$, A1 за $(6,8,10)$. И примечание: A1A0, если найден
-один треугольник целиком или у обоих по две стороны.
+**The marking.** M1 for a method (running through $b$ or the divisibility
+property), A1 for $(5,12,13)$, A1 for $(6,8,10)$. And the note: A1A0 if one triangle
+is found in full, or two sides of each.
 
-**Уравнение симметрично, задача — нет.** Формула не различает катеты,
-поэтому её решения приходят парами. Вопрос спрашивает про треугольники,
-и превратить четыре решения в два — отдельный шаг, за который здесь
-и стоят баллы.
+**The equation is symmetric, the question is not.** The formula does not tell the
+legs apart, so its solutions come in pairs. The question asks about triangles, and
+turning four solutions into two is a separate step, which is what the marks are for
+here.
 
-**Почему делители, а не перебор.** Перебор тоже принимается, но он
-бесконечен, если не заметить, что $\frac{8}{b-4}$ убывает: уже при
-$b=13$ дробь меньше 1, и целой она больше не станет. Делимость даёт
-конечный список сразу.
+**Why divisors rather than a search.** A search is accepted too, but it is endless
+unless you notice that $\frac{8}{b-4}$ decreases: already at $b=13$ the fraction is
+below 1 and will never be an integer again. Divisibility gives the finite list at
+once.
 
-**Знакомые числа.** $(5,12,13)$ и $(6,8,10)$ — пифагоровы тройки,
-и вторая это удвоенная $(3,4,5)$. Что именно они и получились —
-следствие условия $A=P$, а не совпадение: у $(3,4,5)$ площадь 6,
-периметр 12, поэтому удвоение сторон удваивает периметр и учетверяет
-площадь, и они сравниваются.
+**Familiar numbers.** $(5,12,13)$ and $(6,8,10)$ are Pythagorean triples, and the
+second is $(3,4,5)$ doubled. That it is precisely these that came out follows from
+the condition $A=P$ and is no coincidence: $(3,4,5)$ has area 6 and perimeter 12, so
+doubling the sides doubles the perimeter and quadruples the area, and they become
+equal.
 """)
 
 md(r"""
-## Решение 8 — логарифм и его область
+## Solution 8 — a logarithm and its domain
 
-График пересекает ось $x$ там, где $f(x)=0$:
+The graph meets the $x$-axis where $f(x)=0$:
 
 $$\ln(x^2-16) = 0 \iff x^2-16 = e^0 = 1 \iff x^2 = 17
 \iff x = \pm\sqrt{17}.$$
 
-По условию $x>4$, а $\sqrt{17} = 4.123\ldots > 4$, поэтому
+By the question $x>4$, and $\sqrt{17} = 4.123\ldots > 4$, so
 
 $$\alpha = \sqrt{17}.$$
 
@@ -1300,33 +1291,33 @@ $$\alpha = \sqrt{17}.$$
 my8 = [sqrt(17)]
 ```
 
-**Разметка.** M1 за $\ln(x^2-16)=0$, A1 за $x^2=17$ или $x=\pm\sqrt{17}$,
-A1 за $\alpha=\sqrt{17}$.
+**The marking.** M1 for $\ln(x^2-16)=0$, A1 for $x^2=17$ or $x=\pm\sqrt{17}$, A1 for
+$\alpha=\sqrt{17}$.
 
-**Оба балла после M1 — про отбор.** Средний за то, что корней два,
-последний за то, что в ответ идёт один. Записать сразу $\sqrt{17}$,
-не показав $\pm$, — потеря A1: из работы не видно, что выбор был.
+**Both marks after the M1 are about selection.** The middle one for there being two
+roots, the last one for one of them going into the answer. Writing $\sqrt{17}$
+straight away without showing the $\pm$ loses an A1: the work does not show that a
+choice was made.
 
-**Точное значение.** «Exact value» означает радикал: $4.12$ не
-засчитывается. В Paper 1 калькулятора и нет, но привычка округлять
-доживает до экзамена.
+**The exact value.** «Exact value» means a surd: $4.12$ does not count. On Paper 1
+there is no calculator anyway, but the habit of rounding survives to the exam.
 
-**Область здесь двойная.** Само выражение $\ln(x^2-16)$ требует
-$|x|>4$, и $-\sqrt{17}$ этому не противоречит — его отбрасывает
-отдельное условие задачи $x>4$. Два разных ограничения, и оба надо
-держать в голове.
+**The domain here is double.** The expression $\ln(x^2-16)$ itself requires
+$|x|>4$, and $-\sqrt{17}$ does not contradict that — it is thrown out by the
+question's separate condition $x>4$. Two different restrictions, and both have to be
+kept in mind.
 """)
 
 md(r"""
-## Решение 9 — квадратное по $3^x$
+## Solution 9 — quadratic in $3^x$
 
-Замечаем, что $9^x = (3^2)^x = (3^x)^2$, и обозначаем $A = 3^x$:
+Notice that $9^x = (3^2)^x = (3^x)^2$ and put $A = 3^x$:
 
 $$3A^2 + 5A - 2 = 0 \iff (3A-1)(A+2) = 0
-\iff A = \frac13 \ \text{или}\ A = -2.$$
+\iff A = \frac13 \ \text{or}\ A = -2.$$
 
-Показательная функция положительна, поэтому $A=-2$ отбрасывается,
-а из $3^x = \frac13 = 3^{-1}$ получаем
+An exponential is positive, so $A=-2$ is discarded, and from
+$3^x = \frac13 = 3^{-1}$ we get
 
 $$x = -1.$$
 
@@ -1334,37 +1325,37 @@ $$x = -1.$$
 my9 = [-1]
 ```
 
-**Разметка.** M1 за распознавание квадратного по $3^x$, M1 за попытку
-решить квадратное, A1 за разложение или формулу корней, A1 за
-$3^x=\frac13$ (и $3^x=-2$), A1 за $x=-1$.
+**The marking.** M1 for recognising a quadratic in $3^x$, M1 for attempting to solve
+the quadratic, A1 for the factorisation or the formula, A1 for $3^x=\frac13$ (and
+$3^x=-2$), A1 for $x=-1$.
 
-**Отбрасывание тут бесплатное, но именное.** Markscheme принимает ответ
-«$x=-1$ и $x=\log_3(-2)$» — вторая запись бессмысленна, но её терпят.
-А вот любой другой лишний корень обнуляет последний балл.
+**The discarding here is free but named.** The markscheme accepts the answer
+«$x=-1$ and $x=\log_3(-2)$» — the second writing is meaningless but tolerated. Any
+other extra root, though, kills the last mark.
 
-**Где ломается замена.** Частая ошибка — решить квадратное и
-остановиться: $A=\frac13$ это не ответ, вопрос был про $x$. Обратный
-ход $3^x = \frac13 \Rightarrow x = -1$ и есть последний A1.
+**Where the substitution breaks.** A frequent mistake is to solve the quadratic and
+stop: $A=\frac13$ is not the answer, the question was about $x$. The way back
+$3^x = \frac13 \Rightarrow x = -1$ is the last A1.
 """)
 
 md(r"""
-## Решение 10 — три закона логарифмов подряд
+## Solution 10 — three log laws in a row
 
-Начинаем с дроби. По формуле смены базы $\frac{1}{\log_2 3} =
-\log_3 2$, поэтому
+Start with the fraction. By the change of base
+$\frac{1}{\log_2 3} = \log_3 2$, so
 
 $$\frac{1}{2\log_2 3} = \frac12\log_3 2 = \log_3 \sqrt2.$$
 
-Теперь справа два логарифма по базе 3, объединяем их:
+Now there are two logarithms to base 3 on the right, and they combine:
 
 $$\log_3 \sqrt x = \log_3 \sqrt2 + \log_3 (4x^3)
 = \log_3\left(4\sqrt2\, x^3\right).$$
 
-Логарифмы по одной базе равны — значит равны аргументы:
+Logarithms to the same base are equal — so the arguments are equal:
 
 $$\sqrt x = 4\sqrt2\, x^3.$$
 
-Возводим в квадрат:
+Square:
 
 $$x = 32x^6 \iff 32x^5 = 1 \iff x^5 = \frac{1}{32}
 \iff x = \frac12.$$
@@ -1373,33 +1364,33 @@ $$x = 32x^6 \iff 32x^5 = 1 \iff x^5 = \frac{1}{32}
 my10 = [Rational(1, 2)]
 ```
 
-**Разметка.** M1 за попытку сменить базу, M1 за вынесение показателя,
-M1 за объединение логарифмов, A1 за $x^5 = \frac1{32}$, A1 за
+**The marking.** M1 for attempting the change of base, M1 for taking the exponent
+out, M1 for combining the logarithms, A1 for $x^5 = \frac1{32}$, A1 for
 $x=\frac12$.
 
-**Три M1 не за порядок, а за факт.** Примечание markscheme прямо
-говорит: три метода могут применяться в любом порядке и в любой момент
-решения. Считаются попытки, а не последовательность.
+**The three M1s are not for the order but for the fact.** The markscheme says
+directly: the three methods may be applied in any order and at any point of the
+solution. Attempts are counted, not the sequence.
 
-**Дробь — это подсказка.** $\frac{1}{2\log_2 3}$ выглядит как что-то
-лишнее, а на деле это единственное место, где нужна смена базы, и
-с него решение и начинается. Полезно запомнить форму:
+**The fraction is a hint.** $\frac{1}{2\log_2 3}$ looks like something superfluous,
+while in fact it is the only place where the change of base is needed, and the
+solution starts from it. The form is worth remembering:
 $\frac{1}{\log_b a} = \log_a b$.
 
-**Про возведение в квадрат.** Шаг неравносильный, но здесь безопасен:
-$x>0$ по условию, обе части положительны. Корень $x=\frac12$ проверку
-проходит: $\sqrt{0.5} = 0.7071$, $4\sqrt2\cdot0.125 = 0.7071$.
+**About the squaring.** The step is not an equivalence, but it is safe here: $x>0$ by
+the question and both sides are positive. The root $x=\frac12$ passes the check:
+$\sqrt{0.5} = 0.7071$, $4\sqrt2\cdot0.125 = 0.7071$.
 """)
 
 md(r"""
-## Решение 11 — «show that» про пересечение
+## Solution 11 — a «show that» about an intersection
 
-Точки пересечения — это одинаковые $x$ и одинаковые $y$, поэтому
-правые части равны:
+Points of intersection have the same $x$ and the same $y$, so the right-hand sides
+are equal:
 
 $$x^2-x-1 = mx-3.$$
 
-Переносим всё влево:
+Take everything to the left:
 
 $$x^2-x-1-mx+3 = 0 \iff x^2 - (m+1)x + 2 = 0. \qquad \blacksquare$$
 
@@ -1407,41 +1398,39 @@ $$x^2-x-1-mx+3 = 0 \iff x^2 - (m+1)x + 2 = 0. \qquad \blacksquare$$
 my11 = Eq(x**2 - (m + 1)*x + 2, 0)
 ```
 
-**Разметка.** M1 за приравнивание $y = mx-3$ и $y = x^2-x-1$,
-A1 за любую верную промежуточную запись
-($x^2-x-1-(mx-3)=0$ или $mx-x^2+x+2=0$); итог — AG.
+**The marking.** M1 for equating $y = mx-3$ and $y = x^2-x-1$, A1 for any correct
+intermediate writing ($x^2-x-1-(mx-3)=0$ or $mx-x^2+x+2=0$); the result is AG.
 
-**Два балла за две строки.** Это весь пункт (a), и в нём нет ничего,
-кроме переноса слагаемых. Тем не менее пропустить его нельзя: дальше
-на этом уравнении стоит весь вопрос.
+**Two marks for two lines.** That is the whole of part (a), and there is nothing in
+it but moving terms. Even so it cannot be skipped: the whole question stands on that
+equation afterwards.
 
-**Что принимает проверка.** Любую запись, отличающуюся переносом
-слагаемых и множителем-числом: $2x^2-2(m+1)x+4=0$ пройдёт. А вот
-домноженное на $x$ — нет: у такого уравнения появился корень $x=0$,
-которого у исходного не было.
+**What the check accepts.** Any writing that differs by moving terms and a numerical
+factor: $2x^2-2(m+1)x+4=0$ passes. But one multiplied by $x$ does not: such an
+equation has acquired the root $x=0$, which the original did not have.
 """)
 
 md(r"""
-## Решение 12 — две семьи кривых
+## Solution 12 — two families of curves
 
-В обоих уравнениях слева стоит $y^2$, поэтому правые части равны:
+Both equations have $y^2$ on the left, so the right-hand sides are equal:
 
 $$4a^2-4ax = 4b^2+4bx.$$
 
-Собираем $x$ в одну сторону, остальное в другую:
+Collect the $x$ on one side and the rest on the other:
 
 $$4a^2-4b^2 = 4bx+4ax \iff 4(a-b)(a+b) = 4x(a+b).$$
 
-Числа $a$ и $b$ положительны, значит $a+b>0$, и на него можно поделить:
+The numbers $a$ and $b$ are positive, so $a+b>0$ and it can be divided out:
 
 $$x = a - b.$$
 
-Подставляем обратно в первое уравнение:
+Substitute back into the first equation:
 
 $$y^2 = 4a^2 - 4a(a-b) = 4a^2-4a^2+4ab = 4ab
 \ \Longrightarrow\ y = \pm2\sqrt{ab}.$$
 
-Получились ровно точки $M(a-b,\ 2\sqrt{ab})$ и $N(a-b,\ -2\sqrt{ab})$.
+Those are exactly the points $M(a-b,\ 2\sqrt{ab})$ and $N(a-b,\ -2\sqrt{ab})$.
 $\blacksquare$
 
 ```python
@@ -1449,42 +1438,41 @@ my12_x = a - b
 my12_y = 2*sqrt(a*b)
 ```
 
-**Разметка.** M1 за приравнивание, M1 за попытку решить относительно
-$x$, A1 за $x = a-b$, M1 за подстановку, A1 за $y^2=4ab$, A1 за оба
-знака корня; координаты — AG.
+**The marking.** M1 for equating, M1 for attempting to solve for $x$, A1 for
+$x = a-b$, M1 for the substitution, A1 for $y^2=4ab$, A1 for both signs of the root;
+the coordinates are AG.
 
-**Разложение на множители, а не деление.** $4a^2-4b^2 = 4x(a+b)$
-раскладывается в $4(a-b)(a+b) = 4x(a+b)$, и дальше сокращение видно
-без каких-либо оговорок про знак. Тот же ход, что в задании 5:
-раскладывать надёжнее, чем делить.
+**Factorising rather than dividing.** $4a^2-4b^2 = 4x(a+b)$ factorises into
+$4(a-b)(a+b) = 4x(a+b)$, and from there the cancellation is visible with no caveats
+about signs. The same move as in task 5: factorising is safer than dividing.
 
-**Оба знака обязательны.** Точек две, и вторая получается не «по
-симметрии», а из того, что $y^2 = 4ab$ имеет два корня. Потерять
-минус — потерять A1.
+**Both signs are compulsory.** There are two points, and the second comes not «by
+symmetry» but from the fact that $y^2 = 4ab$ has two roots. Losing the minus loses an
+A1.
 
-**Зачем такая задача в Paper 3.** Это первый шаг исследования про
-ортогональные семейства: дальше в том же вопросе считают угол между
-кривыми в точке $M$. Пересечение здесь — не цель, а вход в тему.
+**Why such a question is on Paper 3.** It is the first step of an investigation about
+orthogonal families: later in the same question the angle between the curves at $M$ is
+computed. The intersection here is not the goal but the entrance to the topic.
 """)
 
 md(r"""
-## Решение 13 — два численных решения
+## Solution 13 — two numerical solutions
 
-**(a)** Уравнение $90e^{-0.5x} = x$ руками не решается. Строим
-$y = 90e^{-0.5x}$ и $y = x$, берём точку пересечения:
+**(a)** The equation $90e^{-0.5x} = x$ does not solve by hand. Draw
+$y = 90e^{-0.5x}$ and $y = x$ and take the intersection:
 
 $$x = 5.56619\ldots \approx 5.57.$$
 
-**(b)** Вода достигает черепахи, когда расстояния совпадают, то есть
-когда $w(t) = g(t) - d(t) = 0$:
+**(b)** The water reaches the tortoise when the distances coincide, that is, when
+$w(t) = g(t) - d(t) = 0$:
 
 $$w(t) = 0.05t^2+1.1t+18 -
 \frac{20\sin\frac{\pi t}{8}}{\sin\left(2.37-\frac{\pi t}{8}\right)}.$$
 
-Первый корень $t = 3.34881\ldots \approx 3.35$ с. Подставляем
-**неокруглённое** значение в $g$:
+The first root is $t = 3.34881\ldots \approx 3.35$ s. Substitute the **unrounded**
+value into $g$:
 
-$$g(3.34881\ldots) = 22.2444\ldots \approx 22.2 \text{ м от } A.$$
+$$g(3.34881\ldots) = 22.2444\ldots \approx 22.2 \text{ m from } A.$$
 
 ```python
 my13_x = 5.56619
@@ -1492,37 +1480,36 @@ my13_t = 3.34881
 my13_g = 22.2444
 ```
 
-**Разметка.** (a): M1 за попытку найти точку пересечения графика $f$
-и прямой $y=x$, A1 за 5.57. (b)(i): A1 за выражение для $w$;
-(b)(ii): M1 за попытку решить $w=0$, A1 за $t=3.35$, A1 за 22.2.
+**The marking.** (a): M1 for attempting to find the intersection of the graph of $f$
+and the line $y=x$, A1 for 5.57. (b)(i): A1 for the expression for $w$; (b)(ii): M1
+for attempting to solve $w=0$, A1 for $t=3.35$, A1 for 22.2.
 
-**Первый корень, а не любой.** У $w=0$ есть и второй корень, около
-$t = 12.8$: вода доходит, отступает и возвращается — прилив
-периодический. Слово «first» в условии часть задания, без него ответ
-был бы неоднозначен. Заодно у модели есть разрыв около $t = 6.04$,
-где знаменатель обращается в ноль; смена знака там — полюс, а не
-корень, и калькулятор об этом не предупредит.
+**The first root, not any root.** $w=0$ has a second root as well, around
+$t = 12.8$: the water arrives, retreats and comes back — the tide is periodic. The
+word «first» in the question is part of the task; without it the answer would be
+ambiguous. The model also has a discontinuity around $t = 6.04$, where the
+denominator vanishes; the sign change there is a pole, not a root, and the calculator
+will not warn you.
 
-**Округление в конце, а не в середине.** Подставив $t=3.35$ вместо
-$3.34881$, получаем 22.2461 вместо 22.2444 — здесь до третьей значащей
-цифры повезло, но это именно везение. Правило простое: округляют только
-записываемый ответ, промежуточные значения берут из памяти калькулятора.
+**Round at the end, not in the middle.** Substituting $t=3.35$ instead of
+$3.34881$ gives 22.2461 instead of 22.2444 — here the third significant figure
+happened to survive, but that is exactly luck. The rule is simple: round only the
+answer you write, and take intermediate values from the calculator's memory.
 
-**Что должно остаться на бумаге.** «Solutions found from a graphic
-display calculator should be supported by suitable working»: выписанное
-уравнение и эскиз графиков. Голая цифра из калькулятора — ноль
-за метод.
+**What has to be left on the paper.** «Solutions found from a graphic display
+calculator should be supported by suitable working»: the equation written out and a
+sketch of the graphs. A bare figure from the calculator is zero for method.
 """)
 
 md(r"""
-## Решение 14 — касание
+## Solution 14 — a tangent
 
-Касание — это ровно один корень уравнения пересечения, то есть
+A tangent means exactly one root of the intersection equation, that is,
 $\Delta = 0$:
 
 $$\Delta = \big(-(m+1)\big)^2 - 4\cdot1\cdot2 = (m+1)^2 - 8 = 0.$$
 
-Отсюда
+Hence
 
 $$(m+1)^2 = 8 \iff m+1 = \pm2\sqrt2 \iff m = -1 \pm 2\sqrt2.$$
 
@@ -1530,36 +1517,35 @@ $$(m+1)^2 = 8 \iff m+1 = \pm2\sqrt2 \iff m = -1 \pm 2\sqrt2.$$
 my14 = FiniteSet(-1 - 2*sqrt(2), -1 + 2*sqrt(2))
 ```
 
-**Разметка.** A1 за подстановку в дискриминант, A1 за $(m+1)^2-4(1)(2)$,
-A1 за условие $\Delta=0$, A1A1 за оба значения $m$.
+**The marking.** A1 for substituting into the discriminant, A1 for
+$(m+1)^2-4(1)(2)$, A1 for the condition $\Delta=0$, A1A1 for both values of $m$.
 
-**Второй путь — через производную.** Касание значит равенство и функции,
-и наклона: $2x-1 = m$, откуда $x = \frac{m+1}{2}$, и подстановка
-в уравнение даёт то же самое. Markscheme принимает оба, но
-дискриминант короче.
+**A second route — through the derivative.** A tangent means both the function and
+the gradient agree: $2x-1 = m$, hence $x = \frac{m+1}{2}$, and substituting into the
+equation gives the same thing. The markscheme accepts both, but the discriminant is
+shorter.
 
-**Два ответа, два балла.** A1A1 — по баллу за каждое значение. Записать
-только положительный корень значит потерять ровно половину.
+**Two answers, two marks.** A1A1 — a mark for each value. Writing only the positive
+root loses exactly half.
 
-**Как это ловит проверка.** Она не считает дискриминант, а для каждого
-пробного $m$ спрашивает у уравнения, сколько у него различных
-действительных корней. Поэтому ответ, полученный любым способом,
-засчитывается, а лишнее значение — замечается.
+**How the check catches that.** It does not compute a discriminant; for every test
+$m$ it asks the equation how many distinct real roots it has. So an answer obtained
+by any method counts, and a surplus value is noticed.
 """)
 
 md(r"""
-## Решение 15 — замена, дискриминант и область
+## Solution 15 — a substitution, the discriminant and the domain
 
-Замена $A = e^x$ превращает уравнение в квадратное:
+The substitution $A = e^x$ turns the equation into a quadratic:
 
 $$A^2 - 3A + \ln k = 0.$$
 
-Действительное решение по $A$ существует при
+A real solution in $A$ exists when
 
 $$\Delta = 9 - 4\ln k \ge 0 \iff \ln k \le \frac94 \iff k \le e^{9/4}.$$
 
-Второе ограничение приходит не из дискриминанта: $\ln k$ определён
-только при $k>0$. Итого
+The second restriction does not come from the discriminant: $\ln k$ is defined only
+for $k>0$. In all
 
 $$0 < k \le e^{9/4}.$$
 
@@ -1567,51 +1553,50 @@ $$0 < k \le e^{9/4}.$$
 my15 = Interval.Lopen(0, exp(Rational(9, 4)))
 ```
 
-**Разметка.** M1 за распознавание квадратного по $e^x$, A1 за
-$A^2-3A+\ln k=0$, M1 за $\Delta \ge 0$, A1 за $9-4\ln k$,
-A1 за $\ln k \le \frac94$, A1 за ответ $0<k\le e^{9/4}$.
+**The marking.** M1 for recognising a quadratic in $e^x$, A1 for
+$A^2-3A+\ln k=0$, M1 for $\Delta \ge 0$, A1 for $9-4\ln k$, A1 for
+$\ln k \le \frac94$, A1 for the answer $0<k\le e^{9/4}$.
 
-**Проверка про $A>0$.** Формально нужно ещё, чтобы у квадратного
-уравнения был **положительный** корень: $A=e^x$ отрицательным не
-бывает. Здесь это выполняется само собой — произведение корней равно
-$\ln k$, и при $\ln k<0$ один корень положителен, а при
-$0 \le \ln k \le \frac94$ положительны оба (их сумма равна 3).
-В других задачах такой проверки не миновать.
+**The check about $A>0$.** Formally the quadratic also has to have a **positive**
+root: $A=e^x$ is never negative. Here that holds by itself — the product of the
+roots is $\ln k$, and for $\ln k<0$ one root is positive, while for
+$0 \le \ln k \le \frac94$ both are (their sum is 3). In other questions that check
+cannot be skipped.
 
-**Знак $\le$, а не $<$.** При $k = e^{9/4}$ дискриминант ноль, корень
-один — но он есть, а спрашивают «at least one». Граница входит.
+**The sign $\le$, not $<$.** At $k = e^{9/4}$ the discriminant is zero and there is
+one root — but there is one, and «at least one» is what is asked. The boundary
+belongs.
 
-**Как это ловит проверка.** Для каждого пробного $k$ она численно
-считает корни исходного уравнения; при $k \le 0$ возвращает None,
-потому что $\ln k$ там не определён и судить не о чем. Пропущенные
-точки печатаются в конце — это честная часть ответа проверки,
-а не умолчание.
+**How the check catches that.** For every test $k$ it computes the roots of the
+original equation numerically; for $k \le 0$ it returns None, because $\ln k$ is
+undefined there and there is nothing to judge. The skipped points are printed at the
+end — that is an honest part of the check's answer, not a silence.
 """)
 
 md(r"""
-## Решение 16 — одно решение и два решения
+## Solution 16 — one solution and two solutions
 
-Умножаем на знаменатель $3x+6$:
+Multiply by the denominator $3x+6$:
 
 $$2x+6 = (mx+1)(3x+6) = 3mx^2 + 6mx + 3x + 6,$$
 
-и после сокращения
+and after cancelling
 
 $$3mx^2 + (6m+1)x = 0 \iff x\big(3mx + 6m + 1\big) = 0.$$
 
-Корни $x = 0$ и $x = -\dfrac{6m+1}{3m}$ (при $m\ne0$).
+The roots are $x = 0$ and $x = -\dfrac{6m+1}{3m}$ (for $m\ne0$).
 
-**(a)** Ровно одно решение получается, когда корни совпадают:
+**(a)** Exactly one solution comes when the roots coincide:
 
 $$-\frac{6m+1}{3m} = 0 \iff 6m+1 = 0 \iff m = -\frac16.$$
 
-**(b)** Два решения с $x \ge 0$ — это $x=0$ и второй корень строго
-больше нуля:
+**(b)** Two solutions with $x \ge 0$ means $x=0$ and the second root strictly
+greater than zero:
 
 $$-\frac{6m+1}{3m} > 0.$$
 
-Дробное неравенство: критические значения $m=-\frac16$ и $m=0$, и
-между ними дробь положительна:
+A rational inequality: the critical values are $m=-\frac16$ and $m=0$, and between
+them the fraction is positive:
 
 $$-\frac16 < m < 0.$$
 
@@ -1620,119 +1605,116 @@ my16_a = FiniteSet(Rational(-1, 6))
 my16_b = Interval.open(Rational(-1, 6), 0)
 ```
 
-**Разметка.** (a): M1 за приведение к квадратному, A1 за
-$3mx^2+(6m+1)x=0$, M1 за условие «одно решение», A1 за $m=-\frac16$.
-(b): A2 за ответ; A1, если найдено только $m>-\frac16$ или только
-$m<0$.
+**The marking.** (a): M1 for reducing to a quadratic, A1 for
+$3mx^2+(6m+1)x=0$, M1 for the condition «one solution», A1 for $m=-\frac16$. (b): A2
+for the answer; A1 if only $m>-\frac16$ or only $m<0$ was found.
 
-**Дискриминант тут можно и не считать.** $\Delta = (6m+1)^2$, и он
-ноль ровно при $m=-\frac16$ — но то же самое видно из разложения
-$x(3mx+6m+1)$ без всякой формулы. Разложение вдобавок сразу даёт оба
-корня, а они нужны в (b).
+**The discriminant need not be computed here.** $\Delta = (6m+1)^2$, and it is zero
+exactly at $m=-\frac16$ — but the same is visible from the factorisation
+$x(3mx+6m+1)$ with no formula at all. The factorisation also gives both roots at
+once, and they are needed in (b).
 
-**Про $m \ne 0$.** При $m=0$ уравнение превращается в $x=0$ — тоже
-ровно одно решение. Условие задачи этот случай исключает, и без него
-ответ в (a) был бы «$m=-\frac16$ или $m=0$». Проверка знает про
-оговорку и точку $m=0$ пропускает: область берётся из условия.
+**About $m \ne 0$.** At $m=0$ the equation becomes $x=0$ — also exactly one
+solution. The question's condition excludes that case, and without it the answer to
+(a) would be «$m=-\frac16$ or $m=0$». The check knows about the caveat and skips the
+point $m=0$: the domain is taken from the question.
 
-**Про $x=-2$.** Умножение на знаменатель обычно добавляет корень,
-и проверить надо. Здесь $x=-2$ корнем не оказался: подстановка
-в $x(3mx+6m+1)$ даёт $-2\cdot(-6m+6m+1) = -2 \ne 0$ при любом $m$.
-Повезло, но смотреть всё равно нужно.
+**About $x=-2$.** Multiplying by a denominator usually adds a root, and it has to be
+checked. Here $x=-2$ turned out not to be one: substituting into $x(3mx+6m+1)$ gives
+$-2\cdot(-6m+6m+1) = -2 \ne 0$ for any $m$. Lucky, but you still have to look.
 
-**Ещё один путь для (a).** Одно решение значит касание, значит
-$m = f'(0)$. Производная $f'(x) = -\frac{2}{3(x+2)^2}$ в нуле равна
-$-\frac16$ — тот же ответ за две строки, если производные уже пройдены.
+**One more route for (a).** One solution means a tangent, which means
+$m = f'(0)$. The derivative $f'(x) = -\frac{2}{3(x+2)^2}$ at zero equals
+$-\frac16$ — the same answer in two lines, if derivatives have been covered.
 """)
 
 md(r"""
-## Решение 17 — множество значений через дискриминант
+## Solution 17 — a range through the discriminant
 
-Обозначим $y = f(x)$ и избавимся от дроби:
+Write $y = f(x)$ and clear the fraction:
 
 $$y = \frac{x^2-14x+24}{2x+6} \iff 2xy + 6y = x^2-14x+24,$$
 
-то есть
+that is,
 
 $$x^2 - (14+2y)x + (24-6y) = 0.$$
 
-Смотрим на это как на квадратное уравнение **относительно $x$**:
-значение $y$ достижимо тогда и только тогда, когда у него есть
-действительный корень, то есть когда
+Look at this as a quadratic equation **in $x$**: the value $y$ is attained if and
+only if it has a real root, that is, when
 
 $$\Delta = (14+2y)^2 - 4(24-6y) \ge 0.$$
 
-Раскрываем:
+Expand:
 
 $$196 + 56y + 4y^2 - 96 + 24y = 4y^2 + 80y + 100 \ge 0
 \iff y^2 + 20y + 25 \ge 0.$$
 
-Критические значения:
+The critical values:
 
 $$y = \frac{-20 \pm \sqrt{400-100}}{2} = -10 \pm 5\sqrt3,$$
 
-и парабола ветвями вверх, поэтому
+and the parabola opens upwards, so
 
-$$y \le -10-5\sqrt3 \quad\text{или}\quad y \ge -10+5\sqrt3,$$
+$$y \le -10-5\sqrt3 \quad\text{or}\quad y \ge -10+5\sqrt3,$$
 
-численно $y \le -18.7$ или $y \ge -1.34$.
+numerically $y \le -18.7$ or $y \ge -1.34$.
 
 ```python
 my17 = Union(Interval(-oo, -10 - 5*sqrt(3)),
              Interval(-10 + 5*sqrt(3), oo))
 ```
 
-**Разметка.** A1 за появление $-10-5\sqrt3$ или $-10+5\sqrt3$,
-M1 за попытку записать множество значений, A1A1 за оба куска ответа.
+**The marking.** A1 for $-10-5\sqrt3$ or $-10+5\sqrt3$ appearing, M1 for attempting
+to write the range, A1A1 for both pieces of the answer.
 
-**Почему приём работает.** «$y$ принадлежит множеству значений» и
-«уравнение $f(x)=y$ имеет решение» — одно и то же утверждение. Второе
-проверяется дискриминантом, и вся хитрость в том, чтобы поменять роли:
-неизвестное здесь $x$, параметр — $y$.
+**Why the technique works.** «$y$ belongs to the range» and «the equation $f(x)=y$
+has a solution» are one and the same statement. The second is checked with the
+discriminant, and the whole trick is swapping the roles: the unknown here is $x$ and
+the parameter is $y$.
 
-**Дырка в середине — это норма.** У дробной функции с вертикальной
-асимптотой график состоит из двух ветвей: одна уходит вверх, другая
-вниз, и между локальным максимумом и локальным минимумом значений нет.
-Концы в ответ входят: в них уравнение имеет (двойной) корень.
+**A gap in the middle is normal.** A rational function with a vertical asymptote has
+a graph of two branches: one goes up, the other down, and between the local maximum
+and the local minimum there are no values. The ends belong to the answer: there the
+equation has a (double) root.
 
-**Проверка калькулятором.** В Paper 2 те же числа получаются из
-графика: локальный максимум $-18.7$, локальный минимум $-1.34$.
-Но записывать ответ стоит точно, через радикалы, — markscheme
-принимает и то, и другое, а точная запись надёжнее.
+**A check with a calculator.** On Paper 2 the same numbers come off the graph: the
+local maximum $-18.7$, the local minimum $-1.34$. But the answer is worth writing
+exactly, with surds — the markscheme accepts either, and the exact writing is
+safer.
 """)
 
 md(r"""
-## Решение 18 — семейство кривых
+## Solution 18 — a family of curves
 
-**(a)** У $y = x^3+3x^2+b$ производная $3x^2+6x = 3x(x+2)$, стационарные
-точки $x=0$ и $x=-2$, значения в них
+**(a)** For $y = x^3+3x^2+b$ the derivative is $3x^2+6x = 3x(x+2)$, the stationary
+points are $x=0$ and $x=-2$, and the values there are
 
 $$y(0) = b, \qquad y(-2) = -8+12+b = 4+b.$$
 
-Ровно два пересечения с осью $x$ бывает тогда, когда одна из этих точек
-лежит **на** оси: $b=0$ или $4+b=0$, то есть
+Exactly two $x$-intercepts happen when one of those points lies **on** the axis:
+$b=0$ or $4+b=0$, that is,
 
-$$b = 0 \quad\text{или}\quad b = -4.$$
+$$b = 0 \quad\text{or}\quad b = -4.$$
 
-**(b)** Три пересечения — когда максимум и минимум по разные стороны
-от оси: $-4 < b < 0$. Одно — когда по одну сторону: $b<-4$ или $b>0$.
+**(b)** Three intercepts — when the maximum and the minimum are on opposite sides of
+the axis: $-4 < b < 0$. One — when they are on the same side: $b<-4$ or $b>0$.
 
-**(c)** У $y = x^3-3x^2+b$ стационарные точки $x=0$ и $x=2$, значения
-$b$ и $-4+b$. Аналогично: два пересечения при $b=0$ или $b=4$; три при
-$0<b<4$; одно при $b<0$ или $b>4$.
+**(c)** For $y = x^3-3x^2+b$ the stationary points are $x=0$ and $x=2$, with values
+$b$ and $-4+b$. Similarly: two intercepts at $b=0$ or $b=4$; three for $0<b<4$; one
+for $b<0$ or $b>4$.
 
-**(d)** Обозначим $u = x(2-x)$. Тогда уравнение принимает вид $u^4 = k$.
-Функция $u$ принимает все значения от $-\infty$ до 1, причём каждое
-значение $u<1$ достигается дважды, а $u=1$ — один раз.
+**(d)** Write $u = x(2-x)$. Then the equation becomes $u^4 = k$. The function $u$
+takes every value from $-\infty$ to 1, and every value $u<1$ is attained twice, while
+$u=1$ is attained once.
 
 $$u^4 = k \iff u = \pm\sqrt[4]{k} \quad (k>0).$$
 
-Четыре решения по $x$ получаются, когда **оба** значения $u$ достижимы
-дважды, то есть когда $\sqrt[4]{k} < 1$:
+Four solutions in $x$ come when **both** values of $u$ are attained twice, that is,
+when $\sqrt[4]{k} < 1$:
 
 $$0 < k < 1.$$
 
-В общем виде (условие из markscheme): $n$ чётно и
+In general (the markscheme's condition): $n$ is even and
 $0 < k < \left(\frac a2\right)^{2n}$.
 
 ```python
@@ -1745,58 +1727,58 @@ my18_c3 = Interval.open(0, 4)
 my18_d = Interval.open(0, 1)
 ```
 
-**Разметка.** (a): M1 за перебор значений $b$ или за рассмотрение
-случая $b=0$, A1 за оба значения. (b), (c): по A1 за каждое множество.
-(d): M1 за рассмотрение чётности $n$, A1 за «$n$ чётно», A1 за нижнюю
-границу, A1 за верхнюю, A1 за строгие знаки.
+**The marking.** (a): M1 for trying values of $b$ or for considering the case
+$b=0$, A1 for both values. (b), (c): an A1 for each set. (d): M1 for considering the
+parity of $n$, A1 for «$n$ is even», A1 for the lower bound, A1 for the upper one, A1
+for the strict signs.
 
-**Вопрос про картинку, а не про формулы.** Paper 3 прямо предлагает
-«by systematically varying the value of $b$»: посмотреть на семейство
-в GDC и увидеть, что происходит. Стационарные точки нужны для того,
-чтобы записать границы точно.
+**A question about a picture, not about formulas.** Paper 3 suggests it directly,
+«by systematically varying the value of $b$»: look at the family on the GDC and see
+what happens. The stationary points are needed in order to write the boundaries
+exactly.
 
-**Строгие знаки — отдельный балл.** В (d) markscheme даёт A1 именно
-за то, что оба неравенства строгие. На границах число решений другое:
-при $k=0$ их два (двойные касания), при $k=1$ — три.
+**The strict signs are a separate mark.** In (d) the markscheme gives an A1
+precisely for both inequalities being strict. At the boundaries the number of
+solutions is different: at $k=0$ there are two (double touchings), at $k=1$ three.
 
-**Чётность в (d).** При нечётном $n$ функция $x^n(2-x)^n$ ведёт себя
-иначе, и четырёх решений не бывает вовсе. Это единственное место
-практикума, где ответ получается не вычислением, а разговором
-про чётность, — и в архиве такие места всегда стоят M1 отдельно.
+**The parity in (d).** For odd $n$ the function $x^n(2-x)^n$ behaves differently and
+four solutions never happen. That is the only place in the practicum where the answer
+comes not from computing but from a conversation about parity — and in the archive
+such places always carry a separate M1.
 """)
 
 md(r"""
-## Решение 19 — задание на таймере
+## Solution 19 — the task on the timer
 
-**(b)(i)** Приравниваем и собираем логарифмы:
+**(b)(i)** Equate and collect the logarithms:
 
 $$\ln(2x-9) = 2\ln x - \ln d = \ln x^2 - \ln d = \ln\frac{x^2}{d}.$$
 
-Логарифмы равны — равны аргументы:
+Logarithms are equal — the arguments are equal:
 
 $$2x-9 = \frac{x^2}{d} \iff d(2x-9) = x^2 \iff x^2 - 2dx + 9d = 0.
 \qquad \blacksquare$$
 
-**(b)(ii)** Две различные точки пересечения — два различных корня,
-то есть $\Delta>0$:
+**(b)(ii)** Two distinct points of intersection mean two distinct roots, that is,
+$\Delta>0$:
 
 $$\Delta = (-2d)^2 - 4\cdot1\cdot9d = 4d^2 - 36d > 0,$$
 
-и после деления на 4
+and after dividing by 4
 
 $$d^2 - 9d > 0. \qquad \blacksquare$$
 
-**(b)(iii)** Раскладываем: $d(d-9)>0$, критические значения 0 и 9.
-По условию $d>0$, поэтому левый кусок отпадает и остаётся
+**(b)(iii)** Factorise: $d(d-9)>0$, with critical values 0 and 9. By the question
+$d>0$, so the left piece falls away and what is left is
 
 $$d > 9.$$
 
-**(c)** При $d=10$ уравнение принимает вид
+**(c)** At $d=10$ the equation becomes
 
 $$x^2 - 20x + 90 = 0 \iff x = \frac{20 \pm \sqrt{400-360}}{2}
 = 10 \pm \sqrt{10}.$$
 
-Значит $p = 10-\sqrt{10}$, $q = 10+\sqrt{10}$ и
+So $p = 10-\sqrt{10}$, $q = 10+\sqrt{10}$ and
 
 $$q - p = 2\sqrt{10}.$$
 
@@ -1808,34 +1790,30 @@ my19_roots = [10 - sqrt(10), 10 + sqrt(10)]
 my19_qp = 2*sqrt(10)
 ```
 
-**Разметка.** (b)(i): M1 за приравнивание, M1 за закон степени,
-M1 за закон частного, A1 за верное логарифмическое равенство; итог AG.
-(b)(ii): A1 за дискриминант, M1 за «$\Delta>0$», A1 — AG.
-(b)(iii): M1 за решение $d(d-9)>0$, A1 за $d>9$.
-(c): A1 за $x^2-20x+90=0$, M1 за попытку решить, A1 за оба корня,
-M1 за вычитание, A1 за $2\sqrt{10}$.
+**The marking.** (b)(i): M1 for equating, M1 for the power law, M1 for the quotient
+law, A1 for the correct logarithmic equality; the result is AG. (b)(ii): A1 for the
+discriminant, M1 for «$\Delta>0$», A1 — AG. (b)(iii): M1 for solving $d(d-9)>0$, A1
+for $d>9$. (c): A1 for $x^2-20x+90=0$, M1 for attempting to solve, A1 for both
+roots, M1 for the subtraction, A1 for $2\sqrt{10}$.
 
-**Как это выглядит по времени.** Четырнадцать баллов за 21 минуту,
-и первые четыре — чистая работа с логарифмами. Если она не выходит
-за пять минут, дальше идти незачем: весь вопрос стоит на уравнении
-из (b)(i).
+**How it looks in time.** Fourteen marks in 21 minutes, and the first four are pure
+work with logarithms. If that does not come out within five minutes, there is no
+point going on: the whole question stands on the equation from (b)(i).
 
-**Условие $d>0$ работает дважды.** Первый раз — чтобы $\ln d$ вообще
-существовал, второй раз — в (b)(iii), где оно отсекает кусок $d<0$.
-Без него ответ был бы «$d<0$ или $d>9$», и это ровно тот балл, который
-теряют чаще всего.
+**The condition $d>0$ works twice.** The first time so that $\ln d$ exists at all,
+the second time in (b)(iii), where it cuts off the piece $d<0$. Without it the answer
+would be «$d<0$ or $d>9$», and that is exactly the mark that is lost most often.
 
-**Проверка ответа за пять секунд.** Возьмите $d=10>9$: корни
-$10\pm\sqrt{10} \approx 6.84$ и $13.16$. Оба больше $4.5$, значит
-$2x-9>0$ и логарифм определён — сходится. Возьмите $d=5$:
-$x^2-10x+45=0$, дискриминант $100-180<0$, пересечений нет — и правда
-$5 < 9$.
+**A check on the answer in five seconds.** Take $d=10>9$: the roots are
+$10\pm\sqrt{10} \approx 6.84$ and $13.16$. Both are greater than $4.5$, so
+$2x-9>0$ and the logarithm is defined — it agrees. Take $d=5$: $x^2-10x+45=0$, the
+discriminant $100-180<0$, no intersections — and indeed $5 < 9$.
 
-**Откуда взялось $2x-9>0$.** Область $f$ это $x>4.5$, а область $g$ —
-$x>0$. Корни уравнения $x^2-2dx+9d=0$ при $d>9$ автоматически попадают
-в пересечение областей: произведение корней $9d>0$ и сумма $2d>0$,
-значит оба положительны, а проверка $2x-9>0$ следует из того, что
-уравнение получено именно из равенства логарифмов.
+**Where $2x-9>0$ came from.** The domain of $f$ is $x>4.5$ and the domain of $g$ is
+$x>0$. For $d>9$ the roots of $x^2-2dx+9d=0$ fall into the intersection of the
+domains automatically: the product of the roots is $9d>0$ and the sum is $2d>0$, so
+both are positive, and $2x-9>0$ follows from the fact that the equation came from an
+equality of logarithms in the first place.
 """)
 
 nb = {

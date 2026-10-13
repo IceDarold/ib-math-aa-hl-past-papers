@@ -60,362 +60,358 @@ def code(src):
 
 
 md(r"""
-# Практикум A8: неравенства
+# Practicum A8: inequalities
 
-**87 баллов, 31 блок, восемь приёмов.** Самая маленькая тема секции A —
-и самая рассыпанная: неравенство почти никогда не бывает целым вопросом,
-оно бывает одним пунктом внутри чужого.
+**87 marks, 31 blocks, eight techniques.** The smallest topic of section A — and the
+most scattered: an inequality is almost never a whole question, it is one part
+inside somebody else's.
 
-**Материал.** 31 блок и 87 баллов из архива AA HL, сессии May 2021 —
-November 2025. Каждое задание ниже — настоящий вопрос прошлых лет,
-источник указан.
+**Material.** 31 blocks and 87 marks from the AA HL archive, sessions May 2021 —
+November 2025. Every task below is a real past-paper question, cited.
 
-**Главная мысль темы.** У неравенства нет ответа-числа. Ответ — это
-**множество**, и всё содержание темы в его границе: откуда граница
-берётся и входит ли она в ответ.
+**The main idea of the topic.** An inequality has no numerical answer. The answer is
+a **set**, and the whole substance of the topic is in its boundary: where the
+boundary comes from and whether it belongs to the answer.
 
-Отсюда же устройство практикума. Неравенство приходит с трёх сторон:
+That is also how the practicum is built. An inequality arrives from three sides:
 
-* его **решают** — тогда ответ множество по $x$ (приёмы 1–4);
-* оно возникает как **условие на букву** — тогда ответ множество
-  по параметру (приёмы 5–7);
-* его **доказывают** — тогда множества нет вовсе (приём 8).
+* it is **solved** — then the answer is a set of $x$ (techniques 1–4);
+* it arises as a **condition on a letter** — then the answer is a set of values of
+  the parameter (techniques 5–7);
+* it is **proved** — then there is no set at all (technique 8).
 
-**Как работать**
+**How to work**
 
-1. Прочитайте карту приёмов. Различать эти три стороны важнее, чем
-   помнить любой отдельный приём.
-2. Решайте **на бумаге**. Таблица знаков и критические значения —
-   ручная работа, за неё стоят все M1.
-3. Ответ вводите множеством: `Interval(-2, 6)`, `(x >= -2) & (x <= 6)`,
-   `Union(Interval.open(-oo, -10), Interval.open(3, oo))` — как удобнее.
-   Проверка сравнивает множества, а не записи.
-4. Последние блоки — тренажёр распознавания и задание на таймере.
+1. Read the map of techniques. Telling those three sides apart matters more than
+   remembering any single technique.
+2. Work **on paper**. The table of signs and the critical values are hand work, and
+   all the M1s are for them.
+3. Enter the answer as a set: `Interval(-2, 6)`, `(x >= -2) & (x <= 6)`,
+   `Union(Interval.open(-oo, -10), Interval.open(3, oo))` — whichever suits. The
+   check compares sets, not writings.
+4. The last blocks are a recognition trainer and one question on a timer.
 
-Метки сложности: 🟢 приём в чистом виде · 🟡 приём в неочевидной обёртке ·
-🔴 комбинация приёмов или экзаменационный формат целиком.
+Difficulty marks: 🟢 the technique on its own · 🟡 the technique in a wrapper ·
+🔴 several techniques, or a whole exam question.
 """)
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/number_algebra к practicum/kit/
-import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
-from kit import *              # проверки + Interval, Union, solveset, real_roots
+sys.path.append('..')          # from practicum/number_algebra to practicum/kit/
+import sympy as sp             # the escape hatch: anything not in kit is in sp
+from kit import *              # checks + Interval, Union, solveset, real_roots
+
+language('en')                 # this notebook is in English, and so are the checks
 
 a, b, c, d = symbols('a b c d')
 m, n, p, q, s = symbols('m n p q s')
-T = Symbol('T')                # сумма в задании 18; буква S уже занята
+T = Symbol('T')                # the sum in task 18; the letter S is already taken
 
-print('готово; sympy', sp.__version__)
-print('решить неравенство:  ', solveset(x**2 + 4*x - 5 <= 0, x, S.Reals))
-print('то же, но d > 0:     ', solveset(d**2 - 9*d > 0, d, Interval.open(0, oo)))
-print('ответ множеством:    ', Union(Interval.open(-oo, -10), Interval.open(3, oo)))
-print('корни для условия:   ', real_roots(Poly(x**2 - 3*x + 2, x)))
+print('ready; sympy', sp.__version__)
+print('solve an inequality: ', solveset(x**2 + 4*x - 5 <= 0, x, S.Reals))
+print('the same, but d > 0: ', solveset(d**2 - 9*d > 0, d, Interval.open(0, oo)))
+print('the answer as a set: ', Union(Interval.open(-oo, -10), Interval.open(3, oo)))
+print('roots for a condition:', real_roots(Poly(x**2 - 3*x + 2, x)))
 """)
 
 md(r"""
 ---
-## Карта приёмов
+## Map of techniques
 
-| # | Приём | Триггер в условии | Первый ход |
+| # | Technique | Trigger in the question | First move |
 | --- | --- | --- | --- |
-| 1 | Критические значения и знак | «solve $f(x)\le c$» для многочлена | всё в одну сторону, нули, таблица знаков |
-| 2 | Дробно-рациональное | «solve $f(x) > x$», в записи есть дробь | одна дробь, нули числителя **и** знаменателя |
-| 3 | Модуль | $\lvert\,\cdot\,\rvert$ в условии, «sketch $\lvert f\rvert$» | снять модуль по двум случаям или по эскизу |
-| 4 | Численно, по GDC | Paper 2, некрасивые числа, «3 s.f.» | найти точки пересечения, собрать интервалы |
-| 5 | Дискриминант как условие | «two distinct real roots», «no real roots» | $\Delta>0$, $\Delta=0$, $\Delta<0$ — и решать по букве |
-| 6 | Знаки корней | «one positive and one negative root», «both roots» | $\alpha\beta=\frac ca$, $\alpha+\beta=-\frac ba$ |
-| 7 | Число решений как множество | «exactly two», «for all $x$», «at least one» | найти, где решения сливаются или исчезают |
-| 8 | Доказать неравенство | «show that … $\ge$ …», «prove by contradiction» | перенести всё в одну сторону и выделить квадрат |
+| 1 | Critical values and the sign | «solve $f(x)\le c$» for a polynomial | everything to one side, the zeros, the table of signs |
+| 2 | A rational inequality | «solve $f(x) > x$», there is a fraction in it | one fraction, the zeros of the numerator **and** the denominator |
+| 3 | A modulus | $\lvert\,\cdot\,\rvert$ in the question, «sketch $\lvert f\rvert$» | remove the modulus by two cases, or from a sketch |
+| 4 | Numerically, on the GDC | Paper 2, ugly numbers, «3 s.f.» | find the intersections, assemble the intervals |
+| 5 | The discriminant as a condition | «two distinct real roots», «no real roots» | $\Delta>0$, $\Delta=0$, $\Delta<0$ — and solve for the letter |
+| 6 | The signs of the roots | «one positive and one negative root», «both roots» | $\alpha\beta=\frac ca$, $\alpha+\beta=-\frac ba$ |
+| 7 | The number of solutions as a set | «exactly two», «for all $x$», «at least one» | find where the solutions merge or disappear |
+| 8 | Prove an inequality | «show that … $\ge$ …», «prove by contradiction» | take everything to one side and complete the square |
 
-Лестница идёт по тому, **где живёт ответ**. Приёмы 1–4 решают неравенство
-относительно $x$: ответ — множество на числовой прямой, и работа в том,
-чтобы найти его границы и правильно их включить или выколоть.
+The ladder goes by **where the answer lives**. Techniques 1–4 solve an inequality in
+$x$: the answer is a set on the number line, and the work is in finding its
+boundaries and including or excluding them correctly.
 
-Приёмы 5–7 переворачивают вопрос. Неравенство больше не спрашивают —
-его получают: «при каких $k$ у уравнения два корня» превращается в
-$\Delta>0$, то есть в неравенство **на букву**. Решать его дальше вы
-умеете приёмом 1; новое здесь — только первый шаг, перевод условия
-задачи в неравенство.
+Techniques 5–7 turn the question round. The inequality is no longer asked for — it
+is obtained: «for which $k$ does the equation have two roots» turns into
+$\Delta>0$, that is, into an inequality **in the letter**. Solving that you already
+know how to do with technique 1; the new thing here is only the first step, the
+translation of the question's wording into an inequality.
 
-Приём 8 стоит особняком: доказать неравенство — не то же самое, что
-решить его. Множества в ответе нет, есть цепочка, последний шаг которой
-обязан быть очевидным.
+Technique 8 stands apart: proving an inequality is not the same as solving one.
+There is no set in the answer, there is a chain whose last step has to be obvious.
 
-**Что экономит больше всего времени.** Прежде чем считать, посмотрите,
-о чём спрашивают — о $x$ или о букве. Половина потерянных баллов в теме
-это перепутанные роли: решают относительно $x$ там, где ответом должно
-быть множество значений $k$.
+**What saves the most time.** Before computing, look at what is being asked about —
+$x$ or the letter. Half the marks lost in this topic are the roles confused: people
+solve in $x$ where the answer should be a set of values of $k$.
 """)
 
 md(r"""
 ---
-## Где здесь калькулятор
+## Where the calculator is in this topic
 
-Формально 49 баллов из 87 — в бумагах с калькулятором, то есть 56%.
-Как и в других темах секции A, цифра обманывает.
+Formally 49 marks out of 87 are on calculator papers, that is, 56%. As in the other
+topics of section A, the figure deceives.
 
-| | баллов | из них реально нужен GDC |
+| | marks | of which really need a GDC |
 | --- | --- | --- |
 | Paper 1 | 38 | — |
 | Paper 2 | 29 | 7 |
 | Paper 3 | 20 | 2 |
 
-Девять баллов из 87 — вот вся работа для калькулятора: одно неравенство
-с показательной функцией и дробью (задание 5), один целочисленный ответ
-(задание 6) и одно чтение по графику в исследовании (задание 14).
-Всё остальное в «калькуляторных» бумагах — алгебра: дискриминант, Виета,
-доказательство от противного. Доказательство в Paper 2 калькулятор
-не сокращает ни на строку.
+Nine marks out of 87 — that is all the work there is for a calculator: one
+inequality with an exponential and a fraction (task 5), one integer answer (task 6)
+and one reading off a graph in an investigation (task 14). Everything else on the
+«calculator» papers is algebra: the discriminant, Vieta, proof by contradiction. A
+proof on Paper 2 is not shortened by a calculator by a single line.
 
-Где GDC действительно помогает:
+Where a GDC does help:
 
-* **Найти точки пересечения.** Единственный способ решить
-  $2^x-2^{-x}\ge\frac{x-1}{x^2-2x-3}$ за отведённые четыре минуты.
-* **Проверить границу.** Подставить в исходное неравенство точку
-  чуть левее и чуть правее найденного конца — пять секунд, и вы знаете,
-  в какую сторону идёт интервал.
-* **Перебрать целые.** «Наибольшее целое $n$, при котором…» — таблица
-  значений; markscheme прямо принимает проверку двух соседних $n$.
+* **Find the intersections.** The only way to solve
+  $2^x-2^{-x}\ge\frac{x-1}{x^2-2x-3}$ in the four minutes allowed.
+* **Check a boundary.** Substitute a point slightly left and slightly right of the
+  end found into the original inequality — five seconds, and you know which way the
+  interval goes.
+* **Run through integers.** «The largest integer $n$ for which …» — a table of
+  values; the markscheme explicitly accepts checking the two neighbouring $n$.
 
-Где он бесполезен: там, где в задаче стоит буква. Уравнение
-$x^2+kx+15-k=0$ калькулятор не решит, а дискриминант — за строку.
+Where it is useless: wherever there is a letter in the question. The equation
+$x^2+kx+15-k=0$ a calculator will not solve, while the discriminant does it in a
+line.
 
-**Самое трудное в калькуляторной задаче этой темы — не посчитать,
-а записать.** GDC выдаёт три точки пересечения; баллы стоят за три
-интервала и за то, какие концы в них входят.
+**The hardest thing in a calculator question in this topic is not the computing but
+the writing.** A GDC gives three intersections; the marks are for three intervals
+and for which ends belong to them.
 """)
 
 md(r"""
 ---
-## Теория 1. Ответ — это множество
+## Theory 1. The answer is a set
 
-Уравнение спрашивает «где равно», неравенство — «где больше». Ответ
-на второй вопрос почти никогда не точка: это объединение промежутков,
-и записать его надо целиком.
+An equation asks «where it is equal», an inequality «where it is greater». The
+answer to the second question is almost never a point: it is a union of intervals,
+and it has to be written out in full.
 
-**Рабочий порядок.** Он один и тот же во всей теме:
+**The working order.** It is the same throughout the topic:
 
-1. Перенести всё в одну сторону: $f(x) \ge 0$.
-2. Найти **критические значения** — нули $f$ и точки, где $f$ не
-   определена.
-3. Между соседними критическими значениями знак $f$ постоянен —
-   значит, достаточно одной пробной точки на промежуток.
-4. Собрать нужные промежутки и решить про каждый конец, входит он
-   или нет.
+1. Take everything to one side: $f(x) \ge 0$.
+2. Find the **critical values** — the zeros of $f$ and the points where $f$ is
+   undefined.
+3. Between neighbouring critical values the sign of $f$ is constant — so one test
+   point per interval is enough.
+4. Collect the intervals wanted and decide for each end whether it belongs.
 
-Пункт 3 — это и есть содержание метода: знак меняется только там, где
-функция обращается в ноль или разрывается, больше нигде.
+Point 3 is the substance of the method: the sign changes only where the function
+vanishes or breaks, nowhere else.
 
-**Чего делать нельзя.** Умножать или делить неравенство на выражение,
-знак которого неизвестен. $\frac1x > 1$ не равносильно $1 > x$:
-при отрицательных $x$ левая часть отрицательна, а неравенство
-перевернулось бы. Эта ошибка стоит всех баллов задачи, потому что
-ответ получается внешне правдоподобным.
+**What must not be done.** Multiplying or dividing an inequality by an expression
+whose sign is unknown. $\frac1x > 1$ is not equivalent to $1 > x$: for negative $x$
+the left-hand side is negative and the inequality would have flipped. That mistake
+costs every mark of the question, because the answer comes out looking plausible.
 
-**Про концы.** Правило простое: конец, пришедший из **нуля** функции,
-входит в ответ тогда и только тогда, когда неравенство нестрогое;
-конец, пришедший из **разрыва**, не входит никогда.
+**About the ends.** The rule is simple: an end that came from a **zero** of the
+function belongs to the answer if and only if the inequality is non-strict; an end
+that came from a **break** never belongs.
 
-**Три записи ответа.** IB принимает любую:
+**Three ways of writing the answer.** IB accepts any:
 
 $$-2 \le x \le 6, \qquad [-2,\;6], \qquad \{x : -2\le x\le 6\}.$$
 
-Чего не принимает — смеси. Запись «$x<-10,\;x>3$» через запятую читается
-как «и то, и другое одновременно», то есть как пустое множество.
-Пишите «or» или $\cup$.
+What it does not accept is a mixture. The writing «$x<-10,\;x>3$» with a comma reads
+as «both at once», that is, as the empty set. Write «or» or $\cup$.
 """)
 
 code(r"""
-# Разминка (не задание): почему знак меняется только в критических точках.
+# A warm-up (not a task): why the sign changes only at the critical points.
 f = (x - 1)*(x + 2)
 for pt in [-3, -2, -1, 0, 1, 2]:
     val = f.subs(x, pt)
-    mark = '+' if val > 0 else ('0' if val == 0 else '−')
-    print(f'x = {pt:2d}:  f = {str(val):>3},  знак {mark}')
-print('решение f(x) < 0:', solveset(f < 0, x, S.Reals))
+    mark = '+' if val > 0 else ('0' if val == 0 else '-')
+    print(f'x = {pt:2d}:  f = {str(val):>3},  sign {mark}')
+print('the solution of f(x) < 0:', solveset(f < 0, x, S.Reals))
 """)
 
 md(r"""
-## Задание 1 🟢 — квадратное неравенство целиком
+## Task 1 🟢 — a whole quadratic inequality
 
-Для $f(x) = 5(x+2)^2 - 5$ решите неравенство $f(x) \le 40$.
+For $f(x) = 5(x+2)^2 - 5$, solve the inequality $f(x) \le 40$.
 
-Ответ введите множеством: `Interval(a, b)` или `(x >= a) & (x <= b)`.
+Enter the answer as a set: `Interval(a, b)` or `(x >= a) & (x <= b)`.
 
-*Источник: May 2025 TZ1, Paper 1, Q10(c) (4 балла, без калькулятора).*
+*Source: May 2025 TZ1, Paper 1, Q10(c) (4 marks, no calculator).*
 """)
 
 code(r"""
-my1 = ...                # множество решений
+my1 = ...                # the solution set
 
-verify_solution_set('Задание 1', my1, 5*(x + 2)**2 - 5 <= 40)
+verify_solution_set('Task 1', my1, 5*(x + 2)**2 - 5 <= 40)
 """)
 
 md(r"""
-## Задание 2 🟢 — когда область меняет ответ
+## Task 2 🟢 — when the domain changes the answer
 
-Известно, что $d$ — положительное действительное число и $d^2 - 9d > 0$.
-Найдите множество возможных значений $d$.
+Given that $d$ is a positive real number and $d^2 - 9d > 0$, find the set of
+possible values of $d$.
 
-Обратите внимание: без условия $d \in \mathbb{R}^+$ ответ был бы другим,
-и последний балл задачи стоит именно за него.
+Note: without the condition $d \in \mathbb{R}^+$ the answer would be different, and
+the last mark of the question is precisely for it.
 
-*Источник: November 2023 TZ1, Paper 1, Q10(b)(iii) (2 балла, без калькулятора).*
+*Source: November 2023 TZ1, Paper 1, Q10(b)(iii) (2 marks, no calculator).*
 """)
 
 code(r"""
-my2 = ...                # множество значений d
+my2 = ...                # the set of values of d
 
-verify_solution_set('Задание 2', my2, d**2 - 9*d > 0,
+verify_solution_set('Task 2', my2, d**2 - 9*d > 0,
                     var=d, domain=Interval.open(0, oo))
 """)
 
 md(r"""
 ---
-## Теория 2. Дробь: знаменатель нельзя трогать
+## Theory 2. A fraction: do not touch the denominator
 
-Неравенство $\dfrac{A(x)}{B(x)} > 0$ решается ровно тем же порядком, что
-и в теории 1, с одной поправкой: критическими значениями становятся
-**и нули числителя, и нули знаменателя**.
+The inequality $\dfrac{A(x)}{B(x)} > 0$ is solved by exactly the order of theory 1,
+with one amendment: the critical values become **the zeros of the numerator and the
+zeros of the denominator**.
 
-Причина в том, что дробь меняет знак в обоих случаях — проходя через
-ноль и проходя через разрыв. Нули знаменателя при этом всегда
-**выколоты**: в них выражение не определено, и в ответ они не входят
-ни при строгом неравенстве, ни при нестрогом.
+The reason is that a fraction changes sign in both cases — passing through zero and
+passing through a break. The zeros of the denominator are always **excluded**: the
+expression is undefined there, and they belong to the answer neither for a strict
+nor for a non-strict inequality.
 
-**Два законных пути.**
+**Two legitimate routes.**
 
-*Всё в одну дробь.* Из $f(x) > x$ делаем $f(x) - x > 0$, приводим к общему
-знаменателю, раскладываем числитель и знаменатель на множители, строим
-таблицу знаков. Путь длиннее на одну строку и не требует никаких оговорок.
+*Everything into one fraction.* From $f(x) > x$ make $f(x) - x > 0$, bring it to a
+common denominator, factorise numerator and denominator and build a table of signs.
+The route is one line longer and needs no caveats at all.
 
-*Разбор случаев.* При $B(x)>0$ умножаем на знаменатель как есть,
-при $B(x)<0$ — переворачиваем знак. Каждое из двух решений пересекается
-со своим условием. Путь короче, но требует аккуратности: пересечение
-забывают чаще, чем ошибаются в алгебре.
+*Case analysis.* For $B(x)>0$ multiply by the denominator as it is, for $B(x)<0$
+flip the sign. Each of the two solutions is intersected with its own condition. The
+route is shorter but needs care: the intersection is forgotten more often than the
+algebra goes wrong.
 
-**Про третий путь.** Домножить на $B^2$ — тоже законно ($B^2>0$ всегда),
-но степень вырастает вдвое, и вместо квадратного неравенства получается
-неравенство четвёртой степени. В Paper 1 это плохая сделка.
+**About a third route.** Multiplying by $B^2$ is legitimate too ($B^2>0$ always),
+but the degree doubles, and instead of a quadratic inequality you get one of the
+fourth degree. On Paper 1 that is a bad deal.
 
-**Что проверяет экзамен.** В обоих блоках архива с дробным неравенством
-разметка одинакова: A1 за критические значения, дальше по A1 за каждый
-промежуток. Найти границы мало — надо предъявить все куски ответа.
+**What the exam checks.** In both archive blocks with a rational inequality the
+marking is the same: A1 for the critical values, then an A1 for each interval.
+Finding the boundaries is not enough — every piece of the answer has to be
+presented.
 """)
 
 md(r"""
-## Задание 3 🟡 — дробное неравенство
+## Task 3 🟡 — a rational inequality
 
-Дана $f(x) = \dfrac{x^2 - 14x + 24}{2x + 6}$. Решите неравенство $f(x) > x$.
+Given $f(x) = \dfrac{x^2 - 14x + 24}{2x + 6}$, solve the inequality $f(x) > x$.
 
-Ответ здесь точный, с радикалами: $\sqrt{31}$ пишется `sqrt(31)`.
+The answer here is exact, with surds: $\sqrt{31}$ is written `sqrt(31)`.
 
-*Источник: November 2023 TZ2, Paper 2, Q11(f) (4 балла, с калькулятором);
-дословно тот же вопрос — November 2023 TZ1, Paper 2, Q11(f).*
+*Source: November 2023 TZ2, Paper 2, Q11(f) (4 marks, calculator); the same
+question word for word is November 2023 TZ1, Paper 2, Q11(f).*
 """)
 
 code(r"""
-my3 = ...                # множество решений
+my3 = ...                # the solution set
 
-verify_solution_set('Задание 3', my3, (x**2 - 14*x + 24)/(2*x + 6) > x)
+verify_solution_set('Task 3', my3, (x**2 - 14*x + 24)/(2*x + 6) > x)
 """)
 
 md(r"""
 ---
-## Теория 3. Модуль
+## Theory 3. A modulus
 
-Модуль снимается по определению, и способов ровно два.
+A modulus is removed by its definition, and there are exactly two ways.
 
-**По случаям.** $|A| = A$ там, где $A \ge 0$, и $|A| = -A$ там, где $A<0$.
-Решаем в каждом случае и пересекаем с условием случая.
+**By cases.** $|A| = A$ where $A \ge 0$, and $|A| = -A$ where $A<0$. Solve in each
+case and intersect with the condition of the case.
 
-**По готовым равносильностям.** Для $b>0$:
+**By the ready equivalences.** For $b>0$:
 
-$$|A| < b \iff -b < A < b, \qquad |A| > b \iff A < -b \ \text{ или } \ A > b.$$
+$$|A| < b \iff -b < A < b, \qquad |A| > b \iff A < -b \ \text{ or } \ A > b.$$
 
-Первая даёт один промежуток, вторая — два. Перепутать их — самая частая
-ошибка, и заметить её легко: если в ответе на «$|A|>b$» получился один
-кусок, что-то не так.
+The first gives one interval, the second two. Confusing them is the most frequent
+mistake, and it is easy to spot: if the answer to «$|A|>b$» came out as a single
+piece, something is wrong.
 
-**$f(|x|)$ и $|f(x)|$ — разные вещи.** Разница видна на графике:
+**$f(|x|)$ and $|f(x)|$ are different things.** The difference shows on the graph:
 
-* $|f(x)|$ отражает вверх всё, что было ниже оси $x$;
-* $f(|x|)$ выбрасывает левую половину графика и заменяет её зеркальным
-  отражением правой.
+* $|f(x)|$ reflects upwards everything that was below the $x$-axis;
+* $f(|x|)$ throws away the left half of the graph and replaces it with the mirror
+  image of the right half.
 
-Поэтому у $f(|x|)$ ответ всегда симметричен относительно нуля, а у
-$|f(x)|$ — вообще говоря нет. В архиве встречается именно $f(|x|)$,
-и симметрия ответа служит проверкой: несимметричный ответ здесь
-заведомо неверен.
+So the answer for $f(|x|)$ is always symmetric about zero, while for $|f(x)|$ it
+generally is not. What appears in the archive is $f(|x|)$, and the symmetry of the
+answer serves as a check: an answer that is not symmetric here is certainly wrong.
 """)
 
 md(r"""
-## Задание 4 🟡 — два вопроса по одному графику
+## Task 4 🟡 — two questions from one graph
 
-Дана $f(x) = \dfrac{2x-1}{x+1}$.
+Given $f(x) = \dfrac{2x-1}{x+1}$.
 
-**(a)** Решите $0 < f(x) < 2$.
-**(b)** Решите $f(|x|) > 0$.
+**(a)** Solve $0 < f(x) < 2$.
+**(b)** Solve $f(|x|) > 0$.
 
-В пункте (b) полезно сначала сообразить, чему равно $f(|x|)$, и только
-потом решать.
+In part (b) it pays to work out what $f(|x|)$ equals first and only then solve.
 
-*Источник: May 2022 TZ2, Paper 1, Q3(c) и Q3(d) (1 + 2 балла, без калькулятора).*
+*Source: May 2022 TZ2, Paper 1, Q3(c) and Q3(d) (1 + 2 marks, no calculator).*
 """)
 
 code(r"""
 f4 = (2*x - 1)/(x + 1)
 
-my4_a = ...              # множество решений 0 < f(x) < 2
-my4_b = ...              # множество решений f(|x|) > 0
+my4_a = ...              # the solution set of 0 < f(x) < 2
+my4_b = ...              # the solution set of f(|x|) > 0
 
-verify_solution_set('Задание 4(a)', my4_a, (f4 > 0) & (f4 < 2))
-verify_solution_set('Задание 4(b)', my4_b, f4.subs(x, Abs(x)) > 0)
+verify_solution_set('Task 4(a)', my4_a, (f4 > 0) & (f4 < 2))
+verify_solution_set('Task 4(b)', my4_b, f4.subs(x, Abs(x)) > 0)
 """)
 
 md(r"""
 ---
-## Теория 4. Когда решает калькулятор
+## Theory 4. When the calculator does the solving
 
-Признак калькуляторной задачи прост: в неравенстве стоят функции разных
-типов — показательная и дробная, логарифм и многочлен. Такие уравнения
-в общем виде не решаются, и markscheme этого не требует: он требует
-точки пересечения с точностью до трёх значащих цифр.
+The sign of a calculator question is simple: the inequality holds functions of
+different kinds — an exponential and a fraction, a logarithm and a polynomial. Such
+equations have no general solution, and the markscheme does not ask for one: it asks
+for the intersections to three significant figures.
 
-**Порядок работы.**
+**The working order.**
 
-1. Нарисовать обе части как две функции и найти все точки пересечения.
-2. Отметить точки, где выражение **не определено** — нули знаменателей,
-   границы области логарифма. Они не решения, но они границы промежутков.
-3. Между соседними отмеченными точками знак постоянен: проверить одну
-   точку внутри каждого промежутка.
-4. Собрать ответ и решить про каждый конец.
+1. Draw both sides as two functions and find every intersection.
+2. Mark the points where the expression is **undefined** — the zeros of
+   denominators, the edges of a logarithm's domain. They are not solutions, but they
+   are boundaries of intervals.
+3. Between neighbouring marked points the sign is constant: check one point inside
+   each interval.
+4. Assemble the answer and decide about each end.
 
-**Ловушка округления.** Пусть точка пересечения равна
-$-2.41834\ldots$; с тремя значащими цифрами это $-2.42$, и округление
-сдвинуло конец промежутка наружу от истинного. На экзамене такая запись
-правильна и принимается, но при проверке подстановкой само $-2.42$
-неравенству уже не удовлетворяет. Не пугайтесь: проверять надо чуть
-внутри промежутка, а не в самом округлённом конце.
+**The rounding trap.** Suppose an intersection is at $-2.41834\ldots$; to three
+significant figures that is $-2.42$, and the rounding has shifted the end of the
+interval outwards from the true one. In the exam such a writing is correct and
+accepted, but on substituting, $-2.42$ itself no longer satisfies the inequality. Do
+not be alarmed: check a little inside the interval, not at the rounded end
+itself.
 
-**Целочисленный ответ.** Вопрос «наибольшее $n$, при котором…» после
-решения неравенства требует ещё одного шага: взять целую часть **и
-проверить два соседних значения**. Markscheme даёт балл именно за
-проверку — она отсекает ошибку в один шаг, самую частую в этом месте.
+**An integer answer.** The question «the largest $n$ for which …», once the
+inequality is solved, needs one more step: take the integer part **and check the two
+neighbouring values**. The markscheme gives a mark precisely for the check — it cuts
+off the off-by-one error, the most frequent one in this place.
 """)
 
 md(r"""
-## Задание 5 🔴 — неравенство, которое решает только GDC
+## Task 5 🔴 — an inequality only a GDC can solve
 
-Даны $f(x) = 2^{x} - 2^{-x}$ и $g(x) = \dfrac{x-1}{x^2-2x-3}$, где
-$x \ne -1$ и $x \ne 3$. Решите неравенство $f(x) \ge g(x)$.
+Given $f(x) = 2^{x} - 2^{-x}$ and $g(x) = \dfrac{x-1}{x^2-2x-3}$, where $x \ne -1$
+and $x \ne 3$, solve the inequality $f(x) \ge g(x)$.
 
-Концы, найденные калькулятором, записывайте с тремя значащими цифрами.
-Проверка знает об округлении и в окрестности границ придирается не будет —
-зато проверит всё остальное, включая выколотые точки.
+Write the ends found by the calculator to three significant figures. The check knows
+about the rounding and will not quibble near the boundaries — but it checks
+everything else, including the excluded points.
 
-*Источник: May 2022 TZ1, Paper 2, Q6(b) (4 балла, с калькулятором).*
+*Source: May 2022 TZ1, Paper 2, Q6(b) (4 marks, calculator).*
 """)
 
 code(r"""
@@ -423,530 +419,524 @@ h5 = 2**x - 2**(-x) - (x - 1)/(x**2 - 2*x - 3)
 
 
 def holds5(v):
-    '''Выполняется ли f(x) >= g(x) в точке v.'''
-    if v == -1 or v == 3:            # там функция не определена
+    '''Does f(x) >= g(x) hold at the point v.'''
+    if v == -1 or v == 3:            # the function is undefined there
         return False
     return float(h5.subs(x, v).evalf()) >= 0
 
 
-my5 = ...                # объединение промежутков: Union(...)
+my5 = ...                # a union of intervals: Union(...)
 
-verify_param_set('Задание 5', my5, holds5, var=x, window=(-6, 6),
+verify_param_set('Task 5', my5, holds5, var=x, window=(-6, 6),
                  eps=Rational(1, 100), tol=0.005)
 """)
 
 md(r"""
-## Задание 6 🟡 — целый ответ
+## Task 6 🟡 — an integer answer
 
-Ряды строятся из карт: в первом ряду 2 карты, и каждый следующий ряд
-на 3 карты длиннее предыдущего, так что на $n$ рядов уходит
-$\dfrac{n(3n+1)}{2}$ карт. Имеется 14 полных колод по 52 карты.
+Rows are built out of cards: the first row has 2 cards and each next row is 3 cards
+longer than the previous one, so $n$ rows take $\dfrac{n(3n+1)}{2}$ cards. There are
+14 full packs of 52 cards.
 
-Найдите наибольшее число рядов, которое можно построить, и запишите
-суммы карт для этого числа рядов и для следующего — так проверяют ответ.
+Find the largest number of rows that can be built, and write down the totals of
+cards for that number of rows and for one more — that is how the answer is
+checked.
 
-*Источник: May 2025 TZ1, Paper 2, Q10(d) (3 балла, с калькулятором).*
+*Source: May 2025 TZ1, Paper 2, Q10(d) (3 marks, calculator).*
 """)
 
 code(r"""
-my6_n = ...              # наибольшее целое число рядов
-my6_t21 = ...            # сколько карт уходит на это число рядов
-my6_t22 = ...            # сколько ушло бы на один ряд больше
+my6_n = ...              # the largest whole number of rows
+my6_t21 = ...            # how many cards that number of rows takes
+my6_t22 = ...            # how many one more row would take
 
-check_num('Задание 6, рядов', my6_n, 6, '""" + D_N6 + r"""')
-check_num('Задание 6, карт на них', my6_t21, 6, '""" + D_T21 + r"""')
-check_num('Задание 6, на один ряд больше', my6_t22, 6, '""" + D_T22 + r"""')
+check_num('Task 6, the rows', my6_n, 6, '""" + D_N6 + r"""')
+check_num('Task 6, the cards for them', my6_t21, 6, '""" + D_T21 + r"""')
+check_num('Task 6, one row more', my6_t22, 6, '""" + D_T22 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 5. Дискриминант как условие на букву
+## Theory 5. The discriminant as a condition on a letter
 
-Здесь тема поворачивается. До сих пор неравенство было дано; теперь его
-надо **получить** из условия задачи, и почти всегда его источник один —
-дискриминант.
+Here the topic turns round. Until now the inequality was given; now it has to be
+**obtained** from the wording of the question, and its source is almost always the
+discriminant.
 
-$$\Delta > 0 \iff \text{два различных действительных корня},$$
-$$\Delta = 0 \iff \text{один (кратный) корень},$$
-$$\Delta < 0 \iff \text{действительных корней нет}.$$
+$$\Delta > 0 \iff \text{two distinct real roots},$$
+$$\Delta = 0 \iff \text{one (repeated) root},$$
+$$\Delta < 0 \iff \text{no real roots}.$$
 
-Дальше $\Delta$ — выражение с буквой, и неравенство на букву решается
-приёмом 1. Вся работа в первом шаге: перевести слова условия в один
-из трёх знаков.
+After that $\Delta$ is an expression in the letter, and the inequality in the letter
+is solved with technique 1. All the work is in the first step: translating the words
+of the question into one of the three signs.
 
-**Осторожно со словом «квадратное».** Формула $\Delta = b^2-4ac$
-предполагает $a \ne 0$. Если старший коэффициент содержит букву,
-случай $a=0$ надо разобрать отдельно — уравнение перестаёт быть
-квадратным. В архиве этот случай не экзотика, а часть ответа: значение
-буквы, обнуляющее старший коэффициент, обычно приходится исключать
-не потому, что дискриминант не подошёл, а потому, что уравнение
-выродилось во что-то другое — линейное, а иногда и вовсе невозможное.
+**Careful with the word «quadratic».** The formula $\Delta = b^2-4ac$ assumes
+$a \ne 0$. If the leading coefficient contains the letter, the case $a=0$ has to be
+treated separately — the equation stops being quadratic. In the archive that case is
+not an exotic one but part of the answer: the value of the letter that kills the
+leading coefficient usually has to be excluded not because the discriminant failed
+but because the equation degenerated into something else — linear, and sometimes
+impossible altogether.
 
-**Как условие звучит в задаче.**
+**How the condition sounds in a question.**
 
-| В условии | Условие на $\Delta$ |
+| In the question | The condition on $\Delta$ |
 | --- | --- |
 | two distinct real roots | $\Delta>0$ |
 | the graph touches the $x$-axis | $\Delta=0$ |
 | no real roots · the graph does not cross | $\Delta<0$ |
-| the line is tangent to the curve | $\Delta=0$ после подстановки |
-| two distinct points of intersection | $\Delta>0$ после подстановки |
+| the line is tangent to the curve | $\Delta=0$ after substituting |
+| two distinct points of intersection | $\Delta>0$ after substituting |
 
-Последние две строки — тот же приём, спрятанный в геометрию: подставляем
-прямую в кривую, получаем квадратное уравнение и смотрим на его
-дискриминант.
+The last two rows are the same technique hidden in geometry: substitute the line
+into the curve, get a quadratic and look at its discriminant.
 
-**После неравенства бывает ещё шаг.** «Наибольшее целое», «$k \in
-\mathbb{Z}^+$», «сколько значений» — решение неравенства здесь
-предпоследняя строка, а не ответ.
+**After the inequality there is sometimes one more step.** «The largest integer»,
+«$k \in \mathbb{Z}^+$», «how many values» — solving the inequality here is the
+second-to-last line, not the answer.
 """)
 
 md(r"""
-## Задание 7 🟡 — буква в старшем коэффициенте
+## Task 7 🟡 — a letter in the leading coefficient
 
-При каких значениях $p$ уравнение
+For which values of $p$ does the equation
 
 $$3px^2 + 2px + 1 - p = 0$$
 
-имеет два различных действительных корня?
+have two distinct real roots?
 
-Проверка не пользуется дискриминантом: она подставляет ваши значения
-$p$ и честно считает, сколько у уравнения различных действительных
-корней. Поэтому вырожденный случай $p=0$ она заметит.
+The check does not use the discriminant: it substitutes your values of $p$ and
+honestly counts how many distinct real roots the equation has. So it will notice the
+degenerate case $p=0$.
 
-*Источник: November 2021, Paper 1, Q7(a) (5 баллов, без калькулятора).*
+*Source: November 2021, Paper 1, Q7(a) (5 marks, no calculator).*
 """)
 
 code(r"""
 def two_roots7(pv):
-    '''Сколько различных действительных корней у уравнения при p = pv.'''
+    '''How many distinct real roots the equation has at p = pv.'''
     return len(set(real_roots(Poly(3*pv*x**2 + 2*pv*x + 1 - pv, x)))) == 2
 
 
-my7 = ...                # множество значений p
+my7 = ...                # the set of values of p
 
-verify_param_set('Задание 7', my7, two_roots7, var=p)
+verify_param_set('Task 7', my7, two_roots7, var=p)
 """)
 
 md(r"""
-## Задание 8 🟢 — от неравенства к наибольшему целому
+## Task 8 🟢 — from an inequality to the largest integer
 
-Функция $f(x) = \tfrac12 x^2 + kx + 13$ не имеет действительных корней,
-и $k$ — целое положительное число. Найдите множество значений $k$,
-при которых корней нет, и наибольшее целое $k$.
+The function $f(x) = \tfrac12 x^2 + kx + 13$ has no real roots, and $k$ is a
+positive integer. Find the set of values of $k$ for which there are no roots, and
+the largest integer $k$.
 
-*Источник: November 2025 TZ3, Paper 1, Q9(a) (2 балла, без калькулятора).*
+*Source: November 2025 TZ3, Paper 1, Q9(a) (2 marks, no calculator).*
 """)
 
 code(r"""
-my8_set = ...            # множество значений k (пока без целочисленности)
-my8_k = ...              # наибольшее целое положительное k
+my8_set = ...            # the set of values of k (not yet integers)
+my8_k = ...              # the largest positive integer k
 
-verify_solution_set('Задание 8, множество', my8_set,
+verify_solution_set('Task 8, the set', my8_set,
                     discriminant(x**2/2 + k*x + 13, x) < 0, var=k)
-check_num('Задание 8, наибольшее k', my8_k, 6, '""" + D_K8 + r"""')
+check_num('Task 8, the largest k', my8_k, 6, '""" + D_K8 + r"""')
 """)
 
 md(r"""
-## Задание 9 🟡 — «show that» про дискриминант
+## Task 9 🟡 — a «show that» about the discriminant
 
-Прямая пересекает кривую в двух различных точках, и после подстановки
-получается уравнение
+A line meets a curve at two distinct points, and after the substitution the equation
 
-$$x^2 - 2dx + 9d = 0.$$
+$$x^2 - 2dx + 9d = 0$$
 
-Покажите, что $d^2 - 9d > 0$.
+is obtained. Show that $d^2 - 9d > 0$.
 
-Введите дискриминант этого уравнения — то самое выражение, из которого
-после деления на 4 получается требуемое неравенство.
+Enter the discriminant of that equation — the expression from which, after dividing
+by 4, the required inequality comes.
 
-*Источник: November 2023 TZ1, Paper 1, Q10(b)(ii) (3 балла, без калькулятора).*
+*Source: November 2023 TZ1, Paper 1, Q10(b)(ii) (3 marks, no calculator).*
 """)
 
 code(r"""
-my9 = ...                # дискриминант уравнения
+my9 = ...                # the discriminant of the equation
 
-verify_identity('Задание 9', my9, 4*d**2 - 36*d, var=d)
+verify_identity('Task 9', my9, 4*d**2 - 36*d, var=d)
 """)
 
 md(r"""
-## Задание 10 🟡 — целочисленное ограничение поверх неравенства
+## Task 10 🟡 — an integer restriction on top of an inequality
 
-Числа $a$, $b$, $c$ независимо принимают целые значения от 1 до 6.
-График $y = ax^2 + bx + c$ пересекает ось $x$ в двух различных точках.
+The numbers $a$, $b$, $c$ independently take integer values from 1 to 6. The graph
+of $y = ax^2 + bx + c$ crosses the $x$-axis at two distinct points.
 
-Найдите все возможные значения произведения $ac$.
+Find all the possible values of the product $ac$.
 
-Подумайте, почему в ответе нет числа 7, хотя неравенству оно
-удовлетворяет.
+Think about why 7 is not in the answer, even though it satisfies the inequality.
 
-*Источник: May 2024 TZ2, Paper 3, Q2(d) (3 балла, с калькулятором).*
+*Source: May 2024 TZ2, Paper 3, Q2(d) (3 marks, calculator).*
 """)
 
 code(r"""
-my10 = [...]             # все возможные значения ac
+my10 = [...]             # all the possible values of ac
 
-check_set('Задание 10', my10, '""" + D_AC10 + r"""')
+check_set('Task 10', my10, '""" + D_AC10 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 6. Знаки корней
+## Theory 6. The signs of the roots
 
-Когда спрашивают не про сами корни, а про их **знаки**, находить корни
-не нужно. Всё видно из формул Виета для $ax^2+bx+c=0$:
+When the question is not about the roots themselves but about their **signs**, the
+roots do not have to be found. Everything is visible from Vieta's formulas for
+$ax^2+bx+c=0$:
 
 $$\alpha\beta = \frac ca, \qquad \alpha+\beta = -\frac ba.$$
 
-Отсюда таблица, которую стоит помнить целиком:
+Hence a table worth remembering whole:
 
-| Требование | Условия |
+| Requirement | Conditions |
 | --- | --- |
-| один корень положителен, другой отрицателен | $\alpha\beta<0$ |
-| оба корня положительны | $\alpha\beta>0$, $\alpha+\beta>0$, $\Delta\ge 0$ |
-| оба корня отрицательны | $\alpha\beta>0$, $\alpha+\beta<0$, $\Delta\ge 0$ |
-| корни одного знака | $\alpha\beta>0$, $\Delta>0$ |
+| one root positive, the other negative | $\alpha\beta<0$ |
+| both roots positive | $\alpha\beta>0$, $\alpha+\beta>0$, $\Delta\ge 0$ |
+| both roots negative | $\alpha\beta>0$, $\alpha+\beta<0$, $\Delta\ge 0$ |
+| the roots have the same sign | $\alpha\beta>0$, $\Delta>0$ |
 
-**Почему в первой строке всего одно условие.** Если $\frac ca<0$, то
-$\Delta = b^2-4ac > 0$ автоматически: $-4ac$ положительно. Требовать
-действительности корней отдельно не надо, и markscheme за это лишнего
-не даёт.
+**Why the first row has only one condition.** If $\frac ca<0$ then
+$\Delta = b^2-4ac > 0$ automatically: $-4ac$ is positive. Requiring the roots to be
+real separately is unnecessary, and the markscheme gives nothing extra for it.
 
-**Почему в остальных строках нужен $\Delta$.** Условия $\alpha\beta>0$
-и $\alpha+\beta>0$ выполняются и для пары комплексно сопряжённых корней
-с положительной действительной частью. Без дискриминанта ответ окажется
-шире правильного.
+**Why the other rows need $\Delta$.** The conditions $\alpha\beta>0$ and
+$\alpha+\beta>0$ hold for a pair of complex conjugate roots with a positive real
+part as well. Without the discriminant the answer comes out wider than the right
+one.
 
-**Пересечение, а не объединение.** Когда условий несколько, ответ —
-их **пересечение**. В задании 19 это прямо оформлено в два пункта:
-сначала множество из дискриминанта, потом пересечение с условием на знак.
+**An intersection, not a union.** When there are several conditions, the answer is
+their **intersection**. In task 19 that is laid out in two parts: first the set from
+the discriminant, then the intersection with the condition on the sign.
 """)
 
 md(r"""
-## Задание 11 🟢 — один корень положителен, другой отрицателен
+## Task 11 🟢 — one root positive, the other negative
 
-При каких значениях $k$ уравнение
+For which values of $k$ does the equation
 
 $$kx^2 - (k+3)x + 2k + 9 = 0$$
 
-имеет один положительный и один отрицательный корень?
+have one positive and one negative root?
 
-*Источник: May 2022 TZ1, Paper 2, Q8(b) (3 балла, с калькулятором).*
+*Source: May 2022 TZ1, Paper 2, Q8(b) (3 marks, calculator).*
 """)
 
 code(r"""
 def signs11(kv):
-    '''Один корень отрицателен, другой положителен — при k = kv.'''
+    '''One root negative and the other positive — at k = kv.'''
     if kv == 0:
-        return False                 # уравнение перестало быть квадратным
+        return False                 # the equation has stopped being quadratic
     found = sorted(set(real_roots(Poly(kv*x**2 - (kv + 3)*x + 2*kv + 9, x))))
     return len(found) == 2 and found[0] < 0 < found[1]
 
 
-my11 = ...               # множество значений k
+my11 = ...               # the set of values of k
 
-verify_param_set('Задание 11', my11, signs11)
+verify_param_set('Task 11', my11, signs11)
 """)
 
 md(r"""
 ---
-## Теория 7. «При всех $x$» и «ровно два решения»
+## Theory 7. «For all $x$» and «exactly two solutions»
 
-Третий поворот темы: спрашивают не про корни и не про знаки, а про
-**количество** решений — и ответом снова оказывается множество значений
-параметра.
+The third turn of the topic: the question is not about the roots and not about their
+signs but about the **number** of solutions — and the answer turns out to be a set
+of values of the parameter again.
 
-**«Верно при всех $x$».** Условие $F(x) \le 0$ для всех $x$ равносильно
-одному неравенству:
+**«True for all $x$».** The condition $F(x) \le 0$ for all $x$ is equivalent to a
+single inequality:
 
 $$\max_{x} F(x) \le 0.$$
 
-Для квадратного $F$ максимум берётся в вершине, и удобнее всего выделить
-полный квадрат: у $-2(x+3)^2 + 7 + k$ максимум равен $7+k$ и достигается
-при $x=-3$, так что условие превращается в $7+k\le 0$. Второй путь —
-через дискриминант: «парабола ветвями вниз не поднимается выше оси» это
-$\Delta \le 0$. Оба принимаются.
+For a quadratic $F$ the maximum is at the vertex, and the most convenient thing is
+to complete the square: $-2(x+3)^2 + 7 + k$ has maximum $7+k$, attained at $x=-3$,
+so the condition becomes $7+k\le 0$. A second route is through the discriminant: «a
+downward parabola does not rise above the axis» is $\Delta \le 0$. Both are
+accepted.
 
-**«Ровно $N$ решений».** Работает такая мысль: число решений меняется
-только там, где решения **сливаются** (касание) или **исчезают**
-(уходят из области). Значит:
+**«Exactly $N$ solutions».** The thought that works is this: the number of solutions
+changes only where the solutions **merge** (a touching) or **disappear** (leave the
+domain). So:
 
-1. найти эти особые значения параметра — они и есть границы ответа;
-2. между ними число решений постоянно, поэтому достаточно проверить
-   по одной точке в каждом промежутке.
+1. find those special values of the parameter — they are the boundaries of the
+   answer;
+2. between them the number of solutions is constant, so one point per interval is
+   enough to check.
 
-Отсюда типичная форма ответа: интервал с **выколотой точкой**. Сама
-выколотая точка — это ровно то значение параметра, при котором два
-решения слились в одно, и потому в ответ на «ровно два» она не входит,
-зато целиком составляет ответ на «ровно одно». Два вопроса, два ответа,
-и одна и та же точка в них играет противоположные роли.
+Hence the typical shape of the answer: an interval with a **point removed**. That
+removed point is exactly the value of the parameter at which two solutions merged
+into one, and so it is not in the answer to «exactly two», while it makes up the
+whole answer to «exactly one». Two questions, two answers, and the same point plays
+opposite roles in them.
 
-**Про запись ответа.** «$m \in \mathbb{R}^+,\ m \ne 2$» и
-«$0<m<2$ или $m>2$» — одно и то же, и markscheme принимает обе записи.
-А вот «$m>0$» без оговорки — уже другой ответ и другой балл.
+**About writing the answer.** «$m \in \mathbb{R}^+,\ m \ne 2$» and
+«$0<m<2$ or $m>2$» are the same thing, and the markscheme accepts both. But «$m>0$»
+with no caveat is a different answer and a different mark.
 """)
 
 md(r"""
-## Задание 12 🟡 — «для всех $x$»
+## Task 12 🟡 — «for all $x$»
 
-Даны $f(x) = 6x^2 - 12x + 1$ и $g(x) = -x + c$. Известно, что
-$(g \circ f)(x) \le 0$ при всех $x \in \mathbb{R}$.
+Given $f(x) = 6x^2 - 12x + 1$ and $g(x) = -x + c$. It is known that
+$(g \circ f)(x) \le 0$ for all $x \in \mathbb{R}$.
 
-Найдите множество возможных значений $c$.
+Find the set of possible values of $c$.
 
-*Источник: May 2021 TZ2, Paper 2, Q4(b) (4 балла, с калькулятором).*
+*Source: May 2021 TZ2, Paper 2, Q4(b) (4 marks, calculator).*
 """)
 
 code(r"""
 def never_positive(cv):
-    '''Верно ли, что (g∘f)(x) ≤ 0 при всех x — при c = cv.'''
+    '''Is it true that (g o f)(x) <= 0 for all x — at c = cv.'''
     return maximum(-(6*x**2 - 12*x + 1) + cv, x) <= 0
 
 
-my12 = ...               # множество значений c
+my12 = ...               # the set of values of c
 
-verify_param_set('Задание 12', my12, never_positive, var=c)
+verify_param_set('Task 12', my12, never_positive, var=c)
 """)
 
 md(r"""
-## Задание 13 🔴 — сколько нормалей, столько решений
+## Task 13 🔴 — as many solutions as there are normals
 
-Исследование Paper 3. Показано, что нормаль к кривой $H$ с наклоном $m$
-существует тогда и только тогда, когда
+A Paper 3 investigation. It has been shown that a normal to the curve $H$ with
+gradient $m$ exists if and only if
 
-$$c = \frac{1}{\sqrt m} - m\sqrt m \qquad\text{или}\qquad
+$$c = \frac{1}{\sqrt m} - m\sqrt m \qquad\text{or}\qquad
 c = -\frac{1}{\sqrt m} + m\sqrt m,$$
 
-и каждому значению $c$ отвечает своя нормаль.
+and each value of $c$ corresponds to its own normal.
 
-**(a)** Найдите множество значений $m$, при которых нормалей ровно две.
-**(b)** Найдите множество значений $m$, при которых нормаль ровно одна.
+**(a)** Find the set of values of $m$ for which there are exactly two normals.
+**(b)** Find the set of values of $m$ for which there is exactly one normal.
 
-Ответ в (b) — одна точка: `FiniteSet(...)`.
+The answer in (b) is a single point: `FiniteSet(...)`.
 
-*Источник: November 2025 TZ1, Paper 3, Q1(b)(ii), (c)(i), (c)(ii)
-(4 балла, с калькулятором).*
+*Source: November 2025 TZ1, Paper 3, Q1(b)(ii), (c)(i), (c)(ii) (4 marks,
+calculator).*
 """)
 
 code(r"""
 def normals(mv):
-    '''Сколько разных нормалей отвечает наклону m = mv.'''
+    '''How many different normals correspond to the gradient m = mv.'''
     if mv <= 0:
-        return 0                     # sqrt(m) не определён
+        return 0                     # sqrt(m) is undefined
     return len({simplify(1/sqrt(mv) - mv*sqrt(mv)),
                 simplify(-1/sqrt(mv) + mv*sqrt(mv))})
 
 
-my13_two = ...           # ровно две нормали
-my13_one = ...           # ровно одна нормаль
+my13_two = ...           # exactly two normals
+my13_one = ...           # exactly one normal
 
-verify_param_set('Задание 13(a)', my13_two, lambda mv: normals(mv) == 2, var=m)
-verify_param_set('Задание 13(b)', my13_one, lambda mv: normals(mv) == 1, var=m)
+verify_param_set('Task 13(a)', my13_two, lambda mv: normals(mv) == 2, var=m)
+verify_param_set('Task 13(b)', my13_one, lambda mv: normals(mv) == 1, var=m)
 """)
 
 md(r"""
-## Задание 14 🔴 — число точек пересечения
+## Task 14 🔴 — the number of intersections
 
-Исследование Paper 3. Рассматриваются графики $y = a^x$ и
-$y = \log_a x$ при $a > 1$.
+A Paper 3 investigation. The graphs of $y = a^x$ and $y = \log_a x$ with $a > 1$ are
+considered.
 
-**(a)** При каких $a$ графики пересекаются в двух точках?
-**(b)** При каких $a$ они не пересекаются вовсе?
+**(a)** For which $a$ do the graphs meet at two points?
+**(b)** For which $a$ do they not meet at all?
 
-Ответ точный: граница выражается через $\mathrm{e}$.
+The answer is exact: the boundary is expressed through $\mathrm{e}$.
 
-*Источник: May 2023 TZ2, Paper 3, Q1(f)(i) и (f)(ii) (2 балла, с калькулятором).*
+*Source: May 2023 TZ2, Paper 3, Q1(f)(i) and (f)(ii) (2 marks, calculator).*
 """)
 
 code(r"""
 import math
 
-# При a > 1 обе кривые взаимно обратны и возрастают, поэтому все точки
-# пересечения лежат на прямой y = x, и вопрос сводится к числу решений
-# уравнения a^x = x. Подстановка x = e^u превращает его в u·e^{−u} = ln a:
-# так второй корень не убегает в бесконечность при a → 1 и его видно.
+# For a > 1 the two curves are inverses of each other and both increasing, so every
+# intersection lies on the line y = x, and the question reduces to the number of
+# solutions of a^x = x. The substitution x = e^u turns it into u*e^{-u} = ln a:
+# that way the second root does not run off to infinity as a -> 1 and stays visible.
 def crossings(av):
-    '''Сколько точек пересечения у графиков при a = av.'''
+    '''How many intersections the graphs have at a = av.'''
     a_ = float(av)
     if a_ <= 1:
-        return None                  # основание должно быть больше 1
+        return None                  # the base has to be greater than 1
     if abs(math.log(a_) - math.exp(-1)) < 1e-9:
-        return None                  # касание: численно тут не считают
+        return None                  # a touching: nobody counts numerically here
     return count_roots(lambda t_: t_*math.exp(-t_) - math.log(a_), -2, 40)
 
 
-my14_two = ...           # две точки пересечения
-my14_none = ...          # ни одной
+my14_two = ...           # two intersections
+my14_none = ...          # none at all
 
-verify_param_set('Задание 14(a)', my14_two, lambda av: crossings(av) == 2,
+verify_param_set('Task 14(a)', my14_two, lambda av: crossings(av) == 2,
                  var=a, window=(0, 4))
-verify_param_set('Задание 14(b)', my14_none, lambda av: crossings(av) == 0,
+verify_param_set('Task 14(b)', my14_none, lambda av: crossings(av) == 0,
                  var=a, window=(0, 4))
 """)
 
 md(r"""
 ---
-## Теория 8. Доказать неравенство
+## Theory 8. Proving an inequality
 
-Доказать — не то же самое, что решить. Множества в ответе нет; есть
-цепочка, и последний её шаг обязан быть очевидным.
+Proving is not the same as solving. There is no set in the answer; there is a chain,
+and its last step has to be obvious.
 
-**Общее правило.** «Доказать $A \ge B$» значит «доказать $A - B \ge 0$»,
-а неотрицательность должна быть **видна из записи**. Отсюда четыре хода,
-и все четыре встречаются в архиве.
+**The general rule.** «Prove $A \ge B$» means «prove $A - B \ge 0$», and the
+non-negativity has to be **visible from the writing**. Hence four moves, and all
+four appear in the archive.
 
-*Полный квадрат.* Самый частый. Выражение
-$a^2+b^2+c^2-ab-bc-ca$ ничего не говорит, а равное ему
-$\tfrac12\left[(a-b)^2+(b-c)^2+(c-a)^2\right]$ говорит всё. Балл M1 стоит
-именно за попытку записать выражение суммой квадратов.
+*Completing the square.* The most frequent. The expression
+$a^2+b^2+c^2-ab-bc-ca$ says nothing, while the equal
+$\tfrac12\left[(a-b)^2+(b-c)^2+(c-a)^2\right]$ says everything. The M1 is precisely
+for attempting to write the expression as a sum of squares.
 
-*Монотонность.* $n^2 \ge 2n-1$ очевидно, это $(n-1)^2\ge0$; применяем
-возрастающую функцию $y=\sqrt{x}$ и получаем
-$n \ge \sqrt{2n-1}$. Ключевое слово в разметке — «increasing»:
-без ссылки на монотонность переход не засчитывается.
+*Monotonicity.* $n^2 \ge 2n-1$ is obvious, it is $(n-1)^2\ge0$; apply the increasing
+function $y=\sqrt{x}$ and get $n \ge \sqrt{2n-1}$. The key word in the marking is
+«increasing»: without a reference to monotonicity the step is not credited.
 
-*Известное неравенство.* Неравенство треугольника
-$|a+b| \le |a| + |b|$, среднее арифметическое против среднего
-геометрического, признак равенства. В Paper 3 такое неравенство сначала
-доказывают, а потом применяют — и в этом порядке, а не наоборот.
+*A known inequality.* The triangle inequality $|a+b| \le |a| + |b|$, the arithmetic
+mean against the geometric mean, the condition for equality. On Paper 3 such an
+inequality is first proved and then applied — in that order, not the other way
+round.
 
-*От противного.* Предполагаем обратное, доводим до заведомо ложного —
-обычно до «квадрат отрицателен»: предположив $x^2 + 1 < 2x$, приходим
-к $(x-1)^2 < 0$. R1 стоит за явную фразу про противоречие,
-а не за выкладку.
+*By contradiction.* Suppose the opposite and derive something plainly false —
+usually «a square is negative»: supposing $x^2 + 1 < 2x$ leads to $(x-1)^2 < 0$. The
+R1 is for the explicit sentence about the contradiction, not for the working.
 
-**Про AG.** Если ответ напечатан в условии («show that … $\ge$ …»),
-баллы стоят за вывод, а не за ответ. Последняя строка обязана быть
-выводом: «квадрат неотрицателен, следовательно…». Без неё снимают
-последний балл даже при верной алгебре.
+**About AG.** If the answer is printed in the question («show that … $\ge$ …»), the
+marks are for the derivation, not for the answer. The last line has to be a
+conclusion: «a square is non-negative, therefore …». Without it the last mark is
+taken off even with correct algebra.
 
-**Что проверяется в этом практикуме.** Проверка требует именно
-неотрицательной **записи**: раскрытый вид $4a^2+12ab+9b^2$ она не примет,
-хотя он равен $(2a+3b)^2$. Это то же требование к форме, что
-`verify_factored` в практикуме A4 — там просили произведение, здесь
-просят квадрат.
+**What is checked in this practicum.** The check requires a **non-negative
+writing**: it will not accept the expanded form $4a^2+12ab+9b^2$, although it equals
+$(2a+3b)^2$. That is the same requirement on the form as `verify_factored` in
+practicum A4 — there a product was asked for, here a square.
 """)
 
 md(r"""
-## Задание 15 🟢 — монотонность
+## Task 15 🟢 — monotonicity
 
-Покажите, что $1 + \log_2 n \ge \log_2(n+1)$ для $n \in \mathbb{Z}^+$.
+Show that $1 + \log_2 n \ge \log_2(n+1)$ for $n \in \mathbb{Z}^+$.
 
-**(a)** Введите выражение, к которому сводится левая часть, чтобы
-сравнивать два логарифма.
-**(b)** Введите множество, на котором верно оставшееся неравенство
-$2n \ge n+1$.
+**(a)** Enter the expression the left-hand side reduces to, so that two logarithms
+can be compared.
+**(b)** Enter the set on which the remaining inequality $2n \ge n+1$ holds.
 
-*Источник: May 2025 TZ1, Paper 1, Q8(a) (2 балла, без калькулятора).*
+*Source: May 2025 TZ1, Paper 1, Q8(a) (2 marks, no calculator).*
 """)
 
 code(r"""
-my15_log = ...           # чем заменить 1 + log_2(n)
-my15_set = ...           # где верно 2n >= n + 1
+my15_log = ...           # what to replace 1 + log_2(n) with
+my15_set = ...           # where 2n >= n + 1 holds
 
-verify_identity('Задание 15(a)', my15_log, 1 + log(n, 2), var=n)
-verify_solution_set('Задание 15(b)', my15_set, 2*n >= n + 1, var=n)
+verify_identity('Task 15(a)', my15_log, 1 + log(n, 2), var=n)
+verify_solution_set('Task 15(b)', my15_set, 2*n >= n + 1, var=n)
 """)
 
 md(r"""
-## Задание 16 🟡 — выделить квадрат
+## Task 16 🟡 — complete the square
 
-Скорость частицы задана формулой $v(\tau) = \mathrm{e}^{\,T-\tau} - 1$,
-где $T$ — фиксированный момент времени. Покажите, что
+The velocity of a particle is given by $v(\tau) = \mathrm{e}^{\,T-\tau} - 1$, where
+$T$ is a fixed moment of time. Show that
 
 $$v(T-k) + v(T+k) \ge 0$$
 
-для всех $k$.
+for all $k$.
 
-**(a)** Введите сумму $v(T-k)+v(T+k)$ в упрощённом виде.
-**(b)** Запишите её же в виде, из которого неотрицательность очевидна.
+**(a)** Enter the sum $v(T-k)+v(T+k)$ in simplified form.
+**(b)** Write the same thing in a form from which the non-negativity is obvious.
 
-*Источник: May 2021 TZ2, Paper 1, Q11(e) (3 балла, без калькулятора).*
+*Source: May 2021 TZ2, Paper 1, Q11(e) (3 marks, no calculator).*
 """)
 
 code(r"""
-my16_sum = ...           # сумма после упрощения
-my16_sq = ...            # она же квадратом
+my16_sum = ...           # the sum after simplifying
+my16_sq = ...            # the same thing as a square
 
-verify_identity('Задание 16(a)', my16_sum, exp(k) + exp(-k) - 2, var=k)
-verify_nonneg_form('Задание 16(b)', my16_sq, exp(k) + exp(-k) - 2)
+verify_identity('Task 16(a)', my16_sum, exp(k) + exp(-k) - 2, var=k)
+verify_nonneg_form('Task 16(b)', my16_sq, exp(k) + exp(-k) - 2)
 """)
 
 md(r"""
-## Задание 17 🟡 — от противного
+## Task 17 🟡 — by contradiction
 
-Докажите от противного, что $\sqrt{xy} \le \dfrac{x+y}{2}$ для всех
+Prove by contradiction that $\sqrt{xy} \le \dfrac{x+y}{2}$ for all
 $x, y \in \mathbb{R}^+$.
 
-**(a)** Предположим обратное и возведём обе части в квадрат. Введите
-выражение $F$, для которого получившееся утверждение имеет вид $0 > F$.
-**(b)** Запишите $F$ в виде, из которого видно противоречие.
+**(a)** Suppose the opposite and square both sides. Enter the expression $F$ for
+which the resulting statement has the form $0 > F$.
+**(b)** Write $F$ in a form from which the contradiction is visible.
 
-*Источник: November 2025 TZ3, Paper 2, Q9 (5 баллов, с калькулятором).*
+*Source: November 2025 TZ3, Paper 2, Q9 (5 marks, calculator).*
 """)
 
 code(r"""
-my17_expr = ...          # F после возведения в квадрат и переноса
-my17_sq = ...            # F в виде квадрата
+my17_expr = ...          # F after squaring and rearranging
+my17_sq = ...            # F as a square
 
-verify_identity('Задание 17(a)', my17_expr, x**2 - 2*x*y + y**2, var=x)
-verify_nonneg_form('Задание 17(b)', my17_sq, x**2 - 2*x*y + y**2)
+verify_identity('Task 17(a)', my17_expr, x**2 - 2*x*y + y**2, var=x)
+verify_nonneg_form('Task 17(b)', my17_sq, x**2 - 2*x*y + y**2)
 """)
 
 md(r"""
-## Задание 18 🟡 — два коротких вывода из Paper 3
+## Task 18 🟡 — two short deductions from Paper 3
 
-**(a)** Известно, что $a = 2st - s^2$ и $b = t^2 - s^2$, где
-$s, t \in \mathbb{R}^+$, и что $a < b$. Покажите, что $t > 2s$.
+**(a)** Given that $a = 2st - s^2$ and $b = t^2 - s^2$, where $s, t \in
+\mathbb{R}^+$, and that $a < b$, show that $t > 2s$.
 
-Введите разность $b - a$ **в виде произведения** — из него вывод
-получается в одну строку.
+Enter the difference $b - a$ **as a product** — the conclusion comes out of it in
+one line.
 
-**(b)** Числа $x_1,\dots,x_n$ положительны, их сумма равна $T$, и по
-неравенству о средних их произведение не превосходит
-$\left(\frac{T}{n}\right)^n$. Запишите наибольшее возможное значение
-произведения $M_n(T)$.
+**(b)** The numbers $x_1,\dots,x_n$ are positive, their sum is $T$, and by the
+AM–GM inequality their product does not exceed $\left(\frac{T}{n}\right)^n$. Write
+down the largest possible value of the product, $M_n(T)$.
 
-*Источники: May 2025 TZ3, Paper 3, Q2(f) (2 балла) и May 2023 TZ1,
-Paper 3, Q2(d)(ii) (4 балла), обе бумаги с калькулятором.*
+*Sources: May 2025 TZ3, Paper 3, Q2(f) (2 marks) and May 2023 TZ1, Paper 3,
+Q2(d)(ii) (4 marks), both calculator papers.*
 """)
 
 code(r"""
-my18_diff = ...          # b − a в виде произведения
+my18_diff = ...          # b - a as a product
 my18_max = ...           # M_n(T)
 
-verify_factored('Задание 18(a)', my18_diff, t**2 - 2*s*t, var=t, n=2)
-check_series('Задание 18(b)', my18_max, '""" + D_M18 + r"""', var=n)
+verify_factored('Task 18(a)', my18_diff, t**2 - 2*s*t, var=t, n=2)
+check_series('Task 18(b)', my18_max, '""" + D_M18 + r"""', var=n)
 """)
 
 md(r"""
 ---
-## Тренажёр: узнать приём за пять секунд
+## Trainer: name the technique in five seconds
 
-Ниже пятнадцать условий без решений. Для каждого напишите код приёма —
-и всё. Считать ничего не нужно; цель в том, чтобы первый ход находился
-раньше, чем начинается счёт.
+Below are fifteen statements with no solutions. For each one write the code of the
+technique — and nothing else. Nothing has to be computed; the aim is for the first
+move to be found before the computing starts.
 
-Коды: `crit` (критические значения и знак) · `rat` (дробно-рациональное) ·
-`abs` (модуль) · `gdc` (численно по GDC) · `disc` (дискриминант как
-условие) · `vieta` (знаки корней) · `count` (число решений) ·
-`prove` (доказать неравенство)
+The codes: `crit` (critical values and the sign) · `rat` (a rational inequality) ·
+`abs` (a modulus) · `gdc` (numerically on the GDC) · `disc` (the discriminant as a
+condition) · `vieta` (the signs of the roots) · `count` (the number of solutions) ·
+`prove` (prove an inequality)
 
-1. Решите $x^2 - 4x - 5 \le 0$.
-2. При каких $k$ уравнение $x^2 + kx + 9 = 0$ имеет два различных действительных корня?
-3. Решите $\dfrac{x-1}{x+2} \ge 0$.
-4. Докажите, что $a^2 + b^2 \ge 2ab$.
-5. Решите $|2x - 3| < 5$.
-6. При каких $m$ оба корня уравнения $x^2 - mx + 4 = 0$ положительны?
-7. Решите $2^x \ge x + 3$ (Paper 2).
-8. При каких $c$ прямая $y = x + c$ не пересекает параболу $y = x^2$?
-9. Найдите все $a$, при которых уравнение $|x^2-4| = a$ имеет ровно три решения.
-10. Решите $x^3 > x$.
-11. Покажите, что $\dfrac{x+y}{2} \ge \sqrt{xy}$ при $x,y>0$.
-12. Решите $\dfrac{x^2-1}{x-3} < 0$.
-13. При каких $k$ выражение $kx^2 + 2x + k$ положительно при всех $x$?
-14. Найдите наибольшее целое $n$, при котором $\dfrac{n(n+1)}{2} < 100$.
-15. По графику $f$ решите $f(|x|) > 0$.
+1. Solve $x^2 - 4x - 5 \le 0$.
+2. For which $k$ does $x^2 + kx + 9 = 0$ have two distinct real roots?
+3. Solve $\dfrac{x-1}{x+2} \ge 0$.
+4. Prove that $a^2 + b^2 \ge 2ab$.
+5. Solve $|2x - 3| < 5$.
+6. For which $m$ are both roots of $x^2 - mx + 4 = 0$ positive?
+7. Solve $2^x \ge x + 3$ (Paper 2).
+8. For which $c$ does the line $y = x + c$ not meet the parabola $y = x^2$?
+9. Find all $a$ for which $|x^2-4| = a$ has exactly three solutions.
+10. Solve $x^3 > x$.
+11. Show that $\dfrac{x+y}{2} \ge \sqrt{xy}$ for $x,y>0$.
+12. Solve $\dfrac{x^2-1}{x-3} < 0$.
+13. For which $k$ is $kx^2 + 2x + k$ positive for all $x$?
+14. Find the largest integer $n$ for which $\dfrac{n(n+1)}{2} < 100$.
+15. From the graph of $f$, solve $f(|x|) > 0$.
 """)
 
 code(r"""
@@ -961,96 +951,96 @@ trigger_check(answers, """ + repr(TRIGGER_KEY) + r""")
 
 md(r"""
 ---
-## Задание 19 🔴 — на таймере, 12 минут
+## Task 19 🔴 — on the timer, 12 minutes
 
-Полный вопрос Paper 1 без калькулятора. Семь баллов, целевое время
-примерно 12 минут.
+A whole Paper 1 question with no calculator. Seven marks, target time about 12
+minutes.
 
-Дано уравнение $x^2 + kx + 15 - k = 0$.
+Given the equation $x^2 + kx + 15 - k = 0$.
 
-**(a)** Найдите все значения $k$, при которых уравнение имеет два
-различных действительных корня.
+**(a)** Find all the values of $k$ for which the equation has two distinct real
+roots.
 
-**(b)** Найдите все значения $k$, при которых эти два корня либо оба
-положительны, либо оба отрицательны.
+**(b)** Find all the values of $k$ for which those two roots are either both
+positive or both negative.
 
-*Источник: May 2025 TZ2, Paper 1, Q5 (5 + 2 балла, без калькулятора).*
+*Source: May 2025 TZ2, Paper 1, Q5 (5 + 2 marks, no calculator).*
 """)
 
 code(r"""
 def two_distinct19(kv):
-    '''Два различных действительных корня при k = kv.'''
+    '''Two distinct real roots at k = kv.'''
     return len(set(real_roots(Poly(x**2 + kv*x + 15 - kv, x)))) == 2
 
 
 def same_sign19(kv):
-    '''Два различных действительных корня одного знака при k = kv.'''
+    '''Two distinct real roots of the same sign at k = kv.'''
     found = sorted(set(real_roots(Poly(x**2 + kv*x + 15 - kv, x))))
     return len(found) == 2 and found[0]*found[1] > 0
 
 
-my19_a = ...             # множество из пункта (a)
-my19_b = ...             # множество из пункта (b)
+my19_a = ...             # the set from part (a)
+my19_b = ...             # the set from part (b)
 
-verify_param_set('Задание 19(a)', my19_a, two_distinct19)
-verify_param_set('Задание 19(b)', my19_b, same_sign19)
+verify_param_set('Task 19(a)', my19_a, two_distinct19)
+verify_param_set('Task 19(b)', my19_b, same_sign19)
 """)
 
 md(r"""
 ---
-# Решения
+# Solutions
 
-Ниже полный разбор каждого задания с разметкой markscheme. Открывайте
-после того, как решили сами: разбор объясняет не только ответ, но и то,
-за что именно ставят баллы.
+Below is a full working of every task with the markscheme's marking. Open them after
+you have solved on your own: the working explains not only the answer but what
+exactly the marks are given for.
 """)
 
 md(r"""
-## Решение 1 — квадратное неравенство целиком
+## Solution 1 — a whole quadratic inequality
 
-Раскрываем и переносим всё в одну сторону:
+Expand and take everything to one side:
 
 $$5(x+2)^2 - 5 \le 40 \iff 5x^2 + 20x + 15 \le 40
 \iff x^2+4x-5\le0 \iff (x+5)(x-1)\le 0.$$
 
-Критические значения $x=-5$ и $x=1$. Парабола ветвями вверх, между
-корнями она ниже оси:
+The critical values are $x=-5$ and $x=1$. The parabola opens upwards and lies below
+the axis between the roots:
 
 $$-5 \le x \le 1.$$
 
-Концы входят: неравенство нестрогое, а в этих точках левая часть равна
-правой.
+The ends belong: the inequality is non-strict and at those points the left-hand side
+equals the right.
 
 ```python
 my1 = Interval(-5, 1)
 ```
 
-**Разметка.** A1 за приведение к $(x+2)^2\le9$ или $x^2+4x-5\le0$,
-M1 за попытку найти критические значения, A1 за $x=-5$ и $x=1$,
-A1 за ответ множеством.
+**The marking.** A1 for reducing to $(x+2)^2\le9$ or $x^2+4x-5\le0$, M1 for
+attempting to find the critical values, A1 for $x=-5$ and $x=1$, A1 for the answer as
+a set.
 
-**Быстрый путь.** Из вида $5(x+2)^2-5\le40$ сразу $(x+2)^2\le9$,
-то есть $|x+2|\le3$, то есть $-3\le x+2\le3$. Ответ получается за одну
-строку, без раскрытия скобок.
+**The fast route.** From the form $5(x+2)^2-5\le40$ at once $(x+2)^2\le9$, that is,
+$|x+2|\le3$, that is, $-3\le x+2\le3$. The answer comes out in one line, with no
+expanding.
 
-**Где теряют балл.** Пишут $x \le -5$ или $x \ge 1$ — перепутана
-сторона. Проверка занимает секунду: подставьте $x=0$. Получается
-$-5\le0$, верно, значит ноль в ответе, значит ответ — отрезок между
-корнями, а не всё остальное.
+**Where the mark goes.** Writing $x \le -5$ or $x \ge 1$ — the side is confused. The
+check takes a second: put $x=0$ in. You get $-5\le0$, which is true, so zero is in
+the answer, so the answer is the interval between the roots and not everything
+else.
 """)
 
 md(r"""
-## Решение 2 — когда область меняет ответ
+## Solution 2 — when the domain changes the answer
 
 $$d^2 - 9d > 0 \iff d(d-9) > 0.$$
 
-Критические значения $d=0$ и $d=9$. Парабола ветвями вверх, выше оси
-она снаружи корней:
+The critical values are $d=0$ and $d=9$. The parabola opens upwards and lies above
+the axis outside the roots:
 
-$$d<0 \quad\text{или}\quad d>9.$$
+$$d<0 \quad\text{or}\quad d>9.$$
 
-Теперь вспоминаем условие $d \in \mathbb{R}^+$. Первая половина
-отпадает целиком:
+Now recall the condition $d \in \mathbb{R}^+$. The first half falls away
+entirely:
 
 $$d > 9.$$
 
@@ -1058,93 +1048,91 @@ $$d > 9.$$
 my2 = Interval.open(9, oo)
 ```
 
-**Разметка.** M1 за $d(d-9)>0$, или за эскиз, или за проверку знаков,
-или за $d^2>9d$; A1 за $d>9$.
+**The marking.** M1 for $d(d-9)>0$, or for a sketch, or for checking the signs, or
+for $d^2>9d$; A1 for $d>9$.
 
-**Почему нельзя было делить на $d$ сразу.** Соблазн такой: $d^2>9d$,
-делим на $d$, получаем $d>9$. Ответ правильный, но только потому, что
-$d>0$ дано. Без этого условия деление на $d$ — ошибка, и половина
-ответа теряется. Приучайтесь оговаривать знак делителя вслух:
-именно за эту оговорку здесь стоит балл.
+**Why it could not be divided by $d$ straight away.** The temptation is this:
+$d^2>9d$, divide by $d$, get $d>9$. The answer is right, but only because $d>0$ was
+given. Without that condition dividing by $d$ is an error and half the answer is
+lost. Get into the habit of stating the sign of the divisor out loud: that statement
+is what the mark is for here.
 
-**Что проверяет практикум.** Проверка сравнивает ваш ответ с множеством
-решений **без** сужения областью — поэтому забытое условие $d>0$ она
-покажет как лишний кусок $d<0$.
+**What the practicum checks.** The check compares your answer with the solution set
+**without** narrowing by the domain — so a forgotten condition $d>0$ shows up as the
+extra piece $d<0$.
 """)
 
 md(r"""
-## Решение 3 — дробное неравенство
+## Solution 3 — a rational inequality
 
-Всё в одну сторону и к общему знаменателю:
+Everything to one side and to a common denominator:
 
 $$\frac{x^2-14x+24}{2x+6} - x > 0
 \iff \frac{x^2-14x+24-x(2x+6)}{2x+6} > 0
 \iff \frac{-x^2-20x+24}{2(x+3)} > 0.$$
 
-Умножаем на $-1$ и переворачиваем знак:
+Multiply by $-1$ and flip the sign:
 
 $$\frac{x^2+20x-24}{x+3} < 0.$$
 
-Критические значения: нули числителя $x = -10 \pm 2\sqrt{31}$
-(это $-21.1355\ldots$ и $1.1355\ldots$) и ноль знаменателя $x=-3$.
-Таблица знаков на четырёх промежутках:
+The critical values: the zeros of the numerator $x = -10 \pm 2\sqrt{31}$ (that is
+$-21.1355\ldots$ and $1.1355\ldots$) and the zero of the denominator $x=-3$. The
+table of signs on four intervals:
 
-| промежуток | числитель | знаменатель | дробь |
+| interval | numerator | denominator | fraction |
 | --- | --- | --- | --- |
 | $x<-10-2\sqrt{31}$ | $+$ | $-$ | $-$ |
 | $-10-2\sqrt{31}<x<-3$ | $-$ | $-$ | $+$ |
 | $-3<x<-10+2\sqrt{31}$ | $-$ | $+$ | $-$ |
 | $x>-10+2\sqrt{31}$ | $+$ | $+$ | $+$ |
 
-Нужны отрицательные:
+The negative ones are wanted:
 
-$$x < -10-2\sqrt{31} \quad\text{или}\quad -3 < x < -10+2\sqrt{31}.$$
+$$x < -10-2\sqrt{31} \quad\text{or}\quad -3 < x < -10+2\sqrt{31}.$$
 
 ```python
 my3 = Union(Interval.open(-oo, -10 - 2*sqrt(31)),
             Interval.open(-3, -10 + 2*sqrt(31)))
 ```
 
-**Разметка.** A1 за появление хотя бы одного из чисел $-21.1$ или
-$1.14$; дальше A1A1A1 за куски ответа: за $x<-21.1$, за верные концы
-$-3$ и $1.14$, за промежуток между ними.
+**The marking.** A1 for either of the numbers $-21.1$ or $1.14$ appearing; then
+A1A1A1 for the pieces of the answer: for $x<-21.1$, for the right ends $-3$ and
+$1.14$, and for the interval between them.
 
-**Почему $-3$ выколота.** Это ноль знаменателя, там $f$ не определена.
-Такой конец не входит в ответ ни при каком знаке неравенства.
+**Why $-3$ is excluded.** It is the zero of the denominator and $f$ is undefined
+there. Such an end belongs to the answer for no sign of inequality at all.
 
-**Соблазн, которого надо избежать.** Умножить обе части на $2x+6$
-и решить $x^2-14x+24 > x(2x+6)$. При $x<-3$ знаменатель отрицателен,
-неравенство переворачивается, и вместо двух промежутков получается один.
-Ответ выглядит убедительно и стоит всех четырёх баллов.
+**The temptation to avoid.** Multiplying both sides by $2x+6$ and solving
+$x^2-14x+24 > x(2x+6)$. For $x<-3$ the denominator is negative, the inequality
+flips, and instead of two intervals one comes out. The answer looks convincing and
+costs all four marks.
 
-**Тот же вопрос дважды.** В ноябре 2023 он стоял и в TZ1, и в TZ2 —
-дословно, с теми же числами. Разметка обеих зон совпадает.
+**The same question twice.** In November 2023 it stood in both TZ1 and TZ2 — word
+for word, with the same numbers. The marking of the two zones is identical.
 """)
 
 md(r"""
-## Решение 4 — два вопроса по одному графику
+## Solution 4 — two questions from one graph
 
 $f(x) = \dfrac{2x-1}{x+1}$.
 
-**(a)** Удобно переписать: $f(x) = 2 - \dfrac{3}{x+1}$.
+**(a)** It is convenient to rewrite it: $f(x) = 2 - \dfrac{3}{x+1}$.
 
-Правое неравенство $f(x)<2$ значит $-\frac{3}{x+1}<0$, то есть
-$x+1>0$, то есть $x>-1$. Оно выполняется на всей правой части
-и нигде левее.
+The right inequality $f(x)<2$ means $-\frac{3}{x+1}<0$, that is, $x+1>0$, that is,
+$x>-1$. It holds on the whole right part and nowhere to the left.
 
-Левое неравенство $f(x)>0$ значит $\frac{2x-1}{x+1}>0$: критические
-значения $\frac12$ и $-1$, дробь положительна при $x<-1$ и при
-$x>\frac12$.
+The left inequality $f(x)>0$ means $\frac{2x-1}{x+1}>0$: the critical values are
+$\frac12$ and $-1$, and the fraction is positive for $x<-1$ and for $x>\frac12$.
 
-Пересекаем: $x > \frac12$.
+Intersecting: $x > \frac12$.
 
-**(b)** Сначала считаем, что такое $f(|x|)$:
+**(b)** First work out what $f(|x|)$ is:
 
 $$f(|x|) = \frac{2|x|-1}{|x|+1}.$$
 
-Знаменатель положителен всегда, поэтому знак определяется числителем:
+The denominator is always positive, so the sign is decided by the numerator:
 
-$$2|x|-1>0 \iff |x| > \tfrac12 \iff x<-\tfrac12 \ \text{ или } \ x>\tfrac12.$$
+$$2|x|-1>0 \iff |x| > \tfrac12 \iff x<-\tfrac12 \ \text{ or } \ x>\tfrac12.$$
 
 ```python
 my4_a = Interval.open(Rational(1, 2), oo)
@@ -1152,38 +1140,37 @@ my4_b = Union(Interval.open(-oo, -Rational(1, 2)),
               Interval.open(Rational(1, 2), oo))
 ```
 
-**Разметка.** (a): A1, ответ читается с графика, и принимается любая
-запись. (b): M1 за эскиз или за решение $2x-1=0$ с выходом на
-критические точки $\pm\frac12$, A1 за ответ.
+**The marking.** (a): A1, the answer is read off the graph and any writing is
+accepted. (b): M1 for a sketch or for solving $2x-1=0$ and arriving at the critical
+points $\pm\frac12$, A1 for the answer.
 
-**Проверка симметрией.** У $f(|x|)$ ответ обязан быть симметричен
-относительно нуля — функция чётная по построению. Если получилось
-несимметрично, ошибка найдена, ещё не начав проверять алгебру.
+**A check by symmetry.** For $f(|x|)$ the answer has to be symmetric about zero —
+the function is even by construction. If it came out asymmetric, the mistake has
+been found before any algebra was checked.
 
-**Про разметку корпуса.** У этого блока в архиве стоит пометка
-`formula_extraction_uncertain`, и не зря: в выдержке из markscheme
-речь о эскизе $|f(x)|$, а записанный там же ответ
-$x<-\frac12$ или $x>\frac12$ отвечает $f(|x|)>0$. Через $|f(x)|$ его
-получить нельзя: $|f(x)|>0$ означает всего лишь $x \ne \frac12$.
-Практикум использует ту постановку, которая согласована с ответом;
-разбор — в карточке приёмов.
+**About the archive's tags.** This block is tagged `formula_extraction_uncertain`,
+and for a reason: the extract from the markscheme talks about sketching $|f(x)|$,
+while the answer recorded in the same place, $x<-\frac12$ or $x>\frac12$,
+corresponds to $f(|x|)>0$. Through $|f(x)|$ it cannot be obtained: $|f(x)|>0$ means
+only $x \ne \frac12$. The practicum uses the statement that agrees with the answer;
+the working is in the technique card.
 """)
 
 md(r"""
-## Решение 5 — неравенство, которое решает только GDC
+## Solution 5 — an inequality only a GDC can solve
 
-Ищем точки пересечения $y=f(x)$ и $y=g(x)$ на калькуляторе:
+Find the intersections of $y=f(x)$ and $y=g(x)$ on the calculator:
 
 $$x = -1.26686\ldots,\qquad x = 0.177935\ldots,\qquad x = 3.06167\ldots$$
 
-то есть $-1.27$, $0.178$ и $3.06$ с точностью до трёх значащих цифр.
-Добавляем к ним точки, где $g$ не определена: $x=-1$ и $x=3$
-(там $x^2-2x-3 = (x+1)(x-3)$ обращается в ноль).
+that is, $-1.27$, $0.178$ and $3.06$ to three significant figures. Add to them the
+points where $g$ is undefined: $x=-1$ and $x=3$ (there $x^2-2x-3 = (x+1)(x-3)$
+vanishes).
 
-Пять отмеченных точек делят прямую на шесть промежутков. Проверяем
-по одной точке в каждом (значения $f-g$):
+The five marked points split the line into six intervals. Check one point in each
+(the values of $f-g$):
 
-| промежуток | проба | $f-g$ |
+| interval | test | $f-g$ |
 | --- | --- | --- |
 | $x<-1.27$ | $-2$ | $-3.15$ |
 | $-1.27<x<-1$ | $-1.2$ | $+0.76$ |
@@ -1192,11 +1179,11 @@ $$x = -1.26686\ldots,\qquad x = 0.177935\ldots,\qquad x = 3.06167\ldots$$
 | $3<x<3.06$ | $3.01$ | $-42$ |
 | $x>3.06$ | $4$ | $+15.3$ |
 
-Собираем промежутки со знаком $+$, добавляя концы-пересечения
-(неравенство нестрогое) и выкалывая полюсы:
+Collect the intervals with the sign $+$, including the intersection ends (the
+inequality is non-strict) and excluding the poles:
 
-$$-1.27 \le x < -1 \quad\text{или}\quad 0.178 \le x < 3
-\quad\text{или}\quad x \ge 3.06.$$
+$$-1.27 \le x < -1 \quad\text{or}\quad 0.178 \le x < 3
+\quad\text{or}\quad x \ge 3.06.$$
 
 ```python
 my5 = Union(Interval.Ropen(-1.27, -1),
@@ -1204,46 +1191,44 @@ my5 = Union(Interval.Ropen(-1.27, -1),
             Interval(3.06, oo))
 ```
 
-**Разметка.** M1 за попытку найти хотя бы одну точку пересечения,
-A1 за все три значения, дальше A1A1A1 — по баллу за каждый из трёх
-промежутков ответа.
+**The marking.** M1 for attempting to find at least one intersection, A1 for all
+three values, then A1A1A1 — a mark for each of the three intervals of the answer.
 
-**Три балла из четырёх стоят за запись.** Считает калькулятор; работа
-экзаменуемого в том, чтобы понять, где неравенство выполняется, и
-какие концы входят. Это и есть содержание задачи.
+**Three of the four marks are for the writing.** The calculator does the computing;
+the candidate's work is in understanding where the inequality holds and which ends
+belong. That is the substance of the question.
 
-**Почему концы разные.** $-1.27$ пришло из пересечения графиков —
-там $f=g$, неравенство нестрогое, конец входит. $-1$ пришло из нуля
-знаменателя — там ничего не определено, конец выколот. В одном ответе
-рядом стоят обе ситуации, и различать их надо каждый раз заново.
+**Why the ends differ.** $-1.27$ came from an intersection of the graphs — there
+$f=g$, the inequality is non-strict and the end belongs. $-1$ came from a zero of
+the denominator — nothing is defined there and the end is excluded. Both situations
+stand side by side in one answer, and they have to be told apart each time afresh.
 
-**Про проверку в практикуме.** Она пробует точки внутри ваших
-промежутков и в зазорах между ними, а к границам не придирается:
-округлённый до трёх цифр конец законно отличается от точного. Поэтому
-здесь проверка мягче экзамена — на экзамене за $-1.27 < x$ вместо
-$-1.27 \le x$ балл снимут.
+**About the check in the practicum.** It tries points inside your intervals and in
+the gaps between them, and does not quibble at the boundaries: an end rounded to
+three figures legitimately differs from the exact one. So the check here is more
+lenient than the exam — in the exam $-1.27 < x$ instead of $-1.27 \le x$ costs a
+mark.
 
-**Про разметку корпуса.** В архиве записано $f(x)=2^{-x}-2^{x}$.
-С такой $f$ ни одна из трёх точек пересечения не получается: подстановка
-даёт $f=-g$, а не $f=g$. Знак перепутан при извлечении, верная запись —
-$f(x)=2^{x}-2^{-x}$; с ней воспроизводятся и точки, и весь ответ.
-Проверка — в `verify_a8.py`.
+**About the archive's tags.** The archive records $f(x)=2^{-x}-2^{x}$. With such an
+$f$ none of the three intersections comes out: substituting gives $f=-g$ rather than
+$f=g$. The sign was confused in the extraction, and the right writing is
+$f(x)=2^{x}-2^{-x}$; with it both the points and the whole answer reproduce. The
+check is in `verify_a8.py`.
 """)
 
 md(r"""
-## Решение 6 — целый ответ
+## Solution 6 — an integer answer
 
-Карт всего $14 \cdot 52 = 728$. Условие:
+There are $14 \cdot 52 = 728$ cards in all. The condition:
 
 $$\frac{n(3n+1)}{2} \le 728 \iff 3n^2 + n - 1456 \le 0.$$
 
-Решаем как уравнение: $n = \dfrac{-1 \pm \sqrt{1 + 4\cdot3\cdot1456}}{6}
-= \dfrac{-1 \pm \sqrt{17473}}{6}$, положительный корень
-$n = 21.8642\ldots$
+Solve it as an equation: $n = \dfrac{-1 \pm \sqrt{1 + 4\cdot3\cdot1456}}{6}
+= \dfrac{-1 \pm \sqrt{17473}}{6}$, and the positive root is $n = 21.8642\ldots$
 
-Значит $n \le 21.86$, и наибольшее целое $n = 21$.
+So $n \le 21.86$ and the largest integer is $n = 21$.
 
-Проверяем оба соседних значения:
+Check both neighbouring values:
 
 $$\frac{21 \cdot 64}{2} = 672 \le 728, \qquad
 \frac{22 \cdot 67}{2} = 737 > 728.$$
@@ -1254,100 +1239,99 @@ my6_t21 = 672
 my6_t22 = 737
 ```
 
-**Разметка.** M1 за попытку решить $\frac{n(3n+1)}2 \le 728$;
-A1 за $n=21.8642\ldots$ **или** за пару $t_{21}=672$, $t_{22}=737$;
-A1 за ответ 21.
+**The marking.** M1 for attempting to solve $\frac{n(3n+1)}2 \le 728$; A1 for
+$n=21.8642\ldots$ **or** for the pair $t_{21}=672$, $t_{22}=737$; A1 for the answer
+21.
 
-**Две дороги, оба балла.** Markscheme принимает и решение неравенства,
-и прямой перебор: посчитать сумму для 21 и для 22 и увидеть, где она
-перевалила за 728. Второй путь на GDC быстрее и не требует радикалов.
+**Two roads, the same marks.** The markscheme accepts both solving the inequality
+and searching directly: compute the total for 21 and for 22 and see where it passed
+728. The second route is faster on a GDC and needs no surds.
 
-**Где теряют балл.** Записывают $21.9$ — не заметив, что вопрос про
-число рядов, а рядов не бывает дробное число. Ещё чаще округляют вверх
-до 22: округление здесь не по правилам арифметики, а по смыслу задачи,
-и всегда вниз.
+**Where the mark goes.** Writing $21.9$ — not noticing that the question is about a
+number of rows, and a number of rows is not a fraction. More often still, rounding
+up to 22: the rounding here is not by the rules of arithmetic but by the sense of the
+question, and it is always down.
 """)
 
 md(r"""
-## Решение 7 — буква в старшем коэффициенте
+## Solution 7 — a letter in the leading coefficient
 
-Уравнение квадратное, когда $3p \ne 0$. Считаем дискриминант:
+The equation is quadratic when $3p \ne 0$. Compute the discriminant:
 
 $$\Delta = (2p)^2 - 4\cdot 3p \cdot (1-p) = 4p^2 - 12p + 12p^2
 = 16p^2 - 12p.$$
 
-Два различных действительных корня — это $\Delta>0$:
+Two distinct real roots means $\Delta>0$:
 
 $$16p^2 - 12p > 0 \iff 4p(4p-3) > 0.$$
 
-Критические значения $p=0$ и $p=\frac34$; парабола ветвями вверх:
+The critical values are $p=0$ and $p=\frac34$; the parabola opens upwards:
 
-$$p<0 \quad\text{или}\quad p>\tfrac34.$$
+$$p<0 \quad\text{or}\quad p>\tfrac34.$$
 
-Случай $p=0$ он и так исключил: при $p=0$ уравнение превращается
-в $1=0$ и корней не имеет вовсе.
+The case $p=0$ is excluded anyway: at $p=0$ the equation becomes $1=0$ and has no
+roots at all.
 
 ```python
 my7 = Union(Interval.open(-oo, 0), Interval.open(Rational(3, 4), oo))
 ```
 
-**Разметка.** M1 за использование дискриминанта, A1 за
-$16p^2-12p>0$, M1 за попытку найти критические значения,
-M1 за понимание, что нужен именно знак $>$, A1 за ответ.
+**The marking.** M1 for using the discriminant, A1 for $16p^2-12p>0$, M1 for
+attempting to find the critical values, M1 for realising that the sign wanted is
+$>$, A1 for the answer.
 
-**Почему граница $p=0$ не входит дважды.** Её исключают два независимых
-соображения: там $\Delta=0$ (значит, корень был бы один) и там уравнение
-не квадратное. Совпадение удобное, но полагаться на него не стоит:
-в других задачах вырожденный случай попадает **внутрь** множества,
-найденного по дискриминанту, и его приходится выбрасывать отдельно.
+**Why the boundary $p=0$ is not excluded twice.** Two independent considerations
+exclude it: there $\Delta=0$ (so there would be one root) and there the equation is
+not quadratic. The coincidence is convenient but not to be relied on: in other
+questions the degenerate case falls **inside** the set found from the discriminant,
+and it has to be thrown out separately.
 
-**Как это ловит проверка.** Она не считает дискриминант вовсе.
-Для каждого пробного $p$ она берёт уравнение и считает, сколько у него
-различных действительных корней. При $p=0$ корней ноль, и попытка
-включить эту точку в ответ будет замечена.
+**How the check catches that.** It does not compute the discriminant at all. For
+every test $p$ it takes the equation and counts how many distinct real roots it has.
+At $p=0$ there are none, and an attempt to include that point in the answer will be
+noticed.
 """)
 
 md(r"""
-## Решение 8 — от неравенства к наибольшему целому
+## Solution 8 — from an inequality to the largest integer
 
-Дискриминант $f(x) = \frac12x^2 + kx + 13$:
+The discriminant of $f(x) = \frac12x^2 + kx + 13$:
 
 $$\Delta = k^2 - 4\cdot\tfrac12\cdot13 = k^2 - 26.$$
 
-Действительных корней нет при $\Delta<0$:
+There are no real roots when $\Delta<0$:
 
 $$k^2 < 26 \iff -\sqrt{26} < k < \sqrt{26}.$$
 
-Так как $\sqrt{26} = 5.0990\ldots$, а $k$ целое положительное,
-наибольшее подходящее $k$ равно 5.
+Since $\sqrt{26} = 5.0990\ldots$ and $k$ is a positive integer, the largest $k$ that
+works is 5.
 
 ```python
 my8_set = Interval.open(-sqrt(26), sqrt(26))
 my8_k = 5
 ```
 
-**Разметка.** A1 за верный дискриминант $k^2-26$, M1 за понимание,
-что нужен знак $<$; ответ $k=5$ напечатан в условии (AG).
+**The marking.** A1 for the right discriminant $k^2-26$, M1 for realising that the
+sign wanted is $<$; the answer $k=5$ is printed in the question (AG).
 
-**Осторожно с AG.** Раз ответ дан, балл стоит за вывод. Написать
-«$k=5$, ч.т.д.» — ноль. Нужны обе строки: дискриминант и условие
-на его знак.
+**Careful with AG.** Since the answer is given, the mark is for the derivation.
+Writing «$k=5$, QED» scores zero. Both lines are needed: the discriminant and the
+condition on its sign.
 
-**Почему не 5.099.** Вопрос про целое $k$, и множество решений
-неравенства здесь предпоследний шаг. Такая двухэтажность —
-фирменный приём темы: сначала неравенство, потом ещё одно условие
-поверх него.
+**Why not 5.099.** The question is about an integer $k$, and the solution set of the
+inequality is the second-to-last step here. That two-storey structure is the topic's
+signature: first an inequality, then one more condition on top of it.
 """)
 
 md(r"""
-## Решение 9 — «show that» про дискриминант
+## Solution 9 — a «show that» about the discriminant
 
-Две различные точки пересечения означают, что у квадратного уравнения
-$x^2-2dx+9d=0$ два различных действительных корня, то есть $\Delta>0$:
+Two distinct points of intersection mean that the quadratic $x^2-2dx+9d=0$ has two
+distinct real roots, that is, $\Delta>0$:
 
 $$\Delta = (-2d)^2 - 4\cdot1\cdot9d = 4d^2 - 36d.$$
 
-Условие $4d^2-36d>0$ после деления на 4 даёт требуемое:
+The condition $4d^2-36d>0$, after dividing by 4, gives what was required:
 
 $$d^2 - 9d > 0. \qquad \blacksquare$$
 
@@ -1355,39 +1339,38 @@ $$d^2 - 9d > 0. \qquad \blacksquare$$
 my9 = 4*d**2 - 36*d
 ```
 
-**Разметка.** A1 за запись дискриминанта $(-2d)^2-4\cdot1\cdot9d$,
-M1 за фразу «дискриминант положителен», A1 за
-$4d^2-36d>0$; переход к $d^2-9d>0$ — AG.
+**The marking.** A1 for writing the discriminant $(-2d)^2-4\cdot1\cdot9d$, M1 for
+the sentence «the discriminant is positive», A1 for $4d^2-36d>0$; the step to
+$d^2-9d>0$ is AG.
 
-**Что здесь на самом деле проверяют.** Умение не потерять множители.
-$(-2d)^2 = 4d^2$, а не $-4d^2$ и не $2d^2$; $4\cdot1\cdot9d = 36d$.
-Обе ошибки дают внешне похожее неравенство, из которого требуемое
-не следует.
+**What is really being tested here.** Not losing factors. $(-2d)^2 = 4d^2$, not
+$-4d^2$ and not $2d^2$; $4\cdot1\cdot9d = 36d$. Either mistake gives an
+outwardly similar inequality from which the required one does not follow.
 
-**Связь с заданием 2.** Это тот же вопрос, пункты (b)(ii) и (b)(iii)
-одного блока: здесь неравенство получают, там решают. Порядок
-в практикуме обратный сознательно — сначала стоит научиться решать,
-и только потом узнавать, откуда такие неравенства берутся.
+**The link with task 2.** It is the same question, parts (b)(ii) and (b)(iii) of one
+block: here the inequality is obtained, there it is solved. The order in the
+practicum is reversed on purpose — first you should learn to solve them, and only
+then find out where such inequalities come from.
 """)
 
 md(r"""
-## Решение 10 — целочисленное ограничение поверх неравенства
+## Solution 10 — an integer restriction on top of an inequality
 
-Две различные точки пересечения с осью $x$ означают $\Delta>0$:
+Two distinct points of intersection with the $x$-axis mean $\Delta>0$:
 
 $$b^2 - 4ac > 0 \iff ac < \frac{b^2}{4}.$$
 
-Числа от 1 до 6, поэтому наибольшее $b^2$ равно 36, и
+The numbers run from 1 to 6, so the largest $b^2$ is 36 and
 
 $$ac < 9.$$
 
-Осталось понять, какие значения произведение $ac$ вообще принимает.
-Оба множителя целые от 1 до 6, поэтому возможны
+What is left is to see which values the product $ac$ can take at all. Both factors
+are integers from 1 to 6, so the possibilities are
 
 $$1,\,2,\,3,\,4,\,5,\,6,\,8,\,9,\,10,\,12,\dots$$
 
-Числа 7 среди них нет: 7 просто, и разложить его на два множителя
-от 1 до 6 нельзя. Значит, ответ
+The number 7 is not among them: 7 is prime and cannot be split into two factors from
+1 to 6. So the answer is
 
 $$ac \in \{1,\,2,\,3,\,4,\,5,\,6,\,8\}.$$
 
@@ -1395,29 +1378,29 @@ $$ac \in \{1,\,2,\,3,\,4,\,5,\,6,\,8\}.$$
 my10 = [1, 2, 3, 4, 5, 6, 8]
 ```
 
-**Разметка.** M1 за $b^2-4ac>0$, A1 за $b^2 \le 36$ или за
-$ac \le 8$, A1 за полный список.
+**The marking.** M1 for $b^2-4ac>0$, A1 for $b^2 \le 36$ or for $ac \le 8$, A1 for
+the full list.
 
-**Два ограничения, а не одно.** Неравенство даёт $ac<9$, но ответ
-короче: работает ещё и то, что $ac$ — произведение двух чисел
-из $\{1,\dots,6\}$. Пропустить второе ограничение легко, и балл за
-полный список тогда теряется.
+**Two restrictions, not one.** The inequality gives $ac<9$, but the answer is
+shorter: the fact that $ac$ is a product of two numbers from $\{1,\dots,6\}$ is also
+at work. Missing the second restriction is easy, and the mark for the full list is
+then lost.
 
-**Проверка ответа.** Для каждого значения из списка полезно назвать
-пару: $8 = 2\cdot4$, $6 = 1\cdot 6 = 2\cdot 3$, а вот для 7 пары нет.
-Это и есть проверка, за которую стоит A1.
+**A check on the answer.** For each value in the list it pays to name a pair:
+$8 = 2\cdot4$, $6 = 1\cdot 6 = 2\cdot 3$, while for 7 there is no pair. That is the
+check the A1 stands for.
 """)
 
 md(r"""
-## Решение 11 — один корень положителен, другой отрицателен
+## Solution 11 — one root positive, the other negative
 
-Корни разных знаков — значит, их произведение отрицательно:
+Roots of different signs means their product is negative:
 
 $$\alpha\beta = \frac{2k+9}{k} < 0.$$
 
-Это дробное неравенство, приём 2. Критические значения:
-$k=-\frac92$ (ноль числителя) и $k=0$ (ноль знаменателя). Дробь
-отрицательна между ними:
+That is a rational inequality, technique 2. The critical values: $k=-\frac92$ (the
+zero of the numerator) and $k=0$ (the zero of the denominator). The fraction is
+negative between them:
 
 $$-\frac92 < k < 0.$$
 
@@ -1425,39 +1408,38 @@ $$-\frac92 < k < 0.$$
 my11 = Interval.open(Rational(-9, 2), 0)
 ```
 
-**Разметка.** M1 за понимание, что произведение корней отрицательно;
-A1 за $\frac{2k+9}{k}<0$ и критические значения $0$ и $-\frac92$;
-A1 за ответ.
+**The marking.** M1 for realising that the product of the roots is negative; A1 for
+$\frac{2k+9}{k}<0$ and the critical values $0$ and $-\frac92$; A1 for the answer.
 
-**Почему не нужен дискриминант.** Если $\frac ca<0$, то $-4ac>0$
-и $\Delta = b^2-4ac>0$ автоматически. Корни действительны сами собой,
-и отдельного условия писать не надо. Это единственная строка таблицы
-из теории 6, где так.
+**Why no discriminant is needed.** If $\frac ca<0$ then $-4ac>0$ and
+$\Delta = b^2-4ac>0$ automatically. The roots are real by themselves and no separate
+condition has to be written. That is the only row of the table in theory 6 where
+this happens.
 
-**Почему $k=0$ исключено.** Там уравнение перестаёт быть квадратным:
-остаётся $-3x+9=0$, единственный корень $x=3$. Не «один положительный
-и один отрицательный», а один-единственный. Оба конца ответа выколоты
-по разным причинам, и это стоит проговорить.
+**Why $k=0$ is excluded.** There the equation stops being quadratic: what is left is
+$-3x+9=0$, with the single root $x=3$. Not «one positive and one negative» but one
+root only. Both ends of the answer are excluded, for different reasons, and that is
+worth saying out loud.
 
-**Как это видит проверка.** Она подставляет пробные $k$, находит корни
-и смотрит на их знаки — ровно то, о чём спрашивает условие. Формула
-Виета в проверке не участвует.
+**How the check sees it.** It substitutes test values of $k$, finds the roots and
+looks at their signs — exactly what the question asks about. Vieta's formula takes no
+part in the check.
 """)
 
 md(r"""
-## Решение 12 — «для всех $x$»
+## Solution 12 — «for all $x$»
 
-Составляем композицию:
+Build the composition:
 
 $$(g\circ f)(x) = g\bigl(6x^2-12x+1\bigr) = -(6x^2-12x+1) + c
 = -6x^2 + 12x - 1 + c.$$
 
-Это парабола ветвями вниз, поэтому «$\le 0$ при всех $x$» равносильно
-«максимум $\le 0$». Выделяем полный квадрат:
+That is a downward parabola, so «$\le 0$ for all $x$» is equivalent to «the maximum
+is $\le 0$». Complete the square:
 
 $$-6x^2+12x-1+c = -6(x-1)^2 + 5 + c.$$
 
-Максимум равен $5+c$ и достигается при $x=1$. Условие:
+The maximum is $5+c$, attained at $x=1$. The condition:
 
 $$5 + c \le 0 \iff c \le -5.$$
 
@@ -1465,45 +1447,43 @@ $$5 + c \le 0 \iff c \le -5.$$
 my12 = Interval(-oo, -5)
 ```
 
-**Разметка.** A1 за композицию в виде $-6(x-1)^2+5+c$, M1 за переход
-к области значений или за вычисление $g(-5)$, A1 за $5+c\le0$,
-A1 за ответ.
+**The marking.** A1 for the composition in the form $-6(x-1)^2+5+c$, M1 for moving
+to the range or for computing $g(-5)$, A1 for $5+c\le0$, A1 for the answer.
 
-**Три законных пути, все с полными баллами.**
+**Three legitimate routes, all with full marks.**
 
-*Через вершину*, как выше.
+*Through the vertex*, as above.
 
-*Через дискриминант.* Парабола ветвями вниз не поднимается выше оси
-тогда и только тогда, когда $\Delta \le 0$:
-$144 - 4\cdot(-6)(c-1) \le 0$, откуда $120+24c\le0$, то есть $c\le-5$.
+*Through the discriminant.* A downward parabola does not rise above the axis exactly
+when $\Delta \le 0$: $144 - 4\cdot(-6)(c-1) \le 0$, hence $120+24c\le0$, that is,
+$c\le-5$.
 
-*Через область значений.* Область значений $f$ — это $[-5,\infty)$,
-потому что $f(x) = 6(x-1)^2-5$. Функция $g$ убывает, поэтому
-наибольшее значение $g(f(x))$ достигается при наименьшем $f$,
-то есть равно $g(-5) = 5+c$.
+*Through the range.* The range of $f$ is $[-5,\infty)$, because
+$f(x) = 6(x-1)^2-5$. The function $g$ is decreasing, so the greatest value of
+$g(f(x))$ is attained at the smallest $f$, that is, it equals $g(-5) = 5+c$.
 
-**Почему конец входит.** При $c=-5$ максимум равен нулю, а неравенство
-нестрогое: $(g\circ f)(1) = 0 \le 0$. Ответ — луч с включённым концом,
-и проверка это различает.
+**Why the end belongs.** At $c=-5$ the maximum is zero and the inequality is
+non-strict: $(g\circ f)(1) = 0 \le 0$. The answer is a ray with its end included,
+and the check tells the difference.
 """)
 
 md(r"""
-## Решение 13 — сколько нормалей, столько решений
+## Solution 13 — as many solutions as there are normals
 
-Два выражения для $c$ отличаются только знаком:
+The two expressions for $c$ differ only in sign:
 
 $$c_1 = \frac1{\sqrt m} - m\sqrt m, \qquad c_2 = -c_1.$$
 
-**(a)** Нормалей две, когда $c_1 \ne c_2$, то есть $c_1 \ne 0$,
-и когда оба выражения вообще существуют, то есть $m>0$.
+**(a)** There are two normals when $c_1 \ne c_2$, that is, $c_1 \ne 0$, and when
+both expressions exist at all, that is, $m>0$.
 
 $$c_1 = 0 \iff \frac1{\sqrt m} = m\sqrt m \iff 1 = m^2 \iff m = 1$$
 
-(корень $m=-1$ отпадает, $m>0$). Значит
+(the root $m=-1$ falls away, $m>0$). So
 
 $$m>0,\ m \ne 1.$$
 
-**(b)** Нормаль одна ровно тогда, когда два значения слились:
+**(b)** There is exactly one normal precisely when the two values have merged:
 $m = 1$.
 
 ```python
@@ -1511,50 +1491,49 @@ my13_two = Union(Interval.open(0, 1), Interval.open(1, oo))
 my13_one = FiniteSet(1)
 ```
 
-**Разметка.** (b)(ii): A1 за $m \in \mathbb{R}^+$. (c)(i): A1 за $m=1$.
-(c)(ii): A1A1 — по баллу за $0<m<1$ и за $m>1$.
+**The marking.** (b)(ii): A1 for $m \in \mathbb{R}^+$. (c)(i): A1 for $m=1$.
+(c)(ii): A1A1 — a mark for $0<m<1$ and a mark for $m>1$.
 
-**Где здесь неравенство.** На первый взгляд его нет: спрашивают про
-количество. Но ответ — множество значений параметра, и получается
-он ровно тем же ходом, что в теории 7: найти значения, при которых
-решения сливаются ($m=1$) или исчезают ($m\le0$), и выбросить их.
+**Where the inequality is here.** At first sight there is none: the question is
+about a number. But the answer is a set of values of the parameter, and it is
+obtained by exactly the move of theory 7: find the values at which the solutions
+merge ($m=1$) or disappear ($m\le0$), and throw them out.
 
-**Про выколотую точку.** Ответ $m>0$ без оговорки $m\ne1$ — другой
-ответ и другой балл. Разметка прямо это фиксирует: за (c)(ii) дают
-два балла, по одному за каждый кусок.
+**About the removed point.** The answer $m>0$ with no caveat $m\ne1$ is a different
+answer and a different mark. The marking records that directly: (c)(ii) carries two
+marks, one for each piece.
 
-**Про разметку корпуса.** В кратком описании блока формула записана
-как $c = \frac{1}{m^{1/2}} - \frac{1}{m^{1/2}}$, то есть тождественный
-ноль. В приведённой там же выдержке из markscheme стоит
-$c = \pm\left(\frac1{\sqrt m} - m\sqrt m\right)$ — это и есть верная
-запись, ею практикум и пользуется.
+**About the archive's tags.** In the short description of the block the formula is
+recorded as $c = \frac{1}{m^{1/2}} - \frac{1}{m^{1/2}}$, that is, identically zero.
+The extract from the markscheme given in the same place has
+$c = \pm\left(\frac1{\sqrt m} - m\sqrt m\right)$ — that is the right writing, and it
+is the one the practicum uses.
 """)
 
 md(r"""
-## Решение 14 — число точек пересечения
+## Solution 14 — the number of intersections
 
-При $a>1$ функции $y=a^x$ и $y=\log_a x$ взаимно обратны и обе
-возрастают. Графики взаимно обратных возрастающих функций симметричны
-относительно прямой $y=x$, и пересекаться они могут только **на** этой
-прямой. Значит, число точек пересечения равно числу решений уравнения
+For $a>1$ the functions $y=a^x$ and $y=\log_a x$ are inverses of each other and both
+increasing. The graphs of increasing inverse functions are symmetric about the line
+$y=x$, and they can only meet **on** that line. So the number of intersections equals
+the number of solutions of
 
 $$a^x = x.$$
 
-Логарифмируем: $x\ln a = \ln x$. Подстановка $x = \mathrm{e}^u$
-превращает это в
+Take logarithms: $x\ln a = \ln x$. The substitution $x = \mathrm{e}^u$ turns that
+into
 
 $$u\,\mathrm{e}^{-u} = \ln a.$$
 
-Слева — функция с единственным максимумом: производная
-$(1-u)\mathrm{e}^{-u}$ обращается в ноль при $u=1$, и максимум равен
-$\mathrm{e}^{-1}$. Поэтому:
+On the left is a function with a single maximum: the derivative
+$(1-u)\mathrm{e}^{-u}$ vanishes at $u=1$ and the maximum is $\mathrm{e}^{-1}$. So:
 
-* при $\ln a < \frac1{\mathrm e}$ — два решения;
-* при $\ln a = \frac1{\mathrm e}$ — одно (касание);
-* при $\ln a > \frac1{\mathrm e}$ — ни одного.
+* for $\ln a < \frac1{\mathrm e}$ — two solutions;
+* for $\ln a = \frac1{\mathrm e}$ — one (a touching);
+* for $\ln a > \frac1{\mathrm e}$ — none.
 
-Условие $\ln a < \frac1{\mathrm e}$ значит $a < \mathrm{e}^{1/\mathrm e}$.
-Вместе с $a>1$:
+The condition $\ln a < \frac1{\mathrm e}$ means $a < \mathrm{e}^{1/\mathrm e}$.
+Together with $a>1$:
 
 $$\textbf{(a)}\quad 1 < a < \mathrm{e}^{1/\mathrm e}, \qquad
 \textbf{(b)}\quad a > \mathrm{e}^{1/\mathrm e}.$$
@@ -1564,76 +1543,76 @@ my14_two = Interval.open(1, exp(1/E))
 my14_none = Interval.open(exp(1/E), oo)
 ```
 
-**Разметка.** (f)(i): A1, причём прямо оговорено, что за
-$a<\mathrm{e}^{1/\mathrm e}$ без левой границы ставится ноль.
-(f)(ii): A1; приближённое значение принимается только как follow
-through, и то в узком коридоре $1.4 \le a \le 1.5$.
+**The marking.** (f)(i): A1, with the explicit note that
+$a<\mathrm{e}^{1/\mathrm e}$ without the left boundary scores zero. (f)(ii): A1; an
+approximate value is accepted only as follow through, and then in the narrow
+corridor $1.4 \le a \le 1.5$.
 
-**Ответ обязан быть точным.** $\mathrm{e}^{1/\mathrm e} = 1.4446\ldots$,
-и записать 1.44 нельзя: вопрос спрашивает «exact set». Это общая черта
-Paper 3 — исследование ведёт к красивой константе, и она и есть ответ.
+**The answer has to be exact.** $\mathrm{e}^{1/\mathrm e} = 1.4446\ldots$, and 1.44
+cannot be written: the question asks for the «exact set». That is a common feature of
+Paper 3 — the investigation leads to a pretty constant, and that constant is the
+answer.
 
-**Два балла за две строки — и полстраницы работы до них.** В самом
-вопросе (f) весит всего 2 балла, но опирается на всё предыдущее
-исследование. В практикуме дана готовая постановка; на экзамене к ней
-приходят через пункты (a)–(e).
+**Two marks for two lines — and half a page of work before them.** Part (f) itself is
+worth only 2 marks but leans on the whole preceding investigation. The practicum
+gives the statement ready-made; in the exam you arrive at it through parts (a)–(e).
 
-**Про численную проверку.** Считать корни $a^x=x$ прямо по $x$ неудобно:
-при $a\to1^+$ второй корень уходит в бесконечность (при $a=1.01$ он
-около 1600). После подстановки $x=\mathrm{e}^u$ оба корня остаются
-в пределах $u \in [-2, 40]$, и сканирование работает устойчиво.
-Поэтому проверка в ноутбуке считает именно по $u$.
+**About the numerical check.** Counting the roots of $a^x=x$ directly in $x$ is
+awkward: as $a\to1^+$ the second root runs off to infinity (at $a=1.01$ it is around
+1600). After the substitution $x=\mathrm{e}^u$ both roots stay within
+$u \in [-2, 40]$ and the scan works stably. That is why the check in the notebook
+counts in $u$.
 """)
 
 md(r"""
-## Решение 15 — монотонность
+## Solution 15 — monotonicity
 
-Единицу превращаем в логарифм и складываем:
+Turn the one into a logarithm and add:
 
 $$1 + \log_2 n = \log_2 2 + \log_2 n = \log_2 (2n).$$
 
-Теперь обе части — логарифмы по одному основанию, и сравнить их можно,
-сравнив аргументы. Функция $\log_2$ **возрастает**, поэтому
+Now both sides are logarithms to the same base, and they can be compared by
+comparing the arguments. The function $\log_2$ is **increasing**, so
 
 $$\log_2(2n) \ge \log_2(n+1) \iff 2n \ge n+1 \iff n \ge 1.$$
 
-Для $n \in \mathbb{Z}^+$ это выполняется всегда. $\blacksquare$
+For $n \in \mathbb{Z}^+$ that always holds. $\blacksquare$
 
 ```python
 my15_log = log(2*n, 2)
 my15_set = Interval(1, oo)
 ```
 
-**Разметка.** A1 за $1+\log_2 n = \log_2(2n)$, R1 за $2n \ge n+1$
-или за сравнение логарифмов; итог — AG.
+**The marking.** A1 for $1+\log_2 n = \log_2(2n)$, R1 for $2n \ge n+1$ or for
+comparing the logarithms; the result is AG.
 
-**Где стоит R1.** Не за неравенство $2n\ge n+1$ само по себе, а за
-переход от него к логарифмам. Формально это ссылка на монотонность
-$\log_2$, и без неё вывод не полон: для убывающей функции знак
-перевернулся бы.
+**What the R1 is for.** Not for the inequality $2n\ge n+1$ itself but for the step
+from it to the logarithms. Formally that is an appeal to the monotonicity of
+$\log_2$, and without it the deduction is incomplete: for a decreasing function the
+sign would have flipped.
 
-**Куда это ведёт.** Блок — пункт (a) вопроса про индукцию: доказанное
-неравенство потом используется в шаге. Так неравенства и живут
-в архиве — служебным пунктом внутри чужой темы.
+**Where this leads.** The block is part (a) of a question about induction: the
+inequality proved is then used in the step. That is how inequalities live in the
+archive — as a service part inside somebody else's topic.
 """)
 
 md(r"""
-## Решение 16 — выделить квадрат
+## Solution 16 — complete the square
 
-Считаем сумму. Из $v(\tau) = \mathrm{e}^{\,T-\tau}-1$:
+Compute the sum. From $v(\tau) = \mathrm{e}^{\,T-\tau}-1$:
 
 $$v(T-k) = \mathrm{e}^{k}-1, \qquad v(T+k) = \mathrm{e}^{-k}-1,$$
 
 $$v(T-k)+v(T+k) = \mathrm{e}^{k} + \mathrm{e}^{-k} - 2.$$
 
-Само по себе это выражение ничего не говорит. Замечаем, что
-$\mathrm{e}^{k} = \left(\mathrm{e}^{k/2}\right)^2$, и разворачиваем
-квадрат разности:
+By itself that expression says nothing. Notice that
+$\mathrm{e}^{k} = \left(\mathrm{e}^{k/2}\right)^2$ and unfold the square of a
+difference:
 
 $$\left(\mathrm{e}^{k/2} - \mathrm{e}^{-k/2}\right)^2
 = \mathrm{e}^{k} - 2 + \mathrm{e}^{-k}.$$
 
-Это то же самое. Квадрат неотрицателен, следовательно
+That is the same thing. A square is non-negative, therefore
 
 $$v(T-k)+v(T+k) \ge 0. \qquad \blacksquare$$
 
@@ -1642,43 +1621,42 @@ my16_sum = exp(k) + exp(-k) - 2
 my16_sq = (exp(k/2) - exp(-k/2))**2
 ```
 
-**Разметка.** A1 за сумму $\mathrm{e}^{k}+\mathrm{e}^{-k}-2$,
-M1 за попытку записать её квадратом, A1 за сам квадрат;
-вывод $\ge0$ — AG.
+**The marking.** A1 for the sum $\mathrm{e}^{k}+\mathrm{e}^{-k}-2$, M1 for
+attempting to write it as a square, A1 for the square itself; the conclusion $\ge0$
+is AG.
 
-**Второй путь, тоже полный.** Исследовать $F(k)=\mathrm{e}^k+
-\mathrm{e}^{-k}-2$ на минимум: $F'(k)=\mathrm{e}^k-\mathrm{e}^{-k}=0$
-при $k=0$, $F(0)=0$, значит $F\ge0$. Markscheme даёт за него
-те же три балла (A1M1R1). В Paper 1 путь через квадрат короче,
-но если квадрат не увидели, производная выручает.
+**A second route, also complete.** Investigate
+$F(k)=\mathrm{e}^k+\mathrm{e}^{-k}-2$ for a minimum:
+$F'(k)=\mathrm{e}^k-\mathrm{e}^{-k}=0$ at $k=0$, $F(0)=0$, so $F\ge0$. The
+markscheme gives the same three marks for it (A1M1R1). On Paper 1 the route through
+the square is shorter, but if the square was not spotted, the derivative saves the
+day.
 
-**Почему проверка не принимает раскрытый вид.** `verify_nonneg_form`
-требует записи, из которой неотрицательность видна: сумма квадратов,
-модулей и неотрицательных чисел, без слагаемых со знаком минус.
-Запись $\mathrm{e}^k+\mathrm{e}^{-k}-2$ равна правильному ответу,
-но доказательства не содержит — ровно как в A4 раскрытый многочлен
-равен своему разложению, но за «product of linear factors»
-не засчитывается.
+**Why the check does not accept the expanded form.** `verify_nonneg_form` requires a
+writing from which the non-negativity is visible: a sum of squares, moduli and
+non-negative numbers, with no terms carrying a minus. The writing
+$\mathrm{e}^k+\mathrm{e}^{-k}-2$ equals the right answer but contains no proof —
+exactly as in A4 an expanded polynomial equals its factorisation but earns nothing
+for «product of linear factors».
 """)
 
 md(r"""
-## Решение 17 — от противного
+## Solution 17 — by contradiction
 
-Предполагаем обратное:
+Suppose the opposite:
 
 $$\sqrt{xy} > \frac{x+y}{2}.$$
 
-Обе части положительны ($x,y>0$), поэтому возведение в квадрат
-равносильно:
+Both sides are positive ($x,y>0$), so squaring is an equivalence:
 
 $$xy > \frac{(x+y)^2}{4} \iff 4xy > x^2+2xy+y^2 \iff 0 > x^2-2xy+y^2.$$
 
-Справа — полный квадрат:
+On the right is a perfect square:
 
 $$0 > (x-y)^2.$$
 
-Квадрат действительного числа не бывает отрицательным. Противоречие,
-следовательно исходное предположение неверно и
+The square of a real number is never negative. A contradiction, therefore the
+original supposition is false and
 
 $$\sqrt{xy} \le \frac{x+y}{2}. \qquad \blacksquare$$
 
@@ -1687,51 +1665,47 @@ my17_expr = x**2 - 2*x*y + y**2
 my17_sq = (x - y)**2
 ```
 
-**Разметка.** M1 за предположение противного, M1 за попытку возвести
-в квадрат, A1 за $0 > x^2-2xy+y^2$, A1 за $0>(x-y)^2$,
-R1 за явную фразу «квадрат не может быть отрицательным, противоречие».
+**The marking.** M1 for supposing the opposite, M1 for attempting to square, A1 for
+$0 > x^2-2xy+y^2$, A1 for $0>(x-y)^2$, R1 for the explicit sentence «a square cannot
+be negative, a contradiction».
 
-**Балл за фразу.** R1 здесь не за выкладку, а за вывод словами.
-Дойти до $0>(x-y)^2$ и остановиться — потерянный балл: формально
-противоречие не предъявлено.
+**A mark for a sentence.** The R1 here is not for the working but for the conclusion
+in words. Reaching $0>(x-y)^2$ and stopping is a lost mark: formally the
+contradiction has not been presented.
 
-**Почему возведение в квадрат законно.** Обе части положительны,
-и только поэтому знак сохраняется. В доказательствах от противного
-это тот шаг, где чаще всего теряют строгость: возводить в квадрат
-неравенство с частями неизвестного знака нельзя.
+**Why the squaring is legitimate.** Both sides are positive, and only for that
+reason the sign is kept. In proofs by contradiction that is the step where rigour is
+most often lost: an inequality whose sides have unknown sign must not be squared.
 
-**Про разметку корпуса.** В выдержке из markscheme стоит
-$0 > x^2-4xy+y^2$. Такого не получается: $4xy > (x+y)^2$ даёт
-$0 > x^2-2xy+y^2$. И следующая строка выдержки, $0>(x-y)^2$,
-согласуется именно с $-2xy$: выражение $x^2-4xy+y^2$ полным квадратом
-не является вовсе. Похоже на потерю коэффициента при извлечении;
-проверка — в `verify_a8.py`.
+**About the archive's tags.** The extract from the markscheme has
+$0 > x^2-4xy+y^2$. That does not come out: $4xy > (x+y)^2$ gives
+$0 > x^2-2xy+y^2$. And the next line of the extract, $0>(x-y)^2$, agrees precisely
+with $-2xy$: the expression $x^2-4xy+y^2$ is not a perfect square at all. It looks
+like a coefficient lost in the extraction; the check is in `verify_a8.py`.
 """)
 
 md(r"""
-## Решение 18 — два коротких вывода из Paper 3
+## Solution 18 — two short deductions from Paper 3
 
-**(a)** Подставляем и вычитаем:
+**(a)** Substitute and subtract:
 
 $$b - a = (t^2-s^2) - (2st-s^2) = t^2 - 2st = t(t-2s).$$
 
-Дано $a<b$, то есть $b-a>0$, то есть $t(t-2s)>0$. Так как
-$t \in \mathbb{R}^+$, делим на $t$, знак сохраняется:
+We are given $a<b$, that is, $b-a>0$, that is, $t(t-2s)>0$. Since
+$t \in \mathbb{R}^+$, divide by $t$ and the sign is kept:
 
 $$t - 2s > 0 \iff t > 2s. \qquad \blacksquare$$
 
-**(b)** По неравенству о средних для положительных $x_1,\dots,x_n$
-с суммой $T$
+**(b)** By the AM–GM inequality, for positive $x_1,\dots,x_n$ with sum $T$
 
 $$\sqrt[n]{x_1x_2\cdots x_n} \le \frac{x_1+\cdots+x_n}{n} = \frac Tn,$$
 
-и после возведения в $n$-ю степень
+and raising to the $n$-th power
 
 $$x_1x_2\cdots x_n \le \left(\frac Tn\right)^n.$$
 
-Равенство достигается, когда все $x_i$ равны, то есть при
-$x_i = \frac Tn$ — такой набор существует и сумму даёт правильную.
-Значит верхняя граница достигается, и
+Equality is attained when all the $x_i$ are equal, that is, at $x_i = \frac Tn$ —
+such a set exists and gives the right sum. So the upper bound is attained and
 
 $$M_n(T) = \left(\frac Tn\right)^n.$$
 
@@ -1740,77 +1714,75 @@ my18_diff = t*(t - 2*s)
 my18_max = (T/n)**n
 ```
 
-**Разметка.** (a): A1 за $2st-s^2 < t^2-s^2$, R1 за деление на $t>0$
-с оговоркой про знак; $t>2s$ — AG. (b): A1 за $\sum x_i = T$,
-M1 за применение AM–GM, M1 за возведение в степень, R1 за условие
-равенства; итог — AG.
+**The marking.** (a): A1 for $2st-s^2 < t^2-s^2$, R1 for dividing by $t>0$ with the
+statement about the sign; $t>2s$ is AG. (b): A1 for $\sum x_i = T$, M1 for applying
+AM–GM, M1 for raising to the power, R1 for the condition of equality; the result is
+AG.
 
-**Оба балла в (a) — за оговорки.** Алгебра там на одну строку:
-$s^2$ сокращается. Баллы стоят за то, что вы сказали, почему можно
-делить на $t$, — и в этом весь пункт.
+**Both marks in (a) are for the caveats.** The algebra there is one line: the $s^2$
+cancels. The marks are for saying why dividing by $t$ is allowed — and that is the
+whole part.
 
-**Почему в (b) нужен признак равенства.** Без него доказано только
-$M_n(T) \le \left(\frac Tn\right)^n$, а спрашивают равенство. R1 стоит
-именно за предъявление набора, на котором граница достигается.
+**Why (b) needs the condition for equality.** Without it only
+$M_n(T) \le \left(\frac Tn\right)^n$ has been proved, while equality is what is
+asked. The R1 is precisely for presenting a set on which the bound is attained.
 
-**Проверка из другого практикума.** Пункт (a) проверяется
-`verify_factored` — той самой функцией из A4. Требование то же:
-ответ должен быть **произведением**, потому что вывод $t>2s$
-получается именно из произведения, а не из $t^2-2st$.
+**A check from another practicum.** Part (a) is checked by `verify_factored` — the
+very function from A4. The requirement is the same: the answer has to be a
+**product**, because the conclusion $t>2s$ comes exactly from the product and not
+from $t^2-2st$.
 """)
 
 md(r"""
-## Решение 19 — задание на таймере
+## Solution 19 — the task on the timer
 
-**(a)** Дискриминант уравнения $x^2+kx+15-k=0$:
+**(a)** The discriminant of $x^2+kx+15-k=0$:
 
 $$\Delta = k^2 - 4(15-k) = k^2 + 4k - 60.$$
 
-Два различных действительных корня — это $\Delta>0$:
+Two distinct real roots means $\Delta>0$:
 
 $$k^2+4k-60 > 0 \iff (k-6)(k+10) > 0.$$
 
-Критические значения $-10$ и $6$, парабола ветвями вверх:
+The critical values are $-10$ and $6$, and the parabola opens upwards:
 
-$$k < -10 \quad\text{или}\quad k > 6.$$
+$$k < -10 \quad\text{or}\quad k > 6.$$
 
-**(b)** Корни одного знака — значит, их произведение положительно:
+**(b)** Roots of the same sign means their product is positive:
 
 $$\alpha\beta = 15 - k > 0 \iff k < 15.$$
 
-Пересекаем с ответом (a):
+Intersect with the answer to (a):
 
-$$k<-10 \quad\text{или}\quad 6 < k < 15.$$
+$$k<-10 \quad\text{or}\quad 6 < k < 15.$$
 
 ```python
 my19_a = Union(Interval.open(-oo, -10), Interval.open(6, oo))
 my19_b = Union(Interval.open(-oo, -10), Interval.open(6, 15))
 ```
 
-**Разметка.** (a): M1 за $\Delta>0$, A1 за $k^2+4k-60$, M1 за попытку
-решить квадратное неравенство, A1 за критические значения, A1 за ответ.
-(b): M1 за понимание, что произведение корней положительно,
-A1 за ответ.
+**The marking.** (a): M1 for $\Delta>0$, A1 for $k^2+4k-60$, M1 for attempting to
+solve the quadratic inequality, A1 for the critical values, A1 for the answer. (b):
+M1 for realising that the product of the roots is positive, A1 for the answer.
 
-**Как это выглядит по времени.** Семь баллов за двенадцать минут,
-и почти всё время уходит на пункт (a): пять баллов из семи стоят
-за аккуратное решение одного квадратного неравенства.
+**How it looks in time.** Seven marks in twelve minutes, and almost all the time
+goes on part (a): five of the seven marks are for solving one quadratic inequality
+carefully.
 
-**Ключевой ход в (b).** Не считать корни. Условие «оба положительны
-или оба отрицательны» это ровно «произведение положительно», и
-произведение известно сразу: $\frac ca = 15-k$. Сумма корней здесь
-не нужна вовсе — она понадобилась бы, если бы спрашивали про оба
-положительных отдельно.
+**The key move in (b).** Not computing the roots. The condition «both positive or
+both negative» is exactly «the product is positive», and the product is known at
+once: $\frac ca = 15-k$. The sum of the roots is not needed here at all — it would
+be needed if both positive were asked about separately.
 
-**Почему пересечение, а не объединение.** Условие (b) добавляется
-к условию (a), а не заменяет его: корни всё ещё должны быть
-действительными и различными. Кусок $k<-10$ уцелел целиком (там
-$15-k>25>0$), а правый обрезался с $k>6$ до $6<k<15$.
+**Why an intersection and not a union.** The condition in (b) is added to the
+condition in (a), not substituted for it: the roots still have to be real and
+distinct. The piece $k<-10$ survived whole (there $15-k>25>0$), while the right one
+was trimmed from $k>6$ to $6<k<15$.
 
-**Проверка ответа за пять секунд.** Возьмите $k=10$: уравнение
-$x^2+10x+5=0$, корни $-5\pm\sqrt{20}$, оба отрицательны — сходится.
-Возьмите $k=20$: $x^2+20x-5=0$, произведение $-5<0$, корни разных
-знаков — не сходится, и правильно, $20>15$.
+**A check on the answer in five seconds.** Take $k=10$: the equation
+$x^2+10x+5=0$, roots $-5\pm\sqrt{20}$, both negative — it agrees. Take $k=20$:
+$x^2+20x-5=0$, product $-5<0$, roots of different signs — it does not agree, and
+rightly so, $20>15$.
 """)
 
 nb = {

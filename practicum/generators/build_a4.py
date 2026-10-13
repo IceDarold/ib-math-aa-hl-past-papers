@@ -85,818 +85,815 @@ def code(src):
 
 
 md(r"""
-# Практикум A4: многочлены
+# Practicum A4: polynomials
 
-**145 баллов, 50 блоков, девять приёмов.** Самая широкая тема секции A
-и единственная, где Paper 3 весит больше Paper 2: 62 балла в Paper 1,
-34 в Paper 2, 49 в Paper 3.
+**145 marks, 50 blocks, nine techniques.** The widest topic of section A and the
+only one where Paper 3 weighs more than Paper 2: 62 marks on Paper 1, 34 on Paper 2,
+49 on Paper 3.
 
-**Материал.** 50 блоков и 145 баллов из архива AA HL, сессии May 2021 —
-November 2025. Каждое задание ниже — настоящий вопрос прошлых лет,
-источник указан.
+**Material.** 50 blocks and 145 marks from the AA HL archive, sessions May 2021 —
+November 2025. Every task below is a real past-paper question, cited.
 
-**Главная мысль темы.** Многочлен можно читать с двух сторон — по
-коэффициентам и по корням, — и вся тема состоит в переходах между этими
-двумя чтениями.
+**The main idea of the topic.** A polynomial can be read from two sides — by its
+coefficients and by its roots — and the whole topic consists of moving between those
+two readings.
 
-* Коэффициенты → корни: теорема о множителе, деление, разложение.
-* Корни → коэффициенты: формулы Виета, симметричные суммы.
+* Coefficients → roots: the factor theorem, division, factorising.
+* Roots → coefficients: Vieta's formulas, symmetric sums.
 
-Почти в каждом вопросе нужно сообразить, в какую сторону идти. Признак
-простой: если корни **находить не требуется** — «найдите произведение
-решений», «покажите, что $a^2 = 3b$» — идти надо от корней к
-коэффициентам, и Виета сэкономит вам страницу.
+In nearly every question you have to work out which way to go. The sign is simple:
+if the roots **do not have to be found** — «find the product of the solutions»,
+«show that $a^2 = 3b$» — then the way is from the roots to the coefficients, and
+Vieta will save you a page.
 
-**Как работать**
+**How to work**
 
-1. Прочитайте карту приёмов. Приёмы 1–3 — коэффициенты → корни,
-   4–8 — корни → коэффициенты, 9 стоит особняком и ведёт в интегрирование.
-2. Решайте **на бумаге**. Деление уголком и подстановка в теорему о корне —
-   ручная работа, за неё стоят все M1.
-3. Ответ вводите в любой удобной форме — кроме тех заданий, где условие
-   требует определённого **вида** записи. Там проверка на вид и смотрит,
-   о чём сказано прямо в задании.
-4. Последние блоки — тренажёр распознавания и задание на таймере.
+1. Read the map of techniques. Techniques 1–3 are coefficients → roots, 4–8 are
+   roots → coefficients, and 9 stands apart and leads into integration.
+2. Work **on paper**. Long division and substitution into the factor theorem are
+   hand work, and all the M1s are for them.
+3. Enter the answer in whichever form suits you — except in the tasks where the
+   question demands a particular **form**. There the check looks at the form too,
+   and the task says so.
+4. The last blocks are a recognition trainer and one question on a timer.
 
-Метки сложности: 🟢 приём в чистом виде · 🟡 приём в неочевидной обёртке ·
-🔴 комбинация приёмов или экзаменационный формат целиком.
+Difficulty marks: 🟢 the technique on its own · 🟡 the technique in a wrapper ·
+🔴 several techniques, or a whole exam question.
 """)
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/number_algebra к practicum/kit/
-import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
-from kit import *              # проверки + factor, apart, solve, sqrt, I и прочие имена
+sys.path.append('..')          # from practicum/number_algebra to practicum/kit/
+import sympy as sp             # the escape hatch: anything not in kit is in sp
+from kit import *              # checks + factor, apart, solve, sqrt, I and the rest
+
+language('en')                 # this notebook is in English, and so are the checks
 
 a, b, c, d = symbols('a b c d')
 m, n, p, q, r = symbols('m n p q r')
 z, w = symbols('z w')
 
-print('готово; sympy', sp.__version__)
-print('разложить на множители:', factor(3*x**3 + 5*x**2 + x - 1))
-print('поделить с остатком:   ', div(2*x**2 - 5*x - 3, x - 1, x))
-print('простейшие дроби:      ', apart(1/((x + 1)*(2*x + 1)), x))
-print('корни численно:        ', Poly(x**3 - 7*x**2 + 12*x + 1, x).nroots())
+print('ready; sympy', sp.__version__)
+print('factorise:              ', factor(3*x**3 + 5*x**2 + x - 1))
+print('divide with remainder:  ', div(2*x**2 - 5*x - 3, x - 1, x))
+print('partial fractions:      ', apart(1/((x + 1)*(2*x + 1)), x))
+print('roots numerically:      ', Poly(x**3 - 7*x**2 + 12*x + 1, x).nroots())
 """)
 
 md(r"""
 ---
-## Карта приёмов
+## Map of techniques
 
-| # | Приём | Триггер в условии | Первый ход |
+| # | Technique | Trigger in the question | First move |
 | --- | --- | --- | --- |
-| 1 | Множитель и остаток | «show that $(x-a)$ is a factor», «the remainder is …» | посчитать $P(a)$ |
-| 2 | Деление с остатком | «express in the form $Q(x) + \frac{R}{d(x)}$» | уголком или подбором |
-| 3 | Кратный корень | «divisible by $(x+1)^2$», «repeated root» | $P(a)=0$ **и** $P'(a)=0$ |
-| 4 | Виета для квадратного | «roots $\alpha,\beta$», $\alpha^2+\beta^2$, корни не спрашивают | $\alpha+\beta=-\frac ba$, $\alpha\beta=\frac ca$ |
-| 5 | Виета для кубического и выше | «write down the sum of the roots», связь корней задана | три симметричные суммы |
-| 6 | Комплексные корни парами | коэффициенты действительны, один корень мнимый | приписать сопряжённый |
-| 7 | Симметричные суммы | $\alpha^2+\beta^2+\gamma^2$ через $p$ и $q$ | $(\alpha+\beta+\gamma)^2$ |
-| 8 | Уравнение с новыми корнями | «whose roots are $\frac1{\alpha^3}$», «$\frac1{z_i}$» | подстановка $w=\frac1z$ либо Виета |
-| 9 | Простейшие дроби | «express in partial fractions» | тождество и подстановка удобных $x$ |
+| 1 | A factor and a remainder | «show that $(x-a)$ is a factor», «the remainder is …» | compute $P(a)$ |
+| 2 | Division with a remainder | «express in the form $Q(x) + \frac{R}{d(x)}$» | long division or matching |
+| 3 | A repeated root | «divisible by $(x+1)^2$», «repeated root» | $P(a)=0$ **and** $P'(a)=0$ |
+| 4 | Vieta for a quadratic | «roots $\alpha,\beta$», $\alpha^2+\beta^2$, the roots are not asked for | $\alpha+\beta=-\frac ba$, $\alpha\beta=\frac ca$ |
+| 5 | Vieta for a cubic and above | «write down the sum of the roots», a relation between the roots is given | the three symmetric sums |
+| 6 | Complex roots in pairs | the coefficients are real, one root is imaginary | write down the conjugate |
+| 7 | Symmetric sums | $\alpha^2+\beta^2+\gamma^2$ in terms of $p$ and $q$ | $(\alpha+\beta+\gamma)^2$ |
+| 8 | An equation with new roots | «whose roots are $\frac1{\alpha^3}$», «$\frac1{z_i}$» | the substitution $w=\frac1z$, or Vieta |
+| 9 | Partial fractions | «express in partial fractions» | the identity and convenient values of $x$ |
 
-Лестница держится на двух опорах. Приёмы 1–3 идут от коэффициентов к
-корням: подставили — нашли множитель — поделили — получили остальные корни.
-Приёмы 4–8 идут обратно: корни не находят вовсе, а работают с их суммами
-и произведениями, потому что те выражаются через коэффициенты сразу.
+The ladder rests on two supports. Techniques 1–3 go from the coefficients to the
+roots: substitute — find a factor — divide — get the other roots. Techniques 4–8 go
+back the other way: the roots are not found at all, and you work with their sums and
+products, because those are expressed through the coefficients immediately.
 
-Приём 9 стоит особняком. Он ничего не говорит о корнях, зато превращает
-дробь в сумму, которую можно проинтегрировать, — и в архиве почти всегда
-оказывается пунктом (a) длинного вопроса по интегрированию.
+Technique 9 stands apart. It says nothing about the roots, but it turns a fraction
+into a sum that can be integrated — and in the archive it is almost always part (a)
+of a long integration question.
 
-**Что экономит больше всего времени.** Прежде чем считать, посмотрите,
-спрашивают ли корни. Вопросы «найдите произведение решений», «покажите,
-что $a^2-3b=0$», «найдите $q$ и $r$» решаются, не находя ни одного корня.
-Кто начинает с формулы корней кубического уравнения, теряет не баллы,
-а время — и вместе с ним всё остальное.
+**What saves the most time.** Before computing, look at whether the roots are asked
+for. Questions like «find the product of the solutions», «show that $a^2-3b=0$»,
+«find $q$ and $r$» are solved without finding a single root. Whoever starts with the
+formula for the roots of a cubic loses not marks but time — and with it everything
+else.
 """)
 
 md(r"""
 ---
-## Где здесь калькулятор
+## Where the calculator is in this topic
 
-Формально 83 балла из 145 — в бумагах с калькулятором, то есть 57%.
-Это ровно середина архива и цифра, которая вводит в заблуждение.
+Formally 83 marks out of 145 are on calculator papers, that is, 57%. That is exactly
+the middle of the archive and a figure that misleads.
 
-| | баллов | из них реально нужен GDC |
+| | marks | of which really need a GDC |
 | --- | --- | --- |
 | Paper 1 | 62 | — |
 | Paper 2 | 34 | 0 |
 | Paper 3 | 49 | 4 |
 
-Настоящей работы для калькулятора в теме на **четыре балла**: перебрать
-целые $q$ в задании 13(e) и решить систему из трёх линейных уравнений
-в одном блоке ноября 2022. Всё остальное — алгебра, которая делается
-одинаково в обеих бумагах.
+The real work for a calculator in this topic is worth **four marks**: running
+through the integers $q$ in task 13(e) and solving a system of three linear
+equations in one block from November 2022. Everything else is algebra, done the same
+way on either paper.
 
-Причина в устройстве темы. Калькулятор умеет находить корни, а вопросы
-здесь про то, что с корнями связано **без их нахождения**. Уравнение
-$x^3-7x^2+qx+1=0$ с буквой $q$ калькулятор не решит, а Виета — за строку.
+The reason is in how the topic is built. A calculator can find roots, and the
+questions here are about what is tied to the roots **without finding them**. The
+equation $x^3-7x^2+qx+1=0$ with the letter $q$ a calculator will not solve, while
+Vieta does it in a line.
 
-Где GDC всё-таки помогает:
+Where a GDC does help:
 
-* **Проверить разложение.** Раскрыть найденное произведение и сравнить —
-  десять секунд и спасённые три балла.
-* **Перебрать целые.** «Наименьшее целое $q$, при котором…» — прямой перебор
-  на графике или в таблице; markscheme это принимает явно.
-* **Найти целый корень квартики.** Нарисовать график и увидеть пересечение
-  с осью в $x=-1$ быстрее, чем перебирать делители свободного члена.
+* **Check a factorisation.** Expand the product found and compare — ten seconds and
+  three marks saved.
+* **Run through integers.** «The smallest integer $q$ for which …» — straight
+  searching on a graph or in a table; the markscheme accepts that explicitly.
+* **Find an integer root of a quartic.** Drawing the graph and seeing it cross the
+  axis at $x=-1$ is faster than trying the divisors of the constant term.
 
-Где он бесполезен и вредит: там, где в задаче стоит буква. А буква
-в этой теме стоит почти везде.
+Where it is useless and harmful: wherever there is a letter in the question. And in
+this topic a letter is almost everywhere.
 """)
 
 md(r"""
 ---
-## Теория 1. Корень, множитель, остаток
+## Theory 1. A root, a factor, a remainder
 
-Основа всей левой половины темы — **теорема об остатке**:
+The base of the whole left half of the topic is the **remainder theorem**:
 
-$$\text{остаток от деления } P(x) \text{ на } (x-a) \;=\; P(a).$$
+$$\text{the remainder on dividing } P(x) \text{ by } (x-a) \;=\; P(a).$$
 
-Доказывается в одну строку. Записываем деление с остатком:
-$P(x) = (x-a)Q(x) + R$, где $R$ — константа, потому что степень остатка
-меньше степени делителя. Подставляем $x=a$: первое слагаемое обнуляется,
-остаётся $P(a) = R$.
+It is proved in one line. Write the division with a remainder:
+$P(x) = (x-a)Q(x) + R$, where $R$ is a constant because the degree of the remainder
+is less than the degree of the divisor. Put $x=a$: the first term vanishes and
+$P(a) = R$ is left.
 
-Отсюда **теорема о множителе** — тот же факт при $R=0$:
+Hence the **factor theorem** — the same fact with $R=0$:
 
-$$(x-a) \text{ — множитель } P(x) \iff P(a) = 0.$$
+$$(x-a) \text{ is a factor of } P(x) \iff P(a) = 0.$$
 
-**Осторожно с несведённым множителем.** Для $(2x+1)$ корень равен
-$-\frac12$, а не $-1$ и не $-2$. Общее правило: множитель $(\alpha x+\beta)$
-отвечает $P\!\left(-\frac{\beta}{\alpha}\right)=0$. На этом теряют балл
-чаще, чем на всём остальном в теореме.
+**Careful with a factor that is not monic.** For $(2x+1)$ the root is $-\frac12$,
+not $-1$ and not $-2$. The general rule: the factor $(\alpha x+\beta)$ corresponds
+to $P\!\left(-\frac{\beta}{\alpha}\right)=0$. That loses marks more often than
+anything else in the theorem.
 
-**Как это выглядит в задаче.** Условий обычно два, и каждое даёт уравнение:
+**How it looks in a question.** There are usually two conditions, and each gives an
+equation:
 
-| В условии | Уравнение |
+| In the question | The equation |
 | --- | --- |
 | $(x+4)$ is a factor of $f$ | $f(-4)=0$ |
-| remainder is $7$ when divided by $(x-2)$ | $f(2)=7$ |
-| $f$ is divisible by $(x-5)^2$ | $f(5)=0$ **и** $f'(5)=0$ |
+| the remainder is $7$ when divided by $(x-2)$ | $f(2)=7$ |
+| $f$ is divisible by $(x-5)^2$ | $f(5)=0$ **and** $f'(5)=0$ |
 
-Две буквы — два условия — линейная система. Ничего сложнее в этом приёме
-не бывает, и он приносит 26 баллов архива.
+Two letters — two conditions — a linear system. There is nothing harder in this
+technique, and it brings 26 marks of the archive.
 """)
 
 code(r"""
-# Разминка (не задание): теорема об остатке на живом примере.
+# A warm-up (not a task): the remainder theorem on a live example.
 f = 3*x**3 + 5*x**2 + x - 1
 for a0 in [-2, -1, 0, 1, 2]:
-    print(f'делим на (x - {a0:2d}):  остаток {div(f, x - a0, x)[1]},'
+    print(f'dividing by (x - {a0:2d}):  remainder {div(f, x - a0, x)[1]},'
           f'   f({a0:2d}) = {f.subs(x, a0)}')
 """)
 
 md(r"""
-## Задание 1 🟢 — множитель одной подстановкой
+## Task 1 🟢 — a factor in one substitution
 
-Дан многочлен $P(x) = 3x^3 + 5x^2 + x - 1$. Покажите, что $(x+1)$ —
-множитель $P(x)$.
+Given the polynomial $P(x) = 3x^3 + 5x^2 + x - 1$, show that $(x+1)$ is a factor of
+$P(x)$.
 
-Введите значение, которым это показывается.
+Enter the value that shows it.
 
-*Источник: May 2024 TZ1, Paper 1, Q11(a) (2 балла, без калькулятора).*
+*Source: May 2024 TZ1, Paper 1, Q11(a) (2 marks, no calculator).*
 """)
 
 code(r"""
-my1 = ...                # значение, обращающее теорему о множителе в проверку
+my1 = ...                # the value that turns the factor theorem into a check
 
-check_num('Задание 1', my1, 6, '""" + D_P1 + r"""')
+check_num('Task 1', my1, 6, '""" + D_P1 + r"""')
 """)
 
 md(r"""
-## Задание 2 🟢 — два условия, две буквы
+## Task 2 🟢 — two conditions, two letters
 
-Дан $f(x) = 2x^4 - 6x^3 + px^2 + qx - 2$. Известно, что $(x-1)$ —
-множитель $f(x)$, а при делении $f(x)$ на $(x-3)$ остаток равен $-2$.
-Найдите $p$ и $q$.
+Given $f(x) = 2x^4 - 6x^3 + px^2 + qx - 2$. It is known that $(x-1)$ is a factor of
+$f(x)$ and that the remainder on dividing $f(x)$ by $(x-3)$ is $-2$. Find $p$ and
+$q$.
 
-*Источник: May 2025 TZ3, Paper 2, Q2 (5 баллов, с калькулятором).*
+*Source: May 2025 TZ3, Paper 2, Q2 (5 marks, calculator).*
 """)
 
 code(r"""
 my2_p = ...
 my2_q = ...
 
-check_expr('Задание 2, p', my2_p, '""" + D_P2 + r"""')
-check_expr('Задание 2, q', my2_q, '""" + D_Q2 + r"""')
+check_expr('Task 2, p', my2_p, '""" + D_P2 + r"""')
+check_expr('Task 2, q', my2_q, '""" + D_Q2 + r"""')
 """)
 
 md(r"""
-## Задание 3 🟡 — когда решений системы два
+## Task 3 🟡 — when the system has two solutions
 
-Дан $P(x) = 2x^2 + qx + r$. При делении на $(x+1)$ остаток равен 12,
-а корни $\alpha$ и $\beta$ многочлена **действительны** и удовлетворяют
-$\alpha^2 + \beta^2 = \dfrac{37}{4}$. Найдите $q$ и $r$.
+Given $P(x) = 2x^2 + qx + r$. The remainder on dividing by $(x+1)$ is 12, and the
+roots $\alpha$ and $\beta$ of the polynomial are **real** and satisfy
+$\alpha^2 + \beta^2 = \dfrac{37}{4}$. Find $q$ and $r$.
 
-Сначала введите **оба** значения $q$, которые даёт система. Потом то
-единственное, которое остаётся после проверки условия, и отвечающее ему $r$.
+First enter **both** values of $q$ that the system gives. Then the single one that
+survives the check of the condition, and the $r$ that goes with it.
 
-*Источник: November 2025 TZ3, Paper 2, Q6 (7 баллов, с калькулятором).*
+*Source: November 2025 TZ3, Paper 2, Q6 (7 marks, calculator).*
 """)
 
 code(r"""
-my3_all = [...]          # оба корня уравнения на q
-my3_q = ...              # тот, который проходит по условию
+my3_all = [...]          # both roots of the equation in q
+my3_q = ...              # the one that satisfies the question
 my3_r = ...
 
-check_set('Задание 3, кандидаты', my3_all, '""" + D_QS3 + r"""')
-check_expr('Задание 3, q', my3_q, '""" + D_Q3 + r"""')
-check_expr('Задание 3, r', my3_r, '""" + D_R3 + r"""')
+check_set('Task 3, the candidates', my3_all, '""" + D_QS3 + r"""')
+check_expr('Task 3, q', my3_q, '""" + D_Q3 + r"""')
+check_expr('Task 3, r', my3_r, '""" + D_R3 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 2. Деление и разложение
+## Theory 2. Division and factorising
 
-Деление с остатком для многочленов устроено как для целых чисел:
+Division with a remainder for polynomials works as it does for integers:
 
 $$P(x) = d(x)\,Q(x) + R(x), \qquad \deg R < \deg d.$$
 
-Условие на степень — не формальность, а часть определения. Пока степень
-остатка не меньше степени делителя, делить можно дальше, и запись просто
-не закончена. Проверка в этом практикуме следит за этим отдельно.
+The condition on the degree is not a formality but part of the definition. While the
+degree of the remainder is not less than the degree of the divisor, the division can
+go on and the writing is simply unfinished. The check in this practicum watches for
+that separately.
 
-**Три способа поделить.** Все три законны, markscheme принимает любой.
+**Three ways to divide.** All three are legitimate; the markscheme accepts any.
 
-*Уголком.* Долго, но не требует догадок и работает всегда.
+*Long division.* Slow, but it needs no guessing and always works.
 
-*Подбором коэффициентов.* Пишем $3x^2+7x-2 = (x+2)(Ax+B) + R$, раскрываем,
-приравниваем коэффициенты и получаем $A=3$, $B=1$, $R=-4$. При делении
-на линейный множитель обычно быстрее уголка.
+*Matching coefficients.* Write $3x^2+7x-2 = (x+2)(Ax+B) + R$, expand, equate the
+coefficients and get $A=3$, $B=1$, $R=-4$. For division by a linear factor that is
+usually faster than long division.
 
-*Схемой Горнера.* Для деления на $(x-a)$ — таблица из одной строки.
+*Synthetic division.* For division by $(x-a)$ — a table of one row.
 
-**Разложение на множители — это уже другое требование.** «Express $P(x)$
-as a product of three linear factors» просит не значение, а **вид записи**.
-Ответ $3x^3+5x^2+x-1$ равен правильному ответу, но балла не получает:
-разложения в нём нет.
+**Factorising is a different requirement already.** «Express $P(x)$ as a product of
+three linear factors» asks not for a value but for a **form of writing**. The answer
+$3x^3+5x^2+x-1$ equals the right answer but earns no mark: there is no factorisation
+in it.
 
-Порядок работы: найти один корень подстановкой (кандидаты — делители
-свободного члена, делённые на делители старшего), поделить, разложить
-остаток обычными школьными способами.
+The order of work: find one root by substitution (the candidates are the divisors of
+the constant term divided by the divisors of the leading one), divide, and factorise
+what is left by the ordinary school methods.
 """)
 
 md(r"""
-## Задание 4 🟢 — выделить целую часть
+## Task 4 🟢 — separate the whole part
 
-Покажите, что при $x \ne 1$
+Show that for $x \ne 1$
 
 $$\frac{2x^2 - 5x - 3}{x-1} = 2x - 3 - \frac{6}{x-1}.$$
 
-Введите частное и остаток от деления $2x^2-5x-3$ на $(x-1)$.
+Enter the quotient and the remainder of the division of $2x^2-5x-3$ by $(x-1)$.
 
-*Источник: November 2021, Paper 1, Q6(a) (2 балла, без калькулятора).*
+*Source: November 2021, Paper 1, Q6(a) (2 marks, no calculator).*
 """)
 
 code(r"""
-my4_quo = ...            # частное
-my4_rem = ...            # остаток
+my4_quo = ...            # the quotient
+my4_rem = ...            # the remainder
 
-verify_division('Задание 4', my4_quo, my4_rem, 2*x**2 - 5*x - 3, x - 1)
+verify_division('Task 4', my4_quo, my4_rem, 2*x**2 - 5*x - 3, x - 1)
 """)
 
 md(r"""
-## Задание 5 🟢 — три линейных множителя
+## Task 5 🟢 — three linear factors
 
-Тот же $P(x) = 3x^3 + 5x^2 + x - 1$, что в задании 1. Представьте его
-в виде произведения трёх линейных множителей.
+The same $P(x) = 3x^3 + 5x^2 + x - 1$ as in task 1. Express it as a product of three
+linear factors.
 
-Здесь проверяется **вид записи**: ответ, равный $P(x)$, но не записанный
-произведением, не засчитывается.
+What is checked here is the **form of the writing**: an answer equal to $P(x) $ but
+not written as a product does not count.
 
-*Источник: May 2024 TZ1, Paper 1, Q11(b) (3 балла, без калькулятора).*
+*Source: May 2024 TZ1, Paper 1, Q11(b) (3 marks, no calculator).*
 """)
 
 code(r"""
-my5 = ...                # произведение трёх скобок
+my5 = ...                # a product of three brackets
 
-verify_factored('Задание 5', my5, 3*x**3 + 5*x**2 + x - 1, n=3)
+verify_factored('Task 5', my5, 3*x**3 + 5*x**2 + x - 1, n=3)
 """)
 
 md(r"""
-## Задание 6 🟡 — множитель задан квадратным трёхчленом
+## Task 6 🟡 — the factor is given as a quadratic
 
-Многочлен $P(x) = x^3 + ax^2 + bx + c$ делится на $x^2 + 3x + 2$.
-Числа $a$, $b$, $c$ различны и принадлежат $\{1,2,3,4,5\}$.
+The polynomial $P(x) = x^3 + ax^2 + bx + c$ is divisible by $x^2 + 3x + 2$. The
+numbers $a$, $b$, $c$ are distinct and belong to $\{1,2,3,4,5\}$.
 
-**(i)** Выразите $b$ через $a$.
-**(ii)** Покажите, что подходит единственный набор.
-**(iii)** Разложите получившийся $P(x)$ на линейные множители.
+**(i)** Express $b$ in terms of $a$.
+**(ii)** Show that only one set works.
+**(iii)** Factorise the resulting $P(x)$ into linear factors.
 
-*Источник: November 2022, Paper 1, Q11(b) (9 баллов, без калькулятора).*
+*Source: November 2022, Paper 1, Q11(b) (9 marks, no calculator).*
 """)
 
 code(r"""
-my6_b = ...              # выражение через a
+my6_b = ...              # an expression in terms of a
 my6_a, my6_bn, my6_cn = ..., ..., ...
-my6_factored = ...       # произведение линейных множителей
+my6_factored = ...       # a product of linear factors
 
-check_series('Задание 6(i)', my6_b, '""" + D_B6 + r"""', var=a)
-check_num('Задание 6(ii), a', my6_a, 6, '""" + D_A6N + r"""')
-check_num('Задание 6(ii), b', my6_bn, 6, '""" + D_B6N + r"""')
-check_num('Задание 6(ii), c', my6_cn, 6, '""" + D_C6N + r"""')
-verify_factored('Задание 6(iii)', my6_factored, x**3 + 4*x**2 + 5*x + 2, n=3)
+check_series('Task 6(i)', my6_b, '""" + D_B6 + r"""', var=a)
+check_num('Task 6(ii), a', my6_a, 6, '""" + D_A6N + r"""')
+check_num('Task 6(ii), b', my6_bn, 6, '""" + D_B6N + r"""')
+check_num('Task 6(ii), c', my6_cn, 6, '""" + D_C6N + r"""')
+verify_factored('Task 6(iii)', my6_factored, x**3 + 4*x**2 + 5*x + 2, n=3)
 """)
 
 md(r"""
 ---
-## Теория 3. Кратный корень
+## Theory 3. A repeated root
 
-Если $(x-a)^2$ делит $P(x)$, то $a$ — корень не только $P$, но и $P'$.
-Проверяется прямым дифференцированием: из $P = (x-a)^2 S(x)$ получаем
+If $(x-a)^2$ divides $P(x)$, then $a$ is a root not only of $P$ but of $P'$. It is
+checked by differentiating directly: from $P = (x-a)^2 S(x)$ we get
 
 $$P'(x) = 2(x-a)S(x) + (x-a)^2 S'(x),$$
 
-и оба слагаемых содержат $(x-a)$. Отсюда рабочее правило:
+and both terms contain $(x-a)$. Hence the working rule:
 
-$$(x-a)^2 \mid P(x) \iff P(a) = 0 \;\text{ и }\; P'(a) = 0.$$
+$$(x-a)^2 \mid P(x) \iff P(a) = 0 \;\text{ and }\; P'(a) = 0.$$
 
-Одно условие превратилось в два — ровно столько, сколько нужно, чтобы
-найти две буквы.
+One condition has become two — exactly as many as are needed to find two letters.
 
-**Второй путь, без производной.** Записать $P(x) = (x-a)^2\left(x^2 + \alpha x
-+ \beta\right)$, раскрыть и приравнять коэффициенты. Длиннее, но не требует
-дифференцирования и в Paper 1 иногда надёжнее.
+**The second route, with no derivative.** Write $P(x) = (x-a)^2\left(x^2 + \alpha x
++ \beta\right)$, expand and equate coefficients. Longer, but it needs no
+differentiation and on Paper 1 is sometimes safer.
 
-**Как кратный корень выглядит на графике.** График касается оси $x$, а не
-пересекает её. Кратность 3 — пересекает, но с горизонтальной касательной.
-В Paper 2 это способ увидеть ответ до всякой алгебры.
+**What a repeated root looks like on a graph.** The graph touches the $x$-axis
+rather than crossing it. A multiplicity of 3 crosses it, but with a horizontal
+tangent. On Paper 2 that is a way of seeing the answer before any algebra.
 """)
 
 md(r"""
-## Задание 7 🟡 — делится на квадрат скобки
+## Task 7 🟡 — divisible by the square of a bracket
 
-Найдите $p$ и $q$, при которых многочлен
+Find $p$ and $q$ for which the polynomial
 
 $$x^4 + px^3 - 2x^2 + qx - 3$$
 
-делится нацело на $(x+1)^2$.
+is divisible by $(x+1)^2$.
 
-Проверка здесь ничего не хранит: ваши значения подставляются в многочлен,
-и считается настоящий остаток от деления.
+The check here stores nothing: your values are substituted into the polynomial and
+the real remainder of the division is computed.
 
-*Источник: May 2025 TZ2, Paper 1, Q7 (5 баллов, без калькулятора).*
+*Source: May 2025 TZ2, Paper 1, Q7 (5 marks, no calculator).*
 """)
 
 code(r"""
 my7_p = ...
 my7_q = ...
 
-verify_divisible('Задание 7', x**4 + p*x**3 - 2*x**2 + q*x - 3, (x + 1)**2,
+verify_divisible('Task 7', x**4 + p*x**3 - 2*x**2 + q*x - 3, (x + 1)**2,
                  {p: my7_p, q: my7_q})
 """)
 
 md(r"""
 ---
-## Теория 4. Формулы Виета
+## Theory 4. Vieta's formulas
 
-Вторая половина темы. Раскроем скобки в многочлене, записанном через корни:
+The second half of the topic. Expand the brackets in a polynomial written through
+its roots:
 
 $$(x-\alpha)(x-\beta)(x-\gamma) = x^3 - (\alpha+\beta+\gamma)x^2
 + (\alpha\beta+\beta\gamma+\gamma\alpha)x - \alpha\beta\gamma.$$
 
-Сравнив с $x^3 + px^2 + qx + s$, получаем сразу три равенства. Общее
-правило для $a_nx^n + \dots + a_0$:
+Comparing with $x^3 + px^2 + qx + s$ gives three equalities at once. The general
+rule for $a_nx^n + \dots + a_0$:
 
 $$\sum \alpha_i = -\frac{a_{n-1}}{a_n}, \qquad
 \sum_{i<j} \alpha_i\alpha_j = \frac{a_{n-2}}{a_n}, \qquad \dots, \qquad
 \prod \alpha_i = (-1)^n \frac{a_0}{a_n}.$$
 
-Знаки чередуются. Для квадратного $ax^2+bx+c$:
+The signs alternate. For a quadratic $ax^2+bx+c$:
 
 $$\alpha + \beta = -\frac ba, \qquad \alpha\beta = \frac ca.$$
 
-**Три места, где теряют баллы.**
+**Three places where marks are lost.**
 
-*Забывают старший коэффициент.* У $3x^2+7x-2$ сумма корней равна
-$-\frac73$, а не $-7$. Делить на $a$ обязательно.
+*The leading coefficient is forgotten.* For $3x^2+7x-2$ the sum of the roots is
+$-\frac73$, not $-7$. Dividing by $a$ is compulsory.
 
-*Путают знак.* Сумма идёт с минусом, произведение для кубического — тоже.
-Проще запомнить через чередование: $-,+,-,+$ начиная с суммы.
+*The sign is confused.* The sum carries a minus, and so does the product for a
+cubic. It is easier to remember through the alternation: $-,+,-,+$ starting from the
+sum.
 
-*Ищут корни.* Если в вопросе просят $\alpha^2+\beta^2$ или произведение
-решений, корни не нужны. Работает тождество
+*The roots are hunted.* If the question asks for $\alpha^2+\beta^2$ or the product
+of the solutions, the roots are not needed. The identity
 
-$$\alpha^2+\beta^2 = (\alpha+\beta)^2 - 2\alpha\beta,$$
+$$\alpha^2+\beta^2 = (\alpha+\beta)^2 - 2\alpha\beta$$
 
-и оно же в разных обёртках приносит большую часть баллов приёма.
+does the work, and in various wrappers it brings most of the marks of the
+technique.
 """)
 
 md(r"""
-## Задание 8 🟢 — произведение корней с буквой
+## Task 8 🟢 — the product of the roots with a letter
 
-Запишите выражение для произведения корней уравнения
+Write down an expression for the product of the roots of the equation
 
 $$kx^2 - (k+3)x + 2k + 9 = 0$$
 
-через $k$.
+in terms of $k$.
 
-*Источник: May 2022 TZ1, Paper 2, Q8(a) (1 балл, с калькулятором).*
+*Source: May 2022 TZ1, Paper 2, Q8(a) (1 mark, calculator).*
 """)
 
 code(r"""
-my8 = ...                # произведение корней через k
+my8 = ...                # the product of the roots in terms of k
 
-check_series('Задание 8', my8, '""" + D_P8 + r"""', var=k)
+check_series('Task 8', my8, '""" + D_P8 + r"""', var=k)
 """)
 
 md(r"""
 ---
-## Теория 5. Уравнение с новыми корнями
+## Theory 5. An equation with new roots
 
-Задача звучит так: у уравнения корни $\alpha,\beta$; составьте уравнение,
-корни которого равны $\frac1{\alpha^3}$ и $\frac1{\beta^3}$ — **не находя
-$\alpha$ и $\beta$**.
+The question sounds like this: an equation has roots $\alpha,\beta$; write the
+equation whose roots are $\frac1{\alpha^3}$ and $\frac1{\beta^3}$ — **without
+finding $\alpha$ and $\beta$**.
 
-**Путь первый: подстановка.** Если новый корень равен $w = f(z)$, выразите
-$z$ через $w$ и подставьте в исходное уравнение. Для $w = z+2$ это
-$z = w-2$:
+**Route one: substitution.** If the new root is $w = f(z)$, express $z$ in terms of
+$w$ and substitute into the original equation. For $w = z+2$ that is $z = w-2$:
 
 $$z^2 - 6z + 5 = 0 \;\Longrightarrow\; (w-2)^2 - 6(w-2) + 5 = 0
 \;\Longrightarrow\; w^2 - 10w + 21 = 0.$$
 
-Три строки, и это лучший способ, когда преобразование обратимо явно.
-Проверить себя легко: корни были $1$ и $5$, стали $3$ и $7$.
+Three lines, and it is the best way when the transformation can be inverted
+explicitly. Checking yourself is easy: the roots were $1$ and $5$, and they have
+become $3$ and $7$.
 
-**Путь второй: через Виета.** Считаем сумму и произведение новых корней
-через старые, потом собираем уравнение $x^2 - Sx + P = 0$. Нужен, когда
-подстановка приводит к неприятностям — например, когда новые корни это
-степени старых:
+**Route two: through Vieta.** Compute the sum and the product of the new roots in
+terms of the old ones, then assemble the equation $x^2 - Sx + P = 0$. It is needed
+when substitution leads to trouble — for example when the new roots are powers of
+the old ones:
 
 $$\alpha^2+\beta^2 = (\alpha+\beta)^2 - 2\alpha\beta,
 \qquad \alpha^2\beta^2 = (\alpha\beta)^2 .$$
 
-Обе части выражены через сумму и произведение, то есть через
-коэффициенты, и корни искать не пришлось. Для более высоких степеней
-работает то же самое: сумму степеней сводят к сумме и произведению
-подходящим тождеством, и именно такое тождество экзамен обычно просит
-доказать отдельным пунктом — не для красоты, а потому, что без него
-второй путь не проходит.
+Both parts are expressed through the sum and the product, that is, through the
+coefficients, and no root had to be found. For higher powers the same thing works:
+the sum of powers is reduced to the sum and the product by a suitable identity, and
+it is exactly such an identity that the exam usually asks you to prove as a separate
+part — not for decoration, but because without it the second route does not go
+through.
 
-**Проверка в ноутбуке устроена по существу.** Эталонных коэффициентов нет:
-корни вашего уравнения считаются численно и сравниваются с преобразованными
-корнями исходного. Поэтому уравнение, умноженное на любое число, тоже
-пройдёт — корни у него те же, и markscheme тоже его принимает.
+**The check in the notebook is built on the substance.** There are no reference
+coefficients: the roots of your equation are computed numerically and compared with
+the transformed roots of the original. So an equation multiplied by any number
+passes too — its roots are the same, and the markscheme accepts it as well.
 """)
 
 md(r"""
-## Задание 9 🟡 — тождество и новое уравнение
+## Task 9 🟡 — an identity and a new equation
 
-**(a)** Докажите тождество $(p+q)^3 - 3pq(p+q) \equiv p^3 + q^3$.
-Введите разность двух раскрытых частей левой стороны.
+**(a)** Prove the identity $(p+q)^3 - 3pq(p+q) \equiv p^3 + q^3$. Enter the
+difference of the two expanded parts of the left-hand side.
 
-**(b)** Уравнение $2x^2 - 5x + 1 = 0$ имеет корни $\alpha$ и $\beta$.
-Найдите $m$ и $n$ такие, что корнями $x^2 + mx + n = 0$ являются
-$\frac1{\alpha^3}$ и $\frac1{\beta^3}$. Находить $\alpha$ и $\beta$ нельзя.
+**(b)** The equation $2x^2 - 5x + 1 = 0$ has roots $\alpha$ and $\beta$. Find $m$
+and $n$ such that the roots of $x^2 + mx + n = 0$ are $\frac1{\alpha^3}$ and
+$\frac1{\beta^3}$. Finding $\alpha$ and $\beta$ is not allowed.
 
-*Источник: November 2021, Paper 2, Q6 (8 баллов, с калькулятором).*
+*Source: November 2021, Paper 2, Q6 (8 marks, calculator).*
 """)
 
 code(r"""
-my9_a = ...              # (p+q)**3 - 3*p*q*(p+q), обе скобки раскрыты
+my9_a = ...              # (p+q)**3 - 3*p*q*(p+q), both brackets expanded
 my9_m = ...
 my9_n = ...
 
-check_series('Задание 9(a)', my9_a, '""" + D_PQ9 + r"""', var=p)
-verify_root_transform('Задание 9(b)', [1, my9_m, my9_n],
+check_series('Task 9(a)', my9_a, '""" + D_PQ9 + r"""', var=p)
+verify_root_transform('Task 9(b)', [1, my9_m, my9_n],
                       2*x**2 - 5*x + 1, lambda t: 1/t**3)
 """)
 
 md(r"""
-## Задание 10 🟡 — связь между корнями задана
+## Task 10 🟡 — a relation between the roots is given
 
-Уравнение
+The equation
 
 $$x^3 - kx^2 + \tfrac{k^2}{2}\,x - 3k = 0, \qquad k > 0,$$
 
-имеет корни $\alpha$, $\beta$ и $\alpha+\beta$.
+has roots $\alpha$, $\beta$ and $\alpha+\beta$.
 
-Сначала выразите $\alpha\beta$ через $k$, потом найдите $k$.
+First express $\alpha\beta$ in terms of $k$, then find $k$.
 
-*Источник: May 2021 TZ2, Paper 1, Q7 (5 баллов, без калькулятора).*
-Условие приведено в согласованном виде; расхождение с разметкой корпуса
-разобрано в решении.
+*Source: May 2021 TZ2, Paper 1, Q7 (5 marks, no calculator).* The question is given
+in a consistent form; the discrepancy with the archive's tags is dealt with in the
+solution.
 """)
 
 code(r"""
-my10_ab = ...            # alpha*beta через k
-my10_k = ...             # значение k
+my10_ab = ...            # alpha*beta in terms of k
+my10_k = ...             # the value of k
 
-check_series('Задание 10, alpha*beta', my10_ab, '""" + D_AB10 + r"""', var=k)
-check_expr('Задание 10, k', my10_k, '""" + D_K10 + r"""')
+check_series('Task 10, alpha*beta', my10_ab, '""" + D_AB10 + r"""', var=k)
+check_expr('Task 10, k', my10_k, '""" + D_K10 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 6. Комплексные корни идут парами
+## Theory 6. Complex roots come in pairs
 
-Если у многочлена **все коэффициенты действительны** и $z_0$ — его корень,
-то $\overline{z_0}$ тоже корень. Причина в одну строку: сопряжение
-перестановочно со сложением и умножением, поэтому
+If **all the coefficients** of a polynomial are real and $z_0$ is a root of it, then
+$\overline{z_0}$ is a root as well. The reason is one line: conjugation commutes
+with addition and multiplication, so
 
 $$\overline{P(z_0)} = P\!\left(\overline{z_0}\right),$$
 
-и если слева ноль, то справа тоже. Условие про действительные
-коэффициенты обязательно: у $z - i$ корень один.
+and if the left-hand side is zero, so is the right. The condition about real
+coefficients is essential: $z - i$ has only one root.
 
-**Что из этого следует немедленно.**
+**What follows immediately.**
 
-* Недействительные корни всегда в чётном числе.
-* У кубического с действительными коэффициентами **всегда есть
-  действительный корень** — их три, а недействительных чётное число.
-  Второй способ сказать то же: график кубической функции уходит в $-\infty$
-  и $+\infty$, значит пересекает ось.
-* Пара $z_0, \overline{z_0}$ даёт действительный квадратный множитель
-  $z^2 - 2\operatorname{Re}(z_0)\,z + |z_0|^2$. Для $1\pm i$ это
-  $z^2-2z+2$.
+* Non-real roots always come in an even number.
+* A cubic with real coefficients **always has a real root** — there are three of
+  them and an even number of non-real ones. Another way of saying the same: the
+  graph of a cubic goes to $-\infty$ and $+\infty$, so it crosses the axis.
+* A pair $z_0, \overline{z_0}$ gives a real quadratic factor
+  $z^2 - 2\operatorname{Re}(z_0)\,z + |z_0|^2$. For $1\pm i$ that is $z^2-2z+2$.
 
-**Как это работает вместе с Виета.** Пара сопряжённых корней вносит
-в сумму $2\operatorname{Re}(z_0)$ — число действительное, — а в произведение
-$|z_0|^2 > 0$. Мнимые части гасятся, и уравнения Виета остаются
-действительными. Именно поэтому такие задачи решаются без единой
-комплексной выкладки.
+**How this works together with Vieta.** A pair of conjugate roots contributes
+$2\operatorname{Re}(z_0)$ to the sum — a real number — and $|z_0|^2 > 0$ to the
+product. The imaginary parts cancel and Vieta's equations stay real. That is exactly
+why such questions are solved with no complex working at all.
 """)
 
 md(r"""
-## Задание 11 🔴 — найти параметр и все корни
+## Task 11 🔴 — find the parameter and all the roots
 
-Многочлен
+The polynomial
 
 $$P(z) = z^3 - \frac{36}{m}z^2 + mz - 4m, \qquad m \in \mathbb{R},\; m > 0,$$
 
-имеет множитель $z - 3i$. Найдите $m$ и все корни $P$.
+has a factor $z - 3i$. Find $m$ and all the roots of $P$.
 
-*Источник: May 2023 TZ1, Paper 1, Q7 (6 баллов, без калькулятора).*
+*Source: May 2023 TZ1, Paper 1, Q7 (6 marks, no calculator).*
 """)
 
 code(r"""
 my11_m = ...
-my11_roots = [...]       # все три корня
+my11_roots = [...]       # all three roots
 
-check_num('Задание 11, m', my11_m, 6, '""" + D_M11 + r"""')
-check_complex_set('Задание 11, корни', my11_roots, '""" + D_R11 + r"""')
+check_num('Task 11, m', my11_m, 6, '""" + D_M11 + r"""')
+check_complex_set('Task 11, the roots', my11_roots, '""" + D_R11 + r"""')
 """)
 
 md(r"""
-## Задание 12 🟡 — уравнение для обратных корней
+## Task 12 🟡 — an equation for the reciprocal roots
 
-Уравнение $z^4 + 2z^2 + 4 = 0$ имеет корни $z_1, z_2, z_3, z_4$.
-Найдите $p$, $q$, $r$ такие, что числа $\frac1{z_1}, \dots, \frac1{z_4}$
-удовлетворяют уравнению
+The equation $z^4 + 2z^2 + 4 = 0$ has roots $z_1, z_2, z_3, z_4$. Find $p$, $q$,
+$r$ such that the numbers $\frac1{z_1}, \dots, \frac1{z_4}$ satisfy the equation
 
 $$pw^4 + qw^2 + r = 0.$$
 
-*Источник: May 2025 TZ2, Paper 1, Q12(d) (3 балла, без калькулятора).*
+*Source: May 2025 TZ2, Paper 1, Q12(d) (3 marks, no calculator).*
 """)
 
 code(r"""
 my12_p, my12_q, my12_r = ..., ..., ...
 
-verify_root_transform('Задание 12', [my12_p, 0, my12_q, 0, my12_r],
+verify_root_transform('Task 12', [my12_p, 0, my12_q, 0, my12_r],
                       z**4 + 2*z**2 + 4, lambda s: 1/s, var=z)
 """)
 
 md(r"""
 ---
-## Теория 7. Симметричные суммы и вещественность корней
+## Theory 7. Symmetric sums and the reality of the roots
 
-Самая красивая конструкция темы, и вся она — из одного приёма:
-**симметричную комбинацию корней возводят в квадрат и узнают в ней
-формулы Виета.** Квадрат суммы всегда даёт одно и то же:
+The prettiest construction in the topic, and all of it comes from one technique: **a
+symmetric combination of the roots is squared and Vieta's formulas are recognised in
+it.** The square of a sum always gives the same thing:
 
 $$\left(\textstyle\sum \alpha_i\right)^2
 = \sum \alpha_i^2 + 2\sum_{i<j}\alpha_i\alpha_j ,$$
 
-и обе суммы справа — это коэффициенты. Значит сумма квадратов корней
-выражается через коэффициенты, и ни одного корня искать не нужно.
+and both sums on the right are coefficients. So the sum of the squares of the roots
+is expressed through the coefficients, and no root has to be found.
 
-**Тот же приём работает не только для самих корней.** Возьмём обратные
-величины у кубического $x^3+px^2+qx+r$. По Виета
+**The same technique works not only for the roots themselves.** Take the reciprocals
+for a cubic $x^3+px^2+qx+r$. By Vieta
 
 $$\sum\frac{1}{\alpha} = \frac{q}{-r}, \qquad
 \sum_{i<j}\frac{1}{\alpha_i\alpha_j} = \frac{-p}{-r} = \frac{p}{r},$$
 
-и то же возведение в квадрат даёт
+and the same squaring gives
 
 $$\sum\frac{1}{\alpha^2}
 = \left(\frac{q}{-r}\right)^2 - 2\cdot\frac{p}{r}
 = \frac{q^2 - 2pr}{r^2}.$$
 
-Проверьте на $x^3-6x^2+11x-6$, у которого корни $1,2,3$: формула даёт
-$\frac{121-72}{36}=\frac{49}{36}$, и это в точности
-$1+\frac14+\frac19$.
+Check it on $x^3-6x^2+11x-6$, whose roots are $1,2,3$: the formula gives
+$\frac{121-72}{36}=\frac{49}{36}$, and that is exactly $1+\frac14+\frac19$.
 
-**Куда это ведёт.** Если возвести в квадрат не сумму корней, а их
-попарные **разности** и сложить, слева окажется сумма квадратов — а она
-у действительных чисел неотрицательна. Справа после подстановки Виета
-останется выражение из двух коэффициентов. Получается критерий, который
-проверяется в уме и по которому видно, что не все корни действительны.
-Вывести его — работа задания 13, и она стоит того, чтобы её проделать,
-а не прочитать.
+**Where this leads.** If you square not the sum of the roots but their pairwise
+**differences** and add them, the left-hand side is a sum of squares — and for real
+numbers that is non-negative. On the right, after Vieta is substituted, an
+expression in two coefficients is left. The result is a criterion that can be
+checked in your head and that shows that the roots are not all real. Deriving it is
+the work of task 13, and it is worth doing rather than reading.
 
-**Что критерий не даёт.** Обратное неверно: из противоположного
-неравенства **не следует**, что все корни действительны. Сумма квадратов
-разностей тогда неотрицательна, но она комплексная сумма, и её
-неотрицательность ничего не гарантирует. Контрпример — тоже задание 13.
+**What the criterion does not give.** The converse is false: the opposite inequality
+does **not** imply that all the roots are real. The sum of the squares of the
+differences is then non-negative, but it is a complex sum, and its non-negativity
+guarantees nothing. The counterexample is task 13 as well.
 
-**Для многочлена четвёртой степени** то же тождество работает дословно,
-но квадратов в нём четыре, а не три, и постоянная в критерии меняется
-вместе с их числом. Перенести число из кубического случая в случай
-четвёртой степени — самая частая ошибка в этом вопросе.
+**For a polynomial of the fourth degree** the same identity works word for word, but
+there are four squares in it rather than three, and the constant in the criterion
+changes with their number. Carrying the number over from the cubic case to the
+quartic one is the most frequent mistake in this question.
 """)
 
 md(r"""
-## Задание 13 🔴 — исследование Paper 3, кубический случай
+## Task 13 🔴 — the Paper 3 investigation, the cubic case
 
-Пусть $\alpha, \beta, \gamma$ — корни $x^3 + px^2 + qx + r = 0$.
+Let $\alpha, \beta, \gamma$ be the roots of $x^3 + px^2 + qx + r = 0$.
 
-**(b)(i)** Выразите $\alpha^2+\beta^2+\gamma^2$ через $p$ и $q$.
-**(b)(ii)** Выразите $(\alpha-\beta)^2+(\beta-\gamma)^2+(\gamma-\alpha)^2$
-через $p$ и $q$.
-**(d)** Для $x^3 - 7x^2 + qx + 1 = 0$ при $q = 17$ введите $p^2$ и $3q$.
-**(e)(i)** Найдите наименьшее целое $q > 0$, при котором $p^2 \ge 3q$,
-но корни всё же не все действительны.
+**(b)(i)** Express $\alpha^2+\beta^2+\gamma^2$ in terms of $p$ and $q$.
+**(b)(ii)** Express $(\alpha-\beta)^2+(\beta-\gamma)^2+(\gamma-\alpha)^2$ in terms
+of $p$ and $q$.
+**(d)** For $x^3 - 7x^2 + qx + 1 = 0$ with $q = 17$, enter $p^2$ and $3q$.
+**(e)(i)** Find the smallest integer $q > 0$ for which $p^2 \ge 3q$ and yet the
+roots are still not all real.
 
-*Источник: May 2022 TZ2, Paper 3, Q2(a)–(e) (15 баллов, с калькулятором).*
+*Source: May 2022 TZ2, Paper 3, Q2(a)–(e) (15 marks, calculator).*
 """)
 
 code(r"""
-my13_sq = ...            # alpha²+beta²+gamma² через p и q
-my13_dif = ...           # сумма квадратов разностей через p и q
-my13_p2 = ...            # p² для x³ − 7x² + 17x + 1
-my13_3q = ...            # 3q для него же
-my13_q = ...             # наименьшее целое q из пункта (e)
+my13_sq = ...            # alpha^2+beta^2+gamma^2 in terms of p and q
+my13_dif = ...           # the sum of the squares of the differences, in p and q
+my13_p2 = ...            # p^2 for x^3 - 7x^2 + 17x + 1
+my13_3q = ...            # 3q for the same one
+my13_q = ...             # the smallest integer q from part (e)
 
-check_series('Задание 13(b)(i)',  my13_sq,  '""" + D_SQ13 + r"""', var=p)
-check_series('Задание 13(b)(ii)', my13_dif, '""" + D_DIF13 + r"""', var=p)
-check_num('Задание 13(d), p²', my13_p2, 6, '""" + D_P13 + r"""')
-check_num('Задание 13(d), 3q', my13_3q, 6, '""" + D_3Q13 + r"""')
-check_num('Задание 13(e)', my13_q, 6, '""" + D_Q13 + r"""')
+check_series('Task 13(b)(i)',  my13_sq,  '""" + D_SQ13 + r"""', var=p)
+check_series('Task 13(b)(ii)', my13_dif, '""" + D_DIF13 + r"""', var=p)
+check_num('Task 13(d), p^2', my13_p2, 6, '""" + D_P13 + r"""')
+check_num('Task 13(d), 3q', my13_3q, 6, '""" + D_3Q13 + r"""')
+check_num('Task 13(e)', my13_q, 6, '""" + D_Q13 + r"""')
 """)
 
 code(r"""
-# Пункт (e) — то самое место, где калькулятор действительно нужен.
-# Условие p² ≥ 3q при p = −7 даёт q ≤ 16; смотрим, где корни перестают
-# быть все действительными.
+# Part (e) is the one place where a calculator is genuinely needed.
+# The condition p^2 >= 3q at p = -7 gives q <= 16; we look at where the roots
+# stop being all real.
 for q0 in range(1, 17):
     found = Poly(x**3 - 7*x**2 + q0*x + 1, x).nroots()
     n_real = sum(1 for s in found if abs(im(s)) < 1e-9)
-    print(f'q = {q0:2d}:  действительных корней {n_real}',
-          '  <-- контрпример' if n_real < 3 else '')
+    print(f'q = {q0:2d}:  real roots {n_real}',
+          '  <-- counterexample' if n_real < 3 else '')
 """)
 
 md(r"""
-## Задание 14 🔴 — исследование Paper 3, четвёртая степень
+## Task 14 🔴 — the Paper 3 investigation, the fourth degree
 
-Продолжение того же вопроса. Теперь $\alpha,\beta,\gamma,\delta$ — корни
-$x^4 + px^3 + qx^2 + \dots = 0$.
+A continuation of the same question. Now $\alpha,\beta,\gamma,\delta$ are the roots
+of $x^4 + px^3 + qx^2 + \dots = 0$.
 
-**(f)(i)** Выразите $\alpha^2+\beta^2+\gamma^2+\delta^2$ через $p$ и $q$.
-**(g)** Для $x^4 - 2x^3 + 3x^2 - 4x + 5 = 0$ введите $p^2$ и $2q$.
-**(h)(ii)** Запишите целый корень $x^4 - 9x^3 + 24x^2 + 22x - 12 = 0$.
-**(h)(iii)** Разделите этот многочлен на $(x + 1)$ и введите частное
-и остаток; затем $p^2$ и $3q$ для получившегося кубического множителя.
+**(f)(i)** Express $\alpha^2+\beta^2+\gamma^2+\delta^2$ in terms of $p$ and $q$.
+**(g)** For $x^4 - 2x^3 + 3x^2 - 4x + 5 = 0$, enter $p^2$ and $2q$.
+**(h)(ii)** Write down the integer root of $x^4 - 9x^3 + 24x^2 + 22x - 12 = 0$.
+**(h)(iii)** Divide that polynomial by $(x + 1)$ and enter the quotient and the
+remainder; then $p^2$ and $3q$ for the cubic factor obtained.
 
-*Источник: May 2022 TZ2, Paper 3, Q2(f)–(h) (12 баллов, с калькулятором).*
+*Source: May 2022 TZ2, Paper 3, Q2(f)–(h) (12 marks, calculator).*
 """)
 
 code(r"""
-my14_sq = ...            # сумма квадратов четырёх корней через p и q
+my14_sq = ...            # the sum of the squares of four roots, in p and q
 my14_p2, my14_2q = ..., ...
-my14_root = ...          # целый корень квартики
+my14_root = ...          # the integer root of the quartic
 my14_quo, my14_rem = ..., ...
 my14_pc2, my14_3qc = ..., ...
 
 QUART = x**4 - 9*x**3 + 24*x**2 + 22*x - 12
 
-check_series('Задание 14(f)(i)', my14_sq, '""" + D_SQ14 + r"""', var=p)
-check_num('Задание 14(g), p²', my14_p2, 6, '""" + D_P14 + r"""')
-check_num('Задание 14(g), 2q', my14_2q, 6, '""" + D_2Q14 + r"""')
-check_num('Задание 14(h)(ii)', my14_root, 6, '""" + D_ROOT14 + r"""')
-verify_division('Задание 14(h)(iii)', my14_quo, my14_rem, QUART, x + 1)
-check_num('Задание 14(h)(iii), p²', my14_pc2, 6, '""" + D_PC14 + r"""')
-check_num('Задание 14(h)(iii), 3q', my14_3qc, 6, '""" + D_3QC14 + r"""')
+check_series('Task 14(f)(i)', my14_sq, '""" + D_SQ14 + r"""', var=p)
+check_num('Task 14(g), p^2', my14_p2, 6, '""" + D_P14 + r"""')
+check_num('Task 14(g), 2q', my14_2q, 6, '""" + D_2Q14 + r"""')
+check_num('Task 14(h)(ii)', my14_root, 6, '""" + D_ROOT14 + r"""')
+verify_division('Task 14(h)(iii)', my14_quo, my14_rem, QUART, x + 1)
+check_num('Task 14(h)(iii), p^2', my14_pc2, 6, '""" + D_PC14 + r"""')
+check_num('Task 14(h)(iii), 3q', my14_3qc, 6, '""" + D_3QC14 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 8. Простейшие дроби
+## Theory 8. Partial fractions
 
-Приём, который ничего не говорит о корнях, но без которого не берётся
-половина интегралов. Правильную дробь с разложимым знаменателем
-раскладывают в сумму:
+A technique that says nothing about the roots, but without which half the integrals
+do not go through. A proper fraction with a factorisable denominator is split into a
+sum:
 
 $$\frac{1}{(x-2)(3x+1)} = \frac{A}{x-2} + \frac{B}{3x+1}.$$
 
-Умножаем обе части на знаменатель:
+Multiply both sides by the denominator:
 
 $$1 = A(3x+1) + B(x-2).$$
 
-Дальше два пути, оба дают полный балл.
+From there two routes, both worth full marks.
 
-*Подстановка удобных значений.* $x = 2$ убивает второе слагаемое:
-$1 = 7A$, откуда $A = \frac17$. $x = -\frac13$ убивает первое:
-$1 = -\frac73 B$, откуда $B = -\frac37$. Быстрее, надёжнее, ошибиться
-почти негде.
+*Substituting convenient values.* $x = 2$ kills the second term: $1 = 7A$, hence
+$A = \frac17$. $x = -\frac13$ kills the first: $1 = -\frac73 B$, hence
+$B = -\frac37$. Faster, safer, and with almost nowhere to go wrong.
 
-*Приравнивание коэффициентов.* $3A + B = 0$ и $A - 2B = 1$. Дольше,
-но работает и там, где удобных значений нет.
+*Equating coefficients.* $3A + B = 0$ and $A - 2B = 1$. Longer, but it works where
+there are no convenient values.
 
-**Кратный множитель требует двух слагаемых.** Для $(x+1)^2$ в знаменателе
-пишут
+**A repeated factor needs two terms.** For $(x+1)^2$ in the denominator you write
 
 $$\frac{A}{x+1} + \frac{B}{(x+1)^2},$$
 
-а не одну дробь. Если написать одну, система окажется несовместной —
-это надёжный признак, что вы забыли слагаемое.
+not a single fraction. If you write a single one, the system turns out inconsistent
+— a reliable sign that a term has been forgotten.
 
-**Проверка в ноутбуке смотрит на форму.** Каждое слагаемое обязано быть
-простейшей дробью: числитель без $x$, знаменатель — степень одного
-линейного множителя. Ответ $\frac{1}{(x+1)(2x+1)}$ равен самому себе,
-но разложением не является, и проверка его отвергнет — ровно как экзаменатор.
+**The check in the notebook looks at the form.** Every term has to be a partial
+fraction: a numerator with no $x$, a denominator that is a power of a single linear
+factor. The answer $\frac{1}{(x+1)(2x+1)}$ equals itself but is not a
+decomposition, and the check will reject it — exactly as an examiner would.
 """)
 
 md(r"""
-## Задание 15 🟢 — два разложения в одну строку
+## Task 15 🟢 — two decompositions in one line
 
-**(a)** Разложите $\dfrac{1}{x(k-x)}$ в сумму вида
+**(a)** Decompose $\dfrac{1}{x(k-x)}$ into a sum of the form
 $\dfrac{a}{x} + \dfrac{b}{k-x}$.
 
-**(b)** Разложите $\dfrac{1}{1-4v^2}$ в сумму вида
+**(b)** Decompose $\dfrac{1}{1-4v^2}$ into a sum of the form
 $\dfrac{A}{1-2v} + \dfrac{B}{1+2v}$.
 
-*Источники: May 2021 TZ1, Paper 2, Q12(a) (3 балла) и November 2025 TZ3,
-Paper 2, Q12(c) (2 балла), обе с калькулятором.*
+*Sources: May 2021 TZ1, Paper 2, Q12(a) (3 marks) and November 2025 TZ3, Paper 2,
+Q12(c) (2 marks), both with a calculator.*
 """)
 
 code(r"""
-my15_a = ...             # сумма двух дробей, через k
-my15_b = ...             # сумма двух дробей, через v
+my15_a = ...             # a sum of two fractions, in terms of k
+my15_b = ...             # a sum of two fractions, in terms of v
 
-check_apart('Задание 15(a)', my15_a, 1/(x*(k - x)))
-check_apart('Задание 15(b)', my15_b, 1/(1 - 4*v**2), var=v)
+check_apart('Task 15(a)', my15_a, 1/(x*(k - x)))
+check_apart('Task 15(b)', my15_b, 1/(1 - 4*v**2), var=v)
 """)
 
 md(r"""
-## Задание 16 🟡 — кратный множитель в знаменателе
+## Task 16 🟡 — a repeated factor in the denominator
 
-Пусть $Q(x) = (x+1)(2x+1)$.
+Let $Q(x) = (x+1)(2x+1)$.
 
-**(c)** Разложите $\dfrac{1}{Q(x)}$ на простейшие дроби.
+**(c)** Decompose $\dfrac{1}{Q(x)}$ into partial fractions.
 
-**(d)** Разложите на простейшие дроби
+**(d)** Decompose into partial fractions
 
 $$\frac{1 - \dfrac{x}{Q(x)}}{(1+x)(2x+1)}.$$
 
-Во втором пункте знаменатель после приведения окажется квадратом,
-и слагаемых будет четыре.
+In the second part the denominator, once tidied, turns out to be a square, and there
+will be four terms.
 
-*Источник: May 2024 TZ1, Paper 1, Q11(c)–(d) (5 баллов, без калькулятора).*
-Правая часть пункта (d) в разметке корпуса записана с ошибками;
-разбор — в решении.
+*Source: May 2024 TZ1, Paper 1, Q11(c)–(d) (5 marks, no calculator).* The
+right-hand side of part (d) is recorded with errors in the archive's tags; the
+working is in the solution.
 """)
 
 code(r"""
 Q = (x + 1)*(2*x + 1)
 
-my16_c = ...             # разложение 1/Q(x)
-my16_d = ...             # разложение выражения из пункта (d)
+my16_c = ...             # the decomposition of 1/Q(x)
+my16_d = ...             # the decomposition of the expression from part (d)
 
-check_apart('Задание 16(c)', my16_c, 1/Q)
-check_apart('Задание 16(d)', my16_d, (1 - x/Q)/((1 + x)*(2*x + 1)))
+check_apart('Task 16(c)', my16_c, 1/Q)
+check_apart('Task 16(d)', my16_d, (1 - x/Q)/((1 + x)*(2*x + 1)))
 """)
 
 md(r"""
 ---
-## Тренажёр: узнать приём за пять секунд
+## Trainer: name the technique in five seconds
 
-Ниже пятнадцать условий без решений. Для каждого напишите код приёма —
-и всё. Считать ничего не нужно; цель в том, чтобы первый ход находился
-раньше, чем начинается счёт.
+Below are fifteen statements with no solutions. For each one write the code of the
+technique — and nothing else. Nothing has to be computed; the aim is for the first
+move to be found before the computing starts.
 
-Коды: `factor` (множитель и остаток) · `div` (деление с остатком) ·
-`mult` (кратный корень) · `vieta2` (Виета, квадратное) ·
-`vieta3` (Виета, степень выше двух) · `conj` (комплексные корни парами) ·
-`sym` (симметричные суммы) · `transform` (уравнение с новыми корнями) ·
-`apart` (простейшие дроби)
+The codes: `factor` (a factor and a remainder) · `div` (division with a remainder) ·
+`mult` (a repeated root) · `vieta2` (Vieta, a quadratic) · `vieta3` (Vieta, degree
+above two) · `conj` (complex roots in pairs) · `sym` (symmetric sums) ·
+`transform` (an equation with new roots) · `apart` (partial fractions)
 
-1. Покажите, что $(x-2)$ — множитель $x^3-3x^2+4x-4$.
-2. Уравнение $3x^2+7x-2=0$ имеет корни $\alpha,\beta$. Найдите $\alpha^2+\beta^2$.
-3. Запишите $\dfrac{5}{(x-1)(x+4)}$ в виде суммы двух дробей.
-4. При каких $a$ многочлен $x^3+ax+2$ имеет кратный корень?
-5. Корни $x^3+px^2+qx+r$ действительны. Что можно сказать о $p^2$ и $3q$?
-6. Уравнение с корнями $\alpha+1$ и $\beta+1$, где $\alpha,\beta$ — корни данного.
-7. Запишите $\dfrac{x^3+1}{x-2}$ в виде $Q(x)+\dfrac{R}{x-2}$.
-8. Многочлен с действительными коэффициентами имеет корень $2-5i$. Что ещё известно?
-9. Запишите сумму корней уравнения $4x^5-3x^4+x-7=0$.
-10. Остаток от деления $f(x)$ на $(x-3)$ равен 5. Найдите $f(3)$.
-11. Разложите $\dfrac{2x+1}{x^2(x-3)}$ на простейшие дроби.
-12. Для $x^4+px^3+qx^2+\dots$ выразите $\sum\alpha_i^2$ через $p$ и $q$.
-13. График $y=P(x)$ касается оси $x$ в точке $x=4$. Что это даёт?
-14. Найдите произведение решений уравнения $2x^2=5x-1$.
-15. Уравнение $z^3-1=0$ имеет корень $z=1$. Найдите остальные.
+1. Show that $(x-2)$ is a factor of $x^3-3x^2+4x-4$.
+2. The equation $3x^2+7x-2=0$ has roots $\alpha,\beta$. Find $\alpha^2+\beta^2$.
+3. Write $\dfrac{5}{(x-1)(x+4)}$ as a sum of two fractions.
+4. For which $a$ does the polynomial $x^3+ax+2$ have a repeated root?
+5. The roots of $x^3+px^2+qx+r$ are real. What can be said about $p^2$ and $3q$?
+6. The equation with roots $\alpha+1$ and $\beta+1$, where $\alpha,\beta$ are the roots of a given one.
+7. Write $\dfrac{x^3+1}{x-2}$ in the form $Q(x)+\dfrac{R}{x-2}$.
+8. A polynomial with real coefficients has the root $2-5i$. What else is known?
+9. Write down the sum of the roots of $4x^5-3x^4+x-7=0$.
+10. The remainder on dividing $f(x)$ by $(x-3)$ is 5. Find $f(3)$.
+11. Decompose $\dfrac{2x+1}{x^2(x-3)}$ into partial fractions.
+12. For $x^4+px^3+qx^2+\dots$ express $\sum\alpha_i^2$ in terms of $p$ and $q$.
+13. The graph of $y=P(x)$ touches the $x$-axis at $x=4$. What does that give?
+14. Find the product of the solutions of the equation $2x^2=5x-1$.
+15. The equation $z^3-1=0$ has the root $z=1$. Find the others.
 """)
 
 code(r"""
@@ -911,54 +908,53 @@ trigger_check(answers, """ + repr(TRIGGER_KEY) + r""")
 
 md(r"""
 ---
-## Задание 17 🔴 — на таймере, 12 минут
+## Task 17 🔴 — on the timer, 12 minutes
 
-Полный вопрос Paper 1 без калькулятора. Семь баллов, целевое время
-примерно 12 минут.
+A whole Paper 1 question with no calculator. Seven marks, target time about 12
+minutes.
 
-Кубический многочлен $g(x) = 2x^3 - 7x^2 + dx - e$ имеет корни
-$\alpha$, $\beta$, $\gamma$.
+The cubic polynomial $g(x) = 2x^3 - 7x^2 + dx - e$ has roots $\alpha$, $\beta$,
+$\gamma$.
 
-**(a)** Запишите $\alpha + \beta + \gamma$.
+**(a)** Write down $\alpha + \beta + \gamma$.
 
-**(b)** Эти же $\alpha,\beta,\gamma$ являются корнями многочлена
-$h(z) = 2z^5 - 11z^4 + rz^3 + sz^2 + tz - 20$, и $z = \rho + 3i$ —
-тоже его корень. Покажите, что $\rho = 1$.
+**(b)** The same $\alpha,\beta,\gamma$ are roots of the polynomial
+$h(z) = 2z^5 - 11z^4 + rz^3 + sz^2 + tz - 20$, and $z = \rho + 3i$ is a root of it
+too. Show that $\rho = 1$.
 
-**(c)** Известно, что $h\!\left(\frac12\right) = 0$, числа $\alpha,\beta$
-положительны и действительны, $\alpha < \beta$, а $\gamma$ рационально.
-Найдите $\alpha\beta$, затем $\alpha$ и $\beta$.
+**(c)** Given that $h\!\left(\frac12\right) = 0$, that $\alpha,\beta$ are positive
+and real with $\alpha < \beta$, and that $\gamma$ is rational, find $\alpha\beta$
+and then $\alpha$ and $\beta$.
 
-*Источник: May 2024 TZ2, Paper 1, Q7 (7 баллов, без калькулятора).*
+*Source: May 2024 TZ2, Paper 1, Q7 (7 marks, no calculator).*
 """)
 
 code(r"""
 my17_sum = ...           # alpha + beta + gamma
-my17_rho = ...           # значение rho
+my17_rho = ...           # the value of rho
 my17_ab = ...            # alpha*beta
 my17_alpha, my17_beta = ..., ...
 
-check_expr('Задание 17(a)', my17_sum, '""" + D_S17 + r"""')
-check_num('Задание 17(b)', my17_rho, 6, '""" + D_P17 + r"""')
-check_num('Задание 17(c), alpha*beta', my17_ab, 6, '""" + D_AB17 + r"""')
-check_num('Задание 17(c), alpha', my17_alpha, 6, '""" + D_A17 + r"""')
-check_num('Задание 17(c), beta', my17_beta, 6, '""" + D_B17 + r"""')
+check_expr('Task 17(a)', my17_sum, '""" + D_S17 + r"""')
+check_num('Task 17(b)', my17_rho, 6, '""" + D_P17 + r"""')
+check_num('Task 17(c), alpha*beta', my17_ab, 6, '""" + D_AB17 + r"""')
+check_num('Task 17(c), alpha', my17_alpha, 6, '""" + D_A17 + r"""')
+check_num('Task 17(c), beta', my17_beta, 6, '""" + D_B17 + r"""')
 """)
 
 md(r"""
 ---
-# Решения
+# Solutions
 
-Ниже полный разбор каждого задания с разметкой markscheme. Открывайте
-после того, как решили сами: разбор объясняет не только ответ, но и то,
-за что именно ставят баллы.
+Below is a full working of every task with the markscheme's marking. Open them after
+you have solved on your own: the working explains not only the answer but what
+exactly the marks are given for.
 """)
 
 md(r"""
-## Решение 1 — множитель одной подстановкой
+## Solution 1 — a factor in one substitution
 
-По теореме о множителе $(x+1)$ делит $P(x)$ тогда и только тогда, когда
-$P(-1) = 0$. Считаем:
+By the factor theorem $(x+1)$ divides $P(x)$ if and only if $P(-1) = 0$. Compute:
 
 $$P(-1) = 3(-1)^3 + 5(-1)^2 + (-1) - 1 = -3 + 5 - 1 - 1 = 0.
 \qquad \blacksquare$$
@@ -967,74 +963,73 @@ $$P(-1) = 3(-1)^3 + 5(-1)^2 + (-1) - 1 = -3 + 5 - 1 - 1 = 0.
 my1 = 0
 ```
 
-**Разметка.** M1 за подстановку $x=-1$ (видно должно быть само выражение,
-а не только результат), A1 за ноль с выводом «следовательно, $(x+1)$ —
-множитель». Деление уголком с нулевым остатком принимается равноценно.
+**The marking.** M1 for substituting $x=-1$ (the expression itself has to be
+visible, not just the result), A1 for the zero with the conclusion «therefore
+$(x+1)$ is a factor». Long division with a zero remainder is accepted as an
+equal.
 
-**Про формулировку.** Это вопрос «show that»: ответ напечатан в условии,
-и балл ставят за выкладку. Написать «$P(-1)=0$, ч.т.д.» без вычисления —
-ноль баллов. Фраза-вывод в конце обязательна: без неё виден счёт,
-но не виден ответ на заданный вопрос.
+**About the wording.** This is a «show that» question: the answer is printed in the
+question and the mark is for the working. Writing «$P(-1)=0$, QED» with no
+computation scores zero. The concluding sentence at the end is compulsory: without
+it the computing is visible but the answer to the question asked is not.
 """)
 
 md(r"""
-## Решение 2 — два условия, две буквы
+## Solution 2 — two conditions, two letters
 
-$(x-1)$ — множитель, значит $f(1) = 0$:
+$(x-1)$ is a factor, so $f(1) = 0$:
 
 $$2 - 6 + p + q - 2 = 0 \;\Longrightarrow\; p + q = 6.$$
 
-Остаток при делении на $(x-3)$ равен $-2$, значит $f(3) = -2$:
+The remainder on dividing by $(x-3)$ is $-2$, so $f(3) = -2$:
 
 $$2\cdot81 - 6\cdot27 + 9p + 3q - 2 = -2
 \;\Longrightarrow\; 162 - 162 + 9p + 3q = 0
 \;\Longrightarrow\; 3p + q = 0.$$
 
-Вычитаем первое из второго: $2p = -6$, откуда $p = -3$ и $q = 9$.
+Subtract the first from the second: $2p = -6$, hence $p = -3$ and $q = 9$.
 
 ```python
 my2_p = -3
 my2_q = 9
 ```
 
-**Разметка.** M1 за применение теоремы о множителе, A1 за первое
-уравнение, M1 за применение теоремы об остатке, A1 за второе уравнение,
-A1 за оба значения. Пять баллов, и три из них — за то, что уравнения
-вообще выписаны.
+**The marking.** M1 for applying the factor theorem, A1 for the first equation, M1
+for applying the remainder theorem, A1 for the second equation, A1 for both values.
+Five marks, and three of them are for the equations being written at all.
 
-**Про калькулятор.** Это Paper 2, и систему разрешено решать на GDC.
-Но выписывать её всё равно приходится руками, а система из двух линейных
-уравнений решается устно быстрее, чем вводится. Калькулятор тут уместен
-как проверка: подставить найденные $p,q$ и убедиться, что $f(1)=0$.
+**About the calculator.** This is Paper 2 and the system is allowed to be solved on
+a GDC. But it still has to be written down by hand, and a system of two linear
+equations is solved in your head faster than it is typed in. The calculator belongs
+here as a check: substitute the $p,q$ found and confirm that $f(1)=0$.
 """)
 
 md(r"""
-## Решение 3 — когда решений системы два
+## Solution 3 — when the system has two solutions
 
-Остаток при делении на $(x+1)$ равен $P(-1)$:
+The remainder on dividing by $(x+1)$ is $P(-1)$:
 
 $$2 - q + r = 12 \;\Longrightarrow\; r - q = 10.$$
 
-По Виета $\alpha+\beta = -\frac q2$ и $\alpha\beta = \frac r2$. Тогда
+By Vieta $\alpha+\beta = -\frac q2$ and $\alpha\beta = \frac r2$. Then
 
 $$\alpha^2+\beta^2 = (\alpha+\beta)^2 - 2\alpha\beta
 = \frac{q^2}{4} - r = \frac{37}{4}.$$
 
-Подставляем $r = q + 10$:
+Substitute $r = q + 10$:
 
 $$\frac{q^2}{4} - q - 10 = \frac{37}{4}
 \;\Longrightarrow\; q^2 - 4q - 40 = 37
 \;\Longrightarrow\; q^2 - 4q - 77 = 0.$$
 
-Раскладываем: $(q-11)(q+7) = 0$, откуда $q = 11$ или $q = -7$.
+Factorise: $(q-11)(q+7) = 0$, hence $q = 11$ or $q = -7$.
 
-**Оба ли годятся?** Проверяем дискриминант $2x^2+qx+r$:
+**Do both work?** Check the discriminant of $2x^2+qx+r$:
 
-* $q = -7$, $r = 3$: $D = 49 - 24 = 25 > 0$, корни $3$ и $\frac12$ —
-  действительны.
-* $q = 11$, $r = 21$: $D = 121 - 168 = -47 < 0$, корни недействительны.
+* $q = -7$, $r = 3$: $D = 49 - 24 = 25 > 0$, the roots $3$ and $\frac12$ are real.
+* $q = 11$, $r = 21$: $D = 121 - 168 = -47 < 0$, the roots are not real.
 
-Условие требует действительных корней, поэтому остаётся $q = -7$, $r = 3$.
+The question requires real roots, so $q = -7$, $r = 3$ remain.
 
 ```python
 my3_all = [-7, 11]
@@ -1042,34 +1037,34 @@ my3_q = -7
 my3_r = 3
 ```
 
-**Разметка.** M1 за теорему об остатке, A1 за $r-q=10$, M1 за тождество
-$\alpha^2+\beta^2 = (\alpha+\beta)^2-2\alpha\beta$, A1 за второе уравнение,
-M1 за решение системы, A1A1 за $q$ и $r$.
+**The marking.** M1 for the remainder theorem, A1 for $r-q=10$, M1 for the identity
+$\alpha^2+\beta^2 = (\alpha+\beta)^2-2\alpha\beta$, A1 for the second equation, M1
+for solving the system, A1A1 for $q$ and $r$.
 
-**Почему это задание помечено 🟡.** Алгебра здесь простая, а ловушка
-в конце: квадратное уравнение на $q$ даёт два корня, и второй выглядит
-не хуже первого. Отбрасывается он только проверкой дискриминанта.
-В разметке корпуса второй корень не упомянут вовсе — и это тот случай,
-когда разбор задачи короче правды о ней.
+**Why this task is marked 🟡.** The algebra is simple and the trap is at the end: the
+quadratic in $q$ gives two roots, and the second looks no worse than the first. It
+is discarded only by checking the discriminant. In the archive's own tags the second
+root is not mentioned at all — and that is the case where the working of the question
+is shorter than the truth about it.
 
-**Общее правило.** Всякий раз, когда система на буквы оказалась
-квадратной, посчитайте оба решения и проверьте каждое по условию.
-Условие «корни действительны», «$k>0$», «$n \in \mathbb{Z}^+$» стоит
-в задаче не для красоты — оно и есть отбор.
+**A general rule.** Whenever the system in the letters has turned out quadratic,
+compute both solutions and check each against the question. A condition «the roots
+are real», «$k>0$», «$n \in \mathbb{Z}^+$» is not in the question for decoration —
+it is the selection.
 """)
 
 md(r"""
-## Решение 4 — выделить целую часть
+## Solution 4 — separate the whole part
 
-Делим уголком. $2x^2 : x = 2x$; умножаем $2x(x-1) = 2x^2-2x$; вычитаем:
+Divide by long division. $2x^2 : x = 2x$; multiply $2x(x-1) = 2x^2-2x$; subtract:
 
 $$2x^2-5x-3 - (2x^2-2x) = -3x - 3.$$
 
-Далее $-3x : x = -3$; умножаем $-3(x-1) = -3x+3$; вычитаем:
+Then $-3x : x = -3$; multiply $-3(x-1) = -3x+3$; subtract:
 
 $$-3x-3 - (-3x+3) = -6.$$
 
-Частное $2x-3$, остаток $-6$. Значит
+The quotient is $2x-3$ and the remainder $-6$. So
 
 $$\frac{2x^2-5x-3}{x-1} = 2x - 3 - \frac{6}{x-1}. \qquad \blacksquare$$
 
@@ -1078,35 +1073,35 @@ my4_quo = 2*x - 3
 my4_rem = -6
 ```
 
-**Разметка.** Markscheme в этом блоке идёт с другой стороны: M1 за
-приведение правой части к общему знаменателю, A1 за совпадение числителей.
-Оба направления принимаются, и второе иногда быстрее — умножить
-$2x-3-\frac6{x-1}$ на $(x-1)$ проще, чем делить.
+**The marking.** The markscheme comes at this block from the other side: M1 for
+bringing the right-hand side to a common denominator, A1 for the numerators
+matching. Both directions are accepted, and the second is sometimes faster —
+multiplying $2x-3-\frac6{x-1}$ by $(x-1)$ is easier than dividing.
 
-**Зачем вообще выделять целую часть.** Ради интегрирования. Дробь
-$\frac{2x^2-5x-3}{x-1}$ не интегрируется как есть, а $2x-3-\frac6{x-1}$
-интегрируется в строку. Тот же приём и по той же причине стоит
-в начале половины вопросов раздела E5.
+**Why separate the whole part at all.** For the sake of integration. The fraction
+$\frac{2x^2-5x-3}{x-1}$ does not integrate as it is, while $2x-3-\frac6{x-1}$
+integrates in a line. The same technique for the same reason stands at the start of
+half the questions in section E5.
 
-**Про степень остатка.** Проверка в ноутбуке отдельно следит, что степень
-остатка меньше степени делителя. Ответ «частное $2x$, остаток $-3x-3$»
-арифметически верен — сумма восстанавливает делимое, — но делением
-не является: делить можно дальше.
+**About the degree of the remainder.** The check in the notebook watches separately
+that the degree of the remainder is less than the degree of the divisor. The answer
+«quotient $2x$, remainder $-3x-3$» is arithmetically right — the sum recovers the
+dividend — but it is not a division: the dividing can go on.
 """)
 
 md(r"""
-## Решение 5 — три линейных множителя
+## Solution 5 — three linear factors
 
-Из задания 1 известно, что $(x+1)$ — множитель. Делим:
+From task 1 we know that $(x+1)$ is a factor. Divide:
 
 $$3x^3+5x^2+x-1 = (x+1)\left(3x^2+2x-1\right).$$
 
-Квадратный трёхчлен раскладываем обычным способом. Ищем два числа
-с произведением $3\cdot(-1) = -3$ и суммой $2$: это $3$ и $-1$.
+The quadratic factorises the ordinary way. Look for two numbers with product
+$3\cdot(-1) = -3$ and sum $2$: they are $3$ and $-1$.
 
 $$3x^2+2x-1 = 3x^2+3x-x-1 = 3x(x+1) - (x+1) = (x+1)(3x-1).$$
 
-Итого
+So
 
 $$P(x) = (x+1)^2(3x-1). \qquad \blacksquare$$
 
@@ -1114,49 +1109,50 @@ $$P(x) = (x+1)^2(3x-1). \qquad \blacksquare$$
 my5 = (x + 1)**2*(3*x - 1)
 ```
 
-**Разметка.** M1 за деление на $(x+1)$, A1 за квадратное частное,
-A1 за окончательное произведение. Три балла.
+**The marking.** M1 for dividing by $(x+1)$, A1 for the quadratic quotient, A1 for
+the final product. Three marks.
 
-**Тут важно, что получилось $(x+1)$ дважды.** Корень $-1$ кратный,
-и график $P$ касается оси $x$ в этой точке, а не пересекает её.
-Приём 3 разбирает такие случаи с другой стороны — когда кратность
-задана в условии, а найти нужно коэффициенты.
+**What matters here is that $(x+1)$ came out twice.** The root $-1$ is repeated, and
+the graph of $P$ touches the $x$-axis there rather than crossing it. Technique 3
+deals with such cases from the other side — when the multiplicity is given in the
+question and the coefficients are what have to be found.
 
-**Про форму ответа.** Условие просит **произведение трёх линейных
-множителей**, и это требование к записи. Проверка `verify_factored`
-разбирает именно то, что написано в ячейке, не факторизуя ответ сама:
-`3*x**3 + 5*x**2 + x - 1` равно правильному ответу, но получит ❌.
-Это ровно то, что сделает экзаменатор.
+**About the form of the answer.** The question asks for **a product of three linear
+factors**, and that is a requirement on the writing. The check `verify_factored`
+parses exactly what is in the cell and does not factorise the answer itself:
+`3*x**3 + 5*x**2 + x - 1` equals the right answer but gets ❌. That is exactly what
+an examiner would do.
 
-Заодно видно, чем эта тема отличается от A3. Там `check_series` принимала
-нераскрытую скобку, потому что просили раскрыть, а численно скобка равна
-своему разложению. Здесь просят обратное — и проверка обратная.
+It also shows how this topic differs from A3. There `check_series` accepted an
+unexpanded bracket, because the question asked for an expansion and numerically a
+bracket equals its expansion. Here the question asks for the reverse — and so does
+the check.
 """)
 
 md(r"""
-## Решение 6 — множитель задан квадратным трёхчленом
+## Solution 6 — the factor is given as a quadratic
 
-**(i)** Раскладываем делитель: $x^2+3x+2 = (x+1)(x+2)$. Значит $P(-1)=0$
-и $P(-2)=0$:
+**(i)** Factorise the divisor: $x^2+3x+2 = (x+1)(x+2)$. So $P(-1)=0$ and
+$P(-2)=0$:
 
 $$-1 + a - b + c = 0, \qquad -8 + 4a - 2b + c = 0.$$
 
-Вычитаем первое из второго, чтобы убрать $c$:
+Subtract the first from the second to remove $c$:
 
 $$-7 + 3a - b = 0 \;\Longrightarrow\; b = 3a - 7. \qquad \blacksquare$$
 
-**(ii)** Из первого уравнения $c = 1 - a + b = 1 - a + 3a - 7 = 2a - 6$.
-Перебираем $a \in \{1,\dots,5\}$:
+**(ii)** From the first equation $c = 1 - a + b = 1 - a + 3a - 7 = 2a - 6$. Run
+through $a \in \{1,\dots,5\}$:
 
-| $a$ | $b = 3a-7$ | $c = 2a-6$ | годится? |
+| $a$ | $b = 3a-7$ | $c = 2a-6$ | does it work? |
 | --- | --- | --- | --- |
-| 1 | $-4$ | $-4$ | нет, вне множества |
-| 2 | $-1$ | $-2$ | нет, вне множества |
-| 3 | 2 | 0 | нет, $0 \notin \{1,\dots,5\}$ |
-| 4 | 5 | 2 | **да** |
-| 5 | 8 | 4 | нет, $8$ вне множества |
+| 1 | $-4$ | $-4$ | no, outside the set |
+| 2 | $-1$ | $-2$ | no, outside the set |
+| 3 | 2 | 0 | no, $0 \notin \{1,\dots,5\}$ |
+| 4 | 5 | 2 | **yes** |
+| 5 | 8 | 4 | no, $8$ is outside the set |
 
-Единственный набор: $a=4$, $b=5$, $c=2$, и все три различны. $\blacksquare$
+The only set: $a=4$, $b=5$, $c=2$, and all three are distinct. $\blacksquare$
 
 **(iii)** $P(x) = x^3+4x^2+5x+2 = (x^2+3x+2)(x+1) = (x+1)^2(x+2)$.
 
@@ -1166,70 +1162,67 @@ my6_a, my6_bn, my6_cn = 4, 5, 2
 my6_factored = (x + 1)**2*(x + 2)
 ```
 
-**Разметка.** (i): M1 за разложение делителя, M1 за применение теоремы
-о множителе, A1A1 за два уравнения, M1 за исключение $c$, A1 за $b=3a-7$.
-(ii): M1 за перебор с проверкой условий, A1 за единственность.
-(iii): A1.
+**The marking.** (i): M1 for factorising the divisor, M1 for applying the factor
+theorem, A1A1 for the two equations, M1 for eliminating $c$, A1 for $b=3a-7$. (ii):
+M1 for the search with the conditions checked, A1 for uniqueness. (iii): A1.
 
-**Где теряют баллы.** В пункте (ii) markscheme требует именно **проверки
-всех случаев**: ответ «$a=4$» без таблицы получает M0A0, потому что
-единственность не показана. Это тот же тип требования, что R1 в A7 —
-балл стоит за полноту рассуждения, а не за верное число.
+**Where marks are lost.** In part (ii) the markscheme requires exactly that **all
+the cases are checked**: the answer «$a=4$» with no table gets M0A0, because
+uniqueness has not been shown. That is the same kind of requirement as the R1 in A7
+— the mark is for the completeness of the reasoning, not for the right number.
 
-**Мелочь, стоящая балла.** Проверить, что $a$, $b$, $c$ действительно
-**различны**: в условии сказано «distinct». Строка $a=3$ отпадает
-не из-за повтора, а потому что $c=0$ не лежит в множестве, — но проверять
-надо оба условия.
+**A small thing worth a mark.** Checking that $a$, $b$, $c$ really are **distinct**:
+the question says «distinct». The row $a=3$ falls away not because of a repeat but
+because $c=0$ is not in the set — but both conditions have to be checked.
 """)
 
 md(r"""
-## Решение 7 — делится на квадрат скобки
+## Solution 7 — divisible by the square of a bracket
 
-Обозначим $f(x) = x^4+px^3-2x^2+qx-3$. Делимость на $(x+1)^2$ означает
+Write $f(x) = x^4+px^3-2x^2+qx-3$. Divisibility by $(x+1)^2$ means
 
-$$f(-1) = 0 \quad\text{и}\quad f'(-1) = 0.$$
+$$f(-1) = 0 \quad\text{and}\quad f'(-1) = 0.$$
 
-Первое условие:
+The first condition:
 
 $$1 - p - 2 - q - 3 = 0 \;\Longrightarrow\; p + q = -4.$$
 
-Дифференцируем: $f'(x) = 4x^3+3px^2-4x+q$. Второе условие:
+Differentiate: $f'(x) = 4x^3+3px^2-4x+q$. The second condition:
 
 $$-4 + 3p + 4 + q = 0 \;\Longrightarrow\; 3p + q = 0.$$
 
-Вычитаем: $2p = 4$, откуда $p = 2$ и $q = -6$.
+Subtract: $2p = 4$, hence $p = 2$ and $q = -6$.
 
-Проверка: $x^4+2x^3-2x^2-6x-3 = (x+1)^2(x^2-3)$. $\blacksquare$
+Check: $x^4+2x^3-2x^2-6x-3 = (x+1)^2(x^2-3)$. $\blacksquare$
 
 ```python
 my7_p = 2
 my7_q = -6
 ```
 
-**Разметка.** M1 за условие $f(-1)=0$, A1 за первое уравнение,
-M1 за дифференцирование и $f'(-1)=0$, A1 за второе уравнение,
-A1 за оба значения.
+**The marking.** M1 for the condition $f(-1)=0$, A1 for the first equation, M1 for
+differentiating and $f'(-1)=0$, A1 for the second equation, A1 for both values.
 
-**Второй путь, если производную вспоминать не хочется.** Записать
+**A second route, if you would rather not recall the derivative.** Write
 
 $$x^4+px^3-2x^2+qx-3 = (x+1)^2\left(x^2 + \alpha x + \beta\right)$$
 
-и приравнять коэффициенты. Свободный член сразу даёт $\beta = -3$,
-коэффициент при $x^3$ даёт $\alpha + 2 = p$, при $x^2$ —
-$\beta + 2\alpha + 1 = -2$, откуда $\alpha = 0$ и $p = 2$. Столько же
-строк, и markscheme принимает.
+and equate coefficients. The constant term gives $\beta = -3$ at once, the
+coefficient of $x^3$ gives $\alpha + 2 = p$, and the one of $x^2$ gives
+$\beta + 2\alpha + 1 = -2$, hence $\alpha = 0$ and $p = 2$. The same number of
+lines, and the markscheme accepts it.
 
-**Про проверку в ноутбуке.** Здесь эталона нет вообще. Ваши $p$ и $q$
-подставляются в многочлен, и `sp.div` считает настоящий остаток от деления
-на $(x+1)^2$. Это в точности то условие, которое стоит в задаче,
-и никакой записанный «правильный ответ» для него не нужен.
+**About the check in the notebook.** There is no reference answer here at all. Your
+$p$ and $q$ are substituted into the polynomial and `sp.div` computes the real
+remainder of the division by $(x+1)^2$. That is exactly the condition stated in the
+question, and no written-down «right answer» is needed for it.
 """)
 
 md(r"""
-## Решение 8 — произведение корней с буквой
+## Solution 8 — the product of the roots with a letter
 
-Для $ax^2+bx+c=0$ произведение корней равно $\frac ca$. Здесь $a = k$
-и $c = 2k+9$, поэтому
+For $ax^2+bx+c=0$ the product of the roots is $\frac ca$. Here $a = k$ and
+$c = 2k+9$, so
 
 $$\alpha\beta = \frac{2k+9}{k}.$$
 
@@ -1237,51 +1230,51 @@ $$\alpha\beta = \frac{2k+9}{k}.$$
 my8 = (2*k + 9)/k
 ```
 
-**Разметка.** A1. Один балл, и вопрос стоит первым пунктом длинного
-задания — это подарок, который нельзя не взять.
+**The marking.** A1. One mark, and the question is the first part of a long task —
+a gift that must not be left on the table.
 
-**Что бывает дальше.** Такие пункты почти всегда ведут к условию вида
-«произведение корней равно 4» или «корни взаимно обратны». Тогда
-$\frac{2k+9}{k}$ приравнивают к чему-то и находят $k$ — без единого корня.
+**What comes next.** Such parts almost always lead to a condition like «the product
+of the roots is 4» or «the roots are reciprocal». Then $\frac{2k+9}{k}$ is equated
+to something and $k$ is found — with not a single root.
 
-**Мелочь.** Ответ можно записать и как $2 + \frac9k$; проверка сверяет
-значения и примет обе формы. Экзаменатор тоже.
+**A small thing.** The answer can also be written as $2 + \frac9k$; the check
+compares values and will take either form. So will an examiner.
 """)
 
 md(r"""
-## Решение 9 — тождество и новое уравнение
+## Solution 9 — an identity and a new equation
 
-**(a)** Раскрываем куб:
+**(a)** Expand the cube:
 
 $$(p+q)^3 = p^3 + 3p^2q + 3pq^2 + q^3.$$
 
-Раскрываем второе слагаемое:
+Expand the second term:
 
 $$3pq(p+q) = 3p^2q + 3pq^2.$$
 
-Вычитаем — средние члены гасятся:
+Subtract — the middle terms cancel:
 
 $$(p+q)^3 - 3pq(p+q) = p^3 + q^3. \qquad \blacksquare$$
 
-**(b)** По Виета для $2x^2-5x+1=0$:
+**(b)** By Vieta for $2x^2-5x+1=0$:
 
 $$\alpha + \beta = \frac52, \qquad \alpha\beta = \frac12.$$
 
-Новые корни — $\frac1{\alpha^3}$ и $\frac1{\beta^3}$. Их произведение:
+The new roots are $\frac1{\alpha^3}$ and $\frac1{\beta^3}$. Their product:
 
 $$n = \frac{1}{(\alpha\beta)^3} = \frac{1}{(1/2)^3} = 8.$$
 
-Их сумма:
+Their sum:
 
 $$\frac1{\alpha^3}+\frac1{\beta^3} = \frac{\alpha^3+\beta^3}{(\alpha\beta)^3}.$$
 
-Числитель считаем тождеством из пункта (a):
+The numerator comes from the identity in part (a):
 
 $$\alpha^3+\beta^3 = \left(\frac52\right)^3 - 3\cdot\frac12\cdot\frac52
 = \frac{125}{8} - \frac{15}{4} = \frac{125 - 30}{8} = \frac{95}{8}.$$
 
-Значит сумма новых корней равна $\frac{95/8}{1/8} = 95$. В уравнении
-$x^2+mx+n=0$ сумма корней равна $-m$, поэтому
+So the sum of the new roots is $\frac{95/8}{1/8} = 95$. In the equation
+$x^2+mx+n=0$ the sum of the roots is $-m$, so
 
 $$m = -95, \qquad n = 8. \qquad \blacksquare$$
 
@@ -1291,51 +1284,52 @@ my9_m = -95
 my9_n = 8
 ```
 
-**Разметка.** (a): M1 за раскрытие куба, A1 за результат. (b): M1 за
-Виета для исходного уравнения, A1 за $n=8$, M1 за выражение суммы через
-$\alpha^3+\beta^3$, M1 за применение пункта (a), A1 за $\frac{95}8$,
-A1 за $m=-95$.
+**The marking.** (a): M1 for expanding the cube, A1 for the result. (b): M1 for
+Vieta on the original equation, A1 for $n=8$, M1 for expressing the sum through
+$\alpha^3+\beta^3$, M1 for applying part (a), A1 for $\frac{95}8$, A1 for
+$m=-95$.
 
-**Зачем пункт (a) стоит первым.** Он и есть инструмент для (b). Так
-устроены почти все двухпунктовые вопросы этой темы: первый пункт
-готовит тождество, второй его применяет. Увидев «hence» или «use the
-result from part (a)», не начинайте заново — подставляйте.
+**Why part (a) comes first.** It is the tool for (b). Almost every two-part question
+in this topic is built that way: the first part prepares an identity, the second
+applies it. On seeing «hence» or «use the result from part (a)», do not start again —
+substitute.
 
-**Знак $m$.** Самая частая потеря балла: находят сумму 95 и пишут $m=95$.
-В $x^2+mx+n$ сумма корней равна $-m$, а не $m$. Проверить можно на любом
-знакомом уравнении: у $x^2-3x+2$ корни 1 и 2, сумма 3, а коэффициент $-3$.
+**The sign of $m$.** The most frequent lost mark: finding the sum 95 and writing
+$m=95$. In $x^2+mx+n$ the sum of the roots is $-m$, not $m$. You can check on any
+familiar equation: $x^2-3x+2$ has roots 1 and 2, the sum is 3, and the coefficient
+is $-3$.
 
-**Про проверку.** `verify_root_transform` не хранит ни $m$, ни $n$. Он
-берёт корни исходного уравнения численно, возводит в куб, обращает
-и сравнивает с корнями вашего. Поэтому уравнение $8x^2-760x+64=0$ —
-то же самое, умноженное на 8, — тоже пройдёт: корни у него те же.
+**About the check.** `verify_root_transform` stores neither $m$ nor $n$. It takes the
+roots of the original equation numerically, cubes them, inverts them and compares
+with the roots of yours. So the equation $8x^2-760x+64=0$ — the same one multiplied
+by 8 — passes too: its roots are the same.
 """)
 
 md(r"""
-## Решение 10 — связь между корнями задана
+## Solution 10 — a relation between the roots is given
 
-Корни: $\alpha$, $\beta$, $\alpha+\beta$. Записываем Виета для
+The roots: $\alpha$, $\beta$, $\alpha+\beta$. Write Vieta for
 $x^3 - kx^2 + \frac{k^2}{2}x - 3k = 0$.
 
-**Сумма корней** равна $k$:
+**The sum of the roots** is $k$:
 
 $$\alpha + \beta + (\alpha+\beta) = 2(\alpha+\beta) = k
 \;\Longrightarrow\; \alpha+\beta = \frac k2.$$
 
-**Сумма попарных произведений** равна $\frac{k^2}{2}$:
+**The sum of the pairwise products** is $\frac{k^2}{2}$:
 
 $$\alpha\beta + \alpha(\alpha+\beta) + \beta(\alpha+\beta)
 = \alpha\beta + (\alpha+\beta)^2 = \frac{k^2}{2}.$$
 
-Подставляем $(\alpha+\beta)^2 = \frac{k^2}4$:
+Substitute $(\alpha+\beta)^2 = \frac{k^2}4$:
 
 $$\alpha\beta = \frac{k^2}{2} - \frac{k^2}{4} = \frac{k^2}{4}.$$
 
-**Произведение корней** равно $3k$:
+**The product of the roots** is $3k$:
 
 $$\alpha\beta(\alpha+\beta) = \frac{k^2}{4}\cdot\frac k2 = \frac{k^3}{8} = 3k.$$
 
-При $k>0$ делим на $k$:
+With $k>0$ divide by $k$:
 
 $$\frac{k^2}{8} = 3 \;\Longrightarrow\; k^2 = 24 \;\Longrightarrow\;
 k = 2\sqrt6. \qquad \blacksquare$$
@@ -1345,147 +1339,143 @@ my10_ab = k**2/4
 my10_k = 2*sqrt(6)
 ```
 
-**Разметка.** M1 за сумму корней, A1 за $\alpha+\beta=\frac k2$,
-M1 за произведение корней, M1 за подстановку, A1 за $k=2\sqrt6$.
+**The marking.** M1 for the sum of the roots, A1 for $\alpha+\beta=\frac k2$, M1 for
+the product of the roots, M1 for the substitution, A1 for $k=2\sqrt6$.
 
-**Про условие.** В разметке корпуса уравнение записано как
-$x^3-kx^2+3k=0$, и при таком уравнении ответа $2\sqrt6$ не существует:
-из $\frac{k^3}8 = -3k$ выходит $k^2 = -24$. Свободный член должен давать
-произведение корней $+3k$, а средний коэффициент — согласовываться
-с $\alpha\beta = \frac{k^2}4$; уравнение выше это и делает, и приводит
-ровно к записанному в корпусе ответу. Подробности — в карточке приёмов,
-раздел `corpus_issues`.
+**About the question.** In the archive's tags the equation is written as
+$x^3-kx^2+3k=0$, and with that equation the answer $2\sqrt6$ does not exist: from
+$\frac{k^3}8 = -3k$ one gets $k^2 = -24$. The constant term has to give the product
+of the roots as $+3k$, and the middle coefficient has to agree with
+$\alpha\beta = \frac{k^2}4$; the equation above does both and leads exactly to the
+answer recorded in the archive. The details are in the technique card, section
+`corpus_issues`.
 
-**Чему учит задание.** Условие «третий корень равен сумме двух других»
-не даёт ничего само по себе — оно начинает работать, только когда его
-подставляют во все три формулы Виета сразу. Одной формулы всегда мало:
-неизвестных здесь три ($\alpha$, $\beta$, $k$).
+**What the task teaches.** The condition «the third root equals the sum of the other
+two» gives nothing by itself — it starts working only when it is substituted into
+all three of Vieta's formulas at once. One formula is never enough: there are three
+unknowns here ($\alpha$, $\beta$, $k$).
 """)
 
 md(r"""
-## Решение 11 — найти параметр и все корни
+## Solution 11 — find the parameter and all the roots
 
-Дано, что $z-3i$ — множитель, значит $3i$ — корень. Коэффициенты $P$
-действительны (при $m$ действительном), поэтому $-3i$ — тоже корень.
-Пусть третий корень равен $\rho$.
+We are given that $z-3i$ is a factor, so $3i$ is a root. The coefficients of $P$ are
+real (for real $m$), so $-3i$ is a root too. Let the third root be $\rho$.
 
-**Произведение корней** для $z^3 - \frac{36}{m}z^2 + mz - 4m$ равно $4m$:
+**The product of the roots** for $z^3 - \frac{36}{m}z^2 + mz - 4m$ is $4m$:
 
 $$(3i)(-3i)\rho = 9\rho = 4m.$$
 
-**Сумма корней** равна $\frac{36}{m}$:
+**The sum of the roots** is $\frac{36}{m}$:
 
 $$3i + (-3i) + \rho = \rho = \frac{36}{m}.$$
 
-Подставляем второе в первое:
+Substitute the second into the first:
 
 $$9\cdot\frac{36}{m} = 4m \;\Longrightarrow\; 324 = 4m^2
 \;\Longrightarrow\; m^2 = 81 \;\Longrightarrow\; m = 9$$
 
-(берём положительный корень, потому что $m>0$). Тогда
-$\rho = \frac{36}{9} = 4$, и корни $P$ — это $3i$, $-3i$, $4$.
-$\blacksquare$
+(we take the positive root because $m>0$). Then $\rho = \frac{36}{9} = 4$, and the
+roots of $P$ are $3i$, $-3i$, $4$. $\blacksquare$
 
 ```python
 my11_m = 9
 my11_roots = [3*I, -3*I, 4]
 ```
 
-**Разметка.** A1 за «$3i$ — корень», A1 за «$-3i$ — тоже корень»,
-M1 за попытку приравнять сумму или произведение, (A1) за $m=9$,
-A1 за третий корень 4. Отдельная пометка в markscheme: без явного
-упоминания корней максимум A0A0(M1)(M1)(A1)A1 — то есть два балла
-теряются просто за то, что не сказано, какие числа считаются корнями.
+**The marking.** A1 for «$3i$ is a root», A1 for «$-3i$ is a root too», M1 for
+attempting to equate the sum or the product, (A1) for $m=9$, A1 for the third root
+4. A separate note in the markscheme: with no explicit mention of the roots the
+maximum is A0A0(M1)(M1)(A1)A1 — that is, two marks are lost simply because it was
+not said which numbers are taken to be roots.
 
-**Проверка средним коэффициентом.** Сумма попарных произведений равна $m$:
+**A check with the middle coefficient.** The sum of the pairwise products is $m$:
 
 $$(3i)(-3i) + \left(3i + (-3i)\right)\rho = 9 + 0 = 9.$$
 
-И действительно $m=9$. Это лишнее уравнение, которого хватило бы и одного,
-— полезная бесплатная проверка.
+And indeed $m=9$. That is a spare equation, of which one would have been enough — a
+useful free check.
 
-**Второй путь.** Записать $P(z) = (z-3i)(z+3i)(z-\rho) = (z^2+9)(z-\rho)$,
-раскрыть до $z^3 - \rho z^2 + 9z - 9\rho$ и сравнить коэффициенты
-с исходным. Получается то же самое; markscheme его тоже принимает.
-Обратите внимание, что пара сопряжённых корней сразу дала действительный
-множитель $z^2+9$ — комплексных чисел дальше не встречается.
+**The second route.** Write $P(z) = (z-3i)(z+3i)(z-\rho) = (z^2+9)(z-\rho)$, expand
+to $z^3 - \rho z^2 + 9z - 9\rho$ and compare the coefficients with the original. The
+same thing comes out; the markscheme accepts it too. Note that the pair of conjugate
+roots gave a real factor $z^2+9$ straight away — no complex numbers appear after
+that.
 """)
 
 md(r"""
-## Решение 12 — уравнение для обратных корней
+## Solution 12 — an equation for the reciprocal roots
 
-Пусть $w = \frac1z$, то есть $z = \frac1w$. Подставляем в исходное
-уравнение:
+Let $w = \frac1z$, that is, $z = \frac1w$. Substitute into the original equation:
 
 $$\frac1{w^4} + \frac2{w^2} + 4 = 0.$$
 
-Умножаем на $w^4$ (это законно: $w=0$ корнем быть не может, потому что
-$z$ конечно):
+Multiply by $w^4$ (legitimate: $w=0$ cannot be a root, because $z$ is finite):
 
 $$1 + 2w^2 + 4w^4 = 0 \;\Longrightarrow\; 4w^4 + 2w^2 + 1 = 0.$$
 
-Значит $p=4$, $q=2$, $r=1$. $\blacksquare$
+So $p=4$, $q=2$, $r=1$. $\blacksquare$
 
 ```python
 my12_p, my12_q, my12_r = 4, 2, 1
 ```
 
-**Разметка.** M1 за подстановку $w=\frac1z$, M1 за умножение на $w^4$,
-A1 за тройку коэффициентов.
+**The marking.** M1 for the substitution $w=\frac1z$, M1 for multiplying by $w^4$,
+A1 for the triple of coefficients.
 
-**Почему подстановка, а не Виета.** Здесь корней четыре, и считать
-$\sum \frac1{z_i}$, $\sum_{i<j} \frac1{z_iz_j}$ и так далее — четыре
-симметричные суммы вместо двух строк. Правило простое: если новый корень
-выражается через старый **явно и обратимо**, идите подстановкой.
-Виета нужен, когда обратить не получается или преобразование нелинейное
-по-хитрому — как $\frac1{\alpha^3}$ в задании 9.
+**Why substitution and not Vieta.** There are four roots here, and computing
+$\sum \frac1{z_i}$, $\sum_{i<j} \frac1{z_iz_j}$ and so on means four symmetric sums
+instead of two lines. The rule is simple: if the new root is expressed through the
+old one **explicitly and invertibly**, go by substitution. Vieta is needed when the
+inversion does not work out or the transformation is awkwardly non-linear — like
+$\frac1{\alpha^3}$ in task 9.
 
-**Красивое следствие.** Коэффициенты нового уравнения — это коэффициенты
-старого, записанные наоборот: $1,2,4 \to 4,2,1$. Так происходит всегда
-при замене $z \to \frac1z$, и это удобная проверка ответа.
+**A pretty consequence.** The coefficients of the new equation are the coefficients
+of the old one the other way round: $1,2,4 \to 4,2,1$. That always happens under
+$z \to \frac1z$, and it is a handy check on the answer.
 """)
 
 md(r"""
-## Решение 13 — исследование Paper 3, кубический случай
+## Solution 13 — the Paper 3 investigation, the cubic case
 
-**(b)(i)** Возводим сумму корней в квадрат:
+**(b)(i)** Square the sum of the roots:
 
 $$(\alpha+\beta+\gamma)^2 = \alpha^2+\beta^2+\gamma^2
 + 2(\alpha\beta+\beta\gamma+\gamma\alpha).$$
 
-По Виета $\alpha+\beta+\gamma = -p$ и $\alpha\beta+\beta\gamma+\gamma\alpha = q$,
-поэтому $p^2 = \left(\alpha^2+\beta^2+\gamma^2\right) + 2q$ и
+By Vieta $\alpha+\beta+\gamma = -p$ and
+$\alpha\beta+\beta\gamma+\gamma\alpha = q$, so
+$p^2 = \left(\alpha^2+\beta^2+\gamma^2\right) + 2q$ and
 
 $$\alpha^2+\beta^2+\gamma^2 = p^2 - 2q. \qquad \blacksquare$$
 
-**(b)(ii)** Раскрываем сумму квадратов разностей:
+**(b)(ii)** Expand the sum of the squares of the differences:
 
 $$(\alpha-\beta)^2+(\beta-\gamma)^2+(\gamma-\alpha)^2
 = 2\left(\alpha^2+\beta^2+\gamma^2\right)
 - 2(\alpha\beta+\beta\gamma+\gamma\alpha).$$
 
-Подставляем результат (b)(i) и $q$:
+Substitute the result of (b)(i) and $q$:
 
 $$= 2\left(p^2-2q\right) - 2q = 2p^2 - 6q. \qquad \blacksquare$$
 
-**(c)** Пусть $p^2 < 3q$. Тогда $2p^2 - 6q < 0$, то есть сумма квадратов
-разностей отрицательна. Если бы все три корня были действительны, каждый
-квадрат был бы неотрицателен, и сумма тоже. Противоречие: не все корни
-действительны. $\blacksquare$
+**(c)** Suppose $p^2 < 3q$. Then $2p^2 - 6q < 0$, that is, the sum of the squares of
+the differences is negative. If all three roots were real, every square would be
+non-negative and so would the sum. A contradiction: the roots are not all real.
+$\blacksquare$
 
-**(d)** Для $x^3-7x^2+17x+1=0$ имеем $p=-7$, $q=17$:
+**(d)** For $x^3-7x^2+17x+1=0$ we have $p=-7$, $q=17$:
 
 $$p^2 = 49, \qquad 3q = 51, \qquad 49 < 51.$$
 
-По пункту (c) хотя бы один корень недействителен. $\blacksquare$
+By part (c) at least one root is not real. $\blacksquare$
 
-**(e)(i)** Условие $p^2 \ge 3q$ при $p=-7$ даёт $q \le 16$. Перебираем
-целые $q$ от 1 до 16 на калькуляторе: до $q=11$ все три корня
-действительны, при $q=12$ — только один. Ответ: $q = 12$.
+**(e)(i)** The condition $p^2 \ge 3q$ at $p=-7$ gives $q \le 16$. Run through the
+integers $q$ from 1 to 16 on the calculator: up to $q=11$ all three roots are real,
+and at $q=12$ only one is. Answer: $q = 12$.
 
-**(e)(ii)** У кубического многочлена с действительными коэффициентами
-недействительные корни идут сопряжёнными парами, значит их 0 или 2,
-и хотя бы один корень действителен всегда.
+**(e)(ii)** For a cubic with real coefficients the non-real roots come in conjugate
+pairs, so there are 0 or 2 of them, and at least one root is always real.
 
 ```python
 my13_sq = p**2 - 2*q
@@ -1494,65 +1484,64 @@ my13_p2, my13_3q = 49, 51
 my13_q = 12
 ```
 
-**Разметка.** (b)(i): M1 за возведение суммы в квадрат, A1 за раскрытие,
-A1 за результат. (b)(ii): M1M1A1 так же. (c): M1 за $2p^2-6q<0$,
-R1 за вывод. (d): M1 за подсчёт обоих чисел, A1 за сравнение и вывод.
-(e)(i): M1 за перебор, A1 за $q=12$. (e)(ii): R1.
+**The marking.** (b)(i): M1 for squaring the sum, A1 for the expansion, A1 for the
+result. (b)(ii): M1M1A1 likewise. (c): M1 for $2p^2-6q<0$, R1 for the conclusion.
+(d): M1 for computing both numbers, A1 for the comparison and the conclusion.
+(e)(i): M1 for the search, A1 for $q=12$. (e)(ii): R1.
 
-**Главная мысль вопроса.** Утверждение (c) — импликация в одну сторону.
-Ноа в пункте (e) считает, что верно и обратное: «если $p^2 \ge 3q$,
-то все корни действительны». Это неверно, и $q=12$ — контрпример:
-$49 \ge 36$, а корни не все действительны. Понять, что от вас хотят
-именно контрпример, — половина решения; дальше работает калькулятор.
+**The main idea of the question.** Statement (c) is an implication one way. In part
+(e) Noah believes the converse holds too: «if $p^2 \ge 3q$ then all the roots are
+real». That is false, and $q=12$ is a counterexample: $49 \ge 36$ and the roots are
+not all real. Realising that a counterexample is what is wanted is half the solution;
+after that the calculator does the work.
 
-**Почему обратное и не могло быть верным.** Условие $2p^2-6q \ge 0$
-говорит лишь, что *сумма* квадратов разностей неотрицательна. Для
-комплексных чисел квадрат может быть отрицателен, и слагаемые способны
-скомпенсировать друг друга. Односторонний критерий — обычное дело:
-он ловит только явные случаи.
+**Why the converse could not have been true.** The condition $2p^2-6q \ge 0$ says
+only that the *sum* of the squares of the differences is non-negative. For complex
+numbers a square can be negative, and the terms are able to compensate for each
+other. A one-sided criterion is an ordinary thing: it catches only the obvious
+cases.
 
-**Где здесь калькулятор.** Пункт (e)(i) — единственное место темы, где
-GDC делает работу, а не проверяет её. Перебор шестнадцати значений
-руками занял бы всё оставшееся время.
+**Where the calculator is here.** Part (e)(i) is the only place in the topic where a
+GDC does the work rather than checks it. Running through sixteen values by hand
+would have taken all the time left.
 """)
 
 md(r"""
-## Решение 14 — исследование Paper 3, четвёртая степень
+## Solution 14 — the Paper 3 investigation, the fourth degree
 
-**(f)(i)** То же тождество, только слагаемых четыре:
+**(f)(i)** The same identity, only with four terms:
 
 $$(\alpha+\beta+\gamma+\delta)^2 = \sum \alpha_i^2
 + 2\sum_{i<j}\alpha_i\alpha_j.$$
 
-По Виета левая часть равна $p^2$, а вторая сумма равна $q$, поэтому
+By Vieta the left-hand side is $p^2$ and the second sum is $q$, so
 
 $$\alpha^2+\beta^2+\gamma^2+\delta^2 = p^2 - 2q. \qquad \blacksquare$$
 
-**(f)(ii)** Если $p^2 < 2q$, сумма квадратов отрицательна, что для
-действительных чисел невозможно. Условие: $p^2 < 2q$.
+**(f)(ii)** If $p^2 < 2q$, the sum of the squares is negative, which is impossible
+for real numbers. The condition: $p^2 < 2q$.
 
-**(g)** Для $x^4-2x^3+3x^2-4x+5$: $p=-2$, $q=3$, значит $p^2 = 4$
-и $2q = 6$. Так как $4 < 6$, хотя бы один корень недействителен.
-$\blacksquare$
+**(g)** For $x^4-2x^3+3x^2-4x+5$: $p=-2$, $q=3$, so $p^2 = 4$ and $2q = 6$. Since
+$4 < 6$, at least one root is not real. $\blacksquare$
 
-**(h)(i)** Для $x^4-9x^3+24x^2+22x-12$: $p=-9$, $q=24$, значит
-$p^2 = 81$ и $2q = 48$. Здесь $81 > 48$, критерий молчит — вывести
-из него нельзя ничего.
+**(h)(i)** For $x^4-9x^3+24x^2+22x-12$: $p=-9$, $q=24$, so $p^2 = 81$ and
+$2q = 48$. Here $81 > 48$ and the criterion is silent — nothing can be concluded
+from it.
 
-**(h)(ii)** Кандидаты в целые корни — делители свободного члена:
-$\pm1, \pm2, \pm3, \pm4, \pm6, \pm12$. Подставляем $x=-1$:
+**(h)(ii)** The candidates for integer roots are the divisors of the constant term:
+$\pm1, \pm2, \pm3, \pm4, \pm6, \pm12$. Substitute $x=-1$:
 
 $$1 + 9 + 24 - 22 - 12 = 0.$$
 
-Целый корень равен $-1$.
+The integer root is $-1$.
 
-**(h)(iii)** Делим на $(x+1)$; остаток нулевой, частное
+**(h)(iii)** Divide by $(x+1)$; the remainder is zero and the quotient is
 
 $$x^3 - 10x^2 + 34x - 12.$$
 
-Для этого кубического $p=-10$, $q=34$, поэтому $p^2 = 100$, $3q = 102$.
-Так как $100 < 102$, по пункту (c) у кубического множителя есть
-недействительный корень — а значит, и у квартики. $\blacksquare$
+For that cubic $p=-10$, $q=34$, so $p^2 = 100$, $3q = 102$. Since $100 < 102$, by
+part (c) the cubic factor has a non-real root — and therefore so does the quartic.
+$\blacksquare$
 
 ```python
 my14_sq = p**2 - 2*q
@@ -1562,46 +1551,45 @@ my14_quo, my14_rem = x**3 - 10*x**2 + 34*x - 12, 0
 my14_pc2, my14_3qc = 100, 102
 ```
 
-**Разметка.** (f)(i): M1A1A1. (f)(ii): A1. (g): A1. (h)(i): A1 за вывод
-«ничего сказать нельзя». (h)(ii): A1. (h)(iii): M1 за разложение,
-A1 за кубический множитель, M1 за применение критерия, A1 за вывод.
+**The marking.** (f)(i): M1A1A1. (f)(ii): A1. (g): A1. (h)(i): A1 for the conclusion
+«nothing can be said». (h)(ii): A1. (h)(iii): M1 for the factorisation, A1 for the
+cubic factor, M1 for applying the criterion, A1 for the conclusion.
 
-**Двойка вместо тройки.** Для кубического критерий $p^2 < 3q$, для
-квартики $p^2 < 2q$. Число берётся не с потолка: в кубическом случае
-сравнивалась сумма квадратов **разностей** (там появился множитель 2
-и коэффициент 6), в случае четвёртой степени — прямо сумма квадратов
-корней $p^2-2q$. Разные тождества, разные константы. Подставить не то
-число — самая частая ошибка в этом вопросе.
+**A two instead of a three.** For a cubic the criterion is $p^2 < 3q$, for a quartic
+$p^2 < 2q$. The number does not come out of nowhere: in the cubic case the sum of
+the squares of the **differences** was compared (which brought the factor 2 and the
+coefficient 6), while in the fourth degree it is the sum of the squares of the roots
+directly, $p^2-2q$. Different identities, different constants. Substituting the
+wrong number is the most frequent mistake in this question.
 
-**Пункт (h)(i) стоит балла за слово «ничего».** Ответ «все корни
-действительны» получает ноль: критерий односторонний, и при $p^2 > 2q$
-он не утверждает ничего. Умение сказать «отсюда не следует» —
-отдельный экзаменационный навык.
+**Part (h)(i) is worth a mark for the word «nothing».** The answer «all the roots
+are real» scores zero: the criterion is one-sided, and at $p^2 > 2q$ it asserts
+nothing. Being able to say «that does not follow» is an exam skill of its own.
 
-**Приём 1 внутри Paper 3.** Пункт (h) — обычная теорема о множителе
-и деление, вставленные в середину исследования. Так устроен весь Paper 3:
-длинный сюжет из коротких стандартных шагов.
+**Technique 1 inside Paper 3.** Part (h) is the ordinary factor theorem and division
+inserted in the middle of an investigation. The whole of Paper 3 is built that way: a
+long storyline made of short standard steps.
 """)
 
 md(r"""
-## Решение 15 — два разложения в одну строку
+## Solution 15 — two decompositions in one line
 
-**(a)** Пишем тождество и умножаем на $x(k-x)$:
+**(a)** Write the identity and multiply by $x(k-x)$:
 
 $$\frac{1}{x(k-x)} = \frac ax + \frac{b}{k-x}
 \;\Longrightarrow\; 1 = a(k-x) + bx.$$
 
-Подставляем $x=0$: $1 = ak$, откуда $a = \frac1k$.
-Подставляем $x=k$: $1 = bk$, откуда $b = \frac1k$.
+Put $x=0$: $1 = ak$, hence $a = \frac1k$.
+Put $x=k$: $1 = bk$, hence $b = \frac1k$.
 
 $$\frac{1}{x(k-x)} = \frac{1}{kx} + \frac{1}{k(k-x)}.$$
 
-**(b)** Знаменатель раскладывается: $1-4v^2 = (1-2v)(1+2v)$. Умножаем:
+**(b)** The denominator factorises: $1-4v^2 = (1-2v)(1+2v)$. Multiply:
 
 $$1 = A(1+2v) + B(1-2v).$$
 
-Подставляем $v=\frac12$: $1 = 2A$, откуда $A = \frac12$.
-Подставляем $v=-\frac12$: $1 = 2B$, откуда $B = \frac12$.
+Put $v=\frac12$: $1 = 2A$, hence $A = \frac12$.
+Put $v=-\frac12$: $1 = 2B$, hence $B = \frac12$.
 
 $$\frac{1}{1-4v^2} = \frac{1}{2(1-2v)} + \frac{1}{2(1+2v)}.$$
 
@@ -1610,41 +1598,39 @@ my15_a = 1/(k*x) + 1/(k*(k - x))
 my15_b = Rational(1, 2)/(1 - 2*v) + Rational(1, 2)/(1 + 2*v)
 ```
 
-**Разметка.** (a): M1 за тождество после умножения, M1 за подстановку
-или приравнивание коэффициентов, A1 за оба значения. (b): M1A1.
+**The marking.** (a): M1 for the identity after multiplying, M1 for the substitution
+or for equating coefficients, A1 for both values. (b): M1A1.
 
-**Почему подстановка быстрее.** Приравнивание коэффициентов в (a) даёт
-систему $-a+b=0$ и $ak=1$ — тоже несложно, но два шага вместо одного.
-Подстановка $x=0$ и $x=k$ убивает по слагаемому за раз. Правило: берите
-те значения, которые обнуляют знаменатели.
+**Why substitution is faster.** Equating coefficients in (a) gives the system
+$-a+b=0$ and $ak=1$ — not hard either, but two steps instead of one. Substituting
+$x=0$ and $x=k$ kills one term at a time. The rule: take the values that make the
+denominators vanish.
 
-**Куда это ведёт.** Оба блока — первые пункты вопросов по интегрированию.
-В блоке мая 2021 дальше интегрируют $\frac{1}{x(k-x)}$ — логистическое
-уравнение из E7; в блоке ноября 2025 — $\frac{1}{1-4v^2}$ в задаче
-о движении с сопротивлением. Простейшие дроби почти никогда не бывают
-целью; они бывают первым шагом.
+**Where this leads.** Both blocks are the first parts of integration questions. In
+the May 2021 block $\frac{1}{x(k-x)}$ is integrated next — the logistic equation
+from E7; in the November 2025 block $\frac{1}{1-4v^2}$ in a problem about motion with
+resistance. Partial fractions are almost never the goal; they are the first step.
 """)
 
 md(r"""
-## Решение 16 — кратный множитель в знаменателе
+## Solution 16 — a repeated factor in the denominator
 
-**(c)** Пишем тождество и умножаем на $Q(x) = (x+1)(2x+1)$:
+**(c)** Write the identity and multiply by $Q(x) = (x+1)(2x+1)$:
 
 $$1 = A(2x+1) + B(x+1).$$
 
-Подставляем $x=-1$: $1 = -A$, откуда $A = -1$.
-Подставляем $x=-\frac12$: $1 = \frac B2$, откуда $B = 2$.
+Put $x=-1$: $1 = -A$, hence $A = -1$.
+Put $x=-\frac12$: $1 = \frac B2$, hence $B = 2$.
 
 $$\frac{1}{Q(x)} = -\frac{1}{x+1} + \frac{2}{2x+1}.$$
 
-**(d)** Замечаем, что $(1+x)(2x+1)$ — это тот же $Q(x)$. Значит
-выражение равно
+**(d)** Notice that $(1+x)(2x+1)$ is the same $Q(x)$. So the expression equals
 
 $$\frac{1 - \frac{x}{Q}}{Q} = \frac{Q - x}{Q^2}.$$
 
-Считаем числитель: $Q - x = 2x^2+3x+1-x = 2x^2+2x+1$. Знаменатель —
-$Q^2 = (x+1)^2(2x+1)^2$. Раскладываем на простейшие дроби; каждый
-кратный множитель даёт два слагаемых:
+Compute the numerator: $Q - x = 2x^2+3x+1-x = 2x^2+2x+1$. The denominator is
+$Q^2 = (x+1)^2(2x+1)^2$. Decompose into partial fractions; each repeated factor
+gives two terms:
 
 $$\frac{2x^2+2x+1}{(x+1)^2(2x+1)^2}
 = \frac{2}{x+1} + \frac{1}{(x+1)^2} - \frac{4}{2x+1} + \frac{2}{(2x+1)^2}.$$
@@ -1654,56 +1640,55 @@ my16_c = -1/(x + 1) + 2/(2*x + 1)
 my16_d = 2/(x + 1) + 1/(x + 1)**2 - 4/(2*x + 1) + 2/(2*x + 1)**2
 ```
 
-**Разметка.** (c): M1 за тождество, M1 за подстановку или систему,
-A1 за $A$ и $B$. (d): M1 за использование результата (c), A1 за итог.
+**The marking.** (c): M1 for the identity, M1 for the substitution or the system, A1
+for $A$ and $B$. (d): M1 for using the result of (c), A1 for the outcome.
 
-**Быстрый путь к (d).** Из (c) известно $\frac1Q = -\frac1{x+1}+\frac2{2x+1}$.
-Тогда $\frac{Q-x}{Q^2} = \frac1Q - \frac{x}{Q^2}$, и остаётся возвести
-известное разложение в квадрат. Так пункт (d) действительно решается
-«hence», за две строки, — ради этого (c) и стоит перед ним.
+**A fast route to (d).** From (c) we know
+$\frac1Q = -\frac1{x+1}+\frac2{2x+1}$. Then
+$\frac{Q-x}{Q^2} = \frac1Q - \frac{x}{Q^2}$, and all that is left is squaring the
+decomposition already known. That is how part (d) really is solved «hence», in two
+lines — which is what (c) stands before it for.
 
-**Про кратные множители.** Для $(x+1)^2$ в знаменателе нужны **оба**
-слагаемых, $\frac{A}{x+1}$ и $\frac{B}{(x+1)^2}$. Если написать только
-второе, система окажется несовместной — и это надёжный признак пропуска,
-а не повод искать арифметическую ошибку.
+**About repeated factors.** For $(x+1)^2$ in the denominator **both** terms are
+needed, $\frac{A}{x+1}$ and $\frac{B}{(x+1)^2}$. If only the second is written, the
+system turns out inconsistent — and that is a reliable sign of an omission, not a
+reason to hunt for an arithmetic slip.
 
-**Про разметку корпуса.** Правая часть этого пункта записана там как
-$1 - \frac4{2x+1} - \frac2{x+1} + \frac2{(2x+1)^2}$. Проверка в sympy
-показывает, что это не равно левой части: у $\frac2{x+1}$ должен стоять
-плюс, а вместо свободной единицы должно быть $\frac1{(x+1)^2}$.
-Разбор — в карточке приёмов, раздел `corpus_issues`.
+**About the archive's tags.** The right-hand side of this part is recorded there as
+$1 - \frac4{2x+1} - \frac2{x+1} + \frac2{(2x+1)^2}$. Checking in sympy shows that
+this is not equal to the left-hand side: $\frac2{x+1}$ should carry a plus, and
+instead of the free one there should be $\frac1{(x+1)^2}$. The working is in the
+technique card, section `corpus_issues`.
 """)
 
 md(r"""
-## Решение 17 — задание на таймере
+## Solution 17 — the task on the timer
 
-**(a)** Для $g(x) = 2x^3-7x^2+dx-e$ сумма корней равна
-$-\frac{-7}{2}$:
+**(a)** For $g(x) = 2x^3-7x^2+dx-e$ the sum of the roots is $-\frac{-7}{2}$:
 
 $$\alpha+\beta+\gamma = \frac72.$$
 
-**(b)** Коэффициенты $h$ действительны, поэтому вместе с $\rho+3i$
-корнем является и $\rho-3i$. Всего у $h$ пять корней:
-$\alpha, \beta, \gamma, \rho+3i, \rho-3i$. Их сумма равна
-$-\frac{-11}{2} = \frac{11}2$:
+**(b)** The coefficients of $h$ are real, so together with $\rho+3i$ the number
+$\rho-3i$ is a root as well. In all $h$ has five roots:
+$\alpha, \beta, \gamma, \rho+3i, \rho-3i$. Their sum is $-\frac{-11}{2} = \frac{11}2$:
 
 $$\frac72 + (\rho+3i) + (\rho-3i) = \frac{11}2
 \;\Longrightarrow\; \frac72 + 2\rho = \frac{11}2
 \;\Longrightarrow\; \rho = 1. \qquad \blacksquare$$
 
-**(c)** Произведение пяти корней равно $-\frac{-20}{2} = 10$. Из
-$h\!\left(\frac12\right)=0$ и условия «$\gamma$ рационально» следует
-$\gamma = \frac12$. Сопряжённая пара даёт
+**(c)** The product of the five roots is $-\frac{-20}{2} = 10$. From
+$h\!\left(\frac12\right)=0$ and the condition «$\gamma$ is rational» it follows that
+$\gamma = \frac12$. The conjugate pair gives
 
 $$(1+3i)(1-3i) = 1 + 9 = 10.$$
 
-Значит
+So
 
 $$10 \cdot \alpha\beta \cdot \frac12 = 10 \;\Longrightarrow\; \alpha\beta = 2.$$
 
-Из (a) $\alpha+\beta = \frac72 - \frac12 = 3$. Числа с суммой 3
-и произведением 2 — это корни $u^2-3u+2=0$, то есть 1 и 2. Так как
-$\alpha<\beta$, получаем $\alpha=1$, $\beta=2$. $\blacksquare$
+From (a) $\alpha+\beta = \frac72 - \frac12 = 3$. Numbers with sum 3 and product 2
+are the roots of $u^2-3u+2=0$, that is, 1 and 2. Since $\alpha<\beta$, we get
+$\alpha=1$, $\beta=2$. $\blacksquare$
 
 ```python
 my17_sum = Rational(7, 2)
@@ -1712,24 +1697,23 @@ my17_ab = 2
 my17_alpha, my17_beta = 1, 2
 ```
 
-**Разметка.** (a): A1. (b): A1 за сопряжённый корень, M1 за сумму пяти
-корней, A1 за $\rho=1$. (c): M1 за произведение пяти корней,
-A1 за $\alpha\beta=2$, A1 за пару значений.
+**The marking.** (a): A1. (b): A1 for the conjugate root, M1 for the sum of the five
+roots, A1 for $\rho=1$. (c): M1 for the product of the five roots, A1 for
+$\alpha\beta=2$, A1 for the pair of values.
 
-**Как это выглядит по времени.** Семь баллов за двенадцать минут, и почти
-всё время уходит на два аккуратных применения Виета к пятой степени.
-Ни один корень не находится честным решением уравнения — и не может:
-$h$ пятой степени с тремя буквами.
+**How it looks in time.** Seven marks in twelve minutes, and almost all the time
+goes on two careful applications of Vieta to a fifth degree. Not one root is found by
+honestly solving an equation — nor could it be: $h$ is of the fifth degree with
+three letters.
 
-**Ключевой ход в (c).** Заметить, что $\frac12$ — это и есть $\gamma$.
-В условии сказано «$\gamma$ рационально», а $\alpha,\beta$ положительны
-и действительны; корень $\frac12$ из $h\left(\frac12\right)=0$ обязан
-быть одним из трёх, и рациональность указывает на $\gamma$. Без этого
-шага произведение не разложить.
+**The key move in (c).** Noticing that $\frac12$ is $\gamma$. The question says
+«$\gamma$ is rational», while $\alpha,\beta$ are positive and real; the root
+$\frac12$ from $h\left(\frac12\right)=0$ has to be one of the three, and the
+rationality points at $\gamma$. Without that step the product cannot be split up.
 
-**Проверка ответа.** $\alpha+\beta+\gamma = 1+2+\frac12 = \frac72$ —
-сходится с пунктом (a). Такая проверка занимает пять секунд и ловит
-почти любую арифметическую ошибку в (c).
+**A check on the answer.** $\alpha+\beta+\gamma = 1+2+\frac12 = \frac72$ — it agrees
+with part (a). Such a check takes five seconds and catches almost any arithmetic
+slip in (c).
 """)
 
 nb = {

@@ -33,12 +33,12 @@ t_('2', verify_implicit('Задание 2', Eq(x**2 + y**2, k), Eq(x**2 + y**2, 
 t_('3', verify_ode('Задание 3', 4 - 2*exp(-x/10), (4 - y)/10, ic=(0, 2)))
 
 a, b = Integer(-4), -4 - pi
-t_('4a', check_expr('Задание 4(a), a', a, D['Задание 4(a), a']))
-t_('4b', check_expr('Задание 4(b), b', b, D['Задание 4(b), b']))
+t_('4a', check_expr('Задание 4(a), a', a, D['Task 4(a), a']))
+t_('4b', check_expr('Задание 4(b), b', b, D['Task 4(b), b']))
 t_('4whole', verify_ode('Задание 4 целиком', a/(2*x + sin(2*x) + b),
                         y**2*cos(x)**2, ic=(pi/2, 1)))
 
-t_('5', check_expr('Задание 5(b), k', log(9)/10, D['Задание 5(b), k']))  # эквивалентная форма
+t_('5', check_expr('Задание 5(b), k', log(9)/10, D['Task 5(b), k']))  # эквивалентная форма
 
 t_('6', verify_implicit('Задание 6', Eq(x**2 - 2*x*y - y**2, 4),
                         Eq(x**2 - 2*x*y - y**2, 4)))
@@ -51,8 +51,8 @@ approx = pts[-1][1]
 exact = float(4 - 2*exp(Rational(-5, 100)))
 err = abs(approx - exact)
 print(f'\nЭйлер: {approx!r}, точное: {exact!r}, ошибка: {err!r}')
-t_('9a', check_num('Задание 9(a)', approx, 4, D['Задание 9(a)']))
-t_('9b', check_num('Задание 9(b)', err, 3, D['Задание 9(b)']))
+t_('9a', check_num('Задание 9(a)', approx, 4, D['Task 9(a)']))
+t_('9b', check_num('Задание 9(b)', err, 3, D['Task 9(b)']))
 
 # знак ошибки: y'' = -(4-y)/100 < 0 при y<4 => завышает
 print('  завышает?', approx > exact)
@@ -61,7 +61,7 @@ t_('9c', approx > exact)
 # --- задание 10 ---
 p2 = euler(lambda a_, b_: (b_**2 - 2*a_**2)/a_**2, 1.0, 3.0, 0.1, 5)
 print('\nЭйлер 10:', [f'{q:.4f}' for _, q in p2])
-t_('10a', check_num('Задание 10(a)', p2[-1][1], 3, D['Задание 10(a)']))
+t_('10a', check_num('Задание 10(a)', p2[-1][1], 3, D['Task 10(a)']))
 
 vx = Function('v')(x)
 got = simplify(solve(Eq(diff(vx*x, x), ((vx*x)**2 - 2*x**2)/x**2),
@@ -91,9 +91,9 @@ t_('neg1', not verify_ode('минус потерян', 4/(2*x + sin(2*x) - 4 - p
                           y**2*cos(x)**2, ic=(pi/2, 1)))
 t_('neg2', not verify_ode('потеряно v в подстановке', 3*exp(x) - x, y + x, ic=(0, 2)))
 t_('neg4', not check_set('m без минуса', [sqrt(2)], D['11(b)']))
-t_('neg5', not check_expr('пустой ответ', ..., D['Задание 5(b), k']))
+t_('neg5', not check_expr('пустой ответ', ..., D['Task 5(b), k']))
 t_('neg3', not check_num('шаг лишний', euler(lambda a_, b_: (4 - b_)/10, 0.0, 2.0, 0.1, 6)[-1][1],
-                         4, D['Задание 9(a)']))
+                         4, D['Task 9(a)']))
 
 bad_n = sum(1 for n, ok in results if not ok)
 print(f'\n{"ВСЁ ПРОШЛО" if bad_n == 0 else "ПРОВАЛЫ: " + str([n for n, ok in results if not ok])}'

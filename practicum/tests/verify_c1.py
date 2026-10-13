@@ -47,8 +47,8 @@ r1 = sp.symbols('r1', positive=True)
 rad1 = float(sp.solve(sp.Eq(sp.tan(sp.rad(58)), (20 - R(9, 5)) / (5 + r1)), r1)[0])
 vol1 = float(sp.pi * rad1**2 * 20 / 3)
 print(f'Задание 1: вертикальный катет 18.2, радиус {rad1:.5f}, объём {vol1:.4f}')
-t('1a', check_num('Задание 1(a)', rad1, 3, D['Задание 1(a)']))
-t('1b', check_num('Задание 1(b)', vol1, 3, D['Задание 1(b)']))
+t('1a', check_num('Задание 1(a)', rad1, 3, D['Task 1(a)']))
+t('1b', check_num('Задание 1(b)', vol1, 3, D['Task 1(b)']))
 # Округлённый радиус даёт другую третью значащую цифру объёма.
 t('1round', sig(math.pi * 6.37**2 * 20 / 3, 3) != sig(vol1, 3))
 
@@ -59,7 +59,7 @@ ang2 = float(sp.deg(sp.atan(vx2 / (ac2 / 2))))
 print(f'Задание 2: VX = {vx2}, AC = {ac2}, угол {ang2:.4f}')
 t('2a', verify_exact('Задание 2(a)', vx2, sp.sqrt(29)))
 t('2b', verify_exact('Задание 2(b)', ac2, 5 * sp.sqrt(2)))
-t('2c', check_num('Задание 2(c)', ang2, 3, D['Задание 2(c)']))
+t('2c', check_num('Задание 2(c)', ang2, 3, D['Task 2(c)']))
 # Ошибка «взял всю диагональ вместо половины» даёт заметно другой угол.
 t('2half', abs(float(sp.deg(sp.atan(vx2 / ac2))) - ang2) > 5)
 
@@ -70,7 +70,7 @@ angle_j = 90 - 34
 angle_d = 180 - angle_j - 25
 tri3 = solve_triangle(A=angle_j, B=25, c=500)[0]
 print(f'Задание 3: DJL = {angle_j}, JDL = {angle_d}, DL = {tri3["a"]:.4f}')
-t('3a', check_num('Задание 3(a)', angle_d, 3, D['Задание 3(a)']))
+t('3a', check_num('Задание 3(a)', angle_d, 3, D['Task 3(a)']))
 t('3b', verify_triangle('Задание 3(b)', {'a': tri3['a']}, B=25, C=angle_d, c=500))
 # Против самого большого угла лежит самая длинная сторона.
 t('3longest', tri3['c'] > tri3['a'] > tri3['b'])
@@ -90,7 +90,7 @@ theta6 = (180 - tri6['A']) / 2
 h6 = 150 * math.sin(math.radians(theta6))
 print(f'Задание 6: APB = {tri6["A"]:.5f}, theta = {theta6:.5f}, h = {h6:.5f}')
 t('6a', verify_triangle('Задание 6(a)', {'A': tri6['A']}, a=154, b=90, c=150))
-t('6b', check_num('Задание 6(b)', h6, 3, D['Задание 6(b)']))
+t('6b', check_num('Задание 6(b)', h6, 3, D['Task 6(b)']))
 t('6lower', 90 * math.sin(math.radians(theta6)) < h6)
 
 # Задание 7: общая диагональ записывается дважды.
@@ -133,7 +133,7 @@ t('10a1', verify_triangle('Задание 10, первый', {'c': sides10[0]},
                           a=7, b=12, A=25))
 t('10a2', verify_triangle('Задание 10, второй', {'c': sides10[1]},
                           a=7, b=12, A=25))
-t('10b', check_num('Задание 10(b)', perim10, 3, D['Задание 10(b)']))
+t('10b', check_num('Задание 10(b)', perim10, 3, D['Task 10(b)']))
 # Те же два корня получаются из квадратного уравнения теоремы косинусов.
 ab = sp.Symbol('ab', positive=True)
 quad10 = sp.solve(sp.Eq(49, 144 + ab**2 - 24 * ab * sp.cos(sp.rad(25))), ab)
@@ -188,8 +188,8 @@ x15 = sp.solve(sp.Eq(100, xx**2 + (2 * xx)**2 - 2 * xx * 2 * xx * R(3, 4)), xx)[
 sin15 = sp.sqrt(1 - R(3, 4)**2)
 area15 = sp.simplify(R(1, 2) * x15 * 2 * x15 * sin15)
 print(f'Задание 15: x = {x15}, sin C = {sin15}, площадь {area15}')
-t('15p', check_num('Задание 15, p', 25, 6, D['Задание 15, p']))
-t('15q', check_num('Задание 15, q', 7, 6, D['Задание 15, q']))
+t('15p', check_num('Задание 15, p', 25, 6, D['Task 15, p']))
+t('15q', check_num('Задание 15, q', 7, 6, D['Task 15, q']))
 t('15area', sp.simplify(area15 - 25 * sp.sqrt(7) / 2) == 0)
 # Площадь зависит только от x², извлекать корень было необязательно.
 t('15square', sp.simplify(x15**2 - 50) == 0)
@@ -212,7 +212,7 @@ best = max((f17(hi17 * i / 20000), hi17 * i / 20000) for i in range(1, 20000))
 brahma = sp.sqrt((10 - 2) * (10 - 4) * (10 - 6) * (10 - 8))
 print(f'Задание 17: максимум {best[0]:.6f} при β = {math.degrees(best[1]):.3f}°, '
       f'формула Брахмагупты даёт {sp.simplify(brahma)} = {float(brahma):.6f}')
-t('17a', check_num('Задание 17(a)', best[0], 3, D['Задание 17(a)']))
+t('17a', check_num('Задание 17(a)', best[0], 3, D['Task 17(a)']))
 t('17b', verify_exact('Задание 17(b)', sp.simplify(brahma), 8 * sp.sqrt(6)))
 t('17same', abs(best[0] - float(brahma)) < 1e-4)
 # В точке максимума четырёхугольник вписанный: α + β = 180°.
@@ -269,7 +269,7 @@ t('нет: округление до двух значащих цифр',
   not verify_triangle('  16', {'a': 16}, b=12, c=7, A=116))
 t('нет: взята вся диагональ вместо половины',
   not check_num('  37.3 вместо 56.7', float(sp.deg(sp.atan(vx2 / ac2))), 3,
-                D['Задание 2(c)']))
+                D['Task 2(c)']))
 
 print('\n=== где проверки мягче экзамена ===')
 # 1. verify_triangle судит по данным условия, а не по вопросу: если данные

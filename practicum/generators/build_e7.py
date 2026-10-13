@@ -46,491 +46,502 @@ def code(src):
 
 
 md(r"""
-# Практикум E7: дифференциальные уравнения первого порядка 🧮
+# Practicum E7: first-order differential equations 🧮
 
-Это не пересказ теории, а тренажёр распознавания. На экзамене дифференциальное
-уравнение решается не тем, что вы помните формулу интегрирующего множителя, а тем,
-что за несколько секунд по виду правой части понимаете, какой из семи приёмов включать.
+This is not a retelling of the theory, it is a recognition trainer. In the exam a
+differential equation is not solved by remembering the formula for the integrating
+factor; it is solved because within a few seconds, from the shape of the right-hand
+side, you know which of the seven techniques to switch on.
 
-**Материал.** 69 блоков и 275 баллов из архива AA HL, сессии May 2021 — November 2025;
-рабочих из них 64 блока и 255 баллов — ноябрь 2023 года задвоился, Paper 2 TZ1 и TZ2
-оказались одной бумагой, а Paper 3 той сессии общий. Каждое задание ниже — настоящий
-вопрос прошлых лет, источник указан. Рабочие блоки по бумагам: Paper 1 — 9,
-Paper 2 — 32, Paper 3 — 23. Вся тема подряд, без теории, лежит в архивном ноутбуке
-`archive-e7-differential-equations.ipynb`: 37 вопросов и 255 баллов.
+**Material.** 69 blocks and 275 marks from the AA HL archive, sessions May 2021 —
+November 2025; 64 blocks and 255 marks of them are workable — November 2023 is a
+duplicate, Paper 2 TZ1 and TZ2 turned out to be the same paper, and Paper 3 of that
+session is shared. Every task below is a real past-paper question, cited. Workable
+blocks by paper: Paper 1 — 9, Paper 2 — 32, Paper 3 — 23. The whole topic in a row,
+with no theory, is in the archive notebook
+`archive-e7-differential-equations.ipynb`: 37 questions and 255 marks.
 
-**Как работать**
+**How to work**
 
-1. Прочитайте карту приёмов. Это лестница: каждый следующий приём сводится
-   к предыдущему или расширяет его.
-2. Решайте задания **по порядку и на бумаге**. Ячейка нужна только для того,
-   чтобы ввести полученный ответ.
-3. Не открывайте решения, пока не упёрлись дважды.
-4. Проверка не хранит эталон: ваш ответ подставляется в исходное уравнение.
-   Поэтому любая верная форма записи проходит — как в markscheme.
-5. Последние два блока — тренажёр распознавания и задание на таймере.
-   Возвращайтесь к ним через неделю и через месяц, записывая время в журнал.
+1. Read the map of techniques. It is a ladder: each technique reduces to the
+   previous one or widens it.
+2. Solve the tasks **in order and on paper**. The cell is there only so that you can
+   type in the answer you got.
+3. Do not open the solutions until you have been stuck twice.
+4. The checks store no reference answer: yours is substituted back into the original
+   equation. So any correct form passes — as in the markscheme.
+5. The last two blocks are a recognition trainer and one question on a timer.
+   Come back to them in a week and in a month, writing the time into the log.
 
-Метки сложности: 🟢 приём в чистом виде · 🟡 приём в неочевидной обёртке ·
-🔴 комбинация приёмов или экзаменационный формат целиком.
+Difficulty marks: 🟢 the technique on its own · 🟡 the technique in a wrapper ·
+🔴 several techniques, or a whole exam question.
 """)
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/calculus к practicum/kit/
-import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
-from kit import *              # проверки + exp, log, sqrt, Eq, diff и прочие имена
+sys.path.append('..')          # from practicum/calculus to practicum/kit/
+import sympy as sp             # the escape hatch: anything not in kit is in sp
+from kit import *              # checks + exp, log, sqrt, Eq, diff and the other names
+
+language('en')                 # this notebook is in English, and so are the checks
 
 x, y, v, t, C = symbols('x y v t C')
 
-print('готово; sympy', sp.__version__)
-print('пишите ответ обычными именами: exp(1) =', exp(1))
+print('ready; sympy', sp.__version__)
+print('write the answer with the plain names: exp(1) =', exp(1))
 """)
 
 md(r"""
 ---
-## Карта приёмов
+## Map of techniques
 
-| # | Приём | Триггер в условии | Сводится к |
+| # | Technique | Trigger in the question | Reduces to |
 | --- | --- | --- | --- |
-| 1 | Прямое интегрирование | справа нет $y$ | — |
-| 2 | Разделение переменных | правая часть распадается в $f(x)\,g(y)$ | 1 |
-| 3 | Разделение + простейшие дроби | после разделения знаменатель раскладывается на множители | 2 |
-| 4 | Однородное, $y = vx$ | правая часть зависит только от $y/x$ | 2 или 3 |
-| 5 | Интегрирующий множитель | приводится к $y' + P(x)y = Q(x)$ | — |
-| 6 | Метод Эйлера | дан шаг $h$, нужно приближение | — |
-| 7 | Знак ошибки Эйлера | спрашивают «занижено или завышено» | 6 |
+| 1 | Direct integration | no $y$ on the right | — |
+| 2 | Separation of variables | the right-hand side splits into $f(x)\,g(y)$ | 1 |
+| 3 | Separation + partial fractions | after separating, the denominator factorises | 2 |
+| 4 | Homogeneous, $y = vx$ | the right-hand side depends only on $y/x$ | 2 or 3 |
+| 5 | Integrating factor | it rearranges to $y' + P(x)y = Q(x)$ | — |
+| 6 | Euler's method | a step $h$ is given, an approximation is asked for | — |
+| 7 | The sign of Euler's error | «is it an under- or an overestimate» | 6 |
 
-Приёмы 1–4 — одна ветка: каждый следующий сводит задачу к предыдущему.
-Приём 5 стоит отдельно: разделение переменных в линейном уравнении не проходит,
-потому что $Q(x)$ мешает собрать $y$ в одной части. Приёмы 6–7 — численная ветка,
-и в бумагах они почти всегда идут парой: сначала посчитать, потом объяснить знак ошибки.
+Techniques 1–4 are one branch: each reduces the problem to the previous one.
+Technique 5 stands apart: separation of variables fails in a linear equation,
+because $Q(x)$ gets in the way of collecting $y$ on one side. Techniques 6–7 are the
+numerical branch, and in the papers they almost always come as a pair: first compute,
+then explain the sign of the error.
 
-Главный вопрос, который вы задаёте себе, увидев уравнение:
-**входит ли $y$ в правую часть, и если да — отделяется ли он от $x$?**
-Три ответа на этот вопрос дают приёмы 1, 2 и 4–5.
+The main question you ask yourself on seeing an equation:
+**does $y$ appear on the right-hand side, and if it does — does it separate from $x$?**
+The three answers to that question give you techniques 1, 2 and 4–5.
 """)
 
 md(r"""
 ---
-## Теория 1. Что значит «решить» и куда девается постоянная
+## Theory 1. What «solve» means, and where the constant goes
 
-Решить $\dfrac{dy}{dx} = f(x, y)$ — найти функцию, обращающую уравнение в тождество.
-Без начального условия таких функций семейство, и произвольная постоянная — не
-формальность, а параметр семейства. Начальное условие выбирает из семейства одну кривую.
+To solve $\dfrac{dy}{dx} = f(x, y)$ is to find a function that turns the equation into
+an identity. Without an initial condition there is a family of such functions, and the
+arbitrary constant is not a formality but the parameter of the family. The initial
+condition picks one curve out of the family.
 
-Порядок действий жёсткий: **сначала интегрируем, потом подставляем условие.**
-Подстановка до интегрирования — самая частая потеря баллов в этой теме.
+The order of work is rigid: **integrate first, substitute the condition afterwards.**
+Substituting before integrating is the most common way of losing marks in this topic.
 
-Простейший случай: справа нет $y$. Тогда уравнение вообще не дифференциальное
-по существу, это задача на первообразную.
+The simplest case: no $y$ on the right. Then the equation is not really differential
+at all, it is an antiderivative problem.
 """)
 
 md(r"""
-## Задание 1 🟢 — прямое интегрирование
+## Task 1 🟢 — direct integration
 
-Решите $\dfrac{dy}{dx} = \cos\!\left(x - \dfrac{\pi}{4}\right)$ при условии, что кривая
-проходит через точку $\left(\dfrac{3\pi}{4},\, 2\right)$. Ответ дайте в виде $y = f(x)$.
+Solve $\dfrac{dy}{dx} = \cos\!\left(x - \dfrac{\pi}{4}\right)$ given that the curve
+passes through the point $\left(\dfrac{3\pi}{4},\, 2\right)$. Give the answer in the
+form $y = f(x)$.
 
-*Источник: November 2021, Paper 1, Q1 (4 балла, без калькулятора).*
+*Source: November 2021, Paper 1, Q1 (4 marks, no calculator).*
 """)
 
 code(r"""
-# ваш ответ здесь: y как выражение от x
+# your answer here: y as an expression in x
 my_y = ...
 
-verify_ode('Задание 1', my_y, cos(x - pi/4), ic=(3*pi/4, 2))
+verify_ode('Task 1', my_y, cos(x - pi/4), ic=(3*pi/4, 2))
 """)
 
 md(r"""
-## Задание 2 🟢 — разделение в чистом виде
+## Task 2 🟢 — separation in its pure form
 
-Решите $\dfrac{dy}{dx} = -\dfrac{x}{y}$ и покажите, что семейство кривых имеет вид
+Solve $\dfrac{dy}{dx} = -\dfrac{x}{y}$ and show that the family of curves has the form
 $x^2 + y^2 = k$.
 
-Здесь ответ неявный, и это нормально: выражать $y$ явно условие не требует.
-Введите ответ как `Eq(левая_часть, правая_часть)`.
+The answer here is implicit, and that is fine: the question does not ask you to make
+$y$ explicit. Enter the answer as `Eq(left_hand_side, right_hand_side)`.
 
-*Источник: November 2023 TZ1, Paper 3, Q2(a)(iii) (2 балла).*
+*Source: November 2023 TZ1, Paper 3, Q2(a)(iii) (2 marks).*
 """)
 
 code(r"""
 K = Symbol('k')
-my_family = ...          # например Eq(x**2 + y**2, K)
+my_family = ...          # for example Eq(x**2 + y**2, K)
 
-verify_implicit('Задание 2', my_family, Eq(x**2 + y**2, K))
+verify_implicit('Task 2', my_family, Eq(x**2 + y**2, K))
 """)
 
 md(r"""
-## Задание 3 🟢 — разделение с логарифмом
+## Task 3 🟢 — separation with a logarithm
 
-Решите $\dfrac{dy}{dx} = \dfrac{4 - y}{10}$ при $y(0) = 2$ и покажите, что
+Solve $\dfrac{dy}{dx} = \dfrac{4 - y}{10}$ with $y(0) = 2$ and show that
 $y = 4 - 2e^{-x/10}$.
 
-Обратите внимание на две вещи. Первая: интеграл $\int \dfrac{dy}{4 - y}$ даёт
-$-\ln|4-y|$, минус здесь легко потерять. Вторая: модуль снимается законно,
-потому что начальное условие $y(0) = 2 < 4$ фиксирует знак $4 - y > 0$,
-и по непрерывности он сохраняется.
+Notice two things. First: the integral $\int \dfrac{dy}{4 - y}$ gives $-\ln|4-y|$, and
+that minus sign is easy to lose. Second: the modulus comes off legitimately, because
+the initial condition $y(0) = 2 < 4$ fixes the sign $4 - y > 0$, and by continuity it
+is kept.
 
-*Источник: November 2023 TZ1, Paper 2, Q9(b) (5 баллов). Тот же вопрос дословно
-повторён в November 2023 TZ2 — полезный сигнал о том, что приём считается опорным.*
+*Source: November 2023 TZ1, Paper 2, Q9(b) (5 marks). The same question is repeated
+word for word in November 2023 TZ2 — a useful signal that the technique counts as a
+load-bearing one.*
 """)
 
 code(r"""
 my_y = ...
 
-verify_ode('Задание 3', my_y, (4 - y)/10, ic=(0, 2))
+verify_ode('Task 3', my_y, (4 - y)/10, ic=(0, 2))
 """)
 
 md(r"""
 ---
-## Теория 2. Разделение переменных, когда множитель спрятан
+## Theory 2. Separation of variables when the factor is hidden
 
-Разделение работает, если правая часть распадается в произведение $f(x)\,g(y)$.
-Сложность экзаменационных версий в том, что произведение видно не сразу:
+Separation works if the right-hand side splits into a product $f(x)\,g(y)$. What makes
+the exam versions hard is that the product is not visible straight away:
 
-- $y\tan^2 x$ — уже произведение, но интеграл по $x$ не берётся, пока
-  квадрат не переписан как $\sec^2 x - 1$;
-- $\dfrac{x^2}{x - 1}\cdot y^3$ — множитель при $y^3$ сначала делят уголком,
-  иначе интеграл по $x$ не берётся;
-- $y\,(4 - y^2)$ — произведение есть, но интеграл по $y$ требует разложения
-  на простейшие дроби, и это уже приём 3.
+- $y\tan^2 x$ — already a product, but the integral in $x$ does not go through until
+  the square is rewritten as $\sec^2 x - 1$;
+- $\dfrac{x^2}{x - 1}\cdot y^3$ — the factor multiplying $y^3$ has to be divided out
+  first, otherwise the integral in $x$ does not go through;
+- $y\,(4 - y^2)$ — the product is there, but the integral in $y$ needs partial
+  fractions, and that is already technique 3.
 
-Общее правило: разделить переменные — половина дела, и обычно лёгкая.
-Тяжёлое стоит после знака интеграла, и смотреть на него надо **до** того,
-как переменные разделены: если интеграл не возьмётся, надо искать другой
-приём, а не выяснять это на середине выкладки.
+The general rule: separating the variables is half the job, and usually the easy half.
+The hard part stands after the integral sign, and you have to look at it **before**
+the variables are separated: if the integral will not go through, you should be looking
+for another technique, not finding that out halfway through the working.
 
-Иными словами, приём 2 почти никогда не проверяется отдельно: за ним стоит
-техника интегрирования из практикума E5. Разделение — это только первый ход.
+In other words, technique 2 is almost never tested on its own: behind it stands the
+integration technique from practicum E5. Separation is only the first move.
 """)
 
 md(r"""
-## Задание 4 🟡 — разделение плюс понижение степени
+## Task 4 🟡 — separation plus a power reduction
 
-Решите $\dfrac{dy}{dx} = y^2\cos^2 x$. Решение можно записать в виде
+Solve $\dfrac{dy}{dx} = y^2\cos^2 x$. The solution can be written in the form
 $y = \dfrac{a}{2x + \sin 2x + b}$.
 
-**(a)** Найдите $a$.
-**(b)** Дано, что $y = 1$ при $x = \dfrac{\pi}{2}$. Найдите $b$.
+**(a)** Find $a$.
+**(b)** Given that $y = 1$ when $x = \dfrac{\pi}{2}$, find $b$.
 
-*Источник: November 2025 TZ1, Paper 1, Q7 (6 + 2 балла, без калькулятора).*
+*Source: November 2025 TZ1, Paper 1, Q7 (6 + 2 marks, no calculator).*
 """)
 
 code(r"""
 my_a = ...
 my_b = ...
 
-check_expr('Задание 4(a), a', my_a, '""" + D_A + r"""')
-check_expr('Задание 4(b), b', my_b, '""" + D_B + r"""')
+check_expr('Task 4(a), a', my_a, '""" + D_A + r"""')
+check_expr('Task 4(b), b', my_b, '""" + D_B + r"""')
 
-# полная проверка: собранное решение должно удовлетворять уравнению и условию
+# the full check: the assembled solution must satisfy the equation and the condition
 if my_a is not Ellipsis and my_b is not Ellipsis:
-    verify_ode('Задание 4, решение целиком',
+    verify_ode('Task 4, the whole solution',
                my_a/(2*x + sin(2*x) + my_b), y**2*cos(x)**2, ic=(pi/2, 1))
 """)
 
 md(r"""
 ---
-## Теория 3. Простейшие дроби и логистическая модель
+## Theory 3. Partial fractions and the logistic model
 
-Когда после разделения слева оказывается дробь с раскладывающимся знаменателем,
-интеграл берётся через простейшие дроби и даёт **разность логарифмов**.
-Дальше обязателен ход, который на экзамене стоит отдельного балла: разность
-логарифмов сворачивается в логарифм отношения,
+When separation leaves a fraction on the left whose denominator factorises, the
+integral goes through partial fractions and gives a **difference of logarithms**.
+What has to come next is worth a mark of its own in the exam: the difference of
+logarithms is collapsed into the logarithm of a ratio,
 
 $$\ln|u| - \ln|w| = \ln\left|\frac{u}{w}\right|,$$
 
-и только после этого потенцирование даёт осмысленный ответ. Кто интегрирует, но
-не сворачивает, застревает на середине.
+and only then does exponentiating give a meaningful answer. Whoever integrates but
+does not collapse gets stuck halfway.
 
-Как это выглядит целиком, на уравнении $\dfrac{dy}{dx} = y^2 - 4$:
+Here is the whole thing on the equation $\dfrac{dy}{dx} = y^2 - 4$:
 
 $$\frac{1}{y^2-4} = \frac14\left(\frac{1}{y-2} - \frac{1}{y+2}\right)
 \;\Longrightarrow\;
 \frac14\ln\left|\frac{y-2}{y+2}\right| = x + c .$$
 
-Раскладываем, интегрируем, **сворачиваем в один логарифм** — и только теперь
-потенцируем. Разложение — механическая работа; балл стоит за то, что после
-неё разность логарифмов собрана обратно.
+Split, integrate, **collapse into one logarithm** — and only now exponentiate.
+The splitting is mechanical work; the mark is for putting the difference of
+logarithms back together afterwards.
 
-Тот же ход обслуживает и модели роста с потолком: знаменатель там тоже
-раскладывается на два линейных множителя, и разложение устроено так же.
+The same move serves growth models with a ceiling: there too the denominator
+factorises into two linear factors, and the split is built the same way.
 """)
 
 md(r"""
-## Задание 5 🟡 — логистическое уравнение
+## Task 5 🟡 — the logistic equation
 
-Популяция описывается уравнением $\dfrac{dP}{dt} = \dfrac{kP(N - P)}{N}$,
-где $N$ — предельная численность, а $P = P_0$ при $t = 0$.
+A population is described by $\dfrac{dP}{dt} = \dfrac{kP(N - P)}{N}$, where $N$ is the
+carrying capacity and $P = P_0$ at $t = 0$.
 
-**(a)** Покажите, что $kt = \ln\!\left[\dfrac{P}{N - P}\cdot\dfrac{N - P_0}{P_0}\right]$.
+**(a)** Show that $kt = \ln\!\left[\dfrac{P}{N - P}\cdot\dfrac{N - P_0}{P_0}\right]$.
 
-**(b)** Известно, что при $t = 10$ выполнено $P = 3P_0$ и $N = 4P_0$. Найдите $k$.
+**(b)** Given that at $t = 10$ we have $P = 3P_0$ and $N = 4P_0$, find $k$.
 
-Пункт (a) — это «покажите, что», проверяемый на бумаге: сверьтесь с решением.
-Пункт (b) введите как точное выражение.
+Part (a) is a «show that», checked on paper: compare it with the solution.
+Enter part (b) as an exact expression.
 
-*Источник: May 2022 TZ2, Paper 2, Q12(e)–(f) (7 + 2 балла).*
+*Source: May 2022 TZ2, Paper 2, Q12(e)–(f) (7 + 2 marks).*
 """)
 
 code(r"""
-my_k = ...            # точное выражение
+my_k = ...            # an exact expression
 
-check_expr('Задание 5(b), k', my_k, '""" + D_K + r"""')
+check_expr('Task 5(b), k', my_k, '""" + D_K + r"""')
 """)
 
 md(r"""
 ---
-## Теория 4. Однородное уравнение и подстановка $y = vx$
+## Theory 4. The homogeneous equation and the substitution $y = vx$
 
-Правая часть зависит только от отношения $y/x$ — числитель и знаменатель имеют
-одинаковую степень однородности:
+The right-hand side depends only on the ratio $y/x$ — numerator and denominator have
+the same degree of homogeneity:
 
 $$\frac{x^2 + y^2}{xy}, \qquad \frac{2y - 5x}{2x + 3y}, \qquad
 \frac{y}{x} + \mathrm{e}^{\,y/x}.$$
 
-Подстановка $y = vx$ переводит такое уравнение в разделяющееся. Единственное место,
-где здесь ошибаются, — производная произведения:
+The substitution $y = vx$ turns such an equation into a separable one. There is only
+one place where people go wrong here — the product rule:
 
 $$y = vx \;\Longrightarrow\; \frac{dy}{dx} = v + x\frac{dv}{dx}.$$
 
-Слагаемое $v$ теряют регулярно. После подстановки уравнение всегда приводится к виду
-$x\dfrac{dv}{dx} = h(v)$, то есть к приёму 2 или 3. Последний шаг — **обратная
-подстановка** $v = y/x$; ответ через $v$ баллов не получает.
+The term $v$ gets lost regularly. After the substitution the equation always
+rearranges to $x\dfrac{dv}{dx} = h(v)$, that is, to technique 2 or 3. The last step is
+the **substitution back**, $v = y/x$; an answer in terms of $v$ earns no marks.
 """)
 
 md(r"""
-## Задание 6 🟡 — однородное уравнение
+## Task 6 🟡 — a homogeneous equation
 
-Решите $\dfrac{dy}{dx} = \dfrac{x - y}{x + y}$ при $y(2) = 0$, используя подстановку
-$y = vx$, и покажите, что решение имеет вид $x^2 - 2xy - y^2 = 4$.
+Solve $\dfrac{dy}{dx} = \dfrac{x - y}{x + y}$ with $y(2) = 0$, using the substitution
+$y = vx$, and show that the solution has the form $x^2 - 2xy - y^2 = 4$.
 
-*Источник: May 2025 TZ1, Paper 1, Q9 (8 баллов, без калькулятора).*
+*Source: May 2025 TZ1, Paper 1, Q9 (8 marks, no calculator).*
 """)
 
 code(r"""
 my_curve = ...        # Eq(..., ...)
 
-verify_implicit('Задание 6', my_curve, Eq(x**2 - 2*x*y - y**2, 4))
+verify_implicit('Task 6', my_curve, Eq(x**2 - 2*x*y - y**2, 4))
 """)
 
 md(r"""
 ---
-## Теория 5. Интегрирующий множитель
+## Theory 5. The integrating factor
 
-Уравнение линейно по $y$, если приводится к
+The equation is linear in $y$ if it rearranges to
 
 $$\frac{dy}{dx} + P(x)\,y = Q(x).$$
 
-Разделить переменные здесь нельзя: слагаемое $Q(x)$ не даёт собрать $y$ в одной части.
-Приём состоит в домножении на $I(x) = e^{\int P\,dx}$, после чего левая часть
-становится производной произведения:
+The variables cannot be separated here: the term $Q(x)$ stops you collecting $y$ on
+one side. The technique is to multiply through by $I(x) = e^{\int P\,dx}$, after which
+the left-hand side becomes the derivative of a product:
 
 $$I\frac{dy}{dx} + IP\,y = \frac{d}{dx}\bigl(I\,y\bigr),$$
 
-потому что $I' = PI$ по построению. Дальше уравнение интегрируется напрямую.
+because $I' = PI$ by construction. From there the equation integrates directly.
 
-Три места, где теряются баллы:
+Three places where marks are lost:
 
-1. Уравнение не приведено к стандартному виду, и знак $P(x)$ взят неверно.
-   В $\dfrac{dy}{dx} - 3y = \mathrm{e}^{x}$ имеем $P = -3$, а не $+3$,
-   и множитель равен $\mathrm{e}^{-3x}$.
-2. Правая часть требует интегрирования по частям, и на этом останавливаются.
-3. Постоянную вносят до деления на $I$: она обязана остаться снаружи,
+1. The equation has not been put into the standard form, and the sign of $P(x)$ is
+   taken wrongly. In $\dfrac{dy}{dx} - 3y = \mathrm{e}^{x}$ we have $P = -3$, not
+   $+3$, and the factor is $\mathrm{e}^{-3x}$.
+2. The right-hand side needs integration by parts, and that is where people stop.
+3. The constant is brought in before the division by $I$: it has to stay outside,
    $y = \dfrac{1}{I}\left(\int IQ\,dx + C\right)$.
 
-Множитель не всегда экспонента: в May 2024 TZ2 интегрирующим множителем
-оказывается $\cot x$, потому что $e^{\frac{1}{2}\ln(\cot^2 x)} = \cot x$.
+The factor is not always an exponential: in May 2024 TZ2 the integrating factor turns
+out to be $\cot x$, because $e^{\frac{1}{2}\ln(\cot^2 x)} = \cot x$.
 """)
 
 md(r"""
-## Задание 7 🟡 — линейное уравнение
+## Task 7 🟡 — a linear equation
 
-Решите $\dfrac{dy}{dx} - y = x$ при $y(0) = 2$. Ответ дайте в виде $y = f(x)$.
+Solve $\dfrac{dy}{dx} - y = x$ with $y(0) = 2$. Give the answer in the form
+$y = f(x)$.
 
-*Источник: May 2024 TZ1, Paper 2, Q7 (7 баллов).*
+*Source: May 2024 TZ1, Paper 2, Q7 (7 marks).*
 """)
 
 code(r"""
 my_y = ...
 
-verify_ode('Задание 7', my_y, y + x, ic=(0, 2))
+verify_ode('Task 7', my_y, y + x, ic=(0, 2))
 """)
 
 md(r"""
-## Задание 8 🔴 — линейное уравнение с многочленом справа
+## Task 8 🔴 — a linear equation with a polynomial on the right
 
-Решите $\dfrac{dy}{dx} + y = x^2 - 5$ и покажите, что решение записывается как
+Solve $\dfrac{dy}{dx} + y = x^2 - 5$ and show that the solution is written as
 $y = x^2 - 2x - 3 + Ce^{-x}$.
 
-Начального условия нет, поэтому постоянная остаётся в ответе — проверка это учитывает.
-Интеграл $\int (x^2 - 5)e^{x}\,dx$ берётся по частям дважды.
+There is no initial condition, so the constant stays in the answer — the check allows
+for that. The integral $\int (x^2 - 5)e^{x}\,dx$ takes two integrations by parts.
 
-*Источник: May 2025 TZ3, Paper 2, Q12(b) (4 балла).*
+*Source: May 2025 TZ3, Paper 2, Q12(b) (4 marks).*
 """)
 
 code(r"""
-my_y = ...            # с произвольной постоянной C
+my_y = ...            # with the arbitrary constant C
 
-verify_ode('Задание 8', my_y, x**2 - 5 - y)
+verify_ode('Task 8', my_y, x**2 - 5 - y)
 """)
 
 md(r"""
 ---
-## Теория 6. Метод Эйлера и знак ошибки
+## Theory 6. Euler's method and the sign of the error
 
-Численная ветка. Итерация
+The numerical branch. The iteration
 
 $$y_{n+1} = y_n + h\,f(x_n, y_n)$$
 
-идёт по касательной к решению в текущей точке. Отсюда сразу следует всё, что
-спрашивают дальше.
+walks along the tangent to the solution at the current point. Everything else that
+gets asked follows from that.
 
-**Сколько шагов.** От $x_0$ до цели ровно $(x_{\text{цель}} - x_0)/h$ шагов.
-Ошибка на единицу здесь стоит всех баллов за пункт.
+**How many steps.** From $x_0$ to the target, exactly $(x_{\text{target}} - x_0)/h$
+steps. Being out by one here costs every mark of the part.
 
-**Округление.** Промежуточные значения не округляют — только итог, и, как правило,
-до **значащих цифр**, а не десятичных знаков. Формулировки «to 4 significant figures»
-и «to 6 significant figures» встречаются в этой теме постоянно.
+**Rounding.** Intermediate values are not rounded — only the final one, and as a rule
+to **significant figures**, not decimal places. The wordings «to 4 significant
+figures» and «to 6 significant figures» turn up in this topic constantly.
 
-**Знак ошибки.** Касательная к вогнутой вверх кривой лежит **ниже** неё, значит
-при $y'' > 0$ метод Эйлера **занижает**. При $y'' < 0$ — завышает. На экзамене
-недостаточно назвать ответ: балл даётся за ссылку на вогнутость или знак второй
-производной.
+**The sign of the error.** The tangent to a curve that is concave up lies **below**
+it, so when $y'' > 0$ Euler's method **underestimates**. When $y'' < 0$ it
+overestimates. In the exam it is not enough to name the answer: the mark is for
+referring to the concavity or to the sign of the second derivative.
 
-**Отдельный сюжет — «почему приближение плохое».** Это не про знак, а про то, что
-градиент резко меняется на отрезке; такое приближение грубо независимо от вогнутости.
+**A separate storyline — «why is the approximation poor».** That is not about the
+sign, it is about the gradient changing sharply over the interval; such an
+approximation is crude regardless of concavity.
 """)
 
 md(r"""
-## Задание 9 🔴 — Эйлер и абсолютная ошибка
+## Task 9 🔴 — Euler and the absolute error
 
-Дано $\dfrac{dy}{dx} = \dfrac{4 - y}{10}$ при $y(0) = 2$.
+Given $\dfrac{dy}{dx} = \dfrac{4 - y}{10}$ with $y(0) = 2$.
 
-**(a)** Методом Эйлера с шагом $h = 0{,}1$ найдите приближение $y(0{,}5)$
-с точностью до четырёх значащих цифр.
-**(b)** Точное решение вы получили в задании 3. Найдите абсолютную ошибку
-приближения, три значащие цифры.
-**(c)** Занижает метод или завышает? Обоснуйте.
+**(a)** Use Euler's method with step $h = 0.1$ to find an approximation to $y(0.5)$,
+to four significant figures.
+**(b)** You found the exact solution in Task 3. Find the absolute error of the
+approximation, to three significant figures.
+**(c)** Does the method under- or overestimate? Justify it.
 
-*Источник: November 2023 TZ1, Paper 2, Q9(a), (c) (3 + 1 балл).*
+*Source: November 2023 TZ1, Paper 2, Q9(a), (c) (3 + 1 marks).*
 """)
 
 code(r"""
-# (a) посчитайте таблицу на бумаге, здесь только сверьте
+# (a) work the table out on paper, here only compare
 my_approx = ...
 
-check_num('Задание 9(a)', my_approx, 4, '""" + D_EULER + r"""')
+check_num('Task 9(a)', my_approx, 4, '""" + D_EULER + r"""')
 
 # (b)
 my_error = ...
-check_num('Задание 9(b)', my_error, 3, '""" + D_ERR + r"""')
+check_num('Task 9(b)', my_error, 3, '""" + D_ERR + r"""')
 
-# (c) ответ словами запишите себе; сверьтесь с решением в конце
+# (c) write the answer in words for yourself; compare it with the solution at the end
 """)
 
 code(r"""
-# после того как сдали (a): так выглядит таблица целиком
+# once you have handed in (a): this is what the whole table looks like
 for xi, yi in euler(lambda a, b: (4 - b)/10, 0.0, 2.0, 0.1, 5):
     print(f'x = {xi:.1f}   y = {yi:.7f}')
 """)
 
 md(r"""
-## Задание 10 🔴 — экзаменационная связка целиком
+## Task 10 🔴 — a whole exam chain
 
-Дано $\dfrac{dy}{dx} = \dfrac{y^2 - 2x^2}{x^2}$ при $y(1) = 3$.
+Given $\dfrac{dy}{dx} = \dfrac{y^2 - 2x^2}{x^2}$ with $y(1) = 3$.
 
-**(a)** Методом Эйлера с шагом $h = 0{,}1$ найдите приближение $y(1{,}5)$,
-три значащие цифры.
-**(b)** Покажите, что подстановка $y = vx$ приводит уравнение к виду
+**(a)** Use Euler's method with step $h = 0.1$ to find an approximation to $y(1.5)$,
+to three significant figures.
+**(b)** Show that the substitution $y = vx$ brings the equation to the form
 $x\dfrac{dv}{dx} = v^2 - v - 2$.
-**(c)** Решите полученное уравнение и найдите точное $y(1{,}5)$.
-**(d)** Объясните, почему приближение из пункта (a) оказалось настолько плохим.
+**(c)** Solve the resulting equation and find the exact value of $y(1.5)$.
+**(d)** Explain why the approximation in part (a) turned out to be so poor.
 
-Это связка трёх приёмов в одном вопросе: Эйлер, однородная подстановка,
-разложение на простейшие дроби. Именно так тема и появляется в Paper 2.
-Пункт (d) — не про вогнутость: посмотрите, что происходит с решением
-при подходе к $x = 1{,}5$.
+This is three techniques chained into one question: Euler, the homogeneous
+substitution, partial fractions. That is exactly how the topic appears in Paper 2.
+Part (d) is not about concavity: look at what happens to the solution as it
+approaches $x = 1.5$.
 
-*Источник: May 2022 TZ1, Paper 2, Q12 (4 + 3 + 12 баллов).*
+*Source: May 2022 TZ1, Paper 2, Q12 (4 + 3 + 12 marks).*
 """)
 
 code(r"""
 my_approx = ...
 
-check_num('Задание 10(a)', my_approx, 3, '""" + D_EULER2 + r"""')
+check_num('Task 10(a)', my_approx, 3, '""" + D_EULER2 + r"""')
 
-# (b) проверьте подстановку символьно: подставьте y = v(x)*x в обе части
+# (b) check the substitution symbolically: put y = v(x)*x into both sides
 vx = Function('v')(x)
 left = diff(vx*x, x)
 right = ((vx*x)**2 - 2*x**2)/x**2
-print('после подстановки:', simplify(solve(Eq(left, right), diff(vx, x))[0]*x))
+print('after the substitution:', simplify(solve(Eq(left, right), diff(vx, x))[0]*x))
 """)
 
 md(r"""
 ---
-## Что калькулятор здесь делает, а что нет
+## What the calculator does here, and what it does not
 
-Эта тема — противоположность тригонометрическим уравнениям: **82% баллов идут
-с калькулятором**, вопросов из Paper 1 всего шесть. Но роль калькулятора тут
-совершенно другая, и рассчитывать на него как на решатель нельзя.
+This topic is the opposite of trigonometric equations: **82% of the marks carry a
+calculator**, and there are only six Paper 1 questions. But the role of the calculator
+here is completely different, and counting on it as a solver is a mistake.
 
-**Замкнутую форму он не даёт.** Ни один GDC не разделит переменные и не построит
-интегрирующий множитель. Всё, что вы делали в заданиях 1–8, придётся делать руками
-в любой бумаге.
+**It will not give you a closed form.** No GDC separates variables or builds an
+integrating factor. Everything you did in tasks 1–8 has to be done by hand on any
+paper.
 
-**Зато он проверяет ответ за полминуты.** Это недооценённый ход под конец времени:
-прогнать метод Эйлера с мелким шагом от того же начального условия и сравнить
-с вашей формулой. Если сходится в первых значащих цифрах — решение почти наверняка
-верное.
+**What it will do is check an answer in half a minute.** This is an underrated move
+towards the end of the time: run Euler's method with a small step from the same
+initial condition and compare it with your formula. If they agree in the first few
+significant figures, the solution is almost certainly right.
 
-Проверим так чужое решение — не из этого практикума:
-$\dfrac{dy}{dx} = y - x$ при $y(0) = 2$, ответ $y = e^{x} + x + 1$.
+Let us check somebody else's solution that way — not one from this practicum:
+$\dfrac{dy}{dx} = y - x$ with $y(0) = 2$, answer $y = e^{x} + x + 1$.
 """)
 
 code(r"""
 import math
 
-my_solution = lambda t: math.exp(t) + t + 1            # проверяемая формула
+my_solution = lambda t: math.exp(t) + t + 1            # the formula being checked
 approx = euler(lambda a, b: b - a, 0.0, 2.0, 0.001, 1000)[-1][1]
 
-print(f'Эйлер, шаг 0.001:  y(1) ≈ {approx:.5f}')
-print(f'ваша формула:      y(1) = {my_solution(1):.5f}')
-print(f'разница:           {abs(approx - my_solution(1)):.5f}')
-print('сходится в трёх значащих цифрах — ровно та точность, что спрашивают в Paper 2'
-      if abs(approx - my_solution(1)) < 0.01 else 'расходится, ищите ошибку')
+print(f'Euler, step 0.001:  y(1) ~ {approx:.5f}')
+print(f'your formula:       y(1) = {my_solution(1):.5f}')
+print(f'difference:         {abs(approx - my_solution(1)):.5f}')
+print('agrees to three significant figures — exactly the accuracy Paper 2 asks for'
+      if abs(approx - my_solution(1)) < 0.01 else 'disagrees, look for the mistake')
 """)
 
 md(r"""
-Метод Эйлера — первого порядка, поэтому его ошибка убывает пропорционально шагу,
-и на совпадение всех знаков рассчитывать не стоит. Совпадения трёх значащих цифр
-достаточно, чтобы поймать ошибку знака, потерянное слагаемое или неверную постоянную.
+Euler's method is first order, so its error shrinks in proportion to the step, and you
+should not expect every digit to agree. Agreement in three significant figures is
+enough to catch a sign error, a lost term or a wrong constant.
 
-**Где калькулятор бесполезен полностью.** Однородные уравнения с подстановкой
-$y = vx$: пять вопросов из семи в архиве — это «show that», где ответ уже написан
-в условии, а баллы даются за вывод. Там калькулятор не помогает ничем.
+**Where the calculator is completely useless.** Homogeneous equations with the
+substitution $y = vx$: five of the seven questions in the archive are «show that»,
+where the answer is already written in the question and the marks are for the
+derivation. There the calculator helps with nothing at all.
 
-**И где он обязателен.** Все семь вопросов на метод Эйлера — Paper 2. Итерацию
-удобно вводить как рекуррентную последовательность или таблицу; промежуточные
-значения не округлять, иначе последняя значащая цифра не сойдётся.
+**And where it is compulsory.** All seven Euler's method questions are Paper 2. The
+iteration is convenient to enter as a recurrence or a table; do not round the
+intermediate values, or the last significant figure will not come out.
 """)
 
 md(r"""
 ---
-## Тренажёр распознавания
+## Trainer: name the technique
 
-Половина работы на экзамене — опознать приём по виду уравнения. Здесь нет вычислений:
-для каждого уравнения назовите приём одним кодом.
+Half the work in the exam is recognising the technique from the shape of the equation.
+There are no computations here: for each equation, name the technique with one code.
 
-| Код | Приём |
+| Code | Technique |
 | --- | --- |
-| `int` | прямое интегрирование |
-| `sep` | разделение переменных |
-| `pf` | разделение + простейшие дроби |
-| `hom` | однородное, $y = vx$ |
-| `if` | интегрирующий множитель |
-| `eu` | метод Эйлера |
+| `int` | direct integration |
+| `sep` | separation of variables |
+| `pf` | separation + partial fractions |
+| `hom` | homogeneous, $y = vx$ |
+| `if` | integrating factor |
+| `eu` | Euler's method |
 
 1. $\dfrac{dy}{dx} = \cos\!\left(x - \dfrac{\pi}{4}\right)$
 2. $\dfrac{dy}{dx} = \dfrac{4 - y}{10}$
@@ -540,12 +551,13 @@ md(r"""
 6. $\dfrac{dy}{dx} = y^2\cos^2 x$
 7. $\dfrac{dy}{dx} + y = x^2 - 5$
 8. $\dfrac{dy}{dx} = \dfrac{y - x}{y + x}$
-9. $\dfrac{dP}{dt} = 104000\,e^{-0{,}0145t}$, найти $P(4)$ при известном $P(0)$
-10. $\dfrac{dy}{dx} = \dfrac{x + 2}{x + y}$, оценить $y(2)$ при шаге $0{,}25$ из точки $(1, 0)$
+9. $\dfrac{dP}{dt} = 104000\,e^{-0.0145t}$, find $P(4)$ given $P(0)$
+10. $\dfrac{dy}{dx} = \dfrac{x + 2}{x + y}$, estimate $y(2)$ with step $0.25$ from the
+    point $(1, 0)$
 11. $x\dfrac{dv}{dx} = v^2 - v - 2$
 12. $\dfrac{dy}{dx} = -\dfrac{x}{y}$
 
-Цель — 12 из 12 меньше чем за две минуты.
+The target is 12 out of 12 in under two minutes.
 """)
 
 code(r"""
@@ -560,26 +572,27 @@ trigger_check(answers, KEY)
 
 md(r"""
 ---
-## Задание 11 🔴 — НА ТАЙМЕРЕ: 15 минут
+## Task 11 🔴 — ON THE TIMER: 15 minutes
 
-Закройте всё выше. Формат Paper 1, без калькулятора, 10 баллов.
+Close everything above. Paper 1 format, no calculator, 10 marks.
 
-Рассмотрим $\dfrac{dy}{dx} = \dfrac{y^2 - 2x^2}{xy}$ для $x > 0$, при $y(1) = 2$.
+Consider $\dfrac{dy}{dx} = \dfrac{y^2 - 2x^2}{xy}$ for $x > 0$, with $y(1) = 2$.
 
-**(a)** Используя подстановку $y = vx$, покажите, что $y^2 = 4x^2(1 - \ln x)$. *(8)*
-**(b)** Касательная к кривой горизонтальна в точке, где $y = mx$. Найдите $m$. *(2)*
+**(a)** Using the substitution $y = vx$, show that $y^2 = 4x^2(1 - \ln x)$. *(8)*
+**(b)** The tangent to the curve is horizontal at the point where $y = mx$. Find $m$.
+*(2)*
 
-Экзаменационный норматив — примерно 1,5 минуты на балл, то есть 15 минут на весь
-вопрос. Записывайте время каждой попытки в журнал ниже и возвращайтесь к заданию
-через неделю и через месяц: цель — не решить один раз, а довести до автоматизма.
+The exam rate is about 1.5 minutes per mark, that is 15 minutes for the whole
+question. Write the time of each attempt into the log below and come back to the task
+in a week and in a month: the goal is not to solve it once but to make it automatic.
 
-*Источник: November 2022, Paper 1, Q9 (8 + 2 балла, без калькулятора).*
+*Source: November 2022, Paper 1, Q9 (8 + 2 marks, no calculator).*
 """)
 
 md(r"""
-### Журнал попыток
+### Attempt log
 
-| Дата | Время | Что тормозило |
+| Date | Time | What slowed you down |
 | --- | --- | --- |
 |  |  |  |
 """)
@@ -588,31 +601,31 @@ code(r"""
 import time
 t0 = time.time()
 
-my_y = ...            # явная ветвь решения, проходящая через (1, 2)
-my_m = ...            # оба значения списком, например [sqrt(2), -sqrt(2)]
+my_y = ...            # the explicit branch of the solution through (1, 2)
+my_m = ...            # both values as a list, for example [sqrt(2), -sqrt(2)]
 
 verify_ode('11(a)', my_y, (y**2 - 2*x**2)/(x*y), ic=(1, 2))
 
 check_set('11(b)', my_m, '""" + D_M + r"""')
-print(f'потрачено {(time.time() - t0)/60:.1f} мин')
+print(f'time spent: {(time.time() - t0)/60:.1f} min')
 """)
 
 md(r"""
 ---
-# 🔑 Решения
+# 🔑 Solutions
 
-Каждое решение — цепочка шагов, которая начисляет баллы. Сверяйте не только ответ,
-но и то, что ни один шаг не пропущен: markscheme платит за метод.
+Each solution is the chain of steps that earns the marks. Check not only the answer
+but that no step is missing: the markscheme pays for method.
 """)
 
 md(r"""
-## Решение 1 — прямое интегрирование
+## Solution 1 — direct integration
 
-Справа нет $y$, значит задача на первообразную.
+There is no $y$ on the right, so this is an antiderivative problem.
 
 1. $y = \int\cos\!\left(x - \frac{\pi}{4}\right)dx = \sin\!\left(x - \frac{\pi}{4}\right) + c$.
-2. Подставляем $\left(\frac{3\pi}{4}, 2\right)$: $\sin\frac{\pi}{2} + c = 2$, то есть $1 + c = 2$.
-3. $c = 1$, откуда $y = \sin\!\left(x - \frac{\pi}{4}\right) + 1$.
+2. Substitute $\left(\frac{3\pi}{4}, 2\right)$: $\sin\frac{\pi}{2} + c = 2$, that is, $1 + c = 2$.
+3. $c = 1$, hence $y = \sin\!\left(x - \frac{\pi}{4}\right) + 1$.
 
 ```python
 my_y = sin(x - pi/4) + 1
@@ -620,13 +633,13 @@ my_y = sin(x - pi/4) + 1
 """)
 
 md(r"""
-## Решение 2 — разделение в чистом виде
+## Solution 2 — separation in its pure form
 
 1. $y\,dy = -x\,dx$.
 2. $\dfrac{y^2}{2} = -\dfrac{x^2}{2} + c$.
-3. Умножаем на 2: $x^2 + y^2 = k$, где $k = 2c$.
+3. Multiply by 2: $x^2 + y^2 = k$, where $k = 2c$.
 
-Ответ неявный и таким и остаётся: это семейство окружностей.
+The answer is implicit and stays that way: this is a family of circles.
 
 ```python
 my_family = Eq(x**2 + y**2, K)
@@ -634,13 +647,13 @@ my_family = Eq(x**2 + y**2, K)
 """)
 
 md(r"""
-## Решение 3 — разделение с логарифмом
+## Solution 3 — separation with a logarithm
 
 1. $\displaystyle\int\frac{dy}{4 - y} = \int\frac{dx}{10}$.
 2. $-\ln|4 - y| = \dfrac{x}{10} + c$.
-3. Условие $(0, 2)$: $-\ln 2 = c$.
-4. $\ln\left|\dfrac{4-y}{2}\right| = -\dfrac{x}{10}$, а так как $y < 4$, модуль снимается.
-5. $4 - y = 2e^{-x/10}$, то есть $y = 4 - 2e^{-x/10}$.
+3. The condition $(0, 2)$: $-\ln 2 = c$.
+4. $\ln\left|\dfrac{4-y}{2}\right| = -\dfrac{x}{10}$, and since $y < 4$ the modulus comes off.
+5. $4 - y = 2e^{-x/10}$, that is, $y = 4 - 2e^{-x/10}$.
 
 ```python
 my_y = 4 - 2*exp(-x/10)
@@ -648,38 +661,38 @@ my_y = 4 - 2*exp(-x/10)
 """)
 
 md(r"""
-## Решение 4 — разделение плюс понижение степени
+## Solution 4 — separation plus a power reduction
 
 1. $\displaystyle\int y^{-2}\,dy = \int\cos^2 x\,dx$.
-2. Слева $-\dfrac{1}{y}$. Справа применяем $\cos^2 x = \dfrac{1 + \cos 2x}{2}$:
+2. On the left, $-\dfrac{1}{y}$. On the right, apply $\cos^2 x = \dfrac{1 + \cos 2x}{2}$:
    $\displaystyle\int\frac{1 + \cos 2x}{2}dx = \frac{1}{2}\left(x + \frac{\sin 2x}{2}\right) + c$.
 3. $-\dfrac{1}{y} = \dfrac{2x + \sin 2x}{4} + c$.
-4. Отсюда $y = \dfrac{-4}{2x + \sin 2x + 4c}$, значит $a = -4$.
-5. Условие $y\left(\frac{\pi}{2}\right) = 1$: $1 = \dfrac{-4}{\pi + 0 + b}$, откуда $b = -4 - \pi$.
+4. Hence $y = \dfrac{-4}{2x + \sin 2x + 4c}$, so $a = -4$.
+5. The condition $y\left(\frac{\pi}{2}\right) = 1$: $1 = \dfrac{-4}{\pi + 0 + b}$, hence $b = -4 - \pi$.
 
 ```python
 my_a = -4
 my_b = -4 - pi
 ```
 
-Знак минус в $a$ — то место, где вопрос отсеивает: если потерять минус при
-интегрировании $y^{-2}$, дальше всё сходится, а ответ неверен.
+The minus sign in $a$ is the place where this question sifts: lose the minus when
+integrating $y^{-2}$ and everything afterwards still works out, with a wrong answer.
 """)
 
 md(r"""
-## Решение 5 — логистическое уравнение
+## Solution 5 — the logistic equation
 
 **(a)**
 
-1. Разделяем: $\displaystyle\int\frac{N}{P(N - P)}\,dP = \int k\,dt$.
-2. Простейшие дроби: $\dfrac{N}{P(N-P)} = \dfrac{1}{P} + \dfrac{1}{N - P}$.
-3. Интегрируем: $\ln P - \ln(N - P) = kt + c$.
-4. Сворачиваем: $\ln\dfrac{P}{N - P} = kt + c$.
-5. Условие $t = 0$, $P = P_0$: $c = \ln\dfrac{P_0}{N - P_0}$.
+1. Separate: $\displaystyle\int\frac{N}{P(N - P)}\,dP = \int k\,dt$.
+2. Partial fractions: $\dfrac{N}{P(N-P)} = \dfrac{1}{P} + \dfrac{1}{N - P}$.
+3. Integrate: $\ln P - \ln(N - P) = kt + c$.
+4. Collapse: $\ln\dfrac{P}{N - P} = kt + c$.
+5. The condition $t = 0$, $P = P_0$: $c = \ln\dfrac{P_0}{N - P_0}$.
 6. $kt = \ln\dfrac{P}{N-P} - \ln\dfrac{P_0}{N-P_0}
    = \ln\!\left[\dfrac{P}{N-P}\cdot\dfrac{N - P_0}{P_0}\right]$.
 
-**(b)** Подставляем $t = 10$, $P = 3P_0$, $N = 4P_0$:
+**(b)** Substitute $t = 10$, $P = 3P_0$, $N = 4P_0$:
 
 $$10k = \ln\left[\frac{3P_0}{P_0}\cdot\frac{3P_0}{P_0}\right] = \ln 9,
 \qquad k = \frac{\ln 9}{10} = \frac{\ln 3}{5}.$$
@@ -690,38 +703,37 @@ my_k = log(3)/5
 """)
 
 md(r"""
-## Решение 6 — однородное уравнение
+## Solution 6 — a homogeneous equation
 
-1. $y = vx$, значит $\dfrac{dy}{dx} = v + x\dfrac{dv}{dx}$.
-2. Подставляем: $v + x\dfrac{dv}{dx} = \dfrac{x - vx}{x + vx} = \dfrac{1 - v}{1 + v}$.
+1. $y = vx$, so $\dfrac{dy}{dx} = v + x\dfrac{dv}{dx}$.
+2. Substitute: $v + x\dfrac{dv}{dx} = \dfrac{x - vx}{x + vx} = \dfrac{1 - v}{1 + v}$.
 3. $x\dfrac{dv}{dx} = \dfrac{1 - v}{1 + v} - v = \dfrac{1 - 2v - v^2}{1 + v}$.
-4. Разделяем: $\dfrac{1 + v}{1 - 2v - v^2}\,dv = \dfrac{dx}{x}$.
-5. Числитель слева — половина производной знаменателя со знаком минус:
-   $\dfrac{d}{dv}(1 - 2v - v^2) = -2 - 2v$. Поэтому
+4. Separate: $\dfrac{1 + v}{1 - 2v - v^2}\,dv = \dfrac{dx}{x}$.
+5. The numerator on the left is half the derivative of the denominator with a minus
+   sign: $\dfrac{d}{dv}(1 - 2v - v^2) = -2 - 2v$. Hence
    $-\dfrac{1}{2}\ln|1 - 2v - v^2| = \ln|x| + c$.
-6. Потенцируем: $1 - 2v - v^2 = \dfrac{A}{x^2}$.
-7. Обратная подстановка $v = y/x$ и умножение на $x^2$:
-   $x^2 - 2xy - y^2 = A$.
-8. Условие $y(2) = 0$: $4 = A$, то есть $x^2 - 2xy - y^2 = 4$.
+6. Exponentiate: $1 - 2v - v^2 = \dfrac{A}{x^2}$.
+7. Substitute back $v = y/x$ and multiply by $x^2$: $x^2 - 2xy - y^2 = A$.
+8. The condition $y(2) = 0$: $4 = A$, that is, $x^2 - 2xy - y^2 = 4$.
 
 ```python
 my_curve = Eq(x**2 - 2*x*y - y**2, 4)
 ```
 
-Шаг 5 — тот самый, ради которого стоит держать в голове приём «числитель есть
-производная знаменателя»: без него интеграл уходит в простейшие дроби
-с иррациональными корнями и вопрос перестаёт решаться за отведённое время.
+Step 5 is the one worth keeping the technique «the numerator is the derivative of the
+denominator» in mind for: without it the integral goes off into partial fractions with
+irrational roots, and the question stops being solvable in the time allowed.
 """)
 
 md(r"""
-## Решение 7 — интегрирующий множитель
+## Solution 7 — the integrating factor
 
-1. Стандартный вид: $\dfrac{dy}{dx} - y = x$, значит $P = -1$, $Q = x$.
+1. Standard form: $\dfrac{dy}{dx} - y = x$, so $P = -1$, $Q = x$.
 2. $I = e^{\int -1\,dx} = e^{-x}$.
-3. Домножаем: $\dfrac{d}{dx}\left(y\,e^{-x}\right) = x e^{-x}$.
-4. По частям: $\displaystyle\int x e^{-x}dx = -x e^{-x} - e^{-x} + C$.
-5. $y e^{-x} = -(x + 1)e^{-x} + C$, откуда $y = -(x+1) + Ce^{x}$.
-6. Условие $y(0) = 2$: $-1 + C = 2$, то есть $C = 3$.
+3. Multiply through: $\dfrac{d}{dx}\left(y\,e^{-x}\right) = x e^{-x}$.
+4. By parts: $\displaystyle\int x e^{-x}dx = -x e^{-x} - e^{-x} + C$.
+5. $y e^{-x} = -(x + 1)e^{-x} + C$, hence $y = -(x+1) + Ce^{x}$.
+6. The condition $y(0) = 2$: $-1 + C = 2$, that is, $C = 3$.
 7. $y = 3e^{x} - x - 1$.
 
 ```python
@@ -730,15 +742,14 @@ my_y = 3*exp(x) - x - 1
 """)
 
 md(r"""
-## Решение 8 — линейное с многочленом справа
+## Solution 8 — linear with a polynomial on the right
 
-1. $P = 1$, $Q = x^2 - 5$, множитель $I = e^{x}$.
+1. $P = 1$, $Q = x^2 - 5$, the factor is $I = e^{x}$.
 2. $\dfrac{d}{dx}\left(y e^{x}\right) = (x^2 - 5)e^{x}$.
-3. Дважды по частям: $\displaystyle\int x^2 e^{x}dx = e^{x}(x^2 - 2x + 2)$, поэтому
+3. Twice by parts: $\displaystyle\int x^2 e^{x}dx = e^{x}(x^2 - 2x + 2)$, so
    $\displaystyle\int (x^2 - 5)e^{x}dx = e^{x}(x^2 - 2x - 3)$.
 4. $y e^{x} = e^{x}(x^2 - 2x - 3) + C$.
-5. Делим на $e^x$, постоянная остаётся снаружи:
-   $y = x^2 - 2x - 3 + Ce^{-x}$.
+5. Divide by $e^x$; the constant stays outside: $y = x^2 - 2x - 3 + Ce^{-x}$.
 
 ```python
 my_y = x**2 - 2*x - 3 + C*exp(-x)
@@ -746,28 +757,28 @@ my_y = x**2 - 2*x - 3 + C*exp(-x)
 """)
 
 md(r"""
-## Решение 9 — Эйлер и абсолютная ошибка
+## Solution 9 — Euler and the absolute error
 
-**(a)** Итерация $y_{n+1} = y_n + 0{,}1\cdot\dfrac{4 - y_n}{10}$ от $(0, 2)$,
-пять шагов до $x = 0{,}5$:
+**(a)** The iteration $y_{n+1} = y_n + 0.1\cdot\dfrac{4 - y_n}{10}$ from $(0, 2)$,
+five steps to $x = 0.5$:
 
 | $x$ | $y$ |
 | --- | --- |
-| 0,0 | 2 |
-| 0,1 | 2,02 |
-| 0,2 | 2,0398 |
-| 0,3 | 2,059404 |
-| 0,4 | 2,078810 |
-| 0,5 | 2,098022 |
+| 0.0 | 2 |
+| 0.1 | 2.02 |
+| 0.2 | 2.0398 |
+| 0.3 | 2.059404 |
+| 0.4 | 2.078810 |
+| 0.5 | 2.098022 |
 
-Ответ: $2{,}098$ (4 знач. цифры).
+Answer: $2.098$ (4 s.f.).
 
-**(b)** Точное значение $y(0{,}5) = 4 - 2e^{-0{,}05} = 2{,}0975435\ldots$
-Абсолютная ошибка $|2{,}0980199 - 2{,}0975435| = 0{,}000479$.
+**(b)** The exact value is $y(0.5) = 4 - 2e^{-0.05} = 2.0975435\ldots$
+The absolute error is $|2.0980199 - 2.0975435| = 0.000479$.
 
-**(c)** $y'' = -\dfrac{1}{100}(4 - y) < 0$ при $y < 4$, кривая вогнута вниз,
-касательные лежат выше неё — метод **завышает**. Это согласуется с тем, что
-приближение оказалось больше точного значения.
+**(c)** $y'' = -\dfrac{1}{100}(4 - y) < 0$ when $y < 4$, the curve is concave down and
+the tangents lie above it — the method **overestimates**. That agrees with the
+approximation coming out larger than the exact value.
 
 ```python
 my_approx = 2.0980199
@@ -776,49 +787,50 @@ my_error  = 0.000478749
 """)
 
 md(r"""
-## Решение 10 — экзаменационная связка
+## Solution 10 — a whole exam chain
 
-**(a)** $y_{n+1} = y_n + 0{,}1\cdot\dfrac{y_n^2 - 2x_n^2}{x_n^2}$ от $(1, 3)$:
-$3{,}7 \to 4{,}6314 \to 5{,}9210 \to 7{,}7954 \to 10{,}6958$. Ответ $10{,}7$.
+**(a)** $y_{n+1} = y_n + 0.1\cdot\dfrac{y_n^2 - 2x_n^2}{x_n^2}$ from $(1, 3)$:
+$3.7 \to 4.6314 \to 5.9210 \to 7.7954 \to 10.6958$. Answer $10.7$.
 
-**(b)** $y = vx$, $\dfrac{dy}{dx} = v + x\dfrac{dv}{dx}$, а правая часть равна
-$\dfrac{v^2x^2 - 2x^2}{x^2} = v^2 - 2$. Отсюда
-$x\dfrac{dv}{dx} = v^2 - 2 - v$, то есть $x\dfrac{dv}{dx} = v^2 - v - 2$.
+**(b)** $y = vx$, $\dfrac{dy}{dx} = v + x\dfrac{dv}{dx}$, and the right-hand side is
+$\dfrac{v^2x^2 - 2x^2}{x^2} = v^2 - 2$. Hence $x\dfrac{dv}{dx} = v^2 - 2 - v$, that
+is, $x\dfrac{dv}{dx} = v^2 - v - 2$.
 
-**(c)** Знаменатель раскладывается: $v^2 - v - 2 = (v - 2)(v + 1)$.
+**(c)** The denominator factorises: $v^2 - v - 2 = (v - 2)(v + 1)$.
 
 1. $\dfrac{dv}{(v-2)(v+1)} = \dfrac{dx}{x}$.
-2. Простейшие дроби: $\dfrac{1}{(v-2)(v+1)} = \dfrac{1}{3}\left(\dfrac{1}{v-2} - \dfrac{1}{v+1}\right)$.
+2. Partial fractions: $\dfrac{1}{(v-2)(v+1)} = \dfrac{1}{3}\left(\dfrac{1}{v-2} - \dfrac{1}{v+1}\right)$.
 3. $\dfrac{1}{3}\left(\ln|v-2| - \ln|v+1|\right) = \ln|x| + c$.
-4. Условие: при $x = 1$ имеем $y = 3$, значит $v = 3$, и $\dfrac{1}{3}\ln\dfrac{1}{4} = c$.
-5. Сворачиваем и потенцируем: $\dfrac{v - 2}{v + 1} = \dfrac{x^3}{4}$.
-6. Возвращаемся к $v = y/x$ и выражаем $y$.
+4. The condition: at $x = 1$ we have $y = 3$, so $v = 3$, and $\dfrac{1}{3}\ln\dfrac{1}{4} = c$.
+5. Collapse and exponentiate: $\dfrac{v - 2}{v + 1} = \dfrac{x^3}{4}$.
+6. Go back to $v = y/x$ and make $y$ explicit.
 
-**(d)** Решение имеет вертикальную асимптоту вблизи $x = 1{,}5$: при
-$\dfrac{v-2}{v+1} \to 1$ знаменатель обращается в ноль. Градиент растёт неограниченно,
-и шаг $0{,}1$ по касательной не успевает за кривой. Это **не** вопрос о знаке
-ошибки — здесь дело в скорости изменения градиента, а не в вогнутости.
+**(d)** The solution has a vertical asymptote near $x = 1.5$: as
+$\dfrac{v-2}{v+1} \to 1$ the denominator goes to zero. The gradient grows without
+bound, and a step of $0.1$ along the tangent cannot keep up with the curve. This is
+**not** a question about the sign of the error — here it is the speed at which the
+gradient changes, not the concavity.
 """)
 
 md(r"""
-## Решение 11 — задание на таймере
+## Solution 11 — the task on the timer
 
 **(a)**
 
 1. $y = vx$, $\dfrac{dy}{dx} = v + x\dfrac{dv}{dx}$.
-2. Правая часть: $\dfrac{v^2x^2 - 2x^2}{x\cdot vx} = \dfrac{v^2 - 2}{v}$.
+2. The right-hand side: $\dfrac{v^2x^2 - 2x^2}{x\cdot vx} = \dfrac{v^2 - 2}{v}$.
 3. $x\dfrac{dv}{dx} = \dfrac{v^2 - 2}{v} - v = -\dfrac{2}{v}$.
-4. Разделяем: $v\,dv = -\dfrac{2}{x}\,dx$.
+4. Separate: $v\,dv = -\dfrac{2}{x}\,dx$.
 5. $\dfrac{v^2}{2} = -2\ln x + c$.
-6. Условие $y(1) = 2$ даёт $v = 2$: $2 = c$.
-7. $\dfrac{v^2}{2} = 2 - 2\ln x$, значит $v^2 = 4(1 - \ln x)$.
-8. Обратная подстановка $v = y/x$: $y^2 = 4x^2(1 - \ln x)$.
+6. The condition $y(1) = 2$ gives $v = 2$: $2 = c$.
+7. $\dfrac{v^2}{2} = 2 - 2\ln x$, so $v^2 = 4(1 - \ln x)$.
+8. Substitute back $v = y/x$: $y^2 = 4x^2(1 - \ln x)$.
 
-**(b)** Касательная горизонтальна там, где $\dfrac{dy}{dx} = 0$, то есть числитель
-обращается в ноль: $y^2 - 2x^2 = 0$, откуда $y = \pm\sqrt{2}\,x$ и $m = \pm\sqrt{2}$.
+**(b)** The tangent is horizontal where $\dfrac{dy}{dx} = 0$, that is, where the
+numerator vanishes: $y^2 - 2x^2 = 0$, hence $y = \pm\sqrt{2}\,x$ and $m = \pm\sqrt{2}$.
 
-Пункт (b) решается за полминуты и не требует результата (a) — на экзамене его
-берут первым, если время поджимает.
+Part (b) takes half a minute and does not need the result of (a) — in the exam you
+take it first if time is short.
 
 ```python
 my_y = 2*x*sqrt(1 - log(x))
@@ -827,15 +839,16 @@ my_m = [sqrt(2), -sqrt(2)]
 """)
 
 md(r"""
-## Ответы тренажёра распознавания
+## Answers to the trainer
 
 1 `int` · 2 `sep` · 3 `if` · 4 `hom` · 5 `pf` · 6 `sep` ·
 7 `if` · 8 `hom` · 9 `int` · 10 `eu` · 11 `pf` · 12 `sep`
 
-Пункт 6 стоит отдельного слова: это `sep`, а не `pf`, хотя интеграл справа требует
-понижения степени. Разложение на простейшие дроби нужно, когда дробь возникает
-**слева**, по переменной $y$. Пункт 11 — уже результат подстановки $y = vx$
-из пункта 4: так тема и устроена, приёмы вкладываются друг в друга.
+Item 6 is worth a word of its own: it is `sep`, not `pf`, even though the integral on
+the right needs a power reduction. Partial fractions are needed when the fraction
+appears **on the left**, in the variable $y$. Item 11 is already the result of the
+substitution $y = vx$ from item 4: that is how the topic is built, the techniques nest
+inside one another.
 """)
 
 nb = {

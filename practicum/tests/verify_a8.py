@@ -134,11 +134,11 @@ top6 = sp.floor(roots6[-1])
 sum6 = lambda i: sp.Rational(i * (3 * i + 1), 2)
 print(f'Задание 6: корни {[sp.N(v, 8) for v in roots6]}, целая часть {top6}, '
       f'суммы {sum6(top6)} и {sum6(top6 + 1)} при {cards}')
-t('6n', check_num('Задание 6, рядов', top6, 6, D['Задание 6, рядов']))
+t('6n', check_num('Задание 6, рядов', top6, 6, D['Task 6, the rows']))
 t('6t21', check_num('Задание 6, карт на них', sum6(top6), 6,
-                    D['Задание 6, карт на них']))
+                    D['Task 6, the cards for them']))
 t('6t22', check_num('Задание 6, на один ряд больше', sum6(top6 + 1), 6,
-                    D['Задание 6, на один ряд больше']))
+                    D['Task 6, one row more']))
 t('6fits', sum6(top6) <= cards < sum6(top6 + 1))
 
 print('\n=== неравенство как условие на букву ===')
@@ -170,7 +170,7 @@ print(f'Задание 8: дискриминант {disc8}, границы {crit
       f'({sp.N(crit8[-1], 6)}), наибольшее целое {top8}')
 ans8 = sp.Interval.open(*crit8)
 t('8set', verify_solution_set('Задание 8, множество', ans8, disc8 < 0, var=k))
-t('8k', check_num('Задание 8, наибольшее k', top8, 6, D['Задание 8, наибольшее k']))
+t('8k', check_num('Задание 8, наибольшее k', top8, 6, D['Task 8, the largest k']))
 t('8check', sp.discriminant((x**2 / 2 + k * x + 13).subs(k, top8), x) < 0
   and sp.discriminant((x**2 / 2 + k * x + 13).subs(k, top8 + 1), x) > 0)
 
@@ -188,7 +188,7 @@ ac10 = sorted({av * cv for av in faces for cv in faces
 print(f'Задание 10: возможные ac {ac10}; произведений, меньших 9, '
       f'но недостижимых: '
       f'{sorted(set(range(1, 9)) - {av * cv for av in faces for cv in faces})}')
-t('10', check_set('Задание 10', ac10, D['Задание 10']))
+t('10', check_set('Задание 10', ac10, D['Task 10']))
 
 # Задание 11: знаки корней — критические значения дроби Виета.
 prod11 = (2 * k + 9) / k
@@ -306,7 +306,7 @@ diff18 = sp.factor((tt**2 - s**2) - (2 * s * tt - s**2))
 max18 = (T / n)**n
 print(f'Задание 18: b − a = {diff18}; M_n(T) = {max18}')
 t('18a', verify_factored('Задание 18(a)', diff18, tt**2 - 2 * s * tt, var=tt, n=2))
-t('18b', check_series('Задание 18(b)', max18, D['Задание 18(b)'], var=n))
+t('18b', check_series('Задание 18(b)', max18, D['Task 18(b)'], var=n))
 # Равенство в AM–GM достигается на равных слагаемых: их произведение и есть (T/n)^n.
 t('18eq', sp.simplify(sp.prod([T / n] * 4) - (T / n)**4) == 0)
 
@@ -401,7 +401,7 @@ t('n8', not verify_nonneg_form('раскрытый вид вместо квад�
 t('n9', not verify_factored('разность не разложена', sp.expand(diff18),
                             tt**2 - 2 * s * tt, var=tt, n=2))
 t('n10', not check_num('округление вверх вместо целой части', top6 + 1, 6,
-                       D['Задание 6, рядов']))
+                       D['Task 6, the rows']))
 
 print('\n=== где проверки мягче экзамена ===')
 # У округлённого конца проверка не различает строгое и нестрогое неравенство:

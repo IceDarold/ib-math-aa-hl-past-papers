@@ -63,785 +63,770 @@ def code(src):
 
 
 md(r"""
-# Практикум C1: треугольник
+# Practicum C1: the triangle
 
-**116 баллов, 39 блоков, восемь приёмов.** Самая старая тема программы
-и единственная, где почти всё решается двумя формулами, — но выбирать
-между ними приходится в каждом вопросе.
+**116 marks, 39 blocks, eight techniques.** The oldest topic on the syllabus and the
+only one where almost everything is done with two formulas — but the choice between
+them has to be made in every question.
 
-**Материал.** 39 блоков и 116 баллов из архива AA HL, сессии May 2021 —
-November 2025. Каждое задание ниже — настоящий вопрос прошлых лет,
-источник указан.
+**Material.** 39 blocks and 116 marks from the AA HL archive, sessions May 2021 —
+November 2025. Every task below is a real past-paper question, cited.
 
-**Главная мысль темы.** Длина стороны или величина угла сами по себе
-ничего не значат: ответ здесь — **треугольник**, а найденное число всего
-лишь одна его часть. Отсюда два следствия, вокруг которых построен
-практикум.
+**The main idea of the topic.** A side length or an angle means nothing on its own:
+the answer here is a **triangle**, and the number found is only one part of it.
+Hence the two consequences the practicum is built around.
 
-Первое: формулу выбирают по тому, **что дано**, а не по тому, что ищут.
-Три стороны или две стороны с углом между ними — косинусы. Сторона
-против известного угла — синусы. Две стороны и угол между ними — площадь.
+First: the formula is chosen by **what is given**, not by what is wanted. Three
+sides, or two sides and the angle between them — the cosine rule. A side opposite a
+known angle — the sine rule. Two sides and the angle between them — the area.
 
-Второе: данных бывает мало для одного треугольника. Две стороны и угол
-против меньшей из них задают **два** разных треугольника, и оба
-настоящие. Какой из них имеется в виду, решает условие, а не алгебра.
+Second: sometimes the data are not enough for one triangle. Two sides and the angle
+opposite the smaller of them define **two** different triangles, and both are real.
+Which one is meant is decided by the question, not by the algebra.
 
-**Как работать**
+**How to work**
 
-1. Прочитайте карту приёмов и держите её рядом: половина ошибок темы —
-   это верная арифметика по неверной формуле.
-2. **Рисуйте.** В архиве почти каждый вопрос идёт с чертежом, а те, что
-   без него, требуют чертёж построить. Это первый ход, и он же самый
-   пропускаемый.
-3. Углы вводите **в градусах**, если в условии не сказано иначе;
-   в проверке `deg=False` переключает на радианы.
-4. Последние блоки — тренажёр распознавания и задание на таймере.
+1. Read the map of techniques and keep it beside you: half the mistakes in the topic
+   are correct arithmetic with the wrong formula.
+2. **Draw.** In the archive nearly every question comes with a diagram, and the ones
+   that do not require a diagram to be built. That is the first move, and the one
+   most often skipped.
+3. Enter angles **in degrees** unless the question says otherwise; in the checks
+   `deg=False` switches to radians.
+4. The last blocks are a recognition trainer and one question on a timer.
 
-Метки сложности: 🟢 приём в чистом виде · 🟡 приём в неочевидной обёртке ·
-🔴 комбинация приёмов или экзаменационный формат целиком.
+Difficulty marks: 🟢 the technique on its own · 🟡 the technique in a wrapper ·
+🔴 several techniques, or a whole exam question.
 """)
 
 code(r"""
 import sys
-sys.path.append('..')          # из practicum/geometry к practicum/kit/
-import sympy as sp             # запасной выход: всё, чего нет в kit, лежит в sp
-from kit import *              # проверки + solve_triangle, sqrt, pi
+sys.path.append('..')          # from practicum/geometry to practicum/kit/
+import sympy as sp             # the escape hatch: anything not in kit is in sp
+from kit import *              # checks + solve_triangle, sqrt, pi
+
+language('en')                 # this notebook is in English, and so are the checks
 
 a, b, c, d = symbols('a b c d')
 alpha, beta, theta = symbols('alpha beta theta')
 h, p, q, s = symbols('h p q s')
 
-print('готово; sympy', sp.__version__)
-# Стороны a, b, c лежат против углов A, B, C — как во всех формулах IB.
+print('ready; sympy', sp.__version__)
+# The sides a, b, c are opposite the angles A, B, C — as in every IB formula.
 for tri in solve_triangle(b=12, c=7, A=116):
-    print('по двум сторонам и углу между ними:',
+    print('from two sides and the angle between them:',
           {k: round(v, 3) for k, v in sorted(tri.items())})
-print('сколько треугольников даёт a = 7, b = 12, A = 25°:',
+print('how many triangles a = 7, b = 12, A = 25 degrees gives:',
       len(solve_triangle(a=7, b=12, A=25)))
 """)
 
 md(r"""
 ---
-## Карта приёмов
+## Map of techniques
 
-| # | Приём | Что дано | Первый ход |
+| # | Technique | What is given | First move |
 | --- | --- | --- | --- |
-| 1 | Прямоугольный треугольник | прямой угол в чертеже | $\sin,\cos,\tan$ и обратные к ним |
-| 2 | От описания к чертежу | направления, углы возвышения, «bearing» | нарисовать и подписать все известные части |
-| 3 | Теорема косинусов | три стороны или две стороны и угол **между** ними | $a^2 = b^2+c^2-2bc\cos A$ |
-| 4 | Теорема синусов | сторона против известного угла | $\dfrac{a}{\sin A} = \dfrac{b}{\sin B}$ |
-| 5 | Неоднозначный случай | две стороны и угол против **меньшей** | найти оба угла: $\theta$ и $180^\circ-\theta$ |
-| 6 | Площадь | две стороны и угол между ними | $S = \tfrac12 ab\sin C$ |
-| 7 | Точные значения | Paper 1, «exact value», «in the form $p\sqrt q$» | $\sin^2+\cos^2=1$, радикалы не считать |
-| 8 | Треугольник с буквой | «show that …», площадь как функция | выразить стороны через букву и подставить |
+| 1 | A right-angled triangle | a right angle in the diagram | $\sin,\cos,\tan$ and their inverses |
+| 2 | From a description to a diagram | directions, angles of elevation, «bearing» | draw it and label every known part |
+| 3 | The cosine rule | three sides, or two sides and the angle **between** them | $a^2 = b^2+c^2-2bc\cos A$ |
+| 4 | The sine rule | a side opposite a known angle | $\dfrac{a}{\sin A} = \dfrac{b}{\sin B}$ |
+| 5 | The ambiguous case | two sides and the angle opposite the **smaller** one | find both angles: $\theta$ and $180^\circ-\theta$ |
+| 6 | Area | two sides and the angle between them | $S = \tfrac12 ab\sin C$ |
+| 7 | Exact values | Paper 1, «exact value», «in the form $p\sqrt q$» | $\sin^2+\cos^2=1$, do not evaluate the radicals |
+| 8 | A triangle with a letter | «show that …», the area as a function | express the sides through the letter and substitute |
 
-Лестница идёт по тому, **что дано**. Приёмы 1–2 про то, как вообще
-получить треугольник: из прямого угла в чертеже или из словесного
-описания. Приёмы 3–5 — две главные формулы и случай, когда их данных
-не хватает на один ответ. Приёмы 6–8 работают уже с готовым
-треугольником: площадь, точная запись, буква вместо числа.
+The ladder goes by **what is given**. Techniques 1–2 are about getting a triangle at
+all: out of a right angle in the diagram or out of a description in words.
+Techniques 3–5 are the two main formulas and the case where their data are not
+enough for one answer. Techniques 6–8 work with a triangle that is already there:
+the area, the exact form, a letter instead of a number.
 
-**Как выбрать между косинусами и синусами.** Правило одно, и оно про
-данные, а не про вопрос:
+**How to choose between the cosine and the sine rule.** There is one rule, and it is
+about the data, not about the question:
 
-* видите **три стороны** или **две стороны и угол между ними** —
-  косинусы;
-* видите **сторону и противолежащий ей угол** — синусы;
-* не видите ни того, ни другого — ищите второй треугольник в чертеже.
+* you see **three sides** or **two sides and the angle between them** — the cosine
+  rule;
+* you see **a side and the angle opposite it** — the sine rule;
+* you see neither — look for a second triangle in the diagram.
 
-**Что экономит больше всего времени.** Подписать на чертеже всё, что
-известно, до того как выбирать формулу. Правило выше читается прямо
-с чертежа за пару секунд, а без чертежа не читается вовсе.
+**What saves the most time.** Labelling everything known on the diagram before
+choosing a formula. The rule above is read straight off the diagram in a couple of
+seconds, and without a diagram it cannot be read at all.
 """)
 
 md(r"""
 ---
-## Теория 1. Прямоугольный треугольник
+## Theory 1. The right-angled triangle
 
-Три отношения и три обратные к ним — весь приём:
+Three ratios and their three inverses — that is the whole technique:
 
-$$\sin\theta = \frac{\text{противолежащий}}{\text{гипотенуза}},\quad
-\cos\theta = \frac{\text{прилежащий}}{\text{гипотенуза}},\quad
-\tan\theta = \frac{\text{противолежащий}}{\text{прилежащий}}.$$
+$$\sin\theta = \frac{\text{opposite}}{\text{hypotenuse}},\quad
+\cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}},\quad
+\tan\theta = \frac{\text{opposite}}{\text{adjacent}}.$$
 
-Плюс теорема Пифагора. В архиве этот приём почти никогда не бывает
-целым вопросом: он встречается **внутри** задач про тела и модели,
-и работа состоит в том, чтобы найти в чертеже прямоугольный треугольник.
+Plus Pythagoras. In the archive this technique is almost never a whole question: it
+turns up **inside** problems about solids and models, and the work consists of
+finding the right-angled triangle in the diagram.
 
-**Где он прячется в стереометрии.** Три места, которые стоит знать
-наизусть:
+**Where it hides in three dimensions.** Three places worth knowing by heart:
 
-| Что ищут | Какой треугольник |
+| What is wanted | Which triangle |
 | --- | --- |
-| диагональ квадратного основания со стороной $s$ | прямоугольный с катетами $s$ и $s$: диагональ $s\sqrt2$ |
-| угол между боковым ребром и основанием | высота пирамиды и **половина** диагонали |
-| высота правильного треугольника со стороной $s$ | катеты $\frac s2$ и $h$: $h = \frac{s\sqrt3}{2}$ |
+| the diagonal of a square base of side $s$ | right-angled with legs $s$ and $s$: the diagonal is $s\sqrt2$ |
+| the angle between a lateral edge and the base | the height of the pyramid and **half** the diagonal |
+| the height of an equilateral triangle of side $s$ | legs $\frac s2$ and $h$: $h = \frac{s\sqrt3}{2}$ |
 
-**Осторожно с половиной.** Самая частая ошибка в задачах про пирамиду —
-взять всю диагональ основания вместо половины. Угол при этом получается
-меньше настоящего, а проверить себя можно прикидкой: если высота
-сравнима с половиной диагонали, угол должен быть около $45^\circ$.
+**Careful with the half.** The most frequent mistake in pyramid questions is taking
+the whole diagonal of the base instead of half of it. The angle then comes out
+smaller than the real one, and you can check yourself with an estimate: if the
+height is comparable with half the diagonal, the angle should be around
+$45^\circ$.
 """)
 
 md(r"""
-## Задание 1 🟢 — угол возвышения и конус
+## Task 1 🟢 — an angle of elevation and a cone
 
-Монумент имеет форму прямого конуса высотой 20 м. Оливер стоит в 5 м
-от основания монумента, его глаза находятся на высоте 1,8 м над землёй,
-и угол возвышения от уровня глаз до вершины конуса равен $58^\circ$.
+A monument is in the shape of a right cone of height 20 m. Oliver stands 5 m from
+the base of the monument, his eyes are 1.8 m above the ground, and the angle of
+elevation from eye level to the vertex of the cone is $58^\circ$.
 
-**(a)** Найдите радиус основания конуса.
+**(a)** Find the radius of the base of the cone.
 
-**(b)** Найдите объём монумента.
+**(b)** Find the volume of the monument.
 
-Ответы — с точностью до трёх значащих цифр.
+The answers to three significant figures.
 
-*Источник: May 2024 TZ1, Paper 2, Q2 (3 + 2 балла, с калькулятором).*
+*Source: May 2024 TZ1, Paper 2, Q2 (3 + 2 marks, calculator).*
 """)
 
 code(r"""
-my1_r = ...              # радиус основания, м
-my1_v = ...              # объём монумента, м³
+my1_r = ...              # the radius of the base, m
+my1_v = ...              # the volume of the monument, m^3
 
-check_num('Задание 1(a)', my1_r, 3, '""" + D_R1 + r"""')
-check_num('Задание 1(b)', my1_v, 3, '""" + D_V1 + r"""')
+check_num('Task 1(a)', my1_r, 3, '""" + D_R1 + r"""')
+check_num('Task 1(b)', my1_v, 3, '""" + D_V1 + r"""')
 """)
 
 md(r"""
-## Задание 2 🟢 — треугольник внутри пирамиды
+## Task 2 🟢 — a triangle inside a pyramid
 
-Правильная пирамида с квадратным основанием $ABCD$ имеет вершину
-$V(1,\ 7,\ 0)$; точка $X(-3,\ 4,\ 2)$ — центр основания. Сторона
-основания равна 5 см.
+A right pyramid with square base $ABCD$ has apex $V(1,\ 7,\ 0)$; the point
+$X(-3,\ 4,\ 2)$ is the centre of the base. The side of the base is 5 cm.
 
-**(a)** Найдите $VX$ — точным значением.
+**(a)** Find $VX$ — as an exact value.
 
-**(b)** Найдите $AC$ — точным значением.
+**(b)** Find $AC$ — as an exact value.
 
-**(c)** Найдите угол между ребром $[VC]$ и плоскостью основания
-(три значащие цифры).
+**(c)** Find the angle between the edge $[VC]$ and the plane of the base (three
+significant figures).
 
-*Источник: May 2025 TZ2, Paper 2, Q2 (2 + 2 + 2 балла, с калькулятором).*
+*Source: May 2025 TZ2, Paper 2, Q2 (2 + 2 + 2 marks, calculator).*
 """)
 
 code(r"""
-my2_vx = ...             # VX, точно
-my2_ac = ...             # AC, точно
-my2_angle = ...          # угол между [VC] и основанием, градусы
+my2_vx = ...             # VX, exactly
+my2_ac = ...             # AC, exactly
+my2_angle = ...          # the angle between [VC] and the base, degrees
 
-verify_exact('Задание 2(a)', my2_vx, sqrt(29))
-verify_exact('Задание 2(b)', my2_ac, 5*sqrt(2))
-check_num('Задание 2(c)', my2_angle, 3, '""" + D_ANG2 + r"""')
+verify_exact('Task 2(a)', my2_vx, sqrt(29))
+verify_exact('Task 2(b)', my2_ac, 5*sqrt(2))
+check_num('Task 2(c)', my2_angle, 3, '""" + D_ANG2 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 2. От описания к чертежу
+## Theory 2. From a description to a diagram
 
-Половина вопросов темы приходит текстом, а не картинкой: «bearing
-$127^\circ$», «угол возвышения», «на 40 км западнее». Приём состоит
-в том, чтобы превратить описание в треугольник с подписанными частями.
+Half the questions in the topic arrive as text rather than a picture: «bearing
+$127^\circ$», «angle of elevation», «40 km to the west». The technique consists of
+turning the description into a triangle with its parts labelled.
 
-**Направления (bearings).** Отсчёт всегда **от севера по часовой
-стрелке**, три цифры: $127^\circ$, $270^\circ$. Отсюда правила перевода:
+**Bearings.** Measured always **from north, clockwise**, with three digits:
+$127^\circ$, $270^\circ$. Hence the conversion rules:
 
-* восток — это $090^\circ$, север — $000^\circ$;
-* угол между направлением $\theta$ и направлением на восток равен
+* east is $090^\circ$, north is $000^\circ$;
+* the angle between a bearing $\theta$ and the direction due east is
   $90^\circ - \theta$;
-* обратное направление отличается на $180^\circ$.
+* the reverse bearing differs by $180^\circ$.
 
-**Углы возвышения и понижения.** Угол возвышения отсчитывается от
-**горизонтали вверх**, угол понижения — от горизонтали вниз. Оба всегда
-лежат в прямоугольном треугольнике, у которого один катет вертикальный.
-Уровень глаз наблюдателя вычитается из высоты объекта: смотрят не от
-земли.
+**Angles of elevation and depression.** An angle of elevation is measured from the
+**horizontal upwards**, an angle of depression from the horizontal downwards. Both
+always sit in a right-angled triangle one of whose legs is vertical. The observer's
+eye level is subtracted from the height of the object: you do not look from the
+ground.
 
-**Что нарисовать обязательно.** Север стрелкой, все известные длины,
-все известные углы и вопросительный знак там, где ответ. Дальше сумма
-углов треугольника обычно даёт недостающий угол за одну строку.
+**What must be drawn.** North as an arrow, every known length, every known angle,
+and a question mark where the answer is. After that the angle sum of the triangle
+usually gives the missing angle in one line.
 """)
 
 md(r"""
-## Задание 3 🟡 — направления и теорема синусов
+## Task 3 🟡 — bearings and the sine rule
 
-Города Лакхнау ($L$), Джайпур ($J$) и Дели ($D$). Лакхнау лежит в 500 км
-строго на восток от Джайпура, направление на Дели из Джайпура —
-$034^\circ$, а угол $J\hat{L}D$ равен $25^\circ$.
+The cities of Lucknow ($L$), Jaipur ($J$) and Delhi ($D$). Lucknow is 500 km due
+east of Jaipur, the bearing of Delhi from Jaipur is $034^\circ$, and the angle
+$J\hat{L}D$ is $25^\circ$.
 
-**(a)** Найдите угол $J\hat{D}L$.
+**(a)** Find the angle $J\hat{D}L$.
 
-**(b)** Найдите расстояние $DL$ (три значащие цифры).
+**(b)** Find the distance $DL$ (three significant figures).
 
-Проверка пункта (b) строит треугольник по **вашему** углу из (a) —
-ровно как follow through в разметке: ошибка в (a) не наказывается
-дважды, но и не исправляется.
+The check for part (b) builds the triangle from **your** angle from (a) — exactly
+like follow through in the marking: a mistake in (a) is not punished twice, but it
+is not fixed either.
 
-*Источник: May 2023 TZ1, Paper 2, Q1 (2 + 3 балла, с калькулятором).*
+*Source: May 2023 TZ1, Paper 2, Q1 (2 + 3 marks, calculator).*
 """)
 
 code(r"""
-my3_angle = ...          # угол JDL, градусы
-my3_dl = ...             # расстояние DL, км
+my3_angle = ...          # the angle JDL, degrees
+my3_dl = ...             # the distance DL, km
 
-check_num('Задание 3(a)', my3_angle, 3, '""" + D_JDL3 + r"""')
-verify_triangle('Задание 3(b)', {'a': my3_dl}, B=25, C=my3_angle, c=500)
+check_num('Task 3(a)', my3_angle, 3, '""" + D_JDL3 + r"""')
+verify_triangle('Task 3(b)', {'a': my3_dl}, B=25, C=my3_angle, c=500)
 """)
 
 md(r"""
 ---
-## Теория 3. Теорема косинусов
+## Theory 3. The cosine rule
 
 $$a^2 = b^2 + c^2 - 2bc\cos A, \qquad
 \cos A = \frac{b^2+c^2-a^2}{2bc}.$$
 
-Стороны $a$, $b$, $c$ лежат против углов $A$, $B$, $C$ — это соглашение
-работает во всех формулах IB, и путаница в нём стоит больше, чем
-любая арифметическая ошибка.
+The sides $a$, $b$, $c$ are opposite the angles $A$, $B$, $C$ — that convention
+holds in every IB formula, and confusing it costs more than any arithmetic
+slip.
 
-**Два случая, и оба про то, что дано.**
+**Two cases, and both are about what is given.**
 
-| Дано | Что находим | Как |
+| Given | What is found | How |
 | --- | --- | --- |
-| две стороны и угол **между** ними (SAS) | третью сторону | первая формула |
-| три стороны (SSS) | любой угол | вторая формула |
+| two sides and the angle **between** them (SAS) | the third side | the first formula |
+| three sides (SSS) | any angle | the second formula |
 
-**Ключевое слово — «между».** Если известный угол лежит **не** между
-известными сторонами, теорема косинусов тоже работает, но превращается
-в квадратное уравнение относительно неизвестной стороны — и у него
-бывает два положительных корня. Это неоднозначный случай, приём 5.
+**The key word is «between».** If the known angle does **not** lie between the known
+sides, the cosine rule still works but turns into a quadratic in the unknown side —
+and that can have two positive roots. That is the ambiguous case, technique 5.
 
-**Тупой угол виден по знаку.** Если $\cos A$ получился отрицательным,
-угол тупой, и это не ошибка: `arccos` вернёт значение больше $90^\circ$
-сам. А вот если тупой угол получился у **двух** углов треугольника —
-ошибка точно есть.
+**An obtuse angle shows in the sign.** If $\cos A$ comes out negative, the angle is
+obtuse, and that is not an error: `arccos` returns a value above $90^\circ$ by
+itself. But if **two** angles of the triangle come out obtuse, there is certainly a
+mistake.
 
-**Проверка за пять секунд.** Против большей стороны лежит больший угол.
-Посмотрите на чертёж: если самая длинная сторона оказалась против
-самого маленького угла, считать дальше незачем.
+**A five-second check.** The larger angle is opposite the larger side. Look at the
+diagram: if the longest side has come out opposite the smallest angle, there is no
+point computing further.
 """)
 
 md(r"""
-## Задание 4 🟢 — третья сторона
+## Task 4 🟢 — the third side
 
-В треугольнике $ABC$ известно: $AB = 7$, $AC = 12$, $B\hat{A}C = 116^\circ$.
-Найдите $BC$.
+In triangle $ABC$: $AB = 7$, $AC = 12$, $B\hat{A}C = 116^\circ$. Find $BC$.
 
-*Источник: May 2025 TZ3, Paper 2, Q1(a) (3 балла, с калькулятором).*
+*Source: May 2025 TZ3, Paper 2, Q1(a) (3 marks, calculator).*
 """)
 
 code(r"""
 my4 = ...                # BC
 
-verify_triangle('Задание 4', {'a': my4}, b=12, c=7, A=116)
+verify_triangle('Task 4', {'a': my4}, b=12, c=7, A=116)
 """)
 
 md(r"""
-## Задание 5 🟢 — угол по трём сторонам
+## Task 5 🟢 — an angle from three sides
 
-Тот же треугольник: $AB = 7$, $AC = 12$, $B\hat{A}C = 116^\circ$.
-Найдите угол $A\hat{C}B$ (три значащие цифры).
+The same triangle: $AB = 7$, $AC = 12$, $B\hat{A}C = 116^\circ$. Find the angle
+$A\hat{C}B$ (three significant figures).
 
-*Источник: May 2025 TZ3, Paper 2, Q1(b) (3 балла, с калькулятором).*
+*Source: May 2025 TZ3, Paper 2, Q1(b) (3 marks, calculator).*
 """)
 
 code(r"""
-my5 = ...                # угол ACB, градусы
+my5 = ...                # the angle ACB, degrees
 
-verify_triangle('Задание 5', {'C': my5}, b=12, c=7, A=116)
+verify_triangle('Task 5', {'C': my5}, b=12, c=7, A=116)
 """)
 
 md(r"""
-## Задание 6 🟡 — два здания
+## Task 6 🟡 — two buildings
 
-Два здания стоят на горизонтальной земле. Из точки $P$ на земле между
-ними угол возвышения до вершины каждого здания один и тот же и равен
-$\theta$. Расстояние от $P$ до вершины $A$ высокого здания равно 150 м,
-до вершины $B$ низкого — 90 м, а расстояние $AB$ равно 154 м.
+Two buildings stand on horizontal ground. From a point $P$ on the ground between
+them the angle of elevation to the top of each building is the same and equals
+$\theta$. The distance from $P$ to the top $A$ of the tall building is 150 m, to the
+top $B$ of the short one 90 m, and the distance $AB$ is 154 m.
 
-**(a)** Найдите угол $A\hat{P}B$ (три значащие цифры).
+**(a)** Find the angle $A\hat{P}B$ (three significant figures).
 
-**(b)** Найдите высоту $h$ высокого здания (три значащие цифры).
+**(b)** Find the height $h$ of the tall building (three significant figures).
 
-Второй пункт короче первого, если заметить, чему равна сумма трёх углов
-при точке $P$ на прямой.
+The second part is shorter than the first if you notice what the three angles at the
+point $P$ on a straight line add up to.
 
-*Источник: May 2023 TZ2, Paper 2, Q2 (6 баллов, с калькулятором).*
+*Source: May 2023 TZ2, Paper 2, Q2 (6 marks, calculator).*
 """)
 
 code(r"""
-my6_apb = ...            # угол APB, градусы
-my6_h = ...              # высота h, м
+my6_apb = ...            # the angle APB, degrees
+my6_h = ...              # the height h, m
 
-verify_triangle('Задание 6(a)', {'A': my6_apb}, a=154, b=90, c=150)
-check_num('Задание 6(b)', my6_h, 3, '""" + D_H6 + r"""')
+verify_triangle('Task 6(a)', {'A': my6_apb}, a=154, b=90, c=150)
+check_num('Task 6(b)', my6_h, 3, '""" + D_H6 + r"""')
 """)
 
 md(r"""
-## Задание 7 🔴 — одна диагональ, два треугольника
+## Task 7 🔴 — one diagonal, two triangles
 
-Четырёхугольник $ABCD$: $AB = 2$, $BC = 4$, $CD = 6$, $DA = 8$. Обозначим
-$\alpha = A\hat{B}C$ и $\beta = A\hat{D}C$.
+A quadrilateral $ABCD$ has $AB = 2$, $BC = 4$, $CD = 6$, $DA = 8$. Write
+$\alpha = A\hat{B}C$ and $\beta = A\hat{D}C$.
 
-Диагональ $AC$ принадлежит обоим треугольникам, $ABC$ и $ADC$. Выразите
-её длину через $\alpha$, затем через $\beta$ и покажите, что
+The diagonal $AC$ belongs to both triangles, $ABC$ and $ADC$. Express its length
+through $\alpha$, then through $\beta$, and show that
 
 $$\alpha = \arccos(6\cos\beta - 5).$$
 
-Введите то, чему равен $\cos\alpha$ — выражение через $\beta$.
+Enter what $\cos\alpha$ equals — an expression in $\beta$.
 
-*Источник: November 2022, Paper 2, Q9(a) (4 балла, с калькулятором).*
+*Source: November 2022, Paper 2, Q9(a) (4 marks, calculator).*
 """)
 
 code(r"""
-my7 = ...                # cos α через β
+my7 = ...                # cos alpha in terms of beta
 
-verify_identity('Задание 7', my7, 6*cos(beta) - 5, var=beta,
+verify_identity('Task 7', my7, 6*cos(beta) - 5, var=beta,
                 samples=(0.2, 0.4, 0.6, 0.8))
 """)
 
 md(r"""
 ---
-## Теория 4. Теорема синусов
+## Theory 4. The sine rule
 
 $$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R.$$
 
-Работает, когда известна **сторона вместе с противолежащим ей углом** —
-эта пара и есть ключ ко всему остальному.
+It works when **a side together with the angle opposite it** is known — that pair is
+the key to everything else.
 
-**Как выглядит применение.** Из пропорции берут ровно две дроби, а не
-все три: одна с известными числителем и знаменателем, вторая с одним
-неизвестным. Дальше это линейное уравнение.
+**What applying it looks like.** Exactly two of the fractions are taken out of the
+proportion, not all three: one with a known numerator and denominator, the other
+with a single unknown. From there it is a linear equation.
 
-**Сумма углов — часть приёма.** Часто известны два угла и одна сторона;
-третий угол находится вычитанием из $180^\circ$, и только после этого
-работает пропорция. В экзамене за этот шаг отдельного балла нет,
-но без него не сходится ничего.
+**The angle sum is part of the technique.** Often two angles and one side are known;
+the third angle comes from subtracting from $180^\circ$, and only then does the
+proportion work. There is no separate mark for that step in the exam, but without it
+nothing comes out.
 
-**Осторожно: `arcsin` возвращает острый угол.** Если по теореме синусов
-ищут **угол**, а не сторону, у уравнения $\sin B = k$ есть два решения
-в диапазоне треугольника: $B$ и $180^\circ - B$. Калькулятор покажет
-только первое. Когда второе тоже подходит — это приём 5.
+**Careful: `arcsin` returns an acute angle.** If the sine rule is used to find an
+**angle** rather than a side, the equation $\sin B = k$ has two solutions in the
+range of a triangle: $B$ and $180^\circ - B$. The calculator shows only the first.
+When the second one works too — that is technique 5.
 
-**Когда угол искать безопасно.** Если он лежит против меньшей из двух
-известных сторон, тупым он быть не может, и `arcsin` даёт единственный
-ответ. Против большей стороны — надо думать.
+**When hunting an angle is safe.** If it is opposite the smaller of two known sides,
+it cannot be obtuse, and `arcsin` gives the only answer. Opposite the larger side —
+you have to think.
 """)
 
 md(r"""
-## Задание 8 🔴 — точный ответ через теорему синусов
+## Task 8 🔴 — an exact answer through the sine rule
 
-В треугольнике $PQR$ известно: $PR = 5$ см, $Q\hat{P}R = 45^\circ$,
-$P\hat{R}Q = 60^\circ$.
+In triangle $PQR$: $PR = 5$ cm, $Q\hat{P}R = 45^\circ$, $P\hat{R}Q = 60^\circ$.
 
-Найдите $QR$, записав ответ в виде $p(\sqrt q - 1)$ см, где
+Find $QR$, giving the answer in the form $p(\sqrt q - 1)$ cm, where
 $p, q \in \mathbb{Q}$.
 
-Понадобится точное значение $\sin 75^\circ = \dfrac{\sqrt6+\sqrt2}{4}$
-и избавление от иррациональности в знаменателе.
+You will need the exact value $\sin 75^\circ = \dfrac{\sqrt6+\sqrt2}{4}$ and the
+clearing of the surd from the denominator.
 
-*Источник: May 2025 TZ1, Paper 1, Q11(c)(ii) (часть вопроса на 7 баллов,
-без калькулятора).*
+*Source: May 2025 TZ1, Paper 1, Q11(c)(ii) (part of a 7-mark question, no
+calculator).*
 """)
 
 code(r"""
-my8 = ...                # QR, точное значение
+my8 = ...                # QR, as an exact value
 
-verify_exact('Задание 8', my8, 5*sqrt(3) - 5)
+verify_exact('Task 8', my8, 5*sqrt(3) - 5)
 """)
 
 md(r"""
-## Задание 9 🟡 — теорема синусов в модели
+## Task 9 🟡 — the sine rule in a model
 
-Поливалка стоит в точке $S$ и поливает круг радиуса 20 м. Точка $S$
-находится в 14 м от края дорожки, идущей с севера на юг; край дорожки
-пересекает круг в точках $A$ и $B$.
+A sprinkler stands at a point $S$ and waters a circle of radius 20 m. The point $S$
+is 14 m from the edge of a path running north to south; the edge of the path meets
+the circle at the points $A$ and $B$.
 
-Поливалка делает оборот за 16 секунд, то есть поворачивается на
-$\frac\pi8$ радиан в секунду. В момент $t$ вода пересекает край дорожки
-в точке $D$ на расстоянии $d$ метров к югу от $A$. Обозначим
-$\alpha = A\hat{S}D = \frac{\pi t}{8}$ и $\beta = S\hat{A}B = 0{,}7754$
-радиан.
+The sprinkler makes one turn in 16 seconds, that is, it rotates $\frac\pi8$ radians
+per second. At time $t$ the water crosses the edge of the path at a point $D$ which
+is $d$ metres south of $A$. Write $\alpha = A\hat{S}D = \frac{\pi t}{8}$ and
+$\beta = S\hat{A}B = 0.7754$ radians.
 
-Применив теорему синусов в треугольнике $ASD$, покажите, что
+Using the sine rule in the triangle $ASD$, show that
 
-$$d(t) = \frac{20\sin\frac{\pi t}{8}}{\sin\left(2{,}37 - \frac{\pi t}{8}\right)}.$$
+$$d(t) = \frac{20\sin\frac{\pi t}{8}}{\sin\left(2.37 - \frac{\pi t}{8}\right)}.$$
 
-Введите выражение для третьего угла треугольника, $A\hat{D}S$,
-в радианах — из него получается знаменатель.
+Enter an expression for the third angle of the triangle, $A\hat{D}S$, in radians —
+the denominator comes out of it.
 
-*Источник: May 2024 TZ2, Paper 2, Q11(e) (3 балла, с калькулятором).*
+*Source: May 2024 TZ2, Paper 2, Q11(e) (3 marks, calculator).*
 """)
 
 code(r"""
-my9 = ...                # угол ADS в радианах, через t
+my9 = ...                # the angle ADS in radians, in terms of t
 
-verify_identity('Задание 9', my9, pi - 0.7754 - pi*t/8, var=t,
+verify_identity('Task 9', my9, pi - 0.7754 - pi*t/8, var=t,
                 samples=(0.5, 1.5, 2.5, 3.5))
 """)
 
 md(r"""
 ---
-## Теория 5. Неоднозначный случай
+## Theory 5. The ambiguous case
 
-Единственное место темы, где ответом оказывается **не один** треугольник.
+The only place in the topic where the answer is **not one** triangle.
 
-Даны две стороны и угол, лежащий против одной из них (случай SSA).
-Теорема синусов даёт $\sin B = \dfrac{b\sin A}{a}$, и у этого уравнения
-в диапазоне $(0^\circ, 180^\circ)$ два решения:
+Two sides and the angle opposite one of them are given (the SSA case). The sine rule
+gives $\sin B = \dfrac{b\sin A}{a}$, and that equation has two solutions in
+$(0^\circ, 180^\circ)$:
 
 $$B_1 = \arcsin\frac{b\sin A}{a}, \qquad B_2 = 180^\circ - B_1.$$
 
-Оба годятся, если $A + B < 180^\circ$. Тогда треугольника два, и они
-разные: у одного $B$ острый, у другого тупой.
+Both are valid if $A + B < 180^\circ$. Then there are two triangles, and they are
+different: in one $B$ is acute, in the other obtuse.
 
-**Когда двух вариантов не бывает.**
+**When there are not two options.**
 
-| Условие | Сколько треугольников |
+| Condition | How many triangles |
 | --- | --- |
-| $\dfrac{b\sin A}{a} > 1$ | ни одного |
-| $a \ge b$ (угол против большей стороны) | один |
-| $A \ge 90^\circ$ | один |
-| иначе | **два** |
+| $\dfrac{b\sin A}{a} > 1$ | none |
+| $a \ge b$ (the angle is opposite the larger side) | one |
+| $A \ge 90^\circ$ | one |
+| otherwise | **two** |
 
-**Как это звучит в задаче.** Слова «smallest possible», «the largest
-possible», «find all possible values» — прямой сигнал: вариантов
-несколько, и вопрос про выбор. Если таких слов нет, а данные всё равно
-дают два треугольника, чертёж в условии обычно показывает нужный.
+**How it sounds in a question.** The words «smallest possible», «the largest
+possible», «find all possible values» are a direct signal: there are several options
+and the question is about the choice. If there are no such words and the data still
+give two triangles, the diagram in the question usually shows the one meant.
 
-**Что проверка делает с этим.** `solve_triangle` возвращает **список**;
-если в нём два элемента, `verify_triangle` об этом скажет прямо
-и не станет решать за вас, какой из них имелся в виду.
+**What the check does with this.** `solve_triangle` returns a **list**; if it has
+two elements, `verify_triangle` says so directly and will not decide for you which
+one was meant.
 """)
 
 md(r"""
-## Задание 10 🔴 — наименьший периметр
+## Task 10 🔴 — the smallest perimeter
 
-В треугольнике $ABC$ известно: $AC = 12$, $CB = 7$, $B\hat{A}C = 25^\circ$.
+In triangle $ABC$: $AC = 12$, $CB = 7$, $B\hat{A}C = 25^\circ$.
 
-**(a)** Найдите обе возможные длины стороны $AB$ (три значащие цифры).
+**(a)** Find both possible lengths of the side $AB$ (three significant figures).
 
-**(b)** Найдите наименьший возможный периметр треугольника $ABC$
-(три значащие цифры).
+**(b)** Find the smallest possible perimeter of the triangle $ABC$ (three
+significant figures).
 
-*Источник: November 2021, Paper 2, Q2 (5 баллов, с калькулятором).*
+*Source: November 2021, Paper 2, Q2 (5 marks, calculator).*
 """)
 
 code(r"""
-my10_ab = [..., ...]     # обе возможные длины AB
-my10_p = ...             # наименьший периметр
+my10_ab = [..., ...]     # both possible lengths of AB
+my10_p = ...             # the smallest perimeter
 
-verify_triangle('Задание 10, первый', {'c': my10_ab[0]}, a=7, b=12, A=25)
-verify_triangle('Задание 10, второй', {'c': my10_ab[1]}, a=7, b=12, A=25)
-check_num('Задание 10(b)', my10_p, 3, '""" + D_P10 + r"""')
+verify_triangle('Task 10, the first', {'c': my10_ab[0]}, a=7, b=12, A=25)
+verify_triangle('Task 10, the second', {'c': my10_ab[1]}, a=7, b=12, A=25)
+check_num('Task 10(b)', my10_p, 3, '""" + D_P10 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 6. Площадь
+## Theory 6. Area
 
 $$S = \frac12 ab\sin C.$$
 
-Угол берётся **между** сторонами $a$ и $b$ — как и в теореме косинусов,
-и по той же причине: формула получается из $\frac12 \cdot$ основание
-$\cdot$ высота, где высота равна $a\sin C$.
+The angle is taken **between** the sides $a$ and $b$ — as in the cosine rule, and
+for the same reason: the formula comes from $\frac12 \cdot$ base $\cdot$ height,
+where the height is $a\sin C$.
 
-**Когда формула не нужна.** Если треугольник прямоугольный, площадь
-проще считать как половину произведения катетов, а на координатной
-плоскости — как половину произведения основания на высоту, взятых прямо
-с осей. Оба способа в архиве встречаются чаще, чем сама формула.
+**When the formula is not needed.** If the triangle is right-angled, the area is
+easier as half the product of the legs, and on the coordinate plane as half the
+product of a base and a height read straight off the axes. Both ways turn up in the
+archive more often than the formula itself.
 
-**Треугольник на диаграмме Аргана — тот же треугольник.** Вершины
-$2+i$, $-1$, $2-i$ это точки $(2,1)$, $(-1,0)$, $(2,-1)$: основание
-вертикально и равно $2$, высота горизонтальна и равна $3$, площадь
-считается устно. Переведите комплексные числа в координаты **до** того,
-как вспоминать формулы: половина таких задач после перевода решается
-без единой тригонометрической функции.
+**A triangle on an Argand diagram is the same triangle.** The vertices $2+i$, $-1$,
+$2-i$ are the points $(2,1)$, $(-1,0)$, $(2,-1)$: the base is vertical and equals
+$2$, the height is horizontal and equals $3$, and the area is computed in your head.
+Convert the complex numbers into coordinates **before** reaching for formulas: half
+of such questions, once converted, are solved with no trigonometric function at
+all.
 
-**Обратная задача.** Площадь дана, ищут сторону — уравнение
-$\frac12 ab\sin C = S$ линейно относительно любой из сторон, и это самый
-частый способ спросить про площадь в Paper 1.
+**The reverse question.** The area is given and a side is wanted — the equation
+$\frac12 ab\sin C = S$ is linear in either of the sides, and that is the most
+frequent way of asking about area on Paper 1.
 """)
 
 md(r"""
-## Задание 11 🟢 — площадь по двум сторонам и косинусу
+## Task 11 🟢 — the area from two sides and a cosine
 
-В треугольнике $ABC$: $AB = 6$ см, $AC = 10$ см,
-$\cos B\hat{A}C = \frac15$.
+In triangle $ABC$: $AB = 6$ cm, $AC = 10$ cm, $\cos B\hat{A}C = \frac15$.
 
-Найдите площадь треугольника $ABC$ — точным значением.
+Find the area of triangle $ABC$ — as an exact value.
 
-*Источник: November 2023 TZ1, Paper 1, Q4 (6 баллов, без калькулятора;
-тот же вопрос стоит в TZ2).*
+*Source: November 2023 TZ1, Paper 1, Q4 (6 marks, no calculator; the same question
+appears in TZ2).*
 """)
 
 code(r"""
-my11 = ...               # площадь ABC, точно
+my11 = ...               # the area of ABC, exactly
 
-verify_exact('Задание 11', my11, 12*sqrt(6))
+verify_exact('Task 11', my11, 12*sqrt(6))
 """)
 
 md(r"""
-## Задание 12 🟡 — треугольник на диаграмме Аргана
+## Task 12 🟡 — a triangle on an Argand diagram
 
-На диаграмме Аргана отмечены точки $u = 1+\sqrt3 i$, $v = -2$,
-$w = 1-\sqrt3 i$. Найдите площадь треугольника $UVW$ — точным значением.
+The points $u = 1+\sqrt3 i$, $v = -2$, $w = 1-\sqrt3 i$ are marked on an Argand
+diagram. Find the area of the triangle $UVW$ — as an exact value.
 
-*Источник: May 2024 TZ1, Paper 1, Q12(d) (3 балла, без калькулятора).*
+*Source: May 2024 TZ1, Paper 1, Q12(d) (3 marks, no calculator).*
 """)
 
 code(r"""
-my12 = ...               # площадь UVW, точно
+my12 = ...               # the area of UVW, exactly
 
-verify_exact('Задание 12', my12, 3*sqrt(3))
+verify_exact('Task 12', my12, 3*sqrt(3))
 """)
 
 md(r"""
-## Задание 13 🟡 — площадь с буквой
+## Task 13 🟡 — an area with a letter
 
-Пусть $a > 1$.
+Let $a > 1$.
 
-**(a)** Покажите, что
-$a^2 + \left(\dfrac{a^2-1}{2}\right)^2 = \left(\dfrac{a^2+1}{2}\right)^2$.
-Введите левую часть — это и есть вся работа пункта.
+**(a)** Show that
+$a^2 + \left(\dfrac{a^2-1}{2}\right)^2 = \left(\dfrac{a^2+1}{2}\right)^2$. Enter the
+left-hand side — that is the whole work of the part.
 
-**(b)** Прямоугольный треугольник имеет стороны $a$, $\dfrac{a^2-1}{2}$
-и $\dfrac{a^2+1}{2}$. Найдите его площадь в виде выражения от $a$.
+**(b)** A right-angled triangle has sides $a$, $\dfrac{a^2-1}{2}$ and
+$\dfrac{a^2+1}{2}$. Find its area as an expression in $a$.
 
-Из пункта (a) сразу видно, какая из трёх сторон гипотенуза.
+Part (a) shows at once which of the three sides is the hypotenuse.
 
-*Источник: November 2022, Paper 1, Q3 (3 + 2 балла, без калькулятора).*
+*Source: November 2022, Paper 1, Q3 (3 + 2 marks, no calculator).*
 """)
 
 code(r"""
-my13_sq = ...            # левая часть тождества из (a)
-my13_area = ...          # площадь через a
+my13_sq = ...            # the left-hand side of the identity from (a)
+my13_area = ...          # the area in terms of a
 
-verify_identity('Задание 13(a)', my13_sq, ((a**2 + 1)/2)**2, var=a,
+verify_identity('Task 13(a)', my13_sq, ((a**2 + 1)/2)**2, var=a,
                 samples=(1.5, 2, 3, 5))
-verify_identity('Задание 13(b)', my13_area, a*(a**2 - 1)/4, var=a,
+verify_identity('Task 13(b)', my13_area, a*(a**2 - 1)/4, var=a,
                 samples=(1.5, 2, 3, 5))
 """)
 
 md(r"""
-## Задание 14 🟡 — четырёхугольник на координатной плоскости
+## Task 14 🟡 — a quadrilateral on the coordinate plane
 
-Четырёхугольник $OABC$ симметричен относительно диагонали $[OB]$,
-$A(6, 0)$ и $C(3, 3\sqrt3)$.
+A quadrilateral $OABC$ is symmetric about the diagonal $[OB]$, with $A(6, 0)$ and
+$C(3, 3\sqrt3)$.
 
-**(a)** Найдите уравнение прямой $OB$ — выражение для $y$ через $x$.
+**(a)** Find the equation of the line $OB$ — an expression for $y$ in terms of $x$.
 
-**(b)** Известно, что $[OA]$ перпендикулярна $[AB]$. Найдите площадь
-четырёхугольника $OABC$ — точным значением.
+**(b)** Given that $[OA]$ is perpendicular to $[AB]$, find the area of the
+quadrilateral $OABC$ — as an exact value.
 
-Симметрия здесь работает дважды: она даёт направление $OB$ и делит
-четырёхугольник на два равных треугольника.
+The symmetry works twice here: it gives the direction of $OB$ and it splits the
+quadrilateral into two equal triangles.
 
-*Источник: May 2024 TZ2, Paper 1, Q3 (4 + 3 балла, без калькулятора).*
+*Source: May 2024 TZ2, Paper 1, Q3 (4 + 3 marks, no calculator).*
 """)
 
 code(r"""
-my14_line = ...          # y через x для прямой OB
-my14_area = ...          # площадь OABC, точно
+my14_line = ...          # y in terms of x for the line OB
+my14_area = ...          # the area of OABC, exactly
 
-verify_identity('Задание 14(a)', my14_line, x/sqrt(3), var=x)
-verify_exact('Задание 14(b)', my14_area, 12*sqrt(3))
+verify_identity('Task 14(a)', my14_line, x/sqrt(3), var=x)
+verify_exact('Task 14(b)', my14_area, 12*sqrt(3))
 """)
 
 md(r"""
 ---
-## Теория 7. Точные значения
+## Theory 7. Exact values
 
-В Paper 1 калькулятора нет, и ответ просят точный: «find the exact
-value», «give your answer in the form $\frac{p\sqrt q}{2}$». Это
-требование к **записи**: 29,4 вместо $12\sqrt6$ балла не получает.
+On Paper 1 there is no calculator and the answer is asked for exactly: «find the
+exact value», «give your answer in the form $\frac{p\sqrt q}{2}$». That is a
+requirement on the **writing**: 29.4 instead of $12\sqrt6$ earns no mark.
 
-**Синус из косинуса.** Главный инструмент темы:
+**The sine from the cosine.** The main tool of the topic:
 
 $$\sin^2\theta + \cos^2\theta = 1 \ \Longrightarrow\
 \sin\theta = \pm\sqrt{1-\cos^2\theta}.$$
 
-В треугольнике знак снимается сам собой: любой угол треугольника лежит
-между $0^\circ$ и $180^\circ$, а там синус **положителен**. Это редкий
-случай, когда $\pm$ не превращается в разбор случаев.
+In a triangle the sign takes care of itself: any angle of a triangle lies between
+$0^\circ$ and $180^\circ$, and there the sine is **positive**. This is the rare case
+where a $\pm$ does not turn into a case analysis.
 
-**Что делать с радикалами.**
+**What to do with surds.**
 
-* $\sqrt{a}\cdot\sqrt{b} = \sqrt{ab}$ — перемножать под корнем, а не
-  считать;
-* $\dfrac{1}{\sqrt3} = \dfrac{\sqrt3}{3}$ — избавляться от
-  иррациональности в знаменателе;
-* $\dfrac{1}{\sqrt5+\sqrt3}$ — домножать на сопряжённое
-  $\sqrt5-\sqrt3$; знаменатель станет разностью квадратов и обратится
-  в $2$.
+* $\sqrt{a}\cdot\sqrt{b} = \sqrt{ab}$ — multiply under the root rather than
+  evaluate;
+* $\dfrac{1}{\sqrt3} = \dfrac{\sqrt3}{3}$ — clear the surd from the denominator;
+* $\dfrac{1}{\sqrt5+\sqrt3}$ — multiply by the conjugate $\sqrt5-\sqrt3$; the
+  denominator becomes a difference of squares and turns into $2$.
 
-**Форма ответа — часть задания.** «In the form $p\sqrt q$, where
-$p, q \in \mathbb{Z}^+$» означает, что $q$ надо довести до
-несократимого вида: $5\sqrt{175}$ формально равно $25\sqrt7$, но
-записано неверно.
+**The form of the answer is part of the task.** «In the form $p\sqrt q$, where
+$p, q \in \mathbb{Z}^+$» means that $q$ has to be reduced to its square-free form:
+$5\sqrt{175}$ formally equals $25\sqrt7$, but it is written wrongly.
 """)
 
 md(r"""
-## Задание 15 🔴 — площадь в заданной форме
+## Task 15 🔴 — the area in a given form
 
-В треугольнике $ABC$: $AB = 10$, $BC = x$, $AC = 2x$ и
-$\cos \hat{C} = \frac34$.
+In triangle $ABC$: $AB = 10$, $BC = x$, $AC = 2x$ and $\cos \hat{C} = \frac34$.
 
-Найдите площадь треугольника в виде $\dfrac{p\sqrt q}{2}$, где
+Find the area of the triangle in the form $\dfrac{p\sqrt q}{2}$, where
 $p, q \in \mathbb{Z}^+$.
 
-Первый ход — теорема косинусов относительно $x$: угол $C$ лежит между
-сторонами $BC$ и $AC$, а против него лежит известная сторона $AB$.
+The first move is the cosine rule in $x$: the angle $C$ lies between the sides $BC$
+and $AC$, and opposite it lies the known side $AB$.
 
-*Источник: May 2021 TZ2, Paper 1, Q6 (7 баллов, без калькулятора).*
+*Source: May 2021 TZ2, Paper 1, Q6 (7 marks, no calculator).*
 """)
 
 code(r"""
 my15_p = ...             # p
 my15_q = ...             # q
 
-check_num('Задание 15, p', my15_p, 6, '""" + D_P15 + r"""')
-check_num('Задание 15, q', my15_q, 6, '""" + D_Q15 + r"""')
+check_num('Task 15, p', my15_p, 6, '""" + D_P15 + r"""')
+check_num('Task 15, q', my15_q, 6, '""" + D_Q15 + r"""')
 """)
 
 md(r"""
 ---
-## Теория 8. Треугольник с буквой
+## Theory 8. A triangle with a letter
 
-Последний приём темы: сторон и углов как чисел больше нет, есть
-выражения. Три формата, и все три в архиве встречаются.
+The last technique of the topic: there are no longer sides and angles as numbers,
+there are expressions. Three formats, and all three appear in the archive.
 
-**«Show that».** Треугольник выражают через параметр и приводят к
-напечатанному виду. Работа та же, что в B1: баллы стоят за дорогу,
-а не за ответ. Полезно помнить, что в таких пунктах почти всегда
-участвует сумма углов — она даёт третий угол через первые два.
+**«Show that».** The triangle is expressed through a parameter and brought to the
+printed form. The work is the same as in B1: the marks are for the road, not for the
+answer. It is worth remembering that such parts almost always involve the angle sum
+— it gives the third angle through the first two.
 
-**Площадь как функция.** Составить выражение для площади через один
-параметр и найти максимум. В Paper 2 максимум ищут на GDC, и это
-единственное место темы, где калькулятор действительно необходим.
+**The area as a function.** Build an expression for the area in terms of one
+parameter and find the maximum. On Paper 2 the maximum is found on the GDC, and that
+is the only place in the topic where a calculator is genuinely needed.
 
-**Разность арктангенсов.** Классическая конструкция «угол обзора»:
-из точки наблюдения проводят два луча — к дальнему концу полосы и к
-ближнему, — каждый из них лежит в своём прямоугольном треугольнике
-с общим вертикальным катетом, и искомый угол есть **разность** двух
-арктангенсов. Вся работа в том, чтобы правильно назвать два катета:
-общий катет один и тот же в обоих треугольниках, а вторые катеты
-отличаются на длину полосы.
+**A difference of arctangents.** The classic «angle of view» construction: two rays
+are drawn from the point of observation — to the far end of a strip and to the near
+one — each lying in its own right-angled triangle with a common vertical leg, and
+the angle wanted is the **difference** of two arctangents. All the work is in naming
+the two legs correctly: the common leg is the same in both triangles, while the
+other legs differ by the length of the strip.
 
-**Общее правило.** Прежде чем составлять выражение, назовите буквой
-ровно одну величину. Если в выражении оказались две буквы, значит
-где-то потеряно соотношение между ними — чаще всего сумма углов
-или теорема косинусов для общей стороны.
+**The general rule.** Before building an expression, give exactly one quantity a
+letter. If two letters end up in the expression, a relation between them has been
+lost somewhere — most often the angle sum or the cosine rule for the common side.
 """)
 
 md(r"""
-## Задание 16 🟡 — угол обзора
+## Task 16 🟡 — an angle of view
 
-Самолёт $P$ летит на постоянной высоте 6 км над горизонтальной землёй
-и приближается к взлётной полосе $[AB]$ длиной 2 км. Точка $G$ — проекция
-самолёта на землю; когда $GA = x$ км, угол обзора полосы $A\hat{P}B$
-равен $\theta$.
+An aeroplane $P$ flies at a constant height of 6 km above horizontal ground and
+approaches a runway $[AB]$ of length 2 km. The point $G$ is the projection of the
+aeroplane onto the ground; when $GA = x$ km, the angle of view of the runway
+$A\hat{P}B$ equals $\theta$.
 
-Покажите, что
+Show that
 
 $$\theta = \arctan\left(\frac{x+2}{6}\right) - \arctan\left(\frac x6\right).$$
 
-Введите выражение для $\theta$.
+Enter an expression for $\theta$.
 
-*Источник: May 2025 TZ3, Paper 2, Q9(a) (2 балла, с калькулятором).*
+*Source: May 2025 TZ3, Paper 2, Q9(a) (2 marks, calculator).*
 """)
 
 code(r"""
-my16 = ...               # θ через x
+my16 = ...               # theta in terms of x
 
-verify_identity('Задание 16', my16,
+verify_identity('Task 16', my16,
                 atan((x + 2)/6) - atan(x/6), var=x,
                 samples=(0.5, 1, 2, 4))
 """)
 
 md(r"""
-## Задание 17 🔴 — наибольшая площадь четырёхугольника
+## Task 17 🔴 — the largest area of a quadrilateral
 
-Продолжение задания 7: четырёхугольник $ABCD$ со сторонами $AB = 2$,
-$BC = 4$, $CD = 6$, $DA = 8$, где $\alpha = A\hat{B}C$,
-$\beta = A\hat{D}C$ и $\cos\alpha = 6\cos\beta - 5$.
+A continuation of task 7: the quadrilateral $ABCD$ with sides $AB = 2$, $BC = 4$,
+$CD = 6$, $DA = 8$, where $\alpha = A\hat{B}C$, $\beta = A\hat{D}C$ and
+$\cos\alpha = 6\cos\beta - 5$.
 
-**(a)** Найдите наибольшую возможную площадь четырёхугольника $ABCD$
-(три значащие цифры).
+**(a)** Find the largest possible area of the quadrilateral $ABCD$ (three
+significant figures).
 
-**(b)** Тот же максимум записывается точно. Введите его точное значение.
+**(b)** The same maximum can be written exactly. Enter its exact value.
 
-Подсказка ко второму пункту: посмотрите, чему равна сумма $\alpha+\beta$
-в точке максимума.
+A hint for the second part: look at what $\alpha+\beta$ equals at the maximum.
 
-*Источник: November 2022, Paper 2, Q9(b) (4 балла, с калькулятором).*
+*Source: November 2022, Paper 2, Q9(b) (4 marks, calculator).*
 """)
 
 code(r"""
-my17_max = ...           # наибольшая площадь, три значащие цифры
-my17_exact = ...         # она же точно
+my17_max = ...           # the largest area, three significant figures
+my17_exact = ...         # the same thing, exactly
 
-check_num('Задание 17(a)', my17_max, 3, '""" + D_MAX17 + r"""')
-verify_exact('Задание 17(b)', my17_exact, 8*sqrt(6))
+check_num('Task 17(a)', my17_max, 3, '""" + D_MAX17 + r"""')
+verify_exact('Task 17(b)', my17_exact, 8*sqrt(6))
 """)
 
 md(r"""
-## Задание 18 🟡 — «show that» из чертежа
+## Task 18 🟡 — a «show that» from a diagram
 
-Узкий коридор шириной $\frac34$ м примыкает перпендикулярно к комнате
-шириной 6 м; в точке $C$ — внутренний угол. Точки $A$ и $B$ лежат
-у оснований стен так, что $A$, $C$ и $B$ на одной прямой. Пусть
-$L = AB$, а $\alpha$ — угол, который $[AB]$ образует со стеной комнаты,
-где $0 < \alpha < \frac\pi2$.
+A narrow corridor of width $\frac34$ m meets a room of width 6 m at right angles; at
+the point $C$ is the inner corner. The points $A$ and $B$ lie at the feet of the
+walls so that $A$, $C$ and $B$ are collinear. Let $L = AB$, and let $\alpha$ be the
+angle $[AB]$ makes with the wall of the room, where $0 < \alpha < \frac\pi2$.
 
-Покажите, что
+Show that
 
 $$L = \frac34\sec\alpha + 6\operatorname{cosec}\alpha.$$
 
-Отрезок $[AB]$ распадается точкой $C$ на два куска, и каждый лежит
-в своём прямоугольном треугольнике: у одного прилежащий катет
-$\frac34$, у другого противолежащий 6.
+The segment $[AB]$ is split by $C$ into two pieces, and each lies in its own
+right-angled triangle: in one the adjacent leg is $\frac34$, in the other the
+opposite leg is 6.
 
-Введите выражение для $L$, пользуясь только $\sin$ и $\cos$.
+Enter an expression for $L$ using only $\sin$ and $\cos$.
 
-*Источник: May 2023 TZ1, Paper 1, Q11(a) (2 балла, без калькулятора).*
+*Source: May 2023 TZ1, Paper 1, Q11(a) (2 marks, no calculator).*
 """)
 
 code(r"""
-my18 = ...               # L через sin и cos
+my18 = ...               # L in terms of sin and cos
 
-verify_identity('Задание 18', my18,
+verify_identity('Task 18', my18,
                 Rational(3, 4)/cos(alpha) + 6/sin(alpha), var=alpha,
                 samples=(0.4, 0.8, 1.2, 1.5))
 """)
 
 md(r"""
 ---
-## Тренажёр: узнать приём за пять секунд
+## Trainer: name the technique in five seconds
 
-Ниже пятнадцать условий без решений. Для каждого напишите код приёма —
-и всё. Считать ничего не нужно; цель в том, чтобы первый ход находился
-раньше, чем начинается счёт.
+Below are fifteen statements with no solutions. For each one write the code of the
+technique — and nothing else. Nothing has to be computed; the aim is for the first
+move to be found before the computing starts.
 
-Коды: `right` (прямоугольный треугольник) · `view` (от описания
-к чертежу) · `cos` (теорема косинусов) · `sin` (теорема синусов) ·
-`ambig` (неоднозначный случай) · `area` (площадь) · `exact` (точные
-значения) · `model` (треугольник с буквой)
+The codes: `right` (a right-angled triangle) · `view` (from a description to a
+diagram) · `cos` (the cosine rule) · `sin` (the sine rule) · `ambig` (the ambiguous
+case) · `area` (area) · `exact` (exact values) · `model` (a triangle with a letter)
 
-1. В треугольнике $a = 5$, $b = 7$, $C = 40^\circ$. Найдите $c$.
-2. Найдите площадь треугольника со сторонами 6 и 9 и углом $50^\circ$ между ними.
-3. Лестница длиной 4 м стоит под углом $70^\circ$ к земле. На какой высоте её верх?
-4. В треугольнике $a = 8$, $b = 11$, $A = 32^\circ$. Найдите все возможные $B$.
-5. В треугольнике $A = 40^\circ$, $B = 65^\circ$, $a = 12$. Найдите $b$.
-6. Дано $\cos\theta = \frac13$. Найдите точное значение $\sin\theta$, если $\theta$ — угол треугольника.
-7. Корабль идёт по направлению $120^\circ$ 30 км, потом по $210^\circ$ ещё 40 км. Как далеко он от старта?
-8. Площадь треугольника со сторонами $x$ и $x+2$ и углом $30^\circ$ между ними равна 6. Найдите $x$.
-9. В треугольнике $a = 4$, $b = 6$, $c = 9$. Найдите наибольший угол.
-10. Диагонали ромба равны 10 и 24. Найдите его площадь.
-11. Угол между диагональю куба с ребром 1 и его основанием.
-12. В треугольнике $B = 50^\circ$, $C = 70^\circ$, $c = 15$. Найдите $a$.
-13. Найдите точное значение площади треугольника со сторонами 4, 4 и углом $60^\circ$.
-14. В треугольнике $a = 9$, $b = 12$, $A = 35^\circ$. Сколько таких треугольников?
-15. Площадь треугольника с $AB = x$, $AC = 10 - x$ и углом $60^\circ$ между ними — при каком $x$ она наибольшая?
+1. In a triangle $a = 5$, $b = 7$, $C = 40^\circ$. Find $c$.
+2. Find the area of a triangle with sides 6 and 9 and the angle $50^\circ$ between them.
+3. A ladder 4 m long leans at $70^\circ$ to the ground. How high is its top?
+4. In a triangle $a = 8$, $b = 11$, $A = 32^\circ$. Find all the possible $B$.
+5. In a triangle $A = 40^\circ$, $B = 65^\circ$, $a = 12$. Find $b$.
+6. Given $\cos\theta = \frac13$, find the exact value of $\sin\theta$, where $\theta$ is an angle of a triangle.
+7. A ship sails on a bearing of $120^\circ$ for 30 km, then on $210^\circ$ for another 40 km. How far is it from the start?
+8. The area of a triangle with sides $x$ and $x+2$ and the angle $30^\circ$ between them is 6. Find $x$.
+9. In a triangle $a = 4$, $b = 6$, $c = 9$. Find the largest angle.
+10. The diagonals of a rhombus are 10 and 24. Find its area.
+11. The angle between the diagonal of a cube of edge 1 and its base.
+12. In a triangle $B = 50^\circ$, $C = 70^\circ$, $c = 15$. Find $a$.
+13. Find the exact value of the area of a triangle with sides 4, 4 and the angle $60^\circ$.
+14. In a triangle $a = 9$, $b = 12$, $A = 35^\circ$. How many such triangles are there?
+15. The area of a triangle with $AB = x$, $AC = 10 - x$ and the angle $60^\circ$ between them — for which $x$ is it largest?
 """)
 
 code(r"""
@@ -856,99 +841,98 @@ trigger_check(answers, """ + repr(TRIGGER_KEY) + r""")
 
 md(r"""
 ---
-## Задание 19 🔴 — на таймере, 10 минут
+## Task 19 🔴 — on the timer, 10 minutes
 
-Полный вопрос Paper 1 без калькулятора. Семь баллов, целевое время
-примерно 10 минут.
+A whole Paper 1 question with no calculator. Seven marks, target time about 10
+minutes.
 
-В треугольнике $ABC$: $AB = 5$, $BC = 6\sqrt2$, $A\hat{C}B = \theta$ и
-$B\hat{A}C = 2\theta$, где $0 < \theta < \frac\pi2$.
+In triangle $ABC$: $AB = 5$, $BC = 6\sqrt2$, $A\hat{C}B = \theta$ and
+$B\hat{A}C = 2\theta$, where $0 < \theta < \frac\pi2$.
 
-**(a)** Пользуясь теоремой синусов, покажите, что
-$\cos\theta = \dfrac{3\sqrt2}{5}$. Введите выражение для $BC$ через
-$\cos\theta$, из которого это следует. [3]
+**(a)** Using the sine rule, show that $\cos\theta = \dfrac{3\sqrt2}{5}$. Enter an
+expression for $BC$ in terms of $\cos\theta$ from which that follows. [3]
 
-**(b)** Найдите $\sin\theta$ — точным значением. [2]
+**(b)** Find $\sin\theta$ — as an exact value. [2]
 
-**(c)** Точка $D$ лежит на $[AC]$ так, что площадь треугольника $BCD$
-равна $2\sqrt{14}$. Найдите $DC$ — точным значением. [2]
+**(c)** The point $D$ lies on $[AC]$ so that the area of triangle $BCD$ is
+$2\sqrt{14}$. Find $DC$ — as an exact value. [2]
 
-*Источник: May 2025 TZ2, Paper 1, Q3 (3 + 2 + 2 балла, без калькулятора).*
+*Source: May 2025 TZ2, Paper 1, Q3 (3 + 2 + 2 marks, no calculator).*
 """)
 
 code(r"""
-my19_bc = ...            # BC через cos θ
-my19_sin = ...           # sin θ, точно
-my19_dc = ...            # DC, точно
+my19_bc = ...            # BC in terms of cos theta
+my19_sin = ...           # sin theta, exactly
+my19_dc = ...            # DC, exactly
 
-verify_identity('Задание 19(a)', my19_bc, 10*cos(theta), var=theta,
+verify_identity('Task 19(a)', my19_bc, 10*cos(theta), var=theta,
                 samples=(0.3, 0.5, 0.7, 0.9))
-verify_exact('Задание 19(b)', my19_sin, sqrt(7)/5)
-verify_exact('Задание 19(c)', my19_dc, Rational(10, 3))
+verify_exact('Task 19(b)', my19_sin, sqrt(7)/5)
+verify_exact('Task 19(c)', my19_dc, Rational(10, 3))
 """)
 
 md(r"""
 ---
-# Решения
+# Solutions
 
-Ниже полный разбор каждого задания с разметкой markscheme. Открывайте
-после того, как решили сами: разбор объясняет не только ответ, но и то,
-за что именно ставят баллы.
+Below is a full working of every task with the markscheme's marking. Open them after
+you have solved on your own: the working explains not only the answer but what
+exactly the marks are given for.
 """)
 
 md(r"""
-## Решение 1 — угол возвышения и конус
+## Solution 1 — an angle of elevation and a cone
 
-Глаза Оливера на высоте 1,8 м, вершина конуса на высоте 20 м, значит
-вертикальный катет равен $20 - 1{,}8 = 18{,}2$. Горизонтальный катет —
-это расстояние от глаз до **оси** конуса, то есть $5 + r$:
+Oliver's eyes are at a height of 1.8 m and the vertex of the cone at 20 m, so the
+vertical leg equals $20 - 1.8 = 18.2$. The horizontal leg is the distance from his
+eyes to the **axis** of the cone, that is, $5 + r$:
 
-$$\tan 58^\circ = \frac{18{,}2}{5+r} \iff 5+r = \frac{18{,}2}{\tan58^\circ}
-= 11{,}37\ldots$$
+$$\tan 58^\circ = \frac{18.2}{5+r} \iff 5+r = \frac{18.2}{\tan58^\circ}
+= 11.37\ldots$$
 
-Отсюда $r = 6{,}372\ldots \approx 6{,}37$ м.
+Hence $r = 6.372\ldots \approx 6.37$ m.
 
-**(b)** Объём конуса:
+**(b)** The volume of a cone:
 
-$$V = \frac13\pi r^2 h = \frac13\pi (6{,}3726)^2 \cdot 20
-= 850{,}5\ldots \approx 851\ \text{м}^3.$$
+$$V = \frac13\pi r^2 h = \frac13\pi (6.3726)^2 \cdot 20
+= 850.5\ldots \approx 851\ \text{m}^3.$$
 
 ```python
 my1_r = 6.3726
 my1_v = 850.54
 ```
 
-**Разметка.** (a): M1 за верное тригонометрическое уравнение,
-A1 за $11{,}4$ (или эквивалент), A1 за $6{,}37$. (b): M1 за подстановку
-в формулу объёма, A1 за 851.
+**The marking.** (a): M1 for the right trigonometric equation, A1 for $11.4$ (or
+equivalent), A1 for $6.37$. (b): M1 for substituting into the volume formula, A1 for
+851.
 
-**Две ловушки, обе про чертёж.** Первая: считать вертикальный катет
-равным 20, забыв про рост наблюдателя. Вторая: считать горизонтальный
-катет равным 5 — но 5 метров это до **основания** конуса, а угол
-возвышения смотрит на вершину, стоящую над центром.
+**Two traps, both about the diagram.** The first: taking the vertical leg to be 20
+and forgetting the observer's height. The second: taking the horizontal leg to be 5
+— but 5 metres is to the **base** of the cone, while the angle of elevation looks at
+the vertex, which stands above the centre.
 
-**Про округление.** В (b) подставлять надо неокруглённый радиус:
-с $r = 6{,}37$ получается $850{,}0$, и это уже другая третья значащая
-цифра. Тот же сюжет, что в B1 с задачей про черепаху.
+**About rounding.** In (b) the unrounded radius has to be substituted: with
+$r = 6.37$ you get $850.0$, and that is already a different third significant
+figure. The same storyline as in B1 with the tortoise question.
 """)
 
 md(r"""
-## Решение 2 — треугольник внутри пирамиды
+## Solution 2 — a triangle inside a pyramid
 
-**(a)** $VX$ — расстояние между двумя точками:
+**(a)** $VX$ is the distance between two points:
 
 $$VX = \sqrt{(1+3)^2 + (7-4)^2 + (0-2)^2} = \sqrt{16+9+4} = \sqrt{29}.$$
 
-**(b)** Диагональ квадрата со стороной 5:
+**(b)** The diagonal of a square of side 5:
 
 $$AC = 5\sqrt2.$$
 
-**(c)** Угол между ребром $[VC]$ и основанием — это угол $V\hat{C}X$
-в прямоугольном треугольнике $VXC$, где $VX$ вертикальна, а
+**(c)** The angle between the edge $[VC]$ and the base is the angle $V\hat{C}X$ in
+the right-angled triangle $VXC$, where $VX$ is vertical and
 $XC = \frac{AC}{2} = \frac{5\sqrt2}{2}$:
 
 $$\tan(V\hat{C}X) = \frac{VX}{XC} = \frac{\sqrt{29}}{\frac{5\sqrt2}{2}}
-= 1{,}523\ldots \ \Longrightarrow\ V\hat{C}X = 56{,}7^\circ.$$
+= 1.523\ldots \ \Longrightarrow\ V\hat{C}X = 56.7^\circ.$$
 
 ```python
 my2_vx = sqrt(29)
@@ -956,210 +940,200 @@ my2_ac = 5*sqrt(2)
 my2_angle = 56.714
 ```
 
-**Разметка.** (a): M1 за формулу расстояния, A1 за $\sqrt{29}$.
-(b): M1 за Пифагора или за $5\sqrt2$, A1. (c): M1 за верный
-прямоугольный треугольник, A1 за $56{,}7^\circ$.
+**The marking.** (a): M1 for the distance formula, A1 for $\sqrt{29}$. (b): M1 for
+Pythagoras or for $5\sqrt2$, A1. (c): M1 for the right triangle, A1 for
+$56.7^\circ$.
 
-**Половина диагонали.** Самая частая ошибка темы в стереометрии:
-взять $AC$ целиком. Тогда получается $46{,}9^\circ$ — ответ похож
-на правдоподобный, и заметить ошибку можно только по чертежу: $X$
-это **центр** основания, а не вершина квадрата.
+**Half the diagonal.** The most frequent mistake of the topic in three dimensions:
+taking the whole of $AC$. That gives $46.9^\circ$ — an answer that looks plausible,
+and the mistake can only be spotted on the diagram: $X$ is the **centre** of the
+base, not a vertex of the square.
 
-**Почему точное значение.** В (a) и (b) вопрос не просит округления,
-и $\sqrt{29}$ — законченный ответ. Проверка это требование понимает
-буквально: `verify_exact` не принимает 5,39.
+**Why an exact value.** In (a) and (b) the question does not ask for rounding, and
+$\sqrt{29}$ is a finished answer. The check takes that requirement literally:
+`verify_exact` will not accept 5.39.
 """)
 
 md(r"""
-## Решение 3 — направления и теорема синусов
+## Solution 3 — bearings and the sine rule
 
-**(a)** Направление $034^\circ$ отсчитывается от севера по часовой
-стрелке, а Лакхнау лежит строго на восток, то есть по направлению
-$090^\circ$. Значит
+**(a)** The bearing $034^\circ$ is measured from north clockwise, and Lucknow lies
+due east, that is, on the bearing $090^\circ$. So
 
 $$D\hat{J}L = 90^\circ - 34^\circ = 56^\circ,$$
 
-и по сумме углов треугольника
+and by the angle sum of the triangle
 
 $$J\hat{D}L = 180^\circ - 56^\circ - 25^\circ = 99^\circ.$$
 
-**(b)** Теорема синусов: сторона $DL$ лежит против угла $J$, сторона
-$JL = 500$ — против угла $D$:
+**(b)** The sine rule: the side $DL$ is opposite the angle $J$, the side
+$JL = 500$ is opposite the angle $D$:
 
 $$\frac{DL}{\sin 56^\circ} = \frac{500}{\sin 99^\circ}
 \ \Longrightarrow\ DL = \frac{500\sin56^\circ}{\sin99^\circ}
-= 419{,}7 \approx 420\ \text{км}.$$
+= 419.7 \approx 420\ \text{km}.$$
 
 ```python
 my3_angle = 99
 my3_dl = 419.69
 ```
 
-**Разметка.** (a): M1 за $56^\circ$ (или за верное использование
-направления), A1 за $99^\circ$. (b): M1 за теорему синусов,
-A1 за подстановку, A1 за 420.
+**The marking.** (a): M1 for $56^\circ$ (or for using the bearing correctly), A1 for
+$99^\circ$. (b): M1 for the sine rule, A1 for the substitution, A1 for 420.
 
-**Где теряют балл в (a).** Берут $34^\circ$ как угол треугольника.
-Направление отсчитывается от **севера**, а сторона $JL$ идёт на восток —
-между ними прямой угол, и вычитание обязательно.
+**Where the mark goes in (a).** Taking $34^\circ$ as an angle of the triangle. A
+bearing is measured from **north**, while the side $JL$ runs east — there is a right
+angle between them, and the subtraction is compulsory.
 
-**Проверка правдоподобия.** Против самого большого угла ($99^\circ$)
-лежит самая длинная сторона — это $JL = 500$. Наш ответ $DL = 420$
-меньше 500, и это сходится.
+**A plausibility check.** Opposite the largest angle ($99^\circ$) lies the longest
+side, which is $JL = 500$. Our answer $DL = 420$ is less than 500, which agrees.
 """)
 
 md(r"""
-## Решение 4 — третья сторона
+## Solution 4 — the third side
 
-Угол $A$ лежит между сторонами $AB$ и $AC$, значит работает теорема
-косинусов:
+The angle $A$ lies between the sides $AB$ and $AC$, so the cosine rule works:
 
 $$BC^2 = AB^2 + AC^2 - 2\cdot AB\cdot AC\cos A
 = 49 + 144 - 168\cos116^\circ.$$
 
-Косинус тупого угла отрицателен, поэтому третье слагаемое **прибавляется**:
+The cosine of an obtuse angle is negative, so the third term is **added**:
 
-$$BC^2 = 193 + 168\cdot0{,}4384 = 266{,}6\ldots
-\ \Longrightarrow\ BC = 16{,}3.$$
+$$BC^2 = 193 + 168\cdot0.4384 = 266.6\ldots
+\ \Longrightarrow\ BC = 16.3.$$
 
 ```python
 my4 = 16.329
 ```
 
-**Разметка.** M1 за теорему косинусов, A1 за верную подстановку,
-A1 за 16,3.
+**The marking.** M1 for the cosine rule, A1 for the right substitution, A1 for
+16.3.
 
-**Знак минус в формуле, а не в ответе.** Формула всегда написана
-с минусом: $-2bc\cos A$. При тупом $A$ косинус сам отрицателен, и минус
-на минус даёт плюс. Пытаться «поправить знак» руками — верный способ
-получить $BC = 8{,}5$ вместо 16,3.
+**The minus is in the formula, not in the answer.** The formula is always written
+with a minus: $-2bc\cos A$. When $A$ is obtuse the cosine is itself negative, and
+minus times minus gives plus. Trying to «fix the sign» by hand is a reliable way of
+getting $BC = 8.5$ instead of 16.3.
 
-**Прикидка.** Тупой угол лежит против самой длинной стороны, а стороны
-7 и 12 короче 16,3 — сходится.
+**An estimate.** The obtuse angle is opposite the longest side, and the sides 7 and
+12 are shorter than 16.3 — it agrees.
 """)
 
 md(r"""
-## Решение 5 — угол по данным того же треугольника
+## Solution 5 — an angle from the data of the same triangle
 
-Проще всего теоремой синусов: угол $C$ лежит против стороны $AB = 7$,
-угол $A = 116^\circ$ — против $BC = 16{,}33$:
+The sine rule is easiest: the angle $C$ is opposite the side $AB = 7$ and the angle
+$A = 116^\circ$ is opposite $BC = 16.33$:
 
-$$\frac{\sin C}{7} = \frac{\sin 116^\circ}{16{,}33}
-\ \Longrightarrow\ \sin C = 0{,}3855\ldots
-\ \Longrightarrow\ C = 22{,}7^\circ.$$
+$$\frac{\sin C}{7} = \frac{\sin 116^\circ}{16.33}
+\ \Longrightarrow\ \sin C = 0.3855\ldots
+\ \Longrightarrow\ C = 22.7^\circ.$$
 
 ```python
 my5 = 22.662
 ```
 
-**Разметка.** M1 за теорему синусов (или косинусов), A1 за верную
-подстановку, A1 за $22{,}7^\circ$.
+**The marking.** M1 for the sine rule (or the cosine rule), A1 for the right
+substitution, A1 for $22.7^\circ$.
 
-**Здесь `arcsin` безопасен.** Угол $C$ лежит против стороны 7 —
-не самой длинной, значит тупым он быть не может, и второй корень
-$180^\circ - 22{,}7^\circ = 157{,}3^\circ$ отпадает сам: сумма с уже
-известными $116^\circ$ вышла бы за $180^\circ$.
+**Here `arcsin` is safe.** The angle $C$ is opposite the side 7 — not the longest
+one, so it cannot be obtuse, and the second root
+$180^\circ - 22.7^\circ = 157.3^\circ$ falls away by itself: with the known
+$116^\circ$ the sum would exceed $180^\circ$.
 
-**Второй путь.** Теорема косинусов по трём сторонам даёт тот же ответ
-и не требует найденного в (a) значения. В экзамене это полезно: ошибка
-в (a) не потянет за собой (b). Но подставлять придётся округлённое
-$BC$, так что путь через синусы точнее.
+**The second route.** The cosine rule on three sides gives the same answer and does
+not need the value found in (a). In the exam that is useful: a mistake in (a) would
+not drag (b) down with it. But the rounded $BC$ has to be substituted, so the sine
+route is more accurate.
 """)
 
 md(r"""
-## Решение 6 — два здания
+## Solution 6 — two buildings
 
-**(a)** В треугольнике $APB$ известны все три стороны: $PA = 150$,
-$PB = 90$, $AB = 154$. По теореме косинусов
+**(a)** In the triangle $APB$ all three sides are known: $PA = 150$, $PB = 90$,
+$AB = 154$. By the cosine rule
 
 $$\cos(A\hat{P}B) = \frac{150^2+90^2-154^2}{2\cdot150\cdot90}
-= \frac{6884}{27000} = 0{,}2549\ldots
-\ \Longrightarrow\ A\hat{P}B = 75{,}2^\circ.$$
+= \frac{6884}{27000} = 0.2549\ldots
+\ \Longrightarrow\ A\hat{P}B = 75.2^\circ.$$
 
-**(b)** Точка $P$ лежит на прямой между зданиями, и три угла при ней
-дают развёрнутый:
+**(b)** The point $P$ lies on a straight line between the buildings, and the three
+angles there make a straight angle:
 
 $$\theta + A\hat{P}B + \theta = 180^\circ
-\ \Longrightarrow\ \theta = \frac{180^\circ - 75{,}23^\circ}{2}
-= 52{,}39^\circ.$$
+\ \Longrightarrow\ \theta = \frac{180^\circ - 75.23^\circ}{2}
+= 52.39^\circ.$$
 
-Дальше высокое здание даёт прямоугольный треугольник с гипотенузой
-$PA = 150$:
+Then the tall building gives a right-angled triangle with hypotenuse $PA = 150$:
 
-$$h = 150\sin\theta = 118{,}8 \approx 119\ \text{м}.$$
+$$h = 150\sin\theta = 118.8 \approx 119\ \text{m}.$$
 
 ```python
 my6_apb = 75.229
 my6_h = 118.82
 ```
 
-**Разметка.** M1 за теорему косинусов, A1 за $75{,}2^\circ$,
-M1 за нахождение $\theta$, A1 за $52{,}4^\circ$, M1 за
-$h = 150\sin\theta$, A1 за 119.
+**The marking.** M1 for the cosine rule, A1 for $75.2^\circ$, M1 for finding
+$\theta$, A1 for $52.4^\circ$, M1 for $h = 150\sin\theta$, A1 for 119.
 
-**Ключ ко всему вопросу — одна строка.** Углы возвышения к обоим
-зданиям равны, и оба отсчитываются от одной горизонтали в одной точке.
-Значит они вместе с $A\hat{P}B$ составляют $180^\circ$. Без этого
-наблюдения задача не решается вовсе, а с ним оставшаяся часть
-занимает две строки.
+**The key to the whole question is one line.** The angles of elevation to both
+buildings are equal, and both are measured from the same horizontal at the same
+point. So together with $A\hat{P}B$ they make $180^\circ$. Without that observation
+the question cannot be solved at all; with it the rest takes two lines.
 
-**Что проверить в конце.** $h = 119$ при гипотенузе 150 — правдоподобно
-($\sin52^\circ \approx 0{,}79$). Низкое здание вышло бы
-$90\sin\theta = 71{,}3$ м, и оно действительно ниже.
+**What to check at the end.** $h = 119$ with a hypotenuse of 150 is plausible
+($\sin52^\circ \approx 0.79$). The short building would come out as
+$90\sin\theta = 71.3$ m, and it really is lower.
 """)
 
 md(r"""
-## Решение 7 — одна диагональ, два треугольника
+## Solution 7 — one diagonal, two triangles
 
-Диагональ $AC$ принадлежит обоим треугольникам, поэтому её квадрат
-можно записать дважды. В треугольнике $ABC$ угол $\alpha$ лежит между
-сторонами 2 и 4:
+The diagonal $AC$ belongs to both triangles, so its square can be written twice. In
+the triangle $ABC$ the angle $\alpha$ lies between the sides 2 and 4:
 
 $$AC^2 = 2^2+4^2-2\cdot2\cdot4\cos\alpha = 20-16\cos\alpha.$$
 
-В треугольнике $ADC$ угол $\beta$ лежит между сторонами 6 и 8:
+In the triangle $ADC$ the angle $\beta$ lies between the sides 6 and 8:
 
 $$AC^2 = 6^2+8^2-2\cdot6\cdot8\cos\beta = 100-96\cos\beta.$$
 
-Приравниваем:
+Equate them:
 
 $$20-16\cos\alpha = 100-96\cos\beta
 \iff 16\cos\alpha = 96\cos\beta - 80
 \iff \cos\alpha = 6\cos\beta - 5,$$
 
-то есть $\alpha = \arccos(6\cos\beta-5)$. $\blacksquare$
+that is, $\alpha = \arccos(6\cos\beta-5)$. $\blacksquare$
 
 ```python
 my7 = 6*cos(beta) - 5
 ```
 
-**Разметка.** A1 за первое выражение, A1 за второе, M1 за приравнивание,
-A1 за требуемую связь.
+**The marking.** A1 for the first expression, A1 for the second, M1 for equating
+them, A1 for the required relation.
 
-**Приём, который стоит запомнить.** Общая сторона двух треугольников —
-это уравнение. Ровно так же в B1 находили точки пересечения двух
-кривых: одна величина, записанная двумя способами, даёт связь между
-параметрами.
+**A technique worth remembering.** A side shared by two triangles is an equation. In
+exactly the same way B1 found the intersections of two curves: one quantity written
+two ways gives a relation between the parameters.
 
-**Побочное следствие.** Из $\cos\alpha = 6\cos\beta-5$ видно, что
-$\cos\beta \ge \frac23$: иначе левая часть вышла бы за $[-1,1]$.
-То есть $\beta \le 48{,}2^\circ$, и это ограничение понадобится
-в задании 17.
+**A side consequence.** From $\cos\alpha = 6\cos\beta-5$ it is clear that
+$\cos\beta \ge \frac23$: otherwise the left-hand side would leave $[-1,1]$. That is,
+$\beta \le 48.2^\circ$, and that restriction will be needed in task 17.
 """)
 
 md(r"""
-## Решение 8 — точный ответ через теорему синусов
+## Solution 8 — an exact answer through the sine rule
 
-Третий угол: $P\hat{Q}R = 180^\circ - 45^\circ - 60^\circ = 75^\circ$.
-Сторона $QR$ лежит против угла $P = 45^\circ$, сторона $PR = 5$ —
-против угла $Q = 75^\circ$:
+The third angle: $P\hat{Q}R = 180^\circ - 45^\circ - 60^\circ = 75^\circ$. The side
+$QR$ is opposite the angle $P = 45^\circ$, the side $PR = 5$ is opposite the angle
+$Q = 75^\circ$:
 
 $$\frac{QR}{\sin45^\circ} = \frac{5}{\sin75^\circ}
 \ \Longrightarrow\ QR = \frac{5\sin45^\circ}{\sin75^\circ}
 = \frac{5\cdot\frac{\sqrt2}{2}}{\frac{\sqrt6+\sqrt2}{4}}
 = \frac{10\sqrt2}{\sqrt6+\sqrt2}.$$
 
-Домножаем на сопряжённое:
+Multiply by the conjugate:
 
 $$QR = \frac{10\sqrt2(\sqrt6-\sqrt2)}{(\sqrt6+\sqrt2)(\sqrt6-\sqrt2)}
 = \frac{10\sqrt{12}-20}{4} = \frac{20\sqrt3-20}{4} = 5(\sqrt3-1).$$
@@ -1168,117 +1142,114 @@ $$QR = \frac{10\sqrt2(\sqrt6-\sqrt2)}{(\sqrt6+\sqrt2)(\sqrt6-\sqrt2)}
 my8 = 5*(sqrt(3) - 1)
 ```
 
-**Разметка.** M1 за теорему синусов, A1 за подстановку точного
-$\sin75^\circ$, M1 за домножение на сопряжённое, A1 за ответ в нужной
-форме.
+**The marking.** M1 for the sine rule, A1 for substituting the exact
+$\sin75^\circ$, M1 for multiplying by the conjugate, A1 for the answer in the
+required form.
 
-**Где ломается решение.** На $\frac{10\sqrt2}{\sqrt6+\sqrt2}$. Дальше
-нужен один приём — сопряжённое, — и без него ответ остаётся в форме,
-которую markscheme не принимает: требование «in the form
-$p(\sqrt q-1)$» это требование к записи.
+**Where the solution breaks.** At $\frac{10\sqrt2}{\sqrt6+\sqrt2}$. What is needed
+next is one technique — the conjugate — and without it the answer stays in a form
+the markscheme does not accept: the demand «in the form $p(\sqrt q-1)$» is a demand
+on the writing.
 
-**Проверка величиной.** $5(\sqrt3-1) = 3{,}66$, а $PR = 5$. Против
-меньшего угла ($45^\circ$ против $60^\circ$) лежит меньшая сторона —
-сходится.
+**A check by size.** $5(\sqrt3-1) = 3.66$, while $PR = 5$. Opposite the smaller
+angle ($45^\circ$ against $60^\circ$) lies the smaller side — it agrees.
 """)
 
 md(r"""
-## Решение 9 — теорема синусов в модели
+## Solution 9 — the sine rule in a model
 
-В треугольнике $ASD$ известны два угла: $\alpha = A\hat{S}D = \frac{\pi t}{8}$
-и $\beta = S\hat{A}D = 0{,}7754$. Третий угол — по сумме:
+In the triangle $ASD$ two angles are known:
+$\alpha = A\hat{S}D = \frac{\pi t}{8}$ and $\beta = S\hat{A}D = 0.7754$. The third
+comes from the angle sum:
 
-$$A\hat{D}S = \pi - 0{,}7754 - \frac{\pi t}{8}
-= 2{,}3662 - \frac{\pi t}{8} \approx 2{,}37 - \frac{\pi t}{8}.$$
+$$A\hat{D}S = \pi - 0.7754 - \frac{\pi t}{8}
+= 2.3662 - \frac{\pi t}{8} \approx 2.37 - \frac{\pi t}{8}.$$
 
-Сторона $AD = d$ лежит против угла $\alpha$, сторона $SA = 20$ —
-против угла $A\hat{D}S$:
+The side $AD = d$ is opposite the angle $\alpha$, the side $SA = 20$ is opposite the
+angle $A\hat{D}S$:
 
-$$\frac{d}{\sin\frac{\pi t}{8}} = \frac{20}{\sin\left(2{,}37-\frac{\pi t}{8}\right)}
+$$\frac{d}{\sin\frac{\pi t}{8}} = \frac{20}{\sin\left(2.37-\frac{\pi t}{8}\right)}
 \ \Longrightarrow\
-d(t) = \frac{20\sin\frac{\pi t}{8}}{\sin\left(2{,}37-\frac{\pi t}{8}\right)}.
+d(t) = \frac{20\sin\frac{\pi t}{8}}{\sin\left(2.37-\frac{\pi t}{8}\right)}.
 \qquad \blacksquare$$
 
 ```python
 my9 = pi - 0.7754 - pi*t/8
 ```
 
-**Разметка.** M1 за третий угол, M1 за теорему синусов, A1 за
-требуемый вид.
+**The marking.** M1 for the third angle, M1 for the sine rule, A1 for the required
+form.
 
-**Знакомая модель.** Это та самая $d(t)$, которую в B1 (задание 13)
-решали численно, отыскивая момент встречи воды с черепахой. Там же
-выяснилось, что около $t = 6{,}04$ у неё разрыв: знаменатель
-обращается в ноль. Теперь видно, откуда он берётся — угол
-$A\hat{D}S$ там становится нулевым, и треугольника больше нет.
+**A familiar model.** This is the very $d(t)$ that B1 (task 13) solved numerically,
+hunting for the moment the water meets the tortoise. It also emerged there that
+around $t = 6.04$ it has a discontinuity: the denominator vanishes. Now it is clear
+where that comes from — the angle $A\hat{D}S$ becomes zero there, and there is no
+triangle any more.
 
-**Про округление константы.** $\pi - 0{,}7754 = 2{,}3662$, а в условии
-стоит $2{,}37$. Модель в экзамене округлена, и это нормально; но
-именно из-за этого положение разрыва в B1 считалось приближённо.
+**About the rounded constant.** $\pi - 0.7754 = 2.3662$, while the question has
+$2.37$. The model in the exam is rounded, and that is normal; but it is exactly why
+the position of the discontinuity in B1 was computed approximately.
 """)
 
 md(r"""
-## Решение 10 — наименьший периметр
+## Solution 10 — the smallest perimeter
 
-Дано $a = CB = 7$, $b = AC = 12$ и угол $A = 25^\circ$, лежащий против
-стороны $a$. Меньшая сторона против известного угла — неоднозначный
-случай.
+We are given $a = CB = 7$, $b = AC = 12$ and the angle $A = 25^\circ$, which is
+opposite the side $a$. The smaller side opposite the known angle — the ambiguous
+case.
 
-По теореме синусов:
+By the sine rule:
 
-$$\sin B = \frac{b\sin A}{a} = \frac{12\sin25^\circ}{7} = 0{,}7243\ldots$$
+$$\sin B = \frac{b\sin A}{a} = \frac{12\sin25^\circ}{7} = 0.7243\ldots$$
 
-Отсюда **два** значения:
+Hence **two** values:
 
-$$B_1 = 46{,}43^\circ, \qquad B_2 = 180^\circ - 46{,}43^\circ = 133{,}57^\circ.$$
+$$B_1 = 46.43^\circ, \qquad B_2 = 180^\circ - 46.43^\circ = 133.57^\circ.$$
 
-Оба подходят: $25^\circ + B < 180^\circ$ в обоих случаях. Третий угол
-и третья сторона:
+Both work: $25^\circ + B < 180^\circ$ in either case. The third angle and the third
+side:
 
-$$C_1 = 108{,}57^\circ,\ AB_1 = \frac{7\sin C_1}{\sin25^\circ} = 15{,}70;
+$$C_1 = 108.57^\circ,\ AB_1 = \frac{7\sin C_1}{\sin25^\circ} = 15.70;
 \qquad
-C_2 = 21{,}43^\circ,\ AB_2 = 6{,}051.$$
+C_2 = 21.43^\circ,\ AB_2 = 6.051.$$
 
-Периметры: $7+12+15{,}70 = 34{,}70$ и $7+12+6{,}051 = 25{,}05$. Значит
+The perimeters: $7+12+15.70 = 34.70$ and $7+12+6.051 = 25.05$. So
 
-$$P_{\min} = 25{,}1.$$
+$$P_{\min} = 25.1.$$
 
 ```python
 my10_ab = [15.701, 6.0507]
 my10_p = 25.051
 ```
 
-**Разметка.** M1 за теорему синусов или косинусов, A1 за первое
-значение, M1 за понимание, что решений два, A1 за второе значение,
-A1 за наименьший периметр.
+**The marking.** M1 for the sine or cosine rule, A1 for the first value, M1 for
+realising that there are two solutions, A1 for the second value, A1 for the smallest
+perimeter.
 
-**Второй путь — квадратное уравнение.** Теорема косинусов относительно
-$AB$: $7^2 = 12^2 + AB^2 - 24\,AB\cos25^\circ$. Это квадратное
-уравнение с двумя положительными корнями 15,70 и 6,051 — те же два
-треугольника, полученные без всякого `arcsin`. Многие находят
-неоднозначность именно так, увидев два корня.
+**The second route — a quadratic.** The cosine rule in $AB$:
+$7^2 = 12^2 + AB^2 - 24\,AB\cos25^\circ$. That is a quadratic with two positive
+roots, 15.70 and 6.051 — the same two triangles obtained with no `arcsin` at all.
+Many people discover the ambiguity exactly that way, by seeing two roots.
 
-**Почему меньший периметр у тупого $B$.** Чем больше угол $B$, тем
-меньше противолежащая ему сторона... нет, наоборот: $B$ лежит против
-$AC = 12$, и эта сторона фиксирована. Тупой $B$ «прижимает» третью
-вершину, и сторона $AB$ выходит короче — 6,05 против 15,70.
+**Why the smaller perimeter goes with the obtuse $B$.** The angle $B$ is opposite
+$AC = 12$, and that side is fixed. An obtuse $B$ «presses» the third vertex in, and
+the side $AB$ comes out shorter — 6.05 against 15.70.
 
-**Слова, за которыми стоит следить.** «Smallest possible», «all
-possible values», «find the two possible» — прямое указание, что
-треугольников два. Если таких слов нет, а неоднозначность есть,
-выбор подсказывает чертёж.
+**The words to watch for.** «Smallest possible», «all possible values», «find the
+two possible» are a direct indication that there are two triangles. If there are no
+such words and the ambiguity is there anyway, the diagram suggests the choice.
 """)
 
 md(r"""
-## Решение 11 — площадь по двум сторонам и косинусу
+## Solution 11 — the area from two sides and a cosine
 
-Синус угла треугольника положителен всегда, поэтому знак снимается
-без разбора случаев:
+The sine of an angle of a triangle is always positive, so the sign is settled with
+no case analysis:
 
 $$\sin A = \sqrt{1-\cos^2 A} = \sqrt{1-\tfrac{1}{25}}
 = \sqrt{\tfrac{24}{25}} = \frac{2\sqrt6}{5}.$$
 
-Дальше формула площади:
+Then the area formula:
 
 $$S = \frac12\cdot 6\cdot 10\cdot\frac{2\sqrt6}{5} = 12\sqrt6.$$
 
@@ -1286,34 +1257,32 @@ $$S = \frac12\cdot 6\cdot 10\cdot\frac{2\sqrt6}{5} = 12\sqrt6.$$
 my11 = 12*sqrt(6)
 ```
 
-**Разметка.** M1 за использование $\sin^2+\cos^2=1$, A1 за
-$\frac{2\sqrt6}{5}$, M1 за формулу площади, A1 за подстановку,
-A1A1 за упрощение до $12\sqrt6$.
+**The marking.** M1 for using $\sin^2+\cos^2=1$, A1 for $\frac{2\sqrt6}{5}$, M1 for
+the area formula, A1 for the substitution, A1A1 for simplifying to $12\sqrt6$.
 
-**Почему без $\pm$.** Угол треугольника лежит в $(0^\circ,180^\circ)$,
-а там синус положителен. Это единственное место школьной программы, где
-из $\sin^2 = k$ следует единственный ответ без оговорок, — и знать это
-полезно, потому что в тригонометрических уравнениях (C3) всё наоборот.
+**Why no $\pm$.** An angle of a triangle lies in $(0^\circ,180^\circ)$, and there
+the sine is positive. This is the only place in the syllabus where $\sin^2 = k$
+implies a single answer with no reservations — and it is worth knowing, because in
+trigonometric equations (C3) it is the other way round.
 
-**Второй путь.** Опустить высоту из $B$ на $AC$: $\cos A = \frac15$
-даёт $AH = 6\cdot\frac15 = 1{,}2$, тогда $BH = \sqrt{36-1{,}44}$,
-и площадь $= \frac12\cdot10\cdot BH$. Ответ тот же, но радикалы
-некрасивее — markscheme его принимает, а времени уходит больше.
+**The second route.** Drop the height from $B$ onto $AC$: $\cos A = \frac15$ gives
+$AH = 6\cdot\frac15 = 1.2$, then $BH = \sqrt{36-1.44}$, and the area is
+$\frac12\cdot10\cdot BH$. The same answer, but the surds are uglier — the markscheme
+accepts it and it takes longer.
 
-**Про точность.** $12\sqrt6 = 29{,}39$, и в Paper 1 такой ответ
-не примут: вопрос про точное значение. Проверка ведёт себя так же.
+**About exactness.** $12\sqrt6 = 29.39$, and on Paper 1 such an answer is not
+accepted: the question asks for the exact value. The check behaves the same way.
 """)
 
 md(r"""
-## Решение 12 — треугольник на диаграмме Аргана
+## Solution 12 — a triangle on an Argand diagram
 
-Точки: $U(1,\sqrt3)$, $V(-2,0)$, $W(1,-\sqrt3)$. Стороны $UW$
-вертикальна (общая абсцисса 1), её длина
+The points: $U(1,\sqrt3)$, $V(-2,0)$, $W(1,-\sqrt3)$. The side $UW$ is vertical
+(both have abscissa 1), and its length is
 
 $$UW = \sqrt3 - (-\sqrt3) = 2\sqrt3.$$
 
-Высота из $V$ на прямую $x=1$ горизонтальна и равна $1-(-2) = 3$.
-Значит
+The height from $V$ to the line $x=1$ is horizontal and equals $1-(-2) = 3$. So
 
 $$S = \frac12\cdot 2\sqrt3\cdot 3 = 3\sqrt3.$$
 
@@ -1321,24 +1290,24 @@ $$S = \frac12\cdot 2\sqrt3\cdot 3 = 3\sqrt3.$$
 my12 = 3*sqrt(3)
 ```
 
-**Разметка.** M1 за нахождение основания или высоты, A1 за второе
-из них, A1 за $3\sqrt3$.
+**The marking.** M1 for finding the base or the height, A1 for the other one, A1 for
+$3\sqrt3$.
 
-**Формула $\frac12 ab\sin C$ тут лишняя.** Она сработает — угол при $V$
-равен $60^\circ$, а $UV = VW = 2\sqrt3$ — но считать придётся больше.
-Признак, по которому видно, что нужна не она: две вершины имеют
-одинаковую абсциссу, то есть основание уже параллельно оси.
+**The formula $\frac12 ab\sin C$ is surplus here.** It would work — the angle at $V$
+is $60^\circ$ and $UV = VW = 2\sqrt3$ — but there would be more to compute. The sign
+that it is not the one needed: two vertices have the same abscissa, that is, the base
+is already parallel to an axis.
 
-**Комплексные числа здесь только декорация.** Диаграмма Аргана —
-обычная координатная плоскость, и треугольник на ней обычный. Полезно
-это замечать: вопрос из раздела про комплексные числа решается
-приёмом из раздела про треугольник.
+**The complex numbers here are only decoration.** An Argand diagram is an ordinary
+coordinate plane, and a triangle on it is an ordinary triangle. Worth noticing: a
+question from the complex-numbers section is solved with a technique from the
+triangle section.
 """)
 
 md(r"""
-## Решение 13 — площадь с буквой
+## Solution 13 — an area with a letter
 
-**(a)** Раскрываем левую часть:
+**(a)** Expand the left-hand side:
 
 $$a^2 + \left(\frac{a^2-1}{2}\right)^2
 = a^2 + \frac{a^4-2a^2+1}{4}
@@ -1346,11 +1315,11 @@ $$a^2 + \left(\frac{a^2-1}{2}\right)^2
 = \frac{a^4+2a^2+1}{4} = \left(\frac{a^2+1}{2}\right)^2.
 \qquad \blacksquare$$
 
-**(b)** Тождество из (a) — это теорема Пифагора для набора
-$\left(a,\ \frac{a^2-1}{2},\ \frac{a^2+1}{2}\right)$: слева сумма
-квадратов двух сторон, справа квадрат третьей. Значит гипотенуза —
-$\frac{a^2+1}{2}$, а катеты $a$ и $\frac{a^2-1}{2}$. Площадь
-прямоугольного треугольника — половина произведения катетов:
+**(b)** The identity from (a) is Pythagoras for the set
+$\left(a,\ \frac{a^2-1}{2},\ \frac{a^2+1}{2}\right)$: on the left the sum of the
+squares of two sides, on the right the square of the third. So the hypotenuse is
+$\frac{a^2+1}{2}$ and the legs are $a$ and $\frac{a^2-1}{2}$. The area of a
+right-angled triangle is half the product of the legs:
 
 $$S = \frac12\cdot a\cdot\frac{a^2-1}{2} = \frac{a(a^2-1)}{4}.$$
 
@@ -1359,44 +1328,42 @@ my13_sq = a**2 + ((a**2 - 1)/2)**2
 my13_area = a*(a**2 - 1)/4
 ```
 
-**Разметка.** (a): M1 за попытку раскрыть, A1 за верное раскрытие,
-A1 — AG. (b): M1 за верные катеты, A1 за выражение.
+**The marking.** (a): M1 for attempting to expand, A1 for the right expansion, A1 —
+AG. (b): M1 for the right legs, A1 for the expression.
 
-**Пункт (a) — это и есть подсказка к (b).** Он говорит не «проверьте
-алгебру», а «вот какие две стороны катеты». Заметить это стоит двух
-баллов: без пункта (a) пришлось бы сравнивать три выражения между собой.
+**Part (a) is itself the hint for (b).** It is not saying «check the algebra» but
+«here are the two sides that are the legs». Noticing that is worth two marks:
+without part (a) you would have to compare three expressions with one another.
 
-**Что это за тройка.** При $a = 3$ стороны равны $3$, $4$, $5$;
-при $a = 5$ — $5$, $12$, $13$. Это общий вид пифагоровых троек
-с нечётным катетом, и обе тройки уже встречались в практикуме B1
-в задаче про треугольник, у которого площадь равна периметру.
+**What this triple is.** At $a = 3$ the sides are $3$, $4$, $5$; at $a = 5$ — $5$,
+$12$, $13$. That is the general form of the Pythagorean triples with an odd leg, and
+both triples have already appeared in practicum B1 in the question about a triangle
+whose area equals its perimeter.
 
-**Про запись.** Ответ $\frac{a^3-a}{4}$ тот же самый, и проверка
-принимает обе формы: здесь требования к записи нет, есть требование
-к значению.
+**About the writing.** The answer $\frac{a^3-a}{4}$ is the same thing, and the check
+accepts both forms: there is no requirement on the writing here, only on the value.
 """)
 
 md(r"""
-## Решение 14 — четырёхугольник на координатной плоскости
+## Solution 14 — a quadrilateral on the coordinate plane
 
-**(a)** Симметрия относительно $[OB]$ означает, что $[OB]$ — серединный
-перпендикуляр к $[AC]$; в частности, $OB$ проходит через середину
-$[AC]$:
+**(a)** Symmetry about $[OB]$ means that $[OB]$ is the perpendicular bisector of
+$[AC]$; in particular, $OB$ passes through the midpoint of $[AC]$:
 
 $$M = \left(\frac{6+3}{2},\ \frac{0+3\sqrt3}{2}\right)
 = \left(\frac92,\ \frac{3\sqrt3}{2}\right).$$
 
-Прямая через начало координат и $M$:
+The line through the origin and $M$:
 
 $$k = \frac{3\sqrt3/2}{9/2} = \frac{\sqrt3}{3} = \frac{1}{\sqrt3},
 \qquad y = \frac{x}{\sqrt3}.$$
 
-**(b)** $[OA]$ лежит на оси $x$, и $[AB]$ ей перпендикулярна — значит
-$AB$ вертикальна, и у точки $B$ абсцисса 6. Тогда
+**(b)** $[OA]$ lies on the $x$-axis and $[AB]$ is perpendicular to it — so $AB$ is
+vertical, and the point $B$ has abscissa 6. Then
 $B\left(6,\ 6\cdot\frac{1}{\sqrt3}\right) = B(6,\ 2\sqrt3)$.
 
-Диагональ $[OB]$ делит четырёхугольник на два равных треугольника
-(симметрия), поэтому
+The diagonal $[OB]$ splits the quadrilateral into two equal triangles (the
+symmetry), so
 
 $$S = 2\cdot S_{OAB} = 2\cdot\frac12\cdot 6\cdot 2\sqrt3 = 12\sqrt3.$$
 
@@ -1405,76 +1372,74 @@ my14_line = x/sqrt(3)
 my14_area = 12*sqrt(3)
 ```
 
-**Разметка.** (a): A1 за середину, M1 за наклон, A1A1 за уравнение.
-(b): M1 за нахождение $B$, M1 за использование симметрии, A1 за
-$12\sqrt3$.
+**The marking.** (a): A1 for the midpoint, M1 for the gradient, A1A1 for the
+equation. (b): M1 for finding $B$, M1 for using the symmetry, A1 for $12\sqrt3$.
 
-**Симметрия работает дважды.** Сначала она даёт направление $OB$
-(через середину $[AC]$), потом делит четырёхугольник пополам. Оба раза
-это экономит вычисления, и оба раза за неё стоит M1.
+**The symmetry works twice.** First it gives the direction of $OB$ (through the
+midpoint of $[AC]$), then it halves the quadrilateral. Both times it saves
+computation, and both times there is an M1 for it.
 
-**Проверка через угол.** Наклон $\frac{1}{\sqrt3}$ — это $30^\circ$,
-а точка $C(3,3\sqrt3)$ лежит под углом $60^\circ$. Биссектриса угла
-$AOC$ действительно идёт под $30^\circ$ — симметрия сходится.
+**A check through an angle.** The gradient $\frac{1}{\sqrt3}$ is $30^\circ$, and the
+point $C(3,3\sqrt3)$ lies at $60^\circ$. The bisector of the angle $AOC$ does run at
+$30^\circ$ — the symmetry agrees.
 """)
 
 md(r"""
-## Решение 15 — площадь в заданной форме
+## Solution 15 — the area in a given form
 
-Угол $C$ лежит между сторонами $BC = x$ и $AC = 2x$, а против него —
-сторона $AB = 10$. Теорема косинусов:
+The angle $C$ lies between the sides $BC = x$ and $AC = 2x$, and opposite it is the
+side $AB = 10$. The cosine rule:
 
 $$100 = x^2 + (2x)^2 - 2\cdot x\cdot 2x\cdot\frac34
 = x^2 + 4x^2 - 3x^2 = 2x^2.$$
 
-Отсюда $x^2 = 50$, то есть $x = 5\sqrt2$.
+Hence $x^2 = 50$, that is, $x = 5\sqrt2$.
 
-Синус угла $C$ положителен:
+The sine of the angle $C$ is positive:
 
 $$\sin C = \sqrt{1-\tfrac{9}{16}} = \frac{\sqrt7}{4}.$$
 
-Площадь:
+The area:
 
 $$S = \frac12\cdot x\cdot 2x\cdot\sin C = x^2\cdot\frac{\sqrt7}{4}
 = 50\cdot\frac{\sqrt7}{4} = \frac{25\sqrt7}{2}.$$
 
-Значит $p = 25$, $q = 7$.
+So $p = 25$, $q = 7$.
 
 ```python
 my15_p = 25
 my15_q = 7
 ```
 
-**Разметка.** M1 за теорему косинусов, A1 за $2x^2 = 100$,
-A1 за $x = 5\sqrt2$, M1 за $\sin C$, A1 за $\frac{\sqrt7}{4}$,
-M1 за формулу площади, A1 за $\frac{25\sqrt7}{2}$.
+**The marking.** M1 for the cosine rule, A1 for $2x^2 = 100$, A1 for
+$x = 5\sqrt2$, M1 for $\sin C$, A1 for $\frac{\sqrt7}{4}$, M1 for the area formula,
+A1 for $\frac{25\sqrt7}{2}$.
 
-**Красота в сокращении.** $x^2+4x^2-3x^2 = 2x^2$ — три слагаемых
-схлопываются в одно, и корень получается «хорошим». Это признак
-того, что задача составлена под точный ответ: если после подстановки
-осталось что-то громоздкое, скорее всего перепутан угол.
+**The beauty is in the cancellation.** $x^2+4x^2-3x^2 = 2x^2$ — three terms collapse
+into one, and the root comes out «nice». That is a sign that the question was built
+for an exact answer: if something bulky is left after the substitution, the angle has
+most likely been confused.
 
-**Сам $x$ в ответ не идёт.** Площадь зависит от $x^2$, а его мы знаем
-сразу — 50. Извлекать корень было необязательно; в экзамене это
-экономит строку и защищает от ошибки со знаком.
+**$x$ itself does not go into the answer.** The area depends on $x^2$, and we know
+that straight away — 50. Taking the root was not necessary; in the exam that saves a
+line and protects against a sign error.
 
-**Про форму $\frac{p\sqrt q}{2}$.** Запись $\frac{5\sqrt{175}}{2}$
-равна тому же числу, но $q$ обязано быть свободным от квадратов:
-$175 = 25\cdot7$. Требование «$p,q\in\mathbb{Z}^+$» подразумевает
-несократимую форму.
+**About the form $\frac{p\sqrt q}{2}$.** The writing $\frac{5\sqrt{175}}{2}$ equals
+the same number, but $q$ has to be square-free: $175 = 25\cdot7$. The requirement
+«$p,q\in\mathbb{Z}^+$» implies the reduced form.
 """)
 
 md(r"""
-## Решение 16 — угол обзора
+## Solution 16 — an angle of view
 
-Точка $G$ лежит под самолётом, $PG = 6$ — общий катет двух
-прямоугольных треугольников. Дальний конец полосы отстоит от $G$
-на $x + 2$, ближний — на $x$:
+The point $G$ lies below the aeroplane, and $PG = 6$ is the common leg of two
+right-angled triangles. The far end of the runway is $x + 2$ from $G$, the near one
+$x$:
 
 $$\tan(G\hat{P}B) = \frac{x+2}{6}, \qquad
 \tan(G\hat{P}A) = \frac{x}{6}.$$
 
-Угол обзора — разность:
+The angle of view is the difference:
 
 $$\theta = A\hat{P}B = G\hat{P}B - G\hat{P}A
 = \arctan\left(\frac{x+2}{6}\right) - \arctan\left(\frac x6\right).
@@ -1484,85 +1449,84 @@ $$\theta = A\hat{P}B = G\hat{P}B - G\hat{P}A
 my16 = atan((x + 2)/6) - atan(x/6)
 ```
 
-**Разметка.** M1 за оба арктангенса (или за один с указанием, что
-второй такой же), A1 за разность.
+**The marking.** M1 for both arctangents (or for one with an indication that the
+other is the same), A1 for the difference.
 
-**Почему разность, а не сумма.** Оба треугольника лежат по одну
-сторону от вертикали $PG$, и меньший угол «вычитается» из большего.
-Если бы полоса лежала по обе стороны от точки $G$, была бы сумма —
-и это первое, что стоит проверить по чертежу.
+**Why a difference and not a sum.** Both triangles lie on the same side of the
+vertical $PG$, and the smaller angle is «subtracted» from the larger. If the runway
+lay on both sides of the point $G$, it would be a sum — and that is the first thing
+to check on the diagram.
 
-**Куда это ведёт.** В оригинале вопроса дальше идёт производная
-$\frac{d\theta}{dt}$ и скорость самолёта: конструкция «угол обзора»
-это стандартный вход в задачи о связанных скоростях (E9).
+**Where this leads.** In the original the question goes on to the derivative
+$\frac{d\theta}{dt}$ and the speed of the aeroplane: the «angle of view»
+construction is a standard entry into related-rates problems (E9).
 """)
 
 md(r"""
-## Решение 17 — наибольшая площадь четырёхугольника
+## Solution 17 — the largest area of a quadrilateral
 
-Площадь — сумма площадей двух треугольников:
+The area is the sum of the areas of two triangles:
 
 $$S = \frac12\cdot2\cdot4\sin\alpha + \frac12\cdot6\cdot8\sin\beta
 = 4\sin\alpha + 24\sin\beta.$$
 
-Из задания 7 известно $\cos\alpha = 6\cos\beta - 5$, то есть
-$\alpha = \arccos(6\cos\beta-5)$. Подставляем и получаем функцию одной
-переменной:
+From task 7 we know $\cos\alpha = 6\cos\beta - 5$, that is,
+$\alpha = \arccos(6\cos\beta-5)$. Substituting gives a function of one variable:
 
 $$S(\beta) = 4\sin\big(\arccos(6\cos\beta-5)\big) + 24\sin\beta,$$
 
-где $\cos\beta \ge \frac23$, то есть $0 < \beta \le 48{,}2^\circ$.
-Максимум по GDC:
+where $\cos\beta \ge \frac23$, that is, $0 < \beta \le 48.2^\circ$. The maximum on
+the GDC:
 
-$$S_{\max} = 19{,}5959\ldots \approx 19{,}6
-\quad\text{при}\quad \beta = 44{,}4^\circ,\ \alpha = 135{,}6^\circ.$$
+$$S_{\max} = 19.5959\ldots \approx 19.6
+\quad\text{at}\quad \beta = 44.4^\circ,\ \alpha = 135.6^\circ.$$
 
-**(b)** Заметим: $\alpha + \beta = 180^\circ$ с точностью до всех
-знаков. Четырёхугольник с наибольшей площадью при данных сторонах —
-**вписанный**, и для него работает формула Брахмагупты:
+**(b)** Notice: $\alpha + \beta = 180^\circ$ to every figure. The quadrilateral with
+the largest area for given sides is the **cyclic** one, and for it Brahmagupta's
+formula works:
 
 $$S = \sqrt{(s-a)(s-b)(s-c)(s-d)}, \qquad
 s = \frac{2+4+6+8}{2} = 10,$$
 $$S = \sqrt{8\cdot6\cdot4\cdot2} = \sqrt{384} = 8\sqrt6.$$
 
-И $8\sqrt6 = 19{,}5959\ldots$ — то же число.
+And $8\sqrt6 = 19.5959\ldots$ — the same number.
 
 ```python
 my17_max = 19.5959
 my17_exact = 8*sqrt(6)
 ```
 
-**Разметка.** M1 за выражение площади через два треугольника,
-M1 за подстановку связи из (a), A1 за функцию одной переменной,
-A1 за 19,6.
+**The marking.** M1 for expressing the area through the two triangles, M1 for
+substituting the relation from (a), A1 for the function of one variable, A1 for
+19.6.
 
-**Экзамен просит только 19,6.** Формулу Брахмагупты в программе AA HL
-не проходят, и пункт (b) здесь добавлен практикумом. Смысл в том,
-чтобы численный ответ можно было проверить независимо: совпадение
-$19{,}5959$ и $\sqrt{384}$ до пятого знака — не совпадение.
+**The exam asks only for 19.6.** Brahmagupta's formula is not on the AA HL
+syllabus, and part (b) has been added here by the practicum. The point is that the
+numerical answer can then be checked independently: the agreement of $19.5959$ and
+$\sqrt{384}$ to five figures is no coincidence.
 
-**Почему максимум там, где $\alpha+\beta = 180^\circ$.** Это и есть
-условие вписанности: сумма противоположных углов вписанного
-четырёхугольника равна развёрнутому. Задача «при данных сторонах
-максимизировать площадь» имеет ответ «вписанный» всегда — и это
-хорошая иллюстрация того, что GDC находит число, а не причину.
+**Why the maximum is where $\alpha+\beta = 180^\circ$.** That is exactly the
+condition for being cyclic: the opposite angles of a cyclic quadrilateral add to a
+straight angle. The problem «maximise the area for given sides» always has the answer
+«the cyclic one» — a good illustration of the fact that a GDC finds a number, not a
+reason.
 """)
 
 md(r"""
-## Решение 18 — «show that» из чертежа
+## Solution 18 — a «show that» from a diagram
 
-Точка $C$ делит $[AB]$ на два куска. Кусок в комнате шириной 6 м:
-угол между отрезком и стеной комнаты равен $\alpha$, ширина 6 лежит
-**против** этого угла, поэтому
+The point $C$ splits $[AB]$ into two pieces. The piece in the room of width 6 m: the
+angle between the segment and the wall of the room is $\alpha$, and the width 6 lies
+**opposite** that angle, so
 
 $$CB = \frac{6}{\sin\alpha} = 6\operatorname{cosec}\alpha.$$
 
-Кусок в коридоре шириной $\frac34$: там тот же угол оказывается
-прилежащим, и
+The piece in the corridor of width $\frac34$: there the same angle turns out to be
+adjacent, and
 
 $$AC = \frac{3/4}{\cos\alpha} = \frac34\sec\alpha.$$
 
-Складываем:
+Add them:
 
 $$L = AC + CB = \frac34\sec\alpha + 6\operatorname{cosec}\alpha.
 \qquad \blacksquare$$
@@ -1571,41 +1535,41 @@ $$L = AC + CB = \frac34\sec\alpha + 6\operatorname{cosec}\alpha.
 my18 = Rational(3, 4)/cos(alpha) + 6/sin(alpha)
 ```
 
-**Разметка.** A1 за один кусок, A1 за второй; сумма — AG.
+**The marking.** A1 for one piece, A1 for the other; the sum is AG.
 
-**Почему один угол работает в двух треугольниках.** Стены
-перпендикулярны, и угол $\alpha$ переходит во второй треугольник как
-дополнительный к $90^\circ - \alpha$. Отсюда и смена $\sin$ на $\cos$:
-то, что было противолежащим, стало прилежащим.
+**Why one angle works in two triangles.** The walls are perpendicular, and the angle
+$\alpha$ carries into the second triangle as the complement of
+$90^\circ - \alpha$. Hence the swap of $\sin$ for $\cos$: what was opposite has
+become adjacent.
 
-**Куда это ведёт.** Дальше в оригинале ищут минимум $L$ — это
-классическая задача «пронести лестницу за угол», и ответ
-$\alpha = \arctan\sqrt[3]{8} = \arctan 2$. Треугольник здесь только
-вход; сама задача про производную (E9).
+**Where this leads.** In the original the minimum of $L$ is then hunted — the
+classic «carry a ladder round a corner» problem, with the answer
+$\alpha = \arctan\sqrt[3]{8} = \arctan 2$. The triangle here is only the entrance;
+the problem itself is about the derivative (E9).
 """)
 
 md(r"""
-## Решение 19 — задание на таймере
+## Solution 19 — the task on the timer
 
-**(a)** Сторона $BC$ лежит против угла $A = 2\theta$, сторона $AB = 5$ —
-против угла $C = \theta$. Теорема синусов:
+**(a)** The side $BC$ is opposite the angle $A = 2\theta$, the side $AB = 5$ is
+opposite the angle $C = \theta$. The sine rule:
 
 $$\frac{BC}{\sin2\theta} = \frac{5}{\sin\theta}
 \ \Longrightarrow\ BC = \frac{5\sin2\theta}{\sin\theta}
 = \frac{5\cdot2\sin\theta\cos\theta}{\sin\theta} = 10\cos\theta.$$
 
-По условию $BC = 6\sqrt2$, значит
+By the question $BC = 6\sqrt2$, so
 
 $$10\cos\theta = 6\sqrt2 \iff \cos\theta = \frac{6\sqrt2}{10}
 = \frac{3\sqrt2}{5}. \qquad \blacksquare$$
 
-**(b)** Угол треугольника, синус положителен:
+**(b)** An angle of a triangle, so the sine is positive:
 
 $$\sin\theta = \sqrt{1-\frac{18}{25}} = \sqrt{\frac{7}{25}}
 = \frac{\sqrt7}{5}.$$
 
-**(c)** В треугольнике $BCD$ угол при вершине $C$ — тот же $\theta$,
-а стороны при нём $BC = 6\sqrt2$ и $DC$:
+**(c)** In the triangle $BCD$ the angle at the vertex $C$ is the same $\theta$, and
+the sides at it are $BC = 6\sqrt2$ and $DC$:
 
 $$\frac12\cdot 6\sqrt2\cdot DC\cdot\frac{\sqrt7}{5} = 2\sqrt{14}
 \iff \frac{3\sqrt{14}}{5}\,DC = 2\sqrt{14}
@@ -1617,23 +1581,23 @@ my19_sin = sqrt(7)/5
 my19_dc = Rational(10, 3)
 ```
 
-**Разметка.** (a): M1 за теорему синусов, M1 за формулу двойного угла,
-A1 — AG. (b): M1 за $\sin^2+\cos^2=1$, A1 за $\frac{\sqrt7}{5}$.
-(c): M1 за формулу площади с найденным синусом, A1 за $\frac{10}{3}$.
+**The marking.** (a): M1 for the sine rule, M1 for the double angle formula, A1 —
+AG. (b): M1 for $\sin^2+\cos^2=1$, A1 for $\frac{\sqrt7}{5}$. (c): M1 for the area
+formula with the sine found, A1 for $\frac{10}{3}$.
 
-**Ключ всего вопроса — сокращение $\sin\theta$.** Формула двойного угла
-превращает $\frac{\sin2\theta}{\sin\theta}$ в $2\cos\theta$, и уравнение
-становится линейным. Без неё остаётся тригонометрическое уравнение
-относительно $\theta$, которое в Paper 1 не решается.
+**The key to the whole question is the cancellation of $\sin\theta$.** The double
+angle formula turns $\frac{\sin2\theta}{\sin\theta}$ into $2\cos\theta$, and the
+equation becomes linear. Without it a trigonometric equation in $\theta$ is left,
+which cannot be solved on Paper 1.
 
-**Как это выглядит по времени.** Семь баллов за десять минут, и первые
-три — самые дорогие: пункт (a) держит на себе оба остальных. Если
-формула двойного угла не вспомнилась за минуту, дальше идти незачем.
+**How it looks in time.** Seven marks in ten minutes, and the first three are the
+dearest: part (a) carries the other two. If the double angle formula has not come to
+mind within a minute, there is no point going on.
 
-**Проверка в конце.** $\sqrt{14}$ в ответе (c) сокращается полностью,
-и $DC = \frac{10}{3} = 3{,}33$. Сторона $AC$ при этом равна
-$AB\cos\theta + \ldots$ — во всяком случае, $DC$ должна быть меньше
-$AC$, и $3{,}33$ этому не противоречит.
+**A check at the end.** The $\sqrt{14}$ in the answer to (c) cancels completely, and
+$DC = \frac{10}{3} = 3.33$. The side $AC$ meanwhile equals
+$AB\cos\theta + \ldots$ — in any case $DC$ has to be smaller than $AC$, and $3.33$
+does not contradict that.
 """)
 
 nb = {
